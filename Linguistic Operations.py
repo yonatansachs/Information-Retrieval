@@ -8,8 +8,61 @@ def remove_stopwords(tokens, stopwords_file):
     return [token for token in tokens if token not in stop_words]
 
 
+def safe_write_file(output_file: Path, content: str):
+    """Safely write content to file, ensuring directory exists."""
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_file, 'w', encoding='utf-8') as out_f:
+        out_f.write(content)
+
+
+def process_stopwords(input_dir: Path, stopwords_file: Path, output_dir: Path):
+    output_dir.mkdir(parents=True, exist_ok=True)
+    input_files = list(input_dir.glob("*.txt"))
+
+    if not input_files:
+        print(f"Warning: No .txt files found in {input_dir}")
+        return
+
+    for file in input_files:
+        try:
+            if "_no_stopwords" not in file.stem:
+                print(f"Processing file: {file.name}")
+                with open(file, 'r', encoding='utf-8') as f:
+                    tokens = f.read().splitlines()
+
+                filtered_tokens = remove_stopwords(tokens, stopwords_file)
+                output_file = output_dir / f"{file.stem}_no_stopwords.txt"
+                safe_write_file(output_file, "\n".join(filtered_tokens))
+
+        except Exception as e:
+            print(f"Error processing {file.name}: {str(e)}")
+
+
 def case_folding(tokens):
     return [token.lower() for token in tokens]
+
+
+def process_case_folding(input_dir: Path, output_dir: Path):
+    output_dir.mkdir(parents=True, exist_ok=True)
+    input_files = list(input_dir.glob("*.txt"))
+
+    if not input_files:
+        print(f"Warning: No .txt files found in {input_dir}")
+        return
+
+    for file in input_files:
+        try:
+            if "_case_folded" not in file.stem:
+                print(f"Processing file: {file.name}")
+                with open(file, 'r', encoding='utf-8') as f:
+                    tokens = f.read().splitlines()
+
+                folded_tokens = case_folding(tokens)
+                output_file = output_dir / f"{file.stem}_case_folded.txt"
+                safe_write_file(output_file, "\n".join(folded_tokens))
+
+        except Exception as e:
+            print(f"Error processing {file.name}: {str(e)}")
 
 
 def perform_stemming(tokens):
@@ -17,29 +70,27 @@ def perform_stemming(tokens):
     return [stemmer.stem(token) for token in tokens]
 
 
-def process_file(input_file: Path, stopwords_file: Path, output_dir: Path):
-    # Create output directory if it doesn't exist
+def process_stemming(input_dir: Path, output_dir: Path):
     output_dir.mkdir(parents=True, exist_ok=True)
+    input_files = list(input_dir.glob("*.txt"))
 
-    try:
-        # Read input file
-        with open(input_file, 'r', encoding='utf-8') as f:
-            tokens = f.read().splitlines()
+    if not input_files:
+        print(f"Warning: No .txt files found in {input_dir}")
+        return
 
-        # Apply all linguistic operations in sequence
-        tokens = remove_stopwords(tokens, stopwords_file)  # Remove stopwords
-        tokens = case_folding(tokens)  # Convert to lowercase
-        tokens = perform_stemming(tokens)  # Apply stemming
+    for file in input_files:
+        try:
+            if "_stemmed" not in file.stem:
+                print(f"Processing file: {file.name}")
+                with open(file, 'r', encoding='utf-8') as f:
+                    tokens = f.read().splitlines()
 
-        # Create output file
-        output_file = output_dir / f"{input_file.stem}_processed.txt"
-        with open(output_file, 'w', encoding='utf-8') as out_f:
-            out_f.write("\n".join(tokens))
+                stemmed_tokens = perform_stemming(tokens)
+                output_file = output_dir / f"{file.stem}_stemmed.txt"
+                safe_write_file(output_file, "\n".join(stemmed_tokens))
 
-        print(f"Successfully processed: {input_file.name}")
-
-    except Exception as e:
-        print(f"Error processing {input_file.name}: {str(e)}")
+        except Exception as e:
+            print(f"Error processing {file.name}: {str(e)}")
 
 
 def process_documents(input_dir: Path, stopwords_file: Path):
@@ -49,27 +100,29 @@ def process_documents(input_dir: Path, stopwords_file: Path):
     if not stopwords_file.exists():
         raise FileNotFoundError(f"Stopwords file does not exist: {stopwords_file}")
 
-    # Create output directory
-    output_dir = input_dir / "processed_files"
-    output_dir.mkdir(parents=True, exist_ok=True)
+    # Create main output directory
+    output_base_dir = input_dir.parent / "linguistic_processed"
+    output_base_dir.mkdir(parents=True, exist_ok=True)
+
+    # Create subdirectories for each processing step
+    stopwords_dir = output_base_dir / "1_no_stopwords"
+    case_folded_dir = output_base_dir / "2_case_folded"
+    stemmed_dir = output_base_dir / "3_stemmed"
 
     print(f"Processing files from: {input_dir}")
-    print(f"Output directory: {output_dir}")
+    print(f"Output directory: {output_base_dir}")
 
-    # Get list of input files
-    input_files = list(input_dir.glob("*.txt"))
+    # Process files through each step
+    print("\nStep 1: Removing stopwords...")
+    process_stopwords(input_dir, stopwords_file, stopwords_dir)
 
-    if not input_files:
-        print(f"No .txt files found in {input_dir}")
-        return
+    print("\nStep 2: Performing case folding...")
+    process_case_folding(stopwords_dir, case_folded_dir)
 
-    # Process each file
-    print("\nStarting processing...")
-    for file in input_files:
-        if "_processed" not in file.stem:  # Skip already processed files
-            process_file(file, stopwords_file, output_dir)
+    print("\nStep 3: Performing stemming...")
+    process_stemming(case_folded_dir, stemmed_dir)
 
-    print(f"\nProcessing completed. Processed files are saved in: {output_dir}")
+    print(f"\nLinguistic processing completed. Results are saved in: {output_base_dir}")
 
 
 if __name__ == "__main__":

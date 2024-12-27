@@ -130,28 +130,39 @@ class AdvancedLanguageModel:
 
 def create_advanced_language_model():
     # Directory containing tokenized files
-    tokenized_dir = Path(
-        r'C:\Users\yonat\OneDrive\Documents\Information Systems\Year 3\Semester A\Information Retrieval\Documents txt\tokenized')
+    directories = [
+        Path(
+            r'C:\Users\yonat\OneDrive\Documents\Information Systems\Year 3\Semester A\Information Retrieval\Documents txt\tokenized'),
+        Path(
+            r'C:\Users\yonat\OneDrive\Documents\Information Systems\Year 3\Semester A\Information Retrieval\Documents txt\linguistic_processed\1_no_stopwords'),
+        Path(
+            r'C:\Users\yonat\OneDrive\Documents\Information Systems\Year 3\Semester A\Information Retrieval\Documents txt\linguistic_processed\2_case_folded'),
+        Path(
+            r'C:\Users\yonat\OneDrive\Documents\Information Systems\Year 3\Semester A\Information Retrieval\Documents txt\linguistic_processed\3_stemmed')
+    ]
+    #tokenized_dir = Path(
+       # r'C:\Users\yonat\OneDrive\Documents\Information Systems\Year 3\Semester A\Information Retrieval\Documents txt\tokenized')
+    for directory in directories:
 
-    # Initialize and train model
-    model = AdvancedLanguageModel(smoothing_method='laplace', laplace_alpha=1.0)
-    model.train(tokenized_dir)
+        # Initialize and train model
+        model = AdvancedLanguageModel(smoothing_method='laplace', laplace_alpha=1.0)
+        model.train(directory)
 
-    # Save model
-    model.save_model(tokenized_dir.parent / 'language_model.json')
+        # Save model
+        model.save_model(directory.parent / 'language_model.json')
 
-    # Print some statistics
-    print("\nLanguage Model Statistics:")
-    print(f"Total terms: {model.total_terms}")
-    print(f"Vocabulary size: {len(model.vocabulary)}")
-    print(f"Total documents: {len(model.doc_lengths)}")
-    print(f"Average document length: {model.total_terms / len(model.doc_lengths):.2f}")
+        # Print some statistics
+        print("\nLanguage Model Statistics:")
+        print(f"Total terms: {model.total_terms}")
+        print(f"Vocabulary size: {len(model.vocabulary)}")
+        print(f"Total documents: {len(model.doc_lengths)}")
+        print(f"Average document length: {model.total_terms / len(model.doc_lengths):.2f}")
 
-    print("\nMost common terms and their probabilities:")
-    for term, count in model.unigram_counts.most_common(10):
-        prob = model._smooth_probability(count, model.total_terms, len(model.vocabulary))
-        idf = model.idf_scores[term]
-        print(f"{term}: count={count}, prob={prob:.6f}, idf={idf:.2f}")
+        print("\nMost common terms and their probabilities:")
+        for term, count in model.unigram_counts.most_common(10):
+            prob = model._smooth_probability(count, model.total_terms, len(model.vocabulary))
+            idf = model.idf_scores[term]
+            print(f"{term}: count={count}, prob={prob:.6f}, idf={idf:.2f}")
 
 
 if __name__ == "__main__":

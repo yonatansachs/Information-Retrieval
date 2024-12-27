@@ -149,7 +149,7 @@ def create_advanced_language_model():
         model.train(directory)
 
         # Save model
-        model.save_model(directory.parent / 'language_model.json')
+        model.save_model(directory / 'language_model.json')
 
         # Print some statistics
         print("\nLanguage Model Statistics:")

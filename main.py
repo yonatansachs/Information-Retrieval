@@ -70,7 +70,7 @@ def process_directory(input_dir, output_dir=None, rules_file=None):
     """Process all text files in a directory"""
     counter=0
     input_dir = Path(input_dir)
-    output_dir = Path(output_dir) if output_dir else input_dir / 'tokenized'
+    output_dir = Path(output_dir) if output_dir else input_dir / 'Processed_Files'
     output_dir.mkdir(exist_ok=True)
 
     # Load custom rules if provided
@@ -101,7 +101,7 @@ def process_directory(input_dir, output_dir=None, rules_file=None):
             tokens = tokenizer.tokenize(text)
 
             # Save tokens
-            output_path = output_dir / f"tokenized_{file_path.name}"
+            output_path = output_dir / f"processed_{file_path.name}"
             with open(output_path, 'w', encoding='utf-8') as f:
                 f.write('\n'.join(tokens))
 
@@ -124,13 +124,9 @@ if __name__ == "__main__":
     #Linguistic Operations
     print()
     print("Starting Linguistic Operations...")
-    LinguisticInput_dir = Path("OurDocuments/tokenized")
+    LinguisticInput_dir = Path("OurDocuments/Processed_Files")
     stopwords_file = Path("StopWords.txt")
     try:
         process_documents(LinguisticInput_dir, stopwords_file)
     except Exception as e:
         print(f"Error: {str(e)}")
-    #Language Models
-    print()
-    print("Creating Language Models...")
-    create_advanced_language_model()

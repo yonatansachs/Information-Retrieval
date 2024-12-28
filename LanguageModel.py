@@ -5,9 +5,10 @@ import math
 
 
 class AdvancedLanguageModel:
-    def __init__(self, smoothing_method='laplace', laplace_alpha=1.0):
+    def __init__(self, smoothing_method='laplace', laplace_alpha=1.0, step_identifier=None):
         self.smoothing_method = smoothing_method
         self.laplace_alpha = laplace_alpha
+        self.step_identifier = step_identifier
 
         # Storage for different n-gram models
         self.unigram_counts = Counter()
@@ -40,7 +41,7 @@ class AdvancedLanguageModel:
 
     def train(self, tokenized_dir: Path):
         """Train the language model on all documents in the directory"""
-        doc_paths = list(tokenized_dir.glob('tokenized_*.txt'))
+        doc_paths = list(tokenized_dir.glob('processed_*.txt'))
 
         if not doc_paths:
             raise ValueError(f"No tokenized files found in directory: {tokenized_dir}")
@@ -98,6 +99,11 @@ class AdvancedLanguageModel:
             raise ValueError("No documents were processed. Cannot save empty model.")
 
         model_data = {
+            'step_info': {
+                'identifier': self.step_identifier,
+                'divider': '='*50,
+                'description': f"Language Model State After: {self.step_identifier}"
+            },
             'collection_stats': {
                 'total_terms': self.total_terms,
                 'vocabulary_size': len(self.vocabulary),
@@ -135,54 +141,62 @@ class AdvancedLanguageModel:
         # Create directory if it doesn't exist
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
+        # Load existing model if it exists, otherwise create new list
+        all_models = []
+        if output_path.exists():
+            with open(output_path, 'r', encoding='utf-8') as f:
+                try:
+                    all_models = json.load(f)
+                    if not isinstance(all_models, list):
+                        all_models = [all_models]
+                except json.JSONDecodeError:
+                    all_models = []
+
+        # Append new model data
+        all_models.append(model_data)
+
+        # Save updated list of models
         with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(model_data, f, indent=4)
+            json.dump(all_models, f, indent=4)
 
         print(f"Model saved to {output_path}")
 
 
-def create_advanced_language_model():
+def create_advanced_language_model(step_identifier=None):
     # Directory containing tokenized files
-    base_dir = Path("OurDocuments")
-    directories = [
-        base_dir / "tokenized",
-        base_dir / "tokenized" / "linguistic_processed" / "1_no_stopwords",
-        base_dir / "tokenized" / "linguistic_processed" / "2_case_folded",
-        base_dir / "tokenized" / "linguistic_processed" / "3_stemmed"
-    ]
+    directory = Path("OurDocuments/Processed_Files")
 
-    for directory in directories:
-        try:
-            #print(f"\nProcessing directory: {directory}")
+    try:
+        if not directory.exists():
+            print(f"Directory does not exist: {directory}")
 
-            # Check if directory exists
-            if not directory.exists():
-                print(f"Directory does not exist: {directory}")
-                continue
+        # Initialize and train model with step identifier
+        model = AdvancedLanguageModel(
+            smoothing_method='laplace',
+            laplace_alpha=1.0,
+            step_identifier=step_identifier
+        )
+        model.train(directory)
 
-            # Initialize and train model
-            model = AdvancedLanguageModel(smoothing_method='laplace', laplace_alpha=1.0)
-            model.train(directory)
+        # Save model
+        model.save_model(directory / 'language_model.json')
 
-            # Save model
-            model.save_model(directory / 'language_model.json')
+        # Print statistics
+        print("\nLanguage Model Statistics:")
+        print(f"Step: {step_identifier}")
+        print(f"Total terms: {model.total_terms}")
+        print(f"Vocabulary size: {len(model.vocabulary)}")
+        print(f"Total documents: {len(model.doc_lengths)}")
+        print(f"Average document length: {model.total_terms / len(model.doc_lengths):.2f}")
 
-            # Print statistics
-            print("\nLanguage Model Statistics:")
-            print(f"Total terms: {model.total_terms}")
-            print(f"Vocabulary size: {len(model.vocabulary)}")
-            print(f"Total documents: {len(model.doc_lengths)}")
-            print(f"Average document length: {model.total_terms / len(model.doc_lengths):.2f}")
+        print("\nMost common terms and their probabilities:")
+        for term, count in model.unigram_counts.most_common(10):
+            prob = model._smooth_probability(count, model.total_terms, len(model.vocabulary))
+            idf = model.idf_scores[term]
+            print(f"{term}: count={count}, prob={prob:.6f}, idf={idf:.2f}")
 
-            print("\nMost common terms and their probabilities:")
-            for term, count in model.unigram_counts.most_common(10):
-                prob = model._smooth_probability(count, model.total_terms, len(model.vocabulary))
-                idf = model.idf_scores[term]
-                print(f"{term}: count={count}, prob={prob:.6f}, idf={idf:.2f}")
-
-        except Exception as e:
-            print(f"Error processing directory {directory}: {str(e)}")
-            continue
+    except Exception as e:
+        print(f"Error processing directory {directory}: {str(e)}")
 
 
 """if __name__ == "__main__":

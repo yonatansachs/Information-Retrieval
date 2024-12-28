@@ -1,0 +1,1026 @@
+CHI 2018 Paper                                                         CHI 2018, April 21–26, 2018, Montréal, QC, Canada
+
+
+
+                       A Qualitative Exploration of Perceptions
+                               of Algorithmic Fairness
+          Allison Woodruff1, Sarah E. Fox2, Steven Rousso-Schindler3, and Jeff Warshaw4
+                                    1
+                                      Google, woodruff@acm.org
+     2
+       Google and Human Centered Design & Engineering, University of Washington, sefox@uw.edu
+          3
+            Department of Anthropology, CSU Long Beach, steven.rousso-schindler@csulb.edu
+                                 4
+                                   Google, jeffwarshaw@google.com
+ABSTRACT                                                         raise awareness and illustrate the potential for wide-ranging
+Algorithmic systems increasingly shape information people        consequences, researchers and the press have pointed out a
+are exposed to as well as influence decisions about              number of specific instances of algorithmic unfairness
+employment, finances, and other opportunities. In some           [19,58], for example, in predictive policing [19,43], the
+cases, algorithmic systems may be more or less favorable to      online housing marketplace [27,28], online ads
+certain groups or individuals, sparking substantial              [13,17,20,29,82], and image search results [49,64].
+discussion of algorithmic fairness in public policy circles,
+academia, and the press. We broaden this discussion by           Such cases demonstrate that algorithmic (un)fairness is a
+exploring how members of potentially affected                    complex, industry-wide issue. Bias can result from many
+communities feel about algorithmic fairness. We conducted        causes, for example, data sets that reflect structural bias in
+workshops and interviews with 44 participants from several       society, human prejudice, product decisions that
+populations traditionally marginalized by categories of race     disadvantage     certain populations,        or   unintended
+or class in the United States. While the concept of              consequences of complicated interactions among multiple
+algorithmic fairness was largely unfamiliar, learning about      technical systems. Accordingly, many players in the
+algorithmic (un)fairness elicited negative feelings that         ecosystem, including but not limited to policy makers,
+connect to current national discussions about racial injustice   companies, advocates, and researchers, have a shared
+and economic inequality. In addition to their concerns about     responsibility and opportunity to pursue fairness.
+potential harms to themselves and society, participants also     Algorithmic fairness, therefore, appears to be a “wicked
+indicated that algorithmic fairness (or lack thereof) could      problem” [72], with diverse stakeholders but, as yet, no
+substantially affect their trust in a company or product.        clear agreement on problem statement or solution. The
+                                                                 human computer interaction (HCI) community and related
+Author Keywords                                                  disciplines are of course highly interested in influencing
+Algorithmic fairness; algorithmic discrimination                 positive action on such issues [25], having for example an
+ACM Classification Keywords                                      established tradition of conducting research to inform
+K.4.m. Computers and Society: Miscellaneous.                     public policy for societal-scale challenges [50,84] as well as
+                                                                 providing companies information about how they can best
+INTRODUCTION                                                     serve their users. Indeed, recent work by Plane et al. on
+Scholars and thought leaders have observed the increasing        discrimination in online advertising is positioned as
+role and influence of algorithms in society, pointing out that   informing public policy as well as company initiatives [67].
+they mediate our perception and knowledge of the world as
+well as affect our chances and opportunities in life             Building on this tradition, our goal in this research was to
+[6,8,17,38,54,55,63,76,79]. Further, academics and               explore ethical and pragmatic aspects of public perception
+regulators have long refuted the presumption that                of algorithmic fairness. To this end, we conducted a
+algorithms are wholly objective, observing that algorithms       qualitative study with several populations that have
+can reflect or amplify human or structural bias, or introduce    traditionally been marginalized and are likely to be affected
+complex biases of their own [4,10,18,33–35,38,46,64]. To         by algorithmic (un)fairness, specifically, Black or African
+                                                                 American, Hispanic or Latinx, and low socioeconomic
+                                                                 status participants in the United States. Our research
+                                                                 questions centered around participants’ interpretations and
+This work is licensed under a Creative Commons                   experiences of algorithmic (un)fairness, as well as their
+Attribution-NonCommercial-NoDerivs International 4.0 License.    ascription of accountability and their ethical and pragmatic
+                                                                 expectations of stakeholders. In order to draw more robust
+CHI 2018, April 21–26, 2018, Montreal, QC, Canada.               conclusions about how participants interpret these highly
+© 2018 Copyright is held by the owner/author(s).                 contextual issues, we explored a broad spectrum of
+ACM ISBN 978-1-4503-5620-6/18/04.
+https://doi.org/10.1145/3173574.3174230                          different types of algorithmic unfairness, using scenarios to
+                                                                 make the discussion concrete.
+
+
+
+
+Paper 656                                                                                                              Page 1
+CHI 2018 Paper                                                        CHI 2018, April 21–26, 2018, Montréal, QC, Canada
+
+
+
+Our findings indicate that while the concept of algorithmic     image search or predictive search results may reinforce or
+(un)fairness was initially mostly unfamiliar and participants   exaggerate societal bias or negative stereotypes related to
+often perceived algorithmic systems as having limited           race, gender, or sexual orientation [4,49,62,64]. Others
+impact, they were still deeply concerned about algorithmic      raised concerns about potential use of Facebook activity to
+unfairness, they often expected companies to address it         compute non-regulated credit scores, especially as this may
+regardless of its source, and a company’s response to           disproportionately disadvantage less privileged populations
+algorithmic unfairness could substantially impact user trust.   [17,82]. Edelman et al. ran experiments on Airbnb and
+These findings can inform a variety of stakeholders, from       reported that applications from guests with distinctively
+policy makers to corporations, and they bolster the widely      African American names were 16% less likely to be
+espoused notion that algorithmic fairness is a societally       accepted relative to identical guests with distinctively
+important goal for stakeholders across the ecosystem—from       White names [28]. Edelman and Luca also found non-Black
+regulator to industry practitioner—to pursue. With full         hosts were able to charge approximately 12% more than
+recognition of the importance of ethical motivations, these     Black hosts, holding location, rental characteristics, and
+findings also suggest that algorithmic fairness can be good     quality constant [27]. Colley et al. found Pokémon GO
+business practice. Some readers may be in search of             advantaged urban, white, non-Hispanic populations, for
+arguments to motivate or persuade companies to take steps       example, potentially attracting more tourist commerce to
+to improve algorithmic fairness. There are many good            their neighborhoods [15], and Johnson et al. found that
+reasons for companies to care about fairness, including but     geolocation inference algorithms exhibited substantially
+not limited to ethical and moral imperatives, legal             worse performance for underrepresented populations, i.e.,
+requirements, regulatory risk, and public relations and         rural users [47].
+brand risk. In this paper, we provide additional motivation
+                                                                This public awareness has been accompanied by increased
+by illustrating that user trust is an important but
+                                                                legal and regulatory attention. For example, the upcoming
+understudied pragmatic incentive for companies across the
+                                                                European Union General Data Protection Regulation
+technology sector to pursue algorithmic fairness. Based on
+                                                                contains an article on ‘automated individual decision-
+our findings, we outline three best practices for pursuing
+                                                                making’ [39]. Yet, algorithmic fairness poses many legal
+algorithmic fairness.
+                                                                complexities and challenges [5] and law and regulation are
+BACKGROUND                                                      still in nascent stages in this rapidly changing field (e.g.
+Algorithmic Fairness                                            [9]). To investigate systems’ adherence to emerging legal,
+In taking up algorithmic fairness, we draw on and seek to       regulatory, and ethical standards of algorithmic fairness,
+extend emerging strands of thought within the fields of         both testing and transparency have been called for
+science and technology studies (STS), HCI, mathematics,         [1,14,77]. A wide range of techniques have been proposed
+and related disciplines. Research on algorithmic fairness       to scrutinize algorithms, such as model interpretability,
+encompasses a wide range of issues, for example, in some        audits, expert analysis, and reverse engineering
+cases considering discrete decisions and their impact on        [22,42,76,77]. Investigation is complicated however by the
+individuals (e.g. fair division algorithms explored in          myriad potential causes of unfairness (prejudice, structural
+[51,52]), and in other cases exploring broader patterns         bias, choice of training data, complex interactions of human
+related to groups that have traditionally been marginalized     behavior with machine learning models, unforeseen supply
+in society. Our focus tends towards the latter, and of          and demand effects of online bidding processes, etc.) and
+particular relevance to our investigation is the perspective    the sometimes impenetrable and opaque nature of machine
+taken in critical algorithm studies, which articulates the      learning systems [12,38]. In fact, existing offline
+increasing influence of algorithms in society and largely       discrimination problems may in some cases be exacerbated
+focuses on understanding algorithms as an object of social      and harder to investigate once they manifest in online
+concern [6,17,38,54,55,63,76,79]. Countering popular            systems [77], and new bigotries based not just on
+claims that algorithmic authority or data-driven decisions      immutable characteristics but more subtle features may
+may lead to increased objectivity, many scholars have           arise which are more difficult to detect than traditional
+observed that algorithms can reflect, amplify or introduce      discriminatory processes [9].
+bias [4,10,18,33–35,38,46,64].                                  Not only do opacity and complexity complicate expert
+Articles in academic venues as well as the popular press        analysis, but they may also make it difficult for
+have chronicled specific instances of unjust or prejudicial     stakeholders to understand the consequences of algorithmic
+treatment of people, based on categories like race, sexual      systems. Many of the proposed mechanisms for scrutinizing
+orientation, or gender, through algorithmic systems or          algorithms make certain assumptions about the public,
+algorithmically aided decision-making. For example, Perez       regulators, and other stakeholders. However, research has
+reported that Microsoft’s Tay (an artificial intelligence       found that perception of algorithmic systems can vary
+chatbot) suffered a coordinated attack that led it to exhibit   substantially by individual factors as well as platform [21],
+racist behavior [65]. Researchers have also reported that       and that end users often have fundamental questions or
+                                                                misconceptions about technical details of their operation
+
+
+
+Paper 656                                                                                                            Page 2
+CHI 2018 Paper                                                           CHI 2018, April 21–26, 2018, Montréal, QC, Canada
+
+
+
+[11,31,69,85,86], an effect that may be exacerbated for less       be different from those of technological experts [87].
+privileged populations [86]. For example, studies have             Taking this perspective, we orient to our workshop
+found that some participants are not aware of algorithmic          attendees as experts in how technology is experienced in
+curation in the Facebook News Feed [31,69] or the                  their daily lives—a framing that speaks to their own sets of
+gathering of online behavioral data and its use for                knowledges that are different, but not any less than, those of
+inferencing [86], or underestimate the prevalence and scale        technological experts.
+of data gathering and its use in practical applications
+                                                                   In the 1980s, HCI scholars Jungk and Müllert first
+[85,86]. Further, participants often emphasize the role of
+                                                                   described the future workshop as a format for social
+human decision-making in algorithmic systems, for
+                                                                   engagement which involved the organization of events with
+example, misattributing algorithmic curation in the
+                                                                   members of the public meant to better address issues of
+Facebook News Feed to actions taken by their friends and
+                                                                   democratic concern [48]. Similar in its political roots,
+family [31], or framing algorithms as calculator-like tools
+                                                                   participatory design is a method focused on more actively
+that support human decision-making [86].
+                                                                   including members of the public or other under-represented
+Despite this existing research on algorithmic literacy, very       stakeholders in the processes of design. Early examples of
+little research has explored understandings of algorithmic         this work, from the 1980s, aimed to support worker
+(un)fairness, and there is currently little insight into how the   autonomy and appreciation of traditional expertise in light
+general public and in particular people affected by                of the introduction of digitized work practices and, in some
+algorithmic unfairness might perceive it. In a rare                cases, automation of labor. For example, Pelle Ehn, a
+exception, Plane et al. surveyed a broad population in the         design scholar and longtime proponent of participatory
+US, including a near-census representative panel, regarding        design, collaborated with a Scandinavian graphic designers
+their responses to online behavioral advertising (OBA)             union to produce a software system meant to better
+scenarios that used race as a targeting variable for a job ad      incorporate their skilled practices, compared with
+[67]. Overall, almost half of the respondents viewed the           management-initiated programs [30].
+scenarios as a moderate or severe problem, with Black
+                                                                   More contemporary participatory initiatives have taken up
+respondents finding them to be of higher severity. We offer
+                                                                   concerns outside of work or governmental contexts, from
+a complementary and novel exploration of algorithmic
+                                                                   exploring alternative food systems [23,24] to understanding
+(un)fairness, in that: (1) we explore a much wider range of
+                                                                   how to promote play among neurodiverse children [80].
+potential types of algorithmic unfairness; (2) we take a
+                                                                   Still others have developed the design workshop as a means
+qualitative approach that allows us to deeply explore issues
+                                                                   of examining critical theory through material practice like
+with a smaller population, which is complementary to Plane
+                                                                   making and tinkering [70] or used craft to imagine
+et al.’s more narrow quantitative exploration with a larger
+                                                                   alternative near futures that might yield more equitable
+and more representative sample [67]; and (3) we focus on
+                                                                   social arrangements [3,75].
+populations that are more likely to be affected by
+algorithmic unfairness, rather than the general public.            Here, we build on this legacy of participatory programs by
+Workshop as Method
+                                                                   reporting on our use of the workshop format as research
+In taking up a workshop format, we draw on traditions              instrument toward understanding not only how participants
+within and just beyond HCI. This includes programs of              perceive algorithmic (un)fairness, but also how they might
+participatory action research, participatory design, and           elect to construct platforms differently. Due to the
+living labs. Within the context of HCI and design research,        potentially sensitive nature of the subject matter we looked
+workshop approaches often seek to invite members of the            to dialogical approaches like participatory design as a
+public to engage with practices of design while exploring          helpful technique for collaboratively working through
+values and beliefs around technology with each other,              complex ideas (e.g. machine learning) and developing an
+positing alternative techniques and outcomes. Noting the           open environment for sharing feelings and opinions. We see
+collaborative and situated nature of the approach, Rosner et       these discussions and subsequent ideas as informing the
+al. describe the design workshop as inviting “a treatment of       development of technology and policy as well as
+collaboration and interdisciplinary as a localized and             communication with diverse users in the future.
+imaginative practice” [74]. These engagements rely on              METHODOLOGY
+careful     collaboration    between       researcher   and        In order to better understand how members of marginalized
+subject/partner, across sites like academic or industrial          communities perceive algorithmic (un)fairness, we
+research centers and community groups each with their own          conducted participatory design workshops with members of
+goals for the work. Relatedly, research on the public              various communities throughout the San Francisco Bay
+understanding of science argues against assuming a single          Area. We then conducted individual follow-up interviews
+correct understanding of science and technology,                   with select participants. The workshops and interviews took
+emphasizing that members of the public should not be               place July through September of 2016.
+excluded from democratic decision-making about
+technology because their interpretations of technology may
+
+
+
+
+Paper 656                                                                                                                Page 3
+CHI 2018 Paper                                                                      CHI 2018, April 21–26, 2018, Montréal, QC, Canada
+
+
+Participants                                                                  slightly emphasizing those involved in care or service
+We recruited 44 adults, all of whom responded to a screener                   professions—skills and expertise often underrecognized in
+survey administered by a national research recruitment firm                   technology cultures [57,71].
+with a respondent database including San Francisco Bay
+Area residents. Participants were compensated for their                       Most of the participants were from the East Bay and San
+time, at or above the living wage for their area. Our                         Francisco, with a wide range of ages (18-65+) and
+recruiting focused on inviting individuals who were                           occupations (e.g. public transportation driver, retail
+traditionally marginalized either by categories of                            manager, special education instructor, community activities
+socioeconomic status or race, and we organized our                            coordinator, tasker, line cook, laborer, correctional peace
+participants into five workshops as follows: two workshops                    officer, office assistant, theater assistant).
+based on socioeconomic status as described below; one                         Workshop
+workshop with participants who identified as Black or                         Each group participated in a 5-hour workshop, with the
+African American women; one workshop with Black or                            following agenda: an icebreaker activity; a group discussion
+African American or mixed race men and women; and one                         of algorithmic (un)fairness; a meal; a design activity
+workshop with Hispanic or Latinx men and women. While                         centered around three cases; and a concluding group
+our work was qualitative and non-representative, we expect                    discussion. In attendance at each workshop were between 6
+the constituencies on which we focused comprise roughly                       and 11 participants, 2 researchers who acted as facilitators,
+between 40% and 50% of the US population. 1                                   and a visual anthropologist who focused on documentation.
+                                                                              Participants were aware of Google’s involvement in the
+Primary factors in considering socioeconomic status were
+                                                                              study, and the workshops took place at a Google location.
+current household income and education level. Selected
+                                                                              During the workshops, we took care to encourage
+participants had an annual household income of less than
+                                                                              collaborative      interpretation,    problem-solving,      and
+the living wage for their home county—an amount
+                                                                              discussion among participants, and to make space for all
+determined from a coarse approximation of Glasmeier’s
+                                                                              participants to share their ideas and opinions. Additionally,
+Living Wage Model (livingwage.mit.edu, accessed July-
+                                                                              recognizing the emotional complexity of the topic, we
+August 2016). In factoring this amount, we considered the
+                                                                              explained that there might be sensitive material, and that
+total number of adults in the household, the number of
+                                                                              participants should feel free to stop participating, sit out on
+adults contributing to the income, the number of dependent
+                                                                              an activity, or step out of the room.
+children in the household, and the number of children
+outside the household cared for financially by the                            To start the day, we asked participants to take part in an
+respondent. Participants had also earned no more than                         icebreaker activity inspired by anti-racism scholar Peggy
+“some college,” defined here as up to 4 years of course                       McIntosh’s Invisible Knapsack exercise [56,78], meant to
+taking without receiving an Associate’s or Bachelor’s                         begin to discuss issues of discrimination, power, and
+degree. As secondary factors contributing to socioeconomic                    privilege in a non-confrontational manner. After this initial
+status determination, we also considered the respondent’s                     activity, the researchers gave a brief description of
+current occupation and location of residence. With this, the                  algorithms and algorithmic (un)fairness. Broad discussion
+focus was on understanding the respondent’s current                           revolved around participant questions and interpretation of
+economic situation as well as near term opportunity for                       algorithmic (un)fairness, whether participants knew about it
+advancement based on proximate resources.                                     prior to the workshop or had ever experienced it, and
+                                                                              sharing of general feelings about it. Note that during the
+For the remainder of the workshops, our recruitment
+                                                                              workshop we used the term “algorithmic discrimination”
+focused on inviting people of color, based on their
+                                                                              rather than “algorithmic (un)fairness.” While “algorithmic
+responses in the recruitment screener. As a secondary
+                                                                              fairness” is often used as a term in the academic literature,
+consideration we also looked to respondent’s occupation,
+                                                                              our experience in this study as well as other work at our
+                                                                              institution suggests that in a user research context “fairness”
+1
+   The US Census Bureau estimates that as of July 2016, the Black or          may be construed overly narrowly (for example, as
+African American population constitutes 13.3% (43 million people) of the      emphasizing equality rather than justice) and therefore we
+total US population (323.1 million people), the Hispanic or Latino            preferred to use “algorithmic discrimination” in our
+population is 17.8% (57.5 million people), and the population with two or
+more races is 2.6%. (https://www.census.gov/quickfacts, accessed August
+                                                                              conversations with participants.
+2017). While we were not able to find an estimated percentage of the US
+population that meets the living wage standard, the poverty rate in 2015
+                                                                              For the bulk of the day, we focused on a series of three
+was 13.5% (43.1 million people), approximately 51% of whom were Black         scenario-based design activities. We began each scenario by
+or Hispanic [68]. Since the living wage exceeds the poverty threshold, we     describing a case that could be understood as an instance of
+expect that substantially more than 13.5% would not meet the living wage      algorithmic unfairness, and then invited participants to
+standard [61], and in fact the number seems likely to be closer to the 29%
+of Americans that Pew identified as living in a lower-class household [37].
+                                                                              share their initial reactions in a brief group discussion.
+Overall this suggests that the populations we focused on (although with       During this discussion, we also occasionally introduced
+only a small, qualitative sample) conservatively comprise nearly 40% of       various complexities, for example suggesting different
+the US population, and more likely slightly over 50%.                         potential causes of unfairness. Then, we asked participants
+
+
+
+
+Paper 656                                                                                                                            Page 4
+CHI 2018 Paper                                                                  CHI 2018, April 21–26, 2018, Montréal, QC, Canada
+
+
+
+to spend 10 minutes working individually to come up with                  the data from both the workshops and interviews by closely
+ideas about what they might do if they were a decision-                   reviewing the text and videos, performing affinity
+maker at a technology company in charge of responding to                  clusterings of textual quotations and video clips to identify
+the scenario. We told participants they were free to express              emergent themes [7], producing short films synthesizing
+their ideas using any means of communication they found                   key themes using a visual ethnographic approach [66], and
+most comfortable—drawing, story writing, performing                       iteratively revising and refining categories. In keeping with
+were all examples given. After they worked and recorded                   the general inductive approach, our analytic process yielded
+their ideas, we came back together as a group and went                    a small number of summary categories, which we describe
+around the table to share and discuss everyone’s ideas.                   in the Findings section below.
+The scenarios we discussed represented a wide range of                    Limitations
+issues. While the scenarios were based on internet-related                We note several limitations of our study methodology that
+products and services, we also encouraged discussion of                   should be considered when interpreting this work. First, due
+other domains and the discussion often branched out to                    to our focus on traditionally marginalized populations, we
+other areas in which algorithmic unfairness might occur.                  did not gather data about how more privileged populations
+The first scenario described a man visiting a newspaper                   think about or experience algorithmic fairness. Second, our
+website and seeing ads for high-paying jobs, while a                      sample was not statistically representative of the
+woman visiting the same website saw ads for low-wage                      populations we explored. The findings we report should be
+work.2 The second scenario was about results of predictive                viewed as a deep exploration of our sample’s beliefs and
+search (a feature which suggests possible search terms as                 attitudes, but not as generalizing to those populations as a
+the user types into a search box) that could be interpreted as            whole. Third, our choice of scenarios as well as our choice
+stereotyping Black men and children as criminals.3 With the               to use the term “algorithmic discrimination,” while
+third and final scenario, we asked participants to consider a             appropriate given our focus, may have influenced
+practice of excluding businesses in neighborhoods with                    participants and other framings of fairness may have
+high crime rates from an online restaurant reviewing and                  yielded different results. Finally, because we touch on
+map application.4 After we completed all three scenarios,                 socioeconomic status and ethnicity in this work, we include
+we concluded the workshop with a broad group discussion                   the detail that the research team consisted only of college-
+reflecting back on ideas that had emerged throughout the                  educated, European-American researchers. We describe
+day and the experience of the workshop as a whole.                        participants’ experiences in their own words, but our
+                                                                          interpretations may lack context or nuance that may have
+Interviews
+                                                                          been more readily available to a more diverse research
+After the workshops were completed, we conducted follow-
+                                                                          team.
+up interviews approximately one hour in length with 11
+participants who appeared particularly engaged during the                 FINDINGS
+workshop discussions. Interviews were semi-structured,                    In this section, we describe the main findings that emerged
+with questions focused on gaining further understanding of                from our analysis.
+the participant’s concerns, opinions, and policy ideas.                   Unfamiliar, but not Unfathomable
+Analysis                                                                  Most participants were not aware of the concept of
+All interviews were video-recorded and transcribed. In our                algorithmic (un)fairness before participating in the study,
+analysis, we used a general inductive approach [83], which                although once it was described a few reported that they had
+relies on detailed readings of raw data to derive themes                  had personal experiences with it or had heard about it in the
+relevant to evaluation objectives. In our case, the primary               media. However, most participants reported extensive
+evaluation objective was to inform technical and policy                   experience with discrimination in their daily lives, and they
+approaches to algorithmic fairness by learning about: (1)                 connected their personal stories to the concept of
+participants’ interpretation of algorithmic fairness; and (2)             algorithmic (un)fairness.
+participants’ ascription of accountability and their ethical              Personal Experiences with Discrimination
+and pragmatic expectations of stakeholders, especially                    Most participants reported extensive negative experience
+companies. Accordingly, we focused on these issues during                 with discrimination and stereotyping. Unfair treatment or
+our time with the participants, and then we jointly analyzed              racial profiling by law enforcement was commonly raised,
+                                                                          for example, some participants described experiences with
+2                                                                         “driving while Black” (being pulled over by police because
+  Inspired by [20], which reported an experiment in which simulated men
+                                                                          of their race, particularly when driving in affluent
+visiting the Times of India website were more likely than simulated
+women to see an ad for a career coaching service for $200K+ executive     neighborhoods with few Black residents) [53]. Participants
+positions.                                                                also raised a number of issues related to social and
+3                                                                         environmental justice, such as “white privilege” (societal
+    Inspired by [62].
+                                                                          advantages conferred on Caucasians), gentrification forcing
+4
+    Inspired by [73].                                                     people with low incomes out of their homes, food deserts
+
+
+
+
+Paper 656                                                                                                                      Page 5
+CHI 2018 Paper                                                                         CHI 2018, April 21–26, 2018, Montréal, QC, Canada
+
+
+
+(lack of access to grocery stores and healthy food in                              One or Discovery or American Express? No, they’ve already labeled
+                                                                                   me as the low income person.” — P43
+impoverished areas), and the proximity of low income
+neighborhoods to pollution and environmental hazards.                              P28: They had to hire Eric Holder to tamp down all the racism of
+Participants also shared a number of other experiences,                            [Airbnb].
+                                                                                   …
+such as “shopping while Black” (receiving poor service in                          Facilitator: So, what do you think Airbnb should do?
+retail establishments, or being followed or monitored by                           P28: (laughs)
+staff who suspect they may steal) [36], being targeted by                          P29: Well, something was already done. An African American man
+direct mail (unsolicited advertisements sent by physical                           creating—
+                                                                                   P28: The Attorney General of the United States. They had to hire the
+mail) for predatory lending and other disadvantageous                              former Attorney General, the biggest lawyer in the United States, to
+opportunities, being stereotyped as “angry” because they                           handle the racism of Airbnb.
+are Black, or employment-related discrimination. Many
+                                                                                Reactions to Algorithmic Unfairness
+viewed these as pervasive issues that framed their
+                                                                                Even though most participants had not been aware of
+opportunities and daily experiences, often from a young
+                                                                                algorithmic unfairness prior to the study, learning about it
+age.
+                                                                                elicited strong negative feelings, evoking experiences with
+    “My mother was taking us to daycare. And I remember her getting             discrimination in other settings. For example, participants
+    pulled over in [city] and the police officer arresting her, taking her to
+    jail. Me and my sister had to go to a place where there were other
+                                                                                drew connections between algorithmic unfairness and
+    children our age. At the time, we were scared. We didn’t know why           national dialogues about racial injustice and economic
+    she was actually in handcuffs. We stayed there all day, and it was          inequality, as well as lost opportunities for personal
+    because the car was behind in registration… I wasn’t even in                advancement.
+    elementary school yet. We were going to preschool. And it was quite
+    traumatizing and I do believe that it was because she was an African           “If I would have searched and those things popped up, I would have
+    American in [city]. So you learn the roles that you have or what could         been very angry. In fact it makes me angry right now just looking at it.
+    possibly happen at a very young age. So, some things now are just              Because what should be is that if somebody wants to know if he was a
+    anticipated. They’re not even shocking anymore.” — P435                        thug they have to type in, ‘was he a thug’. Not have it be suggested to
+                                                                                   them. Because for people like me who feel like the police are taking
+    “I tell my daughter that, ‘when you were eight months, in your mom’s           advantage of getting away with killing brown and black people all
+    womb, you were already [racially] profiled [in a traffic stop]’.” — P20        over the country, it’s infuriating. So what they should do is no matter
+    “They’re following me around the grocery store like I’m going to steal         what other people have typed in before, when someone types it in, it
+    something.” — P11                                                              should show up as certain facts, no adjectives, no judgments, no
+                                                                                   positive or negative connotations. Just whatever happened that has
+    “There was a lot of environmental racism in the neighborhood that I            been factually reported.” — P23
+    grew up in. It was very impoverished. Lots of police brutality... It’s
+    just set up that way for us to fail.” — P11                                    “[To] have your destiny, or your destination in life, based on
+                                                                                   mathematics or something that you don’t put in for yourself… to have
+Prior Awareness of Algorithmic Unfairness                                          everything that you worked and planned for based on something that’s
+Once algorithmic unfairness was described to them, a few                           totally out of your control, it seems a little harsh. Because it’s like, this
+                                                                                   is what you’re sent to do, and because of a algorithm, it sets you back
+participants reported that they were aware of times they had                       from doing just that. It’s not fair.” — P04
+experienced it (naturally, participants may also have
+experienced it and not been aware of it), and a few other                       Participants also drew connections with personal stories and
+participants said they were familiar with the concept from                      life experiences. For example, they objected heavily to
+the media. For example, a small number of participants                          stereotyping, such as negative online characterizations of
+raised concerns about having been targeted for low income                       marginalized groups, or online ads or information being
+ads, and a few discussed turning off location history to                        personalized based on demographic characteristics (similar
+avoid racial profiling and “racially motivated advertising.”                    to concerns raised in [67,86]). Similarly, they also felt it
+A couple of participants also discussed experiences with                        was very unfair to personalize ads or information based on
+computer systems making unfair job and scholarship                              the online behavior of other people with similar
+decisions. Several participants also described stories they                     characteristics. While at first glance this may appear to
+had heard about in the press regarding companies such as                        contrast with Plane et al.’s finding that online behavioral
+Airbnb, Facebook, Google, NextDoor, and others.                                 advertising was seen as significantly less problematic than
+                                                                                explicit demographic targeting [67], it seems likely that
+    “I’m constantly bombarded with ‘You can get this low income credit
+    card.’ ‘You can get this low finance loan.’ I didn’t ask for no loan. I
+                                                                                participants’ underlying concern in both cases relates to the
+    didn’t ask for no credit card… Plus it’s a low income loan. It’s not        use of demographic characteristics or other sensitive traits
+    like ‘Would you like to buy a house?’ ‘Would you like to buy a boat?’       to personalize information.
+    ‘Would you like to finance a car?’ No. Why can’t I have like a Capital
+                                                                                   P34: It’s totally unfair—
+                                                                                   P33: —because not every woman’s the same.
+5                                                                                  “It’s not accurate if you’re just basing it on a group.” — P22
+  For ease of reading, we have followed editing conventions consistent
+with applied social science research practices as described in [16].               “They didn’t even base it [what was shown to me] on what I’ve done
+Specifically, we edited quotes to remove content such as filler words and          in the past, they’re just basing it on what they think I am.” — P23
+false starts, and in some cases we re-punctuated. We use ellipses to
+indicate substantial omissions.
+
+
+
+
+Paper 656                                                                                                                                             Page 6
+CHI 2018 Paper                                                                          CHI 2018, April 21–26, 2018, Montréal, QC, Canada
+
+
+
+Some participants oriented to algorithmic unfairness as a                           to be the final decision maker? … It’s all good so that it can help
+                                                                                    categorize it, suggest. But to be the main decision maker, that would
+modern incarnation of familiar forms of discrimination, an
+                                                                                    be scary.” — P05
+unwelcome extension of offline discrimination into the
+online arena.                                                                    Further, for the most part, participants interpreted small
+                                                                                 percentage biases of algorithmic decisions as low-impact,
+   “It’s setup for not everyone [to win]… Since the beginning of
+   civilization there’s always been a hierarchy… technology is just              and indicating natural imperfection rather than subtle bias.
+   another wheel in that.” — P37                                                 While researchers have argued that small statistical
+   “It seems like in technology, it’s fascinating, but at the same time it’s
+                                                                                 differences can have significant cumulative effects on
+   alarming because it seems like in every phase…people have taken it            individuals and/or groups, thereby perpetuating or
+   and have always done something wicked with it.” — P30                         increasing inequality [41], participants appeared to interpret
+   “[Because it’s algorithmic] there is some type of system to it. Which         small statistical disparities as benign, largely considering
+   means that there is some type of work being put into this certain type        them to be natural, inevitable, and impossible to fix.
+   of discrimination... that it’s actually people in the world that want it to
+   be that way. And it’s like, why? … I just don’t understand why we                “It sounds fine to me… I don’t expect perfection, of course.” — P43
+   have to live under these type of circumstances.” — P04                        High Salience of Representational Consequences
+   P12: We deal with this just walking down the street—                          While participants may not have always come in with a
+   P14: On a daily basis.                                                        previous notion of the wide-reaching implications of the
+   P12: —on a daily basis. We don’t need this on our internet, on our            underlying algorithmic systems, they did care deeply about
+   sites that we trust the most. We don’t need to see the negative
+   connotation come up every time. We have to walk out of our house              the visible results of these systems and how marginalized
+   and wonder if we’re going to make it back in, and when we’re safe in          groups were portrayed online. Participants were aware of
+   our homes we need to feel safe…especially if it comes from Google,            and concerned about skewed representations and negative
+   or a site that we trust.                                                      stereotypes, for example, online sexualization of women or
+   P11: Um-hm. You have to draw the line somewhere… When we get
+   home we’ve already dealt with it all day at work, at school, and it’s         offensive language about particular ethnic groups. Such
+   like I want to come home and I don’t want to have to deal with this,          offenses connected to a broader system of microaggressions
+   too… When I get on the computer…I shouldn’t have to be subjected              [81] and personal stories from their own lives.
+   to racial stereotypes.
+                                                                                    P29: If you type in ‘two Black teenagers,’ you will see all mugshots of
+Although parallels to other life experiences may have                               Black boys. But with White teenagers, you will see them playing
+driven initial negative responses, participants shared                              basketball, boy scout.
+                                                                                    ...
+nuanced and pragmatic perspectives as the workshops                                 P28: You have negative connotations for the word black and positive
+unfolded, showing an appreciation for the complexity of                             connotations for the word white. That’s just the way it is.
+this topic as they discussed it.
+                                                                                    “I’m just really not happy with the way that these words are put out
+Scale and Impact of Algorithmic Systems                                             there, these ideas.” — P24
+Though a small number of participants expressed a belief                            “To see the things that they said [criminalizing] that little boy, that
+that large-scale algorithmic systems underlie many aspects                          just broke my heart... He didn’t do nothing to deserve that, and the
+of modern society, many participants viewed algorithmic                             fact that that’s what society thinks of him, that’s not just something
+                                                                                    that the computer put out there... I got sisters, I got little cousins, little
+systems as small in scope and low in both complexity and
+                                                                                    nieces and nephews… they could look that up and see that. That’s not
+impact. This was especially apparent in the solutions that                          right. That is not right at all...that’s just sickening. Because that’s a
+many participants proposed to scenarios of algorithmic                              whole bunch of human beings that really typed that in … if I had any
+unfairness, which often emphasized manual work by the                               type of way to filter stuff like that, I would, because that’s not cool. I
+                                                                                    would just erase it all.” — P04
+end user or employees of technology companies, echoing
+the types of manual work envisioned by participants in [86].                     Participants were especially concerned with how children
+For example, some participants proposed that filtering or                        might be affected by negative representations.
+recommendation processes could be made more fair by
+                                                                                    “There’s lots of images that society already tells young, Black boys,
+removing algorithmic processing and allowing the end user                           or boys of color, that they’re thugs; that they’re gangster; and this and
+to go through the content themselves. Most participants                             that. I wouldn’t want my son to look up this teenage boy’s name, and
+tended to favor and trust human decision-making over                                those type of images or associations comes up behind his name
+algorithmic decision-making (this appears to contrast with                          because my son is a young, Black boy… I don’t think people should
+                                                                                    be stereotyped. And I don’t want my son to think that society—even
+Plane et al.’s results [67], which could be due to a variety of                     though it’s the truth—society does label you because you’re a young,
+factors such as the different populations studied, and bears                        Black boy.” — P11
+further investigation).
+                                                                                 Participants also felt that popularity algorithms are not
+   “The algorithm is not a person. It’s just a mathematical equation. It         benign mirrors of the world, pointing out that social media
+   just has information. Then somebody chooses that information in a
+   certain way and does with it whatever. That could mean choosing
+                                                                                 can amplify societal biases and increase the reach of
+   whether to use you in a job or where to put the next K-Mart… It’s not         stereotyping messages.
+   making human decisions.” — P39
+                                                                                    “I was just talking to my girlfriend about this last night. It’s ridiculous
+   “I think it should stick with suggestions. I mean, what happens if the           how every time you click on Facebook or turn on news, radio station,
+   computer makes a bad decision? Does it just suggest…or is it going               or just the internet in general, there’s some type of discrimination
+
+
+
+
+Paper 656                                                                                                                                              Page 7
+CHI 2018 Paper                                                                      CHI 2018, April 21–26, 2018, Montréal, QC, Canada
+
+
+   going on… and the main reason why it’s gotten this big is because             wrong. People are entitled to their opinions… I guess that’s their way
+   social media is in the middle of it all…” — P04                               of going online and free speeching too. Whether it’s right or wrong,
+                                                                                 the search engine’s not at fault. It’s humanity… I wouldn’t blame a
+   “Feeding into that stuff, to me, is going backwards. Even encouraging         company for that.
+   people to read about that stuff and feeding into those thoughts, there’s
+   no need to feed.” — P22                                                    Even when they believed that the cause was external, most
+Accountability                                                                still saw technology companies as having some
+Participants proposed a number of different parties might be                  responsibility and a role to play in addressing the issue (this
+responsible for algorithmic unfairness, and sometimes had                     is consistent with and extends Plane et al.’s finding that
+differing opinions about the likely underlying cause of                       many participants held both the advertiser and the ad
+unfairness. Three of the most commonly proposed causes                        network responsible, regardless of which was explicitly
+were: (1) a non-diverse population of programmers; (2)                        named as the perpetrator [67]). Further, they believed that
+prejudiced online behavior by members of society; and (3)                     companies could readily resolve many of the problems if
+the news media. While a number of these ideas suggest an                      they chose to do so.
+understanding of algorithmic fairness that goes beyond the                       “I think that people that work for these companies…they can make the
+technical, it is worth noting that many potential causes                         change tonight if they wanted to. It’s just a matter of how are they
+commonly raised in technical circles, such as lack of                            going to meticulously put everything so it will still benefit them in
+                                                                                 some aspect.” — P29
+diverse training data or inequitable accuracy in classifying
+members of different categories [44], were raised rarely or                   Occasionally, in specific contexts, some participants
+not at all.                                                                   indicated that they did not feel companies could or should
+                                                                              take action. The most prevalent arguments for inaction
+Many participants held the programmer accountable for an
+                                                                              were: freedom of expression; concern about censoring
+algorithm’s discrimination, not necessarily because they
+                                                                              content from credible news sources; a belief that a user is
+thought programmers were ill-intended, but rather because
+                                                                              personally responsible for making good choices in their
+their perception was that programmers are predominantly
+                                                                              online activity, in order to shape what they see; or a belief
+privileged white males who do not understand the
+                                                                              that there was not a feasible technological solution.
+perspective of more diverse users. They felt more diverse
+hiring practices would help.                                                     “As a company like Google, you’d have to respect the free speech.
+                                                                                 What could you do? It would be a very difficult decision for me to
+   “People create the technology to do these things, so that’s why I say it      have to make.” — P44
+   stems from the writer.” — P29
+                                                                                 “Sometimes that’s what people want to see. You kind of got to give
+   “When you lack that diversity, they may not be able to input certain          them what they want to see, unfortunately. It’s scary.” — P24
+   things into that equation...because they don’t know that
+   reality…because the people that are writing these apps are probably           “Unless Google owns the news companies, I think it’s kind of out of
+   not from our community... You need to be more selective, diverse or           their hands.” — P37
+   whatever in who you’re hiring.” — P20                                         “I don’t know who’s going to really go and actually keep up with each
+   Facilitator: Does anybody else have any thoughts about who’s writing          controversial racial issue that comes up… How would you regulate?
+   algorithms?                                                                   How would you know that these things would eventually come up?
+   P24: I think it’s kind of assumed that it is white males.                     You just check every damn time something happened. You just kind
+   P17: Ivy League people.                                                       of look and you kind of monitor? I don’t even know if that’s actually
+   P21: (laughs) I was going to say rich white men.                              feasible.” — P43
+   ...
+   P24: I mean who else? (laughs)                                             However, these positions were less common, tended to arise
+   P21: Does that make us racist when we say that?                            for fairly specific situations, and were often in opposition to
+                                                                              much more commonly expressed positions that companies
+Participants also often thought that much of the                              can and should act to reduce unfairness.
+stereotyping or racism was coming from outside of
+technology companies, frequently calling out the role                         Curation
+society played in creating the problem. Some participants                     As mentioned in the previous section, participants
+also emphasized that the news media is a source of bias.                      expressed certain expectations of companies, regardless of
+                                                                              the source of unfairness. In this section, we discuss the most
+   “It’s not really like a company being racist… it’s really just a
+   machine, it’s stats... It’s counting numbers, it’s counting what we are    prominent themes regarding expectations: a curatorial
+   all looking at. It’s based on what we’re looking at, not what Google       position on representation and the voice of the company.
+   wants you to look at… The problem is us, and what we have in our
+   minds, so we can’t really turn around and be like, ‘oh, Google did it.’”   Journalistic Standards
+   — P02                                                                      Participants tended to hold technology companies such as
+   P06: I hear what you’re saying, and I’m totally against everything
+                                                                              search engines to journalistic standards. For instance, they
+   that’s going on, but the only reason it’s so popular is because            expected them to perform careful, manual fact checking
+   everybody’s clicking on it, and people are making it popular… people       (although resonating with the findings above regarding
+   have put that in there. Doesn’t mean it’s true…                            underestimation of scale, participants tended to propose
+   P02: Yeah, the problem’s not really the search engine, it’s the people
+   searching. I wouldn’t blame Google or anything because…it’s just…
+                                                                              manual, human-scale approaches), and show proven facts
+   going on clicks. The machine’s not deciding whether it’s right or          rather than opinions or biased content. Some participants
+
+
+
+
+Paper 656                                                                                                                                     Page 8
+CHI 2018 Paper                                                                       CHI 2018, April 21–26, 2018, Montréal, QC, Canada
+
+
+
+indicated the news media do not always meet this standard                     feelings of betrayal, disappointment, or anger when
+but rather sometimes shows harmful biased representations                     companies they trusted surfaced societal bias or prejudice.
+of marginalized populations, and some felt that technology                        “I’ve used Google a lot, it’s been my lifeline almost… Maybe that’s
+companies could compensate for this.                                              why I’m even more offended... It’s like, come on, Google. I thought
+                                                                                  we were better than that.” — P24
+   P10: I would only allow what is a actual fact. I don’t need to know
+   your cousin, your momma, said this that and the other, just include—           “When I go on Google, I like the company and I expect great things
+   P07: The truth.                                                                from them, and I expect facts and I expect not to see stuff like that and
+   P10: —the facts.                                                               don’t want my child to see it because it’s such a great company.” —
+                                                                                  P12
+   “The media responsibility. Google has that responsibility.” — P28
+   “I just need the news on it… It makes you upset when you see that all      However, when participants perceived companies were
+   the time about any person pretty much that has been in the news for        protecting them from unfairness or discrimination, it greatly
+   being brutalized or killed…I would prefer for it to be just official       enhanced user trust and strengthened their relationships
+   news…I would like to try to explore on my own, make my own
+                                                                              with those companies.
+   opinion. But it seems like my opinion is already kind of being made
+   before I can even search for answers.” — P43                                   “I think that it’s a very good decision that Google decided to stop
+                                                                                  running tobacco ads and stop doing the payday loans 6 because it lets
+   “I think it’s their responsibility to not do that. They don’t have to
+                                                                                  me know that as a consumer…they are taking my feelings into
+   report it like that, just because the news reports it like that.” — P12
+                                                                                  consideration... I tell my son to search Google all the time and so now
+On a related note, many participants suggested that a                             I feel more confident I may not have to watch over his shoulder…
+                                                                                  Very good. I’m very pleased.” — P43
+predictive search feature should not suggest negative
+information for individuals, particularly minors. A few also                  DISCUSSION
+suggested that negative information should be                                 As human-computer interaction researchers, we often make
+counterbalanced with positive information so the reader                       arguments to stakeholders about how and why they can
+could learn about both sides of an argument and reach their                   change technology to better serve users and/or improve
+own conclusions.                                                              society. In the case of algorithmic fairness, stakeholders
+                                                                              such as regulators, lawmakers, the press, industry
+Voice of the Company
+                                                                              practitioners, and many others have the opportunity to take
+Participant responses suggest that in-product information
+                                                                              positive action. Technology companies in particular have
+processed by algorithms can give the impression that a
+                                                                              tremendous leverage to improve algorithmic fairness
+company generated or endorses a message. For example,
+                                                                              because they are immediately proximate to many of the
+predictive search actively suggests content within the user
+                                                                              technical issues that arise, and they are uniquely positioned
+interface, and some participants felt this gave the
+                                                                              to diagnose and develop effective solutions to complex
+appearance that the content originated with the company
+                                                                              problems that would be difficult for outsiders to address.
+that produced the feature. Participants also felt that the
+                                                                              Accordingly, while we hope it is apparent that our findings
+feature could make it too easy for users to find such
+                                                                              can be directly leveraged by a wide variety of stakeholders,
+content, or even encourage searching for it, and suggested
+                                                                              especially for decisions relating to product categories such
+that users should have to generate the negative searches
+                                                                              as social media and search engines, we focus here on three
+themselves.
+                                                                              best practices that our findings suggest apply to companies
+   “I feel like encouraging this type of searching is just toxic.” — P22      across the technology sector.
+   “If there were any negative connotations then it wouldn’t pop up at        #1: Include fairness as a value in product design and
+   all, so if you wanted to see something negative, you would have to
+   spell it out.” — P08                                                       development. Similar to considerations such as privacy,
+                                                                              fairness can be included as a consideration throughout the
+   “I would clear off all the negative...and just let them actually type in
+   what they wanted to know about the person. Instead of offering
+                                                                              product life cycle. Many positive steps can be taken, such
+   things.” — P38                                                             as ensuring diverse training data for machine learning
+                                                                              models, ensuring that designers are aware of inequalities in
+Inaction posed the risk of appearing to endorse others’                       their systems so they can consider appropriate action
+discrimination by signal boosting it.                                         [15,49], and including diverse populations in user testing.
+   “You guys [Facebook] are pretty much promoting this hate and
+   promoting this deceit... That’s not doing nothing but making               In support of this point, our participants cared about
+   everybody mad.” — P04                                                      fairness, had strong ethical expectations of companies, were
+                                                                              disappointed when companies did not act (regardless of the
+Impact on User Trust
+                                                                              source of the unfairness), and greatly valued efforts on the
+As illustrated in the preceding sections, algorithmic fairness
+                                                                              part of companies to ameliorate societal bias and make their
+connects to strong emotions and in many cases participants
+                                                                              products as inclusive as possible. Therefore, it is likely that
+have high expectations of how companies will ensure
+                                                                              measureable gains in user trust and engagement can result
+fairness in their products. Consistent with the philosophy of
+relationship marketing [59], participants linked algorithmic                  6
+                                                                                 Earlier in the interview, we told the participant that Google had
+fairness to their relationships with companies, expressing                    established a policy that banned ads for payday loans [40,45].
+
+
+
+
+Paper 656                                                                                                                                        Page 9
+CHI 2018 Paper                                                           CHI 2018, April 21–26, 2018, Montréal, QC, Canada
+
+
+
+from incorporating algorithmic fairness in product design.        forward will result from strong participation of multiple
+Our findings suggest this is an opportune time for                players, a point reinforced by Lee et al.’s argument that
+companies to act proactively, while public perception of          algorithmic service design support multiple stakeholder
+this complex topic is still evolving. Algorithmic fairness        perspectives [52]. For example, companies can partner with
+issues are challenging both technically and organizationally      community groups and community leaders to address
+and can take a long time to address, particularly if              particular challenges, as Airbnb did when addressing racism
+mechanisms are not already in place, so it is strategically       on its platform [2,60], as Facebook did when addressing
+wise to take positive steps before additional pressures           concerns about ethnic affinity marketing [29], and as
+apply. Due to the complexity of these issues, it is also wise     Google did when developing its policy about payday
+to proceed thoughtfully with user research and to engage          lending ads [40,45]. Our research underscores the
+stakeholders to represent diverse perspectives. We discuss        importance of such efforts, since it shows that traditional
+these in turn in the next two points.                             methods of user testing may not yield a complete picture of
+                                                                  different groups’ perspectives on this computationally and
+#2: Design user studies that accommodate diverse
+                                                                  socially complex issue. Community groups and leaders are
+perspectives, and include members of traditionally
+                                                                  experienced in considering societal-scale consequences and
+marginalized populations in user testing. The workshop
+                                                                  representing their constituencies on a range of issues, and
+format supported and encouraged participants’ exploration
+                                                                  are well-positioned to contribute to such discussions.
+and development of diverse, nuanced, and at times
+conflicting positions, and participants reported that it was      CONCLUSIONS AND FUTURE WORK
+empowering to take the perspective of a decision-maker at a       One way to make social change is to bolster pragmatic
+technology company. At the same time, our experience              arguments for corporations to do good, by demonstrating
+reflects both the value and challenges of user research on        that societally positive actions are also good business
+complex computational topics. Complementing other work,           practice. Consider for example how Green to Gold
+our findings suggest that participants’ opinions on this topic    effectively argued that sustainable business practices not
+were highly contextual, often varying in response to              only benefit the environment but can yield significant
+situational factors (e.g. specific details of given scenarios),   financial profit [32]. In this paper, we presented a novel
+individual factors (which appears to resonate with variation      exploration of how traditionally marginalized populations
+reported in [69,86]), different stakeholder perspectives (as      perceive algorithmic fairness. While our findings can
+discussed for example in [51,52]), and different framings of      inform a range of stakeholders, we highlight the insight that
+fairness (for example, an emphasis on fair division as in         company handling of algorithmic fairness interacts
+[51,52] versus social justice). This contextual nature may        significantly with user trust. We hope this insight may
+help explain why research on this topic yields results that       provide additional motivation for companies across the
+may sometimes appear inconsistent; for example, while             technology sector to actively pursue algorithmic fairness.
+many of our findings are broadly consistent with Plane et         Future work could fruitfully explore these findings with a
+al. (e.g. objections to personalization based on demographic      broader population, noting that Plane et al.’s study offers
+characteristics, and the expectation that technology              evidence that at least some of these issues may resonate
+companies play a role in addressing issues caused by              widely [67]. We also suggest further exploring concrete
+external forces), our findings differed in other regards such     actions that companies can take regarding algorithmic
+as the fact that our participants appeared to favor and trust     fairness, such as making specific improvements to product
+human decision-making over algorithmic decision-making.           experiences, to build and maintain user trust. Finally, we
+Additional research could yield further insights that account     suggest further research on how stakeholders across the
+for such variation. Relatedly, we caution that                    ecosystem can work collectively to leverage their different
+decontextualized user research on this topic may yield            perspectives and skills to pursue algorithmic fairness.
+misleading results. We recommend that researchers prepare
+and account for the beliefs and knowledge that participants       ACKNOWLEDGMENTS
+may bring to the research environment, in order to provide        We thank the following for their thoughtful comments and
+an inclusive research environment for all participants. In        contributions to this work: Paul Aoki, Ed Chi, Charina
+some situations it will also be valuable to use ethnographic      Choi, Mark Chow, Rena Coen, Sunny Consolvo, Jen
+approaches to explore participants’ underlying values and         Gennai, Lea Kissner, Brad Krueger, Ali Lange, Irene Tang,
+extrapolate from those values to technological implications       Lynette Webb, Jill Woelfer, and the anonymous reviewers.
+(see [26] for additional discussion of the nature of analytic     REFERENCES
+knowledge that can be gained in ethnographic studies).            1.   ACM US Public Policy Council. 2017. Statement on
+#3: Engage with community groups and advocates to                      Algorithmic Transparency and Accountability.
+collaboratively develop solutions. As is common with                   Retrieved September 16, 2017 from
+wicked problems, stakeholders should not work in isolation             https://www.acm.org/binaries/content/assets/public-
+to address the complex issues posed by algorithmic fairness            policy/2017_usacm_statement_algorithms.pdf
+[72]. A robust understanding of the goals and the best path
+
+
+
+Paper 656                                                                                                             Page 10
+CHI 2018 Paper                                                      CHI 2018, April 21–26, 2018, Montréal, QC, Canada
+
+
+
+2.   Airbnb, Inc. Airbnb’s Nondiscrimination Policy.              Häkkilä, Kate Kuehl, Valentina Nisi, Nuno Jardim
+     Retrieved September 14, 2017 from                            Nunes, Nina Wenig, Dirk Wenig, Brent Hecht, and
+     https://www.airbnb.com/terms/nondiscrimination_polic         Johannes Schöning. 2017. The Geography of PokéMon
+     y                                                            GO: Beneficial and Problematic Effects on Places and
+3.   Mariam Asad, Sarah Fox, and Christopher A. Le                Movement. In Proceedings of the 2017 CHI
+     Dantec. 2014. Speculative Activist Technologies.             Conference on Human Factors in Computing Systems
+     Proceedings iConference 2014.                                (CHI ’17), 1179–1192.
+     https://doi.org/10.9776/14074                                https://doi.org/10.1145/3025453.3025495
+4.   Paul Baker and Amanda Potts. 2013. ‘Why do white         16. Anne Corden and Roy Sainsbury. 2006. Using
+     people have thin lips?’ Google and the perpetuation of       Verbatim Quotations in Reporting Qualitative Social
+     stereotypes via auto-complete search forms. Critical         Research. University of York, York, UK.
+     Discourse Studies 10, 2: 187–204.                        17. Tressie McMillan Cottom. 2015. Credit Scores, Life
+     https://doi.org/10.1080/17405904.2012.744320                 Chances, and Algorithms. Retrieved September 15,
+5.   Solon Barocas and Andrew D. Selbst. 2016. Big Data’s         2017 from https://tressiemc.com/uncategorized/credit-
+     Disparate Impact. California Law Review 104, 3: 671–         scores-life-chances-and-algorithms/
+     732.                                                     18. Kate Crawford. 2014. The Anxieties of Big Data. The
+6.   David Beer. 2009. Power through the algorithm?               New Inquiry.
+     Participatory web cultures and the technological         19. Kate Crawford. 2016. Artificial Intelligence’s White
+     unconscious. New Media & Society 11, 6: 985–1002.            Guy Problem. The New York Times.
+     https://doi.org/10.1177/1461444809336551                 20. Amit Datta, Michael Carl Tschantz, and Anupam
+7.   Hugh Beyer and Karen Holtzblatt. 1998. Contextual            Datta. 2015. Automated Experiments on Ad Privacy
+     Design: Defining Customer-centered Systems. Morgan           Settings. In Proceedings on Privacy Enhancing
+     Kaufmann Publishers Inc., San Francisco, CA, USA.            Technologies (PETS 2015), 92–112.
+8.   danah boyd and Kate Crawford. 2012. Critical                 https://doi.org/10.1515/popets-2015-0007
+     Questions for Big Data. Information, Communication       21. Michael A. DeVito, Jeremy Birnholtz, and Jeffery T.
+     & Society 15, 5: 662–679.                                    Hancock. Platforms, People, and Perception: Using
+     https://doi.org/10.1080/1369118X.2012.678878                 Affordances to Understand Self-Presentation on Social
+9.   danah boyd, Karen Levy, and Alice Marwick. 2014.             Media. In Proceedings of the 20th ACM Conference on
+     The Networked Nature of Algorithmic Discrimination.          Computer-Supported Cooperative Work & Social
+     In Data and Discrimination: Collected Essays, Seeta          Computing (CSCW ’17), 740–754.
+     Peña Gangadharan, Virginia Eubanks and Solon             22. Nicholas Diakopoulos. 2015. Algorithmic
+     Barocas (eds.). Open Technology Institute, New               Accountability. Digital Journalism 3, 3: 398–415.
+     America Foundation, Washington, D.C., 53–57.                 https://doi.org/10.1080/21670811.2014.976411
+10. Engin Bozdag. 2013. Bias in algorithmic filtering and     23. Carl DiSalvo, Thomas Lodato, Laura Fries, Beth
+    personalization. Ethics and Information Technology 15,        Schechter, and Thomas Barnwell. 2011. The collective
+    3: 209–227. https://doi.org/10.1007/s10676-013-9321-          articulation of issues as design practice. CoDesign 7,
+    6                                                             3–4: 185–197.
+11. Taina Bucher. 2017. The algorithmic imaginary:                https://doi.org/10.1080/15710882.2011.630475
+    exploring the ordinary affects of Facebook algorithms.    24. Carl DiSalvo, Illah Nourbakhsh, David Holstius, Ayça
+    Information, Communication & Society 20, 1: 30–44.            Akin, and Marti Louw. 2008. The Neighborhood
+12. Jenna Burrell. 2016. How the machine ‘thinks’:                Networks Project: A Case Study of Critical
+    Understanding opacity in machine learning algorithms.         Engagement and Creative Expression Through
+    Big Data & Society 3, 1: 1–12.                                Participatory Design. In Proceedings of the Tenth
+    https://doi.org/10.1177/2053951715622512                      Anniversary Conference on Participatory Design 2008
+                                                                  (PDC ’08), 41–50.
+13. Kathleen Chaykowski. 2016. Facebook To Ban “Ethnic
+    Affinity” Targeting For Housing, Employment, Credit-      25. Carl DiSalvo, Phoebe Sengers, and Hrönn
+    Related Ads. Forbes.                                          Brynjarsdóttir. 2010. Mapping the Landscape of
+                                                                  Sustainable HCI. In Proceedings of the SIGCHI
+14. Danielle Keats Citron and Frank Pasquale. 2014. The           Conference on Human Factors in Computing Systems
+    Scored Society: Due Process for Automated                     (CHI ’10), 1975–1984.
+    Predictions. Washington Law Review 89, 1.                     https://doi.org/10.1145/1753326.1753625
+15. Ashley Colley, Jacob Thebault-Spieker, Allen Yilun        26. Paul Dourish. 2006. Implications for Design. In
+    Lin, Donald Degraen, Benjamin Fischman, Jonna                 Proceedings of the SIGCHI Conference on Human
+
+
+
+
+Paper 656                                                                                                       Page 11
+CHI 2018 Paper                                                     CHI 2018, April 21–26, 2018, Montréal, QC, Canada
+
+
+
+    Factors in Computing Systems (CHI ’06), 541–550.         39. Bryce Goodman and Seth Flaxman. 2016. European
+    https://doi.org/10.1145/1124772.1124855                      Union regulations on algorithmic decision-making and
+27. Benjamin Edelman and Michael Luca. 2014. Digital             a “right to explanation.” In ICML Workshop on Human
+    Discrimination: The Case of Airbnb.com. Harvard              Interpretability in Machine Learning (WHI 2016).
+    Business School Working Paper 14-054.                    40. David Graff. 2016. An update to our AdWords policy
+28. Benjamin Edelman, Michael Luca, and Daniel Svirsky.          on lending products. Google Public Policy Blog.
+    2017. Racial Discrimination in the Sharing Economy:          Retrieved September 15, 2017 from
+    Evidence from a Field Experiment. American                   https://www.blog.google/topics/public-policy/an-
+    Economic Journal: Applied Economics 9, 2: 1–22.              update-to-our-adwords-policy-on/
+29. Erin Egan. 2016. Improving Enforcement and               41. Anthony G. Greenwald, Mahzarin R. Banaji, and Brian
+    Promoting Diversity: Updates to Ethnic Affinity              A. Nosek. 2015. Statistically small effects of the
+    Marketing. Facebook Newsroom Blog. Retrieved                 Implicit Association Test can have societally large
+    September 14, 2017 from                                      effects. Journal of Personality and Social Psychology
+    https://newsroom.fb.com/news/2016/11/updates-to-             108, 4: 553–561. https://doi.org/10.1037/pspa0000016
+    ethnic-affinity-marketing/                               42. Maya Gupta, Andrew Cotter, Jan Pfeifer, Konstantin
+30. Pelle Ehn. 1990. Work-Oriented Design of Computer            Voevodski, Kevin Canini, Alexander Mangylov,
+    Artifacts. L. Erlbaum Associates Inc., Hillsdale, NJ,        Wojciech Moczydlowski, and Alexander van Esbroeck.
+    USA.                                                         2016. Monotonic Calibrated Interpolated Look-Up
+                                                                 Tables. Journal of Machine Learning Research 17,
+31. Motahhare Eslami, Aimee Rickman, Kristen Vaccaro,            109: 1–47.
+    Amirhossein Aleyasen, Andy Vuong, Karrie
+    Karahalios, Kevin Hamilton, and Christian Sandvig.       43. Bernard E. Harcourt. 2007. Against prediction:
+    2015. “I Always Assumed That I Wasn’t Really That            Profiling, policing, and punishing in an actuarial age.
+    Close to [Her]”: Reasoning About Invisible Algorithms        University of Chicago Press.
+    in News Feeds. In Proceedings of the 33rd Annual         44. Moritz Hardt, Eric Price, and Nathan Srebro. 2016.
+    ACM Conference on Human Factors in Computing                 Equality of Opportunity in Supervised Learning. In
+    Systems (CHI ’15), 153–162.                                  Advances in Neural Information Processing Systems
+    https://doi.org/10.1145/2702123.2702556                      (NIPS 2016), 3315–3323.
+32. Daniel C. Esty and Andrew Winston. 2006. Green to        45. Shin Inouye. 2016. Advocates Applaud Google’s Ban
+    Gold: How Smart Companies Use Environmental                  on Payday Loan Advertisements. The Leadership
+    Strategy to Innovate, Create Value, and Build                Conference on Civil and Human Rights. Retrieved
+    Competitive Advantage. Yale University Press.                September 15, 2017 from
+33. Executive Office of the President. 2016. Big Data: A         http://civilrights.org/advocates-applaud-googles-ban-
+    Report on Algorithmic Systems, Opportunity, and Civil        on-payday-loan-advertisements/
+    Rights.                                                  46. Lucas D. Introna and Helen Nissenbaum. 2000.
+34. Federal Trade Commission. 2016. Big Data: A Tool for         Shaping the Web: Why the Politics of Search Engines
+    Inclusion or Exclusion? Understanding the Issues.            Matters. The Information Society 16, 3: 169–185.
+                                                                 https://doi.org/10.1080/01972240050133634
+35. Batya Friedman and Helen Nissenbaum. 1996. Bias in
+    Computer Systems. ACM Transactions on Information        47. Isaac Johnson, Connor McMahon, Johannes Schöning,
+    Systems 14, 3: 330–347.                                      and Brent Hecht. 2017. The Effect of Population and
+    https://doi.org/10.1145/230538.230561                        “Structural” Biases on Social Media-based Algorithms:
+                                                                 A Case Study in Geolocation Inference Across the
+36. Shaun L. Gabbidon. 2003. Racial Profiling by Store           Urban-Rural Spectrum. In Proceedings of the 2017
+    Clerks and Security Personnel in Retail                      CHI Conference on Human Factors in Computing
+    Establishments: An Exploration of “Shopping While            Systems (CHI ’17), 1167–1178.
+    Black.” Journal of Contemporary Criminal Justice 19,         https://doi.org/10.1145/3025453.3026015
+    3: 345–364.
+    https://doi.org/10.1177/1043986203254531                 48. Robert Jungk, Norbert Müllert, and Institute for Social
+                                                                 Inventions. 1987. Future workshops: how to create
+37. Marilyn Geewax. 2015. The Tipping Point: Most                desirable futures. Institute for Social Inventions,
+    Americans No Longer Are Middle Class. NPR.                   London.
+38. Tarleton Gillespie. 2014. The relevance of algorithms.   49. Matthew Kay, Cynthia Matuszek, and Sean A.
+    In Media Technologies: Essays on Communication,              Munson. 2015. Unequal Representation and Gender
+    Materiality, and Society - University Press                  Stereotypes in Image Search Results for Occupations.
+    Scholarship, Tarleton Gillespie, Pablo Boczkowski and        In Proceedings of the 33rd Annual ACM Conference
+    Kirsten Foot (eds.). MIT Press.
+
+
+
+Paper 656                                                                                                       Page 12
+CHI 2018 Paper                                                     CHI 2018, April 21–26, 2018, Montréal, QC, Canada
+
+
+
+    on Human Factors in Computing Systems (CHI ’15),             Human Factors in Computing Systems (CHI ’15), 207–
+    3819–3828. https://doi.org/10.1145/2702123.2702520           210. https://doi.org/10.1145/2702123.2702514
+50. Jonathan Lazar, Julio Abascal, Simone Barbosa,           58. Claire Cain Miller. 2015. When Algorithms
+    Jeremy Barksdale, Batya Friedman, Jens Grossklags,           Discriminate. The New York Times.
+    Jan Gulliksen, Jeff Johnson, Tom McEwan, Loïc            59. Robert M. Morgan and Shelby D. Hunt. 1994. The
+    Martínez-Normand, Wibke Michalk, Janice Tsai,                Commitment-Trust Theory of Relationship Marketing.
+    Gerrit van der Veer, Hans von Axelson, Ake Walldius,         Journal of Marketing 58, 3: 20–38.
+    Gill Whitney, Marco Winckler, Volker Wulf, Elizabeth         https://doi.org/10.2307/1252308
+    F. Churchill, Lorrie Cranor, Janet Davis, Alan Hedge,
+    Harry Hochheiser, Juan Pablo Hourcade, Clayton           60. Laura W. Murphy. 2016. Airbnb’s Work to Fight
+    Lewis, Lisa Nathan, Fabio Paterno, Blake Reid,               Discrimination and Build Inclusion: A Report
+    Whitney Quesenbery, Ted Selker, and Brian Wentz.             Submitted to Airbnb. Retrieved September 15, 2017
+    2016. Human–Computer Interaction and International           from http://blog.atairbnb.com/wp-
+    Public Policymaking: A Framework for Understanding           content/uploads/2016/09/REPORT_Airbnbs-Work-to-
+    and Taking Future Actions. Foundations and Trends in         Fight-Discrimination-and-Build-Inclusion.pdf?3c10be
+    Human-Computer Interaction 9, 2: 69–149.                 61. Carey Nadeau and Amy K. Glasmeier. 2016. Minimum
+    https://doi.org/10.1561/1100000062                           Wage: Can an Individual or a Family Live on It?
+51. Min Kyung Lee and Su Baykal. 2017. Algorithmic               Retrieved September 15, 2017 from
+    Mediation in Group Decisions: Fairness Perceptions of        http://livingwage.mit.edu/articles/15-minimum-wage-
+    Algorithmically Mediated vs. Discussion-Based Social         can-an-individual-or-a-family-live-on-it
+    Division. In Proceedings of the 20th ACM Conference      62. Safiya Umoja Noble. 2014. Teaching Trayvon: Race,
+    on Computer-Supported Cooperative Work & Social              Media, and the Politics of Spectacle. The Black Scholar
+    Computing (CSCW ’17), 1035–1048.                             44, 1: 12–29.
+52. Min Kyung Lee, Ji Tae Kim, and Leah Lizarondo.               https://doi.org/10.5816/blackscholar.44.1.0012
+    2017. A Human-Centered Approach to Algorithmic           63. Cathy O’Neil. 2016. Weapons of Math Destruction:
+    Services: Considerations for Fair and Motivating Smart       How Big Data Increases Inequality and Threatens
+    Community Service Management that Allocates                  Democracy. Crown, New York.
+    Donations to Non-Profit Organizations. In Proceedings    64. Jahna Otterbacher, Jo Bates, and Paul Clough. 2017.
+    of the 2017 CHI Conference on Human Factors in               Competent Men and Warm Women: Gender
+    Computing Systems (CHI ’17), 3365–3376.                      Stereotypes and Backlash in Image Search Results. In
+53. Richard J. Lundman and Robert L. Kaufman. 2003.              Proceedings of the 2017 CHI Conference on Human
+    Driving While Black: Effects of Race, Ethnicity, and         Factors in Computing Systems (CHI ’17), 6620–6631.
+    Gender on Citizen Self-Reports of Traffic Stops and          https://doi.org/10.1145/3025453.3025727
+    Police Actions. Criminology 41, 1: 195–220.              65. Sarah Perez. 2016. Microsoft silences its new A.I. bot
+    https://doi.org/10.1111/j.1745-9125.2003.tb00986.x           Tay, after Twitter users teach it racism. TechCrunch.
+54. Caitlin Lustig and Bonnie Nardi. 2015. Algorithmic       66. Sarah Pink. 2014. Doing Visual Ethnography. Sage
+    Authority: The Case of Bitcoin. In 48th Hawaii               Publications.
+    International Conference on System Sciences (HICSS
+    2015), 743–752.                                          67. Angelisa Plane, Elissa Redmiles, Michelle Mazurek,
+    https://doi.org/10.1109/HICSS.2015.95                        and Michael Tschantz. 2017. Exploring User
+                                                                 Perceptions of Discrimination in Online Targeted
+55. Caitlin Lustig, Katie Pine, Bonnie Nardi, Lilly Irani,       Advertising. In Proceedings of the 2017 USENIX
+    Min Kyung Lee, Dawn Nafus, and Christian Sandvig.            Security Symposium.
+    2016. Algorithmic Authority: The Ethics, Politics, and
+    Economics of Algorithms That Interpret, Decide, and      68. Bernadette D. Proctor, Jessica L. Semega, and Melissa
+    Manage. In Proceedings of the 2016 CHI Conference            A. Kollar. 2016. Income and Poverty in the United
+    Extended Abstracts on Human Factors in Computing             States: 2015. The United States Census Bureau.
+    Systems (CHI EA ’16), 1057–1062.                             Retrieved September 15, 2017 from
+    https://doi.org/10.1145/2851581.2886426                      https://www.census.gov/library/publications/2016/dem
+                                                                 o/p60-256.html
+56. Peggy McIntosh. 1990. White Privilege: Unpacking the
+    Invisible Knapsack. Independent School 49, 4: 31–5.      69. Emilee Rader and Rebecca Gray. 2015. Understanding
+                                                                 User Beliefs About Algorithmic Curation in the
+57. Amanda Menking and Ingrid Erickson. 2015. The                Facebook News Feed. In Proceedings of the 33rd
+    Heart Work of Wikipedia: Gendered, Emotional Labor           Annual ACM Conference on Human Factors in
+    in the World’s Largest Online Encyclopedia. In               Computing Systems (CHI ’15), 173–182.
+    Proceedings of the 33rd Annual ACM Conference on             https://doi.org/10.1145/2702123.2702174
+
+
+
+Paper 656                                                                                                       Page 13
+CHI 2018 Paper                                                     CHI 2018, April 21–26, 2018, Montréal, QC, Canada
+
+
+
+70. Matt Ratto. 2011. Critical Making: Conceptual and        79. Clay Shirky. 2011. A Speculative Post on the Idea of
+    Material Studies in Technology and Social Life. The          Algorithmic Authority. Retrieved September 15, 2017
+    Information Society 27, 4: 252–260.                          from http://www.shirky.com/weblog/2009/11/a-
+    https://doi.org/10.1080/01972243.2011.583819                 speculative-post-on-the-idea-of-algorithmic-authority/
+71. Noopur Raval and Paul Dourish. 2016. Standing Out        80. Kiley Sobel, Katie O’Leary, and Julie A. Kientz. 2015.
+    from the Crowd: Emotional Labor, Body Labor, and             Maximizing Children’s Opportunities with Inclusive
+    Temporal Labor in Ridesharing. In Proceedings of the         Play: Considerations for Interactive Technology
+    19th ACM Conference on Computer-Supported                    Design. In Proceedings of the 14th International
+    Cooperative Work & Social Computing (CSCW ’16),              Conference on Interaction Design and Children (IDC
+    97–107. https://doi.org/10.1145/2818048.2820026              ’15), 39–48. https://doi.org/10.1145/2771839.2771844
+72. Horst W. J. Rittel and Melvin M. Webber. 1973.           81. Derald Wing Sue. 2010. Microaggressions in Everyday
+    Dilemmas in a general theory of planning. Policy             Life: Race, Gender, and Sexual Orientation. Wiley.
+    Sciences 4, 2: 155–169.                                  82. Astra Taylor and Jathan Sadowski. 2015. How
+    https://doi.org/10.1007/BF01405730                           Companies Turn Your Facebook Activity Into a Credit
+73. Rosemary Rodriguez. 2015. Discovery. The Good                Score. The Nation.
+    Wife.                                                    83. David R. Thomas. 2006. A General Inductive
+74. Daniela K. Rosner, Saba Kawas, Wenqi Li, Nicole              Approach for Analyzing Qualitative Evaluation Data.
+    Tilly, and Yi-Chen Sung. 2016. Out of Time, Out of           American Journal of Evaluation 27, 2: 237–246.
+    Place: Reflections on Design Workshops as a Research         https://doi.org/10.1177/1098214005283748
+    Method. In Proceedings of the 19th ACM Conference        84. Vanessa Thomas, Christian Remy, Mike Hazas, and
+    on Computer-Supported Cooperative Work & Social              Oliver Bates. 2017. HCI and Environmental Public
+    Computing (CSCW ’16), 1131–1141.                             Policy: Opportunities for Engagement. In Proceedings
+    https://doi.org/10.1145/2818048.2820021                      of the 2017 CHI Conference on Human Factors in
+75. Elizabeth B.-N. Sanders and Pieter Jan Stappers. 2008.       Computing Systems (CHI ’17), 6986–6992.
+    Co-creation and the new landscapes of design.                https://doi.org/10.1145/3025453.3025579
+    CoDesign 4, 1: 5–18.                                     85. Blase Ur, Pedro Giovanni Leon, Lorrie Faith Cranor,
+    https://doi.org/10.1080/15710880701875068                    Richard Shay, and Yang Wang. 2012. Smart, Useful,
+76. Christian Sandvig, Kevin Hamilton, Karrie Karahalios,        Scary, Creepy: Perceptions of Online Behavioral
+    and Cedric Langbort. 2015. Can an Algorithm be               Advertising. In Proceedings of the Eighth Symposium
+    Unethical? In 65th Annual Meeting of the International       on Usable Privacy and Security (SOUPS ’12), 4:1–
+    Communication Association.                                   4:15. https://doi.org/10.1145/2335356.2335362
+77. Christian Sandvig, Kevin Hamilton, Karrie Karahalios,    86. Jeff Warshaw, Nina Taft, and Allison Woodruff. 2016.
+    and Cedric Langbort. Auditing algorithms: Research           Intuitions, analytics, and killing ants: Inference literacy
+    methods for detecting discrimination on internet             of high school-educated adults in the US. In
+    platforms. Data and Discrimination: Converting               Proceedings of the Twelfth Symposium on Usable
+    Critical Concerns into Productive Inquiry: May 2014.         Privacy and Security (SOUPS ’16).
+78. Sassafras Tech Collective. 2016. Icebreaker. In          87. Brian Wynne. 1991. Knowledges in Context. Science,
+    Exploring Social Justice, Design, and HCI Workshop           Technology, & Human Values 16, 1: 111–121.
+    at CHI 2016.
+
+
+
+
+Paper 656                                                                                                          Page 14
+

@@ -1,0 +1,153 @@
+Tutorial                                                                                                                      SIGIR ’19, July 21–25, 2019, Paris, France
+
+
+
+
+    Fairness and Discrimination in Retrieval and Recommendation
+                                                                            Half-Day Tutorial
+
+              Michael D. Ekstrand                                                Robin Burke                                          Fernando Diaz
+    People & Information Research Team                                 Dept. of Information Science                                  Microsoft Research
+           Boise State University                                         University of Colorado                                     Montréal, Quebec
+                Boise, Idaho                                                Boulder, Colorado                                         diazf@acm.org
+      michaelekstrand@boisestate.edu                                    robin.burke@colorado.edu
+ABSTRACT                                                                                           and engineers to understand how these systems interact with soci-
+Fairness and related concerns have become of increasing impor-                                     ety in general, including the various biases — some benign, some
+tance in a variety of AI and machine learning contexts. They are                                   connected to historical patterns of discrimination — in their under-
+also highly relevant to information retrieval and related problems                                 lying data and in the responses of their users [6]. Indeed, Belkin and
+such as recommendation, as evidenced by the growing literature                                     Robertson [1] stress the need for considering social implications of
+in SIGIR, FAT*, RecSys, and special sessions such as the FATREC                                    information retrieval research when they write, “the development
+workshop and the Fairness track at TREC 2019; however, translat-                                   of theory must depend not only on the internal constraints of the
+ing algorithmic fairness constructs from classification, scoring, and                              science but also upon its external constraints.”
+even many ranking settings into information retrieval and recom-                                      The issues of fairness, accountability, transparency, bias, discrim-
+mendation scenarios is not a straightforward task. This tutorial                                   ination, justice, and ethics that are seeing increased attention in
+will help to orient IR researchers to algorithmic fairness, under-                                 many areas of computing also have significant relevance to the
+stand how concepts do and do not translate from other settings,                                    information retrieval community [3, 8, 9, 12]. There is a substantial
+and provide an introduction to the growing literature on this topic.                               and rapidly-growing research literature studying fairness, bias, and
+                                                                                                   discrimination in general machine learning contexts [5]. While
+CCS CONCEPTS                                                                                       some of this work, particularly work on fair ranking [3, 15], trans-
+                                                                                                   lates easily into information retrieval and recommender systems,
+• Information systems → Evaluation of retrieval results; • Social
+                                                                                                   other issues such as the multisided nature of information discov-
+and professional topics → User characteristics.
+                                                                                                   ery platforms [4] and the extreme sparsity of relevance judgments
+                                                                                                   make it more difficult to apply fairness results from other fields to
+KEYWORDS
+                                                                                                   retrieval and recommendation settings.
+fairness, discrimination, bias, social effects                                                        The purpose of this tutorial is to provide information retrieval re-
+ACM Reference Format:                                                                              searchers and practitioners interested in issues of fairness, bias, and
+Michael D. Ekstrand, Robin Burke, and Fernando Diaz. 2019. Fairness and                            discrimination with a starting point for carrying out that work. To
+Discrimination in Retrieval and Recommendation: Half-Day Tutorial. In                              that end, we cover core concepts in algorithmic fairness with point-
+Proceedings of the 42nd International ACM SIGIR Conference on Research                             ers to relevant literature, survey the problem space and existing
+and Development in Information Retrieval (SIGIR ’19), July 21–25, 2019, Paris,                     research on fairness in information retrieval and recommendation,
+France. ACM, New York, NY, USA, 2 pages. https://doi.org/10.1145/3331184.                          and explain in greater detail the methods and metrics currently
+3331380
+                                                                                                   developed for evaluating and providing fair rankings and recom-
+                                                                                                   mendations along with the limitations of these methods that should
+1     MOTIVATION                                                                                   drive further research. We devote particular attention on the study
+Search engines, recommender systems, and other algorithmic infor-                                  of fairness in production information retrieval and recommendation
+mation access systems mediate much of the information experiences                                  settings [2, 10, 12, 13].
+of members of society. Many of these issues result from a failure to
+consider the social context of the design, testing, and deployment
+of information access systems. As a result, undiagnosed problems                                   2   OBJECTIVES
+in these systems can produce unintended societal consequences, as                                  It is our goal that participants in this tutorial will be able to do the
+Noble [14] highlights.                                                                             following:
+   As information access systems continue to be employed in an in-
+creasing variety of domains, it becomes crucial both for researchers
+                                                                                                       • Understand key concepts of algorithmic fairness, including
+Permission to make digital or hard copies of part or all of this work for personal or                    group vs. individual fairness, disparate treatment vs. dis-
+classroom use is granted without fee provided that copies are not made or distributed                    parate impact, allocational vs. representational harms, and
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for third-party components of this work must be honored.                   key results on the measurement and relationships of these
+For all other uses, contact the owner/author(s).                                                         constructs.
+SIGIR ’19, July 21–25, 2019, Paris, France                                                             • Identify possible sources of unfairness in data, algorithms,
+© 2019 Copyright held by the owner/author(s).
+ACM ISBN 978-1-4503-6172-9/19/07.                                                                        and applications in information retrieval and recommenda-
+https://doi.org/10.1145/3331184.3331380                                                                  tion.
+
+
+
+
+                                                                                            1403
+Tutorial                                                                                                         SIGIR ’19, July 21–25, 2019, Paris, France
+
+
+
+
+      • Identify the stakeholders who may have fairness concerns                      • Fair How? Personalization, Relevance, and Other Problems
+        in a given retrieval or recommendation application, and ar-                     with Fairness
+        ticulate how the system may have adverse impacts on them.                     • Taxonomizing the Problem Space
+      • Assess the applicability of existing metrics and experimental                 • Consumer Fairness - Who Is It Good For?
+        protocols to assessing fairness in particular problem settings.               • Provider Fairness - Who Gets Exposure?
+      • Engage with existing research on fairness, apply it tot infor-                • Calibration, Exposure, and Provider Concerns
+        mation retrieval or recommendation problems, and identify                     • Fair Ranking - operationalizing provider fairness
+        new research questions on the fairness of information access                  • Feedback Loops
+        systems.                                                                      • Some Open Problems
+                                                                                      • Questions
+3     RELEVANCE
+                                                                                 5    SUPPORT MATERIALS
+To our knowledge, this is the first tutorial specifically on the state
+of research and the challenges in applying ideas of fairness to in-              Support materials for this tutorial, including slides and a working
+formation retrieval and recommendation. We have reviewed the                     paper, are available at https://fairtut.ekstrandom.net.
+tutorial lists for recent installments of WWW, KDD, SIGIR, and
+RecSys, and have not found prior tutorial work in this area. This                ACKNOWLEDGMENTS
+tutorial will complement the FATREC workshops at RecSys 2017                     This tutorial is partially based on work supported by NSF grant IIS
+and 2018 [7, 11], the successor to which is proposed as a workshop               17-51278.
+for SIGIR 2019. This tutorial is related to the WSDM 2019 tuto-
+rial on Fairness-Aware Machine Learning, but with an emphasis on                 REFERENCES
+information retrieval and access.                                                 [1] N. J. Belkin and S. E. Robertson. 1976. Some ethical and political implications
+                                                                                      of theoretical research in information science. In Proceedings of the ASIS Annual
+   Participants who have previously attended the Limits of Social                     Meeting.
+Data tutorial given by Alexandra Olteanu, Emre Kıcıman, Carlos                    [2] Alex Beutel, Jilin Chen, Tulsee Doshi, Hai Qian, Allison Woodruff, Christine Luu,
+Castillo, and Fernando Diaz at WWW’18, KDD’17, and several                            Pierre Kreitmann, Jonathan Bischof, and Ed H. Chi. 2019. Putting Fairness Princi-
+                                                                                      ples into Practice: Challenges, Metrics, and Improvements. CoRR abs/1901.04562
+other conferences will find this to be complementary, building on                     (2019).
+ideas there and digging deeper into their particular application to               [3] Asia J Biega, Krishna P Gummadi, and Gerhard Weikum. 2018. Equity of Attention:
+                                                                                      Amortizing Individual Fairness in Rankings. In Proc. SIGIR ’18. ACM, 405–414.
+information retrieval and recommender systems.                                        https://doi.org/10.1145/3209978.3210063
+   We will not be assuming any prior familiarity with algorith-                   [4] Robin Burke. 2017. Multisided Fairness for Recommendation. (July 2017).
+mic fairness or its legal and social foundations, and will only be                    arXiv:cs.CY/1707.00093 http://arxiv.org/abs/1707.00093
+                                                                                  [5] Alexandra Chouldechova and Aaron Roth. 2018. The Frontiers of Fairness in
+assuming exposure to the fundamentals of information retrieval,                       Machine Learning. (Oct. 2018). arXiv:cs.LG/1810.08810 http://arxiv.org/abs/1810.
+not familiarity with specific lines of current research. Thus, the                    08810
+tutorial will be accessible to early-stage researchers, but will also             [6] Fernando Diaz. 2016. Worst Practices for Designing Production Information
+                                                                                      Access Systems. SIGIR Forum 50, 1 (June 2016), 2–11.
+contain useful information for intermediate and experienced IR                    [7] Michael D Ekstrand and Amit Sharma. 2017. FATREC Workshop on Responsible
+researchers looking to expand their research and teaching activi-                     Recommendation. In Proc. ACM RecSys ’18. ACM, 382–383. https://doi.org/10.
+                                                                                      1145/3109859.3109960
+ties to include fairness. We will also connect our presentation to                [8] Michael D Ekstrand, Mucun Tian, Ion Madrazo Azpiazu, Jennifer D Ekstrand,
+production concerns, leaning on the work of Holstein et al. [10], to                  Oghenemaro Anuyah, David McNeill, Pera, and Maria Soledad. 2018. All
+make this tutorial useful for industrial practitioners as well.                       The Cool Kids, How Do They Fit In?: Popularity and Demographic Biases
+                                                                                      in Recommender Evaluation and Effectiveness. In Proceedings of the Confer-
+                                                                                      ence on Fairness, Accountability, and Transparency (PMLR), Vol. 81. 172âĂŞ186.
+4     FORMAT AND SCHEDULE                                                             http://proceedings.mlr.press/v81/ekstrand18b.html
+                                                                                  [9] Michael D Ekstrand, Mucun Tian, Mohammed R Imran Kazi, Hoda Mehrpouyan,
+This is a half-day tutorial in lecture format, with topics organized                  and Daniel Kluver. 2018. Exploring Author Gender in Book Rating and Recommen-
+                                                                                      dation. In Proc. ACM RecSys ’18. ACM. https://doi.org/10.1145/3240323.3240373
+as follows:                                                                      [10] Kenneth Holstein, Jennifer Wortman Vaughan, Hal Daumé III, Miro Dudík, and
+                                                                                      Hanna Wallach. 2019. Improving fairness in machine learning systems: What do
+                                                                                      industry practitioners need?. In Proc. CHI 2019.
+4.1       Session 1: Foundations and Problems                                    [11] Toshihiro Kamishima, Pierre-Nicolas Schwab, and Michael D Ekstrand. 2018. 2nd
+      • Welcome and Intro                                                             FATREC workshop: responsible recommendation. In Proc. ACM RecSys ’18. ACM,
+                                                                                      516–516. https://doi.org/10.1145/3240323.3240335
+      • Some Motivating Examples                                                 [12] Rishabh Mehrotra, Ashton Anderson, Fernando Diaz, Amit Sharma, Hanna Wal-
+      • Introduction to Fairness Problems and Concepts                                lach, and Emine Yilmaz. 2017. Auditing Search Engines for Differential Satis-
+      • Survey of Algorithmic Fairness Concepts, Metrics, and Re-                     faction Across Demographics. In WWW ’17 Companion. International World
+                                                                                      Wide Web Conferences Steering Committee, Republic and Canton of Geneva,
+        sults                                                                         Switzerland, 626–633. https://doi.org/10.1145/3041021.3054197
+      • Fairness in production systems. Motivation and description               [13] Rishabh Mehrotra, James McInerney, Hugues Bouchard, Mounia Lalmas, and
+                                                                                      Fernando Diaz. 2018. Towards a Fair Marketplace: Counterfactual Evaluation of
+        of fairness in production. Diverse users and needs. Pitfalls.                 the trade-off between Relevance, Fairness and Satisfaction in Recommendation
+        Tension with Privacy.                                                         Systems. In Proc. CIKM ’18.
+                                                                                 [14] Safiya Umoja Noble. 2018. Algorithms of Oppression: How Search Engines Reinforce
+                                                                                      Racism. NYU Press.
+4.2       Session 2: Metrics and (Partial) Solutions                             [15] Ashudeep Singh and Thorsten Joachims. 2018. Fairness of Exposure in Rankings.
+                                                                                      In Proc. KDD ’18 (KDD ’18). ACM, New York, NY, USA, 2219–2228. https:
+      • Fair for Who? Multisided Nature of Information Access Fair-                   //doi.org/10.1145/3219819.3220088
+        ness
+
+
+
+
+                                                                          1404
+

@@ -1,0 +1,863 @@
+    The Case for Voter-Centered Audits of Search Engines During
+                         Political Elections
+                    Eni Mustafaraj                                                    Emma Lurie                                              Claire Devine
+        Department of Computer Science                                      School of Information                                        Undergraduate Division
+              Wellesley College                                        University of California, Berkeley                                  Wellesley College
+          emustafaraj@wellesley.edu                                       emma_lurie@berkeley.edu                                        cdevine@wellesley.edu
+
+ABSTRACT                                                                                              1    INTRODUCTION
+Search engines, by ranking a few links ahead of million others                                        A week after the 2016 U.S. presidential election, a news story1 about
+based on opaque rules, open themselves up to criticism of bias.                                       a problematic Google search result page made the media rounds.
+Previous research has focused on measuring political bias of search                                   The journalist had searched for the query “final vote count 2016”,
+engine algorithms to detect possible search engine manipulation                                       and Google’s top search result had claimed that “Trump won both
+effects on voters or unbalanced ideological representation in search                                  [the] popular [vote] and electoral college.” (President Trump lost
+results. Insofar that these concerns are related to the principle of                                  the popular vote by 2.87 million votes.2 )
+fairness, this notion of fairness can be seen as explicitly oriented                                     This top search result was published by a conspiracy blog, one
+toward election candidates or political processes and only implic-                                    of the dubious sources that contributed to the creation and spread
+itly oriented toward the public at large. Thus, we ask the following                                  of a conspiracy theory (repeated by President Trump) that Trump
+research question: how should an auditing framework that is explic-                                   would have won the popular vote if not for voting irregularities
+itly centered on the principle of ensuring and maximizing fairness                                    (unauthorized immigrant voters, voter fraud, etc.).3
+for the public (i.e., voters) operate? To answer this question, we                                       How did a false news story from a conspiracy blog end up as
+qualitatively explore four datasets about elections and politics in                                   the top news story on the Google search results page? Google’s
+the United States: 1) a survey of eligible U.S. voters about their                                    response, through a spokesperson,4 was non-revealing:
+information needs ahead of the 2018 U.S. elections, 2) a dataset of                                           The goal of Search is to provide the most relevant and
+biased political phrases used in a large-scale Google audit ahead of                                          useful results for our users. In this case we clearly
+the 2018 U.S. election, 3) Google’s “related searches” phrases for two                                        didn’t get it right, but we are continually working to
+groups of political candidates in the 2018 U.S. election (one group                                           improve our algorithms.
+is composed entirely of women), and 4) autocomplete suggestions
+                                                                                                         Other questions that can be asked in this context are: how many
+and result pages for a set of searches on the day of a statewide
+                                                                                                      users searched Google for this topic (“final vote count 2016”)? How
+election in the U.S. state of Virginia in 2019. We find that voters
+                                                                                                      many users saw the conspiracy blog story as the top result? What
+have much broader information needs than the search engine audit
+                                                                                                      fraction of users clicked to read it? These questions, aimed at trans-
+literature has accounted for in the past, and that relying on political
+                                                                                                      parency, are important when trying to understand how disinfor-
+science theories of voter modeling provides a good starting point
+                                                                                                      mation spreads and affects users, in order to mitigate its potential
+for informing the design of voter-centered audits.
+                                                                                                      harm. For example, Twitter notified 1.4 million users in the United
+                                                                                                      States, that they were exposed to content generated by Russia’s
+CCS CONCEPTS
+                                                                                                      Internet Research Agency during the 2016 U.S. Election.5 Although
+• Information systems → Web search engines.                                                           journalists have documented several examples of disinformation6
+                                                                                                      or other harmful content7 being displayed at the top of Google
+KEYWORDS                                                                                              Search results, Google’s response has been to change the algorithms
+algorithm audits, search engines, Google, voters, elections, bias                                     to fix the particular problem, without providing transparency to
+ACM Reference Format:
+                                                                                                      stakeholders.
+Eni Mustafaraj, Emma Lurie, and Claire Devine. 2020. The Case for Voter-                                 This lack of transparency about the how of such scenarios is
+Centered Audits of Search Engines During Political Elections. In Conference                           often defended as a protective measure: malicious third-party actors
+on Fairness, Accountability, and Transparency (FAT* ’20), January 27–30, 2020,                        could benefit from efforts of transparency to increase the success
+Barcelona, Spain. ACM, New York, NY, USA, 11 pages. https://doi.org/10.
+1145/3351095.3372835                                                                                  1 https://www.mediaite.com/uncategorized/now-even-google-search-aiding-in-
+                                                                                                      scourge-of-fake-inaccurate-news-about-election-2016/
+                                                                                                      2 https://en.wikipedia.org/wiki/2016_United_States_presidential_election
+Permission to make digital or hard copies of all or part of this work for personal or
+                                                                                                      3 New York Times: Trump Repeats Lie about Popular Vote in Meeting with Lawmakers
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation             (January 23, 2017).
+                                                                                                      4 https://www.theverge.com/2016/11/14/13622566/google-search-fake-news-election-
+on the first page. Copyrights for components of this work owned by others than the
+author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or                results-algorithm
+republish, to post on servers or to redistribute to lists, requires prior specific permission         5 https://www.reuters.com/article/us-twitter-russia/twitter-notifies-more-users-
+and/or a fee. Request permissions from permissions@acm.org.                                           exposed-to-russian-propaganda-idU.S.KBN1FK388
+                                                                                                      6 https://theoutline.com/post/1192/google-s-featured-snippets-are-worse-than-fake-
+FAT* ’20, January 27–30, 2020, Barcelona, Spain
+© 2020 Copyright held by the owner/author(s). Publication rights licensed to ACM.                     news
+                                                                                                      7 https://www.theguardian.com/technology/2016/dec/04/google-democracy-truth-
+ACM ISBN 978-1-4503-6936-7/20/02. . . $15.00
+https://doi.org/10.1145/3351095.3372835                                                               internet-search-facebook
+
+
+
+
+                                                                                                559
+FAT* ’20, January 27–30, 2020, Barcelona, Spain
+
+
+rate of their attacks.8 However, Google’s secrecy about the extent                    and led to specific approaches. Concretely, we can distinguish three
+of exposure to such highly ranked disinformation is potentially                       different kinds of efforts to detect political bias in search platforms:
+harmful to the public. In at least one highly-publicized case, one                        (1) Third-party manipulation. In the early 2000’s, Google
+individual’s path to a devastating hate crime—that of Dylan Roof,                             was susceptible to forms of political activism that came to
+who killed nine black people in their own church—started with the                             be known as “Google bombing”.12 According to [30], Demo-
+search for “black on white crime” on Google.9                                                 cratic party activists used this technique to promote in the
+   There is a difference between the two search phrases we have                               Google search results negative stories about Republican can-
+discussed so far: “final vote count 2016” and “black on white crime”.                         didates in the 2006 U.S. Congressional elections. However,
+The first one is a seemingly neutral query that anyone can perform                            such techniques didn’t succeed in 2008, due to Google’s
+innocently, out of curiosity. The second query is problematic from                            changes in its algorithms to promote official sources when
+the start as it was pushed on the Internet discourse by groups with a                         searching for candidate names. A repetition of this study
+white supremacist agenda.10 The researchers Michael Golebiewski                               (with more search engines) in 2016 [31] confirmed the previ-
+and danah boyd coined the concept “data void” [17] to refer to                                ous finding of official websites topping the rankings.
+phrases like this one, which, when searched, lead to either low                           (2) Ranking Bias. Experimental work by Epstein and Robert-
+quality or problematic content. As they explain, once “black on                               son in [14] tested the following hypothesis: were a search en-
+white” was publicized by Roof’s crime, high quality websites created                          gine like Google to subtly manipulate the ranking of stories
+content that filled the “data void”.                                                          about political candidates, this would be sufficient to affect
+   One could argue that these are isolated cases, that the majority                           the outcome of an election. They named this the “search
+of queries are not problematic and will not lead to problematic                               engine manipulation effect” (SEME). This hypothesis is con-
+content. However, Google’s general lack of transparency has opened                            nected to the popular theory of “filter bubbles” by Eli Pariser
+the door for continuous political attacks. Most recently, President                           [35], according to which, different search engine users might
+Trump accused Google of manipulating the search results to favor                              be exposed to different search results for the same query.
+his 2016 political opponent, Hillary Clinton,11 basing his claim on a                         Various studies to test this theory (using political search
+white paper of a small-scale Google audit, which had hypothesized                             terms, although not during election periods) have found
+the possibility of Google swaying the elections.                                              little evidence for it [21, 37, 39].
+   If Google is unable to provide transparency, researchers can try                       (3) Ecosystem bias. Recent audit studies have recognized that
+to use audits as a tool for increasing literacy around the complexity                         focusing on the the producers of content or on the ranking al-
+of generating search results. The public should be able to search                             gorithms individually is not sufficient to appropriately char-
+for anything, problematic content as well, but it should be Google’s                          acterize the complex nature of interactions during search,
+responsibility to not serve harmful content, at the very least, at                            which involve the users who initiate the search, the con-
+the top of the search result page. Google was able to fix the issues                          tent providers, and the ranking algorithms. Furthermore, the
+of consumer-harming web spam that plagued online shopping re-                                 search page itself has evolved over the past years, providing
+sults in the early 2000’s [33]. We should demand the same kind of                             more outlets for showcasing content without having to click
+commitment to high-quality results for political content, too.                                on any links on the search page. This ecosystem approach
+   This is particularly important, because research has found that                            to bias was articulated first in [23] in the context of Twitter
+the public believes that Google shows trustworthy information at                              search, but can also be found in [11, 19].
+the top of its search results [34]. However, if the 2016 U.S. presiden-                  As we can notice from this chronological literature survey, there
+tial election was any indication, efforts to propagate disinformation                 has been a progressive move toward expanding the focus of where
+in novel ways will only increase in frequency and sophistication                      bias (and as result, manipulation) is located. For example, the work
+[28]. Continuous and large-scale audits can serve to raise aware-                     by Kulshrestha et al. 2017 [23] introduced the concept of the inter-
+ness about vulnerabilities in the information ecosystem, for which                    action among various kinds of biases (input bias and ranking bias)
+search engines are a central gateway.                                                 in order to produce a more pronounced output bias. Meanwhile,
+                                                                                      the work by Hu et al. 2019 [19] changed how audits are performed,
+1.1     Auditing for Bias                                                             by adopting “biased searches” as starting points for the audit. This
+Social scientists have been worried about the power of search en-                     allowed them to notice a similar effect to that shown by Kulshrestha
+gines and their potential bias since they came into prominence in                     et al. on Twitter, namely, that when using biased search phrases,
+the 2000’s [13, 15, 20, 48]. Thus, auditing search engines in gen-                    the text snippets shown by Google are more biased than the web
+eral, and especially their role in political elections, is not a new                  pages from which they are extracted.
+research problem. However, the underlying assumptions that have
+motivated such research over the past ten years have been different                   1.2     Considering the Voters
+                                                                                      This progress on auditing search engines in the context of political
+8 https://www.theguardian.com/commentisfree/2016/nov/13/good-luck-in-making-
+                                                                                      elections, especially recognizing the many sources of bias and their
+google-reveal-its-algorithm
+9 https://www.npr.org/sections/thetwo-way/2017/01/10/508363607/what-happened-         interaction, is important, but insufficient towards the goal of devel-
+when-dylann-roof-asked-google-for-information-about-race                              oping voter-centered audits. For one, most of the mentioned studies
+10 https://www.gq.com/story/dylann-roof-making-of-an-american-terrorist
+                                                                                      utilized queries chosen by researchers themselves, without any
+11 https://www.nytimes.com/2019/08/19/us/politics/google-votes-election-
+trump.html                                                                            12 https://en.wikipedia.org/wiki/Google_bombing#Political_activism
+
+
+
+
+                                                                                560
+The Case for Voter-Centered Audits of Search Engines During Political Elections                                             FAT* ’20, January 27–30, 2020, Barcelona, Spain
+
+
+input from voters or insights from political scientists’ knowledge                           trustworthy sources, independently of their geographic location or
+of voters. Additionally, queries are focused on politicians (occasion-                       the sophistication of their search phrases.
+ally, rightly so [16]), while elections are multi-faceted; what else
+besides the candidates affects participation and decision making in                          2     RELATED RESEARCH
+elections? Meanwhile, what role does the interface of the search                             Given our focus on the voters, we start this section with theories
+engine (e.g., the autocomplete suggestions feature) play in shap-                            that try to explain and predict voter behavior with respect to their
+ing voters’ information seeking behavior? Finally, do the audits                             information needs. Then, to expand upon the overview of audits in
+consider if searches are leading to high quality information from                            the context of political elections, which we presented in the intro-
+reliable sources? This last question is especially important, because                        duction section, we summarize aspects of the audit methodology
+efforts to manipulate elections might not come in the form of polit-                         that is relevant to our discussion.
+ical bias, which is what most audits have been focusing on. Efforts
+to suppress voters’ participation in elections can target information
+                                                                                             2.1    Informed or Uninformed Voters?
+such as: when does the early voting start? Where are the polling
+locations situated? When is the voter registration deadline? En-                             In 1960, the landmark study of “The American Voter” [7] changed
+suring that all voters get reliable information on such questions is                         the way the political science research community approached the
+important, because such information is location dependent.13                                 understanding of electoral behavior, by borrowing methods from
+   In this paper, we explore four different datasets that capture                            the field of psychology. One of the important insights drawn from
+various aspects of searches about politics and elections, with the                           this new methodology was the discovery of a stable “party identifi-
+explicit goal of identifying important features for the design                               cation” as the principal factor in voting. Further exploration of this
+of search engine audits that are centered on fairness to vot-                                study’s panel data by Philip Converse, exposed the various belief
+ers and their information needs. Our takeaways, explained in                                 systems of different groups of voters [9]. Many interpreted this
+more detail in the rest of the paper, are the following:                                     research as suggesting that “voters are dumb,” and Converse later
+                                                                                             tried to distance himself from such an interpretation [8], insisting
+      • Information Cues: We need to utilize the vast political
+                                                                                             that he had only made the case for a great (mal)distribution of po-
+        science theory on voter modeling to choose queries for audits.
+                                                                                             litical information across the public, that is, a majority of the public
+        For example, we found empirical evidence that many voters
+                                                                                             knows little and is inconsistent in their positions (uninformed or
+        behave as predicted by the theory of “information cues” by
+                                                                                             low-information voters); while only a fraction of the electorate has
+        Arthur Lupia [25–27]. This theory suggests that voters prefer
+                                                                                             sufficient knowledge to be consistent in their positions over time.
+        to take shortcuts to get informed about elections. Examples
+                                                                                                 A more sympathetic view of the voters comes from Arthur Lu-
+        are searches for endorsements or political alignment. Women
+                                                                                             pia, who in earlier studies [25, 26] contended that voters could
+        candidates are more likely to be the subject of such searches.
+                                                                                             not be expected to have an encyclopedic knowledge about politics.
+      • Biased Searches: Recent audits like Hu et al. [19] are right
+                                                                                             He suggested that information cues (e.g., who supports a ballot
+        about including biased searches in their seed dataset of
+                                                                                             initiative, Ralph Nader or the auto insurance lobby? Or, is the can-
+        phrases. Our survey with voters found evidence that voters
+                                                                                             didate a Democrat or Republican?) are a good way for voters to
+        do indeed perform biased searches. However, comparing the
+                                                                                             align themselves with the issues or candidates (see also, [24, 32]).
+        phrases that Hu et al. extracted from politician speeches
+                                                                                             A cue, according to Lupia [27] is “a piece of information that can
+        with those used by voters showed almost no overlap. Biased
+                                                                                             take the place of other information as the basis of competence at
+        searches need to come from voters.
+                                                                                             a particular task.” Cues are not unique to politics, individuals use
+      • Beyond Candidate Names: While candidates are central
+                                                                                             them in many situations, for example, brand names (e.g. Nike or
+        to the information seeking process, queries about them are
+                                                                                             Volvo) are a cue for product quality. In the survey data we collected,
+        more complex than just their names. Voters first need to
+                                                                                             many queries formulate an explicit information request for party
+        find out who the candidates are, e.g., “Colorado candidates”,
+                                                                                             identification, e.g., “what party is Harry Arora”, “Gavin Newsom’s
+        and then will ask for more specific information, such as,
+                                                                                             party”, as well as other information cues such as endorsements and
+        “what does Beto stand for” or “Gillum - DeSantis polling”.
+                                                                                             polls. We qualitatively code all phrases that request information
+        Moreover, questions about the logistics of voting and the
+                                                                                             cues to find out the extent this strategy is used by voters.
+        nature of elections are common too.
+                                                                                                 Additionally, Lupia and other researchers [47] highlight the role
+      • Unreliable Localization: Voters might prefer short and
+                                                                                             that negative emotions such as fear and anxiety play in informa-
+        ambiguous queries, e.g. “election” or “voting near me”, and
+                                                                                             tion seeking behaviors. We noticed this emotional manifestation
+        rely on the search engine to either provide autocomplete
+                                                                                             in searches from our survey participants (“are the elections rigged”
+        suggestions or display the right information. Google’s algo-
+                                                                                             or “will democrats win the senate”) and decided to look for more
+        rithms appear to be sensitive to real-world events such as
+                                                                                             examples of such searches, which we broadly categorize as “biased”
+        elections, but this behavior seems difficult to predict.
+                                                                                             searches, because they come from an one-sided perspective, usually
+   We hope that these insights will serve to guide the design of fu-                         in favor or against a certain political party, individual, or issue.
+ture voter-centered audits, which, by taking an ecosystem view, aim
+to uncover whether voters are receiving reliable information from                            2.2    More on Search Engine Audits
+13 This is especially true in the United States, where each U.S. state has different         Search engines, as one of the major platforms for satisfying infor-
+elections norms and laws.                                                                    mation needs, are a particularly frequent target of algorithm audits.
+
+
+
+
+                                                                                       561
+FAT* ’20, January 27–30, 2020, Barcelona, Spain
+
+
+But how are audits carried out? In [40], Sandvig et al. formally                  We recruited 560 U.S. citizens through Amazon Mechanical Turk
+define four different types of audits: 1) code audits, 2) scraping             (AMT) and asked them to share searches that they have performed
+audits, 3) sock puppet audits, and 4) non-invasive user audits. Code           or will perform on the days ahead of the election (Oct 16-Nov 2,
+audits involve researchers examining the code bases that underlie              2018). To attract a diverse group of participants, we didn’t set re-
+algorithmic systems. To date, there are no such audits for search              strictions for participation, except for age (over 18) and citizenship
+engines, and most likely, the complexity and scale of their code               (United States). This led to a large number of incomplete or irrele-
+bases might make that task impossible [6]. Instead, the most com-              vant submissions that we manually discarded. At the end, we had
+mon way to perform search engine audits is the Scraping audit,                 responses from 392 eligible U.S. voters, who supplied between 3 to
+during which, automated scripts send batches of queries to a search            8 search phrases, together with demographic information.15
+platform and then analyze the results. The datasets used in this                  The respondents generated a total of 2,526 search phrases, with
+paper are collected via scraping audits.                                       84% of queries only appearing once in the dataset. The average
+    Recently, sock puppet audits have increased in popularity as               length of a search phrase was 3.2 words (standard deviation = 1.82
+they add a new dimension: the process imitates users by construct-             words, and median = 3 words). This finding mirrors what studies
+ing fake user profiles before making repeated queries. Sandvig et              of search logs across many datasets have found: an average query
+al. express concern that these techniques violate platforms’ Terms             length of 2-4 words [1]. That is, despite the fact that the queries in
+of Service and present some legal issues. However, the auditing                this dataset were not extracted from search logs, they still conform
+community has argued that the importance of understanding po-                  to the usual form of search queries. We perform qualitative coding
+tential discrimination and biases in these algorithms outweighs                of these search phrases to detect themes, identify biased searches,
+these risks [10, 22]. As this method evolves, some of the sock pup-            as well as requests for information cues.
+pet audits are now employing real users who have been recruited
+throw crowdsourcing platforms [37, 39, 45].                                    3.2        Dataset 2: Partisan Queries
+    The non-invasive user audits require users to answer ques-                 Hu et al. 2019 [19] performed an audit of Google search snippets
+tions about the ways they interacted with the platform. This could             during Oct 13-30, 2018, ahead of the 2018 U.S. Congressional Elec-
+include, but is not limited to, search query log collections as well.          tions. This is the largest audit about elections ever reported in the
+Sandvig et al. raise several concerns about this technique includ-             literature. The authors started with a list of 3,520 politician names
+ing: users inability to accurately report their behavior, users not            and 1,050 left and right leaning terms and phrases. Then, they ex-
+searching enough queries that will reveal platform discrimination              tracted Google autocomplete suggested phrases for all of them and
+(“sampling problems”), and the difficulty to establish causality due           collected the resulting 88,745 SERPs (search engine result pages).
+to lack of systematic controls over what users do. As a result, such           Differently from previous audits in the literature, which mostly
+audits are almost non-existent in the search engine audits literature.         rely on candidate names and phrases selected by researchers, this
+However, this is a limitation that needs to be overcome through                time the politically-biased searches came from politicians. Con-
+a combination of large-scale representative sampling (as the one               cretely, the authors created a lexicon of unigrams and bigrams that
+used in political science surveys) with advances in browser plugin             represent partisan cues. These n-grams came from speeches of 20
+technologies such as the ones used in [29] or [39].                            Democrats and 19 Republican politicians, scraped from the web-
+                                                                               site votesmart.org, and spanning the time period January 2008 -
+3     DATA AND METHODS                                                         August 2018. All n-grams that occurred more than 50 times were
+In this paper, we make use of four different datasets. An overview             assigned a partisan bias score, which ranged from -1 (ngram used
+of the datasets is provided in Table 3. Each subsection provides               only by Democrats) to +1 (ngram used only by Republicans). Then,
+information about how we collected and processed the datasets.                 from this lexicon, the authors chose all phrases with an absolute
+More details about the survey with AMT workers, the audit method,              score greater than 0.5, and manually selected meaningful phrases
+and the Virginia election are provided online.14                               to search. The dataset that they shared with us contains 495 such
+                                                                               phrases and their bias scores. For example, “gun lobby” has a score
+3.1      Dataset 1: Voter Searches                                             of -0.85 (mostly used by democrats), while “gun rights” has a score
+Knowing what voters search ahead of elections and what results                 of 0.67 (mostly used by republicans). In our analysis, we search
+they are shown by a search engine can help us ascertain that search            if any of these phrases is contained in the searches formulated
+engines are not promoting disinformation harmful to the public or              by the AMT respondents, in order to discover if such phrases are
+the candidates participating in the electoral process. One way to              representative of what voters themselves could search ahead of an
+do that would be to recruit participants that are willing to install a         election.
+plugin on their browser (a technique used by [29, 39]), which will
+allow us to collect their interactions with the search engine.                 3.3        Dataset 3: RS-Candidates
+   However, implementing plugin based studies is expensive, in-                For Google Search users, there are two opportunities to learn what
+troduces concerns about user privacy, and presents new technical               other users are searching: the autocomplete suggestion feature and
+challenges in having to discern which queries are election related.            the related searches at the bottom of a SERP. Autocomplete searches
+Therefore, we created a survey rather than a plugin to collect elec-           are sensitive to “external shocks” [38] (events that happen in the
+tion related queries.                                                          real world) and are updated more frequently than related searches.
+14 http://cs.wellesley.edu/~credlab/fat2020/                                   15 Refer   to materials on our webpage: http://cs.wellesley.edu/~credlab/fat2020/
+
+
+
+
+                                                                         562
+The Case for Voter-Centered Audits of Search Engines During Political Elections                                                FAT* ’20, January 27–30, 2020, Barcelona, Spain
+
+
+Table 1: An overview of the four datasets used throughout this paper. Three datasets were created by this paper’s authors and
+one was received by the authors of Hu et al. 2019 [19].
+
+       Name                     Period                      Description                                                                                       Creator
+ 1.    Voter Searches           Oct - Nov 2018              A list of 2,500 search phrases collected through a survey of AMTs.                                Authors
+                                                            A list of 495 phrases extracted from politicians’ speeches of democrats
+ 2.    Partisan Queries         Jan 2008 - Aug 2018                                                                                                           Hu et al. 2019
+                                                            and republicans with a partisan bias score.
+ 3.    RS-Candidates            Oct - Nov 2018              Google’s related searches (RS) in SERPs for two groups of candidates.                             Authors
+                                                            Autocomplete phrases and SERPs for 40 queries searched simultaneously
+ 4.    Virginia Election        June 11, 2019                                                                                                                 Authors
+                                                            in Virginia and Massachusetts.
+
+
+One way to think about these two groups of searches is that the                         3.4      Dataset 4: Virginia Election
+former correspond to “trending searches”, while the latter to “most                     When we analyzed the phrases from the Voter Searches dataset, we
+popular searches” about a seed query.                                                   noticed that many of them were short and ambiguous. For exam-
+    After collecting SERPs for two groups of candidates for the 2018                    ple, respondents wrote phrases like: voting or elections, as well as
+U.S. midterm elections, we extracted the related searches (RS) from                     “candidates near me”. We hypothesized that one reason that voters
+each page. The groups of candidates were as follows:                                    might formulate such queries is that they rely on the search engine
+    (1) 185 Women candidates [185Women] running for congress                            to correctly interpret their intentions, despite their searches being
+        or governor. Their names were gathered from a Washington                        short and ambiguous. Google users are familiar with searches like
+        Post article that was tracking the political fortunes of women                  “weather” or “pizza near me” that correctly leverage the user’s lo-
+        candidates.16                                                                   cation to personalize the search results [18]. Another reason for
+    (2) 215 Senate challengers [215Challengers], running in the pri-                    supplying short queries to the search engine might be that users are
+        maries and the 2018 Senate election for 35 U..S. states. The                    accustomed to taking advantage of Google’s autocomplete feature
+        names of candidates were collected from Ballotpedia in July                     to suggest longer and more appropriate queries. In order to test
+        2018, by visiting the electoral information webpage of each                     such hypotheses, we conducted a pilot study the day of the primary
+        US state holding a 2018 election.                                               election for the State Legislature in the U.S. state of Virginia, June
+    An example of related searches for the candidate Alexandria                         11, 2019. We selected 40 query phrases from the Voters Searches
+Ocasio-Cortez is shown in Figure 1. For our analysis, we are in-                        dataset, mostly short queries such as: voting, election day, democrats,
+terested in the words (or phrases) next to the candidate name, in                       as well as syntactic variations of semantically similar queries such
+this case, “husband”, “married”, “age”, etc. To have a more complete                    as where can i vote, where do i vote, or where to vote.17 We used two
+dataset, we collected SERPs for both groups of candidates on 6 dif-                     computers, one in Virginia and one in Massachusetts to automat-
+ferent days on the period Oct 17, 2018 - Nov 3, 2018, and compiled                      ically collect the SERPs for these search queries from Google at
+all unique phrases in related searches for each candidate. Then, we                     the same exact time and through the same automated procedure.18
+automatically removed the names of the candidates to focus on the                       Additionally, we collected the autocomplete suggestions for all the
+additional words and phrases in the queries. We found 1,944 unique                      queries (10 for each) in both locations, using the open-source tool19
+phrases for [185Women] and 1,974 unique phrases for [215Chal-                           introduced in [38]. Thus, this dataset is composed of 80 SERPs (40
+lengers]. These phrases were manually inspected to correct some                         for each location), and 800 autocomplete search phrases (400 for
+of the inevitable errors of the automatic phrase extraction.                            each location).
+
+                                                                                        3.5      Qualitative Coding
+Figure 1: The related searches for Alexandria Ocasio-Cortez                             For the Voter Searches dataset, we performed multiple rounds of
+(a woman candidate running for the U.S. Congress), screen-                              qualitative coding. We started with a thematic analysis of the data
+shot taken on Nov 3, 2018. We automatically remove the can-                             [4], in order to inductively draw themes from the queries. Then,
+didate name from the related searches and aggregate the re-                             we performed deductive coding for the presence of phrases that
+maining words or phrases. In this case, these words are, hus-                           elicit information cues (yes, no), presence of bias (yes, no), and
+band, married, age, etc.                                                                expression of bias (semantic, pragmatic).
+                                                                                           For the thematic analysis, two coders independently looked for
+                                                                                        themes in a subset of 10% of the phrases, until they reached a satu-
+                                                                                        ration point. The coders then met to discuss themes and subthemes
+                                                                                        and create the code book. The rest of the data was thematically
+                                                                                        coded by a single coder. For the deductive coding of information
+                                                                                        cues, bias presence and bias expression, two independent coders
+                                                                                        17 The list of all queries can be found online: http://cs.wellesley.edu/~credlab/fat2020/.
+16 https://www.washingtonpost.com/graphics/2018/politics/women-congress-                18 Our procedure is described here: http://cs.wellesley.edu/~credlab/fat2020/.
+governor/                                                                               19 https://github.com/gitronald/suggests
+
+
+
+
+                                                                                  563
+FAT* ’20, January 27–30, 2020, Barcelona, Spain
+
+
+and the research team defined strategies and rules for applying the               3.6       Limitations of the Collected Datasets
+codes and then the coders proceeded independently. After each                     All our datasets can be considered as “small” datasets compared to
+round, they had the opportunity to check their differences and                    the ones used in other auditing studies. This was by design, so that
+decide to change or retain their label. We report the inter-rater reli-           we could inspect the results manually, and only small datasets are
+ability (IRR) score, calculated as the Cohen’s kappa in the Results               amenable to such analysis. Our goal is not to perform an audit, but to
+section.                                                                          find out how to design audits that are centered on voters. We believe
+   Operationalizing Bias: Our definition of what is biased was                    that the exploration of these small datasets provides important
+deliberately broad: any explicit or implicit expression of preference             insights that can be tested via large-scale and partially automated
+toward or against a person, group, issue, or event. We recognize                  audits. Nevertheless, it’s worth pointing out the limitations of the
+that the discussion of bias in literature is often much more narrow               datasets, in order to mitigate such limitations in future studies.
+and usually with a negative connotation. However, to the extent                      Sampling Bias: The survey with AMT respondents is not rep-
+that bias seems to be correlated with information cues, which, when               resentative of the voter population in the United States. However,
+accurate, can help voters make good decisions, we think that our                  recent research has indicated that AMT is better than or equal in
+broad definition is warranted. Particularly in psychology, many                   terms of diversity to other survey participant pools [3].
+biases, e.g., optimism bias [41], are shown to have positive effects                 Ecological Validity: We didn’t receive actual search logs from
+on our lives. Inspired by this interpretation, we don’t regard the                the respondents, thus, it’s fair to question how valid the query
+presence of bias in search queries (the phrases provided by voters)               phrases are. As part of the survey, we asked participants how likely
+negatively.                                                                       it was that they have performed or will perform these searches
+   Once we had identified the subset of biased phrases, we pro-                   and 79.3% responded with extremely likely or somewhat likely. The
+ceeded with a second round of coding, this time to identify the                   average length of phrases was 3.2 words, within the range described
+expression of the bias using a binary categorization: semantically                in literature [1]. It is possible that when searching with a search
+and pragmatically biased queries. A query was coded as semanti-                   engine, voters will formulate different queries, but, we believe that
+cally biased, if it included language that denotes bias independently             this doesn’t invalidate that the queries in our dataset are possible,
+of its context. For example, the phrases “the best candidate” and                 too. Given that this study only uses the data to inform design for
+“will Beto win” are semantically biased because of the individual                 future audits, the incompleteness of the dataset might be acceptable.
+words “best” and “win.” Alternatively, a query was coded as prag-                    Algorithmic Exclusion: Two datasets, Virginia Election and
+matically biased, if it contains bias as a result of its context within a         RS-Candidates, are based on data that Google’s algorithms for gen-
+broader narrative. Such examples would include “diane feinstein’s                 erating related searches and autocomplete suggestions provide. It is
+age” or “blue wave.” None of the words in these phrases indicates                 the nature of these algorithms to exclude certain terms and phrases
+bias, but in the context of the election, the phrases can be inter-               that are deemed harmful.20 Relying on accounts of researchers who
+preted as biased. Concretely, there were calls for California Senator             have accessed unrestricted search logs [44], we know that users
+Diane Feinstein to not run again for a senate seat, because she was               perform many searches that are not made public in any way. While
+deemed too old, leading to accusations of ageism. Meanwhile, “blue                the exclusion of such queries limits what we can learn from the
+wave” referred to a theory in which the Democrats (whose color is                 datasets, it is also a reminder of why we cannot perform audits
+blue) were going to regain the power in Congress, leading to much                 relying only on autocomplete searches, but instead find ways to
+excitement and mobilization for Democratic Party voters.                          collect real queries from users, given that access to search engine
+   Our terminology (semantic/pragmatic) was inspired by the “rel-                 logs [49] is off limits for most researchers.
+evance theory of meaning” within linguistics and philosophy of
+language scholarship. Developed in the 1980s by Dan Sperber and                   4     RESULTS
+Deirdre Wilson [42], relevance theory distinguishes between the
+                                                                                  One central motivation for this study is to gather information for
+semantic and pragmatic meaning of a linguistic utterance in order
+                                                                                  designing voter-centered audits of search engines during election
+to describe how people interpret context-independent linguistic
+                                                                                  periods. The analysis of the four datasets we have assembled pro-
+cues based on speaker intention and contextual situation.
+                                                                                  vides us with the opportunity to do so.
+   Operationalizing Information Cues. Drawing on Arthur Lu-
+pia’s discussion of information cues in his book [27], we identified
+                                                                                  4.1       Information Cues
+queries which likely contained shortcuts to information that voters
+may not have on recall. As a reminder, Lupia explains that “a cue is              Our analysis of information cues, phrases that serve as shortcuts
+a piece of information that can take the place of other information               to evaluate candidates, explores two datasets: Voter Searches and
+as the basis of competence at a particular task.” Our dataset doesn’t             RS-Candidates. In Voter Searches, we manually coded all phrases
+contain the cues themselves, instead it contains the query phrases                as eliciting information cues or not. The first rater coded 32% (673
+that voters formulate in order to access such cues. For example,                  phrases) and the second rater coded 37% (789 phrases) as eliciting
+when they search about “Gavin Newsom’s party”, they are look-                     such cues. Their agreement as calculated by Cohen’s kappa was
+ing for this candidate’s partisan alignment that serves as a strong               0.7 (substantial agreement). By matching the phrases back to the
+information cue. Other queries that serve to access information                   respondents, we found that 264 participants (67%) formulated at
+cues are endorsements, polls, rankings, or position alignments with               least one query that elicits information cues about candidates or
+hot-button issues.                                                                20 https://www.blog.google/products/search/how-google-autocomplete-works-
+                                                                                  search/
+
+
+
+
+                                                                            564
+The Case for Voter-Centered Audits of Search Engines During Political Elections                                            FAT* ’20, January 27–30, 2020, Barcelona, Spain
+
+
+Table 2: Comparing the top most related searches for two                                    they achieved an inter-rater agreement (Cohen’s kappa) of 0.68
+datasets: [185Women] and [215Challengers], collected dur-                                   (substantial agreement) and in the second round of reconciliation,
+ing the 2018 U.S. Congressional Elections. Searches known                                   the agreement rose to 0.88 (almost perfect agreement). At the end of
+as information cues, such as polls or endorsement, are more                                 these two rounds, the two raters agreed that 657 phrases, or 31% of
+often directed at women candidates.                                                         the whole dataset, is composed of biased search phrases. Matching
+                                                                                            these phrases to the participants in the AMT survey, we found that
+ [185Women] Dataset                         [215Challengers] Dataset                        69% (269 out of 392) of the participants have formulated at least
+ related searches %                         related searches %                              one biased search. Meanwhile, 26% (104 out of 392) of participants
+                                                                                            formulated three or more biased searches. These results indicate
+ polls                   55%                senate                  41%
+                                                                                            that formulating biased queries is a common practice for a majority
+ facebook                45%                for senate              39%
+                                                                                            of voters and that a sizeable portion of them will frequently perform
+ wikipedia               41%                twitter                 23%
+                                                                                            such searches.
+ bio                     38%                facebook                21%
+                                                                                               For the set of 657 biased phrases, the raters performed another
+ for congress            38%                wikipedia               20%
+                                                                                            round of coding to establish the expression of bias (as semantic or
+ age                     35%                polls                   19%
+                                                                                            pragmatic). The two raters labeled 59% and 62% (respectively) of
+ twitter                 35%                bio                     15%
+                                                                                            phrases as semantically biased, with the rest labeled as pragmatic.
+ endorsements            30%                us senate               15%
+                                                                                            Their agreement according to the Kappa score was 0.77 (substan-
+ husband                 26%                age                     15%
+                                                                                            tial agreement). The good news is that the majority of the biased
+ congress                24%                net worth               15%
+                                                                                            searches express this bias semantically, which we defined as being
+                                                                                            located in one of the query words themselves. These are words
+                                                                                            that are found in sentiment analysis and opinion mining lexicons,
+issues, with 97 participants (25%) formulating three or more such
+                                                                                            as having a positive or negative valence, e.g, [2], or through NLP
+queries. Thus, 2/3 of participants engaged in this kind of infor-
+                                                                                            approaches [36]. This will make it easier (for large-scale surveys)
+mation gathering strategy, as Lupia’s theory on voters suggests.
+                                                                                            to identify biased searches, in order to scrutinize the search results
+This is important on two counts: a) it indicates that we can rely on
+                                                                                            shown for them. However, a substantial portion of bias is expressed
+political science theory for voter modeling to extract insights to
+                                                                                            pragmatically and this will complicate automated analysis.
+inform audits; b) it raises the issue of whether the results that are
+                                                                                               Although we didn’t explicitly set out to find “data voids”, while
+shown in response to such queries are reliable, given that voters
+                                                                                            performing the labelling into semantic vs pragmatic bias, we noticed
+are using them to make decisions about who or what to vote for.
+                                                                                            that several of the phrases fit the description of searches that have
+    While Voter Searches coverage is restricted to the convenience
+                                                                                            the potential to lead to “data voids”, SERPs with low-quality content
+sample that we recruited through Amazon Mechanical Turk (n=392),
+                                                                                            from adversarial information providers. The typology of data voids
+related searches for candidates on Google Search might correspond
+                                                                                            proposed by Golebiewski & boyd [17], would classify some of them
+to a larger sample, accumulated over weeks and months.21 Thus, it
+                                                                                            as data voids that can be weaponized after breaking news events,
+is informative to analyze what Google users most frequently search
+                                                                                            e.g, “maga bomber” or “25th ammendment”, and others that may be
+about candidates. Table 2 summarizes the top phrases that we ex-
+                                                                                            weaponized due to ongoing discriminatory events in our society,
+tracted for the two sets of candidates, [185Women] and [215Chal-
+                                                                                            e.g., “voter purge” or “immigration based crime.” Thus, an advantage
+lengers]. The value in percentage indicates the proportion of candi-
+                                                                                            of collecting such queries from users is to understand the extent to
+dates for which the query was found at least once in their related
+                                                                                            which certain weaponized phrases succeed to spread in the public.
+searches. For example, searches about polls were found in 55% of
+                                                                                               In the past, most researchers have used neutral phrases as queries
+[185Women] and in 19% of [215Challengers]. From the perspective
+                                                                                            for the search engine audits. Hu et al. 2019 [19] intentionally used
+of the information cues theory, such results are interesting because
+                                                                                            biased phrases and their autocomplete suggestions to perform their
+they not only indicate that Google users are looking for them (for
+                                                                                            audit. In light of our above-mentioned findings, such a decision
+example, polls and endorsements, shown in bold), but that such
+                                                                                            is the right one, given that voters will either occasionally or fre-
+requests are much more likely for women candidates. While many
+                                                                                            quently perform biased searches. However, it’s worth examining
+of the phrases in Table 2 can be regarded as navigational queries
+                                                                                            more closely the details of how bias is expressed. For that, we com-
+(based on Broder’s taxonomy, [5]), some of the information queries
+                                                                                            pared the phrases in Voter Searches with those in Partisan Queries.
+formulated for women candidates (age or husband) are a good indi-
+                                                                                            We found an exact overlap for only 7 phrases. These phrases are
+cator of the personal scrutiny that women running for office face,
+                                                                                            (occurrence given in parentheses): early voting (13), gun control
+another reason for considering the presence of bias by voters in
+                                                                                            (11), illegal immigration (4), voter turnout (3), voter suppression (3),
+search phrases.
+                                                                                            russia investigation (1), election system (1). That is, 7 phrases or
+                                                                                            1.4% of biased phrases in Partisan Queries (extracted from politician
+4.2     Bias in Search Phrases
+                                                                                            speeches) were found 36 times (1.4%) in Voter Searches. This very
+Our analysis of bias was focused on two datasets, Voter Searches                            small overlap is concerning, because it indicates that we cannot
+and Partisan Queries. Two independent raters labeled phrases in                             rely on the speech of politicians or other political elites as a source
+Voter Searches as “biased” or not. In the first round of labeling                           of knowledge. Additionally, one reason that Hu et al. 2019’s data
+21 However, we have no way of knowing this with any certainty, since Google doesn’t         might be showing this low overlap is that it draws from politician
+divulge absolute numbers about search volume.                                               speeches over an extended period of ten years, while the public
+
+
+
+
+                                                                                      565
+FAT* ’20, January 27–30, 2020, Barcelona, Spain
+
+
+Table 3: The 10 major themes that we identified coding the data. Many search phrases are coded with multiple themes, since
+they don’t fit exclusively in one theme only. As a result, the relative frequencies don’t add up to 100%.
+
+                                                                                                                                             Rel.
+  Theme               Examples of search phrases
+                                                                                                                                             Freq.
+  Ballot              ballot initiatives in 2018, proposition 110, MA question 1, Oregon measure 103                                         6.37%
+  Candidates          Black democratic candidates Florida, is there a female running in Georgia, policies of Alaskan candidates             41.57%
+  Election            election 2018 reviews, Senate seats up for reelection, Ohio election polls, voter suppression                         23.79%
+  Issue               immigration based crime, georgia hope scholarship Abrams, gillibrand gun control, arizona health care                 14.05%
+  News source         AP midterm facts, ballotpedia, 538 senate forecast, recent election news                                               3.44%
+  Office              NC judicial candidates, Virginia Beach mayor, who my senate candidates are, best candidate for governor               12.23%
+  Party               how can Dems take the house, florida democratic party, Travis county GOP, Republican donation limits                  12.51%
+  People              Gillum vs DeSantis polling, Ben Jealous policies, bernie sanders endorsements, Claire McCaskill                       15.52%
+  State               overview of stances of arizona politicians, california voter guide, Colorado poll, who’s winning florida              23.56%
+  Voting              where can I vote, when do polls end, register to vote Ohio, absentee ballot, voting locations central Michigan        10.65%
+
+
+might be more tuned to phrases that are currently in the news.                   Table 4: Out of 40 seed queries, 13 received 23 autocomplete
+Thus, gathering search phrases directly from the public might be a               suggestions for the location in Virginia, related to the pri-
+necessary condition for voter-centered audits.                                   mary election happening that day in Virginia. (R = Rank)
+
+4.3     Beyond Candidate Names                                                    Seed                       Suggestion                              R
+Most audits in the literature have relied on candidate names. While               candidates                 candidates in virginia primary 2019     8
+it is true that voters are interested in candidates, their query phrases          election                   election day 2019 virginia              1
+are not simply candidate names. We found only 391 query phrases                   election day               election day 2019 virginia              1
+that explicitly mention candidates. Out of these, 50% mentioned                                              elections in virginia 2019              1
+candidates in context, such as, “Bredeson stance on healthcare”,                  elections                  elections in virginia                   4
+or “elizabeth warren ancestry”. Of the other half, 39% referred to                                           elections in va                         6
+complete names, 9% to last names only (e.g., “Gillum”) and 2% to first            how to register            how to register to vote in va           1
+names only (e.g., “Beto”). Most importantly though, initially, only                                          how to register to vote in va           2
+135 respondents explicitly mentioned a candidate in their phrases.                how to register to vote
+                                                                                                             how to register to vote in virginia     3
+With our prompt, this number increased to 192 (slightly less than                                            primaries in virginia 2019              1
+half of all participants). Meanwhile, as the results of the thematic              primaries
+                                                                                                             primaries virginia                      3
+coding shown in Table 3 indicate, the largest group of searches is                                           sample ballot virginia                  1
+about unnamed candidates, with queries such as “Black democratic                  sample ballot
+                                                                                                             sample ballot fairfax county            4
+candidates Florida” or “policies of Alaskan candidates”. This is                                             voter registration virginia             3
+indicative of another political science theory [9], that most voters              voter registration
+                                                                                                             voter registration card va              8
+are initially uninformed. Thus, the role that the search engine will                                         voting in virginia                      2
+be playing, by directing voters to information sources in response                voting                     voting in va                            6
+to such queries, is even more important, given the scale that this                                           voting virginia 2019                    7
+might be happening.                                                                                          where do i vote virginia                1
+    The thematic coding in Table 3 contains more insights. The voters             where do i vote
+                                                                                                             where do i vote in primaries            2
+are interested not only in a wide range of topics, but also in a vari-                                       where to vote in virginia               1
+ety of information kinds: factual information (“where can I vote”);               where to vote
+                                                                                                             where to vote in virginia primary       2
+speculative information (“who’s winning Florida”), and so-called                  who is running             who is running for virginia senate      3
+problematic queries that might lead to data voids (e.g., “immigration
+based crime”). Given such variation, to carry out comprehensive
+voter-centered audits, we will need to design mechanisms to elicit               and Massachusetts, on June 11, 2019, the election day in Virginia.
+such queries from voters, in order to examine how the search en-                 Comparing the two sets of 400 autocomplete phrases, we find an
+gines treat these distinct epistemic categories (factual, speculative,           overlap of 76.4%. While the overlap is substantial, the fact that
+and problematic) of information needs. Ethnographic research by                  23.6% of phrases are different, indicates that there is a degree of
+[46] provides additional evidence for such a need.                               localization happening in both locations. Given that our focus was
+                                                                                 on the election happening that day, we further analyzed the seeds
+4.4     Unreliable Localization                                                  and suggested phrases that indicated an awareness about local
+The Virginia Election dataset contains SERPs and autocomplete                    elections. The results for both locations are shown in Table 4 and
+suggestions that were collected on two different locations, Virginia             Table 5. Comparing the results in the two tables shows that there are
+
+
+
+
+                                                                           566
+The Case for Voter-Centered Audits of Search Engines During Political Elections                                                            FAT* ’20, January 27–30, 2020, Barcelona, Spain
+
+
+Table 5: Out of 40 seed queries, 7 received 13 autocomplete
+suggestions for the location in Massachusetts. There was no                                       Figure 2: Screenshoot of Google’s SERP for the query “elec-
+election happening in Massachusetts on the collection date.                                       tion’, taken on June 11, 2019, from a computer in Virginia.
+                                                                                                  Two articles in Top Stories and the second result are about
+ Seed                               Suggestion                                     Rank           the Virginia election.
+
+ election day                       election day 2019 massachusetts                7
+ how to register                    how to regiser to vote in ma                   7
+                                    how to register to vote in ma                  2
+ how to register to vote
+                                    how to register to vote in mass                5
+ primaries                          primaries in massachusetts                     8
+                                    sample ballot brookline ma                     6
+ sample ballot
+                                    sample ballot massachusetts                    9
+                                    voter registration ma                          2
+ voter registration
+                                    voter registration card ma                     5
+                                    where do i vote ma                             1
+ where do i vote                    where do i vote boston                         2
+                                    where do i vote brookline ma                   4
+
+
+more suggestions for the Virginia location (23 versus 13) and that
+the suggestions generally appear towards the top of the SERP. This
+can lead us to hypothesize that to some extent, Google’s algorithms
+are able to pick up the signal about Virginia’s elections and update
+the autocomplete suggestions accordingly.
+    However, most of the seed queries didn’t contain any localized
+suggestions (27 for VA and 33 for MA) and it is difficult to predict
+which queries will display locally relevant results. This is especially                           from that location? If so, that might be unfair to voters who live
+concerning for queries that are semantically similar, but display mi-                             in remote areas (away from densely populated cities) or who lack
+nor syntactic differences. For example, the phrases “who is running”                              local institutions that will post on the web reliable information.
+and “who’s running” differ only in the contraction of the verb, but                               Further research is needed to addresss such questions.
+all their suggestions but one are different. Similarly, suggestions
+for “where can I vote”, “where do i vote”, and “where to vote” don’t                              5       DISCUSSION AND IMPLICATIONS
+overlap much. This random variation makes it challenging to con-
+                                                                                                  There is surprisingly little research on how voters use search en-
+sider autocomplete suggestions as a reliable source for directing
+                                                                                                  gines in the context of political elections, see [12] for a recent
+searchers toward valuable suggestions during an election period.
+                                                                                                  multi-national survey, supported by Google. Concretely, the long-
+    On Virginia’s election day, we also collected SERPs in both loca-
+                                                                                                  running American National Election Study (ANES),23 which has
+tions. Are SERPs personalized to show results based on location for
+                                                                                                  been collecting data on voters and elections in the U.S. since 1948,
+simple queries such as “elections”? As the screenshot in Figure 2
+                                                                                                  has yet to include questions about the use of search engines by
+shows, there is evidence for such hypothesis too.
+                                                                                                  voters, despite asking questions about Twitter (a much less used
+    Nevertheless, drawing a clear conclusion from the comparison
+                                                                                                  platform by the population at large).
+of the organic links from all 40 SERPs between the two locations
+                                                                                                     The analysis of our datasets, despite the stated limitations, pro-
+was also challenging. For 8 of the queries, the results are identical
+                                                                                                  vides insights that should inform further research both on how
+(e.g., polls, election polls, republicans, who is running, etc.), but
+                                                                                                  voters utilize search engines for staying informed during elections
+for 9 of them, the Jaccard similarity22 is less than 0.3 (little over-
+                                                                                                  and on the kind of results search engines provide.
+lap between links). Some of the search phrases with little overlap
+include: “voting locations”, “elections”, “poll results”, “sample bal-
+lot”, “how to vote”, etc. For these queries, many local links (local
+                                                                                                  5.1        Bias, Information Cues, and Data Voids
+government or local news) are shown. This is a desirable situation,                               By labeling all search phrases in our dataset as either “biased” or
+but the unpredictability of which queries lead to locally relevant                                “not biased,” we found that 69% of participants formulated biased
+SERPs and which do not makes this an unreliable feature, similarly                                searches (toward or against)24 a political party, ideological issue,
+to autocomplete suggestions. How consistently are results for im-                                 candidate trait, or entire groups of people. Often, this bias is evident
+portant searches localized? Does it depend on one’s locality? Does                                through partisan words (e.g., Democrat or Republican); positive
+it depend on the sample size of users who engage in such searches                                 and negative emotions or situations (e.g., win, lose, good, bad);
+                                                                                                  verbs that pass a judgment (e.g., lie, impeach); or verbs that express
+22 Asimilarity measure that is calculated as the ratio of the size of the intersection of
+                                                                                                  23 https://electionstudies.org/
+the two lists with the size of the union of the two lists. It is 0 for two lists with no
+overlap and 1 for two lists with full overlap.                                                    24 We   didn’t label the direction of bias.
+
+
+
+
+                                                                                            567
+FAT* ’20, January 27–30, 2020, Barcelona, Spain
+
+
+support (endorse, approve, etc.). We refer to all these instances                         and can be discovered automatically through NLP techniques. Mean-
+as semantically biased phrases, given that the bias is evident in                         while, pragmatically biased phrases are difficult to recognize and
+the meaning of the words. In the biased phrases dataset, close                            interpret and may occasionally lead to “data voids.” Finding ways
+to two thirds of phrases are semantically biased. This is a useful                        to gather/discover such queries and audit their results in a timely
+finding because when bias is expressed in this way, it is possible to                     fashion should be an important area for future work, especially in
+identify it using automated approaches based on natural language                          the context of fighting political disinformation by bad-faith actors.
+processing techniques. The remaining one third of the phrases were                           Candidates: When voters search for specific candidates, they
+labeled as pragmatically biased, indicating that in order to infer                        don’t simply use the candidates names. Instead, they formulate
+the bias, we need contextual information that is not present in the                       specific questions that use the names in context. For some groups
+words themselves. For example, a phrase like “kavanaugh hearing”                          of candidates, e.g., women, there are common pieces of information
+is pragmatically biased because one needs to know that the way                            being asked, which might reveal greater bias toward them. It’s thus
+senators voted during the hearings of Supreme Court Justice Brett                         worth considering auditing for groups of candidates in case they
+Kavanaugh became an electoral issue in the November 2018 U.S.                             are target of disinformation that might be visible only when results
+midterm campaigns.                                                                        are compared to other groups of candidates.
+   Our analysis also illustrates the relationship of biased phrases to                       Cues: Voters are formulating searches to lead them to informa-
+two important concepts in political and media communication: in-                          tion cues. In addition to well-established cues such as partisanship,
+formation cues and data voids. In our dataset, 75% of queries labeled                     endorsements, and polls, a new set of cues (stances on specific
+as biased search phrases were also labeled as eliciting information                       issues, not clearly aligned with partisanship) are emerging. This
+cues. In addition to well-known cues such as the party affiliation of                     need for quick access to such cues raises the issue of the authority
+a candidate or their endorsement by a trusted entity, there seems                         and the political interests of sources that are providing the answers
+to be a shift toward a new and broader set of cues. Concretely, we                        on Google. Methods for assessing who is a trustworthy source in
+noticed many queries asking for the stance of a candidate on what                         such contexts need to be established.
+have become ideologically divisive issues, such as abortion, gun                             Localization: Virginia is the 12th most populated state in the
+control, marijuana, inequality, climate, etc., which are not always                       U.S., with 8.5 million inhabitants. Their election searches might
+aligned with one’s political affiliation. Finding reliable information                    have been easy to pick up by Google’s algorithms. But how do these
+on the web about such issues might be challenging for many vot-                           algorithms behave in other parts of the country (or other countries
+ers. Therefore, Google’s decision to display an “On the issues” tab                       in the world) on the days ahead of the election? Large-scale audits
+as part of the knowledge panel for the presidential candidates in                         that target diverse geographical areas, following the method in
+2016 and some senators in 2018, may be a positive step toward                             [21] are needed to ensure that voters in these areas have access to
+solving this issue. However, some researchers have criticized the                         reliable information as well.
+approach, because it relies on biased news sources, and it might
+not be available for all candidates running for office.25                                 6   CONCLUSION
+   Another type of biased searches that we identified (as part of
+                                                                                          Search engines are one of the most used platforms for accessing
+the semantic/pragmatic labeling of bias) are rumors or conspiracy
+                                                                                          information about elections [12]. Our exploratory, qualitative analy-
+theories that have the potential to lead to so-called “data voids,”
+                                                                                          sis of four datasets related to elections in the United States indicated
+situations in which the search engine only shows results from low-
+                                                                                          that 2/3 of voters formulate queries to elicit information cues about
+quality information sources, because such rumors are not covered
+                                                                                          elections (shortcuts to information that helps them decide). Sim-
+from reliable news sources. As discussed by Golebiewski and boyd
+                                                                                          ilarly, voters also perform biased searches as well as problematic
+[17], users are often nudged to search for certain phrases (e.g.,
+                                                                                          ones. It is thus important that future search engine audits go be-
+“caravan,” “immigration based crime,” “voting fraud,” “voter purge,”
+                                                                                          yond identifying whether their ranking algorithms are biased, but
+etc.), by trails left on other media (Twitter, talk show radio, YouTube)
+                                                                                          instead, take a broader ecosystem approach. This means that audits
+from different political actors with varying agendas. Since such
+                                                                                          should specifically target the quality of information in response
+rumors, often related to current events, go viral unexpectedly (e.g.
+                                                                                          to varied queries (tested in different geographical locations), in
+“maga bomber” or “anti trumper shoots up synagogue”), identifying
+                                                                                          order to detect and measure possible pollution in the informational
+them when auditing search results is a challenging task. However,
+                                                                                          ecosystem, which often is the result of deliberate disinformation
+to the extent that they might influence elections, it is a topic that
+                                                                                          by bad-faith actors [43], who are engaged in information warfare.
+we believe needs further attention by the research community.
+
+5.2     Implications for Voter-Centered Audits                                            ACKNOWLEDGMENTS
+Here are some important takeaways to consider when designing                              We would like to thank Jennifer Chudy and Cassandra Pattanayak
+voter-centered audits in the context of political elections:                              of Wellesley College, for insightful conversations and pointers to
+  Acknowledge Bias: Voters perform biased searches, but their                             the literature in political science, as well as discussions of survey
+expression of bias doesn’t match that of established politicians. For-                    analysis. We are indebted to Ronald E. Robertson for generous
+tunately, most of their biased searches are semantically expressed                        feedback on previous drafts of this article and for continuous in-
+                                                                                          spiration with his work. Finally, we are grateful to the members
+25 https://slate.com/technology/2016/06/how-the-google-issue-guide-on-candidates-         of the Wellesley Cred Lab for their moral support and to funding
+is-biased.html                                                                            from the National Science Foundation, under grant IIS 1751087.
+
+
+
+
+                                                                                    568
+The Case for Voter-Centered Audits of Search Engines During Political Elections                                                          FAT* ’20, January 27–30, 2020, Barcelona, Spain
+
+
+REFERENCES                                                                                              Review 88, 1 (1994), 63–76. https://doi.org/10.2307/2944882
+ [1] Avi Arampatzis and Jaap Kamps. 2008. A study of query length. In Proceedings of               [27] Arthur Lupia. 2016. Uninformed: Why people know so little about politics and what
+     the 31st Annual International ACM SIGIR Conference on Research and Development                     we can do about it. Oxford University Press.
+     in Information Retrieval. 811–812.                                                            [28] Alice Marwick and Rebecca Lewis. 2017. Media manipulation and disinformation
+ [2] Stefano Baccianella, Andrea Esuli, and Fabrizio Sebastiani. 2010. Sentiwordnet                     online. New York: Data & Society Research Institute (2017).
+     3.0: an enhanced lexical resource for sentiment analysis and opinion mining. In               [29] Connor McMahon, Isaac Johnson, and Brent Hecht. 2017. The substantial interde-
+     Lrec, Vol. 10. 2200–2204.                                                                          pendence of Wikipedia and Google: A case study on the relationship between peer
+ [3] Frank R Bentley, Nediyana Daskalova, and Brooke White. 2017. Comparing                             production communities and information technologies. In Eleventh International
+     the Reliability of Amazon Mechanical Turk and Survey Monkey to Traditional                         AAAI Conference on Web and Social Media.
+     Market Research Surveys. In Proceedings of the 2017 CHI Conference Extended                   [30] P Takis Metaxas and Eni Mustafaraj. 2009. The Battle for the 2008 US Congres-
+     Abstracts on Human Factors in Computing Systems. ACM, 1092–1099.                                   sional Elections on the Web. In Proceedings of the 1st WebSci’09 Conference: Society
+ [4] Virginia Braun and Victoria Clarke. 2006. Using thematic analysis in psychology.                   on-line. Athens, Greece.
+     Qualitative research in psychology 3, 2 (2006), 77–101.                                       [31] P Takis Metaxas and Yada Pruksachatkun. 2017. Manipulation of search engine
+ [5] Andrei Broder. 2002. A taxonomy of web search. In ACM SIGIR Forum, Vol. 36.                        results during the 2016 US congressional elections. In Proceedings of the Twelfth
+     ACM, 3–10.                                                                                         International Conference on Internet and Web Applications and Services (ICIW).
+ [6] Jenna Burrell. 2016. How the machine ’thinks’: Understanding opacity in machine               [32] Thomas E. Nelson and Donald R. Kinder. 1996. Issue Frames and Group-Centrism
+     learning algorithms. Big Data & Society 3, 1 (2016). https://doi.org/10.1177/                      in American Public Opinion. The Journal of Politics 58, 4 (1996), 1055–1078.
+     2053951715622512                                                                                   http://www.jstor.org/stable/2960149
+ [7] Angus Campbell, Philip Converse, Warren Miller, and Donald Stokes. 1960. The                  [33] Alexandros Ntoulas, Marc Najork, Mark Manasse, and Dennis Fetterly. 2006.
+     American Voter. University of Chicago Press.                                                       Detecting spam web pages through content analysis. In Proceedings of the 15th
+ [8] Philip E. Converse. 2000. Assessing the Capacity of Mass Electorates. Annual                       international conference on World Wide Web. ACM, 83–92.
+     Review of Political Science 3, 1 (2000), 331–353. https://doi.org/10.1146/annurev.            [34] Bing Pan, Helene Hembrooke, Thorsten Joachims, Lori Lorigo, Geri Gay, and
+     polisci.3.1.331                                                                                    Laura Granka. 2007. In Google we trust: Users’ decisions on rank, position, and
+ [9] Philip E. Converse. 2006. The nature of belief systems in mass publics (1964).                     relevance. Journal of computer-mediated communication 12, 3 (2007), 801–823.
+     Critical Review 18, 1-3 (2006), 1–74. https://doi.org/10.1080/08913810608443650               [35] Eli Pariser. 2011. The filter bubble: How the new personalized web is changing what
+[10] Nicholas Diakopoulos. 2015. Algorithmic Accountability. Digital Journalism 3, 3                    we read and how we think. Penguin.
+     (2015), 398–415. https://doi.org/10.1080/21670811.2014.976411                                 [36] Marta Recasens, Cristian Danescu-Niculescu-Mizil, and Dan Jurafsky. 2013. Lin-
+[11] Nicholas Diakopoulos, Daniel Trielli, Jennifer Stark, and Sean Mussenden. 2018. I                  guistic models for analyzing and detecting biased language. In Proceedings of the
+     Vote For: How Search Informs Our Choice of a Candidate. In Digital Dominance:                      51st Annual Meeting of the Association for Computational Linguistics (Volume 1:
+     The Power of Google, Amazon, Facebook, and Apple. Springer, 121–133.                               Long Papers), Vol. 1. 1650–1659.
+[12] William H. Dutton, Bianca Reisdorf, Elizabeth Dubois, and Grant Blank. 2017.                  [37] Ronald E. Robertson, Shan Jiang, Kenneth Joseph, Lisa Friedland, David Lazer,
+     Search and Politics: The Uses and Impacts of Search in Britain, France, Germany,                   and Christo Wilson. 2018. Auditing Partisan Audience Bias Within Google Search.
+     Italy, Poland, Spain, and the United States. Quello Center Working Paper No. 5-1-17                Proc. ACM Hum.-Comput. Interact. 2, CSCW, Article 148 (Nov. 2018), 22 pages.
+     (2017). http://dx.doi.org/10.2139/ssrn.2960697                                                     https://doi.org/10.1145/3274417
+[13] Niva Elkin-Koren. 2000. Let the crawlers crawl: On virtual gatekeepers and the                [38] Ronald E. Robertson, Shan Jiang, David Lazer, and Christo Wilson. 2019. Auditing
+     right to exclude indexing. U. Dayton L. Rev. 26 (2000), 179.                                       Autocomplete: Suggestion Networks and Recursive Algorithm Interrogation. In
+[14] Robert Epstein and Ronald E Robertson. 2015. The search engine manipulation                        Proceedings of the 10th ACM Conference on Web Science (WebSci ’19). ACM, New
+     effect (SEME) and its possible impact on the outcomes of elections. Proceedings                    York, NY, USA, 235–244. https://doi.org/10.1145/3292522.3326047
+     of the National Academy of Sciences 112, 33 (2015), 4512–4521.                                [39] Ronald E. Robertson, David Lazer, and Christo Wilson. 2018. Auditing the Per-
+[15] Susan Gerhart. 2004. Do Web search engines suppress controversy? First Monday                      sonalization and Composition of Politically-Related Search Engine Results Pages.
+     9, 1 (2004). https://doi.org/10.5210/fm.v9i1.1111                                                  In Proceedings of the 2018 World Wide Web Conference (WWW ’18). International
+[16] Tarleton Gillespie. 2017. Algorithmically recognizable: Santorum’s Google prob-                    World Wide Web Conferences Steering Committee, Republic and Canton of
+     lem, and Google’s Santorum problem. Information, Communication & Society 20,                       Geneva, Switzerland, 955–965. https://doi.org/10.1145/3178876.3186143
+     1 (2017), 63–80.                                                                              [40] Christian Sandvig, Kevin Hamilton, Karrie Karahalios, and Cedric Langbort. 2014.
+[17] Michael Golebiewski and danah boyd. 2018. Data Voids: Where Missing Data Can                       Auditing algorithms: Research methods for detecting discrimination on internet
+     Easily Be Exploited. (2018), 1–7. https://datasociety.net/wp-content/uploads/                      platforms. Data and discrimination: converting critical concerns into productive
+     2018/05/Data_Society_Data_Voids_Final_3.pdf                                                        inquiry 22 (2014).
+[18] Aniko Hannak, Piotr Sapiezynski, Arash Molavi Kakhki, Balachander Krish-                      [41] Tali Sharot. 2011. The optimism bias. Current biology 21, 23 (2011), R941–R945.
+     namurthy, David Lazer, Alan Mislove, and Christo Wilson. 2013. Measuring                      [42] Dan Sperber and Deirdre Wilson. 2004. Relevance theory. Handbook of Pragmatics.
+     Personalization of Web Search. In Proceedings of the 22nd International Conference                 Oxford: Blackwell (2004), 607–632.
+     on World Wide Web. ACM, 527–538.                                                              [43] Kate Starbird. 2019. Disinformation’s spread: bots, trolls and all of us. Nature
+[19] Desheng Hu, Shan Jiang, Ronald E. Robertson, and Christo Wilson. 2019. Audit-                      571, 7766 (2019), 449.
+     ing the Partisanship of Google Search Snippets. In Proceedings of the 2019 Web                [44] Seth Stephens-Davidowitz. 2017. Everybody lies: Big data, new data, and what the
+     Conference (WWW 2019). San Francisco, CA.                                                          internet can tell us about who we really are. HarperCollins New York.
+[20] Lucas D Introna and Helen Nissenbaum. 2000. Shaping the Web: Why the politics                 [45] Daniel Trielli and Nicholas Diakopoulos. 2019. Search As News Curator: The Role
+     of search engines matters. The information society 16, 3 (2000), 169–185.                          of Google in Shaping Attention to News Information. In Proceedings of the 2019
+[21] Chloe Kliman-Silver, Aniko Hannak, David Lazer, Christo Wilson, and Alan                           CHI Conference on Human Factors in Computing Systems (CHI ’19). ACM, New
+     Mislove. 2015. Location, Location, Location: The Impact of Geolocation on Web                      York, NY, USA, Article 453, 15 pages. https://doi.org/10.1145/3290605.3300683
+     Search Personalization. In Proceedings of the 2015 Internet Measurement Conference            [46] Francesca Tripodi. 2018. Searching for Alternative Facts: Analyzing Scriptural
+     (IMC ’15). ACM, New York, NY, USA, 121–127. https://doi.org/10.1145/2815675.                       Inference in Conservative News Practices. Data & Society (2018).
+     2815714                                                                                       [47] Nicholas A. Valentino, Vincent L. Hutchings, Antoine J. Banks, and Anne K.
+[22] Joshua A Kroll, Solon Barocas, Edward W Felten, Joel R Reidenberg, David G                         Davis. 2008. Is a Worried Citizen a Good Citizen? Emotions, Political Information
+     Robinson, and Harlan Yu. 2016. Accountable algorithms. University of Pennsyl-                      Seeking, and Learning via the Internet. Political Psychology 29, 2 (2008), 247–273.
+     vania Law Review 165 (2016), 633.                                                                  https://doi.org/10.1111/j.1467-9221.2008.00625.x
+[23] Juhi Kulshrestha, Motahhare Eslami, Johnnatan Messias, Muhammad Bilal Zafar,                  [48] Liwen Vaughan and Mike Thelwall. 2004. Search engine coverage bias: evidence
+     Saptarshi Ghosh, Krishna P Gummadi, and Karrie Karahalios. 2017. Quantifying                       and possible causes. Information Processing Management 40, 4 (2004), 693 – 707.
+     search bias: Investigating sources of bias for political searches in social media. In              https://doi.org/10.1016/S0306-4573(03)00063-3
+     Proceedings of the 2017 ACM Conference on Computer Supported Cooperative Work                 [49] Ingmar Weber, Venkata Rama Kiran Garimella, and Erik Borra. 2012. Mining
+     and Social Computing. ACM, 417–432.                                                                web query logs to analyze political issues. In Proceedings of the 4th Annual ACM
+[24] Milton Lodge and Ruth Hamill. 1986. A Partisan Schema for Political Information                    Web Science Conference. ACM, 330–334.
+     Processing. American Political Science Review 80, 2 (1986), 505–519. https:
+     //doi.org/10.2307/1958271
+[25] Arthur Lupia. 1992. Busy Voters, Agenda Control, and the Power of Information.
+     The American Political Science Review 86, 2 (1992), 390–403. http://www.jstor.
+     org/stable/1964228
+[26] Arthur Lupia. 1994. Shortcuts Versus Encyclopedias: Information and Voting
+     Behavior in California Insurance Reform Elections. American Political Science
+
+
+
+
+                                                                                             569
+

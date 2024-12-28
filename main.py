@@ -2,7 +2,10 @@ import re
 import logging
 from pathlib import Path
 import json
+
+from LanguageModel import create_advanced_language_model
 from tokenization_rules import TOKENIZATION_RULES
+from LinguisticOperations import process_documents
 
 
 class IRTokenizer:
@@ -65,6 +68,7 @@ class IRTokenizer:
 
 def process_directory(input_dir, output_dir=None, rules_file=None):
     """Process all text files in a directory"""
+    counter=0
     input_dir = Path(input_dir)
     output_dir = Path(output_dir) if output_dir else input_dir / 'tokenized'
     output_dir.mkdir(exist_ok=True)
@@ -101,15 +105,32 @@ def process_directory(input_dir, output_dir=None, rules_file=None):
             with open(output_path, 'w', encoding='utf-8') as f:
                 f.write('\n'.join(tokens))
 
-            print(f"Successfully processed {file_path}: {len(tokens)} tokens")
+            #print(f"Successfully processed {file_path}: {len(tokens)} tokens")
 
         except Exception as e:
+            counter+=1
             print(f"Error processing {file_path}: {str(e)}")
+    if counter==0:
+        print(f"Successfully Tokenized all files to {output_dir}")
+
 
 
 if __name__ == "__main__":
     # Directory containing your text files
-    input_dir = r'C:\Users\yonat\OneDrive\Documents\Information Systems\Year 3\Semester A\Information Retrieval\Documents txt'
-
+    input_dir = Path("OurDocuments")
     # Process files
+    print("Starting to Tokenize...")
     process_directory(input_dir)
+    #Linguistic Operations
+    print()
+    print("Starting Linguistic Operations...")
+    LinguisticInput_dir = Path("OurDocuments/tokenized")
+    stopwords_file = Path("StopWords.txt")
+    try:
+        process_documents(LinguisticInput_dir, stopwords_file)
+    except Exception as e:
+        print(f"Error: {str(e)}")
+    #Language Models
+    print()
+    print("Creating Language Models...")
+    create_advanced_language_model()

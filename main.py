@@ -130,3 +130,25 @@ if __name__ == "__main__":
         process_documents(LinguisticInput_dir, stopwords_file)
     except Exception as e:
         print(f"Error: {str(e)}")
+
+    print("***************************************")
+    print("***************************************")
+    print("Moving on to Search engine bias")
+    print("***************************************")
+    print("***************************************")
+    print()
+    print("Labels documents can be found at search_engine_bias_lables.csv")
+    print()
+    print("Starting to Tokenize...")
+    input_dir = Path("SearchEngineBias")
+    process_directory(input_dir)
+    # Linguistic Operations
+    print()
+    print("Starting Linguistic Operations...")
+    NewInput_dir = Path("SearchEngineBias/Processed_Files")
+    stopwords_file = Path("StopWords.txt")
+    try:
+        process_documents(NewInput_dir, stopwords_file)
+    except Exception as e:
+        print(f"Error: {str(e)}")
+

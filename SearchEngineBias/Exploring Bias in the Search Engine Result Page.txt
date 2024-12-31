@@ -1,0 +1,1439 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/314294059
+
+Making Sense of Conﬂicting Science Information: Exploring Bias in the Search
+Engine Result Page
+Conference Paper · March 2017
+DOI: 10.1145/3020165.3020185
+
+CITATIONS
+
+READS
+
+51
+
+559
+
+2 authors:
+Alamir Novin
+
+Eric Matthew Meyers
+
+University of South Carolina
+
+University of British Columbia
+
+26 PUBLICATIONS 79 CITATIONS
+
+55 PUBLICATIONS 893 CITATIONS
+
+SEE PROFILE
+
+All content following this page was uploaded by Alamir Novin on 19 June 2021.
+The user has requested enhancement of the downloaded file.
+
+SEE PROFILE
+
+Making Sense of Conflicting Science Information:
+Exploring Bias in the Search Engine Result Page
+Alamir Novin
+
+Eric Meyers
+
+University of British Columbia
+1961 East Mall, Vancouver, BC, Canada
+
+University of British Columbia
+1961 East Mall, Vancouver, BC, Canada
+
+alamir.novin@ubc.ca
+
+eric.meyers@ubc.ca
+that people apply when selecting sources on a search engine
+results page (SERP) [6], [7]. In this study, we pose the question:
+How do search engine results influence the way students
+conceptualize a science topic about which they have little prior
+knowledge?
+
+ABSTRACT
+Currently, there is widespread media coverage about the problems
+with 'fake news' that appears in social media, but the effects of
+biased information that appears in search engine results is also
+increasing. The authors argue that the search engine results page
+(SERP) exposes three important types of bias: source bias,
+algorithmic bias, and cognitive bias. To explore the relationship
+between these three types of bias, we conducted a mixed methods
+study with sixty participants (plus fourteen in a pilot to make a
+total of seventy-four participants). Within a library setting,
+participants were provided with mock search engine pages that
+presented order-controlled sources on a science controversy.
+Participants were then asked to rank the sources’ usefulness and
+then summarize the controversy. We found that participants
+ranked the usefulness of sources depending on its presentation
+within a SERP. In turn, this also influenced how the participants
+summarized the topic. We attribute the differences in the
+participants' writings to the cognitive biases that affect a user's
+judgment when selecting sources on a SERP. We identify four
+main cognitive biases that a SERP can evoke in students: Priming,
+Anchoring, Framing, and the Availability Heuristic. While
+policing information quality is a quixotic task, changes can be
+made to both SERPs and a user's decision-making when selecting
+sources. As bias emerges both on the system side and the user side
+of search, we suggest a two-fold solution is required to address
+these challenges.
+
+While search engines appear to fulfill a public good, as they
+provide a seemingly “free” service to users of the Internet, they
+are neither “objective” nor are they disinterested in what the
+searcher selects. For example, Google’s search engine algorithm
+presents a hierarchical list of what is deemed to be the most
+important sources. However, the list itself may be limited by the
+way search engines qualify relevance over other contextual factors
+[8], [9]. The presentation of a hierarchical list visually removes all
+intellectual relationships between each item in the list [10] and the
+algorithm behind Google's document ordering is ambiguous to
+even Google's search engine developers themselves [11]. Whether
+the top result on Google is there because it is the most relevant,
+useful, popular, current, or even the most hyperlinked is unknown
+to users. As a result, users remain unaware of the hidden biases in
+search engines [12].
+We argue that search results are a fruitful venue for examining the
+intersection of several types of bias: the influence of search engine
+design (algorithmic bias); the influence of document design and
+the persuasive nature of content organization (source bias), and
+the way visual and contextual cues affect human thinking
+(cognitive bias). In addition, we theorize that a user's unawareness
+of algorithmic bias increases their susceptibility to cognitive bias,
+which increases the influence that source bias may have.
+
+1. INTRODUCTION
+Did Facebook's 'fake news' affect policy? Did Google's results
+influence the Brexit vote? Recent scholarship indicates that our
+opinions can be influenced by the manner in which news
+aggregators and search interfaces present information on everyday
+topics, from politics to fashion to science [1]–[3]. Information
+presentation likely affects the quality of thinking and knowledge
+creation, particularly when study respondents demonstrate and
+report relying heavily on the authority of search engines [3], [4].
+
+Using a population-based survey experiment [13] with sixty
+participants, this study explored the intersectional nature of
+cognitive bias by asking post-secondary students to use and rank
+alternative perspectives in an order-controlled mock SERP. We
+found that students’ understanding of a topic, as expressed in their
+written summaries, depended on how information was presented
+in a SERP. In a post-hoc analysis, the authors identify four
+possible types of cognitive biases that influenced student learning:
+Priming, Anchoring, Framing, and the Availability Heuristic. For
+students who are relying on search engines as a learning
+intervention, the search system must present diversity and a user
+must understand how to select amongst multiple perspectives to
+minimize the influence of intersecting biases.
+
+According to the National Science Board, the public's primary
+form of science education is via the medium of search engines [5].
+However, while the Internet increases the public's access to
+scientific information, it also increases access to misinformation
+[5]. Therefore, it is worth questioning the level of critical thinking
+Permission to make digital or hard copies of all or part of this work for personal
+or classroom use is granted without fee provided that copies are not made or
+distributed for profit or commercial advantage and that copies bear this notice
+and the full citation on the first page. Copyrights for components of this work
+owned by others than the author(s) must be honored. Abstracting with credit is
+permitted. To copy otherwise, or republish, to post on servers or to redistribute
+to lists, requires prior specific permission and/or a fee. Request permissions
+from Permissions@acm.org.
+CHIIR '17, March 07 - 11, 2017, Oslo, Norway
+Copyright is held by the owner/author(s). Publication rights licensed to ACM.
+ACM 978-1-4503-4677-1/17/03…$15.00
+DOI: http://dx.doi.org/10.1145/3020165.3020185
+
+2. THEORETICAL FRAMEWORK
+2.1 Information, Bias, and the Public
+It has been almost a hundred years since the often-called
+"Lippmann-Dewey debate" [14]–[17] covered the issue of how
+the public can detangle the bias in sources of information and the
+biases in the structures of institutions. While Walter Lippmann
+argued for the values of expertise that could limit the biases of
+public opinion by scientifically measuring the objective elements
+in information and creating a "system of records" [17], John
+
+175
+
+instead of all the relevant ones [42]. She also brings attention to
+research that finds irrelevant documents may also be seen as
+useful [42]. If only some documents are selected by an agent, then
+how does the agent select which documents to use? Studies
+suggest that people will rely on their prior knowledge and select
+documents that confirm their biases [44], [45]. Currently, students
+often trust lists produced by search algorithms over their own
+analytical skills [4]. However, users themselves are not sure how a
+SERPs ranking system works [12], just like most Google
+developers [46]. This is concerning because people are more
+vulnerable to bias when they are unaware of how it might
+influence them [35], [47], [48]. For example, even the order in
+which search results are listed can influence our opinions and
+decisions [1]–[3]. Cognitive biases become especially
+troublesome in search queries dealing with controversial science
+topics where conflicting information may be retrieved [49],
+whereby non-experts either ignore or reinterpret information that
+conflicts with their queries’ assumptions [50]. Salmerón,
+Kammerer, and Garcı́a-Carrión observed that a SERP's order of
+conflicting sources on a scientific topic affected a users'
+judgement of its relevancy, but that the usage of the information
+was dependent on their level of prior-knowledge of the scientific
+topic [51]. Furthermore, they conclude that their finding
+demonstrates the importance of researching not only how users
+search for information, but also how they use it too [51].
+
+Dewey suggested that democratic processes would remove those
+biases when the public has greater means to participate via
+dialogue [16]. Lippmann recognized the bias that exists in media
+sources, but made an exception for "the exact sciences" since he
+felt science's quest for objectivity minimized bias [17]. Scholars
+argue that a similar belief in the objectivity of the sciences still
+thrives today amongst the public and many academics [18]–[22].
+However, Dewey was critical about the management of multiple
+perspectives found in public discourse [16]. Democracy is an
+ongoing practice and the management of information can be
+biased by ideological forces and scientific information is not any
+different [16]. Other scholars have also taken Dewey's position,
+arguing that scientific sources can be tainted by the personal
+agendas of fringe scientists, non-scientific agenda-building by the
+media, and corporate science organizations that seek monetary
+gains at the expense of scientific accuracy [19], [23]–[28]. Most
+notably, Bowker and Star found Dewey's criticisms of information
+management in the biases of classification systems on diseases
+and race [29].
+While the Lippmann-Dewey debate was focused on traditional
+media, we seek to update this conversation for the 21st Century.
+The Internet provides greater access to the "system of records"
+Lippmann advocated for [14], but it also brought the bias that
+appears in many blogs and news websites we might consider
+source bias [30], [31]. While Dewey defended the importance of
+dialogue in the public, a SERP may be at risk of promoting the
+most popular ideas in a community over pluralism. He was also
+concerned with the management of public information, which we
+can relate to the algorithmic bias that appears in a search engine.
+There is a common misconception that search engines are
+objective, but humans may code their biases into the algorithms
+[30], [31],[32]. Specifically, the authors are concerned with how
+the algorithm prioritizes which document genres to present on an
+interface and in which document order.
+
+Scholars, notably Nick Belkin, have expounded on this concept of
+usefulness as a more appropriate indicator than relevance [1],
+[52], [53]. Usefulness refers to whether a document is perceived
+as important for the completion of a task and whether it was used
+to achieve an outcome [54]. Similarly, Donald O. Case argues that
+over the last sixty-years our measures for understanding
+information use have increased, but more research should
+consider the final outcomes [55]. This type of research is often
+difficult to carry out due to limitations on measuring the influence
+that one source of information has on a final outcome [56].
+
+If this research can contribute to the unresolved Lippmann-Dewey
+debate, it would add that our individual parsing techniques for
+searching and retrieving information also contributes a cognitive
+bias. Cognitive biases occur when the mental operations that
+mediate an individual's judgment are misapplied [33], [34]. The
+errors in judgment are often motivated by an individual's wish to
+minimize cognitive effort [35]. For example, individuals
+researching a topic often only seek information that confirms their
+bias while disregarding information that challenges it [36]. Peter
+C. Wason found students were more prone to exhibiting cognitive
+biases with abstract problem-tasks than tasks with greater context
+[37]. Familiarity with the problem-task also plays a role [35]. A
+SERP provides more familiarity than Wason's selection task to
+users, but without enough context for users to understand the
+relationship between different sources. Therefore, we question
+whether this lack of context in Google's SERP influences the
+deductive reasoning of students selecting amongst sources of
+information.
+
+To expand on the arguments by Case on the influence information
+has on an outcome, it is worth questioning how a SERP itself
+influences a user's perception of usefulness. While Google is often
+credited for its minimalist SERP interface [57], it does not mean
+that less subtle influences do not exist. For a decade now,
+Google's goal during its "Evolution of Search" is to disperse
+information with minimal effort from their users [58], but as the
+next section shows, cognitive biases also work best when
+cognitive effort is minimized [35]. The authors theorize that a
+user's unawareness of algorithmic biases will increase their
+chances of exhibiting cognitive bias, which also raises the
+influence that a source bias may have.
+
+2.3 Cognitive Bias: Your Brain on SERP
+To understand the role of bias in constructing meaning from
+search engines, we draw on research in cognitive science,
+particularly in judgment and decision making. Cognitive biases
+and heuristics affect the way people perceive and process new
+information about a topic – particularly when the learner has to
+process conflicting or non-intuitive information [59]. Some
+scholars identify as many as 53 different kinds of cognitive biases
+that contribute to difficulties in inferential thinking [60] (see also
+[35] for a survey of the literature). However, research groups
+found only some of the main cognitive biases are experimentally
+reproducible [61]. Instead of testing for all 53 biases, the authors
+experimented with two document variables (document order and
+document genre) and its effect on the participants' psychological
+construct on a topic. We then matched them with the cognitive
+
+2.2 Prior Work on Search Engine Results
+People value highly ranked search results on a SERP [38]–[41]
+over lower ranking results [1] and often do not look below the
+third result [42]. Despite the high value placed on the top results,
+there are no standard qualifiers to identify 'relevant' information
+[43]. Raya Fidel notes that information retrieval models often
+falsely assume that agents behave rationally, wanting all the
+“relevant” documents and none of the “irrelevant” ones [42]. To
+counter this assumption, Fidel highlights research that shows only
+some documents may be used by agents conducting searches
+
+176
+
+as a framing device [76]. A SERP provides multiple document
+genres for a user with minimal ordering.
+
+biases that provided the best explanation for our observations. In
+our post-hoc analysis, we identified four cognitive biases that
+occur in a loosely chronological order when a user reads a SERP
+[Figure 1]: From a user's initial viewing of a SERP, whereby 1)
+Priming effects occur; to reading the top result on a SERP that
+evokes 2) Anchoring; to the next few SERP results that may cause
+3) Framing; and then finally the engagement or avoidance of
+other sources dependent on 4) the Availability Heuristic.
+
+2.3.4 Availability Heuristic
+An availability heuristic bias occurs when a person's estimate is
+influenced by the ease of a person's access to information over
+subsequent information [59]. For example, when people scan a list
+they place greater attention on the first few results — those which
+are easiest to access [59]. Similarly, document ordering effects are
+observable after the first five results [77]. When dealing with a
+controversial topic, non-experts may have difficulty determining
+which sources of information are authoritative when popular, but
+questionable, information is presented first. Furthermore, the
+effort to “optimize” search results can affect the presentation
+order of politically-charged topics.
+In summary, these constructs represent kinds of cognitive short
+cuts, techniques that we employ, either consciously or not, to ease
+our cognitive load when resolving information problems. These
+factors contribute to judgment errors in information seeking, but
+can also affect the extent to which new information leads to the
+development or revision of conceptual structures.
+
+3. Methods
+3.1 Methodological Framework
+Current research in information search and retrieval is interested
+in studying more complete models of information use, from the
+interactions users have with systems [8], the usefulness of its
+information [54], its influences [55], and the outcome of the
+retrieval [78]. Researching these factors requires tailoring the
+work task to the information environment and participants [78].
+Pia Borlund provides the following example, which applies to our
+study: “if the evaluation takes place by involvement of university
+students then the simulated work task situation should be to
+describe a situation they can relate to, and report on how the
+situation was simulated” [78]. In addition, to create such a
+situation, the task should be piloted and the final report should
+explain how the situation was simulated [78]. Thus, this study
+conducted a population-based survey experiment, whereby
+participants are randomly assigned to an experiment that takes
+place outside of a lab and within the population itself [13]. Diana
+C. Mutz argues the main advantage of choosing this method is
+that "theories can be tested on samples that are representative of
+the populations to which they are said to apply" [13]. Therefore,
+we chose the common area of a university library to study
+whether cognitive bias theories influence the information search
+and retrieval processes of students researching.
+
+Figure 1 The relationship between time, eye motion, the
+interface, document facets, and their effects on cognitive bias.
+
+2.3.1 Priming effects
+A priming effect in user interfaces occurs when the repeated use
+of a layout automatically directs our eyes to information [62].
+This creates a cognitive bias whereby we are influenced by certain
+cues [63]. Search engines will very frequently show Wikipedia
+results because the expectation by users is that it will assist users
+with quickly solving queries [64], [65]. Similarly, scholars have
+observed that Google's algorithm is biased towards mainstream
+information that users will find familiar [66]–[71]. While
+efficient, users may skip over unfamiliar document genres. For
+example, a parent trying to find a link between vaccines and
+autism may skip a source to a health journal debunking the link
+due to its visual cues, such as the parent's prior experience with
+journals behind pay-walls or incomprehensible scientific jargon.
+
+2.3.2 Anchoring Effects
+Anchoring occurs when we are biased towards the first value we
+perceive in a set of data [59]. The first result in a SERP can affect
+the user's impression of the importance of the next result [72]. For
+example, if the first result in a SERP presents a medical condition
+as severe, it will affect the participants impression of its overall
+severity even when the other search results downplay the severity
+[72]. Even though users are unaware of the relationship between
+results [12], the top result can affect the level of critical thinking
+that is applied to all other search results that follow.
+
+To measure the usefulness of information a quantitative and
+qualitative approach should be applied [55]. Mixed methods can
+increase the responsiveness of participants in an otherwise
+complex research activity that is asking for a significant amount
+of effort [79]. Creswell identifies this application of a mixedmethods approach as an Explanatory Sequential Design, whereby
+a quantitative data collection and analysis is used to inform the
+mixing of a qualitative data collection and analysis [80]. This
+mixed methods design may be best suited to draw inferences to
+explain the observed data.
+
+2.3.3 Framing Effect
+The framing effect is a cognitive bias that occurs when peoples'
+choices are influenced by the manner information is presented
+[73]. Framing is not about unavailable information, but about
+whether the presentation makes us care about competing views
+and how [74]. The visualization of information can create a
+narrative that runs parallel to the framing studies in rhetorical
+political messaging [75]. One form of visualization in a SERP is
+the document genre (e.g., blog, journal article, news report,
+encyclopedia, etc.). The document genre of a source's text works
+
+To investigate user interactions with cognitive biases when
+selecting different perspectives on a science controversy, it is
+important to choose a topic for the SERP that is easy to grasp and
+that participants have little prior knowledge of or opinions about.
+One subject that meets this criteria is biofuels [81]–[86]. Biofuels
+are organic matter, which are used as an alternative to un-
+
+177
+
+which websites are used and how the controversial biofuel
+information is acknowledged.
+
+renewable fuels. They are generally viewed positively due to their
+renewable nature and both the USA and Canada invest billions of
+dollars in developing the technology [87]. One scientific
+controversy with biofuels is known as the "food vs. fuel" debate.
+We found that querying for "Biofuels" would consistently lead to
+a Google SERP page that explicitly mentioned the controversy.
+However, we also found the Biofuel Wikipedia page would also
+consistently appear near the top of the SERP. Given Wikipedia's
+reputation this may be a pragmatic choice, but a closer
+investigation of Wikipedia's biofuel page reveals that the issues
+with biofuels are relegated to a hyperlink near the latter half of the
+Wikipedia page. Users would have to click through it to access a
+second Wikipedia page entitled "Issues with Biofuels." Google's
+algorithm did not include the second Wikipedia page in their
+SERP unless we specifically queried for biofuels issues. The study
+experimented with including sources that raised these issues with
+biofuels in different document genres and document orders in a
+mock-SERP [Figure 2].
+
+Beyond simply acknowledging controversial information, we
+were interested in the reconciliation of conflicting information.
+We define conflicting information as sources that counterpoint or
+negate an explicit or implicit assumption in a query (i.e., it
+provides the “other side” of the story). Therefore, in the mockSERP we included a conflicting source of information on the topic
+of corn biofuels—“Advanced Biofuels." By definition, Advanced
+Biofuels aim to minimize the “Food vs. Fuel” concerns by
+deriving fuel from non-food biological-sources, such as algae. In
+summary, our SERP held conflicting narratives that
+contextualized the topic of the advantages of plant biofuels. The
+first narrative acknowledged the controversy that 1) biofuels can
+drive up the price of food. The second narrative conflicted with
+the first, proposing that 2) algae biofuels resolve the "food vs.
+fuel" debate and thus may be the more advanced biofuel.
+
+3.2 Procedure
+Prior to the actual experiment, a pilot test was conducted. The
+pilot recruited fourteen participants through convenience sampling
+to test the experiment's mock-SERP. Each participant was
+provided with a laptop where the mock-SERP appeared as a
+Google webpage. They would interact with the mock-SERP
+webpage by reading (or scrolling) through the results and clicking
+on the ones that they found useful. For the pilot, participants were
+asked to "think out-loud" as they scored the usefulness of the six
+search results. Participants in the pilot were also interviewed to
+understand why they scored certain articles as more or less useful.
+Next, they were asked to summarize the topic. Finally, the
+participants were asked whether any part of the experiment
+required clarification. The pilot informed our assumptions and
+allowed us to tweak our mock-SERP. From the pilot study, two
+main findings informed the eventual population-based survey
+experiment: 1) Participants rely heavily on top search results and
+they 2) overlook comprehensive discussions (i.e., multiple
+perspectives). The survey-experiment was then tweaked to focus
+its measure on how document order and document genre
+influenced the participants' interaction with the SERP.
+
+Figure 2 [Screen-capture] The original SERP query for
+"biofuels" did not show the second result: "Issues Relating to
+Biofuels" (arrow). We included it in the mock-SERP's HTML.
+
+For the population-based survey experiment, two laptops were
+setup on a table in the common area of a university library with a
+sign calling for participation. As the library requested, students
+were not approached unless they inquired about our sign. Sixty
+students were recruited for this study. Their age range was 18-34,
+gender distribution was 45% female and 55% male, and 91% of
+participants had little to no knowledge of the topic prior to their
+participation. Despite their little knowledge on the topic,
+participants were also asked if they could express any personal
+opinions on biofuels and none mentioned any strong sentiments
+about the topic. When asked to list any prior knowledge on the
+topic of biofuels only one participant mentioned that they were
+aware of biofuels other than corn.
+
+In a similar study to our own, Salmerón et al., [51] found that
+document-order affected how students perceived the relevancy of
+conflicting information on a science topic in a SERP.
+Interestingly, when students were deciding whether the website
+should be bookmarked their judgement of its relevance changed.
+However, as Salmerón et al., [51] acknowledge, this still does not
+determine whether these new judgements will affect how the
+information will be used by the student in a task. In this study, by
+analyzing the students' search result evaluations before and after
+reading the webpages we can first compare this direct change in
+judgement. Therefore, to compare the change in judgement to the
+actual usage of information we asked participants to use any of
+the sources for a final write-up and then analyzed which sources
+were used. For example, when a student first visits a SERP on
+biofuels with conflicting results they might judge that a website
+promoting corn biofuels is more relevant than a website that
+focuses on the "food-vs-fuel" debate. However, after reading
+larger excerpts of both websites they may change their mind about
+the relevancy because they might judge that the "food-vs-fuel"
+website supports their criticisms of corn biofuels well. This
+change in judgement is important, but it still does not determine
+which websites will be used by the student. Therefore, we asked
+participants for a final write-up summarizing the topic to see
+
+The experiment was conducted in four stages that paralleled the
+pilot. In Stage 1, participants were provided a laptop with the
+same mock-Google SERP page. Participants were asked to read
+the SERP and score each search result (six in total) based on their
+usefulness. Unlike the pilot, this was not a think-out-loud process
+– to protect the anonymity of the participants. The result with
+conflicting information (i.e., on algae biofuels) appeared in either
+a different document genre or in a different document order.
+There were three different possible document orders for the
+SERP, whereby the conflicting information either appeared at the
+1) top (first result), 2) middle (third result), or 3) bottom (last
+
+178
+
+[Figure 3]. As Participant 77 explained, they used "the perceived
+neutrality of Wikipedia links as a basis" for such assignments. As
+we will expand on in our discussion, this perspective of Wikipedia
+is generally reasonable, but the issue is that Wikipedia was not
+neutral in its presentation of the topic of biofuels.
+
+result) of the search page. Via a double-blind procedure, a
+computer randomly assigned students to one of these different
+SERP arrangements. Students were not instructed to read from top
+to bottom. In Stage 2, all the students wrote their own summary of
+the scientific topic as though it were intended to be read by a
+colleague. In Stage 3, students revisited the SERP's summaries for
+each of the search results, but read longer abstracts for each page,
+extended from 25 words to 150 words. In Stage 4, participants
+were then re-shown their prior summary and asked if there was
+any information they wished to add to their prior summaries. Our
+survey system allowed us to see the changes made in both the
+usefulness scores and the summary of results.
+
+However, when the source was a scholarly article on biofuels (i.e.,
+with an academic document genre) and was presented at the top of
+the SERP, the majority of participants skipped it. As Participant 3
+explained: "I was hit with the scientific jargon too immediately
+[...] all the biofuel information became too jarring so I moved on
+to the other sources." When the participant was questioned if they
+felt the need to return to the source, they responded that the other
+sources provided enough information for them not to feel the need
+to do so. The preference for Wikipedia over the academic article
+may indicate priming effects are causing cognitive bias.
+
+The data analysis on document genre and document order was
+conducted in the following manner:
+
+3.2.1 Method for Data Analysis on Document Genre
+and Document Order:
+Data Analysis on Document Genre:
+Scoring of Sources: Participants were presented with the
+following document genres: Scholarly articles, News articles,
+Wikipedia (as a familiar source) and non-familiar sources that
+summarize biofuels. They were then asked to first score the
+usefulness of the results in a SERP. Prior to reading longer
+excerpts of the articles, students were then asked to summarize the
+SERP using only the information they recalled.
+Textual-Analysis of Write-Up: We conducted a textual analysis
+of participant responses to see how the document genre affected
+the participants' write-ups. The two narratives on biofuels were
+that 1) corn biofuels can drive up the price of food and 2) algae
+can be a more sustainable alternative in the future. Both narratives
+existed in the SERP at the same time, but different groups of
+participants were presented with the second narrative in different
+document genres. We then used an automated textual analysis
+tool, provided by FluidSurveys, to highlight the word frequencies
+for each group of participants. We were interested in whether the
+write-up of participants used a narrative that correlated with the
+document genres of the information that was presented.
+
+Figure 3 Scores on usefulness of Wikipedia article on
+"Biofuels" in comparison to other sources (reported in
+percentages).
+Textual-Analysis of Document Genre Effects on Write-Up:
+A textual analysis of participant responses found that if sources on
+corn biofuels and its controversies were placed alongside a source
+on algae biofuels that was in an academic-genre, then students
+would focus their write-ups mostly on the food controversy. Using
+an automated textual analysis for word frequency, the three key
+terms "food price", "production", and "land" were mentioned
+frequently. However, if the sources on corn biofuels and its
+controversies was placed alongside sources on algae biofuels that
+had a more common document genre, students would shift their
+focus on how scientists were addressing the food controversy. In
+this case, the key terms "new" "generation", "focus", and the
+perspective of "scientists" were mentioned most frequently.
+
+Data Analysis on Document Order:
+Textual-Analysis of Write-Up: After students were asked to
+summarize the topic of biofuels, a textual analysis identified
+whether they mentioned a controversy. We compared whether the
+conflicting information at the top of a SERP is correlated with
+whether participants mention the controversy by using a chisquare test for independence. The hypothesis is that conflicting
+information at the top of a SERP is correlated with whether a
+controversy is mentioned. The null hypothesis is that there is no
+correlation.
+
+For example, participants who were provided the algae biofuels
+alongside the food controversy would include statements, such as:
+"Scientists are becoming aware of the food issues and have come
+up with other ways to obtain biofuels. There are 4 'generations' of
+biofuels each with different types of materials used. Algae seems
+to be a promising source of biofuels.” (Participant 2). These types
+of statements were less likely to appear when the sources on
+biofuel algae was in an academic document genre. In addition, we
+found the answers to be more comprehensive because participants
+would contextualize their summary of biofuels by first 1)
+explaining what biofuels are, then 2) explaining the controversy of
+biofuels that are derived from corn, and finally 3) explaining the
+potential of algae biofuels. Whereas groups who had the algae
+sources appear at the bottom of the SERP would not include this
+third component in their summary. As we will explain in the
+Discussions section the differences in contextual narratives
+
+Scoring of Sources: We presented participants with a source that
+was challenging because it was both scientific in language and
+appeared at the bottom of the SERP. Theoretically, for its
+usefulness to be recognized users had to re-adjust their
+assumptions that were implicitly accumulated from prior sources.
+To test this, after their initial scoring we asked participants to read
+longer excerpts of the sources on a SERP. We then asked the
+participants to score the usefulness of these results as well.
+
+4. FINDINGS
+Document Genre Effects on Scoring:
+When participants were asked to score the usefulness of the
+results in a SERP, familiarity with Wikipedia was an influencer
+because it was consistently scored as more useful than others
+
+179
+
+between the two groups may indicate framing effects are causing
+cognitive bias.
+Textual-Analysis of Document Order Effects on Write-Up:
+We found that the higher an article on the biofuel controversy was
+presented to participants, the more likely they were to mention the
+biofuel controversies in their write-up. When the top result on a
+SERP was a source that explicitly mentioned the biofuel
+controversy, 73% of the participants mentioned the controversy in
+their write-ups. However, if the same source was elsewhere inthe
+SERP, only 41% of students would mention the controversy,
+respectively. For example, when Participant 42 had the
+controversy mentioned at the top they wrote: “Biofuels are
+basically fuels that comes from starch based plants such as corn
+or soy. However, because of this it takes up farmland which raises
+food prices. This can be really devastating to poor countries/those
+in poverty because they cannot afford the food." In contrast, most
+participants who did not have the controversy mentioned at the top
+of the SERP did not mention the controversy.
+
+Figure 4 Comparison between score of SERP results before
+and after reading excerpts of the sources.
+
+5. DISCUSSION
+
+A Pearson chi-square test was performed to analyze whether a
+topic’s position on the results list was related to students
+mentioning the topic in their explanations. A relationship was
+found between whether a group had a controversial topic
+anchored at the top of a SERP and the number of participants that
+mention the controversy in their write up, X2 (1, N = 42) =
+4.1067, p =0.043. The association between rows (groups) and
+columns (outcomes) is statistically significant [Table 1].
+
+The Lippmann-Dewey debate addressed the entanglement
+between public information, biased opinions in media, and
+democracy. As mentioned, the Internet is the machine that has
+brought us both the access to the system of records Lippmann
+advocated for to combat source bias (i.e., bias in the sources
+provided by a search engine) and the public's capability to dispute
+those records as Dewey advocated for in order to minimize
+algorithmic bias (i.e., the search engine's management of sources).
+This research can contribute to the unresolved Lippmann-Dewey
+debate by adding that our individual parsing techniques for
+searching and retrieving information contains cognitive biases in
+itself.
+
+When the controversial source appeared at the top of the search
+results, students were more likely to incorporate this information
+in their written responses, as opposed to the controversial
+information appearing lower in the search results page. As we will
+explain in the Discussions section the differences between the two
+groups may indicate anchoring effects are causing cognitive bias.
+
+While prior studies mostly observed confirmation-bias in a user's
+search, we were interested in which cognitive biases emerge when
+a user has little prior knowledge of a controversy and thus little
+knowledge to "confirm"). We identified four cognitive biases that
+can emerge from how a SERP manages document genres and the
+document order. We list the cognitive biases in the loosely
+chronological order that they occur, from a user's initial viewing
+of a SERP, whereby 1) Priming effects occur; to reading the top
+result on a SERP that evokes 2) Anchoring; to the next few SERP
+results that may cause 3) Framing; and then finally the
+engagement or avoidance of other sources dependent on the 4)
+Availability Heuristic [Figure 1]. In response, we suggest four
+strategies users can use to identify and contextualize the biases.
+
+Table 1 Chi square comparison of write-ups between group
+with anchored results vs. groups without.
+Number of participants
+that mention controversy
+in their write-up
+
+Number of participants that
+do not mention controversy
+in their write-up
+
+Total
+
+Group with
+Controversy
+Anchored at top
+
+11
+
+4
+
+15
+
+Groups without
+Controversy
+Anchored at top
+
+11
+
+16
+
+27
+
+Total
+
+22
+
+20
+
+42
+
+5.1 Priming:
+
+Document Order Effects on Scoring:
+
+Immediately upon visiting a SERP, priming can occur, whereby
+users are visually drawn to familiar features on a SERP. Priming
+features include Google presenting the top result in a demarcated
+box accompanied by a thumbnail illustration of a biofuel cycle
+[Figure 2]. Prior research using eye-tracking has found that users
+will often be drawn to this area of a SERP [88]. Users will also be
+drawn to images before even reading any information [88].
+Features such as the "I'm Feeling Lucky" button and Google's
+"Answer Box" (i.e., when the top result on Google provides an
+answer so that users do not need to leave the SERP) provide
+aesthetically pleasing answers when compared to the other low
+ranking sources. This becomes problematic when the aesthetically
+pleasing answer singles out a perspective over equally valuable
+perspectives. Similarly, users are also automatically drawn to the
+familiarity of Wikipedia. Our study found that users consistently
+rate Wikipedia as highly useful [Figure 3]. On the other hand, we
+observed that a source with an unfamiliar document genre for
+
+We presented participants with a source with an academic
+document genre that was challenging because it was scientific in
+language and low-ranking on the SERP. When users were
+presented with the source on the SERP the users did not view the
+information as useful and gave it a very low score [Figure 4].
+However, when participants were asked to read a large excerpt of
+the same result, its usefulness received a much higher score
+[Figure 4]. As we will explain in the Discussions section this
+increase in score may be due to a participant's initial reluctance to
+apply cognitive effort on a scholarly source at the bottom of a
+SERP and the availability-heuristic may be causing a cognitive
+bias.
+
+180
+
+represented in a user's output. A document genre may make itself
+seem esoteric and not intended for a certain audience. However,
+by placing value on the task of acquiring multiple perspectives on
+a topic, we might transfer value on a document's alternative genre
+rather than avoid it.
+
+non-experts that is positioned at the top would receive an opposite
+reaction [Figure 3]. When a SERP presents an academic journal
+with little context at the top, users may skip the entry, instead
+choosing sources that do provide responses with a familiar genre
+for non-experts. This is problematic because participants skipped
+sources based on their document genre that were otherwise useful.
+It was only after participants were asked to engage with the
+unfamiliar document genre by actively reading through the
+content that the users began to rank the usefulness of the source
+higher [Figure 4].
+
+Expanding the frames set around a debate is a difficult task.
+However, when users limit their scope of a topic to the top three
+results on a SERP [42], the variety of perspectives is narrowed.
+While Wikipedia has earned its reputation as a respectable source,
+that does not imply that it will always be the more comprehensive
+or least biased source. For example, during our research we found
+that querying for "Biofuels" would consistently lead to the Biofuel
+Wikipedia page appearing near the top of the SERP, but not to the
+Wikipedia page on the "issues" related to biofuels. Although
+humans naturally wish to minimize cognitive work, valuing the
+representation of multiple perspectives can cause a user to pause
+and reevaluate the strengths and weaknesses in their own query.
+
+In response, the authors suggest that SERPs can visually identify
+conflicting information more explicitly by drawing a user's
+attention to more perspectives on a topic. One strategy users can
+use to mitigate cognitive bias is to compensate for this priming
+effect by actively searching for information that conflicts,
+counter-points, or even contradicts search results. This approach is
+grounded in Karl Popper's arguments for how researchers should
+falsify their hypotheses [89]. If we can draw a parallel between a
+user searching a query and how scientists should research a
+hypothesis, then a pragmatic implementation would be that users
+should question their own query to consider whether any implicit
+biases exist – with the goal of finding results that provide the
+colloquial 'other side of a story.'
+
+In addition, greater transparency is required in SERPs so that
+users can understand the relationships between multiple sources.
+By being able to examine the strength of these relationships (i.e.,
+why certain sources appear next to each other in a list) users may
+be able to determine the parameters surrounding their query.
+
+5.4 Availability Heuristic
+
+5.2 Anchoring
+
+Our human tendency to favor simple language and our ease of
+recall on the prior sources of a topic can cause useful sources to
+seem like anomalies. As our study found, a source that seems out
+of place for users will not be seen as useful [Figure 4]. It is only
+after users were asked to read a longer excerpt of the source, that
+its usefulness score increased. A challenge for SERPs is how to
+convey the usefulness of a resource that can re-adjust the
+assumptions that we implicitly accumulate from prior sources.
+While search engines are designed to demarcate quick and easy
+answers, they may inadvertently mask alternative perspectives
+that provide the correct context.
+
+Generally, hierarchical lists emphasize the top result over other
+results [90]. This is problematic with science controversies where
+the top result might emphasize a particular view in a debate over
+equally valuable perspectives. This was the case with the SERP
+page on biofuels, whereby users placed a high level of trust in the
+top result. In our study, we found that when the top SERP result
+focused heavily on corn biofuels, users would fail to mention its
+controversial aspects. Similarly, the algae biofuel research that
+aims to address the controversy in their write-ups was also rarely
+mentioned. This suggests that students trusted the top result to
+give the general idea of what biofuels were and neglected
+adjusting this perspective for any conflicting sources. These
+ordering effects are due to Google presenting results in a
+hierarchical list, which causes students to access information in a
+top-down manner. In addition, the relationship between the first
+and every subsequent result is not made clear to users. The design
+forces users to apply an anchor-and-adjusting heuristic iteratively
+with information until they are satisfied with the answer. One
+method users can employ to minimize the effect of anchoring is to
+maintain standards for the document genre of information they
+will retrieve, while still investigating multiple sources. This
+method is parallel to how researchers should create a plan of how
+they will collect data before being influenced by the first few
+results or cherry-picking data [91], [92]. Similarly, users should
+set criteria for the type of sources that are sought and in which
+sequence sources will be retrieved (e.g., first retrieving Wikipedia
+articles, then moving on to academic sources, and then checking
+news media). By setting out to first investigate information by a
+sequence of document genres, users will break up the effects of
+document order. More importantly, they will maintain a path for
+retrieving information that will not be satisfied by the first few
+answers in a SERP.
+
+One way to broaden our scope of a topic is to first scan the
+landscape of debate before delving in depth into a topic. A quick
+scan of a SERP's page may increase our chance of not missing
+alternative perspectives. This suggested strategy becomes
+increasingly challenging when Google's designers have repeatedly
+claimed that its goal is to provide "seamless" single-source
+answers to complex queries [11], [46], [58]. Google’s goal makes
+the reductionist assumption that underlying every human query is
+an essential truth waiting to be uncovered by an algorithm. This
+line of thought runs parallel with Lippmann's reductionist views
+on "public opinions" [17] and we therefore invoke Dewey's
+objections to reductionist views on "the public and its problems"
+[16]: Science controversies require various perspectives to be
+weighted and the source of the 'controversy' itself often involves
+external sociological or cultural actors. In addition, a sociocultural perspective situates our learning in more common
+everyday scenarios [93].
+Recently, scholars have expounded on the numerous benefits of
+collaborative searching, including its potential to provide multiple
+perspectives on controversial topics. A variety of online
+documents can be retrieved by individual students, but student
+collaboration can synthesize perspectives and make better
+inferences [94]. Whereas Internet search engine designs were
+based on idealized views that information searches are conducted
+in isolation [95], scholars are observing that the search process is
+rarely a solitary activity and is intertwined with the
+communication and collaboration that takes place in everyday life
+[96]–[100]. Collaborative sense-making can assist students with
+
+5.3 Framing
+SERPs may attribute conflicting results with irrelevant ones and
+rank them lower. However, this frames a debate by narrowing the
+multiple perspectives that can contextualize it. As our study
+found, the genre in which diverse sources of information in a
+SERP are presented will affect whether multiple perspectives are
+
+181
+
+[5]
+
+understanding complex science topics [101], [102]. The social
+engagement with controversial information is why collaborative
+searching shows some promise. While this area of research has
+not come up with an ideal method of conducting collaborative
+searching to minimize cognitive biases, we suggest searching with
+colleagues or sharing results may assist in the discovery of
+multiple perspectives on findings. Aside from the benefit of a
+wider range of useful results, future studies may investigate
+whether a wider range of search strategies employed by
+collaborators can minimize cognitive bias.
+
+[6]
+
+[7]
+
+There are several important limitations to this work. First, the
+pilot and main study were conducted with a student population
+that may not represent the broader public. Second, the small
+number of participants in the pilot and main study (14 and 60
+respectively), limit the power of the analysis. Although we chose
+biofuels because it was a topic that fit within our purpose and
+methodology, we acknowledge that biofuels may not be
+motivating as a search and learning topic for all individuals.
+Third, none of our suggested solutions have been tested since they
+were not part of our initial study design. Fourth, to control for the
+diversity in website interfaces, participants were provided with
+only textual excerpts of webpages, but users might browse the
+actual webpages differently. Future studies should consider
+whether our suggestions for searching work. Nonetheless, this
+study paves the way for additional analyses of how search engine
+result pages interact with learning tasks to influence how
+individuals develop their understanding of science topics.
+
+[8]
+[9]
+
+[10]
+[11]
+[12]
+[13]
+[14]
+
+6. CONCLUSION
+
+[15]
+
+Search engines are the "go to" strategy for finding information on
+the Internet, yet they harbor several challenging features we must
+confront, both in terms of pedagogy and policy. Their function is
+opaque to the user, and may present challenges to understanding
+content we are just beginning to comprehend. This work found
+that students need to consider the role of multiple, systemic and
+personal biases in the presentation and processing of scientific
+information. A user's unawareness of algorithmic bias increases
+their susceptibility to cognitive bias, which increases the influence
+that source bias may have. Specifically, they are susceptible to
+four cognitive biases that emerge from the following heuristics
+when selecting sources on a SERP: Priming, Anchoring, Framing,
+and the Availability Heuristic.
+
+[16]
+[17]
+[18]
+[19]
+[20]
+
+As users continue to rely on digital information to participate in
+the public sphere, including information that informs decisions of
+personal and public importance, we need to understand how these
+biases may intersect to shape the way individual and public
+opinion is constructed and used.
+
+[21]
+[22]
+[23]
+
+7. REFERENCES
+[1]
+
+[2]
+
+[3]
+[4]
+
+[24]
+
+N. J. Belkin, M. Cole, and J. Liu, “A model for evaluation
+of interactive information retrieval,” presented at the
+Proceedings of the SIGIR 2009 Workshop on the Future of
+IR Evaluation, 2009, pp. 7–8.
+R. Epstein and R. E. Robertson, “The search engine
+manipulation effect (SEME) and its possible impact on the
+outcomes of elections,” Proc. Natl. Acad. Sci., p.
+201419828, Aug. 2015.
+E. Hargittai, “Digital Na(t)ives? Variation in Internet Skills
+and Uses among Members of the ‘Net Generation,’”
+Sociol. Inq., vol. 80, no. 1, pp. 92–113, Feb. 2010.
+E. M. Meyers, “Access denied: how students resolve
+information needs when an ideal document is restricted,” in
+Proceedings of the 2012 iConference, 2012, pp. 629–631.
+
+[25]
+[26]
+[27]
+[28]
+
+182
+
+“National Science Board (2014) Science and Engineering
+Indicators.” National Science Foundation, Arlington, VA.,
+2014.
+Q. Guo, R. W. White, S. T. Dumais, J. Wang, and B.
+Anderson, “Predicting query performance using query,
+result, and user interaction features,” presented at the
+Adaptivity, Personalization and Fusion of Heterogeneous
+Information, 2010, pp. 198–201.
+N. Höchstötter and D. Lewandowski, “What users see–
+Structures in search engine results pages,” Inf. Sci., vol.
+179, no. 12, pp. 1796–1812, 2009.
+D. Kelly, “Methods for evaluating interactive information
+retrieval systems with users,” Found. Trends Inf. Retr., vol.
+3, no. 1—2, pp. 1–224, 2009.
+A. Shiri and L. Zvyagintseva, “Dynamic Query Suggestion
+in Web Search Engines: A Comparative Examination,”
+presented at the Proceedings of the Annual Conference of
+CAIS/Actes du congrès annuel de l’ACSI, 2014.
+E. R. Tufte, Beautiful evidence. Cheshire, Conn: Graphics
+Press, 2006.
+R. Cellan-Jones, “Six searches that show the power of
+Google,” Apr. 2016.
+S. Gerhart, “Do Web search engines suppress
+controversy?,” First Monday, vol. 9, no. 1, 2004.
+D. C. Mutz, Population-based survey experiments.
+Princeton University Press, 2011.
+M. Schudson, “The‘ Lippmann-Dewey Debate’ and the
+Invention of Walter Lippmann as an Anti-Democrat 19851996,” Int. J. Commun., vol. 2, p. 12, 2008.
+J. W. Carey, Communication as Culture: Essays on Media
+and Society. Psychology Press, 1989.
+J. Dewey and M. L. Rogers, The public and its problems:
+An essay in political inquiry. Penn State Press, 2012.
+W. Lippmann, Public opinion. Transaction Publishers,
+1946.
+E. Amend and D. Barney, “Getting It Right: Canadian
+Conservatives and the‘ War on Science’.,” Can. J.
+Commun., vol. 41, no. 1, 2016.
+S. Dunwoody, “Science journalism,” Handb. Public
+Commun. Sci. Technol., pp. 15–26, 2008.
+E. Segev and A. J. Sharon, “Temporal patterns of scientific
+information-seeking on Google and Wikipedia,” Public
+Underst. Sci., p. 963662516648565, 2016.
+B. Latour, Science in action: How to follow scientists and
+engineers through society. Harvard university press, 1987.
+L. Daston and P. Galison, “The Image of Objectivity,”
+Representations, no. 40, pp. 81–128, Oct. 1992.
+T. Bubela et al., “Science communication reconsidered,”
+Nat. Biotechnol., vol. 27, no. 6, pp. 514–518, 2009.
+L. D. Carsten and D. L. Illman, “Perceptions of accuracy in
+science writing,” Prof. Commun. IEEE Trans. On, vol. 45,
+no. 3, pp. 153–156, 2002.
+S. Dunwoody and M. Ryan, “Scientific barriers to the
+popularization of science in the mass media,” J. Commun.,
+vol. 35, no. 1, pp. 26–42, 1985.
+McComas and Simone, “Media Coverage of Conflict
+Science Communication,” Vol 24 No, vol. 24, no. 4, Jun.
+2003.
+D. Nelkin, Selling Science - How the Press Covers Science
+and Technology. New York: W.H. Freeman and Company,
+1987.
+D. A. Scheufele, “Science communication as political
+communication,” Proc. Natl. Acad. Sci., vol. 111, no.
+Supplement_4, pp. 13585–13592, Sep. 2014.
+
+[29]
+[30]
+[31]
+[32]
+[33]
+[34]
+[35]
+[36]
+
+[37]
+[38]
+
+[39]
+[40]
+
+[41]
+
+[42]
+[43]
+[44]
+
+[45]
+[46]
+[47]
+[48]
+
+[49]
+
+G. C. Bowker and S. L. Star, Sorting things out
+classification and its consequences. Cambridge, Mass.:
+MIT Press, 1999.
+E. Morozov, The net delusion: the dark side of internet
+freedom, 1. ed. New York, NY: Public Affairs, 2011.
+B. J. Fogg, Persuasive Technology: Using Computers to
+Change what We Think and Do. Morgan Kaufmann, 2003.
+B. Friedman and H. Nissenbaum, “Bias in computer
+systems,” ACM Trans. Inf. Syst. TOIS, vol. 14, no. 3, pp.
+330–347, 1996.
+D. Kahneman and A. Tversky, “Subjective probability: A
+judgment of representativeness,” Cognit. Psychol., vol. 3,
+no. 3, pp. 430–454, 1972.
+D. Kahneman and A. Tversky, “On the reality of cognitive
+illusions.,” 1996.
+D. Kahneman, Thinking, fast and slow. 2013.
+S. Lewandowsky, U. K. H. Ecker, C. M. Seifert, N.
+Schwarz, and J. Cook, “Misinformation and Its Correction:
+Continued Influence and Successful Debiasing,” Psychol.
+Sci. Public Interest, vol. 13, no. 3, pp. 106–131, Dec. 2012.
+P. C. Wason and D. Shapiro, “Natural and contrived
+experience in a reasoning problem,” Q. J. Exp. Psychol.,
+vol. 23, no. 1, pp. 63–71, Feb. 1971.
+C. Behnert and D. Lewandowski, “Ranking Search Results
+in Library Information Systems — Considering Ranking
+Approaches Adapted From Web Search Engines,” J. Acad.
+Librariansh., vol. 41, no. 6, pp. 725–735, Nov. 2015.
+L. Lorigo et al., “Eye tracking and online search: Lessons
+learned and challenges ahead,” J. Am. Soc. Inf. Sci.
+Technol., vol. 59, no. 7, pp. 1041–1052, 2008.
+B. Pan, H. Hembrooke, T. Joachims, L. Lorigo, G. Gay,
+and L. Granka, “In google we trust: Users’ decisions on
+rank, position, and relevance,” J. Comput. Commun., vol.
+12, no. 3, pp. 801–823, 2007.
+T. Joachims, L. Granka, B. Pan, H. Hembrooke, F.
+Radlinski, and G. Gay, “Evaluating the accuracy of
+implicit feedback from clicks and query reformulations in
+web search,” ACM Trans. Inf. Syst. TOIS, vol. 25, no. 2, p.
+7, 2007.
+R. Fidel, Human information interaction: an ecological
+approach to information behavior. MIT Press, 2012.
+D. O. Case, Looking for Information: A Survey of Research
+on Information Seeking, Needs and Behavior. Emerald
+Group Publishing, 2012.
+G. B. Chapman and E. J. Johnson, “Incorporating the
+irrelevant: Anchors in judgments of belief and value,”
+Heuristics Biases Psychol. Intuitive Judgm., pp. 120–138,
+2002.
+J. S. B. T. Evans and D. E. Over, Rationality and
+Reasoning. Psychology Press, 2013.
+R. Cellan-Jones, “The Force of Google,” BBC Radio 4,
+May-2016.
+R. B. Zajonc, “Mere exposure: A gateway to the
+subliminal,” Curr. Dir. Psychol. Sci., vol. 10, no. 6, pp.
+224–228, 2001.
+J. A. Bargh, P. M. Gollwitzer, A. Lee-Chai, K. Barndollar,
+and R. Trötschel, “The automated will: nonconscious
+activation and pursuit of behavioral goals.,” J. Pers. Soc.
+Psychol., vol. 81, no. 6, p. 1014, 2001.
+C. R. Mynatt, M. E. Doherty, and R. D. Tweney,
+“Confirmation bias in a simulated research environment:
+An experimental study of scientific inference,” Q. J. Exp.
+Psychol., vol. 29, no. 1, pp. 85–95, Feb. 1977.
+
+[50]
+
+[51]
+
+[52]
+
+[53]
+
+[54]
+
+[55]
+[56]
+
+[57]
+
+[58]
+[59]
+[60]
+
+[61]
+[62]
+[63]
+
+[64]
+[65]
+[66]
+
+[67]
+
+183
+
+C. A. Chinn, “Factors that Inﬂuence,” presented at the
+Proceedings of the Fifteenth Annual Conference of the
+Cognitive Science Society: June 18 to 21, 1993, Institute of
+Cognitive Science, University of Colorado-Boulder, 1993,
+vol. 15, p. 318.
+L. Salmerón, Y. Kammerer, and P. García-Carrión,
+“Searching the Web for conflicting topics: Page and user
+factors,” Comput. Hum. Behav., vol. 29, no. 6, pp. 2161–
+2171, Nov. 2013.
+E. Agichtein, E. Brill, and S. Dumais, “Improving web
+search ranking by incorporating user behavior
+information,” presented at the Proceedings of the 29th
+annual international ACM SIGIR conference on Research
+and development in information retrieval, 2006, pp. 19–26.
+J. Liu and N. J. Belkin, “Personalizing information
+retrieval for multi‐session tasks: Examining the roles of
+task stage, task type, and topic knowledge on the
+interpretation of dwell time as an indicator of document
+usefulness,” J. Assoc. Inf. Sci. Technol., vol. 66, no. 1, pp.
+58–81, 2015.
+N. J. Belkin, M. Cole, and J. Liu, “A model for evaluation
+of interactive information retrieval,” presented at the
+Proceedings of the SIGIR 2009 Workshop on the Future of
+IR Evaluation, 2009, pp. 7–8.
+D. Case, “Sixty years of measuring the use of information
+and its sources: from consultation to application,” Libr.
+Digit. Age LIDA Proc., vol. 13, 2014.
+D. O. Case and L. G. O’Connor, “What’s the use?
+Measuring the frequency of studies of information
+outcomes: Journal of the Association for Information
+Science and Technology,” J. Assoc. Inf. Sci. Technol., vol.
+67, no. 3, pp. 649–661, Mar. 2016.
+B. Pan, H. Hembrooke, T. Joachims, L. Lorigo, G. Gay,
+and L. Granka, “In Google We Trust: Users’ Decisions on
+Rank, Position, and Relevance,” J. Comput.-Mediat.
+Commun., vol. 12, no. 3, pp. 801–823, Apr. 2007.
+Google, The Evolution of Search. 2011.
+A. Tversky and D. Kahneman, “Judgment under
+uncertainty: Heuristics and biases,” science, vol. 185, no.
+4157, pp. 1124–1131, 1974.
+M. Hilbert, “Toward a synthesis of cognitive biases: How
+noisy information processing can bias human decision
+making.,” Psychol. Bull., vol. 138, no. 2, pp. 211–237,
+2012.
+E. Yong, “Psychologists strike a blow for reproducibility,”
+Nature, Nov. 2013.
+C. Ware, Information visualization: perception for design,
+Third edition. Waltham, MA: Morgan Kaufmann, 2013.
+D. Kahneman, A. Treisman, and B. J. Gibbs, “The
+reviewing of object files: Object-specific integration of
+information,” Cognit. Psychol., vol. 24, no. 2, pp. 175–219,
+Apr. 1992.
+N. Höchstötter and D. Lewandowski, “What users see –
+Structures in search engine results pages,” Inf. Sci., vol.
+179, no. 12, pp. 1796–1812, May 2009.
+M. R. Laurent and T. J. Vickers, “Seeking health
+information online: does Wikipedia matter?,” J. Am. Med.
+Inform. Assoc., vol. 16, no. 4, pp. 471–479, 2009.
+J. Braun and T. Gillespie, “Hosting the public discourse,
+hosting the public: When online news and social media
+converge,” Journal. Pract., vol. 5, no. 4, pp. 383–398,
+2011.
+A. Diaz, “Through the Google Goggles: Sociopolitical
+Bias in Search Engine Design,” in Web search:
+
+[68]
+[69]
+[70]
+[71]
+
+[72]
+
+[73]
+[74]
+
+[75]
+[76]
+[77]
+
+[78]
+[79]
+
+[80]
+[81]
+
+[82]
+
+[83]
+
+[84]
+[85]
+
+multidisciplinary perspectives, A. Spink and M. Zimmer,
+Eds. Berlin: Springer, 2008, pp. 11–34.
+T. Gillespie, “The politics of ‘platforms,’” New Media
+Soc., vol. 12, no. 3, pp. 347–364, May 2010.
+T. Harper, “The big data public and its problems: Big data
+and the structural transformation of the public sphere,”
+New Media Soc., p. 1461444816642167, 2016.
+P. Ladwig, A. A. Anderson, D. Brossard, D. A. Scheufele,
+and B. Shaw, “Narrowing the nano discourse?,” Mater.
+Today, vol. 13, no. 5, pp. 52–54, 2010.
+B. Rieder and G. Sire, “Conflicts of interest and incentives
+to bias: A microeconomic critique of Google’s tangled
+position on the Web,” New Media Soc., p.
+1461444813481195, 2013.
+C. Lauckner and G. Hsieh, “The presentation of healthrelated search results and its impact on negative emotional
+outcomes,” in Proceedings of the SIGCHI Conference on
+Human Factors in Computing Systems, 2013, pp. 333–342.
+D. Kahneman, “Maps of bounded rationality: A
+perspective on intuitive judgment and choice,” Nobel Prize
+Lect., vol. 8, pp. 351–401, 2002.
+D. A. Scheufele and D. Tewksbury, “Framing, Agenda
+Setting, and Priming: The Evolution of Three Media
+Effects Models,” J. Commun., vol. 57, no. 1, pp. 9–20,
+Mar. 2007.
+J. Hullman and N. Diakopoulos, “Visualization rhetoric:
+Framing effects in narrative visualization,” IEEE Trans.
+Vis. Comput. Graph., vol. 17, no. 12, pp. 2231–2240, 2011.
+R. Bauman, “Genre,” J. Linguist. Anthropol., vol. 9, no.
+1/2, pp. 84–87, 1999.
+Y.-C. Huang, H.-H. Chen, M.-L. Yeh, and Y.-C. Chung,
+“Case studies combined with or without concept maps
+improve critical thinking in hospital-based nurses: A
+randomized-controlled trial,” Int. J. Nurs. Stud., vol. 49,
+no. 6, pp. 747–754, 2012.
+P. Borlund, “Interactive Information Retrieval: An
+Introduction,” J. Inf. Sci. Theory Pract., vol. 1, no. 3, pp.
+12–32, Sep. 2013.
+K. B. Rasmussen, “General Approaches to Data Quality
+and Internet-generated Data,” in The Sage Handbook of
+online Research Methods, Fielding, Lee, and Blank, Eds.
+Sage, 2008.
+J. Creswell, Research Design - Qualitative, Quantitative,
+and Mixed Methods Approach, vol. 3. Sage, 2014.
+M. A. Carriquiry, X. Du, and G. R. Timilsina, “Second
+generation biofuels: Economics and policies,” Spec. Sect.
+Renew. Energy Policy Dev., vol. 39, no. 7, pp. 4222–4234,
+Jul. 2011.
+A. B. Delshad, L. Raymond, V. Sawicki, and D. T.
+Wegener, “Public attitudes toward political and
+technological options for biofuels,” Energy Policy, vol. 38,
+no. 7, pp. 3414–3425, Jul. 2010.
+H. Longstaff, D. M. Secko, G. Capurro, P. Hanney, and T.
+McIntyre, “Fostering citizen deliberations on the social
+acceptability of renewable fuels policy: The case of
+advanced lignocellulosic biofuels in Canada,” Biomass
+Bioenergy, vol. 74, pp. 103–112, Mar. 2015.
+T. E. McKone et al., “Grand Challenges for Life-Cycle
+Assessment of Biofuels,” Env. Sci Technol, vol. 45, no. 5,
+pp. 1751–1756, 2011.
+D. M. Secko and E. Einsiedel, “The biofuels quadrilemma,
+public perceptions and policy,” Biofuels, vol. 5, no. 3, pp.
+207–209, May 2014.
+
+[86]
+
+D. Smith, “BFN Annual Report 2015,” 2015. [Online].
+Available: http://www.biofuelnet.ca/wpcontent/uploads/2013/02/BFN-2015-AnnualReport_11.10.15_web.pdf. [Accessed: 25-Oct-2015].
+[87] National Resources Canada, “Biodiesel - Government
+Programs and Regulations | Natural Resources Canada,”
+2015. [Online]. Available:
+http://www.nrcan.gc.ca/energy/alternative-fuels/fuelfacts/biodiesel/3515. [Accessed: 06-Mar-2016].
+[88] G. Hotchkiss, T. Sherman, R. Tobin, C. Bates, and K.
+Brown, “Search engine results: 2010,” Enq. Search Solut.,
+pp. 1–61, 2010.
+[89] K. Popper, Realism and the aim of science: From the
+postscript to the logic of scientific discovery. Routledge,
+2013.
+[90] J. Wood, D. Badawood, J. Dykes, and A. Slingsby,
+“BallotMaps: Detecting name bias in alphabetically
+ordered ballot papers,” IEEE Trans. Vis. Comput. Graph.,
+vol. 17, no. 12, pp. 2384–2391, 2011.
+[91] E.-J. Wagenmakers, R. Wetzels, D. Borsboom, H. L. J. van
+der Maas, and R. A. Kievit, “An Agenda for Purely
+Confirmatory Research,” Perspect. Psychol. Sci., vol. 7,
+no. 6, pp. 632–638, Nov. 2012.
+[92] M. L. Berger, M. Mamdani, D. Atkins, and M. L. Johnson,
+“Good Research Practices for Comparative Effectiveness
+Research: Defining, Reporting and Interpreting
+Nonrandomized Studies of Treatment Effects Using
+Secondary Data Sources: The ISPOR Good Research
+Practices for Retrospective Database Analysis Task Force
+Report—Part I,” Value Health, vol. 12, no. 8, pp. 1044–
+1052, Nov. 2009.
+[93] A. Collins, J. Greeno, L. Resnick, B. Berliner, and R.
+Calfee, “Cognition and learning,” B Berl. R Calfee Handb.
+Educ. Psychol. N. Y. Simon Shuster MacMillan, 1992.
+[94] E. M. Meyers, “Losses and gains in collaborative search:
+Insights from the Middle School Classroom,” GROUP’10
+Novemb. 7–12 2010 Sanibel Isl. FL USA, 2010.
+[95] D. M. Levy and C. C. Marshall, “Going digital: a look at
+assumptions underlying digital libraries,” Commun. ACM,
+vol. 38, no. 4, pp. 77–84, Apr. 1995.
+[96] P. Dillenbourg and M. Baker, “Negotiation spaces in
+human-computer collaborative learning,” in Proceedings of
+the International Conference on Cooperative Systems,
+1996, pp. 12–14.
+[97] J. Foster, Ed., Collaborative information behavior: user
+engagement and communication sharing. Hershey PA:
+Information Science Reference, 2010.
+[98] P. Hansen, C. Shah, and C.-P. Klas, Eds., Collaborative
+Information Seeking. Cham: Springer International
+Publishing, 2015.
+[99] M. R. Morris, “Collaborative search revisited,” in
+Proceedings of the 2013 conference on Computer
+supported cooperative work, 2013, pp. 1181–1192.
+[100] M. B. Twidale, D. M. Nichols, and C. D. Paice, “Browsing
+is a collaborative process,” Inf. Process. Manag., vol. 33,
+no. 6, pp. 761–783, 1997.
+[101] J. D. Novak and A. J. Cañas, “The theory underlying
+concept maps and how to construct and use them,” Fla.
+Inst. Hum. Mach. Cogn., vol. 2008, 2008.
+[102] J. D. Novak, Learning how to learn. Cambridge
+[Cambridgeshire] ; New York: Cambridge University
+Press, 1984.
+
+184
+View publication stats
+
+

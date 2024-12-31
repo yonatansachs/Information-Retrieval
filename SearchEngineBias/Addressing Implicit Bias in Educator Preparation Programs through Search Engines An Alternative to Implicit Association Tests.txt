@@ -1,0 +1,1165 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/348305844
+
+Addressing Implicit Bias in Educator Preparation
+Programs through Search Engines: An Alternative to
+Implicit Association Tests
+Article · October 2020
+CITATIONS
+
+READS
+
+2
+
+526
+
+4 authors, including:
+Todd Cherner
+
+Alex Fegely
+
+University of North Carolina at Chapel Hill
+
+Coastal Carolina University
+
+31 PUBLICATIONS 349 CITATIONS
+
+22 PUBLICATIONS 105 CITATIONS
+
+SEE PROFILE
+
+Cory Gleasman
+University of Georgia
+10 PUBLICATIONS 64 CITATIONS
+SEE PROFILE
+
+All content following this page was uploaded by Todd Cherner on 07 January 2021.
+
+The user has requested enhancement of the downloaded file.
+
+SEE PROFILE
+
+Jl. of Technology and Teacher Education (2020) 28(4), 639-663
+
+Addressing Implicit Bias in Educator Preparation
+Programs through Search Engines:
+An Alternative to Implicit Association Tests
+TODD CHERNER
+University of North Carolina - Chapel Hill, USA
+tcherner@unc.edu
+ALEX FEGELY
+Coastal Carolina University, USA
+agfegely@coastal.edu
+CHRYSTINE MITCHELL
+York College, USA
+cmitchell4@ycp.edu
+CORY GLEASMAN
+Tennessee Technical University, USA
+cory.gleasman@gmail.com
+Implicit bias is an important area of study in the field of education because it permeates schools, and it can severely affect
+the experiences students have in the classroom. Historically,
+scholars have used implicit association tests to identify implicit bias in pre-service teachers, but they have not addressed
+the role technology plays in it. Through an input-output
+framework designed for bias, this mixed methods study tests
+a strategy for using search engine results to increase pre-service teachers’ awareness of implicit bias. This study explains
+the strategy’s design and purpose in detail before discussing
+the results and sharing implications for teacher educators.
+
+640
+
+Cherner, Fegely, Mitchell, and Gleasman
+INTRODUCTION
+
+Implicit bias is an area of study that has received increased amounts of
+attention from both scholars and practitioners working in the field of education. With implications for providing students with quality educational experiences, mindfulness of unconscious choices, and being inclusive and supportive of all students, implicit bias is an important area of study. One area
+that is often overlooked, however, is implicit bias in the form of algorithmic
+oppression, which Noble (2018) explains as the spreading of “deleterious
+information about people, creating and normalizing structural and systemic
+isolation” (p. 10) through search engine results. For example, when users
+submit queries to search engines, the results reported back to them may contain stereotypical, racist, anti-Semitic, or sexist depictions of cultures and
+groups of people (Cuthbertson, 2018). With search engines being used frequently in schools, there is a need to develop educators’ awareness of the
+algorithmic oppression inherent in the results reported to them. Yet, after a
+review of literature, educators are not aware of algorithmic oppression and
+they seldom address implicit bias in the classroom. This presents an opportunity for teacher educators to address that topic in their educator preparation and graduate degree programs, and this study describes and assesses an
+instructional strategy specifically developed for that purpose.
+DEFINING IMPLICIT BIAS
+Implicit bias is a complex term that has been used in a variety of ways.
+To help ensure clarity regarding how the term is used, the researchers drew
+from previous works. To begin, Rudd (2014) explains implicit bias as “the
+mental process that causes us to have negative feelings and attitudes about
+people based on characteristics like race, ethnicity, age and appearance” (p.
+3). In this definition, implicit bias is described as something that results in
+having certain negative emotions and poor opinions about an entire group
+of people. Sharma (2017) further explains it as an “unconscious, irrepressible, or irrational connotation that may influence one’s judgements resulting
+in unfairness toward an individual, group or community” (p. 3048). From
+that definition, implicit bias is invisible, and it is integrated into individuals’
+mentalities so closely that they are not aware of their own biases. Implicit
+bias then becomes amplified over time as it is repeatedly presented and unconsciously accepted by individuals, which then makes it become part of
+the “cultural memory” inherent about a group of people (Goff et al., 2008).
+
+Addressing Implicit Bias in Educator Preparation Programs
+
+641
+
+From those perspectives, this study operationalizes implicit bias as the subtly passive but hurtful misrepresentations and overgeneralizations of peoples
+and cultures through repeated inaccurate depictions, which then influences
+individuals’ understandings and beliefs about entire populations. These implicit biases then inform the treatment of people in society.
+In Delgado and Stefancic’s (2001) seminal primer on Critical Race
+Theory, they open with a series of instances that can be interpreted from
+multiple perspectives: a child who raises her hand to answer a question and
+goes uncalled on by her teacher, a woman who is unable to get a salesperson’s attention while browsing a dealership’s car lot, and a sales clerk who
+does not make physical contact with a customer when returning his change.
+From a majority perspective, these instances may be overlooked or not noticed. However, Delgado and Stefancic explain that they could also be seen
+as microaggressions – “small acts of racism, consciously or unconsciously
+perpetrated, welling up from the assumptions about racial matters most of
+us absorb from the cultural heritage from a minority person’s experiences”
+(p. 2). If implicit bias is the internalization of negative feelings and attitudes
+towards groups of people that individuals unknowingly hold in their psyche,
+it can then manifest into a microaggression. The challenge is then developing individuals’ awareness of their own microaggressions, and a strategy using online search engines is a first step to building this awareness.
+Online search engines rely on human-made algorithms to gather results,
+and these algorithms include the programmers’ implicit bias (Halavais,
+2009; Nissenabum & Introna, 2004; Pasquale, 2015; Segev, 2010), which
+can contribute to algorithmic oppression (Noble, 2018). This study’s aim is
+to first describe a strategy for raising pre-service teachers’ (PSTs) awareness
+of implicit bias using online search engines and then analyze its impact on
+PST’s thinking and behavior. If awareness about implicit bias can be raised,
+it can inspire action, thus ultimately reducing instances of implicit bias in
+classrooms. To frame this work, an overview of a test educational researchers use to study PSTs levels of implicit bias and a summary of their findings
+will be offered, along with an overview of additional ways implicit bias has
+been studied by educational researchers. Next, to contextualize this study,
+a framework for positioning implicit bias as related to microaggressions
+will be shared. This framework will be followed by a rich description of the
+strategy along with a methodology for using it with PSTs. To conclude, the
+findings will be reported along with theoretical and practical implications.
+
+642
+
+Cherner, Fegely, Mitchell, and Gleasman
+A REVIEW OF IMPLICIT BIAS TESTS USED IN
+RESEARCHING PRE-SERVICE TEACHERS
+
+Project Implicit is comprised of a group of researchers who developed
+an implicit association test (IAT) to assess levels of implicit bias individuals carry with them (For a full discussion on the development of the IATs,
+please see Banaji & Greenwalk, 2013). Currently, Project Implicit has tests
+that will analyze individuals’ implicit bias levels along 14 different topics
+(e.g., race, sexuality, presidents, weight, religion, etc.), and individuals can
+visit https://implicit.harvard.edu/implicit/selectatest.html to access all the
+tests at no cost. When taking a test, individuals are shown a series of words
+and/or images on their computer screen, and they must react rapidly by tapping a corresponding letter on their keyboard. At the end of the test, which
+takes approximately five minutes to complete, individuals will be asked to
+input demographic and other personal data in order to access their results.
+Over time, researchers have integrated IATs into their studies focused
+on PSTs. For example, Hartlep (2015) conducted a mixed methods study on
+PSTs enrolled in a six-week course. In it, he had PSTs take Project Implicit’s test about Asian Americans. The test results showed that the PSTs held
+a negative implicit bias against Asian Americans, and Hartlep had the PSTs
+write about how and why they gained that implicit bias. Next, the PSTs engaged readings and discussions about implicit bias. During the final week of
+class, Hartlep had the PSTs take the same IAT, and their scores continued to
+evidence an implicit bias against Asian Americans. He then asked the PSTs
+to write about why they think their scores remained unchanged. The PSTs
+identified their family and culture as being the main contributing reasons
+why they held this bias. In addition, Hartlep reported that the PSTs have
+come to realize and accept their biases.
+In another example, Harrison and Lakin (2018) conducted a study
+that compared PSTs’ attitudes for working with English Learners (ELs)
+using a survey. They designed the study so that the PSTs would complete
+the survey and then take an IAT about ELs. In all, the researchers included 71 participants, and they found mixed results. Whereas they found that
+“those pre-service teachers declaring the most positive attitudes towards
+EL students [on the survey] (e.g., that it benefits all students and creates a
+positive educational atmosphere) actually had more negative implicit associations with EL students than other pre-service teachers” (p. 61). They also
+found modest evidence that the “pre-service teachers with more positive
+attitudes towards ELs had more confidence that they will be supported by
+school administration and ESL teachers as well as stronger beliefs that EL
+
+Addressing Implicit Bias in Educator Preparation Programs
+
+643
+
+students will not increase their workload or slow down the class” (p. 61).
+In this study, the researchers positioned the IAT to measure the accuracy or
+“truths” declared by the PSTs on the survey regarding their expectations for
+teaching ELs.
+In summary, other researchers have recommended using the IAT with
+PSTs to increase their awareness of their own implicit bias, with the ultimate goal of reducing the amount of implicit bias in schools (Morris &
+Ashburn-Nardo, 2009; Staats, 2016). The studies described in this section
+(Harrison & Lakin, 2018; Hartlep, 2015) are representative of additional
+research that have used IATs and repeatedly identified implicit bias levels
+in PSTs. In addition to IATs, researchers have studied implicit bias found
+within educational contexts in multiple ways, and two examples will next be
+highlighted.
+First, Jackson et al. (2014) evaluated the effect a brief training on implicit associations about female educators in the field of science, technology,
+engineering, and math (STEM) had on STEM educators working in higher
+education. They found that even a short training can impact the implicit associations male STEM faculty members hold about female STEM faculty
+members, though male faculty members still held more negative associations than female STEM faculty members. Next, Girvan et al. (2017) reviewed previous studies about implicit bias that found students of color are
+disciplined at higher rates than their White classmates. They then analyzed
+1,154,686 discipline referrals collected from 1,824 schools to determine if
+the language used in the referral was objective or subjective and if there
+were correlations between the language and school’s student population
+based on race. They found that “implicit biases that affect teacher’s discretionary decision-making, not racial differences in student behaviors or explicit biases” (p. 400) cause the disparities found in the number of students
+of color who are disciplined compared to their White classmates. Though
+the lens and research methods may differ, the commonality is that implicit
+bias exists, and it negatively impacts entire populations, which is why strategies for increasing PSTs’ awareness of when they encounter implicit bias is
+so necessary. To help address that issue, a framework will next be described
+to contextualize the causal relationship between holding implicit bias and
+potential outcomes.
+AN ADOPTED THEORETICAL FRAMEWORK FOR ENGAGING IMPLICIT BIAS
+To theorize this work, a framework that illustrated an “input-output”
+or causal relationship from the field of education was sought. To locate this
+
+644
+
+Cherner, Fegely, Mitchell, and Gleasman
+
+type of framework, the researchers entered keyword combinations that consisted of the word framework along with input, output, microaggression, implicit bias, racism, prejudice, and bias, and they entered those terms into
+ERIC, Google Scholar, and a library’s article database of a major research
+university. Though several hundred articles were reported, no frameworks
+that specifically theorized implicit bias manifesting into microaggression
+within an educational context were found. The researchers did, however,
+locate Mathew’s (2015) framework that focuses on implicit bias becoming
+explicit racism within a healthcare context, as shown in Figure 1. Though
+her framework is not from the field of education, the researchers selected it
+because it demonstrates a causal relationship focused on bias and inequality.
+
+Figure 1. Mathew’s (2015) Contextualized Theory of Health Inequality.
+In her framework, Mathew traces how inequality in healthcare is a manifestation of the racism and classism found in society spanning discriminatory housing, education, and employment opportunities along with the
+power dynamics that exist in medicine (e.g., a patient’s access to her doctor,
+the cost of healthcare, etc.). Mathew then couples those elements with individuals’ explicit and implicit biases, which creates an inequitable healthcare
+system that has disparate outcomes for patients. This study uses elements of
+Mathew’s framework to focus more deeply on the development of individu-
+
+Addressing Implicit Bias in Educator Preparation Programs
+
+645
+
+als’ implicit biases, and the researchers adopted it because they identified
+parallels between her framework and the relationship between the Opportunity Gap and Achievement Gap as pertaining to education.
+This study employs the “input-output” lens from Mathew’s Structurally
+Derived Discrimination component in her framework. If the implicit bias informs the explicit bias, there is a need to study what the “input” is that creates the implicit bias, which then becomes the “output” that is explicit and
+real. In Mathew’s framework, she talks about the implicit bias held against
+certain people of color that leads to inequitable healthcare treatment, and
+that inequity also exists in education. The Opportunity Gap has largely been
+identified as a significant problem, and it includes the inequitable access
+students have to high-quality teachers, high-performing schools, current
+technologies, clean and safe facilities, and much more (Carter & Welner,
+2013; Gorski, 2017). The result is the Achievement Gap, which includes a
+series of measurable outcomes (e.g., standardized test scores, college admittance, high school graduation rates, etc.). Students who had more opportunities when progressing through their compulsory education historically
+have higher levels of achievement than their peers who did not have similar
+opportunities (Darling-Hammond, 2015; Deshano et al., 2007). In this example, the input is the Opportunity Gap and the output is the Achievement
+Gap. As noted, researchers have successfully used the IAT to increase PSTs’
+awareness of their implicit bias, but that method has little to no impact on
+the PSTs, as they have been found to be complicit about their implicit biases
+and carry those biases with them into the classroom (Jacoby-Senghor et al.,
+2016; Peterson et al., 2016). Instead, focusing on strategies that raise the
+PSTs’ awareness for when they are encountering implicit bias opposed to
+assessing their levels of implicit bias has the potential to be a more meaningful intervention to PSTs. Framed by the input-output lens from Matthew’s work, this study tests a strategy for increasing PSTs’ awareness of
+the implicit biases that are presented to them through search engines, which
+the researchers see as an input. If increased levels of awareness are realized,
+it has the potential to change the PTSs’ output.
+METHODOLOGY
+This study uses a mixed methods approach to analyze PSTs’ awareness
+and interpretation of implicit bias embedded within search engine results.
+The statistical data is descriptive (Lomax et al., 2013) and includes surveys the PSTs completed. The qualitative data also includes survey results
+along with digital artifacts that the PSTs created and class discussions. The
+
+Cherner, Fegely, Mitchell, and Gleasman
+
+646
+
+study itself spanned across four sites, and data was collected during the fall
+of 2019. The participants included PSTs enrolled in one of four accredited
+educator preparation programs, and Table 1 provides additional information
+about the universities.
+Table 1
+Research Site Descriptions
+Site Name
+
+Description of Site
+
+Number of PSTs
+
+Foreman
+
+A medium-sized public liberal arts university in the
+Southeast
+
+53
+
+Louis
+
+A large public flagship research-focused university
+in the Southeast
+
+8
+
+Frazier
+
+A medium-sized public university in the Southeast
+
+9
+
+Dempsey
+
+A small private college in the Northeast
+
+13
+
+Participant Information
+In all, 83 PSTs participated in this study. During data collection, the
+participants were asked to supply demographic information about themselves. As shown in Table 2, participants spanned the spectrum of age, with
+the majority being under the age of 19. Table 3 highlights if the participants
+identified as a majority or minority member of society, and more detailed
+information could not be asked due to the conditions of the institutional review boards at the various universities. As displayed in Table 4, most participants categorized their household income as between $60,001 and $80,000,
+and Table 5 shows the highest degree earned varied by site. Table 6 shows
+that political views also varied by site, with “neutral” being the most common affiliation. Search engine preference was nearly unanimous. All participants but one preferred Google as their search engine of choice, with the
+one exception preferring Bing.
+Table 2
+Ages of Participants – All Sites
+Site Name
+
+19 or younger
+
+20-29
+
+30-39
+
+Foreman
+
+37
+
+16
+
+0
+
+Louis
+
+0
+
+5
+
+3
+
+Frazier
+
+1
+
+8
+
+0
+
+Dempsey
+
+10
+
+3
+
+0
+
+Addressing Implicit Bias in Educator Preparation Programs
+
+647
+
+Table 3
+Race of Participants – All Sites
+Site Name
+
+Majority
+
+Minority
+
+Foreman
+
+43
+
+10
+
+Louis
+
+6
+
+2
+
+Frazier
+
+8
+
+1
+
+Dempsey
+
+12
+
+1
+
+Table 4
+Household Income of Participants – All Sites
+Site Name
+
+$0$20,000
+
+$20,001$40,000
+
+$40,001$60,000
+
+$60,001$80,000
+
+$80,001- $100,001- $120,001- $140,001+
+$100,000 $120,000 $140,000
+
+Foreman
+
+9
+
+6
+
+6
+
+11
+
+9
+
+7
+
+1
+
+4
+
+Louis
+
+0
+
+1
+
+3
+
+1
+
+0
+
+2
+
+1
+
+0
+
+Frazier
+
+2
+
+0
+
+2
+
+2
+
+1
+
+2
+
+0
+
+0
+
+Dempsey
+
+0
+
+1
+
+1
+
+5
+
+4
+
+1
+
+0
+
+1
+
+Table 5
+Highest Degree Earned – All Sites
+Site Name
+
+High school
+
+Associate’s
+
+Bachelor’s
+
+Master’s
+
+Did not disclose
+
+Foreman
+
+49
+
+3
+
+1
+
+0
+
+0
+
+Louis
+
+0
+
+0
+
+7
+
+1
+
+0
+
+Frazier
+
+3
+
+5
+
+0
+
+0
+
+1
+
+Dempsey
+
+13
+
+0
+
+0
+
+0
+
+0
+
+Table 6
+Political Views – All Sites
+Site Name Very
+Conservative Conservativeconservative
+leaning
+
+Neutral
+
+Liberalleaning
+
+Liberal
+
+Very liberal
+
+Foreman
+
+4
+
+10
+
+5
+
+20
+
+6
+
+6
+
+2
+
+Louis
+
+0
+
+0
+
+0
+
+2
+
+2
+
+3
+
+1
+
+Frazier
+
+2
+
+2
+
+2
+
+1
+
+2
+
+0
+
+0
+
+Dempsey
+
+0
+
+1
+
+1
+
+5
+
+2
+
+3
+
+1
+
+Data Collection
+To collect data, participants created a digital artifact and completed surveys, which were part of a think-pair-share activity. The artifact required
+participants to search the Google, Bing, DuckDuckGo, and Baidu search
+
+648
+
+Cherner, Fegely, Mitchell, and Gleasman
+
+engines for images using specific search term combinations including:
+“Happy Person”, “Sad Person”, “Rich Person”, “Poor Person”, “Suburban
+Education”, and “Urban Education”. It is important to note that the quotation marks were intentionally used so that both words in the term would be
+searched as one term and not two individual words, which could impact the
+search engine results. The researchers were strategic in their search engine
+selection. Google and Bing were selected because they were the two most
+popular search engines used in the United States at the time of this study
+(Global Stats, 2019a). Baidu was selected because it was the most popular Chinese search engine at the time of this study (Global Stats, 2019b).
+DuckDuckGo was selected not due to its popularity – though it is fourth
+in the United States – but because it does not collect user data. For each
+search term, participants were instructed to enter it into the search engine
+and conduct an image search. Participants then copied and pasted the first
+four images reported for the term into a template, and Appendix A includes
+an example. After conducting searches for each of the terms, participants
+completed a survey individually that asked them:
+• What did you notice about the images in relation to the search
+terms?
+• What is your thinking regarding the representation of the topic
+by the images? Is the representation accurate, misleading, a bit of
+both? Please explain.
+• If you think there is an implicit message embedded within these
+images, can you please explain what it is and use specific evidence
+to support your thinking?
+• Based on this experience, do you foresee it having an impact on the
+way you will use search engines? Please explain.
+• What other thoughts, feelings, or ideas did you have when completing this experience?
+Participants responses were collected by a digital form, which the researchers could export into a spreadsheet. Next, the participants each paired with
+another participant and shared their results. At this point, researchers requested the participants to complete a second survey that asked:
+• Did you identify commonalities in your responses to the questions?
+Please explain.
+• Did you identify differences in your responses to the questions?
+Please explain.
+• Is there anything else you would like to add that came out of this
+“paired” debriefing?
+
+Addressing Implicit Bias in Educator Preparation Programs
+
+649
+
+Again, the participants were asked to add their thoughts based on those
+prompts into a digital form. To complete data collection, the researchers
+facilitated class conversations, so the participants could broadly share their
+thoughts, feelings, and reactions to this experience. The prompts were recycled from the second survey. These recordings were subsequently transcribed to facilitate coding.
+Data Analysis
+The researchers first tallied the statistical data collected from the survey and organized it into tables. These tables helped the researchers contextualize the qualitative data, which they open coded. Strauss and Corbin
+(1990) describe open coding as “the process of breaking down, examining,
+comparing, conceptualizing, and categorizing data” in qualitative research
+(p. 61). In this study, open coding was implemented to develop categories
+that were used to summarize participants’ feelings and pinpoint themes,
+which emerged during the data analysis (Bloomberg & Volpe, 2016; Creswell & Poth, 2018; Mills, 2018). For the first level of coding, the researchers identified single words or phrases that the participants said or wrote
+that contained meaning, and they were color coded into a new spreadsheet.
+When similar words and phrases that added meaning to the initial words
+were identified, they were grouped together. For the second level of coding, the researchers created sociologically constructed codes (SCCs), which
+are the researchers’ own ideas and interpretations of the participants’ words
+and phrases based on the researchers’ experiences, background knowledge,
+and ideologies (Strauss, 1987). At this point, the researchers then grouped
+the SCCs into the categories that they created on the spreadsheet during
+the first level of coding. In all, this process was iterative. As the researchers
+exchanged ideas about the codes and negotiated meaning, it informed and
+changed the categories. Then, once the categories were stable, the researchers developed umbrella themes by looking across the coded data and categories for patterns (Braun & Clarke, 2006; Creswell, 2014; Mertler, 2017).
+These themes were then described as short statements, and an explanation
+of the patterns were used to substantiate the themes, which in turn became
+the study’s findings.
+
+650
+
+Cherner, Fegely, Mitchell, and Gleasman
+
+Credibility
+Credibility was achieved through four different methods. First, the data
+was reviewed and coded by two researchers to avoid the subjectivities of
+only one researcher (Barry et al., 1999; Saldana, 2015), as described in the
+data analysis process. Second, the researchers used member checking (Creswell, 2014; Merriam, 1998; Mertler, 2017). The substantiated themes along
+with the commentary were sent back to the participants to confirm the accuracy of the work (McMillan, 2016; Mills, 2018). No inaccuracies were
+reported. Third, peer debriefing was used (Lincoln & Guba, 1985; McMillan, 2016), which adds validity to a study through presenting its details and
+findings to other scholars in order to unlock “the fresh perspective that such
+individuals may be able to bring” (Shenton, 2004, p. 67) that can challenge
+the researchers’ findings and aid in identifying opportunities for the study’s
+refinement. The researchers reached out to members of their scholarly networks and shared the entire body of work including their research process
+and de-identified data with two scholars. They then asked for feedback and
+revisions were made based on their suggestions. In addition, this study was
+presented at an international conference to gain the perspective of the attendees. Fourth, the researchers have shared their coding process in detail
+within this article.
+Limitations
+As with all studies, this one too has limitations. First, ideally this study
+would have included participants from several different demographics and
+backgrounds. As this study is bound to the participants in particular educator preparation programs, including more participants was not an option.
+Second, there are multiple search engines that could have also been included in this study, such as Dogpile, Yippy, Gigablast, and several more. This
+study chose to include the two largest search engines in the United States,
+the largest search engine in China, and a non-tracking search engine. Using
+additional search engines may have yielded different findings. Along those
+lines, only six specific search terms were used. Additional search terms
+would have potentially broadened this study’s findings and also the use of
+quotation marks or not using quotation marks may have impacted the findings. Finally, the act of interpretation is a personal one in which researchers
+filter the data against their own background knowledge, beliefs, biases, experiences, and identities. Other researchers with different experiences may
+
+Addressing Implicit Bias in Educator Preparation Programs
+
+651
+
+come to different understandings of the data. Even with member checking
+protocols in place, these limitations apply.
+FINDINGS
+This study’s aim was to raise awareness about implicit bias in order to
+affect change in PSTs’ thinking and behavior. This study was successful in
+accomplishing its aim. Two overarching findings undergird the researchers’ judgement that this instructional strategy was effective in raising PSTs’
+awareness of implicit bias. These results are (1) participants identified misleading images in their search engine results, and (2) a portion of participants said that they were going to change their search engine practices as a
+result of the instructional strategy.
+Finding 1: Participants Identified Misleading Images in Their Search Results
+Shown in Table 7, the survey responses indicated that 62.5% of participants
+characterized their search results as either generally misleading or slightly
+misleading. The participants who categorized their search results as misleading or slightly misleading identified three overarching themes of misleading images: (1) race, (2) gender, and (3) money. Participants’ elaborations related to each of these themes are next described.
+Table 7
+Participants’ Acceptance Rate of Image Representing Search Terms
+Description of Results
+
+Number of Participants
+
+Misleading
+
+22
+
+Slightly misleading
+
+28
+
+Accurate
+
+30
+
+Participants identified implicit messages associated with race. Data
+from the survey showed that participants identified negative and sometimes stereotypical representations of people of color in their search results.
+“If you’re homeless, you’re Black. If you are in the urban region, you’re
+Black,” wrote one participant. Participants also noticed disparities in representation associated with race and wealth. One participant stated, “For some
+
+652
+
+Cherner, Fegely, Mitchell, and Gleasman
+
+of the topics like ‘Rich People’, the people that were depicted in the images
+were all white males. There were no females and no one of different race in
+the pictures.” The most-often-identified implicit message connected wealth
+and the absence of people of color. One participant summarized why such
+non-diverse results could be problematic, explaining, “The ‘poor person’
+result produced images of individuals of the African descent. These results
+could lead you to be biased in the idea that most or all individuals of African descent are poor.”
+Participants identified implicit messages associated with gender. Implicit messages related to gender were identified by participants in the
+survey data. Of note, participants observed stereotypical search results in
+which men were often depicted as rich while women were often depicted as
+emotional. One participant wrote, “the one about rich people was interesting
+because on three of the four websites it showed only men. Likewise for the
+sadness one it was almost all women that were depicted. This is a bit misleading because it almost seems like it is saying women aren’t seen as able
+to be successful and are more unhappy.” This participant’s point was echoed
+by another one who noted, “I think some of the implicit messages were that
+men are meant to be successful and rich, and women are seen as more emotional. Almost all the rich people pictures were of men, and almost all the
+sad pictures were of women.” Further, another participant added, “In reference to the ‘rich person’ images all being men, it may lead viewers to believe that only men can be rich.”
+Participants noted implicit messages associated with money. Survey
+responses showed that participants identified implicit messages in the depictions of poverty and wealth. “Some of the sad images were people in poverty, saying money brings you happiness,” mentioned one participant. “It
+suggested that in order for someone to be happy they needed to smile and
+have material things or money,” affirmed another participant. These observations were echoed by participants in the class discussion portion of the
+study across research sites, with one participant sharing that she noticed all
+the depictions of rich people were smiling, which in turn associated money
+with happiness. A fellow participant from the conversation stated, “I think
+that’s horrible.”
+Participants’ characterizations of their search results’ accuracy converged along political lines. Participants who defined their search results as
+misleading most often identified as liberal, which includes liberal-leaning,
+liberal, or very liberal. Those who characterized their search results as only
+slightly misleading most often identified conservative, which includes conservative-leaning, conservative, or very conservative, as depicted in Table 8.
+
+Addressing Implicit Bias in Educator Preparation Programs
+
+653
+
+Table 8
+Participants’ Characterization of Search Results and Political Views
+Description of Results
+
+Conservative
+
+Neutral
+
+Liberal
+
+Misleading
+
+3
+
+6
+
+13
+
+Slightly misleading
+
+16
+
+9
+
+4
+
+Accurate
+
+9
+
+10
+
+10
+
+Participants who categorized their political views as liberal were over
+four times more likely to describe their search results as misleading when
+compared to those who described their political views as conservative. In
+contrast, participants who described their search results as slightly misleading were four times more likely to identify as having conservative political
+views and two times more likely to have neutral political views than liberal views. Participants who described their search results as accurate were
+split in nearly perfect thirds across political leanings. Three of the responses
+could not be categorized and were removed from the data set because they
+did not answer the question.
+Finding 2: Participants said that they will change their search engine habits
+Of the 83 participants, one third (33.4%) of them indicated that they would
+change their search engine habits after participating in this strategy just one
+time, and Table 9 lists the way that third of participants would change.
+Table 9
+Changes to Participants’ Search Engine Habits as a Result of the Instructional Strategy
+Change to search habits
+
+Number of participants
+
+Use either different or multiple search engines
+
+13
+
+Use either different or multiple search terms
+
+8
+
+Review search results with enhanced mindfulness
+
+7
+
+Use either different or multiple search engines. Participants noted that
+they would now use a different search engine or use multiple search engines
+to triangulate the most accurate results. Two participants responded that
+they felt Bing had more diverse search results, with one writing, “I will use
+
+654
+
+Cherner, Fegely, Mitchell, and Gleasman
+
+Bing for pictures because I like how there were more people represented.”
+Another participant stated, “I think I will use different, more diverse search
+engines from now on. I will make sure to look at the photos and see if implicit messages are being sent.” Participants also noted that they would use
+more than one search engine in the future in order to get the most accurate
+results. “I think that if I want to get more perspectives on topics or different
+answers, I need to use more than one search engine,” responded one participant. “I will definitely try to use different search engines to get a more accurate representation about what I want,” wrote a different participant. Another participant presented their perspective as a PST and stated that using
+multiple search engines would be important to help ensure all their future
+students felt represented. “I’ll try to make an effort to find diverse images
+when using them for coursework or classes. It is important to use representation across all groups in positive image examples. I will probably continue
+to use a variety of search engines and image databases.”
+Use either different or multiple search terms. Some participants explained that they would be more cognizant of the terms they use when engaging with search engines. Participants identified two ways they were
+change their behavior: using multiple different search terms and using more
+diverse search terms. Participants noted that they would utilize different
+search terms to find the most accurate results. “I think this exercise will lead
+me to enter in multiple different versions of what I am trying to look for,”
+wrote one participant. Instead of using multiple search terms, other participants decided they would focus on using more diverse terms. As one participant describes their strategy, “I will attempt to put in more diverse terms”
+when performing searches. Another participant explained, “I would try to
+narrow my searches a little better, so I get the best selections.”
+Review search results with an enhanced mindfulness. Other participants noted that the strategy had changed their mindfulness of search engine
+results. One participant responded that the activity impacted their search
+habits because “now I know there is a bias when using search engines.” Another one connected the activity to the world outside of search engine results: “I think that I will be more mindful of how these biases not only pervade people, but our search engines as well.” Participants also connected the
+strategy to their future teaching. While one participant noted that they would
+not change their personal search habits with search engines, that participant
+wrote, “I will, however, be careful when allowing my students to use search
+engines.” As part of a classroom discussion, one participant summed up his
+enhanced mindfulness for using search engine results, “if we are education
+
+Addressing Implicit Bias in Educator Preparation Programs
+
+655
+
+majors and we have students look things up by images, it could like alter
+their decision making.”
+CONTEXTUALIZING FINDINGS THROUGH AN “INPUT-OUTPUT” LENS
+This study’s goal was to raise PSTs’ awareness of implicit bias, and it
+required a stimulus for drawing the PSTs’ attention to the topic, which was
+the purpose for the images reported by the search engines. The researchers position those images as “inputs” or explicit bias in Mathew’s (2015)
+Contextualized Theory of Health Inequality framework. The search engines
+reported those images based on the algorithms it used to locate them, which
+has implications. As Noble (2018) pointed out, algorithms contain the subtilties of the programmers’ beliefs and values – complete with their principles, ideals, and ethics as well as any partialities, predispositions, and prejudices that they may carry. Therefore, if the programmers held other beliefs
+and values, there is the potentiality that the images reported by the search
+engines would be different. These images are then artifacts of the explicit
+bias Mathews alludes to in her framework, and they served as the input to
+the PSTs in this study. Like the actions in Delgado and Stefancic’s (2001)
+primer, the images are inputs because they draw attention in a way that can
+be interpreted from multiple perspectives, which are requisites for being an
+input. By establishing the images as inputs being explicit bias, the focus
+then shifts to the “outputs” or the implicit bias in Matthew’s framework.
+Delgado and Stefancic (2001) use the term microaggressions to describe the manifestation of an implicit bias into an observable action. Because this study focused on raising PSTs’ awareness of implicit bias and
+then documenting that awareness, it required observable actions, which constituted an “output” lens. In Mathew’s (2015) framework, the circles representing explicit bias and implicit bias overlap to form a Venn diagram. This
+overlap is where the PSTs’ awareness of implicit bias lives because it requires them to internalize the explicit bias or “input” that was sent to them
+in the form of images. This internalization, in turn, becomes the fuel for an
+implicit bias or future “output” to develop. As shown by this study, when
+individuals are aware that the information they are internalizing contains
+implicit messages, they can critically analyze and understand the messages
+they are receiving. Their response is then the output because their actions
+and choices are reflections of how they processed the input and reacted to it.
+In Matthew’s framework, she positioned the internalization of an explicit bias as resulting in an implicit bias connected to a negative outcome.
+
+656
+
+Cherner, Fegely, Mitchell, and Gleasman
+
+However, the PSTs in this study shared that they would change their behavior and be more critical of the images reported to them by search engines.
+The researchers saw that change in behavior as being positive, which does
+not align well to Matthew’s framework. Though the flow in the framework
+– from explicit bias to implicit bias – is a causal relationship needed for the
+input-output lens used by this study, a revision to the framework that allows
+for both positive and negative outcomes is needed, as individuals have the
+opportunity to change for the better as well as for the worse. As such, the
+researchers encourage this new framework to be developed specifically for
+the field of education.
+APPLYING THE FINDINGS FOR PRACTICE AND FUTURE RESEARCH
+This study demonstrates that the strategy of having PSTs search for
+images by using strategic keywords has influenced their thought processes
+while using search engines. Based on the data from surveys and analyses,
+the PSTs were not blindly accepting the results as accurate representations
+of the key terms they inputted into the search engines. Rather, the intervention of the search engine activity illuminated discrepancies between the
+search results and the PSTs’ lived experiences and understanding of society. Therefore, this study’s implications are most useful for teacher educators who prepare PSTs to work in schools and in-service teachers currently
+working in schools.
+First, teacher educators can replicate this activity for their PSTs, and
+Appendix B includes an overview of this activity. Teacher educators can
+then assess the impact of the activity in the moment by facilitating a class
+conversation. Teacher educators can utilize the same questions used by this
+study in order to guide their discussions. To facilitate an ongoing conversation in the classroom about mindfully addressing implicit bias, teacher educators can monitor their PSTs’ use of search engines and note any changes as a result of this activity. Furthermore, after conducting this activity in
+class, teacher educators can remind students about implicit biases they may
+encounter when creating lesson materials and to be mindful about how the
+materials represent different populations and groups of people. During those
+moments, teacher educators can query PSTs about their use of search engines, with an emphasis on using multiple search engines to help ensure that
+a diverse collection of results were considered. This practice can help establish and reinforce student behaviors for using more than one source when
+gathering digital content and information.
+
+Addressing Implicit Bias in Educator Preparation Programs
+
+657
+
+Second, this study presents teacher educators with an alternative from
+using IATs when discussing implicit bias. Whereas the studies referenced
+in the review of literature section each used IATs, the results did not support the IATs as being effective for changing PSTs’ behaviors and thoughts
+regarding their own implicit biases. The strategy described and implemented
+by this study, however, did yield qualitative results that have implications
+for informing and changing PSTs’ behavior related to implicit biases after
+just a single experience with it.
+Next, this strategy presents a powerful method to reframe the topic of
+implicit bias in the PSTs’ future classrooms. Teacher educators can shift the
+conversation from being an analysis of the PSTs’ different biases to viewing implicit bias from an input-output lens. For example, some students who
+are uncomfortable with a classroom discussion on implicit bias may stubbornly make claims that have been widely debunked by scholars, such as “I
+don’t see color” (Groff & Peters, 2012; Husband, 2012). Declarations such
+as these can stall open classroom conversations about implicit bias. Instead,
+this strategy presents an alternative. It pivots the focus of the conversation
+from evaluating individuals and the amount of implicit biases they hold to
+evaluating the mechanisms that imprint implicit biases into individuals’
+psyches. By reframing conversations from identifying the amount of implicit biases people hold to a recognition of mechanisms in society that purport
+and reinforce implicit biases, using an input-output lens offers an alternative
+perspective for engaging these conversations with PSTs.
+Fourth, this strategy utilized images because there is a higher chance
+the PSTs would be able to more immediately visualize the implicit bias in
+that form. After utilizing this strategy with images, teacher educators could
+transition to other forms, such as text and videos. Identifying implicit bias in
+those forms might be more challenging, as a deeper analysis of the texts and
+videos would be needed. However, teacher educators should not preclude
+those forms from being analyzed. In fact, becoming more critical of them
+may well increase the PSTs awareness of the several ways and vast amounts
+of implicit bias that exist in search engines.
+Finally, this strategy is only in its infancy. It is barebones because a limited number of search terms were used, and teacher educators who wish to
+pursue this strategy as part of their scholarship have the opportunity to more
+formally develop it. For example, 33.4% of the participants noted that they
+would change their search engine preference due to having been exposed to
+this strategy just one time. This claim presents teacher educators with two
+lines of inquiry. First, they can replicate this strategy and let a period of time
+pass (e.g., a week, month, semester). They can then survey their PSTs to
+
+658
+
+Cherner, Fegely, Mitchell, and Gleasman
+
+identify if this strategy had long-term effects on PSTs’ preference of search
+engines or how they gathered online materials. Second, as this study’s researchers only implemented this strategy once and reported findings, teacher
+educators could replicate it multiple times by content area. For example,
+teacher educators could have their PSTs use the terms “Famous authors,”
+“Famous scientists,” “Famous historians,” “Famous artists,” and more to see
+if any patterns are recognized in who is and is not reported as famous by
+the search engines. This repetition may increase the number of PSTs who
+would change their behaviors for using search engines.
+CONCLUSION
+Implicit bias is an important topic to address in educator preparation
+programs. Previous studies have assessed PSTs’ levels of implicit bias using IATs. However, those studies have not presented an intervention that has
+implications for increasing PSTs’ awareness of their own implicit biases nor
+how they might address implicit bias in their own instructional practices.
+Though this study has not conclusively accomplished those outcomes, it has
+offered an intervention that teacher educators can implement in their own
+instruction to address implicit bias by having PSTs analyze one way that
+implicit bias is imprinted into individuals’ psyches. The initial results shared
+by this study demonstrate the effectiveness of this strategy for increasing
+awareness and changing behaviors based on the participants’ own words.
+Furthermore, the input-output lens used by this study recasts implicit bias
+from only being viewed as something individuals carry with them and reframes it through the lens of macro mechanisms that transmit these biases
+unto individuals. Given that more work needs to be done in this area, the
+strategy and results shared by this study highlight an innovative way for engaging PSTs in this work and continuing to transform society into a more
+just, socially equitable community.
+References
+Banaji, M.R., & Greenwald, A.G. (2013). Blind spot: Hidden biases of good
+people. Bantam Books.
+Barry, C. A., Britten, N. Barber, N., Bradley, C., & Stevensen, F. (1999). Using
+reflexivity to optimize teamwork in qualitative research. Qualitative Health
+Research, 9(1), 26-44.
+
+Addressing Implicit Bias in Educator Preparation Programs
+
+659
+
+Bloomberg, L. D., & Volpe, M. (2016). Completing your qualitative dissertation: A road map from beginning to end (3rd ed.). Sage.
+Braun, V., & Clarke, V. (2006). Using thematic analysis in psychology. Qualitative Research in Psychology, 3(2), 77-101.
+Creswell, J. W. (2014). Research design: Qualitative, quantitative, and mixed
+method approaches (4th ed.). Sage.
+Creswell, J. W., & Poth, C. N. (2018). Qualitative inquiry and research design:
+Choosing among five approaches (4th ed.). Sage.
+Carter, P. L., & Welner, K. G. (Eds.). (2013). Closing the opportunity gap: What
+America must do to give every child an even chance. Oxford University
+Press.
+Cuthbertson, A. (2018, Oct.). Microsoft Bing delivers racist search results. Independent. Retrieved from https://www.independent.co.uk/life-style/gadgetsand-tech/news/bing-image-search-microsoft-jews-racist-hitler-nazis-a8579596.
+html
+Darling-Hammond, L. (2015). Want to close the achievement gap? Close the
+teaching gap. American Educator, 38(4), 14-18.
+Delgado, R. & Stefancic, J. (2001). Critical Race Theory: An introduction. New
+York University Press.
+Deshano da Silva, C., Huguley, J. P., Kakli, Z., & Rao, R. (2007). The opportunity gap: Achievement and inequality in education. Harvard Education Publishing Group.
+Girvan, E. J., Gion, C., McIntosh, K., & Smolkowski, K. (2017). The relative
+contribution of subjective office referrals to racial disproportionality in
+school discipline. School Psychology Quarterly, 32(3), 392-404.
+Global Stats. (2019a). Search engine market share in United States of America
+- September 2019. Retrieved from https://gs.statcounter.com/search-enginemarket-share/all/united-states-of-america.
+Global Stats. (2019b). Desktop search engine market share in China - September 2019. Retrieved from https://gs.statcounter.com/search-engine-marketshare/desktop/china/2019.
+Goff, P. A., Eberhardt, J. L., Williams, M. J., & Jackson, M. C. (2008). Not yet
+human: Implicit knowledge, historical dehumanization, and contemporary
+consequences. Journal of Personality and Social Psychology, 94(2), 292–
+306.
+Gorski, P. C. (2017). Reaching and teaching students in poverty: Strategies for
+erasing the opportunity gap. Teachers College Press.
+Groff, C. A., & Peters, T. (2012). “I don’t see color”: The Impact of field placements on preservice teachers’ white racial identity development. Journal of
+Educational and Developmental Psychology, 2(2), 1-15.
+Halavais, A. (2009). Search engine society. Polity.
+Hartlep, N.D. (2015). Unwilling or unable? Measuring anti-Asian implicit biases
+of pre-service teachers in order to impact teacher effectiveness. Gauisus:
+Selected Scholarship on Teaching and Learning at Illinois State University,
+3, 1-10.
+
+660
+
+Cherner, Fegely, Mitchell, and Gleasman
+
+Husband, T. (2012). “I don’t see color”: Challenging assumptions about discussing race with young children. Early Childhood Education Journal, 39(6),
+365-371.
+Jackson, S. M., Hillard, A. L., & Schneider, T. R. (2014). Using implicit bias
+training to improve attitudes toward women in STEM. Social Psychology of
+Education, 17(3), 419-438.
+Jacoby-Senghor, D. S., Sinclair, S., & Shelton, J. N. (2016). A lesson in bias:
+The relationship between implicit racial bias and performance in pedagogical contexts. Journal of Experimental Social Psychology, 63, 50-55.
+Lomax, R. G., & Hahs-Vaughn, D. L. (2013). An introduction to statistical concepts. Routledge.
+Lincoln, Y. S., & Guba, E. G. (1985). Naturalistic inquiry. Sage.
+Mathew, D.B. (2015). Towards a structural theory of implicit racial and ethnic
+bias in health care. Health Matrix: The Journal of Law-Medicine, 25(1), 6186.
+McMillan, J. H. (2016). Fundamentals of educational research (7th ed.). Pearson.
+Mertler, C. A. (2017). Action research: Improving schools and empowering educators (5th ed.). Sage.
+Merriam, S.B. (1998). Qualitative research and case study applications in education. Jossey-Bass.
+Mills, G. E. (2018). Action research: A guide for the teacher researcher (6th
+ed.). Pearson.
+Morris, K. A., & Ashburn-Nardo, L. (2009). The Implicit Association Test as a
+class assignment: Student affective and attitudinal reactions. Teaching of
+Psychology, 37(1), 63-68.
+Nissenbaum, H. & Introna, L. (2004). Shaping the web: Why the politics of
+search engines matters. In V. V. Gehring (Ed.), The Internet in public life,
+(pp. 7-27). Rowman and Littlefield.
+Noble, S.U. (2018). Algorithms of oppression: How search engines reinforce
+racism. NYU Press.
+Pasquale, F. (2015). The Black Box Society: The secret algorithms that control
+money and information. Harvard University Press.
+Peterson, E. R., Rubie-Davies, C., Osborne, D., & Sibley, C. (2016). Teachers’ explicit expectations and implicit prejudiced attitudes to educational
+achievement: Relations with student achievement and the ethnic achievement gap. Learning and Instruction, 42, 123-140.
+Rudd, T. (2014). Racial disproportionality in school discipline: Implicit bias is
+heavily implicated. Kirwan Institute.
+Saldana, J. (2015). The coding manual for qualitative researchers. Sage.
+Segev, E. (2010). Google and the digital divide: The bias of online knowledge.
+Chandos.
+Sharma, M. (2017). Applying multi-theory model of health behaviour change to
+address implicit biases in public health. International Journal of Community Medicine and Public Health, 4(9), 3048-3058.
+
+Addressing Implicit Bias in Educator Preparation Programs
+
+661
+
+Shenton, A.K. (2004). Strategies for ensuring trustworthiness in qualitative research projects. Education for Information, 22(2), 63-75.
+Staats, C. (2016). Understanding implicit bias: What educators should know.
+American Educator, 39(4), 29-43.
+Strauss, A., & Corbin, J. (1990). Basics of qualitative research: Grounded theory procedures and techniques. Sage.
+Strauss, A. L. (1987). Qualitative analysis for social scientists. Cambridge University Press.
+
+Cherner, Fegely, Mitchell, and Gleasman
+
+662
+
+APPENDIX A
+Student Search Results Example
+
+Addressing Implicit Bias in Educator Preparation Programs
+
+663
+
+APPENDIX B
+Overview of the Search Engine Activity
+This outline provides teacher educators (TEs) with a scaffold to replicate the activity described in this study with their PSTs. TEs are encouraged
+to modify it to their context.
+To begin, TEs should select the search engines, content, and key terms
+they want their PSTs to use. This study used Google, Bing, Baidu, and
+DuckDuckGo as the search engines, images as its content, and key terms
+that described people (e.g., rich, sad, etc.). TEs can vary these considerations by content area, such as pre-service English teachers using Google
+and Bing to search for poetic content by using “best poetry” “famous poetry” as their key term and then analyzing the results. Pre-service science
+teachers may also use Google and Bing but enter in “Famous Botanists” or
+“Best Physicists” to locate who the search engines deem as notable scientists and then analyze those results. The purpose is for PSTs to be able to
+locate relevant content and analyze it for implicit bias. In fact, TEs can have
+PSTs choose the content and key terms, which can help them take ownership of this activity.
+Next, this study used a think-pair-share methodology paired with
+prompts, so PSTs could process and reflect with classmates while completing the activity. The prompts were written to focus the PSTs’ attention on
+the images and how they use search engines. TEs could replicate that focus
+or modify the prompts, so the PSTs make connections between the images
+and society. For example, TEs could ask, “How do these search results reflect or not reflect society” or “What messages do these search results communicate about the subject area?” Before crafting the prompts, TEs should
+spend time considering the broader implications in relation to the content.
+In close, this description provides a scaffold that TEs can customize to
+their instructional context, with the goal of increasing PSTs’ awareness of
+the implicit biases communicated to them via search engines.
+
+View publication stats
+
+

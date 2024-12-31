@@ -33,65 +33,83 @@ def read_tokens(file_path: Path):
 
 def process_documents(input_dir: Path, stopwords_file: Path):
     # Verify input paths exist
-    if not input_dir.exists():
-        raise FileNotFoundError(f"Input directory does not exist: {input_dir}")
-    if not stopwords_file.exists():
-        raise FileNotFoundError(f"Stopwords file does not exist: {stopwords_file}")
-
-    input_files = list(input_dir.glob("*.txt"))
-    if not input_files:
-        print(f"Warning: No .txt files found in {input_dir}")
-        return
-
-    error_count = 0
-
-    # Initial state language model
-    print("\nCreating initial language model...")
-    create_advanced_language_model(step_identifier="0_Initial_State")
-
-    # Step 1: Remove stopwords for all files
-    print("\nStep 1: Removing stopwords...")
-    for file in input_files:
-        try:
-            tokens = read_tokens(file)
-            tokens = remove_stopwords(tokens, stopwords_file)
-            safe_write_file(file, "\n".join(tokens))
-        except Exception as e:
-            error_count += 1
-            print(f"Error processing {file.name}: {str(e)}")
-    print("\nCreating language model after removing stopwords...")
-    create_advanced_language_model(step_identifier="1_After_Stopwords_Removal")
-
-    # Step 2: Case folding for all files
-    print("\nStep 2: Performing case folding...")
-    for file in input_files:
-        try:
-            tokens = read_tokens(file)
-            tokens = case_folding(tokens)
-            safe_write_file(file, "\n".join(tokens))
-        except Exception as e:
-            error_count += 1
-            print(f"Error processing {file.name}: {str(e)}")
-    print("\nCreating language model after case folding...")
-    create_advanced_language_model(step_identifier="2_After_Case_Folding")
-
-    # Step 3: Stemming for all files
-    print("\nStep 3: Performing stemming...")
-    for file in input_files:
-        try:
-            tokens = read_tokens(file)
-            tokens = perform_stemming(tokens)
-            safe_write_file(file, "\n".join(tokens))
-        except Exception as e:
-            error_count += 1
-            print(f"Error processing {file.name}: {str(e)}")
-    print("\nCreating language model after stemming...")
-    create_advanced_language_model(step_identifier="3_After_Stemming")
-
-    if error_count == 0:
-        print("\nSuccessfully processed all files")
+    if input_dir.resolve()==Path("SearchEngineBias/Processed_Files").resolve():
+        input_files = list(input_dir.glob("*.txt"))
+        if not input_files:
+            print(f"Warning: No .txt files found in {input_dir}")
+            return
+        print("Removing stopwords...")
+        error_count=0
+        for file in input_files:
+            try:
+                tokens = read_tokens(file)
+                tokens = remove_stopwords(tokens, stopwords_file)
+                safe_write_file(file, "\n".join(tokens))
+            except Exception as e:
+                error_count += 1
+                print(f"Error processing {file.name}: {str(e)}")
+        if error_count == 0:
+            print("\nSuccessfully removed stopwords.\n")
     else:
-        print(f"\nCompleted with {error_count} errors")
+        if not input_dir.exists():
+            raise FileNotFoundError(f"Input directory does not exist: {input_dir}")
+        if not stopwords_file.exists():
+            raise FileNotFoundError(f"Stopwords file does not exist: {stopwords_file}")
+
+        input_files = list(input_dir.glob("*.txt"))
+        if not input_files:
+            print(f"Warning: No .txt files found in {input_dir}")
+            return
+
+        error_count = 0
+
+        # Initial state language model
+        print("\nCreating initial language model...")
+        create_advanced_language_model(step_identifier="0_Initial_State")
+
+        # Step 1: Remove stopwords for all files
+        print("\nStep 1: Removing stopwords...")
+        for file in input_files:
+            try:
+                tokens = read_tokens(file)
+                tokens = remove_stopwords(tokens, stopwords_file)
+                safe_write_file(file, "\n".join(tokens))
+            except Exception as e:
+                error_count += 1
+                print(f"Error processing {file.name}: {str(e)}")
+        print("\nCreating language model after removing stopwords...")
+        create_advanced_language_model(step_identifier="1_After_Stopwords_Removal")
+
+        # Step 2: Case folding for all files
+        print("\nStep 2: Performing case folding...")
+        for file in input_files:
+            try:
+                tokens = read_tokens(file)
+                tokens = case_folding(tokens)
+                safe_write_file(file, "\n".join(tokens))
+            except Exception as e:
+                error_count += 1
+                print(f"Error processing {file.name}: {str(e)}")
+        print("\nCreating language model after case folding...")
+        create_advanced_language_model(step_identifier="2_After_Case_Folding")
+
+        # Step 3: Stemming for all files
+        print("\nStep 3: Performing stemming...")
+        for file in input_files:
+            try:
+                tokens = read_tokens(file)
+                tokens = perform_stemming(tokens)
+                safe_write_file(file, "\n".join(tokens))
+            except Exception as e:
+                error_count += 1
+                print(f"Error processing {file.name}: {str(e)}")
+        print("\nCreating language model after stemming...")
+        create_advanced_language_model(step_identifier="3_After_Stemming")
+
+        if error_count == 0:
+            print("\nSuccessfully processed all files")
+        else:
+            print(f"\nCompleted with {error_count} errors")
 
 
 """if __name__ == "__main__":

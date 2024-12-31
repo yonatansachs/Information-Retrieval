@@ -1,0 +1,340 @@
+OBrien_feb_lo:Intro_ lo
+
+1/8/08
+
+1:35 AM
+
+Page 49
+
+By Mark T. Keane, Maeve O’Brien,
+and Barry Smyth
+
+ARE PEOPLE BIASED
+in Their Use of Search Engines?
+
+S
+
+earch engines are among the most-used resources on the
+Internet. Google [2], for example, now hosts over eight
+billion items and returns answers to queries in a fraction
+of a second—thus realizing some
+of the more far-fetched predictions envi- Assessing user
+sioned by the pioneers of the Web [1].
+Here, we assess whether people are search behavior when
+biased in their use of a search engine; deciding which links to
+specifically, whether people tend to
+click on those items that are pre- follow in rank-ordered
+sented as being the most relevant in results lists.
+the search engine’s results list (those
+items listed at the top of the results list). To test this bias hypothesis, we simulated the Google environment systematically reversing
+Google’s normal relevance ordering of the items presented to users. Our results
+show people do manifest some bias, favoring items at the top of results lists,
+though they also seek out high-relevance items listed further down a list. Whether
+this bias arises from people’s implicit trust in search engines such as Google, or
+some other effect, is a subject for further discussion later in this article.
+
+COMMUNICATIONS OF THE ACM February 2008/Vol. 51, No. 2
+
+49
+
+OBrien_feb_lo:Intro_ lo
+
+1/8/08
+
+1:35 AM
+
+Page 50
+
+The Web provides access to an unparalleled volume
+of information at time costs that are orders of magnitude lower than those required for traditional media.
+The critical jumping-off point for this vast repository
+is typically provided by the results returned by search
+engines to user queries: Google [2], for example,
+returns results to over 100 million queries daily,
+queries that are typically two words long [12]. Like
+many search engines, Google uses the collective intelligence of the Web to rank-order pages of relevance to
+a particular query. Each page in this ordered list is typically summarized by a clickable title, some snippets of
+the page’s content (with highlighted matching content
+words) and a Web address link.
+
+A
+
+rational searcher might be
+expected to assess each of these
+page summaries against their
+information need and click on the
+one that appears as the most relevant. People may not search in
+such a way, however. Instead, they
+may manifest biases—they may simply click on toplisted results without checking the results against what
+is on offer, for example. Such biases, if they exist, could
+be due to users coming to implicitly trust a search
+engine. That is, over time, as a search engine consistently delivers relevant pages toward the top of its
+results lists, users might come to assume the top results
+are indeed the best. Alternatively, such biases may arise
+because of a user’s tendency to “satisfice,” or stop at the
+first item that contains the sort of content sought,
+rather than looking for the “best” result among hundreds of relevant results.
+The key manipulation in this study was to compare
+users’ responses when they received results lists in their
+normal ordering versus a systematically reversed order.
+If people are biased in their search then they will not
+notice that the relevance rankings have been reversed.
+That is, they should respond identically to the normal
+and reversed lists clicking on results placed first at the
+top of the lists. If they are not biased then they should
+respond differently to the normal and reversed lists;
+specifically, they should hunt down the reversed list to
+find highly relevant items. To presage our results, the
+truth seems to lie somewhere between these two
+extremes. There is definite evidence of bias in people’s
+Google searches; they tend to click on first-listed
+items, though people also sometimes seek out highly
+relevant results lower down results lists.
+METHOD
+Thirty science undergraduates at University College
+in Dublin, Ireland were paid to participate in the
+50
+
+February 2008/Vol. 51, No. 2 COMMUNICATIONS OF THE ACM
+
+study. Participants were asked to answer 16 questions on computer science (for example, “Who
+invented Java?”) by running as many queries as they
+liked on the simulated Google environment. The
+interface was designed to have the look and feel of
+Google, and all participants reported they thought it
+was Google they were using. The simulated system
+was built using comprehensive search logs from a
+live user trial in which a separate group was asked to
+answer the same 16 questions [4]. All of the queries
+used by this group were stored, as were all of the
+results lists returned to these queries. We then created a database linking specific queries to their
+appropriate results list. This database sat behind our
+simulated Google interface and was used to systematically counterbalance the presentation of results
+lists in either a normal or reversed ordering when a
+user entered a query.
+The results lists returned to a given query were presented in either their original relevance ordering or a
+reversed ordering in a counterbalanced way across trials of the experiment. The order in which questions
+were presented was randomized for each participant to
+counteract any learning effects that might occur in the
+course of a trial. Participants were instructed to limit
+the number of query terms to two or less, to parallel
+typical user behavior (the average Web user enters
+between one and three query terms [12]). For each
+question we recorded the number and names of the
+queries entered and the search results clicked on by
+users. The timing of each transaction was also
+recorded. Participants were asked to complete a form
+detailing their answers to the questions and sessions
+averaged 1.5 hours.
+We also carried out a ranking post test to see
+whether people agree with Google’s relevance ordering
+of results. This post test was carried out on a sample of
+the results lists using a new group of 14 students.
+These participants were asked to manually rank the
+presented results lists from the search experiment (on
+a 1–10 scale from “most likely to select” to “least likely
+to select”). A sample of 16 results lists from the experiment were used, based on those results lists returned
+to the most frequently used query for each of the 16
+questions. This sample thus covered those results lists
+that contributed most to any effects found in the
+experiment. Each participant received the results lists
+in a randomized order and the results in each list were
+also randomized for every participant. This procedure
+was adopted to ensure an accurate assessment of people’s relevance ranks, independent of any possible bias
+effect. People were given one hour to complete this
+ranking task during which participants only completely ranked a subset of the presented results sets.
+
+OBrien_feb_lo:Intro_ lo
+
+1/8/08
+
+1:35 AM
+
+Page 51
+
+RESULTS AND DISCUSSION
+The post test showed there is close agreement
+The dependent measure was the users first click, that between people’s rank of returned results and those
+is the first chosen link by a given user in a returned rankings posed by Google. People’s mean rankings of
+results list to a given query. The data was analyzed in the sampled results lists correlate highly with the search
+a 2 (condition; normal versus reversed) x 10 (rele- engine rankings (r2 = 0.9124 t=9.13; df=8; p<0.0001).
+vance rank; 1–10) design treating queries as the ran- This result shows us that the items Google presents as
+dom factor. That is, for each query we recorded the the best are considered by people to be the best too. It
+proportion of people that chose a particular ranked is interesting this finding occurs even when people
+result, noting whether this occurred in a list that was have been given the results lists in a randomly renormal or reversed. The two-way analysis of variance ordered form, suggesting highly relevant items in each
+(ANOVA) with condition and relevance rank results list were easily identifiable. This post test also
+revealed a main effect of relevance rank [F(9,319) = sheds some light on another issue regarding the relevance topology of the
+102.14, p<0.01, MSe=
+results lists. One concern
+0.89], and a reliable
+about the evidence is that
+interaction between the 80%
+the first 10 results in each
+condition and relevance 70%
+list are approximately
+rank [F(9,319)=11.31, 60%
+50%
+equal in relevance and the
+p<0.01,
+MSe=0.10]. 40%
+real relevance differences
+Tukey’s post-hoc compar- 30%
+only begin around the
+isons of the interaction 20%
+10%
+100th or 200th ranked
+showed there were reli0%
+items. If this were the case
+able differences between
+First Second Third Fourth Fifth Sixth Seventh Eighth Ninth Tenth
+then the search behavior
+the first-click frequencies
+Normal
+Reversed
+observed would only
+for the 1st, 9th, and 10th
+apply to results lists with
+relevance ranks (see the
+flat, relevance topologies. This concern is partly
+figure here).
+normalized percentage of first
+These results clearly The
+clicks by position in the list in the answered by the correlation reported here, but not
+indicate people’s first normal and reversed conditions. fully.
+To get a better idea of the actual relevance topology
+clicks in the normal and
+we analyzed the rankings produced by people in the
+reversed conditions are
+not identical, providing evidence that people are par- post test in a different way. For each of the 16 results
+tially biased in their search activities. Items with the lists sampled, we noted the mean rating given by peohighest-relevance ranks (items ordered first by Google) ple to each result in the list. If the relevance topology
+are chosen 70% of the time in the normal condition, is flat for these lists then these mean ratings should all
+but this rate drops to 10% in the reversed condition. be approximately equal (recall, order effects are conIn contrast, the 9th and 10th relevance-ranked items trolled for this data by randomization). However, this
+are chosen more often (13% and 41%, respectively) in is not what we found. There is a huge variety of differthe reversed condition than in the normal one (2% ent topologies for the results in each list; a few have a
+and 2%, respectively). Intermediately ranked items are single highly relevant item (with a mean rank of 1 or
+2), others have several results given high mean ranks,
+much the same across both conditions.
+The significance of what is happening is readily while others have a linearly increasing relevance topolapparent if one considers the data by position in the ogy. This finding suggests our random selection of
+results lists. The accompanying figure shows that when questions for the experiment generated a random
+lower-relevance-ranked items are positioned first and selection of different relevance topologies; these are
+second in the results list (as they are in the reversed presumably representative of the topologies generated
+condition) they are chosen more often by users, despite by Google. Furthermore, they are not all flat but
+their limited relevance. In contrast, when the highest- hugely varied.
+relevance items are positioned last in the results list (in
+the reversed condition) they are being chosen by users GENERAL DISCUSSION
+considerably less often. In short, users are, in part, mis- Our study results clearly show people are partially
+led by the presented order of the items. However, biased in their search behavior. While it is known
+sometimes people deliberately hunt out the highly rel- that people have a fondness for items at the beginevant items even when they are located at the very bot- ning of written lists, the novelty of our study is that
+it demonstrates such effects within a search engine
+tom of the returned list.
+COMMUNICATIONS OF THE ACM February 2008/Vol. 51, No. 2
+
+51
+
+OBrien_feb_lo:Intro_ lo
+
+1/8/08
+
+1:35 AM
+
+Page 52
+
+context (through our systematically controlled forward-reversed paradigm). So, given that we have evidence of such bias, the difficult question to answer
+is “Why?”
+Recently, Joachims et al. [5] carried out an independently conducted similar experiment to the present one using an eye-tracking paradigm that
+interprets its findings as being due to people’s development of an implicit trust in search engines. However, other recent work does not conclusively support
+the “trust hypothesis,” for instance, O’Brien and
+Keane [7] have found this bias exists even when search
+results are presented as simple text lists.
+
+A
+
+n alternative possibility is that the
+bias is a function of “satisficing”
+search heuristics on behalf of
+users, where users seek satisfactory
+as opposed to optimal results. Our
+findings seem closer to this type of
+search behavior in that we only
+find a partial bias; that is, people do sometimes search
+to the bottom of the list to find the highly relevant
+items. Also, O’Brien and Keane [7] have observed different click patterns across different result distributions where a highly relevant result coming before
+many irrelevant results stands a greater chance of being
+chosen over the same highly relevant result preceded
+by other relatively relevant results, for instance.
+O’Brien and Keane [8] have modeled users interacting with search results adopting a satisficing strategy, accommodating both the findings presented in
+the current study and eye-tracking evidence that suggests users tend to evaluate results sequentially, deciding immediately whether or not to click [6]. O’Brien
+and Keane’s model [8] predicts users will, in general,
+tend to click on top results over results lower down the
+list, though this tendency should not be as strong
+when the relevance of the top results is weakened.
+They [8] demonstrate how the model, across a number of trials, approximates the aggregate search behaviors of large numbers of users searching the Web.
+On the whole, our results suggest search engines
+could misleadingly overpromote an initially popular
+page because, having placed it at the top of the results
+list, it is clicked on preferentially by users, in turn
+increasing the likelihood of it being placed first, being
+clicked on, and so on (see also [3, 7, 8, 10]). This problem obviously applies to search engines that rely on histories of previous user choices (for example, [11]), but
+it could also apply to those linkage-based algorithms
+such as Google’s PageRank [9] because the top-of-thelist pages are more likely to end up as the chosen link
+on people’s Web pages. Search engine designers may
+52
+
+February 2008/Vol. 51, No. 2 COMMUNICATIONS OF THE ACM
+
+need to design systems to overcome such effects (for a
+solution see [10]), and it is clear that future information delivery systems have much to learn from such
+detailed analyses of user search behavior. c
+References
+1. Berners-Lee, T., Cailliau, R., Groff, J., and Pollermann, B. World Wide
+Web: The information universe. Electronic Networking: Research, Applications, and Policy 2, 1 (1992), 52–58.
+2. Brin, S. and Page, L. The anatomy of a large-scale hypertextual Web
+search engine. In Proceedings of the 7th International World Wide Web
+Conference (WWW ‘98) (1998), 107–117.
+3. Cho, J. and Roy, S. Impact of search engines on page popularity. In Proceedings of the 13th International World Wide Web Conference (WWW
+‘04) (2004).
+4. Freyne, J. and Smyth, B. Collaborative search: A live user trial. In Proceedings of the 26th European Conference on Information Retrieval
+Research (ECIR ’04) (2004).
+5. Joachims, T. et al. Accurately interpreting clickthrough data as implicit
+feedback. In Proceedings of the Conference on Research and Development
+in Information Retrieval (SIGIR ’05) (2005).
+6. Klöckner, K., Wirschum, N., and Jameson, A. Depth- and breadth-first
+processing of search result lists. In Proceedings of the SIGCHI Conference
+on Human Factors in Computing Systems (CHI ‘04) (2004).
+7. O’Brien, M. and Keane, M.T. Modeling result-list searching in the
+World Wide Web: The role of relevance topologies and trust bias. In
+Proceedings of the 28th Annual Conference of the Cognitive Science Society
+(2006).
+8. O’Brien, M. and Keane, M.T. Modelling user behaviour using a search
+engine. In Proceedings of the 12th International Conference on Intelligent
+User Interfaces (IUI ‘07) (2007).
+9. Page, L., Brin, S., Motwani, R., Winograd, T. The PageRank Citation
+Ranking: Bringing Order to the Web (1998).
+10. Pandey, S., Roy, S., Olston, C., Cho, J., and Chakrabarti, S. Shuffling
+a stacked deck: The case for partially randomized ranking of search
+engine results. In Proceedings of the 31st international Conference on Very
+Large Data Bases (VLDB ‘05) (2005).
+11. Smyth, B., Freyne, J., Coyle, M., Briggs, P., and Balfe, E. I-SPY—
+Anonymous, community-based personalization by collaborative metasearch. In Proceedings of the 23rd SGAI International Conference on
+Innovative Techniques Applications of Artificial Intelligence (2003).
+12. Spink, A., Wolfram, D., Jansen, B.J., and Saracevic, T. Searching the
+Web: The public and their queries. Journal of the American Society of
+Information Science and Technology 53, 2 (2001), 226–234.
+
+Mark T. Keane (mark.keane@ucd.ie) is the chair of the School of
+Computer Science and Informatics and Vice President for Innovation
+at University College Dublin, Ireland.
+Maeve O’Brien (maeve.m.obrien@ucd.ie) is a Ph.D. candidate in
+the School of Computer Science and Informatics at University College
+Dublin, Ireland.
+Barry Smyth (barry.smyth@ucs.ie) is the digital chair of the
+School of Computer Science and Informatics at University College
+Dublin, Ireland, and the founder and chief technical officer of Changing Worlds Limited, Dublin, Ireland.
+Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for
+profit or commercial advantage and that copies bear this notice and the full citation on
+the first page. To copy otherwise, to republish, to post on servers or to redistribute to
+lists, requires prior specific permission and/or a fee.
+© 2008 ACM 0001-0782/08/0200 $5.00
+
+DOI: 10.1145/1314215.1314224
+
+

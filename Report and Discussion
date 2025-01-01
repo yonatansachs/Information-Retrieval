@@ -1,0 +1,78 @@
+1. Stopwords Removal
+
+A large number of high-frequency but semantically light words (e.g., “the,” “of,” “in,” “to”) were removed.
+As a result, the total number of terms in the corpus dropped substantially.
+However, the vocabulary size (unique words) did not shrink much, because stopwords are repeated constantly but represent only a small portion of unique word types.
+
+By removing stopwords, you shift the corpus to focus on more content-bearing words.
+This typically lowers the average document length (fewer total tokens) but leaves domain-specific words intact.
+The corpus is now more concentrated on topical keywords like “fairness,” “bias,” “ranking,” rather than function words.
+
+2. Case Folding
+
+Converting text to all-lowercase typically merges uppercase and lowercase forms of the same token (e.g., “Search” → “search”).
+In your case, you saw minimal changes in total token count and the top terms remained almost the same.
+
+If the original text was already mostly lowercase, case folding doesn’t significantly reduce the vocabulary.
+When documents do have many uppercase variants (titles, acronyms), case folding helps unify them, potentially reducing the vocabulary size slightly.
+It also standardizes text for downstream tasks, so “Search,” “SEARCH,” and “search” become one token “search.”
+
+3. Stemming
+
+Words with different inflected forms (e.g., “fairness,” “fair,” “fairer”) collapse into a common stem (e.g., “fair”).
+This step causes the largest drop in vocabulary size because multiple variants map to the same root.
+The total number of terms (tokens) remains the same, but now these terms often share simpler forms.
+
+Stemming helps the model treat related words as the same concept (e.g., “ranked,” “ranking,” “ranks” → “rank”).
+This consolidation can help retrieval or classification models by making word matches more robust.
+However, it can introduce ambiguities: different words that share the same root but have slightly different meanings also become merged.
+
+Summary :
+
+Stopwords Removal gave you the biggest drop in total tokens but barely changed the number of unique words. It stripped away function words, revealing more domain-relevant terms.
+Case Folding had a minor effect because the corpus was apparently already near-lowercase. In other scenarios, it can unify otherwise “duplicated” words that differ only in capitalization.
+Stemming notably reduced vocabulary size by collapsing morphological variants. This can improve text matching and save memory but may lose nuanced differences in meaning.
+
+
+
+
+
+
+Overview of Results of Classification:
+Naive Bayes and Random Forest both achieved 80% accuracy on the (very small) 5-document test set.
+SVM (with a linear kernel) and Neural Network both achieved 60% accuracy on the same test set.
+Because there were only 5 documents in the test portion, these numbers can fluctuate greatly. One correct or incorrect prediction can shift the accuracy by 20%.
+
+2. Classification Report Interpretation
+Each classifier’s classification report typically shows:
+
+Precision: Among all documents predicted as a certain class (e.g., “Belongs”), how many truly belong to that class?
+Recall: Among all documents that truly belong to a class, how many did the classifier correctly identify?
+F1-Score: The harmonic mean of precision and recall (balances both).
+Support: The number of documents in each class (in the test set).
+For instance, with Naive Bayes:
+
+precision    recall  f1-score   support
+0 (Does not belong)    0.00      0.00      0.00         1
+1 (Belongs)            0.80      1.00      0.89         4
+It correctly identified all 4 documents in class “1” (Belongs), but it failed to identify the single document in class “0” (Does not belong).
+This results in an overall accuracy of 80%: 4 out of 5 test documents were labeled correctly.
+
+3. Misclassified Documents
+Two documents in particular were frequently misclassified:
+
+Belief_Dynamics_and_Biases_in_Web_Search
+
+True label: Does not belong
+Predicted label (Naive Bayes, SVM, Random Forest, Neural Network): Belongs
+
+Evaluating_the_performance_and_neutrality_bias_of_search_engines
+
+True label: Belongs
+Misclassified at least once (SVM, Neural Network) as Does not belong
+
+Possible Reasons for Misclassifications:
+Small Dataset / Few Test Samples: With only 5 documents in the test set, it is very easy for one or two documents to swing the accuracy and heavily influence recall/precision. A single misclassified document means a 20% drop in accuracy.
+Overlapping Keywords: If “Belief_Dynamics_and_Biases_in_Web_Search” contains many of the same terms that typically appear in “Belongs” documents, the classifier might label it as belonging. This can happen if the text shares important keywords (e.g., “bias,” “search,” “engine,” “analysis”).
+Topic Similarity: Even though the document was labeled “Does not belong,” its content may still be closely related (at the lexical level) to other “Belongs” documents. Classifiers relying on word-frequency patterns might find it too similar to the “Belongs” class.
+Imbalanced Classes: If the overall dataset has many more “Belongs” documents than “Does not belong,” the model can become biased toward predicting “Belongs.” The single “Does not belong” document is easy to misclassify.

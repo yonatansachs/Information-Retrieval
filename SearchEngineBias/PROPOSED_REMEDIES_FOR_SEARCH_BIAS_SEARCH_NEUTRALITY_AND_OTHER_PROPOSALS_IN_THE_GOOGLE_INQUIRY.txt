@@ -1,0 +1,1830 @@
+PROPOSED REMEDIES FOR SEARCH BIAS:
+“SEARCH NEUTRALITY” AND OTHER PROPOSALS IN THE GOOGLE INQUIRY
+
+Marvin Ammori and Luke Pelican
+May 14, 2012
+
+Published in the Journal of Internet Law
+
+1
+
+Electronic
+Electroniccopy
+copyavailable
+availableat:
+at:https://ssrn.com/abstract=2058159
+http://ssrn.com/abstract=2058159
+
+PROPOSED REMEDIES FOR SEARCH BIAS:
+“SEARCH NEUTRALITY” AND OTHER PROPOSALS IN THE GOOGLE INQUIRY
+
+I. BACKGROUND ..................................................................................................................... 4
+A. FACTS AT THE CENTER OF THE ANTITRUST INQUIRY ..................................... 4
+B.
+
+REMEDIES IN ANTITRUST LAW ................................................................................. 8
+
+II. REMEDIES PROPOSED BY GOOGLE’S COMPETITORS ........................................... 10
+A. SEARCH NEUTRALITY ................................................................................................ 11
+1.
+
+A Court Could Not Explain This Remedy ............................................................... 12
+
+2. A Court Could Not Adequately Supervise This Remedy: A CRS Analogy and
+Technical Committees Would Fail ................................................................................... 15
+B.
+
+TEN BLUE LINKS: FORBIDDING UNIVERSAL SEARCH ..................................... 20
+
+C. TRANSPARENCY .......................................................................................................... 25
+D. CONTENT RULES: FAIR USE AND SHARING ....................................................... 32
+E.
+
+NO BIDDING: ACQUISITIONS AND EXCLUSIVE AGREEMENTS .................... 36
+
+III. CONCLUSION ................................................................................................................... 38
+NOTES ......................................................................................................................................... 39
+
+2
+
+Electronic
+Electroniccopy
+copyavailable
+availableat:
+at:https://ssrn.com/abstract=2058159
+http://ssrn.com/abstract=2058159
+
+PROPOSED REMEDIES FOR SEARCH BIAS:
+“SEARCH NEUTRALITY” AND OTHER PROPOSALS IN THE GOOGLE INQUIRY
+Marvin Ammori and Luke Pelican1
+
+Google is currently the subject of high-profile antitrust scrutiny by the Federal
+Trade Commission (FTC), the European Commission (EU), and other regulators. At the
+heart of this scrutiny is Google’s competitors’ claim of “search bias”—that Google
+manipulates Google Search results to penalize competitors or to privilege other Google
+products and features. In light of these antitrust inquiries, Google’s competitors have
+publicly proposed more than a dozen remedies for agencies to pursue.
+This article evaluates these proposed remedies, with a focus on the FTC’s
+investigation in the United States. The remedies can be evaluated now because Google’s
+complaining competitors have had considerable opportunity to provide details of
+workable remedies. Microsoft, Expedia, Foundem, and a host of other companies have
+formed coalitions devoted to pursuing an antitrust investigation, called FairSearch in
+the United States and Initiative for a Competitive Online Marketplace (ICOMP) in
+Europe.1 These coalitions have issued several white papers, sections of which propose a
+large number of remedies.2 Their consultants have also elaborated on these remedies
+and proposed others.3 The executives of Google’s complaining competitors testified at a
+Marvin Ammori and Luke Pelican manage the Ammori Group, a law firm and
+Internet-law consulting practice whose clients include Google Inc. Mr. Ammori spent
+years as a faculty member at the University of Nebraska, where he cofounded its worldleading Space, Cyber, and Telecom Law program, supported by US Strategic Command
+and the US Air Force. He has published articles in law journals at Harvard, Michigan,
+Wisconsin, Missouri, Catholic, Regent, and elsewhere. Mr. Pelican has a JD from the
+University of Michigan Law School and an LLM from the University of Nebraska
+School of Law.
+1
+
+1
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+US Senate hearing on Google and antitrust, in September of 2011, with the opportunity
+to propose remedies.4 It can be assumed that these competitors and their consultants
+have already put forward their most persuasive remedies, rather than putting forth
+their least persuasive proposals. Almost all of the proposed remedies target search bias.
+As this article demonstrates, even the competitors’ strongest proposed remedies are
+entirely unpersuasive. At the Senate hearing, senators suggested that Google’s
+competitors had not proposed a compelling, workable remedy, as they repeatedly
+asked witnesses for Google what they “would propose for a remedy if an antitrust court
+ruled against it.”5
+This article concludes that the cures proposed by the competitors are worse than
+Google’s alleged disease. The proposed remedies might benefit the short-term economic
+interests of Google’s competitors that are members of FairSearch and ICOMP, but
+benefiting competitors is not the goal of antitrust law. The goal of antitrust law is to
+promote consumer welfare, competition, and innovation. The proposed remedies,
+however, would do the opposite: harm consumers, impede competition, and stifle
+innovation. The remedies would invite government agencies and technical committees
+to second-guess and evaluate both mundane and game-changing engineering and userinterface decisions regarding Google Search, reverse long-standing fair use principles
+rooted in constitutional requirements, and empower competitors to litigate rather than
+compete against daily innovations and disclosures by Google.
+Although the antitrust inquiries are ongoing, the FTC should evaluate the
+competitors’ proposed remedies now for at least three reasons. First, if the dozen
+strongest proposed remedies would, on balance, harm consumer welfare, competition,
+and innovation, then the FTC would find no point in pursuing an investigation at all. 6
+Second, the lack of workable remedies may be a powerful indicator of a weak antitrust
+claim on its merits, as even Thomas Barnett, the former US Department of Justice (DOJ)
+Antitrust Division chief who now represents FairSearch, has noted.7 Third, when
+competitors in the FairSearch coalition such as Microsoft seek a government
+investigation without proffering a practical remedy, the intention appears rooted not in
+2
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+redressing a legal wrong, but merely in raising a rival’s costs through the legal system.
+Forcing Google’s executives to spend valuable time not on out-innovating competitors
+but instead on responding to antitrust investigations merely raises Google’s costs of
+innovation.8
+To evaluate the many proposed remedies, they can be classified into five
+categories:
+
+1. Search “Neutrality”: inviting government to second-guess and reject
+algorithmic and manual changes to Google Search based on an elusive, illdefined “neutrality” concept that neither agencies nor technical committees
+could effectively adjudicate.
+2. Ten Blue Links, not Universal Search: forbidding Google from presenting
+answers to search queries as both Google and its largest competitors have
+done since 2007, with results that deliver a mix of Web links, news links,
+places, maps, and images, rather than merely providing 10 blue links to Web
+sites, just as many search engines did years ago.
+3. Google-Specific Fair-Use Limits: forbidding Google from crawling and
+using others’ Web content while forcing Google to let others crawl and use
+Google’s content, thereby inverting the copyright fair-use doctrine, the
+trespass-to-chattels doctrine, and raising constitutional concerns.
+4. No Bidding: constraining Google’s ability to compete for acquisitions and
+exclusive partnerships, harming acquisition targets and consumers while
+favoring the most deep-pocketed competitors.
+
+3
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+5. Continuous Disclosure: requiring numerous ongoing disclosures, many of
+which Google already provides, and others that would enable spammers to
+manipulate Google’s search algorithms or empower its less innovative
+competitors merely to copy new Google products more rapidly.
+
+To evaluate these categories of proposed remedies, this article is divided into two
+primary sections. The first sets out some background regarding the relevant facts of the
+Google inquiry and the law of antitrust remedies. The second addresses each of the five
+classes of proposed remedies. The article concludes that none of these proposed
+remedies is workable and that antitrust law specifically disfavors many of them.
+I.
+
+BACKGROUND
+We begin with a brief review of the facts and applicable law and policy
+
+concerning antitrust remedies and consumer welfare.
+
+A. FACTS AT THE CENTER OF THE ANTITRUST INQUIRY
+In June of 2011, Google confirmed that it is under investigation by the FTC. 9 The
+following September, the US Senate’s Subcommittee on Antitrust, Competition Policy,
+and Consumer Rights held a hearing on Google that focused almost exclusively on one
+topic: whether Google’s search engine preferences other Google products or
+deliberately harms Google’s competitors.10 In December, the top Democrat and top
+Republican on the Subcommittee sent a letter to the FTC to encourage the ongoing
+investigation and reiterated the focus on search bias.11 The debate over Google’s search
+bias extends beyond the FTC and Congress, and has also prompted debates in academic
+circles, think tanks, the press, and abroad.12
+As the case against Google would be a monopolization case, we can begin with
+the two legal questions that shape the factual analysis in any monopolization case.
+4
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+Those questions are whether the company has monopoly power and, if so, whether it
+has abused that monopoly power to exclude rivals on a basis other than efficiency or
+innovation.
+First, Google’s competitors argue that Google has monopoly power, because,
+depending on the measure, Google processes roughly 65 percent of search queries
+through general search engines.13 Google denies having monopoly power, arguing that
+it competes aggressively with general search engines such as Microsoft’s Bing (which
+also powers Yahoo! search, another competitor), smaller general-search providers, and
+other tools for finding information. These other tools include Facebook and other social
+networks, which direct considerable traffic to news sites, among others;14 Twitter and
+other microblogs; specialized search engines such as Yelp and Amazon; and other tools,
+including mobile apps.15
+Google’s complaining competitors also argue that Google has engaged in legally
+“exclusionary” actions. Antitrust law protects “competition” but not specific
+“competitors.”16 Courts have recognized that antitrust law encourages aggressive
+competition but that distinguishing exclusionary conduct from aggressive competition
+is often difficult. As a result, whether or not conduct is exclusionary often turns on
+whether the monopolist’s actions cannot be explained by innovation, efficiency,
+meeting competition, or serving consumers, and is best explained as having no business
+purpose beyond destroying competition.17
+In alleging exclusionary acts, Google’s complaining competitors have thrown a
+lot of ingredients into a “monopoly broth,”18 but focus on alleged search bias. The
+competitors accuse Google of nontransparent manipulation of its search results either to
+favor its own properties or to punish specific potential competitors. The argument that
+Google favors its own properties is derived primarily from Google’s use of a Universal
+Search instead of 10 blue links. Before 2007, Google displayed results generally as 10
+links to Web pages on each results page. In 2007, Google introduced Universal Search,
+which displays results not only from Web sites, but also, from images, videos, news,
+maps, and places. Google’s competitors argue that Universal Search favors Google’s
+5
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+own “specialized search properties,” such as Google Maps, Google Places, and Google
+Products, over competing specialized search providers, such as MapQuest, Yelp,
+Foundem, and Nextag. For example, in February of 2012, a TripAdvisor executive
+accused Google of bias because Google Places results show up higher on the screen than
+some other results, including TripAdvisor’s.19 To the competitors, from an antitrust
+viewpoint, Google is tying together two distinct products—general search and the
+specialized search tools—thereby making it difficult for specialized competitors to
+receive as much traffic from Google’s search users.
+In response, Google argues that Universal Search is not exclusionary but
+innovative and responsive to consumers. First, Google argues that the attack on
+Google’s integrated search results reflects an attempt to lock into place a (perhaps
+inaccurate) view of what search engines did in 2007. Since 2007, all search engines have
+not only moved to Universal Search,20 but also, Bing, Yahoo!, and Google have
+introduced social search functionality—with Bing doing so in partnership with the
+largest social network, Facebook.21 Bing has advertised itself as providing answers and
+has criticized Google for providing links without context.22 Second, Google maintains
+that consumers go to search engines for answers and that those answers may be more
+usefully categorized by images, places, or news, not merely through links to Web sites. 23
+Third, as noted, Google’s leading general-search competitors, Bing and Yahoo!, also
+display results “universally” rather than providing 10 blue links, 24 which likely reflects
+efficiency and consumer preferences, rather than exclusionary conduct. Fourth, research
+demonstrates that Google “favors” its own properties, such as Google Places, no more
+than Bing does.25
+Since 2007, disruptive small competitors have aimed at innovations far beyond
+presenting 10 blue links to Web sites: Bit.ly has announced a predictive future search
+product,26 Blekko uses a suggestive, hashed search and weeds out content farms and
+spammy sites (while opposing the Google antitrust inquiry, declaring its willingness to
+compete against Google in the market),27 StumbleUpon offers a serendipitous search,28
+DuckDuckGo aims to provide answers, not results, and does not collect personal
+6
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+information.29 Chomp is considered the best tool for searching the iPhone app store,
+resulting in Apple’s recent purchase of Chomp.30 Several other companies compete
+based on privacy (Ixquick), security and family-friendly defaults (Yippy), and even
+environmental effects (Gigablast).31 Google’s leading engineers are predicting that the
+future of searches will be more like Siri than like 10 blue links: They will be mobile and
+increasingly reliant on artificial-intelligence processing of concepts, not keywords. 32 The
+Google competitors have not, according to Google, demonstrated that consumers are
+better served by requiring Google to maintain its 10-blue-links display from years ago
+while at the same time other companies continue to innovate their search engines.
+In contrast to the argument that Google favors its own properties, the argument
+that Google specifically penalizes particular competitors rests largely on specific
+complaints from particular companies that rank poorly because of a hypothesized
+“manual” adjustment by Google or a general Google policy. For example, Foundem, a
+small UK-based price-comparison site most famous for complaining about Google,
+argues that Google has deliberately punished Foundem because it is a search engine
+competing with Google.33 Google replies that it does not “cook” the results to disfavor
+competitors and also notes that, to meet consumers’ demands, it favors sites with
+original content, rather than sites consisting of merely lists of links to other content.
+According to Google, its users understandably go to Google for answers, not for links to
+sites consisting of additional links to answers.34 Finally, Google asserts that no Web site
+(competing with it or not) is “entitled” to a certain amount of traffic from Google or to
+being highly ranked in particular searches; rather, Google has the right to determine its
+search results, as it is a given that all sites would prefer high rankings for some
+searches.
+In light of Google competitors’ arguments regarding search bias, several
+academic experts have debated the subject and potential solutions for the perceived
+problem. Frank Pasquale and Oren Bracha published the first piece arguing for
+considering “search neutrality” in 2007.35 Since then, Professor Pasquale has proposed,
+beyond “search neutrality,” a government-funded search engine.36 Google competitors
+7
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+and their consultants have championed “search neutrality,” while several academic
+experts have rejected the concept as incoherent and problematic. Harsh critics of search
+neutrality include Eric Goldman, James Grimmelmann, Daniel Crane, and Joshua
+Wright.37
+In addition to the focus on search bias, Google’s competitors raise other
+arguments. They suggest that Google is free-riding off their content (although violating
+no intellectual property laws) when Google points users to newspapers and to other
+sites willingly indexed by Google, that Google is deceiving users about its search-engine
+results, and that Google is apparently engaging in exclusionary exclusive deals and
+acquisitions by outbidding the similarly deep-pocketed Microsoft.38 Google’s
+competitors have proposed almost two dozen remedies to address these alleged actions.
+
+B. REMEDIES IN ANTITRUST LAW
+Cases of equitable remedies for monopolization have three goals: to terminate a
+defendant’s unlawful conduct, to prevent that conduct’s recurrence, and to reestablish
+the opportunity for competition.39 The third goal, reestablishing the opportunity for
+competition, should aim merely to reestablish the competitive opportunities prior to the
+anticompetitive actions rather than aim to remake the market.40 The “daunting
+challenge” is selecting a remedy that furthers these goals “without imposing undue
+costs on the court or the parties, without unnecessarily chilling legitimate competition,
+and without undermining incentives to invest and innovate.”41
+The study and theory of antitrust remedies, however, leaves much to be desired.
+As the DOJ has observed, “Notwithstanding their importance, the study of remedies
+has been somewhat neglected.”42 Experts observe that there is “no treatise” on remedies
+and no “body of systematic knowledge” identifying patterns in precedent or evaluating
+which remedies have worked and which have failed.43 Critics contend that, in antitrust
+investigations, somehow, “[R]emedy [is] something that gets thought of at the last
+minute with the least resources.”44 Indeed, a former senior official at the FTC, who has
+also noted that there is “no book” on remedies, has conceded that he personally worked
+8
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+on remedies that failed because the FTC poorly understood the industry involved
+and/or potential remedies in general.45
+In furthering the goals of cases of equitable remedies for monopolization, three
+features of antitrust law are most influential in guiding our analysis: a focus on
+consumer welfare—not competitor welfare, a sensitivity to institutional limitations in
+implementing ongoing remedies, and a concern for dynamic innovation.
+First, antitrust remedies should focus on consumer welfare, not on the welfare of
+specific competitors. As the FTC and DOJ have noted, a “remedy should focus on
+preserving competition, not protecting individual competitors.”46 A remedy should not
+slow down the most efficient and innovative leaders merely to help weaker
+competitors.
+Second, regulators and academic experts increasingly take into account
+technological innovation and dynamic efficiency, rather than merely focusing on static
+efficiency.47 The benefits of innovation and dynamic efficiency likely far outweigh the
+benefits of static efficiency over the long run, particularly in innovative markets. 48
+Therefore, courts must weigh the effects of particular remedies regarding innovation.
+Third, and centrally important for the Google analysis, courts are sensitive to
+institutional constraints.49 Herbert Hovenkamp, editor of a highly influential antitrust
+treatise,50 has counseled courts that, “The basic rule should be nonintervention unless
+the court is confident that it has identified anti-competitive conduct and can apply an
+effective remedy”51 (emphasis added). Generalist courts often lack the competence,
+information, and institutional tools to implement intrusive economic oversight and
+regulation, such as price setting and network-infrastructure sharing, leaving such
+remedies to specialized federal agencies tasked with implementing such policies. 52
+Such institutional sensitivity is reflected in two ways. First, when remedies are
+appropriate, courts favor remedies that are less intrusive and easier to administer over
+other remedies. The Supreme Court has stated that, “[A]ntitrust courts normally avoid
+direct price administration, relying on rules and remedies . . . that are easier to
+administer.”53 Second, sometimes the lack of an administrable remedy counsels against
+9
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+finding liability. For example, because of institutional limits, antitrust courts are
+reluctant to impose a “duty to deal” with competitors, requiring a company to deal with
+its competitors on particular terms. As the Supreme Court has held, a court should not
+“impose a duty to deal that it cannot . . . reasonably supervise,” and problems should be
+considered irremediable “by antitrust law when compulsory access requires the court to
+assume the day-to-day controls characteristic of a regulatory agency.”54 Similarly, the
+Supreme Court does not recognize claims for “price squeezes,” partly because of the
+difficulty of administering a remedy: “Institutional concerns also counsel against
+recognition of such claims. Courts are ill suited ‘to act as central planners, identifying
+the proper price, quantity, and other terms of dealing.’”55
+As the following section of this article establishes, the remedies proposed by
+Google’s competitors and their consultants would benefit those competitors rather than
+benefiting competition, would stifle the innovative efforts of both Google and its
+competitors, and would require antitrust courts to act as supervisory regulatory
+agencies. Several remedies would impose on Google a duty to deal with complaining
+competitors. Others, such as a price-squeeze remedy, would require constant
+monitoring and the matching of two moving targets in different markets: the quality of
+Web sites ranked in search results and the consumer preferences for their relevance. For
+these reasons, the proposed remedies are flawed and should not be considered.
+
+II.
+
+REMEDIES PROPOSED BY GOOGLE’S COMPETITORS
+FairSearch and ICOMP proffer numerous remedies. The first category would
+
+require “neutral” search algorithms and the “neutral” display of search results,
+although neutrality in searches is an incoherent concept and attempting to enforce it
+would require daily government oversight (and approval) of business and engineering.
+The second category would eliminate one of Google’s competitive innovations,
+Universal Search, perhaps even by splitting Google into a “general” search company
+and a “specialized” search company, even though Universal Search is a four-year-old
+innovation and has also been adopted by Google’s main competitors to meet consumer
+10
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+preferences. A third category of remedies would impose transparency requirements on
+Google—despite Google’s existing transparency efforts—that would benefit Google’s
+competitors and spammers far more than they would benefit consumers and legitimate
+Web-site operators. The fourth category of remedies would warp traditional copyright
+law uniquely for Google’s search products and impose on Google unprecedented duties
+to deal with competitors seeking to technically crawl its servers. The fifth and final
+category would impose a higher burden on Google in the area of acquisitions and
+exclusive arrangements, either blocking these altogether or subjecting Google’s efforts
+to greater scrutiny than the efforts of other firms. On balance, these remedies do not
+further—but rather threaten—consumer welfare, competition, and innovation.
+
+A. SEARCH NEUTRALITY
+Many of the most prominent proposed remedies aim to ensure that Google’s
+results are not biased against competitors.56 The FairSearch White Paper proposes
+“[p]rohibiting Google from reducing the ranking of any site because it competes with a
+Google site.”57 The ICOMP Report includes a rule forbidding “retaliation” against
+companies that exercise one of the other proposed remedies, including the reduction of
+the search placement of those companies. 58 That report also provides an analogy to an
+antitrust remedy employed against airlines’ computer reservation systems (CRS) in the
+1980s and 1990s, which would require Google not to privilege sites in which it has an
+interest.59 To implement these neutrality mandates, some have proposed the aid of a
+“technical committee.”60
+These remedies would not benefit consumers because not even technical
+committees could define the necessary metric for “neutrality” and administering such a
+metric would destroy Google’s ability to compete, innovate, and serve consumers. In
+the language of antitrust law, these remedies impose a “duty to deal with competitors,”
+by requiring Google to deal with and display competing sites under certain terms. As
+
+11
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+noted above, “No court should impose a duty to deal that it cannot explain or
+adequately and reasonably supervise.”61
+
+1.
+
+A Court Could Not Explain This Remedy
+
+A court could not adequately explain the duty to deal with competitors with
+specificity. Despite the inquiry and competitors’ incentives, no one has articulated a
+specific formula or metric for determining when or if Google’s display opinions
+improperly disadvantage rivals. Search is ultimately an opinion about the likely
+relevance of some information to a query. Indeed, several courts have held that, for
+constitutional purposes, search results are “opinions.”62 If search results had easy “right
+answers,” Google would not have to experiment daily and tweak its engine more than
+500 times a year.63 Professors James Grimmelman and Eric Goldman have both
+elaborated on this point, concluding that it is impossible to define an objective metric
+for determining the “neutrality” of search opinions.64 As a technology journalist
+observed, “Trying to prove whether Yelp or Google Places provides the better results is
+very subjective.”65 Consider the example of vanity searches, in which a user’s search
+query is his or her own name. What is the “right” ranking? Is a profile page on Google
+Profiles more relevant than an AOL About.me page or the user’s About the Author
+page on his or her blog (whether that blog is on Google’s Blogger or the competing
+platforms of WordPress and Tumblr)? No objective metric is helpful in making such a
+determination.
+Beyond these hypothetical examples, we can look to actual proposed examples of
+such bias. The most prominent example is Foundem, a “vertical search” company in the
+United Kingdom that claims Google penalized it because Foundem is a competitor.
+Foundem has complained to regulators and users, and it created a site devoted to
+“search neutrality.”66 Essentially, Google’s response is that Foundem deserves its poor
+rankings because of consumer preferences. To Google, Foundem is a low-quality site
+lacking original content and merely copying content off other sites.67 Google favors sites
+with original content because users generally want the original source, not a site that
+12
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+merely republishes other content. Anyone who has published in the Huffington Post
+likely hopes that search engines serve the original post first, rather than the many
+dozens of (generally lower-quality, spammy) copying sites that mirror that content.
+Foundem responds to this Google policy by noting that all search engines competing
+with Google have little original content. Google replies that its users go to Google for
+answers, not for links to other sites that link to answers. To use vanity searches of one’s
+own name as an example again, a search-results list of links to other search engines’
+results would not be helpful for such searches. Indeed, vanity searches would not want
+other users to see a list of links to other search engines when those users are searching
+for their names.
+An executive at one of the United Kingdom’s leading technology marketing
+firms was skeptical of Foundem’s claims, considering that so many other vertical search
+engines place very well in Google’s search results. Moreover, he observed that
+Foundem resembles a link directory, whose links lead “to nothing special”—content
+“culled from product feeds,” with “duplicate content all over the place,” and pages
+inviting user reviews but not having any such reviews.68 This executive noted that
+Foundem fails to even engage in proper search-engine optimization for various
+technical reasons, and he believes that Google’s failure to rank Foundem highly was
+evidence that Google’s algorithm was doing an excellent job of distinguishing content
+that is useful for users.69
+Who is right? Is there a metric for determining which opinion is right? Even
+Microsoft consultants have no simple answer, noting, about this very issue: “[I]t is
+difficult to resolve the disagreement without making difficult judgments about the
+value and importance of individual sites,” although they go on to assert that Foundem’s
+supposed “industry accolades confirm site quality.” 70
+While no specific metric is available for judging the “best” opinion, a more
+general metric would provide insufficient guidance to Google and its competitors. The
+Supreme Court has stated that, “[A]ntitrust rules ‘must be clear enough for lawyers to
+explain them to clients.’”71 The same must be true of antitrust remedies. Google changes
+13
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+its algorithm 500 times a year. With these changes, some sites rise in rank and some fall.
+Short of an unlikely “smoking gun” in Google’s policies, source code, or an
+incriminating email exchange, Google could very plausibly argue that each change
+merely aims to provide the most relevant results for users. A general rule against
+disadvantaging competitors’ links, however, would invite companies both to claim to
+be competitors and then to lodge harassing complaints to jockey for better placement.72
+Companies could object weekly, if not daily, to their search placements, as all would
+prefer better placement for particular queries. Rather than investing in better, more
+relevant content and in increasing visibility through diverse means, companies would
+spend resources in rent-seeking through a poorly crafted antitrust remedy lacking
+specific guidance.
+Here is one more example: Competitors complain that Google’s Universal Search
+results might place links from Google Places over links to Yelp, place results from
+Google Flight Search over links to Trip Advisor, place Google Maps results over
+MapQuest links, and group Google’s results for News above Web links to other news
+sources. The proposed bias remedy, however, would empower Yelp, TripAdvisor,
+MapQuest, and any news organization or aggregator to argue that Google has
+disadvantaged them. If Google had to justify every query resulting in a link to a Google
+product outranking a link to a supposed competitor, Google would either have to
+abandon Universal Search or include its own properties at the bottom of the displayed
+results as a precaution. Google would have to do this even though many believe that
+Google Maps and Google Flight Search often include better, more relevant results, and
+even though some users likely use Google Search partly because they prefer the
+“specialized” Google properties over specialized Bing search properties in Bing’s
+Universal Search.
+
+14
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+2. A Court Could Not Adequately Supervise This Remedy: A CRS
+Analogy and Technical Committees Would Fail
+A court (or agency) could not “adequately and reasonably supervise” this
+remedy—regardless of the debatable success of the airline CRS remedy decades ago and
+even with the help of a technical committee.
+To supervise this remedy, a court or agency would have to adjudicate complaints
+from a potential “competitor” for existing algorithms—about which Google’s
+competitors already complain73—and potentially adjudicate every one of the 500 tweaks
+that Google makes to the algorithms every year, while applying an undefined metric, as
+discussed above. It is doubtful that any court or agency could administer such a
+remedy, let alone administer it rapidly. The bias adjudications would require courts or
+agencies to monitor thousands of lines of code changed daily to measure a continuously
+moving target: the interaction between (often-modified) sites and consumer preferences
+regarding relevance to queries. A court or agency simply could not engage in such
+adjudication without crippling Google’s ability to innovate rapidly and respond to
+consumer preferences. Hindering Google’s ability to innovate might help competitors,
+but it would harm consumers.
+CRS Analogy. Despite this obvious administrability problem, Google’s
+competitors claim that these remedies are indeed workable, largely by pointing to a
+remedy implemented by the Civil Aeronautics Board (CAB) for airline CRSs in the
+1990s and suggesting a “technical committee.” Before the advent of Internet and tools
+such as Expedia, Travelocity, and Google Flight Search., airline customers used travel
+agents to book flights. The travel agents had access to CRS terminals, enabling them to
+see flight availability and pricing for various major airlines. The airlines owned the
+major CRSs and favored their own flights. United Airlines owned a CRS called Apollo,
+and it might have listed United Airlines flights first on queries even if other flights were
+less expensive and had fewer stops. In the words of Microsoft consultant Ben Edelman,
+“The Department of Justice intervened, culminating in rules prohibiting any CRS
+owned by an airline from ordering listings us[ing] any factors directly or indirectly
+15
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+relating to carrier identity.”74 That consultant went on to say that, “[M]ost travel agents
+hesitated to switch CRS’s, and extra searches would be both time-consuming and errorprone. Prohibiting biased listings was the better approach.”75
+This analogy, however, is inapt, and it weighs against Google’s competitors. As
+others have argued, the analogy is inapt in terms of the market dynamics; through
+contracts, CRS networks had multiyear termination access monopolies with travel
+agents, whereas consumers today can easily switch search engines and sites can reach
+users through many other means.76 More importantly, the analogy is inapt in terms of
+the dynamics of the remedy itself.
+First, the CRS rules reflected a regulatory policy, not an antitrust remedy, and the
+Supreme Court has explicitly held that antitrust courts disfavor remedies requiring
+them to take on the role of regulatory agencies. 77 In the last year of its existence, 1984,
+the CAB adopted these CRS rules and the Department of Transportation (DOT)
+implemented the remedy until repealing the rules in 2004.78 Simply put, this was not an
+antitrust remedy, and neither the generalist courts nor the antitrust agencies
+administered the rules. In fact, as Judge Richard Posner noted, “the Department did not
+file an antitrust suit” before the CAB rules were adopted.79 Indeed, the DOJ never
+brought suit; the many private antitrust suits failed; and a court in a 1989 antitrust case
+decided that the CRS market was competitive.80 Therefore, because a sector-specific
+regulatory agency adopted and enforced the rules, Edelman’s analogy is inapplicable.
+Indeed, it suggests that an antitrust court would take on the role of a regulatory agency,
+despite the Supreme Court’s admonition.
+Second, even if the DOT could have implemented the CRS remedy, CRS is so
+much simpler a technology than Internet searches are that it is doubtful that any
+regulatory agency could implement the proposed search “neutrality” remedies. CRS
+displays results for a specific class of queries (flights) based on a few simple criteria,
+such as listed price, stops, destination, date, and time.81 On the other hand, search
+engines must respond to far more complex (and often incomplete or suggestive)
+queries. It is far more difficult to determine whether competitors are penalized by a
+16
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+search engine’s search of “Luke Pelican,” “best shoe store in Washington, DC,” or “best
+happy hour in Austin” than by a search of flights from Detroit to Miami. The queries for
+a search engine are more complex; the searched dataset of the Internet is many
+magnitudes greater than a search of upcoming flights is; and the factors for determining
+relevance in an Internet search are far more varied, as well as subjective, than are the
+objective criteria of the price of flights and the number of stops. As a result, even if an
+agency could define and adjudicate preferences for more expensive, nondirect United
+Airlines flights against competitors’ flights, this does not suggest that the agency could
+define and adjudicate preferences for Internet searches. One is like tic-tac-toe; the other
+is like chess.
+Technical-Committee Proposal. To address the complexity of Internet searches,
+a technical committee would be of little value because these searches and the resulting
+problems in determining preferences are not merely “technical.” The argument for a
+technical committee draws its historical inspiration not from the airlines, but from the
+United States v. Microsoft antitrust case.82 In the Microsoft case, the courts determined
+that Microsoft had engaged in illegal monopolization, and Microsoft agreed to a
+remedy with the federal government and some states that included a technical
+committee.83 The technical committee merely served these parties, providing technical
+advice but lacking legal and other expertise.84 The technical committee was proposed in
+the first draft of the Microsoft consent decree that also required Microsoft to provide
+technical details ensuring that Web servers could interoperate with Microsoft’s
+monopolistic operating system Windows. (This was the fourteenth draft by some
+counts.)85 The technical committee had access to source code, the ability to interview
+Microsoft staff, and other powers, primarily interfacing with a Microsoft compliance
+officer.86 The technical committee consisted of three members, chosen for 30-month
+terms, with possible extension, under particular and detailed rules. 87
+There are indications that this committee was not particularly successful in the
+Microsoft case. First, Microsoft’s executives criticized the technical committee, doing so
+before the FTC and the DOJ at a workshop on remedies for high-tech industries.88
+17
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+Microsoft’s top lawyer for antitrust issues noted that the technical committee’s staff
+ballooned from three people to 40 and that the majority of Microsoft’s compliance
+efforts required laborious and time-consuming back-and-forth with that committee.89
+Second, this enlarged staff risked the theft of trade secrets. In fact, some consultants for
+the committee refused to return committee-related documents, forcing Microsoft and
+the government jointly to ask for a court order “to protect the confidentiality of all TC
+[technical committee] material (including material held by the TC that is Microsoft
+confidential material) by requiring all members of the TC and all consultants or staff
+hired by the TC to return all materials relating to the TC to the United States.” 90 As
+Microsoft publicly complained to antitrust agencies about the remedy and faced theft of
+confidential information, it is doubtful that the technical committee turned out to be the
+success that some had hoped it would be.
+Moreover, even if the technical committee had been successful for the Microsoft
+case, a committee to implement the Google “neutrality” remedies would face far greater
+challenges. First, the primary task of the Microsoft technical committee became
+ensuring interoperability between competitors’ Web servers and Windows.91
+Interoperability is a common problem that technology companies frequently address;
+companies often work closely with competitors—sometimes in standard-setting bodies
+or other formal bodies—on such issues.92 While the goal of interoperability is somewhat
+subjective, interoperability can in fact be tested: Relevant technologies could fail to
+interoperate. Determining unbiased search results, on the other hand, is a very different
+matter. Lack of bias in results cannot be tested in the way that interoperability can.
+Indeed, perhaps for this very reason, no one has ever set up a technical committee for
+determining whether search results are unbiased, whereas many committees work on
+interoperability in the technology sector.
+Second, the protocols necessary to connect Windows to Web servers did not need
+to be constantly improved—500 times a year. As the Windows protocols were necessary
+for interoperating with a fairly static operating system, these protocols benefited more
+from consistency and longevity than do search algorithms, which can and should be
+18
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+constantly modified. A technical committee therefore could not move quickly enough to
+make sense of, and to help the government make sense of and understand, two
+algorithm changes a day, let alone portions of existing algorithms subject to
+competitors’ complaints. Attempts to implement such a remedy would cripple Google’s
+ability to implement daily innovations. Competitors would have 500 opportunities a
+year to petition a technical committee, thereby grinding Google’s engineering process to
+a halt and making it impossible for the company to operate efficiently. For each
+complaint, Google would need to provide expert testimony on technical matters and on
+consumer behavior for scrutiny by the technical committee that would distract and
+preoccupy Google staff and leadership. Such permanent litigation would necessarily
+add additional bureaucratic layers, compliance costs, and transaction costs for Google
+(and for competitors litigating these cases), thereby slowing down Google engineers’
+ability to roll out daily innovations designed primarily to benefit consumers.
+Third, and most important, setting up a technical committee simply would not
+resolve the core analytical problem for the proposed “neutrality” remedies. The
+committee would have no useable metric for determining unbiased search results. A
+court or agency could not ask a technical committee to determine such a metric because
+a metric is not a “technical” question. Someone would have to define what it means for
+Google to “penalize” a competitor through search rankings lower than those that
+Google provides to a noncompetitor, meaning that someone would have to define what
+the “objectively” correct ranking would be for a noncompetitor. Coming up with an
+“objective” correct ranking is not merely a technical, computer-science question, largely
+because there is no “objectively” correct ranking. Again, search rankings reflect
+opinions. Companies can and do disagree about what result is most relevant for a
+particular query—which is why search engines provide different results. The Microsoft
+decree does not suggest that a technical committee could address such a nontechnical
+limitation. In Microsoft, the technical committee served the government and states,
+providing mere technical expertise, while the federal government’s and states’ lawyers
+retained the ultimate responsibility of enforcing the decree. No technical committee,
+19
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+however, could provide “technical” advice to create or implement an undefined
+standard of objectively “neutral” or “correct” engine search results. While lawyers
+might want to punt the hard questions about neutrality in search engine results to some
+purely “technical” committee, the committee would be unable to answer the questions
+without recourse to nontechnical standards, none of which have been demonstrated to
+exist.
+
+B. TEN BLUE LINKS: FORBIDDING UNIVERSAL SEARCH
+Even beyond the impact of the first category of remedies for Universal Search,
+Google’s competitors propose a second category of remedies that would effectively
+eliminate the ability of Google (and only Google) to offer Universal Search. Underlying
+this proposal is the assumption that Universal Search is either inherently
+anticompetitive or that it facilitates so much difficult-to-remedy anticompetitive
+behavior that it should be banned prophylactically. To adopt these remedies against
+Universal Search, a court would have to determine under antitrust law that Google has
+the power to exclude specialized search providers such as Yelp, despite the presence of
+competing search providers, competing sources for generating traffic and raising brand
+awareness, and users’ ability to access such search providers directly online. 93
+Flaws of Google Competitors’ “Ten Blue Links” Proposed Remedies
+Google’s competitors propose two remedies in this category. First, they have
+analogized a remedy imposed on Microsoft in Europe, called browser swapping. In
+Europe, Microsoft cannot load Internet Explorer as the default Internet browser but
+must instead provide users a choice among Safari, Opera, Mozilla Firefox, Chrome, and
+others. A Microsoft consultant has proposed applying an analogous remedy to Google
+Search results.94 Specifically, users could choose a default map service, default news
+service, default local search, and so on, to display on Google’s Universal Search page.
+Second, going even further, Google’s competitors propose divestiture “[s]eparating [1]
+the general search and paid search business from [2] products that provide specialized
+search or information content services.”95 This remedy would undermine Google’s
+20
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+ability to offer Universal Search as it does today by requiring it to present merely 10
+blue links, as it did in 2007, or to partner with other companies’ specialized services to
+offer Universal Search.
+These proposed remedies would further competitors’ welfare and impose
+enormous administrative costs on Google, at the expense of benefits to consumers and
+innovation.
+First: Eliminating Universal Search would harm consumers. Google’s
+competitors have put forth no evidence that consumers oppose an integrated Universal
+Search or that they want other companies’ specialized results to show up more
+prominently in the list of Google’s search results.96 Indeed, Universal Search saves
+consumers both time and frustration, which is why all major market players, including
+Bing and Yahoo!, have adopted Universal Search. The downsides are minimal for users.
+If a user prefers using MapQuest for maps and Google for general searches, he or she
+can navigate directly to MapQuest for maps. The user can type MapQuest’s URL in the
+browser’s navigation bar or search on Google (or Bing) for “MapQuest.” The user can
+also search for “maps” to find a range of map services beyond Google Maps. Indeed,
+MapQuest is already one of the most popular search queries for “maps” on Google
+Search, alongside some other Google competitors.97
+Second: These two remedies target a well-known source of innovation:
+integrating previously nonintegrated “products.”98 Some vertical integrations are
+harmful to competition and innovation, and they are therefore condemned by public
+policy. An integration is most likely problematic when the product enjoys durable high
+barriers to entry (e.g., telecommunications networks) and users face high switching
+costs (e.g., browsers in the 1990s, when users received software through compact disks,
+not broadband downloads).99 Google’s competitors have not made a persuasive case
+that search engines face durable high barriers to entry that dissuade innovators and
+investors from entering the market or that users face high switching costs. 100
+On the other hand, antitrust policy generally favors integrations, as they may
+turn out to be innovative and pro-consumer. Consider the iPhone, whose innovation
+21
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+was largely one of integration, combining into a single device the following: (1) a mobile
+phone, (2) an Internet connectivity device, (3) a portable music player (and later), (4) a
+digital photo camera, (5) a video camera, and (6) a GPS device.101 Although the iPhone
+and similar devices innovatively tie together several products (or features), few would
+argue that antitrust courts should require these innovators to re-engineer their devices
+so that iPhone users can swap in a Canon or Sony camera instead of Apple’s chosen
+camera, or swap in a Zune or Rio music player instead of Apple’s iPod. Nor would they
+argue that Apple should be divided into a music company and a phone company and a
+computer company.
+Such innovative integration is even more common in software. Facebook began
+as a social network of college profiles, and then it provided photo hosting and sharing
+(which had originally been Flickr’s core product), microblogging through status
+updates (originally Twitter’s), video sharing (YouTube’s), instant messaging (AIM’s),
+email (Hotmail’s), and Facebook Deals (Groupon’s).102 Indeed, in Silicon Valley,
+investors often refer to some start-ups as providing merely a “feature” rather than a
+“product,” or as providing a “product” rather than a “business,” 103 suggesting that
+“features” and “products” become vertically integrated with larger companies to most
+efficiently provide consumer benefits. Courts recognize that the market, rather than
+litigation, is usually more competent at determining the optimal extent of integration.
+Courts lack that competence.104
+By targeting Universal Search’s integration, the competitors’ proposed remedies
+would sorely test courts’ competence to make accurate predictive business judgments
+about which integrations would harm consumer welfare in the dynamic market of
+Internet searches. The error costs are high, particularly because the market has already
+moved in the opposite direction of 10-blue-links results and “pure play” generalized
+search companies. For example, Internet searches are only a fraction of Microsoft’s
+business, which includes operating systems (Windows), office software (Word and
+Excel), cloud-storage service (SkyDrive), gaming systems (Xbox), and telephony
+(Skype).105 According to a recent Fast Company cover article, “The Great Tech War of
+22
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+2012: Apple, Facebook, Google, and Amazon battle for the future of the innovation
+economy,”106 like Microsoft, none of these companies is a pure play in anything. Each
+has diversified offerings, from messaging to social media to cloud storage to retail sales
+to tablets to payment systems.107 Google competitors’ proposed remedies would
+artificially limit the integration undertaken by only one of the four companies—Google.
+Third: These remedies assume that the benefits enjoyed by Google’s competitors
+in specialized searches—whatever they might be—are worth the costs of stifling
+innovation in general searches. Innovations in general search services are pushing
+competitors to be more mobile, more voice-activated, and more dedicated to social and
+real-time results.108 Against this backdrop, a focus on the display of specialized search
+results on a desktop screen today is as outdated as focusing on innovations in fax
+machines and search directories. The remedies rest on preserving the 1998 gold
+standard of 10 blue links on a search page—before major search engines moved to
+Universal Search with Google’s display innovation in 2007.
+Fourth: Beyond the dubious benefits to both static consumer welfare and to
+dynamic innovation, the initial administrative and technical costs for these remedies
+would be enormous. For browser swapping, an agency or court would have to have
+power over the design of user interfaces for Google Search, even though courts lack
+such design competence. Unless it were to abandon Universal Search and return to 10
+blue links, Google would be required to include tabs for users to swap Google’s
+browser with those of competitors such as Yelp for local searches, MapQuest for maps,
+Expedia for travel, and so on. A court would likely entertain arguments about how each
+service is displayed generally, whether Google can attempt to match the services’
+design to match the rest of the interface or whether it must use the competitors’ usual
+color schemes and clashing fonts—lest Google use deliberately distasteful colors and
+designs for Yelp and MapQuest. A court would determine how often, and by what
+method, a user would select a service (e.g., once, monthly, or whenever a new,
+specialized search is launched). The court would have to approve any major site
+redesigns, delving into consumer preferences and engineering. Improved interface
+23
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+design, however, is a critical element of digital competition,109 and one of Google’s
+competitive advantages,110 meaning that litigation of Google’s design choices would
+likely slow down and impede Google’s design innovation, particularly relative to its
+competitors.
+To implement the divestiture remedy, a court would have to oversee which of
+Google’s services would stay with the Google “General” Search company and which
+would be spun off into a newly created Google “Specialized” Search company;
+moreover, the court would have to review each new innovation to see which company
+could undertake it. For example, the court would determine whether Google News
+must be spun off as a costly specialized search product, or whether Google News is
+merely a way to categorize recent “newslike” results in a general search. For consumers,
+these “products” might all just be different ways to provide answers to their questions.
+For the divestiture remedy, however, products must be specifically defined and split up
+based on the business models of competitors such as Yelp and MapQuest. Beyond
+defining the products for divestiture, the court would also have to determine which
+company receives which search patents and other intellectual property, as well as the
+terms of cross-licensing, a task likely to require considerable specialized competence
+and the gathering of technical and expert information from the parties. The court would
+also have to review, rewrite, and reject or approve the service contracts and intellectualproperty licenses that Google has entered into with hundreds of business partners, as
+contracts with third parties likely draw no artificial boundary between specialized and
+general searches.
+Perhaps more importantly, even after a divestiture, a court would have to engage
+in burdensome and sluggish ongoing regulation that would further hinder Google’s
+search innovations and impose enormous administrative and compliance costs.
+Whenever Google “General” would seek to roll out a new product, competitors would
+petition the court for a judgment on whether the product violates the divestiture
+remedy. In the process, these petitions would slow down Google “General’s”
+innovations and would enable competitors to study and copy Google “General’s”
+24
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+product, and to eliminate or steal its first-mover advantage on particular products.
+Divestiture would also eliminate Google “General’s” ability to integrate technologies
+for the benefit of consumers, while Facebook, meanwhile, could integrate photos,
+videos, and music, and Amazon could integrate far more products than book delivery.
+Moreover, the court would have to monitor all deals between Google “General”
+and specialized-search companies to ensure nonexclusivity and nondiscrimination.
+Under the theory of the proposed remedy, Google “General” should not be able to
+contract to make the new Google “Specialized” its exclusive provider of specialized
+service. That would clearly undermine the intended effect of the remedy. Nor could
+Google “General” make an exclusive deal or preferential deal with any other specialized
+search company, such as Yelp, because exclusivity would similarly undermine the
+competition in specialized searches sought by this strong remedy. Indeed, a court or
+agency would have to continually monitor any deal that provides any specialized
+search engine with any preference over other companies, because preferences (perhaps
+no less than exclusivity) could undermine the specialized-search competition sought by
+this remedy. This ongoing regulation would require the court to review and approve all
+such business partnerships, evaluating their economic terms and revenue shares;
+technical and interoperability terms; and other terms, such as duration, placement,
+design, and so on. Such scrutiny would impose huge costs and delays on Google,
+merely to ensure an outcome in the search market that likely harms both static and
+dynamic efficiency and consumer welfare.
+Therefore, while the remedies of specialized-search swapping and divestiture are
+unlikely to benefit consumers, who, by and large, value Universal Search, they would
+undermine innovation and impose huge administrative costs on Google.
+
+C. TRANSPARENCY
+Google’s competitors propose a wide range of disclosure rules to implement
+search neutrality and to counter Google’s alleged “deception” of users. There are a
+number of vague proposals, but it is worth numbering them specifically. The
+25
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+competitors propose “[p]rohibiting Google’s deceptive display bias” by “[1] requiring
+clear notices to consumers of those links in which Google has an economic interest
+and/or [2] that Google has placed on the search results page through any process other
+than its normal search algorithm,”111 including disclosure of manual adjustments to
+algorithmic searches.112 ICOMP proposes that, “Remedies should in some way require
+Google to become more transparent and open generally – in particular, as regards the
+way in which it organises its search results, [3] its AdWord policy, its explanation of
+reductions in quality score, [4] AdSense revenue calculation and [5] algorithmic
+updates.”113
+Flaws of Google Competitors’ and ICOMP’s Proposed Remedies
+Each of these proposals is unsound and inappropriate, either because the
+disclosures merely further the flawed search “neutrality” remedies or because they
+request information that Google publishes or has pro-consumer reasons not to publish.
+Moreover, the competitors could attempt to prove deception more easily without an
+antitrust case.
+Algorithmic Updates: There is little apparent reason for Google to reveal even
+more about its algorithmic updates and how it organizes its search results. First, Google
+provides considerable information to Webmasters regarding its algorithms. Google has
+published hundreds of research papers revealing the technologies behind Google,
+hundreds of blog posts, and thousands of responses in search-help forums and
+Webmaster-help forums.114 Google has also begun publishing monthly notices
+identifying major algorithm changes for the month.115 Google makes these disclosures
+subject to plausible limits: “[T]here are certain aspects of our algorithms that must
+remain a secret. Otherwise, we would enable some spammers to game Google’s results,
+which in turn punishes site owners who offer legitimately useful websites and
+services.”116 The complaining competitors have provided no evidence to suggest that
+Google’s assertion is merely pretextual. Second, as Google suggests, too much
+disclosure would harm consumers who are seeking relevant information. Such
+disclosure would benefit competitors but not consumers; if Google Search has a
+26
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+problem with spam-ridden, irrelevant sites, more people will use its competitors’ sites.
+Moreover, Google’s algorithms are its key competitive advantage, and requiring
+disclosure of Google’s detailed strategies is analogous to requiring Coca-Cola to reveal
+its secret formula to Pepsi. While competitors such as Bing could likely learn from
+Google’s algorithms and provide more relevant results than it and other competitors
+currently do, the remedy would only benefit competitors and spammers, not
+consumers.
+Manual Adjustments: Little evidence suggests that the government should
+monitor Google and force it to disclose each search result placed through “any process
+other than its normal search algorithm” including through a manual adjustment. First,
+this remedy assumes that a “neutral” normal algorithm returns searches but that manual
+adjustments are somehow suspect and likely anticompetitive. From a legal perspective,
+nothing distinguishes algorithmic changes from manual ones. Indeed, even if antitrust
+law somehow could enforce search “neutrality,” there is nothing inherently more (or
+less) neutral about an algorithm or about a manual adjustment. Both the algorithms and
+the manual adjustments are simply two means to help users find the most relevant
+answers, implemented through similar technical means. When an algorithm fails for
+some reason—retrieving spam or irrelevant results—a manual adjustment to the
+algorithm, targeted to particular sites and rankings, can correct the relevance
+problem.117 A manual adjustment is the technical equivalent of an algorithmic change:
+Both require writing another line of code into the search algorithm.
+While the proposed disclosure implies that routine manual activity reflects
+wrongdoing, such disclosure would do little to further the search regulation remedies.
+Google denies “cooking” the results in the search listings. 118 If Google reveals manual
+tweaks, however, government engineers or competitors who study these revelations
+would likely be unable to identify any “biased” results reliably or convincingly. Indeed,
+so far, the only “evidence” of search-result manipulation is a study by Microsoft
+consultant Ben Edelman that is based on a tiny sample of 32 cherry-picked, nonrandom
+queries, reflecting a clearly flawed design. 119 Josh Wright, a law and economics
+27
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+professor at George Mason University who consults with Google, refuted that analysis
+in what appears to be a far more rigorous study with a far greater sample of searches
+that demonstrates a similar level of “bias” among the other large search engines.120
+Second, to the extent that “manual” adjustments may be considered highly
+targeted algorithmic tweaks, Google already makes such information available. Google
+discloses its manual policies regarding spam, malware, child pornography, copyright
+infringing content, defamation (subject to a court order), personally confidential
+information, and other content under country-specific laws. Both Google and Bing
+engage in manual adjustments for such content.121 Further, regarding general
+algorithmic tweaks, Google provides considerable information. It provides disclosure to
+Web sites so that legitimate sites can better optimize their placement in search results. It
+also hosts Google Webmaster Central, which contains information about how “Google
+crawls, indexes and ranks your site,” information about “how many people found your
+site in search results, and how many people clicked on it” and information about “who
+added a link to your site.”122 Google also provides advice to Webmasters, including a
+Search Engine Optimization starter guide, a Webmaster Blog, a discussion forum, a
+YouTube channel with more than 350 instructional videos, and presentations given at
+search engine conferences.123 Google provides disclosure on these items, but additional
+disclosure could empower spammers and others to game the search algorithms to
+ensure that less relevant and less useful content rises to the top, rather than directing
+users to the most relevant, quality content.124
+Economic Interest: Requiring Google to provide notice of economic interest is
+unnecessary because Google appears, in fact, to label its products. For the Google News
+results, the title in Universal Search is “News,” rather than “Google News,” because
+users likely perceive the results as Google does—listings categorized by Google as news
+stories that link to others’ news sites. Users may or may not consider Google News to be
+an entirely separate product, but there is no evidence of consumer confusion regarding
+which company (Google) has organized news results into a news box on Google’s search
+page.125 When a user searches for a restaurant, Google may insert a link to Google
+28
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+Reviews under the main listing for the restaurant.126 The labeling is clear: “Google
+Reviews.” A map may also appear in the search results, and the map will generally
+include this notice: “©2012 Google.” This phrase is legal notice under copyright law and
+should be acceptable in this case.
+AdWords Policy and Quality Score: Google’s competitors also have not
+sufficiently made the case that courts or agencies should require more disclosure of how
+Google’s AdWords policy operates and “its explanation of reductions in quality
+score.”127 AdWords is Google’s main advertising product. Advertisers of all sizes use
+AdWords to place ads on Google’s search results and on its display network, including
+large partner sites and the many smaller sites that sign up to display Google AdWord
+ads. On Google Search, for example, advertisements are displayed above and to the
+right of the natural results. Users are more likely to click on the first listed
+advertisement than on the second, to click on the second than on the third, and so on.
+Advertisers prefer higher placement and pay for it. Advertisers choose to buy
+advertising based on certain keywords, and Google charges an advertiser not each time
+Google displays the advertiser’s ad, but each time a user clicks on the ad. Because
+Google makes money from clicks rather than from displays alone, it does not merely
+auction off slots to those willing to pay the most money for each click. An advertiser
+could offer to pay half as much as its competitors yet receive ten times the clicks,
+providing more value both to consumers and to Google. Thus, Google weights the bids
+with a Quality Score for each keyword-ad pair and accepts lower per-click rates for
+those that generate more clicks and consumer value.
+Google’s competitors have not devoted considerable attention to the argument
+for requiring more transparency regarding Quality Scores and AdWords. Foundem
+complains that its Quality Score was very low, but Google is at least transparent about
+why. As Google prominently reveals, sites with high Quality Scores “feature original
+content that can’t be found on another site. This guideline is particularly applicable to
+resellers whose site is identical or highly similar to another reseller’s or the parent
+company’s site.”128 FairSearch mentions other sites such as TradeComet and Sourcetool,
+29
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+both of which also appear to be “low quality” sites based on Google’s disclosed
+guidelines.129 Nevertheless, it is clear that the competitors have yet to advance a
+compelling case.
+First, Google already publicly reveals considerable information about AdWords.
+Google provides information about setup, managing ads, measuring results, improving
+results, and billing. For improving results, Google provides information about landingpage and site-quality guidelines—defining “quality” to include featuring “relevant and
+original content,” having a privacy policy, not altering browser settings, not
+automatically downloading software without notice, and so on.130 Google’s advice for
+improving landing-page quality includes not only two dozen pieces of advice and a
+video with further information, but also, links to Google’s Software Principles, ways to
+improve a site’s load time, Webmaster Guidelines, and the Quality Score.131 The page
+devoted to Quality Score features even more information, including how the Quality
+Score affects advertisers’ bids and what factors determine the Quality Score for bidding
+on advertising on both the Search Network and the Display Network.132 That page also
+links to the Optimization Center, which provides seven general principles about how to
+increase Quality Scores, the fifth of which pertains to optimizing the Web site itself
+(including pointing users from the ad to the relevant landing page, evaluating site
+design, testing how the site will increase conversions, and means for enhancing user
+experiences).133 Essentially, Google furnishes considerable information for advertisers,
+including its general advertising policies,134 a description of the AdWords policy and
+quality score on each ad/keyword pair,135 and information about increasing a Quality
+Score by optimizing an account.136 It provides text, videos, links to a community of
+AdWords users, and a phone number to reach a Google employee.137 Indeed, Google
+has incentives to provide such information to legitimate sites. Google clearly provides
+considerable information—and certainly enough information for Foundem and other
+complaining sites to know why their Quality Scores would be low on Google’s
+advertising network.
+
+30
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+Second, the costs of revealing even more information would include enabling
+competitors to copy strategies, rather than innovate their own, regarding
+advertisements and search results. Consumers value relevant ads for searches, and
+advertisers value placement on relevant searches.138 Google’s competitors could copy
+Google’s Quality Score strategies to increase the relevance of advertisements to their
+own searches. Depending on the amount of information that could possibly be
+mandated, competitors could do so for an indefinite period of time if Google were to
+reveal such information on an ongoing basis. This might help Microsoft and other
+Google competitors, but it is unclear how it might help consumers.
+AdSense Revenue Calculation. AdSense is Google’s product for Web sites (or
+publishers) that choose to be part of Google’s Display Network (the publishers display
+ads on their Web sites) or the Google Search Network (the publishers add a customized
+Google search bar to their sites). Google and the publishers split the revenue from the
+advertisements, as Google runs the networks matching advertisers and the Web sites on
+which they advertise. Google provides considerable information for publishers joining
+the Google Display Network, including pages of information about AdSense on Web
+sites, custom search engines, custom search ads, mobile content and apps, video content
+(embedding ads in videos), and games.139
+Google’s competitors do not focus much attention on the proposed remedy of
+disclosure of revenue share and provide little evidence that Google provides inadequate
+disclosure or that a lack of disclosure harms consumers under antitrust precedent. They
+merely state that Google’s practices are “opaque.”140 They have failed to make the case
+for a remedy of disclosure of revenue share.
+First, Google already publishes this share calculation, and it had done so long
+ago. Google’s competitors complained to the US government and asked for disclosure
+of revenue share in October of 2011.141 Google had already released this information in
+May of 2010.142 At the time in 2010, the split was 68 percent for AdSense content
+publishers and 51 percent for AdSense search partners. Google did not then reveal the
+revenue shares for additional AdSense products, including those for mobile
+31
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+applications, feeds, and games, because these products were “quickly evolving” and
+Google was “still learning about the costs associated with supporting them.”
+Second, competitors have not made the case that the government should
+mandate disclosure of the AdSense revenue calculation for these other products for
+which Google has not yet disclosed the revenue share. Competitors such as Bing are
+likely dealing with the same evolving pricing problems, and they would competitively
+benefit from disclosure of Google’s pricing as it develops without having to disclose
+their own. Moreover, the competitors have not made the case that consumers would
+benefit from additional disclosure. Competitors might even raise their own revenue
+shares to match Google’s, knowing that advertisers would not get a better share from
+Google, or they might undercut Google’s pricing only marginally. Lack of disclosure
+could lead to steeper cuts or lower prices from competitors. The net effect is unclear and
+unproven. Google’s competitors have not demonstrated why consumers would benefit
+from revealing these revenue shares—or the other proposed disclosure remedies
+already discussed.
+
+D. CONTENT RULES: FAIR USE AND SHARING
+Competitors propose two flawed intellectual-property-related remedies that
+would change, only for Google, the default intellectual-property law otherwise
+applicable to search engines. They propose forbidding Google from displaying excerpts
+of content from other sites, despite fair use, while requiring Google to let others crawl
+Google’s content, despite the defaults about “trespass to chattels” and property law.
+Unhappy with the constitutionally required fair use doctrine, Google’s
+competitors propose in their FairSearch White Paper, without further detail:
+“[p]rohibiting Google’s scraping and use of content from other sites without their
+permission.”143 The White Paper states that, “Google steals content from others and
+uses it to generate advertising revenue without paying compensation to the companies
+that have spent many years and many millions of dollars developing the content.”144 As
+
+32
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+an example of such “theft,” it highlights Google’s previous practice of displaying Yelp
+snippets in Google’s Places categories.145
+This argument is simply about copyright and fair use. Even though the
+expansive copyright laws of the United States provide famously onerous remedies for
+“stealing” content, competitors have not brought a copyright claim, because such a
+claim would fail. Since its founding, Google has done what other search engines do:
+crawl the Web and display snippets and links of content to direct users to the world’s
+Web sites.146 For linking, Google can link to content without violating a copyright
+holder’s exclusive reproduction or display rights, because links do not “reproduce” or
+“display” the content.147 Thus, like all users, Google can link to content widely. Some
+competitors might prefer their links to show up differently in Google’s results (namely,
+higher on the results list). Copyright law, however, does not give anyone the right to
+determine whether their links are displayed in a specialized category of results or in the
+general search results.
+For snippets, Google has and exercises an established fair-use right available for
+all search engines (and for the rest of us with First Amendment rights). 148 Fair use for
+using snippets for general searches is firmly established and rarely questioned in law. 149
+If Google’s competitors oppose Google’s use of snippets in specialized searches, they
+could bring a copyright claim. Otherwise, fair use permits even a monopolist to quote
+snippets of content.150 Permission is not required for fair use, so Google can choose how
+to use the content. If Google, unlike any of its competitors, were to be subject to a
+modified “fair-use” right for all the content it crawls and had to receive permission
+from all sites, it could not offer a search product without the enormous transaction costs
+of clearing rights for snippets on sites that already set technical controls to encourage
+crawling by search engines.151
+We know of no antitrust-case ruling determining that even a dominant
+company’s exercise of fair-use rights creates an antitrust problem.152 We know of none
+that accepts a remedy of changing fair-use rights for only one company. This is
+probably because, if fair use applies, neither policymakers nor antitrust courts can
+33
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+eliminate that right without raising serious constitutional concerns; the Supreme Court
+has held that fair use is rooted in the First Amendment itself.153 Thus, courts cannot and
+apparently never have imposed an antitrust remedy of remaking the First
+Amendment’s copyright fair-use doctrine.
+Google’s competitors seek to remove Google’s right to control when others can
+crawl Google’s own content. As a general rule, Web sites can determine whether their
+“library” of content is public or private by including code that forbids crawling. 154 A
+trespass property right, known as the trespass to chattels, backs this code, as companies’
+servers are chattels, or non-real-estate property.155 If Google made its content crawlable,
+it would be subject to fair use. If, however, Google forbade crawling, it could assert a
+property right against outside crawlers.156 A real-world analogy may be apt here:
+Google’s competitors are arguing essentially that Google should be unable to make fair
+use of a published book available for all to see but that it must let everyone else into its
+own library to make photocopies of books in its own private collection.
+Competitors claim that Google exercises its property right to deny competitors
+the right to crawl some sites, such as YouTube and Google Books. 157 Google denies
+some of these accusations, particularly regarding Bing and Yahoo! crawling YouTube. 158
+We can assume, however, in this article, that Google’s competitors are describing
+Google’s practice factually and that this practice would create an antitrust problem
+under current law (despite our doubts).159
+Even if these assumptions were correct, antitrust courts would still disfavor the
+remedy. First, mandating competitor access to Google Books and YouTube, despite
+property rights, would require a court to administer a duty to deal. As noted earlier,
+unless required by Congress for a particular industry, antitrust courts disfavor forced
+sharing with competitors, even for monopolists. 160 The crawling remedy would require
+Google to deal with competitors, thereby permitting competitors to access Google’s
+servers. To implement this remedy, a court would need to determine which competitors
+receive access to Google’s servers for YouTube and Google Books and which do not,
+and whether Google can charge these companies based on the expenses for additional
+34
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+servers or wear and tear. The court would also need to determine when the duty to deal
+would end, based on new innovations or increased competition. Courts disfavor such
+remedies partly because of such administrability problems.
+Second, as with other duties to deal, a court cannot be sure that the remedy
+would benefit rather than undermine consumer welfare. Courts have been attentive to
+the notion that imposing a duty to deal in some circumstances, in some markets, can
+result in diminished innovation over the long-term for both a regulated company and
+its competitors. With access to YouTube and Google Books, competitors such as
+Microsoft and Yahoo! could free ride on Google’s investments. Google invested billions
+of dollars in both acquiring YouTube and expanding it 161 and in scanning and indexing
+the world’s libraries.162 Microsoft, in contrast, has invested in other technologies, such
+as the Xbox, Facebook, and Skype, and it does not share those technologies with
+Google. Microsoft abandoned its own books project, determining that it would be
+unprofitable, but seeks to free ride on Google’s investment.163
+Moreover, Google’s investments in YouTube and Google Books were not
+government-backed investments like those made in the past by government-sanctioned,
+regulated, monopoly companies. Rather, Google risked its capital in these investments.
+Generally, US economic policy encourages such capital risk through reward. According
+to its competitors, Google sought the reward of strengthening its search properties. As a
+matter of basic risk calculus, Google might be less likely to innovate and invest in such
+services if it had to share some of the benefits of these services with competing
+companies.164 Not only would Google have less incentive to innovate if courts adopted
+the sharing remedy, but also, the free-riding companies could invest less in innovation
+as well, knowing that if Google beats them to the punch with new search innovations,
+Google would have to share them. For example, if Google expanded its legal and
+scholar search products to compete with Westlaw or LexisNexis, Bing would have
+access to crawl the products without making any innovations or investment. Because
+innovation is high risk, Bing’s investors would not bear that risk. If Google innovated
+with ten new products but only one succeeded, Bing would be able to receive access to
+35
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+the successful product without bearing the cost of the nine unsuccessful products. Even
+if antitrust agencies or courts could calculate a formula requiring Bing to pay fairly for
+the cost of both the failed and successful innovations (e.g., paying for both the failed
+Buzz and the successful YouTube), Bing would deny Google a disruptive advantage
+through innovation, as Bing would share in that innovation.165 As a result, the proposed
+remedy would decrease innovation and therefore harm consumers.
+
+E. NO BIDDING: ACQUISITIONS AND EXCLUSIVE AGREEMENTS
+In a final category of proposed remedies, Google’s competitors propose
+impeding Google’s ability to compete for acquisitions and exclusive partnerships.
+Google’s competitors suggest “[r]equiring prior notice to the government of all
+acquisitions by Google,”166 even though Google makes more than one acquisition a
+week, generally acquiring relatively small companies. 167 The competitors also
+recommend “[p]rohibiting Google from entering into exclusive agreements that relate
+to any product in which Google is dominant, including search and paid search
+advertising.”168 Finally, the competitors also vaguely seek to limit Google’s ability to
+use its “war chest” generally.169 While unclear, this proposal suggests limits on
+acquisitions and exclusive deals.
+The first of these remedies, notice of acquisitions, provides little to no concrete
+economic value to consumers or administrative value to the government, although it
+might benefit competitors. Google already must notify the government of acquisitions
+large enough to meet the thresholds set forth for compliance with the Hart-Scott-Rodino
+Act.170 When Google acquires a company too small to require notification, both Google
+and the acquired company generally issue a press release. 171 Both Wikipedia and AOL’s
+popular technology blog, TechCrunch, manage to list Google acquisitions. 172 (They also
+manage equally long lists of acquisitions by Microsoft and others.) 173 Google’s
+complaining competitors have not even suggested that Google has failed to announce
+acquisitions or that failing to announce acquisitions has caused any consumer harm.
+36
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+Existing law already permits competitors to challenge acquisitions, and antitrust
+agencies frequently scrutinize mergers that fall below the Hart-Scott-Rodino thresholds
+for transaction size.174
+The second remedy, banning exclusive partnerships, is somewhat unclear but
+seems to refer to deals that would make Google search the default (or perhaps
+exclusive) search engine on a Web browser or on a device. Google has entered into
+partnerships to be the default (although not the exclusive) provider of searches for the
+Mozilla Firefox browser and the iPhone’s Safari browser.175 Microsoft’s Bing search
+engine leads Google in exclusive deals for new personal computers, such as Dell
+computers, and for browsers, as the default browser for most computers running
+Windows is Microsoft’s Internet Explorer, whose default search engine is Bing. 176 These
+deals appear to drive traffic: Internet Explorer users use Bing far more often than they
+use other search engines.177
+This proposed remedy would likely harm consumers, device makers, and
+browser makers. If the proposed remedy were to succeed in forbidding Google from
+competing to be the default provider on browsers and devices, then Mozilla, Apple, and
+other potential partners would receive less money in these partnerships. Without
+Google to bid on the partnerships, there would be fewer bidders; and with fewer
+bidders, there would likely be lower clearing prices for defaults. In an auction, the
+winning bid usually matches (or barely exceeds) the willingness to pay of the bidder
+with the second-highest willingness.178 If Company A would be willing to bid $100,
+Company B $10, and Company C $1, then Company A would not need to bid its full
+willingness to pay of $100. Company A would need only bid $11—enough to beat out
+Company B. If Company A were eliminated from the bidding, however, then Company
+B would not win the auction with a bid of $10. Company B could bid merely $2, enough
+to edge out Company C. With searches, the leading bidders currently are usually
+Microsoft, Google, and Yahoo!179 If Google were removed from bidding, then the main
+bidders remaining would be Microsoft and Yahoo!. With Google gone from the bidding,
+Microsoft would be able to purchase such partnerships for a price that would not track
+37
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+its own willingness to pay for a particular default-search partnership, but instead, one
+tracking Yahoo’s, which might be far lower than Google’s or Microsoft’s.
+While this outcome would benefit Microsoft (or Yahoo!), Google’s competitors
+have not demonstrated that it would benefit consumers or others in the Internet
+ecosystem. These proposed remedies might enable Microsoft’s Bing to partner as the
+default search engine on more properties, perhaps increasing traffic to Bing at a lower
+price.180 As a result, however, these proposed remedies would save Microsoft (or
+Yahoo!) a lot of money while depriving Mozilla and Apple of both the additional
+revenue that they would otherwise receive if more companies could compete for the
+partnerships and the choice to provide, as the default, Google’s more popular search
+engine. Indeed, generally, the highest bidder is presumed to provide the most value to
+consumers.
+Google’s competitors imply, however, that Google is merely overpaying for these
+partnerships, doing so to block competitors, and able to do so because of its “war
+chest.” Microsoft has its own war chest, however, and a larger market cap, making
+billions of dollars a year from its long-dominant Windows and Office products, among
+others.181 Microsoft can afford to pay whatever Google can afford to pay to compete
+with Google from a war-chest perspective. With the proposed remedy, however,
+Microsoft would simply be enabled to spend less from its own war chest. The consumer
+benefits are unclear and appear to be minimal or nonexistent.
+As a result, both an acquisition notification (beyond current law) and a ban on
+exclusive/default deals would appear to provide little-to-no consumer benefits while
+instead resulting in harm to consumers, browser companies, and device makers.
+
+III.
+
+CONCLUSION
+Google’s complaining competitors have aggressively bet on an antitrust inquiry
+
+into Google’s “search bias” and have proposed more than a dozen remedies to address
+this alleged problem. Google’s competitors have not spelled out the details of all of
+these remedies, but an evaluation of them suggests that they would cause more harm
+38
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+than good for consumers, for competition generally, and for high-tech innovations.
+Indeed, antitrust courts specifically disfavor many of the proposed remedies, such as
+those that require detailed day-to-day regulation usually implemented by a regulatory
+agency, those that impose duties to deal with competitors, and those that raise
+constitutional problems.
+Because Google’s complaining competitors have had their shot at putting forth
+their strongest proposed remedies, the FTC should consider whether these remedies are
+even worth pursuing. The weakness of these remedies suggests that the competitors’
+complaints are not only irremediable, but also, lack merit under US antitrust laws. As a
+writer at the nation’s top technology blog wrote:
+Even if Google is abusing its monopoly powers, then what? Any remedies
+imposed on Google could be worse for consumers than the uncertain
+consequences of keeping Google unchecked. If Google had to pass every
+change to its search engine through an antitrust filter that could really
+screw up search, something which most of us depend on every single
+day.182
+In short, the FTC has better uses for its scarce resources than pursuing an inquiry
+or investigation that would merely raise the cost of one rival, Google, for the benefit of
+other rivals that have proposed unworkable and detrimental remedies for their novel
+theories of antitrust harm that is effected through “search bias.”
+
+NOTES
+
+FairSearch.org, “About FairSearch.com,” www.fairsearch.org/about-fairsearch/; “Member
+Directory,” www.i-comp.org/en_us/members/members/member_directory.
+2 FairSearch, “Google’s Transformation from Gateway to Gate Keeper: How Google’s
+Exclusionary and Anticompetitive Conduct Restricts Innovation and Deceives Consumers,” FairSearch 41
+(2011), available at www.fairsearch.org/wp-content/uploads/2011/11/Googles-Transformation-from-Gateway-toGatekeeper-Edited.pdf [hereinafter FairSearch Report]; ICOMP, “Initiative for a Competitive Online Market
+Place, Google Under the Antitrust Microscope,” ICOMP.com 32-38 (2011), www.icomp.org/resources/view/1224/file/Google Under the Antitrust Microscope [hereinafter ICOMP Report].
+FairSearch’s paper proposed six remedies—but devoted a page to listing them and provided no further
+detail. The European paper spent seven pages on remedies, but listed over half a dozen distinct remedies,
+with varying levels of vagueness.
+1
+
+39
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+3 See Ben Edelman, “Bias in Search Results?: Diagnosis and Response,” 7 Indian J. Law & Tech. 16
+(2011), available at www.nls.ac.in/ojs-2.2.3/index.php/IJLT/article/viewFile/92/72.
+4 See “The Power of Google: Serving Consumers or Threatening Competition?: Hearings Before
+the Senate Subcommittee on Antitrust, Competition Policy and Consumer Rights,” 112th Cong. (2011),
+available at www.judiciary.senate.gov/hearings/hearing.cfm?id=3d9031b47812de2592c3baeba64d93cb [hereinafter
+Google Hearing].
+5 Erick Schonfeld, “Google and Monopoly Theater,” TechCrunch, Sept. 25, 2011.
+6 See Google Hearing, supra note 4, at 147:30 (Statement of Susan A. Creighton) (“Because of the
+very real risk of deterring innovation and other beneficial activities, extraordinary care must be taken to
+ensure that government intervention in the market is truly essential. Otherwise such action is much more
+likely to harm consumers than to help them.”).
+7 Thomas O. Barnett, Assistant Attorney General, Antitrust Div. U.S. Dep’t of Justice, Presentation
+at the American Bar Association Conference on Monopolization Remedies: Section 2 Remedies: What to
+Do after Catching the Tiger by the Tail (June 4, 2008), available at
+www.justice.gov/atr/public/speeches/233884.htm (“Even in circumstances where competitive harm
+theoretically could occur, the difficulty of designing a proper remedy may reveal that antitrust litigation
+cannot effectively remedy that harm.”). Microsoft’s head antitrust lawyer has made a similar argument.
+“Remarks of David A. Heiner, Vice Pres. and Dep. Gen. Counsel for Antitrust, Microsoft Corp., FTC and
+DOJ: Hearings on Sec. 2 of the Sherman Act: Single-Firm Conduct as Related to Competition,” Mar. 28,
+2007 at 4, available at www.ftc.gov/os/sectiontwohearings/docs/070328Heiner_Presentation.pdf. (“[I]t is
+important that that [antitrust remedies] be fully thought through before liability proceedings are
+commenced.”).
+8 FairSearch’s counsel has noted these incentives. See Thomas O. Barnett, “Interoperability
+Between Antitrust and Intellectual Property,” George Mason University School of Law, Sept. 13, 2008 (“[I]f
+the government is too willing to step in as a regulator, rivals will devote their resources to legal
+challenges rather than business innovation. . . . [S]eeking government help to grab a share of your
+competitor’s profit is likely to be low cost and low risk, whereas innovating on your own is a risky,
+expensive proposition.”). Professor Eric Goldman has observed the same incentives, noting that, in the
+search bias debate, “[I]t has become almost impossible to distinguish legitimate discourse from economic
+rent-seeking” by competitors.” Eric Goldman, “Revisiting Search Engine Bias,” 38 William Mitchell L. Rev.
+96, 109 (2011).
+9 Miguel Helft, “Google Confirms F.T.C. Antitrust Inquiry,” NY Times Bits Blog, June 24, 2011.
+10 See Google Hearing, supra note 4.
+11 Letter from Herb Kohl, Chairman, Subcommittee on Antitrust, Competition Policy and
+Consumer Rights, to Jonathan Leibowitz, Chairman, FTC, Dec. 19, 2011, available at
+www.kohl.senate.gov/newsroom/upload/Google-FTC-Letter-12-19-11.pdf.
+12 James Grimmelmann, “Some Skepticism About Search Neutrality,” in The Next Digital Decade:
+Essays on the Future of the Internet 435 (Berin Szoka & Adam Marcus, eds., 2010); Frank Pasquale,
+“Dominant Search Engines: An Essential Cultural & Political Facility,” in The Next Digital Decade: Essays
+on the Future of the Internet 401 (Berin Szoka & Adam Marcus, eds., 2010); Joshua D. Wright, “Retrograde
+Antitrust Analysis Is No Fit for Google,” ACSBlog, Oct. 3, 2011, www.acslaw.org/acsblog/retrogradeantitrust-analysis-is-no-fit-for-google; Benjamin G. Edelman, “Finding and Preventing Biased Results,”
+ACSBlog, Oct. 6, 2011, www.acslaw.org/acsblog/finding-and-preventing-biased-results.
+13 John Cook, “Google Holds Steady with 65 Percent of U.S. Search Queries,” GeekWire, Oct. 12,
+2011.
+14 Michael Liedtke, “Pew Report Finds Facebook Influences What News Gets Read Online,”
+Huffington Post, May 9, 2011.
+15 Google Hearing, supra note 4, at 149:00 and 155:00 (statement of Susan A. Creighton).
+16 See Brown Shoe Co. v. United States, 370 U.S. 294, 344 (1962) (“It is competition, not
+competitors, which the Act protects.”). Thomas O. Barnett, Assistant Attorney General, Antitrust Div.,
+U.S. Dep’t of Justice, Presentation to the Lisbon Conference on Competition Law and Economics (Nov. 6,
+
+40
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+2007), available at www.justice.gov/atr/public/speeches/227755.htm (“[T]he law protects consumer welfare by
+protecting competition, not individual competitors.”).
+17 See Aspen Skiing Co. v. Aspen Highlands Skiing Corp., 472 U.S. 585, 608-11 (1985).
+18 City of Mishawaka v. American Elec. Power Co., 616 F.2d 976, 986 (7th Cir. 1980), cert. denied,
+449 U.S. 1096 (1981). But see, Daniel Crane, “Monopoly Broth Makes Bad Soup,” 76 Antitrust L. J. 663 (on
+problems with certain applications of the monopoly broth doctrine).
+19 Tim Bradshaw, “TripAdvisor Claims Google Pushing Services Harder,” Financial Times, Feb.
+21, 2012.
+20 Carsten Cumbrowski, “New Yahoo! (Universal) Search Launched,” Reve News, Oct. 2, 2007; Eli
+Goodman, “Universal Search: Not All Blends Are Created Equal,” Search Engine Watch, Oct. 11, 2010.
+21 Marvin Ammori, “Some Thoughts on Google Search, Plus Your World,” Marvin Ammori &
+Friends on Technology Policy, Jan. 11, 2012.
+22 J.R. Raphael, “Microsoft’s Bing Ad Claims to Terminate ‘Search Overload,’” PC World, June 3,
+2009.
+23 Ben Grimes, “The Evolution of Search in Six Minutes,” The Official Google Blog, Nov. 28, 2011,
+www.googleblog.blogspot.com/2011/11/evolution-of-search-in-six-minutes.html.
+24 Screenshot, i1259.photobucket.com/albums/ii559/PelicanAG/YahooUniversalSearch.jpg; Screenshot,
+i1259.photobucket.com/albums/ii559/PelicanAG/BingUniversalSearch.jpg.
+25 Joshua D. Wright, “Defining and Measuring Search Bias: Some Preliminary Evidence,” George
+Mason Law & Economics Research Paper no. 12-14, Nov. 2011.
+26 Lucian Parfeni, “Bit.ly Debuts Future Predicting Real-Time Search Technology,” Softpedia, Oct.
+11, 2011.
+27 Damon Darlin, “An Engine’s Tall Order: Streamline the Search,” NY Times, May 7, 2011. See
+also, Rich Skrenta, “Blekko’s not afraid of Google, why is Washington?” Skrentablog, Sept. 20, 2011 (“But
+we don’t need federal intervention to level the playing field with Google.”).
+28 Brad McCarty, “StumbleUpon: 800 million monthly stumbles can’t be wrong,” The Next Web
+Insider, Apr. 4, 2011.
+29 Francis Bea, “DuckDuckGo: An Introduction to the Anonymous Search Engine,” Digital Trends,
+Feb. 25, 2012; Danny Goodwin, “DuckDuckGo Hits New Milestone: 1 Million Searches,” Search Engine
+Watch, Feb. 16, 2012.
+30 Adam Satariano & Douglas MacMillan, “Apple Said to Pay About $50 Million for ApplicationSearch Startup Chomp,” Bloomberg, Feb. 24, 2012.
+31 BigOak Blog, “5 Secret Search Engines Way Better Than Google,” BigOak Blog, Nov. 21, 2011.
+32 Lance Ulanoff, “Google Knowledge Graph Could Change Search Forever,” Mashable, Feb. 13,
+2012.
+33 Ian Wishart, “Searching questions for EU as small firm takes on giant,” EuropeanVoice.com, Jan.
+20, 2011, www.europeanvoice.com/article/imported/searching-questions-for-eu-as-small-firm-takes-ongiant/69988.aspx.
+34 “Facts About Google and Competition,” www.google.com/competition/.
+35 Oren Bracha & Frank Pasquale, “Federal Search Commission? Access, Fairness, and
+Accountability in the Law of Search,” 93 Cornell L. Rev. 1149 (2007). Telecommunications and cable
+companies, such as AT&T, Comcast, and Time Warner Cable, proposed undefined “search neutrality”
+mandates in unrelated FCC dockets regarding network neutrality. See Nate Anderson, “Search
+neutrality? How Google became a “neutrality” target,” Ars Technica, Apr. 29, 2010. See also, “Comments of
+Time Warner Cable Inc.,” GN Docket No. 09-191 (filed Jan. 14, 2010), “Comments of AT&T Inc.,” GN
+Docket No. 09-191 (filed Jan. 14, 2010), and “Comments of Comcast Corporation,” GN Docket No. 09-191
+(filed Jan. 14, 2010): “Hearings Before the Federal Trade Commission in the Matter of Preserving the
+Open Internet: Broadband Industry Practices.”
+36 Frank Pasquale, “Dominant Search Engines: An Essential Cultural & Political Facility,” in The
+Next Digital Decade: Essays on the Future of the Internet 401, 415 (Berin Szoka & Adam Marcus, eds., 2010).
+
+41
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+37 See Eric Goldman, “Search Engine Bias and the Demise of Search Engine Utopianism,” 8 Yale
+J.L. & Tech. 188 (2006); Grimmelmann, supra note 12; Daniel A. Crane, “Search Neutrality as an Antitrust
+Principle,” University of Michigan Law School, Law & Economics Working Paper 40, available at
+bit.ly/yBfyor; Wright, supra note 25.
+38 See Google Hearing, supra note 4(Statement of Jeremy Stoppelman, CEO, Yelp); Benjamin
+Edelman, “Hard-Coding Bias in Google ‘Algorithmic’ Search Results,” Nov. 15, 2010,
+www.benedelman.org/hardcoding/; FairSearch Report, supra note 2, at 42.
+39 See US DOJ, “Competition and Monopoly: Single-Firm Conduct Under Section 2 of the
+Sherman Act 143,” (2008; withdrawn May 11, 2009) (hereinafter DOJ Section 2 Report, withdrawn.
+40 See John E. Lopatka & William Page, “Devising a Microsoft Remedy That Serves Consumers,” 9
+Geo Mason L. Rev. 691, 700 (2001).
+41 See DOJ Section 2 Report, withdrawn, supra note 39, at xi.
+42 Id. at 143.
+43 See Philip Marsden & Spencer Waller, “Antitrust Marathon Part IV,” 20 Loyola Consumer L. Rev.
+197, 210 (2008) (quoting Bert Foer).
+44 Id.
+45 Id. at 215 (“I would say most of the regulatory remedies, access remedies in particular that have
+been tried at the Federal Trade Commission have not worked. We didn’t know enough about them. We
+didn’t know enough about remedy. There is no book on remedy. . . . I know in my own case, I have
+worked on a whole bunch of remedies with total failures, and they were total failures because we didn’t
+understand enough about the industry when we designed the remedy.”) (quoting Ken Davidson).
+46 “The agencies make this point in discussing merger remedies, but the same principle applies in
+other antitrust cases.” U.S. Dept. of Justice, Antitrust Division Policy Guide to Merger Remedies 2, (2011).
+47 See, e.g., David Warsh, Knowledge and the Wealth of Nations: A Story of Economic Discovery, (2006);
+Richard Gilbert & Willard K. Tom, “Is Innovation King at the Antitrust Agencies? The Intellectual
+Property Guidelines Five Years Later,” UC Berkeley, Center for Competition Policy Working Paper no.
+CP-C01-20 (2001) available at escholarship.org/uc/item/8zv6b8c5. See also Richard J. Gilbert, “Competition and
+Innovation,” (2007), escholarship.org/uc/item/9xh5p5p9.
+48 Geoffrey A. Manne & Joshua D. Wright, “Google and the Limits of Antitrust: The Case Against
+Google,” 34 Harv. J. L. & Pol’y 171, 187 (2011).
+49 Classic works on comparative institutional analysis include Neil K. Komesar, Imperfect
+Alternatives: Choosing Institutions in Law, Economics, and Public Policy, (1997); Ronald Coase, “The Problem
+of Social Cost, 3,” J.L. & Econ. 1 (1960).
+50 Phillip E. Areeda & Herbert Hovenkamp et al., “Antitrust Law (21 volumes, annual
+supplements, 1978-2011).” See also Daniel A. Crane, “Antitrust Modesty,” 105 Mich. L. Rev. 1193, 1193
+(2007) (quoting Justice Stephen Breyer suggesting that the treatise is more influential than circuit court
+opinions.).
+51 See Herbert Hovenkamp, The Antitrust Enterprise: Principle and Execution, 47 (2005).
+52 See, e.g., Verizon Communications Inc. v. Law Offices of Curtis V. Trinko, LLP, 540 U.S. 398,
+405-07 (2004); Thomas A. Lambert, “The Roberts Court and the Limits of Antitrust,” 52 B.C. L. Rev. 871,
+874-79 (2011); Frank H. Easterbrook, “The Limits of Antitrust,” 63 Tex. L. Rev. 1 (1984) (suggesting that
+error costs deterring beneficial conduct are more costly than the error costs of overlooking
+anticompetitive conduct).
+53 Linkline, 555 U.S. at 453 (quoting Town of Concord v. Boston Edison Co., 915 F.2d 17, 25, 1st
+Cir. 1990, Breyer, C.J.).
+54 Trinko, 540 U.S. at 415 (quoting Phillip E. Areeda, “Essential Facilities: An Epithet in Need of
+Limiting Principles,” 58 Antitrust L.J. 841, 853 (1989)).
+55 Pacific Bell Telephone Co. v. Linkline Communications, Inc., 555 U.S. 438, 449 (2009). In price
+squeezes, a competitor raises wholesale prices to competitors while cutting its retail prices to consumers.
+Id. at 452-53.
+
+42
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+56 For the main academic argument, see Oren Bracha & Frank Pasquale, “Federal Search
+Commission? Access, Fairness, and Accountability in the Law of Search,” 93 Cornell L. Rev. 1149 (2008).
+See also Frank Pasquale, “Dominant Search Engines: An Essential Cultural & Political Facility,” in The
+Next Digital Decade: Essays on the Future of the Internet 402 (Berin Szoka & Adam Marcus, eds., 2010)
+(proposing a government funded search engine instead).
+57 See FairSearch Report, supra note 2, at 41.
+58 See ICOMP Report, supra note 2, at 36 (“A remedy in this context should prevent Google from
+taking into account the following inappropriate factors in relation to search rankings: whether or not the
+website or service in question is offered by Google, a firm that is a subsidiary or a business unit of
+Google, or one of Google’s business partners; whether the firm offers or promotes competing products to
+those of Google; or whether the firm has brought a complaint against Google. Similarly, Google should
+face an absolute ban from retaliation against any product, service, website or firm.”).
+59 See id. at 34-35. See also, Edelman, supra note 3, at 27-28.
+60 Schonfeld, supra note 5. (“Senator Al Franken suggested the possibility of a voluntary technical
+committee to provide oversight, to which Google’s outside lawyer Susan Creighton responded (quite
+correctly): ‘Google already changes its algorithm 500 times a year. I think a technical committee would be
+too slow to keep up with changes in the market.’”).
+61 Linkline, 555 U.S. at 452-53.
+62 See Kinderstart.com, LLC v. Google, Inc., Case No. C 06-2057 JF (RS), 2007 WL 831806 (N.D.
+Ca., Mar. 16, 2007); Search King, Inc. v. Google Technology, Inc., Case No. Civ-02-1457-M, 2003 WL
+21464568 (W.D. Okla., Jan. 13, 2003).
+63 Matt Cutts, “Ten Recent Algorithm Changes,” Inside Search, Nov. 14, 2011,
+insidesearch.blogspot.com/2011/11/ten-recent-algorithm-changes.html.
+64 Eric Goldman, “Search Engine Bias & the Demise of Search Engine Utopianism,” in The Next
+Digital Decade: Essays on the Future of the Internet 461 (Berin Szoka & Adam Marcus, eds., 2010); James
+Grimmelmann, “Some Skepticism About Search Neutrality,” in The Next Digital Decade: Essays on the
+Future of the Internet 435, 438 (Berin Szoka & Adam Marcus, eds., 2010).
+65 See Schonfeld, supra note 5.
+66 See Search Neutrality, www.searchneutrality.org (last visited Feb. 27, 2012).
+67 Claire Compton, “Google Responds to EC Anti-Trust Investigation,” Prague Post, Dec. 8, 2010.
+68 Chris Lake, “Foundem vs Google: A Case Study in SEO Fail,” EConsultancy, Aug. 18 2009.
+69 Id. See also, Chris Lake, “Foundem vs Google Redux,” EConsultancy, Jan. 5, 2010.
+70 Benjamin Edelman & Benjamin Lockwood, “Measuring Bias in ‘Organic’ Web Search,” at
+Appendix 1, www.benedelman.org/searchbias/appendix1.html (last visited Feb. 27, 2012).
+71 Pacific Bell Telephone Co. v. Linkline Communications, Inc., 555 U.S. 438, 453 (2009) (quoting
+Town of Concord v. Boston Edison Co., 915 F.2d 17, 22, 1st Cir. 1990, Breyer, C.J.).
+72 David Segal, “The Dirty Little Secrets of Search”, NY Times, Feb. 12, 2011.
+73 FairSearch Report, supra note 2, at 27-28.
+74 Edelman, supra note 3, at 27 (quoting 14 C.F.R. Part 255).
+75 Id.
+76 Josh Wright, “Searching for Antitrust Remedies, Part II,” Truth on the Market, July 13, 2011,
+truthonthemarket.com/2011/07/13/searching-for-antitrust-remedies-part-ii/.
+77 Trinko, 540 U.S. at 415 (quoting Phillip E. Areeda, “Essential Facilities: An Epithet in Need of
+Limiting Principles,” 58 Antitrust L.J. 841, 853 (1989)).
+78 Computer Reservation System (CRS) Regulations, 69 Fed. Reg. 976 (DOT, Jan. 7, 2004).
+79 United Air Lines v. CAB, 766 F.2d 1107, 1111 (7th Cir. 1985) (affirming Airline Computer
+Reservation Systems: Display of Information, 49 Fed. Reg. 32, 540 (Civil Aeronautics Board Aug. 15,
+1984)).
+80 For a discussion of these cases, see Cindy R. Alexander & Yoon-Ho Alex Lee, “The Economics
+of Regulating Reform: Termination of Airline Computer Reservation System Rules,” 21 Yale J. on Reg. 369,
+384-85 (2004).
+
+43
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+See Edelman, supra note 3, at 27-28.
+United States v. Microsoft Corp., 253 F.3d 34 (D.C. Cir. 2001).
+83 William H. Page & Seldon J. Childers, “Software Development as an Antitrust Remedy:
+Lessons from the Enforcement of the Microsoft Communications Protocol Licensing Requirement,” 14
+Mich. Telecomm. & Tech. L. Rev. 77, 98, 107-110, 133-136 (2007).
+84 Id. at 108-109.
+85 Id. at 98.
+86 Final Judgment, United States v. Microsoft Corp., No. 98-1232 (CKK), 2002 WL 31654530
+(D.D.C. Nov. 12, 2002).
+87 New York v. Microsoft, 231 F. Supp. 2d 203, 253-257 (D.D.C. 2002).
+88 See Heiner, supra note 8, at 4-5.
+89 Id.
+90 Joint Motion for a Supplemental Protective Order and Supporting Memorandum of Points and
+Authorities, United States v. Microsoft Corp., No. 98-1232(CKK) (D.D.C. Aug. 18, 2011). See also, David
+Meyer, “Microsoft and US Sue for Return of Antitrust Documents,” ZDNet UK, Aug. 22, 2011.
+91 See Page & Childers, supra note 83, at 133-36.
+92 See, e.g., Daniel F. Spulber, “Unlocking Technology: Antitrust and Innovation,” 4 J. Competition
+L. & Econ. 915, 946-47 (2008) (“There are over 100 national and international standard-setting bodies in the
+ICTE [information and communications technology and selected electronics] industries.”).
+93 Aspen Skiing Co. v. Aspen Highlands Skiing Corp., 472 U.S. 585, 605 n. 32 (“‘Thus,
+“exclusionary” comprehends at the most behavior that not only (1) tends to impair the opportunity of
+rivals, but also (2) either does not further competition on the merits or does so in an unnecessarily
+restrictive way.’”) (quoting 3 Phillip E. Areeda & Donald F. Turner, Antitrust Law ¶ 626b, at 78 (1978)).
+94 See Edelman, supra note 3, at 29-30.
+95 See FairSearch Report, supra note 2, at 41.
+96 There was some criticism of Google’s Search Plus Your World, which was announced after
+Google’s competitors proposed its remedies. See Nick Bilton, “Google’s Social Move Attracts Critics,” NY
+Times Bits Blog, Jan. 10, 2012.
+97 Todd Wasserman, “‘Facebook’ Is the Most-Searched Term of 2011[STUDY],” Mashable, Dec. 22,
+2011 (others in the top ten included Yahoo, and MapQuest).
+98 We can assume here, for the sake of argument, that the way Google presents search results by
+news or local results is a “product” under antitrust law separate from a general search. We could also
+view Google News as merely a way to categorize and display some search results among the many search
+results presented on a page, more a design choice than a separate product.
+99 See, e.g., Complaint, United States v. Microsoft Corp, Civil Action No 98-1232 (D.D.C. filed May
+18, 1998) ¶ 103-23.
+100 Charlotte Kiang, “Google+ Launch Resuscitates Antitrust Concerns”, PolicyMic, July 27, 2011;
+Qi Guo et al., “Why Searchers Switch: Understanding and Predicting Engine Switching Rationales,” in
+Proceedings of SIGIR 335 (2011). See also, supra notes 26- 31 (and accompanying text) (discussing rival
+search engines).
+101 See, e.g., Steve Jobs, 2007 iPhone Presentation (Part 1 of 2), YouTube, youtube/6uW-E496FXg;
+Joseph Volpe, “Meet the New iPhone 4S,” Engadget, Oct. 4, 2011.
+102 See, e.g., “The Evolution of Facebook Features,” available at
+www.grosocial.com/blogposts/Evolution-Facebook-Features.
+103 See Victoria Barret, “Dropbox: The Inside Story on Tech’s Hottest Startup,” Forbes, Oct. 18,
+2011.
+104 Yane Svetiev, “Antitrust Governance: The New Wave of Antitrust,” 38 Loy. U. Chi. L.J. 593, 626
+(2007) (“Courts defer to the product development decisions, even those of a dominant firm, not because
+they are antiantitrust, but because, in the absence of doctrinal guidance, they do not have the tools with
+which to perform the balancing task effectively or legitimately, in a way which would provide actors
+with a clear guide to future compliance.”).
+81
+82
+
+44
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+105 Verne G. Kopytoff, “Microsoft Posts a 30% Increase in Profit, but Sales of Windows Are
+Weak,” NY Times, July 21, 2011; Peter Bright, “A Look Ahead: 2012 is Microsoft’s Turning Point,” Ars
+Technica, Dec. 29, 2011.
+106 See Farhad Manjoo, “The Great Tech War Of 2012,” Fast Company, Nov. 2011. See also Miguel
+Helft & Jessi Hempel, “Facebook vs. Google: The Battle for the Future of the Web,” CNN Money, Nov. 29,
+2011. For example, even though known for book sales, Amazon has evolved to “Own[] the Web in More
+Ways Than You Think,” according to Wired magazine. Steven Levy, “Jeff Bezos Owns the Web in More
+Ways Than You Think,” Wired, Nov. 13, 2011. Amazon’s Fire competes with Apple in the tablet market;
+it’s Kindle with Barnes & Noble’s Nook; it’s UnBox with Netflix; it’s Amazon MP3 with iTunes; it’s
+Checkout with Paypal; it’s e-commerce offerings with Buy.com, Walmart.com, and eBay; it’s enterprise
+cloud computing with Rackspace and others; and it’s consumer cloud computing with Dropbox and
+iCloud. Amazon may even be launching a smartphone to compete with Apple’s iPhone and the devices
+powered by Google’s Android operating system. John Cook, “Infographic: Amazon versus Apple,
+PayPal, Dropbox and the rest of the tech world,” GeekWire, Dec. 23, 2011; Agustino Fontevecchia, “Jeff
+Bezos Eyeing Apple’s Lunch? Amazon Smartphone in 2012, Citi Says,” Forbes, Nov. 17, 2011.
+107 See Manjoo, supra note 106.
+108 Even Microsoft’s advertisements emphasize this point. See “Bing: Decide to Discover
+Downtown,” YouTube, youtube/8aN5UPyseBw.
+109 See, e.g., Alexia Tsotsis, “The d.Fund Founder Enrique Allen: Innovation Will Take a Different
+Breed Of Designer,” TechCrunch, Apr. 9, 2011; Meghan Kelly, “Hipmunk Launches Mobile App for
+Booking Hotels,” MobileBeat, Jan. 9, 2012.
+110 See Tom Spring, “Bing vs. Google vs. Yahoo: Feature Smackdown,” PC World, May 29, 2009.
+111 See FairSearch Report, supra note 2, at 41.
+112 Id. at 28.
+113 See ICOMP Report, supra note 2, at 36.
+114 Id.
+115 See, e.g., Amit Singhal, “Search Quality Highlights: 40 Changes for February,” Inside Search,
+Feb. 27, 2012, insidesearch.blogspot.com/2012/02/search-quality-highlights-40-changes.html; Pandu Nayak, “30
+Search Quality Highlights (with Codenames!): December,” Inside Search, Jan. 5, 2012,
+insidesearch.blogspot.com/2012/01/30-search-quality-highlights-with.html; Matt Cutts, “Ten Recent Algorithm
+Changes,” Inside Search, Nov. 14, 2011, insidesearch.blogspot.com/2011/11/ten-recent-algorithm-changes.html.
+116 “Facts About Google and Competition,” supra note 34.
+117 See Danny Sullivan, “Google & Bing Have Whitelists – ‘Exception Lists’ – For Some Algorithm
+Signals,” Search Engine Land, Mar. 10, 2011(hereinafter Exception Lists).
+118 See Google Hearing, supra note 4, at 59:40 (Eric Schmidt stating, “I can assure you we have not
+cooked anything.”); “Facts About Google and Competition,” supra note 34.
+119 Edelman & Lockwood, supra note 70.
+120 Josh Wright, “Extending & Rebutting Edelman & Lockwood on Search Bias,” Truth on the
+Market, Nov. 9, 2011, truthonthemarket.com/2011/11/09/extending-rebutting-edelman-lockwood-on-search-bias/.
+See also, Wright, supra note 25.
+121 See Exception Lists, supra note 17.
+122 See Google Webmaster Central, available at www.google.com/webmasters/.
+123 See “Facts About Google and Competition,” supra note 34.
+124 Marissa Mayer, “Do Not Neutralize the Web’s Endless Search”, Financial Times, July 14, 2010.
+125 See Screenshot, i1259.photobucket.com/albums/ii559/PelicanAG/TransparencySearch1.jpg.
+126 See Screenshot, i1259.photobucket.com/albums/ii559/PelicanAG/TransparencySearch2.jpg.
+127 See ICOMP Report, supra note 2, at 36.
+128 “AdWords Help: Landing Page and Site Quality Guidelines,” Google.com,
+support.google.com/adwords/bin/answer.py?hl=en&answer=46675.
+129 See FairSearch Report, supra note 2, at 32.
+
+45
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+130 “AdWords Help: Landing Page and Site Quality Guidelines,” Google.com, ,
+support.google.com/adwords/bin/answer.py?hl=en&answer=46675.
+131 Id.
+132 “AdWords Help: What Is the AdWords “Quality Score” and How Is It Calculated?,”
+Google.com, support.google.com/adwords/bin/answer.py?hl=en&answer=10215 (hereinafter Quality Score).
+133 “AdWords Help: Tips for Success,” Google.com
+support.google.com/adwords/bin/static.py?hl=en&page=tips.html#optimize (hereinafter Tips).
+134 “Advertising Policies Help: Overview,” Google.com,
+support.google.com/adwordspolicy/bin/static.py?hl=en&page=guide.cs&guide=1316546.
+135 “Quality Score,” supra note 132.
+136 “AdWords Help: Tips for Success,” supra note 133; “AdWords Help: Optimization Center,”
+Google.com, support.google.com/adwords/bin/topic.py?hl=en&topic=21804&from=guide.
+137 “AdWords Help (Overview),” Google.com, support.google.com/adwords/?hl=en.
+138 Users even post irrelevant advertisements that they find annoying. Fred Benenson, “Really NY
+Times? Its [sic] really frustrating that I can’t even pay to make these ads go away,” Flickr,
+www.flickr.com/photos/fcb/6786879392/. See also, “Dear Google and Facebook: Get Active,” Four Elements
+Media Blog, Mar. 1, 2012.
+139 “Google Ads: Publisher: Publisher Solutions,” Google.com),
+www.google.com/intl/en/ads/publisher/solutions.html#subid=ww-en-et-adsense-pubsollink.
+140 See FairSearch Report, supra note 2, at 36.
+141 The FairSearch Report was released October 11, 2011, and the ICOMP Report was released
+October 20, 2011, over a year after Google’s disclosure.
+142 Neil Mohan, “The AdSense Revenue Share,” Google Inside AdSense Blog, May 24, 2010,
+adsense.blogspot.com/2010/05/adsense-revenue-share.html.
+143 FairSearch Report, supra note 2, at 41.
+144 Id. at 38.
+145 Id. at 37.
+146 Ríona MacNamara, “The Anatomy of a Search Result,” Webmaster Central Blog, Nov. 26, 2007,
+googlewebmastercentral.blogspot.com/2007/11/anatomy-of-search-result.html.
+147 Ticketmaster Corp. v. Tickets.com Inc., 54 USPQ2d 1344 (C.D. Cal. 2000).
+148 Field v. Google, Inc., 412 F. Supp. 2d 1106 (D. Nev. 2006).
+149 See id at 1117-24.
+150 Using snippets in specialized searches would likely be fair use because the use is so similar to
+use in general searches. The test balances the (1) purpose and character of the use (nearly identical for
+general search and specialized search), (2) the nature of the copyrighted work (identical), (3) the amount
+and substantiality of the portion taken (identical or nearly identical), and (4) and the effect of the use
+upon the potential market. The effect on the potential market is not identical, however, according to Yelp
+and some news organizations for Google Places and Google News. They claim that the market effect is
+more harmful for Google’s specialized searches; however, the competitors have provided no evidence of
+an effect on the market for their copyrighted content to support this remedy. Even if they did, and if the
+fourth factor weighed against Google, the other three factors weigh strongly in favor of Google. Thus,
+using snippets in specialized searches is likely fair use. See, Kelly v. Arriba Soft Corp., 336 F. 3d 811 (9th
+Cir. 2003); Perfect 10, Inc. v. Amazon.com, Inc., et al., 487 F. 3d 701 (9th Cir. 2007).
+151 See Field v. Google, Inc., note 150 at 1112.
+152 Antitrust courts have done the opposite: Rather than expand the copyrights of other
+companies beyond traditional contours, they have limited the exclusive copyrights of dominant players.
+See Associated Press v. United States, 326 U.S. 1 (1945). Such a remedy better balances First Amendment
+concerns and furthers wider dissemination of information. See id. at 20.
+153 Fair use is constitutionally required as a judicial means to mediate the Constitution’s
+Copyright Clause and the First Amendment. See Golan v. Holder, 132 S. Ct. 873, 890-91, (2012); Eldred v.
+Ashcroft, 537 U.S. 186, 219-20 (2003).
+
+46
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+154
+
+Ralph Tegtmeier, “Bye-bye, Crawler: Blocking the Parasites,” Search Engine Watch, Aug. 4,
+
+2010.
+Some have criticized the doctrine. See Laura Quilter, “The Continuing Expansion of
+Cyberspace Trespass to Chattels,” 17 Berkeley Tech. L. J. 421, 436-43 (2002).
+156 In theory, parties could negotiate access to different terms. They generally do not, partly
+because search engines would likely be unable to negotiate different terms for accessing each site.
+157 The Media Institute, “Google and the Media: How Google Is Leveraging Its Position in Search
+to Dominate the Media Economy,” 29 (2011).
+158 Adam Kovacevich, “Response to The Media Institute White Paper: The Truth About Google,
+Search, and the Media Industry,” Media & Communications Policy, Oct. 6, 2011,
+www.mediacompolicy.org/2011/10/articles/digital-technology/response-to-the-media-institute-white-paper-thetruth-about-google-search-and-the-media-industry/.
+159 We would have to assume that Google’s practice is an antitrust violation either because books
+and videos are “essential facilities” or because of the doctrine of raising rivals’ costs. Thomas G.
+Krattenmaker & Steven C. Salop, “Anticompetitive Exclusion: Raising Rivals’ Costs to Achieve Power
+over Price,” 96 Yale L.J. 209 (1986). For essential facilities, we have to assume that the Supreme Court
+would recognize the doctrine—it never has. Verizon Communications Inc. v. Law Offices of Curtis V.
+Trinko, LLP, 540 U.S. 398, 411 (2004). Raising rivals’ costs is generally not enough on its own for a claim.
+See Areeda & Hovenkamp, supra note 50, at 109 (“[M]any practices that raise rivals’ cost, such as
+innovation that either deprives rivals or (sic) revenue or forces them to innovate in return, are also
+welfare-enhancing. As a result, raising rivals’ costs can never operate as a complete test for exclusionary
+conduct.”). In addition, competitors such as Microsoft can afford to make similar investments in scanning
+books or an alternative video service, so courts may conclude that Google is not raising rivals’ costs so
+much as refusing to subsidize competitors that are unwilling, but able, to make similar investments.
+160 See Verizon Communications Inc. v. Law Offices of Curtis V. Trinko, LLP, 540 U.S. at 407-08.
+161 Richard Waters, “Google’s YouTube Gamble Is Vindicated,” Financial Times, Jan. 1, 2010;
+Sherilynn Macale, “Google Reportedly Dishes $100M for New and Original YouTube Content,” Next Web,
+Oct. 3, 2011.
+162 One of the coauthors has disagreed with a provision of the Google Books settlement proposal
+that would have given Google a preferred position regarding the law itself, granting Google rights with
+in-copyright, out-of-print books that others would lack. Marvin Ammori, “Google Books Settlement:
+Copyright, Congress, and Information Monopolies,” ConcurringOpinions, Mar. 23, 2011. That provision
+would have applied copyright law differently to Google, and he argued, as we do here, that the same
+copyright rules should apply to all competitors in that space.
+163 Nancy Gohring, “Microsoft Shuts Down Book Search,” InfoWorld, May 23, 2008.
+164 Forcing Google to share its services is far more problematic than the more justifiable laws
+historically forcing telecommunications common carriers to share assets with their competitors. Among
+other things, generally, the legislature and a specialized agency, not the antitrust courts, required such
+sharing as a matter of economic policy. See Verizon v. FCC, 535 U.S. 467 (2002). Thus, as a descriptive
+matter, arguing for such sharing to an antitrust court would have been a losing argument. Cf. Verizon
+Communications Inc. v. Law Offices of Curtis V. Trinko, LLP, 540 U.S. 398, 406 (2004). Moreover, the
+telecommunications-sharing obligations pertained to lines that were built with enormous government
+subsidies, generally under government-provided monopoly protection to the local phone or local cable
+company. In this case, Google has invested its own funds, without a government backed monopoly, and
+has invested in new innovations. Thus, the innovation and investment calculus is different.
+165 An antitrust court could set a price for such innovation sharing, and that price would have to
+take into account not just the cost of the specific shared innovation, but also, of the failed innovations
+(such as Google Wave or Slide) that are necessary to create the innovation. Determining that figure, and
+modifying it over time, would be a difficult challenge, likely subject to error costs and complex expert
+testimony and evidence on both sides.
+166 FairSearch Report, supra note 2, at 41.
+155
+
+47
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+167 Leena Rao, “Google Spent Nearly $2 Billion On 79 Acquisitions In 2011,” TechCrunch, Jan. 27,
+2012; Christopher Dawson, “Google’s 40 Acquisitions in 2010: What About Integration?,” ZDNet, Oct. 30,
+2010.
+168 FairSearch Report, supra note 2, at 41.
+169 ICOMP Report, supra note 2, at 37.
+170 Don Harrison, “Acquisitions and Antitrust,” Google Public Policy Blog, Dec. 15, 2010,
+googlepublicpolicy.blogspot.com/2010/12/acquisitions-and-antitrust.html.
+171 Matt Rosoff, “Google Has Made More Than 50 Acquisitions This Year – Here Are The Ones
+We Know About,” Business Insider, Oct. 27, 2011.
+172 “Acquisitions,” CrunchBase, www.crunchbase.com/acquisitions?page=1; “List of Acquisitions by
+Google,” Wikipedia, en.wikipedia.org/wiki/List_of_acquisitions_by_Google.
+173 “List of Mergers and Acquisitions by Microsoft,” Wikipedia,
+en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Microsoft.
+174 15 U.S.C. § 26 (2012) (providing private right of action for injunctive relief “against threatened
+loss or damage by a violation of the antitrust laws”). See Mary K. Marks & Beverly J. Ang, “Agency
+Merger Enforcement in Non-Reportable Transactions,” Feb. 1, 2010, available at
+www.srz.com/Agency_Merger_Enforcement_in_NonReportable_Transactions/.
+175 Clint Boulton, “Google, Apple Extend Search Deal for iPhone, iPad,” eWeek, Sept. 25, 2010;
+Matt McGee, “Google, Mozilla Renew Firefox Search Deal for 3 More Years,” Search Engine Land, Dec. 20,
+2011.
+176 Greg Sterling, “Deal Puts Microsoft Live Search on Dell Computers, Verizon Phones – Will It
+Help?” Search Engine Land, Jan. 7, 2009; Zach Epstein, “Windows Market Share Slides in October as Mac,
+Linux Gain,” Boy Genius Report, Nov. 2, 2011; Patrick Seitz, “Microsoft Expands Bing Search Engine Reach
+Through Deals,” Investors’ Business Daily: Click Tech. Blog, Feb. 5, 2010.
+177 See Gabe Donnini, “Is Bing Winging on Internet Explorer?,” Insights, July 27, 2011.
+178 See Jonathan Levin, “Auction Theory 2,” Oct. 2004, available at
+www.stanford.edu/~jdlevin/Econ%20286/Auctions.pdf.
+179 See Kara Swisher, “Google Will Pay Mozilla Almost $300M Per Year in Search Deal, Besting
+Microsoft and Yahoo,” All Things D, Dec. 22, 2011.
+180 Bing is the default search engine of Internet Explorer (a Microsoft product) and Blackberry,
+and a disproportionate percentage of search queries on those platforms use Bing. Gabe Donnini, “Is Bing
+Winging on Internet Explorer?,” Insights, July 27, 2011.
+181 See Joe Wilcox, “Microsoft Q4 2011 by the numbers: $17.37B revenue, $5.87B profit, 69 cents
+EPS,” BetaNews, July 21, 2011; Steven D. Jones, “Microsoft Shares Reach Highest Level Since Spring 2010,”
+Dow Jones Newswires, Jan. 20, 2012.
+182 Schonfeld, supra note 5.
+
+48
+
+Electronic copy available at: https://ssrn.com/abstract=2058159
+
+

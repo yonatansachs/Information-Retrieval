@@ -4,6 +4,7 @@ from pathlib import Path
 import json
 
 from LanguageModel import create_advanced_language_model
+from MachineLearning import main
 from tokenization_rules import TOKENIZATION_RULES
 from LinguisticOperations import process_documents
 
@@ -152,3 +153,11 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Error: {str(e)}")
 
+
+    print("***************************************")
+    print("***************************************")
+    print("Moving on to Classification")
+    print("***************************************")
+    print("***************************************")
+
+    main()

@@ -1,0 +1,591 @@
+XR technologies fostering museum visits for people with 
+impairments 
+Dimitrios Koukopoulos1, Konstantinos Koukoulis1, Stella Sylaiou2 and Christos Fidas1 
+1 University of Patras, University Campus, 26504, Rion, Greece  
+2 International Hellenic University, Address, Serres, Index, Greece  
+Abstract 
+XR technologies are a trend nowadays for enhancing museum visits. Although museum visits are a way 
+to enhance well-being in modern cities, there is a question concerning how inclusive they can be, 
+especially for people with impairments. In this work, we are interested in people with impairments 
+like low vision or hearing problems. In such a context, we investigate the issue of how XR technologies 
+can benefit museum visits for impaired people. Based on the literature, we make an attempt to specify 
+user needs and associate them with XR technology functionalities taking into account how those 
+functionalities have been implemented in current systems for museum visits. To the best of our 
+knowledge, there is no system for museum visits that can personalize its features to the special needs 
+of impaired persons independently of the type of impairment they are facing. Another challenge is the 
+engagement of impaired persons in the design and development of such systems. Our results suggest 
+that this scientific domain is in its infancy and a lot of work remains to be done, especially for the 
+human-computer interaction community. 
+Keywords  
+Impairments, XR systems, museum visits1 
+1. Introduction 
+Nowadays, the world is increasingly trying to exploit the advantages of XR technologies in 
+everyday life. People have started to become familiar with XR technologies and companies, 
+institutions and even governments are trying to exploit this popularity to provide personalized 
+services to their audience. In the case of museums, incorporating XR technologies may lead to 
+better engagement with their audience by providing distance access to their collections or 
+facilitating a better experience in the museum. The potential of those technologies has been 
+exploited within museum environments for preservation purposes, facilitation of everyday 
+functions like ticketing, or even promotion of the democratization concerning accessibility. The 
+focus of this work is how museum visits can be inclusive using XR technologies to promote well-
+being in modern cities.  
+A lot of work is targeting the use of technology in the everyday life of a museum [1–3]. There 
+is also much work for online users who need a virtual tour for exhibitions [4–7]. However, there 
+is a limited amount of research that focuses on people with impairments and in most cases, 
+applications are focused on only one impairment type. In [8] they state that most mobile AR 
+apps for museum visitors do not support hearing-impaired visitors even though this community 
+accounts for over 5% of the world's populace. Furthermore, in [9] they state that only 20 of the 
+90 low-vision studies recruited participants with low vision. Most of the research in the field is 
+based on simulation of low vision. Also, in [10] they state that according to the US Center for 
+ 
+AMID 2023 - Workshop on Accessibility and Multimodal Interaction Design Approaches in Museums for People with 
+Impairments, September 27, 2023, Athens, Greece  
+ dkoukopoulos@upatras.gr (D. Koukopoulos); kkoukoulis@upatras.gr (K. Koukoulis); sylaiou@ihu.gr (S. Sylaiou), 
+cfidas@upatras.gr (C. Fidas)  
+ 0000-0001-7019-4224 (D. Koukopoulos); 0000-0002-6017-8690 (K. Koukoulis); 0000-0001-5879-5908 (S. 
+Sylaiou); 0000-0001-6111-0244 (C. Fidas) 
+ 
+© 2023 Copyright for this paper by its authors. 
+Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0).  
+ CEUR Workshop Proceedings (CEUR-WS.org)  
+ 
+CEUR
+Workshop
+Proceedings
+ceur-ws.org
+ISSN 1613-0073
+
+Disease Control and Prevention, 25% of US adults have a disability that “impacts major life 
+activities”. 
+In this work, we are dealing with the user needs of people with impairments concerning 
+museum visits and how those needs can be facilitated by XR technology functionalities to 
+enhance the visiting experience in the museum or provide distance access to their collections. In 
+this context, there are many questions to be answered: What are the XR technological tools that 
+museums use to facilitate their visitors (distanced or in situ)? Is this technology equally helpful 
+for all their visitors? What about people with impairments? 
+2. XR Technology for museum visits 
+Milgram and Kishino defined a lot of concepts related to computer-generated realities [11, 12]. 
+Augmented Reality (AR) is about providing a digital layer of information to the vision [13] or 
+even to other senses [13, 14]. Virtual reality (VR) “produces a digital environment in which 
+visual perception, sense of hearing, and sense of touch are highly similar to those of actual 
+environment within a certain range” [15]. Also, VR is there to engage several human senses 
+[16]. Mixed reality (MR) is not a clearly defined term [17, 18]. In MR, the digitally displayed 
+information tends to be an integral part of the real world. The user has the option to treat that 
+object like it is real. For a common understanding, we use the following definitions [19]: VR 
+enhances our presence and interaction with a computer-generated environment hiding from 
+the user the real world, and AR enhances our perception and understanding of the real world by 
+superimposing virtual information on our view of the real world, and MR is when real and 
+virtual environments blend. Extended Reality (XR) is used to describe all these realities. 
+However, in [20] they state that X should stand for any reality format. Going beyond the XR 
+technologies is the metaverse [21–24]. We will adapt the definition from [21], where the 
+metaverse can be seen as a virtual environment blending physical and digital, facilitated by the 
+convergence between the Internet and Web technologies and XR. XR offers all the technological 
+tools that are necessary for someone to build new worlds. It also offers devices for entering 
+those worlds.  
+Technologies related to XR [14, 16, 19, 25–27] are constantly evolving [28]. We may have some 
+categories related to the ability to use these technologies in an indoor or outdoor setting: 
+AR/MR can be indoor or outdoor while VR is mainly set to be indoor. Mobile AR can be 
+categorized depending on the technology used to trigger the superimposing [26]. Another 
+category is related to the level of immersion which depends on the type of device and the type 
+of reality. For example, we cannot expect a fully immersive experience with the use of a desktop 
+device or with the use of an AR app. The devices used for XR are mobile devices, desktop 
+displays [16], HMDs (like Google cardboard [29] and Meta Quest Pro [30], CAVE [31], 
+holographic, or smart glasses. Also, new types of devices that could offer a deeper sense of 
+impressiveness have started to become common (like Haptic Feedback). AR devices like HMDs 
+or smartphones [25] are used because they are portable and can facilitate the display of 
+information in the real environment. Caves or desktop computers can be used for VR, while 
+HMDs can be used for all XR systems. The most common devices for MR are see-through HMDs 
+[32]. XR applications are created using dedicated development kits (commercial or not). There 
+are many developments in software for VR (like [33–37]). For AR we have software like [38–
+42]. For MR we cannot identify any exclusive list of toolkits or devices, but the abovementioned 
+software can be used in some cases [43].  
+3. Museums and impaired persons 
+According to [44], “in the context of health experience, an impairment is any loss or abnormality 
+of psychological, physiological or anatomical structure or function”. This definition also includes 
+losses that occurred during the person's lifetime. In [45], it is stated that disability “is any 
+restriction or lack (resulting from an impairment) of ability to perform an activity in the manner 
+
+or within the range considered normal for a human being” and a handicap is a “disadvantage for 
+a given individual resulting from an impairment or a disability, that limits or prevents the 
+fulfilment of a role that is normal (depending on age, sex, and social and cultural factors) for 
+that individual”. A brief list of impairments includes (according to [45]): 1. Intellectual 2. Other 
+psychological 3. Language 4. Aural 5. Ocular 6. Visceral 7. Skeletal 8. Disfiguring 9. Generalized, 
+sensory, and other impairments. In [46], they state that impairments can be related to vision, 
+hearing, mobility, cognitive, or speech. In all cases, the impairment might be temporary, 
+situational, or permanent. 
+ 
+ 
+Figure 1: Extended reality for everyone 
+ 
+In a study [47], participants highlighted that “the biggest issues in XR technology are overuse of 
+motion tracking, lack of flexibility with other hardware, lack of customization ability, lack of 
+compatibility with assistive technology, lack of visual, and audio, and haptic cues and an overall 
+lack of consideration for most kinds of disability needs”. In this work, we mainly focus on the 
+requirements that are required to assist impaired people. To understand the challenges that 
+should be confronted when an XR system is designed, [47] determines some directions to be 
+aware of: 
+• 
+Understanding of specific diverse user needs and how they relate to XR. 
+• 
+Identifying modality needs that are not obvious but required. 
+• 
+Suitable authoring tools for supporting accessibility requirements in XR. 
+• 
+Using languages, platforms, and engines that support accessibility semantics. 
+• 
+Providing accessible alternatives for content and interaction. 
+• 
+Providing specific commands within the VR environment, which assist with navigation 
+to support different modalities. 
+• 
+Using virtual assistive technologies to provide non-visual feedback.  
+It is obvious that each impairment type needs to be treated in a special way. In [48] they also list 
+needs together with requirements that are needed to be served to create a system that is 
+accessible for people without excluding a type of impairment. In Table 1, we list these needs 
+along with the proposed system requirements that provide help for impaired persons. Research 
+that is currently available does not deal with all the types of impairment together. In [8], they 
+deal with hearing-impaired persons, and they conclude that major elements of engagement for a 
+mobile AR application are Aesthetics, Curiosity, Usability, Interaction, Motivation, Satisfaction, 
+Self-Efficacy, Perceived Control, Enjoyment, Focused Attention, and Interest.  
+ 
+Table 1 
+User needs and requirements. A revised version of the data that is presented in [48] 
+N 
+Need 
+Requirements 
+XR type 
+1 
+Assistive 
+technology 
+users: 
+to 
+navigate, identify locations, objects 
+Navigation / alternative mapping, position 
+rearrangement, sensitivity, and resizing / 
+VR/MR 
+
+and interact  
+important 
+objects 
+in 
+suitable 
+modality/filtering and sorting  
+2 
+Physical disability users: to interact 
+with items with no bodily movement 
+to perform any given action. 
+Device-independent actions - not physically 
+/ same input for all the UI methods, 
+multiple input methods at the same time. 
+VR/MR 
+3 
+Cognitive and learning disabilities 
+users: to personalize the immersive 
+experience in various ways. 
+Symbol sets used to communicate and 
+layered over objects / turn off or 'mute' 
+non-critical environmental content  
+VR/MR 
+4 
+Limited mobility, or tunnel or 
+peripheral vision users: may need a 
+larger 'Target size' for a button or 
+other controls. 
+Hit targets are large with spacing, multiple 
+actions or gestures are not required at the 
+same time / 'Sticky Keys' requirements for 
+various inputs  
+VR/MR 
+5 
+Limited mobility users: use voice 
+commands to navigate, interact and 
+communicate. 
+Navigation 
+and 
+interaction 
+by 
+Voice 
+Activation / Voice activation should use 
+native screen readers or voice assistants 
+rather than external devices. 
+XR 
+6 
+Colour-blind users: to be able to 
+customise the colours used. 
+Customized high-contrast skins for the 
+environment. 
+XR 
+7 
+Screen magnification users: to check 
+the context of their view  
+Check the context of view and track/reset 
+focus/interface elements - enlarged, menu 
+reflow. 
+VR/MR 
+8 
+Screen magnification users: to be 
+made aware of critical messaging 
+and alerts often without losing 
+focus.  
+Critical messaging or alerts have priority 
+roles that can be understood and flagged 
+to AT, without moving the focus 
+VR/MR 
+9 
+Blind users: to interact with a 
+gestural interface, such as a virtual 
+menu system. 
+Touch screen accessibility gestures / self-
+voicing option - menus / re-mapping of 
+gestures.  
+VR/MR 
+10 
+Deaf or hard-of-hearing users (with 
+the written language not to be their 
+first): signing of video for text, 
+objects, or item descriptions. 
+Text, objects, or item descriptions via a 
+signing 
+avatar/restriction 
+for 
+signing 
+videos.  
+VR/MR 
+11 Cognitive Impairments users:  easily 
+overwhelmed. 
+Allow the user to set a 'safe place' - quick 
+key, shortcut, or macro. 
+VR/MR 
+12 All Users: too much time or 
+experience to lose track of time. 
+Tools that support digital well-being, / set 
+alarms for time limits during an immersive 
+session 
+XR 
+13 Screen magnification, cognitive and 
+learning disability, spatial orientation 
+impairment users: to maintain focus 
+and understand their position they 
+are. 
+Reset and calibrate their orientation/view 
+in a device-independent way / Field of view 
+can be personalized - / clear visual or audio 
+landmarks. 
+VR/MR 
+14 Users of assistive technology such as 
+blind, 
+or 
+deaf-blind 
+users 
+communicating via specialized apps, 
+may have sophisticated 'routing' 
+requirements for inputs and outputs. 
+Text output, alerts, environment sounds, or 
+audio to a braille or second screen 
+device/flow 
+of 
+critical 
+messaging 
+or 
+content on a second screen/touch screen 
+accessibility gestures.  
+XR 
+15 Physical or cognitive and learning 
+disabilities users:  may find some 
+interactions too fast to keep up with 
+or maintain. 
+Change the speed/timing for interactions 
+or critical inputs can be modified / clear 
+start and stop mechanisms. 
+VR/MR 
+
+16 Vestibular disorders, epilepsy, and 
+photosensitivity 
+users: 
+some 
+interactions may trigger motion 
+sickness and other effects. 
+Alternatives for interactions that may 
+trigger epilepsy or motion sickness and/or 
+flickering images at maximum 
+VR/MR 
+17 Hard-of-hearing users may need 
+accommodations to perceive audio. 
+Spatialized 
+audio 
+content, 
+and 
+text 
+descriptions of important audio content. 
+XR 
+18 Spatial 
+orientation, 
+cognitive 
+impairments, or hearing loss users in 
+just one ear: may miss information 
+in a stereo or binaural soundscape. 
+Allow mono audio sound. 
+XR 
+19 Users: customize captions, subtitles, 
+and other text. 
+Captioning, 
+subtitling 
+of 
+multimedia 
+content, customizable context, sensitive 
+reflow of captions, subtitles, and text 
+content. 
+XR 
+4. Survey of apps assisting people with impairments based on XR 
+functionalities. 
+In Table 2, we present a list of indicative research related to applications facilitating impaired 
+persons during museum visits, along with app features that exploit XR functionalities. In all 
+cases, these applications try to invent ways to transmit the information that cannot be 
+perceived due to the impairment, using another channel. For example, they provide more 
+acoustic information to low-vision persons.  
+ 
+Table 2 
+Systems and applications that assist impaired persons in a museum visit. 
+System 
+Name 
+Features for people with impairment 
+Technology 
+Anagnostakis 
+et al. 2017 
+[49] 
+Navigation in exhibition halls and the tactual exploration of 
+exhibit replicas using touch-sensitive audio descriptions 
+and touch gestures on a mobile device.  
+3D printed exhibits, 
+touch sensors, 
+Arduino boards, 
+mobile app 
+Sulaimani et 
+al. 2023 [50] 
+Navigate autonomously around a museum combining 
+current traditional non-technical accessibility methods 
+with the use of 3D sound technology. 
+mobile application, 
+AR 
+Ahmetovic et 
+al. 2021 [51] 
+Supporting sighted and low vision visitors in accessing 2D 
+visual artworks through interactive artwork descriptions: 
+the user can quickly find descriptions; navigate the 
+description; augment descriptions with visual information;  
+mobile app, AR 
+Soares et al. 
+2020. [52] 
+It contains a screen reader, and the user can listen to all 
+the extra information. This inclusive feature is essential for 
+people with disabilities, such as visually impaired or 
+intellectually disabled people. 
+mobile app, AR 
+Zaal et al. 
+2020 [53] 
+Use narrations and spatialized ‘reference’ audio combined 
+with haptic feedback. 
+modified narratives, 
+enhanced audio, 
+haptics, VR 
+Trichopoulos 
+et al. 2022. 
+[54] 
+AR-based digital storytelling system without the use of 
+images, to improve the experience of visually impaired 
+visitors in the heritage site. 
+AR, tangible 
+interface, binaural 
+audio, smart glass. 
+5. Conclusions and Discussion 
+
+In this work, we dealt with systems or applications that are specially created for impaired 
+persons. Most of the apps target only one impairment, providing ways to help these people have 
+a better experience when visiting a museum. Furthermore, we listed several users' needs and 
+requirements for any XR application focusing on impaired people. These requirements should 
+be followed by application designers to promote inclusion. However, this does not happen 
+today. We could hardly see an implementation of one or two of these requirements in 
+applications that are for the general population.  
+We believe that the research on the use of technology that assists people with impairments 
+should be done with the impaired people and not using simulations. In [47] they mention that 
+“For AR and VR to become truly accessible to persons with disabilities, then those who are 
+experiencing disabilities must be included in the development. In the words of disability activist 
+James Charlton, “Nothing about us without us.”. In the future, the systems that are created for 
+enhancing the museum experience should adapt to the personalized needs of the persons, 
+impaired or not.  
+Acknowledgements 
+This research has been co-financed by the European Regional Development Fund of the 
+European Union and Greek national funds through the operational program Competitiveness, 
+Entrepreneurship, and Innovation, under the call RESEARCH–CREATE–INNOVATE (project 
+code: T1EDK-2-01392). 
+References 
+[1] T. Kuflik, A. J. Wecker, J. Lanir, O. Stock, An integrative framework for extending the 
+boundaries of the museum visit experience: linking the pre, during and post visit phases, 
+Information Technology & Tourism 15 (2015) 17–47. doi: 10.1007/s40558-014-0018-4. 
+[2] D. Koukopoulos, K. Koukoulis, A Trustworthy System with Mobile Services Facilitating the 
+Everyday Life of a Museum, International Journal of Ambient Computing and Intelligence 9 
+(2018) 1–18. doi: 10.4018/IJACI.2018010101. 
+[3] E. King, M. P. Smith, P. F. Wilson, J. Stott, M. A. Williams, Creating Meaningful Museums: A 
+Model for Museum Exhibition User Experience, Visitor Studies 26 (2023) 59–81. doi: 
+https://doi.org/10.1080/10645578.2022.2129944. 
+[4] M. Torres-Ruiz, F. Mata, R. Zagal, G. Guzmán, R. Quintero, M. Moreno-Ibarra, A 
+recommender system to generate museum itineraries applying augmented reality and 
+social-sensor 
+mining 
+techniques, 
+Virtual 
+Real 
+24 
+(2020) 
+175–189. 
+doi: 
+https://doi.org/10.1007/s10055-018-0366-z. 
+[5] J.-B. Kim, C. Park, Development of Mobile AR Tour Application for the National Palace 
+Museum of Korea. In: Shumaker, R. (ed.) Proceedings of the Virtual and Mixed Reality - New 
+Trends: International Conference, Virtual and Mixed Reality 2011, Held as Part of HCI 
+International 2011, Berlin, Heidelberg, 2011, p. 55–60. doi: 10.1007/978-3-642-22021-0_7 
+[6] A. Martí-Testón, A. Muñoz, J. E. Solanes, L. Gracia, J. Tornero, A Methodology to Produce 
+Augmented-Reality Guided Tours in Museums for Mixed-Reality Headsets, Electronics 10 
+(2021) 2956. doi: 10.3390/ELECTRONICS10232956. 
+[7] M. Silva, L. Teixeira, eXtended Reality (XR) Experiences in Museums for Cultural Heritage: A 
+Systematic Review In: Lv, Z. and Song, H. (eds.) Intelligent Technologies for Interactive 
+Entertainment, Springer International Publishing, Cham, 2022, pp. 58–79. 
+[8] E. J. Baker, J. A. A. Bakar, A. N. Zulkifli, Elements of museum mobile augmented reality for 
+engaging hearing impaired visitors, In: Proceedings of the AIP Conference, AIP Publishing, 
+2017, p. 020033. doi: 10.1063/1.5005366. 
+[9] J. Kasowski, B. A. Johnson, R. Neydavood, A. Akkaraju, M. Beyeler, A systematic review of 
+extended reality (XR) for understanding and augmenting vision loss. J Vis. 23 (2023). doi: 
+10.1167/jov.23.5.5 
+
+[10] How Virtual Reality Transforms The Lives Of Disabled People, 2022. URL: 
+https://mazerspace.com/how-virtual-reality-transforms-the-lives-of-disabled-people/. 
+[11] P. Milgram, F. Kishino, A taxonomy of mixed reality visual displays,” IEICE Transactions on 
+Information Systems 77 (1994) 1321–1329. 
+[12] P. Milgram, H. Takemura, A. Utsumi, F. Kishino, Augmented reality: a class of displays on the 
+reality-virtuality continuum, In: Das, H. (ed.) Proceedings of the Photonics for intustrial 
+applications, SPIE, 1995, pp. 282–292. doi:110.1117/12.197321. 
+[13] R. T. Azuma, A Survey of Augmented Reality, Presence: Teleoperators and Virtual 
+Environments 6 (1997) 355–385. 
+[14] J. Carmigniani, B. Furht, Augmented Reality: An Overview, in Handbook of Augmented 
+Reality, New York, NY: Springer New York, 2011, pp. 3–46. doi: 10.1007/978-1-4614-0064-
+6_1. 
+[15] Q. Zhao, A survey on virtual reality, Science in China Series F: Information Sciences 52 
+(2009) 348–400. doi: 10.1007/s11432-009-0066-0. 
+[16] H. Ardiny, E. Khanmirza, The Role of AR and VR Technologies in Education Developments: 
+Opportunities and Challenges, In: Proceedings of the 2018 6th RSI International Conference 
+on and Mechatronics, IEEE, 2018, pp. 482–487. doi: 10.1109/ICRoM.2018.8657615. 
+[17] M. Speicher, B. D. Hall, M. Nebeling, What is Mixed Reality? In: Proceedings of the 2019 CHI 
+Conference on Human Factors in Computing Systems, ACM, New York, NY, USA, 2019, pp. 
+482–487. doi: 10.1145/3290605.3300767. 
+[18] W. Honig, C. Milanes, L. Scaria, T. Phan, M. Bolas, N. Ayanian, Mixed reality for robotics. In: 
+Proceedings of the 2015 IEEE/RSJ International Conference on Intelligent Robots and 
+Systems (IROS), IEEE, 2015, pp. 5382–5387. doi:10.1109/IROS.2015.7354138. 
+[19] M. K. Bekele, R. Pierdicca, E. Frontoni, E. S. Malinverni, J. Gain, A Survey of Augmented, 
+Virtual, and Mixed Reality for Cultural Heritage, Journal on Computing and Cultural 
+Heritage 11 (2018) 1–36. doi: 10.1145/3145534. 
+[20] P. A. Rauschnabel, R. Felix, C. Hinsch, H. Shahab, F. Alt, What is XR? Towards a Framework 
+for Augmented and Virtual Reality, Comput Human Behav, 133 (2022) 107289. doi: 
+https://doi.org/10.1016/j.chb.2022.107289. 
+[21] L.-H. Lee, T. Braud, P. Zhou, L. Wang, D. Xu, Z. Lin, A. Kumar, C. Bermejo, P. Hui: All One 
+Needs to Know about Metaverse: A Complete Survey on Technological Singularity, Virtual 
+Ecosystem, and Research Agenda, 2021. arXiv preprint arXiv:2110.05352. 
+[22] Y. Wang, Z. Su, N. Zhang, R. Xing, D. Liu, T.H. Luan, X. Shen: A Survey on Metaverse: 
+Fundamentals, Security, and Privacy. IEEE Communications Surveys & Tutorials. 25 (2023) 
+319–352. https://doi.org/10.1109/COMST.2022.3202047. 
+[23] H. Wang, H. Ning, Y. Lin, W. Wang, S. Dhelim, F. Farha, J. Ding, M. Daneshmand: A Survey on 
+the Metaverse: The State-of-the-Art, Technologies, Applications, and Challenges. IEEE 
+Internet Things J. 10, 14671–14688 (2023). https://doi.org/10.1109/JIOT.2023.3278329 
+[24] J. Sun, P. S. Yu, W. Gan, H.-C. Chao, Metaverse: Survey, Applications, Security, and 
+Opportunities. ACM Comput. Surv. 1 (2022), 35. doi: 10.48550/arXiv.2210.07990. 
+[25] A. Çöltekin, I. Lochhead, M. Madden, S. Christophe, A. Devaux, C. Pettit, O. Lock, S. Shukla, L. 
+Herman, Z. Stachoň, P. Kubíček, D. Snopková, S. Bernardes, N. Hedley: Extended Reality in 
+Spatial Sciences: A Review of Research Challenges and Future Directions. ISPRS Int J Geoinf. 
+9 (2020) 439. doi:10.3390/ijgi9070439  
+[26] P. Kanade, J. P. Prasad, Mobile and Location Based Service using Augmented Reality: A 
+Review, European Journal of Electrical Engineering and Computer Science 5 (2021) 13–18. 
+doi: 10.24018/EJECE.2021.5.2.303. 
+[27] K. M. Stanney, H. Nye, S. Haddad, K. S. Hale, C. K. Padron, J. V. Cohn, “Extended Reality (XR) 
+Environments,” in Handbook of human factors and ergonomics, Wiley, 2021, pp. 782–815. 
+doi: 10.1002/9781119636113.ch30. 
+[28] A. K. Bhowmik, “Advances in Virtual, Augmented, and Mixed Reality Technologies, Inf Disp 
+34 (1975) 18–21. doi: 10.1002/j.2637-496X.2018.tb01117.x. 
+[29] Google Cardboard, 2022. URL: https://arvr.google.com/cardboard/. 
+[30] Meta Quest Pro, 2022. URL: https://www.meta.com/quest/quest-pro/. 
+
+[31] H. Creagh, “Cave Automatic Virtual Environment,” in Proceedings: Electrical Insulation 
+Conference and Electrical Manufacturing and Coil Winding Technology Conference (Cat. 
+No.03CH37480), IEEE, 2003, pp. 499–504. doi: 10.1109/EICEMC.2003.1247937. 
+[32] S. Jain, D. Werth, Current State of Mixed Reality Technology for Digital Retail: A Literature 
+Review. In: Lecture Notes in Computer Science (including subseries Lecture Notes in 
+Artificial Intelligence and Lecture Notes in Bioinformatics), Springer Verlag, 2019, pp. 22–
+37. doi:10.1007/978-3-030-22335-9_2. 
+[33] OpenSceneGraph, 2022. URL: https://www.openscenegraph.com/. 
+[34] Unity Real-Time Development Platform, 2022. URL: https://unity.com/. 
+[35] Unreal Engine, 2022. URL: https://www.unrealengine.com/en-US. 
+[36] A-Frame, 2022. URL: https://aframe.io/. 
+[37] CRYENGINE, 2022. URL: https://www.cryengine.com/. 
+[38] ARToolKit+ SDK, 2022. URL: http://www.arreverie.com/artoolkit.html. 
+[39] Vuforia, 2022. URL: https://developer.vuforia.com/. 
+[40] Wikitude Augmented Reality, 2022. URL: https://www.wikitude.com/. 
+[41] Layar, 2022. URL: https://www.layar.com/. 
+[42] ARCore, 2022. URL: https://developers.google.com/ar. 
+[43] S. Rokhsaritalemi, A. Sadeghi-Niaraki, S.-M. Choi, A review on mixed reality: Current trends, 
+challenges 
+and 
+prospects, 
+Applied 
+Sciences 
+10 
+(2020) 
+636. 
+doi: 
+doi.org/10.3390/app10020636. 
+[44] E. M. Badley, An introduction to the concepts and classifications of the international 
+classification of impairments, disabilities, and handicaps, Disability and Rehabilitation 15 
+(2009) 161–178. doi: 10.3109/09638289309166008. 
+[45] World Health Organization: International classification of impairments, disabilities, and 
+handicaps: a manual of classification relating to the consequences of disease, published in 
+accordance with resolution WHA29.35 of the Twenty-ninth World Health Assembly, 1976. 
+URL: https://iris.who.int/handle/10665/41003. 
+[46] Types of Impairments, 2023. URL: https://kb.iu.edu/d/ayuj. 
+[47] Anna 
+Devine, 
+2020. 
+URL: 
+https://th3rdeyexr.com/accessibility-
+to%E2%80%AFxr%E2%80%AFfor-persons-with-disabilities/. 
+[48] XR Accessibility User Requirements, 2023. URL: https://www.w3.org/TR/xaur/. 
+[49] G. Anagnostakis, M. Antoniou, E. Kardamitsi, Th. Sachinidis, P. Koutsabasis, M. Stavrakis, Sp. 
+Vosinakis, D. Zissis., Accessible Museum collections for the visually impaired. In: 
+Proceedings of the 18th International Conference on Human-Computer Interaction with 
+Mobile Devices and Services Adjunct, ACM, New York, NY, USA, 2016, pp. 22–37. 
+doi:10.1145/2957265.2963118. 
+[50] N. Al Sulaimani, A. Al-Humairi, S. Al Khanjari, User Friendly Indoor Navigation Application 
+for Visually Impaired Users in Museums Using 3D Sound. In: Proceedings of the 
+International Conference on Interactive Collaborative Robotics, Springer, 2023, pp. 441–
+444. doi:10.1007/978-3-031-35308-6_37. 
+[51] D. Ahmetovic, C. Bernareggi, K. Keller, S. Mascetti, MusA: artwork accessibility through 
+augmented reality for people with low vision. In: Proceedings of the 18th International 
+Web for All Conference, 2021, pp. 1–9. 
+[52] L.S. Guedes, L.A. Marques, G. Vitório: Enhancing Interaction and Accessibility in Museums 
+and Exhibitions with Augmented Reality and Screen Readers. In: Miesenberger Klaus and 
+Manduchi, R. and C.R.M. and P.P. (ed.) Computers Helping People with Special Needs. 
+Springer International Publishing, Cham, 2020, pp. 157–163. doi:10.1007/978-3-030-
+58796-3_20. 
+[53] T. Zaal, A. A. A. Salah, W. Hürst, Toward inclusivity: Virtual reality museums for the visually 
+impaired. In: Proceedings of the 2022 IEEE International Conference on Artificial 
+Intelligence 
+and 
+Virtual 
+Reality 
+(AIVR), 
+IEEE, 
+2022, 
+pp. 
+225–233. 
+doi:10.1109/AIVR56993.2022.00047. 
+
+[54] G. Trichopoulos, J. Aliprantis, M. Konstantakis, K. Michalakis, G. Caridakis, Tangible and 
+Personalized DS Application Approach in Cultural Heritage: The CHATS Project. Computers. 
+11 (2022) 19. doi: https://doi.org/10.3390/computers11020019. 
+

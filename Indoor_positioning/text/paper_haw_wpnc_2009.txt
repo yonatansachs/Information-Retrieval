@@ -1,0 +1,455 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/224439926
+Application of indoor navigation technologies under practical conditions
+Conference Paper · April 2009
+DOI: 10.1109/WPNC.2009.4907837 · Source: IEEE Xplore
+CITATIONS READS
+5 358
+3 authors, including:
+Ralf Kruse Birgit Wendholt
+EnableChange GmbH Hochschule für Angewandte Wissenschaften Hamburg
+2 PUBLICATIONS 5 CITATIONS 11 PUBLICATIONS 7 CITATIONS
+SEE PROFILE SEE PROFILE
+All content following this page was uploaded by Birgit Wendholt on 03 June 2016.
+The user has requested enhancement of the downloaded file.Application of Indoor Navigation Technologies
+Under Practical Conditions
+Bjo¨rn Jensen Ralf Kruse Birgit Wendholt
+Department Computer Science Department Computer Science Department Computer Science
+Faculty Technique and Computer Science Faculty Technique and Computer Science Faculty Technique and Computer Science
+Hamburg University of Applied Sciences Hamburg University of Applied Sciences Hamburg University of Applied Sciences
+Hamburg, Germany Hamburg, Germany Hamburg, Germany
+Email: bjoern.jensen@haw-hamburg.de Email: ralf.kruse@haw-hamburg.de Email: wendholt@informatik.haw-hamburg.de
+Abstract—The project outline in this paper concentrates on structure and function. In all cases people staying in such
+preparingtheinfrastructureforindoorspatialapplicationswhile areas at least need spatial orientation.
+simultaneously sketching useful applications in the domain.
+Nowadaysmultifunctionalbuildingsnotonlychallengethespatial
+Theprojectoutlineinthispaperthusconcentratesonprepar-
+but moreover the individual thematic orientation because of
+the diversity of service offers. “Life in urban spaces” requires ing the infrastructure for spatial applications while simul-
+navigation aids not only to be available all over the city but also taneously sketching meaningful applications in the domain.
+in the neighbourhood including the inside of single buildings. We start with a brief overview of related work and base
+Two example scenarios will introduce those kinds of naviga-
+technologies. Two example scenarios will introduce those
+tion applications we are currently working on. First, a typical
+kindsofnavigationapplications,wearecurrentlyworkingon.
+navigation task, the second a navigation task that combines
+with proximity services. To minimize risks we have chosen an One, a typical navigation tasks, the second a navigation tasks
+iterative approach where, in follow up stages, requirements that combines with proximity services. To minimize risks we
+will increase in complexity. To minimize cost we decided on a have chosen an iterative approach, where in follow up stages
+simulation approach, based on game and physics engines for
+requirements will increase in complexity. To minimize cost
+realistic simulations. Given this approach we give an insight to
+we decided on a simulation approach, based on game and
+our current working results ending with those projects already
+finished. The conclusion will revise our results so far and gives physics engines for realistic simulations. Given this approach
+an outlook to future work. we give an insight to our current working results ending with
+those projects already finished. The conclusion will revise our
+I. INTRODUCTION
+results so far and gives an outlook to future work.
+This paper continues on the ideas and concepts already
+elaboratedinthephdthesisin[1].Settingupaninfrastructure II. RELATEDWORK
+for indoor navigation yields the prerequesites that brings trip
+A. Pedestrian Navigation and Proximity Services
+planning scenarios from outdoors to complex buildings, e.g.
+airports, universities, exhibition or conference halls. It also During the last decade numerous solutions for pedestrian
+continuesontheworkoftheUbiComplab[2]attheHamburg navigation systems have been proposed. Most of them deal
+University of Applied Sciences (aka HAW), especially the with outdoor navigation based on GPS (see e.g. [3]). Hence
+discussion in the Living Place Hamburg project funded by with the improvement of indoor-positioning techniques we
+the agency for economy and business of Hamburg, which observe an increase in indoor-navigation solutions sometimes
+is concerned with applications to improve “life in urban combined with outdoor counterparts to form a hybrid
+spaces”. This requires navigation aids not only to be avaible navigation system.
+all over the city but also in the neighbourhood including the
+inside of single buildings. All of the indoor variants are concerned with guidance of
+people through more or less complex buildings. They differ
+Nowadays multifunctional buildings not only challenge in choice of position techniques, quality of presentation and
+the spatial but moreover the individual thematic orientation user interaction and their very aim of navigating people.
+because of the diversity of service offers. In a conferencing
+scenario, for example, people need orientation for interesting CyberGuide [4] besides ParcTab [5], one of the first
+workshops and talks. Universities may serve as conference representative in this field, is a hybrid navigation system that
+sites and thus demand the same aid for visitors like uses infrared beacons indoor and GPS outdoor to detect a
+pure conference centers. In exhibition halls guidance for a person’s location and visualize it on a map. Certain locations
+personalizedexhibitiontourisrequired.Whetherthedifficulty on maps are annotated with additional information.
+is more of spatial or thematic nature depends on buildingIRREAL[6]theindoorpartofthehybridsystemREAL[7] B. Automated Extraction and Generation of the Building and
+uses infrared-sensors for locating people. The project focuses the Route Model
+on multi-modal route descriptions that are optimized with
+respect to the resources of different devices - especially their Most of the systems mentioned so far use hand-crafted
+interaction capabilities - like PDAs or notebooks exploiting maps for the underlying building infrastructure. The more
+domain knowledge and a user model. complexbuildingsarethemoreessentialtheneedtoautomatic
+extraction of maps out of existing CAD data. Hence, as has
+beenpointedoutby[16],CADdataistoodetailedastoserve
+RENA [8] a hybrid indoor and outdoor navigation systems
+asasuitablespatialmodelfornavigationplanning.Moreover:
+emphasise like REAL on resource adaptive multi-modal
+”An improved connectivity, and thus a more elaborate
+navigation support seamlessly switching between various
+topological model, is essential for the implementation of
+kinds of positioning and data transmission techniques. Indoor
+route guidance and map matching algorithms.” [16]. [17],
+positioningisbasedonWLAN.RENAintegratesapedestrian
+[18] introduces GEOEXTRACT to reduce and classify spatial
+and car navigation with situation aware services like weather
+data when transforming into an open standard. Objects are
+forecasts and traffic reports.
+classified as door, room, corridor, building, etc. The spatial
+entities are defined by location, shape and their topological
+relations.
+Open-SPIRIT[9]isahybridindoorandoutdoornavigation
+system designed to guide public transport travellers. A
+[19] develops an algorithm for automatic graph extraction
+personalguideproposesindividualintermodalandnationwide
+fromtopologicallystructureddata.[20]proposesanalgorithm
+interconnections including guidance through public transport
+to derive topological relations between objects based on a
+stations.Open-SPIRITusesbluetoothasacell-basedapproach
+structural component graph of room faces and a room graph
+for indoor positioning.
+to apply them in an building energy simulation tool. [21]
+presents a tool that can be used to automatically extract a
+SaiMotion [10], [11] a pure indoor navigation system route graph from the given CAD model without reduction
+based on DECT for positioning focuses on task management and classification of spatial entities. [22] develops a spatial
+assistance. SaiMotion uses a rich context model including query language for extracting partial models that fulfill
+location, user, tasks and activity information to help a user certain spatial constraints, e.g. directional operators such as
+accomplish a scheduled spatially and temporally distributed ”‘northOf”’ or ”‘above”’. They introduce a space-partitioning
+task. In case of impending failure the system corrects an data structure called slot-tree, that enables choice between
+ongoing schedule. Route guidance is implemented as hints computational effort and accuracy. [23] introduces a 3D
+for rooms derived from a schedule without explicit route navigable data model to support emergency reponse in
+descriptions. buildings. The model is based on a 3D geometric data model
+andrepresentspedestrianaccesswithinbuildingsasanetwork
+of walkway sections and connections. This model serves as
+As opposed to navigation services that use location to input to an indoor navigation system that identifies optimal
+guide people through areas, proximity services offer relevant routes within a multilevel building and provides navigation
+information to users suitable for her contexts exploiting the guidance for rescue personnel.
+spatial proximity of users to objects of interest. As a kind
+of contextual bookmarking [12] individual stages of a route
+[24] proposes a model for automatic extracting geometry
+are annotated with contextual information whereas route
+and topology of a building. Based on transformations a
+finding is left as task to the users. Typical representatives
+distance matrix is computed, that contains distances among
+in this area are museum guides like MOBIS [13]. Users are
+all entities, which serves as input for well-known path-finding
+provided exhibit related information when they reach the near algorithms1.
+surrounding of an exhibit equipped with infrared beacons in
+order to detect a person. A similar approach can be found in
+A brief sketch of algotithms and models yields possible
+HIPS [14] and PEACH [15].
+solutions for the automated extraction task. Ongoing work
+will show if and how these proposal are applicable to our
+In our project we are investigating the integration of domain under consideration.
+navigational and proximity services in order to define useful
+location based services for indoor environments. Therefor we
+need a well founded base for critical essential technologies
+and models, like the underlying spatial and route model and
+1Sincesuchanapproachyieldsexponentialdistancematrixesinanumber
+the positioning technique at hand.
+ofspatialentities,anodeandpathreductionprocedureshouldbeappliedto
+comeupwithafeasiblesizeforaroutegraph([1]).C. Indoorpositioning building partially. Bob is inside the building. He is on the
+A number of well-known indoor positioning techniques movesohehasnofixedposition.InthatmomentAliceenters
+have been evolved over the last two decades. the building Bob is informed by the information system about
+it (via mobile or something similar). Bob enables Alice to
+Most of these technologies use a sensor infrastructure with see its position. Alice gets raw information to orient herself
+quantitative measures based on infrared, ultrasound or radio andasymbolforanonymisedguidancetoBob.Aliceusesthe
+waves either as beacon infrastructure or cell based, some of given information to get through the floor Bob is in. When
+them combine different wireless techniques. For a survey on Alice gets closer to a public display a schematic 2D-map of
+well-known techniques we refer the reader to [25]. Recently, the floor is visible. In the map Bob’s location is highlighted
+RFID [26] gains the focus of research in indoor positioning. so Alice could see how to get to him.
+On the other hand we observe qualitative approaches like
+B. Conference-Guidance-System
+visual tag detection or the on proposed in [27] who uses
+This scenario is based on a bigger and more complex
+landmarksandanglesectorstoderivethepositionofaperson.
+building which is completely unknown to external visitors.
+To avoid a complex and expensive infrastructure of There is one fact in common of most conferences. Every
+transmitters and receivers when using sensor based indoor visitor gets a document with events and respective locations
+positioning, you either choose an infrastructure-less inertial at her/his hand. In this example the navigation should be
+systems using gyroscopes, digital compasses, accelaration an improved routing system that leads the visitor to those
+sensors or step counters or rely on an existing infrastructure. locationswheretheselectedeventstakeplace.Tofulfilthetask
+Inertial systems extrapolate the actual position over time thesystemneedsacompleteinformationsetaboutthebuilding
+with the major drawback of fault accumulation2. A further whichisneededtocalculatearouteandtonavigateinsidethe
+argument againts these techniques is the additional equipment building. This should be an improvement of the given system
+that becomes necessary for mobile users. Thus the use of and it should handle the support of groups and individuals as
+existing infrastructure and equipment available to a mobile well.Navigationandinformationcouldbesupportedbyusing
+user will be the most promising approach for developing the environment and local equipment on one hand. On the
+everyday navigation applications. WLAN (e.g. [29]) based other hand it could be better to extend the system by using
+indoor-positioning and Bluetooth (e.g. [30]) based position mobile devices.
+detection are examples for using existing infrastructure or
+IV. APPROACH
+equipment.
+The given scenarios are complex and multifaceted. Our
+As it comes to applications built on top of positioning very aim is the realization of the given scenarios. So we start
+techniques, we typically find combinations of different sensor with a systematic analysis of existing technologies.
+techniques. Examples are projects like NIMBUS ([31]) and
+NAVIO [30]. NAVIO primarily use a WLAN infrastructure The first step is to evaluate what kind of basic technology
+for positioning and combine with other wireless techniques is needed for positioning. At the Hamburg University of
+such as RFID Bluetooth or ZigBee. Applied Sciences a lot of work has been done on context
+of navigation. But WLAN has never been used for position
+As for the former, our project is concerned with location tracking. So we try to use the outcome and the lessons
+aware and navigational servives. Because of availability, we learned of past projects. And we want to integrate research
+will rely on WLAN in most szenarios, although consider findings as much as possible. Sometimes we have to extend
+alternatives whenever possible. therelyingwork.Sometimeswehavetoredosomething.This
+wouldbetransferredtogivenproblems.Wealsoimplemented
+III. SCENARIOS
+the automatic generation of the needed maps. The necessary
+Two different scenarios are examined. The first one is of information is extracted from given CAD models.
+low complexity in which general functionality of Indoor-
+Navigation and -Positioning should be shown. The second is The usability lab of the Hamburg University of Applied
+more complex. It handles a very popular use case. Both are Sciences is used to ensure that each concept is proven in
+real experiments in which single techniques and technologies all stages of the project. Sometimes a realisation could be
+are consolidated. too complex, expensive and time-consuming. In front of this
+case the solutions and approaches will be simulated. We are
+usingthegeneratedmaptogettomapsforopensourcegame-
+A. Meet up inside a building
+engines.Togetausablesimulatedmaporbuildinganykindof
+Two persons - Bob and Alice - arrange a meeting inside
+information (2D and height) is transformed into a data format
+a building (via public subscriber). Both of them know the
+thatcouldbeusedbya3D-GameEngine(incl.physicsengine).
+To get a more authentic model any kind of outside influences
+2Forsomecircumstancesitcouldbeshown,thatcorrectingfaultsbyrandom
+GPSmeasuresreducesthefaultrateto2%([28]). likeotherpeople(BOTS),noise,lightetc.hastobeintegratedintoourvirtualenvironment.Thisisafarcheaperwaytoprove category groups introduced in section II as there are:
+an approach than using real persons.
+V. PROJECTOUTLINE • Indoorpositioning
+The experiments are based on the usage of WLAN- • Automated Extraction of Geometry and Topology of
+Buildings
+HotSpots because this is a widespread technology available
+for common use. • Pedestrian Navigation and Proximity Services
+The first results are followed by currently related projects,
+Currently two different Indoor-Positioning-Engines are in which are projects with aspects of indoor navigation and
+evaluation.Bothofthempromiseanexactnesse<=1m.The indoor positioning.
+aim is to observe the performance under changing conditions.
+A. Indoorpositioning
+The application range differs in environmental circumstances
+(“hotspot-concentration”, areal structure and so on). The first Navigation of individuals are based on the localisation of
+environment is composed of two adjacent floors and a low the users. The following approaches are implemented, applied
+complex areal structure within the Hamburg University of and/or evaluated as preparation to build an indoor navigation
+Applied Sciences. This environment supports us in a first system:
+evaluation of the used systems in front of localisation quality.
+We will be able to detect basic kinds of interference factors 1) IMAP: The indoor distance measurement and
+that can be considered in transferring the technique to a more positioning system, shortly IMAP, is an outcome of the
+complex building. The floors are located on two different bachelor thesis [32] adduced in the UbiComp-Project at the
+levels so the very outcome of the testing technologies should HAW. IMAP uses ultrasound and IEEE 802.15.4 for the
+be if and how a chosen infrastructure handles the switch position determination by time difference of arrival. This
+between levels. The low-complex environment leads to a solution has a high-accuracy in determination of position by
+common imagination of what is necessary to implement some a beacon, but with a high afford of installation. An IMAP
+kind of navigation and routing. Further on we are evaluating installation with 22 transmitter beacons placed in a raster
+and developing algorithms to extract map data out of given with a distance of two meters between each other and was
+CAD-Data automatically. We prove this output because this used in navigation applications and for an automatic indoor
+isthebasicinformationforourpositioningandroutingsystem. flight control system for a model aircraft.
+Our preliminary findings should be transferred to a more 2) Ultra-wideband: In the context of the “LivingPlace
+complex building of the Hamburg University of Applied Hamburg” project a professional localisation system based
+Sciences in middle term. This building is more plain than on UWB is currently evaluated with respect to high position
+the first one but it has a large footprint. There are less small accuracy. We consider USB as an alternative to WLAN-
+corridors in it but more rooms which connect to other rooms. based positioning in controlled non-public environments. A
+Theyarewide-rangedwithmanycolumnsinit.Levelsarenot professional localisation system is in use to gather experience
+strictly divided from each other because there are sublevels in in development of location based services. This system
+between. Those facts lead to some kind of complexity most from the company Ubisense is based in Ultra-wideband (aka
+users are not able to handle. All the rooms and areas include UWB). A accuracy for determination of position can be
+some kind of information but not as explicit as it should be reached well below one meter. The experience in location-
+so it could be used as landmark or something similar for based application development is gathered in the project
+newbies. The named problems could be observed by taking “Living Place” and other projects.
+alookatundergraduatestudentsinthefirsttermsatthefaculty.
+3) WiFi: WiFi based positioning is less precise then
+Our aim is to establish some kind of navigation concept
+technologies introduced so far. The wide distribution of
+that resolves the problems addressed so far. And our findings
+mobile devices opens the opportunity to use out of the shelf
+shouldbetransformedintotheimplementationofaconference
+technologies for the determination of positioning. This reduce
+system within a huge semi-public building.
+expenditure of deployment and installation, which making
+WiFi-based solutions more and more interesting for indoor
+Besidequestionsincontextoftechnologyquestionsincon-
+localisation. Therefore we evaluate two WiFi-based solutions,
+text of technique and implementation will be resolved too. In
+one commercial, one open source, with respect to their
+this case you should know how landmarks should be realized,
+applicability for our in indoor navigation scenarios:
+howtheyareimplementedintheconcreteenvironmentandso
+on.
+1) Ekahau is a company that build a commercial solution
+VI. CURRENTWORKANDFIRSTRESULTS for real-time location tracking. It offers a software for
+The project outcomes are intermediate steps for solutions location tracking, the Ekahsu RTLS, and Ekahau Site
+of indoor navigation. The shown results are orientated on Survey for planning and administrating of WiFi layoutsforsuchasolution.Especially,thefaithofplanningwith
+Ekahau is in the focus of evaluation.
+2) MagicMap is a localisation system developed at the
+Humboldt University. It is an open source solution
+and designed for extensibility, i. e. the positioning can
+transparency changed from WiFi to other wireless tech-
+nologies.
+Thefocusoftheevaluationwithrespecttotheenvironment
+laysontheaccuracyoflocalisationandtheeffortofdeploying.
+The effort to install such a system consists mainly of the
+necessary density of access points for regarded -accuracy, of
+measurement of the WiFi Access Points and work expended
+for calibration.
+B. Automated Extraction of Geometry and Topology of Build-
+ings
+Fig.1. Amobileprototyptoevaluatelandmark-basednavigation
+The indoor navigation is based in edificial-information of
+theoperationalarea.TheinformationiscontainedinCAD-files
+and building information systems. This information should be individual guidance. In such an environment every sign
+reduced to needed data for indoor navigation and transformed has to be meaningful to every person. Individual guidance
+in a format further use. Derivate information for navigation means every person needs to carry a personal navigation
+shouldbeadditionallystoredandnavigationapplicationshave device. A solution that make this personal device obsolete
+access to base and derivated information. CityGML is a com- is a navigation system that adapts to group profiles and
+moninformationmodelbasedonXML,whichisstandardized distributes navigational hints to public displays. An users
+by the Open Geospatial Consortium (OGC) and ISO TC211. strategy to solve the concurrent group access to publicity
+ThisFormatcanbeusedforinformationoutoftheCAD-Files shared resources. Numerous usability tests proofed the
+andderivedinformations,likecalculatedroutesfornavigation. chosen approach to be feasible. The usability tests shows
+This format can accessed programmatic (for example with that dynamic signposting can have benefits for navigation.
+citygml4j) and their are several tools based on this format. The shown signs can be adapted to a actual situation and the
+As first intermediate step we generates a PostGIS-Database shown signs can be concentration on necessary signs.
+withdxf2postgisoutoftheCAD-Filesforabuildingfromthe
+university, which makes further transformation easier. The limitation of and reduction of signpost is central for
+success of such systems. Because of the effort to build such
+C. Evaluating alternative Forms of Pedestrian Navigation
+a installation, the investigation is done by a simulation with
+Newwaysandclassicalwaysofnavigationareevaluatedto a game-engine3 described in section IV. Figure 2 views a
+improve the guidance of the user and to make the navigation screenshot of this simulation, with on dynamic signposting.
+more intuitive with less infrastructure.
+1) Landmarks in pedestrian navigation: The master thesis
+D. Pedestrian Navigation and Proximity Services
+[33] reviewed the use of landmarks in the navigation. A
+prototypeofamobileapplicationbasedonandroidwasbuild. Different prototypes that use different approaches was
+Figure 1 shows this Android-based mobile application with implemented. In section VI-C are shown prototypes of
+a map and artificial landmarks. The benefit of landmarks navigation, but the both projects are focused on evaluating
+in a mobile pedestrian navigation is analysed by usability new orientation approaches with this prototypes. The
+tests with the prototype. The test show that landmark can following navigation systems are case-based studies to
+be a benefit for pedestrian navigation. The extraction of evaluate the use of the technology.
+natural landmarks is complex and wasn’t part of the thesis,
+but artificial landmarks can placed easily. The prototype 1) Airport Terminal Navigation: A project from master
+and evaluation shows the support of guidance by artificial students build a prototype for indoor navigation based on
+landmarks, which makes pedestrian navigation more intuitive. IMAPS indoor positioning system. The project is describes in
+the Reports [35], [36], [37] and [38]. It shows that effort of
+2) Dynamic signposting in group navigation: The master installation is to high, because height density of sensor-nodes
+thesis [34] examines the use of dynamic signposting in are needed.
+group navigation in a complex environment. The scenario
+proposed in this work, was group navigation in an airport
+context. Static signposting for navigation has his limits in 3ThesesimulutionsaremadewithIrrlichtanopensourcegame-engine.indoor positioning.
+5) Hybrid Navigation: The building of the University of
+AppliedSciencesisdistributedovertheholecityofHamburg.
+Another aspect is the research on hybrid navigation. hybrid
+navigation is the combination of indoor- and outdoor-
+navigation. This expands the scenario in section with
+navigation over more than one campus. In this case persons
+in to modes, On campus WiFi-based like described in section
+VI-A3. Outdoor by use of public transport and determination
+of position by GPS. This system will be realised as thesis in
+cooperation with the public transport company HVV.
+6) ApplicationinLivingPlaceLaboratory: Thedepartment
+computer science has a laboratory in the context of “Liv-
+ingLabs”, called LivingPlace Hamburg. The laboratory con-
+Fig. 2. Dynamic signposting – Semulation in a complex building with a
+3D-GameEngine sistsofaflatwhereemergingtechnologiesandresearchresults
+shouldbeinstalledforevaluationindailylife.TheApplication
+of the technologies and the use in daily life situations should
+2) Trailblazers: The paper [39] describes the project expand usability tests with experimental in a daily life like
+Trailblazers, which builds community driven navigation situationawayfromsimplelaboratoryusabilitytest.Isexpand
+system for mobility impaired people. It’s a GPS-based usability test on studies closer to daily live. The project uses
+outdoor solution, which wins the Microsoft Imagine Cup in indoorpositioningmoreforlocation-based-servicesandhybrid
+the Year 2006. It’s a mobile Application based von Microsoft navigation, than for simple indoor navigation.
+Mobile and special is the generation from content by the use.
+VII. CONCLUSION
+3) interactive information system: A bachlor project build In this paper, we have described our ambition to apply
+a touch information terminal to find stationary informations technologies to build indoor navigation systems. The domain
+to find spatial information and other information. It is consists of the following sub-areas: indoor positioning,
+installed to find floor based informations. The figure 3 shows Automated Extraction of Geometry and Topology of
+a screenshot of the application, with a simple floor like Buildings and Pedestrian Navigation. The composition of
+in section V described. It is in development and shows these sub-areas are building the navigation system. Our
+the opportunity to use interactive information stations for approach is to evaluate techniques and technologies under
+information in as part of a spatial information system for practical conditions. The application is orientated on two
+visitors and students. scenarios for indoor navigation to give the goal a practical
+background. The technologies are analysed on their achieve
+requirements, like the evaluation of the resolution of the
+indoor positioning. New forms of orientation like landmarks
+and dynamic signposting are tested on benefits for navigation.
+The practical test of techniques is done by prototypes.
+By complex installation evaluation should been made in a
+simulation first.
+The fulfilled work are intermediate steps for solutions of
+indoor navigation. Approaches like IMAPs or with UWB
+have high accuracy, but also require high effort to install the
+systems. WiFi has a lower accuracy, but has advantages in
+the effort of installation and more and more mobile devices
+can be used as positioning client. We evaluate WiFI, which
+has a low accuracy, on his applicability to indoor navigation,
+Fig.3. InteractiveInformationSystem we prepare the transformation of the CAD-Data into standard
+A Screen shot from a touch informations system, which CityGML as Database, and we gather experiences with
+shows information about one foor. different types of navigation systems.
+4) Curently Related Projects: In the following we describe Apositiveaspectisthepositiveresonanceuponourcurrent
+two actual project with a relation to indoor navigation an work. It attract wide interest under involvement of HamburgUniversity of Applied Sciences. All parties are interested to [20] ——,“Dimensionalreductionof3dbuildingmodelsusinggraphtheory
+transfer our research findings into real application. and its application in building energy simulation,” Engineering with
+Computers,vol.23,no.2,72007.
+[21] S. Narasimhan, “Simulation and Optimized Scheduling of Pedestrian
+ACKNOWLEDGMENT
+Traffic,” Ph.D. dissertation, Fakulta¨t Informatik, Elektrotechnik und
+The activities to develop and evaluate techniques and tech- InformationstechnikderUniversita¨tStuttgart,2007.
+[22] A.BorrmannandE.Rank,“Specificationandimplementationofdirec-
+nologies for indoor navigation under practical conditions are
+tionaloperatorsina3dspatialquerylanguageforbuildinginformation
+part of the project Ubicomp of the university of applied models,”Adv.Eng.Inform.,vol.23,no.1,pp.32–44,2009.
+sciences hamburg. [23] J.Lee,“AThree-DimensionalNavigableDataModeltoSupportEmer-
+gency Response in Microspatial Built-Environments,” Annals of the
+REFERENCES AssociationofAmericanGeographers,vol.97,pp.512–529,2007.
+[24] I. R. Karas, F. Batuk5, A. E. Akay6, and I. Baz4, “Automatically Ex-
+[1] B. Wendholt, “Dynamisch adaptive Planung individualisierter Touren,” tracting3DModelsandNetworkAnalysisforIndoors,”inInnovations
+Ph.D. dissertation, Fachbereich 3 (Mathematik und Informatik) der in3DGeoInformationSystems,2006,pp.395–404.
+Universita¨tBremen,2008. [25] G. Retscher, “ Pedestrian navigation systems and location-based ser-
+[2] Hamburg University of Applied Sciences, “UbiComp Lab vices,”inFifthIEEInternationalConferenceon3GMobileCommuni-
+Homepage,” Letzter Zugriff am 08.02.2009. [Online]. Available: cationTechnologies,2004,pp.359–363.
+users.informatik.haw-hamburg.de/ubicomp/ [26] Q.Fu,“ActiveRFIDforPositioningUsingTrilaterationandLocation
+[3] R. Malaka and A. Zipf, “DEEP MAP - Challenging IT research in FingerprintingBasedonRSSI,”2008.
+the framework of a tourist information system,” in Information and [27] T. Wagner, “Qualitative sicht-basierte Navigation in unstrukturierten
+CommunicationTechnologiesinTourism2000,D.Fesenmaier,S.Klein, Umgebungen,” Ph.D. dissertation, Universita¨t Bremen - Fachbereich
+andD.Buhalis,Eds.,Barcelona,Spain,2000,pp.15–27. MathematikundInformatik,2007.
+[4] G.Abowd,C.Atkeson,J.Hong,S.Long,R.Kooper,andM.Pinkerton, [28] S. Beauregard and H. Haas, “Pedestrian Dead Reckoning (PDR) and
+“Cyberguide: A mobile context-aware tour guide,” 1997. [Online]. GPS for Indoor Positioning,” in WPNC’06: Proceedings of the 3’rd
+Available:citeseer.ist.psu.edu/abowd97cyberguide.html WorkshoponPositioningNavigationandCommunication,2006,pp.27–
+[5] R. Want, B. N. Schilit, N. I. Adams, R. Gold, K. Petersen, 36.
+D. Goldberg, J. R. Ellis, and M. Weiser, “The parctab ubiquitous [29] S.Bruning,J.Zapotoczky,P.Ibach,andV.Stantchev,“CooperativePo-
+computing experiment,” Tech. Rep., 1995. [Online]. Available: sitioningwithMagicMap,”inWPNC’07.4thWorkshoponPositioning,
+citeseer.ist.psu.edu/535.html NavigationandCommunication,2007,pp.17–22.
+[6] A. Butz and A. Kru¨ger, “Orts- und richtungsabha¨ngige Information- [30] G.Gartner,A.Frank,andG.Retscher,“PedestrianNavigationSystem
+spra¨sentationaufmobilenGera¨ten,”IT+TI,vol.2,pp.90–96,2001. in Mixed Indoor/Outdoor Environment The NAVIO Project,” in Pro-
+[7] J. Baus, A. Kru¨ger, and W. Wahlster, “A resource-adaptive mobile ceedingsoftheCORP2004andGeomultimedia04Symposium,Vienna,
+navigationsystem,”inIUI2002:InternationalConferenceonIntelligent Austria,2004,pp.165–171.
+UserInter-faces,2002,pp.15–22. [31] J. Roth, “A Decentralized Location Service Providing Semantic Loca-
+[8] A. Krger, A. Butz, C. Mller, C. Stahl, R. Wasinger, K. Steinberg, tions,” Habilitationsschrift, Informatik Bericht 323, Fernuniversitt Ha-
+and A. Dirschl, “The Connected User Interface: Realizing a Personal gen,2005.
+SituatedNavigationService,”inProc.ofIUI2004,2004. [32] S. Gregor, “Entwicklung einer hardwareplattform fu¨r die ermittlung
+[9] K. Rehrl, N. Go¨ll, S. Leitinger, S. Bruntsch, and H.-J. Mentz, von positionsdaten innerhalb von geba¨uden,” Bachelorthesis, HAW
+“Smartphone-basedinformationandnavigationaidsforpublictransport Hamburg,2006.
+travellers,”inLocationBasedServicesandTeleCartography. Springer [33] A. Schuman, “Ein einfach benutzbares mobiles navigationssystem fu¨r
+BerlinHeidelberg,2007,pp.525–544. fußga¨nger,”Masterthesis,HAWHamburg,2008.
+[10] G. Bieber, M. Bliesze, T. Kirste, and R. Oppermann, “Aufgabenorien- [34] B. Kogan, “Gruppennavigationssystem fu¨r fuy¨ga¨nger auf basis der
+tierte und situationsgesteuerte Computerunterstu¨tzung fu¨r mobile An- dynamischenbeschilderung,”Masterthesis,HAWHamburg,2009.
+wendungeninIndoor-Umgebungen,”inMensch&Computer,M.Her- [35] J.Napitupulu,“Indoormapserverineinemflughafenszenario,”HAW
+czegandH.Oberquelle,Eds. Teubner,2002. Hamburg,Tech.Rep.,2007.
+[11] F. FIT, “SAiMotion,” http://www.t.fraunhofer.de/projekte/saimotion/, [36] A. Schumann, “Indoornavigationssystem im flughafenszenario,” HAW
+2005. Hamburg,Tech.Rep.,2007.
+[12] N. Henze, M. Lim, A. Lorenz, M. Mueller, X. Righetti, E. Rukzio, [37] M. Koychev, “Indoornavigation mit nutzung von ortsabha¨ngigen und
+A. Zimmermann, N. Magnenat-Thalmann, S. Boll, and D. Thalmann, adhocdiensten,”HAWHamburg,Tech.Rep.,2007.
+“ContextualBookmarks,”inProceedingsoftheJointWorkshopMobile [38] E. Kutak, “Hardwareplattform fu¨r positionsbestimmung innerhalb von
+InteractionwiththeRealWorld(MIRW2007),2007,pp.51–54. geba¨uden,”HAWHamburg,Tech.Rep.,2007.
+[13] J.L.EncarnacaoandT.Kirste,“Beyondthedesktop:Naturalinteraction [39] S. Stegelmeier, M. Stein, M. Thome´, and P. Wendt, “Trailblazers - a
+and intelligent assistance for the everyday life,” in Alltag der Zukunft communitydrivennavigationsystemformobilityimpairedpeople,”in
+-Informationstechnikvera¨ndertunserLeben,HeinzNixdorfMuseums- ASK-ITInternationalConference,2006.
+forum,Ed.,2000,p.3957.
+[14] R.OppermannandM.Specht,“AContext-SensitiveNomadicExhibition
+Guide,” in HUC2K: Second Symposium on Handheld and Ubiquitous
+Computing,2000,pp.127–149.
+[15] O. Stock, M. Zancanaro, P. Busetta, C. B. Callaway, A. Kru¨ger,
+M. Kruppa, T. Kuflik, E. Not, and C. Rocchi, “Adaptive, intelligent
+presentation of information for the museum visitor in PEACH,” User
+Model.User-Adapt.Interact.,vol.17,no.3,pp.257–304,2007.
+[16] P.-Y. Gillieron, D. Buchel, I. Spassov, and B. Merminod, Eds., Indoor
+Navigation Performance Analysis. Rotterdam, The Netherlands: enc
+gnss2004,2004.
+[17] P.Gillie´ronandB.Merminod,“PersonalNavigationSystemForIndoor
+Applications,”in11thIAINWorldCongress,2003.
+[18] P. Zweiacker, “Syste`me dinformation ge´ographique pour navigation
+pe´destrea` linte´rieurdesbaˆtiments,”DiplomaThesis,EPFL,2003.
+[19] C. van Treeck and E. Rank, “Analysis of building structure and
+topology based on Graph Theory,” in International Conference
+on Computing in Civil and Building Engineering, 2004. [Online].
+Available:http://e-pub.uni-weimar.de/volltexte/2004/238/
+View publication stats

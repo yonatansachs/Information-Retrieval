@@ -1,0 +1,1203 @@
+heritage
+Article
+Accessibility, Natural User Interfaces and Interactions in
+Museums: The IntARSI Project
+Eva Pietroni 1,*, Alfonsina Pagano 1, Luigi Biocca 1
+and Giacomo Frassineti 2
+
+
+Citation: Pietroni, E.; Pagano, A.;
+Biocca, L.; Frassineti, G. Accessibility,
+Natural User Interfaces and
+Interactions in Museums: The
+IntARSI Project. Heritage 2021, 4,
+567–584. https://doi.org/10.3390/
+heritage4020034
+Academic Editor: Nicola Masini
+Received: 26 January 2021
+Accepted: 1 April 2021
+Published: 4 April 2021
+Publisher’s Note: MDPI stays neutral
+with regard to jurisdictional claims in
+published maps and institutional afﬁl-
+iations.
+Copyright: © 2021 by the authors.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed
+under
+the
+terms
+and
+conditions of the Creative Commons
+Attribution (CC BY) license (https://
+creativecommons.org/licenses/by/
+4.0/).
+1
+CNR ISPC, Reseacrh Area Rome 1, via Salaria km 29,300, 00015 Monterotondo, Italy;
+alfonsina.pagano@ispc.cnr.it (A.P.); luigi.biocca@cnr.it (L.B.)
+2
+Venue in Rome, IULM University, via Marco Minghetti 17, 00187 Rome, Italy; giacomo.frassineti@gmail.com
+*
+Correspondence: eva.pietroni@cnr.it; Tel.: +39-06-90672349
+Abstract: In a museum context, people have speciﬁc needs in terms of physical, cognitive, and
+social accessibility that cannot be ignored. Therefore, we need to ﬁnd a way to make art and culture
+accessible to them through the aid of Universal Design principles, advanced technologies, and suitable
+interfaces and contents. Integration of such factors is a priority of the Museums General Direction
+of the Italian Ministry of Cultural Heritage, within the wider strategy of museum exploitation.
+In accordance with this issue, the IntARSI project, publicly funded, consists of a pre-evaluation and
+a report of technical speciﬁcations for a new concept of museology applied to the new Museum
+of Civilization in Rome (MuCIV). It relates to planning of multimedia, virtual, and mixed reality
+applications based on the concept of “augmented” and multisensory experience, innovative tangible
+user interfaces, and storytelling techniques. An inclusive approach is applied, taking into account the
+needs and attitudes of a wide audience with different ages, cultural interests, skills, and expectations,
+as well as cognitive and physical abilities.
+Keywords: technologies for museums; accessibility; universal design; natural interaction interfaces;
+tangible user interfaces; art and culture
+1. Introduction: Scope of the Action and General Context in Which It Has Been Started
+1.1. Premises
+From more than twenty years of research, the Virtual Heritage Lab (VHLab) of the
+Italian National Research Council, Institute of Heritage Science (CNR ISPC) has been
+involved in shaping, developing, and implementing multifaceted virtual museum environ-
+ments through technological installations, communicative strategies, and layout design;
+the general aim has always been to enhance cultural contents and storytelling to educate
+and emotionally involve museum visitors.
+Recently, the VHLab team has developed a Universal Design (UD)–oriented strategy to
+shape technology, interfaces, and contents, taking into account a larger potential audience
+of visitors with differentiated needs and expectations.
+The Italian Ministry of Cultural Heritage (MIBACT) has established a long-term
+strategy [1] for the revitalization of the national museums’ network and exploitation of
+various cultural contexts for the beneﬁt of a wider audience. Within this strategy, some
+relevant museums were funded to redesign their spaces’ layout, including digital and
+technical installations, in order to make exhibits more attractive to an extended audience.
+One of the museums that took advantage of such a renovation is the Museum of Civilization
+in Rome (MuCIV). Recently it has been opened to the public after a long process of
+aggregation of four previous institutions (Early Middle Ages Museum, Popular Arts and
+Traditions Museum, Ethnographic Museum, Eastern Art Museum). The new museum is
+very rich in content, but unfortunately it is located in a marginal tourist area of Rome with
+plenty of ofﬁces rather than tourist attractions, but with great potentialities. The museum
+is deﬁning new promotional strategies aimed at reaching a new public: not a mass one,
+Heritage 2021, 4, 567–584. https://doi.org/10.3390/heritage4020034
+https://www.mdpi.com/journal/heritage
+
+Heritage 2021, 4
+568
+but focused on speciﬁc targets. It has a multicultural vocation, represented by artifacts and
+intangible heritage related to dominant or fragile anthropological contexts, aristocratic and
+popular, and coming from all over the world. Consistent with this vocation, the choice to
+connote itself as a museum grounded on the ethical principles of social inclusiveness and
+accessibility seems a promising perspective.
+1.2. Goal of the Contribution
+On occasion of the IntARSI project, funded by the Lazio region, the VHLab team
+encouraged and supported the new museological approach based on physical and multi-
+media inclusivity and accessibility; it was involved by MuCIV to design several multimedia
+solutions in order to enhance collections along the exhibition pathway.
+Our proposal is based on theoretical background and practical guidelines we have
+evolved along more than twenty years of research and concrete experience in museum
+studies and virtual heritage projects (communicative media for cultural heritage, new forms
+of storytelling and paradigms of interaction, user experience design), supported by the
+results of surveys carried out on thousands of European museums visitors [2–6].
+Beside, the project also involved very experienced consultants in museum communi-
+cation for people with visual, hearing, and motor disabilities. Indeed, accessibility experts
+have oriented our contribution towards the adaptation of our methodologies and ideas to
+the principles of UD. Thus, the solutions proposed here are the result of a broad cooperation
+validated on the basis of everyone’s previous know-how. We believe that the process of
+innovation of this contribution springs from the merge of so many experiences, resulting in
+a holistic approach, where the whole result is greater than the sum of the parts.
+This paper illustrates the approach, the developed content, and the outputs based on
+the initial criteria and scope. The research presented here is the ﬁrst step of a wider process,
+which focuses on the pre-evaluation, design, and technical speciﬁcations. Hopefully, it shall
+continue in the future with the concrete execution of works (second step) and with the user
+experience evaluation (third step).
+1.3. Structure of this Contribution
+In Section 1 we present the goal of this research, its background in terms of competen-
+cies involved, general context in which it has been started, and its innovative value.
+In Section 2 we present the topic of multimedia accessibility in museums, introducing
+some guidelines to enrich the experience as much as possible for a wider audience, favoring
+collective and individual dimensions. We also introduce Universal Design principles,
+discussing how they have been evolved and applied in the European and Italian contexts,
+and how they can be integrated in the general user experience design.
+Section 3 presents the IntARSI project, venues and collections interested in the project,
+and methodological approach.
+Section 4 illustrates a couple of proposed solutions, showing how new technological
+devices can meet the public’s expectations as well as cognitive needs. The focus is mainly
+on tangible interface applications that would be ideal for all users, especially people with
+physical diseases, and natural interaction interfaces.
+Section 5 concludes the contribution proposing future improvements and announcing
+the realization phase of the IntARSI project, as well as suggesting the application of a
+user-centered approach in designing inclusivity for museum contexts.
+2. Accessibility of Multimedia Contents in Museums
+The main challenge to be faced today in cultural venues is to create a closer synergy
+and interconnection between (a) real collections, (b) digital contents, (c) storytelling, and
+(d) audiences, in order to create new scenarios related to the cultural experience (Figure 1).
+
+Heritage 2021, 4
+569
+Heritage 2021, 4 FOR PEER REVIEW  
+3 
+ 
+ 
+2. Accessibility of Multimedia Contents in Museums 
+The main challenge to be faced today in cultural venues is to create a closer synergy 
+and interconnection between (a) real collections, (b) digital contents, (c) storytelling, and 
+(d) audiences, in order to create new scenarios related to the cultural experience (Figure 
+1). 
+ 
+Figure 1. The connection between collections, users, and stories must be encouraged in museums 
+to create new scenarios of user experience. 
+Multimedia communication is probably the most efficient way to address this chal-
+lenge. Indeed, the main goal of translating a physical cultural object into a virtual one is 
+not merely the creation of a digital replica of the real object. This process does not per-
+tain to objectivity, to the object’s description, or quantity; rather, it is the creation of a 
+dynamic space of narratives, relationships, and interactions [7]. What matters is the ex-
+perience, what we do with the digital content, the simulation of a multiple and open 
+past. The feedback we get from the virtual context modifies our behavior and critical 
+sense, and stimulates understanding and the process of attribution of meaning. Thus, 
+the process of knowledge is constructed and consolidated [8]. 
+This process of contextualization and attribution of meaning to the cultural heritage 
+is therefore diachronic, evolving through various cycles of interaction, through variation 
+and redundancy, and is different from era to era, from person to person. Many factors 
+contribute to the design of a good experience within the exhibition pathway [4]: 
+- 
+quality of the information and harmonious integration between real and virtual 
+contents 
+- 
+configuration of the spaces, visitors’ flow and viability 
+- 
+layout 
+- 
+lighting 
+- 
+noisiness of the environment 
+- 
+possibility for the audience to pause comfortably, to sit or stand still during the in-
+teraction with the contents 
+- 
+balance between free interaction and guided experience 
+- 
+duration of the narrative units and their distribution along the visit path 
+- 
+communicative rhythm, harmonic coherence of words, images and sounds 
+But how can we shape up the exhibition’s layout, the presentation of real and mul-
+timedia content, and the interaction interfaces as inclusively as possible? How can we 
+make it attractive and accessible to different audiences, including those with specific 
+needs? 
+According to ISO 9241-11:2018 [9], the term “accessibility” refers to the extent to 
+which products, systems, services, environments, and facilities can be used by people in 
+a population with the widest range of user needs, characteristics, and capabilities, to 
+achieve an identified goal in an identified context of use. 
+Figure 1. The connection between collections, users, and stories must be encouraged in museums to
+create new scenarios of user experience.
+Multimedia communication is probably the most efﬁcient way to address this chal-
+lenge. Indeed, the main goal of translating a physical cultural object into a virtual one is not
+merely the creation of a digital replica of the real object. This process does not pertain to ob-
+jectivity, to the object’s description, or quantity; rather, it is the creation of a dynamic space
+of narratives, relationships, and interactions [7]. What matters is the experience, what we
+do with the digital content, the simulation of a multiple and open past. The feedback
+we get from the virtual context modiﬁes our behavior and critical sense, and stimulates
+understanding and the process of attribution of meaning. Thus, the process of knowledge
+is constructed and consolidated [8].
+This process of contextualization and attribution of meaning to the cultural heritage
+is therefore diachronic, evolving through various cycles of interaction, through variation
+and redundancy, and is different from era to era, from person to person. Many factors
+contribute to the design of a good experience within the exhibition pathway [4]:
+-
+quality of the information and harmonious integration between real and virtual contents
+-
+conﬁguration of the spaces, visitors’ ﬂow and viability
+-
+layout
+-
+lighting
+-
+noisiness of the environment
+-
+possibility for the audience to pause comfortably, to sit or stand still during the
+interaction with the contents
+-
+balance between free interaction and guided experience
+-
+duration of the narrative units and their distribution along the visit path
+-
+communicative rhythm, harmonic coherence of words, images and sounds
+But how can we shape up the exhibition’s layout, the presentation of real and multi-
+media content, and the interaction interfaces as inclusively as possible? How can we make
+it attractive and accessible to different audiences, including those with speciﬁc needs?
+According to ISO 9241-11:2018 [9], the term “accessibility” refers to the extent to
+which products, systems, services, environments, and facilities can be used by people in a
+population with the widest range of user needs, characteristics, and capabilities, to achieve
+an identiﬁed goal in an identiﬁed context of use.
+As a public place of education and culture, the museum encourages collective com-
+munication, sharing, and social exchange. The approach in the representation of contents,
+languages, and technologies must be chosen to involve groups of people, even heteroge-
+neous. This happens, for example, with a video projection or an interactive installation
+on a large screen, accessible to several users at the same time: here each of them can
+enjoy audio-visual content and can choose to play an active role, taking control of the
+system, or to attend as a passive spectator. It is recommended that interactive technologies
+facilitate simple and immediate alternation between active and passive participation, so
+that the public feels encouraged to switch the roles without being inhibited by technology.
+In this way it is possible for users to start socializing and exchanging ideas around that
+speciﬁc topic. Additional attributions of social and cultural values can arise from visitors’
+interaction [10].
+
+Heritage 2021, 4
+570
+It is also important that the experience, lived by the passive audience, is sufﬁciently
+rewarding in terms of perceptual and narrative involvement, although inevitably condi-
+tioned by the quality of the “performance” played by the user who is taking the active
+control of the system. These factors largely depend on conceptual and interaction design.
+Alongside the social dimension, it is important to convey moments of intimate and
+personal reﬂection inside the museum, favoring a deep contact with the artwork. The space,
+the contents, and the languages adopted in this case are modeled on visitors aiming
+to establish an inner dialogue with the cultural object, seeking the depth to get to the
+essence. Another fundamental criterion to reach various types of audiences is multichannel
+communication, which is the ability to convey content through different media, languages,
+and technologies intended for users of various cultural backgrounds, origins, age, or with
+speciﬁc needs. A multisensory approach is also necessary to favor the experience and the
+contact with the cultural object, since it is able to convey information, perceptions, and
+sensations that can stimulate cognitive and emotional processes. Thus, a multisensory
+approach generates embodiment [11], making the users feel part of that world [12].
+The research presented here, related to the design of the IntARSI project, is shaped
+on these criteria of museology, and it tries to improve the connection among collections,
+stories, and audiences, enhancing multicultural, collective, and reﬂective dimensions.
+2.1. Universal Design (UD) Principles
+The seven principles of UD were ﬁrst developed in 1997 by a working group of
+American architects, product designers, engineers, and environmental design researchers.
+Their purpose was to deﬁne a framework of best practices to increase the usability of
+physical spaces, products, and communication systems, making them accessible to the
+largest user categories with different abilities, without special or separate design. The main
+beneﬁt of UD is that addressing the divergent needs of special populations increases
+usability for everyone. The seven principles are: (1) equitable use; (2) ﬂexibility in use;
+(3) simple and intuitive use; (4) perceptible information; (5) tolerance for error; (6) low
+physical effort; (7) size and space for approach and use [13].
+In December 2019 a new version of the European guideline “accessibility require-
+ments for Information and Communication Technologies (ICT) products and services”
+(EN 301549) [14] was published to specify functional accessibility requirements applicable
+to ICT products and services, to be used in public procurement in Europe. This standard,
+compliant with ISO/IEC 17007:2009 (i.18) [15], has been drawn up under the competence
+of the authority federated to “Ente Italiano di Normazione” (UNI),—“Tecnologie infor-
+matiche e loro applicazioni” (UNINFO), and became part of the Italian national legislation
+on 17 December 2020. The document is suitable for web-based technologies, non-web
+technologies, and hybrid technologies using both. It includes software, hardware, and
+services. Most parts of the principles here established are addressed to improve the acces-
+sibility and usability of multimedia applications, and comfort of use, by blind and deaf
+people, or by visitors with limited abilities in vision and hearing, visitors in wheelchairs,
+and persons with cognitive disabilities. However, they can improve the experience of
+all users, generating ease in use and well-being, in accordance with the UD principles.
+The proposed general solutions are based on multisensory and multichannel approaches
+in communication. This means that information has to be delivered not only by means of a
+unique media/sensory solicitation, but more than one. Thus, visitors at the same time can
+touch, read, listen to, and look at the same content and, even if one of their senses is not
+working well, they can access information using an alternative sensory approach. Some
+criteria must be respected, of course, in creating such alternatives. For instance:
+1.
+Users should be able to autonomously set subtitle layout (position, font size, contrast,
+synchronization, background, length).
+2.
+Audio descriptions of visual content (useful for visually impaired persons) should be
+well designed in terms of selection of meaningful content and absence of interference
+
+Heritage 2021, 4
+571
+with other audio solicitations, possibility to be activated by the user on a predeﬁned
+speciﬁc audio channel of the device.
+3.
+International Sign (IS) language (and national versions) and lip reading should take
+advantage of the right size and framing of the human translator, from the back-
+ground, from possible subtitle concurrence, and from the right speed of gestures
+and synchronization.
+4.
+Users should be able to customize enlargement of images.
+5.
+Contrast and brightness regulation should be available functions for visually im-
+paired visitors.
+6.
+The presence of Braille translations needs to respect speciﬁc standards of size and
+distance among lines and relief.
+7.
+The physical layout of the communicative systems (spaces, distances, heights, position
+of the interaction interfaces and screens) should be ergonomically designed to allow
+access of users in wheelchairs.
+8.
+Lights, lines or colors, and patterns in relief can be useful to mark the perimeters
+of interactive areas where users have to focus their attention on interaction inter-
+faces, making them easier to be identiﬁed, especially by visually impaired persons,
+but certainly they are useful for everybody.
+9.
+Tangible user interfaces are of course fundamental in several cases [16,17], and we
+are going to discuss them in the following sections of the paper, in relation to the
+IntARSI project.
+10.
+Hardware systems should support speciﬁc sensory disabilities, like assistive listen-
+ing devices.
+In conclusion, new integrated technological solutions and a multisensory and mul-
+tichannel approach provide an opportunity to revolutionize the way art and culture are
+experienced, breaking down the architectural and perceptive barriers that still prevent
+them from being a truly universal language [18].
+2.2. State of the Art of Accessibility of Museum Content, the Italian Experience
+Despite the principles of UD, the focus of institutions, designers, and architects was
+initially mostly on users with physical difﬁculties and in wheelchairs, thus the legislation
+was mainly addressed to measures and prescriptions of space sizes rather than to “solutions
+for all”.
+Gradually, a growing awareness of a better inclusion of larger users’ needs took
+place, also extending to different sensorial and cognitive difﬁculties. Design and solutions
+started to encompass additional sectors and human activities as well as building types and
+environments. The recent European regulation, just discussed, adopted also by national
+laws, is a demonstration of this evolution: the focus is now on the individual’s levels of
+ability to perform certain tasks in daily life.
+In museums and exhibitions, whose mission is cultural and social growth, accessibility
+is not an easy issue to deal with. Indeed, recently they have been transforming in multi-
+faceted and dynamic contexts, more conditioned by quick but uneven changing realities,
+and also in terms of funding, offers, and audience capacity attractiveness.
+Thus, the relevance of the visitors’ expectations and needs has been gradually taking
+prevalence on some preservation criteria that were traditionally limiting larger visits to the
+monumental areas.
+Thus, solutions for accommodating the widest range of users’ needs are strictly linked
+to the museum performance evaluation [19–22].
+One of the forms in which multimedia and art intertwine is represented by tangi-
+ble user interfaces (TUIs) [23]. A TUI is a form of technology aimed at improving users’
+involvement, active participation, and accessibility in cultural heritage venues. These inter-
+faces, in their multiple and different forms, can be used by a wide variety of users of all
+ages and needs.
+
+Heritage 2021, 4
+572
+TUIs have so far been deployed in multiple museums and cultural heritage sites: some
+examples are the interfaces from the MIT Tangible Media Group (tangible.media.mit.edu),
+which can be considered the arch-types for all TUIs and a beta-test for this kind of technol-
+ogy; the TUIs developed by Gagarin (www.gagarin.is, site accessed on the 3 April 2021) a
+company based in Iceland, used in museums all over the world to make the exploration
+of the space, physical and virtual, a real and creative experience; or the “Espositore for
+All” in Turin, Italy, which allows people with physical disabilities to experience works of
+art otherwise inaccessible to them (https://italiapost.it/torino-venaria-espositore-for-all/,
+site accessed on the 3 April 2021). A great contribution to the improvement of TUIs in Italy
+comes from the Omero National Tactile Museum in Ancona city (www.museoomero.it,
+site accessed on the 3 April 2021) [24], with its great collection of printed reproductions of
+artworks and maps. The Tactile Museum of Varese (www.museotattilevarese.it/, site ac-
+cessed on the 3 April 2021) is an excellent example of accessibility too: it exhibits a collection
+of tactile wooden models that reproduce aspects of the landscape, architecture, art, archeol-
+ogy, and design. Tactile models have a dual function: didactic and emotional; in addition
+to the models, the museum hosts multisensory itineraries and installations, capable of com-
+bining fun with an interest in experimentation. The Civic Museum of Natural Science of
+Bergamo (www.museoscienzebergamo.it, site accessed on the 3 April 2021) also promotes
+a multisensory and inclusive pathway to discover its collections: it is possible to touch
+samples of the skin and skeleton of some vertebrates, to manipulate stones and miner-
+als, discover the fossilization process with the hands, experience the physical properties
+of minerals, and listen to the songs of different bird species. The ancient domus of Via
+dell’Abbondanza of Pesaro (www.pesaromusei.it/area-archeologica-via-dellabbondanza/,
+site accessed on the 3 April 2021) promotes an inclusive approach: the three-dimensional
+reconstructions of the ancient rooms of the domus are projected, allowing visitors to
+imagine how daily life took place and to immerse themselves in the atmosphere of the
+Pisaurum of the Roman era. The visit path of the archaeological area is enriched with
+Braille panels and tactile models for visitors with special needs. In 2020, three tactile
+and multisensory itineraries were created in the museums of Belgiojoso Palace in Lecco
+(www.comune.lecco.it, site accessed on the 3 April 2021): the Archaeological Museum,
+the Historical Museum, and the Natural History Museum. Various stations have been
+conceived with tactile maps, captions in Braille, and enlarged characters for the visually
+impaired, with faithful reproductions and original pieces. Each tactile station is equipped
+with an electronic signal, which activates self-descriptions of the museum hall and of the
+elements on display through a specially designed reproducer, delivered to each visitor.
+The goal of the IntARSI project is to amplify the impact of multimedia in museums adopt-
+ing a multichannel approach in order to involve different audiences in the experience at
+the same time. Indeed, the project tries to design an integrated solution to communication,
+built on the coexistence of several sensory stimuli in the experience of an artifact, or a
+group of artifacts: visual, auditive, tactile. Each kind of sensorial solicitation is provided
+through integrated solutions as far as possible. From one side, in the experience design,
+we adopt the multi-layered paradigms of virtual museums in terms of high quality of
+images and sounds, sensory immersion, advanced storytelling techniques, virtual reality
+and embodiment, playfulness, and possibility to deepen the content. On the other side
+we implement many communication channels that can sometimes cooperate, other times
+work as alternative systems based on synaesthesia principles: touching (instead of looking
+at) and exploring a scale model, a replica, or the real object and receiving back properly
+designed audio-visual content. Technologies and interfaces are in most cases the same
+for all the users, according to UD criteria. Of course, head-mounted displays are not for
+blind users, but tangible interfaces can be enjoyed by everyone if following speciﬁc criteria.
+Content format can be interactively customized by users according to their needs, in the
+same installation, as explained at the end of Section 2.1. In most cases interfaces and
+solutions for visitors with disabilities are translated into facilities for a wide public (aged
+persons, children).
+
+Heritage 2021, 4
+573
+In conclusion, with this project we try to encourage the involvement and cooperation
+among users around a similar experience without isolating the different targets or impover-
+ishing the perceptive and emotional impact of the multimedia experience for any of them.
+We expect that this will favor social exchange and individual growth.
+2.3. TUI Basic Requirements
+TUIs, as well as all forms of technology aimed at improving users’ ways of experienc-
+ing cultural content, need to respect some basic principles:
+•
+Digital interfaces and physical buttons of the TUI need to be easily recognizable,
+accessible, and their uses need to be understandable by all users;
+•
+the main feature of TUIs are the cultural objects, not the technology used for the
+system interaction, so their design must be driven by the content to be transmitted;
+•
+the presence of TUIs needs to be well integrated into museum spaces, without interfer-
+ing with visitors’ experience and without appearing as alien elements, but effectively
+camouﬂaging into the context in which they are located.
+The general use of a TUI is the following: the user is able to touch a replica, or in
+some cases the original version, of a speciﬁc item presented on the TUI; this action causes
+a system modiﬁcation in status which recognizes the touch and conveys the information
+via video, sound, subtitles, or all of them. Depending on the object and its complexity,
+touching a speciﬁc part of it will cause the system to convey the corresponding information,
+while touching another part will activate another content related to it. This behavior is
+common in most of the TUIs. In terms of structure and composition, a TUI is usually
+composed of:
+•
+a surface onto which the object is placed, or better ﬁxed, to avoid dangerous uses;
+•
+the object—that can be touched and activated;
+•
+a hardware infrastructure, composed of sensors (placed into the object and allowing
+the system to recognize users’ touch and manipulation, which causes the correspond-
+ing audio and/or video information to be transmitted), and other computing elements,
+such as a Raspberry or Arduino system;
+•
+a screen or TV through which visual information is conveyed (if present);
+•
+an audio system;
+•
+an appropriate illumination system.
+2.4. User Experience Design in Museums
+It is not easy to create content and experiences that will satisfy a diverse museum
+audience. Therefore, it is important to study the museum audience in advance: where they
+come from, how culturally and technologically literate they are, what age group they are,
+and whether they participate primarily in guided tours or alone, in order to design the best
+types of museum experience.
+Nevertheless, how is a user experience conceived? It comes from observation, partici-
+pation, and interaction with a speciﬁc “sphere of life” [25], in a precise moment.
+Experience is made up of non-predictable processes, inﬂuenced by a series of condi-
+tions and variables, both objective and subjective [26]. For this reason, experience does not
+have the same value for each individual and does not produce the same effects in all users.
+Likely, experience includes:
+•
+all actions and reactions of the user that occur before, during, and after the use;
+•
+objective aspects raised out of the usage such as usability, effectiveness, visibility, and
+efﬁciency of the system and user interface;
+•
+subjective aspects raised out of the usage such as motivation, critical processing,
+memorization, and interpretation.
+Experience is the basis of the process of the user’s identity construction, which turns
+to be individual but still collective (sociality) [25]. Therefore, it is very important to
+understand how, within cultural venues, audiences experience culture.
+
+Heritage 2021, 4
+574
+3. The IntARSI Project
+3.1. Goals, Venues, Target
+The IntARSI project stands as a new opportunity for CNR ISPC and the Museum of
+Civilization in Rome (MuCIV, main proponent), the Museum of Toys in Zagarolo, and the
+Archaeological Park of Ostia Antica (all of them are in Italy, Lazio region), to cooperate in
+order to establish virtual and physical connections among intercultural contexts, cultural
+objects, and urban and regional contexts. This cooperation has been supported by an
+initiative ﬁnanced by the Lazio region aiming at empowering a network of cultural sites
+sharing strategies, innovative design and, possibly, audiences, thus incrementing their
+cultural offer, attractiveness, and educational impact on local and foreign communities.
+As mentioned, CNR ISPC, in collaboration with MuCIV, is primarily responsible for the
+design and planning of multimedia content, which has been recently completed; the next
+phase will be the development of the digital applications. The sites interested by the
+project are:
+1.
+MuCIV, in Rome, speciﬁcally referring to the Opus Sectile decoration located in the
+Early Middle Ages section of the museum; the contemporary African collection,
+exhibited in the Prehistoric-Ethnographic section of the museum; and the Figure
+Theater objects exhibited in the Popular Arts and Traditions section of the museum;
+2.
+Archaeological Park of Ostia Antica, specifically referring to the archaeological remains
+of the Porta Marina building, and the artifacts exhibited in the Ostiense Museum;
+3.
+Museum of Toys, in Zagarolo, speciﬁcally about the collection of puppets and mari-
+onettes.
+The title of the project, intARSi, is inspired by the ancient marble intarsia technique
+that characterizes one of the main artworks: the Opus Sectile decoration, at MuCIV, orig-
+inally found in the domus of Porta Marina in Ostia Antica. The project partners intend to
+recall, metaphorically, the idea of how pieces of precious materials, carved in different
+forms, can be skillfully assembled to create something new that, as a whole, enhances the
+potentialities of the individual components. IntARSI pertains n.12 multimedia and virtual
+productions, based on the concept of “augmented” and multicultural experience, built
+on multisensory, immersive, multichannel solutions, aiming at stimulating an emotional
+impact on users. In designing the technological applications an inclusive approach has been
+applied, which takes into account the needs and attitudes of an audience differentiated by
+age groups, cultural interests, skills, and expectations, as well as cognitive and physical abil-
+ities. Systems and contents are conceived in order to be accessible, both in terms of usability
+and comprehensibility. Moreover, they are shaped and transmitted not only according to
+typically didactic communication methods, but also according to a playful and dramatized
+approach in storytelling (following the practice of learning-by-doing [27–30]). Technology
+naturally integrates with the collections and their spatiality, recreating a “dramaturgy”
+around the exhibited objects and reconstructing their sensory and symbolic dimension and
+context of usage, according to a new museological perspective. Four main targets have
+been considered (Italian and foreign tourists; children and teenagers; experts, professionals,
+amateurs; and people with different speciﬁc needs), conceiving installations able to work
+with different targets, according to the UD approach. In this way, the museum partners
+could guarantee a democratic access to shared, inclusive, and in-depth experiences. For the
+same reason, the type of experience enabled by intARSi is twofold: passive, for those
+who want to simply attend a show; and active, for those who want to be engaged in the
+ﬁrst person.
+3.2. Preliminary Study at MuCIV: Self-Assessment Phase
+Along with the consideration in Section 2.4, for the IntARSI project we decided to ﬁrst
+analyze what happened inside one of the major museums involved, the MuCIV, before
+starting the design of multimedia and layout interventions. On one side, we studied
+the museum visiting paths, considering how clear the presentation of contents and the
+communicative apparatus was, what visitors could ﬁnd, and what they were allowed to
+
+Heritage 2021, 4
+575
+do from the moment they entered until the moment they left the museum. On the other
+side, we investigated who the visitors were, where they came from, how often they visited
+the museum, and what their interests, needs, and expectations were. Finally, we studied
+if the museum was able to manage users with speciﬁc needs (like sick or elderly persons,
+or children as well as people with disabilities).
+Observations, questionnaires, and interviews supported this initial study—the so-
+called self-assessment phase. We limited the survey to MuCIV because (a) it is the main
+proponent and thus it will host several and different multimedia applications; (b) it has the
+greatest potentialities in terms of audience development and strategies because it was born
+very recently from the fusion of four previous museums and its vocation is to be a cultural
+aggregator; and (c) it has already settled few actions in favor of visually impaired visitors;
+therefore, there is a sincere interest in increasing UD principle in the museum. On the 3rd
+of November 2019, we conducted interviews directed towards visitors and, when possible,
+museum staff, on a day of heavy public presence in the museum rooms. This was done in
+order to understand which sections were the most visited, the strengths and weaknesses of
+the MuCIV, and to get a general idea on the composition of the visitor base. A summary of
+the main results is provided below, based on 38 anonymous and voluntary interviews:
+•
+the audience of the museum is composed of 76% adults (ranging from 26 to 60
+years old);
+•
+the audience comes mainly from Rome, with a small percentage coming from other
+parts of Europe (5%);
+•
+15% of visitors are composed of teachers and university students interested in speciﬁc
+parts of the museum;
+•
+45% of the users visit the museum with their family;
+•
+73% are familiar with technologies in general;
+•
+86% would be interested in a more multimedia and technological experience of the mu-
+seum.
+It was not possible to meet people with any kind of impairment, but we collected
+information from the museum’s staff, who periodically organize visits especially addressed
+to blind persons in very small groups (1 or 2 persons with companions) supported by expert
+guides. The only dedicated physical supports in the museum are Braille panels installed
+on some showcases. Apart from these short descriptions, narration of the pieces is totally
+entrusted to the human operators. The evaluation allowed us to draft user personas, ﬁctional
+characters useful to anticipate the target identiﬁcation, the user experience roadmap inside
+the museum, and if and how the different target groups would probably approach the
+solutions imagined for IntARSI.
+3.3. First Basic Recommendations for the Accessibility to the Museum’s Contents
+Within such a general vision, we identiﬁed some initial and basic recommendations
+regarding pathways, signs, and overall organization of contents. We summarize here the
+main ones:
+•
+Paths and spaces must be ﬂat or with minimal level differences and obstacles, easily
+identiﬁable and recognizable, with comfortable transit also by wheelchairs, with con-
+trast colors to highlight room’s change or steps—also for visually impaired people.
+This is an existing condition inside the museum. In addition, we proposed to integrate
+tactile paving indicators to guide blind users to the multimedia installations placed in
+different parts of the museum. These indicators can be useful for all visitors, in order
+to orientate their visit towards the intARSi contents.
+•
+Communication systems should have a clear hierarchy and identiﬁcation/recognition
+through short, legible, and easily understandable messaging, and signage with proper
+choice of colors and contrasts, type, and font size.
+•
+Signs must not be hidden by obstacles, neither they can be an obstacle to visibility
+and mobility; appropriate legibility from long and closer distance with no lighting
+interference and reﬂection to visitors’ sight; proper height installation of signs are
+
+Heritage 2021, 4
+576
+between 1.30 m and 1.70 m (in particular, signs in Braille must be easily reachable
+without effort and without excessively raising the arms); general information panels
+should use large font sizes, with a correct graphical balance between background
+and text; when necessary they must include a QR code to access their audio version;
+inappropriate supports (reﬂective surfaces like glass, shiny metals, mirrors, etc.) must
+be avoided.
+•
+Assistance to visitors by trained staff must be guaranteed to complement the overall
+users’ accommodation.
+•
+A catalogue addressed to impaired visitors could be created to be consulted at the
+entrance of the museum, including a tactile guide towards the accessible installations
+spread throughout the museum.
+4. The IntARSI Technological Proposals
+The second phase of the IntArsi project consisted of conceptualizing and designing
+some technological solutions which respected the UD principles and the above-mentioned
+recommendations. CNR ISPC identiﬁed, among several proposals, three of them as the
+most innovative and inclusive:
+-
+Applications and TUI for the Opus Sectile decoration exhibited in one of the MuCIV
+rooms (see Section 4.1);
+-
+Holographic showcase and its integration with TUI technology for the African section
+of MuCIV (see Section 4.2);
+-
+Holographic theatre and its integrations with natural interaction (NI) interfaces (mid-
+air gestures) [31] for the Figure Theater of the MuCIV and the Museum of Toys in
+Zagarolo (see Section 4.3).
+4.1. Applications and TUIs: The Case of the Opus Sectile Decoration
+The Opus Sectile is a formidable piece of early Roman art (IV A.D.) found in the
+archeological site of Ostia Antica, and transferred to the Museum of the Middle Ages
+(MuCIV) in 2006 [32]. It is a wide marble inlay decoration, extending on three walls and on
+the ﬂoor, and it is the best preserved of the Roman ancient world. A room is completely
+dedicated to its exhibition, approximately repeating the volume and measures of the
+original environment.
+Inside this museum’s room for the ﬁrst time, the public will be able to see the ex-
+traordinary marble decoration virtually contextualized in the original environment of
+the Porta Marina building in Ostia Antica, thanks to a single user-immersive experience
+of virtual reality that will be enjoyed through a head-mounted display. The idea is to
+alternate the detailed vision of the original artwork in the present room and its virtual
+contextualization. Throughout this process of redundancy and variation, comprehension
+and knowledge grow up. In the same room, projection mapping can be periodically started,
+for a collective experience, on the surface of the marble inlay, synchronized to an audio
+surround. The purpose of such a projection mapping is to animate the decorative con-
+text, tell its interpretations of iconographies, the execution technique, and the story of its
+conservation. Always in the same room a TUI has been designed, useful in particular for
+single user experience of blind people. It consists of a physical scale model of the room
+and its inlay decoration, with the main lines characterizing the ﬁgures in relief, useful to
+understand the grandiosity and the dislocation of the decorative cycle on the walls and
+on the ﬂoor. Additional tactile drawings of the main scenes and Braille panels (Figure 2)
+support the experience, as they help users to perceive speciﬁc contents/ﬁgures [33]. In this
+case, no additional multimedia has been associated to avoid an overload of technologies.
+
+Heritage 2021, 4
+577
+ 
+context, tell its interpretations of iconographies, the execution technique, and the story of 
+its conservation. Always in the same room a TUI has been designed, useful in particular 
+for single user experience of blind people. It consists of a physical scale model of the 
+room and its inlay decoration, with the main lines characterizing the figures in relief, 
+useful to understand the grandiosity and the dislocation of the decorative cycle on the 
+walls and on the floor. Additional tactile drawings of the main scenes and Braille panels 
+(Figure 2) support the experience, as they help users to perceive specific contents/figures 
+[33]. In this case, no additional multimedia has been associated to avoid an overload of 
+technologies. 
+ 
+Figure 2. Opus Sectile room, with all the types of intervention: projection mapping, immersive 
+Virtual Reality, tactile experience for blind people. 
+Beside, a tangible path of “introduction” to the theme of the Opus Sectile has been 
+planned along the corridor leading to the Opus room, with four tangible and interactive 
+“stations” that can be used by different groups of users. These TUI stations have been 
+conceived as completely accessible. 
+4.1.1. TUI Features 
+The TUIs designed for the project follow general guidelines regarding the infra-
+structure: they will have the same dimensions, i.e., a size varying between 120 × 90 cm 
+and 150 × 100 cm, with a top surface placed at 75 cm from the ground to allow the 
+Figure 2. Opus Sectile room, with all the types of intervention: projection mapping, immersive
+Virtual Reality, tactile experience for blind people.
+Beside, a tangible path of “introduction” to the theme of the Opus Sectile has been
+planned along the corridor leading to the Opus room, with four tangible and interactive
+“stations” that can be used by different groups of users. These TUI stations have been
+conceived as completely accessible.
+4.1.1. TUI Features
+The TUIs designed for the project follow general guidelines regarding the infrastruc-
+ture: they will have the same dimensions, i.e., a size varying between 120 × 90 cm and 150
+× 100 cm, with a top surface placed at 75 cm from the ground to allow the wheelchair ac-
+commodation and an easier accessibility to tangible content. Each TUI will follow the same
+usability logic in order to keep a consistency in the user experience roadmap. They will be
+composed of:
+•
+an inclinable monitor placed at 90◦respective to user’s point of view (size 46–55 inches);
+•
+3D print of the digital replica—or the original—artifact(s) placed and ﬁxed on a slightly
+(13–15◦) inclined surface;
+•
+informative panels of different dimensions (A0, A4, A5, and A3) printed with letters
+and superimposed in Braille, useful for (a) general introduction (A0); (b) tactile draw-
+ings or Braille text put inside a lateral pocket for alternative accessibility to contents
+(A3 and A4); (c) captions under the interfaces on the table (A5);
+•
+directional audio systems and magnetically induced ampliﬁer. Directional audio is
+required since each of the TUIs will be placed in the same corridor in close proximity,
+and a normal audio system would produce conﬂicting audio sources;
+•
+tactile paving systems to guide users to the TUIs;
+•
+ad hoc illumination system, useful to mark each interactive area/interface and make
+them more recognizable;
+•
+sensors’ interaction system.
+Deﬁnitively, six TUIs have been designed for the IntARSI project: ﬁve of them will be
+located inside the Museum of the Early Middle Ages, a section of MuCIV; they will intro-
+duce the Opus Sectile decoration and the context of prevenience (Porta Marina building);
+the sixth one will be located in the Ostiense Museum in the Archaeological Park of Ostia
+Antica (Figure 3). Each one will present a particular topic accessible by users through tactile
+input on 3D-printed surfaces or objects; the latter will trigger an audiovisual narrative in
+the frontal 46′ screen, creating a touch-mediated multimedia experience.
+
+Heritage 2021, 4
+578
+1 
+ 
+ 
+Figure 3. On the left: the corridor leading to the Opus Sectile Room where TUIs will be located.
+On the right: the standard conﬁguration of a TUI (graphic and technical elaboration in collaboration
+with Michele Fucci).
+4.1.2. Usability and User Experience Roadmap
+With reference to usability, the user approaching the TUI will need to understand
+immediately and clearly what he/she can do and how to interact with the tangible elements.
+Instructions will ﬁrstly be issued on the A0 panel placed next to the workstation where only
+information to let the system start will be indicated (as the choice of language). As soon as
+the language is selected on the table (ITA/EN), by two buttons, a simpliﬁed explanation
+in infographics will start explaining: (a) welcome to the workstation, (b) introduction to
+the topic, (c) what to do and how to access the multimedia contents (start/end/restart),
+and (d) timing of use/waiting/timeout. Infographics will be similar in style in all the work-
+stations, but different in content according to each TUI. It will be a video in 2D graphics,
+accompanied by audio and Italian Language Sign (LIS)/International Sign (IS) [33].
+In each TUI station, the activation and interaction with the narrative content will take
+place through the manipulation of real, 3D objects (tangible interface), also perceivable by
+people with visual impairments. Each of these objects will be ﬁxed to the top surface (but
+raised to be touched and perceived tactilely in their whole volume, 360◦). Where it will
+not be possible to use the original objects, 3D prints or handmade replicas will be created,
+with tactile translations (patterns) making understandable ﬁgures, decorative motifs, and
+color variety, where necessary. Touching the tangible objects will allow them to display,
+on the screen located above, the related narration in audiovisual form. The latter will be
+supported by subtitles written in the same language and sign language—LIS if in Italian,
+IS if in English—to facilitate access to deaf people. Each narrative unit will last about 1 min,
+so as not to tire the user.
+Audio will be transmitted through directional speakers, so as not to create sound
+interferences in the environment that will host multiple multimedia installations and/or
+not to disturb visitors who are not experiencing that speciﬁc TUI station. If some visi-
+tors want to passively enjoy the content, they will have to stand next to the active user,
+in the axis with the directional audio. For people with cochlear implants and/or sound
+ampliﬁers, a magnetic induction ampliﬁer will be included to enhance listening and isolate
+background noise.
+4.1.3. Contents, Languages, and Style
+The user will be guided through a journey from the original location of the marble
+(which will be narrated through the tools used to excavate and shape the materials),
+to the decoration of Porta Marina (where the user can interact through a puzzle game,
+reconstructing the ﬁgures of the Opus Sectile), to the enigmatic personage of a bearded
+
+Heritage 2021, 4
+579
+human ﬁgure with a halo (which will be proposed, in a simpliﬁed way, as a tangible
+3D-printed object) to, ﬁnally, a 3D reconstruction of the building and urban settlement in
+Ostia Antica.
+In terms of language and style, it is necessary to capture the essential meaning of
+the message to convey. It is also important to calibrate well the duration of sentences,
+their logical structure, and correctly formulate the form and the expressive register of the
+narrative. For this reason, the aid of accessibility experts has been crucial in this preliminary
+phase of the project, and it will be necessary during the realization phase.
+The duration of a video in LIS/IS is comparable to its version in spoken language. The
+text in LIS is not a translation of the text in the spoken language, but it is a new text that
+has its own sequential structure; therefore, according to the experts it will be convenient to
+start from a text conceived in LIS and then transposed into the spoken language, rather
+than the opposite [34].
+The narration that works for LIS should also be effective for the blind or visually
+impaired users: the audio should also help the visually impaired person to understand
+what is happening on the monitor, describing the shapes, their constituent elements,
+and their location in space (audio description). It will therefore be necessary to give precise
+spatial references, for example: “the animal you see in the center, the ﬂower you see on the
+left, etc.”. This same audio will also be useful to deaf users (in the form of LIS), providing
+more descriptive information on what is being explained.
+It is also necessary to specify in the text, whenever it occurs, noises and sounds as to
+ensure an augmentative sensory experience and a complete understanding of the content
+for deaf users. Graphics should be essential and uncrowded. Overlapping of different
+elements has to be avoided (e.g., writing on photographs, etc.). For texts, the background
+can be dark with light characters or vice versa. There is not a univocal solution since
+there are many types of visual impairments. The images that will be placed alongside the
+narrator in video need to correspond to (and be synchronized with) the story he/she is
+telling; they may consist of drawings, photographs, animations, and videos. The tactile
+drawings will be translated according to the rules of good tactile reading in order to create
+useful aids for the recognition of images by the visually impaired users [23].
+Finally, each TUI station has one or more tangible objects on the table, each of which
+will determine the start of a single narrative fragment. The order of activation of the various
+narrative fragments is not univocal; therefore, the narrative units will be autonomous
+although related.
+4.2. Holographic Showcase and Its Integration with TUIs
+In the African section of the MuCIV, a holographic showcase will be set up integrated
+in a larger projection wall [5]. Inside the showcase, two original objects will be exhibited,
+a Baulé Male Statue and a Lega Mask. The virtual contents will be visible sometimes inside
+the showcase, in the form of a hologram, and sometimes outside the showcase, expanding
+themselves on the surrounding projection wall.
+The internal hologram will be related to the form, to the constitutive elements of the
+object, its details, and relative meanings. In the showcase, an effect of mixed reality (MR)
+will thus be produced, relying on the Pepper’s ghost technique, born with photography
+in the XV century, diffused in theaters in the XIX century, and today enhanced by digital
+technologies [35].
+External contents, projected on the surrounding wall, will be related to the context of
+production and use of such objects in Africa, documented and shown through photographs
+and archive footage: ceremonies, rituals, dances and music, and contexts of production of
+these artifacts. These repertoires cannot be displayed in the holographic showcase, which
+needs a speciﬁc visual grammar.
+Indeed, a hologram is an illusion of reality [36]. Its use is not only aimed at arousing
+amazing reactions in visitors, thanks to its magical effect. Through the hologram, in fact,
+it is possible to create a better integration between real and virtual dimensions: if we
+
+Heritage 2021, 4
+580
+include the real artifact inside the holographic showcase, the attention still remains focused
+on the real artifact. Not its virtual replica, but the original one, is the center of our attention
+during the experience: the virtual animations and the story fragments come out of the real
+ﬁgures, creating a mixed reality experience. The holographic showcase is conceived as a
+small theatrical stage equipped with controls for the direction and synchronization of each
+scenic device: lights, audio speakers, scenery, projections. Everything will be managed by
+ad hoc software.
+The structure of the installation is designed according to the rules of the Pepper’s
+ghost technique: a monitor is mounted on the top of the showcase to close its ceiling, in a
+hidden position; the images transmitted by the monitor are reﬂected by a transparent mirror
+positioned at 45◦(invisible to the public because of its transparency) and are projected,
+by effect of an optical illusion, on a projection plane on the back, corresponding with the
+position of the real objects. Elements such as (a) integration of real and digital content,
+(b) structure, (c) materials, (d) interior design, (e) lighting, (f) audiovisual grammar, and (g)
+narrative approach and dramatization are designed as a whole, and combine to constitute
+an “expressive unity” [5]. The holographic showcase, in such a conﬁguration, has been
+ﬁrstly conceived and realized by our team in occasion of the CEMEC project [5] (Connecting
+Early Medieval European Collections), within the Creative Europe framework (2015–2019),
+presented in several European museums during an itinerant exhibition and tested on more
+than 600 visitors. A huge amount of data has been collected regarding its attractiveness,
+educational impact, usability, and sustainability. The IntARSI project has been the occasion
+to evolve this format to embrace UD criteria, most probably for the ﬁrst time, without
+renouncing its magic.
+The selection of contents and the interaction is done through TUI on a table/surface
+placed frontally, leaning on the showcase. Most probably this is the ﬁrst example of a
+holographic showcase which takes care of UD criteria. On the table, two replicas of the
+objects are positioned at the extremities, and can be touched by visitors in order to be
+perceived and better identiﬁed (especially by blind visitors). Between them there are
+four buttons for language selection (Italian, English, LIS, and IS). In this case, LIS or IS
+versions are not automatically integrated with the spoken languages, but must be activated
+intentionally if needed, because the ﬁgure of the translator in video could interfere a little
+bit with the magic of the hologram that comes (also) from the graphic essentiality. On
+the bottom of the table, some A5 panels are printed with normal fonts and overlapping
+Braille: they indicate the function of the buttons above, and the captions of the two replicas
+(Figure 4).
+The installation will be equipped with a lateral pocket containing Braille text and tactile
+drawings, dealing with the main contents of the narrative. These auxiliary supports will be
+in A3 format. Panels, interfaces, audio systems will be similar to the ones implemented for
+the other TUIs.
+Heritage 2021, 4 FOR PEER REVIEW  
+15 
+ 
+bility. The IntARSi project has been the occasion to evolve this format to embrace UD 
+criteria, most probably for the first time, without renouncing its magic. 
+The selection of contents and the interaction is done through TUI on a table/surface 
+placed frontally, leaning on the showcase. Most probably this is the first example of a 
+holographic showcase which takes care of UD criteria. On the table, two replicas of the 
+objects are positioned at the extremities, and can be touched by visitors in order to be 
+perceived and better identified (especially by blind visitors). Between them there are 
+four buttons for language selection (Italian, English, LIS, and IS). In this case, LIS or IS 
+versions are not automatically integrated with the spoken languages, but must be acti-
+vated intentionally if needed, because the figure of the translator in video could interfere 
+a little bit with the magic of the hologram that comes (also) from the graphic essentiality. 
+On the bottom of the table, some A5 panels are printed with normal fonts and overlap-
+ping Braille: they indicate the function of the buttons above, and the captions of the two 
+replicas (Figure 4). 
+The installation will be equipped with a lateral pocket containing Braille text and 
+tactile drawings, dealing with the main contents of the narrative. These auxiliary sup-
+ports will be in A3 format. Panels, interfaces, audio systems will be similar to the ones 
+implemented for the other TUIs. 
+ 
+Figure 4. Holographic showcase with TUIs. On the left: rendering showing the main components 
+of the interface. On the right: frontal axonometric projection with measures. In collaboration with 
+Enzo d’Annibale, CNR ISPC. 
+4.3. Holographic Theatre and Its Integration with Gesture-Based Interaction 
+In the rooms dedicated to the Figure Theater of the MuCIV and in the Museum of 
+Toys in Zagarolo, demo-ethno-anthropological assets will be brought back to life, in 
+their intangible value, as evidence of customs and cultural traditions. Through the crea-
+tion of a holographic theater, some marionettes (that are physically exhibited in the sur-
+rounding showcases) will be virtually animated. Again, the holographic theater will be 
+based on the technique of Pepper’s ghost (Figure 5) VHLab has a long-standing experi-
+Figure 4. Holographic showcase with TUIs. On the left: rendering showing the main components of
+the interface. On the right: frontal axonometric projection with measures. In collaboration with Enzo
+d’Annibale, CNR ISPC.
+
+Heritage 2021, 4
+581
+4.3. Holographic Theatre and Its Integration with Gesture-Based Interaction
+In the rooms dedicated to the Figure Theater of the MuCIV and in the Museum of
+Toys in Zagarolo, demo-ethno-anthropological assets will be brought back to life, in their
+intangible value, as evidence of customs and cultural traditions. Through the creation of a
+holographic theater, some marionettes (that are physically exhibited in the surrounding
+showcases) will be virtually animated. Again, the holographic theater will be based on the
+technique of Pepper’s ghost (Figure 5). VHLab has a long-standing experience (since 2011)
+with natural (mid-air gesture based) interaction applied to virtual reality environments.
+This modality of interaction is not mediated by traditional devices like a mouse, joystick,
+etc., resulting indeed clearer for everyone. The experience is conﬁgured as a progression of
+physical as well as cognitive actions. Numerous surveys have been carried out to evaluate
+the user experience related to such VR applications [37–39]. Hundreds of visitors were
+observed and interviewed in the different venues, taking into account both active and
+passive users. What has been found is that interacting with a VR application through
+body gestures, in the center of a “performative” space, immediately generates in the visitor
+the impression of being involved in a playful situation, unusual inside a museum, and it
+encourages socialization and alternation between active and passive roles. Therefore, the
+experience is done with enthusiasm, like a game, in most of the cases. This is particularly
+evident for those visitors under 20 and over 60, while the intermediate age group shows
+a greater self-control that can lead to shyness and any other social and psychomotor
+inhibition [6].
+3D digital replicas of some puppets will be realized, visualized inside the holographic
+theater and contextualized in a virtual scenography. At the beginning of the show they will
+explain to the public their history, their typical gestures and expressions, and their origin,
+character, and context of use; after a while, they will become “movable” thanks to visitors’
+gestures, and a game will start, as a single user or in a team. The gestures and the mime
+of the virtual marionette can be performed by visitors through gesture-based interaction
+interfaces, made possible by sensors for full-body motion capture, like Kinect or a similar
+device. While the marionette will tell a typical story, vocally interpreting its role, the user
+will move in front of it, giving expression to its body and completing the performance.
+Thus, the visitor will play the role of puppeteer, as his/her movements are transferred to
+the virtual marionettes, but the visitor himself/herself will become a marionette in front of
+a mirror.
+Heritage 2021, 4 FOR PEER REVIEW  
+16 
+ 
+application through body gestures, in the center of a “performative” space, immediately 
+generates in the visitor the impression of being involved in a playful situation, unusual 
+inside a museum, and it encourages socialization and alternation between active and 
+passive roles. Therefore, the experience is done with enthusiasm, like a game, in most of 
+the cases. This is particularly evident for those visitors under 20 and over 60, while the 
+intermediate age group shows a greater self-control that can lead to shyness and any 
+other social and psychomotor inhibition [6]. 
+3D digital replicas of some puppets will be realized, visualized inside the holo-
+graphic theater and contextualized in a virtual scenography. At the beginning of the 
+show they will explain to the public their history, their typical gestures and expressions, 
+and their origin, character, and context of use; after a while, they will become “movable” 
+thanks to visitors’ gestures, and a game will start, as a single user or in a team. The ges-
+tures and the mime of the virtual marionette can be performed by visitors through ges-
+ture-based interaction interfaces, made possible by sensors for full-body motion capture, 
+like Kinect or a similar device. While the marionette will tell a typical story, vocally in-
+terpreting its role, the user will move in front of it, giving expression to its body and 
+completing the performance. Thus, the visitor will play the role of puppeteer, as his/her 
+movements are transferred to the virtual marionettes, but the visitor himself/herself will 
+become a marionette in front of a mirror. 
+The game can be played in a team, with players moving other puppets or selecting, 
+through a peripheral device, proper digital scenographies to be visualized, as back-
+ground, in the holographic showcase. The player/team who best interprets the character 
+and context of the puppets will be the winner of the game. 
+ 
+Figure 5. Setup of the holographic theatre and interactive area. In collaboration with Enzo d’Annibale, CNR ISPC. 
+5. Conclusions 
+Improving the physical and virtual worlds for people with specific needs in terms 
+of physical, cognitive, and emotional abilities, allows the museum experience to live in a 
+more intense and profitable way. Especially for art and culture, technology can change 
+the way people communicate and interact within museum spaces, translating the acces-
+sibility concept into concrete actions to make the environment truly smart [40]. 
+Within the IntARSi project we carried out the first, essential step toward a wider 
+strategy for museums’ valorization based on the concepts of user-centered approach, 
+multisensory and multichannel communication, accessibility, tailored interfaces and 
+Figure 5. Setup of the holographic theatre and interactive area. In collaboration with Enzo d’Annibale,
+CNR ISPC.
+The game can be played in a team, with players moving other puppets or selecting,
+through a peripheral device, proper digital scenographies to be visualized, as background,
+in the holographic showcase. The player/team who best interprets the character and
+context of the puppets will be the winner of the game.
+
+Heritage 2021, 4
+582
+5. Conclusions
+Improving the physical and virtual worlds for people with speciﬁc needs in terms
+of physical, cognitive, and emotional abilities, allows the museum experience to live in a
+more intense and proﬁtable way. Especially for art and culture, technology can change the
+way people communicate and interact within museum spaces, translating the accessibility
+concept into concrete actions to make the environment truly smart [40].
+Within the IntARSI project we carried out the ﬁrst, essential step toward a wider
+strategy for museums’ valorization based on the concepts of user-centered approach,
+multisensory and multichannel communication, accessibility, tailored interfaces and tools,
+multicultural inclusion, storytelling, emotional solicitation, and technological innovation.
+Beyond European guidelines and national rules for accessibility of ICT products, an
+extended application of these criteria in common museums is very rare. Interventions
+in favor of multimedia accessibility are often circumscribed to speciﬁc actions: museums
+entirely dedicated to blind people; guided tours in sign language managed by physical
+professionals; applications created in research laboratories and temporarily tested in cul-
+tural venues; tactile paths for blind users, often limited to the possibility of touching copies
+of the original objects, with little possibility of deepening. These are important and praise-
+worthy initiatives, but they are not always effective examples of inclusive experiences
+for all the people. The current contribution tries to establish coherent, proﬁtable, and
+feasible solutions for a permanent and inclusive museum fruition, without renouncing to
+the technological boost, while allowing playful dynamics, attractive solutions usable by all
+the public, adopting multichannel communication strategies.
+Our partners were MuCIV (Rome), Ostia Antica Archaeological Park (Ostia), and the
+Museum of Toys (Zagarolo). All of them are in the Lazio region (Italy) which funded this
+initiative. MuCIV was interested in embracing new cultural, ethical, and social issues,
+retaining speciﬁc targets, like experts, foreign communities (also of immigrants), and im-
+paired persons. Thus, we tried to open our previous and long experience in the ﬁeld of
+virtual heritage and museums to the UD issues, involving accessibility experts and com-
+munication scientists. In the following phase of the project, we intend to involve African
+communities living in Rome for the creation of multimedia contents to be implemented in
+the TUIs about contemporary Africa, where some representative objects of their culture
+will be surely integrated.
+In the context of IntARSI, we learned how to adapt previously developed solutions
+(e.g., the holographic showcase realized in the context of the recent European CEMEC
+project) to make them accessible to impaired persons, introducing tactile interaction and
+sign language, even in those situations where this seemed unsuitable. Single user or
+multiplayer installations, interactive or passive, and dynamic or contemplative experiences
+have been designed, dealing with topics representing popular or aristocratic, ancient and
+contemporary cultures and regional, national, or international contexts [41–44].
+The innovative value of the current contribution stands in the whole design process
+that required cooperation and know-how transferring among experts coming from different
+research ﬁelds: museums designers, digital curators, storytellers, technicians, engineers,
+interface and user experience designers, acoustics engineers, and experts of visual and
+hearing disabilities, including external communities, allowing a co-creation process to
+take place. This encounter is not common in Italian and foreign museums, despite the
+guidelines, rules, and recommendations in terms of ICT accessibility and social inclusion
+introduced by Europe and adopted by national laws. Typically, museums had been poorly
+funded for renovation, digitization, maintenance, and marketing. Restrictions on budgets
+and monuments’ preservation had often led to partial and incomplete solutions for few
+or limited application areas. However, there have been some excellent cases of Italian
+museums dedicated to speciﬁc disabilities that were a basis for identifying appropriate
+technical speciﬁcations, as mentioned in Section 2.2.
+The IntARSI project wants to integrate several aspects of communication: attractive-
+ness, accessibility, usability, educational impact, emotional and multisensory engagement,
+
+Heritage 2021, 4
+583
+storytelling, and gaming strategies in a uniﬁed vision. We hope that the work conducted
+within this project can be seen as a ﬁrst milestone for integrating a wide range of actions
+that can improve the accessibility for larger user groups, according to a more comprehen-
+sive and unitary perspective for the museum development and management. A wider
+strategy for museums, in general, is needed: for instance, the presence of a staff, speciﬁcally
+trained and dedicated to welcome and support impaired persons, mediating their approach
+with the environment and the technologies; training or recruiting staff who can speak sign
+language; and staff who are themselves disabled would be important next steps. An access
+audit should include a review of all communication issues and marketing, for example,
+ensuring that images of the museum on posters and on the website include images of
+disabled visitors.
+In conclusion, we are conﬁdent that the next steps of this process (and project) can be
+based on deep cultural interactions between real and virtual environments, museum staff,
+and visitors’ participation.
+Author Contributions: Conceptualization, E.P.; methodology, E.P., A.P., G.F.; validation, E.P.; formal
+analysis, E.P. and A.P.; investigation, E.P., A.P., L.B. G.F.; resources, E.P., A.P.; data curation, E.P., A.P.,
+G.F.; writing—original draft preparation, E.P., A.P., L.B., G.F.; writing—review and editing, E.P., A.P.,
+G.F., L.B.; supervision, E.P.; project administration, E.P.; funding acquisition, E.P. All authors have
+read and agreed to the published version of the manuscript.
+Funding: This research was funded by MuCIV, CUP: F34E19000070003. Agreement MuCIV-CNR
+ISPC prot. N. 0000566 del 20/09/2019.
+Data Availability Statement: Data supporting reported results can be found in the Technical Dossier
+of the IntARSI Multimedia project developed by CNR ISPC (ex ITABC) delivered to MuCIV, including
+links to archived datasets generated during the study (prot. N. 1489/2020).
+Acknowledgments: The authors would like to thank the MuCIV, in particular the Filippo Maria
+Gambari, Francesca Manuela Anzelmo, Ilenia Bove, Gaia Del Pino; the Archaeological Park of Ostia
+Antica, in particular Clauda Tempesta and Alberto Tulli; the experts in accessibility Cristiana Carlini
+(Museo Omero) and Carlo Di Biase for their precious support; Michele Fucci for helping us with the
+technological system integration; the colleagues of CNR ISPC-Virtual Heritage Lab who collaborated
+in the design of technologies and in the archaeological research; our colleague Nicolò Paraciani who
+supported us in the topic of accessibility; ﬁnally, Lazio Innova who ﬁnanced the project.
+Conﬂicts of Interest: The authors declare no conﬂict of interest.
+References
+1.
+Council of Europe (CoE). Council of Europe (CoE). Council of Europe Framework Convention on the Value of Cultural Heritage
+for Society. In Faro Declaration of the Council of Europe’s Strategy for Developing Intercultural Dialogue; Council of Europe: Strasbourg,
+France, 2005.
+2.
+Falk, J.H. Identity and the Museum Visitor Experience; Left Coast Press: Cambridge, MA, USA, 2009.
+3.
+Falk, J.H.; Dierking, L.D. The Museum Experience Revisited; Routledge: London, UK, 2012.
+4.
+Pietroni, E. Experience Design, Virtual Reality and Media Hybridization for the Digital Communication Inside Museums. Appl.
+Syst. Innov. 2019, 2, 35. [CrossRef]
+5.
+Pietroni, E.; Ferdani, D.; Forlani, M.; Pagano, A.; Rufa, C. Bringing the illusion of reality inside museums—A methodological
+proposal for an advanced museology using holographic showcases. Informatics 2019, 6, 2. [CrossRef]
+6.
+Pietroni, E.; Pagano, A.; Poli, C. Tiber Valley Virtual Museum: User Experience Evaluation in the National Etruscan Museum of
+Villa Giulia. In Proceedings of the 24th International Conference in Central Europe on Computer Graphics, Visualization and
+Computer Vision WSCG 2016, Plzen, Czech Republic, 30 May–3 June 2016; Skala, V., Pan, Z., Eds.; UNION Agency: Plzen, Czech
+Republic, 2016; pp. 97–106, ISSN 2464–4625 (CD-ROM)ISSN 2464–4617 (print).
+7.
+Bateson, G. Steps to an Ecology of Mind; University of Chicago Press: Chicago, IL, USA, 1972.
+8.
+Forte, M. About Virtual Archaeology: Disorders, Cognitive Interactions and Virtuality. In Virtual Reality in Archaeology; Barceló,
+J.A., Forte, M., Sanders, D.H., Eds.; British Archaeological Reports; Archeopress: Oxford, UK, 2000.
+9.
+ISO 9241-11:2018. Ergonomics of Human-System Interaction—Part 11: Usability: Deﬁnitions and Concepts. Available online:
+https://www.iso.org/standard/63500.html (accessed on 3 April 2021).
+10.
+Pescarin, S. Video Games, Ricerca. In Patrimonio Culturale; Franco Angeli Editore: Milano, Italy, 2020; ISBN-13: 9788835103004.
+11.
+Mellet-d’Huart, D. A model of (en)action to approach embodiment: A cornerstone for the design of virtual environments for
+learning. Virtual Real. 2006, 10, 253–269. [CrossRef]
+
+Heritage 2021, 4
+584
+12.
+Wagner, R.W. Edgar Dale: Professional. Theory Pr. 1970, 9, 89–95. [CrossRef]
+13.
+Betsy, J.; Case, P.H.D. Universal Design, Policy Report, June 2003, by Pearson Education, Inc. or Its Afﬁliate(s). Available online:
+http://images.pearsonassessments.com/images/tmrs/tmrs_rg/UniversalDesign.pdf (accessed on 27 December 2020).
+14.
+Accessibility Requirements for ICT Products and Services. EN 301549. Available online: https://www.etsi.org/deliver/etsi_en/
+301500_301599/301549/02.01.02_60/en_301549v020102p.pdf (accessed on 3 April 2021).
+15.
+ISO/IEC 17007:2009. 2018-Conformity Assessment—Guidance for Drafting Normative Documents Suitable for Use for Confor-
+mity Assessment. Available online: https://www.iso.org/standard/42635.html (accessed on 3 April 2021).
+16.
+Baykal, G.E.; Veryeri Alaca, I.; Yantaç, A.E.; Göksun, T. A Review on Complementary Natures of Tangible User Interfaces (TUIs)
+and Early Spatial Learning. Int. J. Child-Comput. Interact. 2018, 16, 104–113. [CrossRef]
+17.
+Billinghurst, M.; Grasset, R.; Seichter, H. Chapter 11—Tangible Interfaces for Ambient Augmented Reality Applications. In
+Human-Centric Interfaces for Ambient Intelligence; Aghajan, H., Delgado, L.C., Augusto, J.C., Eds.; Academic Press: San Diego, CA.,
+USA, 2010; pp. 281–302. ISBN 9780123747082. [CrossRef]
+18.
+Grassini, A. Toccare la Bellezza—Catalogo Mostra; Corraini: Mantova, Italy, 2020; pp. 11–17.
+19.
+Macdonald, S. Interconnecting: Museum visiting and exhibition design. CoDesign 2007, 3, 149–162. [CrossRef]
+20.
+Bedford, L. The Art of Museum Exhibitions: How Story and Imagination Create Aesthetic Experiences; Left Coast Press: Walnut Creek,
+CA, USA, 2014.
+21.
+Bogle, E. Museum Exhibition Planning and Design; AltaMira Press: Landham, MA, USA, 2013.
+22.
+Decker, J. (Ed.) Technology and Digital Initiatives: Innovative Approaches for Museums; Innovative Approaches for Museums; Rowman
+& Littleﬁeld Publishers: Lanham, MD, USA, 2015.
+23.
+AA.VV. A cura di Museo Tattile Statale Omero. L’arte a portata di mano. Verso una pedagogia di accesso ai Beni culturali senza
+barriere. In Proceedings of the Atti del Convegno, Armando, Roma, Italy, 21–23 October 2004.
+24.
+Grassini, A. I ciechi e le arti plastiche. In Le dispense del Museo Omero; Museo Omero: Ancona, Italy, 2004.
+25.
+Hassenzahl, M. The thing and I: Understanding the Relationship between User and Product. In Funology; Blythe, M.A., Overbeeke,
+K., Monk, A.F., Wright, P.C., Eds.; Human-Computer Interaction Series; Springer: Dordrecht, The Netherland, 2003; Volume 3,
+pp. 31–42.
+26.
+Veneziani, M. Experientia. Lessico Intellettuale Europeo. In Proceedings of the X Colloquio Internazionale, Roma, Italy, 4–6
+January 2001; Olschki: Firenze, Italy, 2002. ISBN 9788822251435.
+27.
+DuFour, R.; DuFour, R.; Eaker, R.W.; Many, T.; Mattos, M. Learning by Doing: A Handbook for Professional Learning Communities at
+Work, 3rd ed.; Solution Tree: Bloomington, IN, USA, 2016.
+28.
+Moon, J.A. A Handbook of Reﬂective and Experiential Learning: Theory and Practice New York; Routledge: London, UK, 2004.
+29.
+Dewey, J. Experience & Education; Kappa Delta Pi: New York, NY, USA, 1938.
+30.
+Kolb, D. Experiential Learning: Experience as the Source of Learning and Development; Prentice Hall: Englewood Cliffs, NJ, USA, 1984.
+31.
+Baraldi, S.; Bimbo, A.D.; Landucci, L.; Torpei, N. Natural Interaction. In Encyclopedia of Database Systems; Liu, L., Özsu, M.T., Eds.;
+Springer: Boston, MA, USA, 2009. [CrossRef]
+32.
+Arena, M.S. l’Opus Sectile di Porta Marina; Soprintendenza per i Beni Archeologici di Ostia: Roma, Italy, 2005.
+33.
+Caselli, M.C.; Maragna, S.; Volterra, V. Linguaggio e Sordità; Il Mulino: Bologna, Italy, 2006; pp. 38–40.
+34.
+Di Biase, C. Accessibilità e Lingua dei segni. In Quaderni della valorizzazione. Nuova Serie 4—Edited by Direzione Generale Musei;
+MiBACT: Rome, Italy, 2017.
+35.
+Porta, J.B. Natural Magick; NuVision Publications: Canton, MA, USA, 2003; ISBN 9781595472380.
+36.
+Dawson, P. The Visual Language of Holograms. In Advanced Holography-Metrology and Imaging; Naydenova, I., Ed.; IntechOpen
+Limited: London, UK, 2011; ISBN 978-953-307-729-1.
+37.
+Carvalho, D.; Bessa, M.; Magalhães, L.; Carrapatoso, E. Performance evaluation of gesture-based interaction between different
+age groups using Fitts’ Law. In Proceedings of the XVI International Conference on Human Computer Interaction (Interacción ‘15);
+Association for Computing Machinery: New York, NY, USA, 2015; Article 5; pp. 1–7. [CrossRef]
+38.
+Carvalho, D.; Bessa, M.; Magalhães, L. Different interaction paradigms for different user groups: An evaluation regarding content
+selection. In Proceedings of the XV International Conference on Human Computer Interaction—Interaccion’14, Puerto de la Cruz,
+Tenerife, Spain, 10–12 September 2014; p. 40.
+39.
+Khalaf, A.S.; Alharthi, S.A.; Dolgov, I.; Toups, Z.O. A Comparative Study of Hand Gesture Recognition Devices in the Context of
+Game Design. In Proceedings of the 2019 ACM International Conference on Interactive Surfaces and Spaces, Daejeon, Korea,
+10–13 November 2019; pp. 397–402.
+40.
+Convention on the Rights of Persons with Disabilities. Available online: https://www.un.org/development/desa/disabilities/
+convention-on-the-rights-of-persons-with-disabilities.html (accessed on 3 April 2021).
+41.
+Davidson, L.; Pérez Castellanos, L. Cosmopolitan Ambassadors: International Exhibitions, Cultural Diplomacy and the Polycentral
+Museum; Vernon Press: Wilmington, DE, USA, 2018.
+42.
+Pitman, B.; Hirzy, E. Ignite the Power of Art: Advancing Visitor Engagement in Museums; Yale University Press: New Haven, CT,
+USA, 2011.
+43.
+Roppola, T. Designing for the Museum Visitor Experience; Routledge: London, UK, 2014.
+44.
+Simon, N. The Art of Relevance; Wordpress: Santa Cruz, CA, USA, 2016.
+

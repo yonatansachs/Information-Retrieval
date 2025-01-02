@@ -1,0 +1,641 @@
+An Independent and Interactive Museum Experience
+for Blind People
+Saki Asakawa1 João Guerreiro1, Daisuke Sato1,2, Hironobu Takagi2,
+Dragan Ahmetovic1,3, Desi Gonzalez4, Kris M. Kitani1, Chieko Asakawa1,2
+1Carnegie Mellon University, 2IBM Research, 3University of Turin, 4The Andy Warhol Museum
+{sakiasa, jpvguerreiro, daisukes}@cmu.edu, takagih@jp.ibm.com,
+dragan.ahmetovic@unito.it, desi.m.gonzalez@gmail.com,
+{kkitani, chiekoa}@cs.cmu.edu
+ABSTRACT
+Museums are gradually becoming more accessible to blind people,
+who have shown interest in visiting museums and in appreciating
+visual art. Yet, their ability to visit museums is still dependent on
+the assistance they get from their family and friends or from the mu-
+seum personnel. Based on this observation and on prior research, we
+developed a solution to support an independent, interactive museum
+experience that uses the continuous tracking of the user’s location
+and orientation to enable a seamless interaction between Navigation
+and Art Appreciation. Accurate localization and context-awareness
+allow for turn-by-turn guidance (Navigation Mode), as well as de-
+tailed audio content when facing an artwork within close proximity
+(Art Appreciation Mode). In order to evaluate our system, we in-
+stalled it at The Andy Warhol Museum in Pittsburgh and conducted
+a user study where nine blind participants followed routes of interest
+while learning about the artworks. We found that all participants
+were able to follow the intended path, immediately grasped how
+to switch between Navigation and Art Appreciation modes, and
+valued listening to the audio content in front of each artwork. Also,
+they showed high satisfaction and an increased motivation to visit
+museums more often.
+CCS Concepts
+•Human-centered computing → Empirical studies in accessibil-
+ity; Accessibility technologies; •Social and professional topics
+→ People with disabilities;
+Keywords
+Museum accessibility; visual impairments; indoor navigation; art
+appreciation; non-visual interaction; interactive space.
+Figure 1: The continuous tracking of the user’s location and
+1. INTRODUCTION orientation enables a seamless interaction between Navigation
+(A) and Art Appreciation (B). In (A), a guide-dog user re-
+Museums are increasing the accessibility of their exhibitions and
+ceives turn-by-turn instructions and is informed about art-
+artworks to people who are blind through specialized tours [20, 33]
+works within close proximity (e.g., Do it yourself (Sailboat) is on
+your right). After turning her body to face an artwork within
+Permission to make digital or hard copies of all or part of this work for personal or close proximity (B), the system automatically starts describing
+classroom use is granted without fee provided that copies are not made or distributed
+the artwork.
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for components of this work owned by others than ACM
+must be honored. Abstracting with credit is permitted. To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee. Request permissions from permissions@acm.org. and the access to tactile representations of artworks [31]. These
+W4A’19, May 13–15, 2019, San Francisco, CA, USA efforts are motivated not only by laws (e.g., the Americans with Dis-
+abilitiesAct(ADA)[34])statingthatmuseumsshouldbeaccessible
+©2019ACM.ISBN978-1-4503-6716-5/19/05...$15.00
+DOI: https://doi.org/10.1145/3315002.3317557 to people with disabilities, but also by the interest of blind people invisiting museums and enjoying visual art [3, 9, 18, 19]. Yet, their the artwork using a cell-phone based interface and then navigate by
+ability to visit art museums is still dependent on the assistance they following the ping sound. More recent efforts such as the iOS app
+get from their family and friends or from the museum personnel. OutLoud [14] allow users to select and listen to audio content based
+A potential solution to increase the independence of blind peo- on the user’s current location. Eyes-Free Art [38] tries to improve
+ple in museums is the use of indoor navigation systems. Current the user experience with proxemic audio, by changing the type
+smartphone-based solutions are now able to accurately localize the of feedback (ranging from background music to a detailed verbal
+user [30] in the environment and are being installed in locations description) depending on the proximity with a particular artwork.
+such as shopping malls [39], universities [36] or transportation hubs Other solutions try to provide continuous navigation assistance for
+[11, 15]. These systems often focus on turn-by-turn guidance [39, blind people in order to increase their independence. Blind Museum
+42] or rely on gesture-based interaction to navigate among lists of Tourer [29] uses Bluetooth Low Energy (BLE) beacons and tactile
+nearby Points-of-Interest (POIs) [7, 23]. However, the challenges floor tiles to help guiding the user, while some approaches [13, 21]
+of an independent museum experience go beyond navigation as the use specialized, portable devices to help localizing the user and
+main goal is art consumption or appreciation. Nevertheless, accu- provide step-by-step navigation instructions. Yet, the interaction
+rate navigation assistance is still important since blind people value between navigation and art appreciation is often left unexplained or
+listening to audio content while they are near the respective artworks is not explored at all.
+[19]. Another relevant line of research focuses on interactive spaces
+In this paper, we present an interactive museum solution for blind (mostly for sighted people) by taking advantage of both location-and
+people that combines indoor navigation assistance and accessible context-awareness. For instance, based on the Proxemics theory [17],
+audio content of visual art (Figure 1). For that purpose, we adapted researchers have been leveraging the continuous tracking of users’
+an open-source smartphone-based navigation app [39] that uses location and orientation to ease the interaction between people and
+Bluetooth Low Energy (BLE) beacons and the smartphone sensors other elements in the environment (e.g., transferring files between
+to accurately localize the user. people, or interacting with public displays) [5, 28, 41]. This theory
+We use the continuous tracking of the user’s location and orien- addresses interpersonal spatial relationships and how they affect the
+tation alongside the awareness of the surroundings to interpret the interaction with others and with the surroundings. In a museum,
+spatial relationships of the interactive space [5, 41]. Based on this visitors’ motivation is to see the artworks, and proximity plays an
+knowledge, the user is able to seamlessly switch between two inter- important role not only for sighted people but also for blind people
+action modes: 1) Navigation, where the user receives turn-by-turn [19]. However, the challenges of an independent museum experience
+instructions (e.g., turn right) and information about the location of for blind people go beyond providing content based on the users’
+artworks (e.g., ’Do It Yourself (Sailboat)’ is on your right); and 2) location, due to their needs for turn-by-turn guidance. For that
+Art Appreciation, where the user is able to listen to audio content reason, it is important to seamlessly integrate the need for accurate
+of artworks, just by turning the body (the smartphone) to face a navigation assistance and the context-awareness that enables blind
+particular artwork. people to appreciate art as sighted people do. Moreover, in order
+In order to obtain feedback and test our solution, we installed it to understand the effectiveness and impact of solutions aiming at
+in The Andy Warhol Museum and conducted a user study where improving museum accessibility, it is important to conduct user
+nine blind participants followed interest-based routes prepared by studies, with the target population and in a real-world environment
+the museum personnel. We found that all participants were able (e.g., in a museum).
+to follow the intended path, showed high satisfaction rates, and
+an increased motivation to visit museums more often either by
+themselves or with sighted peers. In particular, they valued being 3. BLIND MUSEUM EXPERIENCE
+able to listen to audio content in front of each artwork and to use their
+Our main goal is to develop an interactive museum experience
+body orientation rather than gesture-based touchscreen commands
+able to support a fully independent visit by blind people. In order
+to switch between navigation and art appreciation.
+to complement prior research on the experiences of blind people
+in museums [3, 9, 18, 19, 37], we performed a short survey with
+2. RELATED WORK
+19 people with visual impairments that aimed to understand their
+Current efforts carried out by museums to make their exhibi- motivations to visit museums independently and the requirements
+tions more accessible to blind people usually fall into three main for a system that would serve such purpose [4].
+categories: guided tours, accessible tactile experiences, and com- In our survey, we found that an independent experience is valuable
+prehensive audio descriptions. Some museums provide specialized because blind people can enjoy visual art at their own pace; they
+tours or workshops [20, 33], while others allow to negotiate a spe- do not want to rely on their sighted friends all the time; and the
+cific time for accessible visits [25]. Other museums either specialize quality of the visual descriptions is highly dependent on the person
+in tactile art for blind people [10, 35] or provide tactile replicas providing them. Most participants referred to the importance of
+or reproductions of a subset of their artworks [14, 31]. In addition, having a navigation system in order to visit museums more often;
+recent research efforts include using 3D-printing to ease the process and that they want to receive audio content in front (not just near)
+of building tactile models [40, 44], augmenting tactile reproductions of the respective artwork in order to have the same experience
+with touch sensors [2] or replacing tactile reproductions with haptic as sighted people have. In addition, participants reported being
+exploration of virtual models [22]. Finally, the use of audio guides, comfortable both with synthesized speech and recorded human
+either with proprietary devices or the user’s own smartphone [8, voices, showing no clear preference between the two options. As
+12], is ubiquitous in museums nowadays. Still, they usually target for the content of the descriptions, an introduction or summary of
+sighted people and are not designed with accessibility in mind. the artwork and both its history and detailed visual description were
+In addition to these efforts, prior research has focused on location- reported as the most relevant elements.
+based accessibility, by trying to guide the user or providing audio Informed by our survey findings and by prior research, we de-
+content in the proximity of artworks. For instance, Ping! [26] uses signed and developed a prototype system to support an independent,
+audio beacons placed near relevant artworks; the user can select interactive museum experience for blind people.3.1 Prototype System
+The main requirements of our system are the ability to guide blind Audio Feedback
+people along an intended path and to provide a way for them to Proceed 5 feet, “PICTURE”
+then turn left is on your right Proceed 20 feet
+enjoy visual art through audio content that thoroughly describes the
+artworks. In order to support both navigation and art appreciation,
+we developed a smartphone app that was extended from an open
+source project called HULOP1.
+HULOP’s localization engine combines two techniques to accu-
+rately track the user’s location and orientation [30, 39]: 1) multi-
+lateral localization using Bluetooth Low Energy (BLE) beacons; Navigation Art Navigation Navigation
+Appreciation
+and 2) Pedestrian Dead Reckoning (PDR) using the smartphone Mode
+accelerometer and gyroscope. Due to the unreliability of magne-
+tometer measurements in indoor spaces, the orientation is estimated
+based on the BLE beacon-based localization history and the PDR
+trajectory. The main advantages of this solution are that users only
+need their own device (a smartphone), it is a cheap solution com-
+paring to competitor alternatives (e.g., each beacon cost $12-20
+depending on order volume), and is known to provide practical ac-
+curacy (average location and orientation errors are about 1.5m and
+12.4 degrees [6]) for turn-by-turn guidance to blind people [1, 39].
+3.2 Seamless Two-Mode Interaction
+The continuous tracking of the user’s location and orientation
+allows us to interpret the spatial relationships between the user and
+relevant elements in the environment [5, 41], such as the route struc-
+ture and the location of the artworks (that are manually annotated in
+our map). Based on this knowledge and on the fact that blind people
+want to listen to art content in front of the artwork, our smartphone Figure 2: It shows the interaction between Navigation and Art
+app provides two interaction modes which activation depends exclu- Appreciation modes based on the user’s location and orien-
+sively on the user’s location and orientation: Navigation, and Art tation, with example audio feedback and screenshots of each
+Appreciation (Figure 2). During Navigation Mode, users receive mode.
+turn-by-turn instructions to proceed in the intended path while being
+alerted about the artworks they are passing by. Art Appreciation
+Mode is activated when the users are next to an artwork and turn the system provides a verbal instruction (e.g., “turn left”) and a
+their body in order to face it, while Navigation Mode is resumed short vibration and sound effect. When the user completes the turn,
+after turning their body to the previous orientation. achieving the correct orientation, the vibration and sound effect
+When the user is within close proximity of an artwork, changing are provided again, followed by the next instruction. While the
+between modes depends on the user’s orientation. It is defined by user is walking, the system provides information about the relative
+equation (1), where θt represents the direction of the target point (an direction of relevant POIs within close proximity (e.g., “Painting X
+artwork, if changing to Art Appreciation Mode) and θu represents is on your right”). In our context, the most important POIs are the
+the orientation of the device held by the user. We defined T as 22.5◦ artworks, but can also be landmarks or obstacles that may affect the
+as it divides the frontal space into eight directions and is close to the navigation (e.g.,“a table is on your left”). Examples of other POIs
+angular error in estimating target directions reported in [27]. When in navigation contexts are elevators, escalators, or restrooms.
+changing back to Navigation Mode, θt represents the direction of Although NavCog provides periodic information about the re-
+the navigation path. maining distance to a turn and an “approaching” message right
+before the turn, we found this to be prejudicial in our context when
+testing the app. Due to the small dimensions of our environment and
+abs(θt − θu) < ∠T (1) to the high density of artworks, announcing an artwork would often
+be interrupted by a navigation command such as “approaching”.
+The system provides a short vibration and sound effect when the
+Moreover, we found that the high localization accuracy and wide
+user reaches the correct orientation, which prevents users from per-
+corridors did not require such announcements.
+forming slighter turns. In order to correct when the user overshoots
+the turn, we provide a "make a slight right/left turn" instruction 3.4 Art Appreciation Mode
+when the user passes the correct orientation (also using T as the
+When next to an artwork, the system alerts about its location
+threshold).
+(e.g., “Photograph X is on your right”). Users can then activate the
+3.3 Navigation Mode Art Appreciation Mode just by turning to the respective side. After
+turning, the system starts reading the audio content automatically.
+The instructions provided during Navigation Mode are based on
+This mimics the way sighted people appreciate art in a museum
+the smartphone app from the HULOP project, NavCog, as it is
+and goes towards the preferences of blind people to listen to audio
+known to cause very few navigation errors [15, 39]. At the start
+content when in front of the artworks. The user can also perform
+of each segment, it reads the next instruction (e.g., “proceed 10
+gestures on the touchscreen in order to navigate through the audio
+meters and turn left”). When the user reaches the turning point,
+content. For instance, a single tap would pause/resume, while right
+1https://github.com/hulop and left swipes would change to the next and previous chapter of anaudio story, respectively.
+Both previous research [3, 18] and our survey showed that the
+quality of the audio content is a crucial factor for blind people to en-
+joy their museum experiences. For that reason, all audio content was
+carefully prepared by the museum personnel and can be categorized
+into Audio Stories and Text Content. The content was created when
+designing an inclusive audio guide, OutLoud [14], which supported
+auditory descriptions, but not navigation. The museum personnel
+consulted with visitors -both with and without visual impairments -
+to design their audio guide content strategy. Their feedback influ-
+enced the design of the audio content, for instance, by breaking the
+audio content into chapters, instead of having a long description of
+an artwork as is often found in audio guides.
+Audio Stories consist of recorded content that is part of the mu-
+seum’s inclusive audio guide. The speakers are scholars, curators,
+educators, or members of the artist’s own family. Each story is
+centered around a theme, series of artwork, or time period, and
+includes an introduction, a visual description of a representative ob-
+ject, and several chapters of interpretive content. Previous research
+[14] and our survey [4] were used to determine the appropriate order
+to present the different chapters (e.g., the introduction and visual
+Figure 3: Map of the experimental environment and tasks; Task
+description are more important than the details about the technique
+1: Red dashed line, Task 2: Blue solid line. Artworks: flat rect-
+used and therefore are presented first). Users could navigate to the
+angles; Blue Dots: BLE beacons
+previous or next chapter by performing left and right swipe gestures
+on the screen, mimicking their usual interaction with VoiceOver
+(iPhone’s screen reader). ID Eyesight Cane/Dog Museum visits Age Sex
+Text Content refers to educational text, not available in the mu-
+P1 Blind Cane A few / life 60s F
+seum inclusive guide, that we included in the system to supplement
+participants’ experience. It contains both visual descriptions and P2 Blind Dog A few / life 60s F
+text that is visually portrayed in the walls of the museum, but is not
+P3 Blind Both A few / life 40s M
+accessible to blind people. Some of the Text Content provides a
+thematic overview of a gallery or collection of objects, while others P4 Blind Cane Once / 2 years 70s F
+might focus on a specific artwork. In our app, these are delivered
+P5 Blind Cane A few / life 60s M
+with a synthesized voice.
+In order to return to the Navigation Mode, users should turn P6 Blind Both Once / 2 years 30s F
+their body to their previous orientation. When facing the correct
+P7 Blind Dog A few / life 50s M
+orientation, the smartphone vibrates, makes a short ping sound and
+provides the next instruction (e.g., Proceed 5 meters and turn left). P8 Legally blind Cane Once / a year 40s M
+3.5 Installation at The Andy Warhol Museum P9 Blind Cane A few / life 50s F
+We deployed 28 BLE beacons at the seventh floor of The Andy
+Table 1: Demographics of participants
+Warhol Museum (see Figure 3) and built a localization model using
+HULOP’s algorithm [30]. Moreover, we populated the map of the
+environment with the route structure and the location of the artworks
+This setting allowed us to understand the users’ acceptance of the
+and potential obstacles for navigation (our POIs). The Andy Warhol
+system, their opinions, as well as their performance in such optimal,
+Museum [32] is the largest museum in the United State dedicated to
+controlled environment. The whole experiment was videotaped for
+only one artist, Andy Warhol. The museum contains an extensive
+further analysis.
+collection of his art and archives which are varied from paintings,
+sculptures, photographs, films, and so on. The seventh floor includes 4.1 Procedure
+mostly photographs and paintings/drawings places on the walls.
+The researchers started by providing an overview of the user study
+and by describing the interface of the prototype system, including
+4. USER STUDY
+the Navigation and Art Appreciation modes and how to switch
+We conducted a user study with nine participants (Table 1) who between them. Afterwards, participants performed a practice route
+had at least 3 years of experience using iPhones. Participants used comprising two turns and a single artwork. Participants were able
+our prototype system on an iPhone 7 provided by the researchers to repeat the practice route in case they were not comfortable with
+with the built-in screen-reading software (VoiceOver) on Apple iOS the system. Before and during practice we explained how to hold
+11. The iPhone’s speakers, not earphones, were used so that the the smartphone, because it affects localization accuracy and the
+researchers could monitor their behavior more easily and check if the interaction is based on its orientation. In addition, participants
+system worked properly. We wanted to run the study in a real-world were told that the researchers would only be observers, but would
+environment, but at the same time to keep the study controlled. For always be nearby to ensure their safety and the safety of the artworks.
+that reason, the study was conducted when the museum was closed Throughout the study, at least one researcher followed the participant
+to the public so that the tasks would not be affected by the presence at close distance, only intervening when necessary.
+of other visitors (who could, for instance, block the user’s path). Then, participants were given detailed guidance for two tasks,1P 2P 3P 4P 5P 6P 7P 8P 9P
+2000
+1500
+1000
+500
+0
+Task 1
+)sdnoces(
+noitaruD
+1P 2P 3P 4P 5P 6P 7P 8P 9P
+Navigation Art Statement Mean SD
+I enjoyed being able to listen to audio content 5.00 0.00
+I enjoyed listening to the audio content in front of 4.89 0.33
+each exhibit or artwork
+I would visit museums by myself if museums pro- 4.78 0.44
+vide such an application
+I feel that the navigation enables me to visit muse- 4.67 0.50
+ums by myself
+Task 2
+I would use this application when I go to museums 4.56 0.53
+Figure 4: Task completion time and the ratio of spent time for
+with someone
+the 2 modes for each user in Tasks 1 and 2
+Table 2: Subjective ratings of the prototype system
+which followed interest-based routes for museum visitors: a chrono-
+logical history route (Task 1), and a route for hand-painted pop art
+(Task 2). Each route and the location of the respective artworks are average (SD=0.16). The average satisfaction score for Task 1 was
+shown in Figure 3. 4.72 (SD=0.44), while for Task 2 it was 4.89 (SD=0.33). Beyond
+Task 1 (red dashed line in Figure 3) has eight artworks in total, these scores, all participants had positive comments about their
+including three readings of Text Content, and five Audio Stories experiences, both about the ability to navigate independently in
+with a total length of 1,670 seconds. Since we wanted to test the the museums and about the accessibility of the artworks through
+interaction between the two modes, we asked the participants to stop carefully prepared audio descriptions. A few examples of the overall
+at each artwork to listen to at least part of the linked audio content. users’ satisfaction are listed below:
+Task 2 (blue solid line in Figure 3) has seven artworks, including
+four readings of Text Content and three Audio Stories with a total “Actually it was very good because I really followed
+length of 1,040 seconds. In this task, participants did not have any the directions correctly, it was very accurate, very well-
+constraints and were asked to enjoy the route as they prefer. They done. The descriptions of the pictures were good. It
+could stop and listen to the content for artworks they were interested, was just all about a good experience” (P1).
+but could also skip other artworks. “It’s good because I never experienced something like
+After each task, participants reported their satisfaction (1-very this. I never had this level of accessibility. So that’s
+low, to 5-very high) using 5-point Likert Items. After completing why I think it is amazing and great!” (P3).
+both tasks, we performed a post-interview to evaluate their overall
+“I can’t see paintings. I normally don’t pay attention to
+satisfaction and of each feature, such as the quality of the audio con-
+what people paint. Because I can’t see them anyway.
+tent, the satisfaction with synthesized and recorded human voices,
+You know, but actually, being able to listen, and here is
+the navigation assistance, and the content based on proximity. Fi-
+the detail, I thought it was interesting that I could actu-
+nally, we asked if such an application would motivate them to go
+ally learn, you know, his personality, just by listening
+to museums alone and if it would still be useful when visiting with
+what he painted” (P3).
+sighted peers.
+“I was able to basically customize it for what I wanted
+4.2 Results
+to hear about. If I was interested in something or under-
+In what follows, we present both a quantitative and a qualitative stood it [and] wanted to move on. I could . . . I can do
+analysis of the user study. it on my own speed. It was nice!” (P5)
+4.2.1 Overall Performance and Completion Times 4.2.3 Artwork Announcements
+All participants were able to complete the two tasks and had no There were a total of 15 artworks (8 + 7) in the two tasks, so
+difficulties switching between the Navigation and Art Appreciation the system should have made 135 announcements (9 participants
+modes by changing their body and iPhone orientation. Figure 4 × 15 POIs). From the log data, we found that the system missed
+shows the total task completion times and the ratio between the 9 announcements out of 135 (6.7%), most of them located near a
+time spent in the two modes. The navigation system successfully corner. Due to the wide corridors, in those situations users turned
+guided all participants to the artworks. They performed the two tasks a few meters earlier than the intended location, which prevented
+in average times of 1,178 (SD=476), and 773 (SD=356) seconds, them from getting close enough to the artwork and trigger the audio
+respectively. The average total duration spent by the participants in content.
+appreciating the audio content for the artwork for the two tasks were In addition, participants did not check the content of an artwork 3
+921 (SD=462), and 543 (SD=312) seconds, respectively, and the times (one time for three different participants) in Task 1 out of 72
+rest of the time was consumed by navigation. This means, 74.5%, opportunities (4.2%) even though they had been instructed to stop
+and 65.6% of the respective time was used for art appreciation in and check the audio content for all artworks. One participant took
+the two tasks. This slight difference is related to the larger number a few steps while the system was describing one artwork and the
+of Audio Stories (which are longer) in Task 1. system skipped the following artwork (because the distance between
+the two artworks was too short). In two other cases, participants
+4.2.2 User Satisfaction
+could hear the announcement (as seen in the video replay) but they
+Participants’ overall satisfaction was very high, scoring 4.94 on did not turn to listen to the content (perhaps due to distraction).4.2.4 Post Interview “I really like to hear the human narration. That adds a
+Table 2 shows the Likert items (from 1-Strongly Disagree to 5- little more personality into the whole experience” (P2).
+Strongly Agree) we used in the post-interviews and users’ average
+Some participants provided a few suggestions to improve the hu-
+ratings. All participants rated the statements very favorably. The
+man voices such as adjusting the volume, or adding more emotion.
+highest average rating (m=5.0) was related to the ability to listen
+to the audio content, showing a major impact of audio-based de-
+scriptions in the museum experience of blind people. In addition, 5. DISCUSSION
+the ability to enjoy such descriptions in exactly in front of the In this section, we discuss our main findings and future research
+artworks was seen as very important: directions that can help supporting independent museum experiences
+for blind people.
+“I would want to be right in front of what is being
+described to me” (P2). 5.1 Overall Museum Experience
+“I want to know exactly what is around me . . . Our All participants successfully navigated along the proposed routes
+experience should be as normal as your experience without getting lost, suggesting that the accuracy provided by the
+would be” (P9). system may be enough to successfully guide a blind user in the
+context of a museum visit. In addition, all participants found no dif-
+Proximity-based art appreciation was found to be important ficulties to combine the two modes, navigation and art-appreciation.
+both when visiting alone and when visiting with sighted peers, such Users’ performance was complemented by their overall very high
+as family members, children, and other social connections. satisfaction rates, which came from the ability to both having an
+independent experience, at their own pace, and listening to carefully
+“...hearing people near me comment on the same items.
+prepared auditory content. Such setting ensures that visual impaired
+I think that would be interesting and really fun” (P4).
+visitors can have their personalized museum experience without
+“...if I’m with a group, it’s more important to me to be needing to over-rely on their sighted peers or needing to join spe-
+in front of it” (P7). cialized tours. We believe, and participants’ comments support, that
+such a system would make blind people visit museums more often.
+Being able to navigate independently was very highly rated by Despite the mostly positive feedback, we also observed some
+participants, because they can not only enjoy art at their own pace, limitations that can result in further iterations of our system or in
+but also to process their experience:: valuable lessons for other researchers or practitioners in this field.
+For instance, it can be easy to skip an artwork if the next one is
+“I’d really enjoy just having quiet time afterwards to
+within very close proximity. For this reason, it may be beneficial
+think about it... If I go with other people, it’s not
+to explore feedback mechanisms that can warn the user in such
+something that I can sit and be contemplative about
+occasions (e.g., using sonification to alert about artworks which
+afterwards.. because everybody’s like now let’s go get
+were skipped) and/or functions that allow users to search for (or
+something to eat, let’s do this...” (P4).
+browse) and be guided to the closest artworks. Other examples are
+related to veering or small localization errors that can result in users
+The lowest average rating (but still very high) was related to us-
+skipping artworks near the corners or even slightly deviating from
+ing this system while visiting a museum with someone (m=4.56).
+the path. Although NavCog has veering prevention mechanisms
+When asked to comment on that possibility, independence also
+[15], these are more appropriate for larger, wider spaces, since slight
+played a very important role:
+deviations (which happened in the museum context) are difficult to
+“...if I was interested in something and my friend was detect. Future solutions should consider how to prevent or correct
+not, my friend could move on. And I could stay, I veering, for instance by combining vision-based techniques.
+wouldn’t have to just follow them” (P6).
+5.2 The Importance of Proximity
+“I don’t wanna take away from their enjoyment [by]
+One of the reasons why blind people like to visit museums is
+having to read me everything” (P7).
+related to experiencing its atmosphere [4]. Being able to learn onsite
+is different than reading about it at home. The same holds for sighted
+In addition, participants found that the system could also be useful
+people, who can see an artwork in a book or online, but still prefer
+for their sighted peers:
+to visit museums as they value the onsite experience. Prior research
+“Even as a sighted person, I think the benefit of this is had already referred to blind people’s preference to appreciate art
+the fact that you are getting a kind of like a personalized near the respective artwork [19] and our survey [4] supported such
+docent tour . . . you’re getting pretty extensive art findings adding that they want to be right in front of the artwork, and
+history . . . I would try to get them [his sighted friends] not just near. The user study built on these findings, also showing
+to get the system as well” (P8). that users want to have an experience as close as possible to the
+one of sighted people, and that by being in front of the artwork
+Participants were asked to evaluate the two types of content. All they could leverage some of the contextual information, such as
+of them except P9 rated 5 for Text Content read by a synthesized listening to other people commenting the artwork. This preference
+voice. They found the synthesized voice acceptable because they is supported by users’ high satisfaction about the ability to trigger
+listen to it every day on their screen readers. P9 rated it 2 because she the audio content based on proximity and orientation (Table 2).
+“loves human voices”. Audio Stories using a human voice were also
+5.3 Real-World Environment Challenges
+highly rated (7 participants with 5 and 2 ratings of 4), as participants
+liked to hear the descriptions from people relevant for the artist’s Installing the system at The Andy Warhol Museum enabled us
+life or knowledgeable about this particular museums. On participant to test our prototype in a more realistic environment than what is
+mentioned the following: usually found in the literature. It is important to note, however, thatthe study was conducted while the museum was closed. This was blind user’s and other visitors’ perspectives.
+important, as a first step, to access the feasibility of our approach
+5.5 The Impact of Individual Differences
+in an ideal, more controlled scenario. However, during opening
+hours the navigational and environmental challenges of museums Individual differences can play an important role in the user’s
+increase. A main concern is how to cope with the presence of other interaction with the system and in their museum experience. Our
+museum visitors, who may be blocking the user’s path or gathered system is mainly designed for blind people, as it relies on audio
+near an artwork. During the study, users were only focused on the and tactile feedback, and most study participants were fully blind
+path and on the artworks, but it is very likely that they would come (one was legally blind). Still, it would be interesting to understand
+across several pedestrians if the museum was crowded. In such if people with low vision could benefit from such system and what
+context, frequently hitting other people with the cane can be seen kind of changes or adaptations would be required. For instance,
+as socially disruptive, while needing to go around them can lead to people with low vision could benefit from the use of magnifier tools
+users deviating from the intended path. from the phone’s accessibility services for visual feedback about
+Additional challenges may arise if we consider other types of the route or the textual auditory descriptions. On the other hand,
+museums. While most of the artworks at The Andy Warhol Museum depending on their visual abilities, users may need less information
+are placed on the walls, other museums may have fragile artworks about the route and focus mostly on the descriptions of artworks.
+in the middle of the room. In that case, it is crucial to guarantee The choice of navigation aid is also known to impact how blind
+sub-meter accuracy near such artworks to ensure their safety. people navigate [15, 16, 43]. However, in the context of a museum
+Potential approaches to increase localization accuracy and to help visit the differences go beyond (and differ from) navigation. While
+the user negotiating space with other visitors may combine this in navigation tasks the guide-dog helps the user walking faster to
+system with computer-vision and/or robot-based guidance, both the destination and avoiding obstacles, when appreciating art users
+to detect pedestrians and to guide the user through or around the wants to walk slowly along the wall to obtain audio feedback within
+crowds. While the first can help predicting future collisions [24], the close proximity of the artworks. In the user study, two participants
+latter may help reducing the user’s load and attention on navigation (P2 and P7) performed their tasks with guide dogs and needed to
+(and space negotiation) to focus on the art experience itself. learn how to interact with their dog. At first, the guide dog was
+ready to turn before the system instructs the user to turn, because
+5.4 The Social Aspect the exhibition room is wide and safe. Seeing the open space, the
+guide dog would turn much earlier than intended, which could cause
+Being able to have an independent experience was seen by par-
+the user to miss some of the artworks near the corners. Realizing
+ticipants as the main advantage of our system. Still, blind people
+of such behaviour, users started guiding their dogs based on the
+often visit museums for the social aspect [4] and participants see
+navigational guidance instructions provided by the system, instead
+themselves using the system even when visiting with sighted peers.
+of just following their dog. This suggests that instructions should
+A main reason is that users can enjoy their experience at their own
+be provided to guide-dog users prior to their interaction with the
+pace, by skipping or taking longer at a particular artwork.
+system. This is specially relevant because guide-dogs may help
+Some participants thought that their sighted peers could also ben-
+coping with the challenges of the environment (e.g., other visitors),
+efit from the audio content provided by this system, which is not
+but can also lead to skipping relevant artworks or deviating from the
+unexpected as most museums provide audio guides to their visitors.
+path.
+In addition, it is relevant to note that some audio guides for the
+general public already use BLE beacons to provide audio content 5.6 Navigation and Exploration
+depending on the user’s location. However, they are often based on
+The ability of blind users to navigate independently in the mu-
+proximity, which prevents such systems to provide accurate, contin-
+seum was given by timely turn-by-turn navigation instructions to
+uous navigation assistance (which is required for blind visitors). The
+follow routes prepared by the museum staff. Although such routes
+accurate localization provided by our system means that the general
+were carefully prepared, following a thematic or chronological order,
+public could also use our system as a location-based audio guide
+it does constrain users to fixed, non-personalized routes. A potential
+and benefit from its audio descriptions. Still, sighted people would
+solution to personalize user’s experiences include calculating routes
+also benefit from a few adaptations that would increase its usability.
+depending on their preferences. For instance, users could select par-
+For instance, the visual feedback on screen could be enriched, and
+ticular exhibitions, artworks or artists of interest, letting the system
+the default order of the audio chapters could vary depending on the
+calculate a route according to such preferences. Other alternatives
+smartphone having an active screen reader or not (as in [14]).
+may provide users with more control to decide their own course
+An application that can be used by all visitors could potentially
+while visiting the museum. Still, navigation instructions are still
+support shared experiences between blind and sighted users in the
+important to allow users to explore the environment independently.
+future. For instance, blind users can exchange opinions with other
+For instance, future solutions may still provide turn-by-turn guid-
+blind or sighted users (friends, acquaintances, or strangers) either
+ance, while providing options to the users at relevant intersection
+to discuss interpretations of the artworks or to ask for particular
+points (e.g., “Turn right for the Pop Art exhibition, or turn left for
+details that may not be available in the auditory descriptions. Also,
+Andy Warhol’s life story”).
+users visiting with friends could potentially use the system to keep
+track of each other, enabling independent experiences by easing the
+6. CONCLUSION
+ability to reconvene later on with their friends and family.
+Despite the increased independence given by such a system, it is This paper described a prototype system to support an indepen-
+also important to consider potentially negative situations, in particu- dent, interactive museum experience for blind people. It is char-
+lar when system errors or user misinterpretation of an instruction acterized by a seamless interaction between Navigation and Art
+may lead users to act in a unexpected manner. For instance, a local- Appreciation modes, accomplished by accurately tracking the user’s
+ization error may lead the user to turn to an artwork too late or too location and orientation. We installed our system in a public museum
+early. It is relevant to further study the impact of such errors and and performed a user study with 9 visually impaired participants to
+behaviours in a social context like visiting a museum, both from the evaluate it in a real-world scenario. All participants were able tocomplete the two interest-based routes and their satisfaction rates [7] BlindSquare. 2018. BlindSquare iOS Application. (2018).
+were high. Results showed that the app was effective to improve Retrieved in January, 2019 from http://blindsquare.com/.
+their museum experience and that they are motivated to use it when [8] Patrick J. Boylan. 2004. Running a Museum: A Practical
+visiting museums either by themselves or with sighted companions. Handbook. Vol. 231. COM-International Council of Museums.
+In particular, users found it very important to listen to the audio http:
+content in front of the artwork (not only near), supporting the use of //unesdoc.unesco.org/images/0014/001410/141067e.pdf
+body orientation as a trigger for switching to the Art Appreciation [9] Serap Buyurgan. 2009. The Expectations of the Visually
+Mode. In the future, we plan to understand how to cope with the Impaired University Students from Museums. Educational
+challenges (e.g., pedestrians blocking the way) and opportunities Sciences: Theory and Practice 9, 3 (2009), 1191–1204.
+(e.g., leveraging shared experiences or the museum atmosphere) that [10] Ligithouse for the Blind of Greece. 2018. Tactual Museum.
+arise from visiting the museum during its opening hours. Moreover, (2018). http://www.tactualmuseum.gr/indexe.htm
+we plan to study how blind people access and perceive audio and Accessed: 2018-06-27.
+tactile content, and customize their experience according to their
+[11] Aura Ganz, James Schafer, Yang Tao, Zhuorui Yang, Charlene
+preferences and their needs.
+Sanderson, and Larry Haile. 2018. PERCEPT Navigation for
+Visually Impaired in Large Transportation Hubs. (2018).
+7. ACKNOWLEDGMENTS
+[12] Sandra Gebbensleben, Jana Dittmann, and Claus Vielhauer.
+We thank all participants who took part in the user study. We 2006. Multimodal audio guide for museums and exhibitions.
+also thank the Carnegie Museums of Pittsburgh, The Andy Warhol In Multimedia on Mobile Devices II, Vol. 6074. International
+Museum, and all their staff contributing to the installation of our Society for Optics and Photonics, 60740S.
+navigation system and to conduct the user studies. [13] Giuseppe Ghiani, Barbara Leporini, and Fabio Paternò. 2009.
+This work was sponsored in part by NSF NRI award (1637927), Vibrotactile feedback to aid blind users of mobile guides.
+and Shimizu Corporation. Journal of Visual Languages & Computing 20, 5 (2009),
+305–317.
+8. REFERENCES [14] Desi Gonzalez. 2017. A Path With Choice: What We Learned
+From Designing An Inclusive Audio Guide. In Museums and
+[1] Dragan Ahmetovic, Masayuki Murata, Cole Gleason, Erin
+the Web.
+Brady, Hironobu Takagi, Kris Kitani, and Chieko Asakawa.
+[15] João Guerreiro, Dragan Ahmetovic, Daisuke Sato, Kris Kitani,
+2017. Achieving practical and accurate indoor navigation for
+people with visual impairments. In Proceedings of the 14th and Chieko Asakawa. 2019. Airport Accessibility and
+Web for All Conference on The Future of Accessible Work. Navigation Assistance for People with Visual Impairments. In
+Proceedings of the 2019 CHI Conference on Human Factors
+ACM, 31.
+in Computing Systems (CHI ’19).
+[2] Giorgos Anagnostakis, Michalis Antoniou, Elena Kardamitsi,
+[16] João Guerreiro, Eshed Ohn-Bar, Dragan Ahmetovic, Kris
+Thodoris Sachinidis, Panayiotis Koutsabasis, Modestos
+Kitani, and Chieko Asakawa. 2018. How Context and User
+Stavrakis, Spyros Vosinakis, and Dimitris Zissis. 2016.
+Behavior Affect Indoor Navigation Assistance for Blind
+Accessible Museum Collections for the Visually Impaired:
+People. In Proceedings of the Internet of Accessible Things
+Combining Tactile Exploration, Audio Descriptions and
+Mobile Gestures. In Proceedings of the 18th International (W4A ’18). ACM, New York, NY, USA, Article 2, 4 pages.
+Conference on Human-Computer Interaction with Mobile
+DOI:http://dx.doi.org/10.1145/3192714.3192829
+Devices and Services Adjunct (MobileHCI ’16). ACM, New [17] Edward Twitchell Hall. 1966. The hidden dimension. Vol. 609.
+York, NY, USA, 1021–1025. DOI: Garden City, NY: Doubleday.
+http://dx.doi.org/10.1145/2957265.2963118 [18] Kozue Handa, Hitoshi Dairoku, and Yoshiko Toriyama. 2010.
+[3] Vassilios S Argyropoulos and Charikleia Kanari. 2015. Investigation of priority needs in terms of museum service
+Re-imagining the museum through “touch”: Reflections of accessibility for visually impaired visitors. British journal of
+individuals with visual disability on their experience of visual impairment 28, 3 (2010), 221–234.
+museum-visiting in Greece. ALTER-European Journal of [19] Simon Hayhoe. 2013. Expanding our vision of museum
+Disability Research/Revue Européenne de Recherche sur le education and perception: An analysis of three case studies of
+Handicap 9, 2 (2015), 130–143. independent blind arts learners. Harvard Educational Review
+[4] Saki Asakawa, João Guerreiro, Dragan Ahmetovic, Kris M. 83, 1 (2013), 67–86.
+Kitani, and Chieko Asakawa. 2018. The Present and Future of [20] Phoebe Hillemann. 2016. Art Museum Tours For Visitors
+Museum Accessibility for People with Visual Impairments. In Who Are Blind -Smithsonian American Art Museum. (2016).
+Proceedings of the 20th International ACM SIGACCESS https://americanart.si.edu/blog/eye-level/2016/09/
+Conference on Computers and Accessibility (ASSETS ’18). 317/art-museum-tours-visitors-who-are-blind Accessed:
+ACM, New York, NY, USA, 382–384. DOI: 2018-06-27.
+http://dx.doi.org/10.1145/3234695.3240997 [21] Dhruv Jain. 2014. Pilot Evaluation of a Path-guided Indoor
+[5] Till Ballendat, Nicolai Marquardt, and Saul Greenberg. 2010. Navigation System for Visually Impaired in a Public Museum.
+Proxemic interaction: designing for a proximity and In Proceedings of the 16th International ACM SIGACCESS
+orientation-aware environment. In ACM International Conference on Computers & Accessibility (ASSETS ’14).
+Conference on Interactive Tabletops and Surfaces. ACM, ACM, New York, NY, USA, 273–274. DOI:
+121–130. http://dx.doi.org/10.1145/2661334.2661405
+[6] HULOP BLE. 2018. HULOP BLE localization library for iOS [22] Gunnar Jansson, Massimo Bergamasco, and Antonio Frisoli.
+-Github. (2018). Retrieved in January, 2019 from 2003. A new option for the visually impaired to experience 3d
+https://github.com/hulop/blelocpp. art at museums: Manual exploration of virtual copies. Visual
+Impairment Research 5, 1 (2003), 1–12.[23] Hernisa Kacorri, Sergio Mascetti, Andrea Gerino, Dragan [34] U.S. Department of Justice. 2009. Expanding Your Market:
+Ahmetovic, Valeria Alampi, Hironobu Takagi, and Chieko Maintaining Accesibility in Museums. (2009).
+Asakawa. 2018. Insights on Assistive Orientation and https://www.ada.gov/business/museum_access.htm
+Mobility of People with Visual Impairment Based on Accessed: 2018-04-12.
+Large-Scale Longitudinal Data. ACM Trans. Access. Comput. [35] Museum of the American Printing House for the Blind. 2018.
+11, 1, Article 5 (March 2018), 28 pages. DOI: About Us. (2018). http://www.aph.org/museum/about/
+http://dx.doi.org/10.1145/3178853 Accessed: 2018-06-27.
+[24] Seita Kayukawa, Keita Higuchi, João Guerreiro, Shigeo [36] Eshed Ohn-Bar, João Guerreiro, Dragan Ahmetovic, Kris M.
+Morishima, Yoichi Sato, Kris Kitani, and Chieko Asakawa. Kitani, and Chieko Asakawa. 2018. Modeling Expertise in
+2019. BBeep: A Sonic Collision Avoidance System for Blind Assistive Navigation Interfaces for Blind People. In 23rd
+Travellers and Nearby Pedestrians. In Proceedings of the 2019 International Conference on Intelligent User Interfaces (IUI
+CHI Conference on Human Factors in Computing Systems ’18). ACM, New York, NY, USA, 403–407. DOI:
+(CHI ’19). ACM. http://dx.doi.org/10.1145/3172944.3173008
+https://doi.org/10.1145/3290605.3300282 [37] Yaniv Poria, Arie Reichel, and Yael Brandt. 2009. People with
+[25] Catherine Kudlick. 2005. The local history museum, so near disabilities visit art museums: an exploratory study of
+and yet so far. (2005). obstacles and difficulties. Journal of Heritage Tourism 4, 2
+[26] Steven Landau, William Wiener, Koorosh Naghshineh, and (2009), 117–129.
+Ellen Giusti. 2005. Creating accessible science museums with [38] Kyle Rector, Keith Salmon, Dan Thornton, Neel Joshi, and
+user-activated environmental audio beacons (Ping!). Assistive Meredith Ringel Morris. 2017. Eyes-Free Art: Exploring
+Technology 17, 2 (2005), 133–143. Proxemic Audio Interfaces For Blind and Low Vision Art
+[27] Jack M Loomis, Roberta L Klatzky, Reginald G Golledge, Engagement. Proc. ACM Interact. Mob. Wearable Ubiquitous
+Joseph G Cicinelli, James W Pellegrino, and Phyllis A Fry. Technol. 1, 3, Article 93 (Sept. 2017), 21 pages. DOI:
+1993. Nonvisual navigation by blind and sighted: assessment http://dx.doi.org/10.1145/3130958
+of path integration ability. Journal of Experimental [39] Daisuke Sato, Uran Oh, Kakuya Naito, Hironobu Takagi, Kris
+Psychology: General 122, 1 (1993), 73. Kitani, and Chieko Asakawa. 2017. NavCog3: An Evaluation
+[28] Nicolai Marquardt, Till Ballendat, Sebastian Boring, Saul of a Smartphone-Based Blind Indoor Navigation Assistant
+Greenberg, and Ken Hinckley. 2012. Gradual engagement: with Semantic Features in a Large-Scale Environment. In
+facilitating information exchange between digital devices as a Proceedings of the 19th International ACM SIGACCESS
+function of proximity. In Proceedings of the 2012 ACM Conference on Computers and Accessibility (ASSETS ’17).
+international conference on Interactive tabletops and surfaces. ACM, New York, NY, USA, 270–279. DOI:
+ACM, 31–40. http://dx.doi.org/10.1145/3132525.3132535
+[29] Apostolos Meliones and Demetrios Sampson. 2018. Blind [40] Ludovico Solima and Mario Tani. 2016. Do Not Touch! How
+MuseumTourer: A System for Self-Guided Tours in Museums 3d Printing can open the way to an accessible museum!
+and Blind Indoor Navigation. Technologies 6, 1 (2018), 4. Management in a Digital World. Decisions, Production,
+[30] Masayuki Murata, Dragan Ahmetovic, Daisuke Sato, Communication (2016).
+Hironobu Takagi, Kris M Kitani, and Chieko Asakawa. 2018. [41] Maurício Sousa, Daniel Mendes, Rafael Kuffner Dos Anjos,
+Smartphone-based Indoor Localization for Blind Navigation Daniel Medeiros, Alfredo Ferreira, Alberto Raposo,
+across Building Complexes. In Proceedings of the 16th IEEE João Madeiras Pereira, and Joaquim Jorge. 2017. Creepy
+International Conference on Pervasive Computing and tracker toolkit for context-aware interfaces. In Proceedings of
+Communcations (PerCom ’18). IEEE. the 2017 ACM International Conference on Interactive
+[31] The Andy Warhol Museum. 2018. Accessibility-The Andy Surfaces and Spaces. ACM, 191–200.
+Warhol Museum. (2018). [42] Wayfindr 2014. Wayfindr app helps the blind navigate the
+https://www.warhol.org/accessibility-accommodations Tube. (2014). http://www.wired.co.uk/article/wayfindr-app.
+Accessed: 2018-06-27. [43] Michele A Williams, Amy Hurst, and Shaun K Kane. 2013.
+[32] The Andy Warhol Museum. 2019. Website of The Andy Pray before you step out: describing personal and situational
+Warhol Museum. (2019). Retrieved in January, 2019 from blind navigation behaviors. In Proceedings of the 15th
+https://www.warhol.org/. International ACM SIGACCESS Conference on Computers
+[33] The Metropolitan Museum of Art. 2018. For Visitors Who and Accessibility. ACM, 28.
+Are Blind or Partially Sighted. (2018). [44] Paul F Wilson, Janet Stott, Jason M Warnett, Alex Attridge,
+https://www.metmuseum.org/events/programs/access/ M Paul Smith, and Mark A Williams. 2017. Evaluation of
+visitors-who-are-blind-or-partially-sighted Accessed: Touchable 3D-Printed Replicas in Museums. Curator: The
+2018-06-27. Museum Journal (2017).

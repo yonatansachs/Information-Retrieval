@@ -1,0 +1,188 @@
+SLAM-based Indoor Navigation in University Buildings
+Ekaterina Sukhareva1, Tatiana Tomchinskaya1 and Ilya Serov1
+1 NNSTU n.a. R.E. Alekseev, Minin Street, 24, Nizhny Novgorod, 603950, Russia
+Abstract
+The article discusses the use of SLAM (simultaneous localization and mapping) technology,
+with the help of which it is possible to build Indoor navigation systems using augmented reality
+technology, including on mobile platforms. The article also provides an overview of the
+positive and negative aspects of the SLAM technology its principle of operation for positioning
+a navigator using augmented reality in a university building within the framework of a student
+project are reviewed. The already implemented projects on similar topics, but using other
+technologies are considered their features are described. An example of the implementation of
+an indoor positioning system in a university using SLAM is given.
+Keywords 1
+Augmented reality, indoor navigation, ARCore, SLAM, Unity
+1. Introduction
+Indoor navigation is the navigation and detection of objects (devices or people) inside a building
+using technologies different from the usual GPS, since GPS is not able to determine the location of the
+device with the required accuracy within the same building.
+Nowadays there are many huge and complexly structured buildings, where it is very easy to get lost
+or not have time to find the right place in time. Imagine you are late for your plane and cannot find the
+desired terminal in a large airport or that five minutes are left before an important interview and you
+are lost in the office building of the company and cannot find the office you need for the interview in
+time, or that you are a freshman student and you are late for an important exam with a strict teacher
+who does not tolerate tardiness, but you do not know where the audience is, where the exam is taking
+place. In such and many other life situations Indoor navigation systems come to the rescue. Often these
+systems are simply a map of the floors of a building on which a route can be plotted and followed.
+However, what to do for those who have problems with the perception of cards or a person simply may
+not have time to figure out where to follow, since his head is already crammed with an important
+interview or maybe even completely because of the haste and nervous state, the person could turn to
+the wrong side where the route led? In such situations, indoor navigation systems with using augmented
+reality can come to the rescue. The main idea of such systems is the interactive display of the route on
+the user's smartphone camera. That is a person simply launches the application, holds the camera in
+front of him and the arrows appear on the screen, which he follows. As you move, the arrows are
+updated and thus the person arrives at the destination on time (Figure 1).
+The purpose of the article is to consider some methods of determining the location inside a building,
+in particular to discuss in details the Simultaneous Localization and Mapping method (Simultanious
+localization and mapping) as well as to give examples of the implementation of such systems including
+an application for determining the location using SLAM on floor of the NSTU building [1-6].
+GraphiCon 2021: 31st International Conference on Computer Graphics and Vision, September 27-30, 2021, Nizhny Novgorod, Russia
+EMAIL: suharevakati@gmail.com (E. Sukhareva); tomchinskaya@mail.ru (T. Tomchinskaya); ilyaserov07@gmail.com (I. Serov)
+ORCID: 0000-0003-4056-6116 (E. Sukhareva); 0000-0002-4693-7478 (T. Tomchinskaya); 0000-0002-6397-9629 (I. Serov)
+©️ 2021 Copyright for this paper by its authors.
+Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0).
+CEUR Workshop Proceedings (CEUR-WS.org)Figure 1: An example of an Indoor navigation system using augmented reality technology
+2. Locating with SLAM
+The most important aspect when building indoor navigation systems using augmented reality is
+determining the location of the device inside the building. Bluetooth Low Energy iBeacon technology
+is often used for this. Another popular location technology is RSSI Fingerprinting. This technology uses
+Wi-Fi signals to build radio maps. However, both of these technologies require material and physical
+costs for realization. Another interesting technology that allows determining and tracking the location
+of a device inside a building is SLAM or Simultanious Localization and Mapping. The essence of the
+SLAM technology is that it is necessary to build a map of the unknown environment and to localize the
+position of the sensor on this map in real time (the algorithm must have time to work out 30 times per
+second). The primary sensor for SLAM algorithms is the device camera, as it provides extensive
+information about the environment with minimal overhead. In addition to the camera, the device uses a
+gyroscope and accelerometer. SLAM algorithms are available in Google's ARCore development
+toolkit, similar to Apple's ARCore is ARKit. On the Internet, there are a few examples of creating
+applications and indoor navigation systems with augmented reality which were created exactly with the
+help of these tools [7-9].
+Consider ARCore, Google's platform for building augmented reality applications without the need
+for in-depth knowledge of OpenGL and rendering. ARCore uses several key technologies to bring
+augmented reality to the real world:
+1. tracking movements – with the help of this the smartphone can understand its position in the
+environment;
+2. understanding the aspects of the surrounding reality - allows you to determine the location,
+size and other details of surrounding surfaces and objects;
+3. illumination assessment – allows the device to assess the ambient lighting conditions.
+So how does ARCore work? With the help of the device's camera when the user moves his
+smartphone smart algorithms create their own virtual space with objects based on the real environment.
+That is why when, in other augmented reality applications, users place virtual objects in the room, go
+out and come back, their created objects remain in place. ARCore has built its own virtual world in
+which it remembers where every detail is situated. Google ARCore SDK can be used for free, but with
+a mandatory mark in the application for using this tool. Most often, ARCore is used in conjunction with
+the Unity engine.
+SLAM algorithms have their own advantages and disadvantages for their using in indoor positioning
+systems. Their most important advantage is that they do not require any preliminary actions and
+preparation as in the cases of using Wi-Fi radio cards and BLE (Bluetooth Low Energy) beacons. The
+disadvantage of this technology is the instability of work in places: with a lot of moving objects;
+ poorly lit;
+ with the same type of surroundings.
+University buildings can be attributed to such places, because basically they are many of the same
+type of corridors with many moving people [10-11].
+3. Examples of indoor navigation systems with augmented reality
+1. Creating an ARCore powered indoor navigation application in Unity. An example of navigating
+an office and several adjoining rooms. In this implementation, the SLAM algorithms were used in the
+implementation from Google ARCore in conjunction with Unity. First, a map of the premises for
+navigation was compiled here, after which it was transferred to Unity at a 1: 1 scale with the real world,
+the blue pointer marked with a red rectangle is a location marker that will move in accordance with the
+change in the location of the device (Figure 2).
+Figure 2: Map for navigation in the example "Creating an ARCore powered indoor navigation
+application in Unity"
+A QR code is used to determine the starting position and synchronization, and the further position
+is calculated using SLAM. In this example, the use of such a method is explained by the fact that when
+the application exits, the ARCore functions are "disabled", and in order to "enable" them, it is necessary
+to perform primary localization. It also points out that to improve navigation performance, more QR
+codes can be added around the perimeter of the navigation terrain so that the location of the blue pointer
+can be adjusted from time to time to a more accurate position. The idea of using QR codes is quite
+popular in the field of Indoor navigation. This is a pretty good way to improve the quality of navigation
+within a university campus, as it is budgetary and realizable [12].
+This example uses NavMesh to find the best route. NavMesh is Unity's built-in navigation surface
+generator. This is a good free tool for building routes for various navigation tasks in Unity.
+The author of the project, in the conclusions about the work done notes that the system is far from
+perfect, he also thinks about ways to improve the project.
+2. Overcoming the problem of uncertain tracking errors in an AR navigation application. Another
+example of building an indoor navigation system using augmented reality. This project is notable for
+the fact that an indoor navigation system is being created here in the university building. A 1: 1 3D
+model of the campus building was created in Unity to calculate navigation-related data such as routes
+or destinations, and to create augmented reality guides (Figure 3).Figure 3: 3D model of the university campus from the second example
+ARCore tools were used to work with elements of augmented reality and to create a virtual network
+of connections. As in the previous example, the NavMesh Navigation Surface Generator was used to
+create navigation areas. The author notes that there was a need to store audience data, it was necessary
+to create a database to store all the information. The selected data storage method is to create a JSON
+file with two data groups: "Room name" and "Description". As a solution to the problem of the
+instability of calculating the user's location, an approach similar to the one proposed in the previous
+example with QR codes is used, however, here instead of codes, signs on the auditoriums are used as
+markers. We use a method for optical recognition based on the Google Cloud Vision API which requires
+a private key. Of course, it is possible to use free analogs of optical recognition systems here, but it is
+not known how well they will work, or you can use the same QR codes. Figure 4 shows what the final
+version of the application from this example looks like [13].
+Figure 4: The final version of the AR navigation application
+4. Creation of a prototype application for determining location using SLAM
+technology on the floor in the building of NSTU
+To create an application for navigating the floor of the NSTU building, SLAM was chosen as a
+technology for determining the location of a smartphone, since this technology is capable to give a very
+accurate result under good conditions and also does not require extra costs for implementation. The
+principle of operation of this system is similar to the first of the examples described above, namely: theapplication was created using Unity + ARCore, to display the movement of the user and his device, a
+map of the floor of the campus building at a scale of 1: 1 is used, a pointer with an arrow indicating the
+user (Figure 5-6. Application interface for locating on the campus floor).
+Figure 5: Determination of the location on the floor of the NSTU campus (map view) The location
+indicator is highlighted in red
+More accurate synchronization of the original location was achieved by reading the data about the
+names of special objects set on the map in Unity from a QR code. To quickly and easily read QR
+codes, the ZXing library was used.
+Figure 6a: Application interface for determining the location on the floor of the NSTU campus (camera
+view)Figure 6b: Application interface for determining the location on the floor of the NSTU campus (camera
+view)
+When testing the application, SLAM technology showed its strengths and weaknesses. In well-lit
+locations and with the smooth movement of the smartphone, the location is determined very accurately,
+up to centimeters. In dark places or when the smartphone moves very quickly (blur appears in the
+camera) errors occur most often: the rotation of the device is not read, that is why further navigation is
+simply impossible. Such errors can be eliminated by adding more QR codes around the entire perimeter
+of the map with which to synchronize the location from time to time. In general, SLAM is one of the
+most suitable and really well working technologies for determining the location of a smartphone inside
+a university building.
+5. Conclusion
+Based on the considered technologies and examples, we can conclude that building an indoor
+navigation system using augmented reality in a university with minimal material costs - possibly using
+SLAM technology. However, it cannot be guaranteed that such a system will work perfectly, or at least
+well, since the SLAM technology itself is quite young and has many disadvantages. Despite this, there
+are already various methods to circumvent SLAM imperfections and errors - for example, the use of
+visual tags or QR codes around the entire perimeter of the building.
+6. References
+[1] A.V. Mongush, P.M. Kikin, Overview of indoor navigation technologies, in: Proceedings of the
+14th. International exhibition and scientific congress Interexpo GEO-Siberia, GEO-Siberia’9(1),
+Novosibirsk, 2017, pp. 119-123.
+[2] S.V. Aleshin, Comparative analysis of existing indoor navigation systems for mobile robots for
+solving the SLAM problem, in: Proceedings of the 6th. Scientific-practical conference "Science of
+the present and the future", St. Petersburg, 2018, pp. 285-289.[3] A.V. Mezhenin, K.I. Gulyaeva, Methods for constructing Indoor-navigation, in: Proceedings of
+the 46th. scientific and educational conference, Almanac of scientific works of young scientists of
+ITMO University, St. Petersburg, 2017, pp. 206-209.
+[4] M. Harvin, Indoor Positioning System - High-precision Positioning System Inside the Premises.
+URL:http://blog.jammer.su/2014/02/indoor-positioning-system-pozicionitovanie-
+vpomesheniyach/.
+[5] Indoor Positioning Systems based on BLE Beacons. URL: http://ja-si.com/ble-beacons/indoor-
+positioning-system/.
+[6] A.V. Mezhenin, V.V. Izvozchikova, A.V. Kovalevsky, Technologies and methods of Indoor
+navigation systems, in: Proceedings of the. International scientific and practical conference,
+Prospects for the development of modern mathematical and natural sciences’2, Voronezh ,2015,
+pp. 100-103.
+[7] Falkov E.V., A.Yu. Romanov, Application of Beacon beacons and Bluetooth Low Energy
+technology for building navigation systems in buildings, New information technologies in
+automated systems 18 (2015) 62-65.
+[8] R.Yu. Safronov, Development of a mobile application for ios using "ibeacon" technology for
+solving problems of navigation inside buildings based on wireless networks, Engineering bulletin
+of the Don 4 (2014) 69.
+[9] New iOS 7: iBeacon technology Apple's secret weapon. URL: macilove.com/news/new-ios-7-
+technology-ibeacon-apple-ssecret-weapon/.
+[10] M.S. Smolkov, Yu.A. Sukhobok, Analysis of modern technologies for building internal navigation
+systems, Scientific, technical and economic cooperation of the Asia-Pacific countries in the XXI
+century 2 (2019) 88-92.
+[11] V.P. Kirnos, A.L. Priorov, Algorithms for object recognition on multidimensional television
+images for scene mapping in the SLAM problem, in: Proceedings of the 12th. international
+scientific and technical conference Advanced technologies in the means of information
+transmission, PTSPI-2017, Vladimir, 2017,pp. 126-128.
+[12] Creation of an application for internal navigation based on ARCore in Unity. URL:
+https://blog.raccoons.be/arcore-powered-indoor-navigation-unity.
+[13] Overcoming the problem of undefined tracking errors in the AR-navigation application. URL:
+https://github.com/Oscheibe/ARIndoorNav.

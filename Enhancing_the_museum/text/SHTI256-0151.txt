@@ -1,0 +1,526 @@
+Using Design Thinking to Develop New 
+Methods of Inclusive Exhibition Making 
+Katrine HESSELDAHLa,1 , Dr Chris MCGINLEY b and Georgia MONK c 
+a
+ The Helen Hamlyn Centre for Design 
+b
+ The Helen Hamlyn Centre for Design 
+c
+ Wellcome Collection 
+Abstract. Museums and galleries are now making significant developments in the 
+area of inclusion and awareness of disability rights. There have been noticeable 
+advances in the design of cultural, physical and digital spaces, which provide wider 
+access to a museum's physical and intellectual resources, for individuals of diverse 
+ages and abilities. However, responses have varied in consistency, efficacy, and 
+legacy. This year-long design research project, in partnership with the Wellcome 
+Collection and the Helen Hamlyn Centre for Design, Royal College of Art, develops 
+a working set of tools that can be used by museums to improve accessibility in a 
+more permanent and reiterative manner, with a view towards gathering and sharing 
+relevant data, and design responses, within a broad network of museums and cultural 
+institutions. This paper outlines recent approaches by relevant experts in the field 
+and outlines a new approach to incorporating inclusive design within the process of 
+exhibition creation. It uses co-design methods to provide a set of principled 
+guidelines that respond to all relevant stakeholders. These guidelines are predicated 
+on the understanding that establishing empathetic links between exhibition-makers 
+and exhibition audience members is essential, resulting in a positive collaboration, 
+combining the skills of museum professionals with the lived experience of people 
+with disabilities. A central goal of the research is to explore how design issues 
+surrounding access can be framed as an essential and positive component of the 
+design process, and, more importantly, an opportunity for innovation, not simply an 
+obligatory requirement. This paper comprises the observations of a current research 
+project of a 12 month project, commencing in September 2017 and concluding in 
+September 2018. 
+Keywords. Design thinking, accessibility, museums, exhibition making 
+1. Introduction 
+Museums are places where curious people go to learn something new, to explore topics 
+of interest, to increase cultural knowledge, and to interact socially with others and have 
+pleasurable experiences. [14]. Going to museums is an important way to understand the 
+world we live in, and can play an important role in enhancing general well-being in 
+people’s lives [7]. 
+Fundamentally, exhibition design is a form of storytelling, and the design of visitor 
+experience. The goal for museums, when hosting exhibitions, is usually to facilitate some 
+form of enjoyable learning experience, encouraging visitors to engage with new 
+                                                           
+1 Katrine Hesseldahl, Age and Diversity Space, the Helen Hamlyn Centre for Design, Royal College of 
+Art, 4 Hester Road, SW114AN, London, United Kingdom; E-mail: Katrine.hesseldahl@network.rca.ac.uk 
+Transforming our World Through Design, Diversity and Education
+G. Craddock et al. (Eds.)
+© 2018 The authors and IOS Press.
+This article is published online with Open Access by IOS Press and distributed under the terms
+of the Creative Commons Attribution Non-Commercial License 4.0 (CC BY-NC 4.0).
+doi:10.3233/978-1-61499-923-2-151
+151
+
+knowledge. The central issue for exhibition makers/designers is to communicate the 
+story of the objects and layers of information through a coherent, understandable 
+narrative. This goal is not simple to achieve; museums are complex spaces, usually 
+consisting of large amounts of objects, each with their own accompanying story and 
+complexity of information and meaning. When visiting museums, most of us recognise 
+the feeling of sometimes not properly understanding the deeper meaning of an exhibition 
+theme, not being able to see things properly, losing our way in labyrinths of objects, and 
+simply feeling overwhelmed, tired, or in other ways limited in our experience. This 
+complexity is naturally a pertinent issue for people with disabilities, a term which covers 
+a far broader spectrum than is commonly understood.  
+In The International Classification of Function, Disability, and Health [25], the 
+World Health Organization (WHO) describe disability as intrinsic to human experience. 
+In this document, WHO defines disability as a contextual and variable dynamic that can 
+develop over time, and in relation to circumstances. In other words, an individual can 
+identify as more or less disabled based on the various evolving relations between person 
+and the social, physical environment they interact with. In this way, disability is not a 
+permanent feature of an individual, but highly contextual [8]. Unfortunately, many 
+museums do not provide the opportunity for everyone to interact and have engaging 
+experiences [7]. Museums generally target a rather narrow group of visitors: people with 
+‘normal’ physical, sensory and cognitive ability. Because of this, people with disabilities, 
+who might fall outside of the conventional spectrum of a museum’s visitor-type, 
+sometimes feel excluded from museum experiences. Exclusion manifests as ‘barriers’ to 
+the designed environment of the museum inhibiting people from experiencing content. 
+Barriers can be physical - architectural barriers such as heavy entrance doors, a lack of 
+angled access ramps, places to rest, or suitable access to toilet facilities can cause 
+disabled visitors to avoid visiting museums. Barriers can also be sensory and cognitive, 
+creating difficulties for visitors to connect with content. Museum exhibitions are 
+traditionally centred around visual experiences, and going to museums today is still 
+primarily a visual experience [2, 9] This type of user experience, which mainly stimulates 
+just one of a visitor’s senses (i.e. vision), caters to a rather narrow visitor group. Not only 
+are there potentially more than two million visually impaired people in the UK [20] who 
+might be more excluded from experiencing this type of display, but all visitors are 
+likewise missing out on engaging through multi-sensory experiences.  
+If museums do not provide options for alternative sensory formats such as audio 
+guides, sign language or objects that can be touched, they automatically exclude a large 
+group of visitors. Access to information online, a crucial locus of engagement, tends to 
+be poorly handled and acts as a deterrent rather than an incentive [24]. Because of the 
+lack of available information and, consequently, the trust that venues will be accessible, 
+up to 92% of people with disabilities do not feel confident about visiting new places [6]. 
+It is important that museums cater to disabled visitors for many reasons; financial, moral, 
+and in the interests of diverse representation of both content and audience, to an 
+institution's cultural significance. Moreover, people with disabilities represent an 
+important potential market for museums [14]: There are more than 13.9 million people 
+with disabilities in the UK, which makes up every fifth person of the population [9] and 
+the number is growing, due to global trends in ageing populations [4]. The spending 
+power of people with access needs in the tourism sector accounts for £12.4bn a year, so 
+unless museums try to be accessible, they could miss out on substantial potential revenue 
+[15]. Besides losing important customers, museums also have a legal obligation to cater 
+to people with disabilities: the Disability Discrimination Act (DDA) came into law in 
+K. Hesseldahl et al. / Using Design Thinking to Develop New Methods
+152
+
+1995, which placed a duty on service providers to make 'reasonable adjustments', to 
+remove any physical barriers to accessing the building as well as removing any attitudinal 
+barriers. The DDA has now been incorporated into the Equality Act which came into law 
+in 2010 [10].  
+This project explores new methods of engaging disabled users in exhibition 
+evaluation and design processes in an integrated, ongoing way. It explores new tools for 
+analysing and communicating findings from user engagements, and takes a look at how 
+best to implement these in the work of professional exhibition makers. The project 
+develops a working set of tools and guidelines that can be used by museums to improve 
+accessibility in a permanent and reiterative manner, with a view towards gathering and 
+sharing relevant data, and design responses, within a broad network of museums and 
+cultural institutions. This paper outlines a new approach to incorporating inclusive design 
+within the process of exhibition creation. It uses co-design methods to provide a set of 
+principled guidelines that respond to all relevant stakeholders. These guidelines are 
+predicated on the understanding that establishing empathetic links between exhibition-
+makers and exhibition audience members is essential, resulting in a positive 
+collaboration, combining the skills of museum professionals with the lived experience 
+of people with disabilities. 
+2. A new approach: Bringing users into the design process 
+The greatest challenge for exhibition designers is offering engaging experiences for as 
+many people as possible, catering to different abilities, interests and preferences. A 
+number of design methodologies can be implemented to help navigate this process. 
+Approaches to design for disabled users tend to follow the principles of “universal 
+design”, which seeks  to order and arrange an environment so that it can be accessed, 
+understood and used to the greatest extent possible by all people regardless of their age, 
+ability or disability [17]. Universal design is often cited as the most beneficial approach 
+for designing for diverse needs: In The International Classification of Function, 
+Disability, and Health [25], WHO specifically reference universal design as the most 
+promising framework for facilitators to achieve this. Even though people with disabilities 
+are usually considered the primary beneficiaries of universal design practices, it would 
+be difficult to name an audience who will not benefit from this approach as universal 
+design is about searching for strategies that have universal benefits [13, 22]. For example, 
+everybody benefits from precise interpretation texts, easily readable font style and colour 
+contrast.  
+However, there are a number of ways universal design can be expanded and 
+improved through the incorporation of other design methodologies. User-centred design 
+focuses on users and their specific needs and aim to involve them at all stages of the 
+process; it considers  the user not just as the final step or recipient of a project, but 
+validates their assumptions regarding their behaviours in real world tests. Another well-
+established design approach, co-design, takes the user-centred design approach even 
+further than inclusive design, and actually brings the user into the design process as a 
+contributing player, requiring professionals to be willing to share control over the project 
+and is grounded in a fundamental belief that all people are creative [21]. 
+Using universal and inclusive design methods to increase exhibition accessibility is 
+now widely recognised by museums, but unfortunately there are still “misconceptions 
+K. Hesseldahl et al. / Using Design Thinking to Develop New Methods
+153
+
+and apprehension about how best to ‘do’ access” [19]. Nonetheless, significant advances 
+have recently been made in approaches to accessible exhibition design.  
+3. Status in the field 
+When taking a look at the status in the field of accessible exhibition design, there is 
+clearly a broad interest amongst museums in catering to more diverse groups of visitors 
+[14]. More positions are being created for access staff at museums [19] and many 
+strategies are being put in place to increase accessibility. Some examples of interesting 
+initiatives include: 
+ 
+Professor Anne Chicks design research project which explores the design and 
+curation of cost- effective, non-permanent exhibitions with outstanding 
+intellectual access for visitors with sight-loss at the National Centre for Craft & 
+Design [3]. 
+ 
+The Victoria and Albert Museum’s ‘Sensory Backpack’-project, which offers 
+young children and families multi-sensory ways of exploring exhibitions 
+through a range of tactile objects connected to the display [5, 23]. 
+ 
+The Beaney House of Art and Knowledge have developed a new technology 
+which allows audiences to interact with paintings through movement and 
+musical audio bits called ‘The Beaney Butterfly Machine’ [11]. 
+ 
+The Quai Branly Museum in Paris have developed tactile maps for visitors to 
+orient themselves and tactile chromatic ground routes to enable all visitors to 
+explore 
+the 
+museum 
+independently 
+[14, 
+16]. 
+ 
+The above strategies focus on access to museum sites, exhibited objects and 
+interpretational material. However, many of the projects reviewed in this study seem to 
+be stand-alone projects, carried out within a limited period of time. The fundamental 
+attitude of museum professionals and their reluctance in any long-term commitment is a 
+primary obstacle to sustained attention to inclusion in museums [12]. Many studies stress 
+the need for continuous cycles of ‘trial and error’ [7] and a need for accessibility to be 
+considered from the initial, conceptual stages of exhibition planning [19]. In many cases 
+the implementation of access strategies is limited to specific departments of museums 
+[1]. This is problematic, since experience has shown that getting people collaboratively 
+involved across a whole organisation is one of the most important issues in implementing 
+access as a fundamental part of museum budget and planning, rather than a secondary 
+consideration, or “add-on” [1].  
+User consultation, and the direct inclusion of people with disabilities throughout the 
+design process, is essential to any successful design strategy.  Most of the above 
+examples have successfully incorporated methods of consulting with people with 
+disabilities to identify needs and ensure that solutions are fit for purpose. Looking at 
+relevant accessible exhibition guidelines by institutions such as the Smithsonian, 
+National Museums of Scotland, Barclays [18], Victoria & Albert Museum etc., it is clear 
+that user consultation is a widely-used and successful design approach. Nonetheless, 
+despite this, user consultation is not integrated as a standard, incorporated method in 
+K. Hesseldahl et al. / Using Design Thinking to Develop New Methods
+154
+
+many museums’ approach to exhibition design, due, in part, to perceived time and budget 
+constraints, or a lack of experience in running useful consultations.  
+Unfortunately, however, this oversight runs deeper than simple managerial and 
+budgetary concerns, and broaches deeper, sociological issues within cultural institutions. 
+Instead of being a primary concern, access issues is often viewed rather as a list of 
+practical accommodations that needs ticking [1]. Access is  an acknowledged but often 
+undesired requirement, perceived by exhibition makers as a limit to their creative 
+freedom [8]. Access must not be viewed as an afterthought but as a creative process 
+intrinsic to art and curatorial practice, and exhibition makers should see access as an 
+opportunity to innovate great designs that benefit all visitors. 
+Apropos of this, my research has aimed at rehabilitating accessibility as a positive 
+and empowering design consideration. I have developed a set of tools and guidelines that 
+allow institutions and design teams to directly consult with users with disabilities, and to 
+create and sustain an ongoing database of examples of good practice, and of quantitative 
+and qualitative user reports.  
+4. Tools and guidelines 
+Over the last 12 months, the Wellcome Collection and the Helen Hamlyn Centre for 
+Design has conducted extensive research into how access issues are currently addressed 
+in museums and how they might be advantageously addressed in the future, expressly 
+through the application of co-design and user-centred design methodologies and 
+approaches. The intention has been to develop a set of working tools and guidelines that 
+can be applied and followed in the practice of exhibition design, with a view to 
+encouraging the incorporation of users, specifically those with disabilities, in the entire 
+design process, from conception to installation. These tools and guidelines are intended 
+to impact the physical and logistical aspects of exhibition design, but also to provide an 
+incentive for fundamental ideological change, inviting both exhibition designers and 
+institutional executives to understand designing for disabilities as a positive and exciting 
+opportunity for innovation.  
+Following the principles of co-design and user based design, my initial research 
+involved extensive user testing and ‘user journey mapping’, in which the experience of 
+a visitor with visual impairment at one of Wellcome Collection’s exhibitions was 
+extensively recorded and ‘mapped’, both on a quantitative level - noting physical 
+logistics and problems - but also qualitative, viz. the participant’s emotional response. 
+The participant, a young woman with a visual impairment, walked through the exhibition, 
+shadowed by the researcher. As she worked her way through the different exhibits her 
+route and all reactions to specific elements of the exhibition was noted down. She walked 
+through the exhibition twice, once to take a look at what objects she would prioritise her 
+attention on, and a second time to engage deeply with the exhibition. The participant 
+generally has a need to view text closely, which can be challenging and awkward in 
+public, this became apparent as she was going through the exhibition. Attempting to use 
+her smartphone, the only aid she uses, she attempted to take pictures in order to view 
+things up close, but struggled to properly engage with the displays due to factors such as 
+low light levels, glare and small text on labels. The main challenges she faced included 
+long theme-texts, physically placed at inappropriate heights for her to get close, small 
+label texts, low light levels, and finally, display cases that were too tall with glared 
+surfaces, which are outlined in the journey map template as seen below (figure 1):  
+K. Hesseldahl et al. / Using Design Thinking to Develop New Methods
+155
+
+ 
+Figure 1. User journey map 
+ 
+This process allowed me to develop Tool1, a set of directions or principled 
+guidelines which help the planning, facilitating, recording and visualising the user-
+engagement in the design process. Tool1 can be used to review any current exhibitions 
+of an institution by people with disabilities, in order to understand and map various 
+elements which are identified as ‘triggers’. Triggers affect users either positively or 
+negatively by enabling or disabling experiences. This collected data can then be used to 
+help an institution such as Wellcome Collection’s exhibitions team to establish best 
+practice regarding accessible exhibition design, by allowing the heightened awareness of 
+users to be noted and documented. 
+Tool1 encourages a walk-through of an exhibition, and a following co-creation 
+session with participants who represent different disabilities and ages. Participants are 
+asked to review the accessibility of exhibitions facilitated by staff from across an 
+institution’s exhibition team. On this occasion, participants were split into groups of two, 
+each group led by one facilitator, in order to better enable and record observations and 
+ideas. Participants were encouraged to point out elements and objects that they found 
+significantly positively enhancing, or inhibiting and detracting from their experience. 
+Each chosen element was marked by a post-it note with a symbol of either + (positive), 
+or - (negative) applied to the trigger element. Explanations for each element’s effect was 
+noted, and the element’s position in the exhibition was photographed. 
+These notations were collated in a co-created ‘trigger-map’, which displays the most 
+important physical triggers for their experience. In this instance, we applied red and green 
+dots to a large printed map of the exhibition. A short comment with a description of 
+triggers was added to each dot, elaborating on the nature of experience. An example of 
+a trigger map can be seen (figure 2): 
+K. Hesseldahl et al. / Using Design Thinking to Develop New Methods
+156
+
+ 
+Figure 2. Exhibition floor plan with applied red (negative) and green (positive) “triggers”.  
+ 
+The goal of the analysis was to get a clearer picture of the physical triggers and to 
+develop a method of analysis which can be easily replicated and used by Wellcome 
+Collection staff in the future. It is fundamentally important that this method be 
+standardised and easily applicable by exhibition team members as a user-friendly and 
+time-efficient method, in order to ensure that the practice is ingrained as a necessary step 
+in the development process. However, an obvious risk in simplification is 
+misrepresenting what is necessarily a complex, multifaceted and highly personal issue.  
+It is important to do these tests consistently, so as to aggregate and compile a very 
+rich data set, which increasingly supports future design decisions. The idea is to have an 
+extensive database of trigger maps, both within an institution’s own records of user-
+based exhibition designs - creating a rich library of data - but also on a wider scale, in 
+which a shared network allows access to other institutions’ approaches for cross-
+reference, comparison and collaboration. This database can be used by designers as a 
+resource for design precedents, but also by institutions to assess the various successes 
+and failures of their approaches. 
+Based on these preliminary user engagements with existing, or ‘live’ exhibitions, we 
+proceeded to address the design process itself, and the incorporation of a similar 
+methodology into a new project, Tool2. This approach seeks to invite visitors to 
+collaborate with designers, to contribute particular knowledge of lived experience. 
+Specific parts of proposed designs will be built as prototypes and tested with participants.  
+Following the initial research stage, and the development of these tools for 
+incorporating a user-based approach in exhibition design, we proceeded to prepare a 
+guidelines document. The purpose of the guideline document is to ensure that designers 
+fulfill accessibility criteria. The document is intended to be given to commissioned 
+designers, architects or artists. Considerations of these guidelines are taken into account 
+when an institution such as Wellcome Collection appoint commissions. Unfortunately, 
+K. Hesseldahl et al. / Using Design Thinking to Develop New Methods
+157
+
+common accessible exhibition design guidelines tend to be rather ‘heavy’ and 
+prescriptive. This was also the case for the former Wellcome Collection guidelines. The 
+format of guidelines can contribute to designers feeling like designing for accessibility 
+is a chore, or ‘tick-box exercise’. To explore this, interviews were conducted with 
+designers to understand how they perceive and use current guidelines. The goal of 
+redesigning the guidelines was for them to function as an easily understandable 
+framework for creating new, innovative ways of designing accessible exhibitions.  
+The document focuses on a selection of ‘interventions’ that can be implemented in 
+the design process. These interventions aim to contribute to an inspirational tone while 
+still steering parts of the process that have to be non-negotiable requirements. An overall 
+invitational tone was established from the beginning through an the initial statement of 
+intent introducing the guidelines and avoiding industry specific language. The 
+introduction was written as an invitation to work collaboratively with Wellcome 
+Collection and its visitors. To highlight,  practical information was reorganised and 
+drawn out in boxes. Secondly, a system of colour coding was implemented in order to 
+visually split the text into suggestions/prompts and set requirements. Illustrations were 
+inserted to make the document intuitively understandable and to help clarify written 
+requirements. Finally, the guidelines were moved to an online format called ‘Frontify’, 
+offering opportunities for building a living document which can be updated regularly. 
+Moving the guidelines online also offered an opportunity to add links to other webpages 
+or parts of the guidelines. It is the intention to build a ‘library of good examples’ that can 
+be accessed through Frontify as a source of inspiration. The guidelines are currently 
+being developed in collaboration with professional exhibition makers, a content writer 
+and user tested by exhibition designers. 
+5. Conclusion 
+Despite obvious advances, designing for disabilities still appears to be somewhat of a 
+fringe topic or secondary consideration in exhibition design. There still lingers a general 
+belief that incorporating accessibility issues directly into the design process might result 
+in the limitation of creative freedom, over-regulation, and a systematic upheaval of 
+traditional aesthetic elements. Moreover, agreeing on one ‘correct’ approach or 
+methodology in implementing universal design becomes quickly problematized by the 
+sheer scale of difference in both disability types, but - perhaps more importantly - 
+difference in personal preferences and personalities. This was an issue that repeatedly 
+revealed itself in the development of the tools and guidelines: in our workshop 
+discussions, it became clear that users rarely agreed on what they like or need. It is 
+important to maintain a degree of flexibility, both in the limitations placed on design 
+teams by institutions, but also regarding how users with disabilities are incorporated into 
+the design process: one size does not fit all, and adhering to a strict design criteria can 
+just as often inhibit a successful exhibition as result in its success.  
+Nonetheless, the benefits of a co-design approach to exhibition design is obvious, as 
+my research has revealed: by directly including users with disabilities in the 
+considerations of an institution such as Wellcome Collection, clear empathetic links, 
+increased awareness, and a direct and sustained dialogue developed, within which 
+executive decisions could be made concerning the ethos, approach and direction of future 
+exhibitions. Users could voice opinions and concerns, and could consequently see them 
+taken into consideration and implemented into design thinking. This value  of 
+K. Hesseldahl et al. / Using Design Thinking to Develop New Methods
+158
+
+empowerment should not be underestimated: users can feel that they have a hand in 
+design choices which directly affect them, and institutions can build up an invaluable set 
+of personal, qualitative data, through which they can assess the respective successes and 
+failures of their ongoing approach to accessible design.  
+More importantly, these empathetic links are taken into consideration by designers 
+from an exhibition’s inception, and remain a central consideration of the design process 
+until completion. The tools described in this paper encourage design teams to implement 
+methods of co-design directly into their process, and also provide them with a wide and 
+detailed set of data and past examples, against which they can evaluate the efficacy of 
+their current work. In this way, the disabled user plays a central role both on a ‘micro’-
+level - in direct communication with the designer - but also on a ‘macro’-level, as 
+represented in the guidelines, but also in the ‘library’ to which the exhibition-maker is 
+encouraged to have recourse.  
+Finally, this project has identified the creation of clear, concise, and - most 
+importantly - incentivising guidelines as a crucial, necessary factor in a universal 
+approach to exhibition design. Making sure that designers feel like they are not obliged, 
+or demanded to follow overly pedantic and stifling requirements, but rather encouraged 
+and inspired by a reconsideration of access design as a space for innovation and 
+experimentation, is a necessary in fostering and maintaining the principles of co-design, 
+and a dialogue between user, institution and design team. 
+ 
+References 
+ 
+[1] 
+Cachia, A. (2013). Talking Blind: Disability, Access, and the Discursive Turn. Disability Studies 
+Quarterly, 33(3). Retrieved from http://dsq-sds.org/article/view/3758/3281 
+[2] 
+Candlin, F. (2008). Touch, and the Limits of the Rational Museum or Can Matter Think? The Senses 
+and Society, 3(3), 277–292. https://doi.org/10.2752/174589308X331323 
+[3] 
+Chick, A. (2018). Improving Intellectual Access in Temporary Exhibitions for Sight Loss Visitors 
+Through 
+Co-creation 
+and 
+Co-assessment. 
+The 
+Design 
+Journal, 
+1–22. 
+https://doi.org/10.1080/14606925.2018.1472441 
+[4] 
+Department of Economic and Social Affairs, Population Division. (2015). World Population 
+Ageing. United Nations. 
+[5] 
+enable. (2015, July). Sense works with the V&A to launch sensory backpack for children with sight 
+impairments. Enable. Retrieved from http://enablemagazine.co.uk/sense-works-with-the-va-to-
+launch-sensory-backpack-for-children-with-sight-impairments/ 
+[6] 
+Euan’s guide. (2017, December). The Access Survey 2017. Euan’s guide. Retrieved from 
+https://www.euansguide.com/media/10926169/the-access-survey-2017-euans-guide.pdf 
+[7] 
+F.Eardley, A., Mineiro, C., Neves, J., & Ride, P. (2016). Redefining Access: Embracing 
+multimodality, memorability and shared experience in Museums. Curator The Museum Journal, 
+59(3). Retrieved from https://onlinelibrary.wiley.com/doi/pdf/10.1111/cura.12163 
+[8] 
+Fletcher Valerie. (2013). Museums around the World that Enliven Our Souls: Inclusion through 
+Rich 
+Experience. 
+Curator: 
+The 
+Museum 
+Journal, 
+56(3), 
+297–305. 
+https://doi.org/10.1111/cura.12029 
+[9] 
+Giaimo, C. (2017, November). Why Can’t People Stop Touching Museum Exhibits? Retrieved 
+January 5, 2018, from https://www.atlasobscura.com/articles/museum-touch-exhibit-objects-
+multisensory 
+[10] Government Equalities Office, & Equality and Human Rights Comission. (2015, February). 
+Equality 
+Act 
+2010: 
+guidance 
+[Government]. 
+Retrieved 
+October 
+10, 
+2017, 
+from 
+https://www.gov.uk/guidance/equality-act-2010-guidance 
+[11] Hewitt, 
+C. 
+(2017). 
+The 
+Butterfly 
+Machine. 
+Retrieved 
+January 
+5, 
+2018, 
+from 
+http://www.thebutterflymachine.com/about/ 
+ 
+K. Hesseldahl et al. / Using Design Thinking to Develop New Methods
+159
+
+[12] Lang, C. (2004, February). “Access for All” Toolkit - Enabling inclusion for museums, libraries 
+and archives. Museums Libraries Archives. 
+[13] Mace, R. L. (1988). Universal Design: Housing for the life span of all people. U.S. Department of 
+Housing 
+and 
+Urban 
+Affairs 
+Office 
+of 
+Public 
+Affairs. 
+Retrieved 
+from 
+https://mn.gov/mnddc/parallels2/pdf/80s/88/88-HFL-UDS.pdf 
+[14] Mesquita, S., & Carneiro, M. J. (2016). Accessibility of European museums to visitors with visual 
+impairments. 
+Disability 
+& 
+Society, 
+31(3), 
+373–388. 
+https://doi.org/10.1080/09687599.2016.1167671 
+[15] Murphy, A. (2015, October). Accessibility in museums: creating a barrier-free cultural landscape. 
+Retrieved 
+from 
+http://advisor.museumsandheritage.com/features/accessibility-in-museums-
+creating-a-barrier-free-cultural-landscape/ 
+[16] Musée du quai Branly - Jacques Chirac. (n.d.). Accessibility [Museum]. Retrieved January 5, 2018, 
+from http://www.quaibranly.fr/en/if-you-are/visitors-with-disabilities/accessibility/ 
+[17] National Disability Authority. (n.d.). What is Universal Design. Retrieved March 27, 2018, from 
+http://universaldesign.ie/What-is-Universal-Design/ 
+[18] National Museums of Scotland. (2002). Exhibitions for All - A practical guide to designing 
+inclusive exhibitions. NMS Publishing Ltd. 
+[19] Osborne, F., Luby, E. M., & Fogarty, C. (2014). An Accessibility Adventure: Teaching and learning 
+Exhibition Design Through the Lens of Disability Studies. Exhibitionist. National Association of 
+Museum Exhibtion, (Fall ’14). 
+[20] RNIB. (2015). How many people in the UK have sight loss? [Charity]. Retrieved April 15, 2018, 
+from https://help.rnib.org.uk/help/newly-diagnosed-registration/registering-sight-loss/statistics 
+[21] Sanders, E. B.-N., & Stappers, P. J. (2008). Co-creation and the new landscapes of design. 
+CoDesign, 4(1), 5–18. https://doi.org/10.1080/15710880701875068 
+[22] Steinfeld, E., & Maisel, J. (2012). Universal Design: Creating Inclusive Environments. John Wiley 
+& Sons. 
+[23] V&A. 
+(2017, 
+April). 
+Backpacks 
+[Museum]. 
+Retrieved 
+December 
+4, 
+2018, 
+from 
+https://www.vam.ac.uk/event/bRo0pWmG/back-packs-april-2017-march-2018 
+[24] VocalEyes. (2016). State of Museum Access 2016. Retrieved from http://vocaleyes.co.uk/wp-
+content/uploads/2016/12/State-of-Museum-Access-2016-VocalEyes.pdf 
+[25] World Health Organization. (2007). International Classification of Functioning, Disability and 
+Health. 
+ 
+ 
+K. Hesseldahl et al. / Using Design Thinking to Develop New Methods
+160
+

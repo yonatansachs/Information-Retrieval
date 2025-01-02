@@ -1,0 +1,308 @@
+© Nottingham University Press
+icccbe2010 Proceedings of the International Conference on
+Computing in Civil and Building Engineering
+W Tizani (Editor)
+Analysis of three indoor localization technologies to support facility
+management field activities
+Saurabh Taneja, Asli Akcamete, Burcu Akinci, James Garrett, Lucio Soibelman
+Carnegie Mellon University, USA
+E. William East
+Engineer Research and Development Center, USA
+Abstract
+Facility management (FM) related field activities often involve accessing and reading
+manuals/specifications/drawings and exchanging information about a specific building element that is
+being worked on among different FM personnel (Lee et al. 2009). Such information retrieval and
+exchange is referred to as contextual retrieval and exchange in this paper because it is contingent upon
+accurate knowledge of: 1) the activity (task) being performed; and 2) the location of person/object in
+the facility. Assisting retrieval of contextual information requires determining the granularity (i.e.,
+accuracy) of the location information, which is needed by FM personnel. The authors identified three
+main requirements for determining FM personnel location information using localization technology:
+1) sub-room level (2-3m) accuracy; 2) greater than 95% precision; and 3) no-line-of-sight required to
+deploy transmitters/receivers for localization. Three technologies were selected for evaluating their
+capabilities in fulfilling the requirements identified for indoor localization to support facility
+management related field activities: 1) Radio Frequency Identification Tags (RFID); 2) Wireless
+LAN (WLAN); and 3) Inertial Measurement Units (IMUs). These three localization technologies
+were selected based on the fact that they do not require line of sight, are scalable and low cost. The
+authors used a fingerprinting approach, which involves creation of a signal strength map for
+localization, and the k-Nearest Neighbor (kNN) algorithm for location determination. Several
+Experiments were carried out to evaluate, for each of these technologies, accuracy and precision.
+These experiments also helped in assessing the reliability of received signal strengths over two
+variables: 1) time; and 2) direction/orientation for the same point/location. All of the technologies
+have been tested on the same floor of an actively used university building, following the same path on
+different days. The paper concludes with the comparison of performance of the three selected
+technologies over the requirements identified for indoor localization.
+Keywords: indoor localization, fingerprinting, kNN, RFID, WLAN, IMUs
+1 Introduction
+Operations and maintenance (O&M) related activities constitute a major part of facility management
+(FM) to ensure effective functioning of facilities. O&M is the longest phase in the building lifecycle
+and consequently approximately 85% of the total building lifecycle cost is spent in O&M (Liu et al.
+1994; Teicholz, 2004). Several researchers have worked on providing computational/mobile support
+to O&M activities, such as asset management, preventive maintenance and maintenance history
+tracking to reduce facility lifecycle O&M cost (Wing, 2006; Junghanns et al., 2009; Legner andThiesse, 2006; Ko, 2009; Ergen et al., 2007; Motamedi and Hammad, 2009). Many of these
+applications involve utilizing location information for equipment and component tracking. At the
+same time, little work has been done to evaluate indoor localization technologies to assess their
+applicability in supporting the above-mentioned applications. In addition, FM personnel carrying out
+field activities, such as accessing and reading manuals/specifications/drawings, getting information on
+necessary materials/tools, documentation, and arranging collaboration with co-
+workers/subcontractors, require interaction with actors/systems that are not located at the activity site
+(Lee et al. 2009). The actors/systems, not located at the activity site, require field personnel location
+information in appropriate detail (accuracy) to support the O&M personnel carrying out their field
+activity (Hammad et al., 2004) for example for locating a shut-off valve in a mechanical room and
+guiding the user to the right location, a navigation system might require to know user position at 2-3m
+accuracy level.
+This paper evaluates indoor localization technologies against the requirements identified for
+supporting facility management field activities. Indoor localization is the process of determining the
+location of a person/object in an indoor environment (Hightower and Borriello, 2001). The authors
+observed staff at a regional hospital and identified three metrics for evaluating of indoor localization
+technologies: 1) accuracy; 2) precision; and 3) no-line-of-sight requirement, i.e., the ability of a
+sensing technology to localize a person/object even when the person/object is not in the line of sight
+of any sensor. The authors have defined the accuracy requirement as the ability of a localization
+technology to localize the user within a certain distance and precision requirement as the ability to
+reproduce the required accuracy over time.
+Section 2 of this paper overviews some major requirements of localization technologies to support
+field O&M activities, Section 3 provides an overview of the background research on indoor
+localization, Section 4 describes the details of the research approach and Section 5 contains the
+description of the test-bed, experimentation methodology and results.
+2 Detailed requirements
+O&M field activities often involve working in dense mechanical environments and locating the
+desired object/equipment on the site. These field activities might also require identification of
+object/equipment obscured by false ceiling tiles or other objects. Visual search and identification
+consumes a great deal of time on site. Hence, there is a need to present the field personnel with
+location information, corresponding to a particular sub-space in a particular room, in which the field
+personnel has to perform his/her task. We refer to such location information as sub-room level (2-3m
+accuracy) and it can reduce the time spent by field personnel by guiding him/her to the right location.
+Dense mechanical environments also present a limitation on placing many transmitters that require
+line-of-sight for localization. Hence, a localization technology that provides sub-room level (2-3m)
+accuracy with no line-of-sight requirement is needed. O&M field activities, just like other industrial
+processes, also need to implement quality control to improve services delivered to occupants (Holtz
+and Campbell, 2004). Hence the selected localization technology should be able to provide sub-room
+level accuracy at 95% precision to ensure smooth execution of O&M tasks most of the time.
+3 Background research
+This section provides a brief overview of the various sensing technologies available for localization
+and the various algorithms available for analysing the sensed data (i.e., algorithms for localization).3.1 Indoor localization technologies
+Current sensing technology for indoor localization can be broadly classified into three categories
+based on the physical principle involved for sensing: 1) Wave propagation based technologies; 2)
+Digital imaging based technologies; and 3) Motion sensing based technologies. Wave propagation
+sensing exploits various properties of waves, such as phase and angle of waves, and covers a wide
+range of frequencies of electromagnetic and sound waves, such as radio waves (300 kHz to 3 GHz),
+infra-red waves (300 GHz to 300 TeraHertz), sound waves (frequencies greater than 20kHz) and
+ultrasonic waves (Finkenzeller, 2003; Miller et al., 2006; Want et al., 1992; Skibniewski and Jang
+2007; Kim and Choi, 2007). Amongst all ranges of frequencies, radio waves are the most widely used
+for localization since they have a longer range and are relatively less costly (Hightower and Borriello
+2001).
+Image based localization involves image-matching and digital image processing techniques.
+Usually, a database of visual characteristics of an indoor environment is created by capturing digital
+images and then the images collected by a mobile agent carrying an image capture device are matched
+to the stored images to determine the current location of the user (Ferdaus et al. 2008). This approach
+is susceptible to changes in indoor environments as well as occlusions in a scene at a given point in
+time.
+Motion sensing is based on detecting human motion through accelerometers and gyroscope.
+Coupling a magnetometer along with accelerometer and gyroscope can provide rate and direction of
+movement (Fraden, 2003). This is the principle involved in an Inertial Measurement Unit (IMU) and
+is called the Dead Reckoning (DR) technique. DR involves fusing current movement rate, motion
+type (walking or running), and direction of motion with the known location at previous time step, to
+determine how far and in what direction the user has moved in the current time step. IMUs are
+susceptible to drift errors and require correction points along the user’s path (Pradhan et al., 2009a).
+3.2 Techniques for localization
+The techniques for indoor localization are mainly classified into three broad categories: 1) Range-
+based; 2) Range-free; and 3) Fingerprinting (Biaz and Ji, 2005). Range-based techniques calculate
+distances between receivers and transmitters and may include time-of-flight, time-delay-of-flight,
+time-of-arrival and angle-of-arrival calculations (Liu et al., 2009). Range-based techniques usually
+involve placing the transmitters in the line-of-sight of the mobile receivers, as the reflection from the
+indoor environment can cause a change in wave properties, such as time, angle or phase of arrival.
+Range-free techniques include the use of proximity to associate the position of a user with the location
+of the transmitter that is the most strongly read by the user’s receiver/tag/mobile device. The third
+type of broad technique, called fingerprinting, involves creating a map of signal strength of the
+transmitters beforehand and then matching the received signal strength characteristics to the created
+signal strength map for location determination. The following section describes the technologies and
+techniques selected in this research for evaluation against the requirements identified for localization
+for fieldwork in operations and maintenance.
+4 Research approach
+This section provides the description of the process of selecting several indoor localization
+technologies and techniques, and specific algorithms for localization for further evaluation.
+4.1 Selected localization technology
+Indoor environments can be dense, hence they might present a challenge to range-based localization
+as this technique usually requires line-of-sight to accurately calculate wave propagation time, angle orphase (Liu et al., 2009). Providing the sub-room level accuracy desired by O&M personnel by using
+range-based methods might require installing a large number of transmitters or receivers throughout a
+facility to ensure that there are no blind spots. This might turn out to be costly. Hence, we decided
+not to include the range-based technologies, such as Ultra-Sonic, Ultra-Wide band and indoor GPS,
+which require line-of-sight, in our evaluation. Some non-range-based technologies, such as GSM,
+infrared, TV signals and Bluetooth, were also not selected since previous research studies reported
+low accuracies for these technologies (Rabinowitz and Spilker, 2005; Otsason et al, 2005; Bruno and
+Delmastro, 2005; Want et al, 1992). Based on the background research, the authors selected Radio
+Frequency (RFID), wifi (WLAN) and Inertial Measurement unit (IMU) for evaluation considering the
+requirements identified in Section 2. None of the above-mentioned three technologies requires line-of-
+sight for localization. Previous research studies have reported the localization accuracy of RF-based
+technologies to be around 10 meters (Bahl and Padmanabhan 2000; Elnahrawy et al. 2004). IMU is
+also selected as it is infrastructure independent and can function even if there is a power outage.
+4.2 Selected localization technique
+The authors chose fingerprinting (signal strength map creation) over range-based (time-of-flight,
+angle-of-arrival, time-of-arrival, time-delay-of-arrival) and range free (proximity based) methods for
+WLAN and RFID technology. Fingerprinting involves using received signal strength (RSS)
+measurements for localizing the receiver of these signals, which can be done even when the wave
+propagation characteristics of the indoor environment are not known. Moreover, fingerprinting
+approach does not require line-of-sight, and hence can perform well with a limited number of
+transmitters in dense environments, such as mechanical rooms. The third selected technology, IMU,
+requires implementation of the Dead Reckoning technique, because it is a motion-based localization
+technology as compared to WLAN and RFID, which are wave-propagation based technologies.
+4.3 Selected algorithm for fingerprinting
+The authors selected the k-Nearest Neighbor (kNN) algorithm for determining location from a
+fingerprint map. kNN belongs to the set of deterministic fingerprinting algorithms, whereas
+algorithms like the Bayes Classifier belong to the set of probabilistic fingerprinting algorithms. With
+limited training data, deterministic classifiers, having fewer parameters to configure, perform better
+than probabilistic classifiers (Hossain et al. 2007). The next section describes the details of the test-
+bed and implementation of the algorithms for fingerprinting, as well as the results of evaluation of the
+three selected technologies.
+5 Test-bed description and results
+This section provides the details of the test-bed and experimentation procedure to evaluate WLAN,
+RFID and IMU technologies against the requirements identified for supporting facility management
+field activities.
+5.1 Test-bed description
+All the selected technologies were evaluated in the basement of a building with concrete walls,
+metallic environment (lockers, artifacts hanging from walls etc.) and many overhead pipes. The test-
+bed for WLAN and RFID consists of a 270 ft long hallway on which signal strengths of Wireless
+Access Points and RFID tags were measured every 1.52m or 5 ft, which corresponds to two human
+strides (Ladetto et al. 2000) and this distance provides the necessary granularity to achieve the
+required accuracy without making the user collect data at a large number of points. Existing wireless
+infrastructure was used for testing WLAN. A freely available wireless signal strength measurementsoftware, NetStumbler (http://www.netstumbler.com/), was utilized for measuring signal strengths of
+different access points. Figure 1 depicts the test-bed with the position of some access points located
+near the test-bed, as well as the location of RFID tags and the test-path for IMU. The selection and
+placement of RFID tags were done in a previous research project (Pradhan et al. 2009b) and RFID
+data was analyzed to study the variation of RFID signal strength over longer time spans. Pradhan et al
+(2009b) placed the RFID tags strategically so that the user could collect signal strength data from at
+least two different tags at every point. The RFID tags are ultrahigh frequency (915Mhz) passive tags
+with long non-directional reading range (30-90m) and have a battery life of 5-6 years but the battery is
+non-rechargeable. IMU data was collected over three different routes in the same test-bed. The
+lengths of the IMU test-paths are 250m, 160m and 157m. The first and the second routes are
+highlighted in Figure 1 and the third route is a route similar in shape to route 1, located in a different
+section of the same floor on which the test-bed is located.
+Figure 1. Description of the test-bed for the evaluation of WLAN, RFID and IMU
+5.2 Details of the experiment
+Signal strength data for WLAN and RFID signals were collected for 55 points, along the hallway,
+separated 1.52m (5ft) apart; signals were collected in all four directions at each point. WLAN and
+RFID data were collected in two phases. In the first phase, WLAN data was collected by a handheld
+portable computer on 5 different days; in the second phase, conducted recently, three months after the
+first phase, the WLAN data was collected by a laptop over 6 days. The first phase of RFID data was
+collected and analyzed by Pradhan et al. (2009b); the second phase was collected recently over 6
+days. A laptop was used for collecting data in both phases of RFID data collection using the software
+supplied by the RFID device vendor and a PCMCIA card. The analysis of the collected data for
+WLAN and RFID signals was done using the kNN algorithm for fingerprinting. The kNN algorithm
+has been implemented for 10 different cases for each day of data collection (Table 1); the
+implementation details for different cases of kNN are described in Pradhan et al. (2009b). For the
+IMU data, a portable handheld computer was used to link to the IMU and data from the IMU was
+collected using the software provided by the IMU manufacturer. IMU data was collected over three
+routes, visited eight times each and the device itself gave as output the coordinates of every time point
+with respect to the starting point, which were plotted to find the route calculated by the IMU.
+5.3 Results
+The results of fingerprinting using WLAN and RFID signals were analyzed based on the percentage
+of time the algorithm could identify the actual location of the user within a certain distance. The
+accuracy of the IMU approach was assessed as the difference between the starting point and the
+ending point (drift error) when a user closed the loop. Figure 2 shows the resulting accuracy usingWLAN data collected by the handheld computer in phase one of data collection. The best result is
+obtained in case 1 of kNN implementation where the algorithm is able to identify the location of the
+user within 1.52m (5ft) of the correct location, 95% of time. The second phase of WLAN data
+collection was carried out using a laptop and retrieved a duplicate Wifi access point for every room,
+which caused the accuracy of the approach to decrease. We are currently investigating the reason for
+reading duplicate access points. The analysis of RFID data in the second phase carried out in this
+research study resulted in poor accuracies. Pradhan et al (2009b) had reported accuracies of around
+10.7m for greater than 93% confidence in best case during the first phase but due to the reduced signal
+strength of most of the installed RFID tags read in this phase of data collection, the accuracies of
+localization went down. The authors are currently investigating the cause of the reduced readings of
+signal strength values from RFID tags installed four years ago. For the IMU data, it was observed that
+there was a very high error for route one (13.1m) whereas the error observed for route two was 5.18m
+and route three was 2.89m. We are currently investigating the features of route one that could have
+caused a high error in the case of route one. Table 2 summarizes the accuracy and precision of the
+three evaluated technologies.
+Table 1 Different case for implementation of kNN algorithm
+Case Case name Training data set creation Test data set creation
+# SS=signal strength
+1 Avgof4Dir Average of SS for all directions Average of SS for all directions
+2 Avgof4Dir(South) A(cid:523)verage of SS for all (cid:524)directions Average of SS for south direction
+3 AvgofSouthDir(South) Average of SS for South direction Average of SS for south direction
+4 Avgof4Dir(Random) Average of SS for all directions Average of SS for a random
+5 AvgofRandomDir(Random) Average of SS for a random Average of SS for a random
+direction direction
+6 Maxof4Dir Max of SS among all directions Max of SS among all directions
+7 Maxof4Dir(Random) Max of SS among all directions Max of SS in a random direction
+8 Maxof4Dir(South) Max of SS among all directions Max of SS in south direction
+9 MaxofSouthDir(South) Max of SS in south direction Max of SS in south direction
+10 MaxofRandomDir Max of SS in a random direction Max of SS in a random direction
+Figure 2: Accuracy of WLAN for different cases of kNN Figure 3: Accuracy of IMU for route one
+Table 2: Summary of accuracies of the three technologies based on experiments done till date
+Technology Average accuracy of 5 samples 95 percentile accuracy
+WLAN 0.58m (Best case kNN) 1.52m (Best case kNN)
+RFID 11.9m (Best case kNN) >30m
+IMU 13.1m drift error at the end of 250m route 1 18.6m6 Conclusions and discussion
+WLAN satisfied all the requirements of indoor localization technology identified in this paper. Even
+when we reduced the density of wifi access points from 32 different access points to only 9 different
+access points read in the test-bed, the accuracy fell only to 3.05m, for 95% confidence. RFID
+technology based localization had poor results in our implementation. One of the possible reasons can
+be the fact that the RFID tags, which were installed four years ago, are being read only at close range
+in the current phase of data collection. The reason for decreased transmission power of these RFID
+tags is yet unknown but needs to be inspected in detail. The IMU data showed a varying trend of
+accuracy, which can be dependent on the indoor environment features that can cause the
+magnetometer to output erroneous readings. One way of determining this environment dependent
+IMU error might be to utilize Building Information Models (BIM) to identify properties of spaces and
+materials that can cause a high magnetometer error. If the sources of errors can be accurately
+identified, IMU can be an effective means of localization along with WLAN, especially when the
+WLAN or other sensor infrastructure is down.
+References
+BAHL, P., and PADMANABHAN, V. N. 2000. RADAR: An In-building RF-based User Location and Tracking System.
+Proceedings of IEEE INFOCOM 2000, Tel Aviv, vol. 2, 775-784.
+BIAZ, S., JI, Y. 2005. A survey and comparison on localisation algorithms for wireless ad hoc networks. International
+Journal of Mobile Communications, v 3, n 4, p 374-410.
+BRUNO, R., DELMASTRO, F. 2003. Design and analysis of a Bluetooth-based indoor localization system. Lecture Notes in
+Comput. Science, Vol.2775, p 711-25, 2003
+ELNAHRAWY, E., XIAOYAN, L., and MARTIN, R. P. 2004. The Limits of Localization using Signal Strength: A
+Comparative Study. First Annual IEEE Communications Society Conference on Sensor and Ad Hoc Communications
+and Networks, 406-414.
+ERGEN, E., AKINCI, B., EAST, B., KIRBY F. 2007. Tracking components and maintenance history within a facility
+utilizing radio frequency identification technology, Journal of Computing in Civil Engineering, ASCE 21 (1) 1120.
+FERDAUS, S. N., VARDY, A., MANN, G., and GOSINE, R. 2008. Comparing Global Measures of Image Similarity for
+Use in Topological Localization of Mobile Robots. Canadian Conference on Electrical and Computer Engineering,
+2008, 913-918.
+FINKENZELLER, K. 2003. RFID Handbook: Fundamentals and Applications in Contactless Smart Cards and
+Identification, Wiley.
+FRADEN, J. 2003. Handbook of Modern Sensors: Physics, Designs, and Applications, Springer.
+HAMMAD, A., GARRETT JR., J. H., KARIMI, H. A. 2004. Location-Based Computing for Infrastructure Field Tasks. In:
+KARIMI, H. A., HAMMAD, A. eds. Telegeoinformatics: Location-Based Computing and Services, CRC Press, pp.287-
+314.
+HIGHTOWER, J. BORRIELLO, G. 2001. Location systems for ubiquitous computing, Computer, v 34, n 8, p 57-66
+HOLTZ, R. and CAMPBELL, P. 2004. Six Sigma: Its implementation in Ford's facility management and maintenance
+functions. Journal of Facilities Management, v 2, no. 4, p 320-329.
+HOSSAIN, A. K., MAHTAB, M., VAN, H. N., JIN, Y., SOH, W. S. 2007. Indoor localization using multiple wireless
+technologies. 2007 IEEE Internatonal Conference on Mobile Adhoc and Sensor Systems, MASS, US
+JUNGHANNS, S., SCHALL, G., SCHMALSTIEG, D. 2009. Employing location-aware handheld augmented reality to
+assist utilities field personnel. Available online: www.icg.tu-graz.ac.at/Members/schall/lbs_abstract.pdf/download, Last
+accessed: November 2009
+KIM, BYOUNG-HOON, CHOI, JONG-SUK 2007. Active beacon system with the fast processing architecture for indoor
+localization. 12th IEEE International Conference on Emerging Technologies and Factory Automation, ETFA 2007
+Proceedings
+KO, CHIEN-HO 2009. RFID-based building maintenance system. Automation in Construction, v 18, n 3, p 275-284
+LADETTO, Q., GABAGLIO, V., MERMINOD, B. PH., and SCHUTZ, Y. 2000. Human walking analysis assisted by
+DGPS. Global navigation satellite system, GNSS, Edinburgh, U.K.
+LEE, S. AKIN, O. 2009. Shadowing tradespeople: Inefficiency in maintenance fieldwork. Automation in Construction, v 18,
+n 5, p 536-546.LEGNER, C., THIESSE, F. 2006. RFID-based maintenance at Frankfurt airport, IEEE Pervasive Computing 5 (1) 34–39.
+LIU, H., DARABI, H., BANERJEE, P., LIU, J. 2007. Survey of wireless indoor positioning techniques and systems. IEEE
+Transactions on Systems, Man and Cybernetics Part C: Applications and Reviews, v 37, n 6, p 1067-1080
+LIU, L.Y., STUMPF, A.L., KIM, S.S., ZBINDEN, F.M. 1994. Capturing as-built project information for facility
+management, Proc. the First Congress held in conjunction with A/E/C Systems'94, 1994, pp. 614–621, USA.
+MOTAMEDI, A., HAMMAD, A. 2009. Lifecycle management of facilities components using radio frequency identification
+and building information model. Electronic Journal of Information Technology in Construction, v 14, p 238-262
+OTSASON, V., VARSHAVSKY, A., LAMARCA, A., DE LARA, E. 2005. Accurate GSM indoor localization. Lecture
+Notes in Computer Science, v 3660 LNCS, p 141-158, 2005
+PRADHAN, A., AKINCI, B., GARRETT JR., J. H. 2009a. Development and testing of inertial measurement system for
+indoor localization. Proceedings of the 2009 ASCE International Workshop on Computing in Civil Engineering, v 346, p
+115-124.
+PRADHAN, A., ERGEN, E., AKINCI, B. 2009b. Technological assessment of radio frequency identification technology for
+indoor localization. Journal of Computing in Civil Engineering, v 23, n 4, p 230-238.
+RABINOWITZ, M., SPILKER, J.J., JR. 2005. A new positioning system using television synchronization signals. IEEE
+Transactions on Broadcasting, v 51, n 1, p 51-61
+SKIBNIEWSKI, M. J., JANG, W. S. 2007. Localization Technique for Automated Tracking of Construction Materials
+Utilizing Combined RF and Ultrasound Sensor Interfaces. Computing in Civil Engineering 2007, Pittsburgh,
+Pennsylvania, USA, 78-78.
+TEICHOLZ, E. 2004. Bridging the AEC technology gap. IFMA Facility Management Journal, March–April, 2004,
+Retrieved on February 10, 2007, from http://www.bricsnet.com/content/Teicholz.pdf.
+WANT, R., HOPPER, A., FALC, V., and GIBBONS, J. 1992. The Active Badge Location System. ACM Transactions on
+Information Systems, 10(1), 91-102.
+WING, R. 2006. RFID applications in construction and facilities management, Electronic Journal of Information in
+Construction, v 11, p 711-721.

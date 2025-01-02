@@ -1,0 +1,538 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/305704648
+TOWARDS SMART & INCLUSIVE SOCIETY: BUILDING 3D IMMERSIVE MUSEUM
+BY CHILDREN WITH COGNITIVE DISABILITIES
+Conference Paper · July 2016
+DOI: 10.21125/edulearn.2016.2240
+CITATIONS
+8
+READS
+400
+4 authors, including:
+Miguel Gea
+University of Granada
+112 PUBLICATIONS   645 CITATIONS   
+SEE PROFILE
+Xavier Alaman
+Universidad Autónoma de Madrid
+112 PUBLICATIONS   850 CITATIONS   
+SEE PROFILE
+Pilar Rodríguez
+Universidad Autónoma de Madrid
+128 PUBLICATIONS   1,614 CITATIONS   
+SEE PROFILE
+All content following this page was uploaded by Miguel Gea on 22 November 2016.
+The user has requested enhancement of the downloaded file.
+
+TOWARDS SMART & INCLUSIVE SOCIETY: BUILDING 3D 
+IMMERSIVE MUSEUM BY CHILDREN WITH COGNITIVE 
+DISABILITIES  
+M. Gea1, X. Alaman2, P. Rodriguez2, V. Rodriguez1 
+1 Dpt. Lenguajes y Sistemas Informáticos. Universidad de Granada (Spain)  
+2 Dpt. Ciencias de la Computación e Inteligencia Artificial. 
+ Universidad Autónoma de Madrid (Spain) 
+mgea@ugr.es, xavier.alaman@uam.es, pilar.rodriguez@ii.uam.es, vicentemr@correo.ugr.es 
+Abstract 
+Smart city is a promising trend where technology may help us to create new smart living places for an 
+inclusive society. In such context, mixed reality paradigm (3D immersive world, augmented reality and 
+mobile app) is growing faster, and people demand new content layers for different purposes (tourism, 
+gaming, learning, etc.). Content creation of for immersive neither augmented 3D interactive world will 
+be an important activity for artist and designers. This paper focuses on and specific target group 
+(users with cognitive disabilities) and how this new technologies may be potentially suitable to help 
+them for a social and labour integration. This paper shows the learning experience of building a virtual 
+immersive museum in a school of special education. 
+Keywords: Storytelling, mixed reality, inclusive design, smart city, autism, cognitive disabilities, content 
+creation 
+1 
+INTRODUCTION 
+ 
+Currently, we are adopting artefacts and services with the aim of building living places based on the 
+smart city paradigm. Information society moves toward interaction society and novel approaches 
+based on mixed reality [1] become popular and most demanded technology. Thus, the smart city, for 
+instance, is a strategic topic in the H2020 European agenda [1], and most countries have similar 
+strategies for IoT adoption [3]. In this approach, most technological advances and services are 
+oriented to sustainable model of public services. But on the other hand, enabling the citizen 
+engagement is crucial to connect innovation with society needs [4], and one of the key issues are the 
+inclusiveness and democratic principles, ensuring solutions endorsed by the entire population, 
+considering any kind of collective. This paper focuses on a specific target group (user with cognitive 
+disabilities) and how this new technologies may be potentially suitable to help them for a social and 
+labour integration. Creativity is a relevant aspect of research on these interactive scenarios, as shown 
+using virtual reality to increase the stimuli for student [5], but also for people with behavioral disorder 
+or disabilities. These objectives are part of the e-Integra project [6], the Spanish research project in the 
+context of the Information Society, particularly in the area of attention to diversity, and focusing on the 
+development of technology to provide comprehensive training to people with special needs. These 
+people have some limitations that affect their daily activities, making them less independent and 
+leading them to a potential risk of social and labour exclusion. These objectives allow children with 
+cognitive disabilities to manage technologies based on emerging interactive paradigms and create 
+authoring contents for these environments. 
+The aim of this project is to develop a collaborative and immersive museum based on virtual reality 
+environment for transmedia storytelling created by a collective with cognitive disabilities [7]. This 
+activity is supported with the collaboration of Asprogrades [8] and association to facilitate support to 
+persons with cognitive disabilities for their social inclusion. This association has a special education 
+school and several socio-labour workshops for adult’s socio-labour inclusion with different kind of 
+handcrafts works. Creativity is a big deal in their permanent exhibitions as a sustainable funding and 
+stand-alone work as shown in figure 1.  
+ 
+
+ 
+ 
+Fig.1. Hand-craft examples done by children with cognitive disabilities and autism spectrum disorders 
+ 
+Some of these children can use computer for some simple task (editing, drawing), but they have not 
+knowledge of concepts related with immersive 3D world. Thus, their everyday activities are sequenced 
+and printed using pictograms because most of them have severe communication problems. Figure 2 
+shows large pictures used in school for planning activities and identify their feelings. 
+ 
+ 
+ 
+Fig.2. Communication based on pictograms  
+ 
+In this case, we have to adapt the experience of building the virtual 3D museum to their skills, 
+facilitating the learning experience using a step-by-step approach. This experience may be translated 
+to other collectives and schools, so a straightforward approach to learning on 3D environments is a 
+suitable way to engage children with different kind of cognitive disorder and focus their attention.  
+The 3D museum will be done in the Open Simulator [9], an open source platform with similar features 
+as Second Life. The users can build their rooms for exhibit their art crafts, put their content and 
+interact with others. We will focus on training social interaction [10], enabling the creativity and skills 
+related with other deficits (language, emotions, orientation, etc.) to advance in the project. Next 
+section shows the case study and relevant features for training. 
+ 
+ 
+
+2 
+CASE STUDY 
+ 
+The first stage in this project is the collaboration with special education school tutors to select 
+candidates for this first training experience. According to these meetings, 10 students were selected 
+(two of them on the autism spectrum) for the experience. After the first training session, 5 of them 
+were selected to start the first training program. This piloting experience allows us to discover 
+references and some approaches to maintain their attention on 50 minutes session in the 3D 
+immersive environment. This first training program will be evaluated using desktop monitor with 
+mouse, tablets, and one interactive digital board suitable for wider audiences.  
+ 
+Our methodological approach identifies different type of sessions according the goal to achieve in 
+each stage of the project. First of all, we propose two exploratory sessions with a set of different 
+activities and different child distributions. The aim of this phase is to acquire knowledge about their 
+feelings, skills, motivation and difficulties to act in a virtual environment. The second phase focuses on 
+each child and how he/she resolves different situations on each training session. According to 
+literature [11], common characteristics of students with cognitive disabilities are the following:  
+- Disorder of attention and Concentration. Difficulty focusing and maintaining attention on academic 
+tasks 
+- Memory. Difficulty memorizing numbers, letters, sequences  
+- Language. Difficulties with sequencing when telling a story, pronouncing words, expressing ideas 
+- Social Skills. Difficulties in interpreting social cues, cooperation  
+- Affective skills. Difficulties to express emotions, changes in sense of humour  
+- Disorders in behaviour such as hyperactivity, impulsivity  
+- Coordination problems  
+In this situation, elementary activities on a 3D reference world demands most of these skills to achieve 
+the following tasks with different difficulty levels:  
+- Walk through and world discovering, acquiring skills for movement, orientation and object 
+localization. 
+- Character building. Identify their avatars, and personalize according to their preferences,  
+- Building activities: create walls, upload media content and putting on it.  
+- Communication activities. Manipulating chat and other interactive elements where they can interact 
+with the 3D world.  
+- Collaborative activities, such as follow a group, meet someone, etc.  
+For this purpose, we will use the Bloom’s taxonomy of educational objectives [12] and the outcomes of 
+using virtual reality in autism [13]. Based on these experiences, we propose pool of tasks to discover 
+the immersive world in a straightforward approach using a common language, based on pictograms, 
+used in the school for other activities. Next section show activities developed on training session. Each 
+session is done once each week. 
+ 
+3 
+ACTIVITY SHEETS FOR TRAINNING 
+ 
+Following, the set of tasks are organized according to their inherent difficultly levels, and also, the 
+child’s autonomy to interact. Two kind of activities were planned:  
+- Individual and stand-alone activities. Basic functionality and autonomy.    
+- Cooperative and interactive activities used for sequencing tasks and discover the 3D world. 
+
+ 
+Table 1. Individual Activity Sheet 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Table 1 shows activities for this session, illustrating the pictogram, an scene explaining the situation 
+and a set of skills and the difficulty level. This table is a sheet to use in class before and during the 
+session in case of difficulties. 
+ 
+For this fist activity sheet, the session is planned as a focus group (Fig 3) where each child performs 
+the task individually, and the rest of student observe how they do it.  The aim is to learn each child 
+from others (in sequence) and motivating in each step with applauses when the task is done correctly.  
+ 
+ 
+Task 
+Pictogram 
+View 
+Skills 
+Walk 
+ 
+ 
+Coordination, 
+orientation, attention 
+Difficulty: low 
+Fly 
+ 
+ 
+Coordination, 
+orientation, attention 
+Difficulty: low 
+Sit 
+ 
+ 
+Coordination, 
+Difficulty: low  
+Wear 
+ 
+ 
+Coordination, 
+attention, memory 
+Difficulty: medium 
+Appea-
+rance 
+ 
+ 
+Coordination, 
+attention, memory 
+Difficulty: medium 
+Build 
+ 
+ 
+3D Coordination, 
+orientation, attention 
+Difficulty: medium 
+
+ 
+Fig 3 Focus Group session 
+ 
+Motivation and affective emotions are good support to capture attention of child with severe autism 
+disorder. On the other hand, repetitive task allow them to give confidence in this new world.   
+The second session is based on cooperative and interactive task. In this case, the configuration 
+changes and students collaborate in groups using several computers (as shown in Fig 4). In this case 
+the virtual reality environment includes locations and objects to interact with them. Children can 
+change the appearance of their avatar.   
+ 
+ 
+Fig 4 Cooperative & interactive session 
+ 
+Table 2 shows the relevant task to manage by groups. They have to interact with objects and 
+configure the avatar. In this session, children are capable of recognise different part of the 
+environment and surroundings to interact with their avatars. Actions with interactive objects focus the 
+attention of everyone on specific action (pick, plant, play) allowing multiple possibilities. This two 
+training sessions are enough to identify skills and interaction capabilities of children. Next step is to 
+focus on different capabilities (called missions) to acquire expertise on different features dimensions 
+(communication, orientation, comprehension and creativity).    
+ 
+ 
+ 
+ 
+ 
+
+ 
+Table 2. Cooperative and Interactive activity sheet 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Once these goals are achieved, next step is to create a pool of tasks facilitating the child motivation 
+and proposing some skills to evaluate and improve them. Next section focus on these set of tasks 
+called missions. Currently, we are running the project, so we can outline only in some cases.  
+ 
+4 
+ENGANGING TO VIRTUAL WORLD: MISSION PLANNING 
+ 
+This part of the project, personal autonomy is more relevant, and thus, individual attitude and 
+behaviour are evaluated to detect possible abnormal situations. In addition, each mission improves 
+creativity by one additional task to be done during the week in other classes. This activity allows us to 
+connect this project with other classes, workshops, and with their teachers, family and friends. Each 
+Task 
+Pictogram 
+View 
+Skills 
+Talk to 
+friends 
+ 
+ 
+Social skills, language 
+Difficulty: medium 
+Play/ 
+interact 
+with fun 
+objects 
+ 
+ 
+Sequence, 
+coordination 
+Difficulty: medium 
+Buy/get 
+objects 
+ 
+ 
+Memory, sequence, 
+coordination 
+Difficulty: medium 
+Pick 
+objects 
+ 
+ 
+Coordination 
+Difficulty: medium 
+Plant 
+ 
+ 
+Sequence, memory, 
+coordination 
+Difficulty: medium 
+Map 
+location 
+ 
+ 
+Sequence, 
+coordination 
+Difficulty: medium 
+
+child uses its own avatar and desktop. Communication preferably is done though the chat, but 
+sometimes, they need to talk each other for different reason (happiness, ask for something, etc.). Now 
+it is important to identify yourself and know the your location as well as the others. Fig 5 shows the 
+configuration of the class (mostly individually) and the virtual meeting.  
+ 
+ 
+ 
+Fig 5. Mission: Discover the island   
+ 
+Table 3 shows six planned missions, where three of them are more related with coordination (doing 
+activities different level of complexity) and the last three one are related with creativity (building, 
+constructing, creating). Each one has an additional activity to do outside class.   
+ 
+Table 3. Missions  
+Missions 
+Goal 
+Tips  
+Homework 
+Mission 1.  
+Discovering 
+You are in an island. You have to know 
+which things is inside and talk with 
+other avatars to find things. Choose 
+your house 
+Use the map and chat. 
+Talk with others. Ask 
+some question.  
+Draw the island as 
+you like it. 
+Mission 2.  
+Cooperate 
+Today is your birthday. Prepare a 
+party. Each one must carry some 
+object to complete the party (candles, 
+globes, gifts..) and sing the song 
+Look for these objects, 
+remember, 
+ordering. 
+Add a list of friends. 
+Say greetings.  
+Draw a picture of 
+all your friends on 
+birthday party and 
+wearing 
+their 
+avatar clothes 
+ 
+Mission 3: 
+Comprehen-
+sion 
+You want to play with your friends. 
+Prepare a Gymkhana: Game based on 
+a sequence of steps to win 
+(finding/manipulating objects)  
+Remember the 
+sequence, use 
+language to ask, 
+express your affective 
+emotions 
+What 
+happened 
+today?. Tell this 
+story using written 
+text 
+and 
+audio 
+recording.  
+ 
+Mission 4 
+Create 
+Make up and go shopping. You plan to 
+create a shop with your friend. Create 
+as a Lego game something you like it, 
+and put on the shop. Describe it and 
+choose one object of your friend 
+Build on 3D dimension 
+using imagination. 
+Check your inventory 
+list (things you need to 
+build). Explain which is 
+the object you like it. 
+Draw an object 
+you whish build in 
+3D world. Explain 
+what is it and how 
+to use it. 
+ 
+ 
+
+Missions 
+Goal 
+Tips  
+Homework 
+Mission 5 
+Build 
+Decorate your house. Add pictures, 
+doors, windows, lamps, etc. Invite 
+others (by letter) to visit your house 
+Decorate it and express 
+your preferences. Talk 
+each other about the 
+house.  
+Imagine a friend 
+you whish to live in 
+this house. Draw 
+your friend and 
+write how is 
+his/her life. 
+Mission 6 
+Storytelling 
+Tell a story about a fictional character 
+(a friend you whish you were here). 
+Add stories to discover on your house.   
+Language, 
+Writing, 
+voice recording. Adding 
+media files.  
+Write/record a 
+story about 
+yourself. 
+ 
+ 
+Nowadays, we are collecting data about this piloting experience. The motivation and engagement of 
+tutors, children and families is highly positive. The aim of this project is to include these activities on 
+special education schools as regular task. The use of 3D world using a gamification strategy is an 
+excellent tool to increase their abilities of spatial orientation, language, memory and comprehension. 
+But on the other hand, it is a powerful opportunity to create contents and stories shared in the digital 
+age society (channels, virtual museums, etc).  
+5 
+CONCLUSION 
+This paper shows the process of building an immersive 3D virtual museum by children with different 
+range of cognitive disabilities. In this process, we have a running project on a Special Education 
+School (Asprogrades) where a group of students has been chosen for a piloting experience of 
+creativity in a 3D world. Although the experience is not finished yet, we have some evidences and 
+outcomes about this activity: 
+- 
+Proposal of a systematic approach to creativity of 3D world, using a common language based on 
+pictograms and the organisation of activities (training sessions & mission) to integrate in their 
+everyday life. 
+- 
+Creation of sheets (material), tasks and skills to use in the special education school. This 
+knowledge can be shared with other schools to use it and promoting virtual meeting experiences.  
+- 
+ This is a beginning stage to learn storytelling on digital media, by creating sceneries, characters 
+(avatars), telling stories and using different narrative media (written, audio). 
+ 
+Future work, once this piloting experience will be finished, will be oriented to the following outcomes:  
+ 
+- 
+Creating a website collecting information and sharable resources (toolkit for educators and 
+families)  
+- 
+Create a (web based) virtual Museum where visitor can see collections of drawings of children, 
+visit their houses and know their everyday life (with different audio/video media) 
+- 
+Use alternative media (Google cardboard) to visit stand-alone 3D virtual world.  
+- 
+Start working on a transmedia storytelling experience using book-crossing, Augmented Reality 
+(QR codes in the city) and fictional characters on Twitter to engage citizen to enter in these 
+stories, know the authors and increase visibility, with the aims of the social and labour inclusion.  
+ 
+ACKNOWLEDGMENTS 
+This work was partially funded by the Spanish National Plan of I+D+i (TIN2013-44586-R) Project: e-
+Training and e-Coaching for the social and laboral integration. 
+
+REFERENCES  
+[1] Azuma, R., Baillot, Y., Behringer, R., Feiner, S., Julier, S. & MacIntyre, B. Recent advances in 
+augmented reality. IEEE Computer Graphics and Applications 2001, Vol. 21, No. 6, pp. 34–47 
+[2] Manville, C., Cochrane, G. et al., 2014.  Mapping Smart Cities in the EU, Directorate General For 
+Internal Policies Policy Department A: Economic And Scientific Policy,  IP/A/ITRE/ST/2013-02  
+[3] Yesner Clarke, R. (2013) Smart Cities and the Internet of Everything: The Foundation for 
+Delivering Next-Generation Citizen Services, white paper IDC Government Insights #GI243955  
+CISCO  
+[4] Market Place of the European Innovation Partnership. (2015) Principles and enablers for citizen 
+engagement: the experience from the European Innovation Partnership on Smart Cities and 
+Communities. Action Cluster: Citizen Focus. Smart City European initiative. Online: https://eu-
+smartcities.eu/archives/publications  
+[5] Wong Lau, K., Yuen Lee, P.: The use of virtual reality for creating unusual environmental 
+stimulation to motivate students to explore creative ideas, Interactive Learning Environments, 
+23:1, 3-18, 2015 
+[6] Alaman, X., 2013, e-Training and e-Coaching for the social and laboral integration. Spanish 
+National Plan of I+D+i (TIN2013-44586-R) Project 
+[7] Gea, M., Alaman, X., Rodriguez, P. (2016). Transmedia storytelling for social integration of 
+children with cognitive disabilities. Proceedings  3rd International KES Conference on SMART 
+EDUCATION AND E-LEARNING, Tenerife, 15-17 June, 2016. Spain    
+[8] Asprogrades: Asociación a favor de las personas con discapacidad intelectual, 
+http://www.asprogrades.org (accessed on 3th of may  2016) 
+[9] OpenSimulator, http://www.opensimulator.org (accessed on 15 jan 2016) 
+[10] Ke, F., Im, F.:  Virtual-Reality-Based Social Interaction Training for Children with High-Functioning 
+Autism. The Journal of Educational Research, 106:6, 441-461. 2013 
+[11]  National Association of Special Education Teachers (NASET)  http://www.naset.org 
+[12]  Anderson, L.W., Krathwohl, D.R., Airasian, P.W., Cruikshank, K.A., Mayer, R.E., Pintrich, P.R., 
+Raths, J., Wittrock, M.C. (2001). A Taxonomy for Learning, Teaching, and Assessing: A revision of 
+Bloom's Taxonomy of Educational Objectives. New York: Pearson, Allyn & Bacon. 
+[13] Bellani M., Fornasari L., Chittaro L., Brambilla P. (2011) Virtual reality in autism: state of the art, 
+Epidemiology and Psychiatric Sciences, Vol. 20, no. 3, pp 235-238. 2011 Cambridge University 
+Press 
+ 
+View publication stats
+

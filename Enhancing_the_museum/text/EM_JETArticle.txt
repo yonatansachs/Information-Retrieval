@@ -1,0 +1,623 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Citation for published version:
+Garcia Carrizosa, H, Sheehy, K, Rix, J, Seale, J & Hayhoe, S 2020, 'Designing technologies for museums:
+accessibility and participation issues', Journal of Enabling Technologies, vol. 14, no. 1, pp. 31-39.
+https://doi.org/10.1108/JET-08-2019-0038
+DOI:
+10.1108/JET-08-2019-0038
+Publication date:
+2020
+Document Version
+Peer reviewed version
+Link to publication
+Publisher Rights
+Unspecified
+The final publication is available at Emerald via https://doi.org/10.1108/JET-08-2019-0038
+University of Bath
+Alternative formats
+If you require this document in an alternative format, please contact:
+openaccess@bath.ac.uk
+General rights
+Copyright and moral rights for the publications made accessible in the public portal are retained by the authors and/or other copyright owners
+and it is a condition of accessing publications that users recognise and abide by the legal requirements associated with these rights.
+Take down policy
+If you believe that this document breaches copyright please contact us providing details, and we will remove access to the work immediately
+and investigate your claim.
+Download date: 15. Nov. 2024
+
+Designing technologies for museums:
+accessibility and participation issues
+Helena Garcia Carrizosa, Kieron Sheehy, Jonathan Rix, Jane Seale and Simon Hayhoe
+Abstract
+Purpose – This paper aims to report the findings of a systematized literature review focusing on
+participatory research and accessibly in the context of assistive technologies, developed for use within
+museums by people with sensory impairments or a learning disability. The extent and nature of
+participatory research that occurs within the creation of technologies to facilitate accessible museum
+experiences is uncertain, and this is therefore a focus of this paper.
+Design/methodology/approach – This paper is a systematized literature review and subsequent
+thematic analysis.
+Findings – A screening of 294 research papers produced 8 papers for analysis in detail. A thematic
+analysis identified that the concept of accessibly has nuanced meanings, underpinned by social values;
+the attractiveness of a technology is important in supporting real-life usability; and that the
+conceptualization of participation should extend beyond the end users.
+Social implications – The argument is made that increasing the participation of people with sensory
+impairments and learning disabilities in the research process will benefit the design of technologies that
+facilitate accessibility for these groups.
+Originality/value – An original notion of participation has emerged from this review. It includes the
+participation and goals of disabled people but has expanded the concept to encompass museum
+personnel and indeed the physical and social spaces of the museums and heritage sites themselves.
+This constructs a broad of participation, with different aspects being reflected across the review’s
+research papers.
+Keywords Participatory research, Assistive technologies, Sensory impairments, Learning difﬁculties,
+Accessibility, Museums
+Paper type Literature review
+Introduction
+There has been an increasing recognition of the importance of cultural and heritage sites,
+such as museums, within people’s life experiences. More recently this importance has been
+acknowledged and explicitly foregrounded for people who may require support to access
+and enjoy these sites. This includes people with learning disabilities (Seale and Chadwick,
+2017) and those with a visual impairment (Reichinger et al., 2016) or hearing impairment
+(Milicchio and Prosperi, 2016). In relation to people with learning disabilities, identified two
+potential approaches that might facilitate their access (Seale and Chadwick, 2017):
+1.
+the development and employment of technologies; and
+2.
+the implementation of inclusive or participatory approaches to research and design
+(Seale and Chadwick, 2017, p. 10).
+These two broad approaches have face validity for a broader group of potential museum
+users. They can be seen as ways to facilitate access for “casual visitors who are visually
+impaired, deaf or who have learning disabilities” (Partarakis et al., 2016, p. 237). The
+importance of this issue is reflected in The UN Convention on the Rights of Persons with
+Helena Garcia Carrizosa is
+based at The Open
+University, Heerlen, The
+Netherlands.
+Kieron Sheehy is based at
+the Faculty of Education
+and Language Studies, The
+Open University, Milton
+Keynes, UK.
+Jonathan Rix is based at
+The Open University,
+Heerlen, The Netherlands,
+and Inland Norway
+University of Applied
+Sciences, Lillehammer,
+Norway.
+Jane Seale is based at the
+Faculty of Education and
+Language Studies, The
+Open University, Milton
+Keynes, UK.
+Simon Hayhoe is based at
+Bath University, Bath, UK.
+Received 19 August 2019
+Revised 27 November 2019
+13 February 2020
+Accepted 25 February 2020
+DOI 10.1108/JET-08-2019-0038
+© Emerald Publishing Limited, ISSN 2398-6263j JOURNAL OF ENABLING TECHNOLOGIESj
+
+Disabilities (United Nations, 2006), which argues that assistive and digital technologies
+have a central role in the lives of disabled people and therefore requires that national
+government address the assistive technology needs of their citizens (Borg et al., 2011). In
+this context, the term “participatory research” refers to the notion of “end users” being
+involved in the development or implementation of technologies within museums and directs
+researchers to support such engagement (Wright et al., 2011). Participatory involvement is
+relatively common within educational research (Abbott et al., 2011), where it can include
+“end users” being active central research team members who are involved in all stages of
+the research process. The nature of participatory research, and the extent to which it
+occurs, within the creation of technologies to facilitate accessible museum experiences is
+uncertain, and this is therefore a focus of this paper.
+Review methodology
+A variety of methods are used to review and extract data from bodies of research literature.
+These range from critical narrative reviews, which seek to identify key papers within a field,
+to exhaustive systematic reviews (Grant and Booth, 2009). This research follows a
+systematized review approach (Grant and Booth, 2009) that adopts a pragmatic review of
+the field, within databases judged to be most appropriate. Unlike a fully systematic review, it
+does not claim to be a completely exhaustive review of all publications that would include
+examining from a wide or open-ended period, searching grey literature and using the hand
+searching of hard copies. Table II outlines the parameters laid out for the review, which was
+conducted between January and February 2019. Scopus was chosen as the source for the
+review data as it is currently the largest database of peer-reviewed social and scientific
+literature. The research reviewed articles in three languages (English, Spanish and German)
+to access different cultural sources and acknowledge, albeit with “Western” languages, the
+global nature of museum research (Ritvala et al., 2017). Given the rapid development of
+recent digital technologies, the review search was focused between 2015 and 2019 to
+capture current practices. Key research terms and inclusion/exclusion criteria were defined
+(Table I). The search terms represented four broad search categories, whose interaction
+reflected the aims of the review.
+The initial search produced 294 articles. The abstracts of each of these publications were
+then screened in accordance with the explicit inclusion and exclusion criteria by two
+independent reviewers. Table II indicates these criteria.
+Where an inclusion/exclusion decision could not be made from the abstract alone, the full
+article was sourced and screened. The judgements of the two reviewers were then
+compared and any disagreement discussed. This occurred for three papers. After this
+second filtering occurred eight articles were selected for final detailed review (Appendix 1).
+These articles were read in full and a thematic analysis conducted with regard to the goals
+of the research. In keeping with a systematized research approach, outcome measures and
+weight of evidence were not considered. The thematic analysis was of descriptive accounts
+of research within each paper.
+Table I The Four categories of search terms
+One
+Two
+Three
+Four
+Museums
+AND
+Disability Impairment
+AND
+Technology
+AND
+Design
+Cognitive impairment
+Blind
+Deaf
+j JOURNAL OF ENABLING TECHNOLOGIESj
+
+Findings
+Descriptive analysis
+The selected eight studies were conducted across 11 countries: the UK, Spain, Korea,
+Greece, Italy, Poland, Sweden, France, Germany, Belgium and the USA. Five papers
+(Fonseca et al., 2018; Park et al., 2015; Wilson et al., 2018; Fernandez-Villalobos and
+Puyuelo, 2018; Yang and Ganz, 2018) did not report the length of the research activities
+and when they occurred. The type of technologies developed within the studies are outlined
+in Table III. As Table III illustrates, within this focused sample are a variety of research aims,
+including creating navigation and spatial awareness tools, location sensitive information,
+tactile objects and haptic interfaces. These technologies were developed through a range
+of research and design approaches.
+Thematic analysis
+Three themes emerged from the thematic analysis.
+Accessibility has nuanced meanings
+The concept
+of accessibility is constructed in different ways within
+the studies,
+foregrounding different, but complementary, motivations and values. For example,
+Fonseca’s et al. (2018) research sees accessibility to culture and assistive learning
+environments as “fundamental human rights” (p. 941). The purposes of, and audiences for,
+accessibility projects can also be framed and influenced through political and economic
+Table II The Focus and parameters of the research literature review
+Theme
+Designing technologies to make museums accessible for people with sensory impairment or learning disabilities
+Sub-theme
+Usability/Accessibility
+Design for All
+Questions we
+want the
+review to address
+What it is the nature of participatory research, and to what extent does it occur, within the creation of technologies
+to facilitate accessible museum experiences?
+Date range
+2015-2019
+Language(s)
+English
+Spanish
+German
+Journal databases
+Scopus
+Inclusion criteria
+For all reviews- papers must be evaluative as well as descriptive- enabling lessons to be drawn from the results
+or experiences
+Must involve Museums (in or for a museum)
+Must involve SI
+Must involve LD
+Must involve technology
+Exclusion criteria
+Doesn’t involve Museums
+Doesn’t involve SI/LD
+Doesn’t involve technology
+Keyword terms
+Disabilities
+Impairment
+Cognitive impairment
+Blind
+Deaf
+Technology
+Museums
+Design
+j JOURNAL OF ENABLING TECHNOLOGIESj
+
+expectations. These can create attempts to respond to “the needs of the wider community”
+(Raffi, 2017, p. 36), i.e. those previously disenfranchised from museum culture. Raffi’s
+(2017) research positions the development of universally accessible provision as a way of
+overcoming social exclusion. She sees this as encompassing not simply the museums
+physical environment, but also as a transformation of access to diverse cultural contents.
+These two “levels” of accessibility can be seen in Hollinworth et al. (2016), where only the
+latter seemed possible.
+During tours of the house, visitors in wheelchairs stayed downstairs with a book of photos. The
+A2H group discussed how we could create an equivalent experience for those not able to get
+upstairs and mentioned how important it was to be able to touch, smell, and hear the information.
+(p. 22)
+The degree to which an equivalent experience is created is important as researchers would
+wish disabled users to engage with as authentic an experience as possible. As suggested
+in the above quote, this can be influenced by the range of modalities being drawn upon. For
+example, Park’s evaluations of haptic, voice and color information (Park et al., 2015) found
+increasing this range had positive effects in creating a “realistic feeling” through
+telepresence for participants unable to access the physical location.
+In relation to accessing cultural knowledge Raffi (2017) emphasizes the need to consider
+that “As far as language is concerned, visitors may be unfamiliar with the specific
+Table III A summary of the technologies aims and design approaches within the review papers
+Article
+No.
+Technology type
+Aim of research
+Design approach
+1
+Augmented Reality (AR) for developing
+a Mobile Augmented Reality (MAR)
+application
+Develop a conceptual model
+(MARHIME) to provide guidelines to
+developers for a MAR application to be
+used in museums by HI visitors
+A comprehensive literature review and
+validation through expert reviews
+2
+Indoor video-guide. A location-based
+system to serve 3 D multimedia content
+for understanding architectural spaces
+Proposing a wireless system that offers
+3 D virtual content that complements the
+visit, using a video-guide based on the
+user’s position
+The evaluation of the video-guide used
+in a museum. Mixed-method:
+quantitative analysis of architecture
+students’ behaviour, and interviews with
+a sample of students
+3
+Microcontrollers and sensors
+The co-creation of multisensory
+interactive artworks
+Co-researchers working in multisensory,
+materials and electronics, workshops
+4
+Haptic telepresence system: robot
+equipped with haptic display (RGB-D
+sensor and haptic interface)
+To explore art galleries and museums
+by using a telepresence robot: giving
+3 D tactile feedback of the remote
+environment and controllability
+Experimental approach to evaluate the
+telepresence system performance.
+Participants’ questionnaires to
+understand users’ experiences
+5
+Phase 1: exploring the use of
+multilingual devices in European
+museums. Phase 2: Tobii Pro Glasses 2
+for eye-tracking
+Evaluating users’ attitudes and patterns
+of engagement
+Phase 1: Questionnaires sent to
+European museums. Phase 2:
+Measuring reading patterns and
+behaviour of museum visitors (eye-
+tracking study)
+6
+3 D printing replicas
+Investigating visitor preference of the
+physical properties of 3 D replicas
+Mixed-methods approach to examine
+user experience
+7
+Technologies suggested for heritage
+sites: 3 D replicas and Augmented
+Reality
+The paper examines study several
+information and signage projects, to
+understand and exemplify good
+practice
+Case studies that examine signage
+resources in different heritage sites
+8
+Bluetooth Low Energy (BLE) sensors
+embedded in smartphones
+To provide real time spatial awareness
+for BVI visitors that allows them to
+navigate independently through public
+venues
+Field tests with users. Questionnaire for
+user feedback
+j JOURNAL OF ENABLING TECHNOLOGIESj
+
+terminology used in a given field of expertise” (p. 29). This may lead to disengagement with
+the exhibition, and so the author suggests:
+[. . .] simplifying the text, breaking texts down into logical chunks or using bullet points may have
+a positive impact on museum visits, enabling visitors to dedicate their time on the exhibition
+rather than on decoding complex texts. This would make not only the informative elements but
+also the whole visiting experience more widely enjoyable and accessible (p. 36)
+These examples illustrate using technology to help access the physical space, the sensory
+experience of the exhibits and the mediation of cultural knowledge through text, audiovisual
+information and symbols. In parallel to visions of creating museums that are universally
+accessible, which resonates with ideas of universal design, are accounts of accessibility
+that are personal and made with and for the individual (Fernandez-Villalobos and Puyuelo,
+2018). Another complementary aspect of accessibility is the notion of emotional
+accessibility (Garcia Carrizosa, 2019), which is implied is several studies (Hollinworth et al.,
+2016;
+Fernandez-Villalobos
+and
+Puyuelo,
+2018;
+Raffi,
+2017).
+For
+example,
+within
+Hollinworth’s et al. (2016) research, the participatory engagement of users within the
+research process was personally significant. Feedback from co-researchers indicated that
+they had
+[...] found the opportunity to be involved in research to be an enjoyable and empowering one (p. 36)
+This increased their emotional connection, and meaningful engagement, with the museum
+and its artifacts and cultural activities. Fernandez-Villalobos and Puyuelo (2018) argues that
+creating accessibility requires
+[. . .] a sensitive perception of the environment and people in their various situations. We must
+start to deal with this binomial connection in a cautious, respectful way, based on observation
+and harmony[. . .]. A compatible accessibility criterion must be created, which respects the
+unique character of each place; namely the search for balance. (p.19)
+It can be seen that in creating accessible museum experiences, researchers have
+emphasized different facets of users experience of accessibility, and for Villalobos, this
+includes respect for the environment that is being accessed.
+Real-life usability
+All of the reported technologies demonstrated the potential for enhancing or even
+transforming the experiences of museum “users” (Sheehy et al., 2019). An emerging theme
+captured the ways in which the potential benefits of a technology were reflected in terms of
+everyday usability. For example, in terms of ‘flexibility, ease of use and learnability [. . .]”
+(Baker et al., 2018, pp. 020031-4), which allows technology to be used independently
+(Yang and Ganz, 2018). However, users must enjoy this use. Therefore, improving their
+enjoyment may improve the relationship that a user has with the technology and the
+museum experience. This relationship can limit, or enhance, usability for all (Fonseca’s
+et al., 2018). For example, in one paper, the interface was “[. . .] the most criticized aspect
+by students with certain difficulties[. . .] [and also by] [. . .] the rest of students [. . .]”
+(Fonseca’s et al., 2018). When it comes to design, this suggests that creating effective
+access to the physical or knowledge components of museums (described in the first theme)
+needs to consider the preferences of the users. There is a relationship between the users’
+enjoyment of technologies, their access preferences and the real-life usability of the
+technology. This aspect of design in facilitating access appears relatively under researched
+(Fonseca’s et al., 2018; Wilson et al., 2018) and emerges as a key area in improving real life
+usability (Wilson et al., 2018). The attractiveness (enjoyment, access preferences and
+usability) of a technology drives its everyday usability, and it seems reasonable to argue
+that this attractiveness needs to represent benefits for both the primary users and museum
+j JOURNAL OF ENABLING TECHNOLOGIESj
+
+staff. While the technological benefits of a technology are often stated in the review papers,
+evidence for attractiveness, and hence real-life usability, appears to be lacking overall.
+The nature of participation and participants
+A theme that emerged across the studies captured the different ways in which participants
+were involved, or not, with the research. This theme also encompasses the degree to which
+heritage site and museum staff and organizations are involved within the research and
+development of the technologies. This aspect of participation appears to be relatively
+limited and may reflect the sample papers’ focus towards developing new technologies,
+rather than evaluating in situ implementations with museum partners. Consequently,
+museums appear mainly as an inert space where research occurs rather than as site of
+active research partners. The exception to this is Hollinworth et al. (2016), where museum
+staff, researchers, potential end users and volunteers were involved in the co-creation of
+accessible artefacts. In two other studies museums staff returned questionnaire (Raffi,
+2017) and assisted in data collection (Wilson et al., 2018).
+The involvement of participants [i.e. end users of technologies] with sensory impairment
+and/or learning disabilities in the research process is illustrated in Table III. This shows that
+end users were involved in four research studies (Fonseca et al., 2018; Hollinworth et al.,
+2016; Park et al., 2015; Yang and Ganz, 2018), albeit as a small minority in (Fonseca et al.,
+2018) and (Park et al., 2015). No end users involved Baker’s et al. (2018) theoretical review
+paper or Studies 5 and 6 (Table IV).
+The use of non-disabled “proxies” is relatively common and has been criticized for
+producing weak understanding of users’ real-life experiences (Silverman et al., 2015). This
+occurred in only two studies in the reviewed sample. In Wilson et al. (2018) and Fernandez-
+Villalobos and Puyuelo (2018), the research addresses access for a general population.
+The nature of participants’ involvement within the research can be seen as varying across a
+continuum. At one end of this continuum would be the participants contributing as co-
+researchers (Hollinworth et al., 2016). Next and most common was participants giving
+feedback to researchers that might inform improving access (Fonseca et al., 2018; Park et
+al., 2015; Wilson et al., 2018). Then, participants whose engagement with artifacts was
+monitored and analyzed by researchers, followed by the other end; a researcher only
+analysis of heritage sites (Fernandez-Villalobos and Puyuelo, 2018) and an expert review
+approach (Baker et al., 2018) in which domain specialists validate particular elements of the
+technology. This continuum reflects the degree of active involvement of participants in
+influencing the research that is being undertaken.
+Table IV Involvement of types of disabled users within the studies
+Article No.
+End user research participants
+Other participants
+1
+People with hearing-impaired (HI). None involved
+N/A
+2
+4 students with attention deficit hyperactivity (ADHD)
+32 architecture students in total, [4 of whom
+identified as having ADHD]
+3
+People with learning disabilities (number of participants unknown)
+workshop participants: artists, technologists,
+multimedia practitioners, educators, museum
+professionals and volunteers
+4
+5 visually impaired users (2 low-vision; 3 blind)
+26 participants in total: 21 were sighted
+5
+People with sensory impairments. None involved
+16 museum visitors
+6
+Diverse categories of the population
+140 museum visitors
+7
+None specified
+Researcher analysis of sites
+8
+6 blind or visually impaired participants
+N/A
+j JOURNAL OF ENABLING TECHNOLOGIESj
+
+Discussion
+This review set out to explore participation in the context of designing technologies to
+support museum accessibility. An original finding has been the emergence of an expanded
+and nuanced view of the concept of accessibility. The studies, variously, reflect a
+construction of accessibility that is values driven and can operate a different level of
+implementation: physical, social, cognitive and emotional, and which respects both the
+person and the environment they are seeking to access.
+The values underpinning accessibility design are important. Technology becomes able to
+enhance the modalities which mediate users experience. This helps create a more
+authentic experience, potentially bringing the user closer to previously inaccessible artifacts
+and sites. However, it also risks creating an alternative situation in which some disabled
+users are confined to virtually mediated experiences away from the physical heritage site
+and indeed other visitors (Sheehy et al., 2014). The values that drive accessibility design will
+be important in negotiating this tension and there is evidence that some researchers are
+positioned to do this (Raffi, 2017; Fonseca et al., 2018; Hollinworth et al., 2016).
+Typically, the notion of participation has focused on the involvement of disabled people
+within the research process and this review has highlighted a continuum of practices that
+exist in this respect (Rix et al., 2019). This continuum reflects the degree of active
+involvement of participants in influencing the research that is being undertaken. It is likely
+that this continuum also reflects the stage of development and complexity of the technology
+that is being designed. Both these factors impact upon the ways in which end user
+participants might engage with the research process. Therefore, a simple view of a
+participation continuum may be misguided. It is however clear that disabled people, for
+whom access technologies are being designed, should feature more strongly within the
+research than this review sample indicates. In particular the use of “proxies” for disabled
+participants is problematic, denying the user groups a voice in the process and distorting
+research conclusions (Silverman et al., 2015). This practice may reflect a simple view of
+accessibility, focused on the technology alone, rather than one that is shaped by the
+broader purposes of the research and design process. This may also partly explain why the
+research participants were commonly identified in terms of a single disability “label,”
+matching the technology to a specific disability category. Only one study (Wilson et al.,
+2018) took a broader view that considered access for all, more akin to a universal design
+perspective.
+An original notion of participation has emerged from this review. It includes the participation
+and goals of disabled people but has expanded the concept to encompass museum
+personnel and indeed the physical (Fernandez-Villalobos and Puyuelo, 2018) and social
+(Fonseca et al., 2018; Raffi, 2017) spaces of the museums and heritage sites themselves.
+This constructs a broad of participation, with different aspects being reflected across the
+review’s research papers.
+Conclusion
+This research review indicates that a range of innovative technologies are being designed
+to facilitate accessibility for museum visitors. Although this is a relatively small sample of
+recent research, it includes haptic telepresence robots, multisensory artworks, 3 D
+multimedia,
+multilingual
+devices
+and
+augmented
+reality
+applications.
+These
+new
+technologies have the potential to transform the museum experiences for people with
+sensory impairment and/or learning disabilities.
+The notion of accessibility that has emerged is of a multi-layered concept, underpinned by
+values which see accessibility as a fundamental human right and way of delivering
+important social goals. While the studies reviewed could all be seen as working toward this
+end, the means of achieving this, in relation to research participation, are more varied.
+j JOURNAL OF ENABLING TECHNOLOGIESj
+
+Participants were typically involved in giving feedback to researchers rather than being
+involved as co-researchers, and although the stage of development or complexity of a
+project may mitigate against a co-researcher approach in some cases, the use of non-
+disabled proxies implies that more involvement is possible.
+Future research that seeks to design museum technologies for people with sensory and
+intellectual impairments will need to become more attuned to issues of inclusion and
+participation. This will impact on who the researchers are, i.e. the composition of the
+research team, and how disabled people contribute to the research process. It will be
+important therefore to research the processes that might enable these changes, building on
+the relatively few examples that currently exist such as the ARCHES Horizon 2020 project
+(Garcia Carrizosa et al., 2019).
+The research identifies a lack of involvement with museum staff, i.e. those who would be
+supporting the implementation of new technologies in the museum and providing
+accessibility support for visitors. If the design process is to be more inclusive and produce
+sustainable change within museums, then the possibility of their deeper engagement
+should be examined further. The attractiveness (as defined previously of the technologies to
+both end users and supporters) is vital if the technology is to have a real-life usability and
+have a meaningful impact in peoples’ lives. Having a notion of participation in research
+which is broad is likely to support the design of such technologies.
+References
+Abbott, C. Brown, D. Evett, L. Standen, P. and Wright, J. (2011), “Learning difference and digital
+technologies: a literature review of research involving children and young people using assistive
+technologies 2007-2010”, available at: www.kcl.ac.uk/sspp/departments/education/research/crestem/
+steg/recentproj/assistivetech.aspx
+Borg, J., Lindstrom, A. and Larsen, S. (2011), “Assistive technology in developing countries: a review
+from the perspective of the convention on the rights of persons with disabilities”, Prosthetics and
+Orthotics International, Vol. 35 No. 1, pp. 20-29.
+Grant, M.J. and Booth, A. (2009), “A typology of reviews: an analysis of 14 review types and associated
+methodologies”, Health Information & Libraries Journal, Vol. 26 No. 2, pp. 91-108.
+Garcia Carrizosa, H., Diaz, J., Krall, R. and Sisinni Ganly, F. (2019), “Cultural differences in ARCHES: a
+European participatory research project – working with mixed access preferences in different cultural
+heritage sites”, The International Journal of the Inclusive Museum, Vol. 12 No. 3, pp. 33-50.
+Milicchio, F. and Prosperi, M.C. (2016), “Accessible tourism for the deaf via mobile apps”, Proceedings of
+the 9th ACM International Conference on Pervasive Technologies Related to Assistive Environments
+(PETRA’16) in Corfu, ACM, art No. 23.
+Partarakis, N., Klironomos, L., Antona, M., Margetis, G., Grammenos, D. and Stephanidis, C. (2016),
+“Accessibility of cultural heritage exhibits”, Lecture Notes in Computer Science (Including Subseries
+Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics, ), Vol. 9738, pp. 444-455.
+Reichinger, A., Fuhrmann, A., Maierhofer, S. and Purgathofer, W. (2016), “Gesture-based interactive
+audio guide on tactile reliefs”, Proceedings of the 18th International ACM SIGACCESS Conference on
+Computers and Accessibility (ASSETS ‘16) in Reno, NV, ACM, pp. 91-100.
+Ritvala, T., Piekkari, R., Franck, H., and Granqvist, N. (2017), “The international expansion of an art
+museum: Guggenheim’s global – local contexts”, in Ibeh, K., Tolentino, P., Janne, O. and Liu X. (Eds),
+Growth Frontiers in International Business, The Academy of International Business, Palgrave Macmillan,
+Cham.
+Rix, J., Garcia Carrizosa, H., Seale, J., Sheehy, K. and Hayhoe, S. (2019), “The while of participation: a
+systematic review of participatory research involving people with sensory impairments and/or intellectual
+impairments”, Disability & Society, Vol. 1.
+Seale, J. and Chadwick, D. (2017), “How does risk mediate the ability of adolescents and adults with
+intellectual and developmental disabilities to live a normal life by using the internet?”, Cyberpsychology:
+Journal of Psychosocial Research on Cyberspace, Vol. 11 No. 1.
+j JOURNAL OF ENABLING TECHNOLOGIESj
+
+Sheehy, K., Garcia Carrizosa, H., Rix, J., Seale, J. and Hayhoe, S. (2019), “Inclusive museums and
+augmented reality. Affordances, participation, ethics and fun”, The International Journal of the Inclusive
+Museum, Vol. 1.
+Sheehy, K., Ferguson, R., and Clough, G. (2014), “Augmented education: bringing real and virtual
+learning together”, Digital Education and Learning, Palgrave Macmillan, Basingstoke.
+Silverman, A.M., Gwinn, J.D. and Van Boven, L. (2015), “Stumbling in their shoes: disability simulations
+reduce judged capabilities of disabled people”, Social Psychological and Personality Science, Vol. 6
+No. 4, pp. 464-471.
+United Nations (2006), “Convention on the rights of persons with disabilities”, available at: www.un.org/
+disabilities/convention/conventionfull.shtml
+Wright, J.A., Sheehy, K., Parsons, S., and Abbott, C. (2011), Guidelines for Research into the
+Effectiveness of Assistive Technologies (at), Kings College London/De Montford University, Leicester.
+Appendix
+List of articles in alphabetical order
+1.
+Baker, E.J., Bakar, J.A.A. and Zulkifli, A.N. (2018), Mobile augmented reality for hearing
+impaired museum engagement (MARHIME): a conceptual model, AIP Conference
+Proceedings, Vol. 2016 No. 1. AIP Publishing, p. 020031.
+2.
+Fonseca, D., Navarro, I., de Renteria, I., Moreira, A.F. and de Reina, O. (2018),
+Assessment of wearable virtual reality technology for visiting world heritage buildings:
+an educational approach, Journal of Educational Computing Research, Vol. 56 No. 6,
+pp. 940-973.
+3.
+Hollinworth, N., Allen, K., Hwang, F., Minnion MBE, A. and Kwiatkowska, G. (2016),
+Interactive sensory objects for and by people with learning disabilities, The
+International Journal of the Inclusive Museum, Vol. 9 No. 1, pp. 21-38.
+4.
+Park, C.H., Ryu, E.S. and Howard, A.M. (2015), Telerobotic haptic exploration in art
+galleries and museums for individuals with visual impairments, IEEE Transactions on
+Haptics, Vol. 8 No. 3, pp. 327-338.
+5.
+Raffi, F. (2017), Full Access to Cultural Spaces (FACS): mapping and evaluating
+museum access services using mobile eye-tracking technology, Ars Aeterna, Vol. 9
+No. 2, pp. 18-38.
+6.
+Wilson, P.F., Stott, J., Warnett, J.M., Attridge, A., Smith, M.P., Williams, M.A. and
+Warwick Manufacturing Group (WMG). (2018), Museum visitor preference for the
+physical properties of 3 D printed replicas, Journal of Cultural Heritage, Vol. 32,
+pp. 176-185.
+7.
+Fernandez-Villalobos, N. and Puyuelo M. (2018), Perception and wayfinding at cultural
+sites, International Journal of Visual Design, Vol. 12 No. 4, pp. 19-34.
+8.
+Yang, Z. and Ganz, A. (2018), A sensing framework for indoor spatial awareness for
+blind and visually impaired users, IEEE Access, Vol. 7, pp. 10343-10352.
+Corresponding author
+Helena Garcia Carrizosa can be contacted at: helena.garcia-carrizosa@open.ac.uk
+For instructions on how to order reprints of this article, please visit our website:
+www.emeraldgrouppublishing.com/licensing/reprints.htm
+Or contact us for further details: permissions@emeraldinsight.com
+j JOURNAL OF ENABLING TECHNOLOGIESj
+

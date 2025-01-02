@@ -1,0 +1,259 @@
+Fourth International Conference on Autonomic and Autonomous Systems
+A Location-aware System using RFID and Mobile Devices for Art Museums
+R. Tesoriero, J. A. Gallud, M. Lozano, V. M. R. Penichet
+Computer Systems Department
+Universidad de Castilla-La Mancha
+Campus universitario s/n, 02071 Albacete, Spain
+{ricardo, jgallud, mlozano, vpenichet}@dsi.uclm.es
+Abstract Previous proposals show the interest of this topic [1,
+2, 3, 4, 6, 7 and 9]. The main difference between
+Emerging location-aware mobile technologies are previous proposals and the one we are proposing in
+being applied successfully in cultural environments. this paper is the way in which our system uses RFID,
+Different technologies, such as RFID, WiFi, and so on, due to mobility issues.
+are being applied to allow mobile devices interact with The rest of the paper is organized as follows: in
+the environment. This paper describes a system based Section 2 we present a brief description of the
+on both active and passive RFID which support the conceptual model we have defined to support the
+automatic positioning of mobile devices in art location aware system. Then, in Section 3 we explore
+museums. This proposal results especially useful to the positioning system technology employed to
+provide location-aware information avoiding the need develop the system. And finally, the conclusions about
+for users to manually select the desired information the work are presented in Section 4.
+they want to see. This proposal has been successfully
+proved for the location and positioning of PDAs. 2. Conceptual modeling for location-
+awareness in cultural spaces
+1. Introduction
+One of the primary tasks related to the design of
+Mobile technologies are present in our daily life and location-aware mobile software for museums is the
+their use seems to be restricted to support phone calls definition of a conceptual model.
+or to organize our work schedule. We think that these We think a museum entity is conceptually
+devices can be used in different scenarios, for instance, composed by, at least, two types of information, the
+in cultural environments. Modern museums offer Catalogue Information and the Environmental
+visitors different devices to guide them and enjoy their Information.
+visit. Often, these electronic guides provide visitors Catalogue Information is related to museum registry
+with audio information about the pieces exhibited in and it is stored according to defined structures and
+the museum in several languages. procedures that museums should follow to accomplish
+The introduction of new technologies in cultural international standards [5]. Usually, this information is
+environments has enriched the way in which art objects available in electronic format and is described in
+are exposed to visitors. However, these technologies technical language. We focused our efforts on defining
+have not been as successful as audio guides in the past a model that represents the information surrounding a
+because these guides keep being the most popular piece instead of the piece itself. We called this
+device to guide users inside museums. information as “environmental information”.
+Positioning systems are common in software Any art object or piece exhibited in a museum is
+applications related to geographic information. An wrapped by extra information depending on the
+interesting challenge is related to the fact of how to exposition environment; for example, the piece
+locate a mobile device inside buildings, for instance art physical place. So, a central item of our model is the
+museums. Space. A piece must be exposed into a Space and it
+This paper defines a conceptual model for a also has a Space associated to it.
+museum to support an automatic positioning system Pieces are usually exposed within a container. This
+based on a well known technology such as RFID. container may be represented by a showcase (if it
+0-7695-3093-1/08 $25.00 © 2008 IEEE 76
+DOI 10.1109/ICAS.2008.38contains small objects) or a frame (in case of a are exhibited in containers. However, there is some
+painting), or anything that is able to contain a piece. A intangible information that is not catalogued, for
+Space is also associated to one or more graphical instance descriptions of temporal events or
+representations, resources and identifiers. geographical characteristics. To solve this problem,
+An overview of the conceptual model is depicted in this information is provided to visitors through panels.
+Figure 1. Panels contain graphical information regarding events
+An interesting thing to point out is the fact that the that do not have any physical representation in the
+Identifier entity allows the system to be isolated from exposition.
+the specific technology used to locate an object in the Sometimes, large showcases are divided into
+real world (RFID, WIFI, etc). Besides, this object may regions to organize pieces in groups to improve the
+be also identified by one or more Identifiers; so it is information understanding. Each region is represented
+possible to use different positioning and location by a section that groups related pieces in some way.
+technologies at the same time to improve the system As a consequence, pieces are contextualized according
+precision. For instance, you can use RFID to identify a to defined criteria providing a context for each group.
+showcase and a code bar to identify a piece within the Pieces are physically represented by the
+showcase. PieceRepresentation entity. It relates the physical space
+Another important issued to point out is the fact in which the piece is settled with the information
+that, although a museum may have a media repository related to the piece.
+associated to its catalogue, this information is not The only linking point between the catalogue
+always appropriate to be exposed to public in general information and the environmental information is
+[9]. Usually, it is expressed in technical language and established by the relationship between
+should be adapted to ordinary people. So, in order to PieceRepresentation and Piece. Thus, we decouple the
+adapt this information, we created the Resource entity piece physical representation (modeled by
+that represents the content that is ready to be exposed PieceRepresentation) from the piece technical
+to visitors. This content may be images, audios, videos information (modeled by Piece). And decoupling these
+or texts. These resources should be also customized in entities we can adapt our conceptual model to any kind
+different languages in order to fit users’ needs. of pieces.
+Pieces are not the only spaces that may have The GraphicRepresentation class is the graphical
+information related to it. Often, rooms, floors and even representation of a space. Depending on the visitor’s
+the building provide contextual information about the point of view, a space can be seen from different
+pieces they contain. perspectives. We have defined two ways of visualizing
+Thus, a museum is a cultural environment that may spaces: Internally and Externally.
+be physically organized in one or more buildings. A The Internal representation is used to show the
+building is divided into floors and a floor is divided space itself (for instance a floor, building or room
+into rooms. In a room we can find terminals. A map), while the external representation depicts the
+terminal represents a device that can be placed into a space from its container’s point of view. This feature
+room. It can be a showcase or a panel. allows the system to manage two abstraction levels of
+As we mentioned before, museums usually have information providing the user with accurate
+information about the catalogued pieces. These pieces information but avoiding information overload.
+77Figure 1. Museum conceptual model
+3. Positioning mobile devices in cultural
+spaces
+The desired functionality of the system includes the
+use of context aware information to provide a richer
+user experience. Additionally, we integrate our
+solution to a software application currently running in
+the museum (the catalogue application).
+The positioning subsystem is responsible for giving
+the PDA an identification to locate the device
+according to a relative or absolute position. The
+automatic database synchronization subsystem is
+responsible for maintaining the coherence between
+both the internal and external databases. As internal
+Figure 2: Passive and active tags and readers
+database we mean the database that may be already
+installed in the museum containing the pieces
+When a user with a PDA visits the museum, he or
+catalogue and, eventually, a media repository. An
+she can download and run the client program in the
+external database refers to our specific database to
+museum’s entrance hall.
+support the positioning subsystem, the information to
+In order to retrieve information related to the pieces
+be displayed to visitors, internationalization issues and
+exhibited in the museum, the user may choose between
+so on.
+auto-navigation mode and manual navigation mode.
+Figure 2 shows both active and passive RFID tags
+Manual navigation mode allows users to navigate
+and a PDA including a RFID reader.
+along the building using cursor keys or the PDA
+stencil. On the other hand, the PDA can automatically
+78detect the position of the user in the museum and In this case, the technique requires the use of
+retrieve the correct information according to the PDA passive RFID tags that are detected by the reader at 5-8
+location within the museum reducing in this way the cm from the tag (that is hidden by the label or mark).
+user clicks on the PDA, as he does not need to select
+anything at all. 3.1.3. The higher level. The higher level requires even
+The variety of positioning systems available in the more attention from the users than the previous levels.
+market made us to define a system separately from the It requires the user to point with a device to an object
+hardware employed to locate users. Thus, the client or label in order to retrieve the information about an art
+program running in the PDA can receive information piece or space. This kind of interaction is not as natural
+from the environment in many ways: infrared sensors, as the other alternatives, but it provides a good method
+active or passive RFID tags, Bluetooth, WiFi devices when the information is not easily reachable due of
+or any other system available now or to appear in the distance issues.
+future. This way, the client sends the location Suppose that we would like to retrieve information
+information to the server and gets back the requested about an artifact that hangs from the roof. In this case,
+information according to the PDA location. the user points the device to the objective and retrieves
+The main advantage of this system is the possibility the information about it.
+to interact with the environment in three levels of In order to implement this alternative, IR
+attention. technology is used because the directional
+characteristics of this kind of light are worth for this
+3.1. Interaction at different levels of attention purpose.
+In this paper we are discussing the user interaction 3.2 Space granularity
+according to different levels of attention required for
+the user to operate the system. Space granularity is based on the idea that spaces
+We have defined 3 levels of attention and, in this can be seen as a tree where each node represents a
+section, we discuss different ways of implementing space and the edges represents the composition
+them based on novel and well-known technologies. relationship.
+The Root is the space that contains all the spaces
+3.1.1. The lower level. The lower level of attention which we are going to provide information of. On the
+allows the user to perceive the periphery with almost contrary, Leaves are objects that cannot be divided into
+no attention from him/her. So the user can perform other ones -in the spatial aspect- to get information.
+other activities without paying attention to the They usually are the art objects.
+periphery. However, he or she can be aware of The interaction techniques described above will be
+interesting events that may occur nearby them. applied to get information about spaces according to
+For instance, suppose that a group of people is two granularity levels: coarse grained and fine grained
+visiting a gallery while they are talking, and they may (see Figure 3).
+come across with an important masterpiece without
+noticing. In such case, the system can alert the visitors 3.2.1. Coarse grained spaces. In coarse grained
+about the event taking visitor’s attention to prevent spaces the system is able to perceive the location of the
+them from missing it. user according to a space position. So, the lower level
+The technological approach to tackle this problem is of attention may fit this situation. Thus, the most
+based on active RFID tags and readers. When a PDA is suitable technology to be used is the active RFID. The
+close to an interesting point, the user is notified about environment provides mobile users with the
+it and the information related to the point is information of the periphery using tags while mobile
+automatically retrieved from the server to the PDA. software detects these tags and recognizes art objects
+(for instance, a statue or a masterpiece) allowing users
+3.1.2. The medium level. The medium level of to download additional information about it.
+attention takes more attention from the user in order to
+get the information about the different objects because 3.2.2. Fine grained spaces. Fine grained mode is
+he or she has to perform an explicit action (or gesture) used to identify objects when the user position is not
+to retrieve the information about a piece or space. precise enough to retrieve information about it. In this
+For instance, if we are watching a showcase and we case we may use passive RFID or infrared according to
+want to get some information about a specific piece, the situation. Thus, we are applying the medium or
+we have to place the device near the piece label (or higher level of attention of the user.
+mark) to retrieve extra information about it.
+79An example of this situation is the selection of a Then, it receives the client requests and fetches the
+piece among a set of them placed in a showcase. related information from the database sending it back
+to the client. As a consequence, this information is
+displayed on the client screen.
+4. Conclusions
+This paper introduces a novel interaction model to
+retrieve information for museums and art galleries
+using mobile devices and RFID technology (although
+different technologies are also supported).
+We start describing a conceptual model that
+supports information retrieval independently of the
+location technology used to identify the user location
+or interest.
+The system allows the user to retrieve information
+according to three levels of attention avoiding this way
+the need for users to make manual selections in the
+PDA to get the desired information. The lower level of
+attention allows users to retrieve information without
+having to pay attention to the surroundings. Finally, the
+higher level of attention requires the user to point with
+the device to the object in which he is interested.
+Two granularity levels regarding space are also
+Figure 3. Granularity Levels introduced to apply the interaction model described.
+Additional considerations have been taken into
+3.3 Additional considerations regarding the account to ease and improve some of the most complex
+proposed solution aspects concerning this system, such as communication
+protocol and portability.
+An important aspect to note is the possibility of
+using passive and active RFID simultaneously. In this 5. References
+situation a hardware problem may appear. Most of the
+current commercially available PDAs have only one [1] C. Barber, H. Bristow, S. Cheng, A. Hedley, Y.
+Compact Flash slot, if any; and RFID readers are only Kuriyama, M. Lien, J. Pollard and P. Sorrell. Augmenting
+available in this format for PDA. Therefore, we may Museums and Art Galleries. Human-Computer Interaction
+use a Compact Flash hub in order to get active and INTERACT '01, The International Federation for
+passive RFID reader working together. Information Processing, Tokyo, Japan, 2001, 439-447.
+This solution also encourages the application
+[2] C. Ciavarella and F. Paternò, F. The design of a handheld,
+portability. In order to achieve it, we have proposed an
+location-aware guide for in-door environments. Personal and
+architecture to support portability among mobile
+Ubiquitous Computing, Springer Verlag, 2004, Vol.8 N.2 82-
+devices by designing it as general as possible.
+91.
+For instance, interface portability is an important
+issue to take into account when designing portable [3] J. A. Gallud, V. M. R. Penichet, L. Argandeña, P.
+device software because of the fast development of this González and J. A. García. Digital Museums: a multi-
+technology. technological approach. HCI - International Conference
+As result of this evolution, mobile devices such as 2005. Lawrence Erlbaum Associates (ISBN 0-8058-5807-5).
+Las Vegas (USA). July 2005.
+PDAs and Smartphones are turning desktop offices
+into mobile offices.
+[4] R. E. Grinter, P. M. Aoki, A. Hurst, M. H. Szymanski, J.
+Another important issue regarding mobile devices is
+D. Thornton and A. Woodruff. Revisiting the Visit:
+the communication protocol. In order to keep it as
+Understanding How Technology Can Shape the Museum
+compatible as possible, the information is managed Visit. In Proc. ACM Conf. on Computer Supported
+using XML through an HTTP connection. Cooperative Work, New Orleans, LA., 2002
+Finally, in order to receive information, the mobile
+device sends the location information to the server. [5] International Guidelines for Museum Object Information:
+The CIDOC Information Categories. International
+80Committee for Documentation of the International Council of
+Museums ICOM-CIDOC. In Proc. ACM Conference on
+Computer Supported Cooperative Work, ISBN 92-9012-124-
+6, New Orleans, LA. 1995.
+[6] S. Long, R. Kooper, G. D. Abowd and C. G. Atkeson.
+Rapid Prototyping of Mobile Context-aware Applications:
+The Cyberguide Case Study. 2nd ACM International
+Conference on Mobile Computing and Networking
+(MobiCom'96), November 10-12, 1996.
+[7] F. Paternò and C. Santoro. Exploiting mobile devices to
+support museum visits through multi-modal interfaces and
+multi-device games. WebIST 2007, Barcelona, Spain, March
+3-6, 2007.
+[8] R. Tesoriero, M. D. Lozano, J. A. Gallud, V. M. R.
+Penichet. Evaluating the users’ ex-perience of a PDA-Based
+Software Applied in Art Museums. WebIST 2007, Barcelona,
+Spain, March 3-6, 2007.
+[9] M. Milosavljevic, R. Dale, S. J. Green, C. Paris and S.
+Williams. Virtual museums on the informationsuperhighway:
+prospects and potholes. Proceedings of the Annual
+Conference on the International Committee for
+Documentation of the International Council of Museums
+(CIDOC’98), Melburne, Australia, October 10-14, 1998
+81

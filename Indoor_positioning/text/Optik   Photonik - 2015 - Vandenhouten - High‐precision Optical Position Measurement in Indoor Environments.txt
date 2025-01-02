@@ -1,0 +1,338 @@
+Measurement Technology
+High-precision Optical Position
+Measurement in Indoor Environments
+Locating people by capturing multiple optical markers with a mobile device
+Ralf Vandenhouten and Ole Wendlandt
+Indoor localization is still a challenge
+today. Conventional methods based on
+satellite navigation, like GPS, can only
+be used outdoors. On the other hand,
+radio signal architectures, like WiFi or
+NFC, require high cost infrastructure
+to be installed inside the building. In
+collaboration with Ixellence GmbH,
+the research group for telematics of the
+University of Applied Science Wildau
+is developing a new inexpensive solu-
+tion based on the camera of a mobile
+device. This approach only requires
+the availability of multiple identifi-
+able landmarks that can be installed
+cost-efficiently in an indoor environ-
+ment. Our investigations show that this meters, depending on the conditions of The presented method in this article
+method is very accurate and can pro- the signal transmission. Since this type dispenses with an elaborate infrastruc-
+duce repeatable, robust results. of detection is based on the reception of ture and uses – besides ordinary mobile
+very weak satellite signals that are avail- devices – only simple and inexpensive
+Indoor localization today and able only outside of buildings, an indoor landmarks and 2D codes. The applica-
+related problems localization is not possible. tion field for such indoor positioning
+Therefore, other methods have been ranges from navigation solutions for
+Modern mobile devices typically have developed for indoor positioning, based large buildings or localized advertising
+a sensor for satellite navigation, mostly on the fact that the mobile device re- at the point-of-sale through to location-
+GPS. This allows spatial outdoor track- ceives a number of signals from a special based value-added services, offered to
+ing with an accuracy of one or a few infrastructure installed in the building the user on the mobile device depending
+(e. g. WiFi or infrared transmitters) and on his position [1].
+uses them for calculating its location,
+Company e. g. by triangulation. Apart from the Architecture of our optical indoor
+relatively high infrastructure costs, this localization
+approach has further disadvantages.
+ixellence GmbH
+Firstly, the accuracy is affected due to The basic architecture of the system
+Wildau, Germany
+reflections of the signals on walls and consists of the landmark infrastructure,
+ixellence is an international operating provider objects in the room. Using calibration a mobile device such as a tablet or mo-
+of telematics solutions and services in the sec- methods these errors can indeed be par- bile phone that will be located, and an
+tors of image processing, medicine and mobile tially compensated, but such methods optional server for data storage.
+applications. Specialized in modern, plug-in-
+are complex and expensive. Secondly, The building in which to place the lo-
+oriented software development, ixellence suc-
+the positioning using radio signals is not calization system must be equipped with
+cessfully plan, develop and supervise projects
+for more than ten years. The product portfolio very robust, as they can be disrupted in landmarks.
+includes image processing tools like the bar- an unpredictable way related to mov- Landmarks can be two-dimensional
+code scanning software ixMAT or the 3D mea- ing objects (such as people, furniture, (e. g. a print on a wall) or three-dimen-
+surement device ix3D.
+shopping carts). For the above reasons, sional (e. g. sphere, cube, cuboid, hex-
+indoor positioning methods based on agonal shapes). In our first approach we
+www.ixellence.com
+radio infrastructure could not prevail in use datamatrix codes on a two dimen-
+broad so far. sional robust cardboard with a colored
+24 Optik&Photonik 3/2015 © 2015 WILEY-VCH Verlag GmbH & Co. KGaA, WeinheimLandmark detection Position calculation
+Recording the environment with the Calculation of the relative position with
+camera of the mobile device respect to the landmarks
+Detection of landmarks in the
+Calculation of the absolute position
+camera image
+Identification of the landmarks and
+spatial mapping Visualization of the position (optional)
+Fig. 1 Processing steps of localization
+rectangle. For reading datamatrix codes the absolute position and orientation of
+Ixellence GmbH provides a quick (real the mobile device can be calculated.
+time) and reliable decoder (ixMAT) for The absolute positions of the land-
+mobile devices which is optimized for marks and their orientation can be
+long distance scanning. stored either in the mobile device itself
+In general, the landmarks should or on a server with a database to which
+be optically prominent (e. g. cubes the mobile device can connect wirelessly
+with colored edges) so that they can be and download required data.
+identified easily. Each landmark has to
+be positioned in a way that it is clearly Landmark detection
+visible from as many positions in the
+area as possible. If a landmark has sev- The layout of our landmark contains a
+eral outer surfaces facing in different datamatrix code with an identifier for
+directions of the area, it is advanta- the position of the landmark in the data-
+geous if each of these surfaces has an base and a surrounding rectangle.
+individual marking in order to be dis- The detection process of the land-
+tinguishable, and so the viewing direc- marks in the camera image is done in a
+tion can be determined reliably. The two-stage procedure. In the first stage all
+size, the number and spatial density rectangles are detected. Because of the
+of landmarks to be installed depend morphologic characteristics rectangles
+on the site area and the desired spatial are easy to detect in a camera image of an
+resolution of the location. environment. The rectangles further al-
+The localization itself is done in two low computing the transformation ma-
+steps – see Fig. 1. One step is the image trix to get an undistorted rectangle that
+processing part that detects the land- may contain a datamatrix barcode. The
+marks in the digital image that is re- computation of the undistorted rectan-
+ceived from the camera of the mobile de- gle is a pre-processing step that simpli-
+vice. The second step is computing the fies and increases robustness of further
+position of the device and consequently image processing steps (e. g. decoding of
+of the person using it. For this the re- the datamatrix label). The detection of
+search group for telematics at Wildau rectangles is implemented with an edge
+University of Applied Science developed detection filter on a grey-image using
+an algorithm that processes both steps the well-known Canny algorithm [2].
+in real time on the mobile device. The The result of the Canny algorithm is a
+relative position and orientation of the binary image containing only two color
+mobile device with respect to the land- values, black and white. White pixel val-
+marks is determined based on the size of ues belong to an edge (Fig. 2).
+the visible landmarks, their positions in Within the binary image, we are
+the image and their perspective distor- looking for those points that approxi-
+tion by estimating the camera pose from mate closed polygons with only four
+3D-2D point correspondences. edges using topological structural
+From the relative position of the mo- analysis and curve approximation.
+bile device with respect to the landmarks From this polygon approximation we
+and the known absolute position of these get a list of sub-images that may con-
+landmarks as well as their orientation tain possible landmarks – see Fig. 3 for
+© 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+21911975,
+2015,
+3,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1002/opph.201500022
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+Licensewww.optik-photonik.de
+(0)
+P = C = 0 (E 3)
+camera 0
+This can be translated to the 3D space
+with the relation derived from (E2)
+above:
+C = –R–1 × t (E 4)
+The result C contains the absolute cam-
+era position in 3D space with the coor-
+dinates (X, Y, Z). These coordinates can
+Fig. 2 Detection of
+be displayed to the user as his position in
+edges with Canny
+algorithm. the building.
+The results of our validation proce-
+positions of possible landmarks in the tion of a calibrated camera can be deter- dure in the laboratory for computer vi-
+source image. mined. We use the iterative Levenberg- sion are relatively robust. We compared
+The last pre-processing step is Marquardt algorithm [5] that provides different positions in 3D space mea-
+dewarping the perspective of each sub- an accurate solution to the PnP-Problem. sured manually with the results of our
+image of a landmark candidate. The per- The result of the computation process indoor location method. The relative
+spective of the landmark is transformed is a translation vector (t) and a rotation error for the x- and y-coordinates was
+to a central perspective to make it or- matrix (R). With t and R it is now pos- about 3.5 – 3.8 %, which corresponds to
+thogonal to the camera viewpoint, like sible to transform points from 2D space an absolute deviation of 10 –12 cm.
+the camera would be positioned directly (R²) to 3D space (R³) and vice versa. This
+in front of the landmark. As mentioned, is based on the pinhole camera model Conclusion and future work
+this transformation increases the ro- described in Hartley and Zissermann
+bustness of the decoding of the datama- [6]. The 3D space is the coordinate sys- We have implemented our method in a
+trix code within the rectangle. tem of the real world with the known ab- prototype running on an Android tablet
+The second stage deals with the de- solute positions of the landmarks. The device with a dual core A15 ARM pro-
+coding of the datamatrix codes in our 2D space is a plane (i. e. the image plane) cessor. With this kind of processor type
+landmarks. within the camera coordinate system it is possible to obtain a frame rate of 10
+All possible landmarks are processed (R³). The distance between the image frames per seconds. Compared to other
+by the ixMAT library [3, 4] from Ixel- plane and the camera position is called approaches, the method is very precise
+lence. As a result, we get the identifier focal length. The focal length belongs to and robust with respect to changes in
+of the landmark in our database where the set of intrinsic camera parameters the environment. A major advantage of
+the known absolute position is stored and is determined by a pre-processed this technique lies in the fact that – apart
+and additionally the position in the calibration procedure for the camera of from the inexpensive landmarks – it does
+camera image. False positive landmarks the mobile device. not need any additional components or
+(rectangles containing no barcode) are Between 2D space and 3D space, the equipment but can be implemented by
+filtered out, when the decoder cannot following coordinate transformation simply using commercially available
+identify them as datamatrix codes. The equation can be used: smartphones. This ensures low invest-
+decoding is parallelized for speeding up ment costs and makes the method inter-
+(x) r 11 r 12 r 13 (X) (t x)
+the real time detection. y = r r r × Y + t (E 1) esting for the growing market of indoor
+21 22 23 y tracking solutions. Our future work will
+f r r r Z t 31 32 33 z
+Position calculation be focused on including additional sen-
+(x, y, f) is the position on the image plane, sors of the mobile device like accelera-
+The position calculation can be per- i. e. camera coordinate system, which tion and / or gyroscope sensors. These
+formed now. The inputs are the absolute is computed with the rotation matrix sensors can be used to improve the ac-
+3D positions of the landmarks stored in a R, the 3D space point (X, Y, Z) and the curacy of the position. Furthermore, a
+database and the relative (2D) positions translation vector (t , t, t). tracking component with a dead reckon-
+x y z
+of the detected landmarks computed in The equation above can also be writ-
+the preceding step. ten as follows:
+We calculate the position of the cam-
+era (i. e. the user position) from the 2D- p = R × P + t (E 2)
+camera world
+3D correspondence of the absolute land-
+mark positions in the real world and the Now we want to determine the camera
+relative landmark positions in the source position in 3D space. We know the posi-
+image. The calculation of the 2D-3D cor- tion of the camera in the camera coordi-
+respondence is called a Perspective-n- nate system which is exactly the centre
+Point (PnP) problem. With solving the C:
+PnP problem the position and orienta- Fig. 3 Candidates of landmark images
+26 Optik&Photonik 3/2015 © 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+21911975,
+2015,
+3,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1002/opph.201500022
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseMeasurement Technology
+ing component could be realized. With [4] R. Vandenhouten, M. Selz: Identification eters, Journal of the Society for Industrial
+these technologies the mobile device can and tracking of goods with the mobile and Applied Mathematics 11 (1963) 431–
+phone. In: Logistics and Industrial Infor- 441
+be tracked without permanently having
+matics, 2007. LINDI 2007, International [6] R. Hartley, A. Zisserman: Multiple view
+landmarks visible from the camera.
+Symposium on, pp. 25–29 (2007). geometry in computer vision. Cambridge
+Beyond determination of the abso- [5] D. Marquardt: An Algorithm for Least- University Press, Cambridge, UK, New
+lute position other content can be shown Squares Estimation of Nonlinear Param- York (2003)
+on the display of the device. Key point
+for that is the integration of location-
+based content for the user (e. g. advertis-
+ing in a supermarket). A next step could
+Authors
+be the integration of augmented reality
+scenarios to the user. Augmented real-
+Ole Wendlandt works
+ity can enrich the real live images of the Ralf Vandenhouten is
+as a scientific assis-
+camera with additional information on vice president for tant in the research
+research and busi-
+the user interface. group for telematics at
+ness relations and
+the Wildau University
+DOI: 10.1002/opph.201500022 head of the depart-
+of Applied Science.
+ment of telematics at
+Research topics are [1] D. Mietzner, R. Vandenhouten, C. the Wildau University
+plug-in-oriented soft-
+Schultz: Neue Ansätze in der Indoor-Nav- of Applied Sciences.
+ware engineering,
+igation – Echter Mehrwert für den statio- His research focuses
+image processing and nären Handel? In: I. Domnick, S. Heimann on software development for telematics
+medical data processing. He received his
+(Hrsg.): Urbanes Leben – Urban Living – applications, mobile computing and image
+Master of Engineering 2010.
+Forum GeoBau, Band 4, S. 51-62, ISBN processing. He received his doctoral
+978-3-8440-2643-6, Berlin, 2013. degree at the Technical University Aachen
+[2] J. Canny: A Computational Approach to (RWTH) in 1997 and is a professor at
+Edge Detection. Pattern Analysis and Ma- Wildau University of Applied Sciences
+chine Intelligence, IEEE Transactions on since 2000.
+PAMI-8, 679–698 (1986)
+[3] ixMAT – The mobile phone as mobile scan- Prof. Dr. Ralf Vandenhouten, Department of Telematics, Wildau University of Applied Sciences, Hochschulring
+ner, www.ixellence.com/ixmat 1, 15745 Wildau, Germany. E-mail: ralf.vandenhouten@th-wildau.de
+© 2015 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim Optik&Photonik 3/2015 27
+21911975,
+2015,
+3,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1002/opph.201500022
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License

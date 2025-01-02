@@ -1,0 +1,301 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/221608249
+Indoor positioning: Challenges and solutions for indoor cultural heritage site
+Conference Paper · February 2011
+DOI: 10.1145/1943403.1943469 · Source: DBLP
+CITATIONS READS
+28 5,210
+7 authors, including:
+Tsvi Kuflik Joel Lanir
+University of Haifa University of Haifa
+296 PUBLICATIONS 4,812 CITATIONS 94 PUBLICATIONS 1,766 CITATIONS
+SEE PROFILE SEE PROFILE
+Eyal Dim Alan J. Wecker
+University of Haifa University of Haifa
+17 PUBLICATIONS 233 CITATIONS 60 PUBLICATIONS 525 CITATIONS
+SEE PROFILE SEE PROFILE
+All content following this page was uploaded by Joel Lanir on 14 February 2018.
+The user has requested enhancement of the downloaded file.Indoor Positioning: Challenges and Solutions
+for Indoor Cultural Heritage Site
+Tsvi Kuflik, Joel Lanir, Michele Corra’ Massimo Zancanaro,
+Eyal Dim, Alan Wecker Tretec S.r.l. Oliviero Stock
+University of Haifa, Mount Carmel, Via Solteri 38, FBK-irst
+Haifa 31905, Israel Trento 38121, Italy Via Sommarive 18,
+tsvikak@is.haifa.ac.il, ylanir@ is.haifa.ac.il, michele.corra@3tec.it Povo 38050 Italy
+dimeyal@ bezeqint.net, ajwecker@ gmail.com zancana@fbk.eu, stock@fbk.eu
+just a bit more is provided by museum visitors guides, mainly
+ABSTRACT because of the limits of time and patience of the visitors. The
+Museums are both appealing and challenging as an advent of mobile technology brought with it the notion of
+environment for indoor positioning research. By nature, they context awareness, hence recent research prototypes of
+are dense and rich in objects and information, and as a result museum visitors guides [Stock et al. 2007; Wakary and
+they contain more information than a visitor can absorb in a Hatala, 2007; Kuflik et al., to appear] attempt to provide
+time-limited visit. Many research projects have explored the personalized context aware information to their users.
+potential of novel technologies to support information Location awareness is a key component in such systems and
+delivery to museum visitors. Having an accurate visitor one of the major challenges systems face, since, in spite of
+position is a key factor in the success of such projects. In numerous attempts and a variety of technologies
+spite of numerous technologies experimented with, there is experimented with, there is still no good solution for the
+no prevailing indoor positioning technology. Each requirements of determining museum visitor’s location. The
+technology has its benefits as well as its limitations. In system is required to be accurate (about +/- 25 cm or so) in
+addition, museums have their own constrains when it comes order to be able to pin-point visitors position, given the sizes
+to installation of sensors in their space. In the framework of of museum displays. Moreover, location itself is not enough
+the PIL project, a flexible “light weight” proximity based and orientation and line of sight are needed for understanding
+positioning system was developed and deployed at the Hecht the visitors point of interest. However, museums have their
+museum and a general framework for indoor positioning is own constrains when it comes to installation of sensors in
+proposed. The inherent limitations of the basic technology their space. As a result, presently, there are no integrated
+are addressed by an abstract reasoning layer and by a dialog solutions (even though bits and pieces exist) that address all
+with the user. these requirements. The paper addresses the gap between
+crude positioning and specific visitors’ interests; bridging
+Author Keywords
+them by a framework that uses different techniques that are
+Visitor Guides, Indoor positioning.
+used at different levels of the system, including a short dialog
+ACM Classification Keywords with the user for determining the exact object of interest, as
+H5.m. Information interfaces and presentation (e.g., HCI):
+necessary.
+Miscellaneous.
+INDOOR POSITIONING IN MUSEUMS
+General Terms Over the years, a variety of technologies have been
+Design. experimented for indoor positioning in museums. Besides
+INTRODUCTION the need for high accuracy due to the density of objects,
+Museums are both a challenging and appealing arena for museums in general have additional challenging constraints
+experimentation with novel technologies for information regarding the installation of equipment (e.g. it should be
+delivery. They are quite dense, full of interesting objects, and invisible, require zero infrastructure and maintenance…).
+rich in information about them. However, only small part of So far, no technology exists that answers all these
+the information about the objects is presented in labels while requirements. Either the system is not invisible, or it needs
+some infrastructure, or it is not accurate enough or it requires
+Permission to make digital or hard copies of all or part of this work for some user-actions (which may harm the cultural experience
+personal or classroom use is granted without fee provided that copies are by requiring the visitor to focus on the technology rather than
+not made or distributed for profit or commercial advantage and that copies
+on the museum content). Two types of technology were
+bear this notice and the full citation on the first page. To copy otherwise,
+widely experimented with – Infra Red (IR) based positioning
+or republish, to post on servers or to redistribute to lists, requires prior
+specific permission and/or a fee. and Radio Frequency (RF) based positioning. In addition to
+IUI’11, February 13–16, 2011, Palo Alto, California, USA. these two that were widely used, visual based positioning
+Copyright 2011 ACM 978-1-4503-0419-1/11/02...$10.00.
+375was experimented as well. Infra Red technology was among (illustrated by Fig. 1, bottom, left), The Hecht1 museum is
+the first to be exploited in many projects [Oppermann and equipped with a Radio Frequency (RF) based positioning
+Specht, 1999; Stock et al., 2007; Kuflik et al., to appear]. system relying on a wireless sensor network (WSN)
+However, it requires visible IR emitters, and a line of sight composed of RF devices designed and produced by Tretec,
+between the emitter and the receiver. Moreover, IR signals an Italian SME. The WSN operates on the 2.4GHz ISM band
+are detected in a conical sphere in from of the emitter, with and is based on 802.15.4 protocol, the underlying layer of the
+limited control over the distance, hence emitters need to be well known ZigBee protocol. The WSN is formed by three
+well spaced (to avoid overlapping). These constraints different kinds of objects: fixed RF tags called Beacons (Fig.
+required fine tuning IR emitters’ parameters as well as users 1, top, right), small (matchbox size) mobile wearable RF tags
+awareness of their existence. RF technology had many called Blinds (Fig. 1, top, left) and RF to TCP Gateways (Fig.
+variants, some trying to use whatever may be available like 1 bottom, right). Beacons and Gateways have the same size
+WiFi based positioning, relying on a sort of triangulation, and are roughly twice the size of a Blind (about a cigarettes’
+while others, based on Ultra Wide Band (UWB), RFID, box size).
+Bluetooth, ZigBee and more applied specific technologies for
+that purpose. Khoury and Kamat [2009] reviewed and
+analyzed RF based indoor positioning technologies. They
+also studied and compared three different wireless
+technologies (WiFi, UWB and Indoor GPS). They found that
+the Indoor GPS positioning technology is the most promising
+due to the low level of uncertainty in the reported user
+position (1 to 2 cm) compared to that of WLAN (1.5 to 2 m)
+and UWB (10 to 50 cm). However, while WiFi equipment
+may be available, its accuracy is not good enough for the
+museum and it may require additional installation of access
+points for improving performance. UWB provides reasonable
+accuracy in the price of a challenging installation
+requirements (line of sight is needed) and high cost. Indoor
+GPS that performed best also requires line of sight and is
+Figure 1: Positioning device and usage scenario
+expensive to install. Further research is needed to evaluate
+the effectiveness of other feasible technologies such as Radio The Gateways transfer the data reported by the Blinds and
+Frequency Identification (RFID) for high-precision indoor Beacons’ status, over a local area network to the PIL2's
+position tracking, mainly due to current technology that server. Beacons are statically located at entrances and exits,
+either requires very close proximity of few centimeters for as well as near relevant locations of interest in the museum,
+passive RFID or up to 50 centimeters (too constraining) for while Blinds are carried by visitors (Fig. 1, bottom, left).
+active RFID or a few meters (too coarse grained). Wakkary When a Blind is in proximity of a Beacon or another Blind,
+and Hatala [2007] experimented with combination of optical that Blind reports this information to the PIL sever through
+tracking and active RFID. Again, optical tracking is the nearest Gateway. The PIL server parses, filters and
+expensive and requires complicated installation and line of enhances the information, determining the visitor’s position.
+sight to visible light sources the visitor is wearing and as Another PIL component then decides on actions, e.g.
+such, is quite challenging solution. Skibniewski and Jang suggesting visitor personalized content adapted to the
+[2006] explored the use of ZigBee networks for tracking and reported location. It should be noted that in general, several
+monitoring objects in ubiquitous computing, avoiding some signals may be detected by a Blind, so that it can report a
+of the RFID limitations by using the capabilities of the idea number of possible locations with different weights. The
+of a sensors network. An approach, which was similarly, ordered set of results, above a given threshold, is sent to the
+adopted by us. Kray and Kortuem [2005] suggested an positioning server. The positioning system has several other
+integrated approach to positioning. At the very bottom there important features: (i) measuring proximity among Blinds,
+are sensors providing positioning measurements that are used allowing to reason about the proximity among visitors; (ii)
+for inferring user position that may be approved or further detecting voice level and activity, a feature that can be used
+refined by interaction with the user. Our work continues that to assess the level of conversation among visitors as well as
+approach. their proximity (people may have a face to face conversation
+only if they are close to each other), (iii) detecting orientation
+PIL POSITIONING SYSTEM
+of visitors, using embedded magnetometers, enabling the
+Given the fact that there is no commonly acceptable indoor
+assessment whether visitors are facing each other, the
+solution, we designed our own solution that minimizes the
+installation complexity while providing acceptable accuracy
+of being within 1.5 to 2 meters from the object of interest
+1 http://mushecht.haifa.ac.il/
+2 http://www.cri.haifa.ac.il/connections/pil/
+376exhibits or standing back to back, and (iv) detecting motion of refining the algorithms used, to balance relevant recent
+using embedded accelerometers. history with the latest signal detection data. Another element
+introduced at firmware level is “parasitic detection”: Blind A
+Particular attention was paid to power consumption of battery
+may be in close proximity to Blind B but not detected at any
+powered devices (Beacons), to their dimension (Blinds) and
+specific position, while Blind B may be detected at a certain
+to the best match of proximity areas. The former goal was
+position; thanks to the Blind proximity feature described
+reached thanks to an appropriate firmware and hardware
+above, we infer that A is at the same position as B. While the
+design of the Beacon devices: they last up to six months
+above provided solution to “false negatives”, it didn't deal
+when powered by 2 C-size batteries. High density surface
+with reflections and irregularities of antenna patterns. As part
+mount technology and LiIon batteries helped reduce the size
+of our attempt at a solution we introduced a software filtering
+of the Blinds. Finally, selecting off-the-shelf 2.4 Ghz
+layer whose purpose was to consider the spatial layout. The
+antennas brought the best tradeoff among the following
+reasoning in this layer is based on the time it takes a user to
+requirements: small dimensions of Beacons, proximity area
+move from a place to another. Starting from a network of
+match and low power RF communication.
+elementary paths with relative distances and maximum speed
+CHALLENGES AND SOLUTIONS conceivable in the museum, positions incompatible with
+The positioning system as deployed, presented the following recent positions are filtered out and compatible ones are
+categories of challenges: accuracy, availability, stability. By given different weights (Figure 2 shows an interface view of
+accuracy problem we denote that the system didn't always a fragment of the Hecht museum). In particular in this
+provide the correct position within the specified allowances process “illegal” proximities (e.g., radio-visible Beacons that
+(~1.5m). Availability problems are defined as not providing are behind physical barriers which cannot be crossed) are
+results within a constrained time limit (~3 sec). Stability ruled out.
+problems refer to not providing consistent results (especially
+when a user is in a borderline position). The problems in each
+of these categories can be further classified as inherent,
+constrained, or implementation-related.. Inherent refers to
+the fact that this is a built in feature of such systems. For
+example a ZigBee system can't determine the line of gaze
+(i.e. which exhibit is the user is looking at). Constrained
+concerns itself with the fact that the system in its present
+technology has certain limits (i.e a position can be
+determined only within ~1.5m). Implementation problems
+are connected with the specific implementation of the system,
+like bugs, ill-defined API, responsiveness, etc. There are
+variety of reasons for these problems, rooted in the specific
+characteristics of the technology, as well as the specific
+museum environs:
+ Transmission power setup, and thresholds as well as Figure 2: Configuration interface view
+antenna reception patterns impacts the area a where a
+There are cases though when resolution is intrinsically
+Beacon is detected by Blinds and cause “false negative”
+insufficient - two significant positions in the museum may be
+visitors not detected at positions.
+simply too close. Such cases were solved by combining
+ Human body shield detection by the Beacon and may cause adjacent positions into one single complex position and using
+“false negative”. a simple dialogue to disambiguate the current position (where
+ Metal, glass and other reflective surfaces may cause the visitor is presented with an aerial image and selects the
+erroneous ”false positive” detections in wrong places. object of interest among the available ones).
+ Irregular antenna patterns may cause spikes of “false
+EVALUATION OF THE POSITIONING SOLUTION
+negatives” as well as “false positives”
+In order to evaluate the positioning system as well as our
+The proposed solution is formulated via a multi-layered approach with the PIL visitor’s guide, the guide was tested by
+approach. On the hardware level (Beacons, Blinds, gateways visitors of the Hecht museum. Twenty one visitors
+antennas), the solutions consisted of using different antennas, participated in the evaluation. They were offered free use of
+individual configuration of Beacon transmission power, and the guide and were asked to fill in a questionnaire at the end
+physical location of Beacons and gateways. Beacon of their visit. In addition, log files with detailed information
+transmission power is constrained as follows: the higher the of the visits were recorded. About 20% of the museum floor
+power the better the detection, the drawback interference and area was covered by 26 Beacons, marking 26 locations of
+detection of Blinds while they are in nearby positions. So the interest in four exhibition rooms, providing visitors with
+power levels are tweaked in order to provide an optimal contextual information seen on their museum guide as soon
+solution as possible. Solutions at the firmware level consisted as they approached a location (over 300 multimedia
+377presentations in total). Out of the 26 positions, 10 had more finally, the user that can be involved in selecting a specific
+than one sub-location allowing visitors to choose, using the exhibit of interest within a larger area pointed by the
+interface a sub-location of interest. Analysis of recorded visit positioning system. For this latter point the importance of
+logs reveals that on average, visitors visited 7.14 locations good navigational aids with fast and meaningful feedback to
+each, for 131.1 seconds in a location and watching 2.31 the user must be emphasized. It should help him continuously
+presentations per location (multiple multimedia presentations understand what information is available in his vicinity (and
+were available for each location). Out of the locations that beyond) and at the same time provide intelligent means for
+had sub-locations, we see that different visitors chose interaction with the positioning system. Currently, when
+different sub-locations, apparently according to personal there is no satisfying indoor positioning solution (highly
+interest. It is interesting to note that most of the visitors accurate, invisible and with little infrastructure and
+(14/21), in at least one location, viewed presentations from maintenance requirements), solutions must be tailored in
+two or more sub-locations, showing interest in more than one such layered approach – the technological solution selected
+sub-location (exhibit). needs to be enhanced with reasoning mechanisms and finally,
+get the visitor involved for resolving ambiguities. Such an
+On average a visit lasted 52.3 minutes. Visitors’ location
+approach may enable us to accommodate different
+using the positioning system was known 29.18% of the time
+requirements and characteristics of different indoors settings,
+– when visitors were in the vicinity of objects of interest.
+while allowing easy integration of various technological
+This analysis is drawn from the number of Blind messages
+solutions as they become available, until there is a generic
+with position received out of the total number of Blind
+acceptable solution – similar to the situation in outdoor GPS.
+messages (Blinds transmit a message approximately every
+second). All were correct (no false positives) as system
+presentations were always coherent with positions. If we add
+ACKNOWLEDGMENTS
+our knowledge of user interaction (we assume that when a
+The work was supported by the collaboration project
+user is interacting with the guide concerning an exhibit, or
+between the Caesarea-Rothschild Institute at the University
+viewing a presentation related to an exhibit, he is at the
+of Haifa and FBK/irst and by FIRB project RBIN045PXH.
+relevant location), then, the visitor, for the application
+purpose was “located” 43.89% of the total time. The
+difference between these two figures is because of persisting
+REFERENCES
+individual false negatives. These numbers make sense
+1. Khoury, H. and Kamat, V. Evaluation of position tracking
+because as noted above, only selected areas of interest in the
+technologies for user localization in indoor construction
+museum (20%) were covered (naturally, visitors spent more
+environments, Automation in Construction 18, 4 (2009),
+time in areas where they could get information). When
+444–457.
+visitors were walking between areas of interest, or when they
+2. Kray, C. and Kortuem, G. Towards an integrated
+stood in front of exhibits that were not covered, no precise
+approach to positioning. In proceedings of Workshop on
+location data were available. We should also say that we just
+Spatio-Temporal Reasoning, at IJCAI'05. Edinburgh,
+used individual visitors, so “parasitic detection” could not be
+Scotland. (2005).
+exploited.
+3. Kuflik, T., Stock, O., Zancanaro, M., Gorfinkel, A., Jbara,
+Following the visit, visitors indicated (using a 7-point Likert S., Kats, S., Sheidin, J. and Kashtan, N. Journal of
+scale) that the use of the guide was easy and intuitive (ave. Computers and Cultural Heritage. (to appear).
+5.6; 17 out of 21 visitors agreed with this statement), it
+4. Oppermann R. and Specht M. A Nomadic Information
+helped them improve their visit experience (ave. 5.9), and
+System for Adaptive Exhibition Guidance. In Bearman,
+that they would like to use such a guide in future visits (ave.
+D. a Trant, J. (eds.) Cultural Heritage Informatics:
+6.1). While we didn't ask directly about positioning
+selected papers from ICHIM 99 (1999) 103-110.
+satisfaction (because users simply used the interface and
+5. Skibniewski, M.J. and Jang, W.S. Ubiquitous computing:
+were not aware of using a “positioning system”), we assume
+object tracking and monitoring in construction processes
+that satisfaction of the positioning is implicitly included in
+utilizing ZigBee networks, Proceedings of the 23rd
+the general satisfaction and usability of the system. Hence,
+International Symposium on Automation and Robotics in
+regarding accuracy, availability and stability discussed
+Construction (ISARC), Tokyo, Japan, (2006) 287–292.
+earlier, the suggested layered approach, seems to be an
+6. Stock O., Zancanaro M., Busetta P., Callaway C., Krüger
+acceptable solution.
+A., Kruppa M., Kuflik T., Not E. and Rocchi C.,
+DISCUSSION Adaptive, intelligent presentation of information for the
+This work demonstrates how museum challenges can be
+museum visitor in PEACH. User Modeling and User-
+addressed by a specific technological solution and how the
+Adapted Interaction. 17 3 (2007) 257-304.
+limitations of indoor positioning technology can be addressed
+7. Wakkary, R. and Hatala, M. 2007. Situated play in a
+by a multi-layer architecture. Inherent hardware limitations
+tangible interface and adaptive audio museum guide.
+are addressed by higher levels of logic – embedded firmware,
+Personal Ubiquitous Comput. 11, 3 (2007), 171-191.
+positioning reasoning software and the user interface and
+378
+View publication stats

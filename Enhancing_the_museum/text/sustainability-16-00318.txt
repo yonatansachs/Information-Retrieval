@@ -1,0 +1,1452 @@
+Citation: Kruczek, Z.; Gmyrek, K.;
+Zi˙zka, D.; Korbiel, K.; Nowak, K.
+Accessibility of Cultural Heritage
+Sites for People with Disabilities: A
+Case Study on Krakow Museums.
+Sustainability 2024, 16, 318. https://
+doi.org/10.3390/su16010318
+Academic Editor: Mark A. Bonn
+Received: 10 November 2023
+Revised: 25 December 2023
+Accepted: 27 December 2023
+Published: 29 December 2023
+Copyright: © 2023 by the authors.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed
+under
+the
+terms
+and
+conditions of the Creative Commons
+Attribution (CC BY) license (https://
+creativecommons.org/licenses/by/
+4.0/).
+sustainability
+Article
+Accessibility of Cultural Heritage Sites for People with
+Disabilities: A Case Study on Krakow Museums
+Zygmunt Kruczek *
+, Katarzyna Gmyrek
+, Danuta Zi˙zka, Karolina Korbiel and Karolina Nowak
+Department of Tourism Geography and Ecology, Institute of Tourism, Faculty of Tourism and Recreation,
+University School of Physical Education in Kraków, 31-571 Kraków, Poland;
+katarzyna.gmyrek@awf.krakow.pl (K.G.); danuta.zizka@awf.krakow.pl (D.Z.);
+karolina.korbiel@awf.krakow.pl (K.K.); karolina.nowak@doctoral.awf.krakow.pl (K.N.)
+* Correspondence: zygmunt.kruczek@awf.krakow.pl
+Abstract: The aim of this paper is to assess the accessibility of flagship cultural attractions—that
+is, museums located in Krakow, a city with a rich historical heritage included in the UNESCO
+World Cultural and Natural Heritage List and distinguished by being a recipient of the Access City
+Award—for people with disabilities. This research shows the degree to which these museums have
+been adapted to receive visitors with disabilities. Assessments were also conducted with regard to
+access to the museums’ websites and the possibility for virtual tours of their collections. Out of a
+total of 50 museums, 31 were selected for this study, both leading museums in terms of attendance,
+such as Wawel Royal Castle, the National Museum, the Museum of Krakow, and the Wieliczka Salt
+Mine, and smaller ones such as the Aviation Museum. The research results indicate that Krakow
+museums are well-prepared for receiving people with physical disabilities and seniors but are less
+well adapted to receiving visually impaired and blind people and hearing-impaired and deaf people.
+Analysis of the museums’ websites showed that they are well-prepared in terms of compatibility and
+comprehensibility but that they received worse assessment scores with regard to their perceivability
+and functionality. Visitors to the museums are principally adults, adolescents, and seniors. People
+with disabilities make up 10% of all visitors.
+Keywords: accessibility; culture heritage; inclusive tourism; museum; people with disabilities; Krakow
+1. Introduction
+As shown in WHO reports, over a billion people around the world, that is, 15% of
+the population, are currently affected by some type of disability. This number is growing
+rapidly due to the aging population, the spread of chronic diseases, and complications
+caused by the COVID-19 pandemic [1].
+The convention on the rights of people with disabilities [2], adopted in 2006 by the
+United Nations and ratified by all the member states of the European Union, ensures
+the full integration of this group of people. The full inclusion of people with disabilities
+involves increasing their activity levels in the public sphere, including via improvements in
+accessibility to various means of spending leisure time. Accessible tourism is increasing in
+popularity, with an ever-growing number of attractions, hotels, and restaurants declaring
+that they are open for people with disabilities. According to the definition provided by the
+United Nations Economic and Social Commission for Asia and the Pacific (UNESCAP),
+“accessible tourism is a form of tourism that involves collaborative processes between
+stakeholders that enables people with access requirements, including mobility, vision,
+hearing and cognitive dimensions of access, to function independently and with equity
+and dignity through the delivery of universally designed tourism products, services and
+environments. This definition adopts a whole of life approach where people through their
+lifespan benefit from accessible tourism provision. These include people with permanent
+Sustainability 2024, 16, 318. https://doi.org/10.3390/su16010318
+https://www.mdpi.com/journal/sustainability
+
+Sustainability 2024, 16, 318
+2 of 18
+and temporary disabilities, seniors, obese, families with young children and those working
+in safer and more socially sustainably designed environments” [3].
+One of the key concepts in the approach to accessible tourism is the accessibility chain,
+defined as a series of transactions based on the supply of products, services, and tourist
+experiences required by the accessible tourism market [4–6].
+According to the proposal of the UNWTO, this chain encompasses the urban environ-
+ment, recreational activities, and excursions [7]. In this context, elements of natural and
+cultural heritage are key attractions in the tourist industry, in which accessibility must be a
+basic attribute [2].
+The aim of this paper is to assess the accessibility of flagship cultural attractions, that
+is, museums located in Krakow, a city with a rich historical heritage entered into the first
+UNESCO World Cultural and Natural Heritage List in 1978, for people with disabilities.
+Currently, Krakow is the most recognised tourist location in Poland, with visitor numbers
+exceeding 14 million in 2019 [8]. In 2010, Krakow was distinguished as receiving first
+place in the competition organised by the European Union for cities accessible for people
+with disabilities and older people, having been granted the Access City Award. The city
+earned this title thanks to efforts intended to increase the accessibility of public spaces in
+very difficult surroundings characterised by inaccessible infrastructure. This was achieved
+thanks to particular attention paid to providing access to historical sites and museums [9].
+2. Literature Review
+There is a link between inclusive tourism and social and economic development [10],
+and many authors contend that this type of tourism can bring additional social and eco-
+nomic benefits [11]. Some are of the opinion that accessible tourism should be analysed
+across a broad spectrum, as it may also relate to other groups of people with special needs
+(e.g., older people, pregnant women, and people travelling with small children) [12].
+A review of the literature related to tourism for people with disabilities points to
+the growing popularity of this issue [4], but despite the multitude of publications and
+the variety of topics, there are few papers that address accessible tourism and people
+with disabilities comprehensively. A great deal of attention in the literature is paid to
+understanding the specific requirements of people with disabilities. Private and societal
+attitudes towards disability were described by Darcy and Daruwall [13]. In their research,
+they addressed the issue of how the needs of people with disabilities are understood by
+abled people. On the basis of a literature review, they pointed to key differences between
+the stereotypical understanding of the needs of people with disabilities and their actual
+needs [13].
+Research into accessible tourism also involves various interrelated aspects connected
+to travelling, part of which is related to transport [14], and the availability of accommo-
+dation [15,16] and tourist attractions [17,18]. Descriptions of the accessibility of tourist
+attractions on popular tourist routes around Poland [19] and in historical cities are pro-
+vided [20].
+The accessibility of tourist sites and attractions in Spain is presented in works by Rucci
+and Porto [21] and Santana et al. [22], while Espinosa and Bonmatí developed a guide to the
+accessibility of museums and other sites on the UNESCO world heritage list [5]. In Poland,
+an analysis of the accessibility of tourist infrastructure for people with disabilities [23], as
+well as of sites and tourist offers in Krakow, was conducted [24].
+Tourism for people with disabilities is a developing segment of the market and brings
+with it at least two benefits. On the one hand, it leads to social inclusion, while on the other,
+it increases the competitiveness of tourist destinations and yields good financial results for
+the tourist sector [25–28].
+A very important feature of people with disabilities is also the fact that they travel
+during the low season, with at least one companion, and are willing to incur significant
+travel-related expenses [29]. One example of an analysis of local tourist offer accessibility
+
+Sustainability 2024, 16, 318
+3 of 18
+for people with disabilities is a paper on the accessibility of tourist offers in the Istria
+peninsula in Croatia [30].
+The COVID-19 pandemic showed that new technologies could be used to effectively
+increase the accessibility of tourist attractions, especially with regard to museums in the
+context of people with cognitive or sensory disabilities. Smartphones with audio guides,
+the possibility of directly translating text into sign language, and online communication
+tools are just a few examples of the use of technology to increase accessibility [31]. These
+solutions are above all used in museums, which, due to the restrictions in place during the
+pandemic, were mostly closed [32,33]. However, as shown in research conducted by Gaweł
+on Polish museums during the pandemic, despite the wealth of digital offers provided
+by Polish museums, visitors prefer a return to a ‘real museum’. Although numerous
+technological solutions that were not in use earlier have become a permanent part of
+museums’ activities, the reaction of visitors after the lockdown was clear: they want to
+enjoy traditional forms of participating in culture and, most of all, value the possibility of
+having personal contact with original artworks in museum galleries [34].
+The impact of the COVID-19 pandemic on the cultural sector around the world
+has been very strong. The clash between cultural institutions and the new reality has
+been described as “dramatic” and been called a “culture shock” [35]. In the face of the
+“forced closure” of museum buildings, the Internet became the only possible channel
+through which to maintain the continuity of activities in the field of public collections. The
+transformation of many previously planned cultural events into virtual versions involved
+museums undergoing a digital transition and constitutes the main impact of the pandemic
+on museum institutions [36]. Museums used the time of closure during the pandemic to
+adapt the infrastructure of their buildings to the needs of visitors [37].
+3. Museums and Cultural Attractions in Krakow and Their Use (Visitor Numbers)
+Krakow is perceived as the most recognised Polish tourist destination, a city of culture
+and art like Florence or Venice. However, in the Fainstein and Judd classification, it
+is considered a tourist-historic city whose principal resource is historical and cultural
+heritage [38,39]. This perception of Krakow is also reflected in its entry into the UNESCO
+List of World Cultural and Natural Heritage, as well as in the selection of Krakow as the
+European Capital of Culture in the year 2000. It is worth adding that Krakow has also been
+distinguished as the UNESCO City of Literature and the European Capital of Gastronomy
+(in 2019).
+Krakow cooperates with other European cities of similar cultural heritage potential,
+such as Barcelona, Edinburgh, Glasgow, Nice, Strasbourg, and Zurich (Figure 1) [40]. It
+occupies a very high position globally and has a wealth of activity that provides high
+quality of life. To the above list, we can also add other cities in Central Europe with a
+character similar to that of Krakow and with excellent tourist functions, such as Prague,
+Bratislava, and Budapest [41].
+At the beginning of the 21st century, Krakow became an important centre for tourism
+of international standing. Its wealth and variety of cultural attractions, potential as a centre
+for academia, broad range of cultural events, and well-developed tourist infrastructure are
+all factors that shape its competitive advantage in the international tourist market [42].
+Figure 2 illustrates the upward trend in the number of visitors to Krakow in the years
+2010–2023. We can observe an upward trend in 2019, when there were 14 million visitors,
+including 3.3 million foreign tourists. The COVID-19 pandemic and the war in Ukraine
+have contributed to a collapse in arrivals, which, in 2023, have not yet reached 2019 levels.
+Krakow contains some of the most impressive examples of urban architecture in
+Central Europe, with more than five thousand historical sites. The most attractive tourist
+district in Krakow is the Old Town, with the main Market Square at its centre (the largest
+square of its type in Europe), which, together with the characteristic buildings that surround
+it, creates one of the most recognisable urban cityscapes in Poland.
+
+Sustainability 2024, 16, 318
+4 of 18
+Sustainability 2024, 16, x FOR PEER REVIEW 
+4 of 18 
+ 
+ 
+Figure 1. Krakow in the city cooperation network. Arrows indicating which cities cooperate with 
+Krakow. Source: This is where I want to live. Krakow 2030, p. 17. 
+Figure 2 illustrates the upward trend in the number of visitors to Krakow in the years 
+2010–2023. We can observe an upward trend in 2019, when there were 14 million visitors, 
+including 3.3 million foreign tourists. The COVID-19 pandemic and the war in Ukraine 
+have contributed to a collapse in arrivals, which, in 2023, have not yet reached 2019 levels. 
+ 
+Figure 2. Number of visitors to Krakow in 2010–2023. (Source: based on the work of Borkowski 
+[43]). 
+Krakow contains some of the most impressive examples of urban architecture in Cen-
+tral Europe, with more than five thousand historical sites. The most attractive tourist dis-
+trict in Krakow is the Old Town, with the main Market Square at its centre (the largest 
+square of its type in Europe), which, together with the characteristic buildings that sur-
+round it, creates one of the most recognisable urban cityscapes in Poland. 
+Krakow is one of the largest centres of culture in Poland and Central Europe. It is 
+also an important museum centre [44]. Various types of museums and collections can be 
+found here: archaeological, historical, artistic, biographical, natural, technical, literary, 
+8,150,000
+14,050,000
+9,400,000
+6,050,000
+10,750,000
+8,200,000
+2,100,000
+3,300,000
+1,200,000
+0
+2,000,000
+4,000,000
+6,000,000
+8,000,000
+10,000,000
+12,000,000
+14,000,000
+16,000,000
+2010
+2015
+2019
+2020
+2023
+number of visitors
+Total
+domestic
+foreign
+Figure 1. Krakow in the city cooperation network. Arrows indicating which cities cooperate with
+Krakow. Source: This is where I want to live. Krakow 2030, p. 17.
+ 
+Figure 1. Krakow in the city cooperation network. Arrows indicating which cities cooperate with 
+Krakow. Source: This is where I want to live. Krakow 2030, p. 17. 
+Figure 2 illustrates the upward trend in the number of visitors to Krakow in the years 
+2010–2023. We can observe an upward trend in 2019, when there were 14 million visitors, 
+including 3.3 million foreign tourists. The COVID-19 pandemic and the war in Ukraine 
+have contributed to a collapse in arrivals, which, in 2023, have not yet reached 2019 levels. 
+ 
+Figure 2. Number of visitors to Krakow in 2010–2023. (Source: based on the work of Borkowski 
+[43]). 
+Krakow contains some of the most impressive examples of urban architecture in Cen-
+tral Europe, with more than five thousand historical sites. The most attractive tourist dis-
+trict in Krakow is the Old Town, with the main Market Square at its centre (the largest 
+square of its type in Europe), which, together with the characteristic buildings that sur-
+round it, creates one of the most recognisable urban cityscapes in Poland. 
+Krakow is one of the largest centres of culture in Poland and Central Europe. It is 
+also an important museum centre [44]. Various types of museums and collections can be 
+found here: archaeological, historical, artistic, biographical, natural, technical, literary, 
+8,150,000
+14,050,000
+9,400,000
+6,050,000
+10,750,000
+8,200,000
+2,100,000
+3,300,000
+1,200,000
+0
+2,000,000
+4,000,000
+6,000,000
+8,000,000
+10,000,000
+12,000,000
+14,000,000
+16,000,000
+2010
+2015
+2019
+2020
+2023
+number of visitors
+Total
+domestic
+foreign
+Figure 2. Number of visitors to Krakow in 2010–2023. (Source: based on the work of Borkowski [43]).
+Krakow is one of the largest centres of culture in Poland and Central Europe. It is
+also an important museum centre [44]. Various types of museums and collections can be
+found here: archaeological, historical, artistic, biographical, natural, technical, literary, and
+specialist. In 2021, there were 51 museums and museum branches in Krakow, which were
+among the most highly frequented museums in Poland. In 2022, the Royal castle, with its
+State Art Collection, was visited by 1,785,000 people, while 1.4 million people visited the
+National Museum in Krakow, and 888,000 visited the Museum of Krakow. These are the
+flagship tourist attractions of this city [45]. It is worth noting that Krakow is continually
+expanding and developing its offering of museums. This is important, as one of the greatest
+magnets drawing tourists to Krakow is its cultural heritage, and museums are the principal
+component of this heritage [46].
+The crisis related to the COVID-19 pandemic has also affected museums in Krakow.
+Figure 3 shows the attendance at selected museums in 2019, 2020, and 2022. During the
+pandemic, all museums noted a catastrophic drop in attendance, but in 2022, some of them,
+
+Sustainability 2024, 16, 318
+5 of 18
+such as the Wawel Royal Castle or the National Museum, already had higher attendance
+than in 2019.
+These are the flagship tourist attractions of this city [45]. It is worth noting that Krakow is 
+continually expanding and developing its offering of museums. This is important, as one 
+of the greatest magnets drawing tourists to Krakow is its cultural heritage, and museums 
+are the principal component of this heritage [46].  
+The crisis related to the COVID-19 pandemic has also affected museums in Krakow. 
+Figure 3 shows the attendance at selected museums in 2019, 2020, and 2022. During the 
+pandemic, all museums noted a catastrophic drop in attendance, but in 2022, some of 
+them, such as the Wawel Royal Castle or the National Museum, already had higher at-
+tendance than in 2019.  
+ 
+Figure 3. Number of visitors to selected Krakow museums in 2019, 2020, and 2021. (Source: own 
+study). 
+4. Materials and Methods 
+4.1. Research Aim 
+The objective of this research was to assess the accessibility of museums in Krakow 
+for people with disabilities. We aimed to show the degree to which museums are adapted 
+to receiving visitors with limited mobility, sight and hearing impairments, and cognitive 
+disabilities, as well as seniors, families with small children, pregnant women, and people 
+with dietary restrictions. This research should also provide answers to the following ques-
+tions: what percentage of the total number of museum visitors consists of people with 
+particular needs, and how well are museum staff prepared to receive such people? An-
+other aim was to assess the level of access to both digital and analogue information re-
+garding amenities for visitors, as well as the possibility of making use of virtual tours of 
+the museums’ collections. 
+4.2. Research Questions 
+1. 
+For which groups of people with special needs are Krakow museums prepared? 
+2. 
+Are museum premises adapted for wheelchair users? 
+0
+1,000,000
+2,000,000
+3,000,000
+NATIONAL MUSEUM IN KRAKOW
+WIELICZKA SALT MINE
+WAWEL ROYAL CASTLE – STATE ART COLLECTIONS
+CITY KRAKOW MUZEUM
+MANGGHA MUSEUM OF JAPANESE ART AND
+TECHNOLOGY
+AVIATION MUSEUM
+ MUSEUM OF CONTEMPORARY ART
+ARCHAEOLOGICAL MUSEUM
+number of visitors
+2022
+2020
+2019
+Figure 3. Number of visitors to selected Krakow museums in 2019, 2020, and 2021. (Source:
+own study).
+4. Materials and Methods
+4.1. Research Aim
+The objective of this research was to assess the accessibility of museums in Krakow
+for people with disabilities. We aimed to show the degree to which museums are adapted
+to receiving visitors with limited mobility, sight and hearing impairments, and cognitive
+disabilities, as well as seniors, families with small children, pregnant women, and people
+with dietary restrictions. This research should also provide answers to the following
+questions: what percentage of the total number of museum visitors consists of people
+with particular needs, and how well are museum staff prepared to receive such people?
+Another aim was to assess the level of access to both digital and analogue information
+regarding amenities for visitors, as well as the possibility of making use of virtual tours of
+the museums’ collections.
+4.2. Research Questions
+1.
+For which groups of people with special needs are Krakow museums prepared?
+2.
+Are museum premises adapted for wheelchair users?
+3.
+What equipment improving accessibility for people with particular needs is available
+in the museums?
+4.
+Which groups of people with particular needs visit Krakow museums?
+5.
+Do the museums employ people trained in how to provide assistance to people with
+particular needs?
+6.
+Do the museums provide sufficient information on the accessibility of their premises
+for people with particular needs?
+7.
+Do the museums’ websites fulfil the requirements of digital accessibility for people
+with disabilities?
+8.
+Do the museums offer virtual tours?
+
+Sustainability 2024, 16, 318
+6 of 18
+4.3. Research Methods and Tools
+This research allows for the diagnosis of the gap in the accessibility of museum
+buildings and exhibitions for people with disabilities and the competence of museum staff
+in dealing with such people.
+To obtain an answer to the questions posed above, research was conducted using the
+categorised interview method [47]. In this method, a carefully developed questionnaire is
+used for research. This study was conducted between July and September 2023 in selected
+Krakow museums. Museums with visitor numbers below five thousand in 2022 were
+excluded from the study, resulting in data being collected from 31 museums. Each of the
+institutions to which the request to complete the questionnaire was addressed authorized
+an employee to do so, who was usually the accessibility coordinator.
+The interviews were conducted with people responsible for the museums’ accessibility
+for people with particular needs, and the CAPI (Computer Assisted Personal Interview)
+technique was used. The research tool was a standardised questionnaire containing 24 mul-
+tiple choice and open questions. An electronic version of the questionnaire was prepared
+using the Forms application and sent as a link to museum staff responsible for museum
+accessibility for people with disabilities.
+To evaluate the statistical significance of the differences in the degree to which mu-
+seums and facilities were adapted for people with disabilities, a significance test for two
+fractions was used (Mann–Whitney U Test) for the so-called top (flagship) museums, where
+the number of visitors in 2022 amounted to over 100 thousand (13 museums), and for
+museums with an attendance of fewer than 100 thousand people (18 museums).
+The Mann–Whitney U test is used for analysing non-parametric data (usually ordinal
+data) and should be considered when using ranking data or data that deviate from accept-
+able distribution patterns or when there are noticeable differences in the number of subjects
+in two comparison groups [48].
+The answers to the questions made it possible to assess the adaptation of each of the
+museums in question to receiving visitors in wheelchairs, blind people, those with sight
+and hearing impairments, and people with cognitive disabilities, as well as seniors, families
+with prams, pregnant women, and people with dietary restrictions. The types of technical
+amenities in place were also taken into consideration, as well as signage and access to
+analogue and digital information.
+A separate study analysed the museums’ websites with regard to their functionality
+for people with disabilities and the possibility of virtual tours. In addition, we verified
+whether the museums’ websites fulfilled the requirements of digital accessibility in terms
+of the following aspects:
+#
+Operability (ease of finding content and functions irrespective of the means of naviga-
+tion, e.g., using only a keyboard or only a mouse);
+#
+Robustness (with programmes used by people with disabilities);
+#
+Perceivability (the possibility of perceiving content via the user’s available senses of
+sight, hearing, or touch, e.g., via audio descriptions);
+#
+Understandability (texts are written in simple language without containing diffi-
+cult phrases);
+#
+Whether a museum has a website.
+This research was conducted using TAW Accessibility Checker software. This tool is
+used to automatically test the accessibility of websites and focuses directly on the standards
+of the World Content Accessibility Guidelines (WCAG 2.1) in identifying problems with
+regard to operability, robustness, perceivability, and understandability. Although it is an
+automated solution, TAW conducts compliance analysis on two levels: automatic and
+manual. Reports on the analysis of individual websites group errors into three segments:
+problems (clearly identified by the software), warnings (identified by the software but
+tagged for manual verification), and unchecked (outside the reach of the software and
+tagged for manual verification) [49]. Methodological limitations are also associated with
+TAW Accessibility Checker software. The tool’s analysis of web accessibility is limited
+
+Sustainability 2024, 16, 318
+7 of 18
+to a website’s home page, so its compliance status does not represent the entire site. The
+software also points out potential errors that cannot be verified automatically via the
+recommendation of a manual check, which yields more accurate analysis results.
+5. Results
+Analysis of the questionnaires provided answers to the previously formulated research
+questions. The first related to identifying the groups of people with disabilities for whom
+Krakow museums are accessible. As shown in Figure 4, Krakow museums are relatively
+the best prepared for receiving people with physical disabilities, as 87% of the museums
+declared they were accessible to this group of people. A high percentage of museums are
+accessible for seniors (80%). The museums are less well adapted to the needs of people with
+sight impairments and blind people (74%) and those of people with hearing impairments
+and deafness (73%). A similar percentage (71%) of museums were accessible to families with
+prams and children. The lowest number of museums declared that they were accessible to
+pregnant women (58%).
+with regard to operability, robustness, perceivability, and understandability. Although it 
+is an automated solution, TAW conducts compliance analysis on two levels: automatic 
+and manual. Reports on the analysis of individual websites group errors into three seg-
+ments: problems (clearly identified by the software), warnings (identified by the software 
+but tagged for manual verification), and unchecked (outside the reach of the software and 
+tagged for manual verification) [49]. Methodological limitations are also associated with 
+TAW Accessibility Checker software. The tool’s analysis of web accessibility is limited to 
+a website’s home page, so its compliance status does not represent the entire site. The 
+software also points out potential errors that cannot be verified automatically via the rec-
+ommendation of a manual check, which yields more accurate analysis results. 
+5. Results 
+Analysis of the questionnaires provided answers to the previously formulated re-
+search questions. The first related to identifying the groups of people with disabilities for 
+whom Krakow museums are accessible. As shown in Figure 4, Krakow museums are rel-
+atively the best prepared for receiving people with physical disabilities, as 87% of the mu-
+seums declared they were accessible to this group of people. A high percentage of muse-
+ums are accessible for seniors (80%). The museums are less well adapted to the needs of 
+people with sight impairments and blind people (74%) and those of people with hearing 
+impairments and deafness (73%). A similar percentage (71%) of museums were accessible 
+to families with prams and children. The lowest number of museums declared that they 
+were accessible to pregnant women (58%). 
+ 
+Figure 4. Degree of adaptation of Krakow museums for groups of people with particular needs or 
+disabilities. 
+It is worth noting that four museums belonging to the so-called flagship museums 
+are also adapted for people with intellectual disabilities, highly sensitive people, and peo-
+ple within the autism spectrum; they have sensory baskets for such visitors and “quiet 
+hours”. In the case of smaller museums, only one declared that it had facilities for people 
+with intellectual disabilities and ASD. 
+The analysis of the results of the study shows that museums with higher attendance 
+do not differ from museums with a smaller number of visitors in terms of their adaptation 
+to groups of people with various disabilities. Differences in responses to the benefit of 
+87
+74
+71
+80
+71
+58
+71
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90 100
+people with physical disabilities
+people with sight impairments and blind people
+people with hearing impairments and deaf people
+seniors
+children
+pregnant women
+families with prams
+number of museums in %
+Figure 4. Degree of adaptation of Krakow museums for groups of people with particular needs or
+disabilities.
+It is worth noting that four museums belonging to the so-called flagship museums are
+also adapted for people with intellectual disabilities, highly sensitive people, and people
+within the autism spectrum; they have sensory baskets for such visitors and “quiet hours”.
+In the case of smaller museums, only one declared that it had facilities for people with
+intellectual disabilities and ASD.
+The analysis of the results of the study shows that museums with higher attendance do
+not differ from museums with a smaller number of visitors in terms of their adaptation to
+groups of people with various disabilities. Differences in responses to the benefit of flagship
+museums in this context were statistically significant at the p = 0.05 level of significance
+only in the case of adapting them for people with physical disabilities (U = 1.82); in other
+cases, no statistically significant differences were found between museums with higher
+and lower attendance, for which the following results were obtained: families with prams
+(U = 0.47), pregnant women (U = 0.33), children (=0.77), seniors (U = −0.53), hearing and
+deaf people (U = 1.42), and visually impaired and blind people (U = 1.12).
+In terms of the answers to question 2, as to whether museum premises were adapted
+for wheelchair users, the responses indicated that this was a considerable spatial challenge
+(sometimes due to the historical nature of the museum’s architecture), as well as an organi-
+sational and financial challenge, with only 9% of the museums reporting that such needs
+were met (Figure 5).
+
+Sustainability 2024, 16, 318
+8 of 18
+p
+(
+) p
+g
+(
+)
+(
+)
+(
+)
+g
+and deaf people (U = 1.42), and visually impaired and blind people (U = 1.12). 
+In terms of the answers to question 2, as to whether museum premises were adapted 
+for wheelchair users, the responses indicated that this was a considerable spatial challenge 
+(sometimes due to the historical nature of the museum’s architecture), as well as an or-
+ganisational and financial challenge, with only 9% of the museums reporting that such 
+needs were met (Figure 5). 
+ 
+Figure 5. Reasons for lack of adaptation of museums for people with disabilities (in %). 
+A separate problem is access for people with disabilities to dedicated parking spaces, 
+with only 52% of the museums providing such access combined with entry to the museum 
+via curb-free pavements and ramps or inclines. Adapting premises for wheelchair users 
+required special modifications to buildings at a later date (50% of answers). The majority 
+of museum managers considered not adapting premises to the needs of wheelchair users 
+to be a form of discrimination (81%), with only 19% holding the opposite opinion. In gen-
+eral, this provision was not confirmed by the managers of museums located in historical 
+buildings, whose adaptation to the needs of people with physical disabilities was limited 
+or impossible. 
+In answer to question 3, ‘What equipment improving accessibility for people with 
+particular needs is available in the museums?’, the responses indicated an appropriate 
+width of museum doors (70%), the provision of lifts (66%), and correctly designed com-
+munication routes within the premises (43%). In the majority of the museums, an induc-
+tion loop has been installed for deaf people (57%). One in three museums had amenities 
+for blind people in the form of descriptions in Braille, as well as inclines and access ramps 
+for people with limited physical ability (36%), lowered counters in reception/ticket offices 
+(33%), platforms/hoists (20%), and automatic doors (20%). Only 10% of the museums did 
+not have any of these amenities (Figure 6). 
+It is worth drawing attention to the high degree of adaptation of toilet facilities for 
+the needs of people with disabilities, with as many as 87% of museums declaring that their 
+bathrooms met such standards. 
+In the case of facilities for people with disabilities, no statistically significant differ-
+ences were found between the museums with higher and lower attendance, correspond-
+ing to the following results: lowered counters at the reception/ticket office (U = 0.53), in-
+duction loop (U = 1.24), Braille descriptions (U = 1.05), proper profile of communication 
+routes (U = 0.09), elevators (U = 0.33), access ramp/ramp (U = 1.47), platform/lift (U = 0.53), 
+wide doors (U = 0.15), and lack of amenities (U = 1.54). Only the answer concerning the 
+61
+61
+19
+19
+9
+0
+10
+20
+30
+40
+50
+60
+70
+organisational
+Spatial
+Financial
+The facility was alredy adapted
+No such need
+%
+Reasons for lack 
+Figure 5. Reasons for lack of adaptation of museums for people with disabilities (in %).
+A separate problem is access for people with disabilities to dedicated parking spaces,
+with only 52% of the museums providing such access combined with entry to the museum
+via curb-free pavements and ramps or inclines. Adapting premises for wheelchair users
+required special modifications to buildings at a later date (50% of answers). The majority
+of museum managers considered not adapting premises to the needs of wheelchair users
+to be a form of discrimination (81%), with only 19% holding the opposite opinion. In
+general, this provision was not confirmed by the managers of museums located in historical
+buildings, whose adaptation to the needs of people with physical disabilities was limited
+or impossible.
+In answer to question 3, ‘What equipment improving accessibility for people with
+particular needs is available in the museums?’, the responses indicated an appropriate
+width of museum doors (70%), the provision of lifts (66%), and correctly designed commu-
+nication routes within the premises (43%). In the majority of the museums, an induction
+loop has been installed for deaf people (57%). One in three museums had amenities for
+blind people in the form of descriptions in Braille, as well as inclines and access ramps
+for people with limited physical ability (36%), lowered counters in reception/ticket offices
+(33%), platforms/hoists (20%), and automatic doors (20%). Only 10% of the museums did
+not have any of these amenities (Figure 6).
+Sustainability 2024, 16, x FOR PEER REVIEW 
+9 of 18 
+ 
+possession of automatically opening doors via objects turned out to be statistically signif-
+icant at the significance level of p = 0.05 (U = 2.2), to the benefit of flagship museums. 
+ 
+Figure 6. Amenities in Krakow museums for people with disabilities (in % of museums). 
+Improvements in accessibility for people with particular needs were possible thanks 
+to the presence of technical solutions in the museums, as illustrated in Table 1. The com-
+munication routes, lifts and toilets, flat surfaces, and lack of doorsteps make the majority 
+of Krakow museums accessible for wheelchair users and those with children’s prams. Half 
+of the museums had appropriate pictograms and warning signs, while one in four had 
+descriptions in Braille. Audio signals for blind people were only found in four museums. 
+10
+33
+57
+33
+43
+66
+36
+20
+20
+70
+0
+10
+20
+30
+40
+50
+60
+70
+80
+no amenities
+lowered counter in reception/ticket office
+induction loop for deaf people
+descriptions in Braille
+correctly designed communication routes
+lifts
+access ramp/incline
+platform/hoist
+automatic doors
+appropriate door width
+%
+amenities
+Figure 6. Amenities in Krakow museums for people with disabilities (in % of museums).
+
+Sustainability 2024, 16, 318
+9 of 18
+It is worth drawing attention to the high degree of adaptation of toilet facilities for the
+needs of people with disabilities, with as many as 87% of museums declaring that their
+bathrooms met such standards.
+In the case of facilities for people with disabilities, no statistically significant differences
+were found between the museums with higher and lower attendance, corresponding to the
+following results: lowered counters at the reception/ticket office (U = 0.53), induction loop
+(U = 1.24), Braille descriptions (U = 1.05), proper profile of communication routes (U = 0.09),
+elevators (U = 0.33), access ramp/ramp (U = 1.47), platform/lift (U = 0.53), wide doors
+(U = 0.15), and lack of amenities (U = 1.54). Only the answer concerning the possession
+of automatically opening doors via objects turned out to be statistically significant at the
+significance level of p = 0.05 (U = 2.2), to the benefit of flagship museums.
+Improvements in accessibility for people with particular needs were possible thanks
+to the presence of technical solutions in the museums, as illustrated in Table 1. The
+communication routes, lifts and toilets, flat surfaces, and lack of doorsteps make the
+majority of Krakow museums accessible for wheelchair users and those with children’s
+prams. Half of the museums had appropriate pictograms and warning signs, while one in
+four had descriptions in Braille. Audio signals for blind people were only found in four
+museums. The majority of the museums (97%) have public spaces that are adapted for joint
+use by both people with particular needs and those without.
+Table 1. Amenities improving accessibility in Krakow museums.
+No.
+Amenities
+%
+1.
+Lifts, including those with Braille and an induction loop
+42
+2.
+Lifts for wheelchairs
+61
+3.
+Inclines with handrails for use by those with children’s prams and
+in wheelchairs
+22.5
+4.
+Toilets accessible by wheelchair users
+71
+5.
+No doorsteps, and flat surfaces
+61
+6.
+Descriptions in Braille
+26
+7.
+Pictograms and warning signs
+48.5
+8.
+Audio signals
+13
+In answer to the question about which groups of people with particular needs or
+disabilities visit Krakow museums, it was indicated that all of the groups analysed are
+represented to differing degrees (Table 2). In total, 81% of the museums confirmed the
+presence of physically disabled tourists, while 78% reported visits by seniors. The majority
+of the museums (71%) reported the presence of people with sight and hearing impairments,
+with a lower percentage confirming the presence of small children (42%) and people with
+dietary restrictions.
+Table 2. Presence of tourists with disabilities in Krakow museums.
+No.
+Type of Disability or Particular Need
+%
+1.
+People with physical disabilities
+81
+2.
+People with sight impairments
+71
+3.
+People with hearing impairments
+68
+4.
+People with cognitive disabilities
+71
+5.
+Seniors
+78
+6.
+Families with prams
+68
+7.
+Pregnant women
+71
+8.
+Small children
+42
+9.
+People with dietary restrictions
+26
+
+Sustainability 2024, 16, 318
+10 of 18
+Figure 7 illustrates the main visitor segments reported by museum managers. The
+segment of adults who visited museums in an organized form (over 70% of responses)
+or on their own (61%) clearly dominates. The second segment is young people who visit
+museums in groups (68% of museums) and, to a lesser extent, individually (almost 38%).
+Also noteworthy is the segment of organized groups of seniors (almost 60%) and individual
+senior guests (45%). A significant percentage of museums indicated groups of students and
+parents with school-age children as an important segment of visitors. More than half of
+Krakow museums indicated parents with small children as an important group.
+4. 
+People with cognitive disabilities 
+71 
+5. 
+Seniors 
+78 
+6. 
+Families with prams 
+68 
+7. 
+Pregnant women 
+71 
+8. 
+Small children 
+42 
+9. 
+People with dietary restrictions 
+26 
+Figure 7 illustrates the main visitor segments reported by museum managers. The 
+segment of adults who visited museums in an organized form (over 70% of responses) or 
+on their own (61%) clearly dominates. The second segment is young people who visit mu-
+seums in groups (68% of museums) and, to a lesser extent, individually (almost 38%). Also 
+noteworthy is the segment of organized groups of seniors (almost 60%) and individual 
+senior guests (45%). A significant percentage of museums indicated groups of students 
+and parents with school-age children as an important segment of visitors. More than half 
+of Krakow museums indicated parents with small children as an important group. 
+ 
+Figure 7. Responses to the question about the principal groups of clients visiting Krakow museums 
+(in %). 
+In response to the question regarding the total number of museum visitors with lim-
+ited mobility and those with particular needs, including people with sight, hearing, and 
+cognitive impairments; seniors; families; pregnant women; and small children, the major-
+ity of managers estimated this proportion to be around 10%. The highest estimates were 
+for people with physical disabilities, while, in general, no participation was found regard-
+ing people with dietary restrictions. 
+Question 6 referred to museums employing people trained in providing assistance 
+to people with particular needs. Almost all of the museums employ such people (97%), 
+with only three museums not having such members of staff. In addition, museum staff 
+were trained in providing assistance to people with particular needs, with 30% of the mu-
+seums having half of their staff trained in this regard. 
+The interviews revealed that the museums provide sufficient information on their 
+websites regarding the accessibility of their premises for people with particular needs, as 
+confirmed by 97% of museum managers, while guide dogs and other support animals are 
+permitted in 87% of the museums. 
+The museum websites were analysed in terms of their functionality for disabled users 
+as well as regarding the option to take virtual tours. In response to the needs of people 
+52
+55
+42
+61
+68
+71
+58
+39
+61
+45
+0
+10
+20
+30
+40
+50
+60
+70
+80
+parents with small children
+parents with school-age children
+parents with adult children
+groups of schoolchildren
+groups of adolescents
+groups of adults
+group of seniors
+individual adolescents
+individual adults
+indyvidual seniors
+%
+Figure 7. Responses to the question about the principal groups of clients visiting Krakow museums
+(in %).
+In response to the question regarding the total number of museum visitors with
+limited mobility and those with particular needs, including people with sight, hearing, and
+cognitive impairments; seniors; families; pregnant women; and small children, the majority
+of managers estimated this proportion to be around 10%. The highest estimates were for
+people with physical disabilities, while, in general, no participation was found regarding
+people with dietary restrictions.
+Question 6 referred to museums employing people trained in providing assistance to
+people with particular needs. Almost all of the museums employ such people (97%), with
+only three museums not having such members of staff. In addition, museum staff were
+trained in providing assistance to people with particular needs, with 30% of the museums
+having half of their staff trained in this regard.
+The interviews revealed that the museums provide sufficient information on their
+websites regarding the accessibility of their premises for people with particular needs, as
+confirmed by 97% of museum managers, while guide dogs and other support animals are
+permitted in 87% of the museums.
+The museum websites were analysed in terms of their functionality for disabled users
+as well as regarding the option to take virtual tours. In response to the needs of people with
+disabilities, Polish law has introduced the concept of so-called digital accessibility. This
+is one of the most important features of websites, mobile applications, and other digital
+solutions, and it is intended to aid people with varying degrees of hearing, movement,
+sight, and cognitive abilities in the use of such solutions. According to the requirements,
+all public entities, including museums, must ensure digital accessibility on their websites
+and mobile applications so that they fulfil the principles of perceivability, functionality,
+comprehensibility, and compatibility [50].
+
+Sustainability 2024, 16, 318
+11 of 18
+According to the Bill of 4th April 2019 on the digital accessibility of the websites
+and mobile applications of public entities, museums are obliged to possess a so-called
+declaration of accessibility, which describes the accessibility of their premises for people
+with disabilities. This declaration informs such people of the solutions, but also the
+problems, that they may encounter on the corresponding website and mobile application
+and in the buildings themselves. The declaration of accessibility must fulfil specific content
+and technical requirements and should be available in every language in which content is
+provided on the website. In situations where a website is not available, a museum must still
+have a fully available declaration. The declaration of accessibility should be updated every
+year (by the end of March) and after every redesign or update of the website or application.
+Museums are obliged to adapt their websites and mobile applications in accordance
+with WCAG guidelines. Their structure is based on four principles:
+Perceivability, i.e., the ability to use a website or app using the senses available to users.
+Operability, i.e., the ability to find and use content and functions regardless of the
+means of navigation (e.g., using only a keyboard or only a mouse).
+Understandability, i.e., the clarity of the expression of both the content and the way
+the website or application works achieved, e.g., through the use of simple language or
+explanations of abbreviations and acronyms.
+Robust, i.e., adapting the content and features of websites and applications so that
+they work properly for a wide variety of additional user programs (e.g., web browsers and
+screen readers for the blind).
+Analysis of the museums’ websites in terms of their accessibility for people with
+disabilities (Table 3) revealed that they are best prepared in terms of compatibility and
+comprehensibility. These elements displayed the lowest number of errors (475 and 745,
+respectively). The greatest problem in the declaration of accessibility was found to be the
+perceivability of websites (3683), followed by their functionality (1695).
+The assessment of individual museums also revealed a certain key disproportion. In
+summary, the best-prepared museums in terms of the website’s declaration of accessibility,
+that is, those with the fewest problems, are Wawel Royal Castle (99), Galicja Jewish Museum
+(110), and the Photography History Museum (112). Meanwhile, the largest number of prob-
+lems, both those clearly identified by the software as well as those indicated as warnings
+and those tagged for manual verification, were found at the Home Army Museum (3141),
+which stood out considerably from the remaining museums.
+In the analysis of the accessibility of museums for people with disabilities, given
+the current ubiquitous access to various types of technical and multimedia solutions, the
+possibility of participating in virtual tours cannot be ignored. Virtual tourism involves
+the computer-based presentation of actual places, in which the geometrical properties of
+places are presented to the user in such a way that they acquire an impression of actually
+being present in the places in question. Virtual tourism cannot exist without virtual reality
+and space, wherein computer technology is used to create the effect of a three-dimensional
+world in which objects give the impression of being spatially and physically present [51]. A
+virtual tour is a simulation of an actual place in which the user can move about freely; it is
+a digital solution that mimics any place or space in three dimensions.
+Virtual tours of museums bring great cognitive and educational benefits in terms of
+faithfully providing users with experiences of visiting museums using one or several of
+their five senses [52]. However, in the museums in question, this is not a popular method
+of presenting collections, and among the 15 museums analysed, only 7 offer such an option
+(Table 3).
+
+Sustainability 2024, 16, 318
+12 of 18
+Table 3. Assessment of the declaration of the accessibility of the museums’ websites, where the
+number of problems was identified according to the TAW Accessibility Checker (as of 15 October2023).
+Museum Name
+O
+R
+P
+U
+Total
+Virtual
+Tours
+National Museum in Krakow (https://mnk.pl/ accessed on 15
+December 2023)
+43
+18
+54
+56
+171
+yes
+Wawel Royal Castle State Art Collection
+https://wawel.krakow.pl/ accessed on 15 December 2023
+37
+1
+48
+13
+99
+yes
+Tourist Trail and Saltworks Museum in Wieliczka
+https://muzeum.wieliczka.pl/ accessed on 15 December 2023
+121
+9
+558
+38
+726
+yes
+Krakow (Historical) Museum https://muzeumkrakowa.pl/
+accessed on 15 December 2023
+47
+1
+94
+18
+160
+no
+Manggha Museum of Japanese Art and Technology
+https://manggha.pl/ accessed on 15 December 2023
+48
+2
+68
+20
+138
+yes
+Aviation Museum
+https://muzeumlotnictwa.pl/ accessed on 15 December 2023
+47
+1
+79
+6
+133
+yes
+Mocak Museum of Contemporary Art in Krakow
+https://www.mocak.pl/ accessed on 15 December 2023
+69
+1
+97
+20
+187
+no
+Krakow Archaeological Museum
+https://ma.krakow.pl/ accessed on 15 December 2023
+39
+1
+87
+6
+133
+yes
+Museum of Municipal Engineering in Krakow
+https://www.mit.krakow.pl/ accessed on 15 December 2023
+101
+1
+148
+25
+275
+no
+Galicja Jewish Museum
+https://galiciajewishmuseum.org/ accessed on 15 December 2023
+56
+1
+47
+6
+110
+no
+Museum of the Jagiellonian University
+https://maius.uj.edu.pl/ accessed on 15 December 2023
+115
+2
+136
+12
+265
+no
+Walery Rzewuski Photography History Museum in Krakow
+https://mufo.krakow.pl/ accessed on 15 December 2023
+51
+1
+40
+20
+112
+yes
+General Emil Fieldorf Home Army Musem in Krakow
+https://muzeum-ak.pl/ accessed on 15 December 2023
+633
+429
+1637
+442
+3141
+no
+Seweryn Udziela Ethnographic Museum
+https://etnomuzeum.eu/ accessed on 15 December 2023
+140
+3
+99
+35
+277
+no
+Museum of St. John Paul ii the Great
+https://mjanpawel2.pl/ accessed on 15 December 2023
+148
+4
+491
+28
+671
+no
+Totals
+1695
+475
+3683
+745
+O—operability, R—robustness, P—perceivability, and U—understandability.
+6. Discussion
+Currently, more than a billion people around the world suffer from some type of
+disability. Ensuring that everyone has access to spaces, communities, areas, hospitality,
+services, food, pathways, and mobility is a pillar of sustainability. The number of people
+with disabilities and the senior population are growing rapidly around the world. In
+Poland, in 2022, seniors made up 25% of the population, and their number in 2050 is
+forecast to be 40%, while people with disabilities account for 14% of the population [53].
+These two groups will form the dominant segment of the tourism market in the coming
+decades. The use of tourist services by these people requires the hosts of tourist destinations
+and tour operators to adapt to their special needs by means of transport, information, and
+tourist infrastructure, enabling the exploitation of the value of the natural environment and
+cultural heritage (including museums), as well as by ensuring that staff are appropriately
+prepared to serve tourists with various types of restrictions. With regard to existing
+museums, this means that it is necessary to obtain funds for the adaptation of buildings
+
+Sustainability 2024, 16, 318
+13 of 18
+and exhibitions. On the other hand, new attractions, including museum facilities, must be
+built in accordance with the “design for all” principle. An example of such an approach
+is the model design of the Museum of Contemporary Art in Krakow. This building was
+awarded in the “Krakow without barriers” competition for its clear layout of pedestrian
+routes, taking into account the access of people with disabilities to the full utility program.
+Cultural tourism is key to the development of tourism in general around the world,
+especially in Europe. An ever-greater number of people are travelling for cultural reasons,
+and they are particularly interested in cultural heritage. Cultural tourism brings huge
+opportunities and is a growing trend. Around 40% of all tourists in the world can be
+considered cultural tourists, and culture is also one of the most important motivations for
+European tourists [54]. Museums can be defined as one of the most important cultural
+attractions that serve to satisfy the cognitive and emotional needs of cultural tourists. As
+such, they serve a key social function. In this context, they should be accessible to all groups
+of people [55].
+Currently, there is observable interest in social inclusion, defined as the process of
+creating the opportunities and resources necessary for people at risk of poverty and social
+exclusion to participate to some extent in economic, social, and cultural life wherever
+possible, including people with disabilities [56]. Social inclusion also involves social inte-
+gration, which manifests itself on many levels—educational, professional, recreational, and
+regarding tourism—and assists in the individual development of people with disabilities.
+In line with this process are the activities of Krakow museums centred on making it possible
+for people with disabilities to use museum resources at a level on a par with that of other
+visitors. Our research results confirm that the majority of visitors of museums are adults
+(individuals and groups), with seniors in second place (visiting in groups and individually),
+ahead of adolescents and other museum visitor segments. People with disabilities con-
+stitute around 10% of museum visitors, and queries about the possibility for such people
+to view museum exhibitions occur sporadically (once a month). This is confirmed by
+the results of research conducted among students with disabilities from various Krakow
+educational institutions, who make use of ‘museums, theatres, exhibitions and cinemas’
+relatively seldom (only 3% declared that such visits occurred once per month) [24].
+It is worth noting that museums with higher attendance have more amenities for
+people with physical disabilities, e.g., automatically opening doors. This seems to be due
+to the fact that adapting a space for people with mobility impairments is more difficult
+architecturally and more expensive than in the case of other disabilities. A common
+reason why museums with a smaller number of visitors lack adaptations for people with
+disabilities is also the fact that they are located in small buildings of a historic character,
+where, for technical and legal reasons, it is not possible to make changes to the structure of
+the interior and surroundings of the building.
+The analysed Krakow museums are best prepared to receive people with physical
+disabilities and seniors, while they are less well prepared for people with sight impairments
+and blind people or people with hearing impairments and deaf people. A similar level of
+accessibility was seen for families with prams and children.
+The studied museums have taken action to improve their accessibility for people
+with particular needs. For people with physical disabilities, it is vital that museums
+ensure there are suitably wide doors and functioning lifts as well as correctly designed
+communication routes. Other important features for people with limited mobility are
+inclines and ramps, lowered counters in reception/ticket offices, platforms and hoists, and
+automatic doors. The majority of the museums have induction loops installed for people
+with hearing impairments. One three museums have amenities for blind people in the form
+of descriptions in Braille. Only 10% of the museums do not have any of these amenities.
+It should be noted that there have been considerable improvements in the accessibility
+of Krakow museums for people with disabilities. The results of research from 1994 [57]
+revealed that access to museums for people with disabilities (in this case, people with
+musculoskeletal dysfunction) was limited in the majority of cases to the ground floor,
+
+Sustainability 2024, 16, 318
+14 of 18
+sometimes even only to certain rooms. In comparison, it can be observed that particular
+care is now taken to ensure that museums are fully accessible to various groups of people
+with particular needs.
+The digitalisation of Krakow museums is not at an advanced stage. The websites
+of the museums studied are assessed positively in terms of their compatibility and com-
+prehensibility with regard to their accessibility for people with disabilities. The greatest
+problem in the declaration of accessibility that the museums were required to present
+concerned the perceivability and functionality of the websites. In research conducted on
+the websites of 30 museums in Bulgaria, it was found that the majority of the analysed
+websites were below average in this regard and did not provide a satisfactory level of
+digital accessibility [58]. Research on museums in Portugal indicated similar problems with
+the assessment of website perceivability and functionality, although the 576 Portuguese
+museum websites studied had higher levels than other tourist entities [59].
+The problem regarding the use of internet applications by Polish museums (including
+two in Krakow) during the COVID-19 pandemic was analysed by Gaweł [34], indicating
+the frequent use of applications such as Facebook, Instagram, YouTube, and Tik-Tok for
+communicating with potential visitors and, above all, promoting the museum as a tourist
+product. For example, the National Museum in Krakow has 103,000 followers on Facebook,
+30,000 members on Instagram, and 1890 subscribers on YouTube. Similarly, Wawel Royal
+Castle has 140,000 followers on Facebook, 10,000 on Instagram, and over 3000 subscribers
+on YouTube. Neither of these two flagship Krakow museums use the Tik-Tok application,
+which is highly popular among young people [34].
+Cóndor-Herrera et al. pointed out that virtual tours available on physical property
+websites can be important tools for assessing levels of accessibility for people with physical
+disabilities, such as wheelchair users. However, it is important to use appropriate, modern
+technologies to obtain high-quality digital replicas of physical environments [60].
+The decided majority of the museums employ staff for assisting clients with special
+needs, suggesting the need to suitably train staff. Unfortunately, the majority of tourism
+study programmes do not include subjects related to the accessibility of tourist attrac-
+tions [12].
+7. Conclusions
+This research indicates that Krakow museums are well prepared for receiving people
+with physical disabilities and seniors but are less well prepared for receiving people with
+sight impairments and blind people or people with hearing impairments and deaf people.
+The visitors of the museums included in this study were predominantly adults, adolescents,
+and seniors. People with disabilities constitute around 10% of all visitors.
+The majority of museum managers consider the existence of premises unadapted for
+wheelchair users to be a form of discrimination, but for many museums, especially those
+corresponding to historical buildings, adapting the premises to the needs of such people
+is a significant technical and financial challenge. For example, only half of the museums
+have access to dedicated parking spaces. As far as is possible, museums install technical
+amenities providing access to their premises, especially their exhibitions. These amenities
+include, above all, doors of suitable width, lifts, correctly designed communication routes,
+induction loops for those with hearing impairments, and descriptions in Braille. The public
+spaces in the majority of the museums are adapted for shared use by both people with
+particular needs and those without. The museums also declare that they employ people
+trained in providing assistance to people with particular needs.
+It is worth noting that museums with higher attendance have more facilities for
+groups with different disabilities, so an obvious consequence of this is more diverse types
+of customers visiting said museums.
+A common reason why museums with a smaller number of visitors lack adaptations
+for people with disabilities is the fact that they are small buildings of a historic character,
+
+Sustainability 2024, 16, 318
+15 of 18
+where, for technical and legal reasons, it is not possible to make changes to the structure of
+the interior and surroundings of the building.
+Analysis of the museums’ digital accessibility showed that their websites were best
+prepared from the point of view of compatibility and comprehensibility. The greatest
+problem in meeting the conditions of the declaration of accessibility was found to be the
+perceivability and functionality of the websites. Unfortunately, only one of the museums
+studied uses virtual tours as a convenient form of making collections available to people
+with disabilities. During the COVID-19 pandemic, this method of visiting was often the
+only way to view museum collections.
+Another issue that could be the subject of future research is the assessment of the
+possibility for value co-creation, that is, providing experiences through the participation
+and interaction of people with disabilities. Experience consumption depends on the
+involvement of both providers (museum managers) and consumers (tourists) [61].
+This research demonstrates the significant importance of new technologies for acces-
+sible tourism. These can be used to remove physical barriers and improve the sharing of
+information and as tools for providing tourist experiences, e.g., augmented reality (AR)
+and virtual reality (VR) [62].
+The activities undertaken by Krakow museums are part of the pillars of sustainable
+tourism [63]. Their purpose is to create equal access to cultural heritage resources, such
+as museums, for all people, regardless of their physical and mental capabilities. Thus, the
+offering of museums accounting for people with disabilities strengthens the position of this
+city, which is distinguished by the Access City Award. Krakow is one of the few cities in
+Europe that has developed and actively implements a sustainable tourism policy. Access to
+cultural heritage resources for all stakeholders is included in the strategic objectives of this
+document [64].
+8. Theoretical and Practical Significance of the Research
+The assessment of the accessibility of museums for people with disabilities presented
+in this article contributes to knowledge of the issues surrounding access to heritage for
+people with special needs. The research results are therefore in line with the phenomenon
+of social inclusion and inclusive tourism.
+The actions described above, whose purpose is to make museums accessible to various
+groups of people with disabilities, as well as the technical, organisational, and informational
+amenities provided, can be used by museum managers as a case study of good practice.
+The results of our research point to the need to conduct further analyses in order
+to identify barriers to the development of accessibility at tourist attractions and to seek
+solutions for learning and disseminating good practices.
+9. Limitations
+This research was limited to one type of attraction, that is, museums, and only one
+city. Also, this research included Krakow museums with more than 5000 visitors per
+year. To obtain a fuller picture of museum accessibility, it would be worth continuing
+this research for museums of various sizes and in various locations. This should include
+the context of the social surroundings, especially the attitudes of museum managers and
+tourism providers towards the problems of accessibility to cultural heritage for people
+with disabilities.
+Author Contributions: Conceptualization, Z.K.; methodology, Z.K. and K.G.; software, K.K.; valida-
+tion, D.Z. and K.N.; formal analysis K.G.; investigation, D.Z.; resources, K.N.; writing—original draft
+preparation, Z.K. All authors have read and agreed to the published version of the manuscript.
+Funding: Project financed from the Visegrad fund ‘Application of Principles of Inclusion in Tourism
+in V4 Countries’ 2023–2024.
+Institutional Review Board Statement: Not applicable for studies not involving humans or animals.
+
+Sustainability 2024, 16, 318
+16 of 18
+Informed Consent Statement: Not applicable.
+Data Availability Statement: Data are contained within the article.
+Conflicts of Interest: The authors declare no conflicts of interest.
+References
+1.
+World Health Organization. Disability and Health. Available online: https://www.who.int/news-room/fact-sheets/detail/
+disability-and-health (accessed on 26 June 2023).
+2.
+United Nations. Convention on the Rights of Persons with Disabilities; United Nations: New York, NY, USA, 2006.
+3.
+UNESCAP 2009. Available online: https://www.accessibletourism.org/resources/takayama_declaration_top-e-fin_171209.pdf
+(accessed on 26 June 2023).
+4.
+Darcy, S.; Ambrose, I.; Schweinsberg, S.; Buhalis, D. Universal Approaches to Accessible Tourism; Accessible Tourism. Concepts and
+Issues; Buhalis, D., Darcy, S., Eds.; Channel View Publications: Bristol, UK, 2011; pp. 300–316.
+5.
+Espinosa Ruiz, A.; Bonmatí Lledó, C. (Eds.) Manual de Accesibilidad e Inclusión en Museos y Lugares Del Patrimonio Cultural y Natural;
+Trea: Gijón, Spain, 2013.
+6.
+Michopoulou, E.; Darcy, S.; Ambrose, I.; Buhalis, D. Accessible tourism futures: The world we dream to live in and the
+opportunities we hope to have. J. Tour. Futures 2015, 1, 179–188. [CrossRef]
+7.
+World Tourism Organization; Fundación ACS. Manual on Accessible Tourism for All—Public-Private Partnerships and Good Practices;
+UNWTO: Madrid, Spain, 2015.
+8.
+Kruczek, Z.; Mazanek, L. Krakow as a Tourist Metropolitan Area. Impact of Tourism on the Economy of the City. Stud. Peregietica
+2019, 26, 25–41. [CrossRef]
+9.
+European Commission. Access—City Award 2010: Rewarding and Inspiring Accessible Cities Across the EU; Publications Office of the
+European Union: Luxembourg, 2011.
+10.
+Scheyvens, R.; Biddulph, R. Inclusive tourism development. Tour. Geogr. 2018, 20, 589–609. [CrossRef]
+11.
+Biddulph, R.; Scheyvens, R. Introducing inclusive tourism. Tour. Geogr. 2018, 20, 583–588. [CrossRef]
+12.
+Liasidou, S.; Umbelino, J.; Amorim, É. Revisiting tourism studies curriculum to highlight accessible and inclusive tourism. J.
+Teach. Travel Tour. 2019, 19, 112–125. [CrossRef]
+13.
+Darcy, S.; Daruwalla, P.S. Personal and Societal Attitudes to disability. Ann. Tour. Res. 2005, 32, 549–570. [CrossRef]
+14.
+Park, J.; Chowdlhury, S. Investigating the barriers in a typical journey by public transport users with disabilities. J. Transp. Health
+2018, 10, 361–368. [CrossRef]
+15.
+Darcy, S. Inherent complexity: Disability, accessible tourism and accommodation information preferences. Tour. Manag. 2010, 31,
+816–826. [CrossRef]
+16.
+Tutuncu, O. Investigating the accessibility factors affecting hotel satisfaction of people with physical disabilities. Int. J. Hosp.
+Manag. 2017, 65, 29–36. [CrossRef]
+17.
+Al Kahtani, S.J.H.; Xia, J.; Veenendaal, B. Measuring Accessibility to Tourist Attractions. In Proceedings of the Geospatial Science
+Research Symposium, Melbourne, Australia, 12–13 May 2011; pp. 12–14.
+18.
+Jamaludin, M.; Kadir, S.A. Accessibility in Buildings of Tourist Attraction: A case studies comparison. Procedia-Soc. Behav. Sci.
+2012, 35, 97–104. [CrossRef]
+19.
+Francuz, S.; Cali´nska-Rogala, D. Ocena przystosowania atrakcji turystycznych dla osób z niepełnosprawno´sciami w Polsce.
+Przedsi˛ebiorczo´s´c I Zarz ˛adzanie 2019, 20, 315–328.
+20.
+Duda-Seifert, M.; Zaj ˛aczkowski, J. Accessibility of Wrocław Tourist Attractions for People with Physical Disabilities. In Tourism
+Role in the Regional Economy; Social, Health-Related, Economic and Spatial Conditions of Disabled People’s Tourism Development,
+Wy˙zsza Szkoła Handlowa, Wrocław; University of Wroclaw: Wroclaw, Poland, 2011; Volume 3.
+21.
+Rucci, A.C.; Porto, N. Accessibility in tourist sites in Spain: Does it really matter when choosing a destination? Eur. J. Tour. Res.
+2022, 31, 3108. [CrossRef]
+22.
+Santana, S.B.; Peña-Alonso, C.; Espino, E.P.C. Assessing physical accessibility conditions to tourist attractions. The case of
+Maspalomas Costa Canaria urban area (Gran Canaria, Spain). Appl. Geogr. 2020, 125, 102327. [CrossRef]
+23.
+´Sledzi´nska, J. Turystyka dla Wszystkich. Dost˛epno´s´c Infrastruktury Turystycznej w Polsce dla osób z Ró˙znymi Niepełnosprawno´s-
+ciami. In Tourism Role in the Regional Economy; Wyrzykowski, J., Marak, J., Eds.; Uniwersytet Ekonomiczny we Wrocławiu:
+Wroclaw, Poland, 2011.
+24.
+Popiel, M. Wybrane aspekty turystyki dost˛epnej w Krakowie w opinii studentów z niepełnosprawno´sci ˛a. Pr. Kom. Geogr.
+Przemysłu Pol. Tow. Geogr. 2017, 31, 50–63. [CrossRef]
+25.
+Porto, N.; Clara Rucci, A.; Darcy, S.; Garbero, N.; Almond, B. Critical elements in accessible tourism for destination competitiveness
+and comparison: Principal component analysis from Oceania and South America. Tour. Manag. 2019, 75, 169–185. [CrossRef]
+26.
+Luiza, S.M. Accessible tourism-the ignored opportunity. Ann. Fac. Econ. 2010, 1, 1154–1157.
+27.
+Domínguez, T.J.; Alén, F.; Alén, E. Economic profitability of accessible tourism for the tourism sector in Spain. Tour. Econ. 2013,
+19, 1385–1399. [CrossRef]
+28.
+Cockburn-Wootten, C.; McIntosh, A. Improving the Accessibility of Tourism Industry in New Zealand. Sustainability 2020, 12,
+10478. [CrossRef]
+
+Sustainability 2024, 16, 318
+17 of 18
+29.
+Skalska, T. Identifying quality gaps in tourism for people with disabilities: Importance-Performance Analysis (IPA). Turyzm/Tour.
+2023, 33, 41–48. [CrossRef]
+30.
+Popovi´c, D.; Slivar, I.; Gonan Božac, M. Accessible Tourism and Formal Planning: Current State of Istria County in Croatia. Adm.
+Sci. 2022, 12, 181. [CrossRef]
+31.
+Załuska, U.; Kwiatkowska-Ciotucha, D.; Grze´skowiak, A. Travelling from Perspective of Persons with Disability: Results of an
+International Survey. Int. J. Environ. Res. Public Health 2022, 19, 10575. [CrossRef] [PubMed]
+32.
+Kruczek, Z.; Nowak, K. Wpływ Pandemii COVID-19 na Funkcjonowanie Atrakcji Turystycznych w Polsce. Warsztaty Z Geogr.
+Turyzmu 2023, 13, 37–50. [CrossRef]
+33.
+Xia, Y. How Has Online Digital Technology Influenced the On-Site Visitation Behavior of Tourists during the COVID-19 Pandemic?
+A Case Study of Online Digital Art Exhibitions in China. Sustainability 2023, 15, 10889. [CrossRef]
+34.
+Gaweł, Ł. Museums without visitors? Crisis and revival—Managing the “digital world” in Polish museums in times of pandemic.
+Sustainability 2023, 15, 11844. [CrossRef]
+35.
+International Council of Museums. Museums, Museum Professionals and COVID-19: Third Survey. 2021. Available online: https:
+//icom.museum/wp-content/uploads/2021/07/Museums-and-Covid-19_third-ICOM-report.pdf (accessed on 20 December
+2023).
+36.
+Bieczy´nski, M. Muzea w internecie w odpowiedzi na „kulturowy szok” pandemii COVID-19. Ochr. Ludno´sci I Dziedzictwa Kult.
+2023, 2, 121–144. [CrossRef]
+37.
+Eid, H.; Forstrom, M. Museum Innovation: Building More Equitable, Relevant and Impactful Museums; Routledge: London, UK, 2021.
+38.
+Page, S.J. Urban Tourism; Routledge: London, UK; New York, NY, USA, 1995.
+39.
+Fainstein, S.S.; Judd, D.R. Cities as Places to Play. In The Tourist City; Fainstein, S.S., Judd, D.R., Eds.; Yale University Press: New
+Haven, CT, USA, 1999; pp. 261–272.
+40.
+This is Where I Wont to Live. Krakow 2030. Krakow Development Strategy. Krakow City Council. 2018. Available online:
+https://www.bip.krakow.pl/?dok_id=94892 (accessed on 20 December 2023).
+41.
+Šauer, M.; Paˇril, V.; Viturka, M. Integrative potential of Central European metropolises with a special Focus on the Vishegrad
+countries. Technol. Econ. Dev. Econ. 2019, 25, 219–238. [CrossRef]
+42.
+Kruczek, Z.; Szromek, A.R. The Identification of Values in Business Models of Tourism Enterprises in the Context of the
+Phenomenon of Overtourism. Sustainability 2020, 12, 1457. [CrossRef]
+43.
+Borkowski, K. (Ed.) Ruch Turystyczny w Krakowie w 2022 r; Małopolska Organizacja Turystyczna: Kraków, Poland, 2022.
+44.
+Ziarkowski, D. Oferta muzealna Krakowa. In Turystyka Muzealna. Przypadek Muzeum Narodowego w Krakowie; Niemczyk, A.,
+Seweryn, R., Eds.; Proksenia: Kraków, Poland, 2015.
+45.
+Kruczek, Z.; Nowak, K. Frekwencja w Polskich Atrakcjach Turystycznych w 2022 r; Polska Organizacja Turystyczna: Warszawa—
+Kraków, Poland, 2023; Available online: https://zarabiajnaturystyce.pl/obserwatorium-turystyki/badania-i-analizy (accessed
+on 20 December 2023).
+46.
+Niemczyk, A.; Seweryn, R. Dziedzictwo kulturowe magnesem przyci ˛agaj ˛acym turystów do wielkich miast (na przykładzie
+Krakowa). In Marketing w Rozwoju Turystyki; Chotkowski, J., Ed.; Wydawnictwo Uczelniane Politechniki Koszali´nskiej: Koszalin,
+Poland, 2009.
+47.
+Ruslin, R.; Mashuri, S.; Rasak, M.; Alhabsyi, F.; Syam, H. Semi-structured Interview: A methodological reflection on the
+development of a qualitative research instrument in educational studies. IOSR J. Res. Method Educ. (IOSR-JRME) 2022, 12, 22–29.
+[CrossRef]
+48.
+MacFarland, T.W.; Yates, J.M. Mann–Whitney U Test. In Introduction to Nonparametric Statistics for the Biological Sciences Using R;
+Springer: Cham, Switzerland, 2016. [CrossRef]
+49.
+Available online: www.tawdis.ne (accessed on 16 October 2023).
+50.
+Available online: https://www.gov.pl/web/dostepnosc-cyfrowa (accessed on 16 October 2023).
+51.
+Stepaniuk, K. Wirtualne zwiedzanie w opinii internautów w Polsce. Ekon. I Zarz ˛adzanie 2011, 3, 75–80.
+52.
+Pawłowska, A.; Matoga, Ł. Wirtualne Muzea w Internecie—Forma promocji i udost˛epniania dziedzictwa kulturowego czy nowy
+walor turystyczny? Tur. Kult. 2014, 9, 46–58.
+53.
+Sytuacja Osób Starszych w Polsce w 2021 r. GUS, Warszawa—Białystok. 2022. Available online: https://stat.gov.pl/files/
+gfx/portalinformacyjny/pl/defaultaktualnosci/6002/2/4/1/sytuacja_osob_starszych_w_polsce_w_2021_r.pdf (accessed on 16
+October 2023).
+54.
+Available online: https://www.cbi.eu/market-information/tourism/cultural-tourism/market-potential (accessed on 16 October
+2023).
+55.
+Melian, A.G.; Camprubí, R. The Accessibility of Museum Websites: The Case of Barcelona. In ICT Tools and Applications for
+Accessible Tourism; IGI Global: Hershey, PA, USA, 2021. [CrossRef]
+56.
+Krupa-Potoczny, M. Inkluzja społeczna osób z niepełnosprawno´sci ˛a na przykładzie działalno´sci Fundacji Handicup Zakopane.
+Kształcenie Literackie. Dydakt. Polonist. 2022, 8, 174–182. [CrossRef]
+57.
+Kruczek, Z.; Stanisławczyk, K. Ocena dost˛epno´sci walorów krajoznawczych i bazy hotelowej Krakowa dla turystów
+niepełnosprawnych. Folia Tur. 1994, 5, 29–46.
+58.
+Todorov, T.; Bogdanova, G.; Todorova–Ekmekci, M. Accessibility of Bulgarian Regional Museums Websites. Int. J. Adv. Comput.
+Sci. Appl. 2022, 13, 28.
+
+Sustainability 2024, 16, 318
+18 of 18
+59.
+Teixeira, P.; Lemos, D.; Carneiro, M.J.; Eusébio, C.; Teixeira, L. Web Accessibility in Portuguese Museums: Potential Constraints on
+Interaction for People with Disabilities; HCI International 2020—Late Breaking Papers: Universal Access and Inclusive Design. HCII
+2020. Lecture Notes in Computer Science; Stephanidis, C., Antona, M., Gao, Q., Zhou, J., Eds.; Springer: Cham, Switzerland, 2020;
+Volume 12426. [CrossRef]
+60.
+Cóndor-Herrera, O.; Ramos-Galarza, C.; Bolaños-Pasquel, M. Virtual Tours of Museums to Promote Tourism. In Marketing and
+Smart Technologies, Proceedings of the ICMarkTech 2022. Smart Innovation, Systems and Technologies, Santiago de Compostela, Spain, 1–3
+December 2022; Reis, J.L., Del Rio Araujo, M., Reis, L.P., dos Santos, J.P.M., Eds.; Springer: Singapore, 2022; Volume 344, p. 344.
+[CrossRef]
+61.
+Nowacki, M.; Kruczek, Z. Experience marketing at Polish museums and visitor attractions: The co-creation of visitor experiences,
+emotions and satisfaction. Mus. Manag. Curatorship 2021, 36, 62–81. [CrossRef]
+62.
+Ozdemir, O.M. Virtual Reality (VR) and Augmented Reality (AR) Technologies for Accessibility and Marketing in the Tourism
+Industry. In ICT Tools and Applications for Accessible Tourism; IGI Global: Hershey, PA, USA, 2021. [CrossRef]
+63.
+Bakker, M.; van der Duim, R.; Peters, K.; Klomp, J. Tourism and Inclusive Growth: Evaluating a Diagnostic Framework. Tour.
+Plan. Dev. 2020, 20, 416–439. [CrossRef]
+64.
+Walas, B. (Ed.) A Sustainable Tourism Policy for Krakow in the Years 2021–2028, Diagnosis and Recommendations, Municipality of Krakow;
+Resolution of the Kraków City Council: Krakow, Poland, 2021; ISBN 978-83-66039-72-8.
+Disclaimer/Publisher’s Note: The statements, opinions and data contained in all publications are solely those of the individual
+author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to
+people or property resulting from any ideas, methods, instructions or products referred to in the content.
+

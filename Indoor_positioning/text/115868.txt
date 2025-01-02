@@ -1,0 +1,365 @@
+An Augmented Reality Exhibition Guide for the iPhone
+Mohamed Ashraf Nassar, Fatma Meawad
+German University in Cairo
+mohamed.nassar@alumni2009.guc.edu.eg, fatma.meawad@guc.edu.eg
+Abstract background that supports our subsequent design
+decisions. With a clear description of the system
+Handheld Augmented Reality (AR) can enable requirements and its essential success criteria, we
+intuitive browsing and annotation of objects in an discuss a simple scenario on a prototype of our
+exhibition through the visitors’ in-hand mobile proposed design. Based on some experimental results
+devices. Several researchers explored Handheld AR of testing the prototype in different scenarios, we
+technologies in museums and exhibition-like highlight some future directions for this on-going
+environments. However, despite the proliferation of work.
+smart phones that can act as magic lenses for
+augmented objects, AR technologies are not widely 2. Tracking Techniques
+adopted in exhibitions. This paper investigates the
+possible techniques to build a reliable, scalable and Choosing a tracking technique for an Augmented
+cost effective solution for an indoor marker based Reality application is an important design decision.
+exhibition guide on the iPhone. After reviewing Such choice can either cause or resolve many
+possible tracking technologies, available open challenges for the application. For example, reliable
+source marker based tracking toolkits on the iPhone and accurate solutions might come with a
+are explored. The paper concludes with a proposed compromise of usability and performance.
+design for dynamic content creation to augment and Additionally, using a free tracking toolkit,
+annotate exhibition objects. purchasing one or building one from scratch would
+impact reliability, performance and the expected cost
+1. Introduction of the whole solution. We aim to present a solution
+that combines the benefits of usability, reliability and
+Augmented reality has become a rich field of cost effectiveness, in order to achieve wide adoption.
+research in recent years, so have the technologies In this section, we give an overview of existing
+enabling it to become widely used. Smart phones, for tracking techniques and their suitability for our main
+example, with their growing capabilities, built-in goal.
+sensors and wide spread represent one of these
+enabling technologies. Much research has been 2.1. Indoors Location Based Tracking (LBT)
+carried out on how handheld augmented reality can
+be used to enhance user experience in museums, Despite the wide success of Global positioning
+exhibitions or in other indoor environments. Some system (GPS) with location based mobile
+research attempted to contextually overlay 3D applications in outdoor settings, GPS does not
+characters on the mobile screen to interact with users provide the required accuracy indoors. Alternately,
+and guide them in the environment [18]. Others used various approaches were used for indoor location
+games to get many users to interact and enjoy a tour based tracking, either through the use of Infra-Red
+inside a building [14]. However, existing attempts in (IR) networks [1], Wireless-LAN (Wi-Fi) networks
+indoor environments are merely prototypes that for triangulating the location [2] or active Radio
+cannot be easily adopted in real life contexts. Frequency Identification (RFID) tags [8]. The
+The aim of this work is to provide an existing solutions for indoors location based tracking
+augmented reality application on the iPhone to allow require expensive infrastructure without a guarantee
+exhibitions’ visitors to enjoy access to dynamic of an acceptable level of accuracy for an AR
+information about the displayed items and share their application [8].
+own comments if they please. Enabling these forms
+of interactions in a reliable, yet seamless manner is 2.2. Marker-less Tracking
+envisaged to promote wide adoption of the
+technology in any indoor exhibition. Marker-less tracking, or feature tracking does not
+Tracking techniques are the biggest challenge to require special markers to be introduced in the
+the usability of an AR client on mobile devices. application setting. It is based purely on computer
+Thus, we start this paper with a discussion of vision algorithms extracting the specific required
+existing tracking techniques to give a basic features from the incoming camera feed, forexample, faces, buildings, objects, etc. Mobile based 2.3.2. 2D Barcodes
+feature tracking is gaining more attention as the
+processing power of current smart phones increases 2D Barcodes are gaining more popularity as fiducial
+to allow it [12, 4]. markers. The ISO standard Data Matrix barcode (see
+Even though, the concept behind marker-less figure 1(b)) can store up to 2KB of information [16].
+tracking could provide the ultimate augmented However, in environments where only little
+reality experience for users, both indoors and information needs to be encoded, simpler markers
+outdoors, there are some major challenges for this are preferred. For example frame, split, BCH (Bose,
+approach that hinder its adoption, especially with Ray-Chaudhuri & Hocquenghem) (see figure 1(d))
+mobile based applications. The machine learning and Standard markers (see figure 1(c)). These
+techniques used for feature detection demand high markers can be used for an ID-aware environments
+processing powers and advanced memory where the ID number is encoded as bits in the marker
+requirements. Scalability is another challenge for this itself. There are several benefits to such approach.
+approach since complex algorithms need to be Firstly, detection of ID-markers is always faster than
+developed for learning different features. Finally, for template-markers since no image matching is
+marker-less tracking can be severely crippled in required [6]. Secondly, the user does not have to
+mono-vision applications that use a single camera, provide marker images, but can freely choose any
+due to the difficulty in depth perception [10]. marker from a fixed set of patterns. Finally, in
+contrast to template markers, the user is not required
+2.3. Marker-based Tracking to train the toolkits with new patterns since any valid
+marker is implicitly known to the system [17]. Frame
+Markers, also known as Fiducials, are symbols with and Split markers offer an extra benefit of enabling
+specific known patterns that are designed to be easily human understandable information in addition to the
+recognized by machines [11, 6]. The maker-based encoded ID. However, they are only supported by a
+technique is the most commonly used indoor few toolkits of which none is available for licensing.
+tracking technology. This is because it relies on Section 2.4 provides more details about BCH and
+relatively simple software algorithms that do not Standard ID markers.
+require high processing powers nor expensive special
+built-in sensors. The following subsections provide
+an overview of some of the most common types of
+markers: template, 2D Barcodes and topological
+markers.
+2.3.1. Template Markers
+( Ma)
+a
+rA
+k
+eT r.e mplate ( Mb)
+a
+rD ka et ra Matrix ( Ic D) MA aS rt ka en rd ard ( Md)
+a
+rA
+k
+eB
+r
+CH ID
+Figure 1. Several Types of Markers used in marker based
+Template markers are one of the earliest fiducial tracking.
+markers developed. Template markers are basically a
+square with a black or white border with a 2.3.3. Topological markers
+contrasting background (white/black respectively)
+that can have anything inside of it. The whole square Topology based markers, such as D-Touch [6], are a
+with the pattern inside it are recognized as a marker, class of markers that are recognized based on
+(see figure 1(a)). Being a first however, template topological features of the markers rather than their
+markers suffer from some drawbacks. Firstly, when a geometry. Marker recognition is not based on shape,
+marker is detected, its pattern is extracted and cross- but on the relationship of dark and light regions. As a
+correlated with all known patterns. Consequently, as consequence, the visual design of the markers is less
+the patterns used increase and as the markers in the constrained and can be governed by aesthetic
+input image increase, the application becomes slower principles. That’s form and function, rather than just
+[6, 17]. Secondly, template markers must first be function. This is their distinctive feature compared to
+designed and then trained for the toolkit to use them. similar systems. The markers can be visually
+Finally, the complexity of the marker pattern affects designed to convey meaning to people [5].
+the efficiency of the tracking, where patterns with Topological markers seem as good candidates for our
+large black and white regions (i.e. low frequency application context since they allows the usage of
+patterns) are the most effective [3]. Template markers with better aesthetic qualities. Their main
+markers were originally developed for the drawback however is that each marker must be
+ARToolKit [9] and currently supported by the independently and uniquely designed and validated.
+ARToolKitPlus [17] and Studierstube ES [15]. This requirement would incur additional effort, cost
+and time on initial deployment and on scalability, as
+in the case of template markers.2.4. Toolkits 3. System Design Considerations
+An augmented reality toolkit is a software library Exhibitions are information rich environments that
+that can be used to calculate camera position and can vastly vary in their settings. We target indoor
+orientation relative to physical markers in real time. environments where exhibits can change frequently
+We are interested in open source toolkits that can and are not tied to a specific location. Thus, the
+demonstrate an acceptable performance on a mobile deployment of our system with minimal effort and
+device and that is either compatible with or can be cost is an essential requirement for our solution.
+ported to the iPhone platform. Existing literature Such requirement rules out the use of indoor location
+introduced several non-commercial marker based based tracking and marker less tracking techniques
+toolkits for augmented reality, for example, for our solution, leaving us with marker based
+ARTag[7], Studierstube ES [13] and ARToolKitPlus tracking as the best suit for our solution.
+[17]. Studierstube ES has been written from scratch Our proposed system is based on a client server
+with high performance for PCs as well as mobile architecture, where the marker identification is done
+phones in mind. It is about twice as fast as on the mobile device (client), and the ID is sent to a
+ARToolkitPlus on mobile devices and supports many database server to query for information about the
+different marker types [13]. However, Studierstube displayed item. Figure 2 presents a typical usage
+ES is a closed source library and is not currently scenario; the user points the iPhone at the augmented
+being licensed. ARTag library was announced to be object (the Porsche Poster in this case). Since the
+unavailable for use by its author, Mark Fiala, despite information is stored in a database, dynamically
+its benefits over other similar toolkits, for example: updating the information, adding new ID’s, or even
+its edge-based detection algorithm that make it both changing the information associated with a certain
+lightning and occlusion immune [7]. ID can be done quickly and independently from the
+ARToolkitPlus is the predecessor of rest of the system. This, in addition to the fact that
+Studierstube; it is an extended version of the original deploying printed black and white markers is quick
+ARToolKit’s vision code that was built to suit the and inexpensive, simplifies dynamic content
+needs of mobile devices. ARToolkitPlus has several generation and association with the exhibited items.
+additional features over the original ARToolkit. Most
+important of which are: Firstly, the support for
+mobile devices pixel formats such as RGB565. This
+allows image processing on the native pixel formats
+of the devices instead of incurring a penalty for
+converting to other formats. Secondly, it is based on
+fixed point arithmetic operations. This speeds it up
+considerably since mobile devices usually do not
+have a dedicated hardware floating point unit.
+Finally, it supports automatic thresholding and
+vignetting that compensate for the sometimes low
+resolution and the distortion of mobile device
+cameras.
+Figure 2: A typical scenario for an exhibition visitor who
+ARToolkitPlus offers two types of ID points the iPhone to the displayed item to browse related
+markers. Standard ID markers (STD ID), also known information.
+as simple ID, use simple four-fold redundancy and
+encode 9 bits in a 6x6 pattern. The second type of ID Data retrieval and display on mobile devices is a
+markers is the BCH, this type uses cyclic redundancy major usability consideration. The client application
+checks (CRC) which require less redundancy for on the mobile should handle the intuitive browsing
+similar robustness. BCH markers can therefore store of information about a recognized item. Moreover,
+12 bits in the 6x6 pattern image. ARToolkitPlus the client application should allow visitors to share
+supports up to 512 STD ID markers and 4096 BCH their comments on the items they are seeing. Finally,
+markers. As mentioned earlier, ID markers have the it is important to target the visitors’ in-hand mobile
+benefit that they encode the ID within the marker so device instead of offering special devices at the
+there is no speed penalty incurred when using a large beginning of their visit. This solution is not only
+number of markers. Consequently, ID markers stand cheaper, but also ensures the users’ familiarity with
+out as the right choice of makers for this work. the devices.Type Marker MRR MRR
+Size At Angle: 90 At angle:
+degrees 45 degrees
+(Straight)
+STD Small 55 cm 40 cm
+ID Medium 126 cm 85 cm
+Large 300 cm 198 cm
+BCH Small 72 cm 56 cm
+Medium 187.5 cm 100 cm
+Large 300+ cm 247 cm
+(a) Object identified (b) Details, reviews and ratings
+Table 1: A Table showing the results of measuring the
+maximum robust range (MRR) in different scenarios.
+4. Experiments
+The proposed system is aimed at exhibition visitors
+who are assumed to have no technical background.
+Hence we put the following criteria that our system
+needs to fulfill. The first and most important is the
+recognition accuracy. The system needs to be able to
+(c) Enter review (d) User Preferences
+recognize markers correctly at a comfortable
+distance to the user. Secondly, the system must be
+Figure 3: Snapshots from the iPhone Mobile client fast in detection. Thirdly, it needs to be robust in the
+sense that it does not exhibit jittering or false
+A prototype was built using ARToolkitPlus on the recognition.
+iPhone to test our envisaged solution. Our choice of
+the iPhone stems from its wide adoption worldwide 4.1. Setup
+[19]. Figure 3 shows several snapshots from our
+iPhone mobile client. The client application running For the purpose of our experiment, the two types of
+ARToolKitPlus, detects and decodes the marker, ID markers used by ARToolKitPlus are tested: STD
+then queries the server with the marker ID and ID and BCH. We are interested in the maximum
+retrieves the information over WiFi. The iPhone robust range (MRR) at which the marker is correctly
+screen, as shown figure 3(a), displays the recognized and is tolerant to smooth medium speed
+information on a transparent white panel that fades in movements. We will measure the MRR for both the
+when a marker is detected and fades out when no BCH and STD ID markers with three different
+marker is detected. Additionally, the panel can be marker sizes: small (2.5x2.5 cm), medium (6x6 cm)
+fixed at the top or button according to user and large (13x13 cm). Lightning conditions are
+preference. The panel is easily scrollable and reminiscent of typical indoor lightning and are
+expandable to show more details about an object, or constant throughout different trials. This is an
+to show existing reviews and ratings on this specific acceptable setting since lightning can, in most cases,
+item (see figure 3(b)). The user can choose to enter be easily controlled indoors.
+ratings and reviews. Additionally, the user can Each marker is fixed perfectly flat to the bottom
+personalize the interface through the display settings right corner of a poster. Such arrangement is chosen
+(see figure 3(d)). Entering data in such panel is to mimic a painting displayed in a museum or gallery
+relatively simple for an iPhone user. The use of a as an example exhibition setting. Then, the
+fixed panel was initially a fast prototyping decision. experimenter moves further away from the marker
+Then, it was found to combine good aesthetics with till a MRR is reached and then it is measured. This
+good usability. The iPhone here acts as a “magic- step is repeated for each size of each type of the
+lens”, where the user holds the device and perceives markers and from two different angles: 90 degrees
+the physical exhibition and the augmented and 45 degrees to the marker. The process is
+information through the iPhone screen. conducted using two different generations of the
+iPhone the 3G and the 3GS models.4.2. Observations different sizes of the markers used. Plus, there are no
+restrictions on the marker size chosen for printing
+Table 1 shows the measured MRR for each marker which allows for a great deal of flexibility for setting
+type, size and angle using the iPhone 3G. The table up the exhibition. For example a small art gallery
+clearly shows that BCH markers tend to offer more may choose to use medium sized markers because its
+overall reliability and robustness than STD ID visitors tend to move around the paintings in a 2
+markers. They are recognized more quickly and their meter radius for example. While a big museum may
+MRR is larger than the STD ID in all cases. This is use very large markers to augment a huge statue and
+probably due to the CRC error correction embedded allow viewing it from a larger distance.
+in the BCH markers as discussed earlier in section
+2.4. Thus, we interpret the results taking the BCH as 5.1. Challenges
+a point of reference since it represents the best
+measurement. Using marker based tracking has its limitations.
+The small markers only offer an MRR of up Markers can be intrusive in an exhibition’s
+to 72 cm when facing the markers and up to 56 cm environment. Our approach offers flexibility in the
+when viewing them from an angle. This restricts the choice of the size. Such control allows the organizer
+movements of the users in this small distance. The of an exhibition to place the markers in the least
+user has to be too close to the item. With such intrusive manner according to the application
+measurements, small markers can be suitable for context. Another potential limitation is that the
+smaller objects/pieces of art that cannot be viewed number of possible markers is limited (4096 in case
+from a distance. Naturally, the medium sized of ARToolkitPlus BCH markers). This limits the
+markers showed better MRR measurements than the number of objects that could be augmented if the
+small ones due to their size advantage. Offering up to target exhibition is really large. Although
+approximately two meters in a direct view and up to ARToolKitPlus is open source, increasing the
+one meter from an angle of 45 degrees provides a number of markers is not an option since this
+comfortable range for users to move around an requires changing the encoding/decoding algorithms
+exhibit item. Their slightly bigger size makes them of the BCH markers themselves. This is roughly
+more obtrusive than their smaller counterparts; equivalent to writing our own library from scratch.
+however they offer a good compromise between Finally, when augmenting a large piece, one
+obtrusiveness and MRR in many cases. Finally, the marker may not be enough. Picture the scenario
+large markers are recognized in distances greater where a user is standing in front of a painting
+than three meters. This makes them ideal when spanning an entire wall, either he/she will back up
+trying to augment a large item or when requiring until the whole painting is in his field of vision, or
+augmentation from large distances. However, they he/she will stand up close and observe each part
+are even more obtrusive than the medium sized separately. In the first case we might need to use a
+markers. The overall results of both the iPhone 3G larger marker in order for it to be recognized from a
+and 3Gs are similar. The only notable difference is in larger distance. In the second case we might need to
+the speed of launching the application where it is place several markers so that recognition is preserved
+faster on the 3Gs model. wherever the user looks. A similar problem arises
+when augmenting a 3D piece like a vase for
+5. Discussion example; a marker is only tracked when it is in view,
+so if the user moves about the piece, the
+We have presented an on-going work towards an augmentation is lost. A solution for this would be to
+interactive handheld augmented reality system for use four markers on the four sides of the object.
+enhancing the experience for exhibitions’ visitors However, this may be obtrusive and unwanted in
+and to promote wide adoption of the technology. We some applications. In this case we might provide an
+emphasized several criteria as the success factors for option for the user to lock on a specific marker ID so
+our proposed system: usability, reliability, scalability that the information associated with that ID is visible
+and cost effectiveness. We presented a prototype of even if the user moves around.
+our system using the iPhone platform as an example One major technical challenge that we faced
+of current smart phones. We favored the marker while building the prototype is getting a camera feed
+based approach over other tracking techniques due to on the iPhone. The iPhone SDK does not allow
+its relative simplicity, ease of deployment and cost direct camera access. Thus, we decided to program
+effectiveness. the phone to snap periodic frames in order to search
+Our proposed system is based on a client them for markers. However, this proved inefficient
+server architecture, where the marker identification is because the iPhone camera takes about 1.5-2.5
+done on the mobile device (client), while data seconds (iPhone 3G) or 1-2 seconds (iPhone 3GS) to
+storage and management takes place on a server. Our capture a photo, which makes the program jittery.
+experimental results were promising for the three Plus, the camera capture is done in the main thread,suspending the application until it completes. As a [6] E. Costanza and J. Huang. Designable visual markers.
+workaround, we programmed the phone to take a In CHI ’09: Proceedings of the 27th international
+self-snap (a snapshot of its own display) instead. The conference on Human factors in computing systems, pages
+1879–1888, New York, NY, USA, 2009. ACM.
+self-snap is done in a separate thread so it does not
+[7] M. Fiala. Artagrev2 fiducialmarker system: Vision-
+impact performance, and is sufficiently fast to allow
+based tracking for ar, In ISMAR (October 2005)
+us to take up to 5 pictures per second on the iPhone
+[8] J. Hightower and G. Borriello. A survey and taxonomy
+3G. This enables real-time perception for the user.
+of location systems for ubiquitous computing. Computer,
+The result image from each snap is a 480 * 320 pixel Vol. 34, No. 8. (07 Aug 2001), pp. 57-66.
+(which is the iPhone screen resolution) bitmap [9] H. Kato and M. Billinghurst. Marker tracking and hmd
+image. The raw image bytes are then extracted and calibration for a video-based augmented reality
+fed into the vision code of ARToolKitPlus. The color conferencing system. Augmented Reality, International
+space of the toolkit is set to BGRA (Blue, Green, Workshop on, 0:85–94, 1999.
+[10] J. M. V. Misker and J. Ster. Authoring immersive
+Red, Alpha) in order to allow fast processing at the
+mixed reality experiences. In E. Dubois, P. Gray, and L.
+native capture format and color space.
+Nigay, editors, The Engineering of
+Mixed Reality Systems, chapter 14, pages 275–291.
+5.2. What is Next?
+Springer London, London, 2010.
+[11] C. Owen, F. Xiao, and P. Middlin. What is the best
+The work described in this paper is a work in- fiducial? In Augmented Reality Toolkit, the First IEEE
+progress. Hence, we conclude by highlighting our International Workshop, 2002.
+next steps: [12] B. Ruf, E. Kokiopoulou, and M. Detyniecki. Mobile
+museum guide based on fast sift recognition. In 6th
+International Workshop on Adaptive Multimedia Retrieval,
+• Finalizing the prototype to add intelligent
+2008.
+recommendations to the visitor based on
+[13] D. Schmalstieg, A. Fuhrmann, G. Hesina, Z.
+viewed pieces and ratings.
+Szalav´ari, L. M. Encarnac, M. Gervautz, and W.
+• Adding support for multi-marker tracking is Purgathofer. The studierstube augmented reality project.
+another point that should be taken in Presence: Teleoperators and Virtual Environments,
+consideration. Currently, if two markers are 11(1):33–54, February 2002.
+recognized by the application, the one with [14] D. Schmalstieg and D. Wagner. A handheld
+the highest confidence will have augmented reality museum guide. In International
+Conference Mobile Learning. IADIS, 2005.
+precedence. In case both markers achieve
+[15] D. Schmalstieg and D.Wagner. Experiences with
+the same confidence, the user should have
+handheld augmented reality. In 2007 6th IEEE and ACM
+the choice which identified object to be in
+International Symposium on Mixed and Augmented
+focus.
+Reality, pages 1–13, Washington, DC, USA, November
+• Conducting a variety of usability tests with 2007. IEEE.
+many users in real life conditions in an [16] D. Wagner, T. Langlotz, and D. Schmalstieg. Robust
+information rich environment. Such tests and unobtrusive marker tracking on mobile phones. In
+will help ensure a great level of usability ISMAR ’08: Proceedings of the 7th IEEE/ACM
+and high acceptance of the application. International Symposium on Mixed and Augmented
+Reality, volume 0, pages 121–124, Washington, DC, USA,
+2008. IEEE Computer Society.
+6. REFERENCES
+[17] D. Wagner and D. Schmalstieg. Artoolkitplus for pose
+tracking on mobile devices. Technical report, Institute for
+[1] Roy Want, Bill N. Schilit, Norman I. Adams, Rich Computer Graphics and Vision, Graz University of
+Gold, Karin Pedersen, David Goldberg, John R. Ellis, and Technology, February 2007.
+Mark Weiser. The ParcTab ubiquitous computing [18] R. Wojciechowski, K. Walczak, M. White, and W.
+experiment. IEEE Personal Communications, 2:28-43, 0. Cellary. Building virtual and augmented reality museum
+[2] P. Bahl and V. N. Padmanabhan. Radar: an in-building exhibitions. In Web3D ’04: Proceedings of the ninth
+rf-based user location and tracking system. In Proceedings international conference on 3D Web technology, pages
+IEEE INFOCOM 2000. Conference on Computer 135–144, New York, NY, USA, 2004. ACM
+Communications. Nineteenth Annual Joint Conference of [19] Gartner. Worldwide mobile phone sales 2009.
+the IEEE Computer and Communications Societies (Cat. http://www.gartner.com/it/page.jsp?id=1306513
+No.00CH37064), volume 2, pages 775–784. IEEE, 2000.
+[3] Artoolkit documentation,
+http://www.hitl.washington.edu/artoolkit/documentation/d
+evmulti.htm.
+[4] E. Bruns, B. Brombach, and O. Bimber. Mobile phone-
+enabled museum guidance with adaptive classification.
+IEEE Computer Graphics and Applications, 28(4):98–102,
+2008.
+[5] E. Costanza. Telling a story on a tag: the importance of
+markers’ visual design for real world applications. In
+Mobile Interaction with the Real World (MIRW), 2006.

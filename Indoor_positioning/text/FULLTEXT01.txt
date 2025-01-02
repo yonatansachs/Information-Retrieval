@@ -1,0 +1,382 @@
+2014 Eighth International Conference on Innovative Mobile and Internet Services in Ubiquitous Computing
+Indoor Taxi-Cab: Real-Time Indoor Positioning and Location-Based Services with
+Ekahau and Android OS
+Caner Kilinc, Seraj Al Mahmud Mostafa, Raihan Ul-Islam, Kashif Shahzad, and Karl Andersson
+Pervasive and Mobile Computing Laboratory
+Luleå University of Technology
+SE-931 87 Skellefteå, Sweden
+{kilcan-0@student., sermos-9@student., raiuli-0@student., kassha-0@student., karl.andersson@}ltu.se
+Abstract—Positioning and routing in outdoors environment that Taxi geometry comes by and takes advantage of lower
+is still challenging especially in complex buildings, where a code complexity such as decreased memory consumption
+number of buildings are combined with tunnels and bridges, and execution time of the computation.
+and the GPS signal is unreachable. Looking for a particular
+Indoor positioning systems (IPSs) with accurate, reliable
+room in an unfamiliar huge indoor environment or a product
+in an enormous store is time wasting and a real life problem and real-time location updates has always been significantly
+that everybody faces on a daily basis. This paper presents a challenging, where there are a lot of physical barriers
+solution using the Ekahau positioning system and Android OS depending on radio signal absorption or obstruction in a
+with an intermediary server, which acts between these two large indoor space with lots of corridors, floors, rooms and
+systems to provide actual room level positioning by a objects. For IPSs there are several systems that have been
+mathematical modeling technique. The system also provides provided including RFID, WLAN, UWB, ZigBee, infrared
+the shortest path to a target destination by using Dijkstra's and ultra sounds, etc. Lots of studies have been done and
+search algorithm. The optimal distance between the locations is remarks that specific calibration techniques are needed to be
+modeled based on the Taxi-cab geometry distance definition able to obtain accurate positioning and mapping results
+for the mobile clients. Additionally, the users can also display related with site characteristics. Previous work provide an
+the shortest path for items in the vicinity such as coffee
+overview of indoor positioning techniques [4][5][6].
+machines, etc. The proposed solution has been evaluated in a
+real life setting at basement floor level. The following techniques are available:
+Keywords: Indoor Positioning; Indoor Location-based • Radio Map (RM): RM definition provides the
+Services; Ekahau; Mathematical Modelling; Dijkstra's Search variations of the RSS values from the AP’s. It also
+Algorithim; Taxi-Cab geometry; Android OS gives detailed information on cell size and the
+distances of APs. However, using the RM
+I. INTRODUCTION
+definition database helps in accuracy to track
+In 2013, the number of connected mobile devices devices. The RSS values are immediately
+reached 10 billion [1] and the amount of smart phones usage compared with the recent signal strength while a
+reached to 1.4 billion: 798 million of them are Android moving device receives any signal from an
+based devices and 294 million are iPhone [2]. Nowadays, AP [7][8]. RM definition table does not store any
+Billions of users are using Global Navigation Satellite new data. It only compares the new received values
+System (GNSS) such as Global Positioning System (GPS) from the device with the RSS locations. So, it
+[3], which is the most well-known. GPS technology relies
+becomes quite easy to detect user accurate location
+on signals from multiple satellites and employs a
+immediately.
+triangulation process to determine physical locations with an
+• Motion Estimation: In the literature, a number of
+accuracy of about 33 feet (10 meters).
+object motion estimation methods are described
+Many business and private zones are already covered by and used [4] e.g. the radio-frequency (RF) based
+wireless networks for connecting laptops, PDAs and mobile RADAR system: Radar is a sensor, which can be
+phones. These devices could be tracked simply by adding placed on walls in order to gather Wi-Fi signal
+enabling software. However, GPS technology cannot be strength information at multiple locations to
+used effectively in dense urban areas, due to blind spots, triangulate the object’s coordinates [9][10].
+weak radio signals, and other signal interference factors.
+These both given techniques are used together by Crowd-
+The lack of GPS-based location services in huge buildings
+sourcing Localization [11][12][13]. Last but not least,
+reinforce to fuse smartphones and Wi-Fi signal strength to
+Simultaneous Location and Mapping (SLAM) can be given
+enable positioning using Euclidean geometry distance
+as an additional example, which is an active research project
+calculation. This paper presents Taxi geometry for the
+for more than 20 years [14][15].
+distance computation, which has so far, to best of our
+knowledge, not been used for this purpose. The reason is
+978-1-4799-4331-9/14 $31.00 © 2014 IEEE 223
+DOI 10.1109/IMIS.2014.99A number of IPSs have been developed based on these horizontally and vertically considered in this computation to
+fundamental techniques. Each system takes advantage of a get from a certain point A to point B. The same destination
+particular positioning technology or combining some of computation technique is used while determining the
+these technologies and [5] introduces and evaluates different distance across the rooms and corridors. Also it is used
+commercially available and research-oriented IPSs. while drawing an optimal route for the users due to the user
+As a solution to the addressed problems and challenges, cannot pass through the wall. Therefore, they have to follow
+this paper presents Indoor Taxi-Cab for real time indoor the corridors like a taxi follows the streets to reach a
+positioning and services. Indoor Taxi-Cab uses Ekahau targeted destination. Additionally, the user also can request
+Positioning Engine (EPE) as a tool to obtain users’ (x, y) a shortest path for the nearest item via the Android
+coordinates by using the signal strength mapping and the application, which will also be handled in the intermediary
+motion estimation techniques in a composition. The server.
+determined coordinates are handled at an intermediate
+The remainder of the paper is structured in the following
+server where the users’ room level location is determined
+way. Section 2 indicates related work, while Section 3
+and based on the demand a shortest path is provided, with
+describes our system architecture. Section 4 concludes,
+Dijkstra's algorithm based on Taxi-Cab geometry distance
+provides evaluation and discusses the results.
+definition, for a certain destination or a closest item e.g.
+Xerox machine or Coffee machine.
+II. RELATED WORK
+EPE offers a practical 802.11b-based Wireless LAN Recently, there is striking development on the real time
+indoor positioning system that requires no proprietary indoor positioning. Feldman et al. [23] proposed a model for
+hardware additions to the network and obtains clients’ location estimation using a triangular method. They used
+location from Ekahau tags which is an RFID (Radio RSSI (radio signal strength indicator) and the distance
+Frequency Identifier) [16] that transmits coordinates of the between sender and the receiver. Gu et al. [5] and Lui et al.
+client to the EPE over Wi-Fi. EPE is designed to be used as [6] provided survey studies of indoor positioning systems
+a WLAN positioning server, or integrated with vertical for wireless personal networks. Shin et al. [7] introduced an
+software applications or hardware. It is a powerful Java™ indoor user tracking system. The system constructs a
+software component that provides user and asset coordinates topological map with Wi-Fi signal calibrations, assigns
+(x, y, floor) and tracking features to client applications [17]. semantically meaningful labels into the map, and estimates
+the semantic location of the user based on the current Wi-Fi
+EPE services have not yet been provided for Microsoft’s
+signal strength observation. Eventually, the proposed system
+and Apple’s mobile operating systems. Therefore, an
+was the first Wi-Fi fingerprinting-based SLAM
+additional Java based intermediary server allows us to
+implementation. Lau et al. [7] presented the Density-based
+provide the positioning and location based services to any
+Cluster Combined Localisation Algorithm that uses the
+kind of mobile users. In the proposed system, an Android
+unsupervised technique to recognise meaningful locations.
+application is implemented and evaluated as a mobile client.
+The results prove that the DCCLA is able to detect
+Furthermore, the intermediate server determines users’ fingerprints of Wi-Fi signal strengths and does not require
+exact room level location based on the (𝑥,𝑦) coordinates users’ input. Godana et al. [9] developed Radar technology
+with a mathematical modeling technique which increases in order to monitor and operate remotely human activity in
+Ekahau’s capability while decreasing the error rate by room the form of a set of Doppler frequency. Regarding the
+level location detection. Based on the Dijkstra's Search results in the study, the system is able to estimate the
+Algorithm the shortest path is computed to the requested velocity profile of the person’s translational movement with
+less than 10% error. Bahl et al. [10] performed a similar
+target destination [18][19] where each room or each nearest
+study and presented results. Rai et al. [11] proposed the Zee
+item is defined as a node. Dijkstra’s algorithm provides a set
+system, which makes the calibration zero-effort, by enabling
+of nodes/room names as an output. Those rooms need to be
+training data to be crowd sourced without any additional
+visited to reach the destination and it is eventually the
+location input from users. Rai’s experimental results
+shortest path. The intermediate server transmits to the
+highlight that WiFi-based positioning techniques, both
+Android Client and updates in real time whenever users’
+fingerprinting-based and modeling-based, are able to
+coordinates are changed.
+perform accurate localization, when crowd sourced data is
+Furthermore, the Indoor Taxi-Cab solution provides an using Zee. Ali et al. [13] implemented algorithms such as
+optimal route to a desired destination. At this phase, Taxi- the Super Resolution Matrix Pencil (MP) algorithm, which
+gives a better estimation for TOA (time of arrival), as the
+Cab geometry is exploited which is unique. Taxicab
+TOA has superior performance over the Fourier transform
+geometry was defined by E. F. Krause [20] and is very
+technique, so it is important to estimate the TOA accurately
+similar with the Euclidean coordinate geometry. Definition
+to identify any object. Johnson et al. [18] examine the
+of points and lines are the same as well as the angles are
+Dijkstra’s shortest path algorithm and evaluated at [19]
+measured in the same way [21]. The difference is that
+whether it is suitable for iterative routing for the operation
+computation of distances which is not calculated as the crow
+of culler multi-hop networks based on various scenarios.
+flies, but as a taxi would drive. The number of blocks
+224The study shows that better delay and cost performance can Note in the figure that the distances between any of the
+be achieved by the iterative algorithm. rooms and corridors are abstract to provide a crystal clear
+picture.
+Finally, Li et al. [20] studied privacy-preserving location
+sharing in mobile online social networks. They observed Whenever measured a pair of axes e.g. (x , y ) are
+u u
+that users’ real fake identities could potentially be leaked to obtained for a user from the Ekahau server, function 𝑓
+location service providers. Li et al. [20] therefore proposed
+identifies the exact room number where the Android client
+an improved mechanism that employs dummy queries and a
+is located and that is defined as below for the rectangular
+private set intersection protocol to prevent the online service
+rooms;
+network service and location service providers from
+learning individual information from each other.
+𝐴, 𝑥 <𝑥 <𝑥 , 𝑦 <𝑦 <𝑦
+! ! ! ! ! !
+III. SYSTEM ARCHITECTURE 𝑓 𝑥 !,𝑦
+!
+= (2)
+𝐵, 𝑥 <𝑥 <𝑥 , 𝑦 <𝑦 <𝑦
+The implementations and experiments are carried out at ! ! ! ! ! !
+the university campus, in a basement corridor at a building.
+Our Indoor Taxi-Cab system architecture consists of three
+different components:
+1. Ekahau Server (Ekahau Positioning Engine)
+2. An Intermediate Server
+3. An Android application and Ekahau Tag
+as shown in Figure 1.
+Figure 2: Mathematical Modeling for Room Level Location Determination
+Furthermore, a circular room, with center C=(h. k) and
+radius r is modeled as follow;
+(𝑥−ℎ)!+(𝑦−𝑘)! =(𝑟)! (3)
+Figure 1: Indoor Taxi-Cab Overall System Architecture. This modeling is done and it can be done for any kind of
+room regardless its shape, due to that there are lots of well-
+Ekahau tag is carried around by the Android Clients.
+known linear calculation techniques and formulas in
+The tag measures the Wi-Fi signal strengths from a number
+analytic geometry to determine whether a certain per of axes
+of different Wireless Access Points and sends the position
+is in a geometric shape or not.
+of the strongest signal to the Ekahau server to determine
+accurate (x, y) position of the users. The Ekahau server Even if the (x, y) coordinates of the user have been
+continuously obtains the user’s position from the Ekahau tag erroneously detected, e.g. by one meter, there is a higher
+and sends it to the Intermediate server in real time. possibility that the user is still in the same room or corridor.
+The Intermediate server has been developed by us in Therefore, the mathematical model used increases Ekahau’s
+order to determine the user’s room level position on a capability while decreasing the error rate by room level
+relevant indoor map. It also provides an optimal route to a location detection. Additionally, one or a number of key
+certain target destination which can be a room or an item, points are identified in each room and corridor in order to be
+e.g. nearest a copy or coffee machine. The system works as used at the next step.
+the following.
+Once the user’s current located room is determined then
+First, all rooms and corridors are defined by an a small circle is sketched, on the relevant area of the map.
+individual set of unique x and y coordinates, e.g. room A is Then an optimal walking route, from the current location to
+modeled as (x y ). the targeted destination, is computed.
+a, a
+As shown in Figure 2 any room can be identified by a set of Dijkstra's algorithm is used in order to find the shortest
+unique x and y coordinates for instance: a rectangle room A walking path and the algorithm works according to the
+is defined as follows: following. First, the current location is set as the starting
+point/node and set to zero as the value (starting point is
+𝐴= (𝑥 !,𝑦 !) 𝑥 !≤𝑥 !≤𝑥 !, 𝑦 !≤𝑦 !≤𝑦 !, 𝑎∈ℕ 𝑎𝑛𝑑 𝑥,𝑦∈ℝ (1) zero) of the current node, which is shown in Figure 3.
+225Second, the current node will be the closest unvisited where 𝜙 is a set of rooms and corridors (represented as
+neighbouring node of the current node. It is worthwhile to nodes in the algorithm).
+keep in mind that the distance between the nodes is The identified key points for the corridors are as
+calculated based on Taxi-Cab geometry destination following; 𝐾(𝑥 ,𝑦 ) is in blue horizontal
+! !
+definition, which is explained later on in this section. corridor, 𝑃 𝑥 ,𝑦 and 𝑃 (𝑥 ,𝑦 ) in grey vertical corridor,
+! ! ! ! ! !
+and 𝐷(𝑥 ,𝑦 ) is in green horizontal corridor
+! !
+where 𝐾𝑃 ⊥ 𝑃 𝑃 ⊥ 𝑃 𝐷 and 𝐾𝑃 ∥ 𝑃 𝐷
+! ! ! ! ! !
+hence 𝐿(𝑥 , 𝑦 ) can be found where 𝐾𝐿 ⊥ 𝐷𝐿 .
+! !
+According to Pythagorean Theorem in Euclidean
+geometry, the shortest path between 𝐾(𝑥 ,𝑦 ) and
+! !
+𝐷 𝑥 ,𝑦 has been calculated by
+! !
+𝐾𝐷 !=𝐾𝐿!+ 𝐿𝐷 !
+𝐾𝐷 != 𝑥 −𝑥 !+ 𝑦 −𝑦 ! (5)
+! ! ! !
+Figure 3: Dijkstra's Algorithm
+On the current node, the distance to every unvisited
+node, which is directly connected to the current node, is
+considered by calculating the total distance between an
+unvisited node and the value of the current node.
+Afterwards, the unvisited node is marked with this
+calculated value, if it is less than its current value. Note that,
+if the path to it through the current node is shorter than the
+Figure 4: Taxi-Cab Geometry Distance Definition
+previously known paths, the node is relabelled. After the
+distances are determined to each neighbouring nodes, the
+The significant difference in Taxi-Cab geometry that the
+current node is coloured as visited and select the closest
+shortest path between 𝐾(𝑥 ,𝑦 ) and 𝐷 𝑥 ,𝑦 , is shown
+! ! ! !
+unvisited node as the current node. with a red route on the figure above, has been defined by
+Dijkstra's algorithm also defines two sets of nodes: 𝐾𝐷 = 𝐾𝑃 + 𝑃 𝑃 + 𝑃 𝐷
+! ! ! !
+OPEN and CLOSED. An OPEN node means that the set of
+𝐾𝐷 =𝑑 𝐾,𝑃 + 𝑑 (𝑃 ,𝑃 )+ 𝑑 (𝑃 ,𝐷)
+vertices to process while a CLOSED node includes vertices !! ! !! ! ! !! !
+already processed. Therefore, the coloured nodes will not be
+𝐾𝐷 = 𝑥 −𝑥 + 𝑦 −𝑦 + 𝑥 −𝑥 (6)
+! ! ! ! ! !
+revisited or returned to.
+Due to the given definition Taxi-Cab distances between
+The searching process for selecting the neighbouring the rooms and corridors are computed and stored in the
+nodes with the shortest distances continues colouring the Intermediate server. The key points are linked as a walking
+current node as visited and moving onto the closest path based on the request.
+unvisited neighbour node until the target destination node is
+Finally, the optimal route is determined and plotted on
+coloured as visited. Once the target destination node is
+the map and it is transmitted to the Android client. Figure 5
+coloured as visited, that means the shortest path is
+shows an additional feature that a user can request for a
+determined and as output a list of nodes in a visiting order is
+nearby item, while Figure 6 shows the user having selected
+obtained, which needs to be visited one by one to reach to
+a particular room name to get the optimal route. Finally,
+the target destination in the given order.
+Figure 7 shows a typical response.
+In order to draw a route to the desired destination, Taxi-
+cab geometry is exploited as follows; Figure 4 gives an
+example where a user is standing at a point 𝐾(𝑥 ,𝑦 ) and
+! !
+wants to go to point 𝐷 𝑥 ,𝑦 , based on this demand as
+! !
+explained above, first the shortest path is determined with
+Dijkstra's algorithm. In this case the output of the Dijkstra's
+algorithm is
+𝜙= 𝑅𝑒𝑑 𝐶𝑜𝑟𝑟𝑖𝑑𝑜𝑟,𝐺𝑟𝑒𝑦 𝐶𝑜𝑟𝑟𝑖𝑑𝑜𝑟,𝐺𝑟𝑒𝑒𝑛 𝐶𝑜𝑟𝑟𝑖𝑑𝑜𝑟 (4)
+226IV. CONCLUSION AND FUTURE WORK
+We provided an efficient system for indoor positioning.
+Users of the system were pleased and excited by having
+such an application where they could be helped by our
+Indoor Taxi-Cab system to know the exact direction and
+location in a complicated indoor environment where a
+number of buildings are linked via tunnels and bridges.
+The proposed system relies on a commercially launched
+Ekahau indoor positioning product while obtaining the
+users’ coordinates based on Wi-Fi radio signal strength
+measurements. Unfortunately, the system inherits the
+Ekahau’s limitations related to performance and
+pricing. Furthermore, the cost of mapping the campus along
+Figure 5: User can request for a nearby item with licenses can be quite high.
+Our future work includes testing alternative open source
+systems to obtain the users’ coordinates. Also, we intend to
+extend the system and to develop our own Wi-Fi positioning
+engine. Finally, we intend to port our system to iOS and
+Windows 8.
+In conclusion, the main problem is to balance the
+performance load, how to distribute processing power
+between the clients and server, and how to utilize limited
+bandwidth.
+ACKNOWLEDGMENT
+Part of this work is a result of the NIMO (Nordic
+Interaction and Mobility Research Platform) project [24]
+supported by the EU Interreg IVA North program.
+REFERENCES
+[1] http://techcrunch.com/2012/02/14/the-number-of-
+mobile-devices-will-exceed-worlds-population-by-
+Figure 6: User requests for a destination 2012-other-shocking-figures/
+[2] http://www.businessinsider.com/15-billion-
+smartphones-in-the-world-22013-2
+[3] http://en.wikipedia.org/wiki/Global_Positioning_Syste
+m
+[4] P. Bissig, R. Wattenhofer, and S. Welten. (2013). A
+Pocket Guide to Indoor Mapping. Proc. WPNC
+[5] Y. Gu, A. Lo, and I. Niemegeers. (2009). A Survey of
+Indoor Positioning Systems for Wireless Personal
+Networks. IEEE Communications Surveys & Tutorials,
+IEEE 11(1):13-32
+[6] H. Liu, H. Darabi, P. Banerjee, and J. Liu. (2007).
+Survey of Wireless Indoor Positioning Techniques and
+Systems. IEEE Transactions on Systems, Man, and
+Cybernetics, Part C: Applications and Reviews
+37(6):1067-1080
+[7] M. Ficco, C. Esposito, and A. Napolitano. (2014).
+Calibrating Indoor Positioning Systems with Low
+Efforts. IEEE Transactions on Mobile Computing
+13(4):737-751
+[8] S. L. Lau, Y. Xu, and K. David. (2011). Novel Indoor
+Figure 7: The shortest path for a certain destination Localisation using an Unsupervised Wi-Fi Signal
+Clustering Method. Proc. FutureNetw
+227[9] B. Godana, G. Leus, and A. Barroso. (2010).
+Estimating Indoor Walking Velocity Profile using a
+Software Radio-based Radar. Proc. SENSORDEVICES
+[10] P. Bahl and V. Padmanabhan. (2000). RADAR: An in-
+building RF-based User Location and Tracking System.
+Proc. IEEE INFOCOM
+[11] A. Rai, K. Chintalapudi, V. Padmanabhan, and R. Sen.
+(2012). Zee: Zero-effort Crowdsourcing for Indoor
+Localization. Proc. Mobicom
+[12] M. Lee, H. Yang, D. Han, and C. Yu. (2010).
+Crowdsourced Radiomap for Room-level Place
+Recognition in Urban Environment. Proc. IEEE
+PERCOM Workshops
+[13] A. Ali and A. Omar. (2005). Time of Arrival
+Estimation for WLAN Indoor Positioning Systems
+using Matrix Pencil Super Resolution Algorithm. Proc.
+WPNC
+[14] H. Durrant-Whyte and T. Bailey. (2006). Simultaneous
+Localization and Mapping: Part I. IEEE Robotics &
+Automation Magazine 13(2):99-110
+[15] T. Bailey and H. Durrant-Whyte. (2006). Simultaneous
+localization and mapping (SLAM): Part II. IEEE
+Robotics & Automation Magazine 13(3):108-117
+[16] http://en.wikipedia.org/wiki/Radio-
+frequency_identification
+[17] http://www.ekahau.com/
+[18] D. Johnson. (1973). A Note on Dijkstra's Shortest Path
+Algorithm. Journal of the ACM 20(3):385-388
+[19] D. Johnson, D. Maltz, and J. Broch. (2001). DSR: The
+Dynamic Source Routing Protocol for Multi-hop
+Wireless Ad Hoc Networks. Ad hoc networking,
+Addison-Wesley Longman Publishing, pp. 139-172
+[20] J. Li, J. Li, X. Chen, Z. Liu, and C. Jia.
+(2014). MobiShare+: Security Improved System for
+Location Sharing in Mobile Online Social Networks.
+Journal of Internet Services and Information Security
+4(1):25-36
+[21] E. Krause. (1973). Taxicab geometry. The Mathematics
+Teacher 66(8):695-706
+[22] E. Krause. (1987). Taxicab geometry: An adventure in
+non-Euclidean geometry, DoverPublications.com
+[23] S. Feldmann, K. Kyamakya, A. Zapater, and Z. Lue.
+(2003). An Indoor Bluetooth-based Positioning System:
+Concept, Implementation and Experimental Evaluation.
+Proc. International Conference on Wireless Networks
+[24] NIMO Project (2014). Available at
+http://www.nimoproject.org
+228

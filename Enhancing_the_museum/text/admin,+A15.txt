@@ -1,0 +1,1305 @@
+A new decade 
+for social changes
+9
+772668
+779000
+ISSN 2668-7798
+www.techniumscience.com
+Vol. 35, 2022
+
+ 
+ 
+ 
+ 
+ 
+ 
+The accessibility of visually impaired people to museums and 
+art through ICTs 
+Paraskevi Vasilakou1, Sofia Mineiko2, Theopisti Marina Hasioti3, Zoe 
+Gavriilidou4, Athanasios Drigas5 
+1 2 3 5Net Media Lab Mind - Brain R&D ΙΙΤ - N.C.S.R. "Demokritos", Athens, Greece, 
+1 2 3 4Democritus University of Thrace 
+paravasi1@helit.duth.gr, sofimine@helit.duth.gr, theopistichasioti@gmail.com, 
+zgabriil@helit.duth.gr, dr@iit.demokritos.gr 
+Abstract. Human’s involvement with culture is a vital part of his life, but what happens when 
+someone is blind or visually impaired (VI) and how Information and Communication 
+Technologies (ICTs) help the access to cultural locations? The difficulties and limitations that 
+blind and visually impaired (BVI) persons face while visiting museums or art exhibitions are of 
+high importance. These limitations concern both the access to the location and the perception of 
+the exhibits. This bibliographic research is divided into four main parts. In the first part of our 
+paper we will analyze the difficulties that these people face as visitors in art exhibitions and how 
+their disabilities affect an autonomous visit. Afterwards, we will refer to the importance of the 
+disability arts when combined with ICTs. In the next part, we will mention the projects that are 
+already applied or those for which efforts have been made globally for their implementation. 
+These will be accompanied by recorded feedback from blind and visually impaired visitors. 
+Finally, we will make a scheduled visit to the Tactual Museum of Athens in order to collect 
+material on practices used in their exhibition and we shall record reactions from visually impaired 
+visitors.  
+Keywords. Museums, art, ICTs, visually impaired 
+Introduction  
+Blind and visually impaired people have long been excluded from artistic and cultural 
+institutions such as art exhibitions and museums. Despite the growing concern and efforts that 
+have been made in the last years, the majority of these institutions are still inaccessible to 
+disabled people. As a result, “only 5.5 percent of blind and visually impaired people visit 
+museums in Europe” [1].This is partially due to the visual centricity of these institutions [1] 
+which creates barriers for visitors with visual impairments and deters their motivation to gain 
+knowledge and socialize with their friends and family [2] in such spaces and contexts. In this 
+article, which is based on bibliographic research, we aim to analyze firstly the lack of 
+accessibility experienced by blind and visually impaired people in cultural institutions such as 
+museums.   
+Today, new technologies can be used to address inaccessibility and create inclusive 
+practices in the fields of Arts and Culture. The integration of Information and Communication 
+263
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+Technologies (ICTs) in these fields offers the possibility to enhance access to artists and 
+audiences that were until now excluded from artistic and cultural institutions [3]. For at least a 
+decade, disabled artists have used ICTs in their creative processes. Our second section will 
+focus on them and on the Disability Arts. Lastly, we will discuss and offer an overview of 
+current practices using new technologies implemented by museums and art galleries in order to 
+enhance accessibility for blind and visually impaired audiences. To conclude this final section, 
+we will present some of the feedback that has been given by blind and visually impaired patrons 
+concerning these practices.  
+ 
+Ι. Implications of the visual nature of art exhibitions and museums for Blind and 
+visually impaired people 
+Ocularly-centered museums: Which are the difficulties blind and visually impaired 
+patrons face? 
+As it is known, people with disabilities rarely visit museums due to mobility issues in 
+reaching and navigating museum buildings and difficulties in accessing artworks [4]. This is 
+because the museums remain mostly ocular centric oriented, which does not contribute to the 
+engagement with exhibitions through other senses than vision, deprives their access to 
+information and exhibits, and also hinders their independent mobility in the museum space [5]. 
+Proper experience of an exposition for these people could only be available by approaching the 
+exhibits literally in a hands-on fashion. In most cases, however, such direct contact with them 
+is not possible due to the risk of damage. [6]  
+According to the social model, disability is not a product of pathology, but of specific 
+social and economic structures that exclude people with disabilities from fully participating in 
+mainstream social activities. In other words, the social model tried to introduce a new point of 
+view regarding the impairments and difficulties turning the attention to the social barriers. [7].  
+The common feeling that the museum experience is mainly visual is by itself the main 
+problem for the people who do not have access to the world's visual culture [8]. 
+Hayhoe in his book claims that the VI persons are passively excluded from the museums 
+without anyone taking into consideration their age and types of blindness. Subsequently, the 
+understanding of blindness or visual impairment (the meaning of which differ depending on the 
+apperceptions of each person and the cultural environment) will eventually lead us to to 
+understand how these people perceive art. Dealing with art and cultural elements will eventually 
+help them to strengthen their self-esteem and built a relationship with the past [1]. Candlin states 
+that museums can include low-vision audience if they want to change how their exhibits are 
+presented and claims that the VI persons are not treated as marginal group because of their low 
+vision or its total absence, but because the opinion that the art is perceived only through the 
+eyes, is still very strong [1]. 
+Blind and visually impaired (BVI) persons tend to feel insecure in unfamiliar 
+environments due to the uncertainty of the environmental context. So imagine how an ocularly-
+centered museum impacts on their psychology as visitors even upon their entering. Mobility 
+barriers and the lack of accessible information, whose content usually includes visual 
+descriptive terminology has a negative influence on them [1]. The absence of information 
+(tactile information) that can be obtained through senses other than sight can reduce the quality 
+of their visit [8].  
+ A survey in United Kingdom focusing on best access practices of museums’ websites 
+proved that 81% of accredited museums in UK provided information regarding the accessibility 
+264
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+of the museum site through their website. However, these information was not sufficient for the 
+VI people to plan an independent visit [1].  
+We need to understand the necessity and the importance of giving visually disabled 
+patrons the opportunity to feel and understand art through their senses. If we do not take into 
+consideration the cultural needs of these people and assist for their integration, that will result 
+into burdening them with high costs in order to be hire escort assistance, which may gradually 
+result to their exclusion from museum visits and other culturally relevant activities, because of 
+the high financial cost [8].  The financial constraints that BVI people face are multidimensional 
+and affect important sectors of their lives.  The high cost of the special equipment they needed 
+in order to have access to everyday things and services based on their needs, along with the lack 
+of social support and sufficiently trained staff is also a sector we cannot overlook and it is 
+important to come up with a solution. Most of the times the assisting staff provides services 
+which do not meet the real needs of these people.[8].  
+ Although, contemporary art is still evolving and the gradual development of 
+multisensory technologies will give to BVI persons the ability to appreciate art through various 
+senses (eg. hearing, touch and smell) and pave the way for quality cultural experiences through 
+the life-enhancing power of art [8]. 
+ 
+Lack of independence  
+The lack of independence when visiting cultural and artistic institutions is a great 
+consequence of the barriers that blind and visually impaired visitors face. People with visual 
+impairments often have to rely on their families and/or friends to visit museums and art 
+exhibitions. During their research, S. Asakawa, Ahmetovic, Guerreiro, Kitan and C. Asakawa 
+found that fourteen out of nineteen participants had never visited a museum by themselves. 
+Those who had visited museums by themselves were assisted by museum escorts or had attented 
+specialized tours for blind and visually impaired people.  Therefore, their ability to visit these 
+spaces is highly dependent on the assistance they receive either from their families/friends or 
+from the museum personnel, and their availability [9]:  
+““I depend too much on them [their family and friends], but if there were specialized 
+services in the museums, I could make arrangements by myself” [10], and “I don’t want to make 
+an appointment three weeks ahead” [1] 
+Yet it is important for blind and visually impaired people to have more control and 
+autonomy over their museum experience, in the same way that non-disabled people do. 
+Naturally, lack of independence strongly impacts the quality of their experiences in those 
+cultural and artistic institutions, firstly because the quality of the description is highly dependent 
+on the person providing them [2,9]: 
+“It depends on who you go with. Some people are very expressive and they are very 
+descriptive. But other people are...not really giving me much...They don’t know exactly what I 
+wanna know.”  [9] 
+Secondly, because they are often dependent on personnel who are not trained to receive 
+a disabled audience and they may thereby be exposed to ableist and unwelcoming behaviors. 
+[1] 
+Art and technology alike can play an important role in creating access to worlds that are 
+otherwise unavailable for blind and visually impaired people [11]. We will now focus on how 
+disabled artists exercise agency, particularly through the use of technology [11]. 
+ 
+ 
+265
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+ΙΙ. Disability Arts using ICT and digital technology  
+Disability Arts  
+Through their artistic and creative practices, disabled artists have – sometimes 
+unwillingly – opposed to the medical model of disability that emphasizes and perpetuates a 
+passive image of individuals with disabilities. Hence, according to Sarah Heussaff, disability 
+arts are socially and politically engaged [12]. According to Swain and French: 
+“Through song lyrics, poetry, writing drama and so on, disabled people have celebrated 
+difference and rejected the ideology of normality in which disabled people are devalued as 
+'abnormal.' They are creating images of strength and pride, the antithesis of dependency and 
+helplessness (2000)” [13] 
+Disability Arts have played an important role in expressing a positive disability identity 
+[13] and thus in the individual and collective empowerment of disabled persons. As Walker 
+described in 1998 during the National Arts and Disability Center online conference, Disability 
+Arts have strongly impacted Disability Culture, which:  
+“is made up of artists who are not trying to pass, artists who don't buy into societies [sic] 
+rule that we should be ashamed of our disabilities, artists who often show in their art a self-
+acceptance and a pride about who they are, not in spite of a disability, not because of a disability, 
+but including a disability.” [13] 
+Therefore, according to Heussaff, disability arts are also practices that enhance self-
+representation and self-organization [12]. 
+For at least a decade, disabled artists have been using new technologies in their artistic 
+and creative processes and they have widely contributed in the field of Digital Arts. For Al 
+Zidjaly, art combined with technology may represent an opportunity for disabled people to 
+create not only personal but also social change (2011). In this section we want to point out that 
+ICTs can be and are being used by disabled actors themselves in order to create art that is both 
+for disabled and non-disabled audiences, but also in order to enhance accessibility. By 
+combining art with technologies, disabled artists are exploring multimodal artistic practices and 
+they create their own creative and inclusive aesthetics.  In spite of society’s perception of artists, 
+they are proving that “great art can be created or interpreted with senses other than our eyes” 
+[14].  
+We will now offer a brief overview of blind and visually impaired artists who use ICTs 
+in their artistic and creative processes.  
+ 
+Overview of blind and visually impaired artists  
+Keith Salmon and The Oregon Project  
+Keith Salmon is a landscape blind artist who uses sound recordings. For him, “painting 
+isn’t about capturing what a place looks like but how it feels” [14]. Thus, in his work he tries to 
+convey parts of his experience: “the cold, the shimmery light, the wind” [14]. 
+In 2016, Salmon collaborated with Microsoft on the “Oregon Project”, an interactive 
+audio-visual experience that used proxemic audio to interpret two-dimensional images. During 
+the exhibition, four Kinects and fifteen overhead speakers that played a total of 54 soundtracks 
+were installed in order to produce an acoustic and spatial interpretation of Salmon’s paintings 
+[15]. The aim of the installation was to create a holistic personal experience of the artworks for 
+people both with and without vision impairments. The paintings, which depict the remote Hells 
+Canyon, are brought to life through the different sounds that are triggered by the Kinects’ track 
+of movements:  
+266
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+“From afar, observers can hear birdsong, rushing water and grass swishing in the wind 
+— recorded in Hells Canyon by Salmon and his collaborators. Moving closer activates digital 
+tones matched to Salmon’s palette of blue, green, brown and ochre. Stand even closer and you 
+can hear Salmon working in his studio as he scribbles pastels on paper, in an experience that 
+parallels how a sighted person can see details when leaning in. The Kinects also track hand 
+waves to change what you hear, helping observers become part of the piece and make their own 
+acoustic mixes with movement. At the exhibit, adults triggered sounds primarily by walking, 
+while kids jumped and waved their arms to produce a different blend of noise.” [15] 
+ 
+ 
+Figure 1: “Artist Keith Salmon, left, and Microsoft researcher Neel Joshi stand in front of 
+“The Oregon Project” at the King Street Station in Seattle. Photos by Dan DeLong” [15] 
+ 
+Hal Lasko, “The pixel painter” 
+Hal Lasko, also known as “The Pixel Painter”, was a typographer and an artist who suffered 
+from wet macular degeneration that caused him blindness in the center of his vision. Lasko 
+created his art pieces on his computer using Microsoft Paint, a program that, thanks to “it’s easy 
+interface and pixel precision allowed Hal to journey down a new artistic path with a style many 
+consider “retro cool” (https://thepixelpainter.com/).  
+267
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2: “Red October” by Hal Lasko 
+ 
+ΙΙΙ. Increasing access for blind and visually impaired museum visitors: an overview 
+of current practices.   
+Visually impaired people have difficulty in visiting museums. For this reason, various 
+researchers have tried to find solutions through ICTs so that these people have equal rights and 
+do not feel excluded from social and artistic activities. 
+ 
+(a) 
+Augmented Reality, the Mobile App MusA and 3D printings  
+The first tool of Information and Communication Technologies which has been used is 
+the Augmented Reality (AR) and the ways it can help people with visual impairments or 
+blindness to navigate in a museum. The researchers try to discover and analyze the ways in 
+which AR could facilitate the access of visually impaired or blind people in the museums and 
+the construction of positive experiences. In the process two questions have arisen and they are 
+relevant to how the museums could create inclusive and accessible spaces for visually impaired 
+or blind individuals. As for AR there is no a standardized definition. The most used one refers 
+to different virtually mediated environments and virtual reality technologies. Some researchers 
+characterized it as a “mixed reality” because it is in the middle of completely virtual 
+environments and completely real world. The AR technology is accessible through mobile 
+applications and it can provide either updated information of satellites or static ones of a specific 
+location or object. In particularly, AR combines audio, haptic, gustatory and olfactory 
+information through verbal descriptions, AR Avatars etc., which could help these people to 
+create a picture of what is presented. As far as affordances it concerns, the researchers refer to 
+a combination of eight properties: authenticity, collaborative affordance, connectivity, student 
+centered, community, exploring situation, sharing knowledge and multisensory. All these 
+properties can help visually impaired or blind people to have access at auditory information 
+about the surrounding space and therefore they can easily navigate in it. The researchers, also, 
+engaged in the thematic analysis which was conducted in the terms of the research. From this 
+analysis four themes emerged: 
+ 
+268
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+Stage of development 
+How Are Disabled People Involved in the Research? 
+The (Potential) Impact of AR on User Experience 
+Fun and Enjoyment/Function, Not Fun 
+It is shown that significant steps have been made in order virtual impaired of blind 
+people have access to museums through Augmented Reality. This could help them to acquire 
+positive experiences and knowledge [16]. Furthermore, the second tool is an inclusive mobile 
+app MusA which aims to assist people with low vision to have access to the museums and their 
+artworks. This app contributes to this supporting LV people in accessing 2D visual artworks, 
+such as paintings, through interactive artwork descriptions in Augmented Reality. Although 
+some questions have arisen during the development of MusA however it was shown that this 
+app is effective in supporting people with LV during artwork accessibility. More specifically, 
+the participants were able to easily frame the target artworks with their mobile device camera, 
+to access the visual feedback provided in AR and also to interact with the visual information 
+shown in AR. In order this app to work, the “Associazione Nazionale Subvedenti” (ANS) used 
+the methodology of DescriVedendo descriptions of the artworks. The analysis focused on 
+addressing the problem of how museum visitors can access DescriVedendo during a visit 
+resulting in the following requirements: 1. It should be accessible from visitors’ own devices. 
+2. It should be accessible to people with LV. 3. It should help the user quickly fnd descriptions. 
+4. It should help the user navigate the description. 5. It should augment descriptions with visual 
+information. 6. It should work in multiple museums, for all artworks with DescriVedendo 
+descriptions. At the end the researchers set as future goal to make MusA available to iOS and 
+Android users and to include DescriVedendo descriptions that are currently available for 
+artworks exposed in 8 museums [4]. 
+In addition to the previous technologies, some software was created in order to serve the 
+needs of these people. So, the researchers propose some guidelines in order to create a 
+framework for improving the museum experience and access of blind and low vision individuals 
+[5]. Firstly, they analyze some tools which are used to help people with blindness or low vision 
+to have access at the museums. Some of these tools are: 1. Geomagic Touch System, which 
+helps these people to explore 3D virtual copies of museum artworks by touching them. 2. The 
+Probos Sensory Console with which the blind or low visual persons have the opportunity not 
+only to touch virtual 3D objects but also to hear sounds which were related to them. 3. Tooteko 
+which provides a tactile exploration of the exhibits by wearing a ring sensor. 4. Blind Museum 
+Tourer which was designed for the Tactual Museum of the Lighthouse for the Blind of Greece, 
+the National Archaeological Museum and the Acropolis Museum and it was used for physical 
+access and indoor navigation. Furthermore, the researchers conducted a research in order to see 
+how the visual impaired or blind people want to enhance their access at the museums. So, at 
+this research semi-structured interviews were used to collect the data and 72 individuals 
+voluntarily participated in. From these the 61,1% were blind and the 38,9% had low vision. The 
+participants considered that in order to have an easier access to the museums and their artworks, 
+they should proceed with 3 phases: pre-visit, on-site visit and post-visit. At the end, the proposed 
+framework does not intend to replace the accessible guided tours but to use technology in order 
+to allow people with low vision or blindness to have easier access to museums and their exhibits. 
+Finally, as a last medium to help people with vision problems is 3D printings. These 
+people in order to “see” the exposition need to use their hands, but this is not possible because 
+damage can be caused. For this reason, museums tried to create “touchable” models of the 
+exhibits. To so, they used the method of 3Dprinting. This, however, has one disadvantage. They 
+269
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+cannot reproduce precisely the model as it is in reality. More specifically some steps need to be 
+made in order to prepare an exhibition through 3D printing. These steps are eight: 1. Selection 
+of the objects, 2. Selection of the 3D scanning technology, 3. Preparation of the documentation, 
+4. 3D scanning, 5. Postprocessing, 6. 3D printing, 7. 3D print processing and 8. Preparation of 
+the exposition. Moreover, the researchers present the implementation of the above steps for the 
+construction of an exhibition with sculptures from the mid-20th century. At the first stage, the 
+museum’s staff selected 10 sculptures from the exhibition. At the second stage, they assessed 
+the dimensions and shape of the sculptures in terms of scanning technology. The objects that 
+used for scanning were mobile scanners which were facilitating the process. However, the 
+precision of the scanning was too low so that the museum’s staff was obliged to use additional 
+markers in order to have the desirable result. At a later stage the staff indicated special features 
+of the objects, which were significant for the preservation of the nature of the exhibition. These 
+features were noted in order to ensure that they were properly displayed during 3D printing. 
+Moreover, research was carried out at the headquarters of Polish Association of the Blind in 
+Lublin and it was expected that a visual impaired or blind person to recognize the 3D printed 
+sculpture without any additional information about it. Thus, the aim was to check the possibility 
+of recognizing the exhibit, to assess the correctness of the 3D size of copies and to assess the 
+suitability of the material used for 3D printing [6]. 
+ 
+(b) 
+Audio description and assistive navigation  
+The barriers that blind and visually impaired visitors may face inside museum spaces 
+are often related to the inaccessibility of the exhibition objects and artworks, as well as to 
+mobility issues such as navigation and orientation [2,17,9,1]. For these reasons, among the most 
+common technological solutions provided by museums to enhance accessibility for blind and 
+visually impaired patrons there are audio guides that offer verbal descriptions of the exhibited 
+items and indoor navigation systems [9,1]. 
+“Besides helping to create new ways for visually impaired and blind visitors to interact 
+with museum collections while learning more about them, technology is also being used to 
+provide them better physical access, indoor navigation and wayfinding in those environments, 
+enhancing their ability to move independently through different galleries, without the aid of 
+guides or another escort.” [1] 
+In addition to this, accurate navigation assistance of blind and visually impaired visitors 
+is important since, as observed by Asakawa et al, they value listening to audio content while 
+they are in front of the respective artworks and not just near them (2019). Thus, many museums 
+have developed systems that combine audio description of the exhibitions and accurate 
+navigation services. We will now offer a brief overview of these hybrid solutions.  
+Blind MuseumTourer, Tactual Museum of the Lighthouse for the Blind (Greece)  
+The Blind MuseumTourer is an application that runs on Android phones and uses 
+Bluetooth Low Energy (BLE) beacons and tactile floor tiles in order to accurately locate visitors 
+and help them navigate independently within the museum environment [17,9]. It was developed 
+by Meliones and Sampson for Greek museums and it was firstly implemented at the Tactual 
+Museum in collaboration with the Lighthouse for the Blind of Greece [17].  The application is 
+initiated through voice command or by tapping on the screen. In the main menu (figure a) 
+visitors can find vocal presentations of possible routes they can take, as well as emergency and 
+back options. System interactions were based on a single-tap for hearing a selection, double-tap 
+for confirming, or through voice command. Selecting a route initiates the self-guided tour and 
+when exhibits are approached by the visitor the application launches a description. [17,1] 
+270
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 3: Blind MuseumTourer Android application activities: (a) Main menu and Route 
+selection (b) Emergency; (c) Get voice way-finding instructions to move to the 
+WC/canteen/exit. 
+ 
+National Science Center of New Delhi (India)  
+At the National Science Center in New Delhi another mobile device was developed in order 
+to enhance accessibility for blind and visually impaired patrons. Users of this device have the 
+option of selecting vocally their destination and are then presented with step-by-step 
+navigational audio instructions while they are walking.  “When the visitor is near an exhibit, an 
+infrared tag is received by the device and a description of the piece is presented” [1].  
+ 
+ 
+Figure 4: Picture of a visitor navigating with the application’s help at the National Science 
+Center of New Delhi 
+ 
+271
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+Andy Warhol Museum, Pittsburgh (USA/ Adena’s, Hopewell’s, and Monongahela’s 
+Territories)  
+In order to support and facilitate both navigation within the museums and accessibility 
+of the exhibits, Asakawa et al. developed a smartphone app with two interaction modes: 
+Navigation and Art Appreciation. The activation of each mode depends exclusively on the 
+user’s location and orientation (2019). Thus, the application uses BLE beacons and the 
+smartphone’s sensors to accurately localize the user [9] 
+“During Navigation Mode, users receive turn-by-turn instructions to proceed in the 
+intended path while being alerted about the artworks they are passing by. Art Appreciation 
+Mode is activated when the users are next to an artwork and turn their body in order to face it, 
+while Navigation Mode is resumed after turning their body to the previous orientation. When 
+the user is within close proximity of an artwork, changing between modes depends on the user’s 
+orientation.” [9] 
+ 
+ 
+Figure 5: “It shows the interaction between Navigation and Art Appreciation modes based on 
+the user’s location and orientation, with example audio feedback and screenshots of each 
+mode” [9]. 
+ 
+In order to evaluate their application, the researchers installed the system at The Andy 
+Warhol Museum in Pittsburg and conducted a user study following nine blind and visually 
+impaired participants. During their research, Asakawa et al. found that the quality of the audio 
+content is a crucial factor in the experience that blind and visually impaired patrons have within 
+cultural and artistic institutions. Thus, the audio content that was used for this study was created 
+by the museum’s personnel when designing their inclusive audio guide, OutLoud – which 
+supports auditory descriptions, but not navigation [9]. Also, the application gives the possibility 
+272
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+to the user to navigate through the audio content by performing gestures on the touchscreen: 
+“for instance, a single tap would pause/resume, while right and left swipes would change to the 
+next and previous chapter of an audio story, respectively” [9] 
+ 
+Interactive multi-model guide  
+The multi-sensory interaction aids learning, inclusion, and collaboration, since it 
+accommodates the diverse cognitive and perceptual needs of the VI [18]. Rare individuals 
+naturally have sensory crossover, whose synesthesia1 [19] permits them, for example, to see 
+colors or shapes when hearing sounds or to sense a specific taste with a specific word [20]. 
+Many scientists, technologists and inventors, however, make a conscious attempt to convert one 
+type of sensory-like input to a different sensory output [18].  
+ 
+Interactive multi-model guide 
+An Interactive multi-model guide developed by Cavazos et al, using 3D technology, 
+transformed a flat painting into a 2.5D, combining it with touch, audio description and sound.  
+The various visual elements in the work such as ambient sounds that reflect periodic, seasonal, 
+temporal and regional information about that work provided a high level experience to the users. 
+An important difference except for the multi-sensory experience it provides, is that the BVI 
+persons can use it freely without the help of a professional curator which, as we mentioned 
+previously, is really important for the BVI persons. Also, the gamification factor added in this 
+project maximizes the fun part of the process and stimulates the other senses. Each artwork in 
+this project was reproduced with materials that can perceive the haptic touch; so with the fist 
+tap of the user on a specific area of the artwork, the user hears an audio description of that part 
+and immediately gets the information about the names, color or shapes of the objects, the 
+location ; with a second tap they are able to hear a sound effect about that part (such as sounds 
+related to the landscape depicted, nature’s sounds such as sounds of leaves, which may refer to 
+the autumn, etc.) . The use of natural sounds stimulates the emotions, while the musical 
+background which creates emotions similar to those expressed in the artwork immerses them in 
+the content of the painting. Also, with the placement of two-dimensional speakers the individual 
+is mentally integrated in the physical context of the artwork and is able to understand his 
+position in relation to the artwork’s environment. Finally, with the touch of a physical button, 
+they are able to hear a recorded track containing use instructions and general information about 
+the artwork, such as the painter’s historical and social context, which is an essential part of 
+understanding any work. [8] 
+BlindTouch artworks exhibited for three weeks at St. Mary’s School (special school for 
+the visually impaired, located in Cheongju, Korea). The participants in the Blindtouch 
+exhibition interacted-among other artworks-at Vincent van Gogh’s 1889 painting, “The Starry 
+Night” Once the users touch the BlindTouch painting two times, a sound which imitates the 
+starlight and the sound of a tall cypress swaying in the wind is produced. The sound of the wind 
+was played through two speakers to express the swirling movement of the wind, and the 
+moonlight and starlight in the sky at the top of the work were expressed as a twinkling ringtone. 
+The sounds of shaking leaves and grass bugs on a summer night were also added. To those 
+ 
+1 Synesthesia is a perceptual phenomenon in which stimulation of one sensory modality evokes additional (usually) sensory 
+experiences in an unrelated modality (e.g., sounds evoking colors).  [19] 
+ 
+273
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+sounds, background music was added with an atmosphere similar to the emotions inspired by 
+“The Starry Night”. To express the warmth coming from the village, an oboe played a major 
+scale, and a slightly fast, lyrical melody in the high pitch range of the piano provided a cold 
+feeling of dawn. The completed exhibition environment used six-channel speakers arranged on 
+flat plates, and the wind sounds were swirled between two speakers to arouse a sense of space 
+and enhance appreciation of the artwork through a sense of three-dimensional sound (Figure 6). 
+[8] 
+Some participants who interacted with Van Gogh’s “Starry Night” referred the below: 
+“I’m so happy that I can now tell my friends that I understand Starry Night better through 
+the blind touch. Thank you for making art more enjoyable. Especially when I’m older, it’s so 
+interesting because I can remember it in a different way.” 
+“It feels like the wind is fighting with each other”; “The sound is played from side to 
+side to express the feeling of wind blowing”; “There is a lot of wind and it feels cool and cold 
+in the air.” [8] 
+ 
+Figure 6. A blind student viewing the “Starry Night” by Vincent van Gogh reproduced in 
+2.5D at the BlindTouch exhibition exhibition (Cheongju St. Mary’s School) 
+ 
+(c) 
+Haptic Devices for the Exploration of Virtual Copies  
+In most of the cases the artifacts in museums or galleries are seldom available for manual 
+manipulation; haptic interfaces provide a potential solution to the problem of making three-
+dimension work of arts available for manual processing [21]. In their essence haptic interfaces 
+provide kinesthetic force feedback to the users in order to perceive information such as shape, 
+weight, texture and material properties while manually exploring three-dimension virtual 
+objects or computer-generated environments. These devices were firstly used for the 
+exploration of complex graphical environments, but because of their kinesthetic sense were 
+considered as a suitable auxiliary tool for blind and people with poor vision. Haptic devices 
+allow visitors to explore tactile visual replicas and also offer the ability to solve the issue of 
+some museums face regarding the storage of duplicate exhibits (physical replicas and original 
+exhibits). [1] 
+274
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+The European Union Project Museum of Pure Form had as an aim to develop a haptic 
+display by converting sculptures from different historical periods and from the collections from 
+different museums into virtual replicas. This effort was presented to the public in temporary 
+exhibitions and gave the visitors the ability to experience the assets of the digitized artifacts. 
+For that reason the visitors were provided with an arm exoskeleton, for force feedback on the 
+upper limb and a haptic interface for fingers, in order to exert a force of direction on the 
+fingertips, integrated in the lower part of the arm (Figure 7a). [1] 
+Experiments after the use of this practice have shown that the users had a pleasing 
+experience, although many of them commented that the time to adapt the haptic system and set 
+up the device needs to be decreased. They also claimed that the haptic display would be more 
+useful if verbal information were added when the users touch specific parts of the artifact. [1] 
+The National Museum of Transylvanian History of Cluj-Napoca also digitized three-
+dimensional objects, which were experienced through the Geomagic Touch System. Geomagic 
+Touch System is a more recent haptic device installation, is a simpler and cost effective system 
+proposed by Comes (2016). Users in order to interact with the virtual object pick up a pen 
+associated the device, which applies force feedback on their hand. In that practice no hardware 
+device is mounted on the users body, on the contrary with the previous case we presented. In 
+order to optimize the experience, multiple texture layers where integrated when necessary, so 
+that the user can feel with enough accuracy the details of the virtual surfaces he or she is 
+touching. [1] 
+Probos Sensory Console, is a project which is developed in the context of the European 
+Union project AMBAVis and also uses that fore-mentioned type of technology. That project 
+aims to enable access to museums and galleries around the world and collaborates with the 
+Manchester Museum, UK, and Gallery Belvedere, in Vienna, Austria. In that project too we 
+have the use of a stylus, which the visitors hold between their fingers. In Probos Sensory 
+Console we have the addition of the hearing sounds while making contact with the object and 
+vocal instructions, which were not applied in the previous projects we have mentioned (Figure 
+7b). [1] 
+Experimental results on blind persons showed that they found it difficult to navigate in 
+order to find the virtual objects and perceive the sense of distance or the perspective of the 
+virtual space. [1] 
+ 
+ 
+Figure 7: From Left to Right: a) A Visitor Using the Pure Form Exoskeleton System to 
+Interact with Virtual Statues;b) A User Exploring a Digitalized Object [Vaz, Freitas, Coelho, 
+2020] 
+ 
+275
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+(d) 
+Feedback from blind and visually impaired persons regarding the 
+practices  
+When it comes to art collection access, BVI visitors expect physical, intellectual, and 
+sensory access to exhibits. This can be provided by multisensory experiences enhanced with 
+appropriate contextual information, using a means of communication that allows the 
+conceptualization of accurate mental images. In order to have choices that are more independent 
+and feel confidence inside museum spaces, facilities for the orientation and mobility are also 
+required [1]. 
+After the overview of the fore-mentioned ICT practices let’s see how BVI persons 
+responded to some of them. When it is possible to have a hands-on approaches to art 
+exhibitions,-as the visitors claimed- those experiences are limited to curators’ and other 
+museum staff’s selections, and tend to represent only a very small fraction of the main 
+collection, when compared with all the information available to sighted visitors [1]. In fact, 
+there is a consensus about the importance of touch for somebody with a visual impairment, as 
+it is the essence of their access, understanding and construction of mental images of museum 
+artifacts. When an object is touched, different maps of the central nervous system are activated 
+regarding the movements through which the object is examined, the physical properties that 
+activate the tactile sensors, and the humoral and visceral reactions that form the emotional 
+response to the object. This exploration results in neural patterns that allow individuals to be 
+aware of objects [1]. 
+Those dimensions are emphasized by several participants in Argyropoulos and Kanari’s 
+research. 
+“Touching exhibits in a museum is magic, is a mystery. I will never forget this 
+experience. When they describe me the exhibit it’s quite possible to forget it; on the other hand 
+if I touch it then this experience stays on my mind, since I had the chance to touch, I could 
+develop my own critical thinking, expand my own horizon, and “when you touch the exhibits 
+you create first the outline of the object in your mind and then you add some attributes regarding 
+texture, temperature and stuff.” [10].  
+That specific last sentence emphasizes on the importance of touching the artifacts not 
+only for the VI but also for the common visitor. That multisensory experience can lead to a 
+better understanding of the materials, shape, texture and even odor. This exploration results in 
+neural patterns and emotional connections that allows individuals to connect with objects and 
+places of the past, as this is the main reason of the existence of the museums [1]. 
+Even though the general positive feedback on that practice some of the visitors said that 
+some information are still lacking when haptic experiences are provided. At this point, Hayhoe 
+in his book Blind Visitor Experiences at Art Museums (2017) emphasizes that BVI visitors are 
+not able to sense the museum object only by touching them. Additional information is of high 
+importance in order to understand the whole exhibit context (the same implies for the typical 
+visitors as well). Braille descriptions, bas-relief images along with audio description are 
+additions that really make a difference [1]. However, a problem that may arise from audio 
+descriptions is that the descriptions might be written in ¨visual language¨, which people with 
+vision problems cannot fully understand. As a visitor during Hayhoe’s research (2017) at the 
+Metropolitan Museum of Art in New York referred:  
+“I don’t have a visual image [of the painting being described]…You see that’s the 
+problem with the culture [of description]. It depends on who is describing it to you” [1] 
+276
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+Also, participants in Neve’s (2012) and Candlin’s (2003) research pointed out that since 
+BVI visitors get in touch with the artifacts probably for the first time, they need to have specific 
+guidance on what they touch and how to touch it. [1] 
+Also, in Reich et al (2011) BVI patrons claim that technology can make their museum 
+experiences more positive and inclusive even without the support of the museum staff. [1] 
+ 
+Conclusion 
+The incorporation of digital technologies in education domain as well as in inclusion 
+domain for supporting people with disabilities is very productive and successful, facilitates and 
+improves the educational procedures and accessibility via Mobiles [26-35], various ICTs 
+applications [36-68], AI & STEM [69-80], and games [81-86]. Additionally the combination of 
+ICTs with theories and models of metacognition, mindfulness, meditation and emotional 
+intelligence cultivation [87-110] as well as with environmental factors and nutrition [22-25], 
+accelerates and improves more over the educational and supportive practices and results. 
+Moreover it is a fact that Internet Access by Visual Impaired or Blind People is a further 
+part of life. However, seems to be in an extent degree excluded from social and art life. People 
+with disabilities rarely visit museums due to mobility issues in reaching and navigating museum 
+buildings and difficulties in accessing artworks [4]. This is because the museums remain mostly 
+ocular centric oriented, which does not contribute to the engagement with exhibitions through 
+other senses than vision, deprives their access to information and exhibits, and also hinders their 
+independent mobility in the museum space [5]. So, for people with ID, the promise of the ICTs 
+requires a long way for full social, entertaining and spiritual inclusion. Assistive technology 
+(AT) can play a major role in overcoming the barriers that persons with visual impairments 
+have to face as it is gaining increasing importance in the process of accessibility at the museums 
+for the people. In addition, the usefulness of ICTs was proven through programs and software 
+by visually impaired people. This research suggested that the ICT programs and software can 
+facilitate the accessibility at the museums and the sight of the exhibits by visual impaired or 
+blind individuals and the suggestion was to be further research in order to find out how the 
+accessibility can be enhanced. Example is “MusA”, an inclusive mobile app which aims to 
+assist people with low vision to have access to the museums and their artworks. 
+As far as Individuals with visual impairments are concerned, the “Oregon Project” is an 
+interactive audio-visual experience that used proxemic audio to interpret two-dimensional 
+images. Also, another program is Using of Color-Concept Directed Scent 
+for Visually Impaired Individuals to Appreciate Paintings (2020) assumed that each 
+scent has its own relation with color and concept, which the researchers called color directivity 
+and concept directivity, respectively. Another important technology tool Blind Museum Tourer 
+which was designed for the Tactual Museum of the Lighthouse for the Blind of Greece, the 
+National Archaeological Museum and the Acropolis Museum and it was used for physical 
+access and indoor navigation. 
+Finally, the use of computers and assistive devices strengthens the self-independence 
+and socialization of visual impaired people. It is obvious that researches have shown that 
+governments should organize ICTs at museums and art in order to bridge the gaping accessing 
+ICT among different individuals and social groups. 
+ 
+277
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+References  
+[1] 
+Vaz, R., Freitas, D. & Coelho, A. (2020, June 26). Blind and Visually Impaired 
+Visitors’ 
+Experiences 
+in 
+Museums: 
+Increasing 
+Accessibility 
+through 
+Assistive 
+Technologies. The International Journal of the Inclusive Museum. 13, (2), 57-80.  
+[2] 
+Asakawa, S., Ahmetovic, D., Guerreiro, J. & Kitani, K. (2018). The Present and Future 
+of Museum Accessibility for People with Visual Impairments. ASSETS '18: Proceedings of the 
+20th International ACM SIGACCESS Conference on Computers and Accessibility. 382–384.  
+[3] 
+Kefalidou, A. (2021). The importance of digital art technology for supporting people 
+with vision impairments. Practices for a museum aiming at social inclusion. The case of 
+“Mind’s Eye | Opening Arts to the visually impaired 2019/20” at MOMus - Museum of 
+Contemporary Art in Thessaloniki. Μη εκδεδομένη διδακτορική διατριβή, Department of 
+Humanities, Social Sciences and Economics International Hellenic University, Thessaloniki.  
+[4] 
+Ahmetovic, D., Bernareggi, C., Keller, K., Mascetti, S. (2021). MusA: Artwork 
+Accessibility through Augmented Reality for People with Low Vision. W4A’21: Proceedings 
+of the 18th International Web for All Conference, 1-9. 
+[5] 
+Vaz, R., Freitas, D., Coelho, A. (2021). Perspectives of Visually Impaired Visitors on 
+Museums: Towards an Integrative and Multisensory Framework to Enhance the Museum 
+Experience. DSAI 2020: 9th International Conference on Software Development and 
+Technologies for Enhancing Accessibility and Fighting Info-exclusion, 17-21. 
+[6] 
+Montusiewicz, J., Miłosz, M., Kęsik, J. (2018). Technical Aspects of Museum 
+Exposition for Visually Impaired Preparation Using Modern 3D Technologies. IEEE Global 
+Engineering Education Conference (EDUCON), 774-779. 
+[7] 
+Anastasiou, D. & Kauffman, J. (2014, July 1). Η Δυσικανότητα ως Πολιτισμική 
+Διαφορά, Συνεπειες για την Ειδική Αγωγή. Εκαπιδευτική Λέσχη, 1-20. 
+[8] 
+Cho, J. (2021, February 15). A Study of Multi-Sensory Experience and Color 
+Recognition in Visual Arts Appreciation of People with Visual Impairment. Electronics. 10, 
+(470), 1-37. 
+[9] 
+Asakawa, S., Guerreiro, J., Sato, D., Takagi, H., Ahmetovic, D., Gonzalez, D., Kitani, 
+K. & Asakawa, C. (2019). An Independent and Interactive Museum Experience for Blind 
+People. W4A '19: Web For All 2019 Personalization - Personalizing the Web. 1-9.   
+[10] 
+ Argyropoulos, V. & Charikleia, K. (2015, 12 Φεβρουαρίου). Re-imagining the 
+museum through “touch”:Reflections of individuals with visual disabilityon their experience of 
+museum-visitingin Greece. ALTER, European Journal of Disability Research 9, 130-143. 
+[11] 
+Al Zidjaly, N. (2011). Managing Social Exclusion through Technology: An Example 
+of Art as Mediated Action. Disability Studies Quarterly. 31, (4).  
+[12] 
+Lesturgie, G. (2000). L'art du handicap. Mouvement. 
+[13] 
+S. Sulewski, J., Boeltzig, H. & Hasnain, R. (2012). Art and Disability: Intersecting 
+Identities among Young Artists with Disabilities. Disability Studies Quarterly. 32, (1).  
+[14] 
+Hale, J. (2 Ιουνίου, 2020). Talent, tech and visual art. Wellcomecollection.org.  
+[15] 
+Ho, V. (18 Νοεμβρίου, 2016). Interpreting visual art with sound for a more inclusive 
+experience. https://www.microsoft.com/en-us/research/blog/keith-salmon-oregon-project/.  
+[16] 
+Sheehy, K., Garcia-Carrizosa, H., Rix, J., Seale, J., Hayhoe, S. (2019). Inclusive 
+Museums and Augmented Reality: Affordances, Participation, Ethics, and Fun. The 
+International Journal of the Inclusive Museum 12(4). 
+[17] 
+Meliones A, Sampson D. (2018). Blind MuseumTourer: A System for Self-Guided 
+Tours in Museums and Blind Indoor Navigation. Technologies. 6 (1).  
+278
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+[18] 
+ Cavazos Quero, L. (2018). An Interactive Multimodal Guide to Improve Art 
+Accessibility for [17] Blind People. Assets '18: The 20th International ACM SIGACCESS 
+Conference on Computersans Accessibility, Galway, Ireland, October 22-24 2018. New York, 
+346-348. 
+[19] 
+Brang, D. & Ramachandran, V. (2020). Multisensory Perception, From Laboratory to 
+Clinic. United States: K. Sathian, V.S. Ramachandran,  
+[20] 
+Suslick, K. (2012, December). Synesthesia in science and technology: more than 
+making the unseen visible. Current Opinion in Chemical Biology. 16, (2), 5-6. 
+[21] 
+Jansson, G., Massimo, B. & Antonio, F. (2003, May 29). A new option for the visually 
+impaired to experience 3D art at museums: manual exploration of virtual copies. Visual 
+Impairment Research 1388. 5, (1), 1-12.  
+[22] 
+Stavridou Th., Driga, A.M., Drigas, A.S., Blood Markers in Detection of Autism 
+,International Journal of Recent Contributions from Engineering Science & IT (iJES) 9(2):79-
+86. 2021. 
+[23] 
+Zavitsanou, A., & Drigas, A. (2021). Nutrition in mental and physical health. 
+Technium Soc. Sci. J., 23, 67.  
+[24] 
+Driga, A.M., Drigas, A.S. “Climate Change 101: How Everyday Activities Contribute 
+to the Ever-Growing Issue”, International Journal of Recent Contributions from Engineering, 
+Science & IT, vol. 7(1), pp. 22-31, 2019. https://doi.org/10.3991/ijes.v7i1.10031 
+[25] 
+Driga, A.M., and Drigas, A.S. “ADHD in the Early Years: Pre-Natal and Early Causes 
+and Alternative Ways of Dealing.” International Journal of Online and Biomedical Engineering 
+(IJOE), vol. 15, no. 13, 2019, p. 95., doi:10.3991/ijoe.v15i13.11203 
+[26] 
+Vlachou J.  and Drigas, A. S., “Mobile technology for students and adults with Autistic 
+Spectrum Disorders (ASD),” International Journal of Interactive Mobile Technologies, vol. 
+11(1), pp. 4-17, 2017 
+[27] 
+Papoutsi C., Drigas, A. S., and C. Skianis, “Mobile Applications to Improve Emotional 
+Intelligence in Autism – A Review,” Int. J. Interact. Mob. Technol. (iJIM); Vol 12, No 6, 2018 
+[28] 
+Karabatzaki, Z., Stathopoulou, A., Kokkalia, G., Dimitriou, E., Loukeri, P., Economou 
+A., & Drigas, A. (2018). Mobile Application Tools for Students in Secondary Education. An 
+Evaluation Study. International Journal of Interactive Mobile Technologies (iJIM), 12(2), 142-
+161 
+[29] 
+Drigas, A. S.,  and Angelidakis P., 'Mobile Applications within Education: An 
+Overview of Application Paradigms in Specific Categories', International Journal of Interactive 
+Mobile Technologies (iJIM), vol. 11, no. 4, p. 17, May 2017. https://doi.org/10.3991/ijim.v11i4. 
+6589 
+[30] 
+Stathopoulou A., Loukeris D., Karabatzaki Z., Politi E., Salapata Y., and Drigas, A. 
+S.,  “Evaluation of Mobile Apps Effectiveness in Children with Autism Social Training via 
+Digital Social Stories,” Int. J. Interact. Mob. Technol. (iJIM); Vol 14, No 03, 2020 
+[31] 
+Stathopoulou, et all Mobile assessment procedures for mental health and literacy skills 
+in education. International Journal of Interactive Mobile Technologies, 12(3), 21-37, 2018, 
+[32] 
+Drigas, A., Kokkalia, G. & Lytras, M. D. (2015). Mobile and Multimedia Learning in 
+Preschool Education. J. Mobile Multimedia, 11(1/2), 119–133. 
+[33] 
+Stathopoulou, A., Karabatzaki, Z., Kokkalia, G., Dimitriou, E., Loukeri, P.I., 
+Economou, A., and Drigas, A. (2018). Mobile assessment procedures for mental health and 
+literacy skills in education. International Journal of Interactive Mobile Technologies (iJIM), 
+12(3):21-37. https://doi.org/10.3991/ijim.v12i3.8038 
+279
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+[34] 
+Drigas, A.S., Ioannidou, R.E., Kokkalia, G. and Lytras, M. (2014), “ICTs, mobile 
+learning and social media to enhance learning for attention difficulties”, Journal of Universal 
+Computer Science, Vol. 20 No. 10, pp. 1499-1510. 
+[35] 
+Kokkalia G. K.  and Drigas, A. S.,  “Mobile learning for special preschool education,” 
+International Journal of Interactive Mobile Technologies, vol. 10 (1), pp. 60-67, 2016 
+[36] 
+Pappas, M.A.; Papoutsi, C.; Drigas, A.S. Policies, Practices, and Attitudes toward 
+Inclusive Education: The Case of Greece. Soc. Sci. 2018, 7, 90. 
+[37] 
+Drigas, A. S., & Ioannidou, R. E. (2011, September). ICTs in special education: A 
+review. In World Summit on Knowledge Society (pp. 357-364). Springer, Berlin, Heidelberg. 
+[38] 
+Drigas, A. S., J.Vrettaros, L.Stavrou, D.Kouremenos, E-learning Environment for 
+Deaf people in the E-Commerce and New Technologies Sector, WSEAS Transactions on 
+Information Science and Applications, Issue 5, Volume 1, November 2004. 
+[39] 
+Drigas, A.S., Vrettaros, J. and Kouremenos, D. (2004a) ‘Teleeducation and e-learning 
+services for teaching English as a second language to deaf people, whose first language is the 
+sign language’, WSEAS Transactions on Information Science and Applications, Vol. 1, No. 3, 
+pp.834–842. 
+[40] 
+Drigas, A., Koukianakis, L., Papagerasimou, Y., Towards an ICT-based psychology: 
+Epsychology, 
+Computers 
+in 
+Human 
+Behavior, 
+2011, 
+27:1416–1423. 
+https://doi.org/10.1016/j.chb.2010.07.045 
+[41] 
+Charami, F., & Drigas, A. (2014). ICTs in English Learning and Teaching. 
+International Journal of Engineering and Science. Vol. 2(4):4-10. DOI: 10.3991/ijes.v2i4.4016 
+[42] 
+Drigas A.S., Kouremenos D (2005) An e-learning system for the deaf people. In: 
+WSEAS transaction on advances in engineering education, vol 2, issue 1, pp 20–24 
+[43] 
+Drigas A., Pappas M, and Lytras M., “Emerging technologies for ict based education 
+for dyscalculia: Implications for computer engineering education,” International Journal of 
+Engineering Education, vol. 32, no. 4, pp. 1604–1610, 2016. 
+[44] 
+Drigas, A. & Kokkalia, G. 2017. ICTs and Special Education in Kindergarten. 
+International Journal of Emerging Technologies in Learning 9 (4), 35–42. 
+[45] 
+Drigas A.,  and Koukianakis L., A Modular Environment for E-learning and E-
+psychology Applications, WSEAS Transactions on Information Science and Application, Vol. 
+3, 2004, pp. 2062-2067. 
+[46] 
+Drigas, A., Leliopoulos, P.: Business to consumer (B2C) e-commerce decade 
+evolution. Int. J. Knowl. Soc. Res. (IJKSR) 4(4), 1–10 (2013) 
+[47] 
+Pappas M, Drigas A, Papagerasimou Y, Dimitriou H, Katsanou N, Papakonstantinou 
+S, et al. Female Entrepreneurship and Employability in the Digital Era: The Case of Greece. 
+Journal of Open Innovation: Technology, Market, and Complexity. 2018; 4(2): 1. 
+[48] 
+Papanastasiou G., Drigas, A. S.,  Skianis Ch., M. Lytras & E. Papanastasiou, “Patient-
+Centric ICTs based Healthcare for students with learning, physical and/or sensory disabilities,” 
+Telemat Inform, vol. 35, no. 4, pp. 654–664, 2018. https://doi. org/10.1016/j.tele.2017.09.002 
+[49] 
+Drigas, A., & Kontopoulou, M. T. L. (2016). ICTs based Physics Learning. 
+International 
+Journal 
+of 
+Engineering 
+Pedagogy 
+(iJEP), 
+6(3), 
+53-59. 
+https://doi.org/10.3991/ijep.v6i3. 5899 
+[50] 
+Papanastasiou, G., Drigas, A., Skianis, C., and Lytras, M. (2020). Brain computer 
+interface based applications for training and rehabilitation of students with neurodevelopmental 
+disorders. A literature review. Heliyon 6:e04250. doi: 10.1016/j.heliyon.2020.e04250 
+[51] 
+Drigas, A. S., John Vrettaros, and Dimitris Kouremenos, 2005. “An e-learning 
+management system for the deaf people,” AIKED ’05: Proceedings of the Fourth WSEAS 
+280
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+International Conference on Artificial Intelligence, Knowledge Engineering Data Bases, article 
+number 28. 
+[52] 
+Pappas, M., Demertzi, E., Papagerasimou, Y., Koukianakis, L., Kouremenos, D., 
+Loukidis, I. and Drigas, A. 2018. E-Learning for deaf adults from a user-centered perspective. 
+Education Sciences 8(206): 3-15. 
+[53] 
+ Marios A. Pappas, Eleftheria Demertzi, Yannis Papagerasimou, Lefteris Koukianakis, 
+Nikitas Voukelatos, and Drigas, A. S.,  2019. Cognitive Based E-Learning Design for Older 
+Adults. Social Sciences 8, 1 (Jan. 2019), 6. https://doi.org/10.3390/socsci801000 
+[54] 
+ Drigas, A. S.,  Leyteris Koukianakis: Government online: An e-government platform 
+to improve public administration operations and services delivery to the citizen. WSKS (1), 
+volume 5736 de Lecture Notes in Computer Science, 523–532. Springer, 2009.  
+[55] 
+ Theodorou, P.; Drigas, A. ICTs and Music in Generic Learning Disabilities. Int. J. 
+Emerg. Technol. Learn. 2017, 12, 101–110 
+[56] 
+ Drigas, A., Kokkalia, G., & Lytras, M. D. (2015). ICT and collaborative co-learning 
+in preschool children who face memory difficulties. Computers in Human Behavior, 51, 645–
+651. https://doi.org/10.1016/j.chb.2015.01.019 
+[57] 
+Pappas, M.A., & Drigas, A.S. (2015). ICT based screening tools and etiology of 
+dyscalculia. International Journal of Engineering Pedagogy, 3, 61-66. 
+[58] 
+Drigas, A., & Kostas, I. (2014). On Line and other ICTs Applications for teaching 
+math in Special Education. International Journal of Recent Contributions from Engineering, 
+Science & IT (iJES), 2(4), pp-46. http://dx.doi.org/10.3991/ijes.v2i4.4204 
+[59] 
+Alexopoulou, A, Batsou, A, Drigas, A. (2019). Resilience and academic 
+underachievement in gifted students: causes, consequences and strategic methods of prevention 
+and intervention. International Journal of Online and Biomedical Engineering (iJOE), vol. 15, 
+no. 14, pp. 78. 
+[60] 
+Pappas, M. A., & Drigas, A. S. (2015). ICT Based Screening Tools and Etiology of 
+Dyscalculia. International Journal of Engineering Pedagogy, 5(3) 
+[61] 
+Drigas, A. & Ioannidou, R. E. (2013). Special education and ICT's. International 
+Journal of Emerging Technologies in Learning 8(2), 41– 47. 
+[62] 
+Drigas, A., & Papanastasiou, G. (2014). Interactive White Boards in Preschool and 
+Primary Education. International Journal of Online and Biomedical Engineering (iJOE), 10(4), 
+46–51. https://doi.org/10.3991/ijoe.v10i4.3754 
+[63] 
+Drigas, A. S. and Politi-Georgousi, S. (2019). Icts as a distinct detection approach for 
+dyslexia screening: A contemporary view. International Journal of Online and Biomedical 
+Engineering (iJOE), 15(13):46–60. 
+[64] 
+Lizeta N. Bakola, Nikolaos D. Rizos, Drigas, A. S.,  “ICTs for Emotional and Social 
+Skills Development for Children with ADHD and ASD Co-existence”International Journal of 
+Emerging Technologies in Learning (iJET), https://doi.org/10.3991/ijet.v14i05.9430 
+[65] 
+Kontostavlou, E.Z., & Drigas, A.S. (2019). The Use of Information and 
+Communications Technology (ICT) in Gifted Students. International Journal of Recent 
+Contributions from Engineering, Science and IT, 7(2), 60-67. doi:10.3991/ijes.v7i2.10815 
+[66] 
+Drigas, A. S., and Vlachou J. A., “Information and communication technologies (ICTs) 
+and autistic spectrum disorders (ASD),” Int. J. Recent Contrib. Eng. Sci. IT (iJES), vol. 4, no. 
+1, p. 4, 2016. https://doi.org/10.3991/ijes.v4i1.5352 
+[67] 
+Drigas, A. S., Koukianakis, L, Papagerasimou, Y. (2006) “An elearning environment 
+for nontraditional students with sight disabilities.”, Frontiers in Education Conference, 36th 
+Annual. IEEE, p. 23-27. 
+281
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+[68] 
+Drigas A., and Koukianakis L. An open distance learning e-system to support SMEs 
+e-enterprising. In proceeding of 5th WSEAS Internationalconference on Artificial intelligence, 
+knowledge engineering, data bases (AIKED 2006). Spain 
+[69] 
+Kefalis C and Drigas A. (2019) Web Based and Online Applications in STEM 
+Education. International Journal of Engineering Pedagogy (iJEP) 9, 4 (2019), 76– 
+85.https://doi.org/10.3991/ijep.v9i4.10691 
+[70] 
+ Drigas, A. S.,  Rodi-Eleni Ioannidou, A Review on Artificial Intelligence in Special 
+Education, Information Systems, Elearning, and Knowledge Management Research 
+Communications in Computer and Information Science Volume 278, pp 385-391, 2013 
+http://dx.doi.org/10.1007/978-3-642-35879-1_46 
+[71] 
+ Drigas, A., Vrettaros, J.: An Intelligent Tool for Building e-Learning Contend-
+Material Using Natural Language in Digital Libraries. WSEAS Transactions on Information 
+Science and Applications 5(1) (2004) 1197–1205 
+[72] 
+Drigas, A.S., Vrettaros, J., Koukianakis, L.G. and Glentzes, J.G. (2005). A Virtual Lab 
+and e-learning system for renewable energy sources. Int. Conf. on Educational Tech. 
+[73] 
+ Drigas AS, Argyri K, Vrettaros J (2009) Decade review (1999-2009): artificial 
+intelligence techniques in student modeling. In: World Summit on Knowledge Society. 
+Springer, pp 552–564 
+[74] 
+Vrettaros, J., Tagoulis, A., Giannopoulou, N., & Drigas, A. (2009). An empirical study 
+on the use of Web 2.0 by Greek adult instructors in educational procedures. World Summit on 
+Knowledge System (WSKS), 49, 164-170. http://dx.doi.org/10.1007/978-3-642-04757-2_18 
+[75] 
+Drigas, A., Dourou, A. (2013). A Review on ICTs, E-Learning and Artificial 
+Intelligence for Dyslexic's Assistance. iJet, 8(4), 63-67. 
+[76] 
+Drigas, A. S., Ioannidou,E.R., (2012), Artificial intelligence in special education: A 
+decade review, International Journal of Engineering Education, vol. 28, no. 6. 
+[77] 
+Drigas, A. S., and Leliopoulos, Panagiotis, The Use of Big Data in Education, 
+International Journal of Computer Science Issues, Vol. 11, Issue 5, 2014, 58-63 
+[78] 
+Anagnostopoulou, P., Alexandropoulou, V., Lorentzou, G., Lykothanasi, A., 
+Ntaountaki, P., & Drigas, A. (2020). Artificial intelligence in autism assessment. International 
+Journal 
+of 
+Emerging 
+Technologies 
+in 
+Learning, 
+15(6), 
+95-107. 
+https://doi.org/10.3991/ijet.v15i06.11231 
+[79] 
+Pappas, M., & Drigas, A. (2016). Incorporation of artificial intelligence tutoring 
+techniques in mathematics. International Journal of Engineering Pedagogy, 6(4), 12–16. 
+https://doi.org/10.3991/ijep.v6i4.6063 
+[80] 
+Chaidi E, Kefalis C, Papagerasimou Y, Drigas (2021) A Educational robotics in 
+Primary Education. A case in Greece. Research, Society and Development 10 (9)  
+[81] 
+Papanastasiou, G. P., Drigas, A. S., & Skianis, C. (2017). Serious games in preschool 
+and primary education: Benefits and impacts on curriculum course syllabus. International 
+Journal 
+of 
+Emerging 
+Technologies 
+in 
+Learning, 
+12(1), 
+44–56. 
+https://doi.org/10.3991/ijet.v12i01.6065 
+[82] 
+Kokkalia, G., Drigas, A., Economou, A., Roussos, P., & Choli, S. (2017). The use of 
+serious games in preschool education. International Journal of Emerging Technologies in 
+Learning, 12(11), 15-27. https://doi.org/10.3991/ijet.v12i11.6991 
+[83] 
+Drigas, A. S., and Pappas M.A. "On line and other Game-Based Learning for 
+Mathematics." International Journal of Online Engineering (iJOE) 11.4, 62-67, 2015 
+https://doi.org/10.3991/ijoe.v11i4.4742 
+282
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+[84] 
+Papanastasiou, G., Drigas, A., Skianis, C., & Lytras, M. D. (2017). Serious games in 
+K-12 education: Benefits and impacts on students with attention, memory and developmental 
+disabilities. Program, 51(4), 424-440. https://doi.org/10.1108/prog-02-2016-0020 
+[85] 
+Drigas, A. S., & Kokkalia, G. K. (2014). ICTs in Kindergarten. International Journal 
+of Emerging Technologies in Learning, 9(2). https://doi.org/10.3991/ijet.v9i2.3278 
+[86] 
+Kokkalia, G., Drigas, A., & Economou, A. (2016). The role of games in special 
+preschool education. International Journal of Emerging Technologies in Learning (iJET), 
+11(12), 30-35. 
+[87] 
+Drigas, A., & Mitsea, E. (2020). The 8 Pillars of Metacognition. International Journal 
+of Emerging Technologies in Learning (iJET), 15(21), 162-178. https://doi.org/10.3991/ijet. 
+v15i21.14907 
+[88] 
+Drigas, A., & Papoutsi, C. (2019). Emotional intelligence as an important asset for HR 
+in organizations: Leaders and employees. International Journal of Advanced Corporate 
+Learning, 12(1). https://doi.org/10.3991/ijac.v12i1.9637 
+[89] 
+Drigas, A. S.,  and M. Pappas, “The Consciousness-Intelligence-Knowledge Pyramid: 
+An 8x8 Layer Model,” International Journal of Recent Contributions from Engineering, Science 
+& IT (iJES), vol. 5, no.3, pp 14-25, 2017. https://doi.org/10.3991/ijes.v5i3.7680 
+[90] 
+Mitsea, E., & Drigas, A. (2019). A journey into the metacognitive learning strategies. 
+International Journal of Online & Biomedical Engineering, 15(14). https://doi.org/ 
+10.3991/ijoe.v15i14.11379 
+[91] 
+Drigas A, Karyotaki M (2017) Attentional control and other executive functions. Int J 
+Emerg Technol Learn iJET 12(03):219–233 
+[92] 
+Drigas A, Karyotaki M 2014. Learning Tools and Application for Cognitive 
+Improvement. International Journal of Engineering Pedagogy, 4(3): 71-77. From (Retrieved on 
+13 May 2016) 
+[93] 
+Drigas, A., & Mitsea, E. (2021). 8 Pillars X 8 Layers Model of Metacognition: 
+Educational Strategies, Exercises &Trainings. International Journal of Online & Biomedical 
+Engineering, 17(8). https://doi.org/10.3991/ijoe.v17i08.23563 
+[94] 
+Drigas A., Papoutsi C. (2020). The Need for Emotional Intelligence Training 
+Education in Critical and Stressful Situations: The Case of COVID-19. Int. J. Recent Contrib. 
+Eng. Sci. IT 8 (3), 20–35. 10.3991/ijes.v8i3.17235 
+[95] 
+Drigas, A., & Mitsea, E. (2020). The Triangle of Spiritual Intelligence, Metacognition 
+and Consciousness. International Journal of Recent Contributions from Engineering, Science & 
+IT (iJES), 8(1), 4-23. https://doi.org/10.3991/ijes.v8i1.12503 
+[96] 
+Kokkalia, G., Drigas, A. Economou, A., & Roussos, P. (2019). School readiness from 
+kindergarten to primary school. International Journal of Emerging Technologies in Learning, 
+14(11), 4-18. 
+[97] 
+Drigas, A., & Mitsea, E. (2021). Metacognition, stress-relaxation balance & related 
+hormones. International Journal of Recent Contributions from Engineering, Science & IT 
+(iJES), 9(1), 4–16. https://doi.org/10.3991/ijes.v9i1.19623 
+[98] 
+Pappas M, Drigas A. Computerized Training for Neuroplasticity and Cognitive 
+Improvement. International Journal of Engineering Pedagogy. 2019;.(4):50-62 
+[99] 
+Papoutsi, C. and Drigas, A. (2017) Empathy and Mobile Applications. International 
+Journal of Interactive Mobile Technologies 11. 57. https://doi.org/10.3991/ijim.v11i3.6385 
+[100] 
+Papoutsi, C. & Drigas, A. (2016). Games for Empathy for Social Impact. International 
+Journal of Engineering Pedagogy 6(4), 36-40. 
+283
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+
+ 
+ 
+ 
+ 
+ 
+ 
+[101] 
+Karyotaki, M., & Drigas, A.  (2015). Online and other  ICT  Applications  for  
+Cognitive Training  and  Assessment. International Journal of Online and Biomedical 
+Engineering. 11(2), 36-42. 
+[102] 
+Papoutsi, C., Drigas, A., & Skianis, C. (2019). Emotional intelligence as an important 
+asset for HR in organizations: Attitudes and working variables. International Journal of 
+Advanced Corporate Learning, 12(2), 21–35. https://doi.org/10.3991/ijac.v12i2.9620 
+[103] 
+Chaidi I.  and Drigas, A. S., “Autism, Expression, and Understanding of Emotions: 
+Literature Review,” Int. J. Online Biomed. Eng., vol. 16, no. 02, pp. 94–111, 2020. 
+https://doi.org/ 10.3991/ijoe.v16i02.11991 
+[104] 
+Chaidi I., Drigas, A.  C Karagiannidis Autistic people's family and emotional 
+intelligence Technium Soc. Sci. J. 26, 194 
+[105] 
+Drigas, A. S., & Karyotaki, M. (2019). A Layered Model of Human Consciousness. 
+International Journal of Recent Contributions from Engineering, Science & IT (iJES), 7(3), 41- 
+50. https://doi.org/10.3991/ijes.v7i3.11117 
+[106] 
+Drigas, A. S., Karyotaki, M., & Skianis, C. (2018). An Integrated Approach to Neuro-
+development, Neuroplasticity and Cognitive Improvement. International Journal of Recent 
+Contributions from Engineering, Science & IT (iJES), 6(3), 4-18. 
+[107] 
+Karyotaki M.  and Drigas, A. S., “Latest trends in problem solving assessment,” 
+International Journal of Recent contributions from Engineering, Science & IT (iJES), vol. 4, no. 
+2, 
+2016. 
+[Online 
+serial]. 
+Available: 
+https://online-journals.org/index.php/i-
+jes/article/view/5800/. [Accessed Aug. 21, 2019]. https://doi.org/10.3991/ijes.v4i2.5800 
+[108] 
+Mitsea E., Drigas, A. S.,  andMantas P., “Soft Skills & Metacognition as Inclusion 
+Amplifiers in the 21st Century,” Int. J. Online Biomed. Eng. IJOE, vol. 17, no. 04, Art. no. 04, 
+Apr. 2021. https://doi.org/10.3991/ijoe.v17i04.20567 
+[109] 
+Angelopoulou, E.  Drigas, A. (2021). Working Memory, Attention and their 
+Relationship: A theoretical Overview. Research. Society and Development,10(5), 1-
+8. https://doi.org/10.33448/rsd-v10i5.15288 
+[110] 
+Tourimpampa, A., Drigas, A., Economou, A., & Roussos, P. (2018). Perception and 
+text comprehension. It’sa matter of perception! International Journal of Emerging Technologies 
+in 
+Learning 
+(iJET). 
+Retrieved 
+from 
+https://online-
+journals.org/index.php/ijet/article/view/7909/5051 
+ 
+284
+Technium Social Sciences Journal
+Vol. 35, 263-284, September, 2022
+ISSN: 2668-7798
+www.techniumscience.com
+

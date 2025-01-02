@@ -1,0 +1,429 @@
+Survey on Indoor Positioning Techniques
+and Systems
+Habib Mohammed
+Hussien(&),
+Yalemzewed Negash Shiferaw,
+and Negassa Basha Teshale
+School ofElectrical andComputer Engineering,
+AddisAbaba Institute of Technology (AAiT), AddisAbaba University (AAU),
+Addis Ababa,Ethiopia
+habibmohammed2001@gmail.com, yalemzewdn@yahoo.com,
+negasabasha4@gmail.com
+Abstract. Navigatingdifferent devices andhumanbeingsin indoor scenehas
+become very crucial for number of tasks specially in automated system. The
+efficiencyofoutdoorpositioninghasbecomeexcellentduetothedevelopment
+of GPS. However lots of mass market applications require very excellent
+positioning capabilities in almost every environments. As a result, indoor
+positioning has attracted the researchers attention and has been a focus of
+research during the past decades. This paper presents an overview of the four
+typicalindoorlocalizationschemesnamelytriangulation,trilateration,proximity
+and scene analysis are analyze and discussed. Moreover it gives a detailed
+survey of different positioning systems which are being both research-oriented
+solutions and commercial products and also attempts to classify the different
+systemsintodifferentgroupsbasedonthetechnologyused.Wecategorizedall
+11 sighted wireless indoor positioning systems into 6 distinct technologies
+namely Infrared signals, radio frequency, ultrasound waves, vision-based anal-
+ysis, electromagnetic waves, and audible sound and explains the measuring
+principles of each. These approaches are characterized and their key perfor-
+manceparametersarequantifiedindividually.Forabetterunderstanding,these
+parameters arebriefly comparedin table form for eachsystem so as to outline
+the trade-offsfrom the viewpoint of auser.
+(cid:1)
+Keywords: Indoorpositioningsystems Positioningtechniques
+(cid:1)
+Wireless positioningtechnology Wireless localization
+1 Introduction
+An Indoor positioning system (IPS) is a continuous and real-time system which can
+decide the position of someone or something in a physical space (i.e. gymnasium,
+hospital, school, etc.) [1]. IPs has been widely researched study area for many years
+now. As a service, IPs has still not attain through global use as broadly compared to
+outdoor positioning services. Outdoor positioning is usually based on GPS satellite
+signals. In GPS [2], the location is approximated by computing the transit time of the
+signal from satellite to client device. When time and satellite position is known, the
+schemecan then computethe distance between user and satellite. Inindoors,situation
+©ICSTInstituteforComputerSciences,SocialInformaticsandTelecommunicationsEngineering2018
+F.Mekuriaetal.(Eds.):ICT4DA2017,LNICST244,pp.46–55,2018.
+https://doi.org/10.1007/978-3-319-95153-9_5Survey onIndoorPositioning Techniques andSystems 47
+is more complicated. Because GPS signals cannot penetrate through building walls
+good enough for accurate indoor positioning, other technologies has to be used or
+combinedwiththeGPSsystem.Thoseothertechnologiesinclude:WLAN,Bluetooth,
+Radio Frequency Identification (RFID) and more. Indoors is a very dynamic envi-
+ronment,withlotofmovingpeopleandinsomeplacesevenobstaclestend tomovea
+lot. There are some basic techniques and technologies used in indoor positioning.
+Theseincludetrilateration,triangulation(angleofarrival),RSSbasedpositioning,time
+of arrival and fingerprinting. An overview of different existing technology options for
+the design of an positioning scheme As an example Infrared, ultrasound, RFID,
+WLAN, sensor networks, Bluetooth, UWB, vision analysis, magnetic signals and
+audible sound are explained in [1, 3]. Considering these key technologies, different
+localization systems have been formulated by different companies, higher institutions
+and research departments. This paper introduced and explained various
+research-oriented and commercially available indoor positioning systems. We also
+discussedthetechniquesandprinciplesoftheseIPSsandmadeacomparisonbetween
+thembyconsideringanumberofevaluationcriteriassuchascost,privacyandsecurity,
+performance,complexity,robustness,userpreferences,availabilityincommercialareas
+and drawbacks.
+2 Survey on Wireless Indoor Positioning/Localization
+Techniques and Systems
+Therehavebeenanumberofsurveysbydifferentresearchersaboutindoorpositioning
+techniques and systems in the literature. This section describes literatures on indoor
+positioning, technologies, techniques and systems. Moreover various rating criterions
+are considered to examine the different indoor positioning systems for the services
+demanded by the users/required by the client.
+2.1 Wireless Indoor Positioning Techniques
+2.1.1 Triangulation
+This algorithm is used find out the position of the target having the geometrical con-
+ceptsoftrianglesandthetargetplacecanbeestimated/computedbyusingthelocations
+of three or more access points. Whenever the target devices receives the signals from
+one or more access points, the TOA, AOA and RSS of the signals will be utilized to
+estimate the distances between the target and the access points. The angle defines the
+estimated position of the target as illustrated in Fig. 1 below.
+(xa,ya)
+(x01,y01)
+(xd,yd)
+(xb,yb) (xc,yc)
+Fig. 1. Triangulation positioning techniques [3]48 H.M.Hussien etal.
+To calculate the value of the unknown nodes shown in Fig. 3 can be given as
+a¼\AO C ¼2p(cid:3)2\ADC
+1
+8qffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi 9
+>>>><
+ðx 01(cid:3)x aÞ2þðy 01(cid:3)y aÞ2 ¼r
+1
+>>>>=
+qffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+>>>>: ðx 01(cid:3)x cÞ2þðy 01(cid:3)y cÞ2 ¼r
+1
+>>>>;
+ðx (cid:3)x Þ2þðy (cid:3)y Þ2 ¼2r (cid:3)2r cosa
+a c a c 1 1
+2.1.2 Trilateration
+This approach [3, 4] determines the location of the target by measuring its distances
+from multiple reference points. The object in the field is located by creating a system
+which uses radio frequency signals. This RSS (radio frequency signal strength) is
+measured between the tagged object and the readers that are positioned in the field.
+Then the signal strength will be converted into a distance using the distance formula
+shown in Eqs. (1), (2) and (3) and plugged into a system known as trilateration. By
+using this approach we can determine the tagged object on the x, y plane (2D latera-
+tion) as well as x, y and z plane (3D lateration).
+(x1,y1)
+(x2,y2)
+(x,y)
+(x3,y3)
+Fig. 2. 2Dtrilateration positioning techniques [3]
+The equations for 2D trilateration [3] are as follows:
+ðx(cid:3)x Þ2þðy(cid:3)y Þ2 ¼d2 ð1Þ
+1 1 1
+ðx(cid:3)x Þ2þðy(cid:3)y Þ2 ¼d2 ð2Þ
+2 2 2
+ðx(cid:3)x Þ2þðy(cid:3)y Þ2 ¼d2 ð3Þ
+3 3 3
+The x and y coordinates are found using Cramer’s rule [3].
+(cid:3) (cid:3)
+(cid:3) (cid:3)ðd2(cid:3)d2Þ(cid:3)ðx2(cid:3)x2Þ(cid:3)ðy2(cid:3)y2Þ 2ðy2(cid:3)y1Þ (cid:3)
+(cid:3)
+(cid:3)ðd1 2(cid:3)d2 2Þ(cid:3)ðx1 2(cid:3)x2 2Þ(cid:3)ðy1 2(cid:3)y2 2Þ 2ðy (cid:3)y Þ(cid:3)
+x¼ 1 3 1 (cid:3)
+(cid:3)
+(cid:3)2ð3
+x
+2(cid:3)x1
+1Þ
+23
+ðy 2(cid:3)y
+1Þ(cid:3)
+(cid:3) (cid:3)
+3 1 ð4Þ
+(cid:3) 2ðx (cid:3)x Þ 2ðy (cid:3)y Þ(cid:3)
+3 1 3 1Survey onIndoorPositioning Techniques andSystems 49
+(cid:3) (cid:3)
+(cid:3) (cid:3) (cid:3)2 2ð ðx x2(cid:3) (cid:3)x x1Þ
+Þ
+ð ðd d12 2(cid:3) (cid:3)d d22 2Þ Þ(cid:3) (cid:3)ð ðx x2
+1
+2(cid:3) (cid:3)x x2
+2
+2Þ Þ(cid:3) (cid:3)ð ðy y2
+1
+2(cid:3) (cid:3)y y2
+2
+2Þ Þ(cid:3) (cid:3)
+(cid:3)
+y¼ 3 1(cid:3)
+(cid:3) (cid:3)2ðx
+21
+(cid:3)x
+1Þ3 2ð1
+y
+2(cid:3)3
+y
+1Þ(cid:3)
+(cid:3) (cid:3)
+1 3 ð5Þ
+(cid:3) 2ðx (cid:3)x Þ 2ðy (cid:3)y Þ(cid:3)
+3 1 3 1
+The equations for 3D trilateration [3] are as follows:
+Fig. 3. 3Dtrilateration [3]
+ðx(cid:3)x Þ2þðy(cid:3)y Þ2þðz(cid:3)z Þ2 ¼d2 ð6Þ
+1 1 1 1
+ðx(cid:3)x Þ2þðy(cid:3)y Þ2þðz(cid:3)z Þ2 ¼d2 ð7Þ
+2 2 2 2
+ðx(cid:3)x Þ2þðy(cid:3)y Þ2þðz(cid:3)z Þ2 ¼d2 ð8Þ
+3 3 3 3
+ðx(cid:3)x Þ2þðy(cid:3)y Þ2þðz(cid:3)z Þ2 ¼d2 ð9Þ
+4 4 4 ð9Þ
+Now, the x, y and z components using Cramer’s rule [3].
+2ðd2(cid:3)d2Þ(cid:3)ðx2(cid:3)x2Þ(cid:3)ðy2(cid:3)y2Þ(cid:3)ðz2(cid:3)z2Þ ð2ðy (cid:3)y Þ 2ðz (cid:3)z Þ
+1 2 1 2 1 2 1 2 2 1 2 1
+2ðd2(cid:3)d2Þ(cid:3)ðx2(cid:3)x2Þ(cid:3)ðy2(cid:3)y2Þ(cid:3)ðz2(cid:3)z2Þ ð2ðy (cid:3)y Þ 2ðz (cid:3)z Þ
+1 3 1 3 1 3 1 3 3 1 3 1
+2ðd2(cid:3)d2Þ(cid:3)ðx2(cid:3)x2Þ(cid:3)ðy2(cid:3)y2Þ(cid:3)ðz2(cid:3)z2Þ ð2ðy (cid:3)y Þ 2ðz (cid:3)z Þ
+x¼ 1 4 1 4 1 4 1 4 4 1 4 1
+2ðx (cid:3)x Þ 2ðy (cid:3)y Þ 2ðz (cid:3)z Þ
+2 1 2 1 2 1
+2ðx (cid:3)x Þ 2ðy (cid:3)y Þ 2ðz (cid:3)z Þ
+3 1 3 1 3 1
+2ðx (cid:3)x Þ 2ðy (cid:3)y Þ 2ðz (cid:3)z Þ
+4 1 4 1 4 1
+ð11Þ
+2ðx (cid:3)x Þ 2ðd2(cid:3)d2Þ(cid:3)ðx2(cid:3)x2Þ(cid:3)ðy2(cid:3)y2Þ(cid:3)ðz2(cid:3)z2Þ 2ðz (cid:3)z Þ
+2 1 1 2 1 2 1 2 1 2 2 1
+2ðx (cid:3)x Þ 2ðd2(cid:3)d2Þ(cid:3)ðx2(cid:3)x2Þ(cid:3)ðy2(cid:3)y2Þ(cid:3)ðz2(cid:3)z2Þ 2ðz (cid:3)z Þ
+3 1 1 3 1 3 1 3 1 3 3 1
+2ðx (cid:3)x Þ 2ðd2(cid:3)d2Þ(cid:3)ðx2(cid:3)x2Þ(cid:3)ðy2(cid:3)y2Þ(cid:3)ðz2(cid:3)z2Þ 2ðz (cid:3)z Þ
+y¼ 4 1 1 4 1 4 1 4 1 4 4 1
+2ðx (cid:3)x Þ 2ðy (cid:3)y Þ 2ðz (cid:3)z Þ
+2 1 2 1 2 1
+2ðx (cid:3)x Þ 2ðy (cid:3)y Þ 2ðz (cid:3)z Þ
+3 1 3 1 3 1
+2ðx (cid:3)x Þ 2ðy (cid:3)y Þ 2ðz (cid:3)z Þ
+4 1 4 1 4 1
+ð12Þ50 H.M.Hussien etal.
+2ðx (cid:3)x Þ 2ðy (cid:3)y Þ ðd2(cid:3)d2Þ(cid:3)ðx2(cid:3)x2Þ(cid:3)ðy2(cid:3)y2Þ(cid:3)ðz2(cid:3)z2Þ
+2 1 2 1 1 2 1 2 1 2 1 2
+2ðx (cid:3)x Þ 2ðy (cid:3)y Þ ðd2(cid:3)d2Þ(cid:3)ðx2(cid:3)x2Þ(cid:3)ðy2(cid:3)y2Þ(cid:3)ðz2(cid:3)z2Þ
+3 1 3 1 1 3 1 3 1 3 1 3
+2ðx (cid:3)x Þ 2ðy (cid:3)y Þ ðd2(cid:3)d2Þ(cid:3)ðx2(cid:3)x2Þ(cid:3)ðy2(cid:3)y2Þ(cid:3)ðz2(cid:3)z2Þ
+z¼ 4 1 4 1 1 4 1 4 1 4 1 4
+2ðx (cid:3)x Þ 2ðy (cid:3)y Þ 2ðz (cid:3)z Þ
+2 1 2 1 2 1
+2ðx (cid:3)x Þ 2ðy (cid:3)y Þ 2ðz (cid:3)z Þ
+3 1 3 1 3 1
+2ðx (cid:3)x Þ 2ðy (cid:3)y Þ 2ðz (cid:3)z Þ
+4 1 4 1 4 1
+ð13Þ
+2.1.3 Scene Analysis
+Aprincipleofpositioningapproachinwhichfirstacquire/gatherfingerprintsofascene
+andthendeterminesanobjectpositionbymatchingwiththeinformationexistinginthe
+database [4]. The offline and online phases are the two phases offingerprinting tech-
+nique [5]. Strengths from access points are collected at reference points during the
+training phase, while in the tracking phase, user’s surrounding access point signal
+strengths are compared/analyzed with the RP dataset collected in the 1st phase for
+matching.
+2.1.4 Proximity
+This approach investigates the location of an object with respect to a distinguished
+position by sensing its location [3]. Moreover, this approach requires a connection
+between the mobile and fixed node to track the target so that the tracked target is
+considered/assumed as in the proximity area.
+2.2 Range Measurement Techniques
+(1) Received Signal Strength: This scheme can achieve a maximum value when the
+gap between transmitter and receiver is smaller so as to investigate the distance.
+Thisschemeisusedtolocatethespace/distanceofthesubscriberunitfromother
+setofmeasurementunitsbyusingtheattenuatedoutputofemittedsignalstrength
+for calculating the signal loss.
+(2) Time of Arrival: The propagation time of signal is approximately equal to the
+distance between the measurement units and the targeted object. A precise syn-
+chronization of all the transmitters and receivers and at least three measurement
+units are required to obtain 2D lateration.
+(3) Time Difference of Arrival: This Technique estimates the relative position of the
+mobile transmitter by determining the difference of the signal arival time at
+number of measurement units. For example, 3 fixed receivers can give two
+TDOAs, which estimates position of the targeted object.
+(4) PhaseofArrival:Thistechniqueestimatesthedistanceofatargetusingthesignal
+delay which is expressed as the fraction of signal wavelength. In this technique,
+the transmitters are needed to be placed at particular locations to perform the
+location of the target based on phase measurements.Survey onIndoorPositioning Techniques andSystems 51
+(5) AngleofArrival:Useantennaearraysatthereceiversidetoestimate theangleat
+which the transmitted signal impinges on the receiver by calculating TDOA at
+individual elements of the antennae array. It requires the measurement of at least
+twoangleswithdirectionorientedorarrayofantennastoestimatethe2Dlocation
+of a target.
+2.3 Criterias for Evaluating Wireless Indoor Positioning Systems
+(1) PrivacyandSecurity:OneoftheevaluationcriteriaforagoodIPSisitssecurity
+and privacy because both of them are very important [6] for Private as well as
+Social activities for controlling the positioning information and history. To
+improveprivacyinIPSlocationaswellasinformationshouldbecontrolledfrom
+the software or system architecture side [3].
+(2) Cost: The most important factors which can determine the cost of a positioning
+system are money, time, space, weight and energy [3]. Installation and mainte-
+nance are related to time factor. Mobile units may have weight and tight space
+constraints. The final important factor of a system cost is energy.
+(3) Performance:Forevaluating theperformanceofan IPSsprecision andaccuracy
+areveryimportant.Thesuccessprobabilityofpositionlocalizationwithrespectto
+predefinedaccuracyisprecision.Accuracyistheaverageerrordistance[3].Other
+performance parameters are calculated positioning delay of targeted object,
+measurement transformation of targeted object and scalability.
+(4) FaultToleranceandRobustness:Eventhoughsomeequipmentsinthesystemare
+notworkingorhaveadeadbatteryenergy,arobustIPSshouldabletooperateand
+tolerable during the occurrence offaults in the system [3].
+(5) Complexity:AgoodIPSisasystemwithoptimumperformance(accuracy),easily
+usedsoftwareplatformsandanexistedinfrastructuredevicesfortheusers[7].The
+users device computational time for determining their position is another aspect
+which indicates complexity.
+(6) User Preference: A good IPSs always assumes the clients’ requirement of the
+targeted equipments, the infrastructures and the software. If the devices are
+lightweight, wireless, small, lower power consumption and computationally
+powerful, the system has a chance to be preferred by the user.
+(7) Commerciallyexisted:FromthedevelopedIPSswhicharediscussedinSect. 2.4,
+some of them are existing in the market and others are still researching.
+(8) Limitations: The medium which are used for position sensing is the fundamental
+limitations of IPSs. For example, WLAN technology can reuse the existing
+infrastructure. However, position sensing based on radio frequency has
+multiple-path and has a reflection effects which result in maximum error.
+2.4 Types of Wireless Indoor Positioning Systems
+2.4.1 Infrared (IR) Positioning Systems
+Active Badge: ThissystemisthefirstindoorlocalizationsystemsdevelopedbyAT&T
+Cambridge.ThissystemneedsanIRtechnologytomakelocationsensingsoastoplace52 H.M.Hussien etal.
+persons in its desired area by computing the position of the badges using a unique IR
+transmittedsignal[8].Oneormoresensorsshouldbefixedinaroomtobedetectedbythe
+IRsignal,whicharesentbyasystemsoastolocatethedevice.Thetargetedactivebadges
+positiondataareforwardedtoacentralserverforspecifyingtheposition.Aroomlevel
+accuracyisprovidedbythesystemandthesignalcanbeaffectedbyanylight.
+Firefly: ThissystemisanIRbasedtrackingschemedevelopedbyCybernetCorporation
+[9].ItusesIRtechnologythatoffershighaccuracyabout3.0 mm.Thesystemcomprises
+tags,atagcontrolleroftagsandonecamera.Thecontrolleratagisasmall,lightweight
+and battery-powered which can be carried by a tracked person. An emitter which has
+beensupportedbycontrolleroftagsattachedondifferenttargetedpartsand3camerasare
+installedona1 mbartoreceivetheIRsignalsandestimate3Dposition.Eventhough,
+tagsandtagcontrollersaresmallandeasytohold,theyarenotsuitable/comfortabletobe
+wornduetotheircables.Thecoverageareaislimitedwithin7 m.
+2.4.2 Ultra-Sound Positioning Systems
+Active Bat: This scheme is developed by AT&T Cambridge and can offer 3D posi-
+tioning for the tracked tags [10]. In this system ultrasonic technology receivers is
+requiredtocomputethe3Dlocationofthetagbymultiple-laterationandtriangulation.
+A tag frequently broadcasting pulse of ultrasound that will be catched by a matrix of
+receivers at an acknowledged position. The distance measurement is obtained by the
+ultrasonic signal TOA. The system acquires installing 720 receivers to the ceiling to
+cover a 1000 m2 area. The system has 3 cm accuracy for 75 tracked tags.
+Cricket: This system uses ultrasound system as infrastructure mounted on the
+walls/ceilings at acknowledged location and receiver are attaching on the individual
+targeted object [11] for using TOA method and triangulation technique to identify the
+targeted object. This approach offers privacy for the client by accomplishing all the
+location triangulation computation of targeted object so as to own its location infor-
+mation. This scheme offers 10 cm accuracy.
+Sonitor: ThissystemisdevelopedbySonitorTechnologiesInc.forindoorpositioning
+and tracking solution based on an ultrasound technology [12]. The system can offer
+locationidentificationandtrackingofpeoplesandequipmentsany-timeandproviding
+proximitypositionalinformationwithroomlevelaccuracyduetotheultrasoundsignal
+(i.e. Ultrasound signal cannot penetrate walls and does not need LOS transmission).
+Thus the scheme is used for detecting and tracking hidden targets.
+2.4.3 Radio Frequency (RF) Positioning Systems
+(I) WLAN: These scheme/technology has been deployed in public areas (i.e. hospi-
+tals, train stations, universities, etc.). The followings are some of the WLAN
+technology based IPSs..Survey onIndoorPositioning Techniques andSystems 53
+Radar: This system is suggested by a Microsoft research group as tracking
+method using WLAN infrastructure [13]. The system utilizes signaling strength
+and SNR with the triangulation. The Radar system can offer 2D information.
+Compas: This system takes an advantages/merits of existing WLAN
+technology/infrastructures and digital compasses to give high and accurate ser-
+viceswithconsiderablecostforaclientholdingaWLAN-basedequipments[14].
+Estimating/calculation the position is depend on the measurement of the signal
+strength from different APs. This scheme uses the fingerprint method
+determine/estimate the position of a client [14].
+(II) UWB:TheUWBofferhigheraccuracybecauseits[15]pulseshaveshortduration
+(less than 1 nano seconds) and this pulses are used for filtering the reflected
+signalsfrom the original signal. Ubisense is an UWB based scheme as discussed
+below.
+Ubisense:ThissystemisdesignedbyAT&TCambridge,whichoffersareal-time
+scheme [16]. In this system the triangulation technique is employed by taking
+advantages of both the TDOA AOA to provide flexible location sensing. This
+scheme cannot be affected by a complicated environment (i.e. walls, doors, etc.)
+[16]. The accuracy offered is about tens of centimeters.
+2.4.4 Magnetic Positioning System
+MotionStarWireless: ThissystemisdesignedbyAscensionTechnologyCorporation,
+whichisusedtotrackthetargetedobjectwithapulsedDCmagneticfieldsforlocating
+sensors within 3 m area/coverage [17]. This scheme offers accurate motion tracker by
+the measurement of different sensors attached on the body of a person. The system
+tracks multiple targets (120 sensors) at a time in real time.
+2.4.5 Vision-Based Positioning System
+Easy Living: This system is vision based and developed by Microsoft research group
+[18].Two cameras (stereo) attaching on theceiling of aroom isneeded andthe entire
+part oftheroom iscovered byonecamera.Two3D cameras (real-time)cancover the
+measuring area and offer real-time visions (which can be used as an input for location
+estimations).Thenthecomputerreceivesthephotosfrom thecamerasandprocessthe
+raw data. After that Easy Living scheme creates a “person creation zone” just near to
+theentranceoftheroom(aplacewherethestereomodulecreatesthevisioninstanceof
+theperson).Thus,whenapersongetsintotheroom,theschemetracksthemotionof
+the person and publish the information of the person.
+2.4.6 Audible Sound Positioning System
+Beep: This system is an audible sound based technology and designed as a cheap 3D
+IPS method [19]. This scheme uses Triangulation technique with a standard 3D mul-
+tiple lateration based on TOA.54 H.M.Hussien etal.
+3 Comparison of Wireless Indoor Positioning Systems
+In this section, the aforementioned different existed IPSs are evaluated from the point
+of view of the client interest. IPSs are compared considering the evaluation criterias
+which has been discussed in Sect. 2.3 Table 1 shown below depicts evaluation and
+comparison results and thus results are important so as to to easily identify the best
+location methods.
+Table1. ComparisonofIPSsbasedonsecurityandprivacy,cost,performanceandcommercial
+existence
+IPSs IPSs with IPSswithroom IPSs whichuses IPSswhichare
+with expensive level accuracy WLAN commercially
+security cost infrastructure available
+Cricket Firefly ActiveBadge Compass Firefly
+Beep Activebat Sonitor Active Bat Sonitor
+Ubisense Senitor Ubisense
+Easyliving
+4 Conclusion
+Fromthispaper,readers cangetadetailedunderstandingofthedifferent existed IPSs,
+especially the 11 IPSs explained in this paper. The existing IPSs are classified into 6
+categories based on the main technology used to sense the location. Moreover, the
+systemarchitectureandworkingprinciplesarepresented.Eighthavebeenproposedto
+so as to and compare the IPSs from the point of view of the client.
+5 Recommendation
+Fromthispaper,wehaveseenthateachtechnologyusedinpositiondeterminationhas
+its own drawbacks. None of them can fulfill the system demand. Therefore we rec-
+ommendthatinsteadofusingasinglemediumtoestimatethelocationsofthetargets,It
+will be good combining some technologies so as to enhance the quality of services
+ratherusingasingletechnology.ForinstanceWLANandUWB.WhereWLANtcover
+large area and UWB can give highly accurate calculation.
+References
+1. Vossiek,M.,Wiebking,L.,Gulden,P.,Wiehardt,J.,Hoffmann,C.,Heide,P.:Wirelesslocal
+positioning. IEEEMicrowave Mag. 4(4),77–86(2003)
+2. Hofmann,B.,Wellinhof,H.,Lichtenegger,H.:GPS:TheoryandPractice.Springer,Vienna
+(1997)
+3. Jarvis,R.,Mason,A.,Thornhill,K.,Zhang,B.:IndoorPositioningSystem,29August2011Survey onIndoorPositioning Techniques andSystems 55
+4. diFlora,C.,Ficco,M.,Russo,S.,Vecchio,V.:Indoorandoutdoorlocationbasedservices
+for portable wireless devices. In: Proceedings of 25th IEEE International Conference on
+Distributed Computing Systems Workshops(2005)
+5. Aitenbichler,E.,Mhlhuser,M.:AnIRlocalpositioningsystemforsmartitemsanddevices.
+In:Proceedingsof23rdIEEEInternationalConferenceonDistributedComputingSystems
+Workshops(IWSAWC03) (2003)
+6. Smailagic, A., Kogan, D.: Location sensing and privacy in a contextaware computing
+environment. IEEEWirel.Commun. 9(5),10–17(2002)
+7. Casas,R.,Cuartielles,D.,Marco,A.,Gracia,H.J.,Falc,J.L.:Hiddenissuesindeployingan
+indoor location system. 6(2),62–69(2007)
+8. Want, R., Hopper, A., Falcao, V., Gibbons, J.: The active badge location system. ACM
+Trans. Inf.Syst. 10(1),91–102(1992)
+9. FireflyMotionTrackingSystemUser’sguide(1999).http://www.gesturecentral.com/firefly/
+FireflyUserGuide.pdf
+10. ActiveBat website(2008). http://www.cl.cam.ac.uk/research/dtg/attarchive/bat/
+11. Priyantha, N.B.:The cricket indoor location system. Ph.D.thesis, MIT (2005)
+12. Sonitor System Website (2008).http://www.sonitor.com/
+13. Ekahau (2008).http://www.ekahau.com/
+14. King, T., Kopf, S., Haenselmann, T., Lubberger, C., Effelsberg, W.: COMPASS: a
+probabilistic indoor positioning system based on 802.11 and digital compasses. In:
+Proceedings of First ACM International Workshop on Wireless Network Testbeds,
+Experimental evaluation and Characterization (WiNTECH), Los Angeles, CA, USA,
+September2006
+15. Ingram,S.J.,Harmer,D.,Quinlan,M.:UltraWideBandindoorpositioningsystemsandtheir
+use in emergencies. In: Proceedings of IEEE Conference on Position Location and
+NavigationSymposium, pp.706–715, April 2004
+16. Ubisense (2008).http://www.ubisense.net
+17. MotionStar Wireless Website (2007). http://www.ascensiontech.com/products/motionstar
+wireless.php
+18. Brumitt, B., Meyers, B., Krumm, J., Kern, A., Shafer, S.: EasyLiving: technologies for
+intelligent environments. In: Thomas, P., Gellersen, H.-W. (eds.) HUC 2000. LNCS, vol.
+1927, pp.12–29.Springer, Heidelberg (2000). https://doi.org/10.1007/3-540-39959-3_2
+19. Lopes,C.V.,Haghighat,A.,Mandal,A.,Givargis,T.,Baldi,P.:Localizationofoff-the-shelf
+mobile devices using audible sound: architectures, protocols and performance assessment.
+ACM SIGMOBILE Mob.Comput. Commun.Rev. 10(2), 38–50(2006)

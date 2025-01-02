@@ -1,0 +1,1623 @@
+Technische Universität München
+Department of Civil, Geo and Environmental Engineering
+Chair of Cartography
+Prof. Dr.-Ing. Liqiu Meng
+Indoor Landmark and Indoor Wayfinding:
+The Indoor Landmark Identification issue
+Rohini Gangaputra
+Master's Thesis
+Submission: 07.07.2017
+Study Course: Cartography M.Sc.
+Supervisor: M.Sc. Juliane Cron, M.Sc. Hao Lyu
+2017Declaration of Originality
+I hereby declare that the submitted Master’s thesis entitled
+Indoor landmark and indoor wayfinding: The indoor landmark identification issue
+is my own work and that, to the best of my knowledge, it contains no material that has
+been published previously, or substantially overlapping with material submitted for any
+other degree or other purposes at any institution, except for the sources where
+acknowledgement is made in the text.
+Munich, July 7, 2017
+Rohini Gangaputra
+iiAcknowledgement
+I would like to express my greatest gratitude to my supervisors, Juliane Cron, PhD
+candidate and programme coordinator of the international Master of Science programme
+in Cartography at the Chair of Cartography at Technical University of Munich and Hao
+Lyu, PhD candidate in Chair of Cartography at Technical University of Munich, for the
+two have immensely supported me in the process of this thesis work.
+Furthermore, I would like to thank all the Professors in Munich, Vienna and Dresden who
+have helped me in various aspects of my Master’s programme.
+I also would like to express my special thanks to Natasha Pirani, Moris Zahtila, Bryant
+Huether, Armand Kapaj, Jessica Gosling-Goldsmith, Natalie Barbosa Mejia, Maria
+Turchenko, Karen Byrne, Sarah Phillips, Roar Engell, Laura Eichler, Maia Zumbulidze,
+Nita Maulia, and Martin Hilljegerdes, Cartography students of 2016 intake for taking part
+in the user test and contributing to my thesis work.
+I would like to thank my classmates for having shown endless friendship and supporting
+me in my hardships and for giving me some very precious moments which are
+unforgettable and will be cherished for this lifetime.
+And finally, a heartfelt thanks to my dear husband and to my family for being with me
+irrespective of time and situations.
+iiiAbstract
+Based on the recent decades’ researches, it can be seen that way finding and navigation
+are playing a vital role and are being the most popular research areas of Location Based
+Services. Although wayfinding and navigation, when concerned with the outdoor
+environment is a vastly explored area, it has been gaining more attention in the indoor
+environment in recent times. Indoor navigation as compared to outdoor navigation has
+its dependence on the technology (Lyu, H. et al., 2015) which has some limitations
+concerning the accuracy of location information, required output media and also
+cognition of the user concerning the indoor environment.
+In spite of all the theories on indoor landmark and indoor wayfinding and many
+experiments being conducted, indoor navigation still needs to be explored and explained
+in order to make navigation in an indoor environment easier. Through this thesis, an
+attempt is made to make navigating in an indoor environment easier. The paper focuses
+on developing a more vivid definition for indoor landmark, a flowchart on how an indoor
+landmark could be derived, comparison between an indoor and an outdoor landmark and
+characteristics of an indoor landmark. The feasibility of the developed theories are
+proved by conducting case study.
+The user test gave desired results. The definition given in the hypothesis is vivid and
+completely explains and defines an indoor landmark. From the questionnaire feedback,
+it was seen that most of the participants could differentiate between an indoor and an
+outdoor landmark and have gained knowledge about the characteristics of an indoor
+landmark. Though, more than half of the participants were from a similar educational
+background, they said that the user test had given them a much clear impression of the
+difference between indoor and outdoor landmark and navigation in an indoor structure.
+As the indoor objects can be classified into three different types such as figural level,
+vista level, environmental level, one of the findings of this thesis along with fulfilling the
+above mentioned proposals is that indoor landmarks should fall under vista and
+environmental level. An indoor landmark falls into figural level only if there are no
+prominent landmarks that fall under vista and environmental level in the chosen location
+as figural level objects are replaceable.
+ivTable of Contents
+DECLARATION OF ORIGINALITY ............................................................................................................. II
+ACKNOWLEDGEMENT ........................................................................................................................... III
+ABSTRACT ............................................................................................................................................ IV
+TABLE OF CONTENTS ............................................................................................................................. V
+LIST OF FIGURES .................................................................................................................................. VII
+LIST OF TABLES .................................................................................................................................. VIII
+1 INTRODUCTION ................................................................................................................................... 1
+1.1 NAVIGATION IN INDOOR AND OUTDOOR ENVIRONMENTS ............................................................................... 1
+1.2 BACKGROUND AND MOTIVATION ............................................................................................................... 2
+1.3 PROBLEM STATEMENT AND GOALS ............................................................................................................. 3
+1.4 HYPOTHESES AND RESEARCH QUESTIONS ..................................................................................................... 3
+1.4.1 Indoor Landmark Definition ........................................................................................................ 3
+1.4.2 Research Questions ..................................................................................................................... 4
+1.5 METHODOLOGY ...................................................................................................................................... 4
+1.6 THESIS STRUCTURE .................................................................................................................................. 5
+2 LITERATURE REVIEW AND SCIENTIFIC BACKGROUND .......................................................................... 6
+2.1 SPATIAL COGNITION FOR WAYFINDING ........................................................................................................ 6
+2.1.1 Navigational Tasks and Communication of Navigational Information ....................................... 7
+2.1.2 Knowledge in the World-Dependency on External Information ................................................. 8
+2.2 CHARACTERIZATION OF AN ENTITY AS A LANDMARK ..................................................................................... 10
+2.3 ANALYSIS OF EXISTING DEFINITIONS OF AN INDOOR LANDMARK ..................................................................... 14
+2.3.1 Figural, Vista and Environmental Level Entities ........................................................................ 15
+2.3.2 Salience of a Landmark ............................................................................................................. 15
+2.3.3 Wayfinding Instructions using Landmarks ................................................................................ 16
+2.4 SUMMARY ........................................................................................................................................... 18
+3 DEVELOPING A NEW DEFINITION FOR AN INDOOR LANDMARK ........................................................ 19
+3.1 KEYWORDS FOR INDOOR LANDMARK DEFINITION ........................................................................................ 19
+3.2 LANDMARK TABLES ................................................................................................................................ 20
+3.2.1 Landmarks of Route 1 ............................................................................................................... 21
+3.2.2 Landmarks of Route 2 ............................................................................................................... 23
+4 USER STUDY FOR INDOOR WAYFINDING........................................................................................... 25
+4.1 TASK DESCRIPTION AND USER GROUP ....................................................................................................... 26
+4.2 USER STUDY MOTIVE ............................................................................................................................. 28
+4.3 EXECUTION OF THE USER TEST ................................................................................................................. 29
+4.4 ANTICIPATED RESULTS OF THE USER TEST .................................................................................................. 30
+5 RESULTS AND DISCUSSION ................................................................................................................ 36
+5.1 QUESTIONNAIRE RESULTS ....................................................................................................................... 36
+5.2 THESIS RESULTS .................................................................................................................................... 41
+5.2.1 Definition of an Indoor Landmark ............................................................................................. 41
+5.2.2 Characteristics of an Indoor Landmark ..................................................................................... 41
+5.2.3 Comparison between an Indoor and an Outdoor Landmark .................................................... 42
+5.2.4 Indicators on Extracting Landmarks from Heterogeneous Geographic Data ........................... 43
+5.2.5 Extraction of a Set of Potential Landmarks ............................................................................... 44
+5.2.6 Flowchart for Extraction of Landmarks ..................................................................................... 49
+v5.2.7 Figural Level, Vista Level and Environmental Level Landmarks ................................................ 51
+6 CONCLUSIONS AND FURTHER RESEARCH .......................................................................................... 52
+6.1 CONCLUSIONS ...................................................................................................................................... 52
+6.2 FURTHER RESEARCH ............................................................................................................................... 53
+7 BIBLIOGRAPHY .................................................................................................................................. 54
+8 APPENDIX USER TEST MATERIAL ....................................................................................................... 59
+8.1 PRESENTATION ..................................................................................................................................... 59
+8.2 QUESTIONNAIRE ................................................................................................................................... 63
+8.3 ROUTE MAP REPRESENTATIONS DRAWN BY THE PARTICIPANTS OF THE USER TEST ............................................. 65
+viList of Figures
+FIGURE 1: FAÇADE AREA OF TUM AUDIMAX ....................................................................................................... 11
+FIGURE 2: OFFICE BUILDING OF FISHERIES DEPARTMENT, HYDERABAD, INDIA .............................................................. 11
+FIGURE 3: PINK, YELLOW AND GREEN COLOURED BUILDINGS HAVING UNIQUENESS OF THEIR OWN ................................... 12
+FIGURE 4: RATHAUS AT MARIENPLATZ, MUNICH ................................................................................................... 12
+FIGURE 5: A BUILDING SHOWING GLASS TEXTURED FACADE...................................................................................... 13
+FIGURE 6: AN OLD HOUSE WITH POOR MAINTENANCE ............................................................................................ 13
+FIGURE 7: LANDMARK DEFINITION GIVEN TO THE PARTICIPANTS OF THE USER TEST ....................................................... 25
+FIGURE 8: EDUCATIONAL STREAM BACKGROUND ................................................................................................... 27
+FIGURE 9: PREVIOUS EXPERIENCE OF USER TEST PARTICIPANTS POSSESS ...................................................................... 28
+FIGURE 10: A FLOW CHART DESCRIBING THE MOTIVE OF PERFORMING THE USER STUDY ................................................ 29
+FIGURE 11: ROUTE MAP DEPICTION OF ROUTE 2 BY ONE OF THE USERS ...................................................................... 31
+FIGURE 12: TRASH BOXES: FIGURAL LEVEL OBJECTS OF INDOOR LANDMARKS ............................................................... 32
+FIGURE 13: INFORMATION BOARD SHOWING DIRECTION FOR DIFFERENT POINT OF INTERESTS ......................................... 32
+FIGURE 14: EMERGENCY WARD IN A HOSPITAL BUILDING......................................................................................... 33
+FIGURE 15: FOOD COURT AT CENTURY CITY ......................................................................................................... 33
+FIGURE 16: INSIDE CHANGI INTERNATIONAL AIRPORT, TERMINAL 3, SINGAPORE ......................................................... 34
+FIGURE 17: GATE NUMBERS AS LANDMARKS IN AIRPORTS ....................................................................................... 34
+FIGURE 18: DIFFICULTY LEVEL TO LOCATE THE INDOOR LANDMARKS .......................................................................... 36
+FIGURE 19: DIFFICULTY LEVEL FACED TO NAVIGATE IN A HUGE INDOOR STRUCTURE ...................................................... 37
+FIGURE 20: USAGE OF PRINTED MAPS IN AN INDOOR ENVIRONMENT ......................................................................... 37
+FIGURE 21: USAGE OF NAVIGATIONAL EQUIPMENT IN OUTDOOR AND INDOOR ENVIRONMENTS ...................................... 38
+FIGURE 22: EASE OF NAVIGATION IN INDOOR VS. OUTDOOR .................................................................................... 38
+FIGURE 23: DIFFICULTY LEVEL FACED WHILE LOCATING LANDMARKS FOR A NEW ROUTE ................................................. 39
+FIGURE 24: FIRE EXTINGUISHER: ONE OF THE MOST PROMINENT ............................................................................... 45
+FIGURE 25: TRASH BOXES: IDENTICAL BECAUSE OF THE COLOURS .............................................................................. 45
+FIGURE 26: PAINTINGS: EYE-CAPTURING LANDMARKS ............................................................................................ 46
+FIGURE 27: LECTURE HALLS WITH UNIQUE NAMES- NOTICEABLE LANDMARKS .............................................................. 46
+FIGURE 28: STAIRCASES- MOST COMMONLY FOUND LANDMARK .............................................................................. 47
+FIGURE 29: SNACK AUTOMATS- EASILY RECOGNIZABLE ........................................................................................... 47
+FIGURE 30: INFORMATION BOARDS- USUALLY THE MOST IMPORTANT LANDMARKS ...................................................... 48
+FIGURE 31: WASHROOMS, COMMON LANDMARK.................................................................................................. 48
+FIGURE 32: ELEVATORS .................................................................................................................................... 49
+FIGURE 33: FLOWCHART TO DERIVE AN INDOOR LANDMARK .................................................................................... 50
+FIGURE 34: LEVEL OF MARKING THE INDOOR LANDMARKS IN DESCENDING ORDER OF SELECTION ..................................... 51
+FIGURE 35: MAP REPRESENTING ROUTE FROM MAIN ENTRANCE TO CAFETERIA VIA CARL VON LINDE HÖRSAAL ................. 65
+FIGURE 36: MAP REPRESENTING ROUTE FROM MAIN ENTRANCE TO CAFETERIA VIA CARL VON LINDE HÖRSAAL ................. 66
+FIGURE 37: MAP DEPICTING THE ROUTE FROM MAIN ENTRANCE TO CAFETERIA VIA CARL VON LINDE HÖRSAAL ................. 67
+FIGURE 38: CONTINUATION OF FIGURE 37 ........................................................................................................... 68
+FIGURE 39: ROUTE MAP OF MAIN ENTRANCE TO ROOM NO. 0714 VIA LIBRARY .......................................................... 69
+viiList of Tables
+TABLE 1: TABLE FOR KEYWORDS OF INDOOR LANDMARK DEFINITION BY VARIOUS AUTHORS ............................................ 19
+TABLE 2: PRE-TESTED ROUTE 1 FROM MAIN ENTRANCE (ARCISSTRAßE 21) TO ROOM NO. 0714 VIA LIBRARY ................... 22
+TABLE 3: PRE-TESTED ROUTE 2 FROM ADMINISTRATIVE OFFICE TO CARL VON LINDE HÖRSAAL TO CAFETERIA .................... 24
+TABLE 4: DIVISION OF GROUPS AND TASKS FOR THE USER TEST ................................................................................. 26
+viii1 Introduction
+1.1 Navigation in Indoor and Outdoor Environments
+Navigation refers to the study that involves the determination of position and direction. It is a
+known fact that outdoor navigation has gained utmost prominence in the past decade.
+Technically, scientifically and academically, navigation focused on the outdoor cartography
+and less prominence was given to indoor cartography. In fact, outdoor navigation has become
+so prominent that it is used in a person’s day-to-day life with different tools like maps, GPS,
+smartphone apps. Nevertheless, it is seen from recent publications on indoor cartography that
+lately, indoor navigation is being the main focus for researchers which resulted in developing
+relevant theories for academia and also leading to technical developments. In spite of the
+contributions made, the indoor navigation stream is in need of a constant development and
+attention, which means that to take the indoor navigation on to a practical level, lot more
+research has to be done and the results should be accessible to the audience. It can be said
+that lack of accurate data and expensive technology are two of the main reasons for indoor
+navigation to fall behind in development than outdoor navigation.
+Through this thesis, an attempt is made to contribute theoretically to the field of indoor
+navigation.
+Indoor navigation is becoming a much bigger topic day-by-day because of the complexity it is
+causing in a person’s daily life. Navigation is supposed to be one of the simplest tasks in one’s
+life to make travelling easier. But, in today’s urban world, navigation is no more an easy task.
+Especially, when it is related to a complex indoor structure, it is becoming almost impossible
+at times to reach the desired destination. This thesis, as the title denotes, addresses the issue
+of indoor navigation and indoor landmark identification. In the fast growing field of Geographic
+Information Systems, it is absolutely important that we use navigational equipment such as
+GPS (Global Positioning System) and maps to make our lives simpler and save time. But this
+scenario is true only when outdoor environment such as roads are considered, as there is
+already sufficient data and media that is being implemented into the navigational systems that
+are being used in a person’s day-to-day life. Also, there is constant attention to detail of the
+data being uploaded and with the increasing technology, it is becoming easier to update the
+navigational systems for more accurate information. In order to implement this indoors such
+as in university buildings, airports, shopping malls, etc., the researchers are finding inhibitions
+with the technology which has some limitations concerning the accuracy of location
+information, required output media and also cognition of the user.
+11.2 Background and Motivation
+Lyu, H. et al. (2015) proposed guidelines for the users to perform better navigating and
+orienting in an indoor environment by building mental maps, reasoning of a route plan, and re-
+orienting for maintaining the right direction. There are sometimes failures in navigating in an
+indoor environment because of the poorly executed design of the building and the poorly
+designed sign system and numbering system.
+Indoor wayfinding is usually performed in two situations: 1) when people plan their route across
+multiple rooms in a complex indoor structure and 2) when people want to find a place in a big
+complex building. Reorientation takes place when people face choices between different
+directions (or routes). Landmarks are important in both the above mentioned tasks for which
+spatial knowledge is also required.
+Spatial knowledge for wayfinding can be categorized into three levels, i.e. landmark
+knowledge, route knowledge and survey knowledge. Landmarks are served in wayfinding for
+multiple purposes, such as organizing space structure, indicating orientation, and denoting
+location (Lynch, K., 1960; Presson, CC. and Montello, DR., 1988; Lovelace, K. et al., 1999).
+For navigation applications, landmarks are also considered as important elements (Burnett
+GE, 1998; Hölscher, C. et al., 2006; Millonig, A. and Schechtner, K., 2007).
+The research done till today in the field of indoor navigation has truly achieved notable success
+along with theoretical, scientific and technical developments. Although, while revising the
+context of the previous papers, there is an unoccupied space where a clear definition of an
+indoor landmark is lacking. Or, it can be said, a more vivid definition is required in order to
+understand the scenario of indoor landmarks and indoor navigation along with which we also
+need to understand the workflow of how to derive an indoor landmark and how it is different
+from outdoor landmark and navigation.
+Therefore, the aim of this thesis is to develop a vivid definition for indoor landmark and study
+the existing research papers of Lynch, Presson and Montello and Lovelace as well as Burnett,
+Hölschcer, Millonig and Schechtner on indoor landmark extraction and indoor navigation. In
+addition, the thesis focuses on deriving a flowchart on how indoor landmarks would be
+identified and derived, comparisons between an indoor and an outdoor landmark and also on
+defining the characteristics of an indoor landmark. A user test is conducted in order to prove
+the hypotheses developed.
+21.3 Problem Statement and Goals
+Ohm, C. et al. introduced in 2014 the entities that could be indoor landmarks, for example,
+doors and stairs (Ohm, C., 2014). But, a vivid definition of an indoor landmark is still to be
+developed, along with this, the differences between and indoor and an outdoor landmark,
+extraction process of an indoor landmark and identification of the characteristics of indoor
+landmarks are to be given insights for the development of indoor navigation. To address these
+problems, the goals of this thesis are listed as follows:
+1. To give a theory on differences between an indoor landmark and an outdoor landmark and
+describing the characteristics of an indoor landmark.
+2. To develop a vivid definition for the term ‘indoor landmark’ that can be used by the future
+researchers.
+3. To develop a flow chart that describes the flow of actions performed in identifying a
+geographical or a structural entity as a landmark.
+4. To perform a user test in order to verify the above mentioned theories.
+1.4 Hypotheses and Research Questions
+1.4.1 Indoor Landmark Definition
+Lynch, K. (1960) defined landmarks as external points of reference that are not part of a route.
+While this definition forms the basis of any landmark, the definition of the indoor landmark is
+given through a hypothesis as:
+An ‘Indoor Landmark’ is a point of interest in the inside of a structure which could be a
+route maintenance point, an external point of reference or a route decision point that
+can either help the person to navigate and explore inside the building or to locate the
+desired point of interest.
+The above definition explains that any entity that is helpful in maintaining the route taken,
+deciding which route has to be taken and/or can be taken as a point of reference in any indoor
+structure can be considered as a landmark. This landmark can be either used to reach a
+particular destination or to explore in the inside of the structure.
+31.4.2 Research Questions
+The potential research questions, based on the above mentioned goals of this thesis include:
+1. What is the difference between and indoor and an outdoor landmark?
+2. What are the characteristics of an indoor landmark? What feature or quality belonging to
+an entity would serve as a landmark in an indoor structure?
+3. How can an indoor landmark be defined?
+4. What are the indicators on how these indoor landmarks should be extracted?
+1.5 Methodology
+To answer the research questions mentioned above, certain methods are adopted for each of
+the questions.
+The behaviour of the participants, during and after the user test is studied in the process of
+determining the differences between an outdoor landmark and an indoor landmark. The user
+test also helped further in determining the characteristics of an indoor landmark.
+For defining indoor landmark, screening of the existing definitions of an indoor landmark by
+preparing matrix tables of keywords of the definitions from the previous papers was performed.
+Also, two landmark tables were prepared for two different routes of Technische Universität
+München (TUM) main campus by describing the landmark category and the information related
+to the landmark. A whole new and vivid definition is developed by considering the results of
+previous research works and the results of user test conducted in the process of this thesis.
+The flow chart for showing the procedure of deriving a landmark is developed by observation
+of the participants’ behaviour during the user test, pre-test procedure results and also from
+previous results of the research done on indoor landmark and indoor wayfinding.
+As mentioned in the above paragraph, a pre-test is done by taking two different routes from
+the TUM main campus into consideration to give the participants an idea of what an indoor
+landmark is, what necessary information is to be provided while describing a route. This is
+continued with a user test.
+41.6 Thesis Structure
+Chapter 2 of this thesis consists of the literature review on the previous scientific results i.e.
+the previous scientific papers on indoor landmarks and indoor navigation are studied and a
+literature review is given based on the results of the studied papers.
+The next chapter 3 includes a landmark keywords table which is developed using the previous
+definitions of indoor landmarks. Also, the chapter includes two other landmarks tables that
+were developed to perform the user test of two different routes within the TUM main campus
+building.
+The fourth chapter of the thesis describes the user test and its analysis. By performing the user
+test, the behaviour of the participants is analysed in attributing a particular structure to a
+landmark, which further contributed in explaining about an indoor landmark, indoor navigation
+and the characteristics of an indoor landmark.
+Chapter 5 explains the thesis results which starts by defining an indoor landmark, followed by
+determining the characteristics of an indoor landmark, comparison and differences between
+an indoor and an outdoor landmark, a flow chart which describes the steps that can be followed
+in order to derive a landmark and extraction of a set of potential landmarks.
+Conclusions and further research that can be conducted in the field of indoor navigation in
+described in chapter 6.
+52 Literature Review and Scientific Background
+Navigation is all about ascertaining one’s position, planning of a route from that position to a
+destination and following the route. From day-to day navigation experience, it can be said that,
+for planning of a route from one location to another, spatial knowledge is required. Spatial
+cognition plays an important role in planning a route between two or more locations. According
+to Denis, M. and Loomis, JM. (2007), spatial cognition refers to the acquisition, organization,
+utilization, and revision of knowledge about the spatial environments. These capabilities
+enable humans to manage basic and high-level cognitive tasks in everyday life which include
+navigating indoors as one of the main tasks. Researchers have been working on indoor
+navigation focusing on various aspects along with spatial cognition. These aspects include
+visual salience, structural salience, semantic salience, cognitive model of indoor environment,
+representation of indoor places, and several others. In the following sub-chapters, a clear
+elaboration of these aspects are given one after the other, initiating with the importance of
+spatial cognition for wayfinding.
+2.1 Spatial Cognition for Wayfinding
+Spatial cognition researches have shown that humans often need landmarks for an easy and
+successful wayfinding and when indoor scenario is considered, the indoor navigation systems
+are required to contain landmark information to improve their usability. From the research work
+by Wang, RF. and Brockmole, JR. (2003); Hölscher, C. et al. (2006), it is stated that people in
+buildings can hardly maintain a sense of global orientation, they also tend to assume the same
+configuration on different floors, and get confused when floors change. From this, it can be
+said that wayfinding in unfamiliar buildings is never an easy task. Therefore, during way-
+finding, people need to build up mental maps, reason a route plan, re-orientate and keep the
+right direction (Lyu, H. et al., 2015). They may lose their path, whenever a mistake takes place.
+These mistakes may occur due to unconventional architectural design, poorly designed sign
+system and numbering system. Navigation systems with automatic routing function shall be
+useful for way finders. Landmarks are needed to increase the usability of navigation systems
+(Gluck, M., 1991).
+Many landmark based indoor navigation applications have been reported, but most of them
+use pre-defined landmarks, while only a few of them considered landmark selection process
+(Lyu, H. et al., 2015). In the already mentioned publication, Lyu et al. attempted to enrich the
+landmark concept with theories on cognition, affordance and space syntax by proposing
+6several salience indicators and a computational method for the extraction of indoor landmarks
+from a geo-database. The paper gave a conclusion that indoor navigation is still on its early
+stage.
+Knowledge about human spatial cognition is very important for explaining, predicting and
+understanding people’s behaviour in a geographic space (Mark, D., 1997). Human spatial
+cognition is a part of the interdisciplinary research area of cognitive science. Researchers from
+many academic disciplines, such as psychology, linguistics, anthropology, philosophy, and
+computer science investigate about mind, reason, experience, and people’s
+conceptualizations of the world in which they live (Lakoff, G., 1987). In particular, cognitive
+science deals with the study of human intelligence in all of its forms, from perception and action
+to language and reasoning. The exercise of intelligence is called cognition (Osherson, D. and
+Lasnik, H., 1990).
+Mark et al. (1999) present a hypothetical information flow model for spatial and geographical
+cognition. It consists of four stages: 1) acquisition of geographical knowledge, 2) mental
+representations of geographical knowledge, 3) knowledge use, and 4) communication of
+geographical information. Spatial cognition refers to both perceptual and conceptual processes
+involved in understanding the physical environment. Therefore, wayfinding theories need to
+integrate a link between perception and cognition if they want to serve as plausible accounts
+of people’s everyday experience (Allen, G., 1999).
+2.1.1 Navigational Tasks and Communication of Navigational Information
+Navigation has two fundamental tasks: wayfinding and motion. These tasks are performed
+iteratively until people reach their destinations. The term ‘wayfinding’ was originally introduced
+by Lynch, K. (1960). Golledge, R. (1999) described it as a purposive, directed and motivated
+activity of determining and following a path or route between an origin and a destination. During
+wayfinding in an unfamiliar environment, people cannot use an internal map but have to rely
+on the external sources to satisfy their information needs (Gluck, M., 1991). Positioning and
+re-orientation are two major parts of navigation. It is given in this paper that positioning takes
+place when people need to check their location. Mental maps or external tools such as GPS
+receiver or maps are often involved in positioning. Re-orientation takes place when people
+face choices between different directions or routes. Landmarks are important in both of these
+tasks. According to Golledge, R. (1999), basic geometry of space and its cognitive maps can
+7be summarized in terms of points, lines, areas, and surfaces. Thus, wayfinding environment is
+usually represented as route network and referenced with landmarks.
+Findings in spatial cognition have shown that humans need landmarks for an easy and
+successful wayfinding.
+There are two different kinds of route directions to convey the navigational information to the
+user, either in terms of description (verbal instructions) or by means of a depiction (route map).
+According to Tversky, B. and Lee, P. (1999) the structure and semantic content of both is
+equal. It is important to consider information needs because people trying to find their ways in
+unfamiliar environments do not have a previously acquired mental representation. Therefore,
+they depend on external information. Simulating people’s wayfinding behaviour in a cognitively
+possible way requires the integration of structures for information perception and cognition in
+the underlying model. Raubal, M. and Winter, S. (2002) used a cognizing agent to simulate
+people’s wayfinding processes in unfamiliar buildings. The agent-based model consists of two
+tiers: simulated states of the environment and simulated beliefs of the agent according to the
+authors. The agent is modelled with state, an observation schema, a specific wayfinding
+strategy, and common sense knowledge.
+2.1.2 Knowledge in the World-Dependency on External Information
+Wayfinding and orientation form integral parts of people’s daily lives. Many a times, we have
+to find our ways through cities, through buildings, along streets and highways, etc. At times,
+the environment to be navigated is unfamiliar. People visit the place for the first time and have
+to find a goal without the help of a previously acquired mental map. Therefore, they depend on
+external information or what Norman, D. (1988) calls knowledge in the world. Such knowledge
+involves the environment and is communicated through signs, guidance systems, and
+architectural clues. In many cases people find it difficult to perform wayfinding tasks in an
+unfamiliar environment because they are not provided with adequate or sufficient knowledge
+in the world. The main reason for environments being too complex to facilitate wayfinding is
+deficiency of clues (Raubal, M. and Egenhofer, M., 1998). They either lack sufficient wayfinding
+information or their architectures are poorly designed and therefore not readable.
+Previous research focused on the development of computational models that simulate
+wayfinding in familiar environments. Route-planning tasks are solved with the help of a
+simulated cognitive map. During wayfinding in an unfamiliar environment people cannot use
+8an internal map but have to rely on other sources to satisfy their information needs (Gluck, M.,
+1991).
+Human wayfinding research investigates the processes that take place when people orient
+themselves and navigate through space. Theories try to explain how people find their ways in
+the physical world, how they communicate directions, and how people’s verbal and visual
+abilities influence wayfinding. Allen, G. (1999) and Golledge, R. (1999) describe wayfinding
+behaviour as purposeful, directed, and motivated movement from an origin to a specific distant
+destination that cannot be perceived directly by the traveller. Such behaviour involves
+interactions between the traveller and the environment. Human wayfinding takes place in
+large-scale spaces (Downs, R. and Stea, D., 1977; Kuipers, B., 1978). Such spaces cannot be
+perceived from a single viewpoint, therefore people have to navigate through large-scale
+spaces to experience them. Examples for large-scale spaces are landscapes, cities, and
+buildings. Wayfinding tasks can be categorized according to their functional goals. Allen, G.,
+(1999) distinguishes between travel with the goal of reaching a familiar destination, exploratory
+travel with the goal of returning to a familiar point of origin, and travel with the goal of reaching
+a novel destination. Raubal, M. (1997) focuses on the task of finding one’s way to a novel
+destination in an unfamiliar environment. In such situations, people have to rely on symbolic
+spatial information communicated to them through the environment. Key processes for this
+type of communication relate to abilities such as matching real-world features against
+knowledge schemas of those features and understanding the symbols commonly used to
+represent real features (Golledge, R., 1999).
+People’s spatial abilities mainly depend on the following four interactive resources: 1) percep-
+tual capabilities, 2) fundamental information processing capabilities, 3) previously acquired
+knowledge, and 4) motor capabilities (Allen, G., 1999). These abilities are a necessary
+prerequisite for people to find a way from an origin point to a destination point. They are
+supposed to use environmental information, representations of spatial knowledge, and move
+through the environment. Wayfinding in a building is mainly concerned with the interactions
+between a mobile observer and large stationary objects. The foundation for this class of spatial
+abilities is sensitivity to perceptual information. Examples are obstacle avoidance and path
+integration. As for the spatial abilities, the cognitive abilities also depend on the task given.
+Finding one’s way in a street network (Timpf, S. et al., 1992; Car, A., 1996) uses a different
+set of cognitive abilities than navigating from one room to another in a building (Gärling, T. et
+al., 1983; Moeser, S., 1988).
+Research on people’s wayfinding performance helped to establish practical guidelines on how
+to design public buildings to facilitate wayfinding. Arthur, P. and Passini, R. (1990) introduced
+9the term environmental communication (i.e., “transfer of orientation, wayfinding (direction), and
+other information within the built environment by means of signs and other communications
+devices or architectural features to enable people to reach destinations”), arguing that the built
+environment and its parts should function as a communication device. They mention two major
+aspects regarding the understanding of buildings: 1) a spatial aspect that refers to the total
+dimensions of the building and 2) a sequential aspect that considers a building in terms of its
+destination routes. Destination routes should eventually lead to the so-called destination
+zones. These are groupings of similar destinations within buildings into clearly identifiable
+zones (Arthur, P. and Passini, R., 1992). In order to facilitate wayfinding to such destination
+zones the circulation system should be of a form people can easily understand.
+2.2 Characterization of an Entity as a Landmark
+Sorrows, M.E. and Hirtle, S.C. (1999) proposed three types of landmarks. The authors
+presumed that the visual, semantic, and structural attraction of features in geographic
+space determine their use as landmarks in human spatial reasoning and communication. The
+description of the three types of attractions to characterize an entity as a landmark is given by
+the authors as below:
+Visual Attraction: Landmarks qualify as visually attractive if they have certain visual
+characteristics such as a sharp contrast with their surroundings or a prominent spatial location.
+The formal model given by the authors of this paper for landmark saliency includes four
+measures regarding visual attraction: Façade area, shape, colour, and visibility.
+ Façade Area: The façade area or simply, the front facing of an object is an important
+property for determining its contrast to surrounding objects. People tend to easily notice
+objects whose façade areas significantly exceed or fall below the façade areas of
+surrounding objects. For example, figure 1 shows a building with a contrasting facade
+area.
+10Figure 1: Façade area of TUM Audimax
+ Shape: Visual attraction of an object is also determined by its shape. Unorthodox
+shapes like the shape of the office building of the fisheries department in Hyderabad
+shown in figure 2, amidst conventional rectangle-like shapes strike one’s eyes.
+Formally, specification of the shape measure of an object is done by considering its
+shape factor and also the deviation of its shape from that of a rectangle. The shape
+factor represents the proportion of height and width. For example, skyscrapers have a
+high shape factor, whereas long and low buildings have a low shape factor. The value
+of deviation is the difference between the area of the minimum-bounding rectangle of
+the object’s façade and its façade area.
+Figure 2: Office building of fisheries department, Hyderabad, India
+11 Colour: An object can stand out from surrounding objects based on its colour. For
+example, imagine a red fire department building in the midst of a set of grey buildings
+or pink, yellow and green coloured buildings like seen in figure 3.
+Figure 3: Pink, yellow and green coloured buildings having uniqueness of their own
+ Visibility: The final property to be measured is the prominence of spatial location as
+seen in figure 4, where the Rathaus building is located in the centre of the city. The
+authors, Sorrows and Hirtle proposed to measure this property by calculating two-
+dimensional visibility. Visibility is considered for the space used in the actual mobility
+mode. It is assumed that visibility is limited by recognisability, for which reason a pre-
+defined buffer zone limits the considered space (and reduces computational
+complexity).
+Figure 4: Rathaus at Marienplatz, Munich
+12 Other Visual Properties: Other properties of an object, such as its texture and condition
+also influence the contrast to surrounding objects as seen below in figures 5 and 6
+respectively. The texture of an object is often hard to identify, both from databases and
+in the real world. The condition of an object refers to its age and cleanliness. According
+to the authors, age is easy to determine from a database, but often very hard to guess
+in the real world. For example, a building may be very old but due to a recent renovation
+looks new. Cleanliness is a subjective measure and therefore hard to specify within
+formal terms.
+Figure 5: A building showing glass textured facade
+Figure 6: An old house with poor maintenance
+13Semantic attraction: The authors’ notion of semantic attraction is similar to that of cognitive
+attraction, which focuses on the meaning of a feature. Semantic measures for the formal model
+of landmark saliency comprise cultural and historical importance of an object, and explicit
+marks.
+Structural attraction: A landmark is structurally attractive if it plays a major role or has a
+prominent location in the structure of the spatial environment. Examples are intersections and
+down-town plazas.
+The definitions which are seen in the following chapter 2.3 are defining an indoor landmark
+based on the characteristics stated in chapter 2.2.
+2.3 Analysis of Existing Definitions of an Indoor Landmark
+As already mentioned above, the definition of landmark is given by Lynch, K. (1960) as an
+external point of reference that is not part of a route. Sorrows, M.E. and Hirtle, S.C. (1999)
+defined landmarks as points that serve multiple purposes in wayfinding as organizing concept
+which help people build up structured spatial knowledge representation and navigational tools.
+According to Raubal, M. and Winter, S. (2002), navigation services communicate optimal
+routes to users by providing sequences of instructions for these routes. Each single instruction
+guides the way finder from one decision point to the next. The instructions are based on
+geometric data from the street network, which is typically the only dataset available.
+Presson, CC. and Montello, DR. (1988) proposed two kinds of landmarks based on wayfinding
+activity, i.e. route decision landmarks, which are cues for turnings at decision points; route
+maintenance points, which help to keep human on the routes.
+As indoor landmark extraction is still on its early age, analysing such theories as mentioned
+above would contribute in developing new theories for indoor cartography. Existing cognitively
+based computational models for wayfinding focus primarily on the exploration of mental
+representations rather than focusing on the information needs for wayfinding. It is important to
+consider information needs because people trying to find their ways in unfamiliar environments
+depend on external information as they do not have a previously acquired mental
+representation. Lyu, H. et al. (2015) have shown that automatic selection of indoor landmark
+is still on its early stage and a quality-measurement system is missing.
+14A taxonomy proposed by Montello, DR. (1993) is introduced to help build this cognitive model
+for indoor wayfinding. The taxonomy contains three levels of indoor objects: figural level
+objects, vista level objects and environmental level objects. The description for these three
+levels is given in the following chapter.
+2.3.1 Figural, Vista and Environmental Level Entities
+In the year 1993, Montello, DR. proposed definitions for figural, vista and environmental level
+as follows:
+Figural level denotes objects that are smaller than or nearly equal to the size of the human
+body. People can directly perceive their properties or manipulate them from one place without
+any location change.
+Vista level denotes objects that are larger than the human body but can be visually perceived
+in a single view. Few examples of vista level objects include simple rooms and corridors.
+Environmental level contains objects that are significantly larger than the human body. To
+completely perceive them, people have to make a considerable position change. Objects at
+this level include irregularly shaped rooms, floor configurations and entire buildings.
+These classifications helped in performing the user test and deriving the landmarks. Also, what
+category of objects are most likely to satisfy the definition of a landmark will be seen further in
+this thesis.
+2.3.2 Salience of a Landmark
+The selection and the assessment of landmarks especially in large scale indoor environments
+is not very frequently examined. It is a fact that pedestrians prefer route instructions based on
+landmarks since they are considered to be the most effective way to communicate navigation
+instructions (Ohm, C. et al., 2014). The importance of this type of navigational aid is well
+reported. Ohm, C. et al. (2014) findings on a user study conducted in the University of
+Regensburg by assessing the visual attraction of objects with an eye tracker show that
+functional landmarks like doors and stairs are most likely to be looked at and named as an
+15indoor landmark. They could also prove that measuring visual salience is not enough to identify
+landmarks with regard to the use in a pedestrian navigation system. Previous spatial
+knowledge is crucial for way finding decisions and thus for selecting landmarks (May, A.J. et
+al., 2003).
+A landmark's salience is considered to result from visual, semantic and structural properties,
+accompanied by its advance visibility (Sorrows, M.E. and Hirtle, S.C., 1999; Winter, S., 2003;
+Winter, S. et al., 2004). However, it is still an open question, what are the features of an object
+that are most essential to assess its suitability to serve as a landmark. This is problematic
+when indoor environments are considered. Instructions require a higher density of landmarks
+since the route usually contains more turns but then there is a smaller choice of landmark
+categories despite the high diversity of distinct objects available (Brunner-Friedrich, B. and
+Radoczky, V., 2006; Radoczky, V., 2007). Even though there is strong evidence that people
+tend to get lost indoors more easily than outdoors, there is still a lack of scalable and practical
+solutions for navigation systems in large-scale indoor environments (Brunner-Friedrich, B. and
+Radoczky, V., 2006). According to the user study conducted in the University of Regensburg
+as mentioned above, visual attraction of a landmark does not seem to be the most important
+feature when it is used for indoor pedestrian navigation systems and show that functional
+landmarks are most suitable for indoor guidance. Elevators, escalators, stairs, doors, plants,
+information boards and signs were selected as potential landmarks and were later assigned to
+one of the four landmark categories (Ohm, C. et al., 2014): 1) Architecture: pillars and fronts,
+2) Function: doors, stairs and elevators, 3) Information: signs and posters and 4) Furniture:
+tables, chairs, benches and vending machines
+The above mentioned categories are not used in this thesis but the examples that are given
+for the four landmark categories are used as indoor landmarks.
+2.3.3 Wayfinding Instructions using Landmarks
+According to Raubal, M. and Winter, S. (2002), navigation services communicate optimal
+routes to users by providing sequences of instructions for these routes. Each single instruction
+guides the way finder from one decision point to the next. These instructions are based on
+geometric data from the street network, which is typically the only dataset available to us, as
+already mentioned. Raubal, M. and Winter, S. (2002), focus on enriching such wayfinding
+instructions with local landmarks. The main challenges are the automatic definition and
+16extraction of appropriate salient features, i.e., landmarks, from the available datasets. Among
+the different meanings of landmark is that of an object or structure that marks a locality and is
+used as a point of reference (Merriam, G. and Webster, N., 2001).
+Allen, G. and Golledge, R. (1999), describe wayfinding behaviour as purposeful, directed, and
+motivated movement from an origin to a specific distant destination, which cannot be directly
+perceived by the traveller. Such behaviour involves interactions between the traveller and the
+environment. Human wayfinding takes place in large-scale spaces (Deakin, A., 1996; Kuipers,
+B., 1978). Such spaces cannot be perceived from a single viewpoint. Therefore, people have
+to navigate through large-scale spaces to experience them. Examples for large-scale spaces
+are landscapes, cities, and buildings. The authors also say that people use various spatial,
+cognitive, and behavioural abilities to find their ways. These abilities are a necessary
+prerequisite to use environmental information or representations of spatial knowledge about
+the environment. The spatial abilities are task-dependent and seem to involve mainly four
+interactive resources: 1) perceptual capabilities, 2) information-processing capabilities, 3)
+previously acquired knowledge, and 4) motor capabilities (Allen, G., 1999). Allen distinguishes
+further between three categories of wayfinding tasks: 1) travel with the goal of reaching a
+familiar destination, 2) exploratory travel with the goal of returning to a familiar point of origin,
+and 3) travel with the goal of reaching a novel destination.
+Landmarks are used in mental representations of space (Habel, C., 1988) and in the
+communication of route directions (Michon, P.E. and Denis, M., 2001; Deakin, A., 1996;
+Werner, S. et al., 1997). Studies show that landmarks are selected for route directions
+preferably at decision points (Maaß, W. and Schmauks, D., 1998; Lovelace, K. et al., 1999).
+Another study (Lynch, K., 1960) has shown that mapped routes enriched with landmarks at
+decision points lead to better guidance, or less wayfinding errors, than routes without
+landmarks. Lynch characterizes the quality of a landmark by its singularity, where singularity
+is bound to a clear form, contrast to the background, and a prominent location. The principal
+factor is the figure-background contrast (Metzger, W., 1936). The contrast can be produced by
+any property, such as uniqueness in form or function in the local or global neighbourhood.
+Sorrows, M.E. and Hirtle, S.C. (1999), categorize landmarks into visual (visual contrast),
+structural (prominent location), and cognitive (use, meaningful) ones, depending on their
+dominant individual quality. A landmark will be stronger the more qualities it possesses. The
+authors had a basic assumption that route directions enriched by local landmarks are easier
+to understand than the ones which are only direction and distance based.
+172.4 Summary
+In this chapter, an overview of the current status of indoor navigation is provided, based on the
+theories developed and research done till date. The most importantly discussed topics were
+spatial cognition for wayfinding, analysis of the existing definitions of landmark and
+characterization of an entity as a landmark. Spatial cognition for wayfinding briefly implies that
+spatial knowledge attaining should be given utmost importance for wayfinding and navigation.
+The existing definitions on landmark provided certain keywords defining landmarks such as
+external points of reference, points serving multiple purposes in wayfinding, entities that help
+in route decision and route maintenance. In characterizing an entity as a landmark, the
+previous theories on landmarks have provided with information that could help differentiate
+between objects and objects that could be landmarks. Visual, semantic, and structural
+attraction of features in geographic space determine their use as landmarks in human spatial
+reasoning and communication which helps in better navigation.
+To contribute more to the literature review, a user test is done. A pre-user test, in which
+developing of a new definition of an indoor landmark takes place, as described in detail in the
+next chapter.
+183 Developing a New Definition for an Indoor Landmark
+After analysing the papers and drawing conclusions of what the papers defined an indoor
+landmark to be, a keyword table is formed to develop a new definition of an indoor landmark.
+The table is described in the chapter 3.1 and chapter 3.2 shows the two tables that were used
+for the pre-test in order to develop the new vivid definition of an indoor landmark. This pre-test
+was further performed with the two routes to derive the landmarks that fall along both the routes
+and to analyse the characteristics of these landmarks. This was necessary to verify the output
+of pre-user test with that of the results of user test and draw conclusions on what characteristics
+makes an entity to be defined as an indoor landmark.
+3.1 Keywords for Indoor Landmark Definition
+As seen below, the table is derived from the previous definitions given on landmark from
+various authors namely, Lynch, K. (1960), Sorrows, M.E. and Hirtle, S.C. (1999), Merriam, G.
+and Webster, N. (2001). These authors defined landmark clearly as already analysed in the
+previous chapter. The keywords of these definitions were selected as these words explain the
+term landmark, which helped in the further research of this thesis to develop a whole new
+definition for an indoor landmark.
+Authors Definition of a Landmark Keywords
+Lynch, K. (1960) A landmark is an external point of External point of reference
+reference that is not a part of a
+route.
+Sorrows, M.E. and Landmarks are points that serve Wayfinding, Structured
+Hirtle, S.C. (1999) multiple purposes in wayfinding as spatial knowledge
+organizing concept which help
+people build up structured spatial
+knowledge representation and
+navigational tools.
+Merriam, G. and Landmark is that of an object or Locality marker, Point of
+Webster, N. (2001) structure that marks a locality and reference
+is used as a point of reference.
+Table 1: Table for keywords of indoor landmark definition by various authors
+19As it can be seen from the above table, the keywords that were used in defining a landmark
+are external points, wayfinding, structured spatial knowledge, locality marker and point of
+reference.
+External points are the entities that are not a part of the route taken. These could serve as
+landmarks to maintain the route. Maintaining the route while navigating is extensively required
+and that makes landmarks as important as reaching the destination.
+Wayfinding and structured spatial knowledge are related to spatial cognition and are the most
+important aspects of navigation. This is discussed in chapter 2.1.
+As the keyword locality marker explains for itself, it is any entity that helps in remembering and
+recollecting a particular locality by making a mental representation of a landmark in a given
+geographical area. This marker is also used or known as a point of reference.
+Deriving of the above mentioned keywords from previous definitions contributed in developing
+a new vivid definition by giving clues about what kind of entities could possibly be considered
+as landmarks.
+The next sub-chapter, includes two landmark tables of two different routes taken from the TUM
+main campus building. These tables were developed to discover more landmarks that relate
+to the keywords derived in the table above. To develop these tables, a pre-test was performed
+by the author of this thesis along the two selected routes, which happen to be the routes
+including prominent locations like library, student service centre, lecture halls, snack automats
+etc. To give the participants of the user test an idea of some of the potential landmarks,
+landmark categories, giving information about the selected landmark, was the motive to
+perform this pre-test.
+3.2 Landmark Tables
+In this sub-chapter, the two landmark tables are given. The pre-test was performed with two
+routes as a clear elaboration of the indoor landmark concept was necessary to explain the
+participants before performing the user test. These two routes happen to be different from each
+other containing various entities as landmarks. These landmarks could vary from one route to
+another in any of the indoors of a structure based on its functionality. For example, landmarks
+in a shopping mall, airport and university building are different from one another.
+20The TUM was used as an example building for performing the user test as it is highly complex,
+wayfinding is not that easy and the building contains a good number of potential landmarks.
+Additionally, the chosen user group is familiar with the campus building.
+The first route starts from the main entrance of the TUM main building, passing through the
+library, the goal is to reach room no. 0714. This particular route was selected as it had
+prominent entities that could be identified as landmarks like elevators, paintings, fire
+extinguishers, staircases etc.
+The second route starts from administrative office (Student Service Centre) in the main campus
+building of TUM, via Carl von Linde Hörsaal to the Cafeteria on the terrace of the main building.
+The selection of this route was made based on the important landmarks the route has like
+lecture halls, elevators and a little complexity it causes.
+The tables below show a total of 17 and 14 landmarks respectively for first and second route
+Along with the landmarks, information related to the landmark and the category into which the
+landmark falls are given in the table.
+3.2.1 Landmarks of Route 1
+The table 2 below gives information about the landmarks that were selected along the route
+from Main Entrance (Arcisstraße 21) to room no. 0714 via Library. As it can be seen from the
+table, the details that are belonging to the landmarks are also given like the information content
+of the landmark and the category of landmarks a selected entity belongs to. A total of 17
+landmarks could be selected for this route.
+Wayfinding Landmark Keyword Related to
+S.No. Landmark
+Instruction Category the Landmark
+Main entrance Arcisstraße 21 Vista level External point of
+1
+door (start) reference
+Information Towards left Vista level Locality marker
+2
+centre
+Staircase (right) 14/EG, Environmental Structured spatial
+3 Destination: level knowledge
+Library
+21Staircase (left) 13/EG, Environmental Structured spatial
+4 Destination: level knowledge
+Library
+Trash boxes in 13/EG, Figural level External point of
+5 yellow and blue Destination: reference
+Library
+Coffee machine, 13/EG, Vista level External point of
+6 Snack automat, Destination: reference
+Wardrobe Library
+WC Entrance of the Vista level External point of
+7
+corridor reference
+Fire extinguisher Towards the exit Figural level External point of
+8
+of the corridor reference
+Info. Board- 0507 On the right Vista level Locality marker
+9 Bestelmeyer
+Nord
+Room no. 1779 End of the Vista level External point of
+10
+corridor reference
+Room no. 1777 ‘Lehrstuhl für Vista level External point of
+Kartographie’ reference
+11
+(Chair of
+Cartography)
+Corridor exit door Vista level External point of
+12
+reference
+Entrance On the left, walk Vista level Locality marker
+13
+Verkehrstsechnik straight
+Staircase (down) On the right Environmental Structured spatial
+14
+level knowledge
+Fire extinguisher Figural level External point of
+15
+reference
+WC- B2/EG U-turn Vista level External point of
+16
+reference
+Room no. 0714 On the right Vista level External point of
+17
+(destination) reference
+Table 2: Pre-tested route 1 from Main entrance (Arcisstraße 21) to room no. 0714 via Library
+22As it can be seen from the above table, most of the landmarks fall into the category of vista
+level objects. It is always important that landmarks belong to either vista level or environmental
+level objects as figural level objects could be replaced from one position to another (chapter
+2.2).
+As can be seen in table 1, trash boxes of different colours, staircases, WC etc. were selected
+as indoor landmarks. Trash boxes were selected as landmarks because of the colour of the
+boxes. As seen in chapter 2.2, an entity can be identified as a landmark based on its colour
+varying from its surroundings. Similarly, a staircase could be a landmark based on its visibility,
+which is one of the characteristics to define an entity as a landmark. In addition to this, coffee
+machine and snack automat contribute to the category of landmarks as these entities are
+commonly used and are easily recognizable. A fire extinguisher could be considered as a
+landmark as it commonly seen in every indoor structure in almost all the floors, also it is easy
+to recognize because of its red colour. Most of the landmarks derived in the above table exhibit
+the characters that were analysed from the literature review.
+3.2.2 Landmarks of Route 2
+Below, the table 3 shows the landmarks that fall along the route from Administrative Office
+(Student Service Centre) via Carl von Linde Hörsaal to Terrace Cafeteria. Also, information
+regarding the landmark and the category of the landmark is also provided. A total of 14
+landmarks were extracted along this route.
+Keyword Related to
+Wayfinding Landmark
+S.No. Landmark
+the Landmark
+Instruction Category
+Main entrance Locality marker
+1 Arcisstraße 21 Vista level
+(start)
+Environmental Structured spatial
+2 Stair case (left) 13/EG
+level knowledge
+Environmental Structured spatial
+3 Stair case (right) 14/EG
+level knowledge
+Entrance door External point of
+Administrative
+4 between Vista level reference
+office on the left
+staircases
+23Way to ‘Carl von Environmental Structured spatial
+5 Stair case (left)
+Linde Hörsaal’ level knowledge
+External point of
+6 Trash boxes On the right Figural level
+reference
+Entrance door Locality marker
+7 (1.OG- On the right Vista level
+0501/0510)
+External point of
+8 WC On the left Vista level
+reference
+External point of
+9 Elevator On the right Vista level
+reference
+Corridor exit Elevator on the External point of
+10 Vista level
+door right reference
+Locality marker
+Entrance door to
+11 On the left Vista level
+Carl von Linde
+Straight through Locality marker
+Carl von Linde Environmental
+12 the entrance and
+Hörsaal level
+on the right
+Cafeteria on the 5th External point of
+13 Elevator Vista level
+floor reference
+On the left of the Structured spatial
+Environmental
+14 Staircase entrance (exit knowledge
+level
+direction)
+Table 3: Pre-tested route 2 from Administrative office to Carl von Linde Hörsaal to Cafeteria
+Similar to route 1, route 2 also has most of the landmarks that fall into the category of vista
+level objects. The landmarks derived for route 2 are similar to that of route 1 except for a few
+such as elevators and Carl von Linde Hörsaal lecture hall. Elevator is described as a landmark
+because of its functionality as recognisability. The lecture hall Carl von Linde Hörsaal is a
+landmark because of its semantic attraction. It is convenient to find objects than are larger than
+the size of the human body than smaller objects. Vista level and environmental level entities
+are easier to locate than to locate figural level objects.
+Completion of the pre-user test along with its results now lead to the user test in chapter 4,
+where the user group perform wayfinding and locate the landmarks that fall along the two
+routes where the pre-user test was performed.
+244 User Study for Indoor Wayfinding
+This chapter holds a user test in order to answer the research questions mentioned in chapter
+1.4.2. To perform this user test, students of M.S. Cartography, 2016 intake were taken into
+consideration. All the 20 students of this intake were asked to participate in the user test.
+However, at the end 14 students participated but the results can be considered as acceptable.
+Before starting with the user test, a presentation describing the term landmark, idea of the user
+test, drive through the idea, the routes to be tested and the execution procedure was given to
+the participants. The entire presentation is given in the annex (chapter 8.1). The hypothesis
+definition was not given because a proof was required for the hypothesis definition and also to
+avoid influencing the user group. Instead of the hypothesis definition, a simple definition of
+landmark was chosen to explain the participants the overall concept of identifying an entity as
+a landmark as given in figure 7 below.
+Figure 7: Landmark definition given to the participants of the user test
+254.1 Task Description and User Group
+After performing a pre-test of the two routes as mentioned in chapter 3.2.1 and 3.2.2, the user
+test was ready to be conducted. To give the students an insight about the thesis goals and
+explain what indoor navigation is, a presentation was given as described above and the pre-
+test result sheets were handed over to the participants.
+Task of this user test is to derive landmarks along the two given routes, analyse the
+characteristics that makes the selected entities as landmarks, identify the differences between
+an indoor landmark and an outdoor landmark and identify already given landmarks from the
+results of the pre-tested routes. After the user test, a questionnaire is handed over to the
+participants of the user test to fill in. The results of this questionnaire are further analysed to
+study the knowledge gained by the participants about indoor wayfinding and indoor landmark.
+Table 4: Division of groups and tasks for the user test
+As seen in the above table, the user test is conducted with 14 students. These 14 students are
+divided into 2 groups of 7 participants each. Among these 14 students, 8 were female and 6
+were male, aged 22-27 on an average. The background of most of the participants was
+Geography, Surveying and Geo-Information. The students of group 1 analyse the pre-tested
+route 1 and perform wayfinding for new route 2 and vice-versa as seen from the figure above.
+The pre-tested route was given before performing the new route wayfinding in order to verify
+if the participants were influenced by the landmarks that were derived during the pre-test.
+Each task takes about 15-20 minutes. To complete the user test, the time consumed is around
+1 hour 10 minutes.
+26The questionnaire to be filled in by the participants is mentioned in appendix user test material
+under chapter 8.2. This questionnaire includes queries that are related to the participants’
+previous experience and knowledge on indoor wayfinding and navigation, the knowledge they
+have gained after performing the user test about indoor navigation and how it differs from
+outdoor navigation.
+Students’ knowledge about Navigation and landmarks before the user test:
+Before starting the user test, students were asked to give their ideas on landmarks. Most of
+the students with similar background like Geology, Geography, Geological engineering,
+Surveying, Urban engineering had an idea of what a landmark is and what factors contribute
+for a feature to be a landmark. The bar chart in figure 8 below shows the students and their
+educational background information more precisely.
+Educational stream background of Participants
+8
+7
+s6
+t
+n
+a
+p5
+ic
+it
+r4
+a
+P
+f o r3 5
+e 4
+b m2 3
+u 2
+N1
+0
+Surveying Geology Geography Arts & Science
+Stream of previous education
+Figure 8: Educational stream background
+Previously performed navigation tests in an Indoor environment:
+The user test was conducted with 14 students. Out of these 14 students, only 4 students have
+performed a similar user test previously as the user test given to them for this thesis. These
+were these students with Geographic Information Systems and Geography background. This
+is represented graphically with a pie-chart in figure 9.
+27Pie-chart representing participants' user test
+previous experience
+29%
+71%
+Previously performed Previously not performed
+Figure 9: Previous experience of user test participants possess
+4.2 User Study Motive
+The motive of performing this user test is to contribute to the existing theories on indoor
+landmark and discover new landmarks from users’ perspective. Additionally, the user test also
+aims to analyse the definition of a landmark and factors influencing the derivation of a
+landmark. This will be derived based on the behaviour of the participants while performing the
+user test. Additionally, the test aims to describe the differences between an indoor and an
+outdoor landmark. This would help the future researchers to develop vivid explanations and
+contribute more precisely to the field of indoor navigation. Also, the user test helps in analysing
+how wayfinding behaviour is exhibited in indoor environment by observing the areas of focus
+by the participants taking part in the user test. Based on the behaviour of the participants in
+the user test, a flowchart is derived depicting how a landmark can be extracted from a given
+geographical data.
+A flow chart in figure 10 shows graphical depiction of the procedure to be followed to fulfil the
+motive of the user test.
+28Understanding the
+Determine the
+Understandingthe differences between
+characteristics of an
+term landmark an indoor and an
+indoor landmark
+outdoor landmark
+Devloping a
+flowchart in order to
+Defining the term
+derive a landmark
+'Indoor Landmark'
+from a given
+geographical data
+Figure 10: A flow chart describing the motive of performing the user study
+4.3 Execution of the User Test
+For the user test to be executed, the procedure followed is as follows:
+There are two routes given as described in chapter 3.2 in which the participants are supposed
+to find their way and locate the landmarks which takes 15-20 minutes for each group.
+While performing the identification of landmarks from the pre-tested routes, each group
+exhibited a behaviour of analysation which further helped them to locate the landmarks of a
+new route. Although, for not all the students it was easy to locate the landmarks. The students
+who had previous experience of performing such user test performed the task with an ease
+while the other faced difficulties finding the landmarks and the route to be taken. To ease the
+students facing difficulty, a few wayfinding instructions were given like which route to take.
+While the choice of elevator available, some of the students opted to find their way through the
+staircase. The other users who hadn’t opted for the elevator and the students who opted to
+use the elevator, both the groups seemed to find the consecutive destination in a similar
+manner.
+Most of the students found route 1 to be easier than route 2 as route 1 leads to one of the
+lecture halls of the students that they already know. The other route 2 was quite unfamiliar
+29route which caused the difficulty. The participants are also asked to draw the route maps of
+the new route for which they are finding way and landmarks. All the participants drew the maps
+of the respective routes taken while only some of the maps were considered which were
+visually attractive and informative as visual attraction plays an important role in defining an
+entity as a landmark. The considered maps are shown in annex 8.3.
+The anticipated results were derived based on the pre-user test and described in the following
+chapter 4.4
+The user test was completed with the filled-in questionnaires, where the next task was to
+analyse the results of the user test (chapter 5).
+4.4 Anticipated Results of the User Test
+The anticipated results were derived as a result of the pre-user test and to answer the research
+questions as mentioned in 1.4.2.
+The expected results should ideally contain a minimum of 10 landmarks in each given route.
+In addition to the landmark, the participants are also expected to provide information about/of
+the landmark or wayfinding instruction considering the pre-tested route as an example.
+The given questionnaire is expected to be filled out by every participant from which the
+characteristics of indoor landmarks could be derived along with the development of a vivid
+definition of an indoor landmark.
+As a result, the output would have the definition of the landmark, differences between an indoor
+and an outdoor landmark and wayfinding, a flow chart on how a landmark can be extracted
+from a given geography, characteristics of indoor landmarks and examples of a set of indoor
+landmarks.
+One of the results of maps drawn by a student who took part in the user test is given in figure
+11.
+30Figure 11: Route map depiction of route 2 by one of the users
+The route map shows route 2. From the map, it can be seen that the participant was
+comfortable using arrows, wayfinding instructions and names of the entities to navigate
+through an unknown route rather than using symbols for landmarks.
+A set of potential landmarks are also derived both from pre-user test and user test. Most of the
+participants derived the landmarks with ease while for a few it was difficult as they lacked
+previous experience of wayfinding and identification of landmarks in an indoor structure. A few
+of the indoor landmarks extracted included trash boxes (figure 12), information boards (figure
+13), staircases and lecture halls with room numbers.
+31Figure 12: Trash boxes: figural level objects of indoor landmarks
+Although trash boxes fall under the category of figural level objects, they can still be considered
+as landmarks where there are no other potential sources of landmarks or these can also be
+additional reference points apart from the main landmark.
+Figure 13: Information board showing direction for different point of interests
+In figure 13, an information board can be seen that shows 6 different destinations along the
+straight path from its position. Information boards, though belong to figural level category of
+the indoor objects, can be considered as landmarks because the information that they contain
+is most likely to not get replaced, for example, lecture halls, auditoriums and other important
+rooms. Therefore, information boards form a very good source of indoor landmarks.
+32Indoor landmarks could be varying from one indoor structure to another. The derived indoor
+landmarks in this thesis are examples of landmarks in a university building. Landmarks could
+be different in an airport, in a hospital and in a shopping complex. For example, in a hospital,
+landmarks could be emergency ward (figure 14), reception, a vending machine etc. In a
+shopping mall, one could use the shop names, WC’s, food court (figure 15), seating area as
+landmarks. Similarly, at an airport, landmarks could be different attractions like trees (figure
+16), gate numbers (figure 17), shops, WC’s, baggage claim, etc.
+Figure 14: Emergency ward in a hospital building
+Figure 15: Food court at Century City
+33Figure 16: Inside Changi International Airport, Terminal 3, Singapore
+Figure 17: Gate numbers as landmarks in airports
+The landmarks derived from the user test relate to the landmarks mentioned in the paragraph
+above in their characteristics. For example, the emergency room board in a hospital building
+is similar to the information board that is derived while performing the user test, the food court
+is similar to the terrace cafeteria which is the destination point of route 2. The landmarks
+34derived in different indoor structures might be different but they do relate with each other based
+on the characteristics they own.
+While the above mentioned scenario is an anticipation of the results, with the completion of the
+user test, the next chapter 5 is about the results that are derived based on the literature review,
+pre-user test and user test conducted.
+355 Results and Discussion
+In the previous chapter, the description of the user test and the procedure of how the user test
+is carried out was described. In this chapter, the results of the user test performed is presented
+along with the analysis of the findings and the further research that can be done by considering
+the results of the user test.
+5.1 Questionnaire Results
+The questionnaire’s results are given along with the questions asked below. The questionnaire
+is given in appendix 8.2. The questionnaire starts with some general questions like gender,
+age, country of origin and previous educational background followed by 12 questions focusing
+on the previous experience of the participants with navigating indoors and outdoors and other
+related questions as seen below:
+The result of question 1 (user test experience) is already explained in chapter 4.1.
+Question 2: Difficulty level experienced by the students for locating a landmark in an indoor
+structure:
+Most of the students experienced moderate level of difficulty to locate a landmark in an indoor
+structure until they performed this user test. A very few students have experienced low level
+difficulty and these students happened to have had similar background related to GIS and
+Cartography.
+Difficulty experienced to locate indoor landmarks
+le
+v
+e
+l
+y
+t
+lu
+c Low 9
+iff
+iD
+Moderate 5
+High
+0 1 2 3 4 5 6 7 8 9 10
+Number of Participants
+Figure 18: Difficulty level to locate the indoor landmarks
+36Question 3: In a typical day, how often does navigating indoors make you feel inconvenient?
+The students have said that navigating in indoors made them feel inconvenient only when the
+structure was a maze and huge. For small buildings, navigating was never a difficult task
+because of the simple structure and planning.
+Difficulty navigating in a huge indoor
+structure
+36%
+64%
+Difficult Moderate
+Figure 19: Difficulty level faced to navigate in a huge indoor structure
+Question 4: How often are printed maps used in an indoor environment?
+When the students were asked about the pace of using printed maps in an indoor environment,
+most of the students replied saying ‘sometimes’ while a few replied saying ‘rarely’. Usage of
+maps in an indoor environment is based on the size and complexity of the indoor structure
+which is why it is sometimes difficult to navigate indoors.
+Printed maps usage in an indoor environment
+21%
+79%
+Sometimes Rarely
+Figure 20: Usage of printed maps in an indoor environment
+Question 5: How often are technology oriented navigating tools like GPS, Smartphone are
+used in an indoor environment?
+37Technical devices like Smartphones and GPS are rarely used to navigate in an indoor
+environment. The reasons being data unavailability and technical on-going development in the
+field on indoor navigation.
+Usage of navigational equipment in outdoor
+and indoor environments
+28%
+72%
+Outdoor Indoor
+Figure 21: Usage of navigational equipment in outdoor and indoor environments
+Question 6: Is navigation easier in an outdoor environment or an indoor environment?
+The questionnaire result shows that some students find navigating in an outdoor environment
+is easier because of the ease to locate landmarks and already available geographical data and
+output media while some find navigating in an indoor environment easier.
+Ease of navigating in an indoor environment vs.
+outdoor environment
+43%
+57%
+Indoor Outdoor
+Figure 22: Ease of navigation in indoor vs. outdoor
+Question 7: How easy was it to locate the landmarks of a new route in the TUM main building
+after looking and walking through the pre-tested route locating the given landmarks?
+38After having walked through the pre-tested route, it was moderate for some of the students to
+locate the landmarks in a new route while for some students it was easier as they possessed
+previous knowledge about the subject area.
+Identification of landmarks for a new route
+36%
+64%
+Moderate Easy
+Figure 23: Difficulty level faced while locating landmarks for a new route
+Question 8: Through this user test, did you gain new knowledge about indoor navigation and
+indoor landmarks?
+To this question, all the students answered saying ‘yes’, which is proved in other questions of
+the questionnaire related to indoor wayfinding and indoor landmark.
+Question 9: Understanding of the term indoor landmark after the user test by the students:
+After the user test, the students gave different descriptions of their understanding of the term
+indoor landmark, which are the following:
+ An indoor landmark is a distinctive marker. (Given by 2 students)
+ An entity that allows us to clearly identify the way that is required to be taken.
+ An easily identified object which should serve as orientation object related with a
+specific place.
+ A prominent feature of an indoor especially those that cannot be moved, like stairs.
+(Given by 2 students)
+ A well recognizable feature that can be used for orientation (can be a sign, an
+architectonic feature, furniture and similar).
+ An object that is either prominent or conspicuous that can serve as a guide for finding
+our way. For indoors, it could be staircase or a hallway.
+39 An indoor landmark is a reference point (object, entity) that helps us to orient in an
+indoor space. (Given by 3 students)
+ A distinctive entity which is visually/ spatially dominant and/or informative for spatial
+orientation.
+ A recognizable feature in the scene that is a potential reference point.
+From these definitions, an indoor landmark can be explained as an easily recognizable entity
+that is visually and spatially dominant and is also a distinctive marker that helps orientation
+when an indoor space is considered.
+Although 14 students filled in the questionnaire, only 9 definitions were taken into consideration
+as the other 5 definitions were similar to the other 9 definitions mentioned above.
+Question 10 and 11: Difference between an indoor and an outdoor landmark:
+The user test completion proceeded with questions of differences between an indoor and an
+outdoor landmark to the students. The feedback included that there are significant differences
+between an indoor and an outdoor landmark by most of the students. The responses given are
+as follows:
+ Types of features, example: staircase vs. traffic light. (Given by 4 students)
+ The indoor landmarks are more limited and of different type (more sophisticated) and
+concentrated in much smaller area.
+ For indoor landmarks could be parts of an interior structure and for outdoor landmarks,
+entities from outdoor environment are used. (Given by 4 students)
+ The indoor landmarks rather tend to be smaller objects while as an outdoor landmark
+can also be served by a building or a nature object such as trees, hills, water bodies
+etc. (Given by 4 students)
+ Outdoor landmarks need to hold up or be visible against potential distractions outside.
+There may be fewer distinctive interior landmarks i.e. no names for hallways the way
+we have for streets.
+Therefore, it can be said that an indoor landmark differs from an outdoor landmark based on
+visibility, types of feature, information content and availability of options for selection of entities
+as landmarks.
+The last question 12 had general character and the participants were asked if they are
+available or willing to volunteer in a similar user test in future and all the participants agreed.
+40As mentioned in the above question, only 5 results were taken into consideration out of 14 as
+the other results were similar and included the same content as the 5 results chosen.
+In the following chapter 5.2, the results of the user test are described in detail based on the
+analysis of the questionnaire results and the route maps drawn by the participants, pre-user
+test results and findings of literature review. These answer the research questions of this
+thesis.
+5.2 Thesis Results
+In this chapter, the results for all the research questions mentioned in the chapter 1.4.2 are
+given initiating with the definition of an indoor landmark as follows:
+5.2.1 Definition of an Indoor Landmark
+The definition for an indoor landmark is derived from the results of user test and based on the
+keywords derived from the previous definitions of landmarks as described in the table 3.1.
+From the results obtained and the study done, the definition is given as:
+An ‘Indoor Landmark’ is a distinctive point of interest that is visually, spatially dominant
+and informative for spatial orientation in the inside of a structure which could be a route
+maintenance point, an external point of reference or a route decision point that can
+either help the person to navigate and explore inside an indoor structure or that helps
+to reach the desired point of interest.
+The above definition explains that an indoor landmark can be any object that is attractive like
+paintings as shown in figure 26 or dull with reference to its surroundings and is spatially
+dominant. It also needs to be informative like information boards in university buildings as
+shown in figure 30. A landmark can be used to maintain a taken route, as a point of reference
+to navigate or to decide the route to be taken which helps in finding way in the indoor structure.
+5.2.2 Characteristics of an Indoor Landmark
+41Characteristics of an indoor landmark can be defined as a feature or a quality belonging
+typically to the category of indoor entities that serves in identifying them as landmarks. Apart
+from the characteristics mentioned in chapter 2.2., the additional characteristics that make an
+indoor entity eligible to be considered as a landmark are as follows:
+Uniqueness: an entity should be clear in its form to serve as a landmark, i.e. it should be
+unique among its surroundings. More like an irregularly shaped building, a fountain in a big
+shopping area etc.
+Contrast: a structure or an entity that is considered as a landmark should be in contrast to the
+background. For example, a textured façade building among plain façade buildings, a red
+building amongst all the dull-shade coloured buildings, a sky-scraper amongst all the buildings
+that are one to multi-floor.
+Spatial prominence: the prominence of location also plays an important role in proving an
+entity as a landmark. For instance, a landmark located in the city centre has more prominence
+that the one located in a residential street. Although, this might differ depending on the area of
+interest.
+Cognition: another characteristic that plays an important role in determining an entity as a
+landmark is its cognition. A landmark has to be a meaningful entity by itself. Any landmark
+gains importance apart from satisfying the above mentioned characteristics if it is useful.
+An entity can be assigned as a landmark if it satisfies the above mentioned characteristics
+along with those mentioned in chapter 2.2.
+5.2.3 Comparison between an Indoor and an Outdoor Landmark
+Indoor and outdoor landmarks have many characteristics other than the known fact that indoor
+landmarks are in the indoor of a structure and outdoor landmarks are in the outdoor
+environment. Through the research done for the literature review and the user test performed,
+the characteristics of an indoor and an outdoor landmark are derived which are as follows:
+The first basic comparison done between an indoor and an outdoor landmark is the size of the
+selected landmarks. Indoor landmarks, most of the times have smaller size when compared to
+the outdoor landmarks which are larger or significantly larger in size. For example, while
+walking in an indoor structure, a door, trash boxes, and corridors are considered as landmarks.
+While in an outdoor environment, large buildings, sky scrapers, shopping malls, natural
+attractions like trees, water bodies are considered as landmarks.
+42Secondly, indoor landmarks are much limited when compared to the outdoor landmarks. While
+selecting outdoor landmarks, one has many options such as high rise buildings, restaurants,
+fountains, shopping malls, airports, trees, mountains, water bodies such as lakes, rivers and
+many others. In indoors however, the options are less.
+Outdoor landmarks need to hold up or be visible against potential distractions like tall trees,
+rocky mountains, high-raised buildings. This is not necessarily true for indoor landmarks as
+indoor landmarks are seen without any obstructions most of the times.
+Outdoor landmarks are more distinctive when compared to indoor landmarks. For example,
+outdoor landmarks are easier to locate like street name boards, flexi boards, malls and
+restaurants. Where as in indoors, no corridor names are given, and not always information
+boards are seen in indoors. There are less distinctive entities which makes navigating in
+indoors a difficult task.
+5.2.4 Indicators on Extracting Landmarks from Heterogeneous
+Geographic Data
+It is clear from today’s technology that navigation using technology has grown enormously over
+the past decade. In this thesis, focus is given to indoor navigation as there is not as much
+growth as there is for outdoor navigation. The reasons for this situation are various like
+accuracy of location information, required output media and also cognition of the user as
+discussed above. However, various theories that are now focusing on indoor landmarks and
+indoor navigation are studied for the literature review of this thesis. From the recent
+developments, it can be said that sooner there is going to be tremendous improvement even
+in the field of indoor navigation.
+Extraction of landmarks or identification of landmarks is an important task when it comes to
+fulfilling the tasks of preparing a navigational equipment, let it be maps, smart phone apps,
+GPS devices or any other. The differences are that outdoor navigation like street navigation
+has exact locations and landmarks, it also has relevant media which supports the navigation.
+Whereas, indoor navigation has no such drastic development as of yet.
+However, there are certain indicators that could help the researches in locating landmarks from
+a heterogeneous geographic data. A heterogeneous geographic data consists of different
+categories of entities which include man-made structures like buildings, sky scrapers,
+hospitals, shopping malls, airports, fountains etc. It also includes natural entities like trees,
+water bodies, mountains etc.
+43In indoor environment, navigation is not easier for the reasons like unconventional architectural
+design, poorly designed sign system and numbering system. Despite these, the characteristics
+discussed above would be helpful in extracting the landmarks in an indoor as well as outdoor
+environments.
+Cognition of the user is one of the most important indicator in determining an entity as a
+landmark. Given a heterogeneous data, every person’s cognition is different to that of others.
+From the user test conducted, a behaviour analysis was done is determining what factors make
+an entity to be a landmark which are as follows:
+Size of the object: most students happened to select larger objects varying in size from a
+human body to the size of a room door as landmarks as they are easier to view and identify.
+Colour of the object: colour of the entity plays an important role in description of an entity as
+a landmark. Contrast of an object from its surroundings was one of the qualities that was
+involved in the selection of the landmarks. Students selected trash boxes as landmarks.
+Shape of the object: any object that is irregularly shaped gets a prominence which also helps
+is defining an entity as a landmark. For example, staircase is not a regularly shaped structure
+which is why it has such a cognitive importance as is selected by the students as a landmark
+during the user test.
+Texture of the object: texture of an object plays an important role in the cognitive world. This
+also is a useful factor when locating indoor landmarks where there are not many prominent
+entities. To give an example, paintings and elevators are selected as landmarks for an indoor
+structure by the students which keep differing from one structure to another.
+5.2.5 Extraction of a Set of Potential Landmarks
+The results showed that most of the landmarks derived by the participants in the user test are
+same as the landmarks derived during the process of pre-user test.
+The 9 landmarks extracted are as follows:
+441. Fire extinguishers
+Fire extinguishers could be an indoor
+landmark as it is seen in all the indoor
+structures and is easy to locate because of
+its colour and information content on the box
+as seen in the figure 21.
+Figure 24: Fire extinguisher: one of the most prominent
+landmarks found in almost every indoor structure
+2. Trash boxes
+Although trash boxes fall under the category
+of figural level objects, they can still be
+considered as landmarks where there are no
+other potential sources of landmarks or these
+can also be additional reference points apart
+from the main landmark as already
+mentioned in 4.4. Trash boxes were
+extracted as landmarks based on visual
+attraction as they exhibit different colour
+which differs from one structure to another.
+Figure 25: Trash boxes: Identical because of the colours
+453. Paintings
+Paintings form unique landmarks as their
+specification and way finding instruction is
+easier to give because of its colours and
+content. In indoors, paintings are most
+commonly seen indoor entities. They are
+found in university buildings, hospitals,
+offices, shopping malls and also in houses.
+Their prominence makes it an easy entity for
+indoor wayfinding.
+Figure 26: Paintings: Eye-capturing landmarks
+4. Doors with door numbers or names
+In university buildings, most commonly
+occurring entities are lecture halls. These
+could be with room numbers or with
+specific names as seen in the figure 27.
+Their identification is easier because of
+the information content they hold.
+Figure 27: Lecture halls with unique names- noticeable landmarks
+465. Staircases
+Staircases are the most commonly seen
+indoor entities for a structure holding more
+than ground floor. They form the basic indoor
+landmark for any indoor structure.
+Figure 28: Staircases- Most commonly found landmark
+6. Snack automat machines
+Snack automats are most common in
+university buildings, hospitals and
+airports. These are again easy-to-find
+indoor landmark entities.
+Figure 29: Snack Automats- Easily recognizable
+477. Information boards
+Informational boards are most useful for
+wayfinding as they speak for themselves
+with the information they hold. Not every
+indoor structure has information boards,
+but when these are present, they form the
+most useful landmarks.
+Figure 30: Information boards- Usually the most important landmarks
+8. WC
+Landmarks, as described in the above
+chapters, can be derived based on usage.
+One such entities are washrooms which are
+the most commonly used rooms in an indoor
+structure.
+Figure 31: Washrooms, common landmark
+489. Elevators
+Elevators are seen in most indoor structure
+holding more than three floors. The elevator
+specifications might be different in different
+countries. The characteristics that makes an
+elevator essential for wayfinding are its
+façade and texture as they from one indoor
+structure to another.
+Figure 32: Elevators
+All the above listed landmarks were chosen both in pre-user test and user test. Although, some
+of the landmarks selected by the participants in the user test like benches, construction
+machinery were removed from the results as they are easily replaceable figural and vista level
+objects respectively.
+5.2.6 Flowchart for Extraction of Landmarks
+To extract the landmarks, a procedure is required to analyse whether the extracted landmark
+is appropriate or not, or to be said, if the landmark satisfies all the criterions that are to be
+fulfilled by a potential landmark or not. Previously, in the sub-chapter 5.2.2, we have seen the
+characteristics of an indoor landmark. Also, from the user test conducted, the behaviour of the
+participants was analysed in the process of locating landmarks. With the knowledge of these
+areas, a flowchart has been derived to show the steps of deriving a landmark which is as
+follows:
+1. Study the map of the building or the indoor location being chosen for navigation.
+2. Analyse the structure based of the study of the map, to analyse means to look at the
+symmetric/asymmetric nature of the structure.
+3. Mark the most convenient route of all the routes to your destination from the map. Most
+convenient route might be the shortest or the easiest according to the perception of the user.
+494. Start navigating through the route and mark the potential landmarks you see through this
+route. The potential landmarks, as discussed earlier should obey the characteristics of being
+unique to its surroundings, be in contrast with the background, the landmark should be in a
+prominent location and finally, it has to own a cognitive importance.
+If an entity is chosen by the above mentioned procedure, then it definitely results in being a
+potential landmark.
+The flow chart is depicted graphically in figure 33.
+Study the map of the
+structure
+Analyse the structure for its
+symmetry and asymmetry
+Mark the preferred route
+from the route of all the
+routes possible
+Mark the potential
+landmarks through the
+route
+Figure 33: Flowchart to derive an indoor landmark
+505.2.7 Figural Level, Vista Level and Environmental Level Landmarks
+Previously in this thesis, it was discussed that indoor objects can be mapped on three levels
+out of the four levels of a taxonomy proposed by Montello, DR. (1993).
+Environmental level
+Vista level
+Figural level
+Figure 34: Level of marking the indoor landmarks in descending order of selection
+In the user test performed for this thesis, all of these three level landmarks were used. While
+on the second round of the user test, a fire extinguisher, which belonged to the figural level
+indoor objects was removed from its place where it was identified and marked as a landmark
+during the first round of the user test.
+Therefore, to avoid such a situation, marking of figural level objects as landmarks should be
+avoided unless there is no other potential landmark in the surroundings. Strongest indoor
+landmark fall under the categories of vista level and environmental level objects. Therefore,
+the selection of landmarks should be done in the order as described in the figure 34.
+516 Conclusions and Further Research
+In the introduction of this thesis (chapter 1), various research questions were proposed and
+the answers to those questions are given in the results chapter 5. In this chapter, the
+conclusions are derived from the results and also further research ideas are presented.
+6.1 Conclusions
+In this thesis, several conclusions are drawn based on the literature review performed and also
+the user test conducted. From the user test results, it is seen that an indoor landmark is an
+entity that is visually, spatially dominant and informative for spatial orientation in the inside of
+a structure. This entity could be a route maintenance point, an external point of reference or a
+route decision point that can either help the person to navigate and explore inside an indoor
+structure or that helps to reach the desired point of interest.
+Also, these indoor objects are categorized into three: figural level, vista level and environmental
+level. Based on the user test analysis, figural level objects do not fit to be marked as landmarks
+as they are replaceable. So, a figural level object should be taken into consideration only in
+the absence of vista and environmental level objects. An indoor landmark varies significantly
+from an outdoor landmark based on shape, size, features and functionality.
+The characteristics derived for an indoor landmark include uniqueness, contrast, spatial
+prominence and cognition of an object. The derived landmarks in the pre-user test and user
+test possessed these characteristics and thus, were selected as landmarks. The indicators that
+helped in deriving these landmarks were the size, colour, shape and texture of the object.
+The landmarks derived were visually dominant, informative and also spatially dominant. Some
+of these landmarks were route maintenance points, some were route decision points and a
+few were external points of reference. This proves that the derived landmarks justify the
+developed definition of indoor landmark.
+The goals and research questions of this thesis as mentioned in chapter 1.3 and sub-chapter
+1.4.2 are determined in chapter 5.2 which proves that the goals of this thesis are achieved.
+526.2 Further Research
+In order to prove the wholeness of the developed definition of indoor landmark, a similar user
+test can be conducted in different scenarios. For example, a user test can be performed in an
+airport, a shopping mall and/or a hospital with audience from different backgrounds like
+students of cartography and related fields, students from entirely different field of education,
+general audience and with experts in the field of cartography. The results of these user tests
+can be used to verify the wholeness of the definition.
+In the previous chapters, it was seen that the reasons for poor navigation in indoors are
+unconventional architectural design, poorly designed sign system and numbering system.
+These can be improved by bringing betterment in the designing of the structures by
+implementing conventional architectural designs, designing of efficient sign systems and
+finding out methods to design easier indoor plans that will help in making navigation an easier
+task in indoors.
+537 Bibliography
+Allen, G. (1999). Spatial Abilities, Cognitive Maps, and Wayfinding - Bases for Individual
+Differences in Spatial Cognition and Behavior. In: Golledge, R. (Ed.), Wayfinding Behavior -
+Cognitive Mapping and Other Spatial Processes (pp. 46-80). Baltimore; Johns Hopkins
+University Press.
+Arthur, P. and Passini, R. (1990). 1-2-3 Evaluation and Design Guide to Wayfinding. Technical
+Report. Public Works Canada.
+Brunner-Friedrich, B. and Radoczky, V. (2006). Active landmarks in indoor environments. In:
+Visual Information and Information Systems. pp 203-215. Springer.
+Burnett, GE. (1998). ‘Turn Right at the King’s Head’: drivers’ requirements for route guidance
+information, Loughborough University.
+Car, A. (1996). Hierarchical Spatial Reasoning: Theoretical Consideration and its Application
+to Modeling Wayfinding.
+Ohm, C., Muller, M., Ludwig, B. and Bienk, S. (2014). Where is the Landmark? Eye Tracking
+Studies in Large-Scale Indoor Environments.
+Deakin, A. (1996). Landmarks as Navigational Aids on Street Maps. In: Cartography and Geo-
+graphic Information Systems, pp 21-36. www.tandfonline.com.
+Denis, M. and Loomis, JM. (2007). Perspectives on Human Spatial Cognition: Memory,
+Navigation, and Environmental Learning. Psychological Research, Springer.
+Downs, R. and Stea, D. (1977). Maps in Minds: Reflections on Cognitive Mapping. Harper and
+Row, New York.
+Gärling, T., Lindberg, E., and Mäntylä, T. (1983). Orientation in buildings: Effects of familiarity,
+visual access, and orientation aids. In: Journal of Applied Psychology 68. pp 177-186.
+Gluck, M. (1991). Making Sense of Human Wayfinding: Review of Cognitive and Linguistic
+Knowledge for Personal Navigation with a New Research Direction. In Mark, D. and Frank, A.
+(Ed.), Cognitive and Linguistic Aspects of Geographic Space. Series D: Behavioural and Social
+Sciences 63. pp 117-135. Dordrecht, The Netherlands, Kluwer Academic Publishers.
+Golledge, RG. (1999). Human wayfinding and cognitive maps. Wayfinding behavior: cognitive
+mapping and other spatial processes. pp 5-45. Baltimore, JHU Press.
+Habel, C. (1988). Prozedurale Aspekte der Wegplanung und Wegbeschreibung. In: Schnelle,
+H. and Rickheit, G. (Eds.), Sprache in Mensch und Computer. pp. 107-133. Westdeutscher
+54Verlag, Opladen,
+Hölscher ,C., Meilinger, T., Vrachliotis, G., Brösamle, M. and Knauff, M. (2006). Up the down
+staircase: wayfinding strategies in multi-level buildings. In: J Environ Psychol 26 (4). pp 284-
+299.
+Lakoff, G. (1987). Women, Fire, and Dangerous Things: What Categories Reveal About the
+Mind. Chicago; The University of Chicago Press.
+Lovelace, KL., Hegarty, M. and Montello, DR. (1999). Elements of good route directions in
+familiar and unfamiliar environments. In: Spatial information theory. Cognitive and
+computational foundations of geographic information science. pp 65–82. Springer.
+Lynch, K. (1960). The Image of the City. Cambridge, Massachusetts, MIT Press.
+Lyu, H., Yu, Z., Meng, L. (2014). A Computational Method for Indoor Landmark extraction. In:
+Progress in Location Based Services. pp 45-59. Springer.
+Maaß, W. and Schmauks, D., (1998). MOSES: Ein Beispiel für die Modellierung räumlicher
+Leistungen durch ein Wegebeschreibungssystem. Zeitschrift für Semiotik. pp 105-118.
+Mark, D. (1997). Cognitive Perspectives on Spatial and Spatio - temporal Reasoning. In
+Craglia, M. and Couclelis, H. (Eds.), Geographic Information Research, Bridging the Atlantic
+pp. 308-319. London, UK, Taylor & Francis.
+Mark, D., Freksa, C., Hirtle, S., Lloyd, R. and Tversky, B. (1999). Cognitive models of
+geographical space.
+May, A.J., Ross, T., Bayer, S.H. and Tarkiainen, M.J. (2003). Pedestrian navigation aids:
+information requirements and design implications. Personal and Ubiquitous Computing 7(6).
+pp 331-338.
+Merriam, G. and Webster, N. (2001). Merriam-Webster's Collegiate Dictionary. Merriam-
+Webster, Inc.
+Metzger, W. (1936). Gesetze des Sehens. Kramer & Co., Frankfurt am Main.
+Michon, P.E. and Denis, M. (2001). When and Why are Visual Landmarks Used in Giving
+Directions? In: Montello, D. (Ed.), Spatial Information Theory. Lecture Notes in Computer
+Science. pp 292-305. Springer.
+Millonig, A., and Schechtner, K. (2007). Developing landmark-based pedestrian-navigation
+systems. IEEE Trans Intell Transp Syst. pp 43-49.
+55Moeser, S. (1988). Cognitive mapping in a complex building. Environment and Behavior 20.
+pp 21-49.
+Montello, DR. (1993). Scale and multiple psychologies of space. In: Spatial information theory
+a theoretical basis for gis. pp 312–321. Springer.
+Norman, D. (1988). The design of everyday things. Donald A. Norman Doubleday, New York.
+Nothegger, C., Winter, S., Raubal M. (2004a). Computation of the salience of features. In:
+Spatial Cognition Computing, 4. pp 113-136.
+Osherson, D. and Lasnik, H. (Eds.) (1990). Language: An Invitation to Cognitive Science.
+Cambridge, Massachusetts, MIT Press.
+Presson, CC. and Montello, DR. (1988). Points of reference in spatial cognition: stalking the
+elusive landmark. Br J Dev Psychol. pp 378-381.
+Radoczky, V. (2007). How to design a pedestrian navigation system for indoor and outdoor
+environments. In: Location based services and telecartography, pp. 301-316. Springer.
+Raubal, M. and Egenhofer, M. (1998). Comparing the complexity of wayfinding tasks in built
+environments. In: Journal of Environment & Planning B 25 (6). pp 895-913.
+Raubal, M. and Winter, S. (2002). Enriching wayfinding instructions with local landmarks. In:
+Geographic Information Science. pp 243-259 Springer.
+Sorrows, ME. and Hirtle, SC. (1999). The nature of landmarks for real and electronic spaces.
+In: Spatial information theory. Cognitive and computational foundations of geographic
+information science. pp 37-50. Springer.
+Timpf, S. and Frank, A. (1997): Using Hierarchical Spatial Data Structures for Hierarchical
+Spatial Reasoning. In: Hirtle, S. and Frank, A. (Eds.), Spatial Information Theory. Lecture
+Notes in Computer Science. pp 69-83. Springer.
+Tversky, B. and Lee, P. (1999). Pictorial and Verbal Tools for Conveying Routes, In: Freksa,
+C. and Mark, D. (Eds.), ‘Spatial Information Theory: Cognitive and Computational Foundations
+of Geographic Information Science’. pp 51-64. Springer
+Wang, RF. and Brockmole, JR. (2003). Simultaneous spatial updating in nested environments.
+Psychon Bull Rev. pp 981-986.
+Werner, S., Krieg-Brückner, B., Mallot, H., Schweizer, K. and Freksa, C. (1997). Spatial
+Cognition: The Role of Landmark, Route, and Survey Knowledge in Human and Robot
+Navigation. In: Jarke, M., Pasedach, K. and Pohl, K. (Eds.), Informatik '97. pp 41-50. Springer.
+56Winter, S. (2003). Route adaptive selection of salient features. In: Spatial Information Theory.
+Foundations of Geographic Information Science. pp 349-361. Springer.
+Figure 1: Technical University of Munich. Digital image, Openbuildings.com, URL:
+http://c1038.r38.cf3.rackcdn.com/group2/building15103/media/featured/029phz1.jpg.
+(Access: July 5, 2017).
+Figure 2: Office Building of Fisheries Department, Hyderabad, India. Digital image,
+Raveender, N., Wikimedia Commons, URL:
+https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Fish_shaped_building.jpg/800p
+x-Fish_shaped_building.jpg. (Access: July 5, 2017).
+Figure 3: Colorful Buildings. Digital image, Wikimedia Commons, URL:
+https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Colorful_buildings_Bo-
+kaap_12.jpg/800px-Colorful_buildings_Bo-kaap_12.jpg. (Access: July 6, 2017).
+Figure 4: The Rathaus and Marienplatz from Peterskirche in Munich, Germany. Digital
+image, Iliff, D., Wikimedia Commons, URL:
+https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Rathaus_and_Marienplatz_from
+Peterskirche_-_August_2006.jpg/696px-Rathaus_and_Marienplatz_from_Peterskirche_-
+August_2006.jpg. (Access: July 5, 2017).
+Figure 5: Glass Facade of a Building. Digital image, pexels.com, URL:
+https://images.pexels.com/photos/273675/pexels-photo-
+273675.jpeg?w=940&h=650&auto=compress&cs=tinysrgb. (Access: July 5, 2017).
+Figure 6: An Old Farm Building. Digital image, Nicol, K., Geograph.org, URL:
+http://s0.geograph.org.uk/geophotos/01/72/30/1723087_20e09ee9.jpg. (Access: July 5,
+2017).
+Figure 17: Terminal Gate. Digital image, Wikimedia Commons, URL:
+https://upload.wikimedia.org/wikipedia/commons/3/37/LGW_North_Terminal_gates.JPG.
+(Access: July 6, 2017).
+Figure 14: Emergency ward. Digital image, rotkreuzklinikum-muenchen.de, URL:
+https://rotkreuzklinikum-
+muenchen.de/_thumbnails_/3322_5_Notfallmedizin_tb_stationen_rk_032.jpg?m=148717213
+8. (Access: July 6, 2017).
+Figure 15: Food court. Digital Image, Wikimedia Commons, URL:
+https://upload.wikimedia.org/wikipedia/commons/4/4b/Canal-Walk-Food-Court.jpg. (Access:
+July 6, 2017)
+57Figure 16: Tress inside Changi Airport, Terminal 3. Digital Image, Wikimedia Commons, URL:
+https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/SINT3.JPG/800px-SINT3.JPG.
+(Access: July 6, 2017)
+588 Appendix User Test Material
+8.1 Presentation
+596061628.2 Questionnaire
+Hello,
+This questionnaire would help me to analyze your knowledge on indoor landmark and
+navigation and to study the behavior exhibited during wayfinding. Your answers to the
+questions below would be summarized and will be included in my thesis presentation (giving
+you the credits).
+Thank you for your participation!
+General information
+1. Gender
+☐Female ☐Male
+2. Age
+☐20-25 ☐26-30 ☐31-35
+3. Country of Origin-
+4. Bachelor’s degree in-
+Questions
+Directions: Please indicate your answer for each of these statements with an "X" mark in the
+box of your answer.
+1. Previously, have you performed any such task in an indoor environment as the user test
+given to you?
+☐Yes ☐No
+2. What was the difficulty level you experienced while locating landmarks in an indoor
+structure?
+☐High ☐Moderate ☐Low
+3. In a typical day, how often does navigating indoors make you feel inconvenient?
+☐Always ☐Very often ☐Sometimes ☐Rarely ☐Never
+634. How often do you use printed maps to navigate in indoor environment?
+☐Always ☐Very often ☐Sometimes ☐Rarely ☐Never
+5. How often do you use navigating tools (GPS, smartphone, and other electronic gadgets) in
+indoor environment?
+☐Always ☐Very often ☐Sometimes ☐Rarely ☐Never
+6. Navigating in an outdoor environment is easier when compared to navigating in an
+Indoor environment.
+☐Strongly Agree ☐Agree ☐Undecided ☐Disagree
+☐Strongly Disagree
+7. How easy was it to locate landmarks of a new route after having a look at the landmarks list
+of a pre-tested route?
+☐Very easy ☐Easy ☐Moderate ☐Somewhat hard
+☐Hard ☐Very hard
+8. Through this user test, did you gain new knowledge about indoor navigation and indoor
+landmarks?
+☐Yes ☐No
+9. If you were asked to define an indoor landmark, what would your definition be?
+10. Do you think there is a difference between an indoor landmark and an outdoor landmark?
+☐Yes ☐No
+11. If your answer for the above question is ‘yes’, what is the difference?
+12. If you were asked to volunteer for an indoor navigation project, would you do it?
+648.3 Route Map Representations Drawn by the Participants of the
+User Test
+Figure 35: Map representing route from Main entrance to Cafeteria via Carl von Linde Hörsaal
+65Figure 36: Map representing route from Main entrance to Cafeteria via Carl von Linde Hörsaal
+66Figure 37: Map depicting the route from main entrance to Cafeteria via Carl von Linde Hörsaal
+67Figure 38: Continuation of figure 37
+68Figure 39: Route map of Main entrance to room no. 0714 via Library
+69

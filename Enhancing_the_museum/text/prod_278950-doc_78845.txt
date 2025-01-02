@@ -1,0 +1,253 @@
+IMPROVING USER EXPERIENCE IN THE MUSEUM 
+Maria Claudia Buzzi1, Marina Buzzi1, Barbara Leporini2 and Gaetana Marchesini3 
+1IIT-CNR, via Moruzzi 1, Pisa  
+2ISTI-CNR, via Moruzzi 1, Pisa 
+3IBAN-CNR, via Biblioteca 4, Catania 
+ABSTRACT 
+Today ICT can benefit any environment, including the safeguarding, preservation and empowerment of cultural heritage. 
+Pervasive technologies such as mobile devices (smart phones and tablets), sensors and RFID (Radio-frequency 
+identification) are flooding the real world, enabling new intelligent and easy-to-use services for everyone, including the 
+differently-abled. RFID technology enables automatic identification of objects and has been successfully applied in 
+museums to improve the museumgoer’s experience or to increase the efficiency of a physical inventory. In this paper we 
+discuss using RFID passive technology to identify artifacts in the museum and deliver content description in the most 
+appropriate form through various sensorial channels, according to the user’s abilities. Specifically, we describe the initial 
+steps of a project aimed at creating mobile apps to facilitate the usability of museum visits for differently-abled and 
+special-needs users. 
+KEYWORDS 
+Museum, RFID, user experience, accessibility, usability, users with special needs 
+1. INTRODUCTION 
+In the last two decades the Internet has changed our society profoundly. The World Wide Web with its 
+simple user interface and link mechanism has brought the user into the net, providing transparent access to 
+the enormous amount of data available worldwide in servers and databases. ICT technology has 
+revolutionized the way products and services are provided; eGovernment, eLearning, eCommerce, eHealth, 
+etc., are the new paradigms made possible by the Web, in some cases allowing the simplification of processes 
+and procedures, but mainly creating new ways of interaction aimed at generating a more satisfying user 
+experience.  
+Today, RFID and sensor technologies embedded in everyday objects promise to further revolutionize our 
+society. In the near future, everyday objects would be able to provide information related to their 
+characteristics or usage. All this information, transmitted via network, may trigger intelligent services 
+available everywhere and under any conditions, so RFID has become one of the potential key technologies 
+for enabling “object-based” services. One advantage of RFID compared to other technologies such as QR 
+codes (Quick Response Code) or barcode, is that it does not require sight, enabling its use for blind persons 
+as well. RFID technology has two components, readers and tags. Tags store object identification information 
+that readers can retrieve. Tags can be battery powered, but the most interesting are passive tags that take 
+advantage of the energy induced by the reader and are small, cheap and long-lasting. 
+In order to provide a more satisfying user experience for museum visitors, including differently-abled 
+persons, flexible adaptive services should be provided to dynamically convert content to a more suitable 
+format, or one preferred by the user. In fact, as argued by Kelly et al., in the eLearning field rather than 
+provide universal access for the same resource, the equivalence of the content provided using different 
+sensory channels (i.e., touch, sight, or hearing) is important. The idea behind the 'Museum for All' (M4A) 
+project is to deliver information about artifacts during a visit to the museum in an accessible way. RFID 
+technology provides personalized content considering the diversity of needs of all users, not only the 
+differently-abled; for instance, to make the experience more usable, interactive paths could be provided for 
+children: learning by experimenting and gaming may enhance learning.  
+IADIS International Conferences Interfaces and Human Computer Interaction and 
+Game and Entertainment Technologies 2013
+327
+
+Special attention will be given to the design of content delivery; if a person has reduced perception or 
+other disabilities, the pervasiveness of technologies may create barriers if information and services are not 
+designed according to accessibility and usability principles. Universal access refers to the possibility of 
+delivering content and services to everyone, including differently-abled people. Since disabilities embrace a 
+wide range -- perceptual, motor, learning and cognitive -- the Museum for all project aims to offer 
+information on artifacts through various channels: visual, auditory, vibro-tactile, etc. Furthermore, children 
+should access different levels of information according their developmental age. Thus, the information is 
+organized by levels of increasing difficulty managed by the system adaptation features. Providing any type of 
+information through mobile devices and applications can be a valuable way to differentiate content according 
+to the users’ characteristics. Recently, mobile devices and applications have been also become accessible to 
+people with special needs, such the blind and the visually-impaired (e.g., iPad, iphone Apple devices 
+enhanced with Siri synthesis, Google Talkback app, for Android devices). In addition, certain special devices 
+designed especially for blind users (http://www.bones.ch/bones/pages/eng/products/milestone312.html) are 
+able to read RFID tag contents without a specific application. 
+The paper is organized as follows: after presenting related work in the field, the museum domain is 
+introduced to apply our proposal, which will be described next. Conclusions end the paper.  
+2. RELATED WORK 
+In the last decade pervasive computing and localization technologies have been increasingly applied in 
+several areas, including cultural heritage. Recently multimodal mobile environments and vibrotactile devices 
+with touchscreens have advanced human-computer interaction, improving the user experience through more 
+natural interaction. Many museum applications have been developed and we only report some of them here, 
+selecting studies most similar to our work. RFID (Radio-Frequency Identifier) technology has been 
+successfully applied in museums in order to improve visitors’ experience. Based on HF (high frequency) 
+readers/tags, Hsi et al. developed the eXspot system, which enables visitors to capture information about 
+exhibits they visit and to take souvenir photographs during their visit to the museum. Furthermore, they can 
+access the exhibit information on personalized Web pages (His et al., 2005). 
+Santoro et al. developed a multimodal museum guide offering various accessibility options to users, 
+fitting and supporting the needs and preferences of different users, including the visually impaired. An initial 
+empirical evaluation showed overall good acceptance among users, but the use of HF forced users to stand in 
+very close proximity to the artworks, which is not very natural in the museum environment. The authors 
+fixed the problem using active RFID tags, which can reach a longer range and at the same time provide a 
+localization of the current user position without forcing them to stand in close proximity to the artwork 
+(Santoro et al., 2007). However, they used active tags that are expensive and require maintenance (battery 
+powered) while we selected passive UHF tags since that are small, cheap and with a potentially infinite life. 
+Hall and al. (Hall and al., 2002) developed an application for children to combine replicas of antique toys, 
+accessing multimedia information about the artifacts and playing different music according to different levels 
+of content, depending on the object combinations.  
+Recently Near Field Communication (NFC), a radio-frequency based wireless technology, has been 
+incorporated into modern smart phones such as Android and ios devices, offering new interaction 
+opportunities. Ceipidor et al. investigate the use of NFC technologies to enhance user experience by 
+retrieving additional contents and accessing social activities using a smart phone (Ceipidor et al., 2013). 
+Participatory Design (PD) techniques are a key factors in the design process since they enable the production 
+of artifacts and services fully usable by users. (Cober et al., 2012) applied PD techniques to simplify 
+interaction for the blind user and improve his/her experience in the museum.  
+Another branch of research focuses on enriching and adapting user experience, also benefitting from 
+social activities. Karimi et al. (2012) investigated recommender systems for museums, by “sniffing” the 
+surrounding environment using the RFID technology. Similarly, Mody et al. 2009 exploited RFID and 
+adapted recommender systems for personalizing platforms for the museum. However, to observe user 
+activities may pose privacy and security issues that must be carefully analyzed.  
+ 
+ISBN: 978-972-8939-90-8 © 2013 IADIS
+328
+
+Concerning social activities, sharing creates interest: attracting people to the exhibition, and allowing 
+people who miss the visit to still enjoy it. Kostoska et al. (2013) investigate how to promote the sharing of 
+memories, after a visit to a museum or exhibition, by performing surveys and trials. Results indicated that 
+users can significantly enhance this sharing when they have simple and easy-to-use tools for building a 
+collection of photos of their visit, supporting their storytelling. 
+3. THE MUSEUM FOR ALL  
+The Museum for All (M4A) is a project aimed at organizing content description of artifacts present in a 
+museum. The idea is to provide accessible information according to user ability in order to offer a level of 
+knowledge suited to each individual. The RFID tag applied to an artifact enables the delivery of the 
+description of the characteristics and historical details associated with it, according to the personalization of 
+the content configured via web (before the visit). When the user is in proximity to the artifact, the content can 
+be delivered automatically or on-demand, depending on user preference. The content is delivered through one 
+or more channels (visual, auditory, haptic, etc.) according to rules described in the next subsection. A simple 
+user profile is selected before or when starting the visit. According to the selected profile, different amounts 
+of information are presented in a fully usable way with different sensory modalities. For instance, when the 
+children’s profile is selected, the language used for providing content is simplified and the description 
+shortened. A sort of game may be proposed, making the child receive an image of the artifact that can be 
+zoomed, highlighting details and putting the artifact into its historic-artistic context. Serious games are a new 
+and active research topic that investigates the potential of games for learning and stimulating brain activities.  
+3.1 Designing the Content 
+The information related to the museum collections is usually stored in a database. Recently artifact 
+descriptions have been made available via wireless networks to visitors using mobile guides (Ghiani et al., 
+2008). However, little attention has been devoted to personalizing user experience according to different user 
+abilities. Systems able to adapt the content as well as the user interfaces may be a possible solution for 
+providing suitable information to any type of user. This type of methodology has characterized our design 
+approach.  
+Adaptive systems may operate statically, reading configuration files, and/or be dynamically based on user 
+behavior and feedback. In the context of our project, the configuration is mainly static but the rhythm of the 
+delivered content can be adapted according to the rapidity of the user’s interaction (i.e., clicking a button, 
+making gestures, etc.) while the other adaptations are performed reading configuration files.  
+When conventional museums are arranged to become accessible for all, these design principles for 
+delivering content related to artifacts should be followed as much as possible. Furthermore, to enrich user 
+experience, multimedia interaction with the artifact should be provided, possibly simulating the real 
+experience with an augmented virtual environment interaction provided through electronic mobile devices 
+such as a tablet, which with its touchscreen interface offers more natural and intuitive interaction. 
+A museum designed for children should be different from conventional museums, offering large spaces 
+where children can run, and artifacts -- or virtual copies of them – that can be touched and experimented 
+with, offering a multisensory experience that enables the child to learn by experience (Dindler et al., 2010). 
+Offering performances with actors can immerse the child in a typical historical scenario. In addition, a user 
+interface designed for a child will be very different from those targeting visually-impaired users (e.g., with 
+fewer graphical objects and more textual content).  
+Table 1 shows the content adaptation rules that drive the content delivery.  
+ 
+ 
+ 
+ 
+ 
+ 
+IADIS International Conferences Interfaces and Human Computer Interaction and 
+Game and Entertainment Technologies 2013
+329
+
+Table 1. Adaptation Rules for Driving the Content Delivery 
+Reduced/ missing ability Content 
+Delivery channels 
+Visual 
+Add a detailed description of 
+the article, provide tactile user 
+interaction (gesture) and 
+vibrotactile feedback  
+Auditory, vibrotactile  
+Hearing 
+Motor 
+Cognitive 
+ 
+Learning 
+Children 
+Simplified language 
+Modified User Interfaces (UIs)  
+Content by levels, Simplified 
+language 
+Content by levels 
+Content by levels, Simplified 
+language, Modified UI  
+Visual 
+Visual, auditory 
+Visual, auditory 
+ 
+Visual, auditory 
+Visual, auditory, 
+tactile 
+3.2 System Architecture 
+The database of information related to a museum’s collections will be enlarged with the additional 
+information necessary for delivery via different channels, for instance adding the description related to visual 
+content and structuring it in at least two different levels of information (one simplified version and a 
+complete one). Different users profiles according to Table 1 will be created and stored. A web application 
+will allow users to register themselves and choose a suitable user profile, specifying the user preferences. A 
+profile manager will select and organize the information according to user preferences. A key feature of the 
+usability of the M4A system is its portability. Thus, the user should be provided with a mobile phone or 
+tablet touchscreen equipped with an RFID reader operating at high frequency. When the RFID reader reads 
+an artifact tag, the M4A web application will provide the information according to the user’s preferences, 
+allowing interaction through the touchscreen devices. We have selected the Web architecture because it is 
+multiplatform and device-independent.  
+We are developing our prototype on the Android platform, which offers an open development 
+environment and can also lead to potential improvements suggested by the international developer 
+community. In order to better design for content that will be presented to different users, a participatory 
+design approach involving people with disabilities will be undertaken from the early phase of the design. 
+4. CONCLUSIONS AND FUTURE WORK 
+Museums are places of culture where people expand their knowledge. Everyone should have the opportunity 
+to benefit from them. Developing content that is fully accessible and usable for all remains a challenge, but 
+the careful development of new systems and services for special needs users is possible. 
+The advantage of the “Museum for All” (M4A) system is that it provides everyone with accessible and 
+suitable content related to museum artifacts. Its design approach could be followed and utilized in other 
+application contexts to take into account the needs of differently-abled persons.  
+Access to cultural heritage is a right for all, and simple and feasible ways to facilitate this should be 
+explored. In this paper we have presented the idea of the “Museum for All” project and we introduced its 
+main basic architectural characteristics. The idea proposed herein could be integrated into online systems for 
+reservation/purchase of Museum tickets, providing a more satisfying user experience for all.  
+Future work will address the implementation of a prototype designed applying the principles of 
+participatory design, to be tested with differently abled users. 
+ 
+ 
+ 
+ 
+ISBN: 978-972-8939-90-8 © 2013 IADIS
+330
+
+REFERENCES 
+Ceipidor, U.B., Medaglia, C.M., Volpi, V.,  Moroni, A.,  Sposato, S., Carboni, M., Caridi, A., 2013. NFC technology 
+applied to touristic-cultural field: A case study on an Italian museum. Proceedings of the 5th International Workshop 
+on Near Field Communication (NFC). 
+Cober, R., Au, O. and Son J.J., 2012. Using a participatory approach to design a technology-enhanced museum tour for 
+visitors who are blind. Proceedings of the 2012 iConference (iConference '12). ACM, New York, NY, USA, 592-
+594. DOI=10.1145/2132176.2132301 
+Dindler, C., Iversen, O.S., Smith, R., and Veerasawmy, R. 2010. Participatory design at the museum: inquiring into 
+children's everyday engagement in cultural heritage. Proceedings of the 22nd Conference of the Computer-Human 
+Interaction Special Interest Group of Australia (OZCHI '10). ACM, New York, NY, USA, pp. 72-79. 
+Ghiani, G., Leporini, B., Paternò F., Santoro,C., 2008, Exploiting RFIDs and Tilt-Based Interaction for Mobile Museum 
+Guides Accessible to Vision-Impaired Users, Proceedings of 11th International Conference on Computers Helping 
+People with Special Needs. Linz, Austria, LNCS, Vol. 5105/2008, pp. 1070 – 1077. 
+Hall, T., Ciolfi, L., Hickey, N., Bannon, L., 2002, From hands-on to minds-on: toward the design of interaction and 
+technology to enhance children's learning in a museum, Proceedings of ICLS02, International Conference of 
+Learning. Seattle, USA,  
+Hsi, S., Fait, H., 2005, RFID enhances visitors' museum experience at the San Francisco Exploratorium. Communications 
+of the ACM, Vol. 48, No.9, pp. 60 – 65.  
+Karimi, R., Nanopoulos, A., Schmidt-Thieme, L., 2012. RFID-Enhanced Museum for Interactive Experience. Springer 
+Multimedia for Cultural Heritage Communications in Computer and Information Science, Vol. 247, pp 192-205. 
+Kelly, B., Phipps, L., Howell, C.: Implementing a holistic approach to e-Learning accessibility. Retrieved Dec 2012 at 
+http://www.ukoln.ac.uk/web-focus/papers/alt-c-2005/accessibility-elearning-paper.doc 
+Kostoska, G., Fezzi, D., Valeri, B., Baez, M., Casati, F., Caliari, S. and Tarter, S., 2013. Collecting memories of the 
+museum experience. In CHI '13 Extended Abstracts on Human Factors in Computing Systems (CHI EA '13). ACM, 
+New York, NY, USA, pp. 247-252. 
+Mody, A., Akram, M. ; Rony, K. ; Aman, M.S. ; Kamoua, R., 2009 Enhancing user experience at museums using smart 
+phones with RFID. Proceedings of the Systems, Applications and Technology Conference. LISAT '09. IEEE Long 
+Island, pp. 1-5. 
+Santoro, C., Paternò, F., Ricci, G., Leporini, B., 2007. A Multimodal Mobile Museum Guide for All, Proceedings of the 
+9th International Conference on Human Computer Interaction with Mobile Devices and Services (Mobile HCI'07), 
+Singapore, pp. 21-25. 
+ 
+IADIS International Conferences Interfaces and Human Computer Interaction and 
+Game and Entertainment Technologies 2013
+331
+

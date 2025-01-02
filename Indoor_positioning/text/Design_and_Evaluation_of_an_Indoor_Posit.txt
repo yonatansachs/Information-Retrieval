@@ -1,0 +1,1063 @@
+Design and Evaluation of an Indoor Positioning
+System Framework
+Kaifei Chen
+Karthik Vadde
+Electrical Engineering and Computer Sciences
+University of California at Berkeley
+Technical Report No. UCB/EECS-2016-16
+http://www.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-16.html
+April 13, 2016Copyright © 2016, by the author(s).
+All rights reserved.
+Permission to make digital or hard copies of all or part of this work for
+personal or classroom use is granted without fee provided that copies are
+not made or distributed for profit or commercial advantage and that copies
+bear this notice and the full citation on the first page. To copy otherwise, to
+republish, to post on servers or to redistribute to lists, requires prior specific
+permission.
+Acknowledgement
+This work is supported in part by the National Science Foundation
+under grant CPS-1239552 (SDB).Design and Evaluation of an Indoor Positioning System
+Framework
+KaifeiChen KarthikReddyVadde
+ComputerScience SchoolofInformation
+UniversityofCalifornia,Berkeley UniversityofCalifornia,Berkeley
+kaifei@berkeley.edu karthikv@berkeley.edu
+Abstract beaconstoformfingerprints. Thetechnologiesusedbybea-
+Numbersofindoorpositioningtechniqueshavebeenpro- consincludeultrasound[14,18],infrared[17],magneticin-
+posed, but none of them is generally deployable in most duction[10],RFID[12],Dopplereffectonradiosignals[4].
+buildings, in spite of their acceptable accuracy in experi- Moreover, richsensorsavailableonsmartphonesstimulates
+ments. The primary reason is that, to work properly, all of researcherstobringtheideaofdeadreckoningintotrajectory
+them have specific assumptions about context, like infras- estimationandlocalization[15,11]. Basically, theyuseIn-
+tructure, environment, and user behaviors. However, as- ertialMeasurementSensors(IMU)embeddedincommercial
+sumptions of them are almost mutually independent, and smartphones(e.g.accelerometer,gyroscope,compass,mag-
+their working context are actually detectable. In this paper, netometers) to estimate the velocity and direction of users,
+weproposeaindoorpositioningsystemframeworktocom- andinturnestimatethetrajectoryandthelocationgiventhe
+binelocationestimationsfrommultiplepositioningsystems. knownstartpoint.
+Each system is encouraged to implement its own context- However,noagreementhasbeenmadeonageneralsolu-
+awareness mechanism, and needs to provide a confidence tionasGlobalPositioningSystem(GPS)inoutdoorlocaliza-
+aboutitsestimation. Theframeworkmaintainscredithistory tions[9], which doesn’tworkwell forindoorenvironments
+for all participating positioning system entities, and fuses because of the signal attenuation inside buildings. Almost
+theirestimationsbasedontheircreditsandconfidences. Our allindoorlocalizationtechniqueshavespecificassumptions,
+preliminarydeploymentshowsthatitisnothardtoprovidea whichinturnbecomelimitationsthatthwarttheirlargescale
+highlyreliableconfidence,andusingdatafusiontechniques real-worlddeployments. Firstly, therearegeneralproblems
+like Kalman Filter can further reduce errors in the frame- for different types of techniques. IMU performs for spo-
+work’sdecision. radic movements and suffers from cumulative drift errors.
+Fingerprint-basedmethodsrequirethesignatureateachpo-
+1 Introduction
+sition to be consistent by time, and the interference should
+Indoor localization is one of essential technologies for not low as well. But at this stage there is no universal con-
+many applications, such as energy-efficient buildings, dis- sistent signal. Moreover, beaconing techniques need extra
+aster rescue, and indoor navigation. Numbers of Indoor infrastructuresthatarenotcommoninbuildings,whichwill
+Positioning System (IPS) has been proposed and imple- bring lots of cost on devices, setup, and maintenance. Sec-
+mented. One group of them are built upon the idea of fin- ondly,someIPSsaredesignedforspecificscenarios. Asan
+gerprint, which means a signature of environment features example, SurroundSense [2] is designed for shopping mall,
+consistently and strongly depending on the physical loca- wheretherearealwaysdistinguishablefeaturesforalladja-
+tion. Examples include WiFi Received Signal Strength In- centstoresandsimilartypesofstoresintermsoflight,color,
+dicator (RSSI) from all Access Point (AP) in the building andsound.
+[3], FM radio signal features (RSSI, SNR, multi-path, etc.)
+Wearguethattheirlimitationsdon’tmeanthesesystems
+[5], acoustic background spectrum [16]. Another group of
+are useless, because of following points. First, the limita-
+systemslookintoinstallingextrainfrastructuresasbeacons
+tions don’t always happen at the same time, and some of
+inbuilding, whereuserscarryreceiverofthesignalsentby
+them have actually been proven to be almost mutually in-
+dependent. Liu et al. [5] look at the consistency of finger-
+print of WiFi signal and FM signal, and found for most lo-
+cations,thereareatleastoneconsistentsignal. Second,itis
+not hard to detect whether the context satisfies the assump-
+tions. For example, we can regard accelerometer data with
+verylargevarianceasuncommonortoocomplexmovement
+from users. The signal consistency can be checked when
+smartphonedetectslittlemovementfromaccelerometer(i.e.
+thephoneisstayingatonelocation). Third, crowdsourcing
+from user inputs is also a good ways to determine the con-text,especiallywhenproceededinamotivatingmanner,like jectories, along which both WiFi and ABS fingerprints are
+gamesorcompetitions. sampled. Theresultsshowthattheframeworkcantrustthe
+Another reason for the absence of consensus on indoor confidence, and hence yield results no worse than the best
+localizationsolutionistheirheterogeneousgoals. Somesys- estimationsamongWiFiLocandABSLoc.
+temspayattentionsonthephysicalprecisionoftheestimated Insummary,ourcontributionsare:
+location,suchassomeSimultaneousLocalizationAndMap- • We point out that most IPS can do context-awareness,
+ping (SLAM) application employed by robots that aspire
+andhenceprovideanaccurateconfidenceoftheirlocal-
+very fine grained positioning results. Some other systems
+izationresults.
+only care about the specific locations relevant to the appli-
+cation. A building energy tracking system [6] only cares • Given each IPS can predict their result accuracy, we
+about the zones around electronic devices. In addition, in- proposetheideaofIPSframeworkthataccordinglyad-
+stead of accurate physical location estimation, some appli- justsandusesappropriateIPSsunderdifferentcircum-
+cations need fine-grained room level positioning, which we stances.
+call as semantic localization. Semantic localization differs • With real implementations, we prove the correctness
+from physical localization in the sense that two physically andfeasibilityoftheconfidencealgorithmsandframe-
+nearby points could locate in two different (and maybe ad- work.
+jacent) rooms, imaging two locations against the same wall The rest parts of this paper are organized as follows: in
+formeachside;andtwopointsinoneroomcanbeapartfrom Section2,weintroducesomeIPSsbriefly,andtalkaboutre-
+eachotheratmeterlevel,imagingtwopointslocatingattwo lated works in combining IPSs. The system architecture is
+diagonalcorners. Aconsumerbehavioranalyticssystemin described in Section 3. We discuss the ideas of calculating
+mall[2,19]needsaccurateestimationsofthestoresthecon- confidenceswithdetailedexamplesinWiFiLocandABSLoc
+sumervisited. in Section 4, and data fusion methods to combine multiple
+Inthispaper,weproposeanIPSFramework,tocombine sourcesofestimatedlocationsinSection5. Theevaluations
+different indoor localization techniques accordingly based aredescribedandanalyzedinSection6. Wetalkaboutour
+ontheirlimitationsandcontext,aswellastherequirements future work and conclude the paper in Section 7 and 8 re-
+oftheapplication. Thekeypointistoassignhighercredits spectively.
+andweightstomorepossiblyaccurateresults,andcombine
+2 RelatedWork
+themusingappropriatedatafusionmethods. EachIPSisre-
+quiredtoimplementitsownwayofpredictingtheaccuracy Some former work of combing multiple indoor localiza-
+ofitsresult, whichwecallasconfidence. Theoverheadfor tiontechniquesresultedtosignificantperformanceimprove-
+existingIPSstobeintegratedisindependentofexistingim- ments. Azizyanetal.takeWiFi,sound,light,andcolorfea-
+plementation,butdependsonhowaccuratetheywanttothe turesfrommobilephonesensorsassignatures, andsequen-
+confidencetobe. Thealgorithmstocalculatetheconfidence tiallyandgraduallyfilterestimatedpositioncandidateswith
+varybetweendifferenttechniques,andhowwellthedesign- multiplesignature-basedtechniques,eachofwhichusesthe
+ersanddevelopersunderstandthelocalizationmethods. As outputcandidatessetoftheformeroneasinput[2]. Theim-
+wedescribedabove,oneimportantpointismanyIPSscanbe provement brought about by this cascaded methodology is
+implementedtobecontext-aware. Forexample,fingerprint- proved to increase with the number of available sensors in-
+based confidence could be more confident if the signal is creases in general. However, they also observe sound filter
+consistent. Based on their confidences and the history per- sometimes rule out the correct positions, which gives more
+formance (i.e. the credit), the framework assigns weight to motivation for us to look into the determinability of the in-
+each of them. IPSs with more accurate confidences in his- termediateaccuracybeforeblindlycombingthem.
+tory gain higher credits. The idea is to recognize the best Chen et al. [5] combine WiFi and FM signal indicators
+resultsbyconservativelytrustingtheirconfidence. Withdif- as one signature. They found the interferences to WiFi and
+ferent results assigned different weights, we look into how FMsignalscausingerroneousresultshappenindependently.
+to combine their data to provide more precise and smooth Thus,usingintegratedsignaturealmostremovealltheerrors,
+trajectoryestimations. Noteweareneithertryingtodenoise drasticallyincreasingthelocalizationaccuracyfromaround
+therawsensordatanorimprovingaccuracyforanyIPS. 80%upto98%. Webelievethisphenomenonisalsoappli-
+To depict our ideas, we implemented WiFi RSSI-based cable to other localization techniques, and will bring more
+fingerprintlocalizationandAcousticBackgroundSpectrum benefitsifmoreappropriateintelligenceareintroduced.
+(ABS)fingerprintlocalization[16]1andtheprototypeofour
+However, no comprehensive and general study has been
+framework. Bothofthemareembeddedwiththeirowncon- done for combing multiple IPSs. Rai et al. [15] build
+fidence calculation mechanisms. We also implement linear an fully-automated indoor localization system called Zee,
+weighted average and Kalman Filter [1] to combine the es- which features no training phase, and the system converge
+timationsfromWiFiLocandABSLoc. Basedonthefinger- pretty neatly by combining IMU-based dead-reckoning and
+print database we build for a university building, we evalu- WiFi signature-based localizations. Zee uses estimated tra-
+ateourconfidencealgorithmsandframeworkwiththreetra- jectory to determine the positions on the map, and records
+the WiFi signatures simultaneously to build the signature
+1Foreaseofdiscussion,“WiFiLoc”and“WiFiRSSI-basedfingerprint
+database from zero. WiFi signatures in history are used to
+localization”areusedinterchangeablyinthispaper,soas“ABSLoc”and
+“AcousticBackgroundSpectrumfingerprintlocalization”. calibratethelocalizationmethods.Thisisagoodexampleofcombiningdifferenttechniques,buttheydon’thavein-depth these elements, and emphasize on the extensibility. As a
+investigationongeneralcombinations. framework,itshouldrequireaslittleoverheadaspossiblefor
+Paiidyaetal.[13]introducetheideaofcombiningdiffer- anewmodulewhowantstoplugin. Fig.1showstheoverall
+entwirelessIPSsbecausetheyarenotavaliableeverywhere, architectureofoursystems.Wehavesensormodulesthatare
+andthecoverageofcollectionwillprovideamorepervasive available on most off-the-shelf smartphones. All data from
+services. However,theyonlyuseaveragingwithoutweights the smartphones are pushed to or pulled by different IPSs.
+and have no discussions about the rationale. Experiments AndallIPSsprovidetheirlistofmostpossiblelocationsand
+showthatimprovementsofmidpointofresultsfromKNear- theirconfidencestotheIPSframework. Theframeworkde-
+est Neighbor (KNN) and triangulation of Bluetooth signal termineandreturnthefinalresultsbacktosmartphone.
+rangefrom2%−52%.
+3.1 SensorModules
+In [8], Gwon et al. propose a Selective Fusion Location
+Sensors in Fig. 1 are most commonly available in com-
+Estimation(SELFLOC)algorithmandRegionofConfidence
+mercialsmartphones.Butwedon’tlimittherangeofsensors
+(RoC) algorithm. Both of them are data fusion methods of
+or devices we can use. They are just data sources of spe-
+IPSs. SELFLOC is essentially a linear weighted averaging
+cificIPSs,andhavelittletodowiththeframeworkthatonly
+calculation. However, they consider little about the nature
+looksattheoutputfromIPSs. Forexample, onecaninstall
+of the mechanism of IPSs, and therefore don’t discuss how
+magneticsignalbeaconsandhaveusercarryapre-registered
+and what weights should be assigned to each IPS, let alone
+magnetic receiver [10]. One important idea here is to iso-
+thecontextawareness,whichwewilldescribeinthispaper.
+late the sensor modules from IPSs. IPSs can get raw data,
+Ontheotherhand,RoCcanonlybeusedforlocationdeter-
+but don’t need to get into details of sensor module imple-
+mination during triangulations, which is just a little portion
+mentations. Someprotocolshavebeenproposedtoabstract
+amongallIPSs. SimilartoSELFLOC,theydidn’tdiveinto
+heterogeneousstream/time-seriesdata[7]. Buttheseareout
+how to eliminate the erroneous IPSs in triangulations using
+oftherangeofthispaper.
+contextawareness. Anotherproblemoftriangulationsisthat
+Same type of sensors from different manufactures may
+universalobstaclesincommercialbuildingsalmostpreclude
+have significant differences with respect to performance,
+accurate line-of-sight distance measurements, which is cru-
+suchasconsistency,accuracy,speed,anddurability. Butthis
+cialintriangulations. Thisisalsotheprimaryreasonthatwe
+isnottheworryoftheframeworkeither. Aswewilldiscuss
+don’tusetriangulationsinourWiFiLoc.
+later, the framework maintains a history of performance of
+David et al. [1] developed a decentralized multi-sensor
+different IPS systems, so the error-prone sensorsor devices
+target tracking system with a distributed information flow
+willlosethecreditsandhavelittleimpactonthefinalresults.
+anddatafusionamongtheparticipatingtheplatforms. They
+3.2 IndoorPositioningSystems
+analyzed three data fusion techniques associated measure-
+ment fusion, tracklet fusion and track to track fusion. Of InspitethatIPSsaredepictedasrunningonserverinFig.
+thesetechniques,thetracktotrackfusionisofgreatinterest 1, practically there should be no restrictions on the imple-
+tous.Tracktotrackdatafusiontechniqueisusedtocombine mentations. Currently we implemented WiFiLoc and AB-
+thedatafrommultiplesensorsassumingtrackersonallplat- SLoc in Matlab on server. But we can totally distribute
+formsusethesameinformationtostartwithatsametimet . them. Inparticular,wemayputthedatabaseoffingerprints
+0
+Weusesimilarapproachtoindoorlocalizationhoweverwith on other servers if the size of database increases. Smart-
+acentralizedserverforcombiningdataformultipletracks. phone can also do preliminary computations to refine the
+data before sending them to server for fine grained finger-
+3 SystemArchitecture
+print matching, and hence reduce the network throughput.
+Forexample,itcanuselastoutdoorGPSreadingstodecide
+thepartofbuildingitshouldbe,andonlylookatthefinger-
+Phone Server
+printsaroundthatarea.
+Sensor Modules Indoor Localization Systems
+WiFiLoctakesthesetofRSSIvaluesfromallWiFiAPs
+WiFi chip WiFiLoc
+as a signature.2 Signatures on selected locations, which
+Microphone ABSLoc [Location List, Confidence] we call fingerprints, are collected in advance and stored in
+Compass [Timestamp, Value] LocIn ald izo ao tr i on database. Whenauserorapplicationquerytheestimatedlo-
+System
+Accelerometer Dead Reckoning Framework cation, WiFiLoc grabs the current signature, and calculates
+distances between it and fingerprints in database. The dis-
+Gyroscope
+Others...
+tancescouldbeanyappropriatedistancesthatcanbeapplied
+Others...
+to an array of values3, such as Euclidean distance or Man-
+[Final Location] hattandistance. Basically,thecorrespondinglocationofthe
+Figure1. SystemArchitecture mostsimilarfingerprintwillberegardedastheestimatedlo-
+cation. Alternativesmaytakethelistofnearfingerprintsand
+theirlocations,andusethemeanvalueofthelocationlistas
+InthisSection,wedescribethesystemarchitectureofthe
+IPSframeworkindetail.Thepointistodesignasystemwith
+2ThereareotherIPSsthatusesignalattenuationtoestimatedistances
+bothefficiencyandextensibility. Theefficiencycomesfrom
+fromuserandAPs,andperformtriangulationonthemaptodopositioning
+various aspects including hardware, algorithm, data trans- 3Dependingonthenatureofthearrayofvalues,itcan,butnotrestricted
+mission, etc. We leave the efficiency as issues to each of to,beavectorinavectorspace.finalestimation. ThisprocessiscalledKNNaveraging,and Forexample,ABSLoctendstoperformbetteramongphys-
+iscommonlyusedinfingerprint-basedIPS. ically separated rooms than open areas. And WiFiLoc may
+ABSLoc[16]isalsoafingerprint-basedIPS. Thediffer- performbetterduringearlymorningwhentherearelessin-
+encebetweenABSLocandWiFiLocisthenatureoffinger- terferences.
+print. Basedontheideathateachroominabuildinghasits There are a bunch of techniques to execute data fusion
+uniquepatternofbackgroundnoise,thankstotheuniqueness onmultiplelocations. Themostsimpleonecouldbelinear
+of environment and sound attenuation through walls. AB- weighted average values of each dimension of coordinates.
+SLoc extract the frequency spectrum of background noise Nevertheless, we can bring more intelligence into this step.
+as the fingerprint for each room. In our prototype, we pro- For example, Kalman Filter [1] could be used to iteratively
+duced fingerprints for points rather than rooms, because it eliminatetheerrorsalongthetrajectory,consideringrestric-
+willnotreduceroom-levellocalizationaccuracyanditsim- tions like pedestrian speed. Moreover, other information,
+plifiesdatafusion. WewillcomebacktothisinSection6. such as physical obstacles and user movement pattern, can
+Dead-reckoning is to estimate current position based on alsobeintegratedintotheframework. Aftercombingdiffer-
+theknownstartpointandthevelocity,time,directionalong entlocations,theframeworksendsthefinaldecisionbackto
+past trajectory. With richer availability and better perfor- allIPSsasfeedbackandsmartphoneasqueryresult.
+mance of IMU on smartphones, we can measure the speed
+4 Confidence
+and orientation of the user, and perform a dead reckoning
+Asidefromtypicallocalizationmechanisms,weadvocate
+calculation. The downside of dead reckoning is that it sub-
+all IPSs also implement their mechanisms to estimate their
+jectstocumulativeerrors. Sothecalibrationswithhelpfrom
+resultaccuracy,whichistheconfidencewetalkedabout. We
+other IPSs appears very important. In our system, the cali-
+lookintoconfidenceinthisSection.Becausetheconfidences
+brations happen when the framework returns the final loca-
+dependonIPSsthemselves,todeliverourideas,wediscuss
+tiontoallplugged-inIPSs.
+possible confidence calculation algorithms for the IPS in-
+InadditiontotheoriginaldesignsoftheseIPSs,wepro-
+volvedinourprototype,namelyWiFiLocandABSLoc,and
+pose each of them to implement a confidence calculation
+extendthediscussionalittleinotherIPSs.Togeneralize,we
+mechanism, in which they can use sensor data to learn the
+require all confidencesC (i=1,2,3,...,n) to be real num-
+context and analyze the intermediate or ultimate results, to i
+bersin[0,1].
+indicatetheirconfidencesabouttheaccuracyoftheirestima-
+tions. MoredetailswillbediscussedinSection4. 4.1 WiFiLoc
+Similar to sensor modules, IPSs are isolated from the Asafingerprint-basedIPS,WiFiLoccanemploygeneric
+framework. In particular, IPS framework use one generic ideas of confidence calculation for fingerprint-based IPS.
+interface with all IPS and obtain estimated location list and Oneofthemistoseethesignaturedistancebetweenthesam-
+confidence from each of them. Hence, any detail of IPS is pled signature and nearest fingerprint in database. Smaller
+hiddenfromframework. However,themanifestationsoflo- nearest distances ought to yield higher confidence gener-
+cations varies. They can be room numbers, or coordinates ally. Furthermore, many fingerprint-based IPSs average
+basedonthemap. Theframeworkneedstounderstandboth more than one locations with near enough fingerprints to
+ofthemandhandlethedifferences. Thedetailswillbedis- avoid extreme errors in estimation. Hence, the sparsity, or
+cussedinSection5.1.3. the variances of each dimensions in the location list, also
+3.3 IndoorPositioningSystemFramework implythepotentialaccuracyoftheestimations. Itcouldbe
+IPS framework is in charge of 1) collecting estimations moreconfidentifitslocationlistconvergeonthemap.
+andconfidencesfromIPSs,2)maintainingacreditbasedon Ontheotherhand,IPSwillpotentiallyprovidemorepre-
+the history performance of each entity of IPSs, and 3) fig- ciseconfidenceifittakesrelevantcontextintoconsideration.
+uring out a good way to fuse data from multiple sources to ForWiFiLoc,onecandeterminewhetherthesignalisconsis-
+generateafinalestimatedlocation. Wediscusseachofthem tentatonepositionbyrecordingmultiplesignatures. Itcan
+asfollows. bedoneduringthethedatabasebuildingphase,inwhichthe
+Estimation and confidence collections could be either system administrator collects takes charge. But a more ef-
+event-drivenorcommand-driven,whichmeansIPSscanre- fortlesswayistohavetheusers’applicationcheckthesignal
+port to framework on locations updates, or framework can consistencywhenlittlemovementinIMUisdetected(i.e.the
+retrieve these information from IPS on demand. We imple- smartphoneishaltingatonepoint). Otherindicatorsofcon-
+mentedoutprototypeasthelattercase,soestimationsfrom fidence include the background noise or interferences, and
+bothIPSshavethesametimestamp,andinturnsimplifythe thenetworkdelay,andnumbersofusersforeachAP. These
+comparisonsbetweentheminSection6. information are all observable with existing infrastructure,
+To reduce the impacts from ill-performed entities of IPS but how exactly they influence the accuracy of the estima-
+resultedfromvariousreasons,includingmalfunctioningsen- tionsrequiremorein-depthresearch.
+sors, nasty implementation, or coarse nature of the algo- Moreover, if the designer and implementer go further,
+rithms,theframeworklogtheperformanceandevaluatethe and make WiFiLoc maintain a history of the consistency
+creditsofthem. Withdifferentrequirementsforframework, of each AP, or even their performances under different cir-
+eachentitymayhaveacreditforeachzoneinabuilding,or cumstances(e.g. numbersofclients,interferences,network
+evenforeachtimespaninadayoraweek.Thereasonisthat throughput), it may perform better context awareness, and
+some IPSs may perform well under specific circumstances. provide much more accurate confidences. These details ishardtobeconsideredintheframework,thereforetherespon- needs to judge and weight between multiple proposes from
+sibilityisoneachIPS. IPSs. Unfortunatelytheconfidencesprovidedalongwithlo-
+4.2 ABSLoc cationlistsbyIPSscanonlyactascluesratherthandetermi-
+nants,becauseofdifferentunderstandings,implementations,
+ABSLoc is also a fingerprint-based IPS, therefore the
+andnaturesamongIPSs. Weproposeanempiricalmethod,
+genericideasdescribedforfingerprint-basedIPSbeforeare
+whichkeepsacreditbasedonperformancehistoryforeach
+applicableaswellforABSLoc.
+IPSentity. Afterthat, welookintoideasoffusingmultiple
+Apparently,ABSLoccanalsotakecontextinformationas
+locationestimations,tofinalizemorepracticalresultsinthe
+input to confidence calculation. If it can identify open ar-
+senseofreasonablehumanmovements. WeuseKalmanFil-
+eas and separated rooms areas in the building, which may
+ter as our key solution for data fusion, which is proved to
+requireinputfromusersoradministrator,itcanbelesscon-
+fulfillourexpectationsaswewilldescribeinSection6.
+fident if most of the nearest fingerprints are located among
+5.1 Preparation
+openareas. ABSLoccanalsologitsperformancesbasedon
+thefeedbacksfromtheframeworkateachpositions,andtag 5.1.1 PerformanceHistoryandCredit
+thepositionswhereitalwaysyieldinaccurateestimationsas The framework keeps track of all plugged-in IPSs, and
+open areas. One point to emphasize here is that, the idea logs their performances to build their credits. Basically, if
+for history performances in framework and in each IPS are oneIPSalwaysprovidesaccurateestimations,whichmeans
+different. For framework, it has not idea about the reasons the estimations have small distances to the final decision
+thatcausethecoarseestimationsinIPS,whichcouldbeei- of the framework, when they meanwhile gives high confi-
+ther bad hardware or software, especially if the framework dences,itgainscredits. Lowconfidencesdon’thelpgainor
+doesn’thavehistorywithfineenoughgranularityintermsof losscredits.Anderroneousestimationswithhighconfidence
+timeandspace. However,iftheseinaccuracycouldbeiden- willharmthecredits.Notethatabadestimationcomingwith
+tifiedbyIPSsthemselvesbylowconfidencesbeforesending highconfidencewillnotdeterminablyruinthefinaldecision,
+toframework,itavoidsthemharmingtheircredits,andpre- becausetheframeworkwillnotonlylookatonconfidences,
+servestheiropportunitiestocontributetothewholesystem. but other parameters like credits and human movement re-
+According to the evaluation part in [16], ABSLoc only strictions.
+work properly in relative quiet environments. Fortunately, Oneimportantfunctionalitythattheframeworkhasisto
+wecandeterminewhethertheaudiorecordisnoisybyaudio figure out what granularity each credit should represent in
+signal processing features, such as its variances and mean termsoftimeandspace.AswedescribedinSection3.3,one
+value. Based on the noisiness of the record, ABSLoc can IPS entity may perform quite differently at different places
+definitelyindicatehigherconfidenceifthesoundisquieter, andtime,becauseoftheirspecificassumptionsonindooren-
+comparedtoapresetperformancethreshold. vironments.Forinstance,ABSLocassumesseparatedrooms
+inbuildings,butopenareaslikecubiclesareactuallynotun-
+4.3 OtherIndoorPositioningSystems
+common. TomakesurethebadperformancesofanIPSun-
+Aside from incomplete confidence calculation methods
+der inappropriate circumstances don’t prevent it from con-
+above,otherIPSsalsohavegreatpotentialinpredictingthere
+tributing in their adept scenarios, the framework can use
+result accuracy using confidence. Take Dead Reckoning as
+clustering techniques, such as k-means, to divide an entity
+anexample,wecaninferfrom[15,11]thattheirIMU-based
+intoseveraloneswithseveralcreditrecords.
+trajectory estimations only workwith “normal” movements
+5.1.2 WeightAssignment
+of phones, which is a limited set of pre-defined patterns to
+Weightsrepresenttowhatextenttheframeworktrustthe
+which all movements have to be matched. But we actually
+estimationsfromanIPS.Asweightsaredirectlyusedfores-
+cannot guarantee that all users will use phone “normally”.
+timationscombination,sowerequirethemtobenormalized,
+It is possible that the user swings her or his phone during
+whichmeansallweightsW (i=1,2,3,...,n)fornIPSsmeet
+gaming,orhaveweirdmovementswhentheyareshootinga i
+thecondition:
+video using phone. Those anomalies could actually be de-
+tected. Fortunately, mostIMU-basedIPShaveapossibility
+n
+oftheirestimationaccuracy,whichtendstobelowwith“ab- ∑W =1, W >0 (1)
+i i
+normal”situations,butfewsystemsmakeuseofthat.
+i=0
+Potentially there are numerous ways to compute a con-
+Therearealsoseveralideastoassignweights. Mostsim-
+fidence. Theoretically, the better we understand the nature
+pleoneshouldbemultiplyingcreditandtheconfidence,and
+of the IPS and related hardware and software, the more ac-
+normalizingtheresultsasweightforeachIPS. Moreover,as
+curate confidence calculation algorithm we could come up
+thepurposeofweightsistohighlightthemostpossiblyaccu-
+with. However, perfect confidence calculation is not our
+rateresult,andreducetheimpactfromerroneousones,when
+goal. Our key point is we can make the most of the infor-
+theframeworkdetectslargesparsityamongestimatedloca-
+mationwegain,andprovideabetterpositioningresultswith
+tions,itmayconsideramplifyingthedifferencesbetweenall
+cooperatedeffortsfrommultipleIPSs.
+weights, to potentially reduce the effects from less-trusted
+5 DataFusion IPS.
+Withmultiplesourcesofestimatedlocationlistandcon- 5.1.3 UnifyLocationGranularities
+fidences, the framework takes charge of combing them and Another issue faced by the framework is that different
+generating a final decision of location. Too achieve this, it IPSsactuallyprovidelocationestimationsatdifferentgran-ularities. Inparticular,someIPSslikeABSLocaimatroom-
+level semantic estimations, but dissimilarly, WiFiLoc only
+producecoordinatesaslocations. Firstofall,theframework
+hastounderstandbothsemanticandphysicalrepresentatives
+on the map. We don’t dive into the details of map imple-
+mentationinthispaper. Asfarasweareconcerned,thein-
+congruity of location manifestations forces the framework
+tocompromiseifitwantstousedominantdatafusiontech-
+niques. We propose two ways to unify the granularity as
+follows.
+• Location Granularities Boost: To convert estimated
+roomfromsemanticestimationstocoordinates,frame-
+workcanuniformlyselectpointsinaroomataproper
+granularity. However,itisnotagoodideatochoosethe
+meanvalueofthesepointsasestimationfromoneIPS,
+becauseitalwaysleadstothecentralpointoftheroom.
+Instead,theframeworkdividesthesepointsandregards
+eachofthemasestimationfromoneIPSentitywiththe
+sameconfidenceastheoriginalone.
+• Location Granularities Reduction: Conversely, the
+framework can also semantically use room where the
+mean value of the coordinate list from one IPS to rep-
+resent its estimation. However, combing semantic lo-
+cations requires different data fusion techniques. We
+leavethisasourfuturework.
+5.2 FusionMethods
+Withweightsandlocationsprepared, theframeworkcan
+combine them and give the final decision of the estimation.
+Weonlytalkaboutdatafusionmethodsafterusing“Location
+GranularitiesBoost”,whichgeneratescoordinatesasinputs
+Figure2. DatabasePointsandGroundTruthPaths
+ratherthansemanticrepresentatives.
+5.2.1 LinearCombination
+The most simple fusion is linear weighted average. We
+This is a simplest case of a persons movement in building.
+denote L (i = 1,2,3,...,n) as the mean location of loca-
+i SoasimplevariationofKalmanfilterwouldsufficefordata
+tionlistfromtheithIPSusingKNNaveraging,andW (i=
+i fusion. Secondly,themeasurementsaretakenfromrighttop
+1,2,3,...,n)asitsweight. Thenthefinalestimatedlocation
+cornerofthefloormap. Positionofbothsensorsareconsid-
+Lis
+eredtobefixedat(0,0)position.
+Each sensor module feeds the Kalman Filter with loca-
+n
+∑(W ·L) tion list and confidence value. Another important assump-
+i i
+L= i=0 (2) tion is that the sensors are synched meaning they provide
+n measurementoftargetstateatsametimeinterval. Usingthe
+linearsystemequationsforpositionestimationandthemea-
+, where W (i = 1,2,3,...,n) are normalized as we de-
+i surementsfromsensorsKalmanFiltercorrectstheerrorsin
+scribedbefore. However,thiscombinationonlyfollowsthe
+sensormeasurements. Wecombinethedatausingweighted
+mathematicalprincipleswithoutanyconsiderationofhuman
+average after the estimation. Weights are calculated based
+movementrestrictions,leavingusplentyroomsforimprove-
+ontheconfidencevaluesuppliedtotheframework. Weplan
+ments.
+toextendthisworkusingnon-linearKalmanFiltersvariants
+5.2.2 KalmanFilter
+suchasExtendedKalmanFilter(EKF)orUnscentedKalman
+Comparedtolinearweightedaverage,KalmanFiltercon-
+Filter(UKF).
+siders the rationality in the trajectory. We used a simple
+6 Evaluation
+form of Kalman Filter to combine the data. Kalman Filter
+providesBayesianrecursiveestimateofstatespaceX using We evaluate our system based on 3 trajectories in uni-
+k
+knowledge of previous state [X 1,X 2,X 3,...,X k−1] in a linear versity building. Particularly, we firstly look into confi-
+statespacesystemwithGaussiannoise.Sincetheprojectfo- dencesabouttheresultsforeachtechnique,namelyWiFiLoc
+cuswasonbuildingtheframeworkratherthanKalmanFilter and ABSLoc. Results shows that each technique can pro-
+itselfweusedabasicformofKalmanFilterwithcertainas- videfairlyaccurateconfidenceontheirestimationaccuracy.
+sumptions. Firstly, a persons movement in a building is a Thereafter, we analyze the accuracy improvements of dif-
+linear system where he is moving with a constant velocity. ferent combination methods given the estimated points andconfidences.Weemploysimpleweightedaveragemethodas Withthesignaturessampledalongthepath,WiFiLocand
+wellasKalmanFilter. Thankstotheerrordeductionfeature ABSLocstartpositioningthesesignaturesaswedescribedin
+ofKalmanFilter,itcanremoveerroneousspikesinallesti- Section3.2.WeuseEuclideandistanceassignaturedistance.
+matedpaths. Notethatweemphasizeontheerrorreduction InWiFiLoc, thedefaultvalueforRSSIissetas−150dBm
+abilityofourframework,ratherthanaccuracyimprovement, ifitismissingineithersignaturescompared. Amongtheco-
+which may be the goal for each technique themselves. In ordinates sorted by their corresponding signature distances,
+otherwords, theframeworkaretryingtoavoidtrustingand WiFiLocandABSLocsetathreshold
+using,butnotabletoreduce,theerrorsthatinherentlyexist
+T =α·D (3)
+insensordataandlocalizationtechniques. min
+,whereD denotestheminimalsignaturedistance,andse-
+6.1 ExperimentSetup min
+lectallcoordinateswhosecorrespondingsignaturedistances
+WeimplementedWiFilocandABSLoc,bothofwhichare
+arelessthanT asestimatedlocationlist. Currently,weonly
+comprised of a training phase and a localizing phase. All
+use the sparsity of this location list to determine the confi-
+training and localizing data are collected in advance, and
+denceforbothWiFiLocandABSLoc.Themorethelocation
+post-processedinMATLAB2012b.
+listconverges,thehighertheconfidencegoes. Inparticular,
+InourWiFiLoc,wewroteanapplicationforLGRevolu- theconfidenceC is
+i
+tionVS910withAndroid2.3.4tocollectWiFiRSSI.Every
+1 1
+entry in raw data is a <MAC address,RSSI > tuple. Each C = + (4)
+WiFisignatureisalistoftuples.Andtheapplicationcollects i 2·eStdBS at sd ex
+linex
+2·eStdBS at sd ey
+liney
+RSSIsforeachavailableAParoundevery800milliseconds,
+, in which Std and Std denote the standard deviations
+whichinturnformsasignature. InWiFiLocdatabase,every x y
+fingerprint is combined with a coordinate on the map. And on each dimension of coordinates, and StdBaseline x =
+newsignaturearecomparedwitallfingerprints, andinturn
+100 (inch) and StdBaseline
+y
+=100 (inch). Those numbers
+are empirically set, and are possible to be tuned for a bet-
+resulttoamost-possiblecoordinatelist.
+ter performance. However, that is not our emphasis in this
+For ABSLoc, we used the default sound recorder in Ap-
+paper.
+ple iPhone 5 with iOS 6.01, which yields .m4a audio files.
+The framework obtains their location lists and confi-
+Therecordfileslastmorethan60secondsforeachpoint. To
+dences,andassignsnormalizedweightedW basedonC (i=
+maketheaudiofileeasytoanalyze,eachofthemisconverted k i
+1,2,3,...,n)usingfollowingformula,
+to.wavfilesinAudacity(Specifically,thefiletypeis“WAV
+(Microsoft)signed16bitPCM”).However,insteadofroom- (C )3
+k
+level semantic localization, we also bind a ABS fingerprint W k=
+n
+(5)
+in ABS database to a coordinate for two reasons. First, us- ∑(C)3
+i
+ingfine-graineddoesn’tharmtheaccuracyatroomlevel,be- i=0
+cause accurate estimated location based on coordinates can The purpose of using 3rd power computation is to enlarge
+alsobeconvertedtoaccurateroomestimation.Second,using thedifferencesbetweenIPSswithrelativelylargedifferences
+coordinatesforbothWiFiLocandABSLocgreatlysimplifies in confidences. In other words, it is used for highlight-
+andreducesourdatafusionefforts. ing the higher confidences between WiFiLoc and ABSLoc.
+With weights assigned, the framework applies both linear
+6.1.1 Training
+weightedaverageandKalmanFiltertothemeancoordinates
+Intrainingphase,wecollectsbothWiFiandABSsigna-
+ofbothlocationlistsfromWiFiLocandABSLoc.
+turesatspecificpointsinRADLab. The98redcrossmark-
+We thereby evaluate this prototype with respect to the
+ersinFig.2indicatethelocationsoftrainingdata. Forevery
+confidenceaccuracy,datafusionmethods,andotherselected
+point,werecordmorethan60secondsaudiosignalandWiFi
+parameters,suchasfingerprintnumberateachpoint,andto-
+RSSIvalues. ThebindingbetweenWiFiorABSfingerprint
+talpointsnumberindatabase.
+and coordinate on the map are stored in WiFiLoc database
+6.2 ConfidenceAccuracy
+and ABSLoc database respectively. The time spent on col-
+Empirically,weselect3WiFifingerprintsand1ABSfin-
+lectingalldataindatabasespansoneweek.
+gerprintateachpositionindatabase.Andwechooseα=1.3
+6.1.2 Localizing forbothWiFiLocandABSLoc.
+Fig. 2 depicts the 3 paths we conducted for evaluation. Fig. 3 depicts the confidences and errors, which is the
+Every marker on the path indicates both a sampled WiFi physicaldistancefromestimatedlocationtothegroundtruth
+andasampledABSsignature. Theremaybesignaturesam- location,forWiFiLocandABSLocinall3paths.Thex-axis
+pling happened between two consequent markers. The size isthetimelinealongthepath,andeverymarkercorresponds
+of marker represents the time the user spent at that point. toamarkerinFig.1. Forpath1,itsamplesaWiFiandABS
+Bothpath1andpath2startfromthebottompartofthemap, signature nearly every 4 seconds, and path 2 and 3 sample
+whereaspath3startsfromthetoppart. Startpointsaretags every1or2seconds. Weeliminatethesamplesbetweenad-
+as S1, S2, and S3 in Fig. 2 respectively. To help discus- jacentmarkersalongthecurve,toensuretheresultsclearas
+sions in Section 6.2 about how the environments influence wellasrepresentative.
+ABSLoc’s performances, we also mark blocked rooms and According to Fig. 3, in most cases when the confidence
+openareasonthemap. is high, the errors are low, with only one exception in AB-1000
+800
+600
+400
+200
+00 100 200 300 400 500 600 700
+)hcni(
+rorrE
+WiFi Confidence for Path 1
+1
+0.8
+0.6
+0.4
+0.2
+0 100 200 300 400 500 600 7000
+Time (second)
+ecnedifnoC
+1000
+800
+600
+400
+200
+00 20 40 60 80 100 120 140 160 180
+)hcni(
+rorrE
+WiFi Confidence for Path 2
+1
+0.8
+0.6
+0.4
+0.2
+0 20 40 60 80 100 120 140 160 1800
+Time (second)
+ecnedifnoC
+1000
+800
+600
+400
+200
+00 20 40 60 80 100 120 140 160 180 200
+)hcni(
+rorrE
+WiFi Confidence for Path 3
+1
+0.8
+0.6
+0.4
+0.2
+0 20 40 60 80 100 120 140 160 180 2000
+Time (second)
+ecnedifnoC
+1000
+800
+600
+400
+200
+00 100 200 300 400 500 600 700
+(a) WiFiLocConfidence
+)hcni(
+rorrE
+ABS Confidence for Path 1
+1
+0.8
+0.6
+0.4
+0.2
+0 100 200 300 400 500 600 7000
+Time (second)
+ecnedifnoC
+1000
+800
+600
+400
+200
+00 20 40 60 80 100 120 140 160 180
+)hcni(
+rorrE
+ABS Confidence for Path 2
+1
+0.8
+0.6
+0.4
+0.2
+0 20 40 60 80 100 120 140 160 1800
+Time (second)
+ecnedifnoC
+1000
+800
+600
+400
+200
+00 20 40 60 80 100 120 140 160 180 200
+)hcni(
+rorrE
+ABS Confidence for Path 3
+1
+0.8
+0.6
+0.4
+0.2
+0 20 40 60 80 100 120 140 160 180 2000
+Time (second)
+ecnedifnoC
+(b) ABSLocConfidence
+Figure3. ConfidenceAccuracyofWiFiLocandABSLoc
+1000
+800
+600
+400
+200
+00 100 200 300 400 500 600 700
+Time (second)
+)hcni(
+rorrE
+Error by Time for Path1 Error by Type for Path1 WiFi Err 1000
+ABS Err 800
+Linear 600
+400
+200
+0 WiFiABSLinear
+)hcni(
+rorrE
+1000
+800
+600
+400
+200
+00 20 40 60 80 100 120 140 160 180
+Time (second)
+)hcni(
+rorrE
+Error by Time for Path2 Error by Type for Path2 WiFi Err 1000
+ABS Err 800
+Linear 600
+400
+200
+0 WiFiABSLinear
+)hcni(
+rorrE
+1000
+800
+600
+400
+200
+00 20 40 60 80 100 120 140 160 180 200
+Time (second)
+)hcni(
+rorrE
+Error by Time for Path3 Error by Type for Path3 WiFi Err 1000
+ABS Err 800
+Linear 600
+400
+200
+0 WiFiABSLinear
+)hcni(
+rorrE
+1000
+800
+600
+400
+200
+00 100 200 300 400 500 600 700
+Time (second)
+(a) LinearWeightedAverage
+)hcni(
+rorrE
+Error by Time for Path1 Error by Type for Path1 WiFi Err 1000
+ABS Err 800
+Kalman 600
+400
+200
+0 WiFiABSKalman
+)hcni(
+rorrE
+1000
+800
+600
+400
+200
+00 20 40 60 80 100 120 140 160 180
+Time (second)
+)hcni(
+rorrE
+Error by Time for Path2 Error by Type for Path2 WiFi Err 1000
+ABS Err 800
+Kalman 600
+400
+200
+0 WiFiABSKalman
+)hcni(
+rorrE
+1000
+800
+600
+400
+200
+00 20 40 60 80 100 120 140 160 180 200
+Time (second)
+)hcni(
+rorrE
+Error by Time for Path3 Error by Type for Path3 WiFi Err 1000
+ABS Err 800
+Kalman 600
+400
+200
+0 WiFiABSKalman
+)hcni(
+rorrE
+(b) KalmanFilter
+Figure4. PerformanceImprovementsafterUsingLinearWeightedCombinationandKalmanFilter
+SLoc at the end of path 1. Hence, the framework should thex-axisisthetimelineofpaths,butthey-axisonlyshows
+trusthighconfidence,andleanthefinaldecisiontothevery theerrors. Ontherightpartofeachsmallsummaryfigureis
+confidentIPS. However,highconfidencesdon’thappenfre- themeanvalueandstandarddeviationofWiFiLoc,ABSLoc
+quently, but fortunately they happen independently, which andthefinallocationfromdatafusionmethod.
+meanswecanpotentiallyhaveatleastoneconfidentIPSev-
+WefirstlylookatthesmallsummaryfiguresinFig.4. As
+erytimeifthereareenoughnumberofthem. Wecanhardly
+wecansee,ABSLocismoreaccuratethanWiFiLocinpath
+prove theoretically their independence, but intuitively WiFi
+1,becausepath1ismostlyinseparatedrooms,butperforms
+signal should have nothing to do with acoustic background
+worse in path 2 and 3, where the users are mostly in open
+noise. Experiments can be conducted to empirically prove
+areas. Soitismoreclearherethattheenvironmentimpacts
+themutualindependence,suchas[5].
+IPS as we suppose in theory. Most importantly, no matter
+Anotherimportanceobservationfrompath1inFig.3(b) whichIPSperformsbetter,andnomatterwhatcombination
+is that ABS works well among blocked rooms, which ends data fusion method is employed, the framework can almost
+around470secondsafterthestartofthetrajectory,andsud- givefinalresultsthathavesimilaraccuracyasthebetterone
+denlyvariesdrasticallyaftertheuserenteringtheopenarea. amongWiFiLocandABSLoc. Thefinalnearly200-incher-
+Meanwhile, the confidences of ABSLoc are also generally rors result from the inaccuracy of each IPS themselves, for
+relativelyhigherinseparatedroomsthaninopenarea. This whichtheframeworkhasnoresponsibilitytoimprove.
+phenomenonisnotobviousinpath2and3becausetheyare
+If we go into more details, we can see both linear
+almost always in open area. If the open areas and blocked
+weightedaverageandKalmanFiltertendtohavefinaldeci-
+areas are tagged on the map, by either crowdsourcing from
+sionswitherrorsnearthemoreaccurateoneamongIPSs,es-
+usersormanualoperationsfromadministrator, wecangive
+peciallyinthefirsthalfpartofpath1.However,attheendof
+ABSabetterconfidencecomputationcomparedtoonlyus-
+path1,becauseABSLochasbothhigherrorandhighconfi-
+inglocationlistsparsity.
+dence,thelinearweightedaveragemethodgeneratesasharp
+6.3 DataFusionMethods spike at that point. But as Kalman Filter takes the human
+We depicts the performance of linear weighted average movementpatternsintoconsideration,wecanseeitreduces
+andKalmanFilterinall3pathsinFig.4.ThesameasFig.3, thespikeby50%. Moreover,KalmanFiltereliminatesmost500
+400
+300
+200
+100
+0
+1 2 3 4 5 6 7 8 9 10
+Number of WiFi Signatures/Point
+)hcni(
+rorrE
+Error by Number of WiFi Signatures/Point for Path 1
+WiFi
+ABS
+Kalman
+500
+400
+300
+200
+100
+0
+1 2 3 4 5 6 7 8 9 10
+Number of WiFi Signatures/Point
+)hcni(
+rorrE
+Error by Number of WiFi Signatures/Point for Path 2
+WiFi
+ABS
+Kalman
+500
+400
+300
+200
+100
+0
+1 2 3 4 5 6 7 8 9 10
+Number of WiFi Signatures/Point
+)hcni(
+rorrE
+500
+400
+300
+200
+100
+0
+1 2 3 4 5 6 7 8 9 10
+Number of ABS Signatures/Point
+Error by Number of WiFi Signatures/Point for Path 3
+WiFi
+ABS
+Kalman
+(a) WiFiLocFingerprintNumber
+)hcni(
+rorrE
+Error by Number of ABS Signatures/Point for Path 1
+WiFi
+ABS
+Kalman
+500
+400
+300
+200
+100
+0
+1 2 3 4 5 6 7 8 9 10
+Number of ABS Signatures/Point
+)hcni(
+rorrE
+Error by Number of ABS Signatures/Point for Path 2
+WiFi
+ABS
+Kalman
+500
+400
+300
+200
+100
+0
+1 2 3 4 5 6 7 8 9 10
+Number of ABS Signatures/Point
+)hcni(
+rorrE
+Error by Number of ABS Signatures/Point for Path 3
+WiFi
+ABS
+Kalman
+(b) ABSLocFingerprintNumber
+Figure5. ErrorTrendsbytheNumberofSignaturesforEveryPointinDatabase
+spikesexistinginlinearweightedaverageresults.Therefore,
+1100
+wecanconcludethatKalmanFiltertieslinearweightedaver- 10 90 00 0
+800
+ageinaverageaccuracyimprovements, andperformsbetter 700
+600 intermsofspikeavoidance. 45 00 00
+300
+6.4 FingerprintNumberPerPoint 12 00 00
+0
+8 18 28 38 48 58 68 78 88 98
+Foranyoneofthe98locationsindatabase,wecollected Number of Database Points
+multiple fingerprints. In WiFiLoc, 60-second log generally
+contains more than 70 signatures. And a 60-second acous-
+tic record in ABSLoc can also be divided to several small frames. Because we collect the ABS data all in quiet envi-
+ronments, the background noise can also be extracted from
+a even 5-second frame. However, using all fingerprints for
+every location appeared to be a bad idea on account of the
+unbearable response time. For example, if we use 10 WiFi
+fingerprints at each location, it will take WiFiLoc up to 10
+secondstolocalizeonesignature. Sowevarythenumberof
+fingerprintsperpoint,andgenerateFig.5.
+InFig.5,thex-axisisthenumberoffingerprintsateach
+location in database, and y-axis is estimation errors. The
+meanvalueandstandarddeviationoferrorsofWiFiLoc,AB-
+SLoc, and results of Kalman Filter are all shown for each
+x-axisvalue. InFig.5(a), theABSfingerprintsnumberper
+pointis1.AndinFig.5(b),theWiFifingerprintsnumberper
+pointis3. Thesearejustempiricalvalues.
+BasedonFig.5,neitherWiFinorABSfingerprintsnum-
+bershasobviousinfluenceontheperformances. Somesub-
+tleexceptionshappenwhenWiFisignaturesnumberchanges
+from2to3inpath1inFig.5(a),andwhenABSsignatures
+numberchangesfrom1to2inpath3inFig.5(b). However,
+onthewholewecannotseeanytrendatleastinourdeploy-
+ment. So it actually doesn’t matter how many fingerprints
+we have for each point, let alone that the framework is not
+focusingonimprovingtheaccuracyforeachIPS.
+6.5 PointsNumberinDatabase
+To figure out how many location do we need to build
+a sufficient database forRADLab, we remove data from
+database, and plot the trends of errors in Fig. 6. Note that
+)hcni(
+rorrE
+Error by Number of Database Points for Path 1
+WiFi
+ABS Kalman
+1100
+1000
+900
+800
+700 600 500 400
+300
+200 100
+0
+8 18 28 38 48 58 68 78 88 98 Number of Database Points
+)hcni(
+rorrE
+Error by Number of Database Points for Path 2
+WiFi ABS Kalman
+1100
+1000 900
+800
+700
+600 500 400
+300
+200
+100
+0
+8 18 28 38 48 58 68 78 88 98
+Number of Database Points
+)hcni(
+rorrE
+Error by Number of Database Points for Path 3
+WiFi
+ABS Kalman
+Figure 6. Error Trends by the Number of Database
+Points
+weonlychangesignaturenumberperpointforeitherIPSin
+Fig.5,butwechangethedatabasepointnumberforbothof
+themeverytimeinFig.6.Thereasonisthatwedon’twantto
+observethetrendsinfluencedbyeachIPSintheformercase,
+but removing one point in database leads to removing both
+WiFiLoc and ABSLoc records at the same time. When re-
+movingpointsfromdatabase,wemakesureremovedpoints
+arephysicallyevenlydistributedonthemap.
+InFig.6,wecanseethatnumberofdatabasepointsinflu-
+encetheperformancewhenitislessthanathreshold,which
+is 58 in this case. In other words, we over-sampled finger-
+printsinRADLabbynearly(98−58)/58≈69%.
+7 FutureWork
+Based on our current prototype, we plan to go steps fur-
+ther and build a complete and easily deployable indoor lo-calization system. To fulfill this, we plan to add more IPSs 9 References
+to our system, such as dead-reckoning, and infrastructure- [1] D.Akselrod,A.Sinha,andT.Kirubarajan. Informationflowcontrol
+based beaconing system like infrared and ultrasound. For forcollaborativedistributeddatafusionandmultisensormultitarget
+most IPSs, there are still many details we can look at that tracking. Systems,Man,andCybernetics,PartC:Applicationsand
+Reviews,IEEETransactionson,42(4):501–517,2012.
+containshugeroomsofimprovements. Forexample,among
+[2] M.Azizyan,I.Constandache,andR.RoyChoudhury.Surroundsense:
+all points and their fingerprints stored in database, we can
+mobilephonelocalizationviaambiencefingerprinting. InProceed-
+lookathowtochoosetheleastandoptimizedonesbasedon ingsofthe15thannualinternationalconferenceonMobilecomputing
+featuresofsignaturethemselves,likesignaturedistanceover andnetworking,pages261–272.ACM,2009.
+real distance, to provide both fast and accurate fingerprint- [3] P.BahlandV.Padmanabhan. Radar:Anin-buildingrf-baseduserlo-
+cationandtrackingsystem. InINFOCOM2000.NineteenthAnnual
+basedlocalizationsystem.
+JointConferenceoftheIEEEComputerandCommunicationsSoci-
+Another important functionality we should primarily fo-
+eties.Proceedings.IEEE,volume2,pages775–784.IEEE,2000.
+cusonishowtoimplementroom-levelsemanticlocalization, [4] H.Chang,J.Tian,T.Lai,H.Chu,andP.Huang.Spinningbeaconsfor
+andhowtododatafusiononsemanticlevel. Oneinforma- preciseindoorlocalization.InProceedingsofthe6thACMconference
+tionthatshouldbeconsideredisphysicalrestrictionsofhu- onEmbeddednetworksensorsystems,pages127–140.ACM,2008.
+[5] Y.Chen,D.Lymberopoulos,J.Liu,andB.Priyantha. Fm-basedin-
+man movements, such as wall, to understand the data with
+doorlocalization.InProceedingsofthe10thinternationalconference
+moreintelligence.
+onMobilesystems,applications,andservices,pages169–182.ACM,
+After all systems working well, we may consider imple- 2012.
+menting automatic database building, which has been pro- [6] Y.Cheng,K.Chen,B.Zhang,C.Liang,X.Jiang,andF.Zhao.Accu-
+posed and implemented in [15]. Currently, there are still ratereal-timeoccupantenergy-footprintingincommercialbuildings.
+2012.
+insufficientworkonthis, whichiscrucialtothesystemde-
+[7] S.Dawson-Haggerty,X.Jiang,G.Tolle,J.Ortiz,andD.Culler.smap:
+ployabilityinabuilding,especiallythosewithoutskilledad-
+asimplemeasurementandactuationprofileforphysicalinformation.
+ministrator. InProceedingsofthe8thACMConferenceonEmbeddedNetworked
+Togofurther,automaticbuildinggenerationisalsointer- SensorSystems,pages197–210.ACM,2010.
+esting and promising. [15] requires users to input a build- [8] Y.Gwon,R.Jain,andT.Kawahara. Robustindoorlocationestima-
+tionofstationaryandmobileusers.InINFOCOM2004.Twenty-third
+ing map, which may be a huge adversary for users to use
+AnnualJointConferenceoftheIEEEComputerandCommunications
+the system. Crowdsourcing techniques can be investigated Societies,volume2,pages1032–1043.IEEE,2004.
+toachievethisgoal. [9] B.Hofmann-Wellenhof,H.Lichtenegger,andJ.Collins.Globalposi-
+8 Conclusions tioningsystem.theoryandpractice. GlobalPositioningSystem.The-
+oryandpractice.J..Springer,Wien(Austria),1993,347p.,1,1993.
+With more and more indoor positioning techniques
+[10] X.Jiang,C.Liang,K.Chen,B.Zhang,J.Hsu,J.Liu,B.Cao,and
+springing up, there are still no consensus on a generic so- F.Zhao. Designandevaluationofawirelessmagnetic-basedprox-
+lution. Thereisahugegapbetweenthisfactandthatallpro- imitydetectionplatformforindoorapplications. InProceedingsof
+the11thinternationalconferenceonInformationProcessinginSen-
+posed IPSs are proven to work acceptably well with appro-
+sorNetworks,pages221–232.ACM,2012.
+priate assumptions or under specific circumstances. How-
+[11] F.Li, C.Zhao, G.Ding, J.Gong, C.Liu, andF.Zhao. Areliable
+ever, their assumptions and circumstances vary a lot, and andaccurateindoorlocalizationmethodusingphoneinertialsensors.
+mostly independent with each other. On the other hand, 2012.
+plentysensorsareinvolvedineachIPS, whichactuallycan [12] L.Ni,Y.Liu,Y.Lau,andA.Patil.Landmarc:indoorlocationsensing
+beusednotonlyforlocalization,butforcontextawareness.
+usingactiverfid.Wirelessnetworks,10(6):701–710,2004.
+[13] D.Pandya, R.Jain, andE.Lupu. Indoorlocationestimationusing
+Inthispaper,weproposeanIPSframework,whichcom-
+multiplewirelesstechnologies. InPersonal,IndoorandMobileRa-
+binesmultiplelocalizationsystems,andtakeschargeofde- dioCommunications,2003.PIMRC2003.14thIEEEProceedingson,
+ciding a final estimated location. Each IPS are responsible volume3,pages2208–2212.IEEE,2003.
+forprovidingaconfidenceabouttheirestimationasaccurate [14] N. Priyantha, A. Chakraborty, and H. Balakrishnan. The cricket
+as possible. The framework manages all plugged-in IPSs, location-supportsystem. InProceedingsofthe6thannualinterna-
+tionalconferenceonMobilecomputingandnetworking,pages32–43.
+builds credit history for them, assigns weights to each pro-
+ACM,2000.
+posedestimation, andusesproperdatafusiontechniquesto [15] A.Rai,K.Chintalapudi,V.Padmanabhan,andR.Sen. Zee: Zero-
+makethedecision. effortcrowdsourcingforindoorlocalization. InProceedingsofthe
+Wedeployedtheprototypeinauniversitybuilding,which 18thannualinternationalconferenceonMobilecomputingandnet-
+working,pages293–304.ACM,2012.
+contains WiFiLoc, ABSLoc, and a framework. Experiment
+[16] S.Tarzia,P.Dinda,R.Dick,andG.Memik.Indoorlocalizationwith-
+results show that IPSs can generate trustable confidences,
+outinfrastructureusingtheacousticbackgroundspectrum. InPro-
+whichinturnbenefitsthedatafusion.Theframeworkcanal- ceedingsofthe9thinternationalconferenceonMobilesystems,ap-
+waysgeneratedecisionwithnearlysameerrorsasthebetter plications,andservices,pages155–168.ACM,2011.
+IPS. Comparedtosimplelinearweightedaveragingmethod, [17] R. Want, A. Hopper, V. Falca˜o, and J. Gibbons. The active badge
+locationsystem. ACMTransactionsonInformationSystems(TOIS),
+KalmanFilteroutperforminthesenseofreducingdrasticer-
+10(1):91–102,1992.
+rors. Insummary,therearestillhugepotentialintheoldin-
+[18] A.Ward,A.Jones,andA.Hopper. Anewlocationtechniqueforthe
+doorlocalizationarea. Asfuturework,weplantogodeeper activeoffice.PersonalCommunications,IEEE,4(5):42–47,1997.
+into a bunch of dominant IPSs, and build a plug-and-play [19] B. Zhang, K. Chen, Y. Cheng, C. Liang, X. Jiang, and F. Zhao.
+indoorpositioningsystemthatisapplicableinanybuilding. Location-log:Bringingonlineshoppingbenefitstothephysicalworld
+withmagnetic-basedproximitydetection.2012.

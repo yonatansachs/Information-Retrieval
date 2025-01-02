@@ -1,0 +1,662 @@
+RECONCEPTUALIZING INCLUSION IN MUSEUM SPACES: A
+MULTIDISCIPLINARY FRAMEWORK
+M. Mastrogiuseppe^ L. Soares Guedes^, S. Span^, P. Clementi, M. Landoni^
+^University of Trieste (ITALY)
+^Università della Svizzera italiana, Lugano (SWiTZERLAND)
+^Cooperativa Sociale Trieste Integrazione a m. Anffas Onius (ITALY)
+Abstract
+This paper descrìbes an exploration into technology design to make cultural spaces accessible to people
+with mild or moderate intellectual disabilities (IDs). We start by considering thè roie technology can play
+in promoting thè engagement and enjoyment of cultural heritage and move on to explore how to design
+for rewardlng user experiences in that context. For that purpose, we bave recruited a multidisciplinary
+team of experts, including researchers in Users Experience (UX) research, psychology, and education,
+to Work together with practitioners skilied in thè care of people with IDs. Cruciai members of our research
+team are a small group of people with IDs who bave been working with experts in education over thè
+years and bave an established emotìonal relationship with them. Together, we set out to learn from each
+other while exploring thè design space for producing technicai Solutions to enhance accessibility,
+usabiiity, and thè overall quality of thè interaction with content available to museum visitors. We describe
+thè lesson learned in terms of theframework we devised, reflecton its implications and suggest possible
+steps towards designing toois to enhance accessibility and engagement.
+Keywords: Accessibility, Intellectual Disabilities. Experts, Co-design, Inclusion, Framework.
+1
+ INTRODUCTION
+Makìng culture accessible to people with Intellectual Disabilities (IDs) represents an ethical imperative
+and a technicai challenge that may open interesting implications for research and educational practice
+[1.2].
+In thè last few years, a growing interest in understanding how to promote access to knowledge for people
+with IDs has been fueied by increased legislative priorities and società! expectations for individuala in
+this population. Life environments and their organization bave been increasingly considered as having
+a substantial impact in favoring or hindering thè functioning of people, affecting thè ability of an individuai
+to deal independently with thè circumstances of everyday lite (ICF, [3]).
+Previous studies bave mainly focused on investigating what factors shouid be considered in building
+accessible environments for people with motor and sensory impairments [4, 5, 6]. However, thè current
+focus on thè participation for all highiights thè importance of reconceptualizing inclusion in museum
+spaces, considering thè variability of potential visitors and extending thè concept of accessibility to all
+its dimensiona (communicative, cognitive, cultural, social, physical, etc. [7]). In this direction, thè use of
+information and communication technologies (ICTs) may help remove cognitive and communicative
+barriera by encouraging flexibility in identifying multiple ways of understanding, processing, and
+elaborating content.
+ICTs are certainly a valuable support for increasing participation of people with IDs in cultural and social
+life, but simply stating that technologies are useful poses thè risk of increasing attention to products
+rather than their applicability, usabiiity, and effectiveness in meeting people's needs [8]. There is a need
+to investigate thè processes behind thè introduction and use of ICTs within museum spaces. It is
+imperative when we talk about people with disabilities because a thorough understanding of thè specific
+ways in which leaming, communication, and engagement occur is necessary.
+The Convention on thè Rights of People with Disabilities [9] highiights thè application of two principles
+to avoid any form of discriminatlon (art. 2). These principles are: "Reasonable accommodatlon”, i.e.,
+necessary and appropriate modification and adjustments to ensure to persone with disabilities thè
+enjoyment or exercise on an equal basis with others of all human rights and fundamental freedoms;
+"Universal design", i.e., thè design of products, environments, programs, and Services to be usable by
+all people, to thè greatest extent possible, without thè need for adaptation or specialized design,
+including thè assistive devices for particular groups of pereons with disabilities where this is needed.
+ISBN: 978-84-09-34549-6
+Proceedings of ICERI2021 Conference
+8th-9ih November 2021
+7225
+
+If we considerthe population with intellectual disabilities, a current interpretation according to thè bio-
+psycho-social perspective as opposed to an outdated conception of "meritai retardation", conceives thè
+importance of thè interaction between thè person and thè context in which they are placed in determining
+their disability. The large varìability characterizing people with IDs receivìng thè same diagnosis is not
+oniy thè result of quantitative and qualitative difTerences in thè cognitive (i.e. language, memory,
+attention, visual-perceptual, and visuomotor skills) and personality characteristics [10] but is also
+determined by thè interaction between these factors and thè context. In fact, different physical, social,
+communication contexts with whom thè person interacts can lead to different manifestations and
+characteristics related to thè same disability. Based on thè presence of barriers or facilitators, different
+environments may be more or less disabling or enabling to thè same person.
+In order to avoìd barriers and promote facilitators to communication and learning, thè Convention on thè
+Rights of People with Disabilities [9] highiights that accessible ICTs shouid be included when designing
+"reasonable accommodations" according to thè design for ali principles. Communication includes
+"languages, display of text, Braille, tactile communication, large print, accessible multimedia as well as
+written, audio, plain-language, human-reader and augmentative and alternative modes, means and
+formate of communication, including accessible Information and communication technology" (art. 2).
+ICTs could account for different profiles within thè large population of intellectual disabilities by
+considering other ways of representing, expressing knowledge/needs/ideas, and a variety of ways to
+engagé with culture.
+An investigation of thè process behind thè introduction and use of ICTs within cultural spaces needs to
+be taken in order to promote thè application of thè two principles outlined above. The aim of thè present
+paper is twofold. The first aim is to understand thè role of new technologies in promoting thè fruition of
+cultural heritage, including thè perspective and needs of people with Intellectual Disabilities. For that
+purpose, we recruited a multidiscipiinary team of experts, including researchers in Users Experience
+(UX) research, psychology, and education, museum didactic, to work together with practìtioners skilied
+in thè care of people with IDs. The experts were asked to investigate thè processes - 
+i.e., why, what,
+how-behind thè introduction and use of ICTs within cultural spaces. The second aim is to model a co-
+design procedure to simplify museum textual resources with thè active contribution of aduits with a mild-
+moderate intellectual disability. This initial theorization will outline methodologies, procedures, and
+standards to be applied in thè co-design of innovative technological Solutions, subject to a subsequent
+work by thè authors.
+2
+ METHODOLOGY
+There is thè need to investigate thè processes - 
+i.e. why, what, how - behind thè introduction and use
+of ICTs within museum spaces.
+To comprehensively explore these processes, we used a multidiscipiinary research framework involving
+a group of experts from different backgrounds (i.e., one psychologist, one pedagogist, two computer
+scientists and UX researchers, two social workers, and one museum curator).
+In a first research phase, thè multidiscipiinary team participated in ten meetings (10 hours duration) to
+build a discussion on issues related to thè foilowing topic: “Which is thè role of new technologies in
+promoting thè fruition of cultural heritage including thè perspective and needs of people with Intellectual
+Disabilities?”. After these joint meetings, a moment of individuai reflection was promoted so that each
+expert could respond to thè foilowing research questione:
+● 
+The first question was related to thè comprehension of why ICTs may be useful and functional for
+people with ID within museum spaces. In other words, which are thè motivations behind thè
+introduction of ICTs within museums for thè scope of enhancing cognitive and communication
+accessibility?
+● 
+The second question was related to understanding what ICT-based products could be
+successfully adapted to current museum themes, spaces, and exhibits to facilitate communication
+and learning for people with IDs.
+● 
+The third question was related to thè comprehension of how to realize ICTs-based products that
+are able to meet thè different needs of people with IDs. For example: How to run a co-design
+process with people with IDs accounting for and respecting diverse abiiities? How to avoid poor
+usability, cognitive overload, and techno-frustration?
+7226
+
+This research phase look place remotely. Each expert individually created their own visual board with
+thè concept Canvas, ìncluding their point of view on thè questions outlined above.
+In a second research phase, thè goal was to explore thè third question further - howto run and validate
+co-design procedures with people with IDs accounting for and respecting diverse abilities? We directiy
+involved experts in psychology, special pedagogy, and educational Sciences in thè observation and
+analysis of co-design sessions aimed at simplifying museum textual resources with thè active
+contribution of aduits with a mild-moderate intellectual disability. The co-design sessions were led by a
+social worker expert in easy-to-read procedures {www.llfe-long-learnìng.eu). The observation was
+conducted at thè Anffas Association ("Cooperativa Sociale Trieste Integrazione a m. Anffas Onius"),
+which has extensive and Consolidated experience in easy-to-read methodologies. Cruciai members of
+our research team were a small group of people with IDs who have been working with experts in
+education over thè years and have an established emotional relationshìp with them. Together, we set
+out to learn from each other whìle explorìng thè design space for producing technical Solutions to
+enhance accessibility, usability, and thè overali quality of thè interaction with content avaìiable to
+museum visitors. The co-design sessions were video-recorded and were subsequently analyzed by thè
+experts in psychology, special pedagogy, and educational Sciences. The analysis allowed us to outline
+thè first modeling of a social-worker-Ied co-design intervention based on scaffolding methodologies to
+promote thè full participation of people with IDs during thè entìre process.
+3
+ RESULTS
+Resuits of thè two research phases are reported separately.
+3.1 Why, what, and how?
+Each expert individually created their own visual board with thè concept Canvas, including their point of
+view on thè questions outlined above. The individuai answers were then collected by thè authors of this
+contribution and merged in a visual board. Different colors represent thè contribution of experts in
+various disciplinary fieids: in blue computer scientists and UX researchers, in green social workers, in
+orango pedagogues and psychologists, in bright pink museum curatore. While we present each
+contribution separately in this research stage, in future studies, our goal wìll be to involve both thè users
+with IDs and thè stakeholders in some brainstorming sessions to create an affinity diagram on thè
+relevant themes (clustere) and together extract related user requirements to guide thè design of new
+toois to increase accessibility and engagement in museum visitors.
+3.1.1 Why?
+Inclusion of
+thè greatest
+number of
+visitors
+To
+Creation of
+flexible
+pathways
+Increase
+legibility,
+readability 
+perception
+To
+enhance
+extended
+content
+Aiternative
+communication
+Immediate,
+easy to use,
+eye-
+catching
+To improve
+content
+fruìtion and
+elaboration
+Personalizati
+on of
+contents
+Interactive To'   ef^iember 
+To explain
+content after
+thè visir
+content
+scenario
+To supporr
+different
+reading
+needs
+Expand thè
+experience
+Alternative 
+Promote thè
+right to
+learn more 
+Participation
+for all
+ways to
+To
+To engagé
+readers
+understand
+context
+Involve visual,
+auditory,
+motor,
+cognitive
+channels
+To get
+familiarìzed
+with thè
+content before 
+accessibility
+thè visit
+To ensure
+ICT allows
+to increase
+knowledge
+Adapt to
+different
+cognitive
+styles and
+preferences
+Responsive to
+thè needs of
+people with
+disabilities
+Figure 1. Why shouid we introduce and use ICTs within museum spaces?
+7227
+
+The main motìvations behind thè introduction of technology are that ìt couid:
+Increase legibilìty and readability: using ICTs to read content presented in different font sizes,
+colors, languages, and text lengths;
+Encourage interaction: ICTs can avoid users' abstractions with hands-on prototypes and
+multisensory experiences;
+Extend, explain and understand content: technology can help people with ID to understand thè
+museum content. explain them in various ways, and extend what is available in an exhibition;
+Engagé and get familiarized with thè content: making users more engaged and prepared for thè
+exhibition:
+Help recalling thè content: using ICTs to access and retain thè museum visit;
+Support different forms of reading and ensure accessibility: considerìng different abilities and
+forms of reading can ensure that people with ID choose what fits thè most with their preferences
+and, consequently, ensure accessibility;
+Improve fruition: ICT’s couid be used to strengthen thè fruition of tangible and intangible heritage
+in museum contexts;
+Promote thè right to participation for all;
+Provide flexibiiity and adapt to different cognitive styles and preferences.
+3.1.2 What?
+Easily
+adapted to
+thè needs
+ofusers
+In-depth
+study of
+specifìc
+themes
+Pictures
+and
+videos
+Reach
+different
+types of
+disabilities
+Dedicated
+screen
+readers
+Legibility
+enhancing
+layout and text
+presentations
+Intuitive
+and easy
+to use
+Learning
+paths of re-
+elaboration
+(POST)
+Ad-hoc
+text to
+speech
+Making &
+Hands-on
+AAC
+QR code
+Products that
+use known
+accessibility
+criteria
+Accessible
+before thè
+museum
+visit
+Tools to
+support
+reading
+Multisensory
+experiences
+Customization
+Accessible
+and usable
+websites
+Highiight
+text and
+change
+audio pace
+Use easy-
+to-read
+language,
+AAC
+Learning
+paths
+during visit
+Age, cognitive,
+language
+abilities. and
+preferences
+Augmented
+reality
+Figure 2. What couid be successfully adapted to current museum spaces?
+Fig. 2 displays thè second question: what ICT-based products couid be successfully adapted to current
+museum themes, spaces, and exhibits to facilitate communication and learning for people with IDs? Our
+resuits showed that technology couid help in many ways by:
+● Enhancing legibility by providing many alternative layout and text presentations: using ICTs, we
+can display and evaluate different designs and ways to present content;
+● 
+Giving alternatives to reading aa in thè Text-to-speech approach where people can listen to
+content benign read by different voices and at different paces;
+● 
+Supporting active reading, with tools to highiight text during reading as to increase thè focus and
+visual involvement with text;
+● Providing assistive technology, such as screen readers, to read thè entire screen content;
+7220
+
+● 
+Extending thè reai worid wìth Augmented Reality, such as 3D objects, textual and audio feedback;
+● 
+Adding or replacing textual elements to make people with ID and other disabilities able to
+understand thè content, as with Augmentative and Alternative Communication (AAC);
+● 
+Reinventing and expanding objects and artworks to use several senses at thè sartie time (see,
+feel, bear, smeli, taste) to produce Multisensory experiences;
+● 
+Accessing non-textual material extra photos and videos with ICT devices;
+● 
+Using technology hands-on, thus promotìng an active learning paradigm for creating contenti
+♦ Customizing content based on age, cognitive and language abilities, and preferences.
+3.1.3 How?
+Finally, we report thè results related to thè third point on how to realize ICTs-based products that are
+able to meet thè different needs of people with IDs.
+This research question aims to encourage a twofold analysis: (i) how to run co-design with people with
+IDs accounting for and respecting diverse abilities? (ii) how to avoid poor usability, cognitive overload,
+and techno-frustration?
+Same process
+ofseleaionas
+Empowering
+Importance of
+recognizing
+that everyone
+can contribute
+Listening io
+thè point of
+view of people
+with IDs
+Scaffolding
+methodologies
+and
+for
+engaging
+simplification
+Respecting
+users'
+different
+abilities
+Evaluation of
+thè reai needs
+and interests
+of people with
+disabilities
+Creation of a
+positive working
+climate in co-
+design sessions
+AR - difficult
+to co-design
+Multidisciplinary
+framevvork
+Next stepfrom
+whataiready
+being done by
+thè social
+worker
+Invotvemem of
+caregivers who
+knows people
+with IDs (social
+workers)
+Coliaboratlon with
+people with
+disabilities to test
+theaccessibilityof
+museum exhibits
+Direct and
+continuous
+design with
+people with
+disabilities
+Methodologies
+and
+International
+standards
+Figure 3. How to co-design with people with IDs accounting for and respecting diverse abilities?
+Regarding thè fìrst question, thè main findings available in Fig. 3 
+are that when co-designing with people
+with IDs we shouid aim at:
+● 
+Empowering and engaging: making users engaged and empowered by listening and always
+considering their voice;
+● 
+Respecting users' different abilities; by respecting thè users' preferences and skills, thè co-design
+sessions can be faster and more effective;
+● Being aware of complexity: to co-design new or unknown technologies, such as Augmented
+Reality, can be difficult;
+● 
+Replicating successful processesi applying text simplification
+ techniques can be similar to
+adapting thè user interface (Ul);
+● 
+Setting up a Multidisciplinary framework: evidence-based educational (EBE) practices couid be
+translated into innovative methodologies, protocois, procedures for co-design;
+● Designing scaffolding methodologies with experts: guidance from practitioners on how to engagé
+people with special needs.
+7229
+
+Venfy thc pre-
+requisices
+necessary for thè
+Creation of
+multiple levels
+of coment
+simplification
+With thè
+accessibillty of
+computer media
+and applying
+guidelines
+Accessible
+settings
+To provide
+alternatives
+Different
+fontsizes
+reai
+urtdcrstanding of
+thè topics
+ Intuitive
+Text 
+and easy to
+simplification
+levels
+use
+interface
+Icons
+selected by
+co-designers
+Sicp by step
+VERIPICATION of
+accessibillty
+with People with
+disabilities
+Verify coment
+comprehensibili
+ty with work
+sessions with
+people with IDs
+Validating thè
+Impact of
+technological
+Products
+Respect thè
+learning
+curve and
+preferences
+With co-
+design
+sessions
+indrvidual and
+group work.
+brainstorming,
+questionnaires
+and interviews,
+Implementation
+of simplified
+languages in
+Identification
+of alternative
+paths
+ICTs
+etc.
+Figure 4. How to avoid poor usability, cognitive overload, and techno-frustration?
+Conceming thè second question (how to avoid poor usability, cognitive overload, and techno-
+frustration), thè main results available in Fig.  4 suggest that we shouid be looking at:
+Providing alternatives: having choices or settings that thè participants can choose from;
+Selecting carefully icons and symbois: thè semiotic shouid make sense for thè users;
+Having co-design sessions: avoìding designing forthem but instead with them;
+Enabling accessible settings: Choices ranging from color scheme to audio pace and font size;
+Offerìng easy-to-read content: available in different simplification levels;
+Respecting thè learning curve and preferences: each participant will take a different time to
+understand and feel comfortable with thè use of ICTs;
+Designing intuitive and easy-to-use interface: too many commands to execute a simple task can
+easily frustrate thè participants;
+Requiring validation: Rigorous methodologies for validating thè involvement and impact of
+technological products.
+Prelìminary ideas on running co-design with people with IDs
+In thè second research phase, thè experts in psychology, special pedagogy, and educational Sciences
+observed and analyzed thè procedure used by a social worker while running co-design sessions aìmed
+at creating easy-to-read museum written contente with thè active contribution of adults with a mild-
+moderate intellectual disability. The analysis allowed to outline an initial modeling of a social-worker-Ied
+co-design intervention based on scaffoiding methodologies, aimed at promoting thè full participation of
+people with IDs during thè entire process. Mere we describe it in its fundamental steps. Scaffoiding is
+an evidence-based education (EBE) practice with a long history of application and success in facilitating
+learning for people with learning disabilities. It typically involves helpful, stmctured interaction between
+an adult and a child, with thè aim of helping thè child achieve a specific goal. Based on Wood [11] thè
+experts identifìed some steps of scaffolded instructions that thè caregiver used as generai guidelines
+while running thè co-design.
+Pre-engagement with thè participant: caregiver considers thè participant's cognitive and affective
+needs to personalize task-related instructions (e.g.. they determine how to simplify thè language
+with which they provide instructions)
+Provide tailored assistance: The caregiver uses some strategies and adjusts them to meet thè
+participant's needs. This means that thè caregiver is particularly receptìve to thè participant's
+thoughts/needs and attuned to their feelings, grasping thè expressed ideas and emotions.
+Moreover, thè caregiver couid give active support to thè participant by cueing or prompting,
+questioning, modeling, telling, or discussing in order to elicit thè expression of new
+ideas/needs/feelings.
+3.2
+1
+2
+7230
+
+3 Maintain pursuit of thè goal: The caregiver adopts strategies to help participants remain focused
+on their goals. The caregiver couid ask few and frequent questiona, request clarification as well
+as offer praise and encouragement. By using these strategies, thè caregiver aims to support
+metacognitive processes and maintain an actìve levei of engagement.
+4 Give feedback: To help participants learn to monitor their own progress, thè caregiver couid
+summarize current progress and explìcitly note behaviors that contributed to each participants
+success.
+5
+ 
+Control for frustration and risic. The caregiver couid create an environment where participants feel
+free to take risks with learning by encouraging them to try altematives.
+These strategies were applied by involving one participant at a time or an entire group of participants
+with IDs through brainstorming activities. The advantage of group activities is that they support
+cooperative structured and/or incidental learning processes, especially when thè affective-relational
+dimension is placed at thè foundation of thè group work. The theorization of a social-worker-Ied co-
+design intervention based on scaffolding methodologies will serve to outline methods, procedures, and
+standards to be applied in thè co-design of innovative technological Solutions, thè subject of a
+subsequent contribution by thè authors of thè present paper.
+4
+ CONCLUSIONS
+Museums are increasingly considered places of great interest to encourage thè inclusion of visitors who
+are stili excluded from regolar attendance due to barriers that limit their abìlity to use and access thè
+content. This is thè case, for example, of people with intellectual disabilitles, but also of visitors who tend
+to be excluded due to different social, cultural, linguistic, and age variables [12].
+The advent of new technologies for thè promotion and enhancement of cultural heritage requires thè
+activation of a multidisciplinary debate that shouid involve experts from different backgrounds in
+understanding which might be thè role of new technologies in removing these barriers. ICTs couid be of
+great importance in promoting thè fruition of cultural heritage for people with special educational needs
+[13, 14, 15,16]. The scientific community must address how to design and use technologically innovative
+Solutions that meet thè needs of different visitors, allowing thè participation ofall in cultural and social life.
+The first objective of this paper was to outline thè perspectives that emerged from a multidisciplinary
+debate involving a group of experts from different backgrounds (i.e., psychologìsts, pedagogista,
+computer scientists, UX designers, social workers, museum curatore) in investigating thè processes -
+i.e., why, what, how - 
+behind thè introduction and use of ICTs within museum spaces.
+Answers given to thè first two questiona ~ why ICTs may be useful and functional for people with IDs
+within museum spaces? and what ICT-based produets couid be successfully adapted to current
+museum themes, spaces, and exhibits to facilitate communication and learning for people with IDs? -
+showed that reasonable accommodations are needed, especially concerning adapting thè ways in which
+cultural Information is transmitted. With particular importance are technological Solutions geared to
+improve thè legibility and comprehensibility of textual Information. These vary from providing
+personalized layouts (enabling users to adjust font and size) to thè availability of screen readers, reading
+aloud just when and what thè visitor needs, and thè representation of textual content in alternative forms
+to appeal to different sensory channels. Augmented alternative communication beìng a starting point to
+explore thè potential of augmented reality, where instead of non-legible text, we couid present visitors
+with 3D objects, and audio feedback.
+Resuits from thè third question - how to run and validate co-design procedure with people with IDs
+accounting for and respecting diverse abilities?  - showed that there is a need to translate toois and
+methodologies currently in use by practitioners in their daily activities with people with disabilitles into
+standards that couid be applied by researchers, computer scientists, and ICTs experts, in running
+participatory design activities in a number of contexts and with different communities. Co-design has
+proved successful in including users' perspectives in thè early production of toois for them to use. In
+particular, there is a rich literature [e.g. 17] reporting on thè positive impact of engaging children in co-
+design activities where they are thè protagonists while playing different roles from informant to
+investigator and evaluator. Nere, we emphasize thè importance of an experienced educator for
+facilitating communication among researchers and co-designers, defining activities to offer thè right levei
+of engagement but, more importantly, helping co-designers find and play thè most suitable role to
+empower and involve them actively as thè protagonists of thè process.
+7231
+
+In a second research phase, thè goal was to further explore thè third question in order to outline thè
+initial modeling of a social-worker-Ied co-design intervention based on scaffolding methodologies.
+Scaffolding methodologies bave long been applied to enhance thè participation and engagement of
+people with learning difficulties. Nere, we want to highiight thè fact that some evidence-based education
+(EBE) practices, like scaffolding methodologies. couid be effectively used to support thè co-design of
+technological Solutions. These resuits underiine thè importance of emphasizing a muitidisciplinary
+dialogue that can activate cross-disciplinary encroachments to outline methodologies, programs,
+procedures, and International standards to foster inclusive access to cultural heritage.
+REFERENCES
+Hayhoe, S., inclusive capitai, human value and cultural access: a case study of disability access at
+Yosemite National Park. In B. Hadley, & D. McDonald (Eds.), The Routledge handbook of disability
+arts, culture, and media (pp. 251-262). Taylor & Francis Group, 2018.
+Austin, S., Duncan, K., Goggin, G., MacDowall, L., Pardo, V., Paterson, E., et al., The last
+avantgarde? In B. Hadley, & D. McDonald (Eds.), The Routledge handbook of disability aris, culture,
+and media (pp. 251-262). Taylor & Francis Group, 2018.
+World Health Organization, International Classification of Functioning, Disability and Health: ICF.
+Geneva: WHO, 
+2001.
+Argyropoulos, V. S., & Kanari, C., Re-imagining thè museum through “touch”: Reflections of
+individuala with visual disability on their experience of museum-visiting in Greece, ALTER,
+European Journal of Disability Research, 9(2), 130-143,2015.
+Castrodale, M., & Crooks, V. A., The production of disability research in human geography: An
+introspective examination. Disability and Society, 25(1), 89-102,2010.
+Marie Lid, I., & Solvang, P., (Dis)ability and thè experience of accessibility in thè urban environment.
+ALTER, European Journal of Disability Research, 10(2), 181-194,2016.
+Aquario, D., Pais, I., & Ghedin, E. (2017). Accessibilità alla conoscenza e Unìversal Design. Uno
+studio esplorativo con docenti e studenti universitari. Italian Journal of Special Education for
+Inclusion, 5(2), 93-105
+Bortolotti, E., & Mastrogiuseppe, M. (2019). Accessibility to cultural heritage sites for intellectual
+disability: Methodologies, technologies and adaptive processes (Accessibilità ai siti culturali per la
+disabilità intellettiva: Metodologie, tecnologie  e processi di adattamento). Nuova Secondaria, 4
+(1828^582).
+CounciI of Europe Secretariat, United Nations drait "International Convention on thè Rights of
+Persona with Disabilities": Drafting proposais and commenta. 2006, Retrieved May 2007, from
+http://www.un.org/esa/socdev/enable/rights/ahc8docs/ahc8eucouncil1.doc
+[10] American Psychiatric Association, Diagnostic and statistica! manual ofmental disorders (5th ed.).
+Washington, DC: Author, 2013.
+[11] Wood, D., How children think and leam. Oxford, England: Basii Blackwell, 1978.
+[12] Sandell, R., Dodd, J., & Garland-Thomson, R., Re-presenting disability: Activism andagencyin thè
+museum, London: Routledge, 2010.
+[13] Owuor J., Larkan F., Kayabu B., et al., Does assistive technology contribute to social inclusion for
+people with intellectual disability? A systematic review protocol, BMJ Open, 8:e017533, 2018.
+[14] Boot, F., Owuor, J., Dinsmore, J. and MacLachlan, M., Access to assistive technology for people
+with intellectual disabilities: a systematic review to identify barriers and facilitators, Journal of
+Intellectual Disability Research, 62(10), pp.900-921,2018.
+[15] Baroni F., Lazzari M., Tecnologie informatiche e diritti umani per un nuovo approccio all'accessibiità,
+Italian Journal of Disability Studies, vol.1, n.1, pp.79-92, 2013.
+[16] Lazzari, M, Informatica umanistica. Seconda edizione, McGraw-Hill, 2014, pp. 326. ISBN:
+9788838668555 ISBN: 9788838691300, 2014.
+[1]
+[2]
+[3]
+[4]
+[5]
+[6]
+[7]
+[8]
+[9]
+7232
+
+[17] Iversen, O. S., Smith, R.C., & Dindler, C., Child as Protagonist: Expanding thè Role of Children in
+Participatory Design in Proceedings ofthe 2017 Conference on Interaction Design and Chiidren
+(!DC '17), Association for Computing Machinery, New York, NY, USA, 27-37, 2017.
+7233
+

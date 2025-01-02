@@ -1,0 +1,588 @@
+Smarter PhoneS
+Indoor Positioning
+and navigation
+with Camera Phones
+This low-cost indoor navigation system uses off-the-shelf camera
+phones to determine user location in real time by detecting unobtrusive
+fiduciary markers.
+G
+PS-based navigation systems orientation guide that relies solely on camera
+have become very popular, phones. Whereas previous work on barcode-
+mainly because they let people based location tracking, such as QR Codes
+rapidly explore unknown areas. (www.qrcode.com), relies on non-real-time
+However, GPS works only out- “snapshot” processing, our approach allows
+doors, because the required satellite links are for continuously scanning an environment in
+blocked or unreliable inside buildings. For real time (15 Hz or more) in search of navi-
+indoor location sensing, many types of sensors gation hints. Thus, navigation scales from
+exist, including ultrasonic, infrared, magnetic, sparse, strategically placed fiduciary markers
+and radio sensors. But they all require a perma- to continuous navigation in 3D.
+nent electronic infrastructure Real-time marker-based tracking of position
+Alessandro Mulloni, to facilitate measurements, is available in several desktop-based applica-
+Daniel Wagner, and localizable objects rely- tions, but it has only recently become available
+and Dieter Schmalstieg ing on this infrastructure need in phones. Consequently, systems for continu-
+Graz University of Technology special sensors or actuators. ous navigation using marker-based tracking
+Practical problems such as haven’t been studied extensively. Non-real-time
+Istvan Barakonyi
+power consumption, wiring, marker-based recognition in existing location-
+Imagination Computer
+and overall infrastructure based services usually takes several seconds, and
+Services GesmbH
+cost have inhibited such tech- the service providers typically place markers to
+nology’s deployment in entire highlight a particular location rather than to act
+buildings. as pure navigation landmarks (see the “Indoor
+In previous work,1 we demonstrated how Navigation and Localization” sidebar).
+to detect and decode square fiduciary mark- We’ve examined marker-based tracking’s
+ers in real time using off-the-shelf camera suitability for continuous navigation in mobile
+phones. Such markers contain a 2D barcode phones. We conducted a controlled user study
+that provides a unique ID from the camera to compare our system with a map without lo-
+image, which the camera phone can use to es- calization and with a GPS-like real-time local-
+timate in real time its position and orientation ization. In this article, we provide an evaluation
+relative to the marker. The indoor navigation of subjective experiences about ease of use and
+system we describe in this article takes ad- location awareness. We also discuss experiences
+vantage of associating locations with mark- from deploying our software at four large-scale
+ers to provide an inexpensive, building-wide events, testing its usability under real-world con-
+22 PERVASIVE computing Published by the IEEE CS n 1536-1268/09/$25.00 © 2009 IEEEIndoor navigation and Localization
+T
+here is a large body of work on indoor navigation in robot- with our system, localization works on only certain hot spots. But
+ics. Guilherme DeSouza and Avinash Kak provide a good the markerless tracking approach makes it difficult for visitors to
+overview.1 These systems commonly harness a robot’s controlled recognize those hot spots.
+position and movements and try to detect its pose using natural-
+feature tracking based on cameras or range sensors. However,
+such algorithms exceed what is currently possible on mobile RefeRences
+phones.
+1. G.n. DeSouza and A.C. Kak, “Vision for Mobile robot navigation:
+Among the first dedicated wearable location systems was Ac-
+A Survey,” IEEE Trans. Pattern Analysis and Machine Intelligence, Feb.
+tive Badge,2 which consisted of infrared badges sending location 2002, pp. 237–267.
+information signals to a server. Its successor, the Bat system,3
+2. r. Want et al., “The Active Badge location System,” ACM Trans. Infor-
+used ultrasonic location estimation to provide more accurate
+mation Systems, jan. 1992, pp. 91–102.
+position data. Another system for location tracking, placelab,4
+used signal strength of various wireless connections such as GSM 3. M. Addlesee et al., “Implementing a Sentient Computing System,”
+Computer, Aug. 2001, pp. 50–56.
+(Global System for Mobile Communications), Bluetooth, and Wi-
+Fi. Accuracy strongly depended on the number of senders in the 4. V. Otsason et al., “Accurate GSM Indoor localization,” Proc. Int’l
+environment and ranged from 3 to 6 meters for indoor use. For a Symp. Ubiquitous Computing (ubicomp 05), lnCS 3660, Springer,
+2005, pp. 141–158.
+good overview of positioning technologies, see the survey by jef-
+frey Hightower and Gaetano Borriello.5 5. j. Hightower and G. Borriello, “location Systems for ubiquitous
+Cyberguide was an early project targeting human indoor Computing,” Computer, Aug. 2001, pp. 57–66.
+navigation and guidance.6 It used remote controls as low-cost
+6. G.D. Abowd et al., “Cyberguide: A Mobile Context-Aware Tour
+infrared beacons, but the cost of the remote controls prevented Guide,” Wireless Networks, Oct. 1997, pp. 421–433.
+deployment in larger areas or large numbers of users. The
+7. j.l. Encarnação and T. Kirste, “Beyond the Desktop: natural Interac-
+eGuide project and the resource-Adaptive Mobile navigation
+tion and Intelligent Assistance for the Everyday life,” Proc. Computer
+System use similar techniques.7,8 Davide Merico and roberto Bi- Graphik Topics, 2000, pp. 16–19 (in German).
+siani use inertial sensors to track user movements.9 periodically,
+8. j. Baus, A. Kruger, and W. Wahlster, “A resource-Adaptive Mobile
+users must calibrate their position by choosing distance measure-
+navigation System,” Proc. 7th Int’l Conf. Intelligent User Interfaces (IuI
+ments in panoramic views of the environment on the device’s 02), ACM press, 2002, pp. 15–22.
+screen. naturally, creating these views is work intensive for large
+9. D. Merico and r. Bisiani, “Indoor navigation with Minimal Infra-
+areas. Harlan Hile and Gaetano Borriello report an indoor naviga-
+structure,” Proc. 4th Workshop Positioning, Navigation and Communi-
+tion system based on the scale-invariant feature transform (SIFT) cation (WpnC 07), IEEE press, 2007, pp. 141–144.
+method.10 This system relies on a server to outsource the actual
+10. H. Hile and G. Borriello, “Information Overlay for Camera phones in
+pose estimation work, providing limited scalability and long
+Indoor Environments,” Proc. 3rd Int’l Symp. Location- and Context-
+latency—a processing time of roughly 10 seconds per image Awareness (loCA 07), lnCS 4718, Springer, 2007, pp. 68–84.
+makes this system unsuitable for large-scale deployment.
+11. T. Miyashita et al., “An Augmented reality Museum Guide,” Proc. 7th
+recently, Tsutomu Miyashita and his colleagues presented a
+IEEE/ACM Int’l Symp. Mixed and Augmented Reality (ISMAr 08), IEEE
+pC-based museum guide using natural-feature tracking.11 As press, 2008, pp. 103–106.
+ditions. Both evaluations suggest that cial markers is highly robust and works encourages users to place highly visible
+marker-based navigation with camera well under varying lighting conditions stickers with barcodes worldwide, each
+phones works well and fits real-world and with minimal computational re- linking to online content.
+requirements. sources. Moreover, fiduciary markers’ Our marker-tracking software li-
+unusual visual appearance makes them brary can estimate, with 6 degrees of
+human-Friendly more noticeable, helping users identify freedom (DOF), a camera phone’s po-
+Fiduciary markers information hot spots in visually clut- sition and orientation with respect to
+Localization using fiduciary markers is tered environments as well as large en- markers. Because maps are only 2D
+a well-established mechanism in mobile vironments where interest points are representations of the world, we can
+applications. Unlike natural-feature sparse. For example, the Yellow Ar- limit the localization to use only 3 DOF,
+tracking, detecting and decoding artifi- row project (http://yellowarrow.net) sufficient to estimate the phone’s 2D
+AprIl–junE 2009 PERVASIVE computing 23Smarter PhoneS
+Figure 1. Development of fiduciary ters or hotels. Using our marker-tracking
+markers and conference posters at technology, we created a location-based
+(a) the 2007 Microsoft Mobile and conference guide called Signpost. We
+Embedded Developers Conference designed this application to work with
+(MEDC 2007) and (b) Microsoft’s sparse tracking, to limit the number of
+TechReady7; and (c) use of our deployed markers to a manageable size.
+localization system at TechReady7. For example, we installed 37 markers at
+a conference site in the Venetian Hotel
+Las Vegas in April 2007, in an area of
+position and orientation. This makes roughly 100 m × 200 m.
+our system more practical to deploy Although 6-DOF tracking can deliver
+because marker positions and orienta- centimeter-level accuracy when mark-
+tions need only be specified in 2D. ers are tracked, presenting only the 2D
+We deployed traditional square location on a map reduces accuracy
+markers at the 2007 Microsoft Mobile requirements significantly. This is im-
+and Embedded Developers Conference portant because conference organizers
+(MEDC 2007), as Figure 1a shows. must consider the logistics of deploy-
+Over time, we introduced a new type ing and inspecting marker placement.
+of less visually obtrusive markers called The most efficient way, developed after
+frame markers (see Figure 1b). Frame consulting conference organizers, was
+markers encode the same amount of to stick markers onto poster stands,
+data (36 bits) as traditional square which could be quickly deployed on site
+markers, but they arrange the data at preplanned locations (see Figure 1c).
+along the border: 9 bits are encoded Signpost combines a conference cal-
+at each marker side in small black and endar and a navigation system. Users
+white squares, carrying 1 bit each. The can query the conference calendar by
+frame marker’s specifications arrange day or conference session, or by using
+the code in clockwise order such that full-text indexing. Live RSS updates
+only one of the four possible rotations received over the air ensure that the
+yields a valid code. The remaining part schedule reflects the latest changes. All
+of the square isn’t used to decode the calendar entries are linked to locations,
+marker and can contain arbitrary con- so users can plan their fastest route
+tent, giving graphics designers freedom from the current location (the last seen
+for customization. marker) to the desired lecture hall. Sign-
+To exploit markers, users must point post displays the results on a map that
+the phone’s camera at them (see Figure users can freely pan, rotate, and zoom.
+1c). As soon as a marker appears in the Alternatively, in live-tracking mode, the
+camera’s view, the system detects and system automatically aligns the map as
+decodes it in real time from the live soon as a marker is detected.
+video stream. For detection to succeed, We implemented Signpost atop the
+each square describing a bit should be Studierstube ES (Embedded Systems)
+at least 2 pixels in the camera image. framework,1 as Figure 2 shows. The sys-
+Our system can cope with tilt angles of tem runs on Windows Mobile phones
+up to roughly 70 degrees, and rotations (Figure 3), independent of screen res-
+around the camera’s optical axis don’t olution and form factor. Signpost can
+affect the system. These constraints impact the device’s battery life, mainly
+are comparable to other marker-based because of its use of the camera and the
+tracking techniques. network connection. However, when
+no one is using the Signpost applica-
+Conference Guide application tion, the system automatically disables
+Large events such as conferences often the camera. Hence, battery drain is lim-
+challenge participants to find their way ited to when users actively interact with
+through vast multistory convention cen- the application. Furthermore, Signpost
+24 PERVASIVE computing www.computer.org/pervasiveuses the network connection only when
+users explicitly ask to update the con-
+ference schedule.
+For large events in venues with mul-
+tiple levels or buildings, a single map
+is no longer sufficient. Signpost, there-
+fore, supports multiple maps linked
+to a 3D overview or, alternatively, an
+interactive 3D representation showing
+the current and target locations’ global
+geographic relationship.
+Deploying the system to a new loca-
+tion consists of three steps:
+• Create a map and database of marker
+locations. On the basis of sketches
+or CAD data, create one or more
+2D images using maps of the target for the maps, allowing reuse of exist- 2D maps, select preliminary marker
+location. The system uses bitmaps ing maps and artworks. On the basis locations and orientations and enter
+rather than vector graphics images of gatherable information from the them into a configuration file. This
+AprIl–junE 2009 PERVASIVE computing 25
+Application
+Signpost
+Studierstube
+scene graph
+Studierstube ES
+Muddleware
+Studierstube I/O Studierstube tracker
+Studierstube core Studierstube math
+Operating systems APIs
+Windows, Windows Mobile, DirectShow, Symbian Camera, OpenMAX, Direct3D,
+Symbian, Mac OS, Linus OpenGL ES (1.x, 2.x), OpenGL, Winsock, and so on
+Hardware
+(CPU, GPU, FPU, display, touch screen, buttons, audio, camera, Wi-Fi, Bluetooth)
+ES: Embedded Systems FPU: floating-point unit GPU: graphics processing unit
+Studierstube
+software
+stack
+Platform
+Figure 2. Software architecture
+of the mobile phone client. Our
+software framework, Studierstube ES,
+provides the application layer with an
+abstraction of all platform-dependent
+functionalities, allowing for an easier
+cross-platform development of
+applications.
+Figure 3. Examples of phones running Signpost and screenshots of the application: (a) HTC Cingular 8525, (b) Orange SPV E600,
+(c) HTC Touch Diamond, (d) HTC S710, and (e) Motorola Q. Signpost supports various form factors and resolutions of the screen,
+and different input capabilities (both keypad- and touch-based).Smarter PhoneS
+Figure 4. Positioning marker-based localization systems on an ideal localization continuum. This continuum spans from systems
+without localization to those with continuous localization.
+step can take place offline in a plan- user can get a better understanding of a good solution for navigation when no
+ning office without access to the tar- the conference complex by looking at GPS positioning is available.
+get location. the 3D view. We recruited 20 users with diverse
+• Deploy markers on site. During event cultural backgrounds and varying ex-
+preparations, deploy markers on site. Comparison pertise in technology. The users were
+Depending on the required accuracy, of Localization techniques between 20 and 34 years old (average
+a coarse deployment (± 50 cm) is of- Even though many projects have used age of 25), with half male and half fe-
+ten sufficient. For simplicity, mark- marker recognition, we aren’t aware of male. For each of the three conditions,
+ers’ horizontal bearing is restricted to any studies that compare marker-based we asked the participants to use the
+45-degree steps, which is usually suf- localization with nonlocalized digital maps and the localization system as
+ficient when mounting them on walls maps. So, we conducted a study to as- their only aids to reach a specific des-
+or poster boards. For those markers sess whether the effort of outfitting the tination. The location of the study was
+that can’t be deployed as planned in environment with fiduciary markers the Department of Computer Science
+the previous step, update the data- pays off in terms of improvements in at Graz University of Technology (in
+base accordingly. user navigation. We compared marker- Graz, Austria)—a complex compris-
+• Create a new software release. Fi- based navigation in Signpost with two ing four buildings connected by several
+nally, create a new software release conditions that represent the extremes bridges. This complex contains many
+by bundling the software with the of the localization continuum, shown repeated features, with a general lack of
+updated map and marker database. in Figure 4: a digital map with no local- clear landmarks. We considered it to be
+Changes to this data (such as repo- ization and a system with continuous a significant example of a hard case for
+sitioning markers or changes to the real-time localization (similar to GPS- navigation in a new environment. To
+schedule) that become necessary later based navigation systems). avoid biased results, we ensured that no
+can be deployed over the air. We hypothesized that the continuous user had previous experience with the
+localization system is significantly eas- buildings. We selected three different
+We envisioned a typical usage pattern ier to use than the other systems, while destinations, balancing their difficulty
+to be as follows: First, a user browses providing the highest degree of loca- in terms of distance from the starting
+the schedule, choosing a desired talk. tion awareness. We also hypothesized point, bridges to cross, and number
+Second, by selecting this talk, the user that discrete localization is significantly of floors. The study used a within-
+can see its location on the map. Third, more helpful in terms of location aware- subjects design (all test users tried all
+when Signpost detects a marker, the ap- ness than the no-localization condition, three conditions) with randomization
+plication shows the user’s current posi- while probably requiring more learning (based on Latin squares) of the order of
+tion, helping the user to decide how to effort. The study’s overall goal was to conditions and target rooms to avoid
+reach the talk. Fourth, if desired, the show that marker-based localization is bias. We gave all users some time to famil-
+26 PERVASIVE computing www.computer.org/pervasiveCriteria
+(1) (2) (3) (4)
+(1) No localization vs.
+marker-based p < 0.05 p = 0.945 p < 0.01 p < 0.001
+localization
+(2)
+No localization vs.
+continuous p < 0.001 p < 0.001 p < 0.001 p < 0.001
+(3) localization
+Marker-based
+localization vs.
+p < 0.001 p < 0.001 p < 0.001 p < 0.001
+(4) continuous
+localization
+0 0.5 1.0 1.5 2.0 2.5 3.0 3.5
+Average ranking
+iarize themselves with the touch-screen- For the continuous-localization con- cent confidence intervals. Friedman’s
+based application before starting the dition, we didn’t have an indoor equiv- test shows that the effect is significant
+evaluation. alent to GPS available. Therefore, we for every criterion (p < 0.001), with
+For the no-localization condition, used a “Wizard of Oz” approach: we a high probability that differences in
+we implemented a digital map viewer, introduced a hidden operator to manu- scores aren’t due to chance. Figure 5
+which lets users pan the maps with a ally control the map’s position and ro- also shows the results of the Bonfer-
+finger on the touch screen. In all condi- tation using a second phone connected roni test for post hoc analysis.
+tions, each map showed the start and via Bluetooth. A crosshair on the map As expected, the continuous-local-
+destination points with crosshairs. showed the user’s current position. ization condition outperformed the
+When such locations were outside the This setup proved to be believable, and other two conditions for all criteria.
+map’s view, we presented off-screen the users sufficiently concentrated on Surprisingly, though, users found dis-
+directions using labeled arrows. Users their devices such that no one noticed crete localization significantly easier
+could access each floor’s maps using the trick. Continuous localization was to use than no localization, while re-
+keypad shortcuts on the phone. a control condition useful only for quiring less attention. During the user
+For discrete localization, we inte- comparison within our experiment, study, we noticed that the localiza-
+grated our marker-based solution into and the Wizard of Oz approach let us tion information provided by mark-
+the navigation map and presented the quickly build a running system. Even ers helped users mentally register the
+live camera video view in a screen cor- if this solution can’t scale to real-world view on the digital map with the real
+ner. The map presented each marker’s situations, we considered its scope to environment. Although in the no-lo-
+position as a red dot. As soon as the be limited to the described user study. calization condition users looked for
+system detected a marker, it automati- After users completed all three matching landmarks in the environ-
+cally updated the user’s detected posi- tasks, we asked them to rank the three ment with landmarks on the map, with
+tion and orientation, presenting it as a conditions from worst to best, accord- discrete localization, the burden was
+labeled icon on the map. However, it ing to four different criteria: ease of reduced to registering the icon on the
+didn’t reposition and reorient the map use, ease of learning, required atten- map with the user’s real position and
+itself automatically. Our pilot study re- tion, and confidence about the current orientation in the world. This might
+vealed that users prefer to rotate and location. For each rating, we assigned explain the ease of use reported for
+center the map manually when using a a score of 1 to the worst condition and discrete localization. The results show
+system that doesn’t provide continuous 3 to the best condition. Figure 5 shows no significant difference in the ease of
+localization. the average rankings and their 95 per- learning between the two conditions,
+AprIl–junE 2009 PERVASIVE computing 27
+airetirC
+No localization Marker-based Continuous
+localization localization
+Statiscally significant Not statiscally significant
+(a) (b)
+Figure 5. Subjective rankings of the three localization systems, based on four different criteria: (a) average ranking of the three
+localization systems (higher scores indicate better ratings); (b) statistical significance of pair-wise differences (as a result of
+Bonferroni post hoc analysis). The criteria were as follows: (1) the system is easy to use, (2) the system is easy to learn, (3) the
+system requires little attention, and (4) the system makes me confident I know where I am. Horizontal lines indicate 95 percent
+confidence intervals.Smarter PhoneS
+Figure 6. Results of 34 anonymous
+Average ratings on 7-point Likert scale
+questionnaires from MEDC 2007: (a)
+Questions 0 11 2 3 4 5 6 7
+questions given, and (b) average ratings
+Signpost was more useful than a for each question on a 7-point Likert
+Q1
+conventional map. scale. The vertical lines indicate the 95
+percent confidence intervals.
+Those black-and-white markers
+Q2
+disturbed me.
+I'd like to see the other users' positions
+Q3 personally and to collect question-
+on my device too.
+naires and usage logs from many of
+I was able to quickly access and understand the them. Our overall aim was to deter-
+Q4
+information (schedule and map) I searched for. mine how useful attendees found the
+application. More specifically, we
+Q5
+I enjoyed using Signpost2007. wanted to learn what worked and
+what didn’t, and which features were
+Signpost2007 improved my location
+Q6 appreciated and which were missing.
+awareness.
+We also wanted to gain insight into
+Signpost2007 should be used on other other research areas, such as pedes-
+Q7
+events too.
+trian navigation.
+(a) (b) During MEDC 2007, we collected
+34 anonymous questionnaires. At-
+tendees marked their answers on a
+although discrete localization scored (April 2007), Microsoft Tech Ed Likert scale from 1 (strongly disagree)
+slightly worse than no localization. In 2007 (June 2007), TechReady6 (Feb- to 7 (strongly agree). Figure 6 presents
+our application, we address marker- ruary 2008) and TechReady7 (July the results. All answers were consis-
+related learnability problems by intro- 2008). The number of distinct users tent, with only a minimal standard
+ducing video tutorials or by providing that installed Signpost on their de- deviation.
+on-screen hints (for instance, view- vices rose from 150 at MEDC 2007 At TechEd 2007, we deployed the
+finder frames, which are common in to more than 1,000 at TechReady6. application at the request of the con-
+photo cameras). To our knowledge, this is the most ference organizers, but we didn’t man-
+Finally, user confidence was signifi- widely used phone-based indoor nav- age to get in contact with any of the
+cantly higher (p < 0.001) for discrete igation system ever deployed in a real conference attendees.
+(marker-based) localization compared environment. At TechReady6, we systematically
+to no localization. Thus, compared to At all four conferences, we intro- observed selected users to monitor
+a static map, users appear to feel a sig- duced Signpost as the official confer- their behavior patterns, and we per-
+nificant increase of location awareness ence guide endorsed by the conference formed recorded, semistructured in-
+when provided with a means of veri- organizer. All users were conference terviews afterward. The interviews
+fying their position on the map, even attendees who hadn’t seen the applica- focused on several core topics, such as
+if coarse and discrete. Our observa- tion beforehand and who didn’t know how Signpost changed the user’s con-
+tions during the user study support this us. By deploying our application in ference experience and organization,
+conclusion. Although users generally previously unknown environments how well the navigation worked, and
+didn’t use markers intensively when and with a large user base possess- how much the small screen limited the
+they were going in the right direction, ing untested hardware, we were able application’s usefulness.
+markers seemed fundamental for users to collect data from many users in a Finally, during TechReady7, we
+who were lost in a wrong branch of the natural environment via anonymous collected usage logs from 74 anony-
+building so that they could remap their usage logs, questionnaires, on-field mous users, covering a time frame of
+mental model with the real building observations, and interviews. These four days, to better understand how
+and restructure their path accordingly. real-world experiments comple- users employed Signpost. We identi-
+ment the controlled study presented fied the following core functions: dis-
+experiences from earlier. play of 2D maps, visualization of the
+real-World Deployment Unfortunately, approaching all us- conference buildings’ 3D models, live
+We deployed Signpost at four inter- ers directly wasn’t possible. Yet, we positioning using markers, browsing
+national conferences: MEDC 2007 managed to interview some of them of the conference schedule, and full-
+28 PERVASIVE computing www.computer.org/pervasivetext search on the conference sched-
+ule. Figure 7a shows the percentage
+of times users invoked the various
+functions. At TechReady7, we also
+collected questionnaires from 64
+users. In this questionnaire, users
+rated the usefulness of the five core
+functions compared with the printed
+conference booklet, on a Likert scale
+4.0
+from 1 (useless) to 5 (useful), as Fig-
+ure 8 shows.
+3.5
+In the following, we discuss the ex-
+periences gained throughout the four 3.0
+conferences.
+2.5
+Usefulness 2.0
+At MEDC 2007, attendees found
+Signpost more useful than the conven- 1.5
+tional conference map that was part
+1.0
+of the printed conference booklet (Fig-
+ure 6a, Q1). At TechReady6, all sub-
+0.5
+jects agreed that the application was
+very helpful. One user said, “Every- 0
+thing I looked for, I used the schedule. 1 2 3 4 5
+I used the map, since I didn’t know
+where to go in the Hyatt; that was very
+helpful.” From the questionnaires at
+TechReady7, we can also see gener-
+ally high rates for Signpost’s useful-
+ness. Most users quickly accessed the
+information presented on their device
+(Q4). Users consistently enjoyed the
+application (Q5), yielding an average
+score of 6.6 out of 7. Furthermore, the
+AprIl–junE 2009 PERVASIVE computing 29
+resu
+rep
+tnuoc
+egasU
+Full-text
+Browse schedule
+search
+(18%) (6%)
+Live position 2D map (38%)
+(27%)
+3D model
+(11%)
+(a)
+2D map
+Browse schedule
+3D model
+Full-text search
+Live position
+(b) Time since user first ran the application (days)
+70
+60
+50
+40
+30
+20
+10
+0
+2D map 3D model Live position Browse schedule Full-text search
+)%(
+gnitar
+fo
+ycneuqerF
+Figure 7. Usage statistics for five core
+functionalities (from TechReady7): (a)
+percentage of times each functionality
+was invoked, and (b) average usage
+count of each functionality per user
+(relative to the days since the user first
+ran the application).
+Useless
+Slightly useless
+Neutral
+Slightly useful
+Useful
+Figure 8. Distribution of ratings on the
+usefulness of functionalities (compared
+to the printed conference handouts at
+TechReady7). All values are oriented
+toward positive ones (“useful”), but the
+ratings for the 3D model seem to be
+Functionality
+more spread and generally centered on
+“slightly useful.”Smarter PhoneS
+attendees strongly believed that Sign- navigation with a black border (see Figure 1). In
+post should be used at other confer- To minimize the workload of adapt- addition, they were mounted on spe-
+ences as well (Q7), resulting in a score ing to new locations, we didn’t de- cial poster boards, so they were easy
+of 6.5 out of 7. sign Signpost to provide textual to spot. For TechReady6, we intro-
+navigation instructions. Although duced the frame markers, branded
+3D overview map users generally liked the way Sign- with the design of the conference. Al-
+Overall, people found the 3D over- post guided them, there were many though they looked significantly more
+view not very helpful. For example, suggestions for improvements. For pleasing, they were far more difficult
+one user at TechReady6 said, “It is example, one user said, “I think the to spot. For TechReady7, we cor-
+cool. It is eye-candy, but for me it biggest thing that would help me was rected this problem by using a differ-
+is not helpful. The 2D map is just if it would tell me steps: go down es- ent color scheme. At TechReady6 and
+fine.” Another said, “It was interest- calator, turn right ... like some of the TechReady7, the conference organizers
+ing, but I didn’t use it to try to find car navigation things, but maybe not deployed only 24 markers over an area
+where I was going. I think the model that precise.” As we expected from of four buildings. Although the mark-
+is too simplistic.” This trend is also the controlled user study, users gener- ers were placed prominently, they were
+evident from the TechReady7 data, ally felt an improvement in their loca- small (15 cm). Surprisingly, all users
+where the 3D functionality’s usage tion awareness (Q6). commented that enough markers were
+was very low, and the ratings for its available.
+usefulness were generally centered tracking accuracy
+on 4 (“slightly useful”). A likely Although the marker-tracking system Privacy
+reason for this is that the confer- was quite precise, we decided to mount With a system like Signpost, it would
+ence area was too large. It spanned the markers only coarsely, to minimize be possible to store all users’ current
+an area of four buildings, each with the effort of mounting and measuring. positions on a central server. Q3 asked
+two to six levels. Still, all users voted Yet, users were generally satisfied with about the users’ interest in seeing other
+to keep the 3D view, because of its the tracking accuracy: “When I looked users on their screen. Here, we noticed
+“eye-candy” factor or because it gave at it—immediately I thought wow, this the highest variation among answers.
+them a better large-scale overview of is where I am.” One user referred to Discussions with users confirmed our
+the environment. the tracking accuracy as “half a meter, expectations that some users have
+for the purpose it was accurate enough concerns about their privacy being af-
+Small Screen … 2 feet off the door versus 4 feet off fected by such a feature. One user said,
+Most users had no problems see- the door really doesn’t matter.” “At a conference it is OK … Or you
+ing the overview, despite the small could just enter your conference ID.”
+screen size, and they made com- Fiduciary markers Another suggested, “Oh, simply make
+ments such as, “That is perfect. I Using fiduciary markers in public ar- it turn-off-able, when you don’t want
+wouldn’t want to carry something eas always raises questions concerning to be localized.”
+bigger” or “I’d rather use my phone visual clutter. However, most attend-
+because I am used to [looking] at the ees didn’t complain about the mark- other Use Cases
+Users commonly agreed on alterna-
+tive usage scenarios: “Inside buildings,
+Although users generally liked malls, etc. There it would be useful.
+Outdoors you have GPS, which is al-
+the way Signpost guided them, there ready there, and people are used to it.
+The key thing would be inside.”
+were many suggestions for improvements.
+technical problems
+small screen anyway.” Yet, another ers, giving Q2 (“Those black-and- Most technical problems were related
+user said “Getting an overview is the white markers disturbed me.”) a score to erroneous camera drivers, which
+toughest part, in the level of detail of 1.7. Perhaps fiduciary markers don’t unfortunately are common on Win-
+that is required.” As expected, some affect conference sites, which are al- dows Mobile phones. Moreover, to
+users found it difficult to browse a ready densely decorated with posters work on all Windows Mobile phones,
+big map. Interestingly, this seemed and screens, as much as other environ- Signpost must support all various
+to wear off as users gained a better ments. At the first two conferences, the screen resolutions, camera resolu-
+feeling for the site. markers looked like a checkerboard tions, and aspect ratios (see Figure 3).
+30 PERVASIVE computing www.computer.org/pervasivethe AUTHORS
+For MEDC 2007, we tried to supply
+configuration files for devices tested
+Alessandro Mulloni is a phD student at the Graz university of Technology.
+in advance, which turned out to be in- His research interests include 3D real-time graphics on handheld devices and
+sufficient, owing to brand and model human–computer interaction, especially user-centric design of interaction and
+visualization methods for handheld augmented reality. Mulloni has an MSc in
+variety. For TechEd 2007, we imple-
+computer science from the university of udine. He is a student member of the
+mented an automatic detection mod- IEEE. Contact him at mulloni@icg.tugraz.at.
+ule for device capabilities, which im-
+proved the situation significantly. For
+TechReady6 and TechReady7, we also
+Daniel Wagner is a postdoctoral researcher at the Graz university of Technol-
+implemented a camera wizard that let ogy. His research interests include mobile augmented-reality technology, and
+users work around the most common real-time graphics and computer vision for mobile phones. Wagner has a phD
+in computer science from the Graz university of Technology. He is a member of
+driver bugs.
+the IEEE. Contact him at wagner@icg.tugraz.at.
+As we solved the most disruptive
+problems, new issues emerged. For
+example, power consumption due to
+camera usage initially didn’t appear
+Istvan Barakonyi is a software developer at Imagination Computer Services
+to be a problem. However, running GesmbH. His research interests include stationary and mobile augmented-
+Signpost with an active camera con- reality applications, virtual reality, and embodied autonomous agents. He has
+a phD in computer science from the Vienna university of Technology. Contact
+tinuously in the background when the
+him at istvan.barakonyi@imagination.at.
+phone wasn’t in use quickly drained
+the battery.
+T Dieter schmalstieg is full professor of virtual reality and computer graphics at
+he combination of quanti-
+the Graz university of Technology. He’s also an advisor for the K-plus Compe-
+tative and multiple quali- tence Center for Virtual reality and Visualization in Vienna, deputy director of
+tative studies shows that the doctoral college for confluence of graphics and vision, and director of the
+Christian Doppler laboratory for Handheld Augmented reality. His research in-
+marker-based indoor navi-
+terests include augmented reality, virtual reality, distributed graphics, 3D user
+gation provides advantages over simple, interfaces, and ubiquitous computing. Schmalstieg has a phD in computer sci-
+manually operated digital maps. These ence from the Vienna university of Technology. He is a member of the IEEE and
+the Austrian Academy of Science. Contact him at schmalstieg@icg.tugraz.at.
+results also illustrate our approach’s
+practicality in real-life use cases. To
+our knowledge, Signpost is the first in-
+door navigation system successfully de-
+ployed at several large-scale venues that guidance system with paper maps. We ACknOwLEDgMEnTS
+runs on users’ own mobile phones. We see paper maps as a separate condition
+This project was partially funded by the Austrian
+received encouraging feedback from from the space (digital maps) we’ve thus
+Science Fund (FWF) under contract no. Y193 and
+our test audience, despite the reported far examined. Introducing another in- by the Christian Doppler research Association
+technical difficulties. dependent variable (paper vs. digital) (CDG).
+Backed up by this positive feedback, will require a separate user study and
+Signpost is now a commercial product. far more test subjects. Further ongo-
+It is adaptable to new events, thanks ing work includes integrating online
+to authoring tools that make it easy marketing campaign material by using REFEREnCE
+to import existing floorplans. Track- DataMatrix 2D barcodes as placehold-
+1. D. Schmalstieg and D. Wagner, “Experi-
+ing based on computer vision is cost- ers for Web links, and extending plat-
+ences with Handheld Augmented Real-
+efficient, as it only requires placing a form coverage. Our ultimate goal is for ity,” Proc. 6th IEEE/ACM Int’l Symp.
+few posters with markers at the site Signpost to evolve from a conference Mixed and Augmented Reality (ISMAR
+07), IEEE Press, 2007, pp. 3–18.
+rather than deploying an active beacon guide to a generic system for indoor
+infrastructure. The use of commercial navigation. The application we envision
+off-the-shelf camera phones lets users will support a broader range of venues
+experience the application on their own and tasks, and will have an embedded
+devices, weaving navigation more inti- scripting language to support direct
+For more information on this or any other com-
+mately into everyday life. downloads of new functions and sce-
+puting topic, please visit our Digital library at
+In the future, we plan to compare our narios to the system. www.computer.org/csdl.
+AprIl–junE 2009 PERVASIVE computing 31

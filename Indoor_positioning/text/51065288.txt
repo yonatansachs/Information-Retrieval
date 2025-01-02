@@ -1,0 +1,441 @@
+View metadata, citation and similar papers at core.ac.uk brought to you by CORE
+provided by CUAL Repository (Connacht Ulster Alliance Libraries)
+To Wireless Fidelity and Beyond - CAPTURE,
+Extending Indoor Positioning Systems
+GaryCullen,KevinCurran,JoseSantos GearoidMaguire,DenisBourne
+IntelligentSystemsResearchCentre,
+UniversityofUlster,MageeCollege, LetterkennyInstituteofTechnology,
+Derry,UnitedKingdom Co.Donegal,Ireland
+Gary.Cullen@lyit.ie
+Abstract—The benefits of context aware computing and Bluetoothbeacon.Thetestareaandexperimentswerethesame
+specifically the context that location can provide to applications for both systems and the results were weighed to evaluate the
+and systems has been heavily documented in recent times. best solution to solve the problem of range in Indoor
+Moreover the move from traditional outdoor localization PositioningSystems(IPS).
+solutions to the indoor arena has seen a dramatic increase in
+researchintothisarea.Mostofthisresearchhassurroundedthe On loosing something or forgetting where you last placed
+problemofpositioningaccuracy,withattemptstosolvethisusing something, a common piece of advice is to retrace your steps
+a myriad of technologies and algorithms. One of the problems back in your mind. This can be quite a formidable task given
+thatseemstobesomewhatoverlookedistheissueofcoveragein the multimodal transport available today coupled with the
+anindoorlocalizationsolution.Themostlyunobstructedviewsof complexityandscaleofbuildingsweinteractwithonaregular
+the Global Positioning System (GPS) which requires a mere 30 basis. The ability to place an avatar of yourself onto a map to
+satellites to provide global coverage never had these problems. graphically retrace your steps in real-time would dramatically
+Thedearthofliteraturearoundthisissueintheoutdoorarenais reduce the brain power required to remember everywhere you
+testament to this fact. Unfortunately unobstructed views are not were at a given time. Googles maneuverings into the indoor
+somethingthatcanbeachievedinmostindoorenvironmentsand location mappings realm [2] opens up the opportunity to
+economical as well as physical barriers can prevent the
+deliver thisvirtualreality, currentlybeingabletoprovidedoor
+installationofaninfrastructuretoachievetotalcoverage.Inthis
+to door route planning. Being able to navigate your way from
+paper we propose a solution to this issue of indoor coverage by
+your office desk out through your company’s building (taking
+deployingasolutiontoextendtherangeofapositioningsystem-
+the stairwell to avoid your boss in the lift) is eminently
+Cooperatively Applied Positioning Techniques Utilizing Range
+achievablealbeitwithasmallnumberoflocationsonamodern
+Extension (CAPTURE). CAPTURE provides a system to locate
+smartphoneusinggooglemaps.Alevelswitcherallowsyouto
+devices that cannot be reached by an in-house location based
+onionslicethroughmultiplefloorlevelplans,beforeswitching
+system.Itpresentsauniquecontributiontoresearchinthisfield
+to GPS to offer possible transport alternatives through the
+byofferingtheabilitytoutilizedevicesthatcurrentlyknowtheir
+locationwithinaLocationBasedSolution(LBS),tohelpevaluate outdoor environment. On reaching what ‘historically’ would
+thepositionofunknowndevicesbeyondtherangecapacityofthe have been your destination, Google Indoor Maps and more
+LBS. Effectively extending the locating distances of an Indoor importantlyanIPSpicksupwhereGPSleftoffofferingapoint
+LBS by utilizing the existing mobile infrastructure without the topointnavigationsolution.Thiscanthentakeyouthroughthe
+requirement for additional hardware. CAPTURE uses the complexities of an airport terminal for example, via specific
+Bluetooth radios on mobile devices to estimate the distance waypointssuchassecurityand check-indesksdirectlyto your
+between devices, before inserting these range estimates into a departuregate.
+trilaterationalgorithmtoascertainposition.CAPTUREhasbeen
+tested through experiments carried out in a real world One of the barriers to implementation of such a concept is
+environment, proving the capacity to provide a solution to the the limitation in coverage and accuracy of currently
+rangingissue. implemented Indoor Position or Location Based Systems [3].
+IPSstypicallyutilize pre-existingWi-Finetworkinfrastructure
+Keywords—Localization; Indoor positioning; Indoor taking ranging information from Wireless Access Points
+localization; geographical positioning; Bluetooth; Cooperative (WAP’s) as inputs for a localization algorithm. Unfortunately
+Positioning.) the driversbehind the strategic decisions on the positioning of
+WAPs,inaWi-Fibasedsolution,weretypicallytocatchlarge
+I. INTRODUCTION congregations of users and primarily to provide the highest
+The firstiterationofCAPTURE described inthe following available throughput to those users. Coverage for IPSs is not
+literature [1], used the RSSI readings taken from the IEEE necessarily to the forefront of network designer’s minds when
+802.11radioonthemobiledevicestogaugetherangebetween designingsuchnetworks, leavinglarge areasbeyond the range
+the devices by measuring the signal loss to estimate distance. ofanIPS.GPSontheother hand, offersnearglobalcoverage,
+The version of CAPTURE implemented and evaluated in this barsomeissueswithurbancanyonsandotherhighrisenatural
+paper uses the Bluetooth radio on the devices to estimate obstacles that prevent Line of Sight (LoS) to the just under 30
+distancesbetweendevicesbasedontheRSSIreceivedfromthe satellitesrequired[4]todeliversuchwidescope.The indoor environment does not afford such clear Consider the following scenario where a user ‘Bob’, is in his
+unobstructed views to and from tracking devices, the many favorite seat in the library, unfortunately the seat is in the far
+doors, walls, floors, pillars and ceilings hinder the capacity of cornerofthelibrary,whichcanonlybe‘seen’byoneWireless
+an IPS to locate devices. Furthermore the indoor arena is an Access Point. In this position Bob’s tablet can gain Wi-Fi
+especially noisy atmosphere, being home to other wireless accessthroughthisAccessPointto allowhimaccessto online
+devices such as Bluetooth Headsets, Cordless Phones and resources. However one AccessPointisnotenoughfor thein-
+Microwave Ovens. All of these devices operate in the same house Location Based System to accurately locate Bob within
+frequency band as the Wi-Fi solution, namely 2.4 GHz and the building using Trilateration positioning techniques. Sue is
+therefore can interfere with the reception of signals used to sitting near the front of the library and can be ‘seen’ by 4
+locate [3], making them behave in an unpredictable fashion. Wireless Access Points, and is thereby accurately located on
+These environmental dynamics combine to dramatically affect theLocationBasedSystem.Sheisalso25meterstotheleftof
+the abilityof an indoor solution to provide an acceptable level Bob and the Wireless Network Card on her Laptop can see
+ofcoverage.LiteraturefromYang[4]andRowe[5]reflectthat Bob’s tablet. The Librarian is stacking books on the shelves
+Location Awareness is rapidly becoming a fundamental behind where Bob is sitting and her smartphone is currently
+requirement for mobile application development. This located within the Location Based System also. The wireless
+highlights the challenges posed for ubiquitous localization of NIC on her smartphone can also ‘see’ Bob’s tablet, therefore,
+devicesintheindoorarena.Consideringusersspendmoretime in a normal scenario, Bob would be beyond the range of the
+in an indoor environment, over 88.9% according to a recent Location Based System, but because CAPTURE can use the
+Canadian study [5], the need for a solution is obvious. We known positions of the Librarian and Sue and Bob’s position
+proposeasolutiontothisissueofcoveragelimitationsbyusing relative to them it can accurately estimate Bob’s position
+a cooperative localization technique, CAPTURE. CAPTURE within the library. Itprovidesa locationrelative to the devices
+can plug into an in situ solution irrespective of the technology locating it, which can then be mapped onto a global overview
+orlocationtechniquethatsolutioncurrentlyusestolocate. of the Location Based System (LBS), assisting in the
+aforementioned scenario to get you to the departure gate in a
+pointtopointnavigationsolution.
+Figure1:SportsHallLyITisolation the variance grows bigger as people are walking.
+The rest of this paper is laid out as follows; Section II
+That is to say that the position estimation becomes less and
+describes the system model used to implement CAPTURE.
+less accurate the further the people being tracked travel.
+Section III provides an overview of the experimental test bed
+Implementing a hybrid solution incorporating Bluetooth RSSI
+used to evaluate the solution and Section IV documents the
+readings to measure the distance between devices,
+data collected during testing. In Section V we describe the
+dramatically improved positioning accuracy. Bluetooth has
+findings of the experiments that were carried out, validating
+been further used as a cooperative solution to the accuracy
+the feasibility of the system, the penultimate section, Section
+issueinIPS’s[7-11].
+VI outlines the proposed implementation of CAPTURE and
+the paper concludes Section VII, providing an insight into
+someprojectedfutureworkwithCAPTURE. B. RSSI–ReceivedSignalStrengthIndicator
+PossiblythemostpopularrangingtechniqueusedinIndoor
+II. CAPTURE-SYSTEMMODEL
+Localization, Received Signal Strength Indicator (RSSI) is a
+Thissectiondescribesasystemmodelthatcanbeusedina
+measurement of the voltage that exists in a transmitted radio
+localization solution to establish the Cartesian coordinate
+signal, which is an indication of the power being received by
+values of a lost device within a two dimensional plane.
+the antenna. When a signal first leaves a transmitting device,
+CAPTURE does not require a preceding calibration stage or a
+thepowerofthe signaldropsorattenuates,thisistrueofboth
+site survey, providing a robust opportunistic solution in
+wiredandwirelesstransmissions.Asaradiosignalpropagates
+dynamic environments, using only real time RSSI values. We
+through the air some of its power is absorbed and the signal
+use the term reference device to describe devices that
+cooperatively assist in the positioning of lost or unknown losesaspecificamountofitsstrength,therefore,thehigherthe
+devices.Traditionallythe termanchor node isused todescribe RSSI value (or least negative in some devices), the stronger
+these devices, but this seems to elicit a perception of static or the signal. Knowing the amount of signal loss over a given
+permanent devices, which in a cooperative solution these distance provides a method to calculate the distance from a
+devices most certainly are not. Two key components typically transmitting device, given a Received Signal Strength. At its
+makeuptheestimationofthepositionofalostdevice.Firstof most basic level this allows for the ‘coarse’ localization or as
+all ranging techniques are used to estimate the distance from referred to in other literature, ‘presence-based localization’
+the transmitting device(s) to the receiving device(s). This is [12]ofadevicerelativetothetransmittingdevice.Thiscanbe
+calculatedusingametricforexamplethelengthoftimeittakes illustrated bythe RSSI calculated distance being the radius of
+a signal to propagate the distance from the transmitter to the a circle and the ‘searching’ device being at the centre of that
+receiver. The second component is the position estimation
+circle. The estimated position of the lost device is anywhere
+technique, here the ranging variables are calculated using one
+on the circumference of that circle. In an IEEE 802.11
+or more ranging techniques and these are used as input for an
+network if the locations of the Access Points are already
+estimationalgorithmtocalculatethepositionofthelostdevice.
+known, then the location of Mobile Devices traversing the
+A. CAPTURE–Bluetooth network can be located relative to them, albeit only to the
+circumference ofthe radiusof the calculated distance. Further
+CAPTURE was first implemented using RSSI
+localization algorithms and position estimation filtering
+measurements from the 802.11 radio on mobile device [1].
+techniques must be applied to provide a more precise level of
+The implementation of CAPTURE described in this paper
+localization.
+utilizes Bluetooth radio beacons to measure range. Bluetooth
+In a cooperative paradigm, mobile devices can simulate
+has been around for quite some time now, designed by phone
+the role carried out by Access Points, providing a relative
+manufacturer Ericsson in 1994, it was initially developed to
+reference to a lost devices location. RSSI values can be
+replacethethenageingRS-232andInfrared(IR)interfacesfor
+extracted from beacons transmitted between devices within
+connectingperipheraldevices. Itoperatesatthe same 2.4GHz
+range. Correlation of these signal indicators and distance can
+frequency as Wi-Fi and is specified in the IEEE 802.15.1
+be estimated using many of the methods already applied
+standard.TheoverridingbenefitofusingBluetoothforIndoor
+throughoutliteratureinthisarena[13-15].RSSIbasedormore
+Localizationisitsavailabilityinnearlyeverymobiledevicein
+broadly speaking, radio based Indoor Positioning Systems
+use today. Using Bluetooth in a cooperative framework also
+have had notoriously irregular environment variables such as
+allows the user to remain connected to the 802.11 network
+reflection, refraction, diffraction and absorption of radio
+while simultaneously assisting in the location of others with
+wavesthatcanimpactpositioningestimateddramatically[16].
+Bluetoothradiosignals.Bluetoothtransmitsbeaconssimilarto
+Although RSSI is a measure of signal loss, it is not a linear
+802.11 radios and the strength of the signal received from
+representationofhowmanydBmisactuallyreachingthecard.
+these beacons can be captured and measured to provide a
+If a signal indicator is reading -72, this means that it is 72
+range estimate. Kloch et al [6] investigate effects in
+dBm less powerful by the time it gets to your device.
+Collaborative Indoor Localization as an example of self-
+ExperimentaltestcarriedoutatanearlystagewithCAPTURE
+organizing in ubiquitous sensing systems, using Bluetooth to
+further extoled this assumption. Results of these tests can be
+correctPedestrianDead Reckoning(PDR) drift. Theyanalyze
+viewed in Table 1: 5 meter increments in Section V, Data
+the collaborative approach as a solution to the indoor
+Collection and Presentation. Crudely extracting the RSSI at
+localization problem, and found that when using PDR in
+givendistanceincrementstoattempttoderiveameterdistancebeing equal to a given dBm increase in RSSI reading was not Tocalculatetheexactpositionofthelostdeviceweneeda
+going to yield any value worth using in any further third reference device. When we calculate the distance from
+experiments. The authors in [17] advocate a solution utilizing thisfinalreferencedevicetothelostdeviceandconsideringwe
+a RSSI smoothing Low Pass Filter (LPF) to minimize the alreadyknowthedistancefromtheotherreferencedevices.We
+dynamicfluctuationoftheRSSIvalues. can then determine that the lost device can only be at one
+specific position to match those three particular distance
+estimations – the intersections of the three circles (see Figure
+C. Trilateration 3). The ranging estimates calculated from the RSSI values in
+Trilateration is a key component of the GPS position the tests were used as the inputs for the trilateration algorithm
+estimation techniques. It is a process that can estimate the ontheCAPTURE,toprovideanestimateonthepositionofthe
+positionofamobiledevicegiventhepositionsofatleastthree lostphones.
+other objects and the distance fromthose objects to the device
+III. EXPERIMENTALTESTBED
+to be located. In the scenario depicted below in Figure 2(a),
+illustrated using a cooperative localization example, the circle In this section, we will provide evidence showing the
+depicts the distance from a reference device to a lost device. suitability of CAPTURE as a solution to the indoor ranging
+This distance would have been derived using the RSSI value problem. To do that we carried out a large campaign of
+between the reference and lost devices. All we can say about measurements in the Sports Hall in Letterkenny Institute of
+the whereaboutsofthe lostdevice isthatitresidessomewhere Technology illustrated in Figure 1. The hall offers a 40m
+on the circumference of the circle that isconstructed using the diagonal testing range, providing Line of Sight measurements
+radiusof the estimated measurement between the two devices. for alltests, ascanbe seen inthe picture depicted in Figure 4.
+A second reference device will allow the position of the lost When readings were been recorded all users vacated the hall,
+device to be narrowed further as can be seen in Figure 2(b). this provided an optimal environment to use as a benchmark
+Now the ranging estimates of the lost device have been forfuturetestsonCAPTURE.
+calculated relative to the second reference device also.
+Therefore considering the lost device must be on the
+circumference of the circles created bythe distance between it
+and the two reference devices there are only 2 possible
+positions where it might be, the intersections of these two
+circles.
+Each phone used in the test is given a name (BSSID)
+TestPhone1, TestPhone2 for example. CAPTURE reads the
+RSSI of all available reference points, i.e. all devices it can
+‘see’,butitfiltersoutonlythetestphonesselectedbytheuser
+carryingoutthetests.Thiscanbeseenintheimageinfigure5,
+and is achieved via a lookup table mapping the MAC address
+of the phone to the phone name. This allows the use of onlya
+specifiedphoneoragroupofphonesduringanygiventest.
+Figure2:(a)SingleDistance (b)With2ndReferenceDevice
+A. SystemComponents
+Figure4: TestEnvironment
+The experimental setup of the prototype consisted of 7
+SamsungGT-S5310GalaxyPocketphones(Figure5),running
+Google Android 2.2.1 on a 600 MHz ARMv6, Adreno 200
+GPU,QualcommMSM7227chipset,wereusedtocarryoutthe
+evaluationoftheCAPTUREsystem.3ofthephoneswereused
+as reference devices, the other phone acted as the lost device.
+All phones used during the test were of an exact make and
+modelsoastoruleoutanyissueswithvariedRSSIreadswith
+different antenna types. Some of these issues have been
+describedintheliterature[18,19].Lishengetal.,[19]gosofar
+as to describe the distortion being as much as 11.2 dBm out
+with different antenna types over a 25 meter read range.
+Although these issues referenced above describe problems in
+the 802.11 realm, it is the author’s opinion that these could
+haveanimpactonBluetoothradiosignalsalso.
+Figure3:TrilaterationExampleWhere:
+n:PathLossExponent
+d:Distancefromtransmittingdevice
+A:Receivedsignalstrengthat1meterdistance
+The path loss exponent typicallyvaries from1.5 to 4, with
+1.5 representing a free-space Line of Sight (LoS) value and 4
+representing an environment that incorporates a high level of
+signal attenuation. Not having a good equation modeling the
+environment in which your experiments are to be deployed,
+will be reflected in horrible results. After initial pre-tests were
+evaluated,aPathLossExponentof1.5wasdeterminedforthe
+test environment, because of the open plan design of the Hall
+offering LoSbetween alldevicesand the RSSI at1 meter was
+measured at -66.8194. The results of the collected data are
+describedinthefollowingsection.
+Figure5:TestPhones
+IV. DATACOLLECTIONANDPRESENTATION
+Duringthetestsallphoneswereplaceatadistanceof80cm Here we present all of the data collated throughout this
+abovefloorlevel,tomimicasclosetoarealworldexampleof work,thedatasetsareillustratedinthegraphandtable.During
+a user holding them. The phones were placed on identical the recording of data the hall was emptied of people so as to
+platforms during the tests to negate the impact of Hand-Grip provideacleansetofresults.Aninitialtestwasruntoestablish
+body-loss effect which can also impact ranging measurements the1meterrangeforinputintothealgorithminequation1,the
+[18]. Device orientation can also introduce errors when results of this test can be seen in Figure 6. The fluctuations in
+calculating signal range estimates, so all phones had the same the meter range values was one of the notable differences
+orientationwhenusedinourtests[20]. betweenthetestsrecordedinthe802.11versionofCAPTURE
+versus the Bluetooth version. In the Wi-Fi version meter read
+ Database
+values were captured from -42 to -45. Here, as can be seen in
+A MySQL Server version: 5.0.96 hosted on a Linux the graph readings ranged from -62 to -77, a difference of
+platform was used to store all data collected by the devices. 3dBm was recorded in the Wi-Fi test, with a difference of
+The server was online and the phones wrote directly to it as 15dBmintheBluetoothexperiments.
+theyrecorded RSSI valuesfromeachother.Thedata wasthen
+passedthroughalowlevelfiltertoremoveanyoutliers,before
+1 Meter RSSI values
+an average RSSI reading was calculated for each required
+ranging measurement, to be used in the trilateration algorithm
+toestimatethepositionofthelostdevice. -80
+ Laptop
+-75
+A Dell Latitude E6440 iCore3 running Windows 7
+Professional was used to develop the app to gather the RSSI
+-70
+from the phones. An algorithm was designed to convert this
+RSSIreadingintoarangingmeasurementbeforeatrilateration
+algorithm converted the ranging measurements into Cartesian -65
+coordinate values. We used the Eclipse IDE and Android
+Software Development Kit (SDK) for Android development
+-60
+anddebugging,todeveloptheapp.
+Figure6:1meterreadings
+B. RangingMeasurementEstimation
+The RSSI valuescaptured fromthe beacons transmitted by
+500readingswererecordedatvariouslocationsthroughoutthe
+deviceswithinrange ofthe ‘lostdevice’ were used toestimate
+hall, to accurately obtain the meter value for the algorithm,
+the relative distance between them. As explained earlier RSSI
+these were smoothed with a filter before the final average was
+values do not provide a linear representation of distance. The
+calculated.
+authors in [17] advocate using the formula in “(1),” below to
+estimateRSSI,andtherebyextrapolatedistancegivenRSSI: Further testswere thencarriedoutto measurethe accuracy
+of both the RSSI values received and the resulting range
+estimations from the algorithm. Table 1 below, depicts the
+RSSI=-(10nLog10(d)+A) Equation(1) resultsofteststo capture theRSSI valuesbetweentwo phones
+at 5 meter increments diagonally across the hall. It highlights
+the RSSI value beginning at -72.3793 for the 0-5 meter range.A sample set of 200 readings were recorded per section, an Theyalsoknowthedistancebetweenthemselves:
+average was then taken from this set. The standard deviation
+ TestPhone1toTestPhone2is15meters
+was also documented to illustrate any fluctuations in the
+received values. In our previous experiments with CAPTURE  TestPhone1toTestPhone3is13meters
+using Wi-Fi [1] the standard deviation was typically low, in
+this case using Bluetooth as can be seen in the table below  TestPhone2toTestPhone3is17meters
+standard deviation ranges from 4.2 to 2.9, these are large
+fluctuationsfromtheaverage.
+TheRSSIreadingsfromthe:
+Distance 0-5m 0-10m 0-15m 0-20m
+ LostPhonetoTestPhone1is-77.5351dBm
+Average -72.3793 -74.8966 -76.6333 -76.3103
+StdDev 4.1140 3.6327 3.9603 3.9226  LostPhonetoTestPhone2is-78.8457dBm
+Estimate 3.73 7.62 11.20 9.69
+ LostPhonetoTestPhone3is-76.1021dBm
+Distance 0-25m 0-30m 0-35m 0-40m
+Average -80.6205 -80.9657 -80.2759 -83.3103
+These RSSI readingstranslateto a rangingestimate of13.345,
+StdDev 4.1062 3.3776 4.2823 2.9490
+15.1221 and 9.349 meters respectively when put through the
+Estimate 28.82 29.38 27.87 49.95
+rangingalgorithm.
+Theactualdistancebetween:
+Table1:5meterincrements
+ TestPhone1andtheLostPhoneis11.5meters
+The average was then inputted into the algorithm to derive
+a range estimate based on the RSSI values received. As  TestPhone2andtheLostPhoneis13.2meters
+mentioned before RSSI values do not provide a linear
+ TestPhone3andtheLostPhoneis11.9meters
+representation of measurement, and therefore some of the
+increments do not initially seem like they could assist in Givinganapproximateaverageerrorrateof2.5meters.
+finding a distance at a given measurement. The ranging
+From the schematic of the test pictured in Figure 7
+estimatesshowanerrorhighof11.31metersatthe0-20meter
+CAPTURE’s visualizer module (Figure 8) graphically depicts
+rangeandlowof.62metersatthe0-30meterrange.
+the positions of the cooperative reference devices on screen
+V. EXPERIMENTALRESULTS along with the actual and estimated positions of the lost
+device. The positions of the 3 reference devices are entered
+Figure 7 depicts one of the tests where CAPTURE
+accurately locates a lost phone within 2.5 meters. TestPhone1, into the visualizer manually, whichcanbe seeninblue on the
+TestPhone2 and TesPhone3 know their location, via the in- screen. The position of the lost device is also entered, it is
+houseIPS. illustrated in red on the screen. The application then reads in
+the RSSI values before estimating the position of the lost
+device,showningreenhereonthescreen.
+Figure7:FindingLostPhone
+Figure8:Visualizermodule[5] C.J.Matz,D.M.Stieb,K.Davis,M.Egyed,A.Rose,B.Chou,et
+VI. CAPTURE–SYSTEMIMPLEMENTATION al., "Effects of Age, Season, Gender and Urban-Rural Status on
+Time-Activity: Canadian Human Activity Pattern Survey 2
+InorderforCAPTUREtobeabletocooperativelylocatea
+(CHAPS2),"Internationaljournalofenvironmentalresearchand
+lostdevicewithina network,theremustbeatleast3reference publichealth,vol.11,pp.2108-2124,2014.
+deviceswithinsightofthelostdevice.Eachofthesemusthave [6] K. Kloch, G. Pirkl, P. Lukowicz, and C. Fischer, "Emergent
+‘a prior’ knowledge of their location within a preexisting behaviourincollaborativeindoorlocalisation:Anexampleofself-
+localization solution. The hypothesis of CAPTURE was to organisation in ubiquitous sensing systems," in Architecture of
+ComputingSystems-ARCS2011,ed:Springer,2011,pp.207-218.
+extend the range of in-house IPS’s, and tests shown in both
+[7] A.Baniukevic,D.Sabonis,C.S.Jensen,andL.Hua,"Improving
+have proven that it can achieve exactly this. Existing IPS’s
+Wi-Fi Based Indoor Positioning Using Bluetooth Add-Ons," in
+have dramatically more powerful infrastructure than what MobileDataManagement(MDM),201112thIEEEInternational
+CAPTURE would utilize though. For example 230 volt AC Conferenceon,2011,pp.246-255.
+powered Access Points in a standard IPS versus 12 volt DC [8] S.Aparicio,J.Perez,A.M.Bernardos,andJ.R.Casar,"Afusion
+method based on bluetooth and WLAN technologies for indoor
+poweredmobilereferencedevices(smartphones,tabletsand\or
+location," in Multisensor Fusion and Integration for Intelligent
+laptops) in a cooperative solution. It would be naive to think
+Systems, 2008. MFI 2008. IEEE International Conference on,
+thataccuracylevelsofanin-houseIPSwouldalso‘extend’toa 2008,pp.487-491.
+cooperative model, although this does not take away from the [9] F.J.Gonzalez-CastanoandJ.Garcia-Reinoso,"Bluetoothlocation
+solution to the range issue that CAPTURE provides. The networks," in Global Telecommunications Conference, 2002.
+GLOBECOM'02.IEEE,2002,pp.233-237vol.1.
+implementation of a more comprehensive filter would
+[10] C. Liang, H. Kuusniemi, C. Yuwei, P. Ling, T. Kroger, and C.
+nonetheless assist with accuracy for example the Kalman or
+Ruizhi, "Information filter with speed detection for indoor
+Extended Kalman Filters are recommended in the following Bluetooth positioning," in Localization and GNSS (ICL-GNSS),
+literature[7,21]. 2011InternationalConferenceon,2011,pp.47-52.
+[11] Z. Sheng and J. K. Pollard, "Position measurement using
+VII. CONCLUSION Bluetooth,"ConsumerElectronics,IEEETransactionson,vol.52,
+pp.555-558,2006.
+ThispaperintroducesCAPTUREacooperativelocalization
+[12] A.E.Kosba,A.Saeed,andM.Youssef,"RobustWLANDevice-
+systemusingBluetooth,thatprovidesasolutiontotheproblem free Passive motion detection," in Wireless Communications and
+of devices being out of range of a hosted Indoor Positioning Networking Conference (WCNC), 2012 IEEE, 2012, pp. 3284-
+System. Although the earlier implementation of CAPTURE 3289.
+[13] D.Gualda,J.Urena,J.C.Garcia,E.Garcia,andD.Ruiz,"RSSI
+using802.11provided more accurateresults,experiments with
+distance estimation based on Genetic Programming," in Indoor
+the Bluetooth version of CAPTURE still demonstrate that
+Positioning and Indoor Navigation (IPIN), 2013 International
+utilizingacooperativeframeworkofmobiledevicescanextend Conferenceon,2013,pp.1-8.
+therangeofaninsituIndoorPositioningSystembyatleastthe [14] M. O. Gani, C. Obrien, S. I. Ahamed, and R. O. Smith, "RSSI
+range of the outermost devices located within the system. Based Indoor Localization for Smartphone Using Fixed and
+Mobile Wireless Node," in Computer Software and Applications
+While CAPTURE using 802.11 [1] provides a more accurate
+Conference(COMPSAC),2013IEEE37thAnnual,2013,pp.110-
+solution, CAPTURE Bluetooth can actively transmit and
+117.
+receive beacons while still connected to the Wi-Fi network, [15] S. Shioda and K. Shimamura, "Anchor-free localization:
+something the 802.11 version cannot currently achieve. Estimation of relative locations of sensors," in Personal Indoor
+Disconnectingauserfromanetworktoallowthemtoassistin and Mobile Radio Communications (PIMRC), 2013 IEEE 24th
+the localization of another device is not something that would InternationalSymposiumon,2013,pp.2087-2092.
+[16] L.Erin-Ee-LinandC.Wan-Young,"EnhancedRSSI-BasedReal-
+lead to large scale adoption of a solution. Wi-Fi Direct
+Time User Location Tracking System for Indoor and Outdoor
+proposes to solve the issue of peer-to-peer communication
+Environments," in Convergence Information Technology, 2007.
+during network connectivity. The implementation of a Wi-Fi InternationalConferenceon,2007,pp.1213-1218.
+directversionofCAPTUREissomethingthatthenextiteration [17] J.Joonyoung,K.Dongoh,andB.Changseok,"AutomaticWBAN
+ofCAPTUREwouldhopetoinclude. arearecognitionusingP2Psignalstrengthinofficeenvironment,"
+in Advanced Communication Technology (ICACT), 2014 16th
+InternationalConferenceon,2014,pp.282-285.
+REFERENCES
+[18] F. D. Rosa, X. Li, J. Nurmi, M. Pelosi, C. Laoudias, and A.
+Terrezza,"Hand-gripandbody-lossimpactonRSSmeasurements
+[1] G.Cullen,K.Curran,andJ.Santos,"CAPTURE- Cooperatively for localization of mass market devices," in Localization and
+Applied Positioning Techniques Utilizing Range Extensions," in GNSS (ICL-GNSS), 2011 International Conference on, 2011, pp.
+5th International Conference on Indoor Positioning and Indoor 58-63.
+Navigation(IPIN2014),IEEE,Busan,Korea,2014,pp.22-29. [19] X. Lisheng, Y. Feifei, J. Yuqi, Z. Lei, F. Cong, and B. Nan,
+[2] M.AlyandJ.Y.Bouguet,"Streetviewgoesindoors:Automatic "Variation of Received Signal Strength in Wireless Sensor
+pose estimation from uncalibrated unordered spherical Network," in Advanced Computer Control (ICACC), 2011 3rd
+panoramas," in Applications of Computer Vision (WACV), 2012 InternationalConferenceon,2011,pp.151-154.
+IEEEWorkshopon,2012,pp.1-8. [20] K. Kaemarungsi and P. Krishnamurthy, "Properties of indoor
+[3] G.Cullen,K.Curran,andJ.Santos,"Cooperativelyextendingthe received signal strength for WLAN location fingerprinting," in
+rangeofIndoorLocalisation,"inSignalsandSystemsConference Mobile and UbiquitousSystems: Networking and Services, 2004.
+(ISSC2013),24thIETIrish,2013,pp.1-8. MOBIQUITOUS2004.TheFirstAnnualInternationalConference
+[4] G.M.DjuknicandR.E.Richton,"GeolocationandassistedGPS," on,2004,pp.14-23.
+Computer,vol.34,pp.123-125,2001. [21] S. S. Saad and Z. S. Nakad, "A Standalone RFID Indoor
+Positioning System Using Passive Tags," Industrial Electronics,
+IEEE Transactions on, vol. 58, pp. 1961-1970, 2011.

@@ -1,0 +1,693 @@
+Design for Inclusion, Vol. 75, 2023, 132–144
+https://doi.org/10.54941/ahfe1003334
+Enhancing Inclusive Experience in
+Museums: Results From a Field Study
+Alessia Brischetto, Ester Iacono, Claudia Becchimanzi,
+and Francesca Tosi
+Laboratory of Ergonomics & Design (LED), Architecture Department, University of
+Florence, Sandro Pertini 93, 50041, Calenzano, Firenze, Italy
+ABSTRACT
+This paper presents a part of the project “XAll - Tutta un’altra guida” (XAll - A whole
+other guide), funded by the TIM Foundation, which partners the University of Florence,
+the Polytechnic University of Milan, and the referents of 3 Florentine museums: Museo
+di Palazzo Vecchio, Museo Bardini and Museo Bargello. The overall objective of the
+project is to create an interactive, customizable and inclusive visit support, aimed at
+the overall population and designed to encourage a multisensory visit experience, rea-
+lized by inserting tactile, sound and olfactory stimuli in the visit path of the 3 Museums
+involved and enhanced by the use of augmented reality. Speciﬁc objectives of the pro-
+ject are: to make cultural heritage accessible to visitors with all types of disability; to
+improve the quality of independent visitation in terms of engagement and customiza-
+tion of the experience; to encourage the dissemination of free applications in museum
+accessibility projects; and to provide an integrated framework and a set of open source
+tools for the development of applications in the same area.
+Keywords: Human centred design, Inclusive museum, Museum experiences, Inclusive museum
+video guides, Multi-sensory stations
+INTRODUCTION
+Open access to culture and the possibility to experience and learn about art
+in museums are human rights that should be granted to everyone. However,
+very often, the information accessible to users through the official channels
+of museums regarding independent visitation by individuals with a disability
+generally refers to accessibility in terms of mobility, and they also frequ-
+ently provide incomplete information. Furthermore, information related to
+independent enjoyment by people with sensory disabilities (visually impai-
+red, blind, hearing impaired, deaf) is most often lacking, as the accessibility
+of the visit route is generally guaranteed in a pre-scheduled way and the pre-
+sence of mediators. This aspect limits the free enjoyment of the artworks
+by people with sensory disabilities. Furthermore, it shows the lack of a real
+inclusive culture and adequate tools to guarantee the full right to visit inde-
+pendently, in their way and on time. This paper presents a part of the project
+“XAll - Tutta un’altra guida” (XAll - A whole other guide), funded by the
+TIM Foundation, which partners the University of Florence, the Polytech-
+nic University of Milan, and the referents of 3 Florentine museums: Museo
+© 2023. Published by AHFE Open Access. All rights reserved.
+132
+
+Enhancing Inclusive Experience in Museums
+133
+di Palazzo Vecchio, Museo Bardini and Museo Bargello. The overall obje-
+ctive of the project is to create an interactive, customizable and inclusive visit
+support aimed at the overall population and designed to encourage a mul-
+tisensory visit experience, realized by inserting tactile, sound and olfactory
+stimuli in the visit path of the 3 Museums involved and enhanced by the
+use of augmented reality. Specific objectives of the project are: to make cul-
+tural heritage accessible to visitors with all types of disability; to improve
+the quality of independent visitation in terms of engagement and customiza-
+tion of the experience; to encourage the dissemination of free applications in
+museum accessibility projects; and to provide an integrated framework and
+a set of open source tools for the development of applications in the same
+area.
+RESEARCH OBJECTIVES AND METHODOLOGY OF INTERVENTION
+To achieve the overall objective, the project involved the application of the
+scientific and methodological approaches of Inclusive Design (Dong et al.,
+2012) and Human-Centered Design (ISO 9241-210: 2019). In particular, the
+study, developed over several stages, envisaged the involvement of various
+types of museum users, using a participatory design approach aimed at the
+associations ENS (Italian Association of the Deaf), UICI (Italian Union for
+the Blind and Visually Impaired) and HABILIA Onlus (Paratetraplegic and
+Motor Disabled Association) and to the various museum institutions invo-
+lved in the project. This involvement has made it possible to focus attention
+on their needs and expectations and the skills and points of view of the profes-
+sionals involved in the planning and managing of the services offered by the
+museums. Precisely, the research followed the following operational phases:
+Phase 1: Definition of user profiles;
+Phase 2: Preliminary studies of User/museum interaction models;
+Phase 3: Development of design solutions and intervention scenarios.
+Phase 1: Deﬁnition of User Proﬁles
+To define user profiles during the preliminary design phase, the following
+activities were conducted: (1) On-site investigation of the three museums
+involved in the project; (2) Survey visits and field observations (Stanton
+et al., 2014), in collaboration with experts from the museum institutions,
+at the three Florentine museums and with the 3 associations involved (see
+Figure 1); (3) Collection and systematization of feedback and data collected
+during the observations (photographic and audio-video material), based on
+which it was possible to set up the development of the video guide project
+and multi-sensory stations to be included within the museums.
+In this phase, the main objective of the research was to collect opinions
+and suggestions for the realization of an optimal visit and the information
+necessary for the design development of the video guide and the multi-sensory
+stations.
+In particular, the specific objectives of this phase were: (a) Identify the
+visit routes and the works to be tested (which works will be the subject of
+tactile reproduction and related sensory stimuli); (b) Define critical issues
+
+134
+Brischetto et al.
+Figure 1: Sensory explorations (tactile, olfactory, auditory, etc.) of the works of the
+three Florentine museums and with the involvement of the associations (ENS, UICI,
+HABILIA Onlus).
+related to physical and sensory accessibility; (c) Define the preliminary design
+requirements of the video guide and multi-sensory stations.
+Phase 2: Preliminary Studies of User/Museum Interaction Models
+The study of user profiles allowed to conduct early analysis of User-Museum
+interaction models through the following activities and methodologies: (1)
+literature review and identification of the requirements of mobile media and
+multi-sensory stations (graphic presentation methods of the works, supports
+used and construction techniques, technologies) (Chick, 2019; Mäkelä, 2020;
+Vaz et al., 2020); (2) development of User Journey Maps (Hanington and
+Martin, 2019) that would visually allow the narration of users’ actions,
+feelings, perceptions within museums (see Figure 2); (3) construction of sce-
+narios that represent the current ways of using the works; (4) analysis of the
+state of the art and of the sector literature for the definition of the technical
+characteristics of the video guide (method of presenting the contents, narra-
+tive styles, limits and opportunities of current technologies, etc.) (Moncrief
+et al., 2022; Musiolik, 2022; Ahmetovic et al., 2021; Hutchinson and Eard-
+ley, 2021). In particular, the User Journey Maps and the usage scenarios
+relating to the use of the application and stations by the reference user target,
+in addition to providing a holistic view of the user experience, have made it
+possible to reveal critical issues and new opportunities to improve the user’s
+experience.
+Phase 3: Development of Design Solutions and Intervention
+Scenarios.
+The last phase of the research allowed, based on the critical issues that emer-
+ged in the previous phases of analysis, the formulation and development of
+new design solutions through (1) the use of Design orienting scenarios (Man-
+zini and Jégou, 2004) for the development of visions and innovative proposals
+centered on user needs. This tool made it possible to represent the strategic
+vision of the research team and favoured (2) brainstorming sessions (Nun-
+nally and Farkas, 2016) with the individual associations to verify and record
+the results of the previous research phases. Within these sessions, the features
+
+Enhancing Inclusive Experience in Museums
+135
+Figure 2: User journey map relating to the museum experience (Palazzo Vecchio) of
+blind users.
+and requirements of the beta version of the Application were presented (video
+guide), and the first versions of multi-sensory stations were submitted.
+RESULTS
+Given the complexity and breadth of the research content, only some of the
+most significant findings from the study have been reported in this paper.
+Therefore, the results of the main phases described in the previous paragraph
+are reported here.
+Critical Issues and Design Ideas [Phase 1]
+In the phase of collecting and systematizing the feedback and collected data
+[Phase 1], it was possible to identify and define the stages of the video/audio
+guide and the multi-sensory stations for the three partner museums of the
+research project. Specifically, maps have been drawn up showing the itine-
+raries for visiting the museums, with the activities to be carried out within
+each area envisaged for a visit. At the same time, the user experience with
+the application and with the multi-sensory stations and information pan-
+els along the route is described. (see Figure 3). As far as the application is
+concerned, the map aims to clearly show both the specific accessibility fea-
+tures that can be used in the vicinity of a specific work or one of the stages
+of the visit and the interaction between the user and the graphical interface
+and the flow of activity it can perform. Similarly, as regards the information
+panels and multi-sensory stations, the map indicates the interaction meth-
+ods envisaged for users and the possible actions for a visit that is not only
+accessible but inclusive. Furthermore, in this research phase, it was possible
+
+136
+Brischetto et al.
+Figure 3: Summary map of the main stages of the video/audio guide and of the multi-
+sensory stations for the Palazzo Vecchio museum.
+to find helpful information for understanding how the current museum envi-
+ronments interface with diversified users (visually impaired, blind, hearing
+impaired, deaf, motor disabled), critical issues relating to physical and sen-
+sory accessibility, and possible design ideas that can make the museum system
+genuinely inclusive.
+In particular, the following is a summary of some considerations that
+emerged during the observations, correlated by some ideas and design
+requirements:
+ENS - needs, problems and design ideas:
+•
+Inability to hear alarms - essential for ENS.
+•
+Videos in LIS (Italian Sign Language) and international sign language,
+with short and simple sentences. Subtitles in Italian and English, taking
+
+Enhancing Inclusive Experience in Museums
+137
+into account that the deaf does not know Italian well; therefore the need
+to structure the texts and their format in an adequate way (in particu-
+lar, avoid sentences that are too long and terms that are too complex) is
+highlighted.
+•
+Videos with subtitles and sign language interpreters are essential for the
+use of deaf people. Therefore, the collaboration of associations and pro-
+fessionals in the sector is essential for developing the video guide. It is
+also necessary to study the most suitable editing methods, particularly the
+graphic and multimedia structure of the sign language videos and using a
+green screen.
+•
+The association and the interviewees highlighted the need to structure the
+videos in sign language, focusing on the following aspects: short videos
+(maximum 2 minutes) and simple theses (otherwise, it risks becoming
+heavy for users who get distracted and no longer follow the explanations).
+•
+The visual and textual supports near the works must consider the structure
+and complexity of the texts and, above all, the correlation between works
+and texts. These aspects are fundamental to include everyone regardless of
+the knowledge of sign language and the language skills of each individual.
+•
+The association suggests using, where possible, QRcode systems that
+offer further explanations. For example, through the QR codes, one (or
+more) videos in sign language could be activated (Barbosa et al., 2021).
+These videos would give users more information on the elements of the
+exhibition than the captions, which are already present in museums.
+UICI - needs, problems and design ideas:
+•
+[Blind] Need to have an audio guide with “nice” but not excessively long
+(short and concise) audio descriptions; “preliminary” audio that briefly
+describes and introduces the museum, its history and the spaces available.
+•
+[Blind] Tactile stations with reproductions of the main works and possibly
+of the museum building to better understand the spaces.
+•
+Auditory and olfactory stimuli are much appreciated.
+•
+[Blind] The tactile experience allows you to know aspects that have
+never been explored (for example, the specific morphology of some ani-
+mals, “tactile experience - Loggia del Verrocchio”). Therefore, you must
+also pay attention to similar experiences and knowledge of the world of
+classical art (a practical aspect for structuring the audio descriptions).
+•
+[The visually impaired and colour-blind] Use a colour-blind filter (or
+similar systems) for visual enjoyment based on contrast and saturation
+adjustment.
+•
+[The visually impaired and colour-blind] Take care of graphic and visual
+aspects, oriented towards customizing screens (for example adjusting font
+sizes, image contrast, adjusting RGB channels).
+Physically disabled - needs, problems and design ideas:
+•
+Need to easily find information on parking for the disabled and routes
+with public transport to reach the museums independently (optimize the
+wayfinding system with maps/routes to avoid critical itineraries).
+
+138
+Brischetto et al.
+•
+Indications visible and placed at a suitable height, especially near the
+main entrance (for example: as in the case of museums where the “main”
+entrance is not accessible).
+•
+Indications on the location of toilets and essential services (such as lifts)
+and on how to reach them.
+•
+Insertion of videos or photo sequences of the rooms not accessible for
+people with motor disabilities to show at least part of what is contained
+inside (for example QR-Code to be scanned with the app).
+•
+Insert all the previous indications in the app (in particular, the rooms not
+accessible for people with motor disabilities), adding feedback that can
+allow the user to request assistance from museum staff and warn the lat-
+ter about the presence of the disabled person inside of the museum (to
+optimize any preparation of ramps or similar solutions).
+•
+Need for accessible tactile stations.
+Features and Prerequisites App [Phase 2]
+Starting from systematic research on the state of the art of the main applica-
+tions in the museum and cultural fields, phase 2 envisaged a specific focus on
+museum applications that include features dedicated to motor, visual, hea-
+ring, and cognitive disabilities and applications designed according to the
+Inclusive Design approach (Gilbert, 2019; Waller et al. 2015, Kim et al.
+2016).
+Given the number of applications on the market, depending on the spe-
+cific topic of this research, it was necessary to select only the most effective
+museum applications in terms of inclusion and accessibility. Therefore, the
+research results relating to the selected applications were analysed and rew-
+orked in a summary table (see Figure 4), which shows the functions and
+accessibility needs the application must satisfy to be considered inclusive.
+In particular, mapping the user experience has allowed the detailed defi-
+nition of all the itineraries envisaged for visiting the three museums and
+the related functions of the application. For each area of the museum, the
+following have been identified:
+•
+front-end features, therefore relating to the user experience and the usa-
+bility of the application, or rather its interaction with the application’s
+User Interface, with a focus on accessibility and inclusion for the four
+macros-categories of disabilities identified;
+•
+back-end features, i.e., relating to development and programming to
+guarantee the optimal execution of the identified functions.
+The features foreseen for the development of the application and the front-
+end and back-end requirements are briefly described in Table 1.
+Features and Prerequisites of Multi-Sensory Stations [Phase 2]
+Concerning what emerged from phase 2 of the research, it was possible
+to analyse the best methods of graphic presentation of the works, and
+the supports used, the construction techniques and the technologies dee-
+med more inclusive. Therefore, multi-sensory stations characterised by 3D
+
+Enhancing Inclusive Experience in Museums
+139
+Figure 4: Accessibility features identiﬁed as necessary for the development of an
+inclusive museum application.
+and 2D models and technological systems have been hypothesised to sup-
+port the tactile, visual, and sensorial dimensions. The first design hypotheses
+of the stations were defined in collaboration with the bodies involved based
+on the individual routes and the relative stages. The essential requirement of
+tactile stations is to satisfy the three ≪senses of touch≫and the act of tactile
+perception itself. These “senses” can be summarised as follows: a) the abi-
+lity to follow a line, i.e., the sensory recognition capabilities of the fingertip;
+b) the haptic ability, i.e., knowing and recognizing the position of the hand in
+the space of the tactile device; c) the ability to recognise and differentiate the
+roughness of surfaces and therefore the texture. Multi-sensory supports must
+therefore be able to match the diversity of end users, from motor disabilities
+to sensory, cognitive and mental disabilities. Furthermore, the supports must
+embrace the philosophy of Design for All and enhance the use of the works
+and the related thematic contents of “historical-cultural heritage”. Therefore,
+the main focus concerned the development of tactile support solutions for
+blind (and visually impaired) people and integrated by technical and seman-
+tic (pedagogical) solutions capable of guaranteeing the interaction of people
+
+140
+Brischetto et al.
+Table 1. Main features foreseen for the development of the application and front-end
+and back-end requirements.
+Visual impairments
+Hearing
+disabilities
+Physical
+disabilities
+Cognitive
+disabilities
+Front-
+end
+featu-
+res
+(Audio channel)
+Audio descriptions
+Ability to change
+screen settings.
+For the visually
+impaired,
+low-resolution
+values (e.g.
+800x600px make
+reading easier),
+possibility of
+choosing large
+fonts, points,
+contrast, etc. vary
+according to the
+level of view.
+(Visual channel)
+Descriptive video
+guide in sign
+language (LIS)
+Augmented
+reality (AR)
+(Visual and
+audio channel)
+Indications on
+which areas
+are accessible -
+entrance/porti-
+ons
+(rooms/areas)
+of the museum
+Indicate
+parking spaces
+and/or services
+useful for
+reaching the
+museum
+(Visual
+and
+audio channel)
+Dynamic
+font
+change,
+with
+the
+addition
+of
+Easy
+Rea-
+ding Font for
+Specific
+Lear-
+ning Disorders
+(SLD).
+Glossary or
+possibility to
+search for dif-
+ficult/complex
+words
+Back-
+end
+featu-
+res
+Screen reader (Talk
+Back/ VoiceOver)
+Colour filtering for
+different types of
+colour blindness or
+an increase in
+contrasts.
+Enlargement of
+fonts and images
+for the visually
+impaired.
+Voice commands
+(Voice Access on
+Android, Voice
+Control on iOS)
+video guide in
+sign language
+(LIS) with
+subtitles
+Since people
+born deaf do not
+understand
+written Italian
+like those
+without the
+disability, the
+Glossary feature
+on Android and
+iOS allows them
+to understand
+more complex
+words.
+Sound
+Recognition
+(only available
+on iOS).
+QR-Code with
+video showing
+the
+inaccessible
+area.
+Map with
+parking spaces
+for people
+with motor
+disabilities,
+and routes to
+reach the
+museum in
+safety
+(including
+public
+transport
+available)
+Information
+on which areas
+of the museum
+are accessible,
+and which are
+not.
+Dynamic
+font
+change,
+with
+the
+addition
+of
+Easy
+Rea-
+ding Font for
+Specific
+Lear-
+ning Disorders
+(SLD).
+Glossary
+feature
+on
+Android
+and
+iOS
+Possibility of
+adapting the
+length of the
+contents
+presented,
+between a
+“complete”
+form and a
+“reduced”
+form.
+with the historical-cultural heritage” in a For All key. Therefore, it was pos-
+sible to identify the requirements, characteristics and techniques/instruments
+deemed necessary for developing multi-sensory stations (see Table 2).
+
+Enhancing Inclusive Experience in Museums
+141
+Table 2. Requirements, objectives and technical features/instruments identiﬁed as
+necessary for developing multi-sensory stations.
+Requirements
+Goals
+Technical features
+“3d scanner” detection
+Digital return of
+tangible works
+“sculptures,
+monuments, frescoes,
+architectures”.
+Laser specification: (1) laser scanner
+and/or (2) structured light scanner. In
+both cases (1 - 2) they are
+≪non-invasive≫scanners, i.e. they do
+not provide for the application of
+optical references on the surface of the
+sculpture: in order to preserve the
+integrity of the object itself. The
+sensitivity of the device and the
+scanning precision must be around
+0.3mm.
+Digitization and
+modelling of the works
+Post-production of 3d
+scans.
+Use of 3D modelling software
+(Zbrush, Rhino) for the calibration
+and fine-tuning of the detail “touch
+thresholds” in terms of volume
+dimensions.
+3D printing
+UV printing or 3D and
+2D relief printing,
+capable of producing
+artefacts made with
+materials suitable for
+museum contexts “in
+particular for frequent
+tactile use”.
+Characteristics of the materials:
+resistance and an aesthetic
+pleasantness to the final object made
+with materials such as Corian,
+Plexiglas, plastic resins such as PLA
+(or similar). Minimum precision
+threshold (“usable to the touch”)
+about 0.6mm.
+Laser cutting and
+finishing surface
+treatments
+Colour screen printing, laser printing
+Quality tactile support
+finishing
+Painting or colour
+printing of tactile
+supports and scaled
+3D reproductions.
+Colour screen printing, laser printing,
+also made on 2D reliefs and
+infographics.
+Graphic
+post-production of the
+works and signage
+2D (digital) graphic
+optimization of the
+informative and
+narrative details of the
+works and orientation
+systems
+Example: simplification of the
+composite system and/or chromatic
+restitution for the visually impaired of
+the constituent levels of a work
+“background - characters etc.”
+Integration of
+technologies to
+multi-sensory stations
+Sensory fruition with
+augmented reality
+Basic lighting technology, connectivity,
+basic electronics, RFID and NFC,
+recorded audio descriptions integrated
+into the stations.
+Technical development
+of olfactory diffusers –
+to integrate the stations
+Creation of olfactory
+devices and creation of
+customized essences in
+the laboratory.
+
+142
+Brischetto et al.
+Realization of Analogue and Digital Study Prototypes [Phase 3]
+The last phase of this study involved the development of a preliminary UI
+developed with Adobe XD and FIGMA software based on the design requi-
+rements identified during the field research and analysis activities (described
+in phases 1-2). This version has considered aspects such as the primary display
+mode of content and choice of paths, layout and wireframe, and UI intera-
+ction styles for user categories. Based on possible technical limitations, such
+as connectivity inside historic buildings and the requirement for the replicabi-
+lity of the video guide, it was decided to develop an application without any
+embedded content but connected to a web server that contains all museum
+materials. Before starting the tour, the user must choose which museum to
+visit; the application will download all the required material onto the user’s
+smartphone to make it available locally. For these reasons, multi-sensory sta-
+tion number 1 within the XALL project will have an essential and strategic
+role in downloading the app (see Figure 5). Within future museum contexts -
+where there will be no multi-sensory stations - it will be enough to integrate
+an information QRcode with the information totems or tickets and guaran-
+tee a space equipped with a WIFI connection and encourage the download of
+the app during the online ticket purchase phase. Having defined the nature
+of the mobile application (web app connected to a web server that contains
+all the materials of the museum) and the technical functions of the app and its
+database, it was possible to start the development of the Beta version of the
+UI/web app, currently in the testing and experimentation phase (see Figure 6).
+Figure 5: UX maps/UI scenario relating to the visit itinerary of the Palazzo Vecchio
+museum with a focus on the “task download” of the web app.
+CONCLUSION
+The results achieved and reported in this article have demonstrated the poten-
+tial and effectiveness of applying Human-Centered Design and Inclusive
+Design methodologies in allowing the evaluation and design of museum envi-
+ronments that consider human diversity and social inclusion. The analysis
+and definition of user-profiles and the evaluation of critical issues of existing
+products/systems have allowed the identification of possible design solutions
+
+Enhancing Inclusive Experience in Museums
+143
+Figure 6: Development of the Beta version of the UI/web app.
+and intervention scenarios, defining the requisites that a museum must have
+in order to make the cultural heritage accessible to visitors with all types of
+disabilities and improve the quality of the visit. Based on this experimenta-
+tion, the importance of validating design concepts is highlighted, both the
+digital ones (app) simulated in all their steps through Figma and the sensory
+ones, such as the tactile stations. Thanks to recent low-cost rapid prototy-
+ping techniques, validating and implementing solutions by involving experts
+and users before production will be possible. The following articles will pre-
+sent the results relating to the development and prototyping of the app (video
+guide) and the multi-sensory stations.
+ACKNOWLEDGMENT
+The authors would like to thank: the TIM Foundation, which financed the
+research; the polytechnic of Milan, Department of Electronics, Information
+and Bioengineering with professor Lanzi Pierluca and dr. Paolo Boffi subse-
+quently developed the computer system; the Association MUS.e Musei Civici
+Fiorentini, Florence, Italy (Palazzo Vecchio and Stefano Bardini Museum)
+and the Bargello National Museum, Florence, Italy; the associations: ENS
+(Italian Association of the Deaf), UICI (Italian Union of the Blind and Visu-
+ally Impaired) and HABILIA Onlus (Paratetraplegic and Motor Disabled
+Association).
+Author Contributions: Conceptualization, A.B. and F.T; methodology,
+A.B., E.I; infographics and data curation, E.I and C.B; writing—original draft
+preparation, A.B, E.I; writing—review and editing, A.B, E.I and C.B. Supe-
+rvision, F.T. and A.B.; project administration, F.T.; funding acquisition, F.T.
+All authors have read and agreed to the published version of the manuscript.
+REFERENCES
+Ahmetovic, D., Bernareggi, C., Keller, K. and Mascetti, S., (2021). MusA: artwork
+accessibility through augmented reality for people with low vision. In Proceedings
+of the 18th International Web for All Conference (pp. 1–9).
+
+144
+Brischetto et al.
+Barbosa, P., Amorim, P., Ferreira, S. B. L. and Castro, A., (2021). Supporting Spon-
+taneous Museum Visits by Deaf People: An Augmented Reality Application and
+a Case Study. In Augmented Reality in Tourism, Museums and Heritage: A New
+Technology to Inform and Entertain (pp.173–193). Cham: Springer International
+Publishing.
+Chick, A., (2019). Improving Intellectual Access for Blind and Partially Sighted
+Visitors to Temporary Exhibitions: An Inclusive Design Solution. International
+Journal of the Inclusive Museum, 12(1).
+Dong, H., Clarkson, J., Coleman, R., and Cassim, J. (2012). Design forinclusi-
+vity: a practical guide to accessible, innovative anduser-centred design. Gower
+Publishing, Ltd.
+Gilbert, R. M. (2019). Inclusive design for a digital world: Designing with accessibi-
+lity in mind. Apress.
+Hanington, B., and Martin, B. (2019). Universal methods of design expanded and
+revised: 125 Ways to research complex problems, develop innovative ideas, and
+design effective solutions. Rockport publishers.
+Hutchinson, R. and Eardley, A. F., (2021). Inclusive museum audio guides: ‘guided
+looking’ through audio description enhances memorability of artworks for sighted
+audiences. Museum Management and Curatorship, 36(4), pp. 427–446.
+ISO 9241–210 (2019). Ergonomics of human-system interaction - Part 210:
+Human- centred design for interactive systems. Ginevra: International Standard
+Organization.
+Kim, W. J., Kim, I. K., Jeon, M. K. and Kim, J., (2016). UX Design guideline for health
+mobile application to improve accessibility for the visually impaired. In 2016
+International Conference on Platform Technology and Service (PlatCon)(pp. 1–5).
+IEEE.
+Mäkelä, A. (2020). Multi-sensory Experience Design in Museums.
+Manzini, E., and Jégou, F. (2004). “Design degli scenari”, in: Designmultiverso:
+appunti di fenomenologia del design. Milão: Edizioni POLI.design, 189–207.
+Moncrief, R., Choudhury, S., and Saenz, M. (2022, June). “Efforts to Improve
+Avatar Technology for Sign Language Synthesis”, in: Proceedings of the 15th
+International Conference on PErvasive Technologies Related to Assistive Envi-
+ronments (pp.307–309).
+Musiolik, T. H., (2022). Multisensory Experiences in Digital Media. Neuro marke-
+ting in Business: Identifying Implicit Purchase Drivers and Leveraging them for
+Sales, pp. 1–13.
+Nunnally, B., and Farkas, D. (2016). UX research: Practical techniques for designing
+better products. O’Reilly Media, Inc.
+Stanton, N. A., Young, M. S., and Harvey, C. (2014). Guide to Methodology in
+Ergonomics: Designing for Human Use. CRC Press.
+Vaz, R., Freitas, D. and Coelho, A., (2020). Blind and visually impaired visitors’ expe-
+riences in museums: increasing accessibility through assistive technologies. The
+International Journal of the Inclusive Museum, 13(2), p. 57.
+Waller, S., Bradley, M., Hosking, I. and Clarkson, P. J., (2015). Making the case for
+inclusive design. Applied ergonomics, 46, pp. 297–303.
+

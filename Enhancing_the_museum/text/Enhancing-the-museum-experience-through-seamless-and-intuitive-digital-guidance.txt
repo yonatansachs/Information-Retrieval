@@ -1,0 +1,1666 @@
+ 
+ 
+NATIONAL AND KAPODISTRIAN UNIVERSITY OF ATHENS 
+ 
+SCHOOL OF SCIENCE 
+DEPARTMENT OF INFORMATICS AND TELECOMMUNICATION 
+ 
+ 
+ 
+ 
+ 
+BSc THESIS 
+ 
+ 
+Enhancing the museum experience through seamless and 
+intuitive digital guidance 
+ 
+ 
+ 
+Rita Anna A. Chiou 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Supervisor: 
+Maria Roussou, Assistant Professor 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ATHENS 
+ 
+MARCH 2023 
+ 
+
+ 
+ 
+ 
+ 
+ΕΘΝΙΚΟ ΚΑΙ ΚΑΠΟΔΙΣΤΡΙΑΚΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΑΘΗΝΩΝ 
+ 
+ΣΧΟΛΗ ΘΕΤΙΚΩΝ ΕΠΙΣΤΗΜΩΝ 
+ΤΜΗΜΑ ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ 
+ 
+ 
+ 
+ 
+ 
+ΠΤΥΧΙΑΚΗ ΕΡΓΑΣΙΑ 
+ 
+ 
+Βελτίωση της μουσειακής εμπειρίας μέσω απρόσκοπτης και 
+διαισθητικής ψηφιακής καθοδήγησης  
+ 
+ 
+ 
+Ρίτα Άννα Α. Χίου 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Επιβλέπουσα: 
+Μαρία Ρούσσου, Επίκουρη Καθηγήτρια 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ΑΘΗΝΑ 
+ 
+ΜΑΡΤΙΟΣ 2023 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+BSc THESIS 
+ 
+ 
+Enhancing the museum experience through seamless and intuitive digital guidance 
+ 
+ 
+ 
+Rita Anna A. Chiou 
+S.N.: 1115201700192 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+SUPERVISOR: 
+Maria Roussou, Assistant Professor 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ΠΤΥΧΙΑΚΗ ΕΡΓΑΣΙΑ 
+ 
+ 
+ 
+Βελτίωση της μουσειακής εμπειρίας μέσω απρόσκοπτης και διαισθητικής ψηφιακής 
+καθοδήγησης 
+ 
+ 
+ 
+Ρίτα Άννα Α. Χίου 
+Α.Μ.: 1115201700192 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ΕΠΙΒΛΕΠΟΥΣΑ: 
+Μαρία Ρούσσου, Επίκουρη Καθηγήτρια 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ABSTRACT 
+ 
+In the last decades, technology has created a culture of instant gratification to the point 
+where people expect to be able to access information and entertainment at a moment's 
+notice. The desire for rapid content consumption is reflected in individuals opting for more 
+captivating and fast-paced activities. In response to this shift, museums and other cultural 
+institutions have had to adapt to engage and educate their visitors. Adopting digital guides 
+and interactive technologies allows them to cater to the needs of modern audiences and 
+their expectations of fast and easy access to information. This comes with the risks of 
+excluding visitors with disabilities or limited exposure to such technology. Therefore, it is 
+crucial to thoroughly study the design of digital museum applications. 
+This thesis aims to investigate the design of a digital museum guide app that effectively 
+reduces distractions and minimizes non-informative screen time, enabling visitors to fully 
+engage with and appreciate the museum's exhibits. By simplifying the app and 
+incorporating user-friendly gestures, this study seeks to provide a seamless and inclusive 
+digital guidance experience for visitors with different accessibility barriers.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+SUBJECT AREA: Human-Computer Interaction  
+KEYWORDS:  Mobile Application, Audio Guide, User Interface Design, Ubiquitous 
+Computing, User Interfaces for All, Digital Cultural Heritage  
+
+ 
+ 
+ΠΕΡΙΛΗΨΗ 
+ 
+Τις τελευταίες δεκαετίες, η τεχνολογία έχει δημιουργήσει μια κουλτούρα άμεσης 
+ικανοποίησης σε βαθμό που η πρόσβαση σε πληροφορίες και ψυχαγωγία αναμένεται να 
+είναι στιγμιαία. Η επιθυμία για γρήγορη κατανάλωση περιεχομένου αποτυπώνεται στο 
+γεγονός ότι ο κόσμος επιλέγει πιο εντυπωσιακές και ταχύρρυθμες δραστηριότητες. Για το 
+λόγο αυτό, τα μουσεία και λοιπά πολιτιστικά ιδρύματα χρειάστηκε να προσαρμοστούν 
+ώστε να εκπαιδεύσουν και να κινήσουν το ενδιαφέρον των επισκεπτών τους. Η απόκτηση 
+ψηφιακών οδηγών και διαδραστικών τεχνολογιών, τους επιτρέπει να ικανοποιούν τις 
+ανάγκες του σύγχρονου κοινού τους και τις προσδοκίες τους για άμεση και εύκολη 
+πρόσβαση στη πληροφορία. Αυτό συνεπάγεται το ρίσκο να αποκλειστούν επισκέπτες με 
+αναπηρίες ή με περιορισμένη έκθεση σε αντίστοιχες τεχνολογίες.  
+Σκοπός της παρούσας είναι να εξεταστεί ο σχεδιασμός μιας ψηφιακής εφαρμογής 
+μουσειακού οδηγού που μειώνει τις αποσπάσεις και τον χρόνο που απαιτείται η χρήση 
+της οθόνης για μη ενημερωτικούς λόγους. Με τον τρόπο αυτό, επιτρέπει στους 
+επισκέπτες να αλληλεπιδράσουν και να εκτιμήσουν τα εκθέματα του μουσείου στο 
+έπακρο. Απλοποιώντας την εφαρμογή και ενσωματώνοντας κινήσεις εύκολες στη χρήση, 
+η παρούσα πτυχιακή επιδιώκει να προσφέρει μια απρόσκοπτη ψηφιακή μουσειακή 
+εμπειρία για όλους, ανεξάρτητα από αναπηρίες ή ψηφιακού γραμματισμού.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ΘΕΜΑΤΙΚΗ ΠΕΡΙΟΧΗ: Αλληλεπίδραση Ανθρώπου – Η/Υ  
+ΛΕΞΕΙΣ ΚΛΕΙΔΙΑ:  Κινητή Εφαρμογή, Ακουστικός Οδηγός, Σχεδιασμός Διεπαφής 
+Χρήστη, Διάχυτη Υπολογιστική, Διεπαφές Χρήστη για Όλους, 
+Ψηφιακή πολιτισμική κληρονομιά  
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+To my mum, my dad and Nefeli 
+ 
+ 
+ 
+
+ 
+ 
+AKNOWLEDGMENTS 
+ 
+For the realization of the current thesis work, I would like to thank my supervisor, Assistant 
+Professor Maria Roussou, for the trust she placed in me and for providing me with the 
+opportunity to explore the field of Human-Computer Interaction further. I would also like 
+to express my gratitude to my family and friends who supported and encouraged me 
+throughout my thesis work. Balancing a full-time job with my research was challenging, 
+but their support helped me to stay focused and motivated. I am grateful for their patience, 
+understanding, and the sacrifices they made to help me achieve my goals. In addition, I 
+would like to thank the r/disability, r/Thritis and r/Blind communities on Reddit for their 
+invaluable advice and for helping me gain a deeper understanding of their perspectives 
+and needs. I would finally like to extend a special thanks to my cat, Nefeli, who 
+experienced every aspect of my thesis work with me, from brainstorming subjects to 
+adding the final details. 
+ 
+ 
+
+ 
+ 
+TABLE OF CONTENTS 
+ 
+PREFACE ......................................................................................................................... 14 
+1.  INTRODUCTION ......................................................................................................... 15 
+1.1.  Subject and Motives ......................................................................................................................... 15 
+1.2.  Context of Use ................................................................................................................................... 15 
+1.3.  Structure ............................................................................................................................................ 17 
+2.  BACKGROUND AND RELATED WORK .................................................................. 19 
+2.1.  Museum Guides ................................................................................................................................ 19 
+2.2.  Ubiquitous Computing ..................................................................................................................... 25 
+2.2.1.  Near Field Communication .................................................................................................... 25 
+2.3.  User Interfaces for All ...................................................................................................................... 26 
+3.  DESIGN ....................................................................................................................... 27 
+3.1.  The Idea ............................................................................................................................................. 27 
+3.2.  User Groups ....................................................................................................................................... 27 
+3.3.  User Personas ................................................................................................................................... 28 
+3.3.1.  Visually Impaired Visitor......................................................................................................... 28 
+3.3.2.  Low Dexterity Visitor .............................................................................................................. 29 
+3.4.  User Scenarios .................................................................................................................................. 30 
+3.4.1.  Low Vision Scenario .............................................................................................................. 30 
+3.4.2.  Limited Dexterity Scenario ..................................................................................................... 30 
+3.5.  Requirement Analysis ...................................................................................................................... 31 
+3.6.  Prototypes ......................................................................................................................................... 35 
+3.6.1.  Museum Entrance .................................................................................................................. 35 
+3.6.2.  Exhibit Audio Description Screens......................................................................................... 37 
+3.6.3.  Digital Souvenir Screens........................................................................................................ 38 
+4. 
+CONCLUSIONS AND FUTURE WORK .................................................................. 42 
+ABBREVIATIONS - ACRONYMS ................................................................................... 44 
+
+ 
+ 
+REFERENCES ................................................................................................................. 45 
+ 
+ 
+
+ 
+ 
+LIST OF FIGURES 
+ 
+Figure 1: Digital 3D floor plan of the Museum of Informatics and Telecommunications. 
+NKUA, eStories, 2021....................................................................................................... 16 
+Figure 2: Digital 3D rendering of a unit within the Main hall of the Museum of Informatics 
+and Telecommunications. NKUA, eStories, 2021 ........................................................... 17 
+Figure 3: British Museum Audio guide's equipment and audio media player, 2015. GLAMi 
+Nomination, Audio guide at the British Museum .............................................................. 20 
+Figure 4: British Museum Audio’s application screenshots of the audio media player and 
+keypad screen, 2023. The British Museum Audio app .................................................... 20 
+Figure 5: Recording screen of the GIFT mobile application. Gift project, Blast Theory . 21 
+Figure 6: A visitor of the Brighton Museum & Art Gallery that has found the exhibit of the 
+gift they received through the GIFT application. MW19 Boston, The GIFT Framework: 
+Give Visitors the Tools to Tell Their Own Stories ............................................................ 22 
+Figure 7: Out Loud’s application screenshots of audio media player. MW17 Cleveland, A 
+Path With Choice: What We Learned From Designing An Inclusive Audio Guide ......... 23 
+Figure 8: Adhesive signs added on each statue, prompting visitors to tap for NFC, scan 
+the QR code or type in the URL. MW2015, BoW, Statue Stories Chicago .................... 24 
+Figure 9: Audio file streaming launched by interaction with the statue’. MW2015, BoW, 
+Statue Stories Chicago ..................................................................................................... 24 
+Figure 10: Portrait of Alexis Panagiotopoulos. AI-Generated, This Person Does Not 
+Exist 2022 ......................................................................................................................... 28 
+Figure 11: Portrait of Areti Christidi. AI Generated, This Person Does Not Exist 2022 .. 29 
+Figure 12: Download App NFC Tag ................................................................................. 35 
+Figure 13: Enable NFC Screen ........................................................................................ 36 
+Figure 14: Wear Earphones Screen ................................................................................. 36 
+Figure 15: Welcome Screen ............................................................................................. 36 
+Figure 17: Home Screen .................................................................................................. 37 
+Figure 18: Audio Description Tag ..................................................................................... 37 
+
+ 
+ 
+Figure 19: Exhibit Audio Description Screens ................................................................. 38 
+Figure 20: Digital Souvenir NFC Tag ............................................................................... 38 
+Figure 21: Storage Permission Screen ............................................................................ 39 
+Figure 22: Photo Souvenir Screen ................................................................................... 39 
+Figure 23: Video Souvenir Screens ................................................................................. 40 
+Figure 24: Voice Recording Souvenir Screens ................................................................ 41 
+Figure 25: Exit Digital Souvenir Screen ........................................................................... 41 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+LIST OF TABLES 
+ 
+Table 1: Description of Alexis Panagiotopoulos .............................................................. 28 
+Table 2: Description of Areti Christidi ............................................................................... 29 
+Table 3: Requirement 'Seamless Guidance' .................................................................... 31 
+Table 4: Requirement 'Intuitive Gestures' ........................................................................ 31 
+Table 5: Requirement ‘Haptic Feedback’ ......................................................................... 32 
+Table 6: Requirement ‘Descriptive and Comprehensible Audio’ ..................................... 33 
+Table 7: Requirement ‘Clear and Accessible Typography’ ............................................. 33 
+Table 8: Requirement ‘Tutorial Exhibit’ ............................................................................ 34 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+PREFACE 
+This project took place in the Department of Informatics and Telecommunications of the 
+National and Kapodistrian University of Athens as a bachelor thesis under the supervision 
+of Dr Maria Roussou. Its duration from its start until its completion was one semester.  
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+15 
+1. 
+INTRODUCTION 
+1.1. Subject and Motives  
+The quest to incorporate digital technologies in cultural institutions has sparked the 
+emergence of immersive exhibitions and increased creativity in presenting information to 
+foster memorable experiences and meaningful connections with the topics at hand. 
+Meanwhile, technology can potentially detract from those experiences if it becomes 
+obtrusive or challenging. This is often the case when interacting with the technology 
+requires taking the visitor’s attention from the actual heritage content to perform 
+operational tasks. Especially for visitors with disabilities or limited familiarity with 
+technology, innovative approaches may break immersion, disrupting the flow of thoughts 
+and emotions that the exhibits are meant to evoke.  
+As Kidd and Nieto McAvoy noted, “deep immersion in an experience is best achieved 
+when the technology becomes invisible – that is, it fades into the background rather than 
+itself being the experience as noted above” [1]. To best incorporate digital solutions in 
+cultural settings, they must be user-friendly, easy to navigate, and provide clear 
+instructions to encourage visitors to interact with the technology. Especially for visitors 
+with disabilities or limited familiarity with technology, such approaches may serve as a 
+distraction, disrupting the flow of thoughts and emotions that the exhibits are meant to 
+evoke.  
+The present thesis seeks to address this challenge and explore the design of a more 
+inclusive and frictionless digital audio guide using a simplified interface and Near Field 
+Communication technology [2] to trigger app workflows. The goal is to reduce cognitive 
+load, improve accessibility, and enhance the overall museum experience for all visitors. 
+We use the Museum of Informatics and Telecommunications of the National and 
+Kapodistrian University of Athens as a case study to attempt to contribute to the broader 
+field of museum studies and encourage a shift towards more inclusive and transparent 
+museum experiences. 
+ 
+1.2. Context of Use 
+The Museum of Informatics and Telecommunications, or MI&T, founded in 2019, is one 
+of the museums of the National and Kapodistrian University of Athens, NKUA. It is 
+currently not open to the public as it is undergoing construction. The MI&T hosts the 
+archive and collections of the Department of Informatics and Telecommunications, DIT. 
+One of its key objectives is to promote awareness and interest in the field among the 
+general population. 
+Specifically, the museum will offer a comprehensive history of Informatics and 
+Telecommunications from the 1940s to the present day in Greece and the rest of the 
+world. It will highlight the research and educational activities of the department, 
+illuminating the history of Informatics as a science and its effects on our daily lives. The 
+museum aims to expose the concept of computational thinking and its applications to the 
+public. Its target audience includes the DIT community of students and researchers, 
+prospective students, specialized visitors, and the general public. 
+The MI&T is located on the ground floor of the Department of Informatics and 
+Telecommunications, below its Reading Room, where the first University-wide Data 
+Centre was initially housed.  The museum will consist of 4 main halls, as depicted in 
+Figure 1: the Entrance, the Introduction room, the Main hall, and the public part of the 
+museum's Archive. 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+16 
+ 
+Figure 1: Digital 3D floor plan of the Museum of Informatics and Telecommunications. NKUA, 
+eStories, 2021 
+In the Introduction room, the visitors will explore an interactive timeline of the history of 
+Informatics and Telecommunications, wall prints and showcases with objects from the 
+department’s collection and a special exhibit of the logarithmic rule as a precursor of 
+computers. The Main hall will host six core sections: the Mathematical Computer (the 
+40s-50s), the Business Computer (the 50s-60s and into the 70s), the Personal/Home 
+Computer (the 80s), the Networked Computer (the 90s), the Creative Computer (the 00s), 
+and the Ubiquitous Computer (the 10s+).  
+The MI&T seeks to put the visitor at the center of the museum experience. It aims to make 
+the visitor actively participate in the exhibition by interacting with some of the exhibits. 
+There will be digital tables, flexible digital interactive surfaces, audio stories, and social 
+interaction among visitors will be encouraged. The architectural design of the MI&T 
+consists of suspended ceilings and color-coded open areas that let the visitor walk around 
+freely, explore, and examine any of the six time periods sub-areas. 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+17 
+ 
+Figure 2: Digital 3D rendering of a unit within the Main hall of the Museum of Informatics and 
+Telecommunications. NKUA, eStories, 2021 
+The 
+museological 
+study 
+conducted 
+for 
+the 
+Museum 
+of 
+Informatics 
+and 
+Telecommunications has addressed a plethora of design decisions to accommodate 
+visitors with disabilities, including the installation of a ramp at the museum's entrance, 
+restrooms for disabled visitors, free-standing exhibits and display cases at an appropriate 
+height, open space areas with wide corridors for wheelchair movement, rest areas or 
+benches, and signs with suitable typeface, color, size, and height for easy reading [3]. 
+With its multitude of interactive activities and multimedia exhibits, and its commitment to 
+creating an inclusive environment, the Museum of Informatics and Telecommunications 
+is designed to provide an immersive experience for all. This thesis aims to explore the 
+design of a seamless audio guide in such an environment, highlighting its benefits in 
+providing more accessible access to information and facilitating a deeper engagement 
+with MI&T’s artifacts. 
+ 
+1.3. Structure 
+This thesis consists of 4 chapters, which can be summarized as such: 
+1. Introduction: The previous sections outline the focus of this work and present an 
+overview of the Museum of Informatics and Telecommunications, which will act as 
+the use case for this thesis. 
+2. Background and Related Work: Chapter 2 delves into the literature of museum 
+guides and the respective user experience research conducted to identify their 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+18 
+users’ needs and ways to improve. It also mentions concepts and research 
+projects that inspired this work, such as ambient intelligence and universal design.  
+3. Design: Chapter 3 consists of the idea around the design of the mobile application,  
+and the user-centered design process. It provides an in-depth look at the user 
+personas developed, user scenarios and several requirements and specifications 
+to cater to their needs. High-fidelity prototypes are also included, along with 
+descriptions of their usage.  
+4. Conclusions and Future Work: Chapter 4 discusses the results of the design 
+process and possible areas for future work, including the integration of the audio 
+guide with more advanced features, the development of a user testing and 
+evaluation plan and the implementation of the app. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+19 
+2. 
+BACKGROUND AND RELATED WORK 
+2.1. Museum Guides 
+In this section, we will examine case studies and concepts of existing museum guides 
+and their impact on the research focus of this thesis; we will analyze their design and 
+features and identify aspects relevant to this thesis. 
+To attract visitors in the competitive landscape of entertainment options, cultural hubs 
+must provide captivating experiences. Mobile technologies have played a significant role 
+in attracting new audiences to museums accommodating visitors with varying 
+preferences and needs. Roussou and Katifori [4] investigated the user experience of 
+mobile museum narratives. They found that while diverse content can enhance the 
+experience, it poses challenges, such as balancing visitors’ attention between the screen 
+and the physical space, ensuring proper navigation, balancing story and interpretive 
+content, and catering to diverse user profiles. 
+Among the many mobile-based solutions, the Bring Your Own Device, or BYOD, 
+approach allows visitors to use their own smartphones or tablets during their museum 
+visits. This model has become increasingly popular in museums of all sizes due to its 
+cost-effectiveness and the fact that visitors are already using their devices for recreational 
+purposes during their visit, such as taking pictures of the exhibits or seeking additional 
+information [4]. However, there are also challenges to consider when implementing the 
+Bring Your Own Device solution, namely the need for a stable and reliable network 
+connection and ensuring that the content is accessible to visitors with different devices 
+and operating systems and mitigating distraction from the exhibit content [5].  
+An example of a project that has gradually adopted the Bring Your Own Device model is 
+the “British Museum Audio” [6] guide for the British Museum in London. It consists of a 
+museum map and additional multimedia content for the museum’s galleries and 
+exhibitions. Until 2022, the guide could not be downloaded on the visitors’ devices and 
+had the form of a mobile-like lightweight device owned by the museum. Nowadays, it 
+comes in the form of a mobile application that offers a more personalized experience by 
+allowing visitors to save their favorite tours or download content to their devices. 
+In 2014, five years after its initial launch, a need for a user-centered redesign was noticed. 
+A research paper presented at the “Museums and the Web” conference in 2015 [7] 
+revealed the findings of a qualitative study performed at the British Museum regarding 
+visitors’ behavior and preferences towards audio guides.  
+The research revealed that 75% of the guide’s users heavily depended on it as their 
+primary means of navigating and obtaining information. Around 15% to 20% of the users 
+made “sporadic and often disinterested use of the audio guide” and often appeared to 
+quit after a few stops. This behavioral pattern valued the freedom to explore the museum 
+at their own pace, and only approach exhibits that sparked their interest. Another 
+interesting observation was that this group was very involved with their devices, phones, 
+tablets, or cameras.  
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+20 
+ 
+ 
+Figure 3: British Museum Audio guide's equipment and audio media player, 2015. GLAMi 
+Nomination, Audio guide at the British Museum 
+Currently, the guide is compatible with mobile devices and consists of a gallery- and tour-
+based mode. The tour-based mode consists of self-guided tours with a list of stops and 
+an estimated duration. Visitors choose a tour and follow the guide's instructions via audio 
+and text. Alternatively, in the gallery-based mode, visitors can selectively explore the 
+exhibits and browse at their own pace listening to the stops in any order they desire.  
+To use the guide, visitors can enter the number next to the exhibit into the app’s keypad. 
+Each stop lasts approximately 2 to 3 minutes, showcasing the artifact’s high-quality 
+images and additional resources such as related exhibits and other reading materials.  
+ 
+ 
+Figure 4: British Museum Audio’s application screenshots of the audio media player and keypad 
+screen, 2023. The British Museum Audio app 
+Regarding accessibility, the app states that its visitors should be able to “navigate easily 
+between sections, select a tour, listen to a tour, change the text size, use the app with a 
+screen reader”, meeting the Web Content and Accessibility Guidelines 2.1 standard. 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+21 
+Additionally, as showcased in Figure 4, the audio content is accompanied by a “Read in 
+text” option, benefiting individuals with hearing impairments. 
+Despite being an accessible and usable application grounded in user research and a 
+valuable case study for this thesis, the “British Museum Audio” still presents certain 
+limitations. Its reliance on entering a key or browsing the app’s collection to access 
+information may disrupt the visitors’ immersion by moving their interest from the exhibits 
+to the screen.  
+Another potential issue of the “British Museum Audio” guide is the absence of social 
+engagement, attributed to its lack of features that inspire visitors to share their experience 
+with their social circle. To incorporate the social aspects of a museum experience in this 
+study, we examined a project that focuses on providing museums with such features, “the 
+GIFT Box” [8].  
+“The GIFT Box” is an EU-funded research project that has developed a smartphone app 
+for museums to encourage visitors to share their narratives and emotions based on the 
+exhibits they encounter during their visit. The program has collaborated with multiple 
+museums that worked as case studies and aided the research process. The “GIFT App” 
+is a simple interface allowing visitors to share their own multimedia creations inspired by 
+the museum’s artifacts.  
+Each visitor may give or receive up to three “gifts”, each consisting of a picture of the 
+selected object, a voice message of their thoughts and a text hint with instructions to find 
+the exhibit. The gift can be as long or short as the giver intends to and can be sent to 
+people within the museum or elsewhere.  
+ 
+Figure 5: Recording screen of the GIFT mobile application. Gift project, Blast Theory 
+One of the pilot cases of the gifting experience at the Brighton Museum & Art Gallery 
+resulted in several noteworthy findings [9]. Visitors in the study reported that they viewed 
+the museum from a fresh perspective, “imagining what their receiver would like, or what 
+their giver had thought they would like” [10], which also led to them feeling connected to 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+22 
+the objects they sent or received. The application’s instructions were given in both text 
+and audio, delivered in a casual tone, and vocabulary influencing the gifting process and 
+overall museum experience. The research revealed that directing the experience toward 
+audio was a successful method to keep the visitors from shifting their attention to their 
+devices.  
+ 
+Figure 6: A visitor of the Brighton Museum & Art Gallery that has found the exhibit of the gift they 
+received through the GIFT application. MW19 Boston, The GIFT Framework: Give Visitors the 
+Tools to Tell Their Own Stories 
+The “GIFT App” serves as a means for sharing user-generated content and achieving 
+social impact while facilitating a multifaceted appreciation and more thorough exploration 
+of the exhibits, aspects that we seek to incorporate in our research. 
+Fostering a frictionless guiding experience within the scope of accessibility is another key 
+objective of this thesis. Notably, “Out Loud” [11], an inclusive audio guide for the Andy 
+Warhol Museum in Pittsburgh, uses Bluetooth to show visitors stories based on their 
+location. It focuses on accessibility and specifically aims to design an optimized 
+experience for visually impaired visitors.  
+In terms of design, the user research showed that visitors preferred a sense of 
+independence within the museum and the freedom to make their own choices [12]. In 
+response, each artwork is accompanied by short audio clips of categorized content, such 
+as an introduction, historical context, and visual description, rather than a single longer 
+clip with all the information. Visitors also expressed their desire to limit physical 
+interactions as they often use service dogs, canes, or guides to navigate within the 
+museum.   
+“Out Loud” is compatible with iOS and supports VoiceOver, the system’s built-in feature 
+to describe on-screen elements and Dynamic Type for text size customization. While 
+implementing the application, researchers concluded that announcing state changes, 
+such as audio autoplay, cross-checking text-to-speech conversions and maintaining a 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+23 
+consistent semantic structure are crucial to ensure successful screen-reading 
+compatibility. They also took advantage of “Magic Tap”, a two-finger double tap which 
+can be assigned to an app-specific action as they discovered that VoiceOver users were 
+instinctively using it to perform intuitive actions such as pausing the audio.  
+To fully accommodate users with visual impairments, the interface adjusts to the use of 
+VoiceOver. When VoiceOver is enabled, a visual description audio file is prioritized and 
+moved at the top of the audio clips list, following a brief introduction. Upon user testing, a 
+pattern was noticed indicating that all of the participants who relied on the VoiceOver 
+functionality to navigate through the app preferred to choose when to play the next audio 
+chapter, while testers who did not use VoiceOver favored autoplay. To cater to both 
+preferences, the default setting is to autoplay, but this functionality is disabled when 
+VoiceOver is activated. 
+ 
+Figure 7: Out Loud’s application screenshots of audio media player. MW17 Cleveland, A Path With 
+Choice: What We Learned From Designing An Inclusive Audio Guide 
+The application consists of two modes (Figure 7), the “Stories” view, which displays all 
+available audio descriptions and the “Near me” view, which filters the audio based on 
+location. To achieve the latter, it used Bluetooth low-energy beacons. The initial strategy 
+was to place one beacon per exhibit and deliver the audio of the one with the strongest 
+signal. This implementation proved unsuccessful and caused the guide to autoplay 
+incorrect audio, switching between objects. Consequently, an adaptation was made, and 
+beacons were placed to cover an entire room, filtering the audio per room instead. 
+Sharing the same goal for a seamless museum experience, Pedersen et al. conducted a 
+research [13] on designing a soundwalk with “no interface” in the process of creating 
+Bezæt, an audio walk for the history of the squatter movement in Copenhagen. The idea 
+entailed of users listening to audio stories narrated by members of the movement as they 
+would walk through their neighborhoods.  
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+24 
+Their initial design using map-based navigation relieved a set of drawbacks during the 
+testing phase. The GPS positioning was not accurate enough to guide the users 
+successfully and often caused user frustration, while the map interface proved to be a 
+source of distraction. Given that the purpose of the experience is to immerse users in the 
+urban environment, Bezæt’s design was revisited to deter users from looking at the 
+screen of their devices and instead direct their attention to their surroundings. The map-
+based prototype was replaced with a minimal GUI containing solely the necessary audio 
+controls and a single map screen showing the starting point of the walk. This translated 
+to an increased need for highly descriptive audio navigation instructions and orientation 
+hints. The design evaluation showed that the lack of GPS and a map interface did not 
+hinder the participants’ ability to navigate the soundwalk route. Many reported feeling 
+more in control of the experience and enjoyed the simple design.  
+"Talking Statues” [14] aimed to achieve a non-disrupting interface for an outdoor cultural 
+experience as well. In 2014, Sing London, alongside several partners, created a website 
+that would host “conversations” of users with statues found around London [15]. Given 
+that the experience primarily catered to pedestrians passing by the statues, it was 
+deemed necessary to eliminate the need for users to download an application in advance. 
+A website was created for this purpose, and the user journey was designed as follows.  
+After locating a statue, the user taps their phone on the statue’s tag, scans the QR code 
+or manually types a URL address to trigger the launch of the website, which imitates a 
+Phone Call screen. The user accepts the “call” from the statue, and a pre-recorded audio 
+file is played. Following the call, the user is redirected to the statue’s page to access 
+further information, view a map of other available statues, and share their experience with 
+others. 
+ 
+ 
+Figure 8: Adhesive signs added on each statue, 
+prompting visitors to tap for NFC, scan the QR 
+code or type in the URL. MW2015, BoW, Statue 
+Stories Chicago 
+ 
+Figure 9: Audio file streaming launched by 
+interaction with the statue’. MW2015, BoW, 
+Statue Stories Chicago 
+The project examined how Near Field Communication could attract non-traditional 
+audiences, such as the youth or people with disabilities, and encourage them to 
+participate in participating cultural activities. Observations and interviews with users of 
+Talking Statue showed that people of different ages and museum-going frequencies were 
+using the NFC technology. Even though iOS mobile phones, the most commonly used 
+type among participants, did not support NFC at the time of the study, users still opted 
+for alternative methods. However, 40% of users were able to use NFC to access Talking 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+25 
+Statues, potentially due to the assistance of research staff who helped older or less 
+technologically confident users and lent devices to those without NFC-compatible 
+phones. Some of them stated that the facilitators’ help was crucial to their ability to access 
+the content. Although instructions were sometimes misunderstood, such as users trying 
+to tap the sign with their fingers or feet instead of their phone, 80% of users agreed that 
+“using NFC/QR tags made the experience more enjoyable”. 
+Almost a decade later, NFC usage has increased, and more smartphone users are 
+familiar with the technology [16]. However, their user research showed that more explicit 
+instructions are needed to make the interaction more inviting to older or unfamiliar users. 
+While Talking Statue is intended for an outdoor setting where the statues are scattered 
+throughout the city, its call-and-answer interaction could become tedious and repetitive 
+in a museum context where exhibits are more closely situated. Nevertheless, the overall 
+design of the application closely aligns with the scope of this thesis. It serves as a 
+significant source of inspiration alongside certain aspects of the previously mentioned 
+projects. 
+ 
+2.2. Ubiquitous Computing 
+According to Mark Weiser, 1991, ubiquitous computing, also called ubicomp, “enhances 
+computer use by making many computers available throughout the physical environment 
+but making them effectively invisible to the user” [17]. 
+Ubiquitous computing is a concept whose primary objective is to make human interaction 
+with technology more natural, similar to the way humans interact with the physical world. 
+This can be achieved by using natural forms of communication, such as speech, touch, 
+gestures, and haptics, called Natural User Interfaces [18], to supplement or replace 
+traditional GUI interfaces. These natural interfaces carry minimal cognitive overhead and 
+should, by definition, be easier to use for children, inexperienced users, and those with 
+disabilities, who would find traditional interfaces less accessible. 
+In the context of cultural settings specifically, their main challenge is “to design a 
+multimedia presentation in such a way that it will convey the information to the visitors, 
+thus enriching the visit experience, without distracting their attention from the exhibits 
+themselves” [19]. User experience evaluations ( [4], [19], [20], [21], [22]) and related work 
+mentioned in 2.1. have proven that digital museum guides can hinder visitors from 
+focusing on their surroundings, often absorbed by the screen, or preoccupied with 
+navigating the interface.  
+Although the MI&T digital audio guide we have designed does not fully align with the 
+principles of ubicomp, it inspired the subject of this thesis and led to the idea of using 
+Near Field Communication to provide a more seamless experience. At this point, BYOD 
+is a widespread model that allows us to approach unobtrusive guidance, though 
+eventually, our goal would be to utilize the full potential of ubiquitous computing. 
+ 
+2.2.1. Near Field Communication 
+Near Field Communication, also known as NFC, is a form of ubiquitous interaction which 
+allows for short-range wireless communication between two compatible devices. It was 
+developed by Philips and Sony in 2002 and is based on radio-frequency identification, 
+RFID, a technology that enables two devices to communicate with each other by sending 
+and receiving radio signals. NFC uses a base frequency of 13.56 MHz to transfer data up 
+to 424 Kbit/s at a distance of 4 cm [2]. The communication requires an initiator device, 
+which triggers and controls the data transfer and a target device that replies to the 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+26 
+former’s request [23]. Although NFC technology currently operates in multiple modes, 
+some of which are the [24]: 
+1. Reader/Writer mode, where a contactless reader, such as an NFC reading device 
+or mobile phone, can access or modify information stored in a contactless tag. This 
+is a case of passive NFC technology as only one device generates the radio 
+frequency and energy required to communicate with an inactive object. 
+2. Peer-to-Peer mode, where two NFC devices are brought together to exchange 
+data. In this active NFC communication, the peers recognize each other and 
+generate their own radiofrequency field and broadcast data within that field.  
+3. Card emulation mode, where an NFC device operates as a contactless card, often 
+used for contactless payments or ticketing in public transport. 
+During the COVID-19 pandemic, NFC became exponentially popular in a plethora of 
+fields as it was an efficient solution to adopt within a short time window to ensure the 
+safety of the population. A survey by ABI Research was conducted in 2022 to determine 
+the behavior and understanding of consumers regarding Near Field Communication [16], 
+while considering the pandemic’s impact on their familiarity with it. The study collected 
+answers from 2620 participants worldwide, aged 18 and over, who had used contactless 
+technology at least once.  
+Their findings showed that 95% of them were at least somewhat familiar with NFC 
+contactless technology and it was stated that a steady increase in NFC usage is expected 
+in the near future. Given that such a large fraction of the population is equipped with a 
+basic intuition to interact with an NFC tag successfully, it became our tool of choice to 
+create a ubiquitous system within cultural institutions. 
+ 
+2.3. User Interfaces for All 
+In the context of designing mobile interfaces for all users, it is important to consider the 
+principles and methods of inclusive design. As noted by Stephanidis [25], the primary 
+objective of inclusive design is to create products and services that can be used by the 
+widest possible range of individuals, regardless of their abilities.  
+The design of mobile interfaces is centered around finger-based gestures that rely on a 
+multi-touch interface. While this may be intuitive for experienced users, for individuals 
+who lack digital literacy or have disabilities, such gestures can pose significant challenges 
+and create barriers to accessing the full range of features and functionalities offered by 
+mobile devices. These users may struggle to hold the device in the correct position, view 
+the screen, and perform delicate touch actions, rendering many mobile apps and features 
+inaccessible [26].  
+To achieve inclusivity and accessibility, it is important to seek alternative methods and 
+technologies that enable all users to interact with the application successfully and 
+effortlessly, 
+regardless 
+of 
+their 
+physical 
+abilities 
+or 
+digital 
+literacy 
+levels. 
+Ultimately, our goal is to ensure that visitors with disabilities can equally benefit from 
+every feature of the mobile application, just like visitors who do not have disabilities and 
+are fluent in mobile device use. 
+ 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+27 
+3. 
+DESIGN 
+3.1. The Idea  
+The increasing cognitive load we have been trained to handle by the constant use of 
+technology in our daily lives has created the expectation for museums and cultural hubs 
+to provide their visitors with access to digital resources that enhance their visit. Despite 
+the trend towards digital museum guides, many of these guides fail to provide a seamless 
+and inclusive experience for visitors with disabilities or limited digital experience.  
+This thesis examines the creation of a digital guide for the Museum of Informatics and 
+Telecommunications of the National and Kapodistrian University of Athens. It aims to offer 
+visitors a simplified and intuitive interface that delivers digital guidance without sacrificing 
+their immersion in the exhibits. 
+To ensure visitors with different accessibility barriers can have access to an equally 
+rewarding visitor experience in terms of content and usability, the application incorporates 
+gesture-based and contactless technologies, such as Near-Field Communication. The 
+interface is designed to be intuitive and mitigate potential distractions, allowing visitors to 
+fully immerse themselves in the museum exhibits while ensuring that information is 
+always accessible. This way the app will serve as a discreet assistant that will enhance 
+the overall museum experience without sacrificing visitor engagement or disrupting their 
+immersion in the museum's content. 
+Finally, a "souvenir" feature of the MI&T museum guide app enables the extension of its 
+social impact to the digital realm through a camera page and a recording page. The 
+concept involves each exhibit having its own simple Augmented Reality camera screen 
+that will show basic information about it in the form of an overlay, allowing the visitors to 
+capture photos or videos tagged with the name of the exhibit. Alternatively, a recording 
+page may be selected instead to create a sound-based reminder of the exhibit and their 
+interaction with it. These features provide a unique, self-captured digital keepsake that 
+can be saved to the visitor’s device, allow them to share their experience with others and 
+create a lasting token of their time at the museum. 
+ 
+3.2. User Groups 
+The Museum of Informatics & Telecommunications digital guide is committed to providing 
+an enjoyable experience for all its visitors, including those who may face technological 
+challenges or have disabilities. The application caters to the diverse needs of its visitors 
+by offering a straightforward and intuitive interface.  
+To achieve this, in this thesis we have chosen to focus on two main user groups who 
+have distinct preferences and requirements for museum guidance: who may have 
+physical disabilities and those who experience low vision. We believe that by designing 
+with these groups in mind, we can create an application that is more usable and 
+accommodating for “All” [25]. 
+Visitors with fine motor difficulties consist of the first user group of the application. For the 
+sake of clarity, this group will henceforth be referred to as ‘Visitors with limited dexterity' 
+throughout this thesis. Within this group lie people who may have physical disabilities that 
+make it challenging for them to use traditional touchscreen devices or to fully view and 
+touch exhibits. They aim to access supplementary content related to the exhibits without 
+feeling restricted or challenged by potential physical limitations. 
+The second user group, ‘Visitors with low vision’, often face challenges in traditional 
+museums due to visual impairments. These individuals may struggle to view exhibits, 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+28 
+read information, or follow written instructions, making it difficult for them to fully 
+experience and appreciate exhibitions. Their primary motive for using the digital guide is 
+to gain a better understanding of the exhibits through detailed audio descriptions without 
+the need for excessive phone interactions. 
+ 
+3.3. User Personas 
+The different expectations of each user group’s profile lead to a variety of needs that 
+ought to be taken into consideration while designing the application. To help comply with 
+usability principles and achieve user satisfaction, two user personas have been created 
+to represent the two user groups mentioned in 3.2.: ‘Visitors with limited dexterity’ and 
+‘Visitors with low vision’ which are visitors with visual disabilities and physical limitations 
+associated with low dexterity. The persona writing follows Nielsen’s technique as 
+described in Personas – User Focused Design [27] and aims to present the users as 
+human beings rather than lifeless characters. Therefore, it consists of demographic data, 
+technology and museum experiences, relationship with the field of Informatics and 
+Telecommunications, and their personal needs and preferences in terms of the 
+application use.  
+By focusing on these specific personas, we aim to ensure that the MI&T digital guide 
+application accommodates visitors with these disabilities and provides a seamless and 
+inclusive experience. 
+ 
+3.3.1. Visually Impaired Visitor 
+ 
+Figure 10: Portrait of Alexis Panagiotopoulos. AI-Generated, This Person Does Not Exist 2022 
+Table 1: Description of Alexis Panagiotopoulos 
+Name 
+Alexis Panagiotopoulos 
+User Group 
+Visitors with low vision 
+Age 
+19 
+Place of Birth 
+Voula, Greece 
+Disability 
+Loss of central vision 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+29 
+Quote 
+“You truly know something when you can explain it in 
+your own words.” 
+Museum Experience 
+Avoids visiting museums because he gets 
+overwhelmed and feels like an outsider. 
+Technology Experience 
+Advanced use of technology and accessibility features, 
+struggles with complex visual interfaces. 
+Relationship with Informatics 
+and Telecommunications 
+Has shown an interest in technology since a young age, 
+aspires to do research in Natural Language Processing. 
+ 
+3.3.2. Low Dexterity Visitor 
+ 
+Figure 11: Portrait of Areti Christidi. AI Generated, This Person Does Not Exist 2022 
+Table 2: Description of Areti Christidi 
+Name 
+Areti Christidi 
+User Group 
+Visitors with limited dexterity 
+Age 
+51 
+Place of Birth 
+Thessaloniki, Greece 
+Disability 
+Rheumatoid arthritis 
+Quote 
+“General knowledge for various topics sparks 
+interesting conversations and makes the world more 
+interesting.” 
+Museum Experience 
+Visits museums often, always with a guide, appreciates 
+the general knowledge she gains. 
+Technology Experience 
+Limited use of computers due to the discomfort caused 
+by operating keyboard and mouse. Occasional, basic 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+30 
+phone usage, finds it difficult to use smaller screens and 
+buttons. 
+Relationship with Informatics 
+and Telecommunications 
+Admires assistive technology for its effect on our daily 
+lives. 
+ 
+3.4. User Scenarios 
+In this section, we will present user scenarios for the personas mentioned in 3.3. 
+representing each user group, to offer a detailed understanding of how different users will 
+interact with the application. The scenarios will encompass a range of tasks and activities, 
+highlighting the various features and functions of the app, and demonstrating how the 
+app will assist the users in achieving their goals. 
+ 
+3.4.1. Low Vision Scenario 
+Alexis has been assigned to do a presentation for the course History of Informatics and 
+Telecommunications regarding punched cards and their debut in business. He has 
+gathered some theoretical content online but is struggling to paint a picture of how the 
+punching worked. He learns that the MI&T hosts some relevant exhibits and decides to 
+visit, even though he generally avoids museums due to his visual impairment. 
+Upon arrival, he finds a braille sign explaining that there is an NFC tag to scan, which 
+downloads the application of the museum and that earphones are recommended. Once 
+installed, he is instructed to scan the “Example Tag,” where he practices using the 
+supported gestures within the app, navigating through an exhibit’s page, and capturing a 
+recording as a souvenir. 
+When he reaches the museum’s relevant section, Alexis scans the “punched cards” 
+exhibit tag to get audio guidance as he touches the cards and the punching equipment to 
+understand how they operated. He listens to an audio description of the artifact, which 
+enhances his understanding of the exhibit and its context. He pauses the guide and 
+rewinds whenever he has trouble processing the information.  
+To recall his visit and reflect on his observations later, he proceeds to record and save 
+his audio souvenir, where he captures his personal reflections, along with the sounds 
+produced by the equipment, a prerecorded summary of the exhibit and key points he 
+plans to make in his presentation. 
+ 
+3.4.2. Limited Dexterity Scenario 
+Areti is in Athens with her daughter to explore university options, and they have planned 
+to visit the MI&T to learn about the department's history and facilities. Areti faces 
+limitations in physically interacting with exhibits that require delicate movements. 
+Upon arrival, Areti is given a lanyard to attach to her device to minimize the strain that the 
+grip causes her. She then scans the NFC tag at the entrance of the museum that triggers 
+the application installation on her mobile phone. She proceeds to practice using the app's 
+interface in the training mode to familiarize herself with the guide’s functionalities. To 
+overcome her physical challenges, she takes advantage of the simple gestures provided 
+by the application and places the phone in front of the NFC tags. Autoplay allows her to 
+listen to the audio descriptions of the exhibits without compromising immersion.  
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+31 
+Areti captures photos and videos of the exhibits, which she saves to later share with her 
+husband, who was unable to join the trip due to work obligations. By the end of their visit, 
+she has gathered plenty of information on the Department of Informatics and 
+Telecommunications, its history, and its facilities, which render her able to aid her 
+daughter in their decision-making process. 
+ 
+3.5. Requirement Analysis 
+Following the description of the user groups and the respective personas, we conducted 
+a requirement analysis by examining the information gathered, drawing conclusions 
+about their needs, translating them to requirements and, eventually, specifications for the 
+user interface [28]. 
+In this chapter, we will outline the design requirements and specifications for the 
+museum's digital interface, taking into account the needs of the aforementioned 
+personas, Areti and Alexis. These requirements are essential to the creation of an 
+interface that is intuitive and accessible, successfully accommodates visitors' needs and 
+provides seamless guidance that allows them to achieve their goals. The user interface 
+specifications that are derived from these requirements aim to contribute to the design of 
+an interface that renders the visitors’ experience educational and immersive for all visitors 
+with minimal distractions and limitations.  
+Table 3: Requirement 'Seamless Guidance' 
+Title 
+Seamless Guidance. 
+Description 
+To be able to access additional material with minimal 
+interaction with the phone screen. 
+Explanation 
+Even though mobile phones are an affordable and 
+convenient means to enrich the material given by the 
+museum, visitors often lose focus and find themselves 
+“absorbed by the device” when they constantly need to 
+perform actions that require attention to their screen [4]. 
+Hence the need to be able to follow the museum 
+guidance without sacrificing immersion in the exhibits. 
+In order to prevent uninformative interactions and avoid 
+squandering visitors' time or effort, in the case of visitors 
+with disabilities, the interface may treat the mobile phone 
+as an object that triggers guidance-related actions. 
+User Group(s) 
+Visitors with low vision, Visitors with limited dexterity. 
+Specification(s) 
+- 
+Installation of NFC tags on each exhibit. 
+- 
+NFC tag reading implementation within the app. 
+Table 4: Requirement 'Intuitive Gestures' 
+Title 
+Intuitive Gestures. 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+32 
+Description 
+To execute actions within the app without depending on 
+precise movements or voice commands, which could be 
+difficult to achieve in a museum environment. 
+Explanation 
+To make the exhibit accessible to everyone, regardless 
+of their level of technological proficiency or any 
+disabilities they may have, the interface should include 
+ways of navigating that are intuitive and easy to use. 
+Both user groups may have difficulty selecting 
+components within the app, and so there is a need for 
+alternative ways of navigating, intuitive gestures. They 
+must not require precise motions nor rely on timing 
+because tapping on the screen with small intervals (i.e. 
+for double tap) or extended periods of time (i.e. for tap 
+and hold) can be challenging to people with fine motor 
+limitations. According to Motti et al., 2013, older users 
+with low manual dexterity or touchscreen users with no 
+prior smartphone experience seem to take longer to 
+select a target while tapping [29]. Aside from tapping, 
+dragging interactions have been suggested for motor-
+impaired users and older users with tremor due to the 
+additional stability caused by the continuous contact with 
+the screen [30]. 
+User Group(s) 
+Visitors with low vision, Visitors with limited dexterity. 
+Specification(s) 
+App-specific gesture implementation for guidance-
+related actions: 
+- 
+NFC Tap. 
+- 
+Tap anywhere on the screen, regardless of 
+number of fingers or duration. 
+- 
+Drag and slide (left or right). 
+Table 5: Requirement ‘Haptic Feedback’ 
+Title 
+Haptic Feedback. 
+Description 
+To receive feedback after executing a gesture within the 
+app, to ensure that the action has been successfully 
+completed. 
+Explanation 
+Haptic feedback can provide a tactile response, such as 
+a vibration or a buzz, to let the user know that their action 
+has been registered and improve their interaction with 
+the touchscreen [31]. This is important for visitors with 
+low vision who may not be able to rely on visual cues 
+alone, and for visitors with limited dexterity who may not 
+be able to perform precise movements or rely on timing-
+based interactions [32]. The feedback should be clear 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+33 
+and easily distinguishable, without being too strong or 
+overwhelming. 
+User Group(s) 
+Visitors with low vision, Visitors with limited dexterity. 
+Specification(s) 
+Vibration for successful completion of an action. 
+Table 6: Requirement ‘Descriptive and Comprehensible Audio’ 
+Title 
+Descriptive and Comprehensible Audio. 
+Description 
+To understand the exhibit's content and follow the app's 
+instructions as clearly as possible through audio. 
+Explanation 
+Visitors with low vision may struggle to perceive visual 
+elements within the exhibit, making audio crucial to their 
+experience. Descriptive audio content can provide a 
+comprehensive understanding of visual elements, 
+enabling individuals with low vision to access information 
+that might otherwise be unavailable to them. 
+As such, the app should provide deeply descriptive audio 
+that accurately describes the exhibit's images, as well as 
+clear audio instructions for navigating the app. 
+User Group(s) 
+Visitors with low vision. 
+Specification(s) 
+- 
+Audio description that provides detailed and 
+accurate descriptions of exhibit images. 
+- 
+Clear 
+and 
+concise 
+audio 
+instructions 
+for 
+navigating the app. 
+- 
+Audio tracks that are free of distortion or other 
+background noise. 
+Table 7: Requirement ‘Clear and Accessible Typography’ 
+Title 
+Clear and Accessible Typography. 
+Description 
+To recognize text and outlines to the extent they are 
+physically capable.  
+Explanation 
+While audio instructions will be provided (Requirement 
+6), the design should be inclusive and provide clear, 
+legible text that is easy to read in order to accommodate 
+visitors with low vision to recognize as much content as 
+they can. 
+The typography should thus comply with Legibility 
+Standards that make text accessible to low vision users 
+according to Web Content Accessibility Guidelines, also 
+known as WCAG [33]. Specifically, the color contrast 
+between text and background should be at least 4.5:1, 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+34 
+and the font size should be a minimum of 14 point for 
+bold and 18 point for regular text. 
+It is also important to choose a typeface with easily 
+recognizable letters that avoid confusing similar shapes, 
+such as lowercase “l” and uppercase “i” or the number 1, 
+and uppercase and lowercase “c”, “o”, and “e” which 
+often have narrow apertures [34]. A font that we deemed 
+satisfies most of the above is Atkinson Hypereligible, 
+created for the Braille Institute with the goal to improve 
+legibility and readability for people with visual 
+impairments by making each letterform visually distinct 
+[35]. 
+User Group(s) 
+Visitors with low vision. 
+Specification(s) 
+- 
+4.5:1 
+color 
+contrast 
+between 
+text 
+and 
+background.  
+- 
+Use of typeface created for accessibility. 
+- 
+Icons that are crucial to conveying a message 
+should also follow the 4.5:1 minimum contrast 
+ratio and be larger. 
+- 
+Font size of at least 18 point throughout the 
+application. 
+Table 8: Requirement ‘Tutorial Exhibit’ 
+Title 
+Tutorial Exhibit. 
+Description 
+To learn and try out supported gestures without 
+consequences. 
+Explanation 
+To make the app as accessible and user-friendly as 
+possible, a tutorial exhibit should be included to teach 
+visitors how to use the app's features and gestures. This 
+will help visitors feel more comfortable and confident in 
+their use of the app and reduce frustration due to missed 
+information or disrupting other visitors in the museum. 
+The tutorial exhibit should provide clear instructions and 
+a safe space for visitors to experiment with app gestures 
+before using them in the main exhibit. It should be 
+designed to not interfere with the flow of other visitors in 
+the museum and not cause unnecessary congestion. 
+User Group(s) 
+Visitors with low vision, Visitors with limited dexterity. 
+Specification(s) 
+A tutorial exhibit that will be located in an easily 
+accessible area of the museum and provide clear step-
+by-step instructions. 
+ 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+35 
+3.6. Prototypes 
+Building upon the requirements and specifications outlined in the previous section, series 
+of high-fidelity prototypes for the museum's digital interface has been created. These 
+prototypes represent an iterative design process that considers the needs of the target 
+user groups and aims to provide an intuitive and accessible interface. The following 
+paragraphs consist of screens that visitors may encounter during installation, as well as 
+the main screens, including the welcome and home screen. Additionally, they feature 
+exhibit audio description screens and souvenir screens, with varying modes and 
+interfaces. 
+The high-fidelity prototypes serve as a comprehensive representation of the proposed 
+digital interface and have undergone multiple iterations in the attempt to seek balance 
+amongst functionality, accessibility, and aesthetic appeal. A previous set of prototypes 
+will be showcased below alongside with the various reasons their design was 
+reconsidered in order to explore how they eventually lead to the final state. 
+ 
+3.6.1. Museum Entrance 
+As the visitors enter the Museum of Informatics and Telecommunications, they find an 
+NFC tag with a Braille inscription, Figure 12, which initiates the installation of the 
+application to their devices, as well as any additional equipment that they may require for 
+their tour, such as earphones and lanyards for those who do not wish to grip their phones 
+or have their hands occupied with a cane.  
+ 
+Figure 12: Download App NFC Tag 
+After the guide is successfully downloaded, visitors may be presented with initial screens, 
+Figures 13 and 14, that prompt them to take specific actions, such as enabling NFC on 
+their device and wearing earphones, before proceeding.  
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+36 
+ 
+Figure 13: Enable NFC Screen 
+ 
+Figure 14: Wear Earphones Screen 
+Once these requirements are fulfilled, the Welcome screen, Figure 15, provides an audio 
+overview of the application and directs the users to the Tutorial Exhibit to familiarize 
+themselves with the supported gestures. 
+ 
+Figure 15: Welcome Screen 
+The Tutorial Exhibit is a “placeholder” exhibit that allows visitors to practice navigating 
+within the guide. It contains all the screens of the paragraphs below, just like any other 
+exhibit within the museum.  
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+37 
+When the tutorial phase is done, the Home Screen, Figure 16, appears and simply 
+exists to remind the users that wherever they see a tag, they may scan it to enhance 
+their experience.  
+ 
+Figure 16: Home Screen  
+3.6.2. Exhibit Audio Description Screens 
+Each exhibit’s information screen is triggered by contactless interaction with an NFC tag, 
+Figure 17, placed on a flat surface by the exhibit accompanied by Braille text. 
+ 
+Figure 17: Audio Description Tag 
+The Exhibit Audio Description consists of two states; the “Playing” and the “Paused” state, 
+Figure 18. Automatically, the application enters the “Playing” state once initiated and 
+contains both text and audio instructions to accomplish basic audio controls with minimal 
+interaction with the device’s screen. This way they may Touch anywhere in their Screen, 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+38 
+regardless of its duration or the number of touch points used, to pause or resume the 
+audio content. They may also start over from the beginning by rescanning the tag.  
+ 
+ 
+Figure 18: Exhibit Audio Description Screens 
+ 
+3.6.3. Digital Souvenir Screens 
+The museum exhibits come with basic information that visitors can enrich with their own 
+perspective and save on their devices. This feature is referred to as the "Digital Souvenir" 
+in this thesis and is composed of three modes: "Photo", "Video", and "Voice Memo". 
+These modes offer visitors with varying needs and preferences the opportunity to express 
+themselves creatively within the museum without adding complexity to their interaction 
+with the guide. Visitors can switch between modes of the carousel menu by swiping the 
+screen from either side. This is a commonly used interaction in the default camera 
+applications of Android and iOS devices. 
+To initiate the “Digital Souvenir” for an exhibit, they may tap the NFC tag placed by the 
+“Audio Description” one, Figure 19. 
+ 
+Figure 19: Digital Souvenir NFC Tag 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+39 
+First, permission to access the device’s storage is required to automatically save the 
+media captured, as shown in Figure 20. 
+ 
+Figure 20: Storage Permission Screen 
+The “Photo” mode, Figure 21, allows visitors to take a single picture by touching their 
+screen. Once the photo is captured, it will be saved to their device’s gallery. On the top 
+of the camera is a text AR overlay with the museum’s name, the exhibit’s name and its 
+basic information, the museum section, and the operational period. 
+ 
+Figure 21: Photo Souvenir Screen 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+40 
+Accordingly, the "Video" mode, Figure 22, enables visitors to record a video of the exhibit 
+that they scanned with the "souvenir" tag. They initiate recording with a tap and finish it 
+with another tap. Once recorded, the video is saved to their device's gallery. Similar to 
+the "Photo" mode, the video is embellished with an AR camera filter featuring the MI&T 
+logo and the exhibit’s primary information. 
+ 
+ 
+Figure 22: Video Souvenir Screens 
+The “Voice Memo” mode, Figure 23, is an alternative to the prior “Digital Souvenir” types 
+for visitors who may prefer to express their thoughts and observations verbally. To initiate 
+recording, visitors simply tap on the screen and begin speaking. The recording ends with 
+another tap and is automatically saved to their device's gallery. Similar to the “Photo” and 
+“Video” modes, the "Voice Memo" mode features a pre-recorded voiceover that 
+announces the name of the museum and the exhibit's basic information. This allows 
+visitors to focus solely on their thoughts and ideas without worrying about providing 
+additional context. 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+41 
+ 
+Figure 23: Voice Recording Souvenir Screens 
+To return to the “Home Screen” and continue exploring the rest of the exhibits, the visitors 
+slide until they reach the “Exit” option, Figure 24, and touch the screen to confirm their 
+action.  
+ 
+Figure 24: Exit Digital Souvenir Screen 
+ 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+42 
+4. 
+CONCLUSIONS AND FUTURE WORK 
+In this thesis, we have explored the design of a museum guide application that provides 
+an intuitive user interface, minimizes distractions, and maximizes engagement for all 
+visitors, including those with accessibility barriers.  
+The analysis of related apps and their respective studies highlighted the importance of 
+designing accessible and frictionless applications that enhance, rather than detract from, 
+the museum experience. Through the development of user personas, we identified the 
+needs and preferences of various user groups. We then used this information, along with 
+findings from research on accessibility principles and natural interfaces, to gather 
+requirements and specifications that would reflect said needs. It was deduced that the 
+incorporation of NFC tags and intuitive gestures, along with haptic feedback, typography 
+compliant with legibility standards, and descriptive audio, can contribute to rendering the 
+interface seamless and inclusive. The resulting high-fidelity prototypes featured a 
+simplistic interface that prioritizes limiting non-informative screen time and leverages 
+Near Field Communication to trigger app workflows, allowing visitors to seamlessly 
+engage with the museum's exhibits. 
+While this research offers valuable insights into the design of museum guide applications, 
+it has limitations.  
+Future research should challenge the effectiveness of our design proposal by conducting 
+usability testing with a broad range of visitors, including those with disabilities or limited 
+familiarity with technology. By doing so, we expect to gain insights into the application’s 
+intuitiveness, accessibility, and disruption from the cultural setting. This evaluation should 
+be both quantitative, through first-click testing, completion rates and heatmaps, and 
+qualitative, through interviews and the think-aloud protocol. Given that the actions within 
+the app are triggered by the user’s interaction with physical tags, it is essential for the 
+usability tests to be done in person and, ideally, within the museum setting.  
+Following user testing, the development of the mobile application is expected. It should 
+be implemented using a framework supporting NFC tag reading and accessibility 
+features, namely React Native, which offers both an NFC library [36] and comprehensive 
+Accessibility documentation [37] for both iOS and Android assistive technologies. The 
+audio recordings should be stored in a data store and associated with unique identifiers 
+to ensure the data is independent, modifiable, and not relying on the application’s 
+updates. This will allow the app to quickly retrieve and play the audio file of the correct 
+exhibit based on the ID attached to the NFC tag tapped. Once developed, it must be 
+deployed and made available for download by visitors. 
+In future redesigns of the application, we would encourage enriching its functionality while 
+maintaining the principles regarding disruption and accessibility tackled in this study. For 
+instance, visitors could be given the option to review their souvenirs prior to saving them 
+and store them within the app instead of directly to their devices. Additionally, the feature 
+to move to a specific time in an audio recording could be helpful for those who benefit 
+from replaying specific audio clips, i.e., in the case of a university assignment or frequent 
+loss of focus.  
+Regarding accessibility, it is important to provide more personalized settings for visitors 
+with disabilities, as their needs can range drastically. Such options could be adjustable 
+haptic feedback, font sizes, contrast levels and audio speed. As reported by the research 
+on the Warhol Museum's app, Out Loud [11], users with screen readers installed on their 
+phones may struggle to perform tasks which may be straightforward to the average user 
+due to the app overriding or ignoring the screen reader’s default gestures. For screen 
+reader users, a single tap on the screen may translate to reading the selected item aloud, 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+43 
+making this functionality disruptive to the current design. Thus, we plan to adjust the 
+application's functionality when a screen reader is detected, replacing single taps with 
+gestures that screen reader users are accustomed to and utilizing OS-specific features 
+such as “Magic Touch” [12]. This will ensure that visually impaired visitors can access the 
+same content as sighted visitors without feeling excluded or disadvantaged. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+44 
+ABBREVIATIONS - ACRONYMS 
+MI&T  
+Museum of Informatics and Telecommunications 
+NKUA  
+National and Kapodistrian University of Athens 
+DIT 
+Department of Informatics and Telecommunications 
+BYOD 
+Bring Your Own Device 
+WCAG 
+Web Content and Accessibility Guidelines 
+GUI  
+Graphical User Interface 
+NFC  
+Near Field Communication 
+RFID  
+Radio-frequency Identification 
+AR 
+Augmented Reality 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+45 
+REFERENCES 
+ 
+[1]  J. Kidd and E. Nieto McAvoy, "Immersive Experiences in Museums, Galleries and Heritage Sites: A 
+review of research findings and issues," Creative Industries Policy and Evidence Centre, 2019. 
+[2]  "NFC Technology," NFC Forum, 2023. [Online]. Available: https://nfc-forum.org/learn/nfc-technology. 
+[Accessed November 2022]. 
+[3]  "Museum of Informatics and Telecommunications, NKUA, eStories," [Online]. Available: 
+https://estories.uoa.gr/en/cultural_heritage/museums/museum-informatics-and-telecommunications. 
+[Accessed 5 March 2023]. 
+[4]  M. Roussou and A. Katifori, "Flow, Staging, Wayfinding, Personalization: Evaluating User Experience 
+with Mobile Museum Narratives," Multimodal Technologies and Interaction, vol. 2, no. 2, p. 32, 2018.  
+[5]  A. Schönhofer, S. Hubner, P. Rashed, W. Aigner, P. Judmaier and M. Seidl , "ViennAR: User-
+Centered-Design of a Bring Your Own Device Mobile Application with Augmented Reality," in 5th 
+International Conference, AVR 2018, Otranto, 2018.  
+[6]  "Audio App, The British Museum," [Online]. Available: https://www.britishmuseum.org/visit/audio-app. 
+[Accessed 3 March 2023]. 
+[7]  S. Mannion, A. Sabiescu and W. Robinson, "An audio state of mind: Understanding behaviour around 
+audio guides and visitor media," in Museums and the Web, Chicago, 2015.  
+[8]  "The GIFT Box – Tools and ways of working to help museums make richer digital experiences for 
+their visitors," [Online]. Available: https://gifting.digital/. [Accessed 12 December 2022]. 
+[9]  J. Spence, B. Bedwell, M. Coleman, S. Benford, B. N. Koleva, M. Adams, J. R. Farr, N. Tandavanitj 
+and A. S. Løvlie, "Seeing with New Eyes: Designing for In-the-Wild Museum Gifting," in the 2019 CHI 
+Conference on Human Factors in Computing Systems, New York, 2019.  
+[10]  A. S. Løvlie, S. Benford, J. Spence, T. Wray, C. H. Mortensen, A. Olesen, L. Rogberg, B. Bedwell, D. 
+Darzentas and A. Waern, "The GIFT Framework: Give Visitors the Tools to Tell Their Own Stories," 
+in Museums and the Web, Boston, 2019.  
+[11]  D. Gonzalez, "A path with choice: What we learned from designing an inclusive audio guide.," in 
+Museums and the Web, Cleveland, 2017.  
+[12]  N. Dezelon, "Designing an Inclusive Audio Guide Part 4: Content Development: Telling the Warhol 
+Story," 4 August 2016. [Online]. Available: https://www.warhol.org/designing-an-inclusive-audio-
+guide-part-4-content-development-telling-the-warhol-story/. [Accessed 19 December 2022]. 
+[13]  T. Pedersen, E. Terte and A. S. Løvlie, "Designing a “No Interface” Audio Walk," in Museums and the 
+Web, Boston, 2019.  
+[14]  "Talking Statues," Sing, 2023. [Online]. Available: http://www.talkingstatues.co.uk/. [Accessed 20 
+December 2023]. 
+[15]  J. Dodd, D. Hopes, M.-A. Tseliou and C. Jones, "Talking Statues : The user experience," Research 
+Centre for Museums and Galleries for Sing London, 2015. 
+[16]  A. Zignani and P. Sealy, "Consumer Attitudes, Experiences, and Understanding of NFC Technology: 
+ABI Research NFC Executive Summary of Survey Results," July 2022. [Online]. Available: https://nfc-
+forum.org/uploads/2022-abi-study-overview.pdf. [Accessed 2022 November 14]. 
+[17]  M. Weiser, "The computer for the 21st century," Scientific American, vol. 265, no. 3, pp. 94-104, 1991.  
+[18]  L. P. Fu, J. Landay, M. Nebeling, Y. Xu and C. Zhao, "Redefining Natural User Interface," in Extended 
+Abstracts of the 2018 CHI Conference, New York, 2018.  
+[19]  S. Katz, Y. Kahanov, N. Kashtan, K. Tsvi, I. Graziola, C. Rocchi, O. Stock and M. Zancanaro, 
+"Preparing Personalized Multimedia Presentations for a Mobile Museum Visitors' Guide - a 
+
+Enhancing the museum experience through seamless and straightforward digital guidance 
+R. Chiou 
+46 
+Methodological Approach," in Museums and the Web 2006: Proceedings, Toronto: Archives & 
+Museum Informatics, 2006.  
+[20]  A. Woodruff, P. M. Aoki, A. Hurst and M. H. Szymanski, "Electronic Guidebooks and Visitor Attention," 
+in the 6th International Cultural Heritage Informatics Meetin, Milan, 2001.  
+[21]  M. K. Othman, in Measuring visitors' experiences with mobile guide technology in cultural spaces, 
+University of York, 2012, p. 75. 
+[22]  M. Roussou, F. Ripanti and K. Servi, "Engaging visitors of archaeological sites through ‘emotive’ 
+storytelling experiences: a pilot at the Ancient Agora of Athens," in International Conference in Honour 
+of Professor Giuseppe Sassatelli’s 70th Birthday, Bologna, 2017.  
+[23]  V. Coskun, B. Ozdenizci and K. Ok, "A Survey on Near Field Communication (NFC) Technology.," 
+Wireless Personal Communications, vol. 71, no. 3, pp. 2259-2294, 2013.  
+[24]  N. K. Singh, "Near-field Communication (NFC)," Information Technology and Libraries, vol. 39, no. 2, 
+2020.  
+[25]  C. Stephanidis, User interfaces for all: concepts, methods, and tools, CRC Press, 2000.  
+[26]  G. Kouroupetroglou, A. Pino and P. Riga, "A methodological approach for designing and developing 
+web-based inventories of mobile Assistive Technology applications," Multimedia Tools and 
+Applications, vol. 76, no. 4, pp. 5347-5366, 2017.  
+[27]  L. Nielsen, in Personas – User Focused Design, Springer, 2019, pp. 3, 55-88. 
+[28]  D. Stone, C. Jarrett, M. Woodroffe and S. Minocha, User Interface Design and Evaluation, Elsevier, 
+2005.  
+[29]  L. G. Motti, N. Vigouroux and P. Gorce, "Interaction techniques for older adults using touchscreen 
+devices: a literature review," in the 25th Conference on l'Interaction Homme-Machine (IHM '13), New 
+York, 2013.  
+[30]  L. G. Motti, N. Vigouroux and P. Gorce, "Drag-and-drop for older adults using touchscreen devices: 
+effects of screen sizes and interaction techniques on accuracy," in the 26th Conference on 
+l'Interaction Homme-Machine, New York, 2014.  
+[31]  E. Hoggan, S. A. Brewster and J. Johnston, "Investigating the effectiveness of tactile feedback for 
+mobile touchscreens," in the 2008 Conference on Human Factors in Computing Systems, Florence, 
+2008.  
+[32]  N. Jafari, K. D. Adams and M. Tavakoli, "Haptics to improve task performance in people with 
+disabilities: A review of previous studies and a guide to future research with children with disabilities," 
+Journal of Rehabilitation and Assistive Technologies Engineering, vol. 3, pp. 8-10, 2016.  
+[33]  A. Kirkpatrick, J. O Connor, A. Campbell and M. Cooper, "Web Content Accessibility Guidelines 
+(WCAG) 2.1," 5 June 2018. [Online]. Available: https://www.w3.org/TR/WCAG21/. [Accessed 10 
+January 2023]. 
+[34]  T. Bohm, "Letter and symbol misrecognition in highly legible typefaces for general, children, dyslexic, 
+visually impaired and ageing readers [2019 fourth edition]," 2 December 2015. [Online]. Available: 
+https://typography.guru/journal/letters-symbols-misrecognition. [Accessed 3 January 2023]. 
+[35]  S. Zarayasky, "From Rebranding to Readability with Atkinson Hyperlegible," Material Design Blog, 6 
+September 2022. [Online]. Available: https://material.io/blog/atkinson-hyperlegible-design. [Accessed 
+15 December 2022]. 
+[36]  Richie Hsieh, "react-native-nfc-manager," RevtelTech, December 2022. [Online]. Available: 
+https://www.npmjs.com/package/react-native-nfc-manager. [Accessed 1 February 2023]. 
+[37]  "Accessibility React Native," Meta Platforms, Inc., 12 January 2023. [Online]. Available: 
+https://reactnative.dev/docs/accessibility. [Accessed 20 February 2023]. 
+ 
+ 
+

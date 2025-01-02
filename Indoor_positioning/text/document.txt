@@ -1,0 +1,312 @@
+Towards a location model for indoor navigation support
+through public displays and mobile devices
+Christian Kray Keith Cheverst Michael Harrison, Fathi
+School of Computing Science Computing Department Hamhoum, Jürgen Wagner
+Newcastle University, Lancaster University School of Computing Science
+Newcastle upon Tyne, UK Lancaster, UK Newcastle University,
+c.kray@ncl.ac.uk kc@comp.lancs.ac.uk Newcastle upon Tyne, UK
+{michael.harrison,f.a.hamhoum
+,jurgen.wagner}@ncl.ac.uk
+ABSTRACT to the receptionist’s desk displaying the helpful message: ”Need
+Directions?” He interacts with the console, and selects Keith’s
+Indoor navigation differs from outdoor navigation in several
+name from the displayed list. The system then offers to provide
+significant ways. In particular, precise localization usually
+personalized guidance if he’s willing to identify his phone’s
+requires an expensive infrastructure whereas outdoors, GPS offers
+Bluetooth name. David recognizes the Bluetooth name of his
+an inexpensive and widely available solution. In addition, indoor
+phone on the list being displayed, selects it and a small
+environments frequently include several floors and can be
+application is sent to his phone. The Hermes II navigation system
+relatively complex and thus difficult to navigate for people
+then asks him to ’follow the arrows that will appear on office door
+unfamiliar with such buildings. In this paper, we investigate
+displays on route to the target destination’. The system also points
+requirements and constraints applicable to a location model to
+out that he can interact with the office door displays if he wishes
+support indoor navigation. We introduce an initial location model
+to view a map showing his current position within InfoLab21 and
+and evaluate its use in the context of a deployed public display
+the route he is taking to Keith’s office. As he walks through the
+network (Hermes II). These displays function as dynamic signage
+building he notices that even displays that seem to be showing
+to support indoor navigation and can be combined with mobile
+some other information change to displaying direction arrows for
+devices to improve navigation.
+him as he approaches. Halfway to Keith’s office, he spots two
+guys in discussion and thinks one of them might be Keith. As he
+Keywords
+walks up to them, he realizes that he was wrong – neither of them
+Location model, public displays, mobile devices, indoor is Keith. At the same time his phone vibrates. When David takes it
+navigation. out he sees a message telling him that he went the wrong way and
+should trace back his steps until he finds another public display.
+1. INTRODUCTION
+A suitable location model is the first step towards realizing such a
+When navigating indoor spaces, people typically use traditional scenario - one that can automatically generate both generic and
+static signage to help them find their intended destination. At personalized guidance information for use on public displays and
+certain events, such as trade-fairs (CEBIT being a good example), mobile devices. In this paper, we identify requirements for such a
+attendees may be able to use mobile devices, such as WaveLan model, introduce an initial location model and evaluate it in the
+equipped PDAs, to help them navigate. context of a deployed public display network. In the following,
+we first briefly review related work and then identify key
+However, an alternative and complimentary way to support
+requirements that a suitable location model would have to meet.
+pedestrians in their navigation of indoor areas is to utilise public
+Subsequently, we introduce an initial model and then evaluate it
+digital displays, which are increasingly prevalent in places such as
+against the identified requirements. The conclusion summarizes
+public transport hubs, airports and conference centers. Content
+our main contributions and highlights some further work that we
+for such dynamic signage is usually manually created and/or pre-
+intend to undertake in the future.
+defined, which requires significant effort prior to setting
+deployment or when updating the content. In addition, providing
+personalized guidance is very difficult with manually created 2. RELATED WORK
+(static) content even though dynamic signage systems are, in In the field of Ubiquitous Computing there has been much work
+principle, well suited for such a use. The same is true for the use on location technologies – this work has variously considered
+of mobile devices in such settings. Consider this g scenario: technologies based on RF/Utrasound, IR etc. Additionally, a
+significant number of location and context models have been
+David, a new postgraduate student has a meeting with his new
+proposed for a variety of applications in mobile in ubiquitous
+supervisor Keith. David has never been to the InfoLab21 building
+computing (see [Baus, 2002] and [Satoh, 2007] for an overview).
+before, and is running a little late for his meeting. On entering
+When the location of persons is at issue then privacy is clearly an
+InfoLab21 David observes that the lady at reception is busy
+important factor and much research has tackled this obdurate
+helping another visitor but he notices a touch screen console next
+problem. There has also been important early work identifying therelationship between the location/context models and the level of InfoLab21 itself has four floors (labeled A-D) connected to a
+individual privacy that can be supported, e.g. [Spreitzer, 1993]. number of staircases and elevators. Seen from the top, its overall
+layout is roughly F-shaped. Signage in the building is based on a
+In terms of supporting the production of geometric location
+few large signs at the entrance points to each floor (e.g. elevators,
+models for use in location aware applications, YAMAMOTO
+stairwells). The signs list the departments and facilities on each
+[Stahl, 2006] (Yet Another Map Modelling Tool) is a highly
+floor, such as “Computing Department”. After the large signs
+advanced tool, which incorporates a detailed GUI for editing and
+there are no intermediate signs, e.g. “Offices 12 to 20 this way”.
+producing a 3-dimensional location model.
+Each room has an ID, indicated on a small black and white
+There are a number of indoor navigation systems that use either doorplate (see figure 1 below). Room IDs are composed of a letter
+public displays, or mobile devices, or a combination thereof. indicating the floor, and a one or two digit room number, e.g.
+Cyberguide [Abowd, 1997] was an early example system using C40. Access to some areas requires an access card..
+Infrared (IR) beacons and sensors (for room-level granularity
+location sensing) in combination with a simple map-based The door displays are clearly situated at specific points within the
+location model for indoor navigation. infoLab21 building and with specific orientations, e.g. some may
+point North, others East etc. Clearly such orientations have
+3. IDENTIFYING REQUIREMENTS important implications for the display of navigation information,
+e.g. a display facing North might be unsuitable for presenting a
+In order to develop a location model that is well suited for
+visual only navigation instruction to a visitor heading North.
+supporting indoor navigation through public displays and mobile
+Consequently, an important requirement on our location model is
+devices, several requirements have to be met. These include some
+that is support the representation of the orientations (and position)
+of a general nature resulting from the application itself (i.e.
+of the door display infrastructure.
+navigation), some more specific ones introduced by the particular
+domain (i.e. the use of dynamic signage) and some technological
+3.2 General requirements
+constraints (i.e. resulting from the type and cost of different
+positioning technologies). Becker and Dürr [Becker, 2005] In order to provide navigation assistance, a system has to be able
+discuss a number of requirements for a generic location model in to compute a route to the destination specified by a user.
+ubiquitous computing. Some of these apply in our context as well Therefore, the location model has to support the application of
+while others are less relevant, and still further ones are particular wayfinding algorithms such as A* or Djikstra’s algorithm.
+to our application scenario.
+In addition, it is highly desirable for a location model to be easily
+integrated with the format used to represent the environment.
+3.1 Deployment considerations
+Ideally, it should be possible to (semi-) automatically derive data
+Our long-term goal is to design, implement and evaluate an for the location model from the environmental representation
+application that realizes the scenario presented in section 1 within format. For example, if the world is represented by 2D maps, the
+InfoLab21 using the Hermes II office door display. This system location model used for navigation should be ‘compatible’ with
+has been deployed on two floors in InfoLab21, a modern office those maps, e.g. be in the form of 2D coordinates.
+building at Lancaster University. The forty displays are mounted
+A further highly desirable property for a location model is the
+outside offices and run an interactive application which builds on
+ability to encode orientation [Becker, 2005]. A significant number
+the functionality of the Hermes I system described in [Cheverst,
+of ways to convey directions rely on this information such as
+2003]. Displays comprise a 7” colour touchscreen, a camera and
+arrows or verbal instructions. While it is possible to relay
+Bluetooth connectivity. In [Kray, 2006] we describe a study in
+guidance without information about orientation – for example,
+which we explored the extent to which owners of door displays
+using an overview map with a highlighted route – the lack of this
+would be prepared to have their display show arrows in order to
+information would significantly limit the vocabulary of a system.
+support visitor navigation. In summary, we found that owners
+were prepared to support such navigation but only if appropriate Finally, any location model should only be as complex as
+control was supported, i.e. enabling owners to specify necessary (in order to facilitate its practical use) while at the same
+circumstances in which important/timely information showing on time being computationally manageable [Becker, 2005].
+their door display could not be overridden.
+3.3 Domain-specific requirements
+Buildings are environments, which are structured in particular
+ways, which should be reflected in a location model. In particular,
+there are frequently multiple floors connected through staircases,
+elevators and escalators. Hence, a model needs to incorporate a
+notion of three-dimensionality (or at least 2.5D) in order to be able
+to cope with multi-level buildings.
+Indoor spaces inside larger buildings are also frequently
+subdivided spatially (e.g. in terms of wings, corridors, rooms) and
+logically (e.g. in terms of departments, organizational and/or
+functional units). Ideally, a location model should take these
+aspects into account – [Becker, 2005] in order to enable a system
+Figure 1. Typical corridor in InfoLab21 showing offices with to refer to these entities and to resolve references to them.
+associated door displays (highlighted).Two prominent representation formats for buildings are to specify containment, the location model contains one
+architectural plans and floor plans (which are often based on mereological relation, <contains>, which is uni-directional. Using
+architectural plans). While these formats do not lend themselves this relation, it is possible to define hierarchical and/or
+easily to the automatic computation of routes, a location model for overlapping areas such as floors, wings or departments.
+indoor navigation should be well integrated with them.
+Figure 2 illustrates our proposed model using an example from the
+intended deployment area. The top part of the figure shows a
+3.4 Technological constraints
+section of the floor plan of the C floor in InfoLab21. The small
+Since precise indoor localization usually requires expensive black rectangles correspond to the door displays we deployed in
+infrastructure, it is worth considering alternatives that are more the context of the Hermes II rollout. The bottom part of figure
+readily available. Among those alternatives, most are either cell- depicts the model corresponding to the highlighted area in the
+based (i.e. the granularity of positional information corresponds to floor plan. In the example, office C1 is located to the North of C
+the size of cells) or proximity-based (i.e. the position of an entity corridor South and display C1, and to the West of office C2. C1 is
+is sensed relative to another). Through the use of overlapping also part of the C floor South Wing as well as C floor. There is
+cells and/or varying signal strength, more precise location one door connecting C1 to C corridor South.
+information can be inferred (subject to calibration and
+unreliability). In order for a location model to be of practical
+relevance, it should be usable with positional information of lower
+granularity/quality as returned by technologies such as Bluetooth,
+NFC or RFID-based approaches.
+4. TOWARDS A LOCATION MODEL
+Earlier models of GAUDI [Kray, 2005] were based on a publish-
+subscribe architecture for distribution of direction information to
+the public displays and the sensors that were located within the
+spaces containing the public displays. The mapping between
+location (defined by Cartesian coordinates) and space (defined by
+the existence of a sensor and a public display) was achieved
+bottom-up. The model that was created [Harrison, 2008] allowed
+for the analysis of simple properties of the information. For
+example it could be checked that a display would contain the
+correct information when a visitor moved into the space or that a
+visitor could always see the next display in the direction that they
+were required to travel. A disadvantage of this model was the lack
+of information in terms of more semantic notions relating to how
+the spaces were organized and related.
+We require an alternative model that captures the spatial entities
+(such as rooms and floors), their interconnections and their
+hierarchy (that rooms are contained within wings for example)
+with a mapping to the physical locations defined in the earlier
+models. This model should also enable a clearer understanding of
+adjacency of space and containment of space that does not require
+a bottom up analysis based on the coordinate representation. In
+addition, we need to be able to reason that, for example, rooms are
+connected by staircases, or elevators or not at all.
+Figure 2. Floor plan with doors and public displays (top) and
+Based on these considerations we designed a model that location model corresponding to the highlighted area (bottom)
+incorporates three types of relations, which are key to
+Using our proposed model, these properties are expressed using
+understanding the space: directional, connectional and
+the following relations:
+mereological relations. Directional relations define in which
+direction one entity is located with respect to another one, and are C1 <north-of>, <connected-by-door> C corridor South
+bi-directional. There are three pairs of relations: <north- C1 <north-of> display C1
+of>/<south-of>, <west-of>/<east-of>, and <on-top-of>/<below>.
+C1 <west-of> C2
+Note that directional relations do not specify whether or not it is
+possible to move between two entities that are linked by a C floor, C floor South Wing <contains> C1
+directional relation. Connectional relations define whether and
+how entities such as rooms are connected. There are 6 bi- 5. EVALUATION AND DISCUSSION
+directional relations of this type: <directly-connected>, In order to start assessing the feasibility of the location model, we
+<connected-by-door>, <connected-by-stairs>, <connected-by- evaluated the model against the requirements set out in section 3,
+escalator> and <connected-by-elevator>. The final relation, and analyzed its applicability to Infolab21 and the Hermes II
+<visible-from>, is uni-directional, and is used to model whether a system.
+public display is visible from a particular area. In order to be ableGeneral requirements. Using the graph defined by nodes and the configuration can be represented using the proposed model,
+connectional relations, it is straightforward to apply a path finding displays mounted on such a curved wall would either only be
+algorithm for graphs (such as A*). Since the model is inspired by modeled using the <visible-from> relation or require further
+architectural plans and floor plans, the second requirement (easy directional relations. In addition, there are several doors
+integration with the format used to represent environment) is also connecting various parts of the building, which are open only at
+fulfilled. Similarly, orientation information is obviously encoded certain times of the day, and which are therefore not well captured
+at the basic level (through directional relations). As buildings by our proposed model. One solution would be to add a temporal
+have a finite number of rooms, corridors etc., the number of nodes parameter to connectional relations. Alternatively, the whole
+and relations in any model will also be limited, and thus model could be made dynamic (i.e. by introducing time slices).
+computationally manageable.
+6. CONCLUSIONS
+Domain-specific requirements. We identified three requirements
+In this paper we have described a set of requirements for a
+in this area: the need for 3D/2.5D, representation of spatial/logical
+location model to support navigation in indoor environments
+grouping and compatibility with architectural/floor plans.
+containing an infrastructure of digital displays. Such environments
+Through the <on-top-of> and <below> relations, our model
+frequently are relatively complex and difficult to navigate for
+supports a basic notion of 2.5D. The mereological relation allows
+visitors. Our investigation of requirements and constraints
+for the definition of partitions and groups (thus fulfilling the
+applicable to a location model for indoor navigation has been
+second requirement). Finally, as stated above and as
+evaluated in the context of a deployed public display network
+demonstrated in Figure 2, the model is well integrated with
+(Hermes II).
+architectural/floor plans.
+In the near future we plan to implement a location model based on
+Technological constraints. A key requirement in this area is the
+the considerations reported here and to test it by means of an
+ability to cope with positional information of lower
+actual deployment. We would also like to explore the implications
+quality/granularity. Since our location model mainly operates on
+of combining such an indoor location model with an outdoor
+the level of rooms rather than Euclidean coordinates, it is well
+location model and to investigate the link to display content
+suited to work with any sensing technology that can resolve a
+generation. In addition, future work will include analyzing the
+user’s location at this level. In particular, this includes readily
+temporal dimension that needs consideration when populating
+available and cost efficient technologies such as Bluetooth, NFC
+location models, for example, how to handle in a dynamic and
+or RFID, which are (or shortly will be) included in a large number
+flexible way changes to the available display infrastructure.
+of mobile devices.
+Deployment issues. Applying the location model described in 7. ACKNOWLEDGMENTS
+section 4 to the Hermes II deployment and investigating its use for This work is partially funded by the EPSRC CASIDE project
+navigation support through mobile devices and public displays (grant ref: EP/C005589).
+reveals a number of benefits and drawbacks.
+8. REFERENCES
+The size of the resulting model compares favorably to the one
+used in the original GAUDI implementation, which relied on Abowd, G. and C. Atkeson and J. Hong and S. Long and R.
+Euclidean coordinates and thus required at least four nodes and Kooper and M. Pinkerton, (1997) “Cyberguide: a mobile context-
+edges to define a rectangular room. The three types of relations aware tour guide”, ACM Wireless Networks, 3, 421-433,
+can also be represented by a simple graph, which allows for the Baus, J. A. Krüger, and W. Wahlster, (2002) ‘A resource-
+easy application of standard routing algorithms such as A*. Only adaptive mobile navigation system’, in Proceedings of the 7th
+those edges representing connectional relations need to be international conference on Intelligent User Interfaces, January
+considered in this case. 13-16, San Francisco, California, USA, 2002.
+Through the use of directional relations it is possible to quickly Becker C. and F. Dürr. (2005) ‘On location models for ubiquitous
+derive route directions for a given route by translating cardinal computing’ Personal and Ubiquitous Computing, 9(1), 20-31,
+directional relations defined within the model into directional 2005.
+relations relative to the route and the user. Public displays are part
+Cheverst, K., D. Fitton, and A. Dix. (2003) “Exploring the
+of the model as well and their visibility and orientation is fully
+Evolution of Office Door Displays”, in: Public and Situated
+specified. This aspect has two key beneficial consequences:
+Displays: Social and Interactional aspects of shared display
+- Displays can serve as landmarks when generating directions technologies. K. O’Hara, M. Perry, et al (Eds). Chapter 6, pp.
+as their location, orientation and visibility can be reasoned 141-169, Kluwer. ISBN 1-4020-1677-8, 2003.
+about within the model. This is particularly advantageous for Harrison, M. C. Kray, and J. Campos. (2008) “Exploring an
+directions conveyed through a mobile device, which usually option space to engineer a ubiquitous computing system”
+have no means to sense the orientation of the user. Electronic Notes on Theoretical Computing Science, 208, 41-55,
+2008.
+- Directions shown on public displays (either as text or via
+arrows) can be generated directly from the orientation Kray, C., K. Cheverst, D. Fitton, C. Sas, J. Patterson, M.
+information embedded in the model. Rouncefield, and C. Stahl, (2006) “Sharing control of dispersed
+situated displays between nomadic and residential users”, in
+We also discovered two issues, which require further
+Proceedings of MobileHCI ’06, pp. 61–68, New York, NY, USA,
+investigation. There are four rooms, which have curved walls
+ACM Press. 2006.
+(reception and three meeting rooms). While the doorKray, C., G. Kortuem, and A. Krüger, (2005) “Adaptive Location- and Context-Awareness (LoCA), LNCS 3987, pp. 74–
+navigation support with public displays”, in Proceedings of IUI 85, Munich, Germany, 2006, Springer-Verlag Berlin Heidelberg.
+2005. ACM Press, New York, NY, 2005.
+Spreitzer, M. and M. Theimer, (1993) “Providing Location
+Satoh. I. (2007) “A location model for smart environments”, Information in a Ubiquitous Computing Environment'', in
+Pervasive and Mobile Computing 3(2), 158-179, (2007). Proceedings. 14th Symposium on Operating System Principles,
+ACM Press, December 1993, pp. 270-283.
+C. Stahl and J. Haupert, (2006) “Taking location modelling to
+new levels: A map modelling toolkit for intelligent
+environments”, in Proceedings of the International Workshop on

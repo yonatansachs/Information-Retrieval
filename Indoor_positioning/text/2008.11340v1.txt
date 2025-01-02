@@ -1,0 +1,501 @@
+Museum Accessibility Through Wi-Fi Indoor
+Positioning
+Antonio Bracco, Federico Grunwald, Agustin Navcevich, Germa´n Capdehourat and Federico Larroca
+Facultad de Ingenier´ıa, Universidad de la Repu´blica
+Montevideo, Uruguay
+{antonio.bracco,federico.grunwald,agustin.navcevich,gcapde,flarroca}@fing.edu.uy
+Abstract—Accessibility has long been a primary concern for by the end of 2017, the MNAV was contemplating replacing
+major museums around the world. This is no exception for the this system with an alternative for a new exhibit to open on
+Museo Nacional de Artes Visuales (MNAV, National Museum of
+November 2018.
+Visual Arts) in Uruguay. Having a special interest in achieving
+With this in mind, the authors were contacted to design,
+accessibility for visually impaired visitors, the MNAV sought to
+implement a new system to allow these visitors a seamless tour deploy and evaluate this alternative, the result of which we
+around a new exhibit. We present here the system we developed discuss in this article. In a nutshell, the solution is based
+and the lessons we learned from its deployment and usage. In around Wi-Fi indoor positioning techniques coupled with an
+particular, we used Wi-Fi indoor positioning techniques, so that
+Android app. The main principle behind this idea is that
+visually impaired visitors could hear relevant audios through
+by using the user’s position, the app can forgo the use of
+an Android app from their own smartphones based on their
+location inside the museum. The system was further adapted interactions with the screen (e.g. through buttons). Moreover,
+andusedtoassistthegeneralpublicduringtheirvisits,allowing being based on Wi-Fi, the system may be used by any
+access to texts, audios and images according to their position. smartphone or similar device. Finally, the focus on Android
+We furthermore share the complete source code and the dataset
+was simply because more than 80% of Uruguayans have this
+used to train the system.
+OS on their phones.
+Index Terms—localization, machine learning, open source
+More in particular, the visitor can walk around the ground
+I. INTRODUCTION floor of the museum and when nearby a specific artwork, the
+corresponding descriptive audio will automatically play as an
+Museums have always looked for new ways to engage
+image of the artwork fills the screen of the phone. Although
+theirvisitors,andinparticularaddressaccessibilityforpeople
+marksonthefloorexisttoguidethevisitor’swalk,theperson
+with disabilities such as visually impaired audiences. Going
+isfreetovisitthemuseumastheyseefit,whichisparticularly
+further than audio guides, diverse solutions have presented
+importantforthosevisuallyimpairedbutnotcompletelyblind.
+themselves as alternatives to making culture more available
+The app was further complemented with a mode designed
+andengaging.Theuseofindoorpositioningsystemshavebeen
+for the general public. In this mode, those artworks closest to
+at the forefront of developing these new systems, allowing
+the user are displayed on the phone. By clicking in one of
+a further interaction between user and their position through
+these artworks, the user may read a descriptive text as well as
+their smartphone. These new technologies have the potential
+listen to a specific audio about the artwork.
+to be game-changing in their approach to granting further
+Our main contribution is sharing some valuable lessons
+accessibility and a better experience for these visitors.
+we learned from this deployment, in particular regarding the
+InUruguay,theMNAV(MuseoNacionaldeArtesVisuales,
+positioning system and its accuracy. As we further present in
+National Museum of Visual Arts) has been specially com-
+the following section, Wi-Fi indoor positioning systems are
+mitted with accessibility. For instance, in 2015 it deployed a
+implemented through Machine Learning (ML) algorithms that
+systemcalled“MuseoAmigo”(FriendlyMuseum),consisting
+learn to map the RSSI (Received Signal Strength Indicator)
+inanumberoftotemsdistributedinfrontofcertainpaintings.
+observed by the device from several APs (Access Points)
+These totems had a 3D version of the painting for the user
+to a particular area inside a building. This is the so-called
+to touch as well as a place to put a tablet, provided by the
+fingerprint-based scheme, first proposed in the seminal pa-
+MNAV staff, which would play a specific audio regarding the
+per by Bahl et al. [1]. Although several other papers have
+painting.
+been published studying this and other indoor positioning
+Thus, visitors needed to use special tablets that had to be
+systems [2]–[4], actual deployments are somewhat scarce.
+asked from the museum’s staff (the system was based on
+The present paper is an effort in this direction, and strives
+near-field communication) and it also required explanations
+at showing that the technology is perfectly apt for public
+and assistance on how it was used. These factors were very
+buildings and massive deployments.
+detrimental to the efforts of making each user independent,
+In what follows, we discuss what level of precision is nec-
+making the solution ineffective at engaging visitors. Thus,
+essary forthe system tobe useful, andwhat it meansin terms
+ThisworkwaspartiallysupportedbyAntel. of number of APs and measurements used to train these ML
+0202
+guA
+62
+]YC.sc[
+1v04311.8002:viXraalgorithms (the biggest costs of any new deployment). Some (SVM), decision trees, random forest, multi-layer perceptron
+unforeseen problems (and their solution) are also discussed, (MLP),AdaBoostandk-nearestneighbors(KNN)[8].Further
+in particular pertaining to 2.4 GHz-only devices. These are discussion and their evaluation are included in Sec. IV.
+all important lessons that we did not find in the literature and Regarding the implementation of the system, the two most
+we believe will be of interest to the rest of the community. prominent open-source alternatives we considered as starting
+Moreover, all of the software and the complete dataset we points are Anyplace [9] and FIND3 [10]. They implement the
+used to train and test the system are shared in our repository mostimportantblocksofanindoorpositioningsystem,which
+https://github.com/ffedee7/posifi mnav. we discuss in the next section. Although they are both valid
+options, we decided to work with FIND3 since we found its
+II. RELATEDWORK
+architecture simpler to modify and more flexible (and it has a
+There have been many different approaches when it comes significantly larger userbase).
+toachievinguniversalaccessibilityformuseums.Somearticles The question that remains is what precision we may obtain
+suchas[5],[6]exploretheproblemfromthedisabledvisitors’ from this Wi-Fi positioning system and at what cost. For
+perspective. We would like to highlight The Andy Warhol instance, how many APs are necessary to install or how many
+Museum, which has developed the Out Loud app [7]. This is measurements should be taken in order to obtain a reasonable
+aninclusiveaudioguide,whichconsidersdifferentdisabilities. precision are important factors to consider in any deployment
+In the particular case of blind or low-vision visitors, the of such system, and which the available literature does not
+app uses an indoor positioning system based on bluetooth discuss. Before presenting these issues in Sec. IV, we briefly
+low-energy (BLE) beacons to play audios based on visitor’s present our implementation.
+location.Particularlyinterestingisthefactthatitiscompletely
+III. ACCESSIBILITYSOLUTIONDESIGN
+free and the code is available at their repository.
+However,theOutLoudapppresentssomeimportantdisad- A. On-site design
+vantages. Firstly, it is developed for iOS, which restricts the Naturally, the more APs are present in the premises, the
+possibleaudience.AswediscussedinSec.I,thepossibilityfor better the resulting system’s precision will be. In particular,
+thevisitorstobringtheirowndevicewasarequirementbased the device should “see” as many APs as possible in all
+on the museum’s previous experience. Moreover, as the name areas of interest. It is important to note that a signal level
+suggests, these BLE beacons are simply bluetooth emitters just above visibility is enough; i.e. APs are not required to
+with very low power. A phone with bluetooth enabled may provide connectivity, which typically required an RSSI above
+then use this signal as an indication that it is near a certain -65/-70dBm, but a level above the sensitivity of the devices,
+artwork. The most important disadvantage of this positioning typically -90dBm, is enough.
+system is that several such beacons have to be bought and Inourparticularcase,practicallyspeakingtheinfrastructure
+deployed(roughlyoneperartwork).Althoughthepriceofthis was non-existent, so the Wi-Fi network had to be designed
+hardware is not very high, for museums on a tight budget the and installed from scratch. Since we wanted to evaluate how
+best strategy would be to re-use their existing infrastructure: many APs were actually necessary, we took the conservative
+Wi-Fi. decision to design the system such that in every point of the
+Although Wi-Fi was not designed for positioning, the APs museum at least 5 APs were visible (more about this topic in
+locationisfixedandtheyperiodicallybroadcastbeaconframes Sec. IV-C). If the infrastructure is already present, then a site
+from which the AP may be identified (by means of its MAC surveyisnecessarytoverifythiscondition,andcheckifmore
+address). Since the received power (or RSSI) of this beacons APs are necessary (and where).
+depends on the receiver’s position, the measurements from Through a Wi-Fi network design tool, and after some
+several APs may be used to estimate this position [2]–[4]. iterations with the museum’s authorities, the final disposition
+Although trilateration seems at first as a valid approach to includes 15 APs. Figure 1 shows the museum’s map (two
+this problem, indoor propagation may be extremely complex, floors, amounting to about 5000square meters in total) along
+resultinginunpredictablerelationsbetweendistanceandRSSI. with the AP’s final positions (marked as red cirles). In this
+An alternative is to divide the building into areas (such case, where APs are under our control, both frequency and
+as rooms, or zones around artworks) and train an ML al- power were fixed so that the RSSI measured by the devices
+gorithm to learn to map RSSI readings from available APs does not change due to dynamic configurations.
+to the corresponding area; i.e. transform the problem into The next step is to choose what areas will be used for
+a classification one. This is the fingerprinting approach to positioning. The final areas chosen in our case and their
+Wi-Fi indoor positioning [1]. The deployment has thus two numberingarealsoshowninFig.1.Theyshouldbeassociated
+stages. First an offline phase where RSSI measurements are with certain artworks, but not too small so as to compromise
+obtained for all areas and the ML algorithm is trained. Then precision. Moreover, actual physical barriers between areas
+an online one where the actual positioning takes place, and (e.g. walls) naturally help to distinguish among them. For
+the RSSI measurements obtained by the user are fed to the instance,aswediscussinSec.IV-A,areasnumbered6,7and
+trained algorithms. In our final system, we used an ensemble 8 were the most challenging ones, mostly due to the absence
+of six machine learning algorithms: support vector machine of these physical separations. Each of these areas include onethe content. Regarding positioning, the app periodically sends
+tothebackendtheRSSIofalltheAPsitsenses(onceasecond
+bydefault).Theestimatedlocationisreturnedtotheuser,and
+thefrontenddecideswhethertoupdatethecurrentareaornot.
+In order to avoid constant changes between areas, we found
+that a simple rule worked: if the estimated location is three
+consecutive times the same (and different from the current
+one), then the front end updates the current area.
+Recall that the application had two modes, depending on
+the user: general public and visually impaired. In the general
+public mode it will show one image of each artwork in
+this new location, and when the user clicks it, it shows
+an extended screen with more information: text, image and
+audio. The mode intended for the visually impaired visitors
+requires almost no interactions. At first the app will play an
+introductoryaudioandthenitwillautomaticallyplayaudiosas
+the visitor walks among areas. The user can tour the museum
+as desired and the audios will not reproduce more than one
+time per session.
+An additional and important tool was developed which we
+highlight here. In order to upload text, images and audios of
+the artworks to the system a dashboard was created, so the
+museum staff could do changes by themselves. It is a very
+simple dashboard where artworks may be created and it is
+possibletouploadmediaaboutit.Eachartworkisassignedto
+an area of the positioning system, although an artwork may
+be mapped to more than one area. After creating an artwork
+in the dashboard, it will be shown in the Android app when
+a user is on the area that was assigned to it. Although it may
+appear almost elementary, it was a key addition to the system
+in terms of usability.
+C. AWS Deployment Details
+Fig.1. Thechosenlocationareasandtheirnumbering(thelowerfloorbelow).
+Figure 2 shows the detailed implementation of the system
+Notethatzone16isoutsidethebuilding.RedcirclescorrespondtoAPs.Only
+areasopenthegeneralpublicareshown. in AWS. The three main use cases are depicted in the
+flowchart. First, the device localization, which corresponds to
+the standard situation where a user device sends the RSSI
+of the artworks in the tour for the visually impaired visitors measurementsoftheAPsintheareaandthesystemestimates
+(on the lower floor only) the device location. Then, we have the fingerprints collection
+process, for which a particular Android app was developped
+B. System’s architecture
+in order to take the training RSSI measurements and upload
+The proposed system architecture consists of two main them to the system. Finally, we have the training of the
+parts:abackend,whichisresponsiblefortheindoorlocation, ML model, which is only done when new fingerprints are
+and a front end, that interacts with the user. The back end collected. We next briefly describe each of the AWS system
+is on the cloud (in our particular case at Amazon Web architecture components, and highlight the main differences
+Services, AWS) although it may be hosted in any server, with the FIND3 vanilla system.
+and is responsible for the training and execution of the ML Main Server: The main server is hosted on a docker con-
+algorithmsandhoststhreedatabases:oneforthetrainingdata, tainer in a EC2 instance (Amazon Elastic Compute Cloud) of
+another one for the multimedia files and a final one of the typeT2andmediumsize(2vCPUs,2.3GHz,IntelBroadwell
+user’sestimatedpositions.Thelattermaybeusedforanalytics E5-2686v4, 4 GB RAM). The main server is in charge of
+on the visitors’ habits (hours of visit, popular artworks, etc.). receivingallthebackendrequests,processthemandsendthem
+Several important modifications to FIND3 where included in totheMLserverifnecessary.Ithasdirectcommunicationwith
+the final version. See the following subsection for details. the database, the ML server and the ML storage.
+The front end part of the system is an Android application. Important changes were introduced here with respect to
+A lot of interdisciplinary work was needed to create the the original FIND3, in particular regarding the communica-
+application,regardingaspectsrangingfromthecolorpaletteto tion with the database, which was originally implemented inMedia area where the device is located based on a set of RSSI
+Storage values measured at the device. For this purpose, different
+standard classification algorithms were used, which were then
+Information Database combinedtobuildameta-learnerusingtheYoudenindex[12],
+Server
+as explained next.
+ML
+Storage First, data is divided into training, validation and test sets.
+T2
+The classic data partition of 70%, 20% and 10% respectively
+Main
+Server was chosen. After training, for each location y and each
+ML
+algorithm ω the Youden index J(ω,y), also known as the
+Server
+Device
+T2 informedness statistic and which is equal to
+Localization T2
+J(ω,y)=sensitivity(ω,y)+specificity(ω,y)−1, (1)
+Fingerprints
+Collection ML Model is computed using the validation data, where
+(Re)Training
+True Positives
+Sensitivity = , (2)
+Fig.2. Backend’sarchitecture. True Positives+False Negatives
+True Negatives
+Specificity = . (3)
+True Negatives+False Positives
+SQLite [11]. As we intended the system to scale with several
+GivenanewRSSImeasurementx,eachalgorithmprovides
+users accessing the database simultaneously, we implemented
+a probability P (y|x) for each location y. These probabilities
+a separate entity, discussed below. ω
+are then weighted with the Youden index J(ω,y) to obtain a
+ML Server: The ML server is responsible for the training
+total score Q (x) that is assigned to each location y:
+and classification of the different algorithms, each time it is y
+requested by the main server. It only receives requests from N
+(cid:88)
+the main server and also makes use of the ML storage. Q y(x)= J(ω,y)P ω(y|x). (4)
+Information Server: A different EC2 was used for the ω=1
+information server (type T2 micro, with 1 vCPU, 2.5 GHz, The location with the highest score is the output of the meta-
+Intel Xeon Family, 1 GB RAM). It provides the artwork learner.
+information(text,audioandimages)forthedifferentmuseum Asmentionedbefore,sixmachinelearningalgorithmswere
+zones. In the database the different artworks are registered used: SVM, decision trees, random forest, MLP, AdaBoost
+with their corresponding text description and the URLs to the and KNN. All of them are included in the scikit-learn python
+images and audio files. This component is new with respect library [13] used in the FIND3-based system developed. This
+to FIND3 and is accessed by the Android app. a subset from all the algorithms included in the original
+Database: The RDS Database (Amazon Relational FIND3 implementation. We decided to discard some of them
+Database Service) is an AWS service for relational databases, because they did not improve the performance and introduced
+similar to EC2. In this case it is used for the implementation unnecessary additional computational costs. In any case, this
+of the main database of the system. As we mentioned before, combination strategy proved very beneficial, as none of the
+this is a new entity with respect to the original FIND3, and it algorithms alone obtained better results than the combination.
+assumes the database functionalities that are included in the To measure the system’s performance, we used two metrics
+Main Server in the original FIND3. For instance, it stores the computed with the remaining test set. Firstly, the accuracy of
+labeled fingerprints, prediction results and information about the system, defined as the ratio of measurements that were
+the different zones. correctly classified. Secondly, the confusion matrix, whose
+ML Storage: It is an S3 bucket (Simple Storage Service) value in the position i,j represents the ratio of data points
+which provides an API for fast, flexible and scalable storage corresponding to location i that were classified in location j.
+for all the ML server data. The state of the algorithms of the Results shown here correspond to the average after executing
+ML model is stored here, as well as a CSV file that contains the system predictions 10 times. On each execution the data
+the data with which the model was trained. This is another is randomly splitted in the different sets (training, testing and
+new element with respect to FIND3. validation).
+Media Storage: Another S3 bucket to store all the media In the rest of this section, we present the different perfor-
+content, such as images and audios for the different artworks. mance evaluations carried out. As we will see, each result is
+This element was not present either in the original FIND3 associated with a lesson learned, which we believe will be
+implementation. useful for future deployments and similar projects.
+IV. LOCALIZATIONPERFORMANCEEVALUATION A. Lesson learned #1: the accuracy should be above 90%
+Asdiscussedbefore,thepositioningproblemaddressedcan Duringthesystemsetup,around20,000RSSImeasurements
+be considered as a classification one. With the RSSI-based (fingerprints) were collected in the museum, which was di-
+approach, the goal is to estimate which is the most probable vided in the 16 different locations defined on the exhibitionFig.3. Confusionmatrixforthesystemtrainedwithdatafrombothfrequency Fig.4. Confusionmatrixforthesystemtrainedwithdatafromthe2.4GHz
+bands. Values different from zero are highlighted (best viewed in a color bandonly.Valuesdifferentfromzeroarehighlighted(bestviewedinacolor
+display) display)
+map (cf. Fig. 1). The number of measurements per location the classifiers should be used for the location estimation.
+was not uniformly distributed, ranging from 800 to 1500, as Each of the RSSI measurements included in the fingerprints
+moremeasurementsweretakeninthemostdifficultareas(e.g. are associated with the corresponding MAC address of each
+openspaceswithnotclearroomsseparations).Pleasenotethat AP radio. Then, it is possible to filter the data according to
+inthiscaseeachRSSImeasurementhaslength30,aswehave the MAC addresses, in order to select only those radios that
+15dual-bandAPsoperatinginbothfrequencybands(2.4GHz correspond to the 2.4GHz band.
+and 5 GHz); i.e. we have 2 measurements per AP. Removing the MACs of the radios belonging to the 5GHz
+The resulting overall accuracy was 96.0%, whereas Fig. 3 band, it was possible to train a new classifier and test the
+shows the corresponding confusion matrix. It is worth noting correspondingperformancefora2.4GHz-onlycapabledevice.
+that the values in the diagonal are almost all near 100%. In this case, the average accuracy for the validation set was
+However, there are a couple of locations which have average 90.7%. In Figure 4 we can see the corresponding confusion
+values below 90%, which were the two more problematic matrix, which again shows a good performance for most of
+museum areas. If we look at locations 6, 7 and 8, we can thelocations,withthevastmajorityoftheclassificationslying
+see some significant confusion in those areas. In practice, on the matrix diagonal. We can notice again some problems
+those zones were close to each other, so it did not generate at locations 6, 7 and 8, where most of the confusions occur.
+major problems concerning the user’s experience. However,
+Concerning the system deployment, the proposed solution
+the lesson learned from this test indicates that a minimum
+was implemented by restructuring the framework code. As
+accuracy of 90% should be ensured to have an appropriate
+previously mentioned, for each location estimation the system
+performance in the field.
+decides if the device is 2.4GHz only based on the RSSI
+measurements. If it has measurements for both frequency
+B. Lesson learned #2: 2.4GHz-only devices should be treated
+bands one classifier is used, and if it only has measurements
+separately
+for the 2.4GHz band the other one is applied. The additional
+One of the first problems we faced when testing the system
+computationalcosts anddelay fortheestimation isnegligible.
+at the museum was related to the 2.4GHz-only capable smart-
+Thiswayweobtainedagoodsolutiontotheproblem,achiev-
+phones,forwhichtheperformancewasquitebad.Theproblem
+ing a similar behavior in terms of performance for dual band
+was that the system did not take into account the user’s
+and 2.4GHz-only capable devices.
+device. Although certain differences in RSSI measurements
+among devices are expected, but are very difficult to consider
+C. Lesson learned #3: each location should be covered by at
+(except by constructing a rich training set), the total absence
+least 3 APs
+of 5GHz RSSI measurements is indicative of a 2.4GHz-only
+device.Thiscausedthatthesystem,trainedwithmeasurements Next, we will analyze how the number of APs affects
+collected with dual band devices, had a very bad performance the system’s performance. This study is of great importance
+for devices that are only able to measure in the 2.4GHz band. in terms of cost, bearing in mind that the purchase and
+To solve this issue, we decided to train and use another installation of the APs (if necessary) is perhaps the most
+classifier for 2.4GHz-only capable devices. The system iden- expensive aspect for the system deployment. On the other
+tifies if the device is dual band or not, just considering the hand, there is a clear relationship between the number of
+RSSI measurements received, and then it decides which of APs and the accuracy of the system. So, we discuss now how)%(
+ycaruccA
+metsyS
+egarevA
+95.2
+95.0
+94.8
+94.6
+94.4
+94.2
+94.0
+10 11 12 13 14 15
+Number of APs
+Fig. 5. Average system accuracy for the different number of APs. The
+boxplotscorrespondtothetenperformanceevaluations.
+many APs are actually needed to achieve a reasonable system
+performance.
+For this purpose, we follow the same system evaluation
+procedure described above, but varying the number of APs.
+TodiscardAPsweproceededwiththecriterionofeliminating
+the most redundants in signal coverage first. This way, it is
+possible to emulate the scenario where the installation was
+initiallyplannedwithasmallernumberofAPs.Inpractice,the
+data for each AP was removed by simply taking into account
+the corresponding MAC address of its radios and filtering the
+data from the RSSI fingerprints.
+Figure 5 shows the average system accuracy for the dif-
+ferent number of APs. For each case, we have ten different
+performanceevaluationresults,sothequantiles25%and75%,
+andtheminimumandmaximumvaluesarealsoindicated.For
+the worst case analyzed we have an average system accuracy
+of 94.5%, which corresponds to the case of a deployment
+with 10 APs. Most importantly, analyzing the fingerprints, we
+have verified that it corresponds to having coverage from at
+least three different APs at each location. This amounts to six
+measurements (since each AP is dual-band) per location, and
+it is a very important rule-of-thumb for future deployments.
+D. Lesson learned #4: the minimum number of fingerprints
+collected for each location should be 500
+Considering the deployment costs, the process of collecting
+all the fingerprints at each location is another important issue
+in terms of the working hours. For example, the application
+we designed and used to collect fingerprints gathers a new
+measurement every 2 seconds. This means roughly 12 hours
+to collect the 20,000 fingerprints, without counting some
+iterations that were necessary to reinforce certain zones. As
+in the previous case of the number of APs, there is a clear
+relationship between the number of fingerprints for each
+locationandthecorrespondingsystemperformance[3].Thus,
+in this section we analyze which is the minimum number of
+fingerprintsneededtoreachareasonablesystemperformance.
+)%(
+ycaruccA
+metsyS
+egarevA
+96
+95
+94
+93
+92
+91
+90
+89
+30 40 50 60 70 80 90 100
+Fingerprints sample size (%)
+Fig.6. Averagesystemaccuracyforthedifferentnumberoffingerprints.The
+boxplotscorrespondtothetenperformanceevaluations.
+For this analysis, the average accuracy of the system was
+calculated for different number of fingerprints. Starting from
+the complete set of 20,000 fingerprints, random subsamples
+were applied in order to obtain fingerprints sets of different
+sizes, ranging from 30% to 100% of all the measurements. In
+ordertoapplythesubsampling,thefollowingrulesweretaken
+into account:
+• The proportion of fingerprints for each location is the
+same, and it is equal to the corresponding percentage
+sampled from the total number of fingerprints. This way,
+all the locations keep the same ratio of fingerprints that
+they have in the complete fingerprints dataset.
+• The selected fingerprints are chosen randomly for each
+performance evaluation test.
+• Due to the random nature affecting the choice of the
+subsets of fingerprints, the accuracy computation is cal-
+culated over 10 choices.
+InFigure6wecanseethesystemaccuracyasthenumberof
+fingerprints varies, which shows a clear tendency to decrease
+as the number of fingerprints considered is lower. In the
+same way as in the previous analysis for the number of APs,
+we look for an appropriate minimum number of fingerprints
+to ensure a good system performance. Considering that the
+average accuracy should be above 90%, looking at the curve
+it indicates that at least 40% of the fingerprints are required
+(roughly7,000fingerprints),forthe16locationsdefinedatthe
+museum. Recalling that the number of fingerprints measured
+by location varied from 800 to 1,500, we can conclude that a
+minimumof500fingerprintsperlocationshouldbeconsidered
+as a general rule for similar deployments.
+V. CONCLUSIONSANDFUTUREWORK
+Asolutionwasdesignedandimplementedtoenablevisually
+impaired visitors to have a better user experience on their
+tour through an art museum, in this case the MNAV in
+Uruguay.Thesystemandapplicationdeveloped,basedonWi-
+Fi indoor positioning techniques, proved to be a successfulsolution [14], [15], achieving good performance to provide [2] P. Davidson and R. Pich, “A survey of selected indoor positioning
+users an interactive experience on their visit to the museum methods for smartphones,” IEEE Communications Surveys Tutorials,
+vol.19,no.2,pp.1347–1370,Secondquarter2017.
+exhibit. All the software developed and the complete dataset,
+[3] F.Zafari,A.Gkelias,andK.K.Leung,“Asurveyofindoorlocalization
+are publicly available in our repository https://github.com/ systems and technologies,” IEEE Communications Surveys Tutorials,
+ffedee7/posifi mnav. vol.21,no.3,pp.2568–2599,thirdquarter2019.
+[4] C.BasriandA.ElKhadimi,“Surveyonindoorlocalizationsystemand
+Although Wi-Fi based positioning has accumulated several
+recentadvancesofwififingerprintingtechnique,”inICMCS2016,Sep.
+years of research and an important literature is available (see 2016,pp.253–259.
+for instance the very recent survey [3]), its usage is still not [5] E. Lisney, J. P. Bowen, K. Hearn, and M. Zedda, “Museums and
+technology: Being inclusive helps accessibility for all,” Curator: The
+very extended, with few institutions using solutions based
+MuseumJournal,vol.56,no.3,pp.353–361,2013.
+on them around the world. Our work’s main contribution is [6] B.Ginley,“Museums:Awholenewworldforvisuallyimpairedpeople,”
+precisely in this direction: showing that these technologies DisabilityStudiesQuarterly,vol.33,no.3,2013.
+[7] Out Loud App development team, “The warhol: Out loud app,” 2018.
+already have the maturity necessary for massive deployments.
+[Online].Available:https://github.com/CMP-Studio/TheWarholOutLoud
+We evaluated a system based on the most popular open- [8] T. Hastie, R. Tibshirani, and J. Friedman, “The elements of statistical
+source indoor positioning framework [10] and share with the learning: data mining, inference, and prediction, springer series in
+statistics,”2009.
+community important lessons we have learned in the process
+[9] AnyPlace Development Team, “A free and open indoor navigation
+that will prove useful for future deployments. service with superb accuracy!” 2019. [Online]. Available: https:
+In particular, the localization performance evaluation and //anyplace.cs.ucy.ac.cy/
+[10] FIND3 Development Team, “Framework for internal nav-
+the user experience we have surveyed has shown that the
+igation and discovery (find),” 2019. [Online]. Available:
+averageaccuracyshouldbeabove90%toprovideasuccessful https://www.internalpositioning.com/doc/
+user experience. In addition, the trade-off between the system [11] SQLite Consortium, “Sqlite,” 2020. [Online]. Available: https://www.
+sqlite.org/index.html
+performance, the number of APs and the number of training
+[12] W.J.Youden,“Indexforratingdiagnostictests,”Cancer,vol.3,no.1,
+measurements were analyzed, being both factors strong influ- pp.32–35,1950.
+ences in the deployment costs. The results show that ensuring [13] scikit-learn developement team, “scikit-learn: Machine Learning in
+Python,”2019.[Online].Available:https://scikit-learn.org/stable/
+the coverage of 3 APs everywhere in the building, and taking
+[14] Stephanie Galliazzi. Por primera vez un museo uruguayo tendra´ una
+approximately500trainingmeasurementsperlocation,should app que funciona como audiogu´ıa para los visitantes. El Observador.
+be enough to have a good performance in most cases. [Online]. Available: https://www.elobservador.com.uy/nota/por-
+primera-vez-un-museo-uruguayo-tendra-una-app-que-funciona-como-
+Analyzing possible extensions to the system, it is clear
+audioguia-2018116163444
+that the use of alternatives such as BLE could be useful, in [15] Ministerio de Disen˜o. La innovacio´n en experiencias muse´ısticas
+particulartoimprovethespatialgranularityofthelocalization. de la mano de ingenier´ıa, tecnolog´ıa y arte. [Online]. Avail-
+able: http://www.ministeriodediseo.com/actualidad/la-innovacion-en-
+The indoor positioning based on Wi-Fi measurements has
+experiencias-museisticas-de-la-mano-de-ingenieria-tecnologia-y-arte/
+limited capabilities, only enabling to identify the room or a
+broad area where the device is located. In this sense, BLE
+beacons present advantages when a high density of beacons
+is deployed. Combining BLE with the Wi-Fi based solution
+willimprovetheperformanceovershortdistances.Thiswould
+allow for example to display content when the user is exactly
+in front of an artwork. In fact, our system may integrate
+BLE measurements if present, and we are currently starting
+to experiment with this technology as a complement to the
+present deployment.
+Anotherpossibilitywouldbetousesomeoftheseveralsen-
+sors that are commonly integrated nowadays in most end user
+devices. For example, the accelerometer and the gyroscope
+couldalsobeusefultoimprovethelocalization.Theycanalso
+be helpful to identify for example where the user is looking
+at. For this purpose the camera could also be useful, also
+allowing the artworks’ recognition with a suitable previously
+trained algorithm. A problem with most of these sensors is
+that they are typically not very accurate and there is a huge
+variability among different devices, so the integration could
+be quite challenging.
+REFERENCES
+[1] P. Bahl and V. N. Padmanabhan, “Radar: an in-building rf-based user
+locationandtrackingsystem,”inIEEEINFOCOM2000,vol.2,March
+2000,pp.775–784vol.2.

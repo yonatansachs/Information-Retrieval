@@ -1,0 +1,472 @@
+2010INTERNATIONALCONFERENCEONINDOORPOSITIONINGANDINDOORNAVIGATION(IPIN),15-17SEPTEMBER2010,ZU¨RICH,SWITZERLAND
+Indoor Navigation Approach Based on Approximate
+Positions
+Ory Chowaw-Liebman*, Uta Christoph*, Karl-Heinz Krempels** and Christoph Terwelp**
+*RWTH Aachen, Informatik 4, Aachen, Germany.Email: {ory.chowaw-liebman,uta.christoph}@rwth-aachen.de
+**RWTH Aachen, Informatik 5, Aachen, Germany. Email: {karl-heinz.krempels,christoph.terwelp}@rwth-aachen.de
+Abstract—Until now navigation aids have primarily focused the system is the Map, described in Section IV, which also
+on outdoor scenarios, whether driving on highways or, more specifieshowtheMapisgeneratedfromuserinput.SectionV
+recently, walking through cities. These systems use the Global
+summarizes the text generation method used by the prototype
+Positioning System (GPS) for position information. Indoor nav-
+to generate natural language instructions for routes. Finally,
+igation however cannot rely on GPS data, as the signals do
+not penetrate building structure. Thus other techniques were Section VI concludes this paper and shows some directions
+developed to provide position information indoors, but most of for future work.
+them lack the precision of GPS. In this article the approach
+of an indoor navigation system based on imprecise position II. STATEOFTHEART
+information is presented. To compensate the deficit of precision This section briefly reviews previous work on indoor posi-
+the position information is combined with a movement model.
+tioningandnaturallanguagegenerationasbasisforourindoor
+Thismovementmodelisautomaticallygeneratedfromthemaps
+navigation approach.
+which are already required for navigation.
+A. Fingerprinting
+I. INTRODUCTION
+Fingerprinting [Ohlbach et al., 2006] is an indoor position-
+Tools for navigational assistance have become an essential
+ing method based on wireless networks. The main goal of
+elementintoday’stravelingsociety.Interactivesoftware,avail-
+the Fingerprinting project is to provide precise position infor-
+able for mobile phones, is capable of guiding users who are
+mation. The approach is basically a pattern matching of the
+driving cars, riding bicycles or walking. Until now such tools
+received signal strengths (RSS) for all APs at a position. The
+have focused on outdoor environments and are hence based
+RSSattheuser’scurrentpositionarematchedtoadatabaseof
+on the precise data of the Global Positioning System (GPS)
+RSSmeasurementsatknownlocations,thefingerprints.When
+to determine the current position of the device, and thus the
+combinedwithusertrackinganda”noteleporting”policy,the
+user. But indoor navigation bears several challenges.
+achieved precision is reported to be approximately 1 meter.
+First, GPS positioning information cannot be used for
+However, the fingerprints are a static representation of a
+indoor scenarios since GPS radio signals do not propagate
+position, which do not adapt to dynamic fluctuations of the
+into buildings.
+RSS, which can be caused by e.g. moving people or changing
+Second,withinbuildingsnavigationdoesnotrelyonstreets
+weather. The database of fingerprints is also a prerequisite for
+or footpaths but on traversable areas and certain connections
+positioning,apotentiallylargedatasetwhichhastobefitinto
+between such, e.g. corridors, rooms, staircases and elevators.
+a mobile devices memory.
+Thus such areas and also the altitude of the user, i.e. the floor
+he is currently standing on, and possible connections to other B. Device Whispering
+floors have to be considered.
+The Device Whispering technique is also an indoor posi-
+Third,thedescriptionofapathneedstobeintuitivelyunder-
+tioning approach based on wireless network infrastructures.
+standable for humans instead of precise distance instructions
+The main idea is to reduce the number of access points (APs)
+as they are used in cars or other devices with odometers.
+considered for position estimation to those that are closest in
+Thefirstissue,apositioningtechniqueforindoorscenarios,
+range. This is achieved by controlling the transmitting power
+wasaddressedamongothersin[Wallbaum and Spaniol, 2006]
+of the WLAN interface: The device is set to minimum power
+and in [Krempels and Krebs, 2008]. The third issue
+before performing an active network scan. The closest AP is
+on intuitive navigational instructions is considered
+defined as the one answering to the request with the lowest
+for outdoor environments in [Dale et al., 2003].
+transmission power used, which is the minimum information
+Section II gives a more detailed overview. Based
+possible.
+on this current state of the art a prototype indoor
+APscanbetaggedwithgeopgraphicalpositioninformation,
+navigation system was developed and implemented as
+andifmultipleAPsareavailablethesetagscanbeusedtoap-
+a software client for a mobile device with WLAN inter-
+proximate the current position of the user more precisely than
+face[Chowaw-Liebman et al., 2009],[Chowaw-Liebman, 2009],
+just assigning the closest AP. Various caveats are discussed
+which is described in Section III. Central data structure of
+in [Patzak, 2009] [Krempels et al., 2009], but our approach
+978-1-4244-5864-6/10$26.00(cid:13)c IEEE only assumes knowledge of the closest AP. The whisperingmethod is also robust against signal multi-path propagation
+and power oscillations or automated adaption of transmitting
+power in APs.
+The method’s lack of precision makes it necessary to use a
+novel naviation approach, as current solutions assume precise
+information. This paper describes an approach specifically
+designed for use with the Device Whispering technique.
+C. CORAL
+The CORAL system [Dale et al., 2003] is a natural lan-
+guage instruction generator designed to enhance existing out- Fig.1. Componentsofthenavigationsystem.
+door navigation tools, accepting route description in standard
+formats. In addition, CORAL is dependent on a geographic
+navigation information available to the client software. The
+information system (GIS) for additional data about the geog-
+dashed parts, representing the use of a local server are not
+raphy traversed by the route. The GIS is required to provide
+implemented by the prototype implementation. In a commer-
+landmarks(liketrafficlights,churchesandothereasilyvisible
+cial system this server would be responsible for providing
+objects) with which the text decription is augmented.
+information to visitors of the location, most important the
+Coral achieves highly readable instructions (see cited refer-
+Map,aswellaslocationspecificservicesandcontextsensitive
+ence for an example), much of which is due to an exhaustive
+information and commands (CSCI). See [Schilit et al., 1994]
+statespacesearchtogeneratesentences.Suchcomputationally
+for further information on these features.
+intensive methods are likely to be too slow on mobile devices
+In our decentralized approach every location is responsible
+for a satisfactory user experience.
+for providing the information locally, for instance by using
+III. PROTOTYPENAVIGATIONSYSTEM the local WLAN infrastructure which can be assumed to be
+available since it is used by the whispering technique for
+Any navigation system must convey the route to the user,
+localization. Thus, it is not required to establish a network
+typically using a combination of graphical map (with high-
+link to the user’s mobile provider to equip the mobile devices
+lighted path) and textual instructions. Information about the
+withup-to-dateMaps.Theprototypeimplementationhowever
+local geometry is of course required to compute paths. In
+provides the Map through a data file saved on the mobile
+indoor scenarios it is especially important to ensure that
+device.
+generated routes do not pass through walls or go outside of
+The Map is generated by a preprocessor, which provides
+thebuilding.Thelattercaseoccursforinstancewhenignoring
+a GUI to create and maintain the Map data structure. The
+a corner.
+”Admin”inFigure1isthepersonresponsibleformaintaining
+A convenient way to provide route information to users
+a location’s Map, by providing the data which is needed
+are natural language instructions (NLI), which offer rich and
+by the preprocessor. In the Map data structure locations are
+flexible means of describing paths. Such descriptions can
+geometrically described by polygons, inside which the APs
+alsobefollowedwithoutpositioninginformation,forexample
+and landmarks are positioned. Section IV describes how this
+cars are equipped with odometers, thus instructions of the
+input data is converted to a location representation based on
+form “turn after 300 meters” are easier to follow than for a
+hierarchical graphs. This conversion allows for an efficient
+pedestrian. Further, NLI can describe paths inside a “sector”,
+use of the location data which is of particular importance
+which represents an area inside which positioning is possibly
+for mobile clients. The Map is made available to the client
+impossible due to the approximate nature of the whispering
+softwarewhichisresponsibleforallinteractionsofthesystem
+approach. This is described more precisely in Section IV.
+with the actual end users.
+NLI, when created by people, are heavily based on land-
+The client software is supposed to run on mobile devices,
+marks. Landmarks are distinctive features of the local geogra-
+which do not have the computational power and memory
+phy,e.g.churches,malls,fountainsandtrafficlightsoutdoors,
+available to notebooks or desktop computers. Therefore, a
+and specific shops, fountains and staircases indoors. To that
+preprocessor was developed to perform the computationally
+effect landmarks are also used by the CORAL system in its
+intensive tasks beforehand. The client is left with the tasks
+description of (outdoor) routes.
+of computing routes in the provided Map, communicating
+One important distinction of indoor scenarios are different
+these routes to the user both graphically and verbally perform
+floors in a building, which add a third dimension to the geog-
+positioning.
+raphyofalocation.Landmarkscanalsorepresentconnections
+between floors, e.g. stairs and elevators, which cannot be
+IV. MAP
+displayed at all in a purely two dimensional map. This is the
+approach taken by the Map data structure of our system. The Map data structure is the central element of the system
+This prototype system is shown conceptually in Figure 1, it which encodes all known information about a location. The
+is centered around the ”Map” data structure, which makes all two main goals of the data structure are adaptation to the im-precise position returned by the Device Whispering technique In any case, start and goal nodes on te skeleton level have
+and support of the generation of NLI. to be found (from there the hierarchy can be traversed to the
+Both landmarks and geometry, can be assigned descriptive coarser levels). The starting node is chosen to be the skeleton
+”features”, which provide nouns to describe elements of the nodeclosesttotheusersposition.Todeterminethegoalnode,
+location. The prototype implementation uses a small ontology the skeleton edge closest to the goal landmark is considered:
+including words like ”corridor”, ”room”, ”elevator” and so on fromthetwonodesterminatingtheedge,theonefartheraway
+forobjectsandspecificpartsoflocationstypicallyencountered from the user’s position is used to ensure the edge under
+within (public) buildings. These features are used during text consideration is part of the route.
+generation to assign nouns, verbs and in some languages arti- The prototype imlementeation selects the node with the
+cles1, so that these landmarks and polygons can be described greater euclidean distance to the current position, ignoring
+in the generated text describing a route. the geography. This worked well for the test Map, which
+represented Terminal 1 of the Cologne/Bonn Airport. Another
+A. Data structure
+optionistojusttakeanyofthetwonodes,andaddtheedgeto
+The Map is basically represented by a hierarchical graph, the route if the wrong node was selected. The latter approach
+where nodes can contain a sub-graph. Our Map uses a hi- may be more stable for some geometries.
+erarchy of four levels summarized in Table I. For indoor The Device Whispering technique defines a mapping
+navigation, ”Building” is an intuitive title for the root node, from points in space to the closest AP. This prob-
+which contains floors. The child nodes of the floors represent lem2 has been studied in various fields under various
+thetraversablegeographyofthelocationinatwodimensional names. In computational geometry this kind of mapping
+wayThe geometry is represented by “sectors” which also is known as Voronoi diagrams, where it plays an im-
+take into account the local distribution of access points. The portant role in various applications [Aurenhammer, 1991],
+sectorization process will be described below. [Aurenhammer and Klein, 2000]. Consequently, efficient al-
+Finally, the lowest level of the hierarchy contains skeletons gorithms to compute Voronoi diagrams have been de-
+of the sectors (which are polygons), used mostly to describe vised, the best known being Fortune’s algorithm described
+traversal of concave sectors which occur at corners and inter- in [Fortune, 1986]. The voronoi diagram assignes a polygon
+sections.Theseskeletonsformthebasicelementsofthepaths (calledtheVoronoiregion)toeveryAPsuchthatthemapping
+for which text instructions are generated. describes at the paragraphs beginning can be solved by point-
+Twonodesindifferentsub-graphscanbeconnectediftheir in-polygon queries.
+parent nodes are connected. This relationship is also invariant These voronoi regions, computed from the APs positions,
+in the other direction, i.e. if two nodes are connected, at least are clipped to the polygons used to describe the location. The
+oneconnectionbetweenthesub-graphsexist.Thisensuresthat sectorization process is illustrated in Figure 2. The polygons
+apathononelevelofthehierarchyalsoimpliesapaththrough resulting from the clipping stage are also called “sectors” and
+the sub-graphs of the path’s nodes. are assigned to nodes on level two of the Map. Nodes are
+This is an important property when the paths are to be connected if their associated sectors share an edge.
+computed by refining paths along the lower levels of the Several algorithms to clip simple polygons exist, all are
+hierarchy. This incremental approach to route finding can based on finding intersections between the polygons and then
+reduce the time required to compute routes, as large parts of traversing the resulting contours, jumping between the two
+thegraphneednotbeconsideredineachstep.Forexample,if polygons in such a fashion that the resulting shape is the
+a route on hierarchy level 1 goes from floor 1 to floor 5 using desired combination of the two polygons. One such algorithm
+anelevator,thereisnoneedtoconsideranyotherfloorsduring is described in [Weiler and Atherton, 1977].
+route finding on level 2. The nice properties of this approach The second goal, the generation of NLI for a route, needs
+come at the cost of complex book-keeping, which can be to address two requirements:
+avoidedbycomputingthecompleterouteontheskeletonlevel
+1) While traversing the route, a user passes by several
+directly.
+landmarks, namely those contained in the sectors which
+are part of the route. The landmark’s order of traversal
+1In English the word ”the” is used for nouns of all genders, in German
+threearticles”der”,”die”and”das”arepossible.Whiletheimplementedtext depends on the direction in which the user is walking
+generator isin English, theinterface requires anarticle assignmentfunction within the sector.
+so that e.g. German output can be added by deriving a new class from the
+2) Sectors can have complex shapes which are difficult to
+generatorinterface.
+describe with words. Specifically corners and intersec-
+tions are difficult to extract from a polygon alone, and
+0 Building difficultoperationsaretobeavoidedonmobiledevices.
+1 Floors
+TheMapshouldthereforebeabletodescribeaconcave
+2 Sectorization(Rooms,Corridors)
+3 MicroPaths(Skeletons) polygon’s shape.
+TABLEI Both issues are addressed in the Map data structure by
+LEVELSOFTHEMAP’SHIERARCHICALGRAPH
+2Alsoknownasthepost-officeproblem.the inclusion of polygon skeletons on the lowest level of
+the hierarchy. A polygon skeleton, an approximation of the
+polygon’s medial axis, is a planar graph which has nodes
+lyinginsidethepolygonand“closeby”thepolygon’scorners.
+The edges of the skeleton, while creating a path between any
+two nodes, also never leave the interior of the polygon3. The
+algorithmtocomputetheskeletonsisoutlinedinthefollowing
+Section IV-B.
+B. Map Generation
+The generation of the Map proceeds by issueing a node
+and sub-graph for every “floor” level, which are connected
+if landmarks inside the floor are flagged as connected. This
+is done by the administrator when creating a Map with the
+preprocessor.Thefloors’immediatechildnodesareassociated
+with the polygons generated during sectorization. Two sector
+level nodes are connected by an edge if their associated
+polygons share an edge. The sectors polygons are created by
+clippingthepolygonsdescribingthelocationsgeometrytothe
+voronoi regions computed for the access points.
+Thenodesonthesectorlevelarealsoassociatedwiththose
+landmarks and APs which are located inside the associated
+polygon. In the case of APs this is at most one AP, the one
+contained inside the sector (a polygon), which is unique due
+toconstruction.ButsectorswhichdonotcontainanyAPscan
+also occur as can be seen in Figure 2.
+Such “artifact” sectors are treated in the next step of the
+algorithm by simply associating them with the access points
+from those connected sectors which do contain an AP, based
+onthefactthatwhisperingshouldclassifyallthoseAPsamong
+the closest ones. This assignment strategy is used instead of
+using all neighbors, which includes neighbors which were
+assigned APs in this step, and avoids sets of APs dependent
+on the order in which they are created.
+Thenodesonthelowestlevel,representingtheskeleton,are
+associated with single points, the position of the associated
+skeleton node. The skeleton nodes are connected naturally
+through the skeleton edges. In addition, the connections be-
+tween the underlying nodes need to be passed to the higher
+level. This is done by comparing all child nodes of one sector
+with all child nodes of a neighboring sector. For every edge
+shared by the associated polygons, the closest pair of these
+skeleton nodes is chosen, on one condition: the line segment
+connecting the two nodes must intersect the polygon edge
+under consideration. This ensures that the skeleton edge stays
+within the traversable area.
+Note the triangle configuration of edges close to the center
+of Figure 3, where a polygon without a skeleton node had to
+beskipped.Thisisanuglycaseoccurringwhengeneratingthe
+skeletons from the geometry. It can be avoided by generating
+skeletons for the sectors instead of the geometry.
+Fig. 2. A simple location, access points are the circled dots. The center Finally, landmark-based connections are created connecting
+image shows the Voronoi regions generated from the access points. In the the floors on level one of the hierarchy. The plurals in the
+bottompicture,theregionshavebeenclippedtothecorridors.Artifactregions
+previous sentence are intentional: multiple sectors in a floor
+generatedduringclippingcanbeseentopcenterbelowthecrosscorridor.
+3Thisistrueforconvexandconcavepolygons.Fig. 3. Example sectorization and skeleton of a simple Map generated by Fig.4. Simplepolygonwithbisectorsandresultingskeleton.
+thepreprocessor.Theskeletonincludesedgesacrosspolygons.
+landmarksconnectingthosefloorswiththecreatededge.
+can have connections to multiple sectors in another floor,
+It remains to describe the algorithm which computes the
+representedbydistinctlandmarks.Infact,evenasinglesector
+polygonskeletons.Thisisanovelalgorithmwhichwasdevel-
+cancontainbothastaircaseandanelevator.Tothisend,edges
+opedduringthecourseofthiswork,andisoriginallydescribed
+on level one of the hierarchy (between distinct floors) are
+in [Chowaw-Liebman, 2009]. The algorithms underlying idea
+assigned sets of landmarks.
+isbasedontheobservationthatthemedialaxisofthepolygon
+When assigning sets of landmarks to the edges, the edges
+containsthelinesbisectingtheconvexcornersofthepolygon,
+areassumedtobedirected(asavailableinpaths)todistinguish
+and that a node exists where two of these lines meet.
+betweenthelandmarksofthetwofloors.Thisisdoneinorder
+The approximation of the medial axis computed by this
+to accommodate the descriptions of routes which use these
+skeletonizationalgorithmcomputesbisectorsforallverticesof
+landmarks, navigating to the landmark on the floor where the
+the polygon. These bisectors are then clipped to the polygon,
+user currently is, and continuing at the landmark on the other
+and intersections between these bisectors are computed to
+floor where the path resumes.
+createthenodesoftheskeleton.Everybisectorisassignedthe
+The resulting generation of the Maps, leaving out some
+closest point of intersection it caused (bisectors can intersect
+details discussed above, follows these steps:
+multiple others).
+1) For each zone:
+These nodes are connected by traversing the polygon con-
+a) Compute sectorization according to Figure 2:
+tour: the bisectors associate nodes of the contour with one
+i) Generate Voronoi diagram of APs. skeletonnode(theclosestonekeptinaboveparagraph),which
+ii) Clip Voronoi regions to geometry. Resulting are simply connected in order of traversal along the contour.
+sectors inherit their features from the geometry Figure 4 shows a polygon, the bisectors of it’s contour nodes
+they are generated from. and the resulting skeleton.
+b) Find (and remember) shared polygon edges, con- The skeleton algorithm follows these steps:
+nect the sectors. 1) Createa“contourlist”ofsegmentsbisectingtheinward
+c) Associate every AP with the containing sector. angles of all vertices, originating at a node of the
+d) Associatethosesectorswhowherenotassignedan polygon contour and ending at the earliest intersection
+AP with those APs of all direct neighbors which with a polygon edge (length and polygon edges inter-
+where assigned an AP in the previous step. sected are recorded). This restricts the segments to lie
+e) Compute skeleton for every geometry polygon, completely inside the polygon, according to the Jordan
+place resulting points in containing sector and Curve Theorem. This prevents intersections outside the
+connect. polygonandensuresthecreationofpointsguaranteedto
+f) Connect points from different geometry polygons lie inside the polygon. All bisectors are initially marked
+if a shared polygon edge exists (remembered in as “intersects polygon”.
+step1(b).Twocandidatepointsarelegaliftheline 2) Find the earliest intersection between all bisecting seg-
+connecting the pair intersects the polygon edge. ments (again record length and other edge intersected).
+See Figure 3. Theintersectionkepthasthelowestlengthforbothseg-
+g) Place landmarks in the containing sectors. Land- mentscrossing.Allsuchedgesaremarkedas“intersects
+marks connecting zones are remembered for con- segment”, yielding pairs of intersecting segments.
+nection after all zones have been generated. 3) All segments still marked as “intersects polygon” are
+2) For the landmarks remembered in step 1(g), create assignedanopposingnodebysplittingthepolygonedge
+the according edges between floors, and associate all at the point where the segment intersects, inserting a”bisector” pointing opposite to the original vertex. This
+”balancing” is required to assert the correctness of the
+next step. Some care must be taken during insertion to
+keep the contour in a consistent ordering, e.g. counter-
+clockwise.
+4) The ”contour list” is walked through. Every segment
+creates a skeleton vertex, which is connected to the
+previously generated vertex (which is initialized to the
+last segments vertex). For segments intersecting another
+segment, the vertex created is at the intersection point
+determinedinstep2.Forpolygonintersectionsegments,
+the vertex is created in the middle of the segment, and
+by extension equidistant to the closest polygon edges.
+Because the segments lie completely inside the polygon
+the node is also inside.
+V. TEXTGENERATION
+Generation of natural language instructions is based on the
+skeleton level of the hierarchy. The order of nodes in the
+path defines a direction for the edges, and with the nodes’
+positionseachedgedefinesalinesegment.Landmarksarenow
+convenientlypassedbyintheorderoftheclosestpointonthe
+line segment. Using parametric lines of the form~y =p~+x·d~
+with origin p~ and direction d~, the closest points on the line
+can be expressed as a scalar value.
+The line segments are constructed such that p~ is the point
+of the originating node and p~ + 1 · d~ is the point of the
+terminating node. That is, the line segments is defined for
+values of the parameter x inside the interval [0,1]. If the
+closestpointonthelineisoutsidethisintervallitisnotonthe
+line segment, and the landmark can be discarded. Sorting the
+remaining landmarks based on the parameter for the closest
+point arranges them in order of traversal.
+These edges with landmarks in order of traversal form the
+basic element for text generation: instructions consider one
+edge after the other, with some connectives (e.g. “and” or
+“then”)andlandmarksfororientation,whiletheskeletontakes
+care of corners and intersections definition. Text generation is
+based on three functions:
+• traverseBy instructs the user to follow the complete
+skeleton edge, which is described as passing by the
+last landmark along the edge. This landmark is used to
+reassure the user about being on the right track, so it is
+left out if the last landmark is too close to the beginning
+of the edge.
+• traverseTo describes movement to a landmark some-
+where along the edge. This is used for the last edge of
+the path, along which the target landmark is located, a
+distance which is communicated to the user in approxi-
+mate terms, see below. The side on which the landmark
+should be is also used in the description.
+• rotateToward turns to face along the next edge. This
+function is responsible for describing the action needed
+at an intersection or corridor.
+Fig.5. Twoscreenshotsoftheclientinaction.
+Directions and distances are discretized into a few approx-
+imate phrases like ”to your left”, ”ahead” or ”close by”, ”inthe middle” and ”at the far end” to give a few representative REFERENCES
+examples. These discretizations provide relative information
+[Aurenhammer,1991] Aurenhammer,F.(1991).Voronoidiagrams:Asurvey
+which is expected to be of more use to people than precise of a fundamental geometric data structure. ACM Computing Surveys,
+distances. The difference is that ”in 68 meters” can mean the 23:345–405.
+[AurenhammerandKlein,2000] Aurenhammer, F. and Klein, R. (2000).
+sameas”halfwaydownthecorridor”,thelatterbeingofbetter Voronoidiagrams. InHandbookofComputationalGeometry,pages201–
+utility as long as users are not equipped with odometers. 290.ElsevierSciencePublishersB.V.North-Holland.
+The prototype text generator simply uses traverseBy [Chowaw-Liebman,2009] Chowaw-Liebman, O. (2009). Context-Sensitive
+Information Systems in Wireless Networks. Master’s thesis, RWTH
+followed by rotateToward for every skeleton edge of the AachenUniversity.
+path, except for the last which is handled by traverseTo. [Chowaw-Liebmanetal.,2009] Chowaw-Liebman, O., Krempels, K.-H.,
+von Stu¨lpnagel, J., and Terwelp, C. (2009). Indoor navigation using
+Thesefunctionsareimplementedbasedonthe”filltheblanks”
+approximate positions. In [ObaidatandCaldeirinha,2009], pages 168–
+approach, generating sentences of a fixed structure with the 171.
+appropriate landmark, geometry type (e.g. corridor or room) [Daleetal.,2003] Dale, R., Geldorf, S., and Prost, J.-P. (2003). CORAL:
+Using Natural Language Generation for Navigational Assistance. In
+and direction placed in their positions. Figure 5 shows two
+ConferencesinResearchandPracticeinInformationTechnology,Vol.16.
+screen shots of the client software, showing a short and a [Fortune,1986] Fortune, S. (1986). A sweepline algorithm for voronoi
+longer route and the natural language instructions generated diagrams. In SCG 1986: Proceedings of the second annual symposium
+onComputationalgeometry,pages313–322.ACMPress.
+for the routes.
+[KrempelsandKrebs,2008] Krempels, K.-H. and Krebs, M. (2008). Im-
+provingdirectory-lesswlanpositioningbydevicewhispering. InObaidat,
+VI. CONCLUSIONS M.S.andCaldeirinha,R.F.S.,editors,WINSYS,pages225–229.INSTICC
+Press.
+A novel indoor navigation system adapted to the device
+[Krempelsetal.,2009] Krempels,K.-H.,Patzak,S.,vonStu¨lpnagel,J.,and
+whispering technique was presented. The central element of Terwelp,C.(2009).Evaluationofdirectory-lesswlanpositioningbydevice
+thesystemistheMapdatastructure,whichwaspresentedand whispering. In[ObaidatandCaldeirinha,2009],pages139–144.
+[ObaidatandCaldeirinha,2009] Obaidat, M. S. and Caldeirinha, R. F. S.,
+it’sapplicabilitytonaturallanguageinstructiongenerationwas
+editors (2009). WINSYS 2009 - Proceedings of the International Con-
+shown, see Figure 5. Tests of the prototype system uncovered ferenceonWirelessInformationNetworksandSystems,Milan,Italy,July
+that common WLAN interface cards (i.e. hardware devices) 7-10,2009,WINSYSispartofICETE-TheInternationalJointConference
+one-BusinessandTelecommunications.INSTICCPress.
+do not modulate transmission power when instructed to do
+[Ohlbachetal.,2006] Ohlbach,H.,Rosner,M.,Lorenz,B.,andStoffel,E.-
+so: all access points which are detected already respond to P.(2006). NLNavigationCommandsfromIndoorWLANFingerprinting
+the lowest power request. Pending further inquiry, we are positiondata.
+[Patzak,2009] Patzak, S. (2009). Aktive WLAN Positionierung. Master’s
+currently assuming that transmission power modulation is not thesis,RWTHAachenUniversity.
+implemented, possibly to reduce the chip’s area. [Schilitetal.,1994] Schilit,B.N.,Adams,N.,andWant,R.(1994).Context-
+AwareComputingApplications.
+The implemented text generation system produces NLI
+[WallbaumandSpaniol,2006] Wallbaum,M.andSpaniol,O.(2006).Indoor
+which are quite satisfactory, especially concerning its min- PositioningUsingWirelessLocalAreaNetworks. JohnVincentAtanasoff
+imalistic simplicity. In both cases, output and generation ModernComputing,InternationalSymposiumon,0:17–26.
+[WeilerandAtherton,1977] Weiler, K. and Atherton, P. (1977). Hidden
+complexity,thesystemcomparesfavourablywithCORAL:the
+surfaceremovalusingpolygonareasorting.
+generated text is not quite as eloquent, but is generated with
+muchlesseffort.Thisindicatesthatourapproachofskeletons
+annotated with landmarks provides adequate information for
+the NLI generator.
+The very simple approach to text generation leaves open
+many possibilities for extension, e.g. adding more rules to
+improve both the natural language as well as for selecting
+landmarks to use in the text.
+AcknowledgementThisresearchwasfundedinpartbythe
+DFG Cluster of Excellence on Ultra-high Speed Information
+and Communication (UMIC), German Research Foundation
+grant DFG EXC 89.

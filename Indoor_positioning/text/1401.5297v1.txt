@@ -1,0 +1,408 @@
+Navigating MazeMap: indoor human mobility,
+spatio-logical ties and future potential
+Gergely Biczók∗, Santiago Díez Martínez∗, Thomas Jelle∗†, and John Krogstie∗
+∗Norwegian Univ. of Science and Technology, E-mail: {gbiczok@item, santiagd@stud, krogstie@idi}.ntnu.no
+†MazeMap, E-mail: thomas@mazemap.com
+Abstract—Global navigation systems and location-based ser- ingcapabilitiesoftheirchips[8].Alreadypresentintheonline
+vices have found their way into our daily lives. Recently, indoor map segment, Google [14] and Nokia [23] are working on
+positioning techniques have also been proposed, and there are
+extendingtheirofferingsformapsofindoorvenues.Currently,
+several live or trial systems already operating. In this paper,
+therearehundredsofSMEsactiveinIPS-relatedbusiness,and
+we present insights from MazeMap, the first live indoor/outdoor
+positioning and navigation system deployed at a large university tech giants pay close attention as evidenced by Apple’s $20M
+campusinNorway.Ourmaincontributionisameasurementcase acquisition of WifiSLAM [4].
+study;weshowthespatialandtemporaldistributionofMazeMap There is a long list of indoor venues, where users, busi-
+geo-location and wayfinding requests, construct the aggregated
+nesses and venue-owners could mutually benefit from Indoor
+human mobility map of the campus and find strong logical ties
+Location-Based Services (ILBSs) built on top of an IPS. This
+betweendifferentlocations.Ononehand,ourfindingsarespecific
+tothevenue;ontheotherhand,thenatureofavailabledataand listincludesshoppingmalls,largehotelsandcasinos,airports,
+insightscoupledwithourdiscussiononpotentialusagescenarios hospitals, museums, university campuses and office buildings.
+for indoor positioning and location-based services predict a Liveandpilotingshopping-related ILBSsincludetheonesof-
+successful future for these systems and applications.
+feredbyBestBuy[6]andothermajorretailerssuchasMacy’s
+and Target, partnering with different IPS startups such as the
+I. INTRODUCTIONANDRELATEDWORK
+already profitable Shopkick [28]. Boston Children’s Hospital
+Navigationsystemshavebeenincorporatedtoourdailylife. has launched its MyWay mobile app providing among others
+The most prolific example is the Global Positioning System indoor wayfinding [7]. In addition, the American Museum of
+(GPS)usedbymotoristsandpedestriansalike.AlthoughGPS NaturalHistoryprovidesvisitorswithapersonalized,location-
+technology itself is quite mature, the market for devices with aware tour guide app [1].
+GPS capability is expected to grow at a Compound Annual NTNU (Norwegian University of Science and Technology)
+GrowthRateof15%between2012and2015[15].Drivingthis partnering with Wireless Trondheim has been offering a hy-
+steady growth is the increasing proliferation of smartphones brid indoor/outdoor wayfinding app called MazeMap (earlier
+with built-in GPS receivers enabling services beyond plain known as CampusGuide) [9], [22] for its main Gløshaugen
+navigation such as location-based shopping and social net- campus since Fall 2011; the first of its kind. MazeMap is
+working. Despite the steady market expansion, location-based able to locate a user’s position on campus with an accuracy
+services would be crippled if limited only to outdoor venues: ofupto5-10meters,andprovidesroom-levelwayfindingand
+people in urban areas could spend around 80-90% of their objectsearchcapabilities.InthispaperwefocusonMazeMap,
+timeindoors[17].Fortunately,indoorpositioningtechnologies and present a measurement study based on 19 month of
+are on the rise, enabling smartphone users, businesses and user logs. Our main contribution is a first-of-its-kind case
+software developers to determine the location of people and study providing usage statistics, human mobility patterns and
+objects inside buildings. Most proposed Indoor Positioning a spatio-logical network of rooms from a live ILBS covering
+Systems (IPS) utilize some form of wireless radio commu- an entire university campus. First, we present spatial and
+nications:WiFi,cellular,RFID,Bluetooth,enhancedGPSand temporal distribution of user requests at the building, room
+theirrespectivecombinations;pleasereferto[16]forastarting and object level. Second, we build a weighted directed graph
+point. out of turn-by-turn routes resulting from wayfinding requests.
+IPS inherently has the potential to tremendously advance Weconstructahumanmobilitymap,showingaggregateduser
+the concept of pervasive computing by forming the basis of mobility patterns and campus highways. Third, we consider
+services like indoor wayfinding, people and asset monitoring, the logical connections between rooms and floors linked by
+personalized shopping, improved emergency response and wayfinding requests. We show that there are expected and un-
+even making the real world digitally searchable down to the expected strong ties in this social graph. Furthermore, we find
+object level [11]. Given the intriguing business potential of an that there is strong correlation between the strength of logical
+emerging multi-billion dollar market, it is hardly surprising connectionsandgeographicaldistance;infactmorethan70%
+that major tech companies are also involved in incorporating of wayfinding requests are intra-building. In addition, we give
+IPSintotheirplatformsandproducts.Onthehardwarevendor anoutlookonthepotentialvenuesandusagescenariosforIPS
+side, Broadcom is focusing on enhancing the indoor position- such as shopping malls, hospitals, institution-level resource
+4102
+naJ
+12
+]YS.sc[
+1v7925.1041:viXraType Samplesize
+management, emergency preparedness and human mobility
+geopos 1301880
+research.
+wayfinding 29808
+One paper we are aware of which is close to our work objectsearch 2294
+is [26]; however, it is based on the experimental tracking of suggestion 71
+37 users for one month, while our study spans thousands of
+TABLE I: Requests by category
+users and 19 month in a large-scale, live system. Owing to
+points; however, MazeMap is also able to use standard GPS
+our slightly different focus, we do not elaborate on wireless
+positioning when the user is outdoors (if the device has an
+indoorpositioningtechniques;weonlyprovideastartingpoint
+enabled GPS receiver), providing approximately the same
+[16]. We do provide a unique case study from a live ILBS
+precision as the WiFi method. Note that the system is also
+and a short discussion on the potential of indoor positioning,
+abletocombineWiFiandGPSsignalsifavailable.Ontheuser
+however, our contribution has some limitations. Due to space
+interfaceside,inordertopresenttheuserswithreadablemaps,
+limitation we do not provide a comprehensive analysis of the
+the service uses construction drawings, and interprets them to
+dataset: we believe that the nature of insights provided by the
+recognize different objects, and to choose what to show or
+case study are more important than the actual results. They
+hide.Thiswaythemapstheusersseearenotoverloadedwith
+justifythepotentialofILBSsinmultiplevenuesandscenarios.
+unnecessary technical data.
+Moreover, the dataset is limited in that the system does not
+MazeMap is delivered as a software as a service, which
+yet have the capability for tracking individual devices or user
+enables frequent updates of design and new functionality. The
+sessions; once operational, the latter feature is expected to
+service is already launched at different other premises includ-
+provide deeper insights.
+ing St. Olavs Hospital (regional university hospital) and the
+Therestofthepaperisorganizedasfollows.SectionIIgives
+UniversityofTromsø;othervenuesarescheduledtostartsoon.
+an overview of the MazeMap system. Section III introduces
+Furthermore,aspartoftheWirelessTrondheimLivingLab[2]
+thedatasetandanalysismethods.SectionIVpresentsourcase
+there is an interdisciplinary group at Wireless Trondheim and
+study.SectionVdiscussespotentialfutureusagescenariosand
+NTNU looking into novel ways of utilizing location data and
+challenges. Finally, Section VI concludes the paper.
+improving the navigation service. MazeMap therefore collects
+II. MAZEMAP depersonalized data of service usage including positioning
+logs,inaccordancewithNTNUdirectivesandNorwegianlaw.
+MazeMap, a service for indoor positioning and navigation,
+started as an R&D project between Wireless Trondheim and
+III. DATASETANDPROCESSING
+NTNU [19]. Each year, 5000 new students arrive at NTNU,
+and have lectures and activities all over NTNU’s premises. We have acquired traces from MazeMap’s logging module,
+The largest campus, Gløshaugen, covers 350000 sqm with coveringtheperiodbetweenSeptember2011andMarch2013.
+over 60 buildings and 13000 rooms. It is therefore a big Since the system has been in active development merging
+challenge for new students and many visitors to find their logs from different periods required additional effort. Logs
+way around campus. This was the motivation for MazeMap; containbothexplicitlyuser-initiated(wayfinding,objectsearch
+the first version was launched 31st August, 2011 under the and object suggestion) and automatic, periodic client-side,
+nameCampusGuide.MazeMapallowstheusertoseebuilding geo-positioning (geopos) requests. The number of different
+maps on campus, locate the user’s own position within the requests can seen in Table I. On one hand, geopos requests
+building, search for all rooms and different objects (toilets, are initiated every 5-10 seconds (depending on the exact app
+parking lots, etc.), and get turn-by-turn directions from where version), hence the large sample size. On the other hand,
+the users is to where he wants to go. MazeMap can be tested individual geopos requests are not linked together as there
+fromanywhereat[22].Theservicehasbecomequitepopular: is no permanent user- or session identification implemented
+duringthestartofanewsemesternearly10%ofallemployees in the current system. Moreover, whenever a geopos request
+and students use the service daily; the total number of unique is initiated outdoors, the system records only that much; the
+devicesloggedsinceAugust2011isaround20000.MazeMap exact position is not saved. Therefore, only aggregate, intra-
+aims to help users find their ways with their laptops, tablets building statistics are derived from this request type. Since
+and smartphones; the service is available from a browser and MazeMap is under continuous development, session-tracking
+as an app at both Google Play and Apple AppStore. and more detailed geopos logging features will be available
+MazeMap can locate a user’s position indoors with an in the future; approval from the institutional review board has
+accuracy of up to 5-10 meters using the dense WiFi network already been secured.
+of NTNU, which has more than 1,800 WiFi access points. We focus on the Gløshaugen campus and filter explicit
+The technique used is called trilateration [20], where signal testingrequestsfromapplicationdevelopersastheywouldbias
+strengthsfrom3ormoredifferentaccesspointsaremeasured, our results. We have written Python scripts for data analysis,
+and the user’s position is calculated based on these. The used Gephi [12] for network visualization and QuantumGIS
+accuracy of the position depends on the WiFi network, how [27] for map-based visualization. First, we present raw results
+access points are placed and their density. At this specific of spatial and temporal characteristics of requests. In order
+campus, most outdoor areas are also covered multiple access to draw a human mobility map, we focus on wayfindingrequests,andmapeverystepofallturn-by-turnindoor/outdoor
+routes onto a detailed map of the same granularity. To be able
+to do this, we submit all wayfinding requests to a backup
+MazeMap server running the routing algorithm, which returns
+the corresponding paths. Based on this map, we present an
+approximation of the aggregated human mobility pattern on
+campus in Section IV-A. We also present the buildings where
+users spend the most time based on geopos requests. Further-
+more,wezoomintothelargestbuilding(Realfagsb.),andshow
+the same statistics. In Section IV-B, we only use the sources
+anddestinationsofwayfindingrequests,andstructurethemas
+a weighted graph. We show the trivial and non-trivial logical
+connectionsbetweendifferentlocationsfromasocialnetwork
+perspective; we also find that logical connections between Fig. 2: Top targets of wayfinding requests per room
+locations show strong dependence on spatial proximity.
+Note that the most avid users of the service are freshmen
+(and new employees), who are not yet familiar with the cam-
+pus layout. However, their movement patterns are expected to
+bemostlysimilartootherstudents(andemployees).Combined
+with the fact that our logs contain data points from more
+than 20,000 unique devices, we believe we do not introduce
+significant sampling bias across the campus population. Fur-
+thermore, we assume that users follow the turn-by-turn in-
+structions provided by MazeMap for two reasons. First, maps
+are constructed from actual floor plans and their connections.
+Fig. 3: Temporal distribution of wayfinding requests (log scale)
+Second, MazeMap takes combined indoor/outdoor paths into
+account; also, the opportunity for cutting corners outdoors is in the beginning of semesters (August-October and February
+quite limited at this location. We use real building and room in Norway), decreasing through the semester (as student get
+names in our results; for detailed context, we refer the reader to know the campus better) and bottoming out around exams
+to the zoomable map of the campus complete with building and holidays (June-July and December-January).
+names at [25]. Regarding object search queries, the most popular POIs are
+toilets, followed by computer and study rooms. Bus stops and
+IV. RESULTS
+parking lots are less popular, see Figure 4 for the breakdown.
+The spatial distribution of geopos and wayfinding requests
+A. Putting statistics on the map
+is shown in Figure 1 (note the log scale). Since geopos
+requests are sent periodically by active user sessions, they Aninterestinginterpretationofourdatasetisamapofusers’
+are much larger in volume. They give an approximation on movement on campus. Deriving such a “traffic map” could
+which buildings users spend the most time at. As expected, be quite important both from scientific and practical points
+buildings with numerous and large lecture halls (Realfagb., of view, e.g., understanding human mobility or predicting
+Gamle Elektro, Sentralb.) are at the top of the list. The congestion points. We construct such a map based on the
+slope of wayfinding requests follows a similar pattern, but 20000 wayfinding requests recorded by MazeMap. Note that
+withcertainexceptions,e.g.,Hovedb.,themainadministrative this map is an approximation of the real mobility pattern on
+building, is a popular target. It is a less obvious finding that multiple levels: it uses limited data aggregated over both the
+certain buildings exhibit disparity being sources or targets of user population and time; and it assumes that users actually
+wayfinding. Berg (general use building) appears several times follow the turn-by-turn instructions provided by the system.
+more as a target, while Elektro A (multiple lecture halls and
+study rooms) is rather a source. Not shown in the figure is
+the outdoor area of the campus: a large number of automatic
+geopos requests originate from here, and it is also the largest
+(albeit aggregated) source of wayfinding queries. Regarding
+single-room targets, the most popular are large lecture halls
+(H3, F1 and R1), while smaller halls and the largest cafeteria
+(Kafe Realfag) are also on the toplist (see Figure 2).
+Figure 3 shows the temporal distribution of wayfinding
+requests per month over 12 months. The distribution appar-
+ently follows a university schedule: most requests are made Fig. 4: Breakdown of requested objectsFig. 1: Number of requests per building (top 30, log scale)
+Routing Targets
+Routing Sources
+Geoposition requests
+0.0000 - 1798.0000
+1798.0000 - 5118.0000
+5118.0000 - 9726.0000
+9726.0000 - 18366.0000
+18366.0000 - 36294.0000
+Fig. 6: Popular buildings: calculated from geopos updates
+given building (see Figure 1 for exact per building numbers).
+Small pie charts illustrate whether the building is more a
+source or target for the users’ wayfinding requests. Note that
+identifying hotspots from geopos requests are indeed biased
+Fig. 5: Human mobility map: routes calculated from wayfinding
+by the actual uptime of apps running on user devices, which
+requests
+inturnisdeterminedbydevicetype,OStypeandversion,and
+TheaggregatedusermobilitypatternisshowninFigure5.The usersexplicitlyterminatingapps.Weassumethattheseeffects
+underlying data structure is a weighted, directed graph, where have been balanced out by the large user population and the
+weights denote the frequency of a given path-segment ap- long duration of our trace.
+pearing across turn-by-turn routes for all wayfinding requests Statistics from the largest building (Realfagsb.) are visual-
+(directions of edges are omitted for better visibility). Building ized in Figure 7. The mobility map is a zoomed in version
+contours (in red) are layered over the mobility map. A main of Figure 5. Names of rooms which are popular targets of
+outdoorpedestrianwalkwaycanbeobservedrunningalongthe wayfinding requests contain the floor number as the last digit.
+campusfromS-SEtowardsN-NW.Severalindoor“highways” Obviously, there are numerous other statistics which can be
+arepresent,e.g.,insideRealfagsb.(withthemostlargelecture derived for the dataset, both at the building- and the room-
+halls) at the south end and Hovedb. (administrative center) at level.
+the north end. Almost all narrow corridors and small offices
+are mapped out by the routes. B. Logical connections
+Figure6showsabuilding-levelmapofthecampus,colored If wayfinding requests are viewed as logical connections
+by the number of automatic geopos updates received from the betweenrooms,floorsandbuildings,wecanthinkoflocations31.0000t-t44.0000
+44.0000t-t68.0000
+C3-113-3
+R2-3
+Routingttargets 68.0000t-t125.0000 biblio-1R1-2
+31.0000t-t44.0000
+125.0000t-t252.0000 R6-1 Meru-2 R60-3
+44.0000t-t68.0000 R10-5
+R5-1 R40-1 R4-1
+68.0000t-t125.0000 252.0000 Rt- 8t -3 140.0R07-020R54-2 R59-2
+R92-2
+R80 R-5 91-1 R90-0 R3-1
+125.0000btu-ti2ld5in2g.0s0_0re0alfa R9-3 Kafe-1R50-2 R20-2R93-4
+252.0000t-t340.0000
+Fig. 7: Inside the largest building: mobility map (left) and popular target rooms (right)
+2.0,2
+1.0,62
+1.0,2 0.0,2-1.0,2
+0.0,62
+3.0,2 0.0,76
+2.0,64 1.0,76
+0.0,251.0,25
+1.0,82 1.0,64
+3.0,891.0,89
+6.0,85
+1.0,39
+0.0,78 -1.0,78 1.0,78
+1.0,32 1.0,30 2.0,41
+3.0,801.0,85 2.0,584.0,55
+1.0,55
+1.0,271.0,- 61 1.0,3 13 .0,264.0,24 0.0,531.0,53 3.0,44 0.0,41
+3.0,15
+Fig. 9: CDF: geographical distance of weighted logical connections
+2.0,85 1.0,18 31 .0.0 ,2,5 98 0.0,18 1.0,1 1.0,15 0.0,15 2.0,44 1.0,44 of weighted logical connections with respect to geographical
+1.0,83 1.0,19 2 2.0,7 .0 0,13 9.0,433 4.0, .1 07 1 ,.0 1,3 73 1.0 2, .04 ,5511.0,17 0.0,45 22.0,25 .0,15 1.0,43-1.0,58-1.0,30 13.0 1,4 1 .4 0.0 ,3,3 56-2.0,3 -2.5 0,3 23 .0,35 2.5,2 d bi es tt wan eec ne bb ue it lw de ine gn s)t .he Itir isen ead sp yoi tn ots se( esim thp atlifi cle od seas toth 7e 0%dis ot fan thce
+e
+0.0,861.0,86 1 1.0 .0,2 ,0 70-2.0,70 22.0 ., 018
+,1
+-1.2 0.0 ,, 117 1.0,0 4. 65,55
+3.0,41
+1.0,45
+-1.0,45
+5.0,670.0,333.01. ,0 6,2 74 -2.0,32 1.0,670.0,32 w 90e %igh ot fo tf hec monn ce oc rrti eo sn ps ons ditu ta ote ad gi en od go ro ar ps h( iz ce ar lo dd isi ts at nan cece l) e, sa sn td ha≈
+n
+2.0,38 -1.0,76 2.0,43 1.0,37 4.0,68 2.0,29-1.0,3- 42 4.0,38.0,67
+-1.0,67
+500meters.The“trafficmap”inFigure5hintsattheopposite;
+3.0,66 -3.0,67 however,indoor-onlypathsconsistofmuchlesspathsegments
+2.0,67 0.0,67
+4.0,67 -1.0,17 therefore being less visible on the map.
+Fig. 8: Logical network of floors based on wayfinding requests.
+Please find all of our maps in zoomable vector graphics
+Nodes: (floorID, buildingID). Color codes represent buildings.
+format at [3].
+as nodes in a social network, where the strength of ties
+is the number of requests between respective nodes (undi- V. DISCUSSION
+rected). While floors act as natural communities of rooms, Results presented in Section IV form an interesting campus
+and buildings act as natural communities of floors due to case study. However, IPSs could potentially offer much more
+the strong spatial correlation, less trivial strong ties can also data, and enable various location-based services at numerous
+be discovered. Figure 8 shows the logical network of floors other venues.
+(nodesarelabeledas(floorID,buildingID)),withfloorsofthe Potential usage on-campus. Managing location resources
+samecolorbelongingtothesamebuilding,usingtheOpenOrd
+at the university-level is not easy: evidence from an IPS
+layout [21]. The size of a node corresponds to the weighted
+providing data on actual user movement, distances to cover
+nodedegree,andloopedgesdenotewayfindingrequestswithin
+in breaks between classes and potential bottleneck staircases
+the same floor. We only show “strong” connections above a
+and corridors can make the outcome closer to optimal. Coor-
+weightthresholdof 10.Wecansee thatthegroundfloor(1.0)
+dination among faculties and departments concerning meeting
+of popular buildings are well-connected; a lot of lecture halls
+and lecture rooms can also be improved.
+canbe foundonthe groundfloor,and NTNUundergradstend
+Potential for other scenarios: shopping malls, hospitals
+to have lectures covering multiple buildings. However, strong
+and emergency preparedness. A venue for IPS-based intel-
+connections do exist between different floors of different
+ligence with huge business potential is the shopping mall;
+buildings, e.g., between the large lecture halls on the ground
+here, being able to easily get mobility and popularity data
+floorofGamleElektro(1.0,1),andthethirdfloorofHovedb.
+with different granularity (room, floor, wing, building, venue)
+(3.0,2), where the financial department is located.
+couldbeextremelyhelpful[28].Tailor-made,location-specific
+Basedonthelogicalnetworkabove,wesuspectthatlogical advertising could be realized. Studying human traffic patterns
+connections are strongly correlated with spatial proximity. In (seeFigure5),mallmanagerscanvalidatethepositionoforre-
+Figure 9, we plot the cumulative distribution function (CDF) locatetheirflagshipstores,getinformedonwheretopluginanoveltystore,orworkoutaninformedpricingplanfortenants. have a bright future with regard to both data-driven research,
+In addition, studying the logical connections among stores (in engineering and business applications.
+the flavor of Figure 8, studying tie strengths, communities,
+REFERENCES
+etc.) can shed light on non-trivial shopping patterns, creating
+the possibility for a profitable coupon program and product [1] American Museum of Natural History. http://www.amnh.org/apps/
+explorer.Lastaccessed:Nov2013.
+bundling encompassing multiple stores of different profiles.
+[2] S. Andresen, J. Krogstie, and T. Jelle. Lab and research activities at
+Furthermore, evidence from deployed IPSs can be used when wirelesstrondheim. InProc.ofthe4thIEEEInternationalSymposium
+planning, building and operating new shopping malls, office onWirelessCommunicationSystems(ISWCS’07),2007.
+[3] Appendix: maps in SVG format. https://dl.dropboxusercontent.com/u/
+buildings or hospitals. Specifically in hospitals, it is essential
+3806223/appendix_mazemap_permoby.zip.
+to keep track of where both patients, staff and equipment [4] Apple acquires indoor location company WiFiSLAM.
+are, and support both wayfinding (for patients), planning http://blogs.wsj.com/digits/2013/03/23/apple-acquires-indoor-location\
+-company-wifislam/.Lastaccessed:Nov2013.
+(of logistics), and self-coordination (of doctors and nurses)
+[5] A.R.BeresfordandF.Stajano.Locationprivacyinpervasivecomputing.
+as unexpected events occur [24]. Finally, regarding safety, PervasiveComputing,IEEE,2(1):46–55,2003.
+IPSs could enable a higher level of emergency preparedness [6] BestBuy. http://www.mobilecommercedaily.com/
+best-buy-geofences-locations-to-deliver\-targeted-mobile-offers. Last
+at indoor venues. Response teams can be sent to an exact
+accessed:Nov2013.
+location, and evacuation routes could be adjusted on the fly; [7] BostonChildren’sHospital.http://childrenshospital.org/patientsfamilies/
+this approach could be also utilized in large underground Site1393/mainpageS1393P474.html.Lastaccessed:Nov2013.
+[8] BroadcomGNSSproductfeatures. http://www.broadcom.com/products/
+complexes and tunnels, where the GPS system has no use.
+features/GNSS.php.Lastaccessed:Nov2013.
+Human mobility research. Understanding human mobility [9] CampusGuide: ’GPS’ for Indoor Use. http://www.sciencedaily.com/
+patterns is of great importance from scientific, engineering releases/2013/02/130206093907.htm.Lastaccessed:Nov2013.
+[10] S.Coull,C.Wright,F.Monrose,M.Collins,M.K.Reiter,etal. Play-
+(how to build more efficient systems for people) and business
+ing devil’s advocate: Inferring sensitive information from anonymized
+angles. Owing to large mobile phone traces, we have a pretty networktraces.InProc.oftheNetworkandDistributedSystemSecurity
+good understanding of people’s movements on a macro scale Symposium,2007.
+[11] Forbes: Indoor venues are the next frontier. http://www.forbes.
+[13]. However, since urban population spends the majority
+com/sites/forrester/2013/01/23/indoor-venues-are-the-next-frontier-for\
+of its lifetime indoors, understanding micro-scale mobility -location-based-services/.Lastaccessed:Nov2013.
+is essential; once equipped with an individual user tracking [12] Gephiwebsite. https://gephi.org/.Lastaccessed:Nov2013.
+[13] M. C. Gonzalez, C. A. Hidalgo, and A.-L. Barabasi. Understanding
+feature, IPSs can help tremendously in this area.
+individualhumanmobilitypatterns. Nature,453(7196):779–782,2008.
+Challenges. All potential services and usage scenarios [14] Google Maps Indoor. http://maps.google.com/help/maps/indoormaps/.
+mentioned above can only be built on carefully designed and Lastaccessed:Nov2013.
+[15] GPSMarketForecast.http://www.reportlinker.com/p0936054-summary/
+implemented IPSs, posing technical challenges. The two most
+GPS-Market-Forecast-to.html.Lastaccessed:Nov2013.
+important requirements for IPS are precision and scalability [16] Y.Gu,A.Lo,andI.Niemegeers.Asurveyofindoorpositioningsystems
+(location update frequency, peak load, large venues). Data for wireless personal networks. Communications Surveys & Tutorials,
+IEEE,11(1):13–32,2009.
+quality of the premises-data are very important. Another
+[17] P. L. Jenkins, T. J. Phillips, E. J. Mulberg, and S. P. Hui. Activity
+important aspect is the integration with GPS-based systems patternsofcalifornians:useofandproximitytoindoorpollutantsources.
+and other, more fine-grained location services. In addition to AtmosphericEnvironment.PartA.,26(12):2141–2148,1992.
+[18] A. Kofod-Petersen, P. A. Gransæ ter, and J. Krogstie. An empirical
+thetechnical,thereisaneedfordeepunderstandingoflocation
+investigationofattitudetowardslocation-awaresocialnetworkservice.
+privacy [5] and users’ valuation of privacy [18], and data InternationalJournalofMobileCommunications,8:53–70,2009.
+handling best practices such as with network measurement [19] J. Krogstie. Bridging research and innovation by applying living labs
+fordesignscienceresearch. InProc.ofSCIS,pages161–176,2012.
+data [10]. It is clear that further development and potential
+[20] B. Li, J. Salter, A. G. Dempster, and C. Rizos. Indoor positioning
+successofIPStechnologyandlocation-basedservicesdepend techniquesbasedonwirelesslan.InProc.ofIEEEInt.Conf.onWireless
+onacooperativeeffortfromresearchers,engineers,economists BroadbandandUltraWidebandCommunications,2007.
+[21] S. Martin, W. M. Brown, R. Klavans, and K. W. Boyack. Openord:
+and lawmakers.
+anopen-sourcetoolboxforlargegraphlayout. InProc.ofIS&T/SPIE
+ElectronicImaging,2011.
+[22] MazeMapwebsite. http://mazemap.com.Lastaccessed:Nov2013.
+VI. CONCLUSION
+[23] Nokia leads the way with indoor mapping. http://conversations.
+nokia.com/2012/07/16/nokia-leads-the-way-with-indoor-mapping/.Last
+Inthispaperweprovidedaglimpseintodataavailablefrom accessed:Nov2013.
+a hybrid indoor/outdoor positioning and navigation system [24] A.NossumandJ.Krogstie. Integratedqualityofmodelsandqualityof
+maps. InProc.ofEMMSAD,pages264–276,2009.
+called MazeMap. We showed possible interpretations of these
+[25] NTNUcampusmapatMazeMap. http://use.mazemap.com.
+data, including finding potential bottlenecks and hotspots [26] A. Petrenko, S. Bell, K. Stanley, W. Qian, A. Sizo, and D. Knowles.
+with the help of mapping user mobility patterns; reflecting Human spatial behavior, sensor informatics, and disaggregate data. In
+Proc.ofSpatialInformationTheory2013,pages224–242.2013.
+on spatial (room, building and campus-level) and temporal
+[27] QuantumGISwebsite. http://www.qgis.org/.Lastaccessed:Nov2013.
+characteristics of user requests; and discovering spatio-logical [28] ShopKick says it’s now profitable. http://techcrunch.
+connections between locations in different buildings. Justified com/2013/01/16/shopkick-says-its-now-profitable-with-its\
+-shopping-app-adding-200m-in-sales-for\
+byourcasestudy,wepresentedabriefoutlookonthepotential
+-target-best-buy-and-other-partners/.Lastaccessed:Nov2013.
+of indoor positioning systems and location-based services
+enabled by them. We believe that such systems and services

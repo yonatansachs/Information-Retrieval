@@ -1,0 +1,773 @@
+Technology Enhanced Interaction Framework and 
+Method for Accessibility in Thai Museums  
+Kewalin Angkananon, Mike Wald, Lester Gilbert 
+Electronic and Computer Science 
+University of Southampton 
+Southampton, UK 
+ka3e10@ecs.soton.ac.uk 
+ 
+Abstract— People with hearing impairments have difficulties 
+in their access to Thai in situ authentic culture because they have 
+problems with understanding spoken information during their 
+visit. An extensive review of the literature found that there was 
+no framework to guide developers in developing technology 
+solutions for such face-to-face situations for people with hearing 
+impairment, other disabilities or no disabilities. This paper 
+describes a Technology Enhanced Interaction Framework (TEIF) 
+and Method that have been shown by experiments and 
+questionnaires to have the potential to help developers make local 
+Thai museums more accessible for disabled visitors. The mean 
+number of correct requirements was significantly higher for 
+participants using the TEIF Method than the Other Methods. 
+The TEIF Method helped developers select a solution 
+significantly more often than the Other Methods that was not 
+worse than a solution rated best by the experts. The TEIF 
+Method also helped developers rate the best solution significantly 
+closer to the experts’ ratings than the Other Methods.  
+Keywords—museums; 
+framework; 
+method; 
+accessibility; 
+technology 
+I.  INTRODUCTION  
+Thai culture is changing over time because of exposure to 
+other nationalities whether face to face or through the Internet, 
+television, or films. Small local Thai museums run by their 
+owners help preserve Thai everyday culture in its original 
+position or place by passing on knowledge and wisdom. 
+Visiting such local museums is more realistic and authentic 
+compared to an experience inside a large museum but there is 
+less budget support from the government [1] so owners of such 
+local sites often do not have enough funding to provide 
+accessible information for hearing impaired people. People 
+with hearing impairments have difficulties in their access to 
+Thai in situ authentic culture because they have problems with 
+understanding spoken or complex text information during their 
+visit. There is more research into helping people with hearing 
+impairments in their access to large museums compared to in 
+situ authentic culture [2]. People with hearing loss of any age 
+who know written language and use lip-reading to support their 
+access to spoken language will in the future be an even larger 
+group compared to sign language users as deaf people are now 
+being fitted with cochlear implants to help improve their 
+listening ability. Mather, Gregory, and Archbold [3] reported 
+that 15 young people who had received sequential bilateral 
+cochlear implants all found improvements in listening with the 
+second implant, even those who did not carry on wearing it. 
+There are also an increasing number of elderly people who 
+have difficulties in hearing as they were approximately 12.5% 
+of the population in 2010 and the percentage is predicted to 
+peak at 20% by 2025 [4].  
+In order to reduce discrimination in access to information in 
+Thai local museums, technology developers need to produce 
+technology solutions. There has, however, been no framework 
+that has helped technology developers to consider all of the 
+possible interactions that occur at the same time and in the 
+same place although there have been projects concerned with 
+how to use technology to support some of these interactions. 
+Section II provides an example museum scenario illustrating 
+the problems, section III reviews related frameworks, section 
+IV explains the TEIF, section V explains the TEIF Method, 
+section VI explains the experimental design, section VII shows 
+the experimental and questionnaire results, and section VIII is a 
+conclusion to the paper. 
+II. EXAMPLE THAI MUSEUM SCENARIO 
+The following scenario based on an existing Thailand 
+Tourism Award winning [5] small local museum visited by the 
+author is presented to show current problems which affect 
+people with hearing impairments in their access to Thai culture 
+and history in local museums. 
+“Suchat Trapsin, who is the owner of the museum, 
+allocated some parts of his house to become the Museum of 
+Folk Art and Shadow Puppets in order to preserve the culture 
+of shadow puppetry by teaching the public more about it. 
+However, there is no information provided in text format inside 
+the museum because normally Suchat will explain the history 
+and tradition behind shadow puppetry by talking with visitors. 
+When people with a hearing impairment watch the shadow 
+puppet show, they cannot hear the conversation clearly 
+because of the background music and the shadow puppet show 
+is also fairly dark with Suchat operating the puppets from 
+behind a screen, which makes lip-reading very difficult for 
+them. Moreover, the language, which is used in the show, is 
+quite complicated, and therefore sometimes difficult to 
+understand if hearing impairment at birth affected their 
+learning of language.” 
+Other scenarios that were also investigated involving 
+hearing impaired people included a tutorial, GP Surgery and 
+Segway Tour in Rome. 
+2015 3rd International Conference on Information and Communication Technology (ICoICT)
+978-1-4799-7752-9/15/$31.00 ©2015 IEEE
+316
+
+III. REVIEW OF RELATED FRAMEWORKS 
+An extensive review of the literature found that there was 
+no framework based on principles rather than just technology 
+system architectures or solutions to guide developers in 
+developing technology solutions for such face-to-face 
+situations for people with hearing impairment, other disabilities 
+or no disabilities that included one or more interaction types 
+involving people, technology, and objects. The research 
+challenges that were therefore identified were to develop a 
+Technology Enhanced Interaction Framework (TEIF) and 
+TEIF Method regarding disabled people interacting with 
+people, technologies, and objects. As information and 
+communication technology has become more important in 
+society, many researchers have been concerned with how to 
+use technology to support communication between people and 
+improve interactions between people, technology, and people 
+[6; 7; 8; 9; 10; 11] or improve interactions between people, 
+technology and objects [10]. The details of interaction 
+frameworks are reviewed under the following two main 
+category headings. 
+A. Interaction Frameworks 
+Sung et al. [10] proposed a framework for designing a 
+mobile electronic guidebook for a history museum. An 
+electronic guidebook was implemented and evaluated in 
+comparison to a worksheet and visiting without any guidebook 
+or worksheet. Users spent the most time with exhibits when 
+using the electronic guidebook but there were no significant 
+differences in the knowledge gained about exhibits. Their 
+framework did not consider a scenario where an expert 
+presented or explained the exhibits. Rukzio [9] presented a 
+physical mobile interaction framework for using mobile 
+devices as mediator for the interaction with a physical object 
+and discussed its implementation. The interactions were 
+Human-Computer, 
+Human-Real 
+World, 
+Computer-Real 
+World, and Computer-Computer. Dix’s framework for 
+Computer Supported Cooperative Work [6] seems to address 
+some of the possible interactions but it misses out some 
+important interactions in the same time and at the same place 
+situations such as people using technology to interact with real 
+objects.  In Dix’s framework, the participants communicate 
+with 
+other 
+participants 
+in 
+what 
+is 
+called 
+‘direct 
+communication’. Furthermore, the participants also interact 
+with artefacts (man-made technology tools) by ‘controlling’ or 
+‘acting’. Sometimes an artefact is shared between the 
+participants; in this case, the artefact is not only the subject of 
+communication but can become a medium of communication, 
+called ‘feedthrough’, as shown in Figure 1. 
+In communication about work and the artefacts of work, 
+various means are used to refer to particular artefacts, and Dix 
+terms this ‘deixis’. Dix [7] discussed the application of his 
+CSCW Framework to mobile devices and Dix [8] used his 
+framework to investigate issues determining the viability of 
+the World Wide Web as an infrastructure for cooperative 
+work. Vyas et al. [11] explored the role of artefacts supporting 
+mediated communication. They used the term ‘artefacts’ to 
+refer to analogue and digital objects that can serve as a tool in 
+artefact - mediated communication. They asked students of a 
+master’s course on Visual Design to come up with and use a 
+communication metaphor in their concept design process. 
+They noted the use of communication metaphors is culturally 
+dependent.  Gaines [12] observed that recommendations based 
+on practical experience of single users operating standard 
+workstations had little to offer developers of complex systems 
+integrating complex behaviour of people and computers. To 
+address this issue he presents a conceptual framework for 
+person-computer interaction in complex systems based on an 
+analysis of systems theory literature to derive design 
+principles for person-computer interaction and a hierarchical 
+model of person-computer systems. His model acknowledges 
+a technological system’s behaviour reflects the value systems 
+and inter-personal attitudes of the system designer and so the 
+same systems principles apply to the psychology, sociology, 
+human-computer 
+interaction, 
+and 
+computer-computer 
+interaction. 
+ 
+Fig. 1. Computer Supported Cooperative Work – A framework 
+B. Considering Accessibility  
+Cook and Hussey [14] modified Bailey’s Human 
+Performance Model in order to accommodate assistive 
+technology. The components of their model are: human 
+(abilities/skills), activity (determined by role), context (setting, 
+social, cultural, physical), and assistive technology (hardware, 
+software, non-electronic). The Lázaro Galdiano Museum [15] 
+provides a Guide app with accessibility options including 
+subtitling and video in Spanish Sign Language for the hearing 
+impaired and audio description for people with visual 
+disabilities. Features include zoom, high contrast and screen 
+reader.  
+IV. TECHNOLOGY ENHANCED INTERACTION FRAMEWORK 
+The TEIF that has been developed based on the main and 
+sub-components identified in Table I and by adapting and 
+extending the work of Dix [6] and Gaines [12] to help 
+developers to design technology to support communication 
+between people and improve interactions between people, 
+technology and objects, particularly in complex situations 
+involving disabled people. The TEIF aims to help developers 
+design technology solutions to complex situations, particularly 
+when disabled people are involved by helping developers 
+think about the user requirements, designing interactions to 
+meet these requirements and the criteria related to the 
+requirements to evaluate the interactions. 
+2015 3rd International Conference on Information and Communication Technology (ICoICT)
+978-1-4799-7752-9/15/$31.00 ©2015 IEEE
+317
+
+    
+ 
+    TABLE I TECHNOLOGY EHNANCED INTERACTION FRAMEWORK 
+ 
+ 
+Main Component 
+Main and Sub-Component of Technology Enhanced Interaction Framework 
+Sub-component 
+Explanations and  Examples   
+People 
+Role 
+A person has a role when communicating with others (e.g. presenter, audience, peer). Roles 
+normally come in pairs such as speaker and audience (e.g. teacher and student or owner and 
+visitor) and peer to peer (e.g. student and student or visitor and visitor). 
+Ability / 
+Disability 
+People have abilities and disabilities which can affect their use of technology or 
+understanding of language and which can lead to communication breakdown (e.g. physical, 
+sensory, language, culture, communication, Information Technology (IT)). 
+Objects 
+Dimension 
+Objects have 2 dimensions (2D) or 3 dimensions (3D), and a 3D object may have a 2D 
+representation. 
+Property 
+Objects have colour, shape, size, and identity 
+Content 
+ 
+Objects have content which is human readable (text, pictures) and machine readable (QR 
+code, AR tag, barcode, RFID tag, NFC). 
+Technology 
+Electronic  
+Electronic technology has stored information, is online (e.g. internet, phone network) or 
+offline (e.g. not connected to the internet or phone network), and is mobile (e.g. smartphone) 
+or non-mobile (e.g. desktop computer). 
+Non-electronic  
+Non-electronic technology is used to store information in objects (e.g. writing with a pen on 
+paper) and is mobile (e.g. pen) or non-mobile (e.g. full-size desktop typewriter).          
+Usability and Accessibility 
+People interact with technology through its user interface (e.g. touch screen, keyboard). 
+Application      
+or Service 
+Electronic technology is an application (e.g. dictionary) or a service (e.g. weather forecast).  
+Cost 
+Technology has cost (e.g. of hardware, software, maintenance).   
+Interactions and 
+Communication 
+People-People 
+(P-P) 
+ 
+People communicate verbally (speak, listen, ask, answer) and non-verbally (lip-read, smile, 
+touch, sign, gesture, nod). When communicating, people may refer (speak or point) to 
+particular objects or technology – this is known as ‘deixis’. 
+People-Objects (P-O) 
+People interact with objects for two main purposes: controlling (e.g. touch, hold or move), 
+and retrieving information (e.g. look, listen, read, in order to get information or construct 
+personal understanding and knowledge). 
+People-Technology (P-T) 
+People control technology (e.g. hold, move, use, type, scan, make image, press, swipe), 
+transmit and store information (e.g. send, save, store, search, retrieve). 
+People-Technology-People 
+(P-T-P) 
+People use technology to transmit information to assist communication with (e.g. send SMS, 
+MMS, email, chat, instant message) other people. Technology is always designed for a 
+purpose by people and so a robotic device triggered by the person walking past it is a P-T-P 
+interaction. 
+People-Technology 
+-Objects(P-T-O) 
+People use technology (e.g. point, move, hold, scan QR codes, scan AR tag, use camera, use 
+compass) to transmit, store, and retrieve information (send, save, store, search, retrieve) to, in, 
+and from objects.  
+Time / Place 
+Place 
+Same and different time and place yield four categories:  same time (ST) and same place 
+(SP), different time (DT)  and same place (SP), different time (DT) and different place (DP), 
+same time (ST) but different place (DP). 
+Time 
+Context 
+Location 
+Location affects the use of technology (e.g. indoors, outdoors). For example GPS does not 
+work well indoors. 
+Weather  
+Condition 
+Weather condition may affect the use of technology (e.g. rainy, cloudy, sunny, windy, hot, 
+cold, dry, wet). For example, the mobile phone screen doesn’t work well in sunshine.  
+Signal Type  
+and Quality 
+Signal type can affect the quality of electronic technology (e.g. broadband, GPS, 3G, 4G). 
+Background  
+Noise 
+Background noise can affect the communication particularly for hearing impaired people (e.g. 
+background music, crowded situation). 
+Lighting  
+Light can affect the interaction (e.g. Inadequate light, too bright).  
+Awareness of others’ 
+interactions 
+People can be aware of interactions involving other people 
+Interaction Layer 
+Culture 
+Cultural layer includes countries, traditional, language and gesture (e.g. ‘hello’ is a normal 
+greeting used in the culture). 
+Intentionality  
+Intention layer involves understanding, purpose and benefit (e.g. the intent is a greeting). 
+Knowledge  
+Knowledge layer involves facts, concepts, procedures, and principles (e.g. how to spell the 
+word ‘hello’). 
+Action  
+Action layer involves actions and behaviours (e.g. pressing the correct key and not hitting 
+neighbouring keys). 
+Expression  
+Expression layer describes how actions are carried out (e.g. whether action is correct, 
+accurate, and prompt). 
+Physical  
+Physical layer is the lowest layer at which people interact with the physical world (e.g. the 
+button is depressed and so sends the electronic code for the letter to the application). 
+2015 3rd International Conference on Information and Communication Technology (ICoICT)
+978-1-4799-7752-9/15/$31.00 ©2015 IEEE
+318
+
+A. Terminology 
+Terminology used in the TEIF is defined as follows: 
+x 
+Communication is the process of passing information 
+from one person to another [14]. 
+x 
+Technology is a tool that helps people achieve their 
+purpose. 
+x 
+People 
+means 
+anyone 
+involved 
+in 
+direct 
+communication or interaction with an object, 
+technology, or other people. 
+x 
+Object is not virtual any anything that is not a 
+technology or a person involved in communication or 
+interaction. 
+x 
+Interactions can be between people and objects (P-O) 
+or people and technology (P-T). People can also use 
+technology to mediate interaction with people (P-T-P) 
+or objects (P-T-O). 
+x 
+A complex situation is a situation, which has the 
+interaction in the forms of P-P, P-T, P-T-P, and P-T-
+O, especially when disabled people are involved. 
+B. Main and Sub-components and Architecture of TEIF  
+There are seven main components in the TEIF as shown in 
+Table I. People can have roles, abilities, and disabilities. The 
+components ‘Object’ and ‘Technology’ are used in order to 
+extend Dix’s framework to show any type of interaction and 
+the overall architecture of the TEIF is shown in Figure 2.  
+Objects are defined as having three sub-components: 
+dimensions, properties, and content. Technology has a cost 
+and can be electronic or non-electronic, online or off-line, and  
+mobile or non-mobile. Furthermore, it may or may not have 
+stored content and may additionally have an interface and be 
+an application or provide a service. The TEIF involves 
+interactions from P-P, P-O, P-T, P-T-P, and P-T-O. ‘Time and 
+Place’ can be divided into four categories [15]. Context can 
+include factors and constraints such as location, signal quality, 
+background noise, lighting, and weather conditions. The TEIF 
+layers and explanations have been adapted from Gaines’ 
+framework [12].  
+ 
+Fig. 2. Architecture of the Technology Enhanced Interaction Framework 
+V. TEIF METHOD 
+ 
+The TEIF Method has been developed in order to help 
+developers understand and apply the TEIF to help make 
+communication and interaction more accessible for people 
+with disabilities. The TEIF Method does not replace other 
+methods but supports them by providing multiple-choice 
+questions to help identify requirements, the answers to which 
+help provide technology suggestions that support the design 
+stage. The TEIF Interaction Diagram and Use Case Diagram 
+are also provided to help with this stage. The example scenario 
+of a hearing impaired visitor to the Shadow Puppet Museum is 
+also provided in section II to help understanding of the TEIF 
+Method.   
+A. TEIF Method Overview 
+This section describes the steps used in the TEIF Method. 
+There are main five steps in the TEIF Method. Developers can 
+go through steps 3 to 5 as many times as required to develop 
+the best solution.  
+Step 1: developers answer multiple-choice questions for 
+gathering or evaluating requirements, which help identify any 
+communication or interaction issues or problems involving 
+hearing impaired people. 
+Step 2: developers use the technology suggestions table, which 
+is based on answers to the multiple-choice questions, to help 
+in designing or evaluating technology solutions.  
+Step 3: developers construct a technology solution scenario by 
+using the technology suggestions table to help in designing or 
+evaluating the solution. 
+Step 4: developers draw the TEIF overview Interaction 
+Diagram 
+showing 
+the 
+interactions 
+between 
+‘People’, 
+‘Technology’, and ‘Objects’ to help in designing the 
+technology solution and evaluating how technologies can be 
+best combined. 
+Step 5: developers draw the TEIF overview Use Case Diagram 
+to help in designing the technology solution, and evaluating 
+how technologies can be best combined by showing the 
+‘location’ of interaction activities and the actions of the people 
+and object ‘actors’ that are required to carry out the related 
+tasks with the technology. 
+B. Example Multiple Choice Questions for Requirements 
+The TEIF Method helps developers gather or evaluate 
+requirements by using multiple-choice questions, which 
+developed, based on the TEIF. The questions help identify 
+issues for which a technology solution is required. Four 
+example questions are shown below: 
+12) What type of technology would be appropriate for the 
+solution to the scenario? 
+a. online technology (Internet) b. off-line technology  
+c. I do not know 
+13) What type of technology devices would be appropriate for 
+the solution to the scenario?                                                     
+a. mobile devices   b. non-mobile devices   c. I don't know 
+16) Where does the situation take place? 
+ 
+a. indoors  b. outdoors c. I do not know 
+17) What are the two main environmental considerations 
+identified that impact the scenario?                                          
+a. noise (Background noise affects everyone’s ability to hear 
+People
+People
+direct 
+communication
+Technology
+Technology
+Objects
+Objects
+control
+ information retrieval
+control, information 
+transmission & storage
+technology-mediated-
+information retrieval
+control, information transmission & storage
+Information retrieval, technology-mediated-
+communication
+deixis
+deixis
+direct 
+interaction
+direct 
+interaction
+technology-mediated-
+interaction
+2015 3rd International Conference on Information and Communication Technology (ICoICT)
+978-1-4799-7752-9/15/$31.00 ©2015 IEEE
+319
+
+and understand what is said)                                                                      
+b. room acoustics (surface (e.g. walls, windows, tile) and 
+objects within every room interact to produce reverberation in 
+response to sound.) 
+c. distance (How far is the audience standing from the 
+presenter?) 
+d. visual access ( How well can the audience see everything 
+that is happening in different locations?) 
+e. lighting (Inadequate lighting or large banks of windows can 
+be challenging for deaf or hard of hearing audience because 
+they cannot see the speakers face well or an interpreter may be 
+located in shadows)  
+C. Example Technology Suggestions Table 
+The example technology suggestions table is based on a 
+review of available technologies that can assist hearing 
+impaired people and can be used to help identify one or more 
+technologies than can be used for the solution by ensuring any 
+combination of technologies used for the solution addresses all 
+the requirement issues (i.e. all the issues have at least one tick 
+in their column). For example, Suchat would like to use online 
+technology indoors which is reflected in the answers to 
+questions 12 and 16. He also would like to use Chuty’s and 
+her parents’ smartphones to keep his costs low, which is 
+shown in the answers to questions 13, 18, and 19. Many 
+technologies may meet a requirement: for example, all of the 
+technology suggestions shown in Table II. The technology 
+suggestions in the table are listed in order of total score. The 
+online version uses tooltips to display the explanations for the 
+ticks or crosses. 
+ 
+TABLE II TECHNOLOGY SUGGESSION TABLE 
+D.  Example Technology Solution Scenario for Thai Local 
+Museum 
+To help developers understand how to use the technology 
+suggestions, an example solution is provided that incorporates 
+some of the technology suggestions shown in Table II.  
+ 
+‘The technology developer has decided based on the TEIF 
+Method’s suggestions and discussions with their client Suchat 
+to make available a mobile web site  with which Chuty and her 
+parents can use their smart phones to enhance the visit. There 
+is a specific function called live functionality which assists 
+Chuty and her parents to communicate with Suchat. Chuty and 
+her parents go to the mobile website  and enable the function 
+before the tour starts. The function allows Suchat to notify 
+Chuty and her parents when the tour begins and change the 
+topics by pressing the ‘start’ button on his mobile phone. 
+Chuty and her parents’ phones vibrate at the same time to 
+notify them of this, and as Suchat starts speaking the pre-
+prepared summary captions  for the first topic, appear on their 
+smartphones. As the captions are presented on the mobile 
+website, the words are highlighted in a sentence, allowing her 
+to follow the conversation. Suchat can also notify Chuty and 
+her parents that the topic is changing by sending a message  
+to the server causing the captions to automatically change on 
+the mobile website. Sometimes Chuty can’t catch all of the 
+conversation but she can pick out keywords through lip 
+reading and hearing. Moreover, she can search for text by 
+using automatic speech recognition of keywords, and then 
+visually or manually select captions based on possible 
+keywords which are highlighted in colour. So she can scroll 
+up and down to find the conversation. When Suchat shows the 
+shadow puppet, he uses his mobile phone to select and 
+indicate the captions of the show that he is currently 
+performing. Chuty and her parents then can enjoy the show by 
+watching the shadow puppet and they also can read the 
+captions when they need to on their smartphones. During the 
+tour, Chuty asks some questions by typing instant messages on 
+her smartphone which Suchat answers supported by selecting 
+pre-prepared caption answers to frequently asked questions or 
+by typing the answers on his smartphone. When Chuty asks 
+questions about the exhibits, to help Chuty understand 
+Suchat’s answers she can use the further information 
+displayed on her smartphone browser through the links from 
+the QR codes on the exhibits.’ 
+VI. EXPERIMENTAL DESIGN 
+Following a successful expert review and validation of 
+the TEIF and TEIF Method by three developer experts, three 
+accessibility experts and an HCI professor, an experiment was 
+carried out involving 36 experienced developers evaluating 
+requirements and technology solutions. Half the participants 
+used the TEIF Method and the other half used whatever other 
+methods they would normally have used and were then shown 
+the TEIF Method. The experiment was carried out in a face-to-
+face situation with the researcher so the researcher was in 
+control by passing the appropriate document to the participant 
+and ensuring the participant engaged with the two 
+experimental tasks and questionnaire. There was no significant 
+difference between the TEIF Method and the Other Method 
+groups in terms of the number of years of practical experience 
+designing software and experience in designing technology 
+solutions for disabled people and so the groups were well 
+balanced in this respect. The participants in both groups were 
+asked to select the best ten requirements from 29 possible 
+requirements for a technology solution to the disability related 
+problems they identified from the scenario interview transcript 
+and underline the keywords of each answer on the transcript 
+sheet. The participants were asked to give ratings between 0 
+ 
+ 
+Technology  
+suggestions 
+ 
+ 
+ 
+Which requirements the technology meets 
+12a.online 
+13a.mobile devices 
+14a.pre-prepared  
+speech 
+16a. indoor 
+17a. noise 
+17e.inadequate 
+18a. low cost 
+19a. work with 
+smart phones 
+Total Score 
+1. Mobile web site 
+9 
+9 
+9 
+9 9 9 9 9 
+16 
+2.Pre-prepared 
+caption/subtitle 
+9 
+9 
+9 
+9 9 9 9 9 
+16 
+3. Frequently asked 
+questions (FAQ) 
+9 
+9 
+9 
+9 9 9 9 9 
+16 
+5. Instant messaging 
+9 
+9 
+9 
+9 × 
+9 9 9 
+15 
+13. Speech 
+recognition 
+× 
+9 
+9 
+9 9 9 9 × 
+13 
+2015 3rd International Conference on Information and Communication Technology (ICoICT)
+978-1-4799-7752-9/15/$31.00 ©2015 IEEE
+320
+
+and 10 for how well each of the three solutions (A, B, C) 
+provided met each of the ten requirements and were asked to 
+underline the words on the solution sheets that helped them 
+with their ratings. To assist them with this task they were 
+provided with a modified version of the paper based 
+technology suggestion table that was provided for the TEIF 
+Method group that only contained descriptions of the 
+technologies, without any ticks, crosses, or explanations. The 
+participants were asked to give background information, rate 
+the clarity of explanation of TEIF Method steps, evaluate 
+whether and how the TEIF Method helped, imagine how the 
+TEIF Method might help in the future, and any other 
+comments about the usefulness or value of the TEIF Method.  
+VII. EXPERIMENTAL AND QUESTIONNAIRE RESULTS 
+x 
+The mean number of correct requirements was 
+significantly higher (p<0.001) for participants using the 
+TEIF Method (mean = 8.33) than the Other Methods 
+(mean = 3.89). 
+x 
+The TEIF Method helped developers select a solution 
+significantly (p=0.01) more often than the Other Methods 
+that was not worse than a solution rated best by the 
+experts. 
+x 
+The TEIF Method helped developers rate solutions 
+significantly closer (p<0.05) to the experts’ ratings than 
+the Other Methods for solution A but not for solutions B 
+and C, and this applied similarly to each requirement. 
+x 
+The participants thought that the TEIF Method would 
+also help with gathering requirements for technology 
+solutions to interaction problems involving hearing 
+impaired people, and for other disabled people. 
+x 
+The participants thought that the TEIF Method would 
+help designing technology solutions to interaction 
+problems involving hearing impaired people, and if 
+information was provided for other disabled people. 
+x 
+Participants thought that the technology suggestions table 
+in the TEIF Method helped with identifying technology 
+solutions to interaction problems involving hearing 
+impaired people. 
+x 
+The participants thought that the TEIF Method would 
+help designing technology solutions to interaction 
+problems involving hearing impaired people, and if 
+information was provided for other disabled people. 
+x 
+Participants thought that the TEIF Method helped 
+improve a developer’s awareness of interaction issues 
+involving hearing impaired people. 
+x 
+Participants thought that the TEIF Method helped 
+improve 
+a 
+developer’s 
+understanding 
+of 
+how 
+environment context affects interaction involving hearing 
+impaired people. 
+VIII. CONCLUSION 
+The TEIF and TEIF Method have been shown to have the 
+potential to guide developers in developing technology 
+accessibility solutions for Thai museums from the results of an 
+experiment and questionnaire involving 36 experienced 
+developers evaluating requirements and technology solutions. 
+The TEIF has been developed based on the main and sub-
+components and the TEIF Method had been developed to help 
+developers to design technology to support communication 
+between people and improve interactions between people, 
+technology and objects, particularly in complex situations 
+involving disabled people. Future work includes extending the 
+requirement questions and technology suggestions tables to 
+address the needs of people with a wider range of disabilities. 
+REFERENCES 
+[1] Princess Maha Chakri Sirindhorn Anthropology Centre. (2005). Local 
+Museum Database  Retrieved 07/02/, 2012, from 
+http://www.sac.or.th/databases/museumdatabase_eng/ 
+[2] Proctor, N. (2005). Off Base or On Target? Pros and Cons of Wireless 
+and Location-Aware Applications in the Museum Paper presented at the 
+ICHIM 05 - Digital Culture & Heritage, Paris, France. 
+http://www.archimuse.com/publishing/ichim05/Proctor.pdf 
+[3] Mather, J., Gregory, S., & Archbold, S. (2011). The Experiences of Deaf 
+Young People with Sequential Bilateral Cochlear Implants Deafness & 
+Education International, 13(4), 152-172. 
+[4] National Electronics and Computer Technology Center, & The National 
+Telecommunications 
+Commission. 
+(2009). 
+The 
+provision 
+of 
+telecommunications services for the disabled and the elderly in 
+Thailand. Bangkok, Thailand. 
+[5] ThailandTourist. (2014). Suchart Subsin, the Puppet Master and his 
+Museum  Retrieved 18/08/2014, 2014, from 
+http://www.thailandtourist.net/guide/9_0_124_1_Puppet-Master-and-
+Museum.html 
+[6] Dix, A. (1994). Computer supported cooperative work - a framework. In 
+Design Issues in CSCW Eds. D. Rosenburg and C. Hutchison. , Springer 
+Verlag, 23-37.  
+[7] Dix, A. (1995). Cooperation without (reliable) communication: 
+Interfaces for mobile applications. Distributed Systems Engineering, 
+2(3), 171.  
+[8] Dix, A. (1997). Challenges for Cooperative Work on the Web: An 
+Analytical Approach. Computer Supported Cooperative Work (CSCW), 
+6(2-3), 135-156. doi: 10.1023/a:1008635907287 
+[9] Rukzio, E. a. B., Gregor and Wetzstein, Sergej (2008). The Physical 
+Mobile Interaction Framework (PMIF). Technical Report LMU-MI-
+2008-2.  
+[10] Sung, Y.-T., Chang, K.-E., Hou, H.-T., & Chen, P.-F. (2010). Designing 
+an electronic guidebook for learning engagement in a museum of 
+history. Computers in Human Behavior, 26(1), 74-83. doi: 
+10.1016/j.chb.2009.08.004 
+[11] Vyas, D., Dix, A., & Nijholt, A. (2008). Role of Artefacts in Mediated 
+Communication. Paper presented at the CHI 2008, Florence, Italy.  
+[12] Gaines, B. R. (1988). A conceptual framework for person-computer 
+interaction in complex systems. Systems, Man and Cybernetics, IEEE 
+Transactions on, 18(4), 532-541. doi: 10.1109/21.17371 
+[13] Cook, A., & Hussey, S. (1995). Assistive Technologies: Principles and 
+Pratice. Mosby: St. Louis, MO. 
+[14] Davis, K. (1977). Human Behavior At Work. New York: McGraw-Hill 
+Book Co. 
+[15] The Lázaro Galdiano Museum launches the first application of the 
+Áppside project. Available: http://www.gvam.es/fr/lazaro-galdiano-
+museum-launches-first-application-appside-
+project/#sthash.5Nl5Iq9R.dpuf 
+[16] Ellis, J. R., Ridolfi, & G. & Zwirner, F. (1991). Groupware: Some issues 
+and experiences. Communications of the ACM, 34(1)
+ 
+2015 3rd International Conference on Information and Communication Technology (ICoICT)
+978-1-4799-7752-9/15/$31.00 ©2015 IEEE
+321
+

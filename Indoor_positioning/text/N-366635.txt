@@ -1,0 +1,486 @@
+Cost-effective camera based ground truth for indoor localization
+Daniel Becker1, Fabian Thiele1, Oliver Sawade2, Ilja Radusch2
+Abstract—Oneofthekeyrequirementsfortheevaluationof positioning accuracy is significantly improved using addi-
+indoor localization systems is an accurate and reliable ground tional transponders at fixed known locations on the ground.
+truth. Existing ground truth systems are often expensive due
+Under typical outdoor conditions, DGPS achieves 1m local-
+to high hardware cost and complex deployment. In this work,
+ization accuracy [1]. However, in indoor spaces or when the
+we present a simple yet highly accurate approach for a cost-
+effectivegroundtruthsystembasedonoff-the-shelfinfrastruc- line-of-sighttothenavigationsatellitesisblocked,theDGPS
+ture cameras and printable markers. We developed a marker accuracy drops significantly or ceases completely [1].
+detectionalgorithmandsystematic3-layerprojectionapproach In this work, we present a cost-effective ground truth
+between multiple coordinate systems which achieves a median
+system based on off-the-shelf infrastructure cameras and
+accuracy of 0.48cm, 0.05 degrees and a minimum accuracy of
+printable optical markers. Towards the goal of optimiz-
+0.75cm, 0.27 degrees for 2D position and orientation.
+ing the system’s accuracy, we introduce a systematic 3-
+I. INTRODUCTION layerprojectionapproachbetweenimage,referencegridand
+globalcoordinates.Ourapproachissuitableforvehiclesand
+Thereisamyriadofapplicationsforvehiclesandwheeled wheeled robots where the marker can be mounted at a fixed
+robots operating in indoor environments. From industrial height. A detailed evaluation using manual high-precision
+robots and automated warehouses to intelligent vehicles, measurements as reference shows that the 2D position and
+all these applications rely on highly accurate localization. orientationcanbemeasuredatamedianaccuracyof0.48cm,
+Especially for applications which are completely automated, 0.05◦ and at a minimum accuracy of 0.75cm and 0.27◦.
+i.e. which operate without human supervision, localization This work is organized as follows: In section II, related
+requirementsareparticularlyhigh.Dependingonthespecific work is examined and classified according to several per-
+application, localization systems need to determine position formance metrics. In section III, we explain the individual
+and orientation of targets (e.g. robot or vehicle) in a 2D parts of our proposed methodology forming the reference
+plane or 3D space. Hence, in the 2D plane three parameters positioning system. Section IV shows a detailed evaluation
+(x/y position and yaw angle) and in 3D space six param- ofourproposedapproachandprovidesresultsaboutposition
+eters (x/y/z position and yaw/pitch/roll angle) need to be accuracy and real-time performance. Conclusions are drawn
+determined. Another point that highlights the importance of inSectionVIwherewealsogiveanoutlookonfuturework.
+ground truth systems is the ability to benchmark various
+localization systems and algorithms under comparable con- II. RELATEDWORK
+ditions [1] [2]. Thefieldofindoorlocalizationhasbeenanactiveresearch
+To evaluate the performance of any localization system, focus for decades, as an accurate and reliable localization
+a ground truth system is required which ideally is at least is a key building block for many applications from auto-
+an order of magnitude more accurate than the evaluated matic warehouses to autonomous vehicles. Any localization
+system. At first glance, both the ground truth and productive approach has to be validated by a ground truth system
+system perform the same task: They estimate position and to produce scientifically valid statements about accuracy.
+orientationin2Dplaneor3Dspace.Thedifferenceisthatthe For instance, for the task of automated driving in indoor
+productive system typically has more cost constraints due to carparks, an accuracy of at least 10cm and 1◦ for position
+the need for economic operation in real-world applications, and orientation is often quoted as sufficient [3], [4]. The
+whereas the ground truth can be more expensive as it is groundtruthneedstobemoreaccuratetovalidateproductive
+only used for a limited time in a limited area to evaluate the systems - ideally by an order of magnitude (i.e. 1cm and
+productive system.
+Outdoors, GNSS (Global Navigation Satellite System)
+based systems are often used as ground truth, especially
+DGPS (Differential Global Positioning System) where the
+Coverage
+1Daniel Becker and Fabian Thiele are with the Daimler
+Center for Automotive Information Technology Innovations
+Cost Effort
+(DCAITI), Ernst-Reuter-Platz 7, 10587 Berlin, Germany
+{daniel.becker,fabian.thiele}@dcaiti.com
+2Oliver Sawade and Ilja Radusch are with the Fraunhofer Institute
+forOpenCommunicationTechnologies(FOKUS),Kaiserin-Augusta-Allee Fig. 1: Trade-off between cost, coverage and effort for
+31, 10589 Berlin, Germany {oliver.sawade,ilja.radusch}
+localization systems.
+@fokus.fraunhofer.de0.1◦). To achieve this high accuracy, trade-offs need to be approaches based on cameras and lidar scanners [10]. The
+made as shown in Fig. 1. At a given accuracy, it is very vision-based system achieved an average error in the 10cm
+difficult to get a favorable combination of the three factors range, while a fusion with the lidar-based approach offered
+cost, coverage and effort. For instance, localization accuracy an improvement to 5cm and 0.5◦ angle. A comprehensive
+can be improved by utilizing a more expensive technology survey of optical indoor localization systems is provided
+comparedtotheproductivesystem,reducingthecoverageby in [11]. Therein, a comparison of about 20 systems high-
+increasing the measurement density or by employing more lights the trade-off between accuracy and cost: All systems
+human effort (e.g. manual measurements). surpassing centimeter accuracy require expensive cameras
+In localization systems, the position is either determined in the price range of 1000$ [11]. In contrast, our system
+within the target (internally) or in the infrastructure (ex- aims to bridge this gap surpassing centimeter accuracy at a
+ternally). A common approach based on internal sensors significantly lower cost.
+consistsofrelativepositioningtechnologies,i.e.deadreckon-
+III. METHODOLOGY
+ing. To achieve necessary precision, high-precision Inertial
+Inthefollowing,wepresenta3-layerprojectionapproach
+Measurement Units (IMU) are typically used in the auto-
+towards the goal of obtaining a position and orientation
+motive industry and autonomous robots [5]. However, the
+estimate of a vehicle with the best possible accuracy. The
+errorsofIMUsarenotbounded,i.e.theerrorsareconstantly
+first step is the detection of marker positions in the image
+risingovertimeandtheestimatedpositionisdivergingfrom
+plane of the camera, p (pixels). Secondly, the position is
+the true position. Hence, IMUs are not well-suited without img
+projected onto a reference grid plane, resulting in position
+additionalsensors.In[6]asystembasedonmultiplecameras
+p (meters).Thelaststepisthedeterminationoftheglobal
+mounted to a robot is introduced. The estimated trajectories ref
+position p (UTM projection [12] coordinate in meters).
+from each camera are compared to each other but not to utm
+The coordinates in each step are defined as follows:
+an external ground truth. Another alternative localization
+technology is based on Ultra Wide Band (UWB) where a (cid:20) x (cid:21) (cid:20) x (cid:21) (cid:20) x (cid:21)
+p = img,px p = ref,m p = utm,m (1)
+positioncanbeestimatedinrelationtothetransmittedsignals img y ref y utm y
+img,px ref,m utm,m
+of infrastructure beacons. Under ideal conditions, decimeter
+The relations between these three coordinate systems are
+accuracy can be reached although it is common to observe
+illustratedinFig.2,displayingtheplacementofachessboard
+high variations and large outliers over time and space [7].
+reference grid in our underground carpark testbed [13] and
+In terms of external localization based on infrastructure
+the coverage of the camera onto the grid (indicated in blue).
+sensors, [4] have shown a prototype for automated indoor
+The grid consists of alternating black/white square shapes
+driving using infrastructure laser scanners. They have mea-
+with a side length of 16.4cm. The camera is at a mounting
+sured an accuracy of about 10cm using manual ground
+height H (cf. Fig. 4) of 2.75m and the camera view covers
+truth. Examples of external localization with cameras are
+a total area of 2.1m x 3.4m. Moreover, 4 map objects are
+presented in [8] and [9], but neither system is able to
+shown in Fig. 2 (1 wall, 1 square pillar and 2 round pillars).
+achieve a sufficient accuracy to qualify as ground truth.
+These map objects are represented in a given indoor map
+The RAWSEEDS project has presented two ground-truth
+with geographic coordinates (UTM [12]).
+The first step is the detection of markers in the image,
+UTM Northing which are projected into reference plane coordinates and
+[m]
+Grid y finally global UTM coordinates:
+[m]
+p →p →p (2)
+img ref utm
+Cam x
+[px] A. Detection of Image Plane Position
+In order to achieve the required accuracy and meet tight
+cost constraints we have developed printable colored mark-
+Cam y ers in conjunction with a custom detection algorithm. The
+[px]
+detection algorithm is divided in multiple steps, shown in
+Fig. 3 and explained in the following.
+1) Image Preprocessing, Fig. 3a: Images captured by the
+Grid x cameraareconvertedtograyscaleandblurredbyconvolving
+[m]
+the grayscale image with a 3x3 averaging kernel. Grayscale
+conversion is needed to perform the edge detection in the
+UTM Easting next step. Blurring the image reduces noise and improves
+[m]
+the edge detection result.
+2) Contour Detection, Fig. 3b: An edge detection algo-
+Fig.2:Referencechessboardgridandcameraviewinindoor
+rithm is used to find the image contours. Found contours
+carpark environment, showing camera (blue), reference grid
+are approximated with polygons using the Ramer-Douglas-
+(red) and global UTM (black) coordinate systems.
+Peucker [14] algorithm which is provided by OpenCV. The(a) Prepocessed input image (b) Detected contours (c) Edge refinement (d) Marker ID sampling
+Fig. 3: Image processing steps of the marker detection algorithm.
+approximated polygons are filtered for potential marker out-
+lines by removing all polygons with an edge count unequal
+tofouroranareaoutoftheexpectedbounds.Approximated
+polygons are drawn in Fig. 3b: Polygons drawn in magenta
+haveanincorrectvertexcount,polygonsdrawnincyanhave
+an incorrect size. The green polygon is the one approximat-
+ing the marker outline.
+3) Edge Refinement, Fig. 3c: The vertex coordinates of
+approximated polygons only offer integer accuracy. More-
+over, due to image noise, vertex positions can vary by
+multiple pixels from frame to frame resulting in an in-
+accurate, noisy marker position. In order to achieve sub-
+pixel accuracy the polygon edges are refined by analyzing
+the two-dimensional gradient image of the grayscale image.
+The marker outline is a black border on white background
+resultinginlargegradientspointinginadirectionorthogonal
+to the marker edge and away from the center. Hence, the
+gradientimageissearchedalongeachpolygonedgeforlocal
+maxima pointing away from the center of the polygon. In a
+second step the edge is matched to the found local maxima
+minimizingthemeandistance.Fig.3cvisualizesthegradient
+image: Red pixels indicate gradient vectors pointing in an
+incorrect direction, whereas green pixels indicate gradient
+vectorspointingintherightdirection.Thebrightnessofeach
+pixel is proportional to the gradient vector magnitude. The
+matched polygon is drawn in white.
+4) Marker ID sampling, Fig. 3d: Finally, based on the
+detected marker outline, the color sampling points are com-
+puted. The sampled colors define the marker direction and
+ID. The white corner is defined as the front-left corner. The
+remaining three corners define the marker ID: Each corner
+might be red, green or blue resulting in 27 unique com-
+binations. Fig. 3d shows the original input image together
+with the detected marker outline, marker direction and color
+sampling points.
+5) Heightprojection,Fig.4: Themarkersarenotresiding
+onthefloorplanebuthaveaheightoffset(cf.Fig.4).Hence,
+there is a projection error ∆d which depends on relation
+betweenthemarkerheighthandthecameramountingheight
+H as well as the angle ξ or offset ∆x between camera
+perpendicular and marker.
+H
+h
+M1 M 2M3
+L1
+ξ
+Δx
+Δd
+L2
+Fig. 4: Test vehicle equipped with color markers and refer-
+ence laser pointers, top view (left) and side view (right).
+The projection error ∆d can be calculated as follows:
+∆d=tan(ξ)h (3)
+The angle ξ can be estimated as:
+(cid:18) (cid:19) ∆x
+ξ =tan−1 (4)
+H −h
+∆x refers to a distance in the reference coordinate plane
+and cannot be measured directly. However, it can be esti-
+matedusingthehomographyprojectionbetweencameraand
+reference plane, as explained in the following chapter. ∆d
+needs to be calculated for both dimensions in the reference
+plane (x/y). Once calculated, it can be subtracted from the
+detected marker position thus reducing the positioning error.
+B. Determination of Reference Plane Position
+For a given set of positions P = {p ,..,p } img img,1 img,n
+in the image plane and a set of corresponding reference
+plane positions P = {p ..,p } (position p ref ref,1 ref,n img,i
+corresponds to p ), we obtain a 3x3 homography matrix ref,i
+H using the OpenCV function cvFindHomography() [15]. A
+H describes2rotationsand1translation.Aminimumof4 A
+points is needed to determine H but more points improve A
+therobustnessagainstnoiseintheinputdata[15].Asaresult,
+the calculation of the coordinates is done as follows:
+p =H p , p =H−1p (5)
+ref A img img A ref
+The sets of image and reference plane positions are deter-
+minedfromthechessboardshapesinthereferenceplane(seeFig. 2). The OpenCV function cvFindChessboardCorners() θ andθ .Themeanangleisreferredto
+ref,M1−M2 ref,M2−M3
+calculatesthepixellocationofthecornerpointsinthechess- as θ and the centroid marker position as p .
+ref,M ref,M
+board pattern in pixel accuracy and cvFindCornerSubPix() 4) Multiple Camera Views: Multiple cameras can be
+is used to refine the result to sub-pixel accuracy [15]. The installed viewing the same reference chessboard grid (cf.
+first step eliminates the need for manual image annotation Fig. 2). Also, multiple grids can be deployed. In this case,
+and the second step drastically improves the accuracy of the each grid has an own coordinate system, hence additional
+homography projection and thus the overall accuracy. mapping between the grids is required. Assuming two refer-
+ence grids α and β, two sets of corresponding coordinates
+C. Determination of Global Position
+aremeasured,i.e.P ={p ..,p }andP =
+refα refα,1 refα,n refβ
+Analogous to the calculation of the homography matrix {p ..,p } (p corresponds to p ). Using
+refβ,1 refβ,n refα,i refβ,i
+H , we use a set of corresponding reference plane posi-
+A the same methodology as described earlier, we obtain a ho-
+tions P ref = {p ref,1,..,p ref,n} and global UTM positions mographyprojectionmatrixH whichisusedtotransform
+αβ
+P = {p ,..,p } to obtain homography matrix
+utm utm,1 utm,n arbitrary coordinates between the two reference planes.
+H .Thisenablestheconversionofarbitraryreferenceplane
+B 5) Map Quality: For indoor environments, such as
+positions into UTM positions and vice versa:
+carparks, there usually are maps available containing the
+locationofstructuralmapelements(e.g.walls,pillars,lanes,
+p =H p , p =H−1p (6)
+utm B ref ref B utm etc.) with respect to a global coordinate frame, cf. Fig. 2.
+Theavailabilityofglobalcoordinatesforeverymapelement
+To determine the sets of UTM positions, a list of charac-
+enables a seamless integration between outdoor and indoor
+teristicpointsinthevicinityofthereferencegrid(e.g.pillars,
+spaces. For instance, a GNSS-based car navigation system
+corners, etc.) are extracted from a given map that contains
+can display an overlay of the internal carpark map and the
+global coordinates for each map element (cf. Fig. 2). Next,
+roadmapassoonasthevehicleisapproachingtheentrance.
+the reference grid coordinates of these points are measured
+However, the quality of the indoor map needs to be taken
+manually,e.g.byusinganaccuratelaserrangemeasurement
+into account as potential source of localization error. For
+deviceplacedonthegrid.Also,twomarkersareplacednext
+instance, creating a map from an outdated construction plan
+to the device in order to determine the origin and angle of
+potentiallyintroduceserrorsduetodeviationsbetweeninitial
+thismeasurement,representingaPolarcoordinatethatallows
+planning and execution of the construction (e.g. displaced
+a straightforward conversion into the Cartesian form.
+pillars, thicker walls, etc.). Thus, we do not perform a
+D. Other Aspects
+direct projection between image and global coordinates, i.e.
+Additional aspects for the implementation and evaluation p →p .Instead,weaddedthereferencegridspanning
+img utm
+of the proposed ground truth are discussed as follows. itsowncoordinateframe(cf.Fig.2)asintermediatestep,i.e.
+1) CameraDistortion: Cameraimagesoftenincurdistor- p → p → p . So the first projection step p →
+img ref utm img
+tions caused by the camera optics [15]. For the proposed p is independent of the external environment manifesting
+ref
+approach, we assume there is no camera distortion which in transparency and robustness. The second projection step
+would negatively affect the homographic mapping between p → p can also be referred to as anchoring, as a
+ref utm
+image and reference plane. Thus, a camera with integrated relation to known real-world map elements is established.
+undistortion is advisable. Alternatively, a calibration can be
+performed to estimate the intrinsic camera parameters in
+IV. EVALUATION
+order to remove existing distortion [15]. The system’s testing environment, localization errors and
+2) Manual ground truth: The proposed ground truth sys- real-time performance are investigated in the following.
+tem aims at achieving a high position accuracy of at least
+A. Test Environment
+1cm. In order to evaluate this approach, a more accurate
+measurement method is required. To this end, we equipped A detailed description about our underground carpark test
+the vehicle with two laser pointers projecting onto the site is provided in our previous work [13]. We use an AXIS
+chessboard reference grid (cf. Fig. 4 and Fig. 6), yielding Q1604 (FW: 5.40.3.1) network camera at a mounting height
+two measurements p and p . We assume that the of2.75mthatprovidesimagesataresolutionof1280x720px
+ref,L1 ref,L2
+manual measurements are collected at an accuracy of at via Gigabit Ethernet encoded as MJPEG or h264 at 24fps.
+least 1mm. Further, we define the frontal laser pointer as A Smart Fortwo is used as test vehicle that is equipped with
+vehicle reference point, hence p = p . Moreover, markers at a mounting height of 0.23m above the floor. The
+ref,V ref,L1
+the vehicle’s orientation θ in reference grid coordinates softwareisimplementedinC++utilizingthelibraryOpenCV
+ref,L
+can be calculated from p and p . 2.4.9 and runs on a computer with an Intel(R) Core(TM) i7-
+ref,L1 ref,L1
+3) Calculation of 2D Vehicle Position and Orientation: 4700MQ and 16GB of RAM on Ubuntu 12.04 LTS (64 bit)
+The marker detection yields the 2D central point as well operating system.
+as identifier for each detected colored marker (cf. Fig. 3).
+B. Reprojection Error
+Our test vehicle is equipped with 3 markers as shown in
+Fig.4.Thusweobtain3positiondetectionsp ,p As described previously, homography projection matrix
+ref,M1 ref,M2
+andp thatareusedtocalculatetwoorientationangles H (between image and reference plane) is generated from
+ref,M3 A100.0%
+90.0%
+80.0%
+70.0%
+60.0%
+50.0%
+40.0%
+30.0%
+20.0% ¢T
+total
+10.0% E pos E µ ¢T det
+0.0%
+0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.00 0.05 0.10 0.15 0.20 0.25 0.30 0 10 20 30 40 50 60 70 80
+Fig. 5: Evaluation results, Cumulative Density Functions (CDF) of A) position error E in cm, B) orientation error E in
+pos θ
+◦ and C) detection time ∆T and total time ∆T in ms.
+det total
+represent the manual ground truth which is used to evaluate
+ourapproach.Also,thefrontallaserpointerisusedasvehicle
+reference point p =p .
+ref,V ref,L1
+Asthemountingofmarkersandlaserpointersisrigid,the
+displacement is constant over time. To be able to compare
+marker position p and manually measured position
+ref,M
+p , we perform a shift to the vehicle reference point:
+ref,L1
+(cid:66)
+p =p =p (8)
+Fig. 6: Laser pointer mounted to the car for measuring the ref,V ref,L1 ref,M
+position on the reference grid. Consequently, we define the error in terms of position as:
+(cid:66)
+E =|p −p | (9)
+x [cm] y [cm] pos ref,V ref,M
+Also, the error for the orientation angle is defined as:
+50 percentile 0.01 0.03
+70 percentile 0.05 0.07
+E =|θ −θ | (10)
+θ ref,L ref,M
+95 percentile 0.1 0.23
+97 percentile 0.2 0.3 To measure the overall positioning error, we placed the
+100 percentile 0.3 0.48 vehicleat15differentpositionsinthecameraview,resulting
+in different variations of p , θ and also ξ.
+ref,V ref,L
+TABLE I: Reprojection error E r for x and y dimensions. Fig. 5 A) displays a Cumulative Density Function (CDF)
+of the position error E . The 50 percentile, 90 percentile
+pos
+two sets of correlated positions P img = {p img,1,..,p img,n} and maximum measured errors are at about 0.48cm, 0.65cm
+and P ref = {p ref,1..,p ref,n} (position p img,i corresponds and0.75cm.Fig.5B)showsaCDFfortheorientationerror
+to p ref,i). For any arbitrary image coordinate p img and H A, E θ, where the 50 percentile, 90 percentile and maximum
+the corresponding reference grid coordinate p ref can be errors are about 0.05◦, 0.23◦ and 0.27◦.
+calculated, cf. (5). So we define the reprojection error E r We found that the error is not constant throughout the
+as: image.Instead,themeasuredpositionerrortendstobelarger
+E r =H Ap img,i−p ref,i ∀i∈{1,..,n} (7) towards the edges of the image, i.e. for larger angles ξ.
+This can be for two reasons: First, the reprojection error
+Thefollowingtabledisplaysthexandyreprojectionerror
+towards the edges of the camera view is larger as our used
+E for different percentiles:
+r
+camera was not perfectly calibrated, i.e. the camera view is
+In summary, the reprojection error is relatively small and
+notperfectlyplanar.Second,theheightprojectioncorrection
+there are no large outliers which underlines the good quality
+isnotabletoentirelycompensatetheheightprojectionerror
+of the homography projection matrix H . Interestingly, E
+A r
+as the estimation of angle ξ is not perfectly accurate.
+islargerfortheydimensionthanxdimensionofp .This
+ref,i
+canbeexplainedduetothesetupinFig.2:Theyaxisofthe
+D. Performance
+chessboard grid pattern used for calibration covers a wider
+Fig. 5 C) shows the measured timings of the marker de-
+angle range ξ than the x axis in the camera view.
+tectionalgorithm∆T andthetotaldetectiontime∆T
+det total
+C. Overall Error thatincludes∆T timeaswellasallremainingprocessing
+det
+AsexplainedpreviouslyandshowninFig.4andFig.6,we (e.g. loading an image from the camera, performing the
+mountedtwolaserpointerstothecarprojectingapointonto homography projection, etc). The 90 percentile time of
+the grid which can be manually measured. These positions ∆T 30ms and the maximum time is about 45ms. The 90
+detpercentileandmaximumtimefor∆T is64msand80ms environment. The extended coverage of the ground truth
+total
+resp. Consequently, even in the worst case, the processing system will facilitate an accurate and systematic evaluation
+rate would be about 12Hz. In 90 percent of all cases, 15Hz of a wide variety of different vehicular positioning systems
+can be achieved. We conclude that the proposed system is indoors. In the long run, this can be used to produce a
+able to measure the marker positions in real-time at a rate benchmarking of different technologies and systems under
+which is suitable for fast moving objects such as vehicles. comparable conditions.
+E. Detection Rate REFERENCES
+Another important point influencing the usability of the [1] Jose-Luis Blanco, Francisco-Angel Moreno, and Javier Gonzalez. A
+ground truth system is the false positive R and false collectionofoutdoorroboticdatasetswithcentimeter-accuracyground
+fp
+truth. AutonomousRobots,27(4):327–351,2009.
+negative rate R . Let i be the number of false detections,
+fn [2] Paolo Barsocchi, Stefano Chessa, Francesco Furfari, and Francesco
+j be the number of missed detections and n be the total Potorti. Evaluatingambientassistedlivingsolutions:Thelocalization
+number of detections. Thus we define: competition. PervasiveComputing,IEEE,12(4):72–79,2013.
+[3] Benjamin H Groh, Martin Friedl, Andre G Linarth, and Elli An-
+i
+R = (11) gelopoulou. Advanced real-time indoor parking localization based
+fp n on semi-static objects. In Information Fusion (FUSION), 2014 17th
+InternationalConferenceon,pages1–7.IEEE,2014.
+j
+R = (12) [4] André Ibisch, Stefan Stumper, Harald Altinger, Marcel Neuhausen,
+fn n Marc Tschentscher, Marc Schlipsing, Jan Salinen, and Alois Knoll.
+Towardsautonomousdrivinginaparkinggarage:Vehiclelocalization
+In the conducted evaluation, there have been incorrectly
+andtrackingusingenvironment-embeddedlidarsensors.InIntelligent
+detected markers, especially in the chessboard pattern of the VehiclesSymposium(IV),2013IEEE,pages829–834.IEEE,2013.
+reference grid (cf. Fig. 2). However, the identifiers of these [5] Henning Lategahn, Markus Schreiber, Julius Ziegler, and Christoph
+Stiller. Urbanlocalizationwithcameraandinertialmeasurementunit.
+misdetections are not within the valid range of the detected
+In Intelligent Vehicles Symposium (IV), 2013 IEEE, pages 719–724.
+colored markers, hence they can be filtered. Consequently, IEEE,2013.
+both R and R turned out to be zero, i.e. there every [6] Maximilian Muffert, Jan Siegemund, and Wolfgang Förstner. The
+fp fn
+estimation of spatial positions by using an omnidirectional camera
+marker has been captured and there were no mismatches.
+system. In 2nd International Conference on Machine Control &
+Moreover, carpark environments often have poor lighting Guidance,pages95–104,2010.
+conditions [13], which can negatively affect the detection [7] Stefano Savazzi, Umberto Spagnolini, Leonardo Goratti, Daniele
+Molteni,MattiLatva-aho,andMonicaNicoli. Ultra-widebandsensor
+in three ways: First, the detection could fail completely if
+networks in oil and gas explorations. Communications Magazine,
+the black/white contrast of the marker border becomes too IEEE,51(4):150–160,2013.
+low.Second,thecolorresolutiondecreases,thusreducingthe [8] ToruSaito. VehiclecoordinatessensingforC-AVPusingsurveillance
+cameras. In Proceedings of the 21th ITS World Congress, Detroit,
+reliabilityofobtainingcorrectidentifiers.Third,thedetection
+USA,2014.ITSofAmerica.
+of moving objects can fail due to motion blur. [9] DanielBecker,BerndSchäufele,JensEinsiedler,OliverSawade,and
+As a result, to be able to guarantee a stable detection IljaRadusch.Vehicleandpedestriancollisionpreventionsystembased
+on smart video surveillance and c2i communication. In Intelligent
+operation, a good illumination below the camera should be
+Transportation Systems (ITSC), 2014 IEEE 17th International Con-
+ensured. In this process, diffused light sources are advanta- ferenceon,pages3088–3093.IEEE,2014.
+geous over focused sources, as inhomogeneous illumination [10] Simone Ceriani, Giulio Fontana, Alessandro Giusti, Daniele Marzo-
+rati, Matteo Matteucci, Davide Migliore, Davide Rizzi, Domenico G
+of the marker surface can also affect the detection.
+Sorrenti, and Pierluigi Taddei. Rawseeds ground truth collection
+systemsforindoorself-localizationandmapping.AutonomousRobots,
+V. CONCLUSIONANDOUTLOOK
+27(4):353–371,2009.
+In this work, we have proposed a highly accurate ground [11] RainerMautzandSebastianTilch.Surveyofopticalindoorpositioning
+systems. In Indoor Positioning and Indoor Navigation (IPIN), 2011
+truth system based on marker detections and a systematic
+InternationalConferenceon,pages1–7.IEEE,2011.
+projection approach. The system is very cost-effective as it [12] Maarten Hooijberg. Conversions and zone systems. Geometrical
+can be operated with off-the-shelf network cameras which Geodesy: Using Information and Computer Technology, pages 173–
+182,2008.
+are installed at fixed locations in the building infrastructure.
+[13] Jens Einsiedler, Daniel Becker, and Ilja Radusch. External visual
+Additionally, a uniform chessboard grid is used as reference positioningsystemforenclosedcarparks. InPositioning,Navigation
+plane and placed under the cameras. Also, the manual effort and Communication (WPNC), 2014 11th Workshop on, pages 1–6.
+IEEE,2014.
+is reduced as calibration of the system can be automated by
+[14] Peucker Douglas. Algorithms for the Reduction of the Number of
+finding the chessboard corner points in the camera image. PointsRequiredtoRepresentaDigitizedLineoritsCaricature,pages
+The proposed system is suitable for vehicles or wheeled 15–28. JohnWileyandSons,Ltd,2011.
+[15] GaryBradskiandAdrianKaehler.LearningOpenCV:Computervision
+robots, where a marker can be mounted at a fixed height.
+withtheOpenCVlibrary. "O’ReillyMedia,Inc.",2008.
+In a detailed evaluation, we equipped a test vehicle with
+laser pointers projecting down onto the grid. We used these
+manually measured positions in order to evaluate the overall
+positioning accuracy. Thus, we determined a median and
+maximum position and orientation error of 0.48cm, 0.05◦
+and 0.75cm, 0.27◦ resp.
+In terms of future work we plan to add additional cam-
+eras to cover wide areas of our underground carpark test

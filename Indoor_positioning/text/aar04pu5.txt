@@ -1,0 +1,740 @@
+A 3-D Indoor Positioning Method using a
+Single Compact Base Station
+EskoO.Dijk1,2, C.H. (Kees)vanBerkel1,2 RonaldM. Aarts,EvertJ. vanLoenen
+1 2
+EindhovenUniversityofTechnology PhilipsResearch Laboratories Eindhoven
+Postbus513,5600 MBEindhoven Prof. Holstlaan4,5656 AAEindhoven
+TheNetherlands TheNetherlands
+esko@ieee.org evert.van.loenen@philips.com
+Abstract nesswillplayanincreasinglyimportantroleinthedomes-
+tic consumerelectronicsdomain.Thiscreatesthe needfor
+Context awareness will become increasingly important ‘consumer grade’ indoor location systems. Such a system
+infuturedomesticconsumerelectronics.Inmanydomestic wouldlikelybeconnectedtoanin-homenetwork,toshare
+contextawareapplications,thereisaneedforlocationand locationinformationbetweenmultipledevicesandapplica-
+orientation information about persons, devices or objects tions.
+in the home. This information can be provided by a dedi- What position accuracy (defined here as the expected
+catedindoorlocationsystem. A consumerlocationsystem distance between an estimated position and the True posi-
+shouldberobust,safe,easytosetup,lowcost,andshould tion) and what type of location information should a con-
+haveaminimalinfrastructure.Inthispaper,asteptowards sumer location system provide? Initial requirements for
+consumerlocationsystems is takenbyproposinganultra- bothwerefoundbyanalyzingin-homeapplicationscenar-
+sonic positioningmethod that needs just a single compact ios where location plays a role. Such scenarios were pro-
+base station to measure 3D positions of mobile devices in duced in the PHENOM [1] project and in related projects
+a room. The method employs ultrasound time-of-flighttri- at Philips Research. Applications often need some loca-
+lateration to estimate device positions, using a base sta- tion, orientation or proximity (range) information, but the
+tion containing an array of three ultrasound transducers. typeofinformationandrequiredaccuracyvariesalotover
+Five potential problems of the proposed method are iden- scenarios.Thelocation/rangeaccuracyrequirementscould
+tified;themainproblembeingline-of-sightpathocclusion. begroupedintothreetypicalcases:lowaccuracyatroom-
+The method has been prototyped, and initial results show scale (‘in which room is the person or device?’), medium
+anaccuracyof1.41morbetterfor95%ofthepositiones- accuracy around 1 m (‘in which part of the room?’), and
+timates,incaseofagoodline-of-sightpath.Itisconcluded high centimeter-scale accuracy (‘at what coordinate in 3D
+thatthemethodis promisingforproviding3Dpositionin- space?’).
+formationataround1maccuracyforcontextawareappli- Ultrasound time-of-flight measurements together with
+cations,but that the problem of line-of-sightocclusion re- trilaterationormultilaterationalgorithmsareoftenusedin
+quiresfurtherinvestigation. indoor location systems to obtain high accuracy. Existing
+high accuracy ultrasonic systems are the Bat [2], Constel-
+lationandothersfromInterSense[6],Cricket[16],andthe
+systembyRandellandMuller[17].Althoughsuchsystems
+1. Introduction canmeetmostaccuracyrequirements,thelargeinfrastruc-
+ture required in a room and the associated installation ef-
+For many applications in pervasive and context aware fort are disadvantages. All current systems require several
+computing,it has been foundthat location is an important unitsofinfrastructureinaroom,e.g.fixedtotheceiling.A
+partofthecontext.Locationinformationmayincludeloca- minimumof three such base station (BS) units is required
+tionsofpersons,devicesandobjects,andmayincludetheir tocalculate3Dpositionsofmobiledevices(MDs)withina
+orientation as well. Indoor location systems are therefore room.Usually morethan threeBS units areadvised orre-
+anactivetopicofresearch[9]inpervasivecomputing.Until quired[2,6,16,17]toimproveaccuracyandreducesuscep-
+nowtheyhavemostlybeendesignedforprofessionalindoor tibilitytorandommeasurementerrors.Moreover,theposi-
+environments.We expectthatinthe future,contextaware- tions of BS units need to be measured accurately and en-
+Proceedings of the Second IEEE Annual Conference on Pervasive Computing and Communications (PERCOM’04)
+0-7695-2090-1/04 $ 20.00 © 2004 IEEEteredintothesystematinstallationtime. mostultrasonicmultilaterationpositioningsystems,thedis-
+The required infrastructure and installation effort make tancesbetweendevicesaremeasuredusingultrasoundtime-
+these systems unsuitable for deploymentin the home. Im- of-flight(TOF)multipliedbythespeedofsoundinair. To
+portantrequirementsinthisdomainarethatalocationsys- measure absolute TOF, time synchronization between the
+temisrobust,safe,easytoinstall,minimalinitsinfrastruc- BS/MDdevicesisneeded.Thisisusuallyachievedbyara-
+ture, and low cost. These requirements led to our current diolink[2,16]oraninfraredlink[6,21].Somesystemsuse
+research direction of a single base station 3D positioning TOFdifferencesinsteadofabsoluteTOF,whichavoidsthe
+system.(Apositioningsystemisdefinedhereasalocation needfortimesynchronization[8].However,thisrequiresan
+system specifically aimed at measuring absolute 3D coor- extra BS unit. Many multilateration algorithms have been
+dinates of MDs.) A single unit is the minimum of infras- designedtocopewitherrorinthemeasureddistancesd im,
+tructure(apartfromnoinfrastructureatall),iseasiertoin- e.g.leastsquaresoptimizationmethods.
+stall than multiple units, and may lead to a low-cost sys-
+temiftheBSsaremass-produced.Currently,weuseultra-
+soundtime-of-flighttechnologybecauseofitsproventrack 2.2. Basestation design
+recordinlowcostaccurateindoorpositioning.Becauseul-
+trasound can not penetrate walls, a single-BS system will A typical state-of-the-artultrasonic multilateration sys-
+onlyworkinoneroomofahouse. temconsistsofthreeormoreBSsinaroom,locatedonthe
+However, using just a single BS comes at a cost: we ceiling, spaced widely apart. Ceiling placement increases
+can’t expect to get centimeter-accurate position informa- theprobabilityofaclearline-of-sight(LOS)pathbetween
+tioninaneasyway.Instead,weaimforasystemthatpro- MDandtheBSs.ThewidespacebetweenBSunitsavoids
+vides medium accuracy for one room. Although this ex- errorinducedbyunfavorablegeometricalconfigurations,as
+cludeshighaccuracyapplications,therearemanyinterest- willbeshownlaterinSection3.1.However,thelargespa-
+ingapplicationsrequiringjustmedium/lowaccuracy. tial extent of these setups is a disadvantage from the con-
+We believe that the introduction of location systems in sumerpointofview.
+homesisviable,ifitcanbedonegradually.Atypicalgrad- The configuration proposed here brings together three
+ualbusinessmodele.g.allowsausertoinitiallybuyasingle BSsintoasinglecompactunit(Fig.1).Abaselinedistance
+BSforthelivingroom.Later,moreBSdevicescanbepur- of d = 11.5 cm was chosen, to make it a compact de-
+BL
+chased for other rooms in the house. Perhaps a single-BS vice.(Theinfluenceoftheparameterd onsystemperfor-
+BL
+location system in the living room could be enhanced by mance will be discussed in Section 3.1.) This BS can be
+addingasecondBSattheothersideoftheroom,whichre- placed in many ways inside a room. Good BS positions
+quires a BS to be able to cooperate with other BS units. include (1) against a room wall at a high position, (2) at-
+Then, unification of different coordinate systems may be- tachedtotheceilinginthemiddleoftheroom,and(3)di-
+comeaproblem[18]. agonallyinaceilingcorner.Inthispaper,position(1)isin-
+Inthenextsection,asingle-BSpositioningmethodwill vestigatedfor two reasons:first, it issimilar to the BS po-
+beintroducedthatusesanarrayofthreetransducersinthe sition forthe single-transducerBSapproachin [5], so that
+BS. In Section 3, five potential problems of the proposed positioningperformancebetween the two approachesmay
+methodwillbestatedandsolutionswillbediscussed.Sec- becomparedinthefuture.Second,position(1)ismorefa-
+tions4and5describeourimplementationofthesingle-BS vorablethan(2)fromtheconsumerperspective,becausethe
+systemandexperimentsperformedwithit.Theconclusions BScanbemoreeasilyfixedtoawall(orsimplybeputupon
+aregiveninSection6. aledgeorcupboard),andbecauseamainspowersocketfor
+theBSisusuallynotavailableontheceilinginthemiddle
+2. Singlebasestationpositioningmethod ofaroom.However,theceilingposition(2)alsohasinter-
+estingpropertiessuchasshortestaveragedistancebetween
+In this section, the single base station array positioning BSandMDs.
+methodandthebasestation(BS)designwillbeintroduced. The proposed array configuration resembles the 2D ul-
+trasonic inter-robot localization system by Wu et al. [21],
+2.1. Ultrasoundtime-of-flighttrilateration wheretransducerswerealsoplacedrelativelyclosetogether
+at5.1cm,ina2x2arrayconfiguration.
+Trilateration [9, 14] consists of measuring three dis- Foranyultrasoniclocationsystem,animportantdesign
+tances d im between a target and three reference points r i, decision is whether MDs send ultrasound as in [2], or the
+and using these distances to calculate the unknown target infrastructure sends ultrasound and the MD receives as in
+3Dpositionx. For morereferencepoints,it is calledmul- [8,16].Thesingle-BSarraymethodcanworkinbothways
+tilateration. The fixed referencepoints are usually BSs. In in principle. Other decisions about what devices send and
+Proceedings of the Second IEEE Annual Conference on Pervasive Computing and Communications (PERCOM’04)
+0-7695-2090-1/04 $ 20.00 © 2004 IEEE3.1. Unfavorablegeometric configuration
+3
+The errorina 3D positionestimate dependsnotjuston
+errors in the distance measurements, but also on the geo-
+d H metrical configuration of MD and BS positions, in a non-
+linearmanner[14].Thepositionerrorduetosmallrandom
+measured-distance errors can be modeled by the Geomet-
+1 2
+ricDilutionofPrecisionconcept[10,14](GDOP,orDOP
+forshort).TheDOPcanbeseenasadistanceerroramplifi-
+cationfactor:foranexpectedstandarddeviation(SD)σ dof
+d
+BL measureddistancesaroundthetruevalue,theexpectedpo-
+sitionestimateerrorSDforaMDisσ p =(DOP)·σ d.The
+Figure1.Single-BSarraywiththreetransduc-
+positionsofBSsandtheMDinfluencethevalue‘DOP’.For
+ersseenfromthefront.
+fixedBSposition(s),theDOPisafunctionoftheMDposi-
+tiononly.
+AnanalysisusingtheDOPconceptwillbeshownnow,
+receivetheRFsignalsfortimesynchronization,andwhere
+which highlights the problem that is introduced by bring-
+positionestimatesarecalculated,remainopeninthispaper.
+ingthethreeBSsintooneunit.Twoconfigurationswillbe
+compared:(1)astandardthree-BSsetupwheretheBSunits
+2.3. Leastsquarestrilateration
+areplacedinthreeceilingcorners;(2)theproposedsingle-
+BSarrayplacedagainstawallataceilingheightof2.97m.
+Aleastsquarestrilaterationalgorithmisusedinourim-
+ForthisanalysistheHDOP(horizontalDOP)[10,14]con-
+plementation, to estimate a 3D position from three mea-
+sureddistancesdm.Thealgorithmiterativelyupdatesapo- cept will be used, which only considers the position error
+i in thehorizontalplane.Althoughthe HDOPcan be calcu-
+sitionestimatexˆ,suchthatacostfunctionE isminimized.
+lated for a specific positioning algorithm as in [14], here
+Thecostfunctionisthesum ofsquarederrorsbetweenel-
+ementsofthemeasureddistancesvectordm andestimated the Cramer-Rao lower bound(CRB) [13] on the HDOP is
+distancesvectordˆ
+:
+calculatedinstead.Itrepresentsthebest(=lowest)possible
+HDOPthatanyunbiasedestimatorofthehorizontalMDpo-
+(cid:1)3 sitionvector(x,y)canreach.
+E(dm,dˆ)= (d im−dˆ i)2, (1) TheCRBontheHDOPforbothconfigurationsisshown
+i=1 inFig.2(a)and2(b)respectively.Theboundwascalculated
+w foh re ire =th 1e ,t 2h ,r 3e ;e ae nl dem xe bn it ss to hf edˆ kna ore wg niv pe on sib tiy ondˆ i of= tra|xˆ ns− dux ceb i r| o tyv pe ir cam la Mny DM heD igp ho ts zit =ion 1s .2( 0x m,y .,z), where z was fixed to a
+i
+i in the BS. To solve this nonlinearoptimization problem, It can be observed in the figures that the HDOP values
+for the single-BS array (2) are much higher than for the
+theMATLAB[15]functionlsqnonlinwasused,whichuses
+three-BS case (1). For the single BS, the HDOP value of
+theJacobianof the costfunctionforquickconvergence.It
+200aroundy ≈0.4meansthatanerrorSDof1mm(forall
+needsaninitialpositionestimatetostartwith.Equationsfor
+three measured distances) results in an error SD of 20 cm
+agoodinitialestimatewereanalyticallyderived,bysolving
+forthepositionestimate (x,y). Inthe experimentsin Sec-
+anapproximationofthe positioningproblem.Theapprox-
+tion5itisinvestigatedwhetherthehighDOPcausesprob-
+imationholdsfortheassumptionsthattheMDisfaraway
+from the BS, d i (cid:1) d , and that measured distances have lematicallylowpositioningaccuracy,ornot.
+BL ApartialsolutiontothehighDOPproblemcomesfrom
+zeroerror.
+thefactthaterrorduetoDOPcanbeestimated.Thismeans
+that the error boundsfor the MD position estimate, which
+3. Problemsofthe singlebasestationmethod
+arereportedbackbythepositioningsystemtoapplications,
+can be dynamically adapted depending on the estimated
+Thedesigndecisionofintegratingallinfrastructureinto
+currentDOPvalue.
+oneunit,althoughattractive,presentsa numberofspecific
+problems.Inthissectionfivepotentialproblemsareidenti- InfluenceoftheBSbaselinedistance. Thebaselinedistance
+fiedandanumberofsolutionsareproposed.Theproblems d (see Fig. 1) has a direct effect on the HDOP. By in-
+BL
+ofunfavorablegeometricconfigurations(Section3.1),line- creasing d , HDOP can be decreased, so a trade-off ex-
+BL
+of-sight path occlusion (Section 3.2), multipath interfer- ists between BS compactness and positioning error. Note
+ence (Section 3.3), movement during measurements (Sec- that the HDOP for positions near y = 0 will remain rela-
+tion3.4),andinstallation(Section3.5)arediscussed. tively large for any d , due to the inability of the single-
+BL
+Proceedings of the Second IEEE Annual Conference on Pervasive Computing and Communications (PERCOM’04)
+0-7695-2090-1/04 $ 20.00 © 2004 IEEE7
+6
+5
+4
+3
+2
+1
+0
+0 1 2 3
+X coordinate (m)
+)m(
+etanidrooc
+Y
+3.2
+3 7
+2.8
+2.6 6
+2.4
+5
+2.2
+2 4
+1.8
+3
+1.6
+2
+1.5
+1
+1.45
+0
+0 1 2 3
+X coordinate (m)
+(a) Cornersetup
+)m(
+etanidrooc
+Y
+ceiver.Then,itispossiblethatareflectedwavethatarrives
+100 later is mistakenly seen as the LOS signal, which can re-
+sultinlargepositioningerrors.
+90 A first step towards solving this problem is to detect
+when occlusion happens. If occlusion is detected, we can
+80 rejectthemeasurementorassigna lowconfidencelevelto
+the corresponding position estimate, which will hopefully
+70 avoidlargeerrors.Onemethodforocclusiondetectionwill
+beintroducednow.Themethodisbasedontheassumption
+that LOS peaks in an ultrasound signal are more likely to
+60
+bevalidiftheirrelativeamplitudea ishigher.(TheLOS
+rel
+55 peakisthecharacteristicfirstpeakinameasuredultrasound
+signal,thatiscausedbythearrivaloftheacousticwaveover
+theshortest(line-of-sight)path.NotethatiftheLOSpeak’s
+70
+80 amplitudeislow,itmaybeundetectableamidstnoise.)The
+100
+90 relative amplitudeof LOS peakscan be defined in a num-
+200
+500 500 berofways,forexampleastheratiooftheLOSpeakam-
+plitudeam totheRMSamplitudeofallotherpeaks:
+1
+(b) Single-BSsetup am
+a = 1 , (2)
+rel RMS(am)
+Figure 2. Isograms of constant HDOP (lower
+wherethevectoram includesallremainingdetectedpeaks
+bound)withinaroom,fortwodistinctsetups.
+The MD height is Z = 1.2 m. BS transducer
+a im(i≥2)duetoacousticalnoise,cross-correlationnoise,
+positionsaremarkedby(cid:1). andacousticreflections(i.e.multipathcomponents).Given
+theaboveassumption,thevaluea canbeusedasacon-
+rel
+fidence value for the measurement. Using a threshold T
+rel
+that dictates a minimum value of a for a measurement
+BS array to estimate y-coordinatesaccurately near y = 0. rel
+to be accepted,a simple occlusionclassifier can be imple-
+(Thiscanbeverifiedbygeometry:asmallpositionchange
+mented. This classifier performance will be tested in Sec-
+of∆y,foranyMD positionneary = 0,inducesa change
+tion5.
+of(∂dm/∂y)·∆y ≈0inthemeasureddistancesdm.)
+i i
+3.3. Multipathinterference
+3.2. Line-of-sight occlusion
+Even when an unobstructedLOS path exists between a
+Theline-of-sight(LOS)pathbetweenthesingleBSand BS and a MD, one source of error can disturb the mea-
+a MD can be easily obstructedby personsor furnitureob- suredLOSdistances.Thiserroriscausedbythemultipath
+jects. A typicalobstructionoccurswhena personcarrying interference effect, which means that reflections of ultra-
+a MD is facing away from the BS, so the person’s body sonic waves (so-calledmultipathcomponentsor multipath
+isobstructingtheLOSpath.Anothertypicalcase is a MD signals) arrive at a receiver while it is still ‘busy’ receiv-
+not pointing straight towards the BS, so that the MD cas- ingtheLOSsignal.Thesereflectionscanbecausedbyper-
+ingblockstheLOSpath.Forallsuchobstructioncasesthe sons,objectsorwalls.Themultipathcomponentsmaydis-
+termLOSocclusionwillbeused. turb the LOS signal by alteration of its phase or shape, or
+Two possible cases can be distinguished:in partial oc- byconstructiveordestructiveinterference,leadingtoerrors
+clusion, LOS signals can still be measured, as the acous- inpositionestimates.ForGPSreceivers,multipathisexten-
+ticwavesdiffract[4]i.e.‘bend’aroundtheobstacleanddo sivelystudied[20]asitisthelargestsourceoferror.Forin-
+reach the receiver. The amplitude of a diffracted signal is doorultrasonicsystems,multipatherrorisusuallynotanis-
+much lower than that of a signal in clear LOS conditions, sue because itis in the orderof magnitudeof a few cm or
+andthelengthofthediffractedwave’spropagationpathwill less.However,forthesingle-BSmethodevenanerrorthis
+beslightlylongerthantheLOSdistance.Boththelowam- small is undesirableas it may lead to largepositioninger-
+plitudeandtheincreasedpropagationpath-lengthcancause rors(aswasshowninSection3.1).
+errors in position estimates. In the case of full occlusion, Next, three solutions to the multipath problem will be
+the LOS path is obstructed such that the amplitude of the given,thatwillnotremovemultipatherrorcompletely,but
+diffractedLOSsignalistoolowtobemeasurableatthere- willreduceit.Astraightforwardfirstsolutionistoincrease
+Proceedings of the Second IEEE Annual Conference on Pervasive Computing and Communications (PERCOM’04)
+0-7695-2090-1/04 $ 20.00 © 2004 IEEEthebandwidthofultrasoundtransducers.Rouglyspeaking, mitted overthe same ultrasoundchannel.The well-known
+transmissions of larger bandwidth can be made shorter in CodeDivisionMultipleAccess(CDMA)[19]schemeuses
+time duration, which lowers the probability that a LOS orthogonalsignals. This approachhasbeen used beforein
+signal will overlap with multipath components that arrive ultrasonicpositioning[7,8]andecholocationsystems[12]
+slightlylateratthereceiver.Forthetheoreticallimitofin- to obtain multiple-access capability, so details are omitted
+finitely narrow impulse signals, multipath error would be here.ACDMAschemeisusedinourimplementation.
+non-existent. It is shown by Hazas and Ward [7, 8] that
+broadbandtransducerscanworkwellinanindoorposition- 3.5. Installation issues
+ingsystem.
+Secondly, solutions exist that use signal processing in OnemoreissueconcernstheinstallationoftheBS.The
+the receiver to compensate for a low bandwidth channel, installationofasingleBSbyanon-expertusershouldbeas
+asshownbythebodyofworkonGPSreceivers[20]andon simpleaspossible,perhapseven‘plugandplay’.Ideally,a
+sonarapplications(e.g.[3]). system shouldallow usersto choosea convenientlocation
+Athirdsolutionisproposedhereforultrasonicsystems forthe BSunit.ButhowcanaBS knowitsownposition?
+thatuse low bandwidthpiezo ultrasoundtransducers.This Ifauserhastoentercoordinatesintothesystem,theinstal-
+methodwasimplementedintheexperimentalsetup(ofSec- lationbecomescumbersome.So auser-friendlymethodof
+tion 4). It uses signal processing at the transmitter side to enteringormeasuringtheBScoordinatesisneeded.Inthe
+increasethebandwidthofpiezotransducers.Byincreasing scopeofthispapernosolutionsarepresented,butitissim-
+thebandwidth,multipatherrorshoulddecrease.Asoftware plyassumedthattheBSpositionisknownandfixed.
+FFT filter with a specially shaped frequency spectrum is NotethataninterestingsideeffectofasingleBSisthat
+connectedbeforethetransmitter.Thefiltershapewascho- enteringcoordinatesmaynotbeneededinsomecases.The
+sen to widenthe typicalnarrowband-passpeakin the fre- single BS can define its own ad-hoc coordinate system in
+quencyspectrumofapiezotransducer.Thiswaythe3-dB- which the BS always resides at the origin. This is useful
+bandwidthof the combinedtransmitter-receiverpair could only for applications that use relative positions instead of
+beenlargedfrom0.8kHztoavalueinthe1-10kHzrange, real-worldroomcoordinates,forexampleapplicationsthat
+where the value is controllable in real-time by a filter pa- onlyrequire a movementtrajectoryof a MD, and applica-
+rameter.Notethatthebandwidthcannotbeincreasedindef- tionsthatneedtoknowMDpositionsrelativetoeachother.
+initely,sinceextrabandwidthisgainedatthecostoftrans-
+ducerefficiency. 4. Implementation
+3.4. Movingmobiledevices A measurement setup has been built to test the single-
+BSarraymethod.Itconsistsofaflexiblehardwaresetupof
+While a MD is performing distance measurements, it uptoeightultrasoundtransmittersandeightreceiverscon-
+may be moving. This can lead to errors in position esti- nectedtoaPC,withallsignalprocessingandpositionesti-
+mates if the three measurements between BS and MD are mationdoneinsoftware.
+takensequentiallyinaTDMAscheme.Inthetimebetween
+measurements(e.g.50ms)theMDmayhavemovedupto 4.1. Measurementhardwaresetup
+several centimeters, which causes the measured distances
+d im tobemutuallyinconsistent.Asthesingle-BStrilatera- ThemeasurementsetupisshowninFig.3.Threetrans-
+tionmethodeffectivelyreliesonsmalldifferencesbetween mitters for the BS and one receiver for the MD are con-
+these distances to computethe position of the MD, move- nectedtoameasurementPC.Outputwaveformsofarbitrary
+mentmaycauseincorrectpositionestimates. shapecanbegeneratedbythethreeoutputDACs.Theout-
+Threesolutionsareconsideredheretoavoiderrorsdueto puts drive Quantelec SQ-40T 40 kHz ultrasound transmit-
+movingMDs.Afirstoneistoreversethedirectionofultra- tersat±3Vpeak.Theacousticwavespropagateinsidethe
+soundtransmissions,andleteachMDintheroomsequen- room, and are recordedby a single Quantelec SQ-40R re-
+tiallytransmitanultrasoundsignalandlettheBStransduc- ceiver. The received electrical signal is amplified, and fil-
+erssimultaneously‘listen’,whichavoidsthetimedelaysbe- tered by a 30-100 kHz bandpass filter to remove electri-
+tween subsequent measurements that caused the problem. cal noise. The ADC samples the data y(k) and sends it to
+Asecondsolutionistomeasuredistancestwiceanddeduct MATLAB. All equipment is connected by coaxial cables.
+from these values if a MD is stationary or not. If not, the TimesynchronizationbetweenBSandMDissimulatedby
+measurementcanberejected.AthirdsolutionistoletallBS asharedtimetriggerbetweentheADCandDACboards.
+transducerstransmitatthesametime,usingthreeorthogo- OneMDwassimulatedusinga10x6.5x2.5cmempty
+nalsignalsthatdonotinterferewitheachotherwhentrans- plastic box with the receiver transducer inside (Fig. 4(a)).
+Proceedings of the Second IEEE Annual Conference on Pervasive Computing and Communications (PERCOM’04)
+0-7695-2090-1/04 $ 20.00 © 2004 IEEENI PCI-MIO-16E-1 card Measurement y(k)
+Coaxial Ultrasound
+cable receiver
+y(k) ADC Filter
+Template Cross-correlation (identical processing
+PC Amplifier EG&G 5113 t 1(k) for t 2(k) and t 3(k) )
+Room x(k)
+1
+u 1(k) DAC Amp Carrier frequency
+f Demodulation
+c
+Coaxial cables
+u 2(k) DAC Amp
+Sound Sampling Downsampling
+frequency f
+s
+u 3(k) DAC Amp Signature s 1(k) s 2(k) s 3(k)
+Ultrasound
+NI 6713 DAC card transmitters
+Line-of-sight estimation
+Figure3.Measurementsetupdiagram.
+Validity classification
+LOS distances dm dm dm accept / reject
+1 2 3
+Figure5.Signalprocessingoperationstoob-
+tainthreeLOSdistanceestimates.
+as sent by transducer j from the BS array. Three orthogo-
+nalcodesfortransmissionwereselectedfromasetof127-
+bit m-sequences [11] optimized for good cross-correlation
+(a) Mobiledevice(MD) (b) Basestation(BS)
+propertiesaccording to the MSQCC/CO criterion. The bi-
+nary codes were nottransmitted directly, but were used to
+Figure 4. The MD and BS used in the experi-
+phase-modulateasequenceof127sinusoidalburstsignals,
+ments.
+of38mstotalsequenceduration.
+The second step demodulates an amplitude envelope
+fromtheultrasoundsignal’sf
+c
+=40kHzcarrierfrequency.
+Thetransducerorientationwas chosento point10 degrees Sincethebandwidthoftheenvelopeislessthan10kHz,it
+upwhenthe MD isheld in a horizontalposition.Thisori- can be downsampled in the third step by a factor ten to a
+entationensuresareasonablygoodorientationofthetrans- samplingfrequencyf s = 25kHz. We use the term signa-
+ducer towards the BS, for the typical way the MD is held tures[5]fortheenvelopess j,becausetheyretainallinfor-
+inahand.TheBS(Fig.4(b))consistsofthreetransmitters mationfromx jabouttheLOSsignal’sTOFandsubsequent
+fixedtoapieceoffoamatpreciselydeterminedpositions(1 multipathcomponents.
+mmaccuracy). ThefourthstepofLOSestimationanalyzesthethreesig-
+natures s j together, and produces an estimate of the three
+4.2. Signalprocessing framework LOSdistancesdm i .Thevalidityclassifier,integratedinthis
+step,decideswhetherthemeasurementisgoodenoughtobe
+Figure 5 shows the operations performed on the mea- used for position estimation, by either accepting or reject-
+sured receiver signal y(k), which is recorded for 105 ms ingit. Theamplitude-thresholdclassifier describedinSec-
+starting at each transmission start time t 0. (Although this tion 3.2 was used for this task, with a defaultthresholdof
+enables an update rate of almost 10 Hz, the current setup T rel = 4. Finally a position estimate is obtained by feed-
+estimatespositionsatjust0.3Hz,asitisnotoptimizedfor ingtheLOSdistanceestimatesintotheleastsquaresalgo-
+speed.)Thesignalycontainsthecombinedcontributionsof rithmoutlinedinSection2.3.
+threeorthogonalcodedsignalsinaCDMAscheme(Section
+3.4)fromthethreeBStransmitters.Thegoaloftheprocess- 5. Experiments
+ingstepsistoobtainthethreeLOSpathdistances.
+Thefirstprocessingstepofcross-correlationseparatesy Thesingle-BSarraymethodhasbeentestedinanexper-
+intothreesignalsx j usingtemplatesignalst 1,t 2andt 3re- imentalsetting,butnotyetinanyapplications.Inthissec-
+spectively, where template t j is the expected coded signal tion,theexperimentandresultsarepresented.
+Proceedings of the Second IEEE Annual Conference on Pervasive Computing and Communications (PERCOM’04)
+0-7695-2090-1/04 $ 20.00 © 2004 IEEEmentswillbediscussed.SelectedresultsfortheSouthori-
+entationare shownin Fig. 7(a).Itshowsa top viewof the
+room,with81truemeasurementpositionsshownascircles
+or crosses. From each true position circle, an error vector
+pointstowardstheestimatedposition.Thisgivesanimpres-
+Cupboard sion of the quality of horizontal position estimates. Note
+thatperpositiononlythe errorvectorof thefirstmeasure-
+Table 1
+ment repeat is shown. True positions marked with a cross
+MD are rejected measurements (Section 4.2). We observe that
+orientations: formanypointsinthemiddleoftheroom,positioncanbe
+North foundquiteaccurately,witherrorsbelow50cm.Theerror
+PC cart
+Table 2 West tends to get worse further away from the BS. Twenty-one
+y
+measurements were rejected by the validity classifier be-
+South
+0 x BS causetherelativeamplitudeoftheLOSpeakswastoolow.
+ForthesixacceptedmeasurementsclosesttotheEastwall,
+Figure 6. Test room layout, with base station theLOSdistancemeasurementsarelikelydegradedbythe
+(BS)andfurniturepositions. multipathinterferenceeffect,causedbystrongacousticre-
+flectionsfromthe East wall, whichhave a path lengthjust
+12cmlongerthantheLOSpath.However,theresultingpo-
+5.1. Experimentalprocedure sitionerrorisacceptable.
+Figure7(b)showstheerrorvectorsfortheNorthorien-
+A standard office room of 3.73 by 7.70 m and 2.97 m tation. As expected,valid LOS distancescan notbe found
+high was used as a test room. Several furniture items like for most positions, due to LOS occlusion by the user’s
+a cupboard, two tables of 0.75 m high, a chair and mea- body. Still, ten position estimates are found. Four of the
+surementPCcartwerepresentthatcouldpotentiallycause north-most estimates have a large error vector pointing
+theproblemsofLOSocclusionandmultipathinterference. North.Thishappenswhenacousticreflectionsignalsarede-
+Theroomlayoutwith furnitureandBS positionsis shown tectedinsteadofthetrueLOSsignal.Thesereflectionswere
+inFig.6.TheMDwasmountedonapoletoensureafixed causedbythenorthernwall,thecupboard,andtheceiling,
+heightovera setofmeasurements.Thepolewasplacedat respectivelyforthetoptwo,middleandbottompositionsof
+about80locationswithintheroom,withtheMDataheight thefour.
+of 1.28 m for most measurements. For some positions the Thetotalresultsforall2410measurements(nowinclud-
+polewasplacedononeofthetables,liftingtheMDto2.03 ing all ten repeated measurements) are shown in Table 1.
+m high. Placement accuracy of the MD was 5 cm or bet- For each orientation, the second column lists the percent-
+ter. ageofacceptedmeasurements.Thethirdcolumngivesthe
+During measurements the MD was held by the exper- medianvalueof3Dpositionerrors,overallacceptedmea-
+imenter, to simulate the carrying around of the MD by a surements. The last column gives the 95% bound on the
+user.Threedifferentorientationsofthe‘user’(holdingthe 3D error. It can be seen that for the North orientation, the
+MD) were measured for each position: North, South, and worst-casepositionerrorsaremuchhigher,andmostmea-
+West, shownin Fig.6. (TheEastorientationwasnotmea- surementsarerejected.
+suredbecauseitisgeometricallysimilartotheWestorien- Thesame2410measurementsareshowninthreegraphs
+tation.) For each position/orientation combination, ten re- in Fig. 8, one graphfor each orientation tried. Each graph
+peated measurements were taken in an approximately 5 s showstheestimatedCDFofthreeerrordistributionsrespec-
+period. tively:total3Dpositionerror,horizontalerrorandvertical
+The North orientation is unfavorable, since the user’s error.ThebestresultsareclearlyfortheSouthandWestori-
+body easily occludes the LOS path between BS and MD. entations,where95%of3Dpositionerrorsarebelow1.41
+Certain positions behind the cupboard suffered from LOS m.
+occlusionaswell.
+5.3. Influenceofthevalidity classifier threshold
+5.2. Results
+For all results above, the measurement validity classi-
+First, some selected results will be shown that give an fierproposedinSection3.2wasusedwithafixedthreshold
+impressionofthepositioningperformanceasafunctionof T =4.Thisthresholdcanbeincreasedtogethigheraccu-
+rel
+MDlocation.Afterthis,theperformanceoverallmeasure- racy(withaloweracceptancerate)ordecreasedtogetlower
+Proceedings of the Second IEEE Annual Conference on Pervasive Computing and Communications (PERCOM’04)
+0-7695-2090-1/04 $ 20.00 © 2004 IEEE8
+7
+6
+5
+4
+3
+2
+1
+0
+0 1 2 3
+X (m)
+)m(
+Y
+south
+8
+7
+6
+5
+4
+3
+2
+1
+0
+0 1 2 3
+X (m)
+(a) Southorientation
+)m(
+Y
+north
+(b) Northorientation
+Figure7.Resultsof2D positionestimation.Vectorspointfromtruepositions(◦)towardsestimated
+position. Crosses (×) mark rejected measurements. The BS position is marked by (cid:1)(cid:1)(cid:1), and dashed
+linesshowtheoutlinesofthefurnitureitemspresentintheroom.
+MDOrientation Measurement Median3D 95%Boundon3D
+acceptancerate positionerror(m) positionerror(m)
+South 74% 0.33 1.14
+North 10% 0.65 3.20
+West 42% 0.28 1.41
+Table1.Summaryof3DpositionestimationresultsforSouth,NorthandWestorientations.
+accuracy (but a higher acceptance rate). It should be veri- error bound as a function of the threshold. It can be seen
+fied whether the assumption underlying the classifier, that thaterrordecreasesforhigherthresholds.However,theac-
+higher relative LOS peak amplitude implies higher proba- ceptanceratealsodecreasesforhigherthresholdsasshown
+bilityofvalidity,iscorrect. inFig.9(b).Forthresholdvaluesof9.4andhigher,allmea-
+Theassumptionwastestedbyclassifyingall2410mea- surementsarerejected.
+surementsaseitheracceptedorrejectedanumberoftimes, It can be concluded from the graphs that the assump-
+using each time a different threshold value T ranging tionunderlyingtheclassifierisindeedcorrect,andthatthe
+rel
+from0.5 to 10. Each time, the median and 95% boundon thresholdclassifierissuccessfulatrejectinghigh-errormea-
+the3Dpositionerrorwerecalculatedfortheacceptedmea- surements.FromFig.9,thetrade-offbetweenaccuracyand
+surements. Figure 9(a) shows both median error and 95% acceptanceratecanbeobserved.
+Proceedings of the Second IEEE Annual Conference on Pervasive Computing and Communications (PERCOM’04)
+0-7695-2090-1/04 $ 20.00 © 2004 IEEE100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+0
+0 0.5 1 1.5 2 2.5 3
+Position error (m)
+assicsba
+naht
+ssel
+rorre
+htiw
+setamitse
+fo
+egatnecreP
+south
+100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+0
+0 0.5 1 1.5 2 2.5 3
+Position error (m)
+(a) Southorientation
+assicsba
+naht
+ssel
+rorre
+htiw
+setamitse
+fo
+egatnecreP
+north
+100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+0
+0 0.5 1 1.5 2 2.5 3
+Position error (m)
+(b) Northorientation
+assicsba
+naht
+ssel
+rorre
+htiw
+setamitse
+fo
+egatnecreP
+west
+3D Position
+Horizontal
+Vertical
+(c) Westorientation
+Figure8.Accuracydistributionsofallpositionestimates,forthethreeMDorientationsrespectively.
+4
+3.5
+3
+2.5
+2
+1.5
+1
+0.5
+0
+0 2 4 6 8 10 Threshold T
+rel
+)m(
+rorre
+noitisoP
+D3
+95% error bound
+median error
+(a) Medianerror,and95%errorbound
+100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+0
+0 2 4 6 8 10
+Threshold T
+rel
+stnemerusaem
+detpeccA
+%
+5.4. Discussion
+FromthehighrejectionrateoftheNorth-orientationpo-
+sitionestimates,itcanbeconcludedthatLOSocclusionis
+a major problem for unfavorable orientations of the MD.
+Also forthe obstructedpositionsbehindthecupboard,po-
+sitionestimateswerenotfoundbecauseLOSpeakdetection
+failed.FromtheSouthorientationresultsinFig.7(a)theef-
+fectof the unfavorablegeometricalconfiguration,as mod-
+eled by the HDOP in Fig. 2(b), can be distinguished. The
+predictedeffectsofhigherpositionerrorsfarawayfromthe
+BSandinthecornersnexttotheBS,areindeedpresentbut
+arenotamajorproblemasageneral‘awareness’of3Dpo-
+sitionintheroomatmediumaccuracyisstillobtained.
+6. Conclusions
+In this paper a positioning method intended for future
+contextawareconsumerapplicationsispresented,thatesti-
+mates3Dpositionsofdeviceswithinaroomatmediumac-
+curacy (around1 m). The method accurately measures ul-
+trasoundtime-of-flightbetweenmobiledevices(MDs)and
+asinglebasestation(BS),andusestrilaterationtofindthe
+MDposition.TheBScontainsanarrayofthreeultrasound
+transmitters. A motivation has been given why a minimal
+infrastructure,andspecificallyasingleBS,isattractivefor
+a consumer location system. Five problems are identified
+(b) Acceptancerate thatresultdirectlyfromthesingle-BSdesign.Fortheprob-
+lems of unfavorable geometric configuration, line-of-sight
+Figure 9. 3D positioning error and accep- (LOS) occlusion, multipath interference, and moving mo-
+tance rate as a function of the classifier bile devices, a number of solutions are proposed and re-
+threshold T rel, for all three orientation cases search challenges are identified. The fifth problem of BS
+combined. installationisidentifiedbutnosolutionsarepresentedyet.
+Ameasurementsetupwasbuilttotestthesingle-BSar-
+ray positioning method, and experiments were performed.
+Proceedings of the Second IEEE Annual Conference on Pervasive Computing and Communications (PERCOM’04)
+0-7695-2090-1/04 $ 20.00 © 2004 IEEETheBSarraytransducerssimultaneouslyemitthreeorthog- SIGGRAPH 1998, pages 371–378, Orlando, Florida, USA,
+onal coded signals (in a CDMA scheme), which are mea- 1998.
+suredbytheMD.Athreshold-basedclassifierwassuccess- [7] M.HazasandA.Ward. ANovelBroadbandUltrasonicLo-
+fullyusedtoclassifymeasurementsasvalid/invalid.Aleast cationSystem. InProc.Int.Conf.onUbiquitousComputing
+squares trilateration algorithm was used to estimate posi- (UbiComp),pages264–280,Go¨teborg,Sweden,2002.
+tionsforacceptedmeasurements.Theexperimentalresults [8] M. Hazas and A. Ward. A High Performance Privacy-
+Oriented Location System. In Proc. IEEE Int. Conf. on
+showthat an accuracyof 1.41m or bettercan be obtained
+PervasiveComputingandCommunications(PerCom),pages
+95%ofthetime,ifthereisagoodLOSpathbetweentheBS
+216–223,Dallas-FortWorth,USA,2003.
+andtheMD.ForthetestedsituationsofLOSocclusion,ac-
+[9] J.HightowerandG.Borriello. LocationSystemsforUbiq-
+curacydropsto3.20morbetterfor95%oftheestimates.
+uitous Computing. IEEE Computer, 2001(August):57–66,
+It can be concludedthat the positioningperformanceis
+2001.
+promising,butsuffersfromtheLOSocclusionproblem.Im-
+[10] E. Kaplan. Understanding GPS: Principles and Applica-
+provementsinthemethodareneededtocopewithLOSoc-
+tions. ArtechHouse,1996.
+clusion.
+[11] K.Ka¨rkka¨inenandP.Leppa¨nen. TheImportanceofInitial-
+Futurework. Asanextstep,theseverityoftheLOSocclu- PhaseSelectionAgreementofPNSequencesfromtheStand-
+sion problem should be studied further for different room pointofNumericalAnalysisandSimulationofaDS-CDMA
+System. In Proc. IEEE Global Telecomm. Conf. (Globe-
+layouts and different base station positions, and solutions
+Com),pages3295–3301,Sydney,Australia,1998.
+will have to be found. Secondly it would be worthwhile
+[12] R.Kazys, L.Svilainis,andL.Mazeika. Applicationofor-
+to evaluate whether including one or more extra transduc-
+thogonalultrasonicsignalsandbinauralprocessingforimag-
+ers on the BS could improve accuracy. Thirdly, the sys-
+ingoftheenvironent. Ultrasonics,38(1-8):171–175,2000.
+tem could perform MD orientation estimation by adding
+[13] L.Ljung. Systemidentification:theoryfortheuser. Upper
+one extra transducer on the MD. Fourth, the threshold va-
+SaddleRiver:PrenticeHall,2ndedition,1999.
+lidity classifier couldbe replacedby a probabilisticclassi-
+[14] D.Manolakis. EfficientSolutionandPerformanceAnalysis
+fier,whichcanproduceerrorboundsforpositionestimates.
+of3-DPositionEstimationbyTrilateration. IEEETrans.on
+These can be used for example to combine several mea- AerospaceandElectronicSystems,32(4):1239–1248,1996.
+surements into a single more confident position estimate. [15] Mathworks. MATLABversion6(R13);withstatisticsand
+Fifth, the current LOS distance estimation method can be optimizationtoolboxes. www.mathworks.com.
+improvedusingmethodsthatachievesub-sampleaccuracy [16] N. Priyantha, A. Miu, H. Balakrishnan, and S.Teller. The
+[3] in distance estimates. Sixth, the BS array could per- Cricket Compass for Context-Aware Mobile Applications.
+formbeam-steering[22]whichcanbeusedasanalternative InProc.ACM7thInt.Conf.onMobileComputingandNet-
+methodtoobtainaccuratemeasurementsoftheangulardi- working(MOBICOM),pages1–14,Rome,Italy,2001.
+rectionofatargetMD.Finally,ultrasoundreflectionsinthe [17] C.RandellandH.Muller.LowCostIndoorPositioningSys-
+roomcouldbeused[5]togivecluesaboutlikelyMDposi- tem. In Proc. Int. Conf. on Ubiquitous Computing (Ubi-
+Comp),pages42–48,Atlanta,Georgia,USA,2001.
+tions, for situations where a good LOS signal is not avail-
+[18] J.ScottandM.Hazas. User-FriendlySurveyingTechniques
+able.
+forLocation-AwareSystems.InProc.5thInt.Conf.onUbiq-
+uitousComputing (UbiComp),pages44–53, Seattle,Wash-
+References
+ington,USA,2003.
+[19] A.Viterbi. CDMA:PrinciplesofSpreadSpectrumCommu-
+[1] PHENOM project, 2003. www.project-phenom.info ;
+nication. Addison-Wesley,1995.
+www.dse.nl/∼esko.
+[20] L.Weill. ConqueringMultipath:TheGPSAccuracyBattle.
+[2] M.Addlesee,R.Curwen,S.Hodges,J.Newman,P.Steggles,
+GPSWorld,1997(April):59–66,1997.
+A.Ward,andA.Hopper. ImplementingaSentientComput-
+[21] J.Wu,W.Chan,andG.Thomas. RapidandAccurateInter-
+ingSystem. IEEEComputer,34(8):50–56,2001.
+RobotPositionDeterminationinRobotTeams. IEEETrans.
+[3] F. Bouchereau, D. Brady, and C. Lanzl. Multipath Delay
+onInstr.andMeasurement,50(1):163–168,2001.
+EstimationUsingaSuperresolutionPN-CorrelationMethod.
+[22] L. Ziomek. Fundamentals of Acoustic Field Theory and
+IEEETrans.onSignalProc.,49(5):938–949,2001.
+Space-TimeSignalProcessing. CRCpress,1995.
+[4] M.Crocker. HandbookofAcoustics. Wiley,1998.
+[5] E. Dijk, C. van Berkel, R. Aarts, and E. van Loenen. Ul-
+trasonic3DPositionEstimationusingaSingleBaseStation.
+InProc.EuropeanSymposiumonAmbientIntelligence(EU-
+SAI),Veldhoven,TheNetherlands,2003.SpringerVerlag.
+[6] E. Foxlin, M. Harrington, and G. Pfeifer. Constellation:
+AWide-RangeWirelessMotion-Tracking SystemforAug-
+mentedRealityandVirtualSetApplications. InProc.ACM
+Proceedings of the Second IEEE Annual Conference on Pervasive Computing and Communications (PERCOM’04)
+0-7695-2090-1/04 $ 20.00 © 2004 IEEE

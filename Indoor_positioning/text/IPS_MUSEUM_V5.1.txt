@@ -1,0 +1,467 @@
+Heriot-Watt University
+Research Gateway
+A semantic approach to enrich user experience in museums
+through indoor positioning
+Citation for published version:
+Duque-Domingo, J, Cerrada, C, Valero, E & Cerrada, JA 2017, A semantic approach to enrich user
+experience in museums through indoor positioning. in S Ochoa, P Singh & J Bravo (eds), Ubiquitous
+Computing and Ambient Intelligence. Lecture Notes in Computer Science, vol. 10586 LNCS, Springer, pp.
+612-623, 11th International Conference on Ubiquitous Computing and Ambient Intelligence UCAmI 2017,
+Philadelphia, Pennsylvania, United States, 7/11/17. https://doi.org/10.1007/978-3-319-67585-5_60
+Digital Object Identifier (DOI):
+10.1007/978-3-319-67585-5_60
+Link:
+Link to publication record in Heriot-Watt Research Portal
+Document Version:
+Peer reviewed version
+Published In:
+Ubiquitous Computing and Ambient Intelligence
+Publisher Rights Statement:
+This is a post-peer-review, pre-copyedit version of an article published in Lecture Notes in Computer Science.
+The final authenticated version is available online at: http://dx.doi.org/10.1007/978-3-319-67585-5_60
+General rights
+Copyright for the publications made accessible via Heriot-Watt Research Portal is retained by the author(s) and /
+or other copyright owners and it is a condition of accessing these publications that users recognise and abide by
+the legal requirements associated with these rights.
+Take down policy
+Heriot-Watt University has made every reasonable effort to ensure that the content in Heriot-Watt Research
+Portal complies with UK legislation. If you believe that the public display of this file breaches copyright please
+contact open.access@hw.ac.uk providing details, and we will remove access to the work immediately and
+investigate your claim.
+Download date: 21. נוב׳. 2024A semantic approach to enrich user experience
+in museums through indoor positioning
+Jaime Duque Domingo1, Carlos Cerrada1, Enrique Valero2, and J.A. Cerrada1
+1 UNED, ETSI Informa´tica,
+Departamento de Ingenier´ıa de Software y Sistemas Informa´ticos,
+C/Juan del Rosal, 16. 28040 Madrid, Spain
+jaimeduque@amenofis.com
+2 Heriot-Watt University, School of Energy, Geoscience, Infrastructure and Society,
+Edinburgh EH14 4AS, United Kingdom
+Abstract. This article presents a novel ontology aiming to connect an
+IndoorPositioningSystem(IPS)toEuropeana,theEuropeanUniondig-
+italplatformforculturalheritage.Themainpurposeofthissystemisto
+deliverinformationaboutCulturalHeritageObjects(CHO)tousersnav-
+igatinginmuseums,whentheyapproachcertainpiecesofart.Although
+different semantic works have been previously published regarding the
+problem of finding optimal paths with IPS, the novelty of this work is
+the combination of indoor positioning and a semantic view of cultural
+objects. This ontology enriches the experience of users and offers a new
+way of enjoying art. The paper shows the effectiveness of the proposed
+ontology to connect a widely known database to a wireless positioning
+system. The potential of the developed method is shown using data ob-
+tainedfromtheRoyalMuseumsofFineArtsofBelgium,oneofthemost
+important European art galleries, with more than six thousand master
+pieceslistedinEuropeana.Someexperimentshavebeenalsocarriedout
+intheOldmastersMuseum,oneoftheconstituentmuseumsoftheRoyal
+Museums that is dedicated to European painters from the 15th to the
+18th centuries.
+Keywords: indoor positioning, WPS, RGB-D sensors, WiFi position-
+ing, fingerprint, depth map, OWL, ontology, SPARQL, ubiquitous com-
+puting,userexperience,Europeana,RoyalMuseumsofFineArtsofBel-
+gium
+1 Introduction
+ModernIndoorPositioningSystems(IPS)facilitatestheinteractionofuserswith
+theenvironment,estimatingthepositionofpeopleorobjectsinsideabuilding[9].
+This kind of systems can be useful in certain environments, where the location
+of users is considered as a trigger for different operations (e.g., enable or disable
+machines, open doors, information management ...).
+This interaction between people and the environment involves a set of con-
+cepts,entitiesandtherelationshipsamongthem,whicharedefinedintheontol-2
+ogy. In this article, a novel ontology is presented aiming to connect a previously
+developed IPS [12] to Europeana.
+Europeana [17] is the European Union’s digital platform for cultural her-
+itage,givingaccesstodifferenttypesofcontentfromdifferentinstitutions.More
+than 3,000 institutions across Europe have contributed to Europeana. The col-
+lectionsletusersexploreEurope’sculturalandscientificheritagefromprehistory
+to the modern day. The digital objects in Europeana are stored in the cultural
+institution and are hosted on their networks. Europeana collects contextual in-
+formation ormetadata aboutitems.Thedata.europeana.euLinkedOpenData
+pilotdatasetcontainsopenmetadataonapproximately2.4milliontexts,images,
+videos and sounds.
+The rest of the paper is structured as follows: Section 2 explores previous
+works related to the techniques used in this article. In Section 3, the developed
+ontologyisdescribed,illustratinghowitislinkedtothepositioningsystemsand
+how the navigation system works. Finally, Section 4 shows carried out exper-
+iments and Section 5 remarks the main features of the presented system and
+proposes future works.
+2 Overview of related work
+2.1 WPS and RGB-D Positioning
+WiFiPositioningSystems(WPS)aremainlyfoundedonthefingerprintingtech-
+nique [19]. This technique creates a map of the environment recording, in each
+point, the received signal from a mobile phone (i.e. Received Signal Strength In-
+dication (RSSI)) . This map is used afterwards to obtain the position of a user
+in real-time, comparing the values received from the user’s portable device to
+those stored in the map.
+One of the main advantages of WPS solutions with respect to similar tech-
+nologies (e.g., RFID or Bluetooth) is the use of devices commonly installed in
+inhabited environments (i.e. routers), whereas other solutions require dedicated
+infrastructure.Also,WPScanbeusedtoprovideInternetaccessaimingtoshare
+information.
+With respect to people and objects positioning, some technologies based on
+computer vision (e.g., RGB-D sensors) have been increasingly used to deliver
+more precise results, such as the method Kinect Positioning System (KPS), an-
+alyzed in [22]. A more complex solution is shown in [24], where the authors
+present an indoor human tracking application using 2 depth-cameras. More re-
+cently, in [26], authors proposed a model for merging Kinect trajectories. Using
+theglobalcoordinatesatthesametimestamp,theirsystemisabletodetermine
+the distance between two skeletons in order to discern between different users.
+ThedevelopedIPSpresentedbyourteamin[12]combinestwowidely-known
+technologies:(WPS),extensivelyusedinindoorpositioning,andcomputervision
+by means of RGB-D sensors. The trajectory of users is considered in both ways:
+exploitingtheWPStrajectoryandthetrajectoryoftheskeletonsoftheusersin3
+thedepth map.Theskeletonsareobtainedbymeansofthetechniquespresented
+in [27] [6], where authors propose new algorithms to quickly and accurately
+predict 3D positions of body joints from depth images. The mentioned IPS is
+the base of the work presented in [13], where the system tracks the position of
+visitors in a museum.
+2.2 Knowledge engineering
+Inthefieldofcomputerscience,anontology[15][14]isthedefinitionandclassi-
+ficationofconceptsandentities,andtherelationshipsbetweenthem.Ontologies
+useentitiesintheuniverseofdiscourse(e.g.,classes,relations,functions,orother
+objects)andformalaxiomsthatconstraintheinterpretationandwell-formeduse
+of these terms. They can be represented in the W3C Web Ontology Language
+(OWL) [8], which is a Semantic Web language designed to represent knowledge
+about things, groups of things, and relations between them.
+Inthelastdecade,differentapproacheshavebeenpresentedtodeliverseman-
+tic views of the indoor navigation problem. In [28], authors propose an Indoor
+Navigation Ontology (INO), which supports the path searching and the presen-
+tation of tasks of a navigation system. More recently, an extended version of
+INO is used in [20], in which an augmented reality solution is also considered to
+provide a richer experience. Another approach for indoor routing was developed
+by [11], where authors propose a different ontology (ONALIN) that provides
+path searching for individuals with special needs and preferences. In [18], au-
+thors present a location-based service (LBS) to figure out the path between a
+starting point and a destination. This is based on an ontology that enriches the
+standardpositioningsinceuserscanshare,manageandquerydatasemantically.
+OGC GeoSPARQL [7] offers support for representing and querying geospatial
+dataontheSemanticWeb.However,itismostlypreparedtorepresentgeometry
+topology, like polygons, instead of being used as a tool for positioning purposes.
+2.3 About data in Europeana
+Europeana is a project developed by the European Commission to incentive
+member states to digitalize and enhance digital preservation in Europe. The
+portal provides free access to a wide array of digital content. It allows in a sim-
+ple but powerful way to find resources from all over Europe. It contains over
+50 million records. These featured datasets represent over a million of the best,
+openly licensed, directly accessible media objects - books, photos, art, artefacts,
+audio clips and more. Europeana has several ways to retrieve data. Informa-
+tion can be obtained by REST API Standard over HTTP, which returns JSON
+data,orbyAnnotationsRESTAPI,whichreturnsJSON-LD.Otherpossibilities
+include OAI-PMH Harvest data via the OAI-PMH protocol and Linked Open
+Data Queries retrieving data in SPARQL. Data can also be linked to external
+data sources, such as the Swedish cultural heritage aggregator, GeoNames, the
+GEMET thesaurus or DBPedia.4
+The use of an ontology in this system, in order to connect it to Europeana,
+facilitates a dynamic behavior, adding new functionalities in a simpler manner
+without modifying data models.
+3 Analysis of the system
+Asmentionedinprevioussections,themainpurposeofthisworkisthedevelop-
+ment of an ontology that links an indoor positioning system to the Europeana
+database,aimingtodeliverinformationaboutCulturalHeritageObjects(CHO)
+tomuseums’users,consideringtheirlocationinsideabuilding.Thisinformation
+about master pieces is retrieved from the database through SPARQL queries.
+Even if this system could be applied in every museum in Europe whose
+works are stored in Europeana database, Royal Museums of Fine Arts of Bel-
+gium (Brussels, Belgium) has been chosen to illustrate this paper. Consider,
+for instance, the search for information about the famous painting of Rogier
+Van der Weyden “D´eploration”. After the corresponding SPARQL query, the
+information shown in Table 1 is provided.
+Longitude and latitude coordinates of the Royal Museums can be easily re-
+trieved. However, the position of the pieces inside the museum is not in Euro-
+peana. Therefore, it is needed to create another relation giving the precise room
+and position of a masterpiece to be used with the developed system. In order to
+do that, an ontology has been created.
+Table 1: Result for the query of “D´eploration”
+CHO http://data.europeana.eu/proxy/provider/2048001/AthenaPlus
+identifier ProvidedCHOKIKIRPABrusselsBelgiumAP10325768
+title “D´eploration”@fr
+creator “VanderWeyden,Rogier”@fr
+date “1441/1464”
+type “tableau[peinture]”
+subject “event”
+format “peint”
+provenance “Object:Mus´eesRoyauxdesBeaux-ArtsdeBelgique,Bruxelles”
+provider “AthenaPlus”
+dataprovider “KIK-IRPA,Brussels(Belgium)”
+mediaURL http://balat.kikirpa.be/image/thumbnail/B117883.jpg
+3.1 New ontology for obtaining the position of a CHO
+As previously mentioned, an ontology is composed of different elements. Classes
+provide an abstraction mechanism for grouping resources with similar charac-
+teristics.Inthisparticularcase,twoOWLclassidentifiershavebeenpredefined,
+namely the classes Thing and Nothing. The extension of Thing is the set of all5
+individuals, whereas for Nothing it is the empty set. Consequently, every OWL
+class is a subclass of Thing [8]. The individuals in the class extension are called
+theinstancesoftheclass.Ifaclassisdefinedasasubclass,thesetofindividuals
+that accepts should be a subset of those individuals in the parent class.
+OWL distinguishes two main categories of properties to be defined in an
+ontology:Objectproperties,whichlinkindividualstoindividuals;andDatatype
+properties, which link individuals to data values.
+Domainandrangeareaxiomsusedintheinferenceprocess.Botharedefined
+as built-in properties. A domain axiom (marked as green arrows in Figure 1)
+links a property to a class description and asserts that the subjects of such
+property statements must belong to the class extension of the indicated class
+description. A range axiom (black arrows in Figure 1) links a property to either
+a class description or a data range. This axiom asserts that the values of this
+property must belong to the class extension of the class description or to data
+values in the specified data range.
+The ontology of Figure 1 has been implemented. As shown, it delivers differ-
+ent types of information.
+Fig.1: Implemented ontology where domain and range axioms are marked as
+green and black arrows respectively.
+There are six general subclasses of Thing: Person, Object, Building, Floor,
+Space and Position. Also, Creator is a subclass of Person, CHO is a subclass of
+Object, and Room, Corridor and Stair are subclasses of Space.
+Person referstoallkindsofindividuals,butCreator justreferstothecreators
+mainlyretrievedfromEuropeana.Thedataproperty“Name”oftype<string >
+acceptsvaluesas“VanderWeyden,Rogier”.TheclassPerson allowsextending6
+thesystemwithothertypesofindividuals:producers,owners,peoplerepresented
+in the CHO, etc.
+Object refers to all kinds of objects that can be located inside a building: a
+computer or a table in a room, a screen or TV, a painting on a wall, etc.
+The extension of the class CHO is composed of particular objects with
+an identifier to link with Europeana. The data property “Identifier” of type
+<string >, which is an identifier in Europeana, accepts values as shown in Ta-
+ble 1.
+Building is the place related to the host institution. It has the data property
+“Provenance” of type <string > that accepts values as “Mus´ees Royaux des
+Beaux-Arts de Belgique, Bruxelles”.
+Regarding spatial-related classes, the class Floor represents a floor of the
+building where there are several spaces (class Space). These spaces are repre-
+sented by the subclasses Room, Corridor, and Stair. Floor and Space have also
+identifiers in order to know their particular names. For example, the room with
+identifier “70 Weyden” (as shown later in Figure 3), is the one where the paint-
+ing“D´eploration”isexhibited.Thisroomispartofthefloorlabelledas“Second
+floor”.
+Position is the class indicating the position (local or global) of an object. It
+contains three data properties “X”, “Y”, “Z”, of type <double> that include
+a relative local position with respect to a space, a floor or a building. The other
+two data properties, “longitude” and “latitude”, of type <double>, are not
+relativetoaspace,floororbuilding.Thesevaluesareusedforglobalpositioning
+with Google APIs as will be explained later. Note that the system is flexible in
+terms of establishing relationships between spaces, floors or buildings and this
+can be modified according to particular cases.
+Furthermore, it is worth mentioning several object properties, which link
+individuals to other individuals. The object property “isRelativeTo” indicates
+that an instance of the class Position is relative to an instance of the class
+Building, Floor or Space. It is subsequently relative to the subclasses Room,
+Corridor, and Stair. This property is used for local positioning, where the three
+dataproperties“X”,“Y”,“Z”arerelativetoaparticularbuilding,floororspace.
+The object property “isPartOf” indicates the place where spaces or floors
+are located. For example, a room is part of a floor and also part of a building.
+Simultaneously, a floor is part of a building.
+The property “isSituatedIn” makes reference to the place where an object
+is situated. For example, the painting “The Census at Bethlehem”, of Pieter
+Bruegel the Elder, is an instance of the class CHO situated in the room with
+identifier “68 Bruegel” and also situated in the floor with identifier “Second
+floor”. Subsequently, it is situated in the building with the provenance “Royal
+Museums of Fine Arts of Belgium”.
+The property “isConnectedTo” is used to obtain the optimal path between
+two spaces, as shown in the next sections. The rooms are connected to other
+rooms,corridorsorstairs.AswillbeshowninSection3.5,A*algorithm[16]has
+been used to find the shortest path between two rooms.7
+Finally there are two object properties related to authors. The property “is-
+CreatedBy” means that a CHO has been conceived by a creator. The CHO
+previouslymentioned,whichrefersto“D´eploration”,waspaintedbythecreator
+withthename“VanderWeyden”.Andtheproperty“isRepresentedIn”indicates
+where author’s artworks are displayed.
+3.2 Linking an IPS with the ontology
+The presented ontology can be linked with two different classes of IPS: one of
+them based on global positioning and another one oriented to local positioning.
+The difference between them is whether the coordinates they return are global
+to the Earth or relative to a certain building, floor or space (usually rooms).
+The local positioning systems are more precise in indoor environments. For
+this reason, it is better to use a global positioning system, like Google API, to
+identify whether the user is in a building, i.e. Royal Museums of Fine Arts of
+Belgium,PradoMuseumorLouvreMuseum.Then,thelocalIPS,as[12],isused
+for indoor positioning delivering precise coordinates.
+Considering this combination of IPS, the proposed system figures out which
+is the nearest artwork with respect to the user, by filtering pieces situated at
+less than 5 meters and ordering them by distance. This distance is implemented
+by means of the Euclidean distance between the user position and the position
+of the artwork. The system implements an SPARQL query, which makes use of
+federated queries [23] to access to the remote SPARQL endpoint of Europeana.
+The two mentioned types of IPS are explained in Sections 3.3 and 3.4.
+3.3 Estimating position by means of Google and Android APIs
+AndroidprovidesanAPIinandroid.location[1]deliveringthepositionofauser
+accordingthreedifferentmethods:GPS,Cell-ID,andWi-Fi.Thesystemreturns
+the position to a Location Listener object that invokes a method each time a
+new Location object is received. The determination of the best location, ifthere
+areseveralresultsfromthedifferentmethods,isdecidedbymeansofparameters
+related to accuracy, speed, and battery-efficiency.
+Google also provides a Location Services API [5]. According to the loca-
+tion Android API [2], Google Location Services API provides a more powerful
+andhigh-levelframework,whichautomaticallyhandleslocationproviders,user’s
+movement, and location accuracy. It also provides a method to establish fences
+surrounding a location and detection when the user is inside the area.
+Finally, Google Maps Geolocation API [4] provides a web service by means
+of HTTPS and using POST. This service receives a list of cell towers and a list
+of WiFi routers, obtained by the client, with their respective signal strength.
+The service returns the location with longitude and latitude and the accuracy.
+The communications with the service are established using the JSON format.
+The created ontology is flexible and able to assign a value of longitude and
+latitude to a position instance. Note that all the previously described systems8
+returntheuser’slocationusinglongitudeandlatitudevalues.Inordertocombine
+GoogleAPIswiththepresentedontology,itisinitiallybettertoobtainthecloser
+building to the user by means of Vincenty’s formulae [29], used in geodesy to
+calculatethedistancebetweentwopointsonthesurfaceofaspheroid.Later,itis
+possible to obtain the closest CHO by means of Haversine formula [21], method
+to calculate the distance between two locations in a simple way. It has an error
+because the radius of the sphere is not the same in all parts of the Earth. When
+two locations are close, it is possible to use a medium radio of 6371 km with
+minor error.
+Somelibrarieslike[10]orembeddedJavascript[30]allowextendingSPARQL
+functionalities.Theldodds:Distancefunctioncalculatesthedistancebetweentwo
+geographic coordinates based on longitude and latitude.
+3.4 Estimating position by means of depth maps and WiFi networks
+A generalized version of the previous work [12] has been used for indoor posi-
+tioning purposes. The proposed system is used for obtaining the identification
+andtheuser’spositioninascenariocomposedofdifferentroomswherethereare
+several people carrying smartphones. Two or more RGB-D sensors are situated
+in each room for obtaining the coordinates of users by means of their skeletons.
+The skeletons are obtained with the technique presented in [27] [6], where au-
+thors propose new algorithms to quickly and accurately predict 3D positions of
+bodies from depth images.
+Users,orvisitorsinthecaseofmuseums,carrysmartphonesthatestablisha
+connectiontosomeaccessiblenetwork.ThesesmartphonesobtainRSSIdataand
+synchronously send them to a central web server. Simultaneously, this central
+web server obtains body information from different RGB-D sensors.
+Fig.2: Skeleton trajectories in a running example of the IPS developed. Twenty
+RGB-D sensors are deployed in the scenario.9
+Figure 2 illustrates this system. Several users can be seen with their corre-
+spondingpathsatcertaintimestamps.ThissystemrequiresatleasttwoRGB-D
+sensors in each room and all users need the application running. Eight WiFi ac-
+cess points (i.e., routers) have to be accessible in the entire scenario to obtain
+good WPS positioning.
+The used SPARQL query obtains the nearest artwork with respect to the
+user. It filters pieces situated in a range of 5 meters. The query makes use of
+federated queries [23] to access to the remote SPARQL endpoint of Europeana
+andmakesuseofAQRfunctions[25]tocalculateEuclideandistances.Notethat
+a SPARQL Jena server [3] has been created to support the ontology.
+3.5 Obtaining optimal path between two rooms
+The presented ontology has been also prepared for obtaining the best path be-
+tween two rooms. As can be seen in Figure 1, rooms are connected to other
+rooms, corridors or stairs. A* algorithm [16] has been used to find the shortest
+path between two rooms, which are considered as nodes in a graph. Users can
+select a CHO in the catalogue and the system calculates the optimal path from
+their current position.
+Fig.3: Obtaining optimal path between two rooms
+In Figure 3, an A* algorithm returns the optimal path to go from the room
+“David”,whereJacques-LouisDavid’spainting“MaratAssassin´e”islocated,to
+the room “70 Weyden”, where users can find Weyden’s painting “D´eploration”.
+The rooms are subclasses of Space, and in Figure 3, the link between them
+is the object property “isConnectedTo”, shown in the previous ontology.10
+4 Experiments
+Aiming to test the proposed ontology, an experiment has been designed and
+carried out in the Royal Museum of Fine Arts of Belgium. This experiment
+consisted of two stages, as detailed in the following.
+First, a user walked around the museum, registering the location of each
+painting linked to Europeana by means of an Android application which has
+been developed for this purpose (see Figure 4a) and installed in smartphones.
+The position of each masterpiece is delivered by the Google API and stored in
+the database. Note that this process is only performed once, and it does not
+need to be repeated at least paintings are relocated inside the museum. Four
+paintings were chosen and their positions registered in the database.
+Later, a different user navigated through the rooms, retrieving information
+from Europeana with the mentioned application installed in his cellphone. The
+4 studied paintings were visited 5 times each, delivering the application the
+correct information every time the user was in a range of 5 meters. Figure 4b
+shows an example where the system is detecting the masterpiece “The Census
+at Bethlehem” by Pieter Bruegel.
+(a) Android application (b) Detecting painting
+Fig.4: Experiments developed using Google Location Services API.
+5 Results and Conclusions
+ThisarticlepresentsanewontologyforconnectingapreviouslydevelopedIndoor
+Positioning System (IPS) and Europeana, the EU digital platform for cultural
+heritage.Asshown,theproposedontologycanbeusedinamuseumforenhanc-
+ing the user experience, by infering knowledge about cultural heritage objects.
+The article also explains an option to obtain the optimal path between the
+position of the user and a painting in the museum based on the A* algorithm.11
+In order to test the developed ontology, some experiment has been carried
+out, taking advantage of the Google Location API. Even though data from the
+ontologywascorrectlyretrievedandthepositionofuserswasproperlyobtained
+by means of data from cell towers and WiFi networks, the installation of more
+WiFi access points could improve the positioning.
+Future works include the testing of the mentioned IPS system (combining
+RGB-D sensors and WPS), together with the solution presented in this paper,
+in a museum environment.
+Acknowledgments
+This work has been developed with the help of the research projects DPI2013-
+44776-R and DPI2016-77677-P of MICINN. It also belongs to the activities
+carried out within the framework of the research network CAM RoboCity2030
+S2013/MIT-2748 of Comunidad de Madrid.
+References
+1. Android Location API. Android Developers Application Programming Interface,
+http://developer.android.com/reference/android/location/package-summary.html
+2. AndroidLocationStrategies.AndroidDevelopersApplicationProgrammingInter-
+face, http://developer.android.com/guide/topics/location/strategies.html
+3. Apache Jena Server. Apache, http://jena.apache.org
+4. GoogleMapsGeolocationAPI.GoogleMapsApplicationProgrammingInterface,
+http://developers.google.com/maps/documentation/geolocation/intro
+5. Google Play Services Location APIs. Google Play Services Application
+Programming Interface, http://developer.android.com/training/location/retrieve-
+current.html
+6. Barmpoutis, A.: Tensor body: Real-time reconstruction of the human body and
+avatar synthesisfrom rgb-d.Cybernetics, IEEETransactionson 43(5), 1347–1356
+(2013)
+7. Consortium,O.G.,etal.:Ogcgeosparql-ageographicquerylanguageforrdfdata.
+OGC Candidate Implementation Standard 2 (2012)
+8. Consortium, W.W.W., et al.: Owl 2 web ontology language document overview
+(2012)
+9. Deak,G.,Curran,K.,Condell,J.:Asurveyofactiveandpassiveindoorlocalisation
+systems. Computer Communications 35(16), 1939–1954 (2012)
+10. Dodds, L.: Sparql geo extensions (2006)
+11. Dudas,P.M.,Ghafourian,M.,Karimi,H.A.:ONALIN:Ontologyandalgorithmfor
+indoor routing. In: Mobile Data Management: Systems, Services and Middleware,
+2009. MDM’09. Tenth International Conference on. pp. 720–725. IEEE (2009)
+12. DuqueDomingo,J.,Cerrada,C.,Valero,E.,Cerrada,J.:Indoorpositioningsystem
+using depth maps and wireless networks. Journal of Sensors 2016 (2016)
+13. Duque-Domingo, J., Herrera, P.J., Valero, E., Cerrada, C.: Deciphering egyptian
+hieroglyphs:Towardsanewstrategyfornavigationinmuseums.Sensors17(3),589
+(2017)12
+14. Gruber, T.R.: Toward principles for the design of ontologies used for knowledge
+sharing.Internationaljournalofhuman-computerstudies43(5-6),907–928(1995)
+15. Guber,T.:Atranslationalapproachtoportableontologies.KnowledgeAcquisition
+5(2), 199–229 (1993)
+16. Hart, P.E., Nilsson, N.J., Raphael, B.: A formal basis for the heuristic determina-
+tionofminimumcostpaths.IEEEtransactionsonSystemsScienceandCybernet-
+ics 4(2), 100–107 (1968)
+17. Isaac,A.,Haslhofer,B.:Europeanalinkedopendata(data.europeana.eu).Seman-
+tic Web 4(3), 291–297 (2013)
+18. Lee,K.,Lee,J.,Kwan,M.P.:Location-basedserviceusingontology-basedsemantic
+queries:Astudywithafocusonindooractivitiesinauniversitycontext.Comput-
+ers, Environment and Urban Systems 62, 41–52 (2017)
+19. Liu,W.,Chen,Y.,Xiong,Y.,Sun,L.,Zhu,H.:Optimizationofsamplingcellsize
+for fingerprint positioning. International Journal of Distributed Sensor Networks
+2014 (2014)
+20. Matuszka, T., Gombos, G., Kiss, A.: A new approach for indoor navigation using
+semantic webtechnologies and augmented reality. In: International Conference on
+Virtual, Augmented and Mixed Reality. pp. 202–210. Springer (2013)
+21. de Mendoza, J., et al.: Memoria sobre algunos m´etodos nuevos de calcular la lon-
+gitud por las distancias lunares: y aplicacio´n de su teo´rica a la solucio´n de otros
+problemas de navegacio´n. En la Imprenta real (1795)
+22. Nakano, Y., Izutsu, K., Tajitsu, K., Kai, K., Tatsumi, T.: Kinect positioning sys-
+tem (kps) and its potential applications. In: International Conference on Indoor
+Positioning and Indoor Navigation. vol. 13, p. 15th (2012)
+23. Prud’hommeaux, E., Buil-Aranda, C., et al.: SPARQL 1.1 federated query. W3C
+Recommendation 21 (2013)
+24. Saputra,M.R.U.,Widyawan,W.,Putra,G.D.,Santosa,P.I.:Indoorhumantrack-
+ingapplicationusingmultipledepth-cameras.In:AdvancedComputerScienceand
+Information Systems (ICACSIS), 2012 International Conference on. pp. 307–312.
+IEEE (2012)
+25. Seaborne,A.:ARQ-ASPARQLProcessorforJena.ObtainedthroughtheInternet:
+http://jena. sourceforge. net/ARQ (2010)
+26. Sevrin,L.,Noury,N.,Abouchi,N.,Jumel,F.,Massot,B.,Saraydaryan,J.:Charac-
+terizationofamulti-userindoorpositioningsystembasedonlowcostdepthvision
+(kinect)formonitoringhumanactivityinasmarthome.In:201537thAnnualIn-
+ternational Conference of the IEEE Engineering in Medicine and Biology Society
+(EMBC). pp. 5003–5007. IEEE (2015)
+27. Shotton, J., Sharp, T., Kipman, A., Fitzgibbon, A., Finocchio, M., Blake, A.,
+Cook,M.,Moore,R.:Real-timehumanposerecognitioninpartsfromsingledepth
+images. Communications of the ACM 56(1), 116–124 (2013)
+28. Tsetsos,V.,Anagnostopoulos,C.,Kikiras,P.,Hasiotis,P.,Hadjiefthymiades,S.:A
+human-centeredsemanticnavigationsystemforindoorenvironments.In:Pervasive
+Services, 2005. ICPS’05. Proceedings. International Conference on. pp. 146–155.
+IEEE (2005)
+29. Vincenty, T.: Direct and inverse solutions of geodesics on the ellipsoid with appli-
+cation of nested equations. Survey review 23(176), 88–93 (1975)
+30. Williams,G.:ExtensibleSPARQLFunctionswithEmbeddedJavascript.In:SFSW
+(2007)

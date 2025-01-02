@@ -1,0 +1,743 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/282848677
+A Survey of Experimental Evaluation in Indoor Localization Research
+Conference Paper · October 2015
+DOI: 10.1109/IPIN.2015.7346749
+CITATIONS READS
+76 589
+4 authors:
+Stephan Adler Simon Schmitt
+Freie Universität Berlin Freie Universität Berlin
+21 PUBLICATIONS 651 CITATIONS 14 PUBLICATIONS 597 CITATIONS
+SEE PROFILE SEE PROFILE
+Katinka Wolter Marcel Kyas
+Freie Universität Berlin Reykjavik University
+174 PUBLICATIONS 2,842 CITATIONS 75 PUBLICATIONS 839 CITATIONS
+SEE PROFILE SEE PROFILE
+All content following this page was uploaded by Simon Schmitt on 14 October 2015.
+The user has requested enhancement of the downloaded file.2015InternationalConferenceonIndoorPositioningandIndoorNavigation(IPIN),13-16October2015,Banff,Alberta,Canada
+A Survey of Experimental Evaluation in
+Indoor Localization Research
+A Look Back on IPIN conferences 2010, 2011, 2012, 2013, and 2014
+Stephan Adler, Simon Schmitt, and Katinka Wolter Marcel Kyas
+Freie Universität Berlin Reykjavík University
+AG Computer Systems & Telematics School of Computer Science
+Berlin, Germany Reykjavík, Iceland
+{stephan.adler, simon.schmitt, katinka.wolter}@fu-berlin.de marcel@ru.is
+Abstract—During the last decade, research in indoor local- A theory gets accepted by the community, if it has been
+ization and navigation has focused on techniques, protocols, confirmed by independent researches, e.g. by reproducing the
+and algorithms. The first International Conference on Indoor results of an experiment.
+PositioningandIndoorNavigation(IPIN)washeldin2010.Since
+then,thisannualconferenceshowedtheprogressofresearchand
+technology. The variations of evaluation methods are significant A. Related Work
+in this field: they range from none, to extensive simulations, and
+Tichyetal.[6]surveypapersincomputersciencefrom1993
+real-worldexperimentsundernon-labconditions.Welookatthe
+articles published in the proceedings of IPIN by IEEEXplore to determine whether computer scientists support their results
+from 2010 to 2014, and analyze the development of evaluation with experimental evaluation. Their result shows that authors
+methods. We categorized 𝟏𝟖𝟑 randomly selected papers, in did not support their results well: 40% of their sample did
+respect to five different aspects. Namely: (1) the underlying sys-
+no evaluation at all, even though it would be required. Tichy
+tem/technologyinuse,(2)theevaluationmethodfortheproposed
+et al. further motivate more experimentation in all computer
+technique,(3)themethodofgroundtruthdatagathering,(4)the
+appliedmetrics,and(5)whethertheauthorsestablishabaseline science disciplines [7].
+for their work. This result of Tichy et al. was later corroborated by Wainer
+I. INTRODUCTION etal.[8],wholookedatpublicationsfrom2005.Theyindicate
+Wesurveythecurrentstateofresearchinindoorlocalization that the lack of empirical or experimental components did not
+by exploring the kind of systems that are commonly used and change during 15 years of research.
+how they are evaluated. We focus on comparability between Morerecentstudiesalsostresstheimportanceofexperimen-
+different evaluations and show important factors that have to tation and lack thereof in various sub disciplines of computer
+be considered when evaluating a system for use in indoor science,e.g.Andujaretal.[9]andTedreandMoisseinen[10].
+localization. We do not contribute to the debate on reproducibility in
+The motivation for this survey is rooted in our attendance computer science research, as initiated with WaveLab by
+to the fifth international conference on Indoor Positioning and Buckheit and Donoho [11] and later by Collberg, Proebsting,
+Indoor Navigation (IPIN), where we wondered whether our and Warren [12].
+impressions about a visible improvement in the methodology Reproducibility is the ability of an experiment or study to
+of evaluation of indoor localization systems over the last be duplicated, either by the same researcher or by someone
+years could be confirmed in a systematic analysis of prior elseworkingindependently.Reproducibilityisoneofthemain
+publications. principles of the scientific method. A theory should only
+We analyzed the evaluation methods used in most con- be accepted by the community, if it has been confirmed by
+tributed publications of the first five installments of this con- independent researches, e.g. by reproducing the results of an
+ference [1]–[5]. We examine if there is a shift in technologies experiment [13].
+in use, how these technologies are evaluated, and if the Inthispaper,wedonotmeasurethereproducibilityofIPIN
+publications are based on scientifically and empirically sound results.First,noexperimentwasreplicatedbyusforthisstudy.
+methods. Finally, we suggest improvements to the methods of Neither did we ask for code or additional information. Thus,
+evaluating indoor positioning and indoor navigation methods. we cannot make any statement about reproducibility.
+This paper may also be viewed as a contribution to the
+As experimental data is analyzed statistically, the sugges-
+debate on reproducibility in computer science research. Re-
+tions of Gentleman and Lang [14] should apply. The paper
+producibility is a corner stone of science, especially physics.
+should at least reference the data and the methods that were
+978-1-4673-8402-5/15/$31.00©2015IEEE used to generate all statistical data, like the numbers and2015InternationalConferenceonIndoorPositioningandIndoorNavigation(IPIN),13-16October2015,Banff,Alberta,Canada
+figures. For simulations, that includes all code to run the A. System Categories
+simulator, which would make this research fully reproducible.
+The system categories describe the underlying technology
+Physical experiments are harder to reproduce. Using the
+of the system under test (SUT). If a publication describes
+method of Collberg, Proebsting, and Warren [12], we would
+a system which uses multimodal sensoring and therefore
+have to exclude almost all papers, because they need special
+can be categorized into multiple categories, we marked it
+hardware to reproduce. Still, such experiments should be
+as multiple. We also count it as a member of all distinct
+explained in as much detail that someone with access to this
+categories that fit the SUT. In most cases these are inertial
+hardware can reproduce the experiment. We did not try to
+systemscombinedwithReceivedSignalStrength(RSS)and/or
+repeat any experiment.
+time-of-flight (TOF) systems for the purpose of recalibration
+Wecanstillmakeastatementaboutrepeatabilityofexperi-
+of the Inertial Measurement Unit (IMU). Other multimodal
+ments.Wecountedthenumberofpapersthatstatedanumber
+approaches describe systems which carry a global navigation
+of repetitions (see Sect. II-D). The purpose of repeating
+satellite system (GNSS) sensor for outdoor localization and
+experiments is to increase confidence in the observations and
+another type of (sub-) system as a fallback solution for indoor
+improve the precision of measurements, which is proportional
+purposes. If a sensor in use is only for ground truth data
+to the reciprocal square root of the number of repetitions.
+gathering, it does not belong to the SUT and is therefore not
+Repeatability should satisfy the following conditions: the
+counted in the system category.
+experimentshouldbedoneusingthesameexperimentaltools,
+There are publications that do not fit into any of our
+by the same observer using the same measuring instrument,
+categories. These are mostly publications that do not describe
+used under the same conditions at the same location. The
+systems or algorithms in indoor scenarios directly (e.g. sur-
+experiment should be repeated over a short period of time
+and the experiment should have the same objective [15]–[17].
+veys). We marked them as unrelated.
+We define the following system categories:
+We study the proposed metrics and best practices described
+by Raj [17] for our approach to classify the experimental set- Inertial Systemsthatusepedestriandeadreckoning(PDR)or
+ups and to assess applied methods found in the publications. other IMU tracking techniques.
+We focus on statistical comparability. We define compa- Map Matching Systems that use any kind of a priori gen-
+rability of results as: can we estimate a probability that we erated or recorded maps, including patterns of environ-
+have (or have not) reproduced the same experimental result. mentalcharacteristics forthepositionestimation, suchas
+As the published evaluations are obtained using statistical received signal strength indicator (RSSI).
+methods (usually identified by supplying an average, a cu- RSS Systems that use RSS for range estimation.
+mulative distributionfunction (c.d.f.) orsome othersample of TOF The TOF category contains all approaches which use
+measurements), the published result should be usable for tests someformofTOFestimationtocalculatethedistanceto
+of statistical comparison. The same notion of comparability is another network member.
+used to judge whether one method is effectively superior to Sound Systems that are based on sound, for example ultra-
+any other method. sound beacons or other sound sources with known posi-
+tion to estimate their distance to known anchor beacons.
+II. RESEARCHMETHOD
+Other Systems that use different spatial depended environ-
+TheproceedingsofthefirstfiveIPINconferencespublished mental properties than described above, e.g. light, mag-
+by IEEEXplore contain 626 papers (2010: 129, 2011: 95, netic fields, visual object recognition.
+2012: 157, 2013: 144, and 2014: 101). We randomized the Multiple Systems using multimodal sensoring.
+orderofthepublicationlistanddrewatleast30%ofthepub- Unrelated Publications which neither describe a localization
+lications published by IEEEXplore per conference to ensure systemnoralocalizationalgorithmbutotherlocalization
+impartiality. related topics.
+To avoid an emotional discussion about our ratings we
+avoided to cite single publications as positive or negative
+B. Evaluation Categories
+examples in this paper. Nevertheless, our results can easily be
+verified or extended by looking at the conference proceedings Theevaluationcategoriesdescribethemethodusedforeval-
+directly. uation for the related papers. If multiple evaluation methods
+We divided the corpus of publications into five categories. are used, we marked the publication as multiple. However, we
+First, we looked at what type of localization technique was also count it as a member of all distinct evaluation categories.
+used by the authors (system category). Second, we distin- In most cases simulations of the method is combined with a
+guished the method of evaluation and categorized by the physical evaluation of a system.
+chosenscenario(evaluationcategory).Third,wedistinguished Since the error model of inertial based systems is very
+methods for ground truth data gathering (reference category). different from the error model of range based systems, the
+Fourth, we distinguished methods by the way metrics are evaluation techniques in use are also different for both cases.
+calculatedandpresented.Andfifth,wedistinguishedmethods For that reason, we examined these systems separately.
+by the choice of a baseline to compare against. We define the following evaluation categories:2015InternationalConferenceonIndoorPositioningandIndoorNavigation(IPIN),13-16October2015,Banff,Alberta,Canada
+No Evaluation Publications that propose localization algo- D. Metric Categories
+rithmsorsystemsbutareneitherevaluatedbysimulation
+Every evaluation of a systems performance should result in
+nor by experiment.
+a quantity. That quantity should have a unit. It should also
+Simple Simulation Simulations which use simple signal
+be clear how this quantity is measured and what parameters
+propagation models that do not recognize obstacle-
+influence the measurements. Finally, measurements ought to
+dependent effects such as non-line-of-sight (NLOS) or
+be reported together with the number of measurements, the
+assume Gaussian distributed errors of the measurement
+accuracyandtheprecision[17].TheterminologyfollowsISO
+system.
+5275-1: 1994 [16].
+Complex Simulation Simulations which take effects intro-
+duced by obstacles into account, adjust the error model No Metric No metric is stated at all.
+accordingly, or use experimentally gathered data as a Trueness The closeness between the average value of a num-
+ber of measurements and an accepted reference value. It
+source for an error distribution.
+is usually expressed as the bias, but sometimes also by
+Discrete Point Experiments with selected discrete points for
+the mean average error (MAE) of the measurements.
+evaluation.Thereferencepointsareeitherdiscretepoints
+ina1-dimensionalstructure(pathorstraightline)ornon- Precision The closeness of agreement between independent
+measurements. It is usually expressed as the variance,
+systematically scattered in an evaluation area.
+standard deviation, or quantiles.
+Grid-like Grid experiments are simple setups usually in an
+empty room without any obstacles. The reference points Accuracy A measure of the systems combined trueness and
+precision is stated, e.g. the mean squared error (MSE) or
+form a grid-like shape.
+root-mean-square error (RMSE).
+Office Walk An office walk experiment uses a specific path
+as reference. The target is moved along this path while Distribution The data distribution is provided, either as a
+histogram, a c.d.f. or similar.
+estimatingitslocationorcollectingmeasurements.After-
+wards the (mostly predefined) ground truth path can be Sample Size The number of experiments that are considered
+in above values is stated.
+compared to its estimated counterpart.
+Outdoor Experiments that are only performed in outdoor To motivate the choice of categories, we point out that
+environments. usually, the exact performance of a system is not known.
+Real World Experiments and even simulations, where the Experiments and measurements collect data points that allow
+SUTisexposedtodifferentbuildingstructuresundernon- us to estimate the performance of a system. The accuracy
+labconditions,e.g.inpopulatedbuildingsoroverseveral of a system is the closeness between the experimental results
+days. and the reference data. It is composed of the two components
+Multiple Publications that use more than one of the evalua- trueness and precision. Accuracy, trueness and precision can
+tion methods above. be related by
+Unrelated Publications that do not cover localization itself
+and are thereby not subject to an evaluation process. MSE=MAE2+Variance (1)
+An increase of sample size 𝑁, e.g., by repeated mea-
+C. Reference Categories
+surements, influences the value of the variance and thus the
+The following categories describe the kind of reference accuracyofanestimate.Assumingthestatisticalindependence
+system or method in use in the selected publications. We ofthemeasurements,thesamplevarianceofthemeasurements
+markedpapersthatdonotdisclosetheirgroundtruthgathering depends on the number of samples, it decreases proportional
+method as undefined. to 𝑁−1∕2. This means that our estimate of the MAE and the
+We define the following reference categories: variance improves with increased sample size.
+Landmarks Single reference points with varying degree of An alternative presentation of the data is the c.d.f., where
+accuracy. the frequencies of the measurement errors are displayed in a
+Path Apath,e.g.fixedpoints,onthefloororlandmarksinthe graphicalmanner.Weincludehistogramsoferrorsanddisplay
+vicinity. The target is directed along these points while of the raw data in this category, because the c.d.f. can be
+the time may be observed. derived from the histogram.
+Optical An optical system that tracks the target using cam- We only include papers that present their experimental
+eras, e.g. mounted on the ceiling. resultsinagraphicalfashionifthedataisclearlylegiblefrom
+Infrastructure A measurement system that often takes con- the graphics. Papers that provide a depiction of a track only
+siderable effort to install, e.g. robot localization using are not counted, because the time of each value is missing,
+predefined maps. among others.
+GNSS Reference data collected by global navigation satellite We also consider two derived categories in our analysis:
+systems outside of buildings, e.g. GPS. Statistics All measures to compare two experiments or sim-
+Undefined The use of reference data or the method to gather ulations are provided in a way that allows a comparison.
+it is not mentioned or very poorly described. This means that a paper is counted in at least two of2015InternationalConferenceonIndoorPositioningandIndoorNavigation(IPIN),13-16October2015,Banff,Alberta,Canada
+TABLEI TABLEII
+SYSTEMCATEGORIESSUMMARYIN[COUNT(%)] EVALUATIONCATEGORIES(ALLSYSTEMS)IN[COUNT(%)]
+2010 2011 2012 2013 2014 Avg. 2010 2011 2012 2013 2014 Avg.
+Inertial 7 (21) 7 (35) 8 (25) 10 (29) 7 (41) 39 (28) NoEvaluation 3 (9) 1 (5) 1 (3) 1 (3) 0 (0) 6 (4)
+onlyInertial 2 (6) 4 (20) 4 (13) 4 (11) 3 (18) 17 (12) SimpleSimulation 10 (29) 4 (20) 1 (3) 4 (11) 4 (24) 23 (17)
+MapMatching 4 (12) 6 (30) 9 (28) 6 (17) 5 (29) 30 (22) onlySimpleSimulation 7 (21) 3 (15) 1 (3) 3 (9) 3 (18) 17 (12)
+onlyMapMatching 3 (9) 5 (25) 7 (22) 4 (11) 3 (18) 22 (16) ComplexSimulation 1 (3) 2 (10) 2 (6) 7 (20) 2 (12) 14 (10)
+RSS 7 (21) 3 (15) 4 (13) 10 (29) 3 (18) 27 (20) onlyComplexSimulation 1 (3) 1 (5) 1 (3) 5 (14) 2 (12) 10 (7)
+onlyRSS 3 (9) 3 (15) 3 (9) 4 (11) 1 (6) 14 (10) DiscretePoint 5 (15) 3 (15) 9 (28) 9 (26) 3 (18) 29 (21)
+TOF 16 (47) 2 (10) 4 (13) 10 (29) 3 (18) 35 (25) onlyDiscretePoint 4 (12) 2 (10) 8 (25) 7 (20) 3 (18) 24 (17)
+onlyTOF 10 (29) 1 (5) 1 (3) 7 (20) 0 (0) 19 (14) Grid-like 5 (15) 2 (10) 5 (16) 4 (11) 1 (6) 17 (12)
+Sound 5 (15) 0 (0) 5 (16) 2 (6) 1 (6) 13 (9) onlyGrid-like 4 (12) 2 (10) 5 (16) 3 (9) 1 (6) 15 (11)
+onlySound 1 (3) 0 (0) 5 (16) 2 (6) 1 (6) 9 (7) OfficeWalk 9 (26) 8 (40) 11 (34) 10 (29) 6 (35) 44 (32)
+Other 8 (24) 5 (25) 8 (25) 7 (20) 4 (24) 32 (23) onlyOfficeWalk 8 (24) 7 (35) 9 (28) 9 (26) 5 (29) 38 (28)
+onlyOther 6 (18) 4 (20) 6 (19) 5 (14) 3 (18) 24 (17) Outdoor 1 (3) 1 (5) 5 (16) 2 (6) 0 (0) 9 (7)
+Multiple 9 (26) 3 (15) 6 (19) 9 (26) 6 (35) 33 (24) onlyOutdoor 0 (0) 1 (5) 3 (9) 1 (3) 0 (0) 5 (4)
+RelatedPaper 34 (100) 20 (100) 32 (100) 35 (100) 17 (100) 138 (100) RealWorld 4 (12) 1 (5) 2 (6) 2 (6) 1 (6) 10 (7)
+onlyRealWorld 4 (12) 1 (5) 1 (3) 2 (6) 1 (6) 9 (7)
+Multiple 3 (9) 2 (10) 3 (9) 4 (11) 1 (6) 13 (9)
+average, variance, and squared error. With two quantities
+given, Eq. 1 is fully determined.
+A. System Category
+Complete All measures to compare two experiments or sim- Table I shows the localization techniques in use (system
+ulation are provided in a way that allows a comparison.
+category). Between 68 and 85% of all publications per year
+This means that a paper is counted in at least two of
+fit in our categorization system. The remaining papers are
+average, variance, and squared error, and it includes the
+categorized as unrelated. All categories except sound (only
+sample size.
+9%) share nearly equal portions of all contributions (20 to
+Note that the required variance mentioned above is im- 28%).
+portant to evaluate whether the reproduced measurements TherangebasedsolutionsusingTOFand/orRSSaddupto
+are close enough to the published measurements and the 41% over the years. Publications using range based solutions
+experiment can be considered reproduced. The RMSE cannot are dropping from 62% in 2010 to 25% in 2011 and 2012,
+be used for this purpose [18]. and come back to 49% in 2013 and 35% in 2014. This is
+accompanied by a rise in the unrelated and map matching
+categories in 2012 and 2013. Although we expected to see
+E. Baseline Category
+a trend towards a favored technolgy before surveying the
+The basic question of this category is: do the authors argue
+publications the data fails to show such a development.
+an improvement with respect to previously published work.
+We observe that 76% of the publications focus on one
+In order to do this, the experiment should be evaluated by
+type of sensing, while the remaining papers use multimodal
+a previous method, thus establishing a baseline. Then, the
+approaches.Themajorityofthemultimodalsystemsweexam-
+proposed method is evaluated using the same data. While
+ined are IMU (67% of all multiple papers) with recalibration
+this method is established scientific practice, we consider
+by another system. They are most often combined with RSS,
+the age of the youngest alternative the method is compared
+TOF, map matching, and other systems, in descending order.
+against. Ideally, this age is small and references one year old
+We did not find any IMU combined with sound. The other
+publications. This way, actual progress becomes visible.
+multiplesystemscombineotherrangebasedandmapmatching
+Papersarenotcountedinthiscategory,ifsomewellknown approaches to solve the indoor localization problem.
+method like linear least squares (LLS) is used as the youngest
+baseline. First, LLS is a well-known algorithm that is easily B. Evaluation Category
+improved on. Second, if the only merit is to improve on LLS, Table II shows the distribution of the evaluation categories.
+an improvement is not exactly established. 96% of all papers perform some kind of evaluation whereas
+Additionally, we wish that the improvement is soundly 4% perform no evaluation at all. The three most often used
+demonstrated, e.g. by estimating the probability that the new evaluation methods are office walk (32%), all kinds of simu-
+method is really giving results different from the baseline. lation approaches (27%), and discrete point (21%) followed
+by evaluation using grid-like experiments (12%). We did
+III. RESULTS not expect that only 7% of all papers meet our real world
+requirements. Looking at the simulation categories, we see
+We examined 183 papers and marked 45 papers as un- that simple simulation declined from 29% in 2010 to 3%
+related. The following tables show the absolute number of in 2012, and rose again to 24% in 2014, while complex
+publications that were assigned to a category and the relative simulation was on the highest in 2013 with 20%. 20% of all
+number in percent in parenthesis. The following percentage papers perform only simulation, whereas 68% perform only
+numbersinthispaperhavealwaystherelatedpaperswefound physical experiments. 7% perform simulations and physical
+asbasis,notincludingunrelatedpapersifnotstatedotherwise. experiments.2015InternationalConferenceonIndoorPositioningandIndoorNavigation(IPIN),13-16October2015,Banff,Alberta,Canada
+TABLEIII TABLEVI
+EVALUATIONCATEGORIES(INERTIALSYSTEMS)IN[COUNT(%)] METRICSCATEGORYSUMAMRYIN[COUNT(%)]
+2010 2011 2012 2013 2014 Avg. 2010 2011 2012 2013 2014 Avg.
+NoEvaluation 0 (0) 0 (0) 0 (0) 0 (0) 0 (0) 0 (0) Nometric 17(50) 3(15) 8(25) 7(20) 6(35) 41(30)
+SimpleSimulation 1 (14) 1 (14) 0 (0) 0 (0) 0 (0) 2 (5) Trueness 15(44) 15(75) 17(53) 20(57) 8(47) 75(54)
+onlySimpleSimulation 0 (0) 1 (14) 0 (0) 0 (0) 0 (0) 1 (3) onlytrueness 10(29) 7(35) 6(19) 7(20) 4(24) 34(25)
+ComplexSimulation 0 (0) 1 (14) 1 (13) 2 (20) 1 (14) 5 (13) Precision 5(15) 8(40) 12(38) 14(40) 4(24) 43(31)
+onlyComplexSimulation 0 (0) 1 (14) 0 (0) 1 (10) 1 (14) 3 (8) onlyprecision 0(0) 0(0) 1(3) 1(3) 0(0) 2(1)
+DiscretePoint 0 (0) 0 (0) 1 (13) 0 (0) 0 (0) 1 (3) Accuracy 7(21) 9(45) 14(44) 16(46) 7(41) 53(38)
+onlyDiscretePoint 0 (0) 0 (0) 0 (0) 0 (0) 0 (0) 0 (0) onlyaccuracy 2(6) 1(5) 3(9) 3(9) 3(18) 12(9)
+Grid-like 0 (0) 0 (0) 0 (0) 0 (0) 0 (0) 0 (0) Distribution 0(0) 2(10) 4(13) 13(37) 3(18) 22(16)
+onlyGrid-like 0 (0) 0 (0) 0 (0) 0 (0) 0 (0) 0 (0) onlydistribution 0(0) 1(5) 3(9) 4(11) 0(0) 8(6)
+OfficeWalk 4 (57) 4 (57) 6 (75) 7 (70) 4 (57) 25 (64) Samplesize 5(15) 6(30) 15(47) 16(46) 6(35) 48(35)
+onlyOfficeWalk 3 (43) 4 (57) 5 (63) 6 (60) 4 (57) 22 (56) onlysamplesize 1(3) 0(0) 1(3) 0(0) 1(6) 3(2)
+Outdoor 1 (14) 1 (14) 2 (25) 1 (10) 0 (0) 5 (13) Trueness&Precision 5(15) 8(40) 11(34) 13(37) 4(24) 41(30)
+onlyOutdoor 0 (0) 1 (14) 1 (13) 1 (10) 0 (0) 3 (8) Complete 2(6) 4(20) 9(28) 10(29) 3(18) 28(20)
+RealWorld 3 (43) 0 (0) 1 (13) 1 (10) 1 (14) 6 (15)
+onlyRealWorld 3 (43) 0 (0) 0 (0) 1 (10) 1 (14) 5 (13)
+Multiple 1 (14) 0 (0) 2 (25) 1 (10) 0 (0) 4 (10)
+categories. Most of all papers describe their setup very well,
+but tend to neglect the information on how the ground truth
+TABLEIV
+EVALUATIONCATEGORIES(NON-INERTIAL)IN[COUNT(%)] information was gathered. Therefore it was very hard for us
+tocategorizethem.Ifitwasimplicitlyclearwhatmethodwas
+2010 2011 2012 2013 2014 Avg. used(mostlylandmarks),wedidnotcategorizeitasundefined.
+NoEvaluation 3 (11) 1 (8) 1 (4) 1 (4) 0 (0) 6 (6)
+SimpleSimulation 9 (33) 3 (23) 1 (4) 4 (16) 4 (40) 21 (21) However, there are publications, which do not describe their
+onlySimpleSimulation 7 (26) 2 (15) 1 (4) 3 (12) 3 (30) 16 (16) method at all. Most of the time, images depict a ground truth
+ComplexSimulation 1 (4) 1 (8) 1 (4) 5 (20) 1 (10) 9 (9)
+onlyComplexSimulation 1 (4) 0 (0) 1 (4) 4 (16) 1 (10) 7 (7) trajectory as a straight line behind measurement information,
+DiscretePoint 5 (19) 3 (23) 8 (33) 9 (36) 3 (30) 28 (28) with no information on how the gathered data was fitted to
+onlyDiscretePoint 4 (15) 2 (15) 8 (33) 7 (28) 3 (30) 24 (24)
+Grid-like 5 (19) 2 (15) 5 (21) 4 (16) 1 (10) 17 (17) the line at all.
+onlyGrid-like 4 (15) 2 (15) 5 (21) 3 (12) 1 (10) 15 (15) Most often the authors choose landmarks as their resource
+OfficeWalk 5 (19) 4 (31) 5 (21) 3 (12) 2 (20) 19 (19)
+onlyOfficeWalk 5 (19) 3 (23) 4 (17) 3 (12) 1 (10) 16 (16) of ground truth information (27%). We found papers that
+Outdoor 0 (0) 0 (0) 3 (13) 1 (4) 0 (0) 4 (4) explicitly state the accuracy of their manual measurements
+onlyOutdoor 0 (0) 0 (0) 2 (8) 0 (0) 0 (0) 2 (2)
+RealWorld 1 (4) 1 (8) 1 (4) 1 (4) 0 (0) 4 (4) from millimeters to centimeters, as well as papers in which
+onlyRealWorld 1 (4) 1 (8) 1 (4) 1 (4) 0 (0) 4 (4) only a rough description of the true position is given (e.g. by
+Multiple 2 (7) 2 (15) 1 (4) 3 (12) 1 (10) 9 (9)
+a dot in a picture). The difference to path related reference
+methods (15%) is only that a consecutive series of points in
+TABLEV
+REFERENCECATEGORIESSUMMARYIN[COUNT(%)] space isconsidered asground truth.Unfortunately, we sawno
+paper that explicitly stated that they evaluate their approach
+2010 2011 2012 2013 2014 Avg. by looking not only at spatial distance to their ground truth
+Landmarks 10 (29) 4 (20) 15 (47) 14 (40) 5 (29) 48 (35)
+Path 4 (12) 6 (30) 7 (22) 6 (17) 2 (12) 25 (18) but also distance in time.
+Optical 2 (6) 1 (5) 1 (3) 2 (6) 2 (12) 8 (6) To our surprise, we did find little about reference methods
+Infrastructure 2 (6) 1 (5) 1 (3) 2 (6) 0 (0) 6 (4)
+GNSS 0 (0) 0 (0) 4 (13) 1 (3) 0 (0) 5 (4) like optical, infrastructure, and GNSS (3 to 4% each). Using
+Undefined 8 (24) 2 (10) 3 (9) 1 (3) 4 (24) 18 (13) GNSSasgroundtruthinformationonlymakessensee.g.when
+evaluating inertial based systems outdoor on a long track,
+Sinceinertialbasedsystemsareoftenevaluatedusingoffice
+which was not often represented in our findings (6%). But
+the other two categories are able to evaluate a wide range of
+walks, we also split the results into inertial based and non-
+systems in a repeatable manner. The most likely reason are
+inertial based systems. Table III shows the percentages of
+the perceived setup costs of such solutions. However, there
+all inertial based systems. The majority of all evaluations
+are also cheap ways of doing an evaluation with e.g. mobile
+used predefined paths, i.e. an office walk, in office environ-
+robots, as we showed previously [19]. We did not find such a
+ments (64%). It is also interesting, that more papers fit into
+solution in our sample.
+the real world (15%) and outdoor category (13%). In 2010,
+43% of the papers we looked at were real world experiments,
+D. Metric Category
+which is remarkably high when looking at other years (0 to
+14%). When we look at the non-inertial based systems in TableVIsummarizesthedistributionofpaperstothemetric
+Tab. IV, we see that discrete point evaluation is the dominant categories. In total, about 73% of the publications provide a
+method (28%), followed by simple simulation (21%), office kind of metric or data of their results. Of those, 70% present
+walk (19%), and grid like (17%) experiments. a quantifiable metric, and 3 papers present a metric in a non-
+numeric way. The other papers rely on anecdotal evidence,
+C. Reference Category in that they demonstrate the feasibility of their approach and
+Table V lists the percentages of reference methods in use. don’t measure the performance.
+We did not find any reference method that did not fit into the A measure of trueness is reported in 54% of the publi-2015InternationalConferenceonIndoorPositioningandIndoorNavigation(IPIN),13-16October2015,Banff,Alberta,Canada
+cations, a measure of accuracy is reported in 38% of the TABLEVII
+publications. In total, 9% of the papers only report a measure METRICSFORINERTIALSYSTEMSIN[COUNT(%)]
+of accuracy. A c.d.f., histogram or the raw data is provided
+2010 2011 2012 2013 2014 Avg.
+in 16% of all papers. Half of those, 8% only report a c.d.f. Nometric 3(43) 1(14) 2(25) 2(20) 3(43) 11(28)
+without a numerical summary. Two papers (2%) only report Trueness 4(57) 6(86) 4(50) 5(50) 3(43) 22(56)
+onlytrueness 3(43) 6(86) 0(0) 3(30) 1(14) 13(33)
+variances. Precision 1(14) 0(0) 5(63) 3(30) 2(29) 11(28)
+Accuracy is the combination of trueness and precision. A onlyprecision 0(0) 0(0) 1(13) 1(10) 0(0) 2(5)
+Accuracy 1(14) 0(0) 5(63) 2(20) 3(43) 11(28)
+combined measure is less useful for comparison, because the onlyaccuracy 0(0) 0(0) 1(13) 0(0) 1(14) 2(5)
+systematic error, measured by a lack of trueness, is conflated Distribution 0(0) 0(0) 0(0) 4(40) 2(29) 6(15)
+onlydistribution 0(0) 0(0) 0(0) 2(20) 0(0) 2(5)
+with the lack of precision. Thus, we indicate the number Samplesize 1(14) 2(29) 5(63) 4(40) 3(43) 15(38)
+of papers that report both an estimation of trueness and onlysamplesize 0(0) 0(0) 1(13) 0(0) 1(14) 2(5)
+Trueness&Precision 1(14) 0(0) 4(50) 2(20) 2(29) 9(23)
+estimation of precision. These are 30% (41 papers). Complete 0(0) 0(0) 3(38) 2(20) 1(14) 6(15)
+Finally, as the reported data is an estimate that depends
+on the sample size considered in the estimation, we also
+TABLEVIII
+calculated the number of papers that report a measure of METRICSFORMAPMATCHINGSYSTEMSIN[COUNT(%)]
+trueness, a measure of precision, and the sample size used
+2010 2011 2012 2013 2014 Avg.
+to estimate those values. These are 20%. If one is to compare
+Nometric 1(25) 1(17) 0(0) 2(33) 0(0) 4(13)
+his results to a published result, the sample size has to Trueness 3(75) 5(83) 7(78) 2(33) 4(80) 21(70)
+onlytrueness 1(25) 2(33) 3(33) 0(0) 3(60) 9(30)
+be considered in the estimation of the similarity/difference,
+Precision 2(50) 3(50) 4(44) 2(33) 1(20) 12(40)
+because the sample size is often an input to the calculation. onlyprecision 0(0) 0(0) 0(0) 0(0) 0(0) 0(0)
+Accuracy 2(50) 3(50) 4(44) 2(33) 2(40) 13(43)
+We note 3 papers that report a sample size but do not onlyaccuracy 0(0) 0(0) 0(0) 0(0) 1(20) 1(3)
+reportanyothermetricfromourselection.Thepaperspresent Distribution 0(0) 0(0) 2(22) 3(50) 1(20) 6(20)
+onlydistribution 0(0) 0(0) 2(22) 2(33) 0(0) 4(13)
+raw data in a figure. By visually inspecting the results, the
+Samplesize 0(0) 3(50) 5(56) 1(17) 1(20) 10(33)
+effectiveness of the method is conveyed. However, the raw onlysamplesize 0(0) 0(0) 0(0) 0(0) 0(0) 0(0)
+Trueness&Precision 2(50) 3(50) 4(44) 2(33) 1(20) 12(40)
+data is not published in the paper and cannot be compared.
+Complete 0(0) 3(50) 3(33) 1(17) 1(20) 8(27)
+1) Metrics in systems: Can we identify a reason for the
+choice of reporting of metrics in IPIN? Can we explain
+why only one in five papers report metrics that allow a papers on inertial system are as like to report metrics as
+meaningful comparison? Can we explain why almost one in the statistical population. It may be less likely that papers
+three publications does not report any metrics? To answer on inertial systems report trueness and precision or even
+these questions, we look at the distribution of reporting per comparable results. In our sample, more authors state the
+system. sample size than the precision.
+After looking at the summarized data, we look at prefer- We believe that these metrics are not reported, because
+ences of methods in different fields of research. Since we walking people get tired and experiments are consequently
+see that the method of presenting metrics varies, and that hard to repeat. Thus, the precision is hard to estimate. The
+the reporting is sometimes incomplete according to certain papers that report a sample size report a rather low number.
+standards, we wonder if we can identify any preference that There, it actually makes sense not to report those numbers, as
+explains this observation. their significance is weak.
+Notethatthedatareportedherehasalargeerrormargin,as Despite the large error margins we have to expect, we are
+thedatareferstoasmallersubsetofpapersonly.Butwhilethe able to explain the numbers. Still, we think that reporting the
+numbers may not be accurate, they still indicate the presence number of trials should be pervasive, because this number
+ofproblems.Consequently,wedonotprovideaformalmodel serves as the justification to the lack of reports on precision.
+or look for correlations. Variations in a single paper result in TableVIIIsummarizesthepresentationofmetricsinpapers
+rather large changes of the percentages reported in the tables presentingmapmatchingsystems.Thereare30papersonmap
+and our data considers only about a third of each year. For matching in our sample.
+this reason, we exclude papers on sound based systems from Most papers on map matching systems provide metrics on
+the evaluation. theperformance.Also,40%ofallpublicationsreporttrueness
+Table VII summarizes the presentation of metrics in papers and precision separately, thus we can properly evaluate the
+presenting inertial systems. Because we consider only 39 accuracy of the method. The number of samples in the
+papers on inertial systems, the margin of error is bounded evaluationisreportedinonly33%ofthepapers,whichmakes
+from above by 0.15 for a confidence level of 95%. it hard to evaluate the quality of those estimates. Overall,
+Except for 2010 and 2014, the use of metrics is estimated performance evaluation of map matching algorithms is well
+to be similar to the totals in Table VI. The high percentage done in many cases.
+difference in 2010 and 2014 is a single paper difference from Table IX summarizes the presentation of metrics in papers
+the expected value. presenting systems based on RSS values. There are 27 papers
+Our first observation is that it is probably the case that inoursample.Thedataishardtointerpret:Thereare3papers2015InternationalConferenceonIndoorPositioningandIndoorNavigation(IPIN),13-16October2015,Banff,Alberta,Canada
+TABLEIX TABLEXI
+METRICSFORRSSSYSTEMSIN[COUNT(%)] METRICSFORSIMULATIONSIN[COUNT(%)]
+2010 2011 2012 2013 2014 Avg. 2010 2011 2012 2013 2014 Avg.
+Nometric 3(43) 0(0) 2(50) 1(10) 1(33) 7(26) Nometric 6(55) 1(17) 0(0) 1(9) 3(50) 11(30)
+Trueness 4(57) 1(33) 2(50) 5(50) 0(0) 12(44) Trueness 4(36) 4(67) 2(67) 6(55) 1(17) 17(46)
+onlytrueness 3(43) 0(0) 1(25) 3(30) 0(0) 7(26) onlytrueness 3(27) 1(17) 1(33) 1(9) 1(17) 7(19)
+Precision 1(14) 1(33) 1(25) 3(30) 0(0) 6(22) Precision 1(9) 3(50) 1(33) 6(55) 0(0) 11(30)
+onlyprecision 0(0) 0(0) 0(0) 1(10) 0(0) 1(4) onlyprecision 0(0) 0(0) 0(0) 1(9) 0(0) 1(3)
+Accuracy 1(14) 2(67) 1(25) 4(40) 2(67) 10(37) Accuracy 2(18) 4(67) 2(67) 7(64) 2(33) 17(46)
+onlyaccuracy 0(0) 1(33) 0(0) 2(20) 2(67) 5(19) onlyaccuracy 1(9) 1(17) 1(33) 2(18) 2(33) 7(19)
+Distribution 0(0) 1(33) 0(0) 5(50) 0(0) 6(22) Distribution 0(0) 0(0) 0(0) 6(55) 0(0) 6(16)
+onlydistribution 0(0) 1(33) 0(0) 1(10) 0(0) 2(7) onlydistribution 0(0) 0(0) 0(0) 1(9) 0(0) 1(3)
+Samplesize 0(0) 0(0) 1(25) 4(40) 1(33) 6(22) Samplesize 1(9) 1(17) 1(33) 7(64) 1(17) 11(30)
+onlysamplesize 0(0) 0(0) 0(0) 0(0) 1(33) 1(4) onlysamplesize 1(9) 0(0) 0(0) 0(0) 0(0) 1(3)
+Trueness&Precision 1(14) 1(33) 1(25) 2(20) 0(0) 5(19) Trueness&Precision 1(9) 3(50) 1(33) 5(45) 0(0) 10(27)
+Complete 0(0) 0(0) 1(25) 2(20) 0(0) 3(11) Complete 0(0) 1(17) 1(33) 5(45) 0(0) 7(19)
+TABLEX
+METRICSFORTOFSYSTEMSIN[COUNT(%)] 2) Metricsinevaluationmethods: Afterlookingatthesum-
+marizeddata,welookatpreferencesofmethodsbyevaluation
+2010 2011 2012 2013 2014 Avg. methods. Since we see that the method of presenting metrics
+Nometric 8(50) 1(50) 2(50) 1(10) 2(67) 14(40)
+Trueness 7(44) 1(50) 1(25) 7(70) 1(33) 17(49) varies and we could not explain this variation by the kind of
+onlytrueness 5(31) 0(0) 0(0) 0(0) 0(0) 5(14) system used in the research, we try to see whether there is a
+Precision 2(13) 1(50) 1(25) 7(70) 1(33) 12(34)
+onlyprecision 0(0) 0(0) 0(0) 0(0) 0(0) 0(0) correlation between evaluation method and metric reporting.
+Accuracy 3(19) 1(50) 2(50) 8(80) 1(33) 15(43) Again,sincewelookattherelationofmetricstoevaluation
+onlyaccuracy 1(6) 0(0) 1(25) 1(10) 0(0) 3(9)
+Distribution 0(0) 0(0) 0(0) 4(40) 1(33) 5(14) methods, the number of samples in each view can be rather
+onlydistribution 0(0) 0(0) 0(0) 1(10) 0(0) 1(3) small.Thismakesithardtoconcludeanythingdefinite.Again,
+Samplesize 3(19) 0(0) 0(0) 6(60) 1(33) 10(29)
+onlysamplesize 0(0) 0(0) 0(0) 0(0) 0(0) 0(0) this is the reason why we do not calculate any correlations.
+Trueness&Precision 2(13) 1(50) 1(25) 7(70) 1(33) 12(34) Also, since there are so few experiments in the grid category,
+Complete 2(13) 0(0) 0(0) 5(50) 1(33) 8(23)
+the outdoor category, and the real world category, we do not
+evaluate these.
+in 2011, 4 papers in our sample from 2012, and 3 papers in Table XI displays the use of metrics for papers that use
+2014. RSS systems were popular in 2010 (7 papers) and 2013 simulation. There are 37 papers using simulation to evaluate
+(10 papers). the proposed method, of which 23 papers with simple simula-
+In 2010, almost half did not report any metrics, while tions and 14 papers with complex simulations. Therefore, we
+most papers reported one in 2013. However, the data was donotdistinguishbetweensimpleandcomplexsimulationsin
+usually not presented in an accessible manner, relying on this table. Of those papers, 10 papers report both a simulation
+pictorial representations of a c.d.f. in 5 papers in 2013 and and an experiment.
+on reports of trueness in 2010. Probably, authors do not First,wearesurprisedbythenumberofpapersthatsimulate
+report precision, because RSS based systems are often very and do not provide any metric. Especially in simulations, it
+imprecise, experiments can take a lot of time, and readings should be simple to obtain metrics. Then, we were surprised
+may be difficult to repeat because of the imprecision. that the sample size is seldom reported in 2010, 2011, 2012,
+Table X summarizes the presentation of metrics in papers and 2014. As simulations are very easy to repeat, and one
+presenting systems based on TOF values. There are 35 papers shouldrepeatsimulationswithvaryingstartingconditions,we
+on this topic on our sample. Again, systems using TOF were wonder why the number was not reported.
+under-represented in 2011, 2012, and 2014, and we refrain Table XII displays the use of metrics for papers that use
+from interpreting the data in those years. In 2010, reporting experimentsforevaluation.Thereare104papersinoursample
+of metrics was not adequate. Half of the publications did that use some experiment to evaluate its proposal. Of those
+not report any metric, no paper reported any data on the papers, 10 papers report both a simulation and an experiment.
+distribution. Just two papers allow meaningful evaluation and It shows that about two-thirds demonstrate the trueness of
+comparison of the metrics. This improved greatly in 2013, their system, and about one third also indicate the precision
+wherealmostallpapersreportametricandhalfofthemallow ofthemethod.Aboutonethirdindicatesametricofaccuracy,
+a meaningful evaluation and comparison. either directly or by indicating both trueness and precision.
+Overall, we do not see a clear correlation between metrics Aboutaquarterofallexperimentsdonotreportametric.This
+and systems. This can in part be explained by the low sample is still in the margin of error for simulations and the sample
+sizes in each category. But we think it is more likely that populations proportions. However, it is rather likely that ex-
+there is no such correlation. Only in the case of inertial perimental work generally presents a measure of trueness and
+systems, the data could be used to explain a model. Next, probably also a measure of precision.
+we check whether we can see a correlation between metrics Table XIII displays the use of metrics for papers that
+and evaluation methods. use discrete points for evaluation. There are 29 papers that2015InternationalConferenceonIndoorPositioningandIndoorNavigation(IPIN),13-16October2015,Banff,Alberta,Canada
+TABLEXII TABLEXV
+METRICSFOREXPERIMENTSIN[COUNT(%)] METRICSFORMULTIPLEMETHODSIN[COUNT(%)]
+2010 2011 2012 2013 2014 Avg. 2010 2011 2012 2013 2014 Avg.
+Nometric 9(39) 1(7) 7(24) 5(19) 2(18) 24(23) Nometric 1(33) 0(0) 1(33) 0(0) 0(0) 2(15)
+Trueness 13(57) 13(87) 16(55) 16(62) 7(64) 65(63) Trueness 2(67) 2(100) 1(33) 3(75) 0(0) 8(62)
+onlytrueness 8(35) 6(40) 5(17) 6(23) 3(27) 28(27) onlytrueness 1(33) 0(0) 0(0) 0(0) 0(0) 1(8)
+Precision 5(22) 7(47) 12(41) 11(42) 4(36) 39(38) Precision 1(33) 2(100) 1(33) 4(100) 0(0) 8(62)
+onlyprecision 0(0) 0(0) 1(3) 1(4) 0(0) 2(2) onlyprecision 0(0) 0(0) 0(0) 1(25) 0(0) 1(8)
+Accuracy 6(26) 7(47) 13(45) 11(42) 6(55) 43(41) Accuracy 1(33) 2(100) 2(67) 3(75) 1(100) 9(69)
+onlyaccuracy 1(4) 0(0) 2(7) 1(4) 2(18) 6(6) onlyaccuracy 0(0) 0(0) 1(33) 0(0) 1(100) 2(15)
+Distribution 0(0) 2(13) 4(14) 9(35) 3(27) 18(17) Distribution 0(0) 0(0) 0(0) 2(50) 0(0) 2(15)
+onlydistribution 0(0) 1(7) 3(10) 3(12) 0(0) 7(7) onlydistribution 0(0) 0(0) 0(0) 0(0) 0(0) 0(0)
+Samplesize 4(17) 6(40) 15(52) 11(42) 4(36) 40(38) Samplesize 0(0) 1(50) 1(33) 3(75) 0(0) 5(38)
+onlysamplesize 0(0) 0(0) 1(3) 0(0) 0(0) 1(1) onlysamplesize 0(0) 0(0) 0(0) 0(0) 0(0) 0(0)
+Trueness&Precision 5(22) 7(47) 11(38) 10(38) 4(36) 37(36) Trueness&Precision 1(33) 2(100) 1(33) 3(75) 0(0) 7(54)
+Complete 2(9) 4(27) 9(31) 7(27) 3(27) 25(24) Complete 0(0) 1(50) 1(33) 3(75) 0(0) 5(38)
+TABLEXIII TABLEXVI
+METRICSFORDISCRETEPOINTSEXPERIMENTSIN[COUNT(%)] USEOFBASELINESIN[COUNT(%)]
+2010 2011 2012 2013 2014 Avg. 2010 2011 2012 2013 2014 Avg.
+Nometric 1(20) 0(0) 1(11) 2(22) 1(33) 5(17) Total 0(0) 2(10) 2(6) 5(14) 1(6) 10(7)
+Trueness 3(60) 3(100) 7(78) 7(78) 2(67) 22(76) Inertial 0(0) 0(0) 1(3) 1(3) 0(0) 2(1)
+onlytrueness 2(40) 0(0) 3(33) 2(22) 1(33) 8(28) Mapmatching 0(0) 2(10) 1(3) 0(0) 0(0) 3(2)
+Precision 1(20) 3(100) 4(44) 5(56) 1(33) 14(48) RSS 0(0) 0(0) 0(0) 2(6) 1(6) 3(2)
+onlyprecision 0(0) 0(0) 0(0) 0(0) 0(0) 0(0) TOF 0(0) 0(0) 0(0) 1(3) 0(0) 1(1)
+Accuracy 2(40) 3(100) 5(56) 5(56) 1(33) 16(55) Sound 0(0) 0(0) 0(0) 0(0) 0(0) 0(0)
+onlyaccuracy 1(20) 0(0) 1(11) 0(0) 0(0) 2(7) Other 0(0) 0(0) 0(0) 2(6) 0(0) 2(1)
+Distribution 0(0) 1(33) 1(11) 2(22) 1(33) 5(17)
+onlydistribution 0(0) 0(0) 0(0) 0(0) 0(0) 0(0)
+Samplesize 0(0) 2(67) 6(67) 5(56) 1(33) 14(48)
+onlysamplesize 0(0) 0(0) 0(0) 0(0) 0(0) 0(0) evaluation.Thissurprisesabit,becauseitishardertomeasure
+Trueness&Precision 1(20) 3(100) 4(44) 5(56) 1(33) 14(48) in actual experiments.
+Complete 0(0) 2(67) 4(44) 4(44) 1(33) 11(38)
+One should not judge the quality of the papers from these
+criteria alone. It is justifiable to not to report some or all
+report experiments using discrete points. Overall, we see metrics. For example, reporting a variance does not make
+that experimental work is usually characterized by providing much sense if the sample size is small. Some authors base
+metrics. About three-quarters indicate the trueness, whereas a their results on three repetitions of an experiment.
+sixth does not provide metrics. Some experiments were reported to demonstrate the system
+Table XIV displays the use of metrics for papers that use and not to measure its performance. On the other hand,
+office walks for evaluation. There are 44 papers that report once the principles of a method are properly understood, a
+experiments using office walks. About two-thirds indicate the performance evaluation is needed to demonstrate that one
+trueness, whereas a sixth does not provide metrics. contributed to the state of the art. For example, if a new
+Table XV displays the use of metrics for papers that use localization algorithm is suggested, its performance should be
+multiplemethodsforevaluation,mostimportantlysimulations evaluated and compared to other methods to understand the
+and experiments. While there are only 13 papers in this utility of the newly proposed method.
+category, we still report it, because the overall distribution is Still, we are surprised that less than a third of the papers
+prettyclosetothedistributionofmethodsusedinexperiments. report an estimate of trueness and precision, and only about a
+3) Summary: Overall, reporting and proper reporting of fifthreportvaluesthataremeaningfultocomparestatistically.
+metrics seems to depend on the use of actual experiments for This is especially surprising, since given the experimental
+setup and the collected data, it ought to be simple to calculate
+and present those values, or at least explain why the values
+TABLEXIV were not calculated.
+METRICSFOROFFICEWALKSIN[COUNT(%)]
+E. Baseline Category
+2010 2011 2012 2013 2014 Avg.
+Nometric 3(33) 1(13) 2(18) 1(10) 1(17) 8(18) Table XVI summarizes the distribution of papers to the
+Trueness 6(67) 7(88) 7(64) 6(60) 4(67) 30(68)
+onlytrueness 5(56) 4(50) 1(9) 3(30) 1(17) 14(32)
+metriccategories.Weseethatfewevaluations(about7.1%,or
+Precision 1(11) 3(38) 7(64) 4(40) 3(50) 18(41) 13publications)defineanexternalbaselinefortheevaluation.
+onlyprecision 0(0) 0(0) 1(9) 1(10) 0(0) 2(5)
+Accuracy 1(11) 3(38) 7(64) 3(30) 4(67) 18(41) Of those publications, 10 are considered related to our work.
+onlyaccuracy 0(0) 0(0) 1(9) 0(0) 1(17) 2(5) As we found so few papers that actually did, we cannot
+Distribution 0(0) 0(0) 0(0) 5(50) 1(17) 6(14)
+identify any additional properties of the choice of baselines.
+onlydistribution 0(0) 0(0) 0(0) 2(20) 0(0) 2(5)
+Samplesize 2(22) 3(38) 6(55) 3(30) 2(33) 16(36) Distributed to the system categories, we find 2 papers about
+onlysamplesize 0(0) 0(0) 1(9) 0(0) 0(0) 1(2)
+Trueness&Precision 1(11) 3(38) 6(55) 3(30) 3(50) 16(36)
+inertialsystems,3papersaboutmapmatching,3papersabout
+Complete 0(0) 2(25) 4(36) 1(10) 2(33) 9(20) RSS methods, 1 paper about TOF methods, 0 about sound2015InternationalConferenceonIndoorPositioningandIndoorNavigation(IPIN),13-16October2015,Banff,Alberta,Canada
+based systems and 2 about other systems; 1 paper combines Reasons for misclassification are ambiguities between the
+an inertial system with an RSS based system. classes definition. It is, e.g., not so clear where we draw the
+This low figure is very surprising at first. We offer the line between simple and complex simulations.
+following explanations for this observation: Some papers did not fit clearly into one of the categories
+and are therefore not counted in any. If, for example, a paper
+1) Manyproposalsarenewandthereislittlethatmayserve
+describes an experiment and does not give any numerical
+as a baseline to compare to. The main purpose of the
+metrics, it may be counted as a paper without any metrics.
+evaluation is to demonstrate that the proposed method is
+This happens when the paper displays its measurements in
+effective.
+diagrams only, and no clear value can be obtained from the
+2) Methods that may serve as a baseline are ill-defined.
+figure.
+To compare, one has to establish the baseline within
+onesownenvironmentandusingtheavailableequipment Aswedidnotclassifyeachpaperbymorethanoneperson,
+to make sure that only the performance of the system we have no estimate of classification errors.
+under evaluation (SUE) is compared and not some other 2) Publicationselectionbias: Thesecondsourceofsystem-
+parameter. This requires the ability of the recreation that atic error is that the selection of articles we reviewed could
+fails with incomplete disclosure. be biased towards a particular style or quality.
+3) Effort is too large. For a proper evaluation, each exper- We selected papers for this study in the following way: We
+iment should be repeated multiple times to increase the wrote a program that downloaded an index of all papers that
+precision. Experiments may take many hours including were published in IEEEXplore in some IPIN conference, and
+set-up and tear-down. Adding a baseline easily doubles have it pseudo-randomly select 30% of the papers from this
+the effort. set. No interference by the authors happened in this step.
+Concerning the publications of IPIN 2014, those were not
+Our figure does not consider an internal baseline, e.g. if
+availableonIEEEXploreasofthiswriting.Wewroteasimilar
+filtersareapplied.Insuchpapers,weseetheunfilteredresults
+program using the papers made available at the conference,
+as a baseline and filtered or processed results to establish an
+while excluding all papers associated to the poster session.
+improvement.
+We are confident that the selection of papers is unbiased.
+We observed that few quantify or report the effect of their
+We claim that this method resulted in a fairly representative
+proposed method. It is not established whether the improve-
+selection of papers published at IPIN.
+mentcanbeexplainedbynoiseorwhetherthereisastatistical
+significance to the improvement. This is especially true in
+papers that propose combinations of methods, where each B. Statistical errors
+additional method shows less effect. We cannot tell whether Statistical errors in our study are random classification
+the addition has actually any effect, because no variance is mistakes and the accuracy of our estimations.
+reported, or if c.d.f. are compared, then no Kolmogorov- Since we have no measure of the classification errors, we
+Smirnov (K-S) statistics is provided. The K-S statistics would cannotestimateit.Weareconfidentthatnotmanypaperswere
+helpinunderstandingandquantifyingthedifferencesbetween misclassified.
+the c.d.f.. Concerningtheaccuracyofourestimations,wecanestimate
+The lack of a baseline makes it difficult to quantify the the margin of errors of our values. With a confidence of 95%,
+progress made over the years. amarginoferrorofabout0.03fortheproportionsreportedfor
+thewholeconferenceseriesandamarginoferrorofabout0.05
+IV. ACCURACYOFTHISSTUDY to 0.07 for the proportions reported for individual years. We
+could have selected proportions such that the margin of error
+Neither did we have the time nor the resources to analyze
+is the same for each year. That would have implied varying
+allpaperspublishedintheIPINconferenceseries.Wealsodid
+proportionsofpapersineachyearanditwouldhaveincreased
+not investigate other big conferences and symposia on indoor
+andincreasedthetotalproportionofpapers,thusdecreasingits
+positioning, like UPIN-LBS or WPNC, or other conferences
+margin of error. We opted for the more economical approach
+where papers on indoor positioning or indoor navigation were
+and note that all proportions have a margin of errors of up to
+published.Thus,thisstudyisstrictlyaboutthepublicationand
+0.07 with 95% confidence.
+selection culture of IPIN.
+Per category, the margin of error is even larger. First, we
+have only an estimate of the total number of papers for each
+A. Systematic error
+category, and second, the sample may even be lower.
+The main sources of systematic error are misclassification We tried to refrain from evaluating data sets where the
+and publication selection bias. margin of error increases above 0.15 at a confidence level
+1) Classificationerrors: Eachpaperwasreadandclassified of 95%. It would be impossible to make any statement in this
+by at least one person. Usually, the papers make a strong situation, if the margin of error allows also a contradicting
+statement on what they are about. But the reader may still explanation. This probably happens, if the number of papers
+have misclassified the publication. is below 30.2015InternationalConferenceonIndoorPositioningandIndoorNavigation(IPIN),13-16October2015,Banff,Alberta,Canada
+C. Overall accuracy robots or optical systems. Simulation could be improved by
+sharing data sets to create a set of standard benchmarks for
+Concerning the data on all papers selected in IPIN, we are
+indoor localization systems.
+confident that we show a pretty accurate picture of all publi-
+cations.Weguessthatthemarginoferrorofmisclassifyingis
+REFERENCES
+about the same as the margin of statistical estimation errors.
+Thus, the proportions are probably pretty accurate. [1] 2010 International Conference on Indoor Positioning and Indoor
+Navigation, IPIN 2010, Zurich, Switzerland, September 15-17,
+The data per year and per category is less accurate. How- 2010. IEEE, 2010. [Online]. Available: http://ieeexplore.ieee.org/
+ever, this does not invalidate the overall conclusion we draw. xpl/mostRecentIssue.jsp?punumber=5637226
+[2] 2011 International Conference on Indoor Positioning and Indoor
+V. RECOMMENDATIONS&CONCLUSION Navigation, IPIN 2011, Guimaraes, Portugal, September 21-23,
+2011. IEEE, 2011. [Online]. Available: http://ieeexplore.ieee.org/xpl/
+We find that 95% of all related papers of IPIN we have mostRecentIssue.jsp?punumber=6062621
+looked at perform some kind of evaluation. Physical exper- [3] 2012 International Conference on Indoor Positioning and Indoor
+imentation plays an important role and is used in 77% of Navigation, IPIN 2012, Sydney, Australia, November 13-15,
+2012. IEEE, 2012. [Online]. Available: http://ieeexplore.ieee.org/
+all related papers. We see a trend towards more complex xpl/mostRecentIssue.jsp?punumber=6409516
+simulations and a steady share between different physical [4] 2013 International Conference on Indoor Positioning and Indoor
+evaluation methods. We challenge the relevance of outdoor Navigation, IPIN 2013, Montbeliard, France, October 28-31,
+2013. IEEE, 2013. [Online]. Available: http://ieeexplore.ieee.org/
+only experiments to indoor systems, which we see in 3% of xpl/mostRecentIssue.jsp?punumber=6811041
+related publications. [5] 2014InternationalConferenceonIndoorPositioningandIndoorNavi-
+While the reliance on evaluation looks high, the quality
+gation,IPIN2014,Busan,Korea,October27-30,2014. IEEE,2014.
+[6] W.F.Tichy,P.Lukowicz,L.Prechelt,andE.A.Heinz,“Experimental
+of description is marbled. A high percentage of publications evaluationincomputerscience:Aquantitativestudy,”JournalofSystems
+describetheirmethodsofgroundtruthdatagatheringpoorlyat andSoftware,vol.28,no.1,pp.9–18,Jan.1995.
+best. Although many authors do not write about that process,
+[7] W.F.Tichy,“Shouldcomputerscientistsexperimentmore?”Computer,
+vol. 31, no. 5, pp. 32–40, May 1998. [Online]. Available: http:
+we assume manual measurements using rulers and distance //dx.doi.org/10.1109/2.675631
+meters were used for ground truth positions. [8] J. Wainer, C. G. N. Barsottini, D. Lacerda, and L. R. M. de Marco,
+“EmpiricalevaluationincomputerscienceresearchpublishedbyACM,”
+We did not evaluate the quality of all experiments. We
+Information and Software Technology, vol. 51, no. 6, pp. 1081–1085,
+also do not claim that experiments that do not follow our Jun.2009.
+metricsarenecessarilybad.Apublicationmayfailourmetrics [9] C.Andujar,V.Schiaffonati,F.A.Schreiber,L.Tanca,M.Tedre,K.van
+Hee, and J. van Leeuwen, “The role and relevance of experimentation
+because of the authors intention. Authors demonstrating only
+ininformatics,”InformaticsEurope,Report,2013.
+theconceptanditsfeasibilitygiveexamplesofthis.Somepub- [10] M. Tedre and N. Moisseinen, “Experiments in computing: A survey,”
+lications fail our criteria, because they measure and evaluate TheScientificWorldJournal,vol.2014,2014.
+[11] J.B.BuckheitandD.L.Donoho,“WaveLabandreproducibleresearch,”
+differently.
+inWaveletsandStatistics,ser.LectureNotesinStatistics,A.Antoniadis
+The scientific standard of an experiment is the formulation andG.Oppenheim,Eds.,NewYork,1995,vol.103,pp.55–81.
+of a hypothesis about a system’s performance, a description [12] C. Collberg, T. Proebsting, and A. M. Warren, “Repeatability and
+benefaction in computer science research,” University of Arizona,
+how the hypothesis is tested, and what steps were taken to
+Arizona, Tech. Rep. TR 14-05, Feb. 2015. [Online]. Available:
+eliminate all forms of bias. For example, it is known that http://reproducibility.cs.arizona.edu/v2/RepeatabilityTR.pdf
+PDR is subject to drift, i.e. the observed error increases with [13] K.Popper,TheLogicofScentificDiscovery. Hutchinson&Co.,1959,
+citedaftereditionbyRoutledge,2002.
+distance. We seldom see statements that relate the observed
+[14] R. Gentleman and D. T. Lang, “Statistical analyses and reproducible
+error to the distance or time of evaluation. Only 35% report research,”J.ComputationalandGraphicalStatistics,vol.16,no.9,pp.
+how often an experiment was performed. We are not made 1–23,2007.
+aware of data that may contradict the hypothesis. We never [15] R. A. Fisher, The Design of Experiments, 8th ed. Edinburgh: Oliver
+andBoyd,1966.
+see a quantitative estimate of the systematic errors in the ex- [16] ISO5725-1:1994”Accuracy(truenessandprecision)ofmeasurement
+perimentalevaluation.Forexample,withGPSbasedreference methodsandresults—Part1:GeneralprinciplesanddefinitionsÂťÂť,
+International Organization for Standardization, Geneva, Switzerland,
+systems in cities, we should track the estimation precision of
+1994.
+the GPS. If this precision is 10 meters and we see an error of [17] R.Jain,Theartofcomputersystemsperformanceanalysis-techniques
+5 meters, the experiment says little about the performance of for experimental design, measurement, simulation, and modeling., ser.
+Wileyprofessionalcomputing. Wiley,1991.
+the SUT. Lack of full disclosure of the experiments makes it
+[18] C.J.WillmottandK.Matsuura,“Advantagesofthemeanabsoluteerror
+hard to validate the results independently. (MAE) over the root mean square error (RMSE) in assessing average
+Experimentationiscentraltoscientificprocesses.Weappeal modelperformance,”ClimateResearch,vol.30,no.1,p.79,2005.
+[19] S.Schmitt,H.Will,B.Aschenbrenner,T.Hillebrandt,andM.Kyas,“A
+to authors to write about their method of ground truth data
+referencesystemforindoorlocalizationtestbeds,”inIndoorPositioning
+gathering in the spirit of comparison, reproducibility, and andIndoorNavigation(IPIN),2012InternationalConferenceon,2012,
+explanation.Thisconcernsnotonlythetruepositionitself,but pp.1–8.
+also the time of a measurement, which is often not mentioned
+in publications. We also feel that the research community
+should ask for more real world experiments. It is important to
+test an approach under different conditions. For repeatability
+we encourage the use of automated reference systems, like
+View publication stats

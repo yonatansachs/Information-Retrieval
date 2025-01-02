@@ -1,0 +1,849 @@
+Interacting with Computers Advance Access published February 6, 2013
+©TheAuthor2013. PublishedbyOxfordUniversityPressonbehalfofTheBritishComputerSociety. Allrightsreserved.
+ForPermissions,pleaseemail: journals.permissions@oup.com
+doi:10.1093/iwc/iws010
+Indoor Human Navigation Systems:
+A Survey
+NavidFallah1,IliasApostolopoulos1,KostasBekris2 andEelkeFolmer1,∗
+1DepartmentofComputerScienceandEngineeringMS171,UniversityofNevada,Reno,1664N.VirginiaSt.
+Reno89557,USA
+2DepartmentofComputerScience,RutgersUniversity,Piscataway,NJ08854,USA
+∗
+Correspondingauthor:efolmer@unr.edu
+Whereas outdoor navigation systems typically rely upon global positioning system (GPS), indoor
+systemshavetorelyupondifferenttechniquesforlocalizingtheuser,asGPSsignalscannotbereceived
+indoors.Overthepastdecadevariousindoornavigationsystemshavebeendeveloped.Thispaper
+providesacomprehensiveoverviewofexistingindoornavigationsystemsandanalyzesthedifferent
+techniquesusedfor:(1)locatingtheuser;(2)planningapath;(3)representingtheenvironmentand
+(4)interactingwiththeuser.Oursurveyidentifiesanumberofresearchissuesthatcouldfacilitate
+large-scaledeploymentofindoornavigationsystems.
+RESEARCHHIGHLIGHTS
+• Asurveyoftechnologiesusedinindoorhumannavigationsystems.
+• Researchissuesthatcouldallowforlargescaledeploymentofindoornavigationsystems.
+Keywords:humannavigation;assistivetechnology;localization;pathplanning;mobility;indoornavigation
+EditorialBoardMember:LindaLittle
+Received21October2011;Revised26September2012;Accepted28September2012
+1. INTRODUCTION
+In this case, a map of environment is not needed (Loomis
+Human navigation relies on a combination of mobility et al., 1999) as the individual keeps track of all the changes.
+and orientation skills (Foulke, 1982). People employ either In landmark-based navigation, users change from reference
+path integration, where they orient themselves relative to a points (landmarks) to reference point as they navigate in the
+startingpositionusingproprioceptivedata,orlandmark-based environment,consideringtherelativepositionofthelandmarks.
+navigation, where they rely upon perceptual cues together Inthiscase,theindividualusesaphysicalorcognitivemapof
+with an external or cognitive map. Humans may also use the environment. By recalling the landmarks and their spatial
+a combination of both path integration and landmark-based relationships from memory (Iara et al., 2003), their current
+navigation(Loomisetal.,2001). positionandorientationcanbeestimatedbasedonthedistance
+In general, human navigation in indoor and outdoor andanglesrelativetooneormultiplelandmarks(Loomisetal.,
+environments is performed by measuring the distance and 1999).When exploring new environments, path integration is
+orientation relative to one or multiple reference points. By especiallyusefulforexploringnewenvironmentswhereusers
+periodically measuring the displacement and changes in the may build a cognitive map by observing landmarks (Lynch,
+orientation (based on body motion and heading) and adding 1960;Tolman,1948).Studies(Iaraetal.,2003)showthatwhen
+them with the distance and orientation relative to a reference mapsareavailable,humanswillfirstnavigateusingalandmark-
+points,suchasalandmark,userscanestimatetheirnewlocation basedapproachandastheysuccessfullymaptheenvironment,
+andorientationwhilenavigatinginanenvironment.Incaseof switchtousingpathintegration.
+path integration, a single reference point is used throughout Cognitive mapping is concerned with the process in which
+the navigation, and the location is estimated based on adding humans create a mental map of the environment (Kitchin and
+all the changes in position and orientation (Iara et al., 2003). Freundschuh,2000).Whilenavigating,manydecisionsneedto
+InteractingwithComputers,2013
+Downloaded
+from
+http://iwc.oxfordjournals.org/
+at
+Pennsylvania
+State
+University
+on
+May
+12,
+20162 NavidFallahetal.
+be made based on our knowledge of the environment that is 2. LOCALIZATION
+storedinthecognitivemap.Whiledifferentsensesmaybeused
+Allnavigationsystemsmustincludeabasicformoflocalization,
+for navigation, vision is the most effective way for creating a
+i.e. the determination of a user’s position and/or orientation.
+cognitivemap,asagreatlevelofdetailsabouttheenvironment
+Localization methods can be grouped into four different
+can be acquired in a relatively short time (Kalia et al., 2008;
+techniques: (1) dead reckoning, (2) direct sensing, (3)
+Semwal,2001;Tsujietal.,2005).Whilenavigating,primarily
+triangulation and (4) pattern recognition, which are discussed
+thevisualsenseisusedtorecognizelandmarksandassessthe
+inthefollowingsubsections.
+distanceandorientationtolandmarkssoastobeabletoasso-
+ciatethemwithlandmarksthatarestoredinthecognitivemap.
+In new environments, way finding can be time consuming 2.1. Dead-reckoning
+and may require a considerable amount of attention. This
+is especially undesirable for an emergency crew, such as Dead reckoning localization techniques estimate a user’s
+firefightersorparamedics,astheyhavetonavigateunfamiliar location based on a previously estimated or known position.
+environmentsonadailybasisoftenwithlimitedvisibility,for Whiletheuserismoving,thedead-reckoningsystemestimates
+example,incaseofafire.Individualswithvisualimpairments the user’s location through the aggregation of odometry
+oftenneedthehelpofsightedpeopletonavigateandcognitively readings. Odometry readings can be acquired through a
+mapnewenvironments,whichistimeconsumingandleadstoa combinationofsensorssuchasaccelerometers,magnetometers,
+lowermobility(Passinietal.,1990).Individualswithcognitive compasses and gyroscopes (Fischer et al., 2008; Hollerer
+impairmentsmayhavedifficultylearningnewenvironmentsand et al., 2001; Koide and Kato, 2005; Retscher, 2004) or using
+following directions.Assistive systems for human navigation a user’s specific walking pattern (such as the user’s average
+aim to allow their users to safely and efficiently navigate in
+walkingspeed)(Wuetal.,2007).Aninitiallocationistypically
+unfamiliar environments without getting lost by planning the determined using global positioning system (GPS) (Hollerer
+pathdynamicallybasedontheuser’slocationandspecialneeds.
+etal.,2001),radio-frequencyidentification(RFID)tags(Koide
+Thefunctionalityofanavigationsystemmustincludelocat- andKato,2005)orcellularphonepositioning(Retscher,2004).
+ingandfollowingtheuserwhilenavigatingintheenvironment. Since the location estimation is a recursive process,
+Thelocationcanbeusedforbothplanningthepathandprovid- inaccuracy in location estimation results in errors that
+ing surrounding information.As the user’s location is known, accumulateovertime.Theaccumulatederrorcanbecorrected
+thesystemcanfindanewpathincasetheuserislostoranalter- using environmental knowledge (Hollerer et al., 2001), RFID
+nativepathisneeded.Theplannedpathisusedtogenerateand
+tags(KoideandKato,2005),ultrasoundbeacons(Fischeretal.,
+providedirectionstoauser-specifieddestination.Theadvantage 2008) and map matching (Koide and Kato, 2005; Nakamura
+ofusinganavigationsystemtoplanapathisthatthepathcanbe et al., 1997). The users’ position can be synchronized using
+optimizedbasedondifferentuserrequirements,suchasshort- direct-sensing localization techniques such as RFID tags or
+estpathorsafestpathforindividualswithvisionimpairments. pattern-matching localization techniques such as through the
+The system interacts with the user to provide directions and recognitionofvisuallandmarks.Abenefitoftheseapproaches
+surrounding information.Alternative interaction methods can overdirect-sensingtechniquesisalowerinstallationcostasa
+beusedindifferentcases,suchasgraphicaldisplaystomakeit smallernumberofidentifiershavetobeinstalled.
+easiertofollowdirectionsorhapticinterfacestoaccommodate Theinaccuracyofdeadreckoningandtheneedtocombine
+noisyenvironment.Sincethelocationoftheuserisknown,such it with other localization techniques are the main drawbacks
+systemscanprovideinformationregardingtheuser’ssurround- ofthismethod.IfasystemusesRFIDforerrorcorrection,the
+ings,suchasthelocationofobstaclesorimportantlandmarks. systemhasallthedisadvantagesoftheRFIDlocalizationsuch
+Overthepastdecadesnumerousindoornavigationsystems as change in the infrastructure and the need for users to carry
+havebeendeveloped.Thissurveypaperprovidesacomprehen- an RFID reader. If map matching or landmarks are used for
+sivereviewoftechnologiesusedforthedifferentcomponents errorcorrection,somepreviousknowledgeoftheenvironment
+(localization,pathplanning,representationandinteraction)of isrequired,whichmightbecostlytoprepare.
+anavigationsystem.Wecontrastthedifferenttechnologiesfor
+each component and discuss their benefits and disadvantages
+2.2. Directsensing
+with regards to accuracy, cost and usability. Our paper points
+outseveralareasforfutureresearch,thatcouldhelpwithlarge- Direct-sensing-based localization methods determine the
+scale deployment of indoor navigation systems. This paper is location of the user through the sensing of identifiers or
+organized as follows: Section 2 discusses localizing the user; tags, which have been installed in the environment. Two
+Section 3 planning a path toward a user-provided destination; differentapproachesexistwithregardtodeterminingtheuser’s
+Section4creatingandrepresentingamapoftheenvironment location:(1)locationinformationandinformationontheuser’s
+and Section 5 interacting with the user. Section 6 points out environment is stored in the tag itself or (2) this information
+areasforresearchandthepaperisconcludedinSection7. is retrieved from a database using the tags’unique identifier.
+InteractingwithComputers,2013
+Downloaded
+from
+http://iwc.oxfordjournals.org/
+at
+Pennsylvania
+State
+University
+on
+May
+12,
+2016IndoorHumanNavigationSystems: ASurvey 3
+Sensingonetagissufficientfordeterminingthelocationofthe (Ertan et al., 1998). Locating identifiers may be hard,
+user and the tag reader can be easily embedded in hand-held asIRrequiresalineofsightduetotheirnarrowtrans-
+devices or in a shoe or cane (Chumkamon et al., 2008;Willis mission angle (Liu et al., 2007).A drawback of IR is
+and Helal, 2005). The user’s orientation can be determined systems that natural and artificial light can interfere
+fromrelativechangesinlocationfromsubsequentreadsoftags withIR(Moreiraetal.,1996).IRsystemsarecostlyto
+(WillisandHelal,2005).Fivedifferenttechnologieshavebeen install due to the large number of tags that need to be
+identifiedthatarebeingusedforthetags: installed(Bulusuetal.,2000).
+(iii) Ultrasound identification uses emitters that broadcast
+(i) Radio-frequencyidentifierdescription(RFID)tagsare ultrasound waves with a short wavelength (Ran et al.,
+usedinmostcurrentnavigationsystemswhereRFID’s 2004). Emitters are installed in the infrastructure and
+can either be passive (D’Atri et al., 2007; Kulyukin theusercarriesareceiveroneachshoulder.Theflight
+etal.,2006;WillisandHelal,2005)oractive(Dingetal., timedifferenceoftheultrasoundsignalsreceivedfrom
+2007). Some systems use both active and passive tags the two closest emitters to each receiver is used to
+(Chumkamonetal.,2008).ActiveRFIDtagscontaina locate the user. By placing a receiver on each shoul-
+batteryandtransmitsignalsautomatically.Thetagshave der, the user’s orientation (Ran et al., 2004) can also
+a larger range, which reduces the number of required be calculated. Other systems have the user carry the
+tags that need to be installed. The drawback of active ultrasound emitter and receivers are installed in the
+tags is the required maintenance, as batteries need to environment (Priyantha et al., 2000) where the users’
+be replaced. Passive tags do not require a battery and location is determined centrally. A disadvantage of
+are powered to transmit signals by the RFID reader. ultrasoundisthatwallsmayreflectorblockultrasound
+Whilepassivetagsaremuchlessexpensive,theyhave signals(Ranetal.,2004),whichresultinlessaccurate
+much shorter range and can store much less data (Ni localization. The other drawback of using ultrasound
+et al., 2004), which increases their installation cost. forlocalizationistherequiredlineofsightbetweenthe
+RFIDtagscanbeusedtostoreanidentifierorlocation receiverandbeacons(LorinczandWelsh,2004).
+informationmaybeembeddedinthetagitself.Active (iv) Bluetooth beacons have been used for localization
+tags can store up to 128kb and passive tags typically (Huang et al., 2009). For localization, the user has
+store less than 128 bytes (Solanki, 2011). RFID tags to walk slower than with other techniques because of
+themselvesarerelativelyinexpensive(WillisandHelal, thedevicedelay(Chawathe,2009).Bluetoothbeacons
+2005),butinstallingtheminlargeenvironmentsmaybe require a power source and hence they need to be
+costly,sincesuchtagsneedtobeembeddedinfloorsor maintained.SimilartoRFIDlocalization,thechangein
+wallsforuserstosensethem.Forexample,ifanindoor infrastructureisoneofthedisadvantagesofthosetech-
+environment has a carpet floor, installation costs may niquesincethereceiversoremittersneedtobeinstalled
+be low but, in the case of concrete or marble floors, throughouttheceiling(HightowerandBorriello,2001).
+this may be prohibitively expensive (Wu et al., 2006). (v) Barcodes can also be used as identifiers to localize a
+Anotherdisadvantageofthistechniqueisthatthehuman user, where users carry a barcode reader. While users
+body can block RF signals (Amemiya et al., 2004). arenavigatingthepath,theyhavetoscanthebarcodes
+Once installed, tags may be difficult to update; some along the way and they are located based on their
+tags are only readable and they need to be replaced, unique ID.The system can then provide the user with
+while others can be updated, but this cannot be done information about their location and surroundings and
+remotelyandonehastobewithinashortdistancefrom whethertheyaremovingintherightdirection(Chang
+the tag. Cheap RFID tags have relative short ranges, etal.,2008;SmailagicandMartin,1997).Thismethod
+whichrequireinstallingtheminanenvironmentwitha islowcostandeasytoinstallandmaintain.Theprob-
+largergranularity,orelsetheriskincreasesthattheuser lem with this method is that the user has to find each
+willbeunabletodetectatag(RossandBlasch,2002). barcode and scan that barcode, which may be cum-
+ActiveRFIDtagshavealargerrangebuttheyrequirea bersome and will slow down navigation. Users with
+powersource,suchasabattery. visualimpairmentsmaybeunabletousethesystemas
+(ii) Infrared (IR) localization uses IR transmitters that are detectingthebarcodesreliesuponbeingabletosee.
+installed in known positions where each transmitter
+broadcasts a unique ID in a cone-shaped region (Baus Althoughmostsystemsuseonlyonetypeoftechniqueforthe
+et al., 2002; Tsetsos et al., 2006). The user carries an identifiers,thereexistsanavigationsystem(Besshoetal.,2008)
+IR receiver that picks up data from IR transmitters in that uses a combination of identifiers, e.g. active and passive
+range.Insomesystems,transmittersnotonlybroadcast RFID tags, or IR beacons. While using multiple localization
+the position of the user but also provide information techniquesmightimprovetheaccuracy,themaindrawbackis
+abouttheenvironmentandgraphicalwalkingdirections the additional equipment that the user has to carry. Particle
+InteractingwithComputers,2013
+Downloaded
+from
+http://iwc.oxfordjournals.org/
+at
+Pennsylvania
+State
+University
+on
+May
+12,
+20164 NavidFallahetal.
+filters have been used successfully (Apostolopoulos et al., theseperceiveddatawiththesetofpriorcollectedrawsensor
+2010;Fallahetal.,2012)tolocateandtrackblindusersinan datathathasbeencoupledwithanenvironmentmap.Thismap
+indoorenvironmentbycombiningdeadreckoningwithsensor- ofsensordatacanbecreatedbysamplingatdifferentlocations
+basedlocalization,wherethehumanuseractsasan“intelligent orbycreatingitmanually.Mosthumannavigationsystemsuse
+sensor”, who confirms the presence of tactile landmarks to acombinationofdifferentsensingtechniques:
+increaselocalizationaccuracy.
+(i) Computer vision-based localization techniques
+(GoldingandLesh,1999;Hubetal.,2004;Ranetal.,
+2.3. Triangulation
+2004; Retscher and Thienelt, 2004) require the user
+Although most direct-sensing techniques locate the user by to either carry a camera or use a camera embedded in
+sensing one unique identifier, a number of systems employ a hand-held device, such as a cell phone.While users
+multiple identifiers and triangulation to locate the user.These navigateinanenvironment,acameracapturesimages
+methods locate the user by triangulating the tags installed in of the environment, and then by matching the images
+known locations. The tags that have been used for indoor or against a database of images with known location,
+outdoorlocalizationincludeRFID(Amemiyaetal.,2004),IR users’positionandorientationcanbedetermined.The
+(Bausetal.,2002)andultrasound(Priyanthaetal.,2000;Ran cameracapturesimageswhiletheusernavigates.Using
+etal.,2004). image matching, the users’ position and orientation
+Triangulation-basedlocalizationmethodsusethelocationof can be determined (Koch andTeller, 2008; Ran et al.,
+at least three known points to determine the users’ location 2004). A disadvantage of this technique is the high
+(Zheng and Ni, 2006). Lateration uses the distance between storagecapacityrequiredforstoringtheimagesthatare
+theuserandatleastthreeknownpoints,whereasangulationuses coupled with the environment map. Significant com-
+theangularmeasurementsfromatleastthreeknownpointstothe puting power may be required to perform the image
+usertodeterminetheuser’slocation(ZhengandNi,2006).GPS matching(HightowerandBorriello,2001),whichmay
+isthemostcommonlyusedtechniqueforoutdoorlocalization be challenging to implement on a hand-held device.
+(Etter and Specht, 2008; Helal et al., 2001; Huang and Liu, Usersareoftenrequiredtocarrysupportingcomputing
+2004) and uses a trilateration method based on satellites’ equipment(GoldingandLesh,1999;Ranetal.,2004),
+positions to locate the user. GPS receivers analyze a periodic whichmayimpedetheirmobility.
+signalsentoutbyeachsatellitetocomputelatitude,longitude (ii) Signal distribution or fingerprinting localization tech-
+and altitude of the user’s position. GPS-based car navigation niquescomparetheuniquesignaldatafromoneormore
+systems can determine orientation based on relative changes external sources sensed at a particular location with a
+in position, whereas hand-held GPS systems typically use a mapofprerecordeddata.Thistechniquerequiresatrain-
+compass(Hollandetal.,2002;Petrieetal.,1996).Foroutdoor ingphase,whichthereceivedsignalstrengthatdifferent
+navigation,GPShasbecomethestandardasitisfreeandreliable locationsareacquiredandthenstoredinadatabaseto
+anditisavailableinanyplaceonEarthinanyweathercondition. createamap.Inthenextphase,whentheuserisnavigat-
+UsingtheHighAccuracyNationwideDifferentialGPSSystem, ing,thereceivedsignalstrengthoritsdistributionover
+an accuracy of locating a user within 10cm can be achieved. timeismeasuredandcomparedwiththemaptofindthe
+Since GPS signals are one-way, it further helps to protect the closestmatch.ThesignalstrengthfromWLANsaccess
+users’privacy. The main disadvantage of GPS localization is points (Rajamäki et al., 2007; Retscher and Thienelt,
+thattheGPSsignalisnotavailableinsidebuildingsorbetween 2004)isanexampleofsignaldistributionlocalization.
+tall buildings. There are two alternative triangulation-based AnadvantageofWLANssignallocalizationistherel-
+techniques,whichareavailableincontextswhereGPSsignals ativelysmallnumberofbasestationsthatarerequired
+arenotavailable.Cell-towerpositioning(Arikawaetal.,2007) forlocalizingtheuser(BahlandPadmanabhan,2000).
+usesthetriangulationoftheknownlocationsofcelltowersusing Owingtotheincreasedprevalenceofwirelessnetworks
+theprovidedsignalstrengthofeachcellphonetower,whereas in indoor environments, often no investment in infras-
+wirelesslocalareanetworks(WLANs)(RetscherandThienelt, tructureisrequiredasexistingbasestationscanbeused
+2004;Tsetsosetal.,2006)positioningtriangulatesthelocation (Hightower and Borriello, 2001). Other signal distri-
+ofwirelessbasestationsusingtheprovidedsignalstrengthof butionlocalizationtechniquestypicallyrelyonacom-
+eachstation.BothtechniqueshavealowerprecisionthanGPS bination of low-cost sensors such as an accelerome-
+duetomulti-pathreflectionproblems(Arikawaetal.,2007). ter, magnetometer (measuring the strength and direc-
+tion of a magnetic field), and temperature and light
+sensors(GoldingandLesh,1999).Creatingamapfor
+2.4. Patternrecognition
+a multitude of sensors is often time consuming and,
+Pattern recognition-based localization methods use data from furthermore, the map may not be reliable as some
+oneormoresensorscarriedorwornbytheuserandcompare signals such as temperature and light sensors may be
+InteractingwithComputers,2013
+Downloaded
+from
+http://iwc.oxfordjournals.org/
+at
+Pennsylvania
+State
+University
+on
+May
+12,
+2016IndoorHumanNavigationSystems: ASurvey 5
+Table1. Overviewoflocalizationindifferentsystems.
+Technique Methods System
+Triangulation GPS AudioGPS(Hollandetal.,2002),Heutenetal.(2008),MelodiousWalkabout(EtterandSpecht,
+2008),NAVITIME(Arikawaetal.,2007),Loomisetal.(1994),HuangandLiu(2004),
+MOBIC(Petrieetal.,1996),Strachanetal.(2007)
+Cell-tower NAVITIME(Arikawaetal.,2007)
+WLAN OntoNav(Tsetsosetal.,2006),NAVIO(RetscherandThienelt,2004)
+RFID Virtualleadingblocks(Amemiyaetal.,2004)
+Patternmatching Computervision GoldingandLesh(1999),Drishti(Ranetal.,2004),Hubetal.(2004)
+Signaldistrib. NAVIO(RetscherandThienelt,2004),LaureaPOP(Rajamäkietal.,2007)
+Directsensing RFID RF-PATH-ID(WillisandHelal,2005),Chumkamonetal.(2008),Besshoetal.(2008),Ding
+etal.(2007),RG-I(Kulyukinetal.,2006),RadioVirgilio(D’Atrietal.,2007)
+IR Ertanetal.(1998),REAL(Bausetal.,2002)
+Ultrasound Drishti(Ranetal.,2004),Cricket(Priyanthaetal.,2000)
+Bluetooth UCPNavi(Huangetal.,2009)
+Barcode Metronaut(SmailagicandMartin,1997),Changetal.(2008)
+Deadreckoning KoideandKato(2005),Hollereretal.(2001),Nakamuraetal.(1997),NAVIO(Retscher,2004),
+Fischeretal.(2008),Wuetal.(2007)
+subjecttodailyorseasonalfluctuations(LaMarcaetal., shortest path or the shortest travel time is desirable for the
+2002). majority of users, and most of the current navigation systems
+(Bessho et al., 2008; Chumkamon et al., 2008; Ding et al.,
+Table 1 shows an overview of the different localization
+2007) use the shortest path algorithms, but this might not be
+techniques and the different technologies used within each
+suitableforeveryone;forexample,touristsmightpreferalonger
+technique.
+path that takes them along interesting landmarks.A planning
+technique might minimize the cognitive load (Baus et al.,
+2002)consideringthecomplexityofapathandthedirections
+3. PATHPLANNING
+provided,tohelpelderlyorindividualswithcognitiveproblems.
+Inadditiontolocalizingusers,anavigationsystemcanprovide Forindividualswithvisualimpairments,apaththatgoesalong
+directions from the user’s current location to a user-specified walls reduces the chance of the user getting lost and a path
+destination. This involves planning a path and turning it into that avoids low ceilings is much safer. Figure 1 illustrates a
+easy-to-follow directions. As the user follows directions, the case where the shortest path results in high uncertainty. Such
+system will dynamically updates its estimation of the user’s systemstrytofindthepathwiththeleasthazard(Helaletal.,
+location and generate a new direction once the previous 2001;Kulyukinetal.2006;Petrieetal.,1996;Wuetal.,2007).
+directionhasbeencompleted. Theaccessibilityofthepathmightbeconsideredwhenplanning
+Since the user might fail to follow instructions and veer the path for wheelchair users or elderly such that stairs are
+from the planned path, the system should be able to detect avoided and the slope of each path is considered (Koide and
+thissituationandre-planthepath.Althoughplanningdifferent Kato,2005;Petrieetal.,1996).Aflexiblesystemmightletthe
+routes to a destination or dynamically updating the path is a user to set preferences based on their needs (Arikawa et al.,
+commonfeatureforcarnavigationsystems,onlyafewhuman 2007;KoideandKato,2005;Petrieetal.,1996;Tsetsosetal.,
+navigationsystems(Apostolopoulosetal.,2010;Besshoetal., 2006).
+2008; Chumkamon et al., 2008; Kulyukin et al., 2006) offer Path-planningalgorithmsusegraphsorgridstorepresentthe
+thisfeature.Mosthumannavigationsystemsseemtoprimarily environment.Toplanapathusinggraph-basedapproaches,the
+focus on localization, which allows users to freely explore an environmentisdividedintosetsofnodesandedgesconnecting
+environment. these nodes. Depending on the path planning algorithm and
+Path planning is an important part of the navigation, which constraints, these nodes might be any type of object, such
+canaffecttheoverallperformanceofthesystem.Thepathneeds as hallway intersections, doors or obstacles. Edges connect
+to be planned in such a way as to maximize the usability and thesenodestogetherbasedontheenvironmentmapandifone
+success rate while minimizing the chance of the user getting node is accessible from the other one. In this case, each edge
+lost. A smarter path-planning technique needs to consider might have a weight assigned to it based on different criteria
+users’requirements and customize the path accordingly. The for the path planning. In case of the grid-based approach, the
+InteractingwithComputers,2013
+Downloaded
+from
+http://iwc.oxfordjournals.org/
+at
+Pennsylvania
+State
+University
+on
+May
+12,
+20166 NavidFallahetal.
+Table2providesanoverviewofthedifferentpathplanning
+techniquesusedinvarioussystems.
+4. REPRESENTATION
+Human navigation systems require storing and retrieving
+different types of information. The stored information can be
+usedforlocalization,pathplanning,generatingdirectionsand
+providinglocationinformation.
+Depending on the approach employed by the system,
+this information may include floor plans, the location and
+Figure1. Ashortpathmayresultinhigheruncertaintyinlocalizing
+description of objects in the indoor environment, locations
+theuser.
+of identifier tags or data collected using sensors. This can
+be a simple two-dimensional (2D) map of the environment
+representingwallsanddoorswithroomnumbers(Hollereretal.,
+environment is divided into small parts called cells. Each cell 2001;KoideandKato,2005;Tsetsosetal.,2006),digitalroad
+containsinformationregardingtheobjectsatthatlocationand maps (Ertan et al., 1998; Helal et al., 2001; Koide and Kato,
+environment description. Cells might have weights associated 2005;Petrieetal.,1996)orgraphofaccessiblepathswithan
+with them similar to edges in the case of the graph-based associated cost for each link (Bessho et al., 2008; Koch and
+approach. The grid-based approach might have a resolution Teller, 2008;Wu et al., 2007). The map can be used for path
+problem, because when the cell size is large, multiple objects planningbasedontheaccessibleareasorlocalizingtheuser.If
+might reside in the same cell while each cell needs to have a the system uses a tag-based approach to localize the user, tag
+structuretoholdthedetails.Usingsmallercellsizesincreases informationisaddedtothemap(D’Atrietal.,2007;Dingetal.,
+the computational overhead for planning a path where some 2007; Willis and Helal, 2005). Information about landmarks
+cellsmightnothaveanyvaluableinformation.Anobjectmay alongthepathcanbeaddedtothemapwhichcanbeusedwhen
+also reside in multiple cells.A graph-based approach has the providing directions to the user (Apostolopoulos et al., 2010;
+advantage of creating the nodes only if there are objects. Ranetal.,2004;Tsetsosetal.,2006;Wuetal.,2007).2Dmaps
+Edges are created only if objects are accessible from each might be the least resource-intensive representation and such
+other,butincomplicatedenvironmentswithmanyobjects,the mapsareeasytogeneratefrombuildings’blueprints.Butadding
+graph might become big and decreases the performance of detailedinformationregardingobjectsintheenvironmentand
+thepath-planningalgorithm.Theweightassociatedwithedges possible hazardous areas, such a as low ceilings, to such map
+or cells play an important role when customizing a path; for mightbechallenging.
+example, in the case of a path that should avoid stairs, the Three-dimensional (3D) models can be used to represent
+edges with stairs receive higher weights or edges with low the environment (Lertlakkhanakul et al., 2009; Lyardet
+ceilinghavehigherweightswhenplanningapathforindividuals et al., 2006). Considerable amount of useful information
+with visual impairments. Most of current navigation systems can be extracted from such models automatically, such as
+use either Dijkstra (Hollerer et al., 2001; Koide and Kato, the location of doors, slope of a ramp or low ceiling.
+2005;Lertlakkhanakuletal.,2009;Lyardetetal.,2006)orA* Such models are more expensive to generate but they are
+(Hollereretal.,2001;Petrieetal.,1996;Wuetal.,2007)for language independent and object recognition algorithms can
+pathplanning. extract information, which helps the system to be deployed
+Table2. Overviewofpath-planningindifferentsystems.
+Methods Pathcriteria System
+Dijkstra Traveltime,avoidstairs,easeoftravel KoideandKato(2005)
+Traveldistance HuangandLiu(2004)
+Userpreference,leasthazard Drishti(Helaletal.,2001)
+Traveltime,traveldistance,safety,easeoftravel MOBIC(Petrieetal.,1996)
+A* Traveldistance Chumkamonetal.(2008),Besshoetal.(2008),Dingetal.(2007),Hollerer
+etal.(2001),Ertanetal.(1998),NAVITIME(Arikawaetal.,2007)
+Minimumcognitiveload REAL(Bausetal.,2002)
+Traveldistance Navatar(Apostolopoulosetal.,2010)
+InteractingwithComputers,2013
+Downloaded
+from
+http://iwc.oxfordjournals.org/
+at
+Pennsylvania
+State
+University
+on
+May
+12,
+2016IndoorHumanNavigationSystems: ASurvey 7
+Table3. Overviewofrepresentationindifferentsystems.
+Map Objects System
+2D Landmarks,buildings,streets REAL(Bausetal.,2002)
+Nameofplace Changetal.(2008)
+Emptyspacesandobjects RG-I(Kulyukinetal.2006)
+Obstaclesandthesurroundingenvironment Drishti(Ranetal.,2004)
+Roadmarkingsandlandmarks KaluwahandiandTadokoro(2001)
+Environmentinformation HuangandLiu(2004)
+Object,typeofhandle,openingdirection,distancetoobjects RF-PATH-ID(WillisandHelal,2005)
+Tactilelandmarks Navatar(Apostolopoulosetal.,2010)
+3D Artwork Besshoetal.(2008)
+Environmentandobjectcolor Hubetal.(2004)
+globally. 3D models require more storage and processing 5. INTERACTION
+them for extracting information can be more resource
+5.1. Systemfeedback
+intensive.
+The information used by a navigation system is typically Thethreemaintechniquesforprovidingdirectionstotheuser
+retrieved either from a local database (D’Atri et al., 2007; areidentifiedasfollows:
+Fischer et al., 2008; Koch andTeller, 2008) or from a central
+database through wireless connection (Amemiya et al., 2004; (i) Visual: Providing directions using a display is the
+Bessho et al., 2008; Rajamäki et al., 2007; Tsetsos et al., mostcommontechniqueforprovidingdirections.Maps
+2006).Thelocaldatabaseapproachispotentiallymorereliable; (Arikawa et al., 2007; Baus et al., 2002) or photos
+as they remove the need for a wireless infrastructure to be (Changetal.,2008)canbedisplayedanddirectionscan
+available, however, any update or change in the physical beshownusingarrowstoindicatetotheuserwhereto
+environmentrequireschangesinalllocalcopies,whichresults go.Usingthismethodarelargeamountofinformation
+in an inaccurate navigation if the local copy is not updated. can be provided to the user in a short amount of time.
+Storingtheinformationlocallymightnotbefeasiblefordevices Providinginformationassuchcanhaveahighlevelof
+withlimitedstorage.Consideringtheexpandingavailabilityof accuracy as realistic images are displayed and arrows
+wirelessconnectionwithincreasingbandwidth,connectivityto can clearly mark the exact location for a user and the
+acentralservermightnotbeamajorissue.Whenthechanges action they have to perform next. This method can be
+intheenvironmentarereflectedontheserver,clientscanhave beneficial for individuals with cognitive disability as
+accesstothelatestrepresentation. theycandirectlycorrespondwhattheyseeonthescreen
+Several navigation systems act as an information system with the environment. On the other hand, storing real
+that provides information about the user’s surroundings. The images is storage intensive and downloading them in
+information provided varies from providing the name of real time might not be feasible. Alternatively, simple
+buildings and rooms (Baus et al., 2002; Ding et al., 2007) text directions (Fischer et al., 2008; Smailagic and
+to a detailed description of the room layout including any Martin, 1997) can be displayed. Displaying text is far
+objects in that room (Hub et al., 2004; Kulyukin et al., 2006; less resource intensive but provides less information,
+Loomisetal.,1998;Ranetal.,2004)andeventhetypeofdoor mightnotbeasaccurateandslowsdowntheuser.
+handle and the direction in which it opens (Willis and Helal, 3Dmodelsoftheenvironments(Lertlakkhanakuletal.,
+2005).This information can be used to help the user to avoid 2009)orawireframemodeloftheuser’ssurroundings
+obstacles along the path (D’Atri et al., 2007). This requires and labels of objects (Hollerer et al., 2001) can be
+storingsignificantlylargeramountsofinformationthanasimple renderedanddisplayedtotheuser.Thismethodmight
+map.Thetypeofinformationstoreddependsontheusers’needs. beasefficientasdisplayingimagesininteractingwith
+Whileindividualswithvisualimpairmentsmightbenefitfrom theuserandrequirelessstoragecomparedwithimages
+detailedinformationaboutthedirectioninwhichdooropens,it buttheprocessingpowerrequiredtorendersuchmodels
+mayalsobehelpfulforanemergencycrewtoknowthelocation ishigher.
+ofthemaingasvalveinthebuilding,orfortheelderlytoknow Having users to look at the screen while following
+thelocationofbenches. directionsmayimpedetheirsafetyastheyneedtodevote
+Table3providesanoverviewofthedifferenttechniquesfor their full attention to the screen. Visual interaction
+representinginformation. mightbeausablemethodofinteractionwithindividuals
+InteractingwithComputers,2013
+Downloaded
+from
+http://iwc.oxfordjournals.org/
+at
+Pennsylvania
+State
+University
+on
+May
+12,
+20168 NavidFallahetal.
+withcognitiveproblemsortouristsbutitisdifficultor six vibration motors worn on fingers, such as Finger-
+impossible to utilize displays for emergency crew or Braille (Amemiya et al., 2004). Haptic directions can
+userswithvisualimpairments. be provided, for example, by using vibrotactors on a
+(ii) Audio: Speech-based systems (Helal et al., 2001; waistbelt(Heutenetal.,2008;WillisandHelal,2005)
+Nakamura et al., 1997; Rajamäki et al., 2007; Ran or in a backpack (Ertan et al., 1998). Some form of
+etal.,2004)userecordeddirections(Chumkamonetal., haptification (e.g. changes in frequency and intensity)
+2008;Loomisetal.,1994)orspeechsynthesis(D’Atri is used to indicate the angle or distance between the
+et al., 2007; Hub et al., 2004; Koch and Teller, 2008) userandthetargetdestination.
+to provide directions to the user. Speech synthesis is While haptic interaction has far less interference with
+much more flexible than the recorded directions and sensingtheenvironment,itrequirestrainingandmore
+canbeperformedatruntimewithoutamajorprocessing concentration,asitislessnaturaltoreceivecomplicated
+overhead, though recorded directions sound better. information through touch. Haptic-based directions
+Speech-baseddirectionsarewidelyusedforinteraction requireadditionalhardwaretobeprovided,whichmay
+but they are language-dependent. Lengthy speech increasethecostofthesystem.
+directionsmayoverwhelmtheuserandmayimpedethe
+user’sabilitytocorrectlyfollowtheprovideddirection. As each modality of feedback has some drawbacks, this
+Because speech directions are language-dependent, can be overcome by representing information in multiple
+audio cues can be used as an alternative (Etter and modalities. Some systems combine visual and audio (Bessho
+Specht, 2008; Holland et al., 2002; Huang and Liu, etal.,2008)orhapticandaudio(Apostolopoulosetal.,2010;
+2004; Kulyukin et al., 2006). Typically some type of KaluwahandiandTadokoro,2001;Nakamuraetal.,1997;Petrie
+sonificationordifferentaudioiconswithdifferenttones etal.,1996)feedbacktoprovidedirectionstotheuser.
+can be used to provide distance information (Holland To navigate the user, the planned path is converted to a set
+et al., 2002). Audio cues are limited and for many of directions and provided to the user. The type of direction
+objectsnonaturalaudiocueisassociated. providedtotheusermaysignificantlyaffectthecognitiveload;
+Speechmaybesaferthanusingadisplayasitrequires incasethedirectionsaretoolong,theymaybechallengingto
+less attention and can be easily facilitated using a followasusersfeeloverwhelmed,whereshorterdirectionsmay
+headsetwithoutimpairingtheuser’snormalnavigation notbeasefficient.
+capabilities and awareness of the surrounding. Using Table4providesanoverviewofthedifferenttechniquesfor
+soundforoutputreducestheamountofinformationthe theinteractionoutput.
+usercanobtainfromtheenvironment.Audio-basedout-
+put techniques are not suitable when the environment
+5.2. Userinput
+isnoisyorwhenauserishearingimpaired.
+(iii) Haptic: Haptic-based interfaces provide output using Many navigation systems are facilitated using mobile devices
+the sense of touch and do not interfere with the user’s where the input provision is limited due to small screens
+ability to sense their immediate environment using andbuttons.Somesystemsuseconventionalinputtechniques,
+sightorhearing.Textualdirectionscanbeprovidedto such as touch screens (Petrie et al., 1996), keypads (Loomis
+theuserusingahapticgloveapproachwhereuserswear etal.,1998)andpush-buttonswitches(KochandTeller,2008;
+Table4. Overviewofinteractionoutputindifferentsystems.
+Modalityoffeedback System
+Haptic Virtualleadingblocks(Amemiyaetal.,2004),Ertanetal.(1998),Heutenetal.(2008),
+RF-PATH-ID(WillisandHelal,2005)
+Speech Chumkamonetal.(2008),Strachanetal.(2007),Nakamuraetal.(1997),Loomisetal.(1994,
+1998),Drishti(Helaletal.,2001;Ranetal.,2004),RG-I(Kulyukinetal.,2006),Hubetal.
+(2004),HuangandLiu(2004)
+Audiocues AudioGPS(Hollandetal.,2002),MelodiousWalkabout(EtterandSpecht,2008)
+Visual Metronaut(SmailagicandMartin,1997),REAL(Bausetal.,2002),Changetal.(2008),
+NAVITIME(Arikawaetal.,2007)
+VisualandAudio Besshoetal.(2008)
+Hapticandspeech MOBICPetrieetal.(1996),KaluwahandiandTadokoro(2001),Navatar(Apostolopoulosetal.,
+2010)
+InteractingwithComputers,2013
+Downloaded
+from
+http://iwc.oxfordjournals.org/
+at
+Pennsylvania
+State
+University
+on
+May
+12,
+2016IndoorHumanNavigationSystems: ASurvey 9
+Table5. Overviewoftheinteractioninputindifferentsystems.
+Inputtypes System
+Push-button Nakamuraetal.(1997)
+Keypad Loomisetal.(1998),MOBIC(Petrieetal.,1996),KaluwahandiandTadokoro(2001),
+MelodiousWalkabout(EtterandSpecht,2008)
+Speechrecognition NAVITIME(Arikawaetal.,2007),Drishti(Helaletal.,2001;Ranetal.,2004),RG-I
+(Kulyukinetal.,2006),HuangandLiu(2004)
+Touchscreen Navatar(Apostolopoulosetal.,2010)
+Nakamuraetal.,1997).Thisrequiresuserstoholdthedevicein maythwarttheusabilityaswellasimpedethemobility
+theirhandallthetimeandlookforthebuttonorrightplaceonthe oftheuser,whichisundesirableespeciallyinthecase
+screentopress.Foremergencycreworindividualswithvisual of users with visual impairments who already carry
+impairmentssuchinteractionisnotfeasible.Speechrecognition assistive equipment such as a cane or a Braille reader
+has been widely used (Arikawa et al., 2007; Huang and Liu, withthem.
+2004; Kulyukin et al., 2006; Ran et al., 2004) to receive a (iii) Accuracy: While an accuracy of 3 feet is acceptable
+user’sinput,forexample,forretrievingatargetdestinationto in most cases for GPS-based localization, indoor
+navigateto.Thisapproachrequireslessuserattentionanditis navigationmayrequireahigherprecision.Forexample,
+morenatural.However,ambientsoundsintheenvironmentcan tosuccessfullynavigatetoalocation,anaccuracyof3
+interfere with the voice recognition system or might interfere feetmaynotallowfordistinguishingbetweenadjacent
+with a user having a conversation with someone else.Table 5 doors.Ontheotherhand,indoorenvironmentsaremore
+provides an overview of the different techniques used for physically constrained by walls and distinguishable
+providinginput. landmarkssuchasdoors,andveeringbecomeslessofa
+problemthanforoutdoorenvironments.
+6. RESEARCHISSUES For indoor navigation systems to become ubiquitous, their
+installation cost needs to decrease significantly. Systems that
+This survey of techniques used in human navigation systems
+donotrequireexpensiveaugmentation(Apostolopoulosetal.,
+identifiedthefollowingresearchissues:
+2010; Hub et al., 2004) or that use low-cost, commercially
+off-the-shelf hardware are more likely to be implemented at
+6.1. Localization alargescale.Atthesametime,suchinexpensivesystemsneed
+toprovideatleastaspreciselocalizationastheirmoreexpensive
+Outdoornavigationsystemstypicallyachieveaccuratelocaliza-
+counterparts.Thistradeoffmaybedifficulttocircumvent,but
+tionatalowcostusingGPS.Indoornavigationsystemshaveto
+hybridindoornavigationsystemscouldbedevelopedthattrade
+relyupondifferenttechniques,asGPScannotbeusedindoors.
+offaccuracyversuscost.Lowaccuracylocalizationcanbeused
+Currentlynoindoornavigationsystemhasachievedlarge-scale
+forareaswherehighprecisionisnotrequired,suchashallways,
+deploymentduetoissueswithcost,accuracyandusability.
+where veering is constrained by the physical environment
+(i) Cost: Indoor navigation systems are prohibitively to minimize the installation cost. Large-scale deployment of
+expensive to install as they typically require extensive indoor navigation systems leads to greater independence of
+augmentation of the physical environment to be userswithvisualimpairmentsandcouldsignificantlyimprove
+navigated in. For example, although the cost of an theirqualityoflife(Golledge,1993).
+RFID tag is low, installing them at a large scale, such
+as a campus environment, is often costly. This cost
+6.2. Pathplanning
+also depends on physical constraints. For instance, if
+an indoor environment has carpets, installing tags is Many indoor navigation systems are developed for users
+relatively cheap, but costs increase significantly when with visual impairments, who could benefit from ‘smarter’
+an environment has concrete or marble floors (Wu path-planningtechniques. Becausetheidentificationoftactile
+etal.,2006).Othertechniquesrequireexpensivesensing landmarks already plays a significant role in how users with
+equipmenttobecarriedorwornbytheuser,forexample, visualimpairmentsnavigatefamiliarspaces(Kaliaetal.,2008;
+camerasandsupportingcomputingequipmentmayadd Tsujietal.,2005),indoornavigationsystemsshouldincorporate
+tothecostofthesystemsignificantly(Ranetal.,2004). this by planning paths that go along easily identifiable
+(ii) Usability: Carrying a multitude of sensors and landmarkssoastoincreasethesuccessfulcompletionofapath.
+supportingcomputingequipmentforlocalizingtheuser Althoughveeringislessofaproblemforindoorenvironments
+InteractingwithComputers,2013
+Downloaded
+from
+http://iwc.oxfordjournals.org/
+at
+Pennsylvania
+State
+University
+on
+May
+12,
+201610 NavidFallahetal.
+thanitisforoutdoorenvironments,systemsshouldalsoavoid commonqueries.However,forblindusersitisalsoimportantto
+largeopenindoorspacesforuserswithvisualimpairmentsand keeptheirhandsfree,sincetheymayalreadyusethosetoholda
+instead lead users along a wall to ensure they arrive at the cane.Alternatively,inputcouldbeprovidedthroughthemotion-
+desireddestination.Navigationsystemscouldalsoplansmarter sensingcapabilitiesofaportabledeviceasmostdeviceshave
+paths for users with different disabilities. For example, anintegratedaccelerometer.Userscouldtilttheirmobiledevice
+wheelchair users could benefit from paths that do not involve upordowntonavigatethroughanaudiomenu.Althoughsuch
+stairsorramps. atypeofinputwouldrequiretheusertoholdtheinputdevice
+intheirhand,itmaybepossibletointegrateaninputdevicein
+acane.
+6.3. Representation
+Manysystemsuse2Dmapsorblueprintstorepresenttheindoor
+environmenttobenavigatedin.3Dvirtualmodels(Hubetal.,
+7. CONCLUSION
+2004)canbepotentiallyemployedtomoreaccuratelyrepresent
+indoorenvironmentswithmultiplelevelsandfeatureslikelow This paper provides a comprehensive overview of state of
+ceilings,ramps,unevenfloorsandrails,whichareimpediments the art techniques used in indoor navigation systems for
+tonavigationforuserswithvisualimpairments.3Dmodelsmay (1)localizingtheuser;(2)planningapathtowardadestination;
+bemoreexpensivetocreatethan2Dmodels,thoughadvancesin (3) representing the environment to be navigated in and
+3Droboticmappinghavereducedthesecostssignificantly.Such (4)interactingwiththeuser.Wecomparedifferenttechniques
+modelsstillneedtobeannotatedwithaddressinginformation, anddiscusstheiradvantagesanddisadvantageswithregardto
+such as room numbers or landmarks, such as doors. It is cost, accuracy and usability. Our paper identifies that indoor
+interesting to investigate how to extract landmarks, such as navigation systems have not achieved large-scale deployment
+doors or staircases, automatically from the geometry of such mainlyduetoissuespertainingtocost,accuracyandusability.
+models. For indoor navigation systems to become ubiquitous The contribution of this paper is that it identifies a number
+they could leverage crowd-sourcing efforts and offer an open of areas for future research that could lead to large-scale
+interface to allow for creating indoor models at a large scale. implementationofindoornavigationsystems.Futurenavigation
+Thousands of 3D models of the exteriors of public buildings systems need to primarily lower the installation cost, by
+havealreadybeensuccessfullycreatedthroughcrowd-sourcing minimizing the amount of infrastructure augmentation that is
+effortsandwhichcanbefoundonthevirtualglobeapplication required for localizing the user, or by using low-cost sensors.
+GoogleEarth.Modelswithinteriordetailssuchasfloorplans Usability needs to be improved by minimizing the amount of
+anddoorsarebecomingincreasinglyavailabletobedeveloped sensors users have to carry and providing usable directions in
+to resolve conflicting annotations or to verify the accuracy of a robust modality of feedback. With regard to path planning,
+annotations. systemsneedtotakeintoaccounttheusers’specialneedsand
+plan paths that minimize uncertainty in the localization.With
+regard to representation, the smallest amount of information
+6.4. Interaction
+needstobeusedforlocalization,pathplanningandinformation
+In addition to issues such as carrying a lot of sensors, which about the environment to be navigated in. Tools need to be
+mayimpedetheusabilityofthesystemthereareanumberof developed for creating such representations efficiently, while
+other issues to be addressed with regard to interaction design leveragingcrowd-sourcingefforts.Withregardtointeraction,a
+forindoornavigationsystems.Interactionusingadisplay(Baus systemmustaccommodatetheuser’sabilitiesandspecialneeds,
+etal.,2002;Changetal.,2008)mayimpedesafetyandusing minimizecognitiveloadandminimizeanyinterferencefromthe
+speech(Rajamäkietal.,2007;Ranetal.,2004)maybedifficult environment.
+in noisy environments (such as an airport or theater). Users
+mayalsobeunabletouseadisplayoraudioduetoasensory
+impairment.Indoornavigationsystemsmustthereforeexplore REFERENCES
+more robust forms of interaction, for example, using haptic
+Amemiya,T.,Yamashita,J.,Hirota,K.andHirose,M.(2004)Virtual
+feedback(Ertanetal.,1998;Heutenetal.,2008).Adrawbackof
+LeadingBlocksfortheDeaf-Blind:AReal-TimeWay-Finderby
+hapticfeedbackisthatitsprovisiononmobiledevicesisoften
+Verbal-Nonverbal Hybrid Interface and High-Density RFID Tag
+limited to a single vibrotactor and prolonged haptic feedback
+Space.VR’04:Proc.IEEEVirtualReality2004,NewYork,NY,
+provision may also drain the battery. Most mobile devices USA,p.165.IEEEComputerSociety.
+currently have touch screens which are inaccessible to users
+Apostolopoulos, E., Fallah, N., Folmer, E. and Bekris, K.E.
+with visual impairments due to their lack of tactile feedback
+(2010) Feasibility of Interactive Localization and Naviga-
+(Hogganetal.,2008).Forexample,buttonsonmoretraditional tion of People with Visual Impairments. Proc. 11th IEEE
+portabledevicesoronexternalwirelessinputdevicescouldbe Intelligent Autonomous Systems (IAS-10), Ottawa, CA,
+usedfornavigatinganaudiomenuwithpossibledestinationsor pp.22–32.
+InteractingwithComputers,2013
+Downloaded
+from
+http://iwc.oxfordjournals.org/
+at
+Pennsylvania
+State
+University
+on
+May
+12,
+2016IndoorHumanNavigationSystems: ASurvey 11
+Arikawa,M.,Konomi,S.andOhnishi,K.(2007)Navitime:supporting Navigation. MELT ’08 Proc. 1stACM Int.Workshop on Mobile
+pedestriannavigationintherealworld.IEEEPervasiveComput., EntityLocalizationandTrackinginGPS-lessEnvironments,San
+6,21–29. Francisco,CA,USA,pp.31–36.
+Bahl, P. and Padmanabhan, V.N. (2000) RADAR: An In-Building Foulke, E. (1982) Perception, Cognition, and Mobility of Blind
+RF-BasedUserLocationandTrackingSystem.INFOCOM2000. Pedestrians.InPotegal,M.(ed.),SpatialOrientation:Development
+NineteenthAnnualJointConf.IEEECompCommSoc.Proc.IEEE, and Physiological Foundations, pp. 55–76. Academic Press,
+2000,pp.775–784. NewYork.
+Baus, J., Kruger,A. and Wahlster, W. (2002)A Resource-Adaptive Golding,A.R.andLesh,N.(1999)IndoorNavigationUsingaDiverse
+Mobile Navigation System. IUI ’02: Proc. 7th Int. Conf. Set of Cheap,Wearable Sensors. ISWC ’99: Proc. 3rd IEEE Int.
+Intelligent user interfaces, San Francisco, CA, USA, pp. 15–22. Symp.WearableComputers,SanFrancisco,CA,USA,p.29.IEEE
+ACM. ComputerSociety.
+Bessho,M.,Kobayashi,S.,Koshizuka,N.andSakamura,K.(2008) Golledge,R.(1993)Geographyandthedisabled:asurveywithspecial
+ASpace-IdentifyingUbiquitousInfrastructureanditsApplication referencetovisionimpairedandblindpopulations.T.I.Brit.Geogr.,
+for Tour-guiding Service. SAC ’08: Proc. 2008 ACM Symp. 18,63–85.
+Applied Computing, Fortaleza, Ceara, Brazil, pp. 1616–1621.
+Helal,A.S., Moore, S.E. and Ramachandran, B. (2001) Drishti:An
+ACM.
+IntegratedNavigationSystemforVisuallyImpairedandDisabled.
+Bulusu, N., Heidemann, J. and Estrin, D. (2000) Gps-less low-cost ISWC’01:Proc.5thIEEEInt.Symp.WearableComputers,Zurich,
+outdoorlocalizationforverysmalldevices.IEEEPers.Commun. Switzerland,p.149.IEEEComputerSociety.
+Mag.,7,28–34.
+Heuten,W.,Henze,N.,Boll,S.andPielot,M.(2008)TactileWayfinder:
+Chang, Y.J., Tsai, S.K. and Wang, T.Y. (2008) A Context Aware ANon-visualSupportSystemforWayfinding.NordiCHI’08:Proc.
+Handheld Wayfinding System for Individuals with Cognitive 5thNordicConf.Human-ComputerInteraction,Lund,Sweden,pp.
+Impairments.Assets’08:Proc.10thInt.ACMSIGACCESSConf. 172–181.ACM.
+Computers and Accessibility, Pittsburg, PA, USA, pp. 27–34.
+Hightower,J.andBorriello,G.(2001)Locationsystemsforubiquitous
+ACM.
+computing.IEEEComput.,34,57–66.
+Chawathe, S.S. (2009) Low-Latency Indoor Localization Using
+Hoggan,E.,Brewster,S.A.andJohnston,J.(2008)Investigatingthe
+Bluetooth Beacons. ITSC ’09. 12th Int. IEEE Conf. Intelligent
+Effectiveness ofTactile Feedback for MobileTouchscreens. CHI
+TransportationSystems,St.Louis,MI,USA,pp.1–7.
+’08:Proc.26thAnnualSIGCHIConf.HumanFactorsinComputing
+Chumkamon, S., Tuvaphanthaphiphat, P. and Keeratiwintakorn, P. Systems, Florence, Italy, pp. 1573–1582. ACM, NewYork, NY,
+(2008) A Blind Navigation System Using RFID for Indoor USA.
+Environments. ECTI-CON 2008. 5th Int. Conf. Electrical
+Holland,S.,Morse,D.R.andGedenryd,H.(2002)Audiogps:spatial
+Engineering/Electronics, Computer, Telecommunications and
+audionavigationwithaminimalattentioninterface.Pers.Ubiquit.
+InformationTechnology,Krabi,Thailand,pp.765–768.
+Comput.,6,253–259.
+D’Atri,E.,Medaglia,C.M.,Serbanati,A.,Ceipidor,U.B.,Panizzi,E.
+Hollerer, T., Hallaway, D., Tinna, N. and Feiner, S. (2001) Steps
+andD’Atri,A.(2007)ASystemtoAidBlindPeopleintheMobility. TowardAccommodatingVariablePositionTrackingAccuracyina
+ICONS’07.2ndInt.Conf.Systems,Sainte-Luce,Martinique,p.35.
+MobileAugmentedRealitySystem.AIMS’01:2ndInt.Workshop
+Ding, B.,Yuan, H., Jiang, L. and Zang, X. (2007)The Research on onArtificialIntelligenceinMobileSystems,Seattle,WA,August4,
+BlindNavigationSystemBasedonRFID.WiCom2007.Int.Conf. 2001,pp.31–37.
+Wireless Communications, Networking and Mobile Computing,
+Huang, B. and Liu, N. (2004) Mobile navigation guide for
+Wuhan,China,pp.2058–2061.
+the visually disabled. Transportation Research Record No.
+Ertan, S., Lee, C., Willets, A., Tan, H. and Pentland, A. (1998) A 1885, Transportation Management and Public Policy 2004, 34,
+Wearable Haptic Navigation Guidance System. ISWC ’98: Proc. 28–34.
+2ndIEEEInt.Symp.WearableComputers,Pittsburgh,PA,USA,
+Huang, H., Gartner, G., Schmidt, M. and Li, Y. (2009) Smart
+pp.164–165.IEEEComputerSociety.
+Environment for Ubiquitous Indoor Navigation. NISS ’09.
+Etter, R. and Specht, M. (2008) Melodious Walkabout—Implicit Int. Conf. New Trends in Information and Service Science,
+NavigationwithContextualizedPersonalAudioContents.Adjunct HradecKrálové,CzechRepublic,pp.176–180.
+Proc.3rdInt.Conf.PervasiveComputing,Munich,Germany,May
+Hub, A., Diepstraten, J. and Ertl, T. (2004) Design and Devel-
+8–13,2005,pp.43–49.
+opment of an Indoor Navigation and Object Identification
+Fallah,N.,Apostolopoulos,I.,Bekris,K.andFolmer,E.(2012)The System for the Blind. Proc. 6th Int. ACM SIGACCESS
+User as a Sensor: Navigating Users with Visual Impairments in Conf. Computers and Accessibility, Atlanta, GA, USA, pp.
+IndoorSpacesUsingTactileLandmarks.CHI’12Proc.2012ACM 147–152.
+AnnualConf.HumanFactorsinComputingSystems,Austin,TX,
+Iara,G.,Petrides,M.,Dagher,A.,Pike,B.andBohbot,V.D.(2003)
+USA,pp.425–432.
+Cognitive strategies dependent on the hippocampus and caudate
+Fischer, C., Muthukrishnan, K., Hazas, M. and Gellersen, H. nucleusinhumannavigation:variabilityandchangewithpractice.
+(2008) Ultrasound-Aided Pedestrian Dead Reckoning for Indoor J.Neurosci.,23,5945–5952.
+InteractingwithComputers,2013
+Downloaded
+from
+http://iwc.oxfordjournals.org/
+at
+Pennsylvania
+State
+University
+on
+May
+12,
+201612 NavidFallahetal.
+Kalia,A.A.,Legge,G.E.andGiudice,N.A.(2008)Learningbuilding Nakamura,K.,Aono,Y.andTadokoro,Y.(1997).Awalkingnavigation
+layoutswithnon-geometricvisualinformation:theeffectsofvisual systemfortheblind.Syst.Comput.Japan,28,36–45.
+impairmentandage.Perception,33,1677–1699.
+Ni,L.M.,Liu,Y.,Lau,Y.C.andPatil,A.P.(2004)LANDMARC:indoor
+Kaluwahandi,S.andTadokoro,Y.(2001)PortableTravelingSupport locationsensingusingactiveRFID.Wirel.Netw.,10,701–710.
+System Using Image Processing for the Visually Impaired.
+Passini,R.,Proulx,G.andRainville,C.(1990)Thespatio-cognitive
+Proc. 2001 Int. Conf. Image Processing 1,Thessaloniki, Greece,
+abilitiesofthevisuallyimpairedpopulation.Environ.Behav.,22,
+pp.337–340.
+91–116.
+Kitchin, R. and Freundschuh, S. (2000) Cognitive Mapping: Past, Petrie,H.,Johnson,V.,Strothotte,T.,Raab,A.,Fritz,S.andMichel,R.
+PresentandFuture.Routledge,NewYork. (1996)MOBIC:designingatravelaidforblindandelderlypeople.
+Koch,O.andTeller,S.(2008)ASelf-calibrating,ECCVWorkshopon J.Navig.,49,45–52.
+ComputerVisionApplicationsfortheVisuallyImpaired,Marseille, Priyantha, N.B., Chakraborty, A. and Balakrishnan, H. (2000) The
+France,2008. CricketLocation-SupportSystem.MobiCom’00:Proc.6thAnnual
+Koide, S. and Kato, M. (2005) 3-d Human Navigation System Int.Conf.MobileComputingandNetworking,Boston,MA,USA,
+Considering Various Transition Preferences. IEEE Int. Conf. pp.32–43.
+Systems,ManandCybernetics,Hawaii,USA,pp.859–864. Rajamäki, J., Viinikainen, P., Tuomisto, J., Sederholm, T. and
+Kulyukin, V., Gharpure, C., Nicholson, J. and Osborne, G. (2006) Säämänen, M. (2007) LaureaPOP Indoor Navigation Service for
+Robot-assistedwayfindingforthevisuallyimpairedinstructured theVisuallyImpairedinaWLANEnvironment.TimelyProc.6th
+indoorenvironments.Auton.Robots,21,29–41. WSEAS Int. Conf. Electronics, Hardware, Wireless and Optical
+Communications,CorfuIsland,Greece,February16–19,200796,
+LaMarca, A., Koizumi, D., Lease, M., Sigurdsson, S., Borriello,
+pp.96–101.
+G., Brunette, W., Sikorski, K. and Fox, D. (2002) Making
+sensor networks practical with robots. Pervasive Comput., 2414, Ran, L., Helal, S. and Moore, S. (2004) Drishti: An Integrated
+152–166. Indoor/Outdoor Blind Navigation System and Service. PER-
+COM’04Proc.SecondIEEEInternationalConf.PervasiveCom-
+Lertlakkhanakul, J., Li, Y., Choi, J. and Bu, S. (2009) Gongpath
+puting and Communications (PerCom’04), Orlando, FL, USA,
+DevelopmentofbimBasedIndoorPedestrianNavigationSystem.
+pp.23–30.
+NCM’09.5thInt.JointConf.INC,IMSandIDC,Seoul,Korea,
+pp.382–388. Retscher, G. (2004) Pedestrian Navigation Systems and Location-
+Based Services. 3G 2004. 5th IEE Int. Conf. 3G Mobile
+Liu,H.,Darabi,H.,Banerjee,P.andLiu,J.(2007)Surveyofwireless
+CommunicationTechnologies,2004,London,UK,pp.359–363.
+indoorpositioningtechniquesandsystems.IEEETrans.Syst.Man
+Cybern.CAppl.Rev.,37,1067–1080. Retscher, G. and Thienelt, M. (2004) Navio—a navigation and
+guidance service for pedestrians. Journal of Global Positioning
+Loomis,J.M.,Golledge,R.G.,Klatzky,R.L.,Speidle,J.M.andTietz,J.
+Systems,3(1–2),208–217.
+(1994)PersonalGuidanceSystemfortheVisuallyImpaired.Assets
+’94:Proc.1stAnnualACMConf.AssistiveTechnologies,Marina Ross, D.A. and Blasch, B.B. (2002) Development of a wearable
+DelRey,CA,USA,pp.85–91.ACM. computerorientationsystem.Pers.Ubiquit.Comput.,6,49–63.
+Loomis, J.M., Golledge, R.G. and Klatzky, R.L. (1998) Navigation Semwal, S.K. (2001) Wayfinding and Navigation in Haptic Virtual
+system for the blind: auditory display modes and guidance. Environments.IEEEInt.Conf.MultimediaandExpo(ICME’01),
+Presence:Teleop.VirtualEnviron.,7,193–203. LosAlamitos,CA,USA,p.143.
+Loomis,J.M.,Klatzky,R.L.,Golledge,R.G.andPhilbeck,J.W.(1999) Smailagic,A.andMartin,R.(1997)Metronaut:awearablecomputer
+Human Navigation by Path Integration. In Golledge, R.G. (ed.), withsensingandglobalcommunicationcapabilities.Pers.Technol.,
+Wayfinding: Cognitive Mapping and other Spatial Processes, pp. 1,260–267.
+125–151.JohnsHopkinsUniversityPress,Baltimore,MD. Solanki, P. (2011) Passive vs active rfid tags. http://www.buzzle.
+Loomis, J.M., Klatzky, R.L. and Golledge, R.G. (2001) Navigating com/articles/passive-vs-active-rfid-tags.html.
+withoutvision:basicandappliedresearch.OptometryVisionSci., Strachan,S.,Williamson,J.andMurray-Smith,R.(2007)ShowMe
+78,282–289. theWaytoMonteCarlo:Density-BasedTrajectoryNavigation.CHI
+Lorincz,K.andWelsh,M.(2004)ARobust,DecentralizedApproach ’07:Proc.SIGCHIConf.HumanFactorsinComputingSystems,
+toRF-BasedLocationTracking.PersUbiquitousComp.,11,489– SanJose,CA,USA,pp.1245–1248.ACM.
+503. Tolman,E.C.(1948)Cognitivemapsinratsandmen.Psychol.Rev.
+Lyardet,F.,Grimmer,J.andMuhlhauser,M.(2006)Coins:Context 55,189–208.
+SensitiveIndoorNavigationSystem.ISM’06.8thIEEEInt.Symp. Tsetsos,V.,Anagnostopoulos,C.,Kikiras,P.andHadjiefthymiades,S.
+Multimedia,2006,SeoulKorea,pp.209–218. (2006)Semanticallyenrichednavigationforindoorenvironments.
+Lynch,K.(1960)TheImageoftheCity.MITPress,Cambridge,MA. Int.J.WebGridServ.,2,453–478.
+Moreira,A.,Valadas,R.anddeOliveiraDuarte,A.(1996)Reducing Tsuji, B., Lindgaard, G. and Parush, A. (2005) Landmarks for
+the effects of artificial light interference in wireless infrared NavigatorsWhoareVisuallyImpaired.Proc.Int.CartographicSoc.
+transmissionsystems.IEESeminarDigests,32,5–5. (ICS)Conf.,Coruna,Spain,9–16July2005.
+InteractingwithComputers,2013
+Downloaded
+from
+http://iwc.oxfordjournals.org/
+at
+Pennsylvania
+State
+University
+on
+May
+12,
+2016IndoorHumanNavigationSystems: ASurvey 13
+Willis,S.andHelal,S.(2005)RFIDInformationGridandWearable Wu,H.,Marshall,A.andYu,W.(2007)PathPlanningandFollowing
+Computing Solution to the Problem ofWayfinding for the Blind AlgorithmsinanIndoorNavigationModelforVisuallyImpaired.
+User in a Campus Environment. IEEE Int. Symp. Wearable 2nd Int. Conf. Internet Monitoring and Protection. ICIMP 2007,
+Computers(ISWC05),Osaka,Japan. SiliconValley,USA,p.38.
+Wu,N.,Nystrom,M.,Lin,T.andYu,H.(2006)Challengestoglobal Zheng,P.andNi,L.(2006)SmartPhoneandNextGenerationMobile
+RFIDadoption.Technovation,26,1317–1323. Computing.MorganKaufmannPublishers.
+InteractingwithComputers,2013
+Downloaded
+from
+http://iwc.oxfordjournals.org/
+at
+Pennsylvania
+State
+University
+on
+May
+12,
+2016

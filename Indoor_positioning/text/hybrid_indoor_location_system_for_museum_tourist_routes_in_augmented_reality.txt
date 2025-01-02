@@ -1,0 +1,482 @@
+Hybrid Indoor Location System for Museum Tourist
+Routes in Augmented Reality.
+Gabriel Villarrubia, Juan F. De Paz, F. De La Prieta Javier Bajo
+Department of Computer Science and Automation, Department of Artificial Intelligence. Faculty of
+University of Salamanca, Salamanca, Spain Computer Science, Technical University of Madrid, Spain
+{gvg,fcods,fer,corchado}@usal.es jbajo @fi.upm.es
+Abstract: At present, indoor positioning systems is one of the participants, whether they be visitors or staff, is increasingly
+areas of research that is continuously growing. The main aim here is required today by museum directors. For example, it is
+to develop a system of indoor location with a similar functionality to important to know which exhibit is most popular and what
+outdoor location systems such as GPS (Global Positioning System). áreas of the museum receive the most foot traffic. This paper
+The main difficulty of indoor location systems lies in their presents an innovative indoor location system for museums
+establishment costs given the resources they initially need. This paper whose objective is to improve the services provided by the
+presents an innovative indoor location system based on the fusion of existing audio guide systems using current techniques of
+information from multiple sensors on a smartphone. This proposed
+ambient intelligence and reducing start up costs. The
+system is evaluated in a case study with the aim of obtaining
+combination of sensors and cameras for pattern recognition and
+locations within a museum and displaying on the screen of a mobile
+the use of Wi- Fi technology [4] to estimate the position of the
+device information about the paintings we are seeing in real time,
+visitor allows us to develop a rich set of information for
+thus improving the efficiency of the existing systems that rely on
+museum directors and which allows for multimedia content
+audio-guides.
+such as paintings, videos, and sets of photographs to be viewed
+Keywords: augmented reality, Wi-Fi, indoor location, on a mobile device by an end user, a task not allowed by audio
+guides [9]. The rest of the paper is structured as follows. The
+next section discusses the museums that make use of new
+I. INTRODUCTION
+technologies. Section 3 presents the proposal for a guided
+Currently, when a user visits a museum, several study visit in a Spanish cathedral, and finally Section 4 outlines
+supplementary materials are offered to the user such as audio the conclusions and the future work to be carried out.
+guides, brochures, or even books, in order to allow visitors to
+understand or expand the information about the items
+II. BACKGROUND
+displayed in the museum in a simple way. However, these
+systems have several disadvantages, the most prominent being
+The use of new technologies in the tourism sector [2] is
+not having enough supplementary materials for all visitors,
+continuously increasing. At present, there is a conference held
+followed by the depletion of brochures or even the need to
+annually at the European level that addresses the use of new
+revise or expand any information in these, which would trigger
+an expensive reprinting. In fact, this last disadvantage is technologies in museums. The conference, called "Museum
+common since musueums are constantly modifying their Next", seeks to present and discuss new trends and the most
+collections. Currently, the evolution of technology allows us to innovative and efficient ways for museums to learn to
+represent multimedia content on mobile devices. Moreover, creatively use the technology currently available.
+accessibility is facilitated because this content can be
+customized, for seniors for example. Its is much easier for A. Use of Smartphones in Museums
+seniors to listen to a spoken phrase than to read an informative The importance and potential impact of new technologies for
+poster. It is vital to mention the high cost of current systems museums [6] and cultural spaces is vital. At present, there are
+based on audio guides which are closed systems and whose
+several museums where solutions have already been
+modification or adaptation to certain scenarios is a very
+introduced to provide visitors with new experiences relying on
+complicated task. In museums that have these systems [5], it is
+these mobile devices. [7]
+necessary to deploy a series of RFID beacons (Radio
+Frequency IDentification) or QRCodes (Quick Response
+The famous "Tate" galleries in [22] the United Kingdom were
+Code), which often aesthetically mar the environment [8].
+among the first to recognize the value of the Internet, both to
+Another deficiency in existing systems of this type resides in
+attract visitors and to offer multimedia guides for its
+the boundary distances between frames, as they can not be
+exhibitions and activities. They have more than 16
+placed too close together so that the beacons do not interfere
+applications, most of them are free and cover topics such as
+with each other. Moreover, analysis of the behavior of musuemeducation (guide of art terms) or fun with augmented reality Bluetooth: The main advantage of this system is its low cost.
+apps. However, it has a very limited range and requires a large
+number of devices to cover a building. It presents an
+The "Museo Del Prado" [22] is also a pioneer in this field. approximate average error margin of 2 meters. A location
+Their new app features 400 works from the permanent system based on this technology, checks the number of
+collection. These are presented chronologically in a bluetooth [16] devices detected around and then proceeds to
+classification by international schools and other features. In determine its position by way of a triangulation algorithm. The
+addition, a selection of 50 masterpieces with large images for disadvantage of this system lies in the number of devices
+navigation in them is available. needed to provide an accurate system and the RSSI (Received
+signal strength indication) indicator that has very unstable
+Another of the leading applications in this field is that of values.
+“Gagosian Galleries " [22], the free application is updated 4
+Ultra WideBand: As one of the most used technologies for
+times a year with exhibitions and multimedia packages on the
+indoor location [19], it is characterized by a very high transfer
+12 Gagosian galleries.
+rate, and an accuracy of about one meter. Is a candidate
+technology to help the problem of low accuracy presented by
+The “State Hermitage Museum” [22], in St. Petersburg, also
+the other systems, offering a great sturdiness against changes
+has its own application. You can get a great virtual tour of the
+in the environment including "doors, walls, presence of
+museum with 100 major 3D panoramas, along with
+objects or movements of people." The main disadvantage of
+descriptions of individual works of art.
+this technology is that its use is not regulated and therefore it
+cannot be used freely as with WiFi airwaves of “2.4 Ghz "
+In the Hungarian capital, the "Museum of Fine Arts" [22] also
+systems.
+has a unique application. Earlier this year, the museum
+presented an application for hearing impaired visitors. It
+ZigBee: ZigBee [17] technology, based on the IEEE 802.15.4
+features videos in several languages of international signs and
+standard, is characterized by its low power consumption
+150 paintings from the collections of the museum with an
+devices, its use of mesh topology, and the ease with which it
+interactive map and 3D images.
+can be made, since the current electronic devices using this
+After carrying out this review on the use of smartphones in
+technology are very simple. Today, we can say that ZigBee is
+cultural centers, we can see more and more museums around
+the most appropriate technology along with WiFi [21]
+the world who start developing applications for mobile
+networks to develop indoor locations motors. Its main
+devices in order to provide their users with a new experience
+advantage is its low cost and low power emission; however,
+during their visits.
+its main disadvantage is that it has a very small bandwidth
+which means that it can not offer other services such as
+B. Wireless Location Technologies streaming, internet etc.
+Next, a review of the state of the art that will address the
+analysis and study of the various existing technologies today C. Indoor Localization Algorithms
+that allow to estimate the position of a user in a closed There are mainly three types of algorithms [1] used by RTLS
+environment becomes. (tracking systems in real time) to determine the location of
+Infrared: Infrared localization [18] is not suitable for indoor mobile nodes: Triangulation, Fingerprinting and
+location due to two factors, the first is its short range "about multilateration. Triangulation allows for the coordinates of the
+two meters," and because it requires the use of auxiliary links element we wish to locate by calculating the length of the
+with a line of sight between two extremes. Because of its sides of a triangle from incoming angles of the signal received
+limited scope, it is necessary to use a very large number of at each antenna, which is required to have at least 3 points of
+infrared emitters. In addition, the problem of not having direct reference. The Fingerprinting [11], also known as location or
+view from all locations would prevent us from detecting symbolic signpost, is based on the study of the characteristics
+certain positions. We note the existence of a well-known of each location area, making measurements of the
+project called WISP "Wireless Indoor Positioning System" characteristics of radio frequency and estimating what area of
+that uses infrared localization to estimate the position of a influence each device is located. Finally, the multilateration
+user. based on the estimated distance from the reader to the mobile
+device, by measuring this parameter as the RSSI (Received
+Wi-Max: Based on the IEEE 802.16 [20] protocol, with a Signal Strength Indication) or TDOA (Time Difference of
+transmission rate of up to 70Mbps, it was intended to Arrival), so that the distances intersect estimated from each
+interconnect large areas of about 50 km. However, due to the device at three or more fixed nodes called beacons can
+large scope of this technology, its use is not recommended for determine the points at which such devices are located.
+determining interior position. Multilateration achieves maximum outcomes [12] outdoors
+with triangulation, but significantly lower performance
+indoors because RSSI levels vary depending on the presenceof elements (people, objects or animals) and also based on infrastructure also currently the most smartphones have Wi-Fi
+distance calculation, so it is necessary to make a prior estimate technology is not forcing the user to carry any additional
+of these distances from RSSI values which are constantly beacon, simply visitor is located by its Smartphone. The
+changing shape. Localization techniques based on process of collecting different RSSI levels from the mobile
+triangulation and multilateration are inefficient because the device is as follows:
+signals are very much attenuated by the different elements of
+the room (walls, doors, walls).
+III. MELDING SYSTEM INFORMATION
+The main objective of this section is to propose an architecture
+that combines information from multiple sensors, allows us to
+estimate the true position of a user within a museum, and can
+also, show the mobile end-user, multimedia content on what
+we are watching at that moment.
+The Wi –Fi system allow us to estimate a first level, the area
+where a user is located, then to refine the location and know
+what monumental work is looking at the time, the user can use
+the camera. We can note that the use of the location on two
+levels, makes our proposal unique , that is, on one level the Wi
+-Fi technology is used to distinguish that room is and then To deploy the solution localization and reduce costs, we used
+proceeds to download user terminal patterns of the pictures the actual hardware, leveraging existing routers whose model
+that can be displayed in that room so that finally , with the is TL-WR740N. The main advantage of this device is the
+help of an image recognition algorithm , we detect on that ability to install a Linux-based firmware that allows us to run
+chart is , in other words, if a user is in a room initially apply programs in script mode, in our case, we have replaced the
+only classifier which to distinguish that picture is seeing all factory version for DD-WRT based firmware.
+possible in that room and not unload hundreds of images of
+pictures that are not close to such user that may impair the
+efficiency of the algorithm.
+The use of a location on two levels, using fusion technology
+(camera -WiFi), promotes efficiency in data consumption by
+mobile terminals, as the Internet data exchange is reduced.
+A. Location System Fig 1. Used Wireless Router
+Due to the particular constraints of the environment (“the case
+Using a custom firmware allows the installation of a new
+study will be validated in a cathedral " ) and the requirement
+software that analyzes all packets received by the router. This
+of cost, has taken the wireless infrastructure already deployed
+software also known as Wiviz is a small utility that open-
+in the museum. The system used to estimate the position of the
+source can be embedded in the firmware DD-WRT monitor
+visitors in the exhibition is based on the use of Access Points
+and display allowing wireless devices that are close to the
+(APs) that transmit a Wi-Fi signal, the signal quality is usually
+router. This utility can be invoked through the command line
+expressed in RSSI and is measured in dB allowing to estimate
+or through a Web interface. Below is a representative image of
+the position of a user by fingerprintg technique. For this, two
+a nearby beacons elements shown.
+distinct phases, in the first phase, also called the calibration
+process has been carried out relating the environment mapping
+RSSI measurements from the APs to the coordinates (x, y) of
+the environment, this map being stored in a database for later
+use in the phase estimate. During the second phase, also called
+phase estimation or location, is the process in which the
+position of a visitor is estimated to be, the mobile who gets the
+RSSI measurements of the access points detected around at
+that point and are compared to the measurements stored in the
+calibration phase. In this comparison, the system is able to
+determine the coordinate ( x , y) by utilizing Euclidian
+distance model [13] is defined as follows:
+SS is a measure of the signal strength, P is each point and
+Fig 2. Nearby Wireless Devices
+AP1, AP2, AP3 are access points. The main advantage is the
+use of this technique is the low cost and the use of existingThe main advantage of using Wiviz [2] is that it is not a
+necessary condition that wireless devices are paired to the
+router to be detected and get the signal level of each.
+Furthermore, we can detect near a hotspot mobile devices,
+without installing any software on the terminals of end users,
+it is very useful to evaluate the user behavior in a mall as the
+current commercial systems require the installation of an
+application on the end user device. To detect users who are
+located near a mark, used a small program that allows us to
+send bash information Wiviz a manager to estimate the
+position of the central server users.
+This script is executed automatically by all routers in the
+cathedral, being the very basic operation, first and place once
+the boot process of the router finished the Wiviz software is Fig 4. Location of artwork in a chapel of the Cathedral.
+During the calibration phase, we use the four measures of AP
+started and the program output is redirected to a central server
+in each of the nine points so generating calibration map taken.
+using port 3000 where the data are interpreted. This program
+To evaluate the system, 4 random points, where users spent an
+runs in cycles and user information is updated every 5
+average of 20 seconds were determined. The use of the
+seconds.
+fingerprint technique, in combination with the model of
+while true; do Euclidean distances, provides an average error of 2.40 meters,
+wiviz & small error for a building of 4500m ^ 2.
+sleep 5
+killall –USR1 wiviz Below is a table with the error obtained in meters at each of
+cat /tmp/wiviz2-dump | telnet mainserver 3000 the points where the system was verified.
+killall –q wiviz
+done
+Then AP locations located throughout the exhibition which act
+as beacons to locate and serve different users within the
+exhibition.
+Table 5. Error average
+If we propose a diagram of the architecture designed, could be
+the following:
+Image 3. Preinstalled Beacons in the Cathedral
+The various works of art found inside the cathedral are located
+in showrooms about 20m^2 separating one of them from other
+work in about 3.5meters. Here is a picture of one of the
+exhibition rooms with different points of interest as well as the
+relative position of the access points used to estimate the
+user's position within a room is shown.
+Fig 6. Architecture.B. Pattern Recognition System responses are calculated Haar apart 5x5 sampling. For
+Due to technical limitations imposed by the use of mobile simplicity, consider dx and dy the Haar responses [14]
+devices where power / battery efficiency ratio is important, it concerning the orientation of the point of interest. The
+has chosen to use SURF algorithm to extract points of interest representation of sub-regions is represented by a vector v of
+in an image. Also called SURF (speed up robust feature) is an components:
+evolution algorithm SIFT (Scale- invariant feature transform) If we include the 4x4 sub-regions is SURF descriptor with a
+that improves the robustness to changes in an image and has a length of 64 values for each of the points of interest identified.
+faster computer without any loss of performance. In our case,
+the use of efficient algorithms, ensures a longer lasting Following is an example of how the algorithm is able to
+battery. Using SIFT SURF front is mainly based on the determine the keypoints in common with two different
+velocity of the points of interest also known as keypoints, as images.
+these contain far fewer descriptors. Then, what is the
+procedure described SURF algorithm for detection of points of
+interest (keypoints) , assigning the orientation and finally
+obtaining SURF descriptor [15].
+Fig 8. Keypoints correlation
+CASE OF STUDY
+The case study chosen to evaluate the proposal aims to
+develop a mobile application for Android and IPhone devices
+allowing the end user to make a guided tour of the Cathedral
+of Salamanca (Spain). To verify the overall operational
+functionality of the system, a Web viewfinder for the director
+of the exhibition will be designedin order to analyze the
+behavior of users within the exhibition.
+This will allow the direct to know at all times which areas of
+the exhibition have more visitors or
+in which part of the exhibition they
+remain longer. To summarize the
+process of recognition of a work of
+art by an end user, this process
+Image 7. SURF Detection Process includes the following steps: first,
+Detection of attractions is the first stage of the process in
+the visitor downloads a mobile
+terms of extracting the keypoints. The high efficiency of this
+application from various official
+algorithm is based on this phase and is based on the use of the
+marketplaces for Android / iPhone
+Hessian [14] array is defined as follows: Given a point P = (x,
+platforms, and with the help of
+y) of the image, the Hessian matrix H (p, o) of the point p is
+geopositioning technology he is allowed to see the nearby
+museums feature our platform.
+defined by: Once the user accesses the site, the application automatically
+Where is the convolution of the Gaussian second will serve as an audio-guide throughout the visit, allowing the
+user to select the language of the virtual guide.
+order, with the image I in point x, and similarly for
+and The approximations of the partial
+derivatives denoted as Dxx, Dxy and Dyy and the determinant
+of the matrix is calculated as follows:
+Orientation assignment: is to obtain the orientation of each of
+the points of interest obtained in the previous step. The
+orientation of the points is obtained by calculation of the Haar
+response.
+SURF descriptors: for each point of interest, a square region
+20s is constructed with the determined orientation and in the Fig 9. Main Menu in Mobile Application
+previous stage is subdivided into 4x4 sub-regions in whichAfterward, the location system estimates what part of the From the point of view of the director of the exhibition, we
+exhibition the visitor and once this area is identified, the can show the real time location of different visitors who are
+mobile only downloads possible patterns of images of the using the platform and on the individual pictures that are
+paintings and monuments that are close to your position. interacting at the time of the query.
+Finally the user focuses on the box of which they would like
+information and the system accurately recognizes the table on
+which it is positioned.
+Fig 13. Locations of visitors
+If we analyze the location of users over a period of time, we
+can obtain behavioral patterns. In the next picture, the areas
+where users have spent more time looking at the works of art
+can be seen. In the image areas reflect more intensity where
+Fig 10. User Camera Focus ArtWork
+users have been steadily for a long period of time. On the
+Finally and once the image is recognized, a menu is made other hand less dense areas reflect traffic areas.
+available to the user with information about the work that is
+currently displayed. This information can be an image gallery,
+related works, an explanatory video, text etc.
+Fig 14. Map of heat generated during a period of time
+IV. CONCLUSIONS
+Fig 11. The virtual assistant informs you about what you're watching
+The proposed system allows for the ability to design an
+architecture that combines information from various sensors
+such as a camera and uses Wi-Fi technology to estimate the
+true position of a user within a museum, and can also show on
+the mobile of an end-user, multimedia content about what is
+being seen at that moment. The main advantage of our system
+compared with other existing systems is the low cost of
+implementation and the level of accuracy achieved because
+the Wi-Fi technology merged with pattern recognition of
+images that are taken by a camera estimate that part of the
+museum visitor is as specific box which the user is pointing
+his mobile device without any QrCode or RFID beacon.
+Fig 12. Gallery of selected monuments
+By using a smartphone and reducing the cost required for
+maintenance of existing systems based on audio - guides, for
+example due to the updates that are triggered when we want to
+update the contents of an exhibition, due to the need to update
+each audio guide also using these devices allows us, forexample, show much more elaborate, such as videos or any VII. REFERENCES
+type of graphic explanation using a virtual interpreter
+multimedia content. Viewing a virtual guide produces an
+1. C.N. Huang., C.T. Chan., ZigBee-based indoor
+enrichment of the visit with the possibility to choose some
+location system by k-nearest neighbor algorithm with
+kind of animated pet for a child audience. [7] When the
+weighted RSSI, Procedia Computer Science, vol. 5,
+application starts, the date of birth of the user is prompted,
+pp. 58-65, February 2011.
+select the type of optimal route based on their age. In the next
+2. Roes I., Personalized Museum Tour with Real-Time
+picture the exact location of the user is displayed in the
+Adaptation on a Mobile Device with Multi-Point
+exhibition and the works you should visit.
+Touch Interface, July 2010
+3. Tapia, D., Bajo, J., De Paz, J.F., Alonso., Rodriguez
+S. Using Multi-Layer Perceptrons to Enhance the
+Performance of Indoor RTLS 2011
+4. Hui L., Darabi, H., Banerjee, P., and Jing Liu.,2007.
+Survey of Wireless Indoor Positioning Techniques
+and Systems. Systems, Man, and Cybernetics, Part C:
+Applications and Reviews, IEEE Transactions on, 37,
+6 (2007), 1067-1080.
+5. Tesoriero R., Tebar R., Gallud J.A., Lozano M.D.,
+Penichet V.M.R., Improving location awareness in
+indoor spaces using RFID technology, Expert
+Systems with Applications, vol. 37, (1), pp. 894-898,
+Fig 15. User Location 2010
+6. Gikas J., Grant M., Mobile computing devices in
+Content development is scalable, allowing multimedia content
+higher education: Student perspectives on learning
+increase in a transparent manner, and that the update is
+with cellphones, smartphones & social media, The
+immediate and simple for the user, the applications of the
+Internet and Higher Education, vol. 19, pp. 18-26,
+devices are updated automatically. We have managed to locate
+May 2013
+the user on a map in real time, can analyze the behavior of
+7. Othaman M.K., H. Petrie., Measuring the Usability
+users within the exhibition. The application administrator can
+of a Smartphone Delivered Museum Guide,Procedia
+observe that part of the gallery visitors stay longer and show
+- Social and Behavioral Sciences, vol. 97, pp. 629-
+the guards in charge of security, which areas are more likely to
+637, November 2013
+be saturated at certain times through the development of a heat
+8. Schultz M.K., A case study on the appropriateness of
+map.
+using quick response (QR) codes in libraries and
+museums, Library & Information Science Research,
+vol. 35, Issue 3, , pp 207-215, July 2013
+V. LINES FOR FUTURE WORK
+9. Gianluigi C., Olivo P., Schettini R., Browsing
+One possible future improvements that can be implemented in
+museum image collections on a multi-touch table
+this system, is to add a recommendation system based
+,Information Systems, vol. 37, pp. 169-182, April
+museums tastes of users using data mining technologies [23].
+2012
+Another possible evolutions is regarding the statistics
+10. Pesonen J.,Horster E., Near field communication
+generated by the web application, with the largest number of
+technology in tourism,Tourism Management
+reports so that the administrator could have much more
+Perspectives, vol. 4, pp. 11-18, October 2012
+information about the tastes of the users. The use of the
+11. C. Nerguizian, C. Despins, amd S. Affes, "Indoor
+compass as additional sensor would offer the user guidance
+Geolocation with Received Signal Strength
+system indoors providing the real works marked by some kind
+Fingerprinting Technique and Neural Networks".
+of route based on your tastes path. Use accelerometer would
+Telecommunications and Networking - ICT 2004. pp.
+determine the rate of movement of visitors and could analyze
+866- 875 2004.
+their behavior in more detail, such as whether certain hours its
+12. Villarrubia, G., Bajo, J., De Paz, J.F., Corchado,
+movements are faster.
+J.M., Real time positioning system using different
+sensors, Information Fusion (FUSION), 2013 16th
+VI. ACKNOWLEDGMENT
+International, pp. 604-609, July 2013.
+13. John G. Cleary, Leonard E. Trigg "K: An Instance-
+This work has been carried out by the project Intelligent
+based Leamer Using an Entropic Distance Measure"
+Platform for the Management and Tracking of Healthcare
+12th International Conference on Machine Learning,
+Personnel and Patients in Hospital Environments. The project
+pp. 108-114, 1995.
+has been supported by Fondo Europeo de Desarrollo Regional
+and Junta Castilla y León FEDER. 0411VA002114. Bay H., Ess A., Tuytelaars T., Gool L.V., Speeded-
+Up Robust Features, Computer Vision and Image
+Understanding, vol. 110, pp. 346-359, June 2008
+15. Brown M., Szeliski R., Winder S., Multi-image
+matching using multi-scale oriented patches.
+InProceedings of the IEEE Conf. on Computer
+Vision and Pattern Recognition, vol. 1, pp. 510–517,
+2005
+16. Gothlin L, N., Korhonen, J., Ojala T.: Bluetooth and
+WAP push based location-aware mobile advertising
+system Proceedings of the 2nd International
+Conference on Mobile Systems, Applications, and
+Services, ACM Press,2004
+17. F Sh.,ZigBee Wireless Networks and Transceivers,
+Chapter 1 - ZigBee Basics, pp. 1-24,2008
+18. Aitenbichler, E.,Muhlhauser, M., An IR local
+positioning system for smart items and devices,
+Distributed Computing Systems Workshops, pp. 334-
+339, May 2003
+19. Bellusci, G., Junlin Yan., Janssen, G.J.M., Tiberius.,
+Ultra-Wideband Positioning Demonstrator Using
+Audio Signals,Positioning, Navigation and
+Communication, WPNC '07. 4th Workshop, pp. 71-
+76,March 2007
+20. Isa A.A.M., Othman M.H., Isa M.S.M., Haron N.Z.,
+Zakaria Z., Zin M.S.I.M. Utilising MIMO for
+positioning in mobile WiMAX systems,Wireless
+Technology and Applications (ISWTA), IEEE
+Symposium, pp. 7-10, Sept 2013
+21. Carlos E. Galvan T, Issac Galvan-Tejada, Ernesto
+Ivan Sandoval, Ramon Brena, Wifi bluetooth based
+combined positioning algorithm, Procedia
+Engineering, vol. 35, 2012, pp. 101-108, 2012
+22. http://www.comunicacion-
+cultural.com/2013/05/06/las-10-mejores-apps-para-
+visitar-museos/ (Last visited March 2014).
+23. DI Tapia, JF De Paz, S Rodríguez, J Bajo, JM
+Corchado. Multi-agent system for security control on
+industrial environments. International Transactions
+on System Science and Applications Journal 4 (3),
+pp. 222-226. 2008.
+24. J Bajo, JM Corchado. Evaluation and monitoring of
+the air-sea interaction using a CBR-Agents approach.
+Case-Based Reasoning Research and Development,
+50-62. 2005.
+25. DI Tapia, RS Alonso, JF De Paz, JM Corchado.
+Introducing a distributed architecture for
+heterogeneous wireless sensor networks. LNCS
+5518, pp. 116-123. 2009.
+26. S Rodriguez, V Julián, J Bajo, C Carrascosa, V Botti,
+JM Corchado. Agent-based virtual organization
+architecture. Engineering Applications of Artificial
+Intelligence 24 (5), 895-910. 2011.

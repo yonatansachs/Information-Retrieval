@@ -1,0 +1,581 @@
+Yangetal.EURASIPJournalonWirelessCommunicationsandNetworking
+(2019) 2019:275
+https://doi.org/10.1186/s13638-019-1601-3
+RESEARCH Open Access
+Research on Wi-Fi indoor positioning in a
+smart exhibition hall based on received
+signal strength indication
+Qing Yang* , Shijue Zheng, Ming Liu and Yawen Zhang
+Abstract
+Toimprovethe management of science and technology museums, this paper conducts an in-depth study onWi-Fi
+(wireless fidelity)indoor positioning based on mobile terminals and applies this technology to theindoor
+positioning of a science and technology museum. The location fingerprint algorithm is used to study the offline
+acquisition and online positioning stages.The positioning flow of thelocation fingerprint algorithm is discussed,
+and the improvement ofthe location fingerprint algorithm is emphasized. The raw data oftheRSSI (received signal
+strength indication) is preprocessed, which makes the location fingerprint data more effective and reliable,thus
+improving the positioning accuracy. Three different improvement strategies are proposed for the nearest neighbor
+classification algorithm: a balancedjoint metric based ondistance weighting and a compromise between thetwo.
+Then, in theexperimental simulation, the positioning results and errors ofthe traditional KNN (k-nearest neighbor)
+algorithm and three improvementstrategy algorithms are analyzedseparately, and the effectivenessof the three
+improved strategy algorithms is verified by experiments.
+Keywords: Indoor positioning, Wi-Fi, Location fingerprint, Nearest neighbor classification, Received signal
+strength indication
+1 Introduction positioning [6], infrared positioning [7], ultrasonic posi-
+Science and technology museums are public science tioning [8], optical tracking positioning [9], and com-
+education institutions with exhibition education as its puter vision positioning [9]. Among them, the more
+main function. There, scientific interest is stimulated, influentialpositioningsystemsare: theactivebadge posi-
+and scientific concepts are enlightened by participation, tioning system based on infrared positioning technology
+experience, interactive exhibits and auxiliary displays. researched by the Cambridge Laboratory [10]; the
+For the science and technology museum, it is necessary RADAR positioning system [11] realized by Wi-Fi posi-
+to know the real-time specific orientation of each visitor tioning technology in wireless LANs and the Active Bat
+in the exhibition hall and the number of visitors and positioningsystem[12]realizedbyultrasonicpositioning
+theirresidencetimeforeachbooth.Moreover,according technically researched by Microsoft Design Institute; the
+to the number of visitors to each booth, the manage- Cricket positioning system [13] researched by MIT
+ment of the exhibition center can maintain the better which is an improvement on the Active Bat system;
+order. AHLos (ad hoc localization system) positioning system
+At present, there are a variety of indoor positioning [14] researched by UCLA which is an improvement on
+technologies [1], which are broadly divided into the theCricketsystem.
+technologies of Wi-Fi positioning [2], radio frequency There are many different exhibition halls in science
+identification (RFID) positioning [3], ZigBee positioning and technology museums. Each exhibition hall has many
+[4], Bluetooth positioning [5], ultra-wide-band (UWB) exhibitions. The managers of science and technology
+museums want to know the flow of people in different
+*Correspondence:yangqing@mail.ccnu.edu.cn exhibitions at different times. Human flow data are con-
+SchoolofComputer,CentralChinaNormalUniversity,Wuhan430079, ducive to scientific management. With the development
+People’sRepublicofChina
+©TheAuthor(s).2019OpenAccessThisarticleisdistributedunderthetermsoftheCreativeCommonsAttribution4.0
+InternationalLicense(http://creativecommons.org/licenses/by/4.0/),whichpermitsunrestricteduse,distribution,and
+reproductioninanymedium,providedyougiveappropriatecredittotheoriginalauthor(s)andthesource,providealinkto
+theCreativeCommonslicense,andindicateifchangesweremade.Yangetal.EURASIPJournalonWirelessCommunicationsandNetworking (2019) 2019:275 Page2of13
+of the mobile Internet, Wi-Fi hotspots have been cov- to conduct experiments in a science and technology
+ered in most public indoor areas of the city, and Wi-Fi museum.
+wireless LANs have data communication functions. Wi- The important task of signal-based fingerprint location
+Fi wireless networks are easy to deploy and have good is to select the appropriate location algorithm. There are
+scalability. However, accuracy still needs to be further three typical methods: (1) neighbor method; (2) prob-
+improved. Indoor positioning technology based on the ability method; (3) neural network method. The number
+Wi-Fi mobile terminal has a great advantage in position- of hidden layers of the neural network method can be
+ing in the exhibition hall of science and technology mu- one or more. The more hidden layers, the higher the ac-
+seums. The purpose of this paper is to improve the curacy of data fitting, but the computational complexity
+indoor location algorithm in the environment of science and training time will also be improved. Normal servers
+and technology museum, to improve the accuracy of cannot afford the computational load of the neural net-
+indoor location, and to minimize the complexity of the workmethod[18].Thismethodisnotsuitable forsmall-
+algorithm, so that it can be used in small- and medium- and medium-sized science and technology museums.
+sized science and technology museums or museums. The main work of this paper is to study the indoor posi-
+Basedontheliteraturesurveysaboutthevariousexisting tioning method suitable for small- and medium-sized
+Wi-Fi indoor positioning algorithms and analyses of scienceandtechnology museums.
+their advantages and disadvantages, an effective location
+fingerprint algorithm is proposed. Performance analysis 2.2Wi-Fipositioningarchitecture
+of the proposed algorithm and an evaluation of the algo- In a Wi-Fi indoor positioning system, the position of the
+rithmwithrespecttootherexistingalgorithmsaregiven. reference point is known, and the position of the target
+This improved algorithm can accurately describe the nodeisusuallytheonetobetested.Themobileterminal
+flow data of people in science and technology museums is at the location to be tested. During the positioning
+when it is used for indoor positioning in science and process, all the surrounding Wi-Fi signal source APs are
+technologymuseums. perceived, and the metrics are uploaded (the specific
+The rest of this paper is organized as follows. Section metrics may be the time of arrival (TOA) of the signal,
+2 discusses related work, followed by the improvement or the angle of arrival (AOA) of the signal, the time
+of the location fingerprint algorithm designed in Sec- difference of arrival (TDOA) of the signal and received
+tion3. Section 4 shows the simulation experimental re- signal strength RSSP.) to the positioning server back-
+sults, andSection5concludesthepaper withasummary ground. The server background estimates the position
+andfutureresearchdirections. coordinates of the point to be tested by a specific posi-
+tioning algorithm, and then sends it to the terminal and
+2 Related work displays it,as shown inFig.1.
+This section provides a brief review of the common Wi- In a Wi-Fi wireless network environment, a Wi-Fi sig-
+Fi indoor positioning algorithms. After comparing these nal access point (i.e., an AP) periodically broadcasts a
+algorithms, the location fingerprint algorithm is selected beacon signal frame, and although a mobile terminal
+for the indoor location of science and technology device with a Wi-Fi access function module does not es-
+museum. The architecture of the Wi-Fi location is intro- tablish a connection with any AP, it can also receive at
+duced, and the flow of the location fingerprint algorithm least three important parameter indicators of the trans-
+isdescribed. mitting source AP from the AP broadcast signal frame:
+the Wi-Fi AP’s MAC address (BSSID), the Wi-Fi AP
+2.1Wi-Fiindoorpositioningalgorithm name (SSID), and the Wi-Fi signal strength indication
+Wi-Fi indoor positioning algorithms [15–17] are com- (RSSI).These three indicators providestrongsupport for
+monly found as follows: (1) based on the central point the model for positioning based on location fingerprint
+algorithm, (2) the propagation model algorithm, and (3) feature matching.
+thelocationfingerprintalgorithm. In general, the following factors affect the Wi-Fi posi-
+The location fingerprint algorithm is simpler and easier tioning effect [19]: the absorption effects of Wi-Fi signals,
+toimplementonthemobileterminal,andthelocationac- the reflection and diffraction of Wi-Fi signals, the multi-
+curacy based on location fingerprint feature matching is pathpropagationandshadowattenuationofWi-Fisignals,
+veryrobust. Wi-Fi fingerprint positioninghas become the the size of indoor areas, the changes in temperature and
+preferred technology for indoor environment positioning humidity in indoor environment sand the signal interfer-
+and navigation because of its convenient use of existing encefromotherelectronicdevices.Inaddition,duetothe
+Wi-Fi network infrastructure, low cost and strong envir- lack of uniform rules and optimization of Wi-Fi, the net-
+onmental adaptability. Therefore, the Wi-Fi location fin- work environment of the Wi-Fi AP is extremely compli-
+gerprint algorithm based on a mobile terminal is selected cated,and the number of manufacturers producingWi-FiYangetal.EURASIPJournalonWirelessCommunicationsandNetworking (2019) 2019:275 Page3of13
+Fig.1OverallarchitectureofWi-Fipositioning
+APs and terminals is large, so the performance difference tofindagroupofdatathatbestmatchesit,thereby find-
+between devices is very obvious, which means that the ingtheposition ofthenodetobetested.
+various influencing factors must be considered in a spe-
+cificpositiontoimprovetheaccuracyofpositioning. 2.3.1Offlineacquisitionstage
+The offline acquisition stage generally needs to complete
+thefollowingworksteps (asshown inFig.3).
+2.3Thelocationprogressofthepositionfingerprint
+algorithm Step1.Theindoorpositioningenvironmentestablishes
+The position fingerprint algorithm is a feature matching alocationmetricand isdivided intoseveralregions.
+algorithm, and the feature value is the position finger- Asshown inFig.3,thepositioningareaisdivided
+printdata oftheWi-Fisignalstrength. into16smallgrids,and theposition informationof
+In the algorithm based on the propagation model, eachgrid isdescribedbyLi,i=1,2....16.
+since the Wi-Fi signal is affected by various factors in Step2.Takesignalstrength information from different
+the indoor environment, the attenuation often does not Wi-FiAPs.Figure3indicatesthatthe location
+meetthetheoreticalvalue;aposition fingerprintingalgo- fingerprintinformationisbeingcollectedatthe L7
+rithm based on feature matching is proposed. That is, position. Ingeneral,thereare twomethods for
+the signal strength information in a group of different obtaining AP signalstrength informationata
+Wi-Fi APs is received at each position, and the finger- specific location. (1)Basedontheterminalmethod,
+print data vector signature sequences of all APs gener- thesignalstrengthinformationofagroupofAPsis
+ated by different positions make differences. In this way, collected onebyoneatthepositionofeach
+specific Wi-Fi position fingerprint information can be referencepoint.(2)Basedonthepropagation model
+obtainedateachlocation.Theoverallprocessofposition method, thesignalstrengthinformation ateach
+fingerprintalgorithmlocation isshown inFig.2. referencepoint isderivedbased onthe position of
+As Fig. 3 shows, the locating process has two stages: theAP.
+the offline acquisition stage and the online positioning Theterminal-based methodachieves accurate signal
+stage. The main task of the offline acquisition stage is to strength and highpositioningaccuracy. Althoughit
+collect the fingerprint data of the reference point pos- takesrequiresconsiderabletime,andeach new
+ition in the indoor environment where the reference positioning areahas tobere-acquired and builta
+point has been deployed, and build a fingerprint data- location fingerprintdatabase built, thismethodis
+base. In the online positioning stage, the fingerprint data adopted inthispaper.
+collected by the node to be tested is matched with the Step3.Generatelocationfeature fingerprint
+fingerprint database, and a matching algorithm is used informationatthereferencepointand store itinYangetal.EURASIPJournalonWirelessCommunicationsandNetworking (2019) 2019:275 Page4of13
+Fig.2Theoverallprocessofpositionfingerprintalgorithmlocating
+thelocationfingerprintdatabase.InFig.3,the 2.3.2Onlinepositioningstage
+location fingerprintofthe deterministicalgorithmis In the matching algorithm used in the positioningphase,
+generated;that is,thefingerprintatthelocationLi theKNN algorithmusedinthis paperusessome metrics
+is(rssii-1, rssii-2, ssii-3,rssii-4, rssii-5, rssii-6), to distinguish the similarity between two different fin-
+where rssiiisthesignalstrengthindicator;iisthe gerprints,also called thedissimilarity.
+number ofthenetwork;1-6 arethe numbers ofthe
+APsdeployedinFig. 3. 1. Fingerprintdissimilarity
+Fig.3TheschematicdiagramofpositionfingerprintlocatingalgorithmYangetal.EURASIPJournalonWirelessCommunicationsandNetworking (2019) 2019:275 Page5of13
+An informal definition of the degree of dissimilarity distance to achieve positioning; (2) based on pattern rec-
+between two objects is a numerical measure of the de- ognition, positioning by location fingerprint feature
+gree of difference between the two objects. The more matching. Both are based on the intensity variation in
+similar objects are, the lower their dissimilarity becomes. the received signal, the difference being in the measure-
+The distance is usually used as a synonym for dissimilar- ment index and whether the position of the reference
+ity, where distance is used to indicate the degree of dis- nodeneeds tobepredicted [21].
+similarity between different nodes (such as the reference
+node and the point to be measured). Common methods 3.1PreprocessingofRSSIdata
+are these, such as Euclidean distance, taxicab geometry, In the complex exhibition hall of a science and technol-
+andtheMinkowskidistance. ogy museum, the Wi-Fi signal is affected by various
+interference factors, and the signal attenuation is irregu-
+2. Locating process lar. The signal strength of the same AP collected by the
+acquisition terminal at a fixed position is not fixed. In
+The matching algorithm during the locating process is other words, the signal strength fluctuates within a cer-
+divided into two types: deterministic positioning algo- tainrange.
+rithm and probability-based positioning algorithm. This In this paper, the method of averaging multiple acqui-
+paper adoptsaprobability-basedpositioning algorithm. sitionandmeasurementisusedtosmooththecalculated
+The probability-based positioning algorithm stores the result to some extent, and thus, reduce the error caused
+probability distribution model parameters of the col- by irregular fluctuations. However, in actual situations,
+lected signal strength information at different positions even the fluctuation of different APs collected at the
+in the database (information such as histograms and same position has different amplitude changes. Table 1
+Gaussian probability distributions are stored in the data- showsthe Wi-Fi signal strength changes in different APs
+base), and Bayesian probability classification is used in collected2000timesatafixed location.
+the positioning phase to estimate the user’s position. In The strength of the signal also changes according to
+the actual locating process, as shown in Fig. 3, the user- the change in the position distance and is relatively
+held mobile terminal collects a set of real-time location stable within a certain distance range. After a certain
+fingerprints at the unknown node position to be tested range, it starts to increase. The Wi-Fi-based location fin-
+(rssii-1, rssii-2, rssii-3, rssii-4, rssii-5, rssii-6) and then gerprint algorithm collects the signal strength feature
+uses a certain matching algorithm (e.g., KNN algorithm), values. To obtain more reliable location fingerprint fea-
+applying the Euclidean distance in the fingerprint data- ture data, the difference between each reference point
+base. Measure the difference between the reference node and the node to be tested is more specific, which can re-
+and the node to be tested, and select the value of the K duce the positioning error, and improve the positioning
+reference point with the smallest difference for test accuracy in the positioning matching stage. This section
+training.Toosmall ortoolargewillaffect accuracy. uses the following methodsto process thecollected RSSI
+A simplified version of the proposed algorithm can be rawinformation data.
+describedas follows:
+3.1.1Truncatedmeanmethod
+When the number of acquisitions is large enough, the
+arithmetic mean can represent the central trend of the
+sampling position, which is closer to the actual effective
+value of the position, and its calculation formula is For-
+mula 1:
+XN
+rssi
+i
+rssi þrssi þ⋯þrssi
+rs(cid:1)si¼ i¼1 ¼ 1 2 N ð1Þ
+N N
+N is the total number of acquisitions. Although the
+mean after a large number of samples is a useful meas-
+3 Improvement of the location fingerprint ure to describe the RSSI data set, it is not the best
+algorithm method; there will be some irregular outliers, resulting
+The RSSI positioning method [20] is mainly divided into inalarger error.
+two categories: (1) based on theoretical or empirical The truncated mean method can be used to eliminate
+propagation models, transforming propagation loss into the negative effect of outliers on the valid data. The coreYangetal.EURASIPJournalonWirelessCommunicationsandNetworking (2019) 2019:275 Page6of13
+Table1SignalamplitudechangetablefordifferentAPswithfixedpositions
+APname Averagevalue Maximumvalue Minimumvalue Volatility
+TL-WR886N −42.58dBm −35dBm −64dBm 29dBm
+TL-WR742N −39.14dBm −29dBm −63dBm 29dBm
+STM-AUTO −57.14dBm −53dBm −66dBm 13dBm
+Mobile −47.29dBm −37dBm −64dBm 27dBm
+Complex −59.43dBm −57dBm −65dBm 8dBm
+STM −61.58dBm −58dBm −70dBm 12dBm
+ideaofthismethodistodiscardtheportionofthelarger 3.2Algorithmimprovement
+value end and the smaller value end, and then average The matching algorithm of the nearest neighbor classifi-
+the remaining data. For example, after sorting the col- cation algorithm in the Wi-Fi location fingerprint
+lected data, discard 5% of the larger value end and 5% of localization algorithm is based on the RSSI location fin-
+the smaller value end, which the ratio must be gerprint feature matching method to achieve position
+controlled. calculation. It compares the dissimilarity (or similarity)
+of the feature fingerprint information in the Wi-Fi fea-
+ture fingerprint database with the Wi-Fi feature finger-
+3.1.2Screeningmeanmethod
+print information measured at the location of the
+Someresearchershaveproposedusingthenormaldistri-
+unknown node to be determined, and thus determines
+bution model to preprocess the RSSI value. The model
+the result of the location of the unknown node to be
+isbased ontheassumption thattheRSSIvalueconforms
+tested.
+tothenormaldistribution,thatis,Formula2issatisfied.
+3.2.1Improvedalgorithmbasedondistanceweighting
+fðxÞ¼pffi 21 ffiffi πffiffiffi σffiffie−ð 2x σ− 2uÞ2 ð2Þ T rith he mco ir se toide aa sso igf nth de ifd feis rt ea nn tc we- eb ia gs he td inw ge pig arh at med etK eN rsN walg ao c-
+-
+p
+cording to the distance between the reference point and
+vffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi
+u the point to be measured. A high weighting value is
+XN uXN
+x u ðx−μÞ2 assigned to the node closer to the reference point and
+i t i
+the reference point, while a low weighting value is
+μ¼ i¼1 is the mean value and σ ¼ i¼1 is
+N n−1 assigned to the node far away from them. Therefore, the
+the standard deviation, where N is the number of acqui- reference point closer to the point to be measured has a
+sitions, and x i is the RSSI value received during larger influence coefficient, and the farther reference
+acquisition. point has a smaller influence coefficient, instead the in-
+The theoretical probability value of the normal distri- fluence coefficient in the conventional KNN algorithm is
+bution in the interval is 0.954, and the theoretical prob- k(k is the latest number in the algorithm),and then the
+ability value oftheintervalis0.997. estimated position results are corrected to a certain ex-
+Instead of using the normal distribution model dir- tent, which improvestheaccuracy ofpositioning.
+ectly, the normal distribution model and the trimmed
+tail estimation method can be comprehensively consid-
+1
+ered to establish a normal distribution model in the d
+middle part where signal strength is relatively stable
+w
+p
+¼ Xkpj ð3Þ
+1
+(which satisfies the premise), which can eliminate the
+d
+outliers by the interval, to select the normal RSSI with i¼1
+higher probability.
+Although there are many other methods for RSSI data
+Among them, 1 is the reciprocal of the Euclidean dis-
+preprocessing, for specific and complex indoor environ- dij
+tance between the reference point i and the pint j to be
+ments,itisnecessarytoconsidertheinfluenceofvarious
+measured, and 1 is the reciprocal of the Euclidean dis-
+factors on Wi-Fi signals, and select different data pro- dpj
+cessing methods according to local conditions to elimin- tance from a reference point p of the k reference points
+ate each collection work. The outlier data in the middle tothepoint jtobemeasured.
+effectivelyimprovethevalidity andreliabilityoftheloca- From Formula 3, the coordinate calculation formula
+tion fingerprint database, and ultimately improve the ac- for the position of the point to be measured can be de-
+curacy ofWi-Fiindoor positioning. rived as:Yangetal.EURASIPJournalonWirelessCommunicationsandNetworking (2019) 2019:275 Page7of13
+1 1 1
+Xk d (cid:3) (cid:4) d d (cid:5) (cid:6)
+ðx;yÞ¼ pj x ;y ¼ 1j ðx ;y Þþ⋯þ kj x ;y
+Xk p p Xk 1 1 Xk k k
+p¼1 1 1 1
+d d d
+i¼1 ij i¼1 ij i¼1 ij
+ð4Þ
+According to Formula 4, the smaller the d value is,
+pj
+the larger the reciprocal value is, and the larger the cor-
+responding w value is, which increases the influence of
+p
+the estimated position coordinate of the near reference
+point tothemeasuredpoint.
+3.2.3Improvedalgorithmforbalancingjointmetrics
+The balanced joint metric algorithm is a trade-off bal-
+ance algorithm for the above two algorithms. Assume
+that parameter is α. In the calculation of the nearest
+k reference points, distance weighting and cosine
+similarity are used as metrics to estimate the final
+position results of two points of the same point to be
+measured. Then, the results are weighted again, as
+shown in Formula 6.
+Assuming that the quantity of data is expressed in n, (cid:5) (cid:6)
+the time complexity of the first, second, fourth, fifth and
+ðX final;Y finalÞ¼ð1−α (cid:5)Þ(cid:2) X weight;Y
+weig(cid:6)ht
+sixth steps in algorithm 2 is O(n). The time complexity
+þα X simality;Y
+simality
+ð6Þ
+of step 3 is O (n2). Step 7 makes the time complexity of
+where (X ,Y ) is the final calculated position co-
+thewholealgorithmO(n3). final final
+ordinate result, (X ,Y ) is the result of the
+weight weight
+position to be measured calculated by distance
+3.2.2Improvedalgorithmbasedoncosinesimilarity
+weighting as the metric, and (X ,Y ) is the
+Cosine similarity is a measure of similarity, assuming simality simality
+cosine similarity as the metric calculated result of the
+that x and y are two vectors to be compared, and the
+position to be tested. When the value of a is equal to
+similarityfunctionisshowninFormula 5.
+0.5, it is equivalent to averaging the above two re-
+(cid:5) ! !(cid:6) ! x (cid:2)! y sults; the specific values need to be dynamically ad-
+simality x; y ¼ ‖! x‖(cid:2)‖! y‖ ð5Þ justed according to different indoor environments.
+The following is the source code description of the
+!
+‖x‖ represents the Euclidean norm of vector simulation core part of cosine similarity.
+!
+x ¼ðx ;x ;⋯;x Þ , which is the length of the vector
+pffiffiffiffiffiffiffiffiffi1ffiffiffiffiffi2ffiffiffiffiffiffiffiffiffiffipffiffiffiffiffi
+!
+x þx þ⋯þx . Similarly, ‖y‖ represents the Euclidean
+1 2 p
+norm of the vector. The measure of similarity is the co-
+! !
+sine between x and y . A cosine value of 0 means that
+the vectors are orthogonal and the angle is 90°. There is
+no similarity. The closer the cosine value is to 1, indicat-
+ing a smaller angle, the greater the similarity in the vec-
+tors. The relationship between distance and cosine is
+showninFig.4.
+In the KNN matching algorithm, the cosine similar-
+ity can be selected as the position fingerprint between
+the reference point and the point to be measured.
+Calculate the cosine similarity between the point to
+be measured and each reference node. The following
+is an artificial pseudo code description for calculating
+the cosine similarity between two vectors.Yangetal.EURASIPJournalonWirelessCommunicationsandNetworking (2019) 2019:275 Page8of13
+cosinesimilarityasthe measurementindex of
+fingerprintfeature vector between reference point
+andtest pointcanimprovethe positioning
+accuracy. Balancingjointmetrics algorithmisa
+balancing algorithmwhichcombinestheabove two
+algorithms.Themainideais tousedistance
+weightingasthemeasurementindex tocalculate
+theresult oftheposition tobemeasured,cosine
+similarity asthemeasurement indexto calculate the
+resultofthe position tobemeasured,and thento
+average thetworesults,soastoimprove the
+positioning accuracy.
+Theexperiment inSection 4shows theaccuracyof
+thedesignidea.
+Fig.4Theschematicdiagramofcosinesimilaritymeasure 4 Simulation experiment and analysis
+4.1Fingerprintpositioningenvironment
+3.3Summaryofdesignideas The 10.5 × 18m2 areas of a science and technology mu-
+In order to improve the positioning accuracy, we start seumwereselected astheindoorpositioningexperimen-
+from two aspects: data preprocessing and algorithm tal environment in Fig. 5. First, the test area is modeled,
+improvement. and the upper left corner of the area is used as the
+coordinate origin to establish a two-dimensional coord-
+(1) Data preprocessing:BecauseWi-Fisignalisaffected inate system.
+byvariousinterferencefactors anditsattenuation is
+irregular,the original dataneedto bepreprocessed. 4.2Locationfingerprintcollection
+Themainmethods are truncated mean method and In the offline sampling measurement phase, an Android
+screeningmeanmethod.Thecore ideaoftruncated terminal is used as a fingerprint information device for
+meanmethodistodiscardtheportion ofthelarger collecting Wi-Fi signals, and the mobile phone model is
+valueendand thesmallervalueend,and then MI-A.Intheacquisitionstage,setascanintervalof5sec-
+average theremainingdata. Thescreeningmean onds, collect 66 sets of RSSI raw data for all reference
+method establishesanormaldistributionmodel in points, save them to the local file in txt format, upload
+themiddle part oftherelatively stable signal themtotheserverthrough Wi-Fi(ora mobilecommuni-
+strength, andeliminatesabnormalvalues inthis cation network), and build on the server side. After the
+way. Truncated mean method and screeningmean fingerprintdataarebuiltontheserverside,amappingre-
+method make thelocationfingerprintdata more lationship between a coordinate point (x, y) and a strong
+effective and reliable,and provide aguaranteefor vector of Wi-Fi signals is established to form an offline
+improvingthe location accuracy. fingerprint database. In the actual acquisition, there are
+(2) Algorithmimprovement:Thecoreideaofthe 6APs with stable Wi-Fi signals for reference, and the
+distance-basedweightedKNNalgorithmistoassign others are filtered. Then, at each reference point, 66 sets
+different weighting parametersaccording tothe of fingerprint data of the location feature fingerprint and
+distance between thereferencepointand thepoint the point coordinates are generated to complete the
+tobemeasured,to assignhigherweightingvalues
+tothenodes whose distance between thereference
+pointand thepointto bemeasured, and toassign
+lowerweightingvalues tothenodes whose distance
+iscloser,insteadofthetraditionalKNNalgorithm
+where theinfluencecoefficientsare all1/k(kisthe
+number ofthenearest neighbors inthealgorithm),
+soasto estimate the location. Theresultsare
+corrected to improve thepositioningaccuracy. The
+ideaofthe improved algorithmbased oncosine
+similarity isthat thecosinevalueiscloserto1,
+which indicatesthatthe smallertheangle is,the
+Fig.5Regionalgriddiagram
+greater thesimilarity between vectors.ChoosingYangetal.EURASIPJournalonWirelessCommunicationsandNetworking (2019) 2019:275 Page9of13
+Fig.6TheresultofpositioninganalystsbasedontraditionalKNN
+constructionofthefingerprintdatabase.Themappingfor- (1) Positioninganalysis based ontraditionalKNN
+matisasfollows: algorithm
+<Loc_x, Loc_y, Rssi-1, Rssi-2, Rssi-3, Rssi-4, Rssi-5,
+Rssi-6>. The positioning result of the traditional KNN algo-
+rithm using Euclidean distance as a metric is shown in
+Fig. 6. Is the comparison between the actual position
+4.3Locatingresultsimulation generated and the positioning estimation result with the
+ThisarticleusesMATLABR2013basthesimulationenvir- minimum deviation of average positioning distance. The
+onment,andunderthepremisethat66referencepointoff- minimum deviation of average positioning distance is
+line location fingerprint databases have been constructed, 1.7105m,andk=5.
+70setsofmeasuredpointsofmeasuredpositionfingerprint
+data are selected as analysis indicators. Different improved (2) Positioninganalysis based ondistance weighting
+algorithmsareselectedasthepositioningresultanalysis. improvement
+Fig.7TheresultofpositioninganalystsbasedondistanceweightingKNNYangetal.EURASIPJournalonWirelessCommunicationsandNetworking (2019) 2019:275 Page10of13
+Fig.8Theresultofpositioninganalystsbasedoncosinesimilarity
+The result of positioning analysis based on KNN algo- metric. Combining Tables 2 and 3, select k = 4, a = 0.7
+rithms of distance weighting improvement is shown in forthe positioningresult analysis,asshown inFig.9.
+Fig. 7. In the figure, the average positioning deviation of
+the 70 groups of nodes to be tested is the smallest, and (5) Comparison of positioning deviation of three
+thedeviation is1.7105m,and k=7.Itcan befoundthat improved algorithms
+the positioning accuracy is improved compared with the
+traditionalEuclidean distancepositioningalgorithm. After completing the analysis of the positioning re-
+sults of different improved algorithms, different k
+(3) Improvedpositioningresultsbasedoncosinesimilarity values are selected here. The traditional positioning
+algorithm based on Euclidean distance and the posi-
+When the cosine similarity is selected as the metric tioning deviation between the improved algorithms of
+to improve the algorithm, it is found that while k is three different strategies are comprehensively com-
+taken as 4, the average positioning error of the node pared and analyzed. In Fig. 10, it is found that the
+to be tested is small, which is 1.6549m. The compari- positioning accuracy improved by the improved algo-
+son of the positioning results at this time is shown in rithm of three different strategies compared with the
+Fig. 8. The positioning accuracy is improved, compar- traditional algorithm. The improved algorithm based
+ing with the traditional KNN algorithm based on Eu- on distance weighting and the balanced joint metric
+clidean distance. algorithm are smoother and more stable, and the joint
+balance metric algorithm performs better than an-
+(4) Theresult ofpositioning analysts based onbalanced other, which preliminarily verifies the effectiveness
+jointmetricimprovementalgorithm and superiority of the joint balance metric algorithm.
+The situation of balancing joint metrics is slightly (6) Comparisonsofalgorithms
+complicated. First, assuming that a takes a value of
+0.5, then separately calculate the effect of k taking a Table2Theinfluenceofthevalueofkonthepositioning
+values from 1 to 10 on the positioning accuracy. The deviationofjointmetrics
+result is shown in Table 2. Thevalue Positioningdeviation Thevalue Positioningdeviation
+Obviously, the positioningaccuracy ishigherwhen k= ofK (m) ofK (m)
+4. k takes the value of 4, and the influence of the joint 1 2.1264 6 1.6915
+average metric improvement algorithm on the position- 2 1.9458 7 1.6844
+ingdeviation isshowninTable 3.
+3 1.6473 8 1.7189
+The joint metric algorithm model shows that when a
+4 1.6466 9 1.7269
+= 0, it is an algorithm based on distance weighting.
+5 1.6661 10 1.7917
+When a = 1, it is an algorithm based on similarityYangetal.EURASIPJournalonWirelessCommunicationsandNetworking (2019) 2019:275 Page11of13
+Table3Theinfluenceofthevalueofaonthepositioningdeviationofjointmetricswhenk=4
+Valueofα Positioningdeviation(m) Valueofα Positioningdeviation(m)
+0 1.7145 0.5 1.6466
+0.1 1.6952 0.6 1.6416
+0.2 1.6791 0.7 1.6396
+0.3 1.6649 0.8 1.6411
+0.4 1.6541 0.9 1.6462
+We performed experiments in various regions, such as technology museums have become increasingly popu-
+20m × 20m and 15m × 24m. Although the accuracy of lar. The main concern of the manager is to improve
+the joint balance metric improvement algorithm is not the quality of the science and technology museum’s
+thebest,thealgorithmissimpleandthetimecomplexity exhibition hall and to understand its popularity. This
+isonlyO(n3). article uses a phone as the mobile terminal, collecting
+The accuracy of the neural network algorithm is visitors’ trajectories through indoor positioning tech-
+higher [18]. Global time complexity of convolutional nology, which is helpful for the scientific management
+P
+Neural Networks is: tmes(cid:3)Oð D l¼1M2 lK2 lC l−1C lÞ , of the science and technology museum. Today’s indoor
+Among them: D is the number of convolution layers of segment distance positioning is still in the stage of ex-
+the neural network; Listhe firstconvolution layerof the ploration and research, and there are no large-scale
+neural network; M is the edge length of the output char- deployments applied in China. Due to the high popu-
+acteristic graph of each convolution core; K is the edge larity of mobile terminals and extensive coverage of
+length of each convolution core; C is the number of Wi-Fi networks, this article chooses Wi-Fi technology
+l
+convolutionkernelsofthelthlayer. based on mobile terminals for the positioning of users
+It can be seen that the time complexity of the algo- of the science and technology museum, improves the
+rithm we designed is lower. This algorithm can be ap- location fingerprint algorithm, and illustrates its
+plied togeneral science andtechnology museums. effectiveness in experiments.
+Although this paper proposes some methods for pro-
+cessing the RSSI raw data of the location fingerprint al-
+5 Conclusions gorithm, provides three improved schemes for the KNN
+In recent years, with the development of science and matching algorithm and improves the validity of finger-
+technology and the progress of society, the science and print data and optimization of algorithm accuracy, it
+Fig.9PositioningresultofjointbalancemetricimprovementalgorithmYangetal.EURASIPJournalonWirelessCommunicationsandNetworking (2019) 2019:275 Page12of13
+Fig.10Deviationmapoffourpositioningalgorithmsunderdifferentkvalues
+only considers the location fingerprint information of Availabilityofdataandmaterials
+two-dimensional space in the simulation experiment to Datasharingisnotapplicabletothisarticleasnodatasetsweregenerated
+oranalyzedduringthecurrentstudy.
+simplify the research work. In fact, the real environment
+in the room is three dimensional, and the fingerprint in-
+Competinginterests
+formation at different heights will be different even in Theauthorsdeclarethattheyhavenocompetinginterests.
+the same position, which is ignored in this article.
+Therefore, to obtain higher positioning accuracy, it is Received:27May2019Accepted:11November2019
+necessary to consider the construction of the location
+fingerprintdatabaseinthree-dimensional space.
+References
+1. C.Jin,D.Qiu,ResearchonindoorpositioningtechnologybasedonWiFi
+Abbreviations
+signal[J].BullSurveyMapp2017(05),21–25(2017)
+AHLos:Adhoclocalizationsystem;AOA:Angleofarrival;AP:Wirelessaccess 2. ChengYC,ChawatheY,LamarcaA,Accuracycharacterizationfor
+point;APs:Approximately6wirelessaccesspoints;BSSID:Basicserviceset; metropolitan-scaleWifilocalization.2005Proceedingsofthe3rd
+KNN:k-nearestneighbor;LAN:Localareanetwork;MIT:Massachusetts InternationalConferenceonMobileSystem,ApplicationsandServices
+InstituteofTechnology;PS:Photoshop;RADAR:Radiodetectionandranging; (MobiSys,Washington,2005),pp.233-245.https://dl.acm.org/citation.
+RFID:Radiofrequencyidentification;RSSI:Receivedsignalstrengthindication; cfm?doid=1067170.1067195.AccessedOct2017.
+RSSP:Receivedsignalstrength;SI:Received;SSID:Servicesetidentifier; 3. L.M.Ni,Y.Liu,Y.C.Lau,A.P.Patil,LANDMARC:indoorlocationsensingusing
+TDOA:Timedifferenceofarrival;TOA:Timeofarrival;UCLA:Universityof
+activeRFID[J].WirelNetw10(6),701–710(2004)
+California,LosAngeles;UWB:Ultrawideband;Wi-Fi:Wireless-fidelity 4. LeeJS,SuYW,ShenCC,Acomparativestudyofwirelessprotocols:
+Bluetooth,UWB,ZigBee,andWi-Fi.IECON2007-33rdAnnualConferenceof
+theIEEEIndustrialElectronicsSocietyIEEE.(Taiwan,2007),pp.46-51.https://
+Acknowledgements ieeexplore.ieee.org/document/4460126.AccessedOct2017.
+Theauthorsthanktheanonymousreviewersandeditorsfortheireffortsin 5. W.Rong,Briefdiscussiononthepopularshort-distancewireless
+valuablecommentsandsuggestions. communicationtechnologynowadays.YouthEra(14),199–200(2015,2015)
+6. Wei-qingHuang,ChangDing,Si-yeWang,JunyuLin,Shao-yiZhu,YueCui,
+Authors’contributions DesignandRealizationofanIndoorPositioningAlgorithmBasedon
+DifferentialPositioningMethod.InternationalConferenceonWireless
+QYproposesthealgorithmdesignanddataanalysis.SZproposesinnovation
+Algorithms,Systems,andApplications.(WASA.Guilin,2017),pp.546-558.
+ideas.MLproposesdataanalysis.YZcarriedoutexperiments.Allauthors
+https://link.springer.com/chapter/10.1007/978-3-319-60033-8_47.Accessed
+readandapprovedthefinalmanuscript.
+Oct2018.
+7. Yucel,Edizkan,Ozkir,Yazici,Developmentofindoorpositioningsystemwith
+Funding ultrasonicandinfraredsignals.InternationalSymposiumonInnovationsin
+Thispaperissupportedbythenationalscienceandtechnologysupport IntelligentSystems&Applications.(Trabzon,2012).https://ieeexplore.ieee.
+Program.Programnumberis2015BAK33B00. org/document/6246983.AccessedMay2018.Yangetal.EURASIPJournalonWirelessCommunicationsandNetworking (2019) 2019:275 Page13of13
+8. AlessioDeAngelis,AntonioMoschitta,PaoloCarbone,MassimoCalderini,
+StefanoNeri,RenatoBorgna,ManueloPeppucci,Designandcharacteriza-
+tionofanultrasonicindoorpositioningtechnique.Instrumentationand
+MeasurementTechno-logyConference(I2MTC)Proceedings2014IEEE
+International.(Montevideo,2014),pp.1623-1628.https://ieeexplore.ieee.org/
+document/6861020.AccessedMay2018.
+9. LinglingZhu,AoleiYang,DingbingWu,LiLiu,SurveyofIndoorPositioning
+TechnologiesandSystems.2014InternationalConferenceonLifeSystem
+ModelingandSimulation.(Shanghai,2014),pp.400-409.https://link.springer.
+com/chapter/10.1007/978-3-662-45283-7_41.AccessedOct2017.
+10. WantR,HoppA,FalcãoV,GibbonsJ,Theactivebadgelocationsystem.
+AcmTransactionsoninformationSystems.10(1),91-102(1992)
+11. BahlP,PadmanabhanVN,RADAR:anin-buildingRF-baseduserlocation
+andtrackingsystem.NineteenthAnnualJointConferenceoftheIEEE
+ComputerandCommunicationsSocieties.(IEEE,TelAviv,2000),pp.775-784.
+https://ieeexplore.ieee.org/document/832252.AccessedMar2018.
+12. WoodmanOJ,HarleRK,ConcurrentschedulingintheActiveBatlocation
+system.IEEEInternationalConferenceonPervasiveComputingand
+CommunicationsWordshops.(Mannheim,2010),pp.431-437.https://
+ieeexplore.ieee.org/document/5470631.AccessedMar2018.
+13. PriyanthaN,ChakrabortyA,BalakrishnanH,TheCricketlocation-support
+system.Proceedingsofthe6thannualinternationalconferenceonMobile
+computingandnetworking.(Boston,2010),pp.32-43.
+14. OliveiraHABF,BoukercheA,NakamuraEF,Localizationintimeandspace
+forwirelesssensornetworks:anefficientandlightweightalgorithm.
+PerformanceEvaluation.66(35),209-222(2009)
+15. D.J.Coleman,A.Rajabifard,K.W.Kolodziej,ExpandingtheSDIenvironment:
+comparingcurrentspatialdatainfrastructurewithemergingindoor
+location-basedservices.IntJDigitalEarth9(6),629–647(2016)
+16. HanhuiYue,XiaoZheng,JuanWang,LiZhu,ChunyanZeng,CongLiu,
+MengLiu,ResearchandImplementationofIndoorPositioningAlgorithm
+forPersonnelBasedonDeepLearning.InternationalConferenceon
+EmergingInternetworking,Data&WebTechnologies.(Tirana,2018),pp.
+782-791.https://link.springer.com/content/pdf/10.1007%2F978-3-319-75928-
+9.pdf.AccessedFeb2019.
+17. HeZ,XuM,GuoA,AdvancedComputationalMethodsinLifeSystem
+ModelingandSimulation.Multi-channelfeatureforpedestriandetection
+(Nanjing,2017),pp.472-480.https://link.springer.com/chapter/10.1007/978-
+981-10-6370-1_47.AccessedOct2018.
+18. J.Luo,H.Gao,I.Gondal,Deepbeliefnetworksforfingerprintingindoor
+localizationusingultrawidebandtechnology[J].IntJDistributedSensor
+Netwo(2016)
+19. Aguilar,W.G.,Luna,M.A.,Moya,J.F.,Abad,V.,Ruiz,H.,Parra,H.,Lopez,W,
+Cascadeclassifiersandsaliencymapsbasedpeopledetection.International
+ConferenceonAugmentedReality,VirtualRealityandComputerGraphics.
+(Otranto,2017),pp.501-510.
+20. JaeminHong,KyuJinKim,ChongGunKim,ComparisonofIndoor
+PositioningSystemUsingWi-FiandUWB.AsianConferenceonIntelligent
+InformationandDatabaseSystems.(DongHoiCity,2018),pp.623-632.
+https://link.springer.com/content/pdf/10.1007%2F978-3-319-75417-8.pdf.
+AccessedOct2018.
+21. JianguoYu,ZhianDeng,XinLiu,JuanChen,ZhenyuNa,WLANIndoor
+PositioningBasedonDLDAFeatureExtractionAlgorithm.International
+ConferenceinCommunications,SignalProcessing,andSystems.(Harbin,
+2017),pp.2779-2787.https://link.springer.com/chapter/10.1007/978-981-1
+0-6571-2_336.AccessedFeb2019.
+Publisher’s Note
+SpringerNatureremainsneutralwithregardtojurisdictionalclaimsin
+publishedmapsandinstitutionalaffiliations.

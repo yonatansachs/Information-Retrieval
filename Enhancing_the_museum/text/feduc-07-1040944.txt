@@ -1,0 +1,1145 @@
+TYPE Original Research
+PUBLISHED 09 December 2022
+DOI 10.3389/feduc.2022.1040944
+OPEN ACCESS
+EDITED BY
+André Bresges,
+University of Cologne, Germany
+REVIEWED BY
+Silvia Fränkel,
+University of Cologne, Germany
+Angela Page,
+The University of Newcastle, Australia
+*CORRESPONDENCE
+Mariana Pereira Fernandes
+mpfernandes@yahoo.com
+Jessica Norberto Rocha
+jnrocha@cecierj.edu.br
+†These authors have contributed
+equally to this work
+SPECIALTY SECTION
+This article was submitted to
+STEM Education,
+a section of the journal
+Frontiers in Education
+RECEIVED 03 October 2022
+ACCEPTED 25 November 2022
+PUBLISHED 09 December 2022
+CITATION
+Fernandes MP and Norberto Rocha J
+(2022) The experience of adults with
+visual disabilities in two Brazilian
+science museums: An exploratory
+and qualitative study.
+Front. Educ. 7:1040944.
+doi: 10.3389/feduc.2022.1040944
+COPYRIGHT
+© 2022 Fernandes and Norberto
+Rocha. This is an open-access article
+distributed under the terms of the
+Creative Commons Attribution License
+(CC BY). The use, distribution or
+reproduction in other forums is
+permitted, provided the original
+author(s) and the copyright owner(s)
+are credited and that the original
+publication in this journal is cited, in
+accordance with accepted academic
+practice. No use, distribution or
+reproduction is permitted which does
+not comply with these terms.
+The experience of adults with
+visual disabilities in two Brazilian
+science museums: An
+exploratory and qualitative study
+Mariana Pereira Fernandes1*† and Jessica Norberto Rocha2*†
+1Fundação Oswaldo Cruz, Casa de Oswaldo Cruz (Fiocruz), Rio de Janeiro, Brazil, 2Fundação
+Centro de Ciências e Educação Superior a Distância (Fundação Cecierj), Rio de Janeiro, Brazil
+In this exploratory and qualitative study, we investigate the experience
+of two groups of adults with visual disabilities in two science museums
+in Rio de Janeiro (Brazil). Data collection was performed by recording
+their visits through a subjective camera placed on the head of one of
+the visitors. The analysis used three accessibility indicators and barriers
+as codes. The data reveals that: (a) physical accessibility—related to the
+internal architectural aspects—was well developed; although other elements
+of this indicator need improvement; (b) attitudinal accessibility was present,
+mostly due to the work and guidance of the museums’ educators; (c)
+communicational accessibility was rare in the museums, either due to a lack
+of diversiﬁed equipment, media or resources both for internal and external
+communication; (d) barriers do exist, mainly because one or more element
+is missing from the accessibility indicators. This study indicates that the two
+science museums offer accessibility strategies from the perspective of people
+with visual disabilities and can provide interactions, learning and science
+communication for this audience in different levels. However, some barriers
+in both institutions still need to be improved. Based on our data, results and
+discussions, museums and their professionals can be inspired, learn and plan
+an organizational change toward accessibility. Lastly, museums need to be
+able to learn from people with disabilities.
+KEYWORDS
+non-formal education, science communication, accessibility, inclusion, disability
+Introduction
+Access to quality education and accurate scientiﬁc information, to be part of cultural
+life, enjoy the arts and participate in any community social activity are the rights of
+every person, according to the Universal Declaration of Human Rights (UN, 1948). For
+people with disabilities, these rights are reinforced by a set of laws and international
+Frontiers in Education
+01
+frontiersin.org
+
+Fernandes and Norberto Rocha
+10.3389/feduc.2022.1040944
+conventions—such as the Convention on the Rights of Persons
+with Disabilities (CRPD) (UN, 2006)—which is aligned with
+the human rights (Ollerton and Horsfall, 2013). Argyropoulos
+and Kanari (2019, p. 125) explain that “educational policies and
+initiatives toward an inclusive society have become more and
+more intensive in the last decades” and that the focus on the
+right to participate in diﬀerent sectors of social life, education
+and culture are based on the adoption of the social model of
+disability.
+The idea that it is possible to learn science outside of school
+also grew and was incentivized both in theory and practice
+throughout the years, as seen in the editorial organized by
+Longnecker et al. (2022). Science museums are considered non-
+formal learning environments (Bell et al., 2009) and signiﬁcant
+places for leisure, engagement and science communication (Falk
+and Dierking, 2002; Schiele, 2014). Through their exhibitions
+and activities, museums can facilitate learning (Marandino et al.,
+2018) in a multidimensional way (Hooper-Greenhill, 1994,
+2006). As Hooper-Greenhill (2006) states, learning in museums
+is based on experience, because they provide opportunities for
+people to perform, touch, interact through their diﬀerent senses,
+and feel engaged and immersed.
+In this way, in science museums, people can explore
+their interest in subjects related to science and practice skills
+related to science learning as logical reasoning, observation,
+and hypotheses construction (Norberto Rocha, 2018; Massarani
+et al., 2022a). Thus, people can “build upon, reinforce
+and strengthen their own preferred, pre-existing science
+understandings” (Falk and Dierking, 2019, p. 3). Visitors
+can choose when and how they want to learn, driven
+by their emotions, personal stories, and motivations—what
+is called “free-choice” learning (Falk and Dierking, 2002).
+These institutions are, thus, platforms for scientiﬁc citizenship
+(Bandelli, 2014) which can provide educational opportunities
+for all people to learn and engage at any age (O’Brien and
+Candlin, 2001).
+As such, they need to be capable of facilitating social
+inclusion and the democratization of knowledge and of
+catering to a broad and diverse audience (Sandell, 2002;
+Bevan and Ramos, 2021). On this subject, during the last
+decades, worldwide, museums have worked on establishing
+relationships
+with
+people
+with
+disabilities,
+primarily
+by
+providing more accessible and barrier-free physical spaces
+(Sandell et al., 2010). Studies also indicate that museums try
+to promote “organizational change” and make institutional
+learning increasingly inclusive (Reich et al., 2011; Reich, 2014);
+they are developing programs and strategies and launching
+speciﬁc initiatives to target diﬀerent audiences (Norberto Rocha
+et al., 2020a; Norberto Rocha, 2021).
+In the speciﬁc context of Latin America, the Guia de
+Museus e Centros de Ciências Acessíveis da América Latina e
+do Caribe (Norberto Rocha et al., 2017) shows that accessibility
+is being practiced by at least 110 science museums in various
+forms. However, the study based on the data collected for
+this document reveals challenges faced by these institutions.
+Norberto Rocha et al. (2020b) exposed that the museums
+tend to emphasize physical accessibility and provide only a
+limited number of activities related to the attitudinal and
+communicational aspects of inclusion—which are essential to
+learning and engagement. This means that museums have
+already progressed in promoting access to their physical spaces,
+but devote insuﬃcient attention to the resources and strategies
+that can facilitate learning in a non-formal environment.
+Argyropoulos and Kanari (2019) mention that diﬀerent
+types of disabilities require corresponding strategies and, what’s
+more, that within a group of people with disabilities, there
+is heterogeneity and speciﬁc needs and ways of promoting
+inclusion. Related to individuals with visual disabilities, the
+authors acknowledge they still face many barriers to visiting,
+such as misunderstandings regarding the heterogeneity of
+people with visual disabilities, limited or temporary options
+oﬀered for blind visitors, attitudinal barriers, and a lack of
+accessible web sites and publicity. Moreover, they state that “it
+seems that due to lack of permanent access facilitations in many
+museums people with visual disability face many diﬃculties
+if they want to visit them spontaneously” (Argyropoulos
+and Kanari, 2019, p. 131–132). The ability to visit museums
+spontaneously is part of what people with disabilities might
+consider autonomy and independent living, which are a central
+demand on the agenda of people with disabilities’ rights (Oliver,
+2013).
+The study of Norberto Rocha et al. (2020a,b) on the
+Latin American science museums and centers explicates these
+institutions’ point of view on accessibility. However, studies
+on how people with disabilities experience museum visits are
+still needed, from their own perspectives, as protagonists of the
+inclusion agenda (Levent et al., 2013). Given that experience is
+a central part of museums’ learning (Falk and Dierking, 2002,
+Hooper-Greenhill, 2006; Argyropoulos and Kanari, 2019), it is
+essential to understand how visitors with disabilities interact
+with the exhibits and the museum professionals—mainly the
+educators—and how they face barriers. Along the same lines,
+Levent and Reich (2013) state that learning from the visitor
+experience is essential to improving museums’ interactions with
+visitors, their services, and their educational environment.
+Under these circumstances, in this study, we aimed to
+investigate the experience of two groups of adults with
+visual disabilities in two science museums in Rio de Janeiro
+(Brazil), focusing on aspects of physical, attitudinal and
+communicational accessibility and barriers. We examine how
+they use accessibility resources, interact with the exhibitions
+and professionals, overcome barriers, and potentially learn
+in these non-formal education places. Finally, we provide
+some discussion based on the evidence collected and the
+study’s limitations.
+Frontiers in Education
+02
+frontiersin.org
+
+Fernandes and Norberto Rocha
+10.3389/feduc.2022.1040944
+Materials and methods
+The methods of this exploratory and qualitative study
+were grounded in previous research involvement developed for
+investigating the experience of diﬀerent audiences in science
+museums, e.g., teenagers (Massarani et al., 2019a,b,c, 2022a;
+Norberto Rocha et al., 2021b, 2022; Coelho et al., 2022), families
+(Massarani et al., 2021, 2022b; Scalﬁet al., 2022) and people with
+disabilities (Do Carmo, 2021).
+In these prior studies, professionals from Brazil, Argentina,
+Colombia, Uruguay, Mexico and the USA developed protocols
+for collecting data with a “subjective camera” method by which
+an audio and video recording of visitors’ interactions and
+conversations in a museum is taken by a camera placed on
+the head of one of the visitors. After collecting this audiovisual
+material, software is used to code the gathered data in order to
+examine which elements of the experience can inﬂuence visitors’
+participation in museums. The codes are based on pre-deﬁned
+categories retrieved from analysis frameworks.
+This data collection protocol and analysis was reliable when
+applied to diﬀerent types of audiences and, in the current
+study, we apply it to another group of visitors—adults with
+visual disabilities, who have not been extensively studied in the
+academic ﬁeld of visitor studies (Fernandes, 2020).
+Participants with visual disabilities
+Participants were invited by the non-probability sampling
+technique known as snowball sampling (Biernacki and Waldorf,
+1981; Bernard, 2005). This method is suitable for ﬁnding study
+participants who may be diﬃcult to identify through other
+recruitment methods (Hennink et al., 2011). This technique
+relies on discovering a “strategically important contact” who can
+help ﬁnd additional contacts that ﬁt the characteristics of the
+desired target population (Henn et al., 2013) and has been used
+in several previous studies on museum visitors’ experience.
+The participants of this study were a heterogeneous group
+of volunteers with visual disabilities: three men and two women,
+aged between 23 and 60 years (Table 1). Their educational level
+varied from elementary to graduate school. The visual disability
+of each participant varied between total blindness and low
+vision. These terms are based on the International Classiﬁcation
+of Functionality, Disability and Health and the World Health
+Organization, which deﬁne parameters for each degree of visual
+impairment. We can classify blindness and low vision according
+to the visual acuity of each individual. We consider people blind
+if they have a visual ﬁeld of less than 10◦and having low vision
+if they have 20◦in the best eye (Cieza et al., 2021). We also chose
+to work with people who were both engaged and not engaged
+with museums’ culture to reﬂect diﬀerent levels of interest and
+participation in cultural life.
+The ﬁrst group of visitors was composed of three people,
+identiﬁed by us as “engaged visitors” (EVs). The group
+was characterized by signiﬁcant personal involvement with
+museums: either through a professional relationship or interest
+and previous social life experiences. Also, they demonstrated
+expertise and knowledge regarding accessibility strategies in
+these spaces. They had secondary and higher education degrees
+and were either totally blind, with white blindness (a lack of light
+and ﬁgure perception) since childhood, or had experienced low
+vision for more than 5 years.
+The second group of visitors comprises two people
+identiﬁed
+as
+“low-engaged
+visitors”
+(LEVs).
+The
+group
+members’ connection with museums’ activities was low, since
+they declared they had not regularly participated in these
+activities or even had never been to a museum. They had
+become totally blind in adulthood and completed middle and
+high school. We therefore consider the group as little engaged
+in this type of social activity.
+The two groups visited the two museums in August and
+September of 2019, but at diﬀerent times to avoid any interplay
+between them. Both museums oﬀered the visits entirely guided
+by museum educators.
+The museums: A natural history
+museum and a science center
+The two Brazilian science museums studied are in Rio de
+Janeiro and consist of a natural history museum and a hands-
+on science center. Both have free admission and state that they
+provide accessibility for people with disabilities. The museums
+were chosen after their presentation on their accessibility
+strategies at the 3rd National Meeting of the Brazilian
+Association of Science Centers and Museums (ABCMC), which
+demonstrated they were working toward the same aim, but in
+diﬀerent stages of development.
+The natural history museum, the Museu da Geodiversidade
+(MGeo) at Universidade Federal do Rio de Janeiro, addresses
+the history of Planet Earth and its evolution over the years. Its
+extensive exhibitions contain eleven rooms with interconnected
+themes, displaying rocks, fossils, and specimens—the majority
+of which are original, in glass cases, or prepared for viewing
+only. Some exhibits can be touched, e.g., the representation of
+the Planet Earth, rocks, minerals, the reproduction of the jaw of
+the largest Brazilian alligator, shells, etc. In part of the exhibition,
+there are a few braille labels, tactile mini dioramas of specimens,
+other tactile representations, and audio recordings.
+The Casa da Descoberta (CD) at Universidade Federal
+Fluminense is a hands-on science center consisting of one large
+exhibition hall with exhibits spread throughout the space. The
+central theme of the hands-on exhibits is physics, but they also
+explore some chemistry, astronomy, mathematics, and biology.
+Many exhibits are those traditionally presented in hands-on
+Frontiers in Education
+03
+frontiersin.org
+
+Fernandes and Norberto Rocha
+10.3389/feduc.2022.1040944
+TABLE 1 Research participants’ proﬁles.
+Group
+Age
+Gender
+Visual disability
+Education
+Profession
+Engaged visitor 1
+41
+Male
+Low vision
+Graduated
+Audio descriptor
+Engaged visitor 2
+33
+Male
+Blind
+Completed high school
+Accessibility consultant
+Engaged visitor 3
+23
+Female
+Blind
+Undergraduate student
+Museum intern
+Low-engaged visitor 1
+60
+Male
+Blind
+Completed middle school
+Retired
+Low-engaged visitor 2
+49
+Female
+Low vision
+Completed high school
+Retired
+science centers, such as the Van Der Graaﬀgenerator, pulley
+association, bed of nails, Newton’s pendulum, human stack,
+power-generating bicycle, and power-generating crank. All
+visitors can touch them, and none provide braille or multimedia
+strategies. The only exhibition that presents accessible resources
+is about optics and was specially made for audiences with
+visual disabilities.
+Data collection and analysis
+Data was collected by recording the visits of the two groups
+to the two museums in total, using the “subjective camera”
+method (Burris, 2017). As in the previous studies using the same
+method, a GoPro
+R⃝camera was placed on a participant’s head for
+each group.
+Five hours of recording were collected and the software
+Dedoose was used to code audiovisual excerpts through
+qualitative analysis. As in previous studies, the data were
+analyzed and coded from a qualitative perspective—the excerpts
+were coded according to the duration of the experience that
+naturally occurred. This means that a speciﬁc excerpt started
+when we interpreted that one or a set of actions, conversations,
+and interactions that ﬁt in one of the codes began until the end
+of these actions.
+For coding the excerpts, we applied the framework
+“Accessibility Indicators of Science Museums” (Table 2)
+proposed by the Accessible Science Museums and Centers
+(MCCAC) research group (Inacio, 2017; Norberto Rocha et al.,
+2020b). This framework was constructed based on a literature
+review and the study of practical norms of accessibility. Since
+its development, it has been applied to several studies. For
+instance, Norberto Rocha et al. (2020b) presented a panorama
+of the provision of accessibility of Latin-American institutions,
+Do Carmo (2021) used it to study the experience of deaf people
+in three diﬀerent exhibitions in the city of Tomaz Silva (2022)
+applied it to investigate how the Museum of Tomorrow provides
+accessibility for visitors with Down’s Syndrome. Diﬀerent
+researchers used indicators to create analysis frameworks,
+especially in science education and communication, museology,
+accessibility, and their interconnections (Marandino et al.,
+2018).
+Physical accessibility: the two attributes of this indicator are
+related to the physical and architectural aspects of the museum,
+its infrastructure and surroundings, and the design of the
+exhibition and its displays. With this indicator, we can identify
+the characteristics that respect and value the diﬀerent abilities
+and physical bodies of the visitors when interacting with the
+exhibitions, activities, objects and the museums’ physical space.
+Attitudinal accessibility: the ﬁrst attribute of this indicator
+is aimed at attitudes and actions to eliminate prejudices,
+stereotypes, and stigmas toward people with disabilities. The
+second examines political aspects, such as the institution’s
+mission to promote accessibility, the qualiﬁcation of human
+resources [such as museum educators], and the incentives,
+programs, and actions that facilitate accessibility.
+Communicational accessibility: this indicator highlights
+the characteristics of equipment and resources that allow
+overcoming
+interpersonal,
+written,
+and/or
+informative
+communication barriers. The ﬁrst attribute of communicational
+accessibility refers to the internal and external communication,
+which provides information about the functioning of the space
+(days and times, location, ticket price, etc.) and the contents of
+the exhibitions and objects of the museum itself. The second
+attribute refers to diversiﬁed media that facilitates content
+communication with visitors.
+Lastly, barriers include obstacles, non-inclusive practices,
+missed opportunities and untapped adaptations, whether
+identiﬁed by the visitor, researcher or reported by the museum
+team (museum educator, coordinator, etc.).
+In the coding process, each attribute of each indicator was
+considered a “code.” It is worth mentioning that the codes are
+not mutually exclusive, meaning that more than one code may
+be applied to a given excerpt, with overlapping durations.
+Results
+A total of 5 h and 31 min were analyzed in the software, in
+which a total of 449 codes were applied. Attitudinal accessibility
+was highly coded in the two museums: a total of 93 codes
+were used, comprising 1 h and 20 min of duration. Following,
+there was a large number of codes for Physical accessibility: 80
+codes and 2 h and 53 min of duration. The Communicational
+Accessibility coding had a total of 24 and 52 min of total
+duration. Regarding the barriers, there were 47 codes and
+43 min of duration.
+Frontiers in Education
+04
+frontiersin.org
+
+Fernandes and Norberto Rocha
+10.3389/feduc.2022.1040944
+TABLE 2 Framework “Accessibility Indicators of Science Museums”.
+Indicators
+Physical
+Attitudinal
+Communicational
+Attributes
+1a. Architecture, physical access,
+accommodations and use of space
+2a. Inclusive practices, welcome and engagement
+3a. Communication (onsite and external) and
+signage
+1b. Design and use of objects and facilities
+2b. Institutional policy/mission
+3b. Media, equipment, resources, etc.
+Barriers: obstacles, non-inclusive practices, missed opportunities and untapped potential of adaptations, whether identiﬁed by the visitor, researcher, or reported by
+the museum team.
+Adapted from Norberto Rocha et al. (2020b).
+As it is an exploratory and qualitative study, the numbers
+(which means the frequency and duration of codes) helped
+to provide an introductory panorama of the data. Exploring
+the coded excerpts in depth was able to provide a better
+understanding of each category and interpretation of the
+visitors’ interactions, potential learning moments, and the
+nature of the barriers confronted. In the following sections,
+we present the analysis by each accessibility indicator using
+examples of transcribed excerpts of the audiovisual recorded
+data to illustrate our arguments.
+Physical accessibility
+From
+the
+point
+of
+view
+of
+the
+architecture
+and
+infrastructure, both museums were considered physically
+accessible in their interiors. At MGeo, visitors did not
+experience diﬃculty going through the exhibition rooms,
+mainly because the museum educators guided them throughout
+the visit. Some ramps had been placed over stairs when these
+connected rooms, and all visitors used them to move from
+one room to another. At CD, as the exhibition is placed in a
+large exhibition hall, no steps or walls separated the exhibits.
+Visitors did not face barriers getting around or accessing the
+exhibitions displayed and all exhibits’ displays had the same
+height and shape and were arranged in a spacious way. The
+LEV’s visitors did not make speciﬁc comments regarding the
+physical accessibility of the place, while EV2 commented: “It’s
+good that everything is close by.” EV1, on his turn, commented
+on accessibility for a broad spectrum of people who could
+beneﬁt: “I liked the height of the cube because a person in a
+wheelchair is at a good height.” EV3 added that the height was
+appropriate “for those who have dwarﬁsm, too.”
+In relation to the second attribute, the design of objects
+and exhibitions were considered partially accessible in both
+museums, with both groups of visitors emphasizing their
+positive experiences. In MGeo, for example, the ﬁrst exhibition
+hall displayed a giant globe of the Earth at the beginning of its
+formation. The museum educator asked both groups to touch
+and explore the piece before giving information about the object
+and what it represented. The strategy of touching the globe was
+a potent activity because visitors were able to raise hypotheses
+and try to interpret and extract information from the object—
+skills relevant to science learning and museum visitation. EV1
+said, “It’s a globe... it looks like the Moon, maybe a meteor. Very
+big.” EV3 said: “This is Planet Earth.” LEV1 asked, “Are these
+holes volcanoes? [...] It’s a meteor? Its craters are here, right?.”
+From the thoughts and what was raised by the visitors during the
+tactile exploration, the museum educator was able to develop a
+dialogue about the object, bringing up scientiﬁc information and
+relating it to daily life and previous experiences narrated by the
+people with visual disabilities.
+In CD, most exhibitions are considered hands-on, such as
+the Van Der Graaﬀgenerator, association of pulleys, bed of
+nails, and Newton’s pendulum. Other exhibitions, such as the
+human battery, power-generating bicycle, and power-generating
+crankare visual-based and require accessibility strategies to
+provide an understanding of their scientiﬁc concepts for people
+with visual disabilities.
+One vision-centered exhibit (about optical concepts) gives
+the option of being entirely dismantled and touched. The
+equipment was designed to be disassembled, allowing visitors to
+explore its structure and the materials as part of the experiment.
+This allowed visitors to understand the information, to make
+assumptions based on prior knowledge and to combine these
+with the guidance of the museum educator. EV3 commented: “I
+should have seen this in my optics classes.” EV2 said, “I think
+there are two mirrors, so it doesn’t get inverted. If it were a
+mirror, it would be inverted.” EV3 responded, “Yes, it is inverted
+and slightly bigger.” EV3 said, “The tail is facing my direction,
+leaving the focus and going to the center of curvature to the left
+and the right there is a snout.” EV1 ultimately said, “Very nice,
+this experience. That’s really cool.”
+Another display in the science center also made visitors
+from both groups curious and excited: the Van Der Graaﬀ
+generator. The exhibit allowed the entire structure to be
+touched, which helped them understand how it works. Visitors
+could hear and feel the eﬀects of the concept of electriﬁcation
+by friction. Educators explained how the generator works,
+exploring the characteristic sounds. Both groups commented
+about their emotions and everyday experiences—elements that
+favor learning. EV1 asked, “Is there light? What color is it? Is
+her hair standing up?.” EV3, touching her hair, said, “It’s ﬂying!.”
+LEV1, touching the metal part of the stick, said “Wood doesn’t
+Frontiers in Education
+05
+frontiersin.org
+
+Fernandes and Norberto Rocha
+10.3389/feduc.2022.1040944
+give shocks. It’s shocking here, right? [...] It’s because it is making
+friction.”
+Attitudinal accessibility
+The Attitudinal accessibility indicator was the most existent
+in the two groups of visitors, in special the “inclusive practices,
+reception and reception” attribute—demonstrating that the
+educators’ guidance and practice during the visits acted as
+an essential strategy for accessibility and for reducing of
+some barriers encountered. Some attitudes and actions to
+welcome people with disabilities were noticed by visitors in both
+museums but in diﬀerent forms and to diﬀerent extents.
+During both visits to the MGeo, the museum educator
+described all rooms and their exhibitions, as in the examples:
+“This is a very bright room, the walls are painted blue, and in
+front of you there is a plot representing the ocean. [...] This rock
+[that you are touching] has darker bands and lighter bands”; “In
+this room, our highlight is, above us, the reconstruction of the
+skeleton of one of the largest amphibians that ever existed in
+the world. We cannot touch it, but it looks like an alligator or
+crocodile.” We can see that this is a usual practice, since it was
+repeated in the visitation of both groups. In addition to being
+an alternative to eliminate barriers, this description practice
+favored contextualization and encouraged visitors to seek more
+information. For instance, one of the EVs asked the educator
+about the rock she was touching. EV3: “What is the color?”
+Educator: “It’s a black color.”
+In the CD, the museum educator, in her opening speech,
+made the presentation combined with the practice of self-
+description, as in the excerpt: “Educator: Good afternoon! [...]
+I’m 1.66 m tall, my hair is black with blonde highlights, wavy,
+and it’s tied in a ponytail. I’m wearing a gray t-shirt, wide-
+ﬂowered pants, and black sneakers. I’ma white person, full
+of tattoos!.” This attitude of self-description for both groups
+generated a connection and awareness and created a relationship
+of trust with visitors. This made them feel more welcomed
+and comfortable with the educator’s guidance, which opened
+space for asking about scientiﬁc topics during the visit, as can
+be seen in EV2’s words: “I think the issue of receptivity made
+a lot of diﬀerence for us to feel comfortable. For example,
+I feel comfortable talking and asking questions. Because this
+content is also a little intimidating, you feel embarrassed to say
+something wrong or ask silly, nonsense questions.”
+Regarding the political and organizational aspects of social
+inclusion, there was evidence that the museums take actions to
+support them, although challenges and struggles also came up.
+During the CD visit, one of the EVs asked about the accessibility
+team that makes up the museum. He was informed that the
+museum had three educators who were ﬂuent in sign language.
+According to the museum educator guiding the group, “we
+selected a student from the history course who is blind and will
+be our great mentor in this adaptation process for you.” This
+is an example of how the institution is organizing itself to be
+more inclusive and brings up the issue of representation, i.e.,
+having people with visual disabilities working in these spaces
+is essential for at least three reasons: (a) consultancy, meaning
+that this professional can give input from his own experience
+when the museum preparing exhibitions and changing spaces
+and objects to be more accessible (Monteiro, 2021); (b) political
+presence and representativeness, which is historically important
+and central in the ﬁght for the rights of people with disabilities
+(Shakespeare, 2006); (c) representativeness, for the visitor to feel
+included and to recognize that the museum is also his place.
+Communicational accessibility
+Nowadays, the museum website is one of the most
+important means for any museum to communicate with its
+audience. Regarding the content and accessibility on the MGeo
+website, one of the EVs asks the museum educator about it:
+“We don’t have images of the collection; we have photos of the
+exhibition halls. The website does not have an audio description
+tool.” For both groups, there was no mention of daily activities,
+opening hours, or even MGeo’s social media—information that
+would be essential if they wanted to return. We emphasize
+that people with visual disabilities, especially those engaged and
+interested in cultural activities, have access to and consume
+internet content, as EV1 highlighted: “In my free time I like to
+access the internet, watch series [and] movies.”
+The museum educator tells the EVs group the accessibility
+days schedule on the CD, but she does not mention the opening
+hours or other relevant information. For the LEVs, at the end
+of the visit, information about the museum’s operation was
+provided. The educator said: “You can bring family members,
+our museum is free, it is open from Monday to Friday from 9
+am to 12 pm and from 2 pm to 5 pm. Show up, [you] are all our
+guests!.” By sharing this information, the interest and curiosity
+of the visitors were aroused about other activities available in the
+space, as seen in the comments. A visitor asked, “What time is
+the telescope open?” and the educator responded, “On Tuesdays,
+from 6 pm to 9 pm.”
+Regarding
+the
+communication
+accessibility
+strategies
+presented to the two groups of visitors at MGeo, we can
+highlight three diﬀerent moments. The ﬁrst was a mammal
+footprint exhibit that oﬀered a label in braille. When this
+resource was provided, the visitors explored the exhibits
+without depending on the guidance of the museum educator.
+EV3 reported: “I love this braille here.” The second moment
+was a tactile mini diorama of the exhibition scenario with
+captioning. A tactile mini diorama is a valuable tool that, when
+explained by the museum educator, can add rich scientiﬁc
+information to a scene that would possibly only be verbally
+described to visitors. The third was an interactive dashboard
+Frontiers in Education
+06
+frontiersin.org
+
+Fernandes and Norberto Rocha
+10.3389/feduc.2022.1040944
+with audio recording. The dashboard provided information
+about various objects of daily life (e.g., plastic bottles, lipstick,
+cell phone, tire, etc.) which contained petroleum in their
+composition. To activate the audio recording, the visitor had to
+choose one of the objects and place it in the dashboard’s center.
+This auditory resource made the visitors surprised and curious
+about the objects, combined with the joy and fun of being able
+to interact with the dashboard freely. LEV2 said, “The rest I
+already know have petroleum; the lipstick, I didn’t know.” LEV1
+said, “That petroleum dashboard, I thought it was entertaining,
+you can put [a product in it and] it has information about the
+product.”
+Barriers
+In general, barriers were encountered by both groups in both
+museums, but the EVs emphasized them more. Several MGeo
+exhibits, which are in glass cases, are not signaled and obstruct
+the tactile exploration of specimens. Visitors from both groups
+were uncomfortable with the experience because they could not
+touch or did not feel safe going through the exhibition circuit.
+EV1 commented: “There are many things in a glass dome, which
+is very frustrating. A lot of things we can’t touch, they didn’t
+present us with any audio description.” EV3 said, “This makes
+us very dependent” and “the part I was most uncomfortable with
+was the window display.” LEV2 said that it was only possible
+“for [a visually disability] person to walk being moved. You can’t
+walk alone here if you can’t see, because it doesn’t have a tactile
+ﬂoor; there is nothing. The person will directly collide with the
+glass because it is not signaled.”
+From examples like these, visitors stated their fear of
+exploring the exhibition by themselves and the discomfort
+caused by being dependent on the museum educators’
+guidance—which directly inﬂuenced their learning experience
+and feeling of autonomy. Also, at the CD, the hugest barrier
+was access to its building: it had elevators and stairs, with very
+poor signage. This made physical guidance necessary. EV1 said:
+“Here, it is inaccessible. The problem is not the ladder, the
+problem is getting to the ladder! [A visually disability person]
+is in no condition to come alone.”
+Another barrier that negatively inﬂuenced the visit of
+the EVs group at MGeo was the museum educator’s self-
+introduction to the group. Right after starting his interaction
+with the visitors, he stated that he was not going to describe
+himself: “I’m not going to describe myself because I don’t like
+it. My self-esteem gets a little... I’m a Latin American guy, that’s
+all you need to know.” The group felt the educator was insecure
+and not prepared to guide people with disabilities—particularly
+with visual disabilities—which generated discomfort and caused
+a feeling of awkwardness in the museum. The group commented
+on this. EV3 said, “[At the] beginning, mainly, I was a little
+uncomfortable,” and EV2 said that this “already created a
+barrier.”
+Another barrier was the material used in the natural history
+museum as a resource for representing the dinosaur fossils
+exhibited—plastic dinosaur toys. The EVs group realized that
+the material presented for touch did not faithfully represent
+the dinosaur fossils in the exhibit, which resulted in unfulﬁlled
+expectations. EV1 said, “Actually, what they showed us is not
+quite a replica. Because from what I understand, what is there
+is just the skeleton and what they gave us was not the skeleton.”
+EV3 said, “I felt a little frustrated there [...] I also thought it was
+going to be fun there, but it was pretty frustrating.” A suggestion
+the visitors gave to make the room more attractive to them
+would be to provide sounds and present more realistic replicas.
+Finally, regarding the few braille labels in MGeo, the EV
+group questioned why only a part of the exhibition contained
+this accessibility strategy. EV1 said: “I don’t know what the
+purpose was because there were several exhibits and only
+a few have braille.” In addition to being only present in
+a small part of the exhibition, it is relevant to note that
+although helpful for some people, this strategy does not
+serve all visitors with visual disabilities. Some people are not
+literate in braille, as one of the LEVs pointed out: “I still
+don’t know. I would like to learn this here.” At CD, this
+communicational strategy was not even used, since there were
+no braille labels or audio descriptions in the entire exhibit, which
+indicated that the science center still needed to develop this
+communication tool.
+In summary, based on the accessibility indicators, we can
+conclude that:
+a) Physical accessibility, related to the internal architectural
+aspects of the museums, was well developed. However,
+there is still room for improvement, mainly related to the
+outside environment of the museums and the design of
+objects and some exhibitions inside the museums.
+b) Attitudinal accessibility was very present, mainly due to
+the guidance and work of the museums’ educators. At
+diﬀerent times, visitors found objects, rooms, or exhibits
+that presented barriers and the museum staﬀcould carry
+out attitudinal practices to overcome or minimize them.
+c) Communicational accessibility was rare in the museums,
+either
+due
+to
+a
+lack
+of
+diversiﬁed
+equipment
+or
+resources to overcome interpersonal, written, and/or
+informative
+communication
+barriers,
+internal
+and
+external communication.
+d) Barriers were present in both visits for both groups.
+They demonstrated one or more missing elements for
+accessibility, either physical, attitudinal, communicational,
+or several of them. Several barriers were encountered
+by both—which proved to be issues that the institutions
+needed to face. Other barriers were encountered only by
+one of the groups, given their diverse proﬁle.
+Frontiers in Education
+07
+frontiersin.org
+
+Fernandes and Norberto Rocha
+10.3389/feduc.2022.1040944
+Discussion, limitations, and
+contributions of the study
+In general, after the framework analysis and also the
+interviews
+with
+participants,
+we
+can
+see
+that
+visitors
+demonstrated
+curiosity
+and
+willingness
+to
+explore
+the
+exhibitions and that they had positive experiences concerning
+accessibility (primarily with regard to the physical and
+attitudinal indicators). From the tactile exploration of objects
+and interaction with the exhibits, hands-on activities and
+educators, they were able to think up hypotheses and connect
+them with previous knowledge and experiences, leading to
+potential learning and engagement with scientiﬁc content.
+In addition, there is evidence that both groups experienced
+appreciation, surprise, discovery, leisure, and emotion—all
+of which are crucial to free-choice learning in non-formal
+education environments (Falk and Dierking, 2002). The visitors
+reported their life experiences several times, which was a fruitful
+way to establish a bridge between the exhibition and the visitor,
+encourage debate, and favor learning in non-formal learning
+environments (Coelho et al., 2022).
+From the experiences of the two heterogeneous groups
+of visitors with visual disabilities, we can see that both
+the natural history museum and the science center oﬀer
+accessibility strategies that can potentially provide learning and
+science communication. Nonetheless, some gaps, barriers, and
+vulnerabilities still need to be improved—which is in line with
+the results of the accessibility panorama of science museums in
+Latin America obtained by Norberto Rocha et al. (2020b). We
+hope that the results obtained here will be able to guide and
+encourage more accessible practices.
+These results were due to the nature of the visits and
+the formats adopted by the museums. First, the visits were
+fully guided by educators of each museum, which may have
+favored the strong presence of attitudinal accessibility, but, at
+the same time, do not oﬀer the option of having an autonomous
+visit. Second, the elimination of some physical barriers,
+improvements in the signage and design of objects would make
+visitors with visual disabilities feel safer and more comfortable
+when walking through the halls. Third, both museums provided
+a tactile exploration of some exhibits and hands-on activities,
+favoring learning and interaction; however, other senses, such
+as smell or hearing—which could have been helpful for the
+participation of these visitors—were barely explored. Fourth,
+the museums did not oﬀer diversiﬁed communication resources,
+such as texts and audio texts, multimedia, support resources,
+etc.; this led to low of communicational accessibility.
+From the experiences of the visitors, we noted that, on the
+one hand, some changes to extant objects and exhibits in the
+two museums and how they worked could make them more
+accessible and participatory to adults with disabilities. Although
+on the other hand, providing such facilities to make possible
+autonomous visits by people with disabilities still seems to be a
+distant prospect for these institutions. This represents a critical
+barrier to be solved, since independent living is central for
+people with disabilities.
+Additionally, the heterogeneity of the visual disabilities
+of the study participants, their diﬀerent backgrounds, and
+their personal stories stood out during the museum visits and
+demonstrated that not all accessibility strategies entirely meet
+the needs of every person of this audience—as Argyropoulos and
+Kanari (2019) anticipated. Some of the accessibility strategies
+were considered positive by and for both groups. Conversely,
+other strategies were successful only for one group—e.g., the
+braille labels for those who were literate in them. Therefore,
+exhibitions and activities need to oﬀer wide-ranging accessibility
+strategies with options to explore through multisensory stimuli,
+as well as complementary and redundant actions, diversifying
+the ways to access information, mainly by providing apparatus,
+equipment, and media.
+It is worth mentioning that considering the exploratory
+and qualitative nature of this study, the results cannot be
+extrapolated to all the adults with visual disabilities visiting
+museums, since the study was focused on two Brazilian
+science museums and the sample was neither statistically
+representative of blind and low vision population, nor
+geographically distributed.
+Although there are these limitations, the study still provides
+qualitative data that deepens the experiences and the potential
+learning of two heterogeneous groups of visitors with visual
+disabilities. It can contribute, in practice and theory, to the
+ﬁelds of non-formal education, special education, science
+communication, museology, visitor studies, and others with
+intersections and points of tension that coexist. Based on our
+data, results and discussions, museums and their professionals
+can be inspired, learn and plan an organizational change toward
+inclusion and accessibility.
+Science museums are places of non-formal education
+and science communication; they can contribute to free-
+choice learning throughout the lives of people with visual
+disabilities if their accessibility strategies (physical, attitudinal,
+and communicational) are continuously improving. It is
+thus necessary to keep elaborating strategies, planning and
+encouraging social interaction for and with diﬀerent audiences.
+Recalling Levent and Reich (2013), museums need to be able to
+learn from the visitors because they are the ones who can explain
+their needs and what they are looking for in these educational
+and cultural experiences. Therefore, our primary expectation
+in performing this type of study was to highlight their voices,
+perspectives, and opinions, as the protagonists of accessibility
+and inclusion in science museums.
+Data availability statement
+The raw data supporting the conclusions of this article will
+be made available by the authors, without undue reservation.
+Frontiers in Education
+08
+frontiersin.org
+
+Fernandes and Norberto Rocha
+10.3389/feduc.2022.1040944
+Ethics statement
+The studies involving human participants were reviewed
+and approved by the Comitê de Ética da Fundação Oswaldo
+Cruz, sob o número CAAE: 10663419.0.0000.5241. The
+patients/participants provided their written informed consent to
+participate in this study. Written informed consent was obtained
+from the individual(s) for the publication of any potentially
+identiﬁable images or data included in this article.
+Author contributions
+MF: data collection and analysis, and development of
+original research. JN: responsible for the guidance and
+development of original research. Both authors contributed to
+the article and approved the submitted version.
+Acknowledgments
+We thank the funding agencies for this study the National
+Council for Scientiﬁc and Technological (CNPq), the National
+Coordination for the Improvement of Higher Education
+Personnel (CAPES), and the Carlos Chagas Filho Foundation
+for Research Support of the State of Rio de Janeiro (FAPERJ).
+We also thank the museums and their staﬀand the research
+participants. JN thanks CNPq for the Productivity Scholarship
+and FAPERJ for the grant Young Scientist of Our State.
+Conﬂict of interest
+The authors declare that the research was conducted in the
+absence of any commercial or ﬁnancial relationships that could
+be construed as a potential conﬂict of interest.
+Publisher’s note
+All claims expressed in this article are solely those of the
+authors and do not necessarily represent those of their aﬃliated
+organizations, or those of the publisher, the editors and the
+reviewers. Any product that may be evaluated in this article, or
+claim that may be made by its manufacturer, is not guaranteed
+or endorsed by the publisher.
+References
+Argyropoulos, V., and Kanari, C. (2019). “The role of non-formal learning
+environments in education and socialization of children with visual disability: the
+case of museums,” in Inclusion, equity and access for individuals with disabilities,
+eds S. Halder and V. Argyropoulos (Singapore: Palgrave Macmillan), doi: 10.1007/
+978-981-13-5962-0_7
+Bandelli, A. (2014). Contextualizing visitor participation: European Science
+Centers as a platform for scientiﬁc citizenship. Thesis. Trieste: Vrije Universiteit.
+Bell, P., Lewenstein, B., Shouse, A. W., and Feder, M. A. (2009). Learning science
+in informal environments: people, places and pursuits. Washington, DC: National
+Academies Press.
+Bernard, H. R. (2005). Research methods in anthropology: qualitative and
+quantitative approaches, 5th Edn. Walnut Creek, CA: AltaMira Press.
+Bevan, B., and Ramos, B. (2021). Theorizing equity in the museum integrating
+perspectives from research and practice, 1 Edn. London: Routledge.
+Biernacki, P., and Waldorf, D. (1981). Snowball sampling – problems and
+techniques of chainreferral sampling. Sociol. Methods Res. 10, 141–163. doi: 10.
+1177/004912418101000205
+Burris, A. (2017). A child’s-eye view: an examination of point-of-view camera
+use in four informal education settings. Visit. Stud. 20, 218–237.
+Cieza, A., Keel, S., Kocur, I., Mccoy, M., and Mariotti, S. P. (2021). Relatório
+mundial sobre a visão (OMS). Available online at: https://apps.who.int/iris/
+bitstream/handle/10665/328717/9789241516570-por.pdf (accessed November 11,
+2022).
+Coelho, P., Norberto Rocha, J., and Massarani, L. (2022). What do adolescents
+talk about when they visit an aquarium? A case study at the marine aquarium
+of Rio De Janeiro. Visit. Stud. 25, 60–84. doi: 10.1080/10645578.2021.199
+3727
+Do Carmo, M. P. S. (2021). Experiências museais de sujeitos surdos
+em três museus de ciências do Rio de Janeiro. Ph.D. Dissertation. Rio de
+Janeiro: Universidade Federal do Rio de Janeiro. doi: 10.13140/RG.2.2.25560.
+01287
+Falk, J., and Dierking, L. (2002). Lessons without limit: how free-choice learning
+is transforming education. Walnut Creek, CA: AltaMira Press.
+Falk, J., and Dierking, L. (2019). Reimagining public science education: the
+role of lifelong free-choice learning. DiscipInterdscip. Sci. Educ. Res. 1:10. doi:
+10.1186/s43031-019-0013-x
+Fernandes, M. P. (2020). A experiência de pessoas com deﬁciência visual: A
+acessibilidade e a inclusão museu da geodiversidade casa da descoberta (UFRJ) e na
+casa da descoberta (UFF). Ph.D. Dissertation. Rio de Janeiro: Fundação Oswaldo
+Cruz.
+Henn, M., Weinstein, M., and Foard, N. (2013). A critical introduction to social
+research, 2nd Edn. Thousand Oaks, CA: Sage Publications Ltd.
+Hennink, M., Hutter, I., and Bailey, A. (2011). Qualitative research methods.
+Thousand Oaks, CA: Sage Publications Ltd.
+Hooper-Greenhill, E. (1994). “Education, communication and interpretation:
+towards a critical pedagogy in museums,” in The Education role of the Museum,
+(London: Routledge).
+Hooper-Greenhill, E. (2006). “The power of the museum pedagogy,” in Museum
+philosophy for the twenty-ﬁrst century, ed. H. H. Genoways (Lanham, MD:
+Altamira Press).
+Inacio, L. G. B. (2017). Indicadores do potencial de acessibilidade em museus e
+centros de ciência: análise da caravana da ciência. Dissertation. Rio de Janeiro:
+Instituto Federal do Rio de Janeiro. (Especialização em Ensino de Ciências – ênfase
+em Biologia e Química).
+Levent, N., and Reich, C. (2013). Museum accessibility: combining audience
+research and staﬀtraining. J. Mus. Educ. 38, 218–226. doi: 10.1080/10598650.2013.
+11510772
+Levent, N., Kleege, G., and Pursley, M. J. (2013). Guest editors’ introduction:
+museum experience and blindness. Disabil. Stud. Q. 33, doi: 10.18061/dsq.v33i3.
+3751
+Longnecker, N., Barriault, C., Lykke, M., and Solis, D. H. (2022). Editorial:
+learning science in out-of-school settings. Front. Educ. 7:983325. doi: 10.3389/
+feduc.2022.983325
+Marandino, M., Norberto Rocha, J., Cerati, T. M., Scalﬁ, G., de Oliveira, D.,
+and Fernandes Lourenço, M. (2018). Ferramenta teórico-metodológica para o
+estudo dos processos de alfabetização cientíﬁca em ações de educação não formal
+Frontiers in Education
+09
+frontiersin.org
+
+Fernandes and Norberto Rocha
+10.3389/feduc.2022.1040944
+e comunicação pública da ciência: resultados e discussões. JCOM 1, 1–24. doi:
+10.22323/3.01010203
+Massarani, L., Poenaru, L., Norberto Rocha, J., Rowe, S., and Falla,
+S. (2019a). Adolescents learning with exhibits and explainers: the case
+of Maloka. Int. J. Sci. Educ. 9, 253–267. doi: 10.1080/21548455.2019.164
+6439
+Massarani, L., Reznik, G., Rocha, J. N., Falla, S., Rowe, S., and Martins, A.
+(2019b). A experiência de adolescentes ao visitar um museu de ciência: um
+estudo no museu da vida. Ens. Pesqui. Educ. Ciênc. 21, 1–25. doi: 10.1590/1983-
+21172019210115
+Massarani, L., Fazio, M. E., Norberto Rocha, J., Dávila, A., Espinosa, S., and
+Bognanni, F. A. (2019c). La interactividad en los museos de ciencias, pivote
+entre expectativas y hechos empíricos: El caso del centro interactivo de ciencia
+y tecnología abremate (argentina). Ciênc. Educ. 25, 467–484. doi: 10.1590/1516-
+731320190020012
+Massarani, L., Norberto Rocha, J., Scalﬁ, G., Silveira, Y., Cruz, W., and dos
+Santos, G. L. S. (2021). Families visit the museum: a study on family interactions
+and conversations at the Museum of the Universe – Rio de Janeiro. Front. Educ
+6:669467. doi: 10.3389/feduc.2021.669467
+Massarani, L., Rowe, S., Scalﬁ, G., Gonçalves, W., Da Silva, C. M., Coelho, P.,
+et al. (2022a). O papel das emoções na visita de adolescentes ao Aquário Marinho
+do Rio de Janeiro. Rev. Iberoam. Cienc. Tecnol. Soc. 17, 39–67.
+Massarani, L., Pereira, J. B., Scalﬁ, G., Pinto, A., Araújo, J., and Norberto Rocha,
+J. (2022b). Experiências de aprendizagem em visita familiar à exposição “Quando
+Nem Tudo Era Gelo” do museu nacional. Rev. Ensaio 24:e35674. doi: 10.1590/
+1983-21172021240106
+Monteiro, F. V. (2021). “Rios em movimento: fomentando a acessibilidade no
+Museu da Vida,” in Acessibilidade em museus e centros de ciências: experiências,
+estudos e desaﬁos, ed. J. Norberto Rocha (Rio de Janeiro: Fundação Cecierj e Grupo
+Museus e Centros de Ciências Acessíveis).
+Norberto Rocha, J. (2018). Museus e centros de ciências itinerantes: análise
+das exposições na perspectiva da Alfabetização Cientíﬁca. Thesis. São Paulo, SP:
+Universidade de São Paulo, doi: 10.11606/T.48.2018.tde-03122018-122740
+Norberto Rocha, J. ed. (2021). Acessibilidade em museus e centros de ciências:
+Experiências, estudos e desaﬁos. Rio de Janeiro: Fundação Cecierj e Grupo Museus
+e Centros de Ciências Acessíveis.
+Norberto Rocha, J., Álvaro, M., Massarani, L., and Abreu, W. (2020a).
+Acessibilidade em museus de ciência: a perspectiva de mediadores brasileiros.
+Interfaces Cientíﬁcas 9, 103–120. doi: 10.17564/2316-3801.2021v9n1p103-120
+Norberto Rocha, J., Massarani, L., Abreu, W., Inacio, L., and Molenzani,
+A. (2020b). Investigating accessibility in Latin American science museums
+and
+centers.
+An.
+Acad.
+Bras.
+Ciênc.
+92:e20191156.
+doi:
+10.1590/0001-
+3765202020191156
+Norberto Rocha, J., Fernandes, M. P., and Massarani, L. (2021a). “Inclusion and
+accessibility in science museums: voices from Brazil,” in Theorizing equity in the
+museum integrating perspectives from research and practice, eds B. Bevan and B.
+Ramos (London: Routledge), 1–13.
+Norberto Rocha, J., Massarani, L., Castelfranchi, Y., and Amorim, J. (2022).
+Adolescentes, controvérsias sociocientíﬁcas e experiências museais: a mediação
+para catalisar diálogos sobre ciência e religião. Rev. Bras. Pesqui. Educ. Ciênc. 1–32,
+e29497. doi: 10.28976/1984-2686rbpec2022u132
+Norberto Rocha, J., Massarani, L., Poenaru, L., Martins, A., and Macías-Nestor,
+P. (2021b). A study about adolescents reading and interactions during a visit in
+Universum Science Museum, Mexico. Anais Mus. Paul. 29, 1–34. doi: 10.1590/
+1982-02672021v29e38
+Norberto Rocha, J., Massarani, L., Gonçalves, J., Ferreira, F. B., De Abreu, W. V.,
+Molenzani, A. O., et al. (2017). Guia de museus e centros de ciências acessíveis
+da américa latina e do caribe. Rio de Janeiro: Museu da Vida/Casa de Oswaldo
+Cruz/Fiocruz, RedPOP.
+O’Brien, M., and Candlin, F. (2001). Lifelong learning in museums: a critical
+appraisal. London: Birkbecke Prints.
+Oliver, M. (2013). The social model of disability: thirty years on. Disabil. Soc. 28,
+1024–1026.
+Ollerton, J., and Horsfall, D. (2013). Rights to research: utilising the
+convention on the rights of persons with disabilities as an inclusive participatory
+action research tool. Disabil. Soc. 28, 616–630. doi: 10.1080/09687599.2012.71
+7881
+Reich, C. A. (2014). Taking action toward inclusion: organizational change and
+the inclusion of people with disabilities in museum learning. Thesis. Boston, MA:
+Boston College.
+Reich, C., Lindgren-Streicher, A., Beyer, M., Levent, N., Pursley, J., and Mesiti,
+L. A. (2011). Speaking out on art and museums: a study on the needs and preferences
+of adults who are blind or have low vision: report. (Boston: Museum of Science).
+Sandell, R. (2002). “Museums and the combating of social inequality:
+roles, responsibilities, resistance,” in Museums, society, ed. R. Sandell (London:
+Routledge), 3–23.
+Sandell, R., Dodd, J., and Garland-Thomson, R. (2010). Re-presenting disability:
+activism and agency in the museum. New York, NY: Routledge.
+Scalﬁ, G., Massarani, L., Marandino, M., Gonçalves, W., and Norberto
+Rocha,
+J.
+(2022).
+A
+study
+of
+the
+interactions
+and
+conversations
+of
+families visiting the museum of microbiology of the Butantan Institute,
+São
+Paulo,
+Brazil.
+J.
+Biol.
+Educ.
+1–20.
+doi:
+10.1080/00219266.2022.203
+0388
+Schiele, B. (2014). “Science museums and centers. Evolutions and contemporary
+trends,” in Handbook of public communication of science and technology, 2nd Edn,
+eds M. Bucchi and B. Trench (New York, NY: Routledge).
+Shakespeare, T. (2006). Disability rights and wrongs. New York, NY: Routledge.
+Tomaz Silva, T. P. (2022). Museu do amanhã: Estratégias de acessibilidade para
+pessoas com síndrome de down. Ph.D. Dissertation. Rio de Janeiro: Fundação
+Oswaldo Cruz.
+UN (1948). Universal declaration of human rights. Available online at:
+https://www.un.org/en/about-us/universal-declaration-of-human-rights
+(accessed August 6, 2022).
+UN (2006). Convention on the rights of persons with disabilities (CRPD).
+Available
+online
+at:
+https://www.un.org/development/desa/disabilities/
+convention-on-the-rights-of-persons-with-disabilities.html (accessed August 6,
+2022).
+Frontiers in Education
+10
+frontiersin.org
+

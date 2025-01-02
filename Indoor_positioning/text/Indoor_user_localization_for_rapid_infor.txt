@@ -1,0 +1,325 @@
+Intelligent Computing in Engineering - ICE08
+Indoor User Localization for Rapid Information Access and
+Retrieval on Construction Sites
+H Khoury1, V Kamat2
+1 University of Michigan Ann Arbor, Michigan 48109
+2 University of Michigan Ann Arbor, Michigan 48109
+hkhoury@umich.edu
+Abstract. Manual search of project information on construction sites is a tedious and time-
+consuming process. Evolving technologies such as location-aware computing offer significant po-
+tential of improving such processes and supporting important decision-making tasks in the field.
+For example, rapid and convenient access to contextual project information, through continuous
+position tracking of engineers, managers and inspectors, can lead to significant cost and time sav-
+ings due to the accuracy and immediacy with which relevant project information can be made
+available to field personnel . Considering the spatial expanse and dynamic nature of typical con-
+struction projects, mobile users need to be constantly tracked outdoors as well as indoors. The
+Global Positioning System (GPS) is an attractive option for outdoor applications, but is not suitable
+for indoor applications because it needs a clear line-of-sight to the satellites in order to track posi-
+tion. As a result, alternate means to detect users’ location in indoor environments without relying
+on GPS are needed. This paper presents research that is studying indoor wireless technologies for
+dynamic user position tracking. Three technologies, Wireless Local Area Networks (WLAN), Ul-
+tra-Wide Band (UWB), and Indoor GPS position systems are evaluated and compared.
+1 Introduction
+Field construction tasks such as inspection, progress monitoring and others require access to a
+wealth of project information. Currently, site engineers, inspectors and other site personnel,
+while working on construction sites, have to spend a lot of time in manually searching into
+piles of papers, documents and drawings to access the information needed for important deci-
+sion making tasks. Evolving technologies such as location-aware computing offer significant
+potential of improving such processes and supporting important decision-making tasks in the
+field. Instead of requiring browsing through detailed drawings and other paper based media,
+contextual project information can be automatically retrieved by continuously and accurately
+tracking the mobile users‟ spatial parameters (Khoury & Kamat, 2008). Therefore, the con-
+cept of context-aware information delivery (Aziz et. al., 2005) encompasses the creation of a
+user centered mobile dynamic indoor and outdoor work environment, which has the ability to
+deliver relevant information to on-site mobile users by intelligent interpretation of their spatial
+context so that they can make more informed decisions (Schilit et al., 1994). Global Position-
+ing System (GPS), being a satellite-based navigation system, works satisfactorily outdoors but
+lacks support indoors and in congested areas. In addition, unlike outdoor areas, the indoor en-
+vironment imposes different challenges on location discovery due to the dense multipath
+effect and building material dependent propagation effect (Tadakamadla 2006). There are
+many potential technologies and techniques that have been suggested to offer the same func-
+tionality as a GPS indoors, such as Wireless Local Area Networks (WLAN), Ultra-Wide Band
+(UWB) and Indoor GPS. By tagging users with appropriate receivers/tags and deploying a
+number of nodes (access points, receivers, transmitters, etc.) at fixed positions indoors, the lo-
+cation of tagged users can be determined and continuously tracked.
+497Intelligent Computing in Engineering - ICE08
+The objectives of the paper are to present three key positioning technologies applicable in-
+doors, portray the features of these techniques through several conducted experiments, and
+highlight the extent to which each one can be used to accurately calculate the position of a us-
+er in congested harsh environments and situations such as those found on construction sites.
+The experimental results demonstrate the ability of Indoor GPS, in particular, to estimate a
+user‟s location with a high degree of accuracy (1 cm).
+2 WLAN Based User Position Tracking
+In the last few years, Wireless Local Area Network (WLAN) radio-signal-based positioning
+system, supported by underlying transmission technologies Radio Frequency (RF) and Infra
+Red (IR), has seen enormous expansion and it will continue this trend due to the fact that it is
+an economical solution providing convenient connectivity and high speed links, and can be
+implemented simply in software (Hightower & Borriello, 2001). Additionally, WLAN covers
+a large area and is not restricted to line of sight. Wireless networks can support large numbers
+of nodes and large physical areas by adding access points to extend coverage. Therefore,
+WLAN allow users to be truly mobile as long as the mobile terminal is under the network
+coverage area. Additionally, the distance over which RF and Infra Red IR waves can commu-ME
+nicate depends on product design (including transmitted power and receiver design) and the
+propagation path, in particular in indoor environments. Interactions with typical building ob-
+jects, such as walls, metal, and even people, can affect the propagation of energy, and thus
+also the range and coverage of the system. IR is blocked by solid objects, which provides ad-
+ditional limitations. For that reason, most wireless LAN systems use RF, because radio waves
+can penetrate many indoor walls and surfaces. The range of a typical WLAN node is about
+100 m (Wang & Liu, 2005). Coverage can be extended, and true freedom of mobility
+achieved via roaming. This means using access points to cover an area in such a way that their
+coverages overlap each other. Thereby the users can navigate around and move from the cov-
+erage area of one access point to another without even knowing they have, and at the same
+time seamlessly maintain the connection between their node and an access point.
+WLAN is appealing because it allows enhanced connectivity and is particularly useful when
+mobile access to data is necessary. Additionally, user flexibility and portability can easily be
+reconfigured while requiring no cable infrastructure (CISCO 2002). For the above reasons, it
+was studied for the purpose of the proposed methodology. A proper WLAN architecture
+framework provides a structure to develop, maintain and implement an acceptable operation
+environment and can support implementation of automated testbed experiments conducted to
+continuously track mobile users. One set of experiments to obtain location information in this
+study were based on a WLAN based position system called the Ekahau Positioning Engine
+(EPE) from the Finnish company Ekahau Inc. (Ekahau 2004).
+Being the centerpiece of the Ekahau tracking system, EPE is a WLAN positioning system
+made for indoor and campus areas (Ekahau 2004) where GPS does not perform adequately.
+The solution requires no proprietary WLAN base stations and it does not need to know the lo-
+cation of the base stations. EPE uses a patented process called SiteCalibration to create a
+model of the desired space. The underlying approach used for the calibration process is the
+fingerprinting technique. Areas/rooms are scanned and Radio Frequency (RF) parameter mea-
+surements (power loss, multipath phase, etc.) are recorded. Then the measurements with their
+location are saved to a database/Ekahau engine (i.e. Received Signal Strengths indicate power
+loss and this loss is translated into location). When a mobile device moves in the area, it re-
+ports its RF parameter measurements to the EPE. Then the device location is estimated by
+498Intelligent Computing in Engineering - ICE08
+matching the RF parameters against the location fingerprints in the database. The software
+uses certain patented algorithms and scene analysis on the signals to compute a location esti-
+mate. The whole process results in a positioning estimate that can be as accurate as 1 to 2
+meters under optimal conditions (LaMarca et.al. 2005).
+Having the positioning model created and calibrated, the positioning engine tracks the real
+time position of a WLAN-enabled mobile device (Figure 1). It discovers all the WLAN-
+enabled devices using their IP addresses, and makes use of the signal strength measurements
+as detected by the access points to determine the actual position (Aziz et.al. 2005).
+Fig. 1. Ekahau Positioning Engine Mechanism
+2.1 WLAN-based Localization Experiment
+Experiment: Construction Engineering Laboratory, University of Michigan
+A testing application was conducted indoors at the Construction Engineering Laboratory lo-
+cated in the G.G. Brown building at the University of Michigan (Figure 2). The objective was
+to real-time track a mobile user’s position and head orientation as s/he walked inside the la-
+boratory. Three access points were used in this case.
+Fig.2. Ekahau Calibration and Testing inside the Construction Laboratory (University of Michigan)
+499Intelligent Computing in Engineering - ICE08
+For that purpose, positioning information (X, Y, floor level) obtained from Ekahau JAVA
+SDK (Ekahau 2004) and orientation information (roll, yaw, and pitch) obtained from a C++
+TCM5 magnetic tracker-based application (Behzadan and Kamat 2006), were combined in a
+single C++ application as reflected through the pseudo code shown in Figure 3.
+ Initialize C++ tracker application function to start obtaining head orientation values (roll , pitch and
+yaw)
+ Get positioning values
+1. Open pipe to invoke Ekahau JAVA SDK& Return pointer to a stream using _popen ()
+2. Read output (X, Y, Floor level) of the invoked program using the reading access character
+string mode “r”
+ Output all positioning and head orientation values (X,Y,Floor level and roll, pitch, yaw)
+ Close pipe using _pclose()
+Fig.3. Pseudo Code for creating a pipe between two tracking applications (JAVA and C++)
+In order to virtually visualize how the mobile user (the first author in this experiment) is
+being continuously tracked in the laboratory using the obtained user’s position and head
+orientation , a 3D environment that has sufficient underlying computer graphics support to
+allow the manipulation of entities in a 3D scene was needed. A computer graphics technol-
+ogy based on the concept of the Scene Graph, namely OpenSceneGraph (OSG) within
+Visual C++ .NET, was adopted (Kamat 2003). Selected snapshots of virtual views taken
+during the experiments, conducted on both the first floor (Construction Engineering Labor-
+atory) as well as the second floor of G.G. Brown building are shown in Figure 4. The
+results of the experiments indicate that the Ekahau tracking system overall achieves a posi-
+tioning accuracy that is on the order of 2m.
+500Intelligent Computing in Engineering - ICE08
+Fig.4. Virtual Representations for Indoor Tracking of a Mobile User in First floor (top) and Second Floor
+(bottom) of the G.G. Brown Building
+3 UWB-Based User Position Tracking
+The second tracking system evaluated in this research is the Sapphire DART Ultra Wideband
+Digital Active Real Time Tracking system (Multispectral Solutions 2008). It is designed for
+the tracking personnel and/or equipment. A system comprises of one processing hub, four or
+more receivers, one or more reference tags, and multiple tags for individual assets (Figure 5).
+Fig.5. Sapphire UWB Tracking System
+The system uses short pulse or UWB technology to determine the precise location of UWB
+radio frequency identification (RFID) tag and operates as follows:
+Each tag repeatedly sends out a packet burst consisting of a short train of UWB pulses, each
+pulse having an instantaneous bandwidth of over 1 GHz. Since individual tags are not syn-
+chronous, and the packet bursts are of extremely short duration, the probability of tag packet
+collision is very small allowing for the simultaneous processing of hundreds to thousands of
+tags in a local area. These transmitted UWB pulse trains are received by one or more Sapphire
+DART UWB receivers which are typically located around the periphery of the area of cover-
+age at known locations. Reception by three or more receivers permits accurate 2-D
+localization, while reception by four or more receivers allows for precise 3-D localization. If
+only one or two receivers can receive a tag transmission, proximity detection can also be rea-
+dily accomplished. Each receiver uses a highly sensitive, very high speed, short pulse detector
+to measure the precise time at which a tag packet arrives at its antenna. The extremely wide
+bandwidth of the UWB pulses permits the receivers to measure these times-of-arrival to sub
+nanosecond precision. In order to determine the actual tag position from these measurements,
+the Sapphire DART Hub/Processor, using calibration data from the Sapphire DART UWB ref-
+erence tag, determines the differential times-of-arrival between receiver pairs from these
+individual receiver measurements and implements an optimization algorithm to determine the
+location using a multilateration technique. Since the speed of light is approximately 0.98 feet
+per nanosecond, these differential times-of-arrival are readily converted into the appropriate
+measurement distances.
+501Intelligent Computing in Engineering - ICE08
+3.1 UWB-Based Localization Experiments
+Experiments at Disaster City - Texas A&M University, and National Institute of Standards and Technolo-
+gy (NIST)
+Disaster City is one of the most comprehensive emergency response training facility available
+today. It is a 52-acre training facility designed to deliver the full array of skills and techniques
+needed by urban search and rescue professionals. As part of the Texas Engineering Extension
+Service (TEEX) at Texas A&M University, the facility features full-size collapsible structures
+that replicate community infrastructure, including a strip mall, office building, industrial
+complex, assembly hall/theater, single family dwelling, train derailment and three rubble piles
+(TEEX 2004).
+Many of the following indoor experiments were performed at Disaster City as part of the re-
+sponse robot evaluation exercises for Urban Search-and-Rescue (US&R) conducted by the
+National Institute of Standards and Technology (NIST) team, of which the first author was a
+member. These response robot evaluation exercises for US&R teams introduce emerging ro-
+botic capabilities to emergency responders within their own training facilities, while
+educating robot developers regarding the necessary performance requirements and operational
+constraints to be effective (NIST 2007). Several of those exercises were specifically per-
+formed at the maze in the assembly hall/theater (Figure 6).
+Fig.6. Disaster City: a) Assembly Theater Location [TEEX 2007] and b) Maze
+Six receivers were deployed in the hall as shown in Figure 7. Tags were placed on top of ro-
+bots in order to track robot’s 3D location.
+Fig.7. UWB tracking system at Maze (Disaster City)
+502Intelligent Computing in Engineering - ICE08
+TCP sockets were used to connect directly to the Hub and provide a quick and effective way
+for accessing location information from a local computer/laptop. This was achieved by open-
+ing a socket connection given the IP address of the hub and the port number, reading values
+and then performing a string manipulation on the values obtained (Figure 8a.) to obtain the X,
+Y, Z coordinates(Figure 8b.). Only values corresponding to a tag header R were extracted (n1,
+n2, & n3).
+Open socket connection “s” to Sapphire HUB (IP address and port number)
+o Receive each position output string l from s
+o If ( l contains tag header R meaning 3D readings X,Y,Z)
+ Do a string manipulation and extract array s[i], a set of 3 position coordinates from
+each string l
+ Convert the array of position strings s to array of position integers f & Assign n1, n2,
+n3 to each of the position integer values f
+for( i=0 i=3)
+string s[i] f[i]
+n1=f [1], n2=f [2] & n3= f [3]
+Fig.8. a) Output Results from Sapphire HUB (top), b) Pseudo Code to extract UWB position coordinates (bot-
+tom)
+The positioning values were then used together with orientation values received from the
+TCM5 magnetic tracker and both were integrated in the tracking OSG application to visualize
+(in 3D) how the robot is moving around the maze in real-time (Figure 9).
+503Intelligent Computing in Engineering - ICE08
+Fig.9. 3D OSG View of robot navigation inside the maze
+The same experiment was carried out at NIST. Figure 10 is a 3D view of a mobile user walk-
+ing inside the maze. The results of the experiments indicated that the UWB Tracking system
+overall achieves an accuracy of about 30 cm.
+Fig.10. 3D OSG View of a Mobile User Path Inside the Maze (UWB)
+4 Indoor GPS-Based User Position Tracking
+Indoor GPS is the third tracking system studied in this research. The system is mainly defined
+by four or more transmitters and a receiver (Figure 11). A battery operated transmitter uses la-
+ser and infrared light to transmit one-way position information and elevation from the
+transmitter to the receiver. The receiver has photodiodes inside its module and senses the
+transmitted laser and infrared light signals. With the addition of a second transmitter of
+known location and orientation, users can calculate the position of the receiver in the base
+coordinate system. By adding two more transmitters, the system will have four laser transmit-
+ters having its accuracy maximized. The GPS-like navigation signal is transferred through a
+wireless network connection providing mobility to the operator (Kang and Tesar 2004). As in
+satellite-based GPS, this one-way signal path is created from transmitters to the receiver, al-
+lowing an unlimited number of receivers to continuously and independently calculate
+positions whenever two or more transmitters are in view. Basically, a receiver in the mea-
+surement volume detects and processes the signals from each visible transmitter. The 3D
+position of the optical receiver is then calculated by the process of triangulation. Triangulation
+(Lähteenmäki et al., 2001) is used, if the angles to known locations are given. With two
+known locations, the absolute position in 2D can be determined. The two angles are used to
+determine the line-of-sights to each of the known locations. With the position of the locations,
+these lines are unique in the two-dimensional space and intersect in the desired position.
+Therefore, given the angular information from at least two transmitters and provided with the
+position and orientation of each transmitter, a unique 3D position within the measurement vo-
+lume can be calculated.
+504Intelligent Computing in Engineering - ICE08
+The indoor GPS eliminates the recurring problem of accidentally interrupting a laser beam
+during measurement action that requires the operator to begin the measurement again.
+Fig. 11. Indoor GPS Transmitter (left) and Receiver (right)
+[Source:http://www.indoorgps.com/Technology/Hardware.aspx]
+4.1 Indoor GPS-Based Localization Experiment
+The experiment using Indoor GPS was conducted at NIST, specifically inside the maze at the
+former NIKE missile base barracks building adjacent to the main NIST campus. The goal of
+this experiment was to simulate a mobile user such as a construction engineer or inspector
+moving around and surveying the building, and determine the extent to which user’s position
+can be accurately and continuously tracked.
+In this case, four transmitters were deployed inside and around the area of the maze as shown
+in Figure 12 and one receiver and the orientation tracker were held by the mobile user as s/he
+moved around. The user‟s position and orientation were continuously obtained from the In-
+door GPS and magnetic tracker and the tracking values were used in the 3D OSG application
+to visualize the path of the user inside the maze (Figure 13). The results of the experiments
+indicate that the Indoor GPS tracking system consistently achieved a high accuracy of 1 to 2
+cm.
+Fig.12. Deployment of laser transmitters around the maze
+505Intelligent Computing in Engineering - ICE08
+Fig.13. 3D OSG View of a Mobile User Path Inside the Maze (Indoor GPS)
+5 Conclusion
+The research presented in this paper compared three different wireless technologies (WLAN,
+UWB and Indoor GPS) that can be used for tracking mobile users on indoor construction
+sites. In order to evaluate the technical features of these technologies and their applicability in
+a context-aware information delivery framework, several validation experiments were con-
+ducted at the University of Michigan, Disaster City (Texas A&M University), and NIST.
+It must be noted that the decision on using one technology or another is based on important
+technical criteria (calibration, line of sight, accuracy etc.) in addition to other logistic issues
+such as availability, the prevailing legal situation, and the associated implementation costs.
+Some of these criteria are summarized in Table 1.
+However, in order to address the problem posed by the difficulties faced in the target operat-
+ing construction environment, Indoor GPS positioning technologies provide the most promise
+due to the high level of accuracy it achieves (1-2 cm) compared to the accuracy of WLAN and
+UWB wireless technologies that provide a comparative accuracy of approximately 2m and 30
+cm respectively (Table 1).
+Table 1: Comparative Summary of Indoor Positioning Technologies
+Accuracy Deployment
+Line of Sight Requirement Calibration and Cost
+Needed Needed
+Very High Quite Easy but
+(receiver- (few sampling
+(1-2 cm) Expensive
+Indoor GPS transmitter) points)
+Needed
+High Quite Easy but
+( receiver- Not needed
+(10-50 cm) Expensive
+UWB reference tag)
+Medium Needed Easy and
+Not needed
+WLAN (Ekahau) (1.5-2 meters) (time-consuming) Economical
+References
+Aziz, Z., Anumba, C.J., Ruikar, D., Carrillo., P.M., Bouchlaghem.,D.N. (2005), “Context-aware information de-
+livery for on-Site construction operations,” 22nd CIB-W78 Conference on Information Technology in
+Construction, Institute for Construction Informatics, Technische Universitat Dresden, Germany, CBI Publi-
+cation No:304, pp:321-32
+Cisco Systems. (2002). “Wireless Local-Area Networking”
+Retrieved from http://www.sat-corp.com/products/PDF/CISCO_WLAN_Overview.pdf
+506Intelligent Computing in Engineering - ICE08
+Ekahau. (2004). http://www.ekahau.com
+Hightower, J., and G. Borriello. (2001). “Location Systems for Ubiquitous Computing”, IEEE Computer,
+34(8):57-66, Piscataway, NJ.
+Behzadan A.H., and Kamat V.R. (2006). “GPS and 3DOF Angular Tracking for Georeferenced Registration of
+Construction Graphics in Outdoor Augmented Reality”, 13th EG-ICE Workshop on Intelligent Computing in
+Engineering and Architecture, Ascona, Switzerland.
+Kamat, V. R. (2003). “VITASCOPE: Extensible and Scalable 3D Visualization of Simulated Construction Oper-
+ations”. Ph.D. dissertation, Department of Civil and Environmental Engineering, Virginia Tech, Blacksburg,
+VA.
+Kang, S., and Tesar, D. (2004). “Indoor GPS Metrology System with 3D Probe for Precision Applications”. In
+Proceedings of ASME IMECE 2004 International Mechanical Engineering Congress and RD&D Expo.
+Khoury, H. M., and Kamat, V. R. (2008). “High-Precision Identification of Contextual Information in Location-
+Aware Engineering Applications”, Advanced Engineering Informatics, Elsevier Science, New York, NY.
+(In Review).
+Lähteenmäki, J., Laitinen, H., & Nordström, T. (2001). “Location Methods”. VTT Information Technology. Re-
+trieved from http://location.vtt.fi/source/technologies.html
+LaMarca, A., Hightower, J., Smith, I. and Consolvo, S. (2005). “Self-Mapping in 802.11 Location Systems” In
+Proceedings of Ubicomp2005.
+Metris Products, (2007). http://www.metris.com/large_volume_tracking__positioning/igps/
+Multispectral Solutions, Inc.(2007). http://www.multispectral.com/products/sapphire.htm
+National Institute of Standards and Technology (NIST). http://www.nist.gov
+Schilit, B.N., Adams, N., and Want R. (1994). “Context-aware computing applications.” Workshop on Mobile
+Computing Systems and Applications (WMCSA „94, Santa Cruz, CA, USA), 85–90.
+Tadakamadla, Shashank .(2006). “Indoor Local Positioning System For ZigBee, Based On RSSI”, M.S. Thesis,
+Department of Information Technology and Media, Mittuniversitetet, Mid Sweden University.
+Texas Engineering Extension Service (TEEX). (2004).
+http://www.teex.com/teex.cfm?pageid=USARprog&area=USAR&templateid=1117
+Wang, J., and Liu, J. (2005). ``Interference Minimization And Uplink Relaying At 3G/WLAN," IEEE SAWN.
+507
+VViieeww ppuubblliiccaattiioonn ssttaattss

@@ -1,0 +1,476 @@
+applied
+sciences
+Article
+Ble Based Indoor Positioning System and Minimal Zone
+Searching Algorithm (MZS) Applied to Visitor Trajectories
+within a Museum
+RichardJérémy*,BertetKarellandFaucherCyril
+L3iLaboratory,17000LaRochelle,France;karell.bertet@univ-lr.fr(B.K.);cyril.faucher@univ-lr.fr(F.C.)
+* Correspondence:jeremy.richard2@univ-lr.fr
+FeaturedApplication:Thispaperintroducesanewalgorithmtoretrievethepositionofauserfrom
+BLEdata,shapedasazone. Thisalgorithmhasnotsoughttocompeteintermsofaccuracywith
+alreadyinplaceindoorpositioningalgorithm,butrathershowasimpleandnewwaytoworkwith
+suchdata.Thisarticlealsodescribesatypicalindoorpositioningexperimentinsideamuseumthat
+canbeeasilyreproducedandthatdoesn’tneedalotofmaterial.
+Abstract:Museumsareperfectexperimentationgroundsforindoorpositioningtechnologies.Indeed,
+museummanagersarealwayspleasedtoholdthesekindsofeventswhereitofferstheopportunity
+tothepublictobeapartofsuchexperimentationandallowingusatthesametimetopopularizeour
+researchwiththem.Inthispaper,wedescribeanexperimentthatheldwithinthemuseumofnatural
+historyofLaRochellewithaclassofhighschoolvolunteers. Wewillexplainoursystemsthathas
+(cid:1)(cid:2)(cid:3)(cid:1)(cid:4)(cid:5)(cid:6)(cid:7)(cid:8)(cid:1)
+(cid:1)(cid:2)(cid:3)(cid:4)(cid:5)(cid:6)(cid:7) beenbuilttoworkinthisspecificcase,andamongotherthingsformalizeouralgorithmforindoor
+localizationthathasnothadanequivalentinthestateoftheart.Theminimalzonesearchingalgorithm
+Citation: Jérémy,R.;Karell,B.;
+(MZS)cancomputeinrealtimethepositionofavisitor,shapedasazonewithanaveragesurfaceof
+Faucher,C.BleBasedIndoor
+3m2whenresourcesarelimitedandwhentheplacementofnodesmustrespecttheconstraintsimposed
+PositioningSystemandMinimal
+bytheroom’slayout.Thismethodofferedgoodresultswithdatacollectedduringtheexperimentation,
+ZoneSearchingAlgorithm(MZS)
+AppliedtoVisitorTrajectorieswithin suchasameaningfulrepresentationofthepositionofavisitorandmostimportantlyastableexecution
+aMuseum.Appl.Sci.2021,11,6107. duringthewholeexperienceevenwhenthesubjectwasintightspaces.
+https://doi.org/10.3390/app11136107
+Keywords:BluetoothLowEnergy;indoorpositioningsystem;SmartMuseum
+AcademicEditors:AlessioDeAngelis
+andFrancescoSantoni
+Received: 31May2021 1. Introduction
+Accepted: 24June2021
+Thefieldofindoorpositioningseeksthelocationofanindividual,aswecanhave
+Published:30June2021
+withGPS,butinabuilding[1]. Assignalsfromsatellitescan’tgothroughwallsinthose
+places, a typical indoor positioning system is composed of a set of emitter sending a
+Publisher’sNote:MDPIstaysneutral
+periodicsignal(manytypesofsignalsareusedsuchasradiofrequency[2,3],ultrasound
+withregardtojurisdictionalclaimsin
+andinfrared)[4–6]andasetofreceivers. Basedonthestrengthofthesignalmeasured
+publishedmapsandinstitutionalaffil-
+betweenanemitterandareceiver(calledRSSIforReceivedSignalStrengthIndication),
+iations.
+thegoalistodeterminethepositionoftheuserwithinaroom. Amongallthesignalused
+insuchsystems,theBLE(ForBluetoothLowEnergy)becamemoreandmorepopularsince
+2013,withtheiBeacontechnologydesignedspecificallyforindoorlocalization,withmany
+applicationssuchas[7].
+Copyright: © 2021 by the authors.
+Inrecentyears, acertainnumberofindoorpositioningstudiesareaimingtobring
+Licensee MDPI, Basel, Switzerland.
+trackingtechnologiestomuseums[8–10]. Besidesallowingmuseummanagerstohavea
+This article is an open access article
+betteroverviewoftheirplacesandthushavingabetterfeedbackonvisits(whichpieces
+distributed under the terms and
+ofartarepopular,andwhichonesareleft),thisalsomakesitpossibletostudybehavior
+conditionsoftheCreativeCommons
+ofvisitorsinsuchenvironments[11,12]. Moreover,museumsareperfectexperimentation
+Attribution(CCBY)license(https://
+groundsforindoorpositioningtechnologies.Indeed,museummanagersarealwayspleased
+creativecommons.org/licenses/by/
+toholdthesekindsofeventswhereitofferstheopportunitytothepublictobeapartof
+4.0/).
+Appl.Sci.2021,11,6107.https://doi.org/10.3390/app11136107 https://www.mdpi.com/journal/applsciAppl.Sci.2021,11,6107 2of14
+suchexperimentationandallowingusatthesametimetopopularizeourresearchwith
+them.Ontopofthat,visitorsstayalongtimewithinthesameroomandwalkslowly,which
+allowustobettercapturetheirpath.
+Butmuseumsalsobringwiththemconstrainsthatindoorlocalizationresearchershave
+todealwith. First,somestudiesapplymachinelearningalgorithmforindoorlocalization
+systemsasexplainin[13],offeringincredibleaccuracyvaluesandgreatresultsoverall. It’s
+verydifficulttousesuchmethodsinmuseums,asitwilltakealotofresourcesandtime
+tocollectdatainordertotrainthosemodelsthatwillonlyworkononemuseum(Asthe
+architectureandroomlayoutisnotthesamebetweenmuseums). Second,wearelimited
+inthenumberandplacementsofnodesforourindoorpositioningsystems. Indeed,our
+nodesshouldnotdisturbvisitorsduringtheirtours(sowecan’tplacetheminthemiddle
+oftheway)andwehavetoworkaroundartworkandroomlayoutthatwerenotalways
+designedtoaccommodateanindoorpositioningsystem.
+Inthispaper,wewilldescribeourindoorpositioningexperimentationandthesystem
+weusedtogetthepositionofavisitor,thatcanbeusedinreal-time.Besidethedataprocess
+architecture,wewillproposeanewalgorithmwhichatourknowledgehasnothadan
+equivalentinthestateoftheartandthatwenamedtheminimalzonesearchingalgorithm
+(MSZ).Wewillthenshowthatthisalgorithmallowsusetogetthepositionofavisitorasa
+zonewithanaveragesurfaceof3m2evenwhentheplacementofthenodesisnotoptimal.
+2. MaterialsandMethods
+2.1. OurIndoorPositioningSystem
+OurindoorpositioningsystemiscomposedofasetofRaspberryPi(Studylike[14]
+usedasimilarsystem)playingtheroleofsensorandbadgestoweararoundthenecksend-
+ingaBLEsignal. Mostindoorlocalizationapproachestendtousesmartphoneapplications,
+butaswewantedtobeassimpleaspossible,abasicnecklacedoesn’trequiretoomuch
+investmentfromvisitorandislessintrusive. Also,itavoidstechnicalproblemssuchas
+storage,typeofphoneoritsversionetc.
+InFigure1wecanseearepresentationofoursystemofindoorpositioning.
+Figure1.Datacollectionarchitecture.Appl.Sci.2021,11,6107 3of14
+2.2. DataProcessing
+Figure 2 explain our data processing architecture in real time. The data collection
+step follows Figure 1 directly. The position of the user is monitored during n seconds,
+whennisthevalueofthetimeparameter,inthispaper,weusedatimewindowof5s.
+ThetransmissionfrequencyofourBLEemitteris1Hz. Wecollectdataduring5sandthen
+weapplythefollowingstepsofthedatapreprocessing. UsingonlyBLEsignalinanindoor
+positioningsystemexposeustousedatasubjecttoimprecisionandoutliers. Wethenneed
+tocollectacertainamountofdatatoovercomethem.
+Figure2.Dataprocessingarchitecture.
+2.2.1. MovingAverageMethod
+Themovingaveragemethodisfrequentlyusedinindoorpositioningsystems[15–17]
+asitreducesthevalueofoutliersandsmoothsthesignalmakingiteasiertoprocess.
+Figure3showstheimpactofthemovingaveragemethodonrawdatacollectedby
+onesensor,smoothingthesignalandmakingiteasiertoprocessbyremovingthedrastic
+variationinourvalues.
+2.2.2. ThresholdFilter
+ThethresholdfilterstepconsiststocomputethemeanvalueofallRSSIdataafterthe
+movingaverageoutput,andthendecideifthesensorisrelevantornot. Indeed,inourcase
+themuseumhasseveralfloorsandsometimetheBLEsignalsentbythevisitor’sbadge
+passesthroughtheceiling. Inthispaper,wewon’ttakeintoaccountanRSSIvaluelower
+than−90dB.Meaningthatweconsiderthatthevisitorisnotinthestudiedroomifthe
+valueislessthatthethresholdvalue. Theoutputofthisstepisalistofsensorsandtheir
+associatedaverageRSSIvalueduringthelast5s.Appl.Sci.2021,11,6107 4of14
+Figure3.Impactofmovingaveragemethodonrawdatacollectedbyonesensor.
+2.2.3. DistanceCalculation
+TheRSSIdistancemeasurementusesthelogarithmicdistancepath-lossmodel,used
+inseveralstudiesusingBLEsignalssuchas[17,18]:
+L = (−10n)log (RSSI )+L
+s 10 s 0
+whereL isthedistanceinmeterbasedontheRSSIvalueofsensors,nisthebroadcasting
+s
+powervalue(2inourcase)and L isthemeasuredRSSIpowerat1m. Inourcase, L
+0 0
+is equal on average to −62 dB, but it is mandatory to keep in mind that this value can
+drasticallychangedependingontheenvironment(suchasthesizeoftheroomstudied)
+andthusthisconstantmustbemeasuredinallnewenvironments.
+2.2.4. PositionalAlgorithms
+Inthisstepweapplythepositionalalgorithmsrequested. Threealgorithmshavebeen
+usedduringthisexperimentation.
+(1)Triangulation:
+Thetriangulationalgorithmsuchasexplainin[19]havebeenusedasitwassuitable
+toourproblem. Theonlyminoradjustmentwemadeisthatwetakeintoaccountthezone
+betweenallintersectionpointsasapotentialpositionofthevisitor. Asweareworking
+withdatacomingfromawindowof5s,azoneismorerepresentativeinthiscontext.
+(2)Trilateration:
+The trilateration algorithm explained in [20] and often used in BLE based indoor
+positioningworkssuchas[21–23]returnedpoorresultsinourcase. Itmaycomefromthe
+non-optimalplacementofoursensorswithintheroom(Suchasthe“grid”placement),
+theexclusiveuseofBLEsignalandthe5swindowofdatacollectionwhichisnotsuitable
+foraccurateandpreciselocalizationinasinglepoint(x,y)ofthevisitor. Inthemajorityof
+cases,thetrilaterationdidnotreturnanyposition.
+(3)Minimalzonesearchingalgorithm(MZS):
+Wealsousedourproposedalgorithm,theMZSalgorithm,whichwillbedescribed
+inthenextsection. Consideringallsensorswithintheroom,ititeratesuntilgettingthe
+minimalzone,representingthemovementofavisitor.Appl.Sci.2021,11,6107 5of14
+(4)Recalibration:
+Weusedacommonmethodforallpositionalalgorithms. Whenacalculatedpoint
+suchthatcircleintersectionwiththetriangulationoraΓ point(ThekeypartoftheMZS
+s
+thatwewillexplaininthenextsection)islocatedoutsidethestudiedroom,weputitdown
+atthelimitofthisoneasdescribedinFigure4.
+Figure4.Recalibrationofcomputedpointbasedonroomlimit.
+TheanglelineinFigure4connectsareferencepointwiththepointoutsidetheroom
+inordertodeterminetheangleoftheintersectionwiththelimitoftheroom. Thisreference
+pointisthesecondintersectionpointinthetriangulationalgorithm,andthecorresponding
+Γ pointforsensorsintheproposedalgorithm. Thissimplemethodhasofferedsignificant
+s
+resultsinourcase.
+2.2.5. FrameRendering
+Thefinalstepofthedataprocessingarchitectureistheframerendering.Asoursystem
+seekstorenderinrealtimeapositioningsuggestion,thesystemwilldisplaythecurrent
+positionofthevisitorintheroomeach5s. Theframerenderingismadeinpythonusing
+thelibrarymatplotlib.
+3. MinimalZoneSearching(MZS),aNewPositionalAlgorithm
+Thegoaloftheproposedalgorithmistofindthesmallestpossiblezonewherethe
+visitorislikelytobeatacertainpointintime. Aswesawintheprevioussection,weare
+workingwithdatacomingfromsensorsbasedonatimewindowof5s.
+Mostapproachesinindoorpositioningsystems,suchthattrilaterationortriangulation
+only takes three to four sensors who recorded the maximum value of RSSI. With this
+approachwearetakingintoaccountallsensorsintheroom. Thealgorithmconsidersthe
+setSofsensorsasinput,eachsensors ∈ Sisgivenbyitscoordinates(x ,y )anditsRSSI
+s s
+valueL ,andcomputesaminimalzoneastherepresentationofpossiblepositionsofthe
+s
+individual. Thealgorithmiteratesuntilatheoptimalzoneisreached. Ateachiteration
+i,anewzonezone iscomputedfromthecentroidofthezoneissuedfromtheprevious
+i
+iterationandtheRSSIvaluesofeachsensors. Thetreatmentisinitializedwiththefirst
+zonezone definedastheconvexhullofsensorswithintheroom(Equation(1)):
+0Appl.Sci.2021,11,6107 6of14
+The MZS algorithm (Algorithm 1) starts by computing the convex hull of sensors
+withintheroom,asexplainedinEquation(1),zone representstheinitializationstep.
+0
+zone = Hull(x ,y : sensors) (1)
+0 s s
+Thezoneisthenrefinedastheconvexhullofasetofdistancepoints,eachdistancepoints
+Γ is computed from a sensor s and the value of L according to the centroïd c of the
+s s
+previousconvexhull: (Equations(2)and(3)).
+(cid:20) (cid:21) (cid:20) (cid:21)
+x cos(α )
+Γ = c +L s (2)
+s y s sin(α )
+c s
+whereweconsiderasetofsensorsnotedbdescribedbytheircoordinateb : (x ,y ),andL
+s s s
+isadistanceinmetercomputedbasedontheRSSIvaluereturnedbyasensorsatatimet.
+ThecentroidC (x ,y ),α theangleinradiantbetweenthecentroidCandsensors. The
+0 c c s
+nextexecution(n=1),considertheconvexhullofallΓ pointandthenewcentroidC . The
+s 1
+iterationofthezonecalculationisbasedonthefollowingequation:
+zone = Hull({DistancePoints(L ,C ) : sensors}) (3)
+i s zonei−1
+whereC zonei−1 isthecentroidofthezone i−1 andDistancePoints()isadirectreferenceto
+Equation(2).
+Algorithm1:MinimalZoneSearching.
+Input: AsetofsensorsS,eachsensors ∈ Sisgivenwithitsposition(x ,y )and
+s s
+thedistanceL ,AdistancethresholdD,AmaxnbofiterationM
+s
+Output: Aminimalzone
+init
+Hull ← {};
+Hull←compute_hull(S);
+//Atthispoint,thevariable“Hull”correspondstozone
+0
+centroid ← new_centroid;
+nb_iter ←0;
+repeat
+nb_iter++;
+centroid ← new_centroid;
+li_DP ← [];
+forallsinSdo
+Γ = DistancePoints(L ,centroid);
+s s
+li_DP.push(Γ );
+s
+Zone ← compute_hull(li_DP);
+new_centroid ← get_centroid(Zone);
+until computeDistance(centroid,new_centroid) > Dnb_iter < M;
+returnZone
+Thealgorithmwillstopwhenthesizeandpositionofzone i−1andzone iarecomparable
+andwhereonlyminorchangesoccur,orifwereachthemaximumnumberofexecutions,
+i.e.,whenweobtainasmalldistancebetweentwoconsecutivecentroids. Thethreshold
+valueusedinthispaperis0.1m. Usingthedatasetfromourexperimentation,weobserved
+thatthealgorithmneedsonaverage6iterationsand0.2sofcomputationtimetofinda
+“stable”zone,whichissuitableforarealtimeexecution.
+Figure5showavisualrepresentationofanexecutionstep,whereΓ ,Γ ,Γ andΓ
+a b c d
+arerespectivelythedistancepointsfromsensorA,B,CandD.Thefigureshowsthestep
+betweenexecutionn=0andn=1foundinFigure6.Appl.Sci.2021,11,6107 7of14
+Figure5.Convexhullofactivessensorsatn=0.
+Figure6.EvolutionoftheMZSeachnexecution.
+4. Results
+4.1. DatasetsUsed
+Inthissection,twodatasetshavebeenused. Oneachofthosedatasets,weusedthe
+samedataprocessingarchitectureasexplainedinSection2.Appl.Sci.2021,11,6107 8of14
+DS1: The first dataset is an open access dataset made by Mehdi Mohammadi et al.,
+2017[24]. ThisdatasetiscomposedofBLERSSIvaluesemittedby13iBeaconsandthe
+actualpositionoftheuser. Asthisdatasethasagroundtruth,itallowsustocomputethe
+accuracyvalueofourmethod. DS1hasa“grid”placement. Table1isadescriptionofthe
+dataset. ThenumberofinstancesisthenumberofRSSIvaluesforallsensors.
+Table1.DescriptionofDS1.
+NumberofSensors NumberofInstances Placement Duration Frames
+13 1420 Grid 8m33 33
+Thelimitednumberofinstancesfromthisdatasetforcesustouseatimewindowsize
+of15s. Indeed,tovalidateourapproachweneedatleast3sensorsreturninganRSSIvalue
+betweentheintervaloftime. Thisleavesuswith8minand33sofdatatoprocesswhichis
+limitedbut,thegroundtruthisapreciousdata,especiallyfromanopenaccessdataset.
+DS2: Theseconddatasetismadeofdatacollectedduringthemuseumexperimenta-
+tion.Thisexperimentationofindoorpositioningheldwithinthemuseumofnaturalhistory
+ofLaRochelle. Asmuseumsareusuallyclosedduetothepandemic,theexperimentation
+tookplaceduringavisitbystudentsfromalocalhighschool.
+Figure 7 describe sensor placement within the museum. We equipped the largest
+room in the building, and we get positional data when visitors were within this room.
+Theexperimentbeganatteninthemorningandendedatnoon. Duringthosetwohours,
+subjectsoftheexperimentationvisitedthemuseumfreely. Wedonothavegroundtruth,
+asthisisnotadatasetmadeandcontrolledbyourteaminouroffice,but“onthefield”,
+andfollowingvisitorscouldhavechangedtheirbehavior. Finally,thethreetrajectoriesof
+visitorswherebuildbasedon82,630Bluetoothtotalfootprintscollectedandprocesswith
+themethodologyexplainsearlier,exceptweonlyconsiderintervalsoftimewithamean
+RSSIvalueofatleast−90dBasexplainedinSection2.
+Figure7.Placementofsensorswithinthemuseum.Appl.Sci.2021,11,6107 9of14
+Table2showthenumberofsensorsused,thetotalnumberofinstances,thetypeof
+placementsandthenumberofsubjects. Table3showadescriptionofthreesubjectsfrom
+ourexperimentation. Weshouldnotethatthenumberofinstancesisnotanindicatorfor
+thetimespentinthestudiedroomsasshowtagnumber3,wherefrom24,414instances,
+weonlygot3minofexploitabledata(3sensorssendinganRSSIvaluegreaterthan−90in
+thesametimewindow).
+Table2.DescriptionofDS2.
+NumberofSensors TotalNumberofInstances Placement NumberofSubjects
+8 82,630 Disorganized 3
+Table3.DescriptionofsubjectsforDS2.
+TagNumber NumberofInstances DurationinStudiedRoom
+5 26,701 16min
+8 31,403 22min
+3 24,414 3min
+4.2. ExperimentationonDS1
+4.2.1. VisualRepresentationofMZSandtheGroundTruth
+Figure8showavisualrepresentationoftheMZSalgorithmona“smallportion”of
+DS1. This“smallportion”iscomposedof15framesfusedtogether(4min),inorderto
+betterseetheresultsreturnedbytheMZSalgorithm. Thetrajectoryisdeducedfromthe
+referencepointgivenbytheauthor
+Figure8.MZSalgorithmappliedtoDS1.Appl.Sci.2021,11,6107 10of14
+4.2.2. ComparisonbetweenMZSandTriangulation
+ThegroundtruthfromDS1allowsustocomputeanaccuracyindicator. Theaccuracy
+parameteriscomputedbycalculatingtheEuclideandistancefromthereturnedzonetoall
+verifiedpositionpointseach15s,aswecanhaveseveralpointsofthistypeperintervalof
+time. Ifthezoneincludesthepoint,theprecisionissetto0.
+Table4showstheaccuracyparametercomputedfortriangulationandMZS,theaver-
+ageandthestandarddeviationofsizeofcalculatedareas. The“framescomputed”column
+ofTable4referstothenumberofpositionestimationthatcouldbecomputed.
+Wecandeducethatatypical“gridpositional”arrangementofsensorsismoresuitable
+forthetriangulationastheaccuracyisbetterthanMZS.
+Butwewillseelaterthatthismethodisvulnerablewhenthepositionofthesensors
+arenotideal. Thisvalidationprocessshowsthatouralgorithmstillgivesaprettygood
+ideaofthepositionoftheuser,evenwithanopenaccessdataset.
+Table4.AccuracyvaluesforMZSalgorithmandtriangulationappliedtoDS1.
+Averagefor StandardDeviation
+Method Accuracy FramesComputed
+ZoneSize forZoneSize
+MSZ 0.74m 0.49m2 0.85 25
+Triangulation 0.53m 1.21m2 0.95 19
+4.3. ExperimentationonDS2
+ImportanceoftheSensorPositions
+The MZS have, as it does not seek intersections between circles, a better accuracy
+inoftencasewhensensorplacementisnotoptimal. Figure9showasituationwhenthe
+triangulationmethoddoesn’tgivethebestresult. TheRSSIvalueisdisplayednexttothe
+sensorandthecirclearoundthemrepresentthevalueinmeteroftheRSSIvaluecollected
+byeachsensor. ItisagoodexampleofhowthesensorwiththegreatestvalueofRSSI,
+(and thus indicate that a person is nearby) won’t intersect with any circle making the
+triangulationmethoddifficult.
+Figure 10 show the property of areas computed by both methods. This figure is a
+resultofthemuseumexperimentationandisbuiltbasedonthreevisitorswearingstags5,
+8and3. Inthisfigure,wearelookingatthesizeofareaswiththreemetrics,themeansize
+ofthezonecomputed,themedianandthestandardvariation(SD).
+Table5showonhowmanyframesbothmethodscouldhavebeencomputed. Aframe
+isanintervaloftimeof5s,whereatleast2sensorsarereturninganRSSIvalueandthus
+thatapersonisintheequippedroom.
+Table5.NumberofframesprocessedbyMZSandthetriangulation.
+Badge MZS Triangulation TotalNumberofFrames
+5 181 135 194
+8 254 200 263
+3 24 5 31
+InTable5,weseethatwithtagnumber5,194framessatisfythoseconditions(Meaning
+thatthisvisitorspendapproximatelyatleast16minwithintheroom). Tagnumber8get
+263exploitableframes(22min)andtagnumber3get31meaningthatthevisitorprobably
+quicklypassesthisroom.Appl.Sci.2021,11,6107 11of14
+Figure9.ComparisonbetweenMZSandtriangulation.
+Figure10.Propertiesofareascomputedbybothmethods.
+5. Discussion
+Withthisinformationinmind,Table5showsthattheMZSalgorithmisabletoreturna
+positionalareainmostoftheframesobserved,morethanthetriangulationtechnique. Also,
+theMZSgivesamorestableresult,withalowervalueofstandardvariation. However,The
+triangulationtechniquereturnsasmallerzoneincomparisonwhenwetakethemedian.
+Thetriangulationtechniquecertainlytargetsamoreaccuratepositionoftheuserwhenthe
+targetisstationaryandunabletoworkproperlywhenthesubjectismovingduringthe
+fivesecondsintervals. Also,thepositionofsensorswithintheroomisnotoptimizedfor
+thetriangulationalgorithmandmayplayabigpartinthoseresultsassituationsdescribe
+inFigure9leadtopoorperformances.Appl.Sci.2021,11,6107 12of14
+InFigure11weshowavisualrepresentationofareascomputedbybothmethodsand
+heldasanillustrationofdatafromTable5andmorepreciselythetagnumber8. Allareas
+computedbythosetwoalgorithmsareprintedtogetheronthesamepicture.
+Figure11.VisualcomparisonbetweentriangulationandMZS,withdatafromtagnumber8inDS2.
+TheMZSalgorithmshowshisstrengthonthisfigure: Thelocalisationofthevisitorin
+thecenteroftheroomshowcomparableresultbetweenthetwomethods,butthedifference
+standinthecentertobottomleftoftheroom. Weseethatthetriangulationmethodshow
+poorresultintightspaces,whereonlyfewsensorsarereachable.Andthus,resultsreturned
+bytheMZSalgorithmaremoreexploitableandgiveamoremeaningfulviewonthevisit
+ofthesubject.
+6. Conclusions
+Indoorpositioningservicesapplytomuseumsoffernewandpromisingwaystostudy
+visitorbehaviors. Itcanhelpthemanagementofsuchfacilities,inordertomonitorvisitor
+pathsandseewhatarethepiecestheyadmirethemostandwhataretheonestheymiss.
+Indeed,managersofmuseumsarealwayslookingfornewwaystoimprovethevisiting
+experience,andareoftenworriedthatwewillmisssomethingduringthetour.
+Butthosekindofplacealsobringarchitecturalconstrainsinsensorplacement,andas
+wesaw,sometimemakingalgorithmssuchasthetriangulationlesseffective. TheMZSAppl.Sci.2021,11,6107 13of14
+algorithm in other hand, as promising results as the position of sensors seems to have
+lessimpact,makingitspecificallyusefulintightspaces. Thiskindofindoorpositioning
+techniqueisstillinanearlystageofdevelopment, andimprovementcanstillbemade.
+An area for improvement can be the use of additional technique, such as trilateration,
+toreducethetrackingerror. AstheMZSalgorithmseekstogetazoneandthuscanbe
+takenintoaccountwithanothermethod,butifusedalone,onlyreturnazone,making
+accurate positional representation difficult. Sensor placement can indeed have a huge
+impact on accuracy and performances on various techniques, and it’s something that
+shouldbeconsideredmorecarefullyasstudiesshown[25,26].
+BLEremainsareferencesignalinthefieldofindoorpositioningandmakeexperimen-
+tationastheonedescribedinthispapereasieranddonotneedalotofmaterialstobe
+efficientandcanalonegivearoughideaofthepositionofavisitor,eveninrealtime.
+Finally,wecanalsoaddthatindoorpositioningsystemsinmostcasesdonotneed
+acomplexalgorithm,oftentooheavytobeprocessedbyasmartphoneortoodifficultto
+implement. Studiessuchas[27–29],
+showsindifferentwaystheuseofthearchitectureandroom’slayoutofabuilding.
+Thus,thesearchformaximumaccuracybecomelessrelevant,whenweknowwherethe
+user can and cannot be, and what path could he follow. Therefore, the robustness of a
+methodshouldbemorevaluablethanitsaccuracy.
+AuthorContributions: Conceptualization,R.J.;methodology,R.J.;software,R.J.;validation,B.K.
+and F.C.; formal analysis, R.J.; investigation, B.K., F.C.; resources, R.J., B.K., F.C.; data curation,
+R.J.;writing—originaldraftpreparation,R.J.;writing—reviewandediting,B.K.;visualization,R.J.;
+supervision,B.K.,F.C.;projectadministration,B.K.,F.C.;fundingacquisition,B.K.,F.C.Allauthors
+havereadandagreedtothepublishedversionofthemanuscript.
+Funding:ThisresearchwasfundedbyBerger-LevraultandtheNouvelle-Aquitaineregion,under
+theDA3Tprojectnumber2018-1R40225AndTheAPCwasfundedbytheL3ILaboratory.
+InstitutionalReviewBoardStatement:Notapplicable.
+InformedConsentStatement: Informedconsentwasobtainedfromallsubjectsinvolvedinthe
+study.
+DataAvailabilityStatement: Publicdataset(DS1)usedinthearticle: 10.1109/JIOT.2017.2712560
+Theotherdataset(DS2)comefromanexperimentation.
+ConflictsofInterest:Theauthorsdeclarenoconflictofinterest.
+References
+1. Zafari,F.;Gkelias,A.;Leung,K.K.ASurveyofIndoorLocalizationSystemsandTechnologies.IEEECommun.Surv.Tutor.2019,
+21,2568–2599.[CrossRef]
+2. Piccinni,G.;Avitabile,G.;Coviello,G.AnimprovedtechniquebasedonZadoff-Chusequencesfordistancemeasurements.In
+Proceedingsofthe2016IEEERadioandAntennaDaysoftheIndianOcean(RADIO),Reunion,France,10–13October2016;
+pp.1–2.[CrossRef]
+3. Piccinni,G.;Avitabile,G.;Coviello,G.;Talarico,C.Real-TimeDistanceEvaluationSystemforWirelessLocalization.IEEETrans.
+CircuitsSyst.IRegul.Pap.2020,67,3320–3330.[CrossRef]
+4. Luo,R.C.;Hsiao,T.J.DynamicWirelessIndoorLocalizationIncorporatingWithanAutonomousMobileRobotBasedonan
+AdaptiveSignalModelFingerprintingApproach.IEEETrans.Ind.Electron.2019,66,1940–1951.[CrossRef]
+5. Farid,Z.;Nordin,R.;Ismail,M.RecentAdvancesinWirelessIndoorLocalizationTechniquesandSystem. J.Comput. Netw.
+Commun.2013,2013,185138.[CrossRef]
+6. Liu,H.;Darabi,H.;Banerjee,P.;Liu,J.SurveyofWirelessIndoorPositioningTechniquesandSystems.IEEETrans.Syst.Man
+Cybern.PartC(Appl.Rev.)2007,37,1067–1080.[CrossRef]
+7. Conte,G.;deMarchi,M.;Nacci,A.A.;Rana,V.;Sciuto,D.BlueSentinel:AfirstapproachusingiBeaconforanenergyefficient
+occupancydetectionsystem.InProceedingsofthe1stACMConferenceonEmbeddedSystemsforEnergy-EfficientBuildings
+(BuildSys’14),Memphis,TN,USA,3–6November2014; AssociationforComputingMachinery: NewYork,NY,USA,2014;
+pp.11–19.[CrossRef]
+8. Yoshimura,Y.;Sobolevsky,S.;Ratti,C.;Girardin,F.;Carrascal,J.P.;Blat,J.;Sinatra,R.AnAnalysisofVisitors’Behaviorinthe
+LouvreMuseum:AStudyUsingBluetoothData.Environ.Plan.BPlan.Des.2014,41,1113–1131.[CrossRef]Appl.Sci.2021,11,6107 14of14
+9. Spachos,P.;Plataniotis,K.N.BLEBeaconsforIndoorPositioningatanInteractiveIoT-BasedSmartMuseum.IEEESyst.J.2020,
+14,3483–3493.[CrossRef]
+10. Giuliano,R.;Cardarilli,G.C.;Cesarini,C.;diNunzio,L.;Fallucchi,F.;Fazzolari,R.;Mazzenga,F.;Re,M.;Vizzarri,A.Indoor
+LocalizationSystemBasedonBluetoothLowEnergyforMuseumApplications.Electronics2020,9,1055.[CrossRef]
+11. Juniarta,N.;Couceiro,M.;Napoli,A.;Raïssi,C.SequentialPatternMiningusingFCAandPatternStructuresforAnalyzing
+VisitorTrajectoriesinaMuseum.InProceedingsoftheCLA2018—The14thInternationalConferenceonConceptLatticesand
+TheirApplications,Olomouc,CzechRepublic,12–14June2018.
+12. Kontarinis,A.;Marinica,C.;Vodislav,D.;Zeitouni,K.;Krebs,A.;Kotzinos,D.TowardsaBetterUnderstandingofMuseum
+Visitors’ Behavior through Indoor Trajectory Analysis. In Proceedings of the Seventh International Conference on Digital
+PresentationandPreservationofCulturalandScientificHeritage(DiPP2017),Burgas,Bulgaria,7–9September2017;pp.19–30.
+13. Belmonte-Hernández,A.;Hernández-Peñaloza,G.;Gutiérrez,D.M.;Álvarez,F.SWiBluX:Multi-SensorDeepLearningFingerprint
+forPreciseReal-TimeIndoorTracking.IEEESens.J.2019,19,3473–3486.[CrossRef]
+14. Wenger,M.;Carrera,J.;Zhao,Z.IndoorpositioningusingRaspberryPiwithUWB.Bachelor’sThesis,UniversitätBern,Bern,
+Switzerland,2019.
+15. Choi,M.;Beakcheol,J.Anaccuratefingerprintingbasedindoorpositioningalgorithm.Int.J.Appl.Eng.Res.2017,12,86–90.
+16. Subedi,S.;Kwon,G.;Shin,S.;Hwang,S.;Pyun,J.Y.Beaconbasedindoorpositioningsystemusingweightedcentroidlocalization
+approach.InProceedingsofthe2016EighthInternationalConferenceonUbiquitousandFutureNetworks(ICUFN),Vienna,
+Austria,5–8July2016;pp.1016–1019.[CrossRef]
+17. Dong, Q.; Dargie, W. Evaluation of the reliability of RSSI for indoor localization. In Proceedings of the 2012 International
+ConferenceonWirelessCommunicationsinUndergroundandConfinedAreas,Clermont-Ferrand,France,28–30August2012;
+pp.1–6.[CrossRef]
+18. Li,G.;Geng,E.;Ye,Z.;Xu,Y.;Lin,J.;Pang,Y.IndoorPositioningAlgorithmBasedontheImprovedRSSIDistanceModel.Sensors
+2018,18,2820.[CrossRef][PubMed]
+19. Wang,Y.;Yang,X.;Zhao,Y.;Liu,Y.;Cuthbert,L.BluetoothpositioningusingRSSIandtriangulationmethods.InProceedingsof
+the2013IEEE10thConsumerCommunicationsandNetworkingConference(CCNC),LasVegas,NV,USA,11–14January2013;
+pp.837–842.[CrossRef]
+20. Pradhan, S.; Bae, Y.; Pyun, J.Y.; Ko, N.Y.; Hwang, S. Hybrid TOA Trilateration Algorithm Based on Line Intersection and
+ComparisonApproachofIntersectionDistances.Energies2019,12,1668.[CrossRef]
+21. CantónPaterna,V.;CalverasAugé,A.;ParadellsAspas,J.;PérezBullones,M.A.ABluetoothLowEnergyIndoorPositioning
+SystemwithChannelDiversity,WeightedTrilaterationandKalmanFiltering.Sensors2017,17,2927.[CrossRef][PubMed]
+22. He,S.;Hu,T.;Chan,S.-H.G.Contour-basedTrilaterationforIndoorFingerprintingLocalization.InProceedingsofthe13thACM
+ConferenceonEmbeddedNetworkedSensorSystems(SenSys’15),Delft,TheNetherlands,6–8November2015;Associationfor
+ComputingMachinery:NewYork,NY,USA,2015;pp.225–238.[CrossRef]
+23. Dinh, T.-M.T.; Duong, N.-S.; Sandrasegaran, K. Smartphone-Based Indoor Positioning Using BLE iBeacon and Reliable
+LightweightFingerprintMap.IEEESens.J.2020,20,10283–10294.[CrossRef]
+24. Mohammadi,M.;Al-Fuqaha,A.;Guizani,M.;Oh,J.Semi-supervisedDeepReinforcementLearninginSupportofIoTandSmart
+CityServices.IEEEInternetThingsJ.2017,5,624–635.[CrossRef]
+25. Rezazadeh,J.;Subramanian,R.;Sandrasegaran,K.;Kong,X.;Moradi,M.;Khodamoradi,F.NoveliBeaconPlacementforIndoor
+PositioninginIoT.IEEESens.J.2018,18,10240–10247.[CrossRef]
+26. Sharma, R.; Badarla, V. Geometrical Optimization of A Novel Beacon Placement Strategy for 3D Indoor Localization. In
+Proceedingsofthe2018IEEEInternationalConferenceonAdvancedNetworksandTelecommunicationsSystems(ANTS),Indore,
+India,16–19December2018;pp.1–6.[CrossRef]
+27. Ramadhan,H.;Yustiawan,Y.;Kwon,J.ApplyingMovementConstraintstoBLERSSI-BasedIndoorPositioningforExtracting
+ValidSemanticTrajectories.Sensors2020,20,527.[CrossRef][PubMed]
+28. Abdelnasser,H.;Mohamed,R.;Elgohary,A.;Alzantot,M.F.;Wang,H.;Sen,S.;Choudhury,R.R.;Youssef,M.SemanticSLAM:
+UsingEnvironmentLandmarksforUnsupervisedIndoorLocalization.IEEETrans.Mob.Comput.2016,15,1770–1782.[CrossRef]
+29. Kontarinis,A.;Zeitouni,K.;Marinica,C.;Vodislav,D.;Kotzinos,D.Towardsasemanticindoortrajectorymodel:Applicationto
+museumvisits.Geoinformatica2021,25,311–352.[CrossRef][PubMed]

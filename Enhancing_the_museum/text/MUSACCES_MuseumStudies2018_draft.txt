@@ -1,0 +1,372 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/337010813
+Museum Accessibility through Technology. The MUSACCES Project
+Experience
+Chapter · November 2019
+CITATION
+1
+READS
+528
+3 authors:
+Covadonga Rodrigo
+National Distance Education University
+91 PUBLICATIONS   575 CITATIONS   
+SEE PROFILE
+Ana M Garcia-Serrano
+National Distance Education University
+169 PUBLICATIONS   1,114 CITATIONS   
+SEE PROFILE
+Ángeles Sánchez-Elvira Paniagua
+National Distance Education University
+123 PUBLICATIONS   771 CITATIONS   
+SEE PROFILE
+All content following this page was uploaded by Ana M Garcia-Serrano on 04 November 2019.
+The user has requested enhancement of the downloaded file.
+
+ 
+MUSEUM ACCESSIBILITY THROUGH TECHNOLOGY. THE MUSACCES PROJECT 
+EXPERIENCE  
+ 
+ 
+Covadonga Rodrigo 
+UNED – Universidad Nacional de Educación a Distancia, Spain 
+covadonga@lsi.uned.es 
+Ana García-Serrano 
+UNED – Universidad Nacional de Educación a Distancia, Spain 
+agarcia@lsi.uned.es 
+Ángeles Sánchez-Elvira Paniagua 
+UNED – Universidad Nacional de Educación a Distancia, Spain 
+asanchez-elvira@psi.uned.es 
+ 
+Abstract 
+People with disabilities still face the problem of limitations while accessing to and enjoying artistic heritage. 
+The work developed within the MUSACCES project aims to improve the relation of people with disabilities with 
+the artistic heritage in the Prado museum trying to achieve a multisensorial user experience discovering 
+formative narratives around the artistic elements. The main characters of the paintings act as virtual 
+conductors of the user-experience through the learning artistic itinerary with augmented reality features. For 
+the historians, an automated system has been developed to manage predefined objects, such as the characters 
+(both real and fictitious), plot events, museum works (and their associated metadata) or external references 
+allowing the construction of semantic graphs, with which the artistic narratives will be constructed. The 
+application of a Technology Acceptance Model survey extended with accessibility criteria focused on collecting 
+the interests of potential users with disabilities and determining the ease of use and the perception of utility 
+of the technology to be used.  
+ 
+Keywords: multisensorial design, user experience, Technology Acceptance Model, mobile application, 
+narratology, cultural heritage.  
+ 
+1. Museology and Social Integration 
+The purpose of the United Nations Convention on the rights of Persons with Disabilities (UN, 2006) is to 
+promote, protect and ensure the full and equal enjoyment of all human rights and fundamental freedoms by 
+all persons with disabilities. In Spain, the Law of Equality of Opportunity, Non-Discrimination and Universal 
+Accessibility (LIONDAU, 2003) upholds the principles of normalisation and independent life. As a result, Spanish 
+society is becoming more and more aware that the inclusion of persons with disability (9% of the overall 
+national population) in the different areas of social life is compulsory. The application of the universal rights to 
+the enjoyment of cultural and artistic heritage is helping people to consider the question of accessibility as a 
+very relevant aspect for the revitalization of the monuments, for instance. Artistic heritage, being accessible 
+to all people regardless of their disabilities, is long lasting and strengthen its nature to all of society. The 
+Ministry of Culture along with the Ministry of Health, Social Politic and Equality have launched several 
+initiatives regarding spanish Strategies for Culture for for All, aiming to promote and normalise the 
+
+ 
+implementation of accessibility in all initiatives in the cultural context, assurig the compliance with the highest 
+demands for quality, technology and adaptability (Real Patronato Discapacidad, 2011). 
+ 
+Stressing the need for a human rights-based approach to cultural heritage matters, the great challenge of 
+Museology of the XXI Century is the attention and integration of the most disadvantaged social sectors with 
+museums. Modern museology, without abandoning the fundaments of the custody, study, research, exhibition 
+and contemplation of collections of artistic, historical, scientific, or technical value or of any other nature, has 
+made it a greater and more varied dynamic reality to the service to the public. The museum institutions are 
+living spaces whose managers try to bring about a more dynamic and open participation. The interest in 
+educating and socialising culture has endowed the museums with human resources, etc., and diverse 
+strategies for attracting the public.  
+2. The MUSACCES Consortium 
+The MUSACCES - S2015/HUM-3494 project1 began its progress in 2016 with the consolidation of a Consortium 
+which operates in the Comunidad de Madrid and which proposes museology activity and social integration in 
+an environment of interdisciplinary work, seeking to bring the Museo del Prado to collectives which face 
+special accessibility barriers (such as blind, deaf and imprisoned people) supported by Information and 
+Communications Technologies (ICTs). The research work is being developed by participants from 
+multidisciplinary fields, humanists and technologists, from research groups from the Universidad Complutense 
+de Madrid, the Universidad Nacional de Educación a Distancia (UNED) and the Universidad Autónoma de 
+Madrid (UAM), with the collaboration of the Museo del Prado and other businesses and institutions such as 
+Fundacion Vodafone España and Fundación ONCE.  
+The INADOC (Innovative User INteraction to Accessible Digital Objects and Collections) group of UNED is a 
+recently created multidisciplinary group made up of teacher-researchers, experts in models for accessibility 
+and usability, and technologies for the management of large repositories of information, the automatic 
+processing of natural language and access to multimedia information, and experts in designing and follow up 
+of the use of new technologies in education and measuring its quality. Within the Consortium, the user-
+experience has been designed with a multi-sensorial approach making all senses to be active and aware of the 
+different activities proposed by a mobile app. The work developed by the INADOC group labour is centred on 
+enhancing the artistic itineraries through technologies assuring the maximum level of accessibility following 
+the Design For All principles of the artifacts and the Universal Design for Learning approach for the formative 
+itineraries (CAST, 2018).  
+3. Lines of integration as regards accessibility to artistic heritage 
+The MUSACCES Consortium decided to develop user-experiences based on the sense of sight, smell, touch, 
+taste and hearing through various artistic interpretations (Rodrigo et al., 2017). The lines of accessibility are 
+different for people with visual impairment as those with hearing impairment. 
+Those people who are unable to perceive images through sight have serious difficulties in enjoying the visual 
+artistic experience. In some cases, when blindness set in after several years of normal life, the minds of these 
+people are able to reconstruct what they perceive from past images. However, many blind people where born 
+                                                           
+1 http://www.musacces.es 
+
+ 
+blind, therefore they lack the prior visual references on which to build their mental images. Visual perception 
+may be substituted with an active participation of the artistic experience through touch senses (touching 
+volumetric representations of works of art and reading texts written in Braille), through hearing (listening to 
+musical passages of melodies and sounds of musical instruments), through taste (experiencing flavours related 
+to the pictorial works) and through smell (smelling aromas that evoke that which is embodied in the pictures). 
+This facts have been tested in MUSACCES through a specific Workshops entitled “The Museo del Prado through 
+the 5 senses” that have been carried out through 2016 and 2018. Experiencing the works of art through the 
+other senses different from sight allows the blind people to enjoy aesthetical experiences equivalent to those 
+of sighted people and will facilitate them access to artistic heritage from an integrated museology. 
+Those people who are unable to hear sounds clearly have difficulties in suitably receiving acoustic explanations 
+on the artistic works in a museum, even though they have no difficulty in seeing them. Although they have no 
+accessibility problems in the direct contemplation of the pictorial works or sculptures, this collective is able to 
+take advantage of didactic resources without sound to help them appreciate the relevance of the said works 
+in its cultural environment in greater detail. The Consortium tries to improve the experience of this potential 
+visitor through the use of audio guides as an element to help them during the visit, and creating other types 
+of interactive supports that will accompany the deaf people during their tours of the Museo del Prado. 
+4. Compilation and analysis of the interests and needs of users with disabilities 
+The MUSACCES project started with the compilation of the interests and needs of the collectives of people 
+with  disabilities as regards the artistic heritage of the Museo del Prado. The survey inluded several questions 
+in accordance with the TAM (Technology Acceptance Model) model (Davis, 1993) and (Davis, et al. 1989) used 
+to predict the benefits of the usage of ICTs. The model is based on two main characteristics: 
+a) 
+The Perceived Usefulness, PU, refers to the degree to which a person believes, that by using a 
+technological system in particular, his/her performance will improve. 
+b) 
+The Perceived Ease of Use, PEOU, highlights up to which degree a person believes, that by using a 
+technological system in particular, he/she will make less effort to carry out his/her tasks. 
+In MUSACCES, the survey was developed to analyze the perceptions of people with disabilities regarding the 
+use of certain ICTs usually integrated into mobile devices that could be of use for the design and development 
+of accessible and interactive mobile learning itineraries inside and outside the Prado Museum. The qualitative 
+study was carried out by collecting data through an ad-hoc questionnaire, validated by a team of experts 
+(psychologists and sociologists). The population under study was composed by 6,571 students with disabilities 
+enrolled at the university. The survey was delivered by a LimeSurvey instance with a high degree of accessibility 
+and data analysis conducted with IBM SPSS software. The survey was organized into three different sections: 
+1) cultural and artistic personal interests, 2) socio-economic user profiling and 3) the ease of use, efficiency 
+and utility of the selected technologies according to TAM. 
+278 valid answers were studied, 55.8% delivered by women and 44.2% by men, with a mean age of 44 years, 
+with 34,5% reached the level of university degree or equivalent. Regarding disability, 26.3% have a recognized 
+disability degree over 65%, while 65.1% dealt between 33% and 65% suffering dfferent illnesses and functional 
+problems, Only 36.6% of them reported to use some kind of adaptation or assistive technology to access ICTs 
+daily. The preliminary analysis of the survey (Rodrigo et al., 2017) results show the following characteristics 
+according to the following factors: 
+
+ 
+• Factor 1. Generalization in the use of mobile devices in the group of people with disabilities. 92.1% of the 
+respondents confirm using a smartphone, or last generation mobile devices and half of them, 51.1%, also use 
+tablets to connect daily to the Internet (60.4% of cases) or with certain frequency (29.1%). Data also confirm 
+that mobile devices are very efficient for daily tasks (92.8% smartphones, 74.8% tablets). These data refuted 
+other studies carried out in the country such as Fundación Vodafone España (2016). 
+• Factor 2. Implications of ICT for ease of connectivity and the formation of user communities. A large 
+percentage of the users confirm that mobile devices are easy (51.8% smartphones, 45.3% tablets) or very easy 
+(36% smartphones, 29.9% tablets) to use, being the phones more easy to use than tablets. As for the Bluetooth 
+technology, this is the easiest to use according to 60.8% of the sample, the NFC technology according to 25.5%. 
+Some specific technologies, for instance audio induction loop for hearing impaired people reached only 9.8%.  
+• Factor 3. Attitude towards the use of multimedia and audiovisual materials for explanatory accompaniment 
+in the museum. The perception of the usefulness of audio-guides and video-guides (45.3%, 34.5%) was greater 
+than their ease of use (43.5%, 29.2%). People think audio-guides were most affordable, also being its use more 
+widespread.  
+• Factor 4. Attitude towards the inclusion through ICT of gamification activities and augmented reality features. 
+19.8% of the sample consider that the augmented reality is easy to handle, however its use is very scarce (70% 
+said they have never used a mobile app with this technology implemented). It is relevant to point out that 
+people who are used to use assistive technologies in their daily activities, give more value to this technology 
+and find it easier to use. 
+• Factor 5. Attitude of people with disabilities towards virtual tours. Approximately 75% of respondents have 
+never visited a museum virtually, although there is a high percentage of visits to the museums' websites and 
+their collections. For instance, 56.9% have already visited the Prado Museum website. Interestingly, people 
+with hearing impairment are less interested in this type of visit (usually lacking subtitling or easy reading 
+styling) than people with visual impairment, who access content more easily through screen readers. 
+5. Achieving OpenLinkedData and Artistic Narratives 
+The description of virtual tours or stories in museums is also an area of research and development within 
+MUSACCE project. In relation to the artistic learning itineraries and narratives, a critical aspect in Digital 
+Humanities applications is the existance of corpus and data in a proper digital format. In fact, there are specific 
+projects dedicated to obtaining information and cultural data in digital format, related to the complex 
+processes of digitization, structuring and visualization of information on the Web (García-Serrano et al., 2015). 
+At the same time, in recent years the information on the Web is being organized according to the paradigm of 
+Linked Open Data (LOD), to facilitate its reuse by computer applications that support its access by different 
+users and enriching their content through multilingualism and so on. The first task to be addressed with open 
+data is to know the structure of the metadata with which the data are described. Metadata is a term coined in 
+the 1960s to describe the characteristics of data (data about data) and enable its retrieval and interoperability. 
+To avoid ambiguity in the description of the data, experts use standard or defined description models, such as 
+the CIDOC-CRM (Contextual Reference Model) defined by (Doerr et al. 2007) together with the standard FRBR 
+to model the bibliographic records of the museum. 
+
+ 
+The model of the Prado Museum2 is organized, at its highest level, around objects of knowledge such as: 
+artwork, author, exhibition, chronological event, activity, restoration, multimedia resources and others (figure 
+1). In addition to this model the museum has information on the Web in the form of microdata in JSON-LD 
+format from (W3C, 2014). With the microdata, the metadata of the data contained in a web page (topics, 
+attributes, etc.) is normalized to be searches by automated engines and other applications. Once the open 
+data structure is known, an automatic process called a crawler can be performed, allowing the data to be 
+imported into a repository or to a reusable software application, such as Paths European project3 to facilitate 
+access to Europeana repository materials. 
+ 
+Figure 1. Metadata - HTML code from view-source:https://www.museodelprado.es/coleccion/obra-de-arte/las-meninas/9fdc7800-
+9ade-48b0-ab8b-edee94ea877f 
+From this first stage, Mussaces repository containing the corpus extracted was locally stored to be used in 
+different information retrieval tasks (IRT). This is the beginning of any IRT as for example in mixing information 
+extracted from images and its annotations (Benavent et al., 2010), topic detection in a twitter corpus (Cigarrán 
+et al. 2016) or semantic similarity measures to compare words meaning semantically (Lastra et al., 2017). 
+Describing virtual tours or stories in museums is an area of research and development that has been working 
+for some time with the objective of bringing the works of museums to the public in general  (García-Serrano & 
+Castellanos, 2016). Narratology refers both to the study of the narrative and the structure of the same, as to 
+the way in which it affects our perception. Related to the narratives, special mention is the DECIPHER project4 
+that developed the Curate ontology (Mulholland et al., 2012), to describe histories from museums resources 
+and related events (cause and effect). On this ontology two software tools were developed: Storyspace5, for 
+the conservation staff of works of two museums and Storyscope6, which includes a model, its associated 
+methodology and a software tool to create and publish stories about cultural heritage and museum collections. 
+In MUSACCES, although the basic concepts are defined quite similarly to the model that underlies these 
+narrative tools (Koenitz, 2013), they are implemented in a different way and the narrative model is more 
+ambitious, based on a relationship graph. The set of all events ordered chronologically constitutes a story. 
+Selecting a subset of events, without chronological ordering, creates a frame. The form of presentation 
+(textual, image, sign language, audio, etc.) is the mechanism used to link the elements in such a way that is 
+accessible and understandable for the general public or with special needs. Once a frame and a shape are 
+selected, a narrative can be constructed. Therefore, narrative is in MUSACCES the process of giving meaning 
+to the elements (that are originally independent) of the plot through the selected form. Structured open linked 
+data is set along with new information to finally construct a story in which one could describe who the 
+characters are and how they participate. 
+                                                           
+2 https://www.museodelprado.es/pmartwork 
+3 http: //www.paths-project.eu/ 
+4 http://kmi.open.ac.uk/projects/name/decipher 
+5 http://www.eastgate.com/storyspace/ 
+6 http://labs.europeana.eu/apps/Storyscope 
+
+ 
+Authors have defined a first approximation to the problem and a prototype that incorporates the automatic 
+ingestion of the open linked data of the Museum of the Prado with participation of the expert historians and 
+educators, with the aim of facilitating the development of adaptive virtual itineraries and narratives. A first 
+approach has been implemented (García-Serrano et al., 2017), called MPOC tool7, which is a web information 
+system developed in the framework Laravel 5.4 and HTML5. It already defines a series of concepts that will 
+serve as a structure for the construction of a semantic graph of metadata and concepts through the narratives. 
+Currently, the system allows to manage predefined objects, such as the characters (both real and fictitious), 
+plot events, museum works (and their associated metadata) or external references (such as Youtube, press, 
+etc.). The relationships generated through the metadata or indirectly, allow the construction of semantic 
+graphs with which the narratives will be constructed.  
+6. Mobile application with augmented reality and 3D figures 
+Another objective of MUSACCES project is producing accessible mobile apps that will serve as didactic 
+itineraries for experiencing artistic work using augmented reality artifacts and gamification activities. Along 
+the itinerary, the application guides the user through the content of the artistic work using an inquiry-based 
+design, and some multisensorial user-experience, such as smelling, listening and touching activities. The mobile 
+app has been developed using Unity 8, a very popular framework to develop apps on the Android platform. 
+Unity is a very powerful engine, general purpose 3D motor, Unity free allows you to publish on the most mobile 
+popular platforms. It also allows a multi-platform development (for PC, web and mobile devices) that can be 
+integrated with Vuforia library for augmented reality features. Some graphical designs have been developed 
+for making the main characters “alive” from the artistic paintings. As for the sound, ambient music has been 
+included contextualized with the time of the artistic work and alternative voices have been also recorded for 
+the main virtual characters. 
+The artistic formative itinerary around the work “La Anunciación” (Fra Angelico) has been developed as a 
+mobile app that follows the European guidelines for accessible developments (CEN EN 301549, 2015). The 
+interaction starts focusing the mobile camera on top of a painting marker (see figure 2). At this time, 
+augmented reality characters will start to appear, conducting the user experience through a didactical 
+narrative and pedagogical activities (tests and serious games). The itinerary is short (3-5 minutes) and the 
+gamification enriched by a system of points and awards to engage the user. The mobile app is linked to social 
+networks (Facebook, Twitter, WhatsApp) in a way that the user can share his/her experience and foster the 
+implication of new users (figure 3).  
+ 
+                                                           
+7 http://catedra.lsi.uned.es/metadata/ 
+8 https://unity3d.com 
+
+ 
+ 
+Figure 2. 3D features and augmented reality in La Anunicación mobile app 
+ 
+7. Conclusions 
+The work developed within the MUSACCES project aims to improve the relation of people with disabilities with 
+the artistic heritage in the Prado museum. The application of a user experience survey based on the Technology 
+Acceptance Model has collected the interests of potential users with disabilities and determining the ease of 
+use and the perception of utility of the technology to be used in the design of mobile learning itineraries. The 
+extensive use of wireless technologies and connectivity tools, encourage the incorporation of these 
+technologies to develop accessible itineraries, promoting interactivity and gamification within the learning 
+design as shown in the first demo prototype.  
+Describing virtual tours or stories in museums using narratives is also an area of research and development. 
+Participation of the expert historians and educators has been inforce in the MUSACCES project by the use of a 
+recently developed prototype of a web information system, which defines a series of concepts that will serve 
+as a structure for the construction of a semantic graph of metadata and concepts through the narratives.  
+8. Acknowledgments 
+Authors gratefully acknowledge the support by MUSACCES (S2015/HUM3494). 
+Figure 3. Screenshots from La Anunciacion mobile App 
+
+ 
+9. References  
+UN 
+(2006) 
+Convention 
+on 
+the 
+Rights 
+of 
+Persons 
+with 
+Disabilities 
+(CRPD). 
+Available 
+at: 
+https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-
+disabilities.html 
+LIONDAU (2003) Ley 51/2003, de 2 de diciembre, de igualdad de oportunidades, no discriminación y 
+accesibilidad 
+universal 
+de 
+las 
+personas 
+con 
+discapacidad. 
+Available 
+at: 
+https://www.boe.es/buscar/doc.php?id=BOE-A-2003-22066 
+Real Patronato Discapacidad (2011)  “Universal Accessibility to Cultural Heritage. Fundaments, Criteria and 
+Guidelines” 
+Retrieved 
+from: 
+https://www.mscbs.gob.es/ssi/discapacidad/docs/estrategia_cultura_para_todos.pdf 
+CAST (2018). Universal Design for Learning Guidelines version 2.2. Wakefield, MA. Retrieved from: 
+http://udlguidelines.cast.org 
+Rodrigo, C., García-Serrano, A. & Sánchez-Elvira, A.  (2017). Narrative design combined with a TAM survey to 
+achieve a multisensorial museum user-experience for people with disabilities. The Online, Open and Flexible 
+Higher Education Conference 2017 - Higher Education for the Future; 'Accelerating and Strengthening 
+Innovation'. Milton Keynes, October 2017. Editors George Ubachs and Lizzie Konings (EADTU) pp. 248 -260 
+ISBN 978-90-79730-29-2 
+Davis, F. D. (1993). User acceptance of information technology: system characteristics, user perceptions and 
+behavioral impacts. International journal of man-machine studies, 38(3), 475-487. 
+Davis, F. D., Bagozzi, R. P., & Warshaw, P. R. (1989). User acceptance of computer technology: a comparison of 
+two theoretical models. Management science, 35(8), 982-1003. 
+Rodrigo, C., Caro, M. & García-Serrano, A. (2017). Extensión del modelo TAM al análisis de requisitos de 
+accesibilidad para el aprendizaje del patrimonio artístico del Museo del Prado con dispositivos móviles. III 
+CONGRESO Humanidades Digitales Hispánicas - HDH 2017 Málaga (España) October, 18-20th, 2017 
+Fundación Vodafone España (2016). Discapacidad, integración y el papel de las TIC (Report). Retrieved from: 
+http://www.fundacionvodafone.es/sites/default/files/conclusiones_acc_1.pdf 
+García-Serrano, A., Castellanos, A., Cigarrán, J. (2015). De la preservación digital al acceso semántico de 
+documentos históricos. Retrieved from: http://hdh2015.linhd.es/ebook/HDH15.epub  
+Doerr, M., Ore, C.-E., Stead, S. (2007). The CIDOC Conceptual Reference Model: A New Standard for Knowledge 
+Sharing, 26th Int. Conf. Concept. Model. - Vol. 83: pp. 51–56. 
+W3 Consortium, others (2014). JSON-LD 1.0: a JSON-based serialization for linked data. Retrieved from: 
+https://www.w3.org/TR/json-ld/ 
+Benavent J., X. Benavent, E. de Ves, R. Granados, A. García-Serrano. (2010) Experiences at ImageCLEF 2010 
+using CBIR and TBIR Mixing Information Approaches. M. Braschler, D. Harman, E. Pianta (Eds.): CLEF 2010 LABs 
+and Workshops, Notebook Papers, ISBN 978-88-904810-0-0, 22-23 September 2010, Padua, Italy. CEUR 
+Workshop Proceedings, Volume 1176. ISSN1613-0073 
+
+ 
+Cigarrán J., Castellanos, A. Garcia-Serrano. (2016) A. A step forward for Topic Detection in Twitter: An FCA-
+based Approach, Expert Systems with Applications Journal. Pergamon Press. doi:10.1016/j.eswa.2016.03.011 
+Vol 57, Pages:21-36, ISSN: 0957-4174 
+Lastra-Díaz J. J., A. García-Serrano, A, M. Batet, M. Fernández, F. Chirigati (2017). HESML: a scalable ontology-based 
+semantic similarity measures library with a set of reproducible experiments and a replication dataset. Information Systems. 
+V 66, Pags 97-118, Pergamon, ISSN: 0306-4379 http://dx.doi.org/10.1016/j.is.2017.02.002 
+García-Serrano, A., Castellanos, A. (2016). Conceptualización, acceso y visibilidad de la información en el 
+proyecto DIMH. (Capítulo 16). Alicia Cámara Muñoz (Editora), Fundación Juanelo Turriano. pp: 379-400 ISBN: 
+978-84-942695-6-1 
+Mulholland, P., Wolff, A., Collins, T. (2012). Curate and storyspace: An ontology and web-based environment 
+for describing curatorial narratives, LNCS 7295.  
+Koenitz, H. (2013). Interactive storytelling, In: Proc. 6th ICIDS 
+García-Serrano, A., Lara, A.  & Rodrigo, C.  (2017). Narrativas con acceso a datos en abierto: MPOC, un Sistema 
+de información Web sobre el Museo del Prado. III CONGRESO Humanidades Digitales Hispánicas - HDH 2017. 
+Málaga (España), October, 18-20 th 
+CEN EN 301549 (2015) http://mandate376.standards.eu/standard 
+ 
+ 
+View publication stats
+

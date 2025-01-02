@@ -1,0 +1,369 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/224198644
+A new Navigation System for indoor positioning (InLite)
+Conference Paper · October 2010
+DOI: 10.1109/IPIN.2010.5647327 · Source: IEEE Xplore
+CITATIONS READS
+4 164
+4 authors, including:
+Andreas Schmitz-Peiffer
+Airbus
+24 PUBLICATIONS 187 CITATIONS
+SEE PROFILE
+All content following this page was uploaded by Andreas Schmitz-Peiffer on 30 May 2014.
+The user has requested enhancement of the downloaded file.2010 International Conference on Indoor Positioning and Indoor Navigation (IPIN), 15-17 September 2010, Zürich, Switzerland
+FPT Gra An s Mm eit mte or ry CD A oig n ni a vta elol r g tt eo r BT asr ea bn ans dm 0i -t 4t 0e Mr Hz Indoor Channel
+420MHz F Ta rs at n F so fou rr mier T Mr Rua ln t eis c pm a licri r at it ee rr Receiver
+Y(w)/X(w) ReC sh pa on nn see l EIm stp imul as te io n LineE oxt fr a Sc igti ho tn D o ef lay M Cu Hhl at (i tnp ,na t)eth l
+Fast Fourier Noise
+Transform
+Memory Analog to
+16384 Digital Samples Converter
+978-1-4244-5864-6/10/$26.00 ©2010 IEEE
+zHM 064–024
+X(w)
+Y(w)
+Lowpass 420MHz 50MHz
+mBd0
+rewoplangiS
+A new Navigation System for Indoor Positioning
+(InLite)
+Dr. Andreas Schmitz-Peiffer*, Dr. Andre Nuckelt**, Maik Middendorf**, and Michael Burazanis**
+* EADS Astrium GmbH, Satellites, Dept. ANE 11, Navigation System Engineering.
+Email: andreas.schmitz.peiffer@astrium.eads.net
+** EADS Astrium GmbH, Satellites, Dept. ANB 22, Navigation Applications
+Abstract — A new Indoor Navigation System (InLite) has
+been developed by Astrium Satellites GmbH which allows positioning of users inside large multi-level buildings with
+an accuracy of two meters without any aiding tools like inertial measurement units or other infrastructure inside
+the building. The Architecture is presented, and
+measurement results are discussed.
+Keywords—Indoor Navigation, TDoA, Synchronization
+I. INTRODUCTION Baseband 0-40MHz 420-460MHz
+The possibility to navigate users in case of emergency
+inside a building is of high interest for fire brigade,
+ambulance, police or military operations. However GPS
+Figure 1: Functional Architecture of InLite
+signals are too low to be used for indoor navigation.
+Hence many indoor navigation systems proposed today
+use pre-installed infrastructure inside a building [RD.1].
+The baseband signal is up converted to a higher
+However this does not support emergency services. There
+frequency band, in our case 420 MHz, the carrier
+are only very few systems which do not rely on inside
+frequency passes the Indoor Radio Channel, where the
+infrastructure [RD.2]. In comparison to the Worchester
+navigation signals will be distorted by heavy multipath
+Polytechnic Institute WPI system [RD.2] in our InLite
+and external noise, and other interferers can disturb the
+system the users in the building are passive users, they
+transmitted navigations signal. On the receiver side, the
+receive navigations signals. The InLite system consists of
+signal is received by a wearable broadband antenna. Then
+a set of 6 to 8 transmit stations positioned around the
+it is necessary to band pass filter the incoming signal in
+building, user terminals inside the building and a
+order to filter out the out-of-band interferers. After
+monitoring and control unit for steering the transmit
+filtering the signal will be down converted to the
+stations plus for broadcasting information to the users.
+baseband, in our case 0-40 MHz.
+The transmit stations broadcast multi-carrier navigation
+It is required to low pass the down converted baseband
+signals with 40 MHz bandwidth from 420 to 460 MHz.
+signal to suppress unwanted mixing products. The low
+The user inside the building receives the signals and
+passed navigation signal must be A/D converted, in order
+calculates his position. The InLite signal design allows
+process it on a computer. For one processing step, we take
+minimizing multipath effects so that the positioning
+16384 samples and calculate the Fast Fourier Transform
+accuracy even in massive multi-level houses made of
+(FFT) of these samples. In the memory of the processing
+concrete, steel and metal-shielded windows reaches 2
+computer, we have stored an undistorted signal replica of
+meters required by [RD.3]. The InLite system has been
+the navigation signal. With this replica and the measured
+successfully tested and presented to public at places in
+signal, we are able to compute the Channel Impulse
+Germany and the UK. System architecture and
+Response (CIR) of the indoor channel for a specific
+measurement examples are presented and an outlook for
+transmitter-receiver combination at a specific time. After
+future activities is given.
+calculation of the CIR in the frequency domain we apply a
+II. INLITE ARCHITECTURE super resolution matrix pencil algorithm to all 200
+subcarrier peaks (for each transmitter) in order to extract
+As displayed in Fig. 1 the main functions of the
+the Line of Sight signal delay, if existent. In order to
+Astrium indoor navigation system are explained. On the
+achieve the required positioning performance it is
+transmitter side, the navigation signal is digitally
+required, that all involved transmitter stations are
+generated in a FPGA Board. In order to achieve an
+synchronized to each other. The synchronization accuracy
+analogue signal, the digital samples must be converted by
+needs to be < 1 nanosecond.
+an ADC to the analogue baseband signal domain.2010 International Conference on Indoor Positioning and Indoor Navigation (IPIN), 15-17 September 2010, Zürich, Switzerland
+III. SYSTEM MODULES The functional block diagram of a TC unit is shown in
+Fig.2.
+InLite consists of the following subsystems: Master
+Control Station (MCS), Transmitter (TC) and User The task of the Synchronization Unit (SU), [RD.5] is to
+Receiver (UR). The MCS is based on a Laptop. It controls ensure that all engaged transmit stations are synchronized
+the TC´s, broadcasts necessary information to the users below 1 nanosecond over the whole operation time (Fig.
+(TC coordinates, reference barometer measurements…) 3, left box). TC #4 needs a reference oscillator which
+and receives user information for further analyses and provides a high accurate 150MHz reference signal for the
+monitoring, and finally displays data for the operator. master synchronization. The synchronization triggered by
+this oscillator leads to an overall synchronization accuracy
+The TC consists of an embedded PC, a navigation
+of 1 nsec for eight signal generators. 1 nsec time deviation
+signal generator, a synchronization unit, a WLAN Data
+corresponds to 30 cm positioning error in the transmit
+Link unit, Power Supply Units (PSU) and antennas for
+station coordinate.
+signal transmission and reception [RD.4]. The ranging
+signal generator is fully initialized after powering up the The distribution of the reference synchronization signal
+system. The synchronization unit is ready some minutes to both branches of the synchronization chain starts at the
+after switch on. The TC embedded PC receives the status master synchronization unit of TC #4. Each TC receives
+data from the synchronization unit, collects GPS raw data the signal from the processor, adjusts his own oscillator
+for later baseline calculation between all transmitter and transmits the signal to the next neighbor.
+stations and controls the WLAN data link modem, which The main synchronization interface between the
+is responsible for the communication between MCS and navigation signal generator and the synchronization unit is
+all transmitters. The configured TC system is capable to a Low Voltage Differential Signaling (LVDS) two wire
+receive command data from the MCS via the data link.
+The UR consists of a powerful embedded PC, a ranging
+signal receiver, a WLAN data link modem and a
+barometer. The ranging signal receiver itself consists of a
+RF-Frontend, which includes a 50MHz band pass filter, a
+down-conversion stage and an anti-alias low pass filter.
+The down-converted baseband will then be sampled by an
+analogue/digital converter. The embedded PC collects the
+samples via an USB bus. The UR barometer is connected
+to the PC and provides height information of the user. The
+WLAN data link modem is used to send the XYZ-
+coordinates to the MCS.
+Figure 2: InLite TC Architecture
+IV. SUBSYSTEM SPECIFICATION
+interface: one for the 10MHz reference clock and the other
+The MCS is responsible for the remote control of the
+one for the 0.5Hz signal which is required for a permanent
+GPS receiver in each TC. By pushing a button the GPS
+resynchronization
+receivers will be activated via a broadcast command to
+The Navigation Signal Generator (NSG) is not a
+start with the recording of GPS raw data over a time
+commercial-of-the-shelf product. It is specified by EADS
+period of 15 minutes. After the expiration, the collected
+Astrium GmbH and built by Andimedes (Fig.3, right box).
+GPS raw files will be automatically transferred to the
+MCS. The NSG has the capability to transmit signals in the
+420MHz frequency band with various bandwidths up to
+Once the raw data are available on the MCS hard disk,
+80MHz. The transmitted signal is a right hand SSB signal.
+the baselines between the transmit stations can be
+We currently use 40MHz bandwidth in a frequency range
+calculated. As a result we achieve very accurate relative
+from 420 to 460 MHz.
+TC coordinates. The accurate absolute positions of each
+TC, related to a WGS84 coordinate system is obtained by
+using SAPOS services, otherwise a stand alone solution
+can have an uncertainty of about 10 meters. A further task
+of the MCS is to provide a communication link with the
+UR. As soon as the TC coordinates are calculated, they
+are transferred to the UR software. This process starts
+automatically, as soon as the UR is connected to the server
+(MCS).
+The height calculation is enhanced via differential
+calculations with respect to the outdoor reference
+barometer mounted in one TC #4. The position calculation
+in the UR can be started and stopped via remote desktop
+connection from the MCS.
+Once the UR has calculated the first positioning data,
+the data stream will be sent via WLAN to the MCS and
+will be visualized in a 3D model of the investigated
+building.
+- 2 -2010 International Conference on Indoor Positioning and Indoor Navigation (IPIN), 15-17 September 2010, Zürich, Switzerland
+Figure 3: Broadband InLite Navigation Signal Generator (right) and
+Synchronization Unit (left) Table 2: Signal specification per TC
+Each signal consists of 200 subcarriers. This signal
+design allows eliminating multi-carrier signals. An
+V. SIGNAL DESCRIPTION
+appropriate algorithm which has been applied is the
+The ranging signal is an appropriate multi carrier signal matrix pencil method.
+optimized for FFT. The frequency shift between the Fig. 4 shows the structure of the transmitted ranging
+transmitters is obtained by: signal over the whole bandwidth of 40 MHz consisting of
+Sampling Rate = 200MHz =12207.03125Hz 8*200 subcarriers.
+No.of Samples 16384 *RBW 3 kHz Marker 1 [T1 ]
+-80.08 dBm
+It equates to the frequency resolution. The frequency Ref 0 dBm Att 30 dB AQT 2.7 s 470.000000000 MHz
+0 *
+spacing is an integer multiple of the frequency resolution:
+16×12207.03125Hz =195312.5 Hz -10 A
+1 PK
+CLRWR
+-20
+The signals characteristics are displayed in Table 1. The -30
+signal specifications of the TC are shown in Table 2.
+-40
+-50
+Table 1: Signal characteristics
+-60
+Signal Characteristics
+-70
+1
+Signal Bandwidth 40 MHz Single Side Band -80
+-90
+Signal Power in 40 MHz 10dBm
+-100
+bandwidth
+Center420 MHz 10 MHz/ Span100 MHz
+Carrier Frequency 420 MHz
+Date: 24.NOV.2008 16:02:47
+Number of subcarrier 200 Figure 4: Transmitted InLite ranging signal
+Phase variation on each Normal distribution *RBW 30 Hz Marker 1 [T1 ]
+subcarrier -49.17 dBm
+Ref 0 dBm Att 30 dB AQT 11 s 420.000000000 MHz
+Pulse width without impressed 25 ns 0 *
+phase variation
+Pulse Repetition rate 5.12 us -10 A
+1 PK
+Unambiguousness area 1536 Meter CLRWR
+-20
+-30
+-40
+1
+-50
+Signal Characteristics
+-60
+Number of carriers 200
+-70
+Impressed phase distribution Normal distribution -80
+on each subcarrier
+-90
+Transmitter #1
+-100
+Frequency of carrier no. 1 195312.5 Hz Center420.62 MHz 200 kHz/ Span2 MHz
+Frequency of carrier no. 200 39062500Hz Date: 24.NOV.2008 16:17:28
+Figure 5: InLite ranging signals transmitted from four TCs
+Transmitter #2
+Frequency of carrier no. 1 207519.53125 Hz VI. SIGNAL TRANSMISSION
+Frequency of carrier no. 200 39074707.03125 Hz
+Transmitter #3 The TC equipment (SG, GNSS Rx, Synchronization Unit,
+Frequency of carrier no. 1 219726.56250 Hz communication unit, and an embedded PC) are mounted
+Frequency of carrier no. 200 39086914.06250 Hz in a TC box. An up to 4 meters expendable telescope
+… …
+mast is fixed to each box as well as the WLAN antenna,
+Transmitter #7
+the synchronization antenna, the navigation signal RF
+Frequency of carrier no. 1 268554.68750 Hz
+Frequency of carrier no. 200 39135742.18750 Hz antenna and GNSS antenna. The set-up of the boxes can
+Transmitter #8 be performed quite easy, however the boxes are heavy
+Frequency of carrier no. 1 280761.71875 Hz and need to be carried by two persons. The advantage of
+Frequency of carrier no. 200 39147949.21875 Hz
+the massive box leads to a good wind robustness of the
+TC. Fig.6 shows the set-up of the TC segment (without
+- 3 -2010 International Conference on Indoor Positioning and Indoor Navigation (IPIN), 15-17 September 2010, Zürich, Switzerland
+GNSS antenna, which would be placed on the very top).
+Fig.7 shows the TC rear panel with cable connections.
+Fig.8. displays the modules and components in the 19"
+rack. The TC power supply is performed by using four
+LiPo accumulators with a voltage of 14.8V and 10
+Ampere hours (Ah). This leads to availability of the
+system of about 8 hours before recharging is necessary.
+Figure 8: TC modules and components in the 19" rack.
+VII. USER RECEIVER
+The InLite test User segment receives the transmitted
+signal of all eight transmit stations. The core module is an
+embedded PC, connected to an AD Converter. A data link
+connection establishes an interface to the Master Control
+Station, in order to send the calculated three dimensional
+receiver coordinates. The AD Converter sends the data
+samples via an USB-Interface to the embedded PC.
+The Block diagram of the RF-Frontend is shown in Fig.9.
+First we have a band pass filter with 60MHz bandwidth,
+to suppress out of band interferers.
+After filtering, the signal must be amplified, with a low
+noise amplifier. The gain must be in an adequate range, to
+avoid an overdriving of the following mixer.
+The down converted signal must be band limited, to
+avoid aliasing products in the connected AD-Converter.
+The low pass filter has also the function of noise power
+reduction. The 10MHz reference input must be tied to the
+10MHz local oscillator output, to avoid beat frequencies.
+Figure 6: View of the InLite transmit station
+The output samples (each batch has a size of 16384
+samples) of the AD converter arrive via an USB bus in
+the embedded PC memory, for estimating the channel
+impulse response, and the line of sight delays of each
+involved transmitter. Fig. 10 shows the Astrium receiver.
+Figure 7: TC back view cable connections
+Figure 9: Block Diagram of the User Receiver Architecture
+Fig. 8 shows the TC modules and components placed in
+the 19" Rack.
+- 4 -2010 International Conference on Indoor Positioning and Indoor Navigation (IPIN), 15-17 September 2010, Zürich, Switzerland
+Figure 9: Overall InLite Architecture
+IX. TEST CAMPAIGNS
+Several test campaigns were run in 2008 and 2009 in
+Germany and in the UK in order to test the indoor
+performance if the InLite system. We present the results
+Figure 10: Front view of the Astrium user receiver from a test campaign in and around a multi-level massive
+not used building in Ottobrunn near Munich made of
+The light weight wearable receiver antenna is carried on reinforced concrete with metal shielded windows. The
+the human body in front of the user and on the back side other campaign was performed in Newport, Wales in and
+of the backpack Receiver. The overall antenna diagram is around a hotel in order to show the performance in a place
+quasi-Omnidirectional and allows the user to walk around where people live. The positioning performance is
+in the building. The following figure shows the user comparable for both sides.
+receiver and the master control station. Fig. 11 shows the Ottobrunn test building. This building
+was selected to represent a realistic challenging mission
+environment.
+Figure 9: InLite Test Receiver (left)
+and MCS (right)
+VIII. OVERALL ARCHITECTURE
+Fig.11: Test building with reinforced concert (60 cm thickness) and
+Fig.10 displays the overall InLite Architecture. The three metal covered windows to protect the heat in summer.
+signal links are clearly visible. The transmission of
+broadband navigation signals (420-460MHz) starts from The following figures show the results.
+the eight TCs. The synchronization chain is initiated by
+TC 4 triggered by a master clock. WLAN communication
+between MCS, TCs and user receiver is started by the
+MCS.
+Fig.12: Track of the user receiver on the ground floor in the Ottobrunn
+building
+- 5 -2010 International Conference on Indoor Positioning and Indoor Navigation (IPIN), 15-17 September 2010, Zürich, Switzerland
+The performance analysis shows that the track of a X. SUMMARY AND OUTLOOK
+person within the building has an accuracy of roughly 2
+meters. The location of the person can be followed even
+The next steps in a follow-on programme will be
+when the person is moving upstairs. Successful
+measurements were made up to the 5th floor of the • Research and tests to analyse the impact of the
+building. near-far effect on the positioning performance of
+the user receiver
+• Research and tests to investigate and separate the
+different error sources impaction the positioning
+performance.
+• Research and tests to analyse the operating distance
+and performance of the Astrium indoor system for
+example with several buildings in between the TC
+setup.
+• Investigations to miniaturize the user receiver.
+ACKNOWLEDGMENT
+This work was co-funded by the German Aerospace
+Center DLR, Germany. The team thanks Dr. Michael
+Heyl from DLR for supporting the work during the 3 year
+period. The Newport and Ottobrunn test campaigns were
+supported by EADS.
+REFERENCES
+[1] The Potential of UWB for Local Augmentations to GNSS
+Positioning, Barry Darby, Pierre Diederich, Ewan Frazer, Dave
+Fig.13: Three-dimensional track of the user inside the Ottobrunn Harmer, Gethin Morgan-Owen, 20th AIAA International
+building. The blue pin points in the upper part of the figure show the Communications Satellite Systems Conference May 12 -15, 2002
+locations of the transmit stations.
+[2] J. Duckworth at al, 2007: WPI Precision Personnel Locator
+System - Evaluation by First Responders, ION-GNSS Session D3,
+Indoor Positioning, Forth Worth, TX, p. 1-9.
+[3] InLite Mission Requirements Document IN-AST-DDD-0001,
+17.April 2007
+[4] ANDIMEDES System Specification for an InLite Transmit
+Station, 2008
+[5] SYMEO Specification of the Synchronization Unit, 2009.
+Fig.14: Track of the user in the Newport Hotel during the UK test campaign in 2009.
+- 6 -
+View publication stats

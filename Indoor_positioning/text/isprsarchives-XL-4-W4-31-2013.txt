@@ -1,0 +1,376 @@
+TheInternationalArchivesofthePhotogrammetry,RemoteSensingandSpatialInformationSciences,VolumeXL-4/W4,2013
+ISPRSAcquisitionandModellingofIndoorandEnclosedEnvironments2013,11–13December2013,CapeTown,SouthAfrica
+TO LOCALISE OR TO BE LOCALISED WITH WIFI IN THE HUBEI MUSEUM?
+Edward Verbree a,, Sisi Zlatanova a,, Karl van Winden b, Eva van der Laan b, Antigoni Makri b,,
+Li Taizhou c,, Ai Haojun c
+a Delft University of Technology, Faculty of Architecture and the Built Environment
+e.verbree@tudelft.nl; s.zlatanova@tudelft.nl
+b Delft University of Technology, MSc Geomatics
+c School of Computing, Wuhan University
+ISPRS Working group IV/7
+KEY WORDS: WiFi Fingerprinting, WiFi Monitoring, Indoor Localisation
+ABSTRACT:
+Indoor localisation is in demand for a variety of applications within the built environment. An overall solution based on a single
+technology has not yet been determined. The aim of this paper is to gain insight on Signal Strength monitoring by a special kind of
+WiFi Monitors in comparison to the commonly known fingerprinting method for the purpose of a 3D indoor navigation system.
+Ttwo different WiFi based localisation techniques are tested during the MSc Geomatics DaRen Syntheses Project in the Hubei
+Provincial Museum, China.
+The first method detects the beacon frames send by smartphones, laptops and other WiFi enabled devices in range using Libelium
+Meshlium Xtreme monitors. Their MAC addresses and the signal strength is measured by the Meshlium Xtreme and stored on an
+external database. We call this method WiFi monitoring. The second method a Wifi enabled device, like a smartphone, measures the
+signal strength of multiple Wifi Access Points in range to localise itself based on a previously created radio map. This method is
+known as WiFi fingerprinting.
+Both methods have some advantages and disadvantages. Advantages of the common way of WiFi fingerprinting are that the
+implementation costs are relatively low, because it is usually possible to use (a part of) the existing WiFi AP infrastructure. WiFi
+fingerprinting can reach a relatively high accuracy in the order of magnitude of meters. Finally, the location granularity can be
+adjusted to what is necessary for the purpose of the indoor localisation. This makes it employable for a wide range of purposes.
+The question remains how suitable these methods are for a 3D indoor navigation system for the Hubei provincial museum. One
+important aspect is the localisation-granularity necessary for the application. In a museum it is not necessary to know the exact X,Y
+position of a user (such high accuracy is unnecessary), more important is to know in which room the user is located so the
+information on exhibitions can be presented and the starting point of the navigation can be determined.
+Both methods can track the user and tell the room he or she is located at. Although WiFi smartphone monitoring may have a low
+update frequency it is still suitable for a navigation system for a museum since visitors usually spend more than a couple of minutes
+within a room.
+1. INTRODUCTION from the museum point-of-view. The museum should be given
+insight on the behaviour of people and the amount of people
+The research was focused on two Wi-Fi based localization present in the museum.
+methods, Wi-Fi monitoring and Wi-Fi fingerprinting using the
+existing WLAN infrastructure. The first method detects the 2. WIFI MONITORING
+beacon frames send out by mobile devices, laptops and other
+Wi-Fi enabled devices in range using Libelium Meshlium The Meshlium Xtreme router launched by Libelium company is
+Xtreme monitors - Wi-Fi monitors (Libelium, 2013) while in the Wi-Fi monitor that is used in the current project. Meshlium
+the second one a mobile application receives signal strength Xtreme is a multiprotocol router for wireless sensor networks
+measurements from multiple access points and compares them designed to connect ZigBee, Wi-Fi and Bluetooth sensors to the
+with the values obtained in a previous (training) phase. The Internet through 3G connectivity. It allows the detection of any
+main question that needs to be investigated is how suitable device working with Wi-Fi or Bluetooth interfaces, such as
+these methods are for a context aware 3D indoor navigation iPhone and Android devices. In this research the device is going
+system for the Hubei Provincial museum. The system demands to be used to detect mobile devices through their Wi-Fi
+a few requirements of the localisation part. The most important connection. The information read from each user by the Wi-Fi
+requirement is to provide the location of the user to the monitor contains:
+application so that the right starting point in the navigation - The MAC address of the wireless interface, which allows
+network to be assigned. A second requirement is to provide the identifying it uniquely.
+room in which the user is located to be able to inform the user - The strength of the signal (in RSSI quality (0-100%) from
+on the exhibits in that room. Moreover, the system has to be signal strength -90 dBm and -40 dBm)
+able to provide the real time location of the user. Besides these - The vendor of the Mobile device (Apple, Nokia, etc)
+user- and application- requirements, there is also a requirement
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-4-W4-31-2013 31TheInternationalArchivesofthePhotogrammetry,RemoteSensingandSpatialInformationSciences,VolumeXL-4/W4,2013
+ISPRSAcquisitionandModellingofIndoorandEnclosedEnvironments2013,11–13December2013,CapeTown,SouthAfrica
+- The Wi-Fi Access Point where the user is connected (if any).
+Users not connected to an AP will be showed as "free users". 2.1 Implementation of the Wi-Fi Monitors
+The recorded data can be stored in a local or an external
+database. The Wi-Fi monitor is plugged into the power, which Being aware of the disadvantages of the Wi-Fi monitors, for
+allows the administrator to read the data when connected to the determining the implementation of these devices the advantages
+device. However, if the Wi-Fi monitor is connected to the are equally important. All mobile device types are detected
+internet, the records can be sent to an external database. This which makes this method accessible for all users, including
+makes it possible for the administrator to access the data from users of Apple devices. Also the possibility to store all the data
+any place when provided with Internet connection (Libelium, externally on a database is a big advantage. In this way all the
+2013). data can be reached from any location without the need for
+information from the mobile device of the user. This last
+During the testing phase the benefits and drawbacks of the Wi- advantage can be used for providing information to the
+Fi monitors were revealed. The major issue with the Wi-Fi museum. It has been demonstrated the direction of the
+monitors is that the interval between two successful scans of the movement of people can be computed and also the amount of
+same mobile device is large (a couple of minutes). The scanning people can be calculated by using information provided by the
+cycle of the Wi-Fi monitors is set at 5 seconds in most cases and Wi-Fi monitors. The museum managers can retrieve this
+even 2 seconds at times, but still the interval between two scans information every moment of the day from their computer,
+is between a minute and a couple of minutes. This is most likely without specific information from the user.
+due to the active scanning of the mobile devices and the interval
+between probe requests. Probe requests are the active scans by 3. FINGERPRINTING TECHNIQUE
+the mobile device. "During active scan, the client tunes its IEEE
+Fingerprinting is a commonly used indoor localization method
+802.11 radio to the channel being scanned and broadcasts a
+due to the high accuracy of location determination and low
+probe request in order to listen to any available probe responses
+costs of implementation as it is usually possible to use (a part
+from APs on the specific channel with the matching SSID"
+of) the existing infrastructure (Haojun et al., 2011). Another
+(Sidiropoulos et al., 2012). A directed probe requests let the
+advantage is that this technique can have a high location
+client send a name-specific SSID request on which the specific
+calculation frequency, also called location granularity. This
+SSID will response. A broadcast probe with a null SSID will
+means that the location calculation frequency can be adjusted to
+cause all the APs to respond and these requests can be picked
+what is necessary for the purpose of the indoor localization.
+up by the Wi-Fi monitor. For a mobile device that is asleep, it
+This makes it employable for a wide range of purposes.
+sends out a probe request every minute. When the mobile
+However, there are also some important disadvantages of Wi-Fi
+device is in stand-by it sends out a request every 4-6 seconds.
+fingerprinting. Firstly, implementation is extremely time
+Only manual scanning for networks by the user can increase the
+consuming since the offline phase takes a lot of time and effort
+interval (Cisco, 2013). The interval between the probe requests
+(Machaj and Brida, 2012). Secondly, fingerprinting does not
+and the scanning cycle of the Wi-Fi monitors causes the Wi-Fi
+work well in open spaces due to the lack of unique signal
+monitors to miss some requests, which leads to larger intervals
+strengths in such spaces (Lu et al., 2013). Thirdly, there are
+than necessary. For localization purposes the current interval
+many external circumstances that influence the accuracy of the
+between two scans is too big, because within a minute a user
+localization. For example, the presence of public or using
+can already be moved from one room to the other. Also it is
+different kind of mobile devices influences the measured signal
+desirable for a localization system that all Wi-Fi monitors, in
+strength and thus the accuracy of the measurements (Ma et al.,
+our case two, to scan the user at the same time. This cannot be
+2008). Finally, an important disadvantage of this technique is
+guaranteed with our Wi-Fi monitors. A smaller interval between
+that Apple devices are excluded from this localization method
+consecutive probe requests would be a solution to scan the
+because they are not able to carry out a Wi-Fi scan since all
+mobile devices more often. According to Musa and Eriksson
+such sniffer applications are banned (WlanBook, 2013).
+(2012) a smaller interval can be achieved by "opportunistic AP
+Fingerprinting is based on comparing the unique signal data
+emulation". Besides the broadcast probes a mobile device sends
+from a source send at a particular location with a radio map of
+out frequently, it also frequently sends out directed probe
+data (Fallah et al., 2012). Localization based on fingerprinting
+requests for a specific SSID that it has been associated to in the
+technique includes two phases, an offline phase and online
+past. The idea is to change the SSID of the Wi-Fi monitor in a
+phase. The offline or training phase is about collecting the data
+SSID that the user has used in the past. In general this SSID can
+for the radio map and in that way obtaining a unique signature
+be well known providers that are in the memory of many mobile
+of signal strengths of different access points at multiple
+devices. When the mobile device tries to associate with the
+locations at the research area. The online phase includes the
+"known" SSID, it will encounter a different security protocol
+comparison of the received signal strength values to the radio
+than it has remembered for that SSID. Because it cannot
+map and in that way give the approximate location of the user
+connect to the AP with the unknown security protocol it will
+(Rehim, 2004).
+continuously sending out null packets to see if the AP is still
+there. In that way the theory on how the Wi-Fi monitor will
+receive additional probe requests is explained. In practise, the 3.1 Theory
+performance was not improved.
+In this research a Wi-Fi fingerprinting application created in the
+Wuhan University was used. This application makes use of the
+The second issue was that not all mobile devices were scanned
+Parametric Signal Strength Distributions for location
+by the Wi-Fi monitor. Especially newer devices tended to be
+determination described by Rehim (2004). As it has already
+invisible in the logs. At a certain time, one of these newer
+been stated, the process consists of two phases, the offline and
+devices did show up in a log of one Wi-Fi monitor but not on
+online phase.
+the other. Apparently, one of the Wi-Fi monitors had been
+previously updated and the other was not. After updating the
+Wi-Fi monitor, the newer mobile devices were scanned.
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-4-W4-31-2013 32TheInternationalArchivesofthePhotogrammetry,RemoteSensingandSpatialInformationSciences,VolumeXL-4/W4,2013
+ISPRSAcquisitionandModellingofIndoorandEnclosedEnvironments2013,11–13December2013,CapeTown,SouthAfrica
+In the offline phase a radio map is created, signal strengths of people who are not using the application, but who only have
+the present access points are measured and processed. It is their Wi-Fi enabled on their mobile device. On the other hand,
+assumed that the signal strength is normally distributed. The the downside of storing data in the database related to privacy
+location of the various access points is unknown, which reduces issues as users should give permission to let the application use
+the problem to defining the parametric distribution fitting the their location for different purposes.
+signal strength as if it would come from a single access point. 3. The interval between two consecutive scans with the Wi-Fi
+The parametric distribution is defined by calculating the monitors is relatively big and a smaller interval is required for
+probability density function (pdf) of the Gaussian distribution. localization. Visitors of the museums tend to walk slow and
+therefore give the Wi-Fi monitors the opportunity to scan the
+In the online phase the users measurement (signal strengths s) is users while they are still in the same place. However, this is not
+compared to the previously created radio map and a location x a suitable for localization purposes.
+with the highest probability P is selected and returned. To find 4. Besides the differences in method, there is also a difference
+the highest probability of certain signal strengths at a certain in signal strength. A comparison has been made between the
+location, once again the Gaussian distribution is used (Rehim, signal strengths measured by the Wi-Fi monitors and measured
+2004). by the mobile device. Measurements are used from both devices
+scanning
+4. WI-FI MONITORED FINGERPRINTING. each other at the same time. A conversion for the signal strength
+from the mobile device is necessary. The mobile device
+“Fingerprinting techniques are especially appropriate for the measures in dBm, while the Wi-Fi monitor measures quality in
+range of frequencies in which GSM and Wi-Fi networks operate percentage where the dBm is between -90 and -40.
+(aprox. 850 MHz to 2.4 GHz) because of two main reasons: the
+signal strength at those frequencies presents an important spatial 5. PRIVACY ISSUES
+variability, and also a reliably consistency in time (despite the
+variable nature of radio signals)" (Martin et al., 2010). The 3D indoor navigation system DaRen falls in the category of
+Additionally, the authors state that the fingerprinting methods location-based services (LBS). LBS uses the user location to
+already proved to be able to deliver better accuracies compared deliver a service. Privacy is a serious issue for LBS and it can
+to propagation-based methods. An attempt has been made for have a great impact on the success of these services. An
+localization with only two Wi-Fi monitors. The Wi-Fi monitors example of this, are the recycling bins of the company Renew
+were already taken into account in the WLAN-infrastructure in (Datoo, 2013). This company installed recycling bins with
+the fingerprinting method for the DaRen application. Therefore screens in the city of London that can show advertisements to
+the data needed for fingerprinting is already present in the people that are close. In some of these bins Renew has installed
+database of the Wi-Fi monitors. tracking devices to detect and track mobile devices, so that the
+advertisements to be personalised for each mobile device. The
+Similar as with normal fingerprinting an offline phase is needed problem with this system was that MAC-addresses are tracked
+to create the radio map. All the reference points are already without the consent of the user and therefore the tracking
+measured for the actual fingerprinting method of the DaRen system in the bins was not allowed by the city of London.
+application, however a radio map has to be created. The RSSI
+measured by both Wi-Fi monitors for every reference point is Besides the legal concerns, there are also the user's concerns
+required to create a radio map of this method. The exact time of about their privacy, such as who receives this location
+every measured reference point is known, which is at least 4 information, for which purpose and for how long is it used and
+minutes, including the MAC-address of the mobile device that stored (Xu et al., 2009). For DaRen project, it is important to
+was used for measurement. A query in the database can filter investigate both legal and user concerns so that users' privacy to
+the data, so that the different RSSI values remain for the given be protected. So, that then these concerns can be taken care off
+reference point and Wi-Fi monitor. The averages of these values in the system, if they apply. In this section, first privacy is
+are taken into account. This has been done for every reference discussed where both user concerns and legal concerns are
+point for both monitors until a table is created with X, Y and addressed. After that, it is investigates whether these concerns
+RSSI thus creating the radio map. are applicable for the DaRen project and if these concerns are
+applicable how these concerns should be taken care off.
+4.1 Comparison.
+5.1 Privacy
+There are some advantages and disadvantages of the method as
+compared to the original fingerprinting which are discussed Often, privacy is described as the right to be left alone (Warren
+below: and Brandeis, 1890). This right is also been recognized by the
+1. The advantage of Wi-Fi monitoring fingerprinting stems from United Nations as a fundamental right in The UN Universal
+the fact that no additional application is required to scan the Declaration of Human Rights (Loenen and de Jong, 2007).
+APs and derive the RSSI. On the other hand, Wi-Fi monitors There are different kinds of privacy. In this case information
+are more expensive than the regular APs used for original privacy, in which information is regarded as personal data, is on
+fingerprinting. interest. Personal data is regulated by the privacy laws of each
+2. Additional advantage is that all the data is stored directly in country.
+the database. The data is accessible every moment of the day
+and in thus can provide real-time information to the museum. 5.2 User concerns
+Adding additional Wi-Fi monitors will enrich the information
+provided thus improving the quality. Furthermore, when the Lot of research concerning the privacy concerns of users using a
+data is stored in the database, it is possible to provide LBS has been conducted. Those studies reveal that users are
+information to the user about the location of other people thus concerned about loss of privacy when using LBS (Xu et al.,
+enabling him to avoid crowded exhibits. This also includes 2009). The different concerns can be categorized in four groups:
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-4-W4-31-2013 33TheInternationalArchivesofthePhotogrammetry,RemoteSensingandSpatialInformationSciences,VolumeXL-4/W4,2013
+ISPRSAcquisitionandModellingofIndoorandEnclosedEnvironments2013,11–13December2013,CapeTown,SouthAfrica
+collection, unauthorized secondary use, errors and improper the information source. That means that if the person does not
+access. Collection reflects the concern about the extensive explicitly express his or her dissent on being tracked, then his or
+amount of personally identifiable data collected and stored in her location can be recorded and used.
+databases. Secondly, unauthorized secondary use is about the
+concern that information is collected from individuals for one 5.4 Privacy concerns DaRen
+purpose but is used for another secondary use without consent.
+Errors reflect the concern that protection against deliberate and The first step is to identify the occurrence of personal
+accidental errors in personal data is inadequate. Improper access information in the DaRen system in order to find out if data
+is the concern that data about individuals are readily available protection regulation has to be applied on the system. Since the
+to people not properly authorized view or work with data. The main difference in the privacy regulation of the Netherlands and
+abovementioned concerns should be considered in the design China is that the in the Netherlands the implementation is
+and implementation of the application. Especially the proper regulated by law while the substance is more-or-less the same,
+communication of privacy issues related to the application the Dutch privacy regulation is used to detect the occurrence of
+should be of primary importance. Users should be aware that personal information. As it has already mentioned, according to
+their privacy is protected. the Dutch law information is personal when it can identify or
+has a possibility to identify a specific person. Normally in LBS
+5.3 Legal Concerns during the localization or tracking of a mobile device, personal
+information is collected as the MAC address of the device is
+In many countries the privacy concerns are addressed by scanned. In DaRen project the user does not have to provide
+applying regulation. This means that regulations can differ per any personal information while using the mobile phone
+country. Therefore, in this subsection the current legislation application. However, the localization component includes two
+current legislation regarding protection of privacy in the sub-systems. The subsystem that provide the museum visitors'
+Netherlands and China are investigated. location in the application does not make use of the MAC
+address but the sub-system that provides the information to the
+5.3.1 Netherlands. museum managers makes use of it and therefore the data falls
+under the data protection regulation. In case that the two
+According to the Dutch law information is personal when it can subsystems will be integrated into one, the implementation of
+identify or has a possibility to identify a specific person. If privacy terms and conditions would be indisputable. The
+information is personal, regulations should be applied on this application should ask for the user's permission before being
+information as described in the "Wet Bescherming installed on the device and the purpose of collecting the MAC
+Persoonsgegevens" (WBP, 2011). According to this law the address of the device should be clearly stated. Moreover,
+user should give prior consent in order for his personal personal data should be sufficiently protected from
+information to be used. Furthermore, it should be stated which unauthorized use.
+information is used and for what purpose. Also, it s not allowed
+this information to be later used for other purposes or to be sold 6. CONCLUSIONS
+to a third party without consent. Finally, personal information is
+only stored till the point that information does not serve its This paper gave insight on WiFi smartphone monitoring with
+purpose anymore and the stored information should be respect to the WiFi fingerprinting method for the purpose of a
+sufficient protected to prevent people from gaining 3D indoor navigation system. The advantages and
+unauthorized access. Further, this year the Article 29-working disadvantages of both systems were listed and a conclusion is
+group (Article 29 Working Party, 2013) which are the privacy made based on the arguments given in this paper and the real-
+supervisors for the European Union gave their opinion on the life problems that were encountered during the creation of a 3D
+area of privacy and mobile applications/LBS. They provide indoor navigation application for the Hubei Provincial Museum.
+mobile application developers with some obligations and
+recommendations. Most of the obligations are more-or-less ACKNOWLEDGEMENTS
+implemented in the Dutch Law. On the other hand, the
+This paper is based on the work conducted by the students of
+recommendations such as informing the public when there is a
+the MSc Geomatics Delft University of Technology (the
+data leak and use in the privacy condition information special
+Netherlands) during their Syntheses Project 2013 in cooperation
+for European users, are more interesting.
+with LIESMARS Wuhan University (China). The project
+focussed on demonstrating the potential of 3D indoor
+5.3.2 China.
+navigation systems and raising awareness of the possibilities
+provided by the technology for every-day users. DaRen, the
+In China there is currently no specific legislation for protecting
+final product of the project is a 3D indoor navigation system for
+personal information. Only a guide of personal information
+Hubei Provincial Museum (China). The synthesis project took
+protection was published in November 2012 (Shi, 2012), which
+seven weeks and was subdivided into three development
+became a national standard since February 2013 (Zhang, 2013).
+phases: preparation, implementation and synthesis. The full
+This guide divides the personal information into personal
+report with test results is to be accessed from:
+general information and personal sensitive information. The
+www.geomatics.tudelft.nl.
+personal sensitive information is the information that can lead
+to harmful effect on the person when it is revealed or changed,
+REFERENCES
+such as the ID number, phone number and fingerprint. The
+personal general information is all other personal information
+Cisco, 2013. White Paper: Presence Analytics [pdf] Cisco
+excluding sensitive information. According to this definition,
+Meraki.
+the writer thinks the anonymous personal location information
+https://meraki.cisco.com/lib/pdf/meraki_whitepaper_presence.p
+belongs to the personal general information, which is allowed to
+df [Accessed 25 October 2013].
+be collected and processed under tacit or expressed consent of
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-4-W4-31-2013 34TheInternationalArchivesofthePhotogrammetry,RemoteSensingandSpatialInformationSciences,VolumeXL-4/W4,2013
+ISPRSAcquisitionandModellingofIndoorandEnclosedEnvironments2013,11–13December2013,CapeTown,SouthAfrica
+Fallah, N., Apostolopoulos, I., Bekris, K., and Folmer, E., 2013. http://qz.com/112873/this-recycling-bin-is-following-you/
+Indoor Human Navigation Systems: A Survey. Interacting with
+Computers, 25.1: 21-33. WBP. (2011), Wet Bescherming Persoongegevens.
+http://www.cbpweb.nl/Pages/pb_20111115_google.aspx
+Haojun, A., Taizhou, L., Jianjian, W., Menglei , Z., 2013. A
+New Wi-Fi Fingerprint Indoor Localization Method for Smart WlanBook (2013)
+Phone’s Heterogeneity. School of Computer Science, Wuhan http://wlanbook.com/why-did-apple-ban-iphone-ipad-wifi-
+University. scanning-apps/
+Libelium, 2013. Meshlium Technical Guide v4.0 [pdf]
+Libelium. Available at:
+http://www.libelium.com/development/Meshlium/documentatio
+n/Meshlium-technical-guide/ [Accessed 25 October 2013].
+Lu, B., Niu, J., Juny, J., Cheng, L., Guy Y., 2013. WiFi
+Fingerprint Localization in Open Space. State Key Laboratory
+of Software Development Environment, Beihang University,
+Beijing 100191, China and Singapore University of Technology
+and Design, Singapore
+Ma, J., Li, X., Tao, X., and LU, J., 2008. Cluster Filtered KNN:
+A WLAN-Based Indoor Positioning Scheme. State Key
+Laboratory for Novel Software Technology
+Machaj, J., Brida, P., 2012. Impact of Radio Fingerprints
+Processing on Localization Accuracy of Fingerprinting
+Algorithms. Electronics and electrical engineering. No7 vol .
+123
+Musa, A.B.M., Eriksson, J., 2012. Tracking Unmodified
+Smartphones Using Wi-Fi Monitors.
+Rehim, M.A.A.A.Y.A., 2004. Horus: A WLAN-Based Indoor
+Location Determination System.
+Shi, J., 2012. The personal information protection legislation
+under Web environment. Available at:
+http://d.g.wanfangdata.com.cn/Periodical_szdxxb-
+zxshkxb201206013.aspx
+Sidiropoulos, N., Mioduszewski, M., Oljasz, P., Schaap, E.,
+2012. Open Wifi SSID Broadcastvulnerability.
+Van Loenen, B., de Jong, J., 2007. ‘SDIs and Privacy:
+Conflicting Interests of the Spatially Enabled Society', Chapter
+21, In A. Rajabifard (ed.), Towards a Spatially Enabled Society,
+ISBN 978-0-7325-1620-8, University of Melbourne, pp. 271-
+284
+Warren, S. D., & Brandeis, L. D., 1890. The right to privacy.
+Harvard law review,4(5), 193-220.
+Xu, H., Gupta, S., & Shi, P., 2009. Balancing User Privacy
+Concerns in the Adoption of Location-Based Services: An
+Empirical Analysis across Pull-Based and Push-Based
+Applications. iConference (iSociety: Research, Education, and
+Engagement, University of NorthCarolina-Chapel Hill.
+Zhang, Y., Chen, X., Jiang, J., 2010. Wayfinding-Oriented
+Design for Passenger Guidance Signs in Large-Scale Transit
+Center in China. Transportation Research Record: Journal of
+the Transportation Research Board, No. 2144, Transportation
+Research Board of the National Academies, Washington, D.C.,
+2010, pp. 150–160.
+Websites:
+Datoo, S. (2013), This recycling bin is following you.
+This contribution has been peer-reviewed.
+doi:10.5194/isprsarchives-XL-4-W4-31-2013 35

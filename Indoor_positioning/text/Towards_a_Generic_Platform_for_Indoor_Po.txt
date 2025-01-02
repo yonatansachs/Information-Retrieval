@@ -1,0 +1,222 @@
+Towards a Generic Platform for Indoor Positioning
+using Existing Infrastructure and Symbolic Maps
+Kurt Gubi1, Rainer Wasinger1, Michael Fry1, Judy Kay1, Tsvi Kuflik2, Bob
+Kummerfeld1
+1 CHAI Group, School of IT, Sydney University, 2006, NSW, Australia
+kurt@it.usyd.edu.au, {rainer.wasinger, michael.fry, judy.kay,
+bob.kummerfeld}@sydney.edu.au
+2 University of Haifa, Haifa, Israel
+tsvikak@is.haifa.ac.il
+Abstract. One of the important challenges for personalised, context-aware
+information delivery within buildings is to be able to show the user a map with
+their own location as well as the locations of points of interest for them. One
+very desirable property of a personalised, context-aware mobile application is
+that it can operate at the same time as preserving the user‟s privacy. To achieve
+this, we need to do on-device positioning and personalisation. This paper
+presents the design of a platform, and its implementation for the retrieval of
+publicly available building data (symbolic maps and associated radio-frequency
+infrastructure point locations) for the purpose of coarse-grained indoor
+positioning on mobile devices. In comparison to other indoor positioning
+systems, this work focuses on the mechanism through which building data is
+made available to mobile devices, as too the motivation in providing generic
+coarse-grained indoor positioning based on the use of existing infrastructure
+and building data.
+Keywords: Indoor positioning; symbolic maps; semi-unprepared environments;
+client-side personalisation
+1 Introduction and Motivation
+Location-aware services are becoming increasingly common. A key reason for this is
+the growing number of mobile devices that can now determine their location and have
+the computational and communication power to deliver sophisticated services.
+Examples of such devices are smartphones, eReaders, mobile gaming consoles, in-car
+consoles, and netbooks. Most of these devices now come with a variety of inbuilt
+technologies as standard: for location sensing, e.g. accelerometer, magnetic field,
+orientation sensors, GPS; for positioning and communication, e.g. radio-frequency
+(RF) technologies like 3G, WLAN, and Bluetooth; and also for IO, e.g. inbuilt
+cameras that can be used for vision sensing, particularly in combination with AR and
+QR tags. High-profile investments, such as the European Galileo satellite system thatis currently being built, are an indication of the value that is placed on location-aware
+services.
+Modern positioning (and navigation) systems now cater for a wide range of
+scenarios ranging from in-car, to on-foot, and both outside and inside of buildings
+(e.g. [1]). In comparison to outdoor positioning via GPS, indoor positioning is far
+less widespread, and there are a number of reasons for this. One reason is the lack of
+availability of suitable maps. It is important to appreciate that the creation and
+maintenance of indoor maps is inherently different than is the case for outdoor maps.
+For example, access to - as well as suitability and privacy of - building blueprints
+provides a barrier to entry, meaning that coverage of indoor spaces, e.g. on the scale
+of a whole city, is far less accomplished than is the case for outdoor map locations.
+This means that we need to explore a different form of mapping approach for indoor
+positioning, and this must be able to operate with the type of indoor maps that are
+widely available; notably, we believe it must make use of symbolic maps that are
+often already available for buildings, despite these often not being particularly
+accurate in terms of scale and these often being highly selective in the information
+shown on the map.
+Another key challenge of indoor positioning follows from the limitations of the
+technologies available. While there are several existing and emerging technologies
+that have been used in indoor positioning prototypes (e.g. based on RF, visual
+technology, dead-reckoning techniques), each of these has its own merits and pitfalls.
+None of them, taken independently, have the same planetary-scale applicability, nor
+the consistent accuracy that GPS provides for outdoor positioning. This means that
+there is still important research to be done to create systems that can make use of a
+combination of the available location technologies to achieve effective indoor
+positioning of a person as they move around a building. Finally, specialty-built indoor
+positioning solutions often require infrastructural (and software) outlays that are not
+always feasible.
+In this paper, we describe our design for a platform that addresses these problems
+and describe its implementation for the retrieval of “publicly” available building data
+in the form of symbolic maps and markup of associated RF infrastructure point
+locations (though not limited to just RF) like WLAN and Bluetooth.
+It can be noted that such a platform and its associated APIs will be an indispensible
+building block for web-based user-adaptive systems that contain any type of indoor
+positioning component.
+In Section 2, we describe the benefits for both providers and users of such a
+platform. Section 3 provides an overview of the platform and details of the
+implemented proof-of-concept client application for Android smartphones. This is
+followed in Section 4 with a summary of related work in the fields of positioning
+platforms, and symbolic maps and data modelling. The paper concludes with a
+description of future work in Section 5.2 Indoor positioning in Semi-unprepared Building Environments
+Buildings are typically constructed based on highly accurate geometric blueprints,
+which although useful for architects and builders, are rarely accessible and rarely
+relevant (with regards to the detail they show) to general visitors of the building.
+Many „public‟ buildings (i.e. buildings that the general public have access to, either
+with or without entrance costs attached) do however have maps available to the public
+(e.g. consider museums, libraries, theatres, hospitals, and so on). These maps are
+symbolic in nature, meaning that they need not align to any geometric model or linear
+scale, but instead are specifically designed to highlight aspects deemed to be most
+relevant to the user.
+Similarly, many buildings are nowadays fitted with a range of RF-based
+communication technologies like Bluetooth and WLAN, and although building
+administrators may be reluctant to add additional infrastructure specifically for the
+purpose of indoor positioning, the modelling of already existing infrastructure may be
+an acceptable compromise. We call such environments “semi-unprepared” in that no
+additional technologies need be integrated, but the modelling of existing
+sensor/beacon points is still required.
+Consider the following scenario. Tom, a tourist, is keen to visit a well known local
+museum. Upon arriving at the museum, he loads up the RoughMaps application on
+his smartphone and is presented with a number of icons on his screen representing
+nearby public buildings (e.g. museums, libraries, shopping malls). After Tom has
+selected the particular museum of interest, RoughMaps downloads the relevant
+mapping data from the web-service via a http request, and presents Tom with a
+number of symbolic maps, each one typically showing one level in the museum.
+While Tom considers these maps a useful feature, he is unsure of where he is in the
+building, so he presses the “Find Me” menu item, and the system positions him on the
+relevant sub-map. He is also able to take a photo of any of the QR codes scattered
+around the museum to have his position updated on the map. As he walks around, his
+position is updated on the map through the use of a dead-reckoning approach that
+combines readings from the digital compass and accelerometer sensor (i.e. a
+directional pedometer) contained within his Nexus One smartphone.
+This scenario describes how a mobile client-device accesses (through a web
+service and its associated set of APIs) public indoor map data, to provide an end-user
+with symbolic indoor maps and indoor positioning information. Such a service would
+enable different mobile device types (including the myriad of smartphones) to provide
+personalised context-aware information relating to individual building spaces. Some
+of the indoor-based context-aware applications that such a service would enable
+include: personalised tour guides, recommendations for paths to follow and POIs to
+see (e.g. based on crowd-sourced data), detailed information pop-ups on nearby and
+relevant POIs, and educational treasure-hunt games for exploring indoor spaces.3 Server-side Platform and Client-side Demonstrator
+This section describes the platform through which building data is made available to
+mobile clients and the proof-of-concept client application for Android smartphones.
+There are two main components described in the above scenario, namely: a web-
+service that allows for the „publishing‟ of symbolic map data and associated sensor
+location points; and an API/client-interface that allows for such map data to be
+downloaded and interpreted by mobile applications (and foreseeably also web clients
+in the future). These components are shown in Figure 1A. Figure 1B shows the
+interface in which building data in the form of floor plans and sensor/beacon-location
+markup can be published to the server, while Figure‟s 1C and 1D show how such map
+data is selected and downloaded by the user from a client device. It should be noted
+that certain complexities have been left out of the client-side implementation thus far;
+in particular, the client-side application only uses QR codes and dead-reckoning to
+provide indoor positioning information back to the user. This implementation is
+however clearly extensible to the sensing of additional beacons such as those based on
+RF technology, and the overarching mechanisms in which other applications and
+web-services are able to access the symbolic map data are also left unaffected from
+client-side implementations.
+Fig. 1. Client-server architecture (A), the web-interface allowing building administrators to
+publish building data (B), and map data being selected and downloaded by the end user (C, D).
+The generic indoor positioning component described in the scenario above is
+relevant to a broad range of mobile systems. For example, in [2], a subset of mobile
+systems are described, namely adaptive mobile guides, and it can be noted that all of
+the systems described in that work, ranging from museum guides and navigation
+systems to shopping assistants, use location as part of their application context.4 Related Work
+This work most closely relates to the intersecting fields of indoor positioning
+platforms, symbolic map use, and data modelling techniques for indoor spaces.
+Indoor Positioning Platforms: A number of indoor positioning platforms have been
+created over the past two decades. The Active Badge system (1992) [3], MIT‟s
+Cricket system (2000) [4], BlueStar (2004) [5], and the Personal Navigator (2004) [6]
+are important examples of such systems.
+The Active Badge system represents a class of indoor positioning system in which
+end-users are required to wear tags that broadcast their location to a centralized
+service through a network of sensors. The Cricket system, in contrast, represents the
+class of indoor positioning systems that are based on a decentralized approach, which
+has the particularly important property of being privacy preserving. In this case, the
+user carries a specially-designed listening device, which estimates its distance from
+nearby positioning beacons. The BlueStar and Personal Navigator systems take this
+basic idea further by allowing the client-side „location-sniffing‟ device to be an off-
+the-shelf commodity phone and/or PDA. Given the importance of location privacy,
+we have taken a similar location-sniffing approach to BlueStar and Personal
+Navigator. We move beyond the previous work in that we make use of a range of
+facilities that are available on the user‟s smartphone, with various APIs to allow for
+generic implementation by any number of 3rd-party applications designed for mobile
+client devices (and foreseeably also mobile web services).
+Symbolic Map Use and Data Modelling Techniques for Indoor Spaces: Research
+into human cognition has identified the use of landmarks for positioning and
+navigation as immensely useful. In [7], a number of papers are surveyed in which the
+importance of human conception of space as a collection of familiar landmarks has
+been shown both behaviourally (e.g. for newcomers to a city) and cognitively. Indeed
+in [8], it is described how human cognitive maps - by their very nature of needing to
+find a balance between storing as much useful information as possible against the
+need to keep the amount of information at a manageable level - emphasise some
+information at the expense of other data.
+Tourist maps, for example, are quite often symbolic in nature, and this is often
+done to increase the salience of map features that are deemed relevant to the viewer,
+at the cost of decreasing the salience of the remaining map features/detail. It is this
+form of graphical symbolic map, which quite often bears little resemblance to the
+geometric blueprints of the buildings they represent, that we place at the heart of this
+work and its associated server-side platform and client-side demonstrator.
+The Yamamoto map modelling toolkit [9] is one solution that can be used for the
+modelling of indoor spaces. Yamamoto provides support for the geometric modelling
+of architectural ground plans through polygon meshes. It is a desktop application
+written in C# for the .NET framework and has many features that would make it an
+ideal tool to use, though does not currently offer its functionality in the form of a web
+service, and would thus require users wishing to upload map data to first download
+and install the toolkit. Yamamoto also does not focus specifically on the modelling ofsymbolic maps that may bear little resemblance to their associated geometric building
+blueprints.
+5 Conclusions and Future Work
+This paper provides a number of outcomes. Firstly, it describes a platform that allows
+for single-point of access for downloading publically available indoor mapping data.
+Secondly, it provides the mechanism in which sensor/beacon location information can
+be utilised for coarse-grained indoor positioning. Thirdly, it makes use of a developed
+API and a sample client-side Android implementation of those APIs to demonstrate,
+as proof-of-concept, how to use the platform.
+Future work will focus on continued implementation of the markup notation used
+to model infrastructure points; surveys into the level of infrastructure that different
+types of public buildings currently contain; and usability studies into what minimal
+level of accuracy is required for indoor positioning to be considered useful by end
+users.
+This work is funded by the Smart Services CRC, as part of the Multi-channel
+Content Delivery and Mobile Personalisation Project. We would also like to
+acknowledge the Australian Museum whose floor plans are shown in this paper.
+References
+1. Krüger, A., Butz, A., Müller, C., Stahl, C., Wasinger, R., Steinberg, K-E., Dirschl, A., The
+Connected User Interface: Realizing a Personal Situated Navigation Service. In: Proc. of the
+9th International Conference on Intelligent User Interfaces, pp. 161 – 168 (2004)
+2. Krüger, A., Baus, J., Heckmann, D., Kruppa, M., Wasinger, R., Adaptive Mobile Guides.
+Chapter in: Brusilovsky, P., Kobsa, A., Nejdl, W. (eds.): The Adaptive Web: Methods and
+Strategies of Web Personalization, pp. 521 – 549, Springer (2007)
+3. Want, R., Hopper, A., Falcão, V., Gibbons, J., The Active Badge location system. ACM
+Transactions on Information Systems, 10 (1), pp. 91 – 102 (1992)
+4. Priyantha, N., Chakraborthy, A., Balakrishnan, H., The Cricket Location-Support System, In:
+Proc. Of the International Conference on Mobile Computing and Networking, pp. 32-43
+(2000).
+5. Quigley, A., Ward, B., Ottrey, C., Cutting, D., Kummerfeld, R., BlueStar, a privacy centric
+location aware system. In: IEEE Position, Location and Navigation Symposium, vol. 1
+(2004)
+6. Wasinger, R., Krüger, A., Multi-modal Interaction with Mobile Navigation Systems. In: W.
+Wahlster (ed.): Special Journal Issue "Conversational User Interfaces", it - Information
+Technology, vol 46, number 6, pp. 322 – 331, Oldenbourg (2004)
+7. Bidwell, N. J., Lueg, C. P., Creating a Framework for Situated Way-Finding Research. In
+APCHI, pp. 40 – 49 (2004)
+8. Golledge, R. G., Wayfinding behavior: cognitive mapping and other spatial processes, The
+Johns Hopkins University Press (1999)
+9. Stahl, C., Haupert, J., Taking Location Modelling to new Levels: A Map Modelling Toolkit
+for Intelligent Environments. In: 2nd International Workshop on Location- and Context-
+Awareness. In: M. Hazas, J. Krumm, and T. Strang (Eds.), pp. 74 – 85, Springer (2006)

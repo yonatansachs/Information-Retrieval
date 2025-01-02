@@ -1,0 +1,473 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/228764083
+Indoor Navigation for Complex Environments
+Article · January 2010
+CITATIONS READS
+5 615
+3 authors, including:
+Maarten Weyn Martin Klepal
+University of Antwerp / iMinds Cork Institute of Technology
+148 PUBLICATIONS 2,705 CITATIONS 71 PUBLICATIONS 1,734 CITATIONS
+SEE PROFILE SEE PROFILE
+All content following this page was uploaded by Martin Klepal on 03 June 2014.
+The user has requested enhancement of the downloaded file.PAPERSOFTHEE-LABMASTER’STHESES2010–2011 1
+Indoor Navigation for Complex Environments
+TimNelen,MaartenWeynandMartinKlepal.
+Abstract—Thispaperinvestigatesthefeasibilityandperformanceofnavigationforindoorenvironments,basedonlocalizationsystems
+withlimitedaccuracy.Workingindependentlyofthelocalizationsystem,thenavigationsystemreadsoutthesensordataofthephone
+andsendsittothelocalizationsystem.AtopologicalrepresentationofthebuildingisautomaticallygeneratedusingaVoronoidiagram.
+The user is able to select from a predefined list of destinations inside the building; subsequently the optimal route to his desired
+destination is calculated and displayed on the screen, accompanied by turn-by-turn instructions provided according to the heading
+oftheuser,estimatedfromthedigitalcompassofthesmartphone.Thisheadingalsoplaysanimportantroleinthemapmatching
+process,usedtomaptheestimatedlocationtothetopologicalrepresentationofthebuilding.Theapplicationcontainsthedifferent
+elementsneededfornavigation,andisabletoprovidethenecessaryinstructionstogetauserfromhiscurrentpositiontohisdesired
+destination,insidethebuilding.
+IndexTerms—Indoornavigation,mapmatching,Voronoidiagram
+(cid:70)
+1 INTRODUCTION
+VISITORS of certain events, like exhibits or trade-fares, system,thatway;theapplicationwillbewidelyapplicable.The
+usuallynavigatethemselvesthroughthebuildingusinga navigation system requires, of course, some interaction with
+floor plan they got at the entrance, or by following the signs the localizationsystem. Itis able tosend sensor datafrom the
+on walls et cetera. In other words, a rather primitive way of mobile phone, in the right format, to the localization system.
+navigation. When a building gets more complex, this type of Aside from location determination, other considerations
+navigation tends to fail, because it is too hard for the visitor have to be made when developing an indoor navigation sys-
+to find his way. To determine his current location, he has to tem.Thestructureofabuildingmustberepresentedinaway,
+look at his environment and, subsequently, identify it on the that it is suitable for routing. Subsequently, the estimation of
+floorplan.Inaddition,thevisitorhimselfhastodeterminethe theuserscurrentpositionmustbemappedtothisstructure,us-
+optimal path leading to his destination. The ideal situation is ingatechniquecalledmapmatching,whichwillbeexplained
+where ones location is determined automatically, and where in the remainder of this paper. All this information has to
+the application gets the visitor from his current location to be presented to the user in a clear way, using turn-by-turn
+the desired destination using visual indications on a portable instructions, so he can reach his desired destination.
+device,likeadynamicmap,accompaniedbyarrowsandpos- Theremainderofthispaperisstructuredasfollows:InSec-
+siblevoice-contextualinformation.Anexampleofthiskindof tion2,anoverviewoftheexistingindoornavigationsystemsis
+navigationsystemisoutdoornavigationusingGPStechnology. given. Section 3 describes each functional block in the system
+For a couple of years now, GPS has been the standard for architecture,whereasSection4brieflydescribesthetoolsused
+navigationpurposes.Almosteverycariseitherequippedwith during this research. In Section 5 the results are discussed,
+abuilt-innavigationsystem,ortheownerhasoneattachedto followed by a conclusion in Section 6.
+hiswindshieldordashboard.Otherexamplesare:theuseofa
+GPSforrecreationpurposes,portablenavigationdevicesused
+2 STATE OF THE ART
+for hiking and location-based games in urban environments
+where the location of the players is part of the gameplay. A variety of different approaches have been made to develop
+All of the previous mentioned examples are located outdoors, a complete indoor navigation system [1], [2], [3], [4], [5].
+leading to the main disadvantage of applications based on The main difference between them is the technology used
+GPS: it is a technique which functions well in wide open for localization. As previously mentioned, GPS is not the
+spaces, but when deployed indoors, the reception often fails preferredtechnologyforindoorusage,becauseoftheweakness
+and the location cannot be determined. When developing a of the signal, caused by the attenuation of walls; therefore,
+navigation system that has to function indoors, we must use an alternative has to be used. Ruppel and Gschwandtner [1]
+alternative technologies for determining the location. Unlike present to spread barcodes around the building to determine
+GPS for outdoors, there is not one specific technology which the location of a user and navigate him from point A to B,
+willgetthisjobdone,becauseeachone(i.e.Wi-Fi,GSM,RFID, using the camera of a smartphone or other portable device
+Bluetooth,)hasitsdownfalls.Avarietyoflocalizationsystems to identify the barcode and calculate the route to be taken.
+have been developed, all using different technologies. Because all the data is on the device and no connection with
+Because of this big variety, I have chosen to develop the a central server has to be made, the privacy of the user is
+navigation application independently from the localization retained,whichisoneofthemainadvantagesofthisapproach.
+Furthermore, the response time of the system is minimized,
+becauseoftheon-boardprocessing.Bypointingthecameraof
+• T.NelenandM.WeynarewiththeUniversityCollegeofAntwerp,dept.
+his device at a barcode, the user can get an instruction in less
+IWT–Electronics-ICT,Paardenmarkt92,2000Antwerp,Belgium
+E-mail:seehttp://www.e-lab.be/ than a second. The main disadvantage of the system is that
+• M. Klepal is with Cork Institute of Technology, Center for Adaptive there is no constant location determination. When a user gets
+WirelessSystem,Cork,Ireland aninstructionbypointinghisdeviceatabarcode,hestillhasto
+E-mail:martin.klepal@cit.ie
+discover the next barcode to get the next instruction. Between2 PAPERSOFTHEE-LABMASTER’STHESES2010–2011
+these2points,theuserisunawareofhispositioninthebuild- withouthavingtoworryhowthispositionistobecalculated.
+ing and is prone to error, i.e. misinterpreting the instruction The advantage of this approach is that different localization
+and walking in the wrong direction. This error will not be systems can be hooked up to the application, each using their
+corrected until the user encounters a new barcode and the own techniques to calculate the position. Using an estimation
+route is recalculated. Another approach is the use of battery- of the users current position as input, the navigation system
+drivenradiobeaconstotransmitlicense-freeradiosignalsthat will be able to calculate the optimal path and display it to
+arepickedupbyabeaconreceiverconnectedtoasmartphone the user. In addition, the system will also be able to send
+through Bluetooth [2]. Using the received beacon signals, the sensordata,neededforpositioncalculation,tothelocalization
+smartphone can determine the users position at any time. system. To work completely independent of the localization
+Anotheradvantageisagainthatthereisnoneedtoconnecttoa system, offline routing is also provided. This situation occurs
+centralserver,thuspreservingtheprivacyoftheuser.Themain whenthereisnopositionestimateatall.Theuserwillhaveto
+disadvantageofthisapproachistheneedforspecialhardware indicatehiscurrentpositiononthemap,subsequentlyaroute
+andinfrastructure.Firstofall,radio-transmittingbeaconsmust tohisdesireddestinationwillbecalculated,however,thisroute
+beinstalledinthebuildinginfrastructure.Inaddition,theuser will not be dynamically updated.
+has to have a beacon receiver connected to his smartphone. Asidefromthesedifferentformsofindoorlocalization,alot
+Similar to [1] but instead of using barcodes, Kray et al. [3] ofapproachesalsohavenbeenmadetodisplaytheinformation
+use public displays available in a building. The advantage is to the user, in a clear way. One of the most popular choices,
+that information can be dynamically shown on these displays mostly due to its simplicity, is to display the map in 2D, with
+too, i.e. arrows, a floor plan or other information concerning the users location indicated on the map. A calculated route
+the route to be taken. On the other hand, this also requires canthenbedrawnontopofthisoverview,informingtheuser
+an extra hardware requirement, since public displays are not how to get to his destination. Although this is the standard
+standardinabuilding.TheresearchconductedbyGallagheret for indoor navigation [4], [6], [2], there are other possibilities.
+al.[6]andWidyawan[7]focusessolelyonpositioning,indoor Instead of displaying the route on a static aerial map, we can
+as well as outdoor. They give a few application examples, give the user more information by displaying a more detailed
+but particularly concentrate on the location determination. part of the map seen from the users point of view. As stated
+For indoor positioning, a technique called fingerprinting is in [10], this can only be accomplished if the position and the
+used; a form of Wi-Fi-localization where, depending on the orientation of the user is known. Because if we know the
+signalstrengthofmultipleaccesspoints,localizationinsidethe orientation of a user, we can give him detailed instructions
+building can be performed. To use this technology, a database for completing his route, like an arrow indicating which way
+of signal strengths and according positions have to be set up he has to go. Whenever the orientation of the user cannot be
+first, from which entities can be compared afterwards with determinedaccurately,thearrowsmaysendhiminthewrong
+measured signal strengths by clients. For outdoor positioning, direction,whichiswhymoretopologicalinformationisusually
+a comparison is made between GPS and Wi-Fi localization, to included, like the corridor he is in, rather than just displaying
+investigatewhetherWi-FicanchallengeGPS.Intheirresearch, an arrow. The user can then use this extra information to
+it is found that Wi-Fi preforms surprisingly well in matching navigate his way correctly through the building. When no
+GPS and sometimes even outperforms it in terms of accuracy. orientation at all is known, we are back at the static overview
+The experiments were conducted in a campus-environment. map, where the user himself has to determine his orientation
+The main problems are the maintenance of the database and to properly follow the indicated route. In other words, the
+the length of the signal strength survey. An advantage of Wi- more information we know about the users orientation, the
+Fi localization is the low implementation cost, assuming that moredetailedtheinstructionswecangivehim.In[5]theygo
+most buildings are already equipped with a Wi-Fi network a step further, by combining the arrows indicating the right
+consisting of multiple access points. That way, the existing direction with camera images of the environment, creating an
+infrastructure can be used. Furthermore, the client does not augmented reality based indoor navigation system.
+needanyspecialhardware,becausemostsmartphonesareal- The conclusion is that there does not exist a perfect local-
+readyequippedwithWi-Fi.Finally,theTime-to-first-fix(TTFF) ization system for indoor environments. In the next Section a
+is significantly lower than GPS. Weyn et al. [8], [9] present generalarchitectureisdescribed,providingindoornavigation,
+a system using a combination of the following sensor tech- coping with the inaccuracy of indoor localization systems.
+nologies available on a smartphone: Wi-Fi, GSM, GPS and
+Pedestrian Dead Reckoning (PDR), where an accelerometer is
+usedtoestimatethedisplacementofaperson.Thetechnologies
+3 ARCHITECTURE
+used for localization depend on the environment and the
+clients hardware, resulting in an opportunistic localization. In
+The general architecture of the indoor navigation system is
+other words, the system will work with the data available, so
+displayed in Figure 1. In this Section I am going to describe
+thattherequirementsforinfrastructureandhardwarearelow.
+thefunctionalityofeachblockandhowtheyworktogetherto
+The more data available, the more accurate the localization of
+form a working application.
+userswillbeperformed,asclearlyprovedbytheexperimental
+results.Thefusionofthedifferenttechnologiesisdoneusinga
+particlefilterwithanadaptivemotionmodel,oneofthemost
+3.1 Navigation
+advanced techniques for sensor data fusion.
+Because of this big variety of localization systems, each The main part of the indoor navigation system consists of the
+having its advantages and disadvantages, I have chosen to navigation block. The input will be the position of the user,
+develop the navigation application independently of the type retrieved from the server, as discussed in Section 3.3, as well
+of localization system. The idea is to start from a position, as the desired destination of the user.PAPERSOFTHEE-LABMASTER’STHESES2010–2011 3
+The result is indicated in Figure 2 (a). This obviously pro-
+duces a vast amount of unnecessary edges. The first step will
+be to remove the ones intersecting with the walls, as it is
+topologically impossible to cross walls. This brings down the
+amount of edges for this example from 663 to 461.
+As a second step, more pruning will be needed. First of all,
+this high number of edges, compared to manual input, where
+you will have around 75 edges, will severely slow down the
+routing algorithm. Furthermore, the route that is ultimately
+drawn on the screen will be built up out of these edges.
+To improve visual attractiveness, as much redundant edges
+as possible are removed, thus smoothing the lines used for
+Fig.1. Architecture routing.
+A first step in this pruning process is to determine the
+connectivity between edges. This is done by counting the
+amount of occurrences of each node in the Voronoi diagram.
+3.1.1 Mapgeneration
+Ifthe2nodesofanedgedonotoverlapwithanyothernodes
+To calculate the optimal path from source to destination, a in the diagram, the edge is considered disconnected from the
+routing algorithm is used. For those algorithms to work, we whole and is therefore removed.
+firstneedtogenerateamapdatabaseofthebuildingwewant Thenextstepwillbetoconsiderendnodes:edgeswithone
+to navigate through, containing all the information we need node that has no overlapping, but another that does, so the
+to get the user from point A to B. As stated by Gilliron [11], edgeisconnectedtothediagram.Iftheseendnodesareclose
+most available maps originate from design plans, developed tothewall,theyareremoved.Thisisbecauseyourdestination
+using Computer Aided Design (CAD). Although this kind islikelytobeinthemiddleofaroom.Thenodesthatareclose
+of representation is good for construction and maintenance to the walls are therefore redundant and can be removed.
+of buildings, we need more information in order to navigate Anotherimprovementistotakeouttheshortedges.Thisisa
+throughabuilding,aboutthetopologicalrelationships:connec- more difficult procedure, as the edges cannot just be removed
+tivity of rooms, corridors, stairs, elevators. A conversion thus from the diagram, like what was done in the previous step
+has to be made from the CAD representation to a topological with the end nodes, in this case, the edges will have to be
+representation consisting of nodes and links between these reconnectedafterremoval.Usingtheconnectivityinformation
+nodes, resulting in a tree-like data structure, called a graph, calculated before, the edge connecting to this short edge is
+ideal for calculating the desired route. The different elements determined.Theendpointofthisedgewillchangetothenon-
+on the map (corridors, rooms, stairs and elevators) are each common node of the short edge. A smoothing of the line is
+represented by a node. The link between nodes, also called hereby acquired. To make sure this process does not disturb
+edge, is a line on which a user can traverse the distance other edges, the node that is changed, cannot be a junction
+between these two nodes. A link between different nodes can node connecting 3 edges.
+onlyexistifitispossiblefortheusertomovebetweenthem.In After this pruning process, the amount of edges is brought
+otherwords,alinkmaynotpassthroughwallsetc.Thegoalof down to a total of 175, as indicated in Figure 2 (b).
+mapgenerationistogeneratesuchatopologicalrepresentation As a last step, the input of possible destinations is also
+of the building. automated.Inaspecialinputmode,itispossibletoindicatea
+A first option is to manually input the coordinates of the desired destination on the map; subsequently an input dialog
+different nodes inside the building, and possibly extra infor- will be displayed to describe the new destination. This infor-
+mation concerning these nodes, like the name of the room, in mationwillbeusedforfuturenavigationandissynchronized
+atextfile,whileedgesconnectingthesenodesareincludedin throughouttheapplication,fromthelistofdestinations,tothe
+another text file. info icons on the map.
+The application reads these text files and creates the graph
+structure with this information. Although this approach gives 3.1.2 Routing
+the best result concerning the quality of the graph (minimum The advantage of this representation, using a graph, is that
+amountofnodes+straightlines),especiallyforlargebuildings, routing algorithms can be used to calculate the optimal route
+this asks for far too much manual input. to a certain destination. Because a route consists of nodes and
+Totacklethisproblem,theVoronoidiagramisused.Thisso- the corresponding edges between them, each route has a total
+lutioniswidelyusedforspatialrepresentations,autonomously cost indicating the distance it takes for the user to get to his
+created by mobile robots, to plan a path through the building destination. Obviously we want to keep this cost as low as
+[12].However,itcanalsobeappliedhere,usingthecoordinates possible; therefore we calculate the route with the lowest cost
+of the walls as input to the Voronoi algorithm. The basic using routing algorithms like Dijkstra, Ford-Bellman and A*.
+principle of Voronoi is the following: given a set of input Acomparisonbetweenthedifferentalgorithmsismadein[4],
+points,Voronoiwillcreatecellsaroundthesepoints,wherethe resulting in a preference for Dijkstra, because of its ability to
+distance to this input point is smaller then to any other. The alwaysfindtheshortestpath,aswellaskeepingthecomplexity
+edgesofeachcellrepresentalinewhereeachpointonthisline limited.
+isequidistantfrom2inputpoints.Theselineswillcorrespond
+totheedgesofthegraph.TheVoronoinodesrepresentapoint 3.1.3 Weights
+that is equidistant from 3 input points; these will correspond The weight of each edge is determined by the length of the
+to the nodes in the graph. edge.Thisisjustabasicimplementationoftheweightscheme,4 PAPERSOFTHEE-LABMASTER’STHESES2010–2011
+The main distinction between a simple geometric map
+matching (MM) algorithm and a topological MM algorithm is
+the fact that topological algorithms use extra information, like
+historical data (the previously matched edge) or topological
+information about the graph, like connectivity of edges. For
+this MM algorithm, the heading of the person is used, esti-
+matedfromthedigitalcompassofthesmartphone.Topological
+information will be used from the graph representing the
+building.ThecorefunctionalityofaMMalgorithmismatching
+the estimated position on this graph, where the difficulty lies
+in selecting the correct edge. A few steps are performed to
+calculate the edge with the highest likelihood.
+First,theclosestnodetotheestimatedpositioniscalculated.
+The edges that are connected to this node will be selected as
+candidateedgesforthemapmatchingalgorithm,thusinclud-
+ing topological information. For each edge in this selection, 3
+differentweightsarecalculated,concerning:theperpendicular
+distancefromtheestimatedpositiontothisedge,thedifference
+in heading between the person and this edge, and finally the
+relative position of the estimated position to the edge. The
+following weighting scheme is constructed:
+W T =A PDW PD+A HW H+A RPW RP (1)
+Where A PD, A H and A RP represent the weighting factors,
+used to indicate the importance of each weight.
+(a)Voronoidiagram (b)Pruneddiagram
+Fig.2. Mapgeneration
+as this provides for several other possibilities. One example is
+to give stairs a higher weight, in order to limit the amount of
+stairs to be climbed by the user. The routing algorithm will
+then try to avoid this part of the building, as long as there
+is an alternative route with a smaller total cost. This could
+help disabled people navigate through a building. A second
+example would be to use user levels with corresponding
+privileges. A visitor might not be allowed to pass through Fig.3. Relationshipbetweenestimatedpositionandedge
+certain parts of a building.
+• The first weight consist of the perpendicular distance
+betweentheestimatedpositionandtheedge.Thisweight
+3.1.4 Mapmatching
+indicates the proximity of the edge, the smaller the dis-
+Another advantage of representing a map using nodes and tance, the higher the weight will be. To calculate this, the
+links is the ability to perform map matching. Originally following formula is used:
+used for outdoor road-navigation [13], this technique has also
+proven its use for indoor navigation [11], [4]. Because the W PD =D (2)
+calculatedpositionofauserispronetoerror,itisdesirableto
+(cid:40) 1, d<2m
+mapthewrongpositiontotheexpectedpathtobefollowedby
+and D= 1−0.07∗(d−2), 2m≤d≤30m
+theuser.Asanexample,consideravehicledrivingonaroad.
+−1, d>30m
+Thecalculatedpositionofthisvehicleislikelytodeviatefrom
+this road, but because we know it is (normally) impossible to A PD representstheweightingfactor,usedinequation(5),
+drive off the road, we can correct the position and map it to to indicate the importance of each weight.
+the right location. A lot of research has been done regarding • Difference in heading between the edge and the person.
+this topic, mainly with the focus on outside road networks, The current heading of a person is a good indicator of
+butthistechniquecanalsobeusedinsideabuilding.Herethe where he is going, and what edge to select for naviga-
+edgesandnodesaretheequivalentofroadsandintersections. tion. The heading provided by the digital compass of he
+In the research conducted by Quddus [13], a distinction is smartphone is denoted as β , whereas the heading of the
+made between 4 different types of map matching algorithms: edge is determined from the graph and denoted as β’,
+geometric, topological, probabilistic and advanced. The main thedifferencebetweenthem,∆β,isusedintheweighting
+conclusionisthatforreal-timeapplications,likemynavigation formula:
+app,thetopologicalalgorithmisdesirable;itsveryfast,dueto
+itssimplicity,butalsoprovidesadequateresultsfornavigation. W H =cos(∆β) (3)PAPERSOFTHEE-LABMASTER’STHESES2010–2011 5
+WhereA
+H
+istheweightingfactorand∆βisthedifference 3.2 GUI
+in heading between the edge and the person. The lower Thegraphicaluserinterfaceisusedtodisplayalltheinforma-
+the angle between them, the higher the weight will be. tion calculated in the previous sections, as well as gather user
+• Position relative to the link. By calculating the smallest input to determine the desired destination.
+angle between the estimated position and the edge, the
+relativepositionisdetermined.Thesmallerthisangle,the
+more likely this edge will be the resulting edge.
+Therefore, following weight formula is used:
+W RP =cos(α) (4)
+Theweightingfactorscanbeusedtoindicatetheimportance
+of each individual weight, as indicated in equation (1). In
+the research conducted by Quddus [2], It is determined that
+the heading is the most important weight, followed by the
+relative position and then the perpendicular distance as the
+least important one, which gives the following values:
+A H =3 (5a)
+A RP =2 (5b)
+A PD =1 (5c)
+Theedgewiththelargestweightsisselectedastheresulting
+edge.
+(a)Standardmapview (b)Rotatedmapview
+Alaststepistodeterminethepositiononthisedge.Tokeep
+thealgorithmsimpleandfast,anordinaryprojectionfromthe Fig.4. Mapdisplay
+position onto this edge is used as the mapped position. By
+usingextrainformation,likespeed,thepositioncanbemapped Themapisbuiltupdynamically,usingatextfile,containing
+more accurately on the edge, but this also requires more the coordinates of the walls inside the building. As stated be-
+computation,whereas,especiallyforindoornavigation,where fore,amessagehandlerisusedtoreceiveupdates,concerning
+the edges are rather small, this does not provide significantly the users current position, as well as the calculated route to
+better results. be taken. Whenever a new message is received, the GUI is
+Toimprovetheperformanceofthealgorithm,historicaldata updated accordingly. The position is indicated as a point on
+about the previous mapping is used, to determine whether the screen, with a fan displaying the current heading of the
+the current estimated position still fits on the same edge. 2 user.Thiswillhelptheusertogethisbearings.Atthebottom
+conditions are used to check for this: has the person made a of the screen, turn-by-turn directions are drawn, to help the
+turn,orhashecrossedajunction.Tocheckthefirstcondition, user navigate through the building as indicated in Figure 5
+the difference in heading is calculated. If it exceeds 45, it is (b).Touchcontrolsareimplementedtoprovideuserinteraction
+assumed that the person has made a turn. To check whether withthemap.Bydraggingonthescreen,theusercanpanthe
+a junction is crossed, the relative position to the link is calcu- map.Additionally,zoomcontrolsareprovidedatthebottomof
+lated. If this angle exceeds 90, it is assumed that the person thescreen.Totherightofthesezoomcontrols,thereisabutton
+has crossed a junction. If any of these 2 conditions is met, tochoosebetweenstandardmapviewasshowninFigure4(a),
+the algorithm goes back to calculating the closest node, and andaviewthatrotatesaccordingtotheheadingoftheuser,as
+starts all over again, otherwise, the position is mapped on the indicatedinFigure4(b).Anextrabutton,onlyprovidedduring
+previous edge. navigation, is located to the left of the zoom controls. This is
+Nowthatwemappedtheuserscurrentpositiontoanedge, the overview button. Whenever a user starts navigation, the
+we can use this as the source for our routing algorithm. As screen will zoom in on his current location, and it will follow
+stated before, the user is able to select his desired destination him during navigation. This button allows the user to switch
+from a list of predefined destinations. back to standard map view at all times, to get an overview of
+Oncetherouteiscalculated,theGUIisupdatedaccordingly, the building.
+and the route is drawn onto the map. There are 3 possible ways for a user to select a destination.
+The first one is by selecting it from a list of all possible
+destinations, retrieved from the database. Alternatively, the
+3.1.5 Directions
+usercantaptheinfoiconslocatedonthemap.Thiswillcause
+To improve the user experience, and help the user find his a popup to appear, containing more information about the
+destination as easy as possible, turn-by-turn directions are place, as well as the possibility to select it as the destination
+provided during navigation. Using the built-in compass, the for routing. Finally, the user can choose to select a dynamic
+heading of a person is used to indicate the direction to walk. destination.
+As shown in Figure 5 (b), the direction is indicated using
+an arrow at the bottom of the screen, accompanied by a 3.2.1 Dynamicdestination
+textualinstruction.Inadditiontothesevisualdirections,voice Destinations inside a building are fixed; a user can choose to
+instructions are also provided. navigate to an office, or a conference room. These locations6 PAPERSOFTHEE-LABMASTER’STHESES2010–2011
+dont change. When a user wants to navigate towards another 3.3 Communicationgateway
+person, his destination will probably be linked to his office, To retrieve a position from the server, the first step will be
+but of course this person is not always inside his office. His to read the sensor data needed for the localization. This raw
+position inside the building changes, making the destination sensor data has to be formatted into packages that can be
+dynamic.Tocopewiththischange,thesystemmustbeaware read by the localization system. As a response, the estimated
+of a change in the persons position. position of the user will be received. To keep the application
+One possibility is to link the person with the localization responsive,thecommunicationwith thelocalizationsystemis
+system, and share its location with other users. This approach moved from the main application thread onto a child thread.
+is a bit to drastic, to provide this real-time localization, the Usingamessagehandler,synchronizationisaccomplishedbe-
+person has to be connected with the system at all times, even tweenthechildthreadandthemainGUIthread,sowhenever
+thoughhehimselfisnotusingit,becausehedoesnotwantto a new position is received, the GUI is updated accordingly.
+navigate through the building.
+Anotherapproachistheconnectionwithsocialmedia,based 4 TOOLS AND SIMULATION
+on location sharing used by services like Foursquare [14] and TheapplicationisdevelopedfortheAndroidOSandistested
+Facebook places [15]. using an HTC Desire HD running Android 2.2. Hardware
+My choice of social media went to Twitter, mainly because requirements depend on the localization system used, i.e. for
+of it simplicity. Tweets, the text-based posts a user can share Wi-Fi localization systems, the device must support a Wi-
+with his followers, are limited to 140 characters. Fi connection. Turn-by-turn instructions during navigation re-
+Thegeneralideaisthatausercantweethiscurrentlocation quire the heading of the user, and thus the requirement of a
+by clicking on his position on the map. A dialog will be built-in compass.
+displayedwiththecomposedtweet,e.g.Timisat#E23#citnav,
+and the question whether to post it online.
+The reason the hash tags are included in the message, is
+to identify the topic of the message. When other users want
+to navigate towards this person, they just have to search for
+tweetscontainingthehashtag#citnav,andwillgetalistofall
+users that shared their location.
+There are thus two different connections with Twitter: the
+first one allows the user to tweet his current location, which
+requires him to login with his Twitter account. The second
+connection does not require the user to login, because it just
+lists all the tweets that contain hash tag #citnav, as indicated
+inFigure5(a)Subsequentlytheusercanselectthetweetfrom
+the person he wants to navigate to. This tweet is then parsed
+for the other hash tag, containing the location, which is then
+used for navigation. It is also possible for the user to search
+(a)GeometricMM (b)TopologicalMM
+through the list, to find the person he is looking for.
+Fig.6. Mapmatching
+5 RESULTS
+Theroutingalgorithmhasproventoprovidetheshortestpath
+tothedesireddestinationatalltimes.Furthermore,therouteis
+updatedinstantly,asanewpositionisreceivedfromtheserver.
+AsindicatedinFigure2,thepruningprocessseverelyreduces
+the complexity of the graph, by removing redundant edges.
+This pruning process does take some time; the application
+takesabout5secondstostartup.Duringthisstart-upprocess
+however, everything concerning the generation of the map,
+fromreadingthe coordinates ofthewallsfromthe textfile,to
+generatingtheVoronoidiagramandfinallyexecutingtheprun-
+ing process, is performed, so it will only happen once in the
+lifecycle of the application. Figure 6 illustrates the importance
+of a topological map matching algorithm. Using the heading
+of the digital compass, false mappings are prevented and the
+correct edge is selected. This is an important step, especially
+when you consider the low accuracy of indoor localization
+(a)Dynamicdestination (b)Routedisplay
+systems. The estimated position is prone to error and will
+therefore differ from the actual position of the user. Using
+Fig.5. Routing
+the topological map matching process, these false positions
+can be mapped to the correct edge. Another advantage of thePAPERSOFTHEE-LABMASTER’STHESES2010–2011 7
+availabilityoftheheading,isthepossibilitytodisplaydetailed [12] J. Wallgru¨n, “Hierarchical voronoi-based route graph represen-
+turn-by-turn instructions as indicated in Figure 5 (b), in order tations for planning, spatial reasoning, and communication,” in
+Proceedings of the 4th International Cognitive Robotics Workshop
+to help the user reach his destination.
+(CogRob-2004),2004,pp.64–69.
+Experiments concerning the user experience are a bit more
+[13] M. Quddus, “High integrity map matching algorithms for ad-
+complicated, and are therefore still ongoing. We will have to vanced transport telematics applications,” Ph.D. dissertation,
+performtestsusingindependentusers.Thefirstbasicrequire- 2006.
+mentwillbeforthemtoreachtheirdesireddestination.Other [14] Foursquare,“foursquare,”https://foursquare.com/,May2011.
+[15] Facebook, “Facebook places,” http://www.facebook.com/
+aspects to this experiment are the usability of the application,
+places/,May2011.
+whichishighlysubjectiveanddependsontheusers.Therefore,
+a wide variety of users will have to be tested.
+6 DISCUSSION AND CONCLUSION
+Tim Nelen received his B.Sc. in Applied Engi-
+The application provides the necessary elements needed for neering: Electronics-ICT in 2010 at the Artesis
+navigation: map generation, map matching, routing, route University College of Antwerp and is currently
+display and turn-by-turn instructions. However, the usability finishing his Master in Applied Engineering:
+Electronics-ICTattheArtesisUniversityCollege
+of the application is strongly dependent on the accuracy of
+ofAntwerp.
+the used localization system. In order to provide useful in-
+structions for example, a minimum accuracy of around 5m-
+10mwouldbeneeded,otherwise,theinstructiontakethenext
+doorleft,wouldnotbeinterpretedcorrectly.Thisalsodepends
+Ifyouwishtocitethispaper,pleaseusethefollowingcode:
+on the building infrastructure. When testing this in an office
+Tim Nelen and Maarten Weyn, Martin Klepal, Indoor naviga-
+environment,itisverydifficulttoprovidecorrectinstructions,
+tionforcomplexenvironments,MastersThesis,Departmentof
+whereastestinginalargerenvironment,likeashoppingmall,
+AppliedEngineering,UniversityCollegeofAntwerp,Belgium,
+allowsforaloweraccuracyinpositioning,andtheinstructions
+June 2011
+will still make sense.
+This will be the major challenge for the future, to cope
+withthelowaccuracyofindoorlocalizationsystems.Another
+futuresubjectwouldbetoseamlesslyswitchbetweenoutdoor
+and indoor navigation. Integrate this in one big application,
+providing navigation at all times, even when there might be
+no localization available at some times.
+REFERENCES
+[1] P. Ruppel and F. Gschwandtner, “Spontaneous and privacy-
+friendly mobile indoor routing and navigation,” in GI Jahresta-
+gung,2009,pp.2574–2583.
+[2] Y. Inoue, T. Ikeda, K. Yamamoto, T. Yamashita, A. Sashima, and
+K. Kurumatani, “Usability study of indoor mobile navigation
+system in commercial facilities,” in Proceedings of the Second In-
+ternationalWorkshoponUbiquitousSystemsEvaluation(USE2008),
+2008.
+[3] C.Kray,K.Cheverst,M.D.Harrison,F.Hamhoum,andJ.Wagner,
+“Towardsalocationmodelforindoornavigationsupportthrough
+publicdisplaysandmobiledevices,”pp.83–92,2008.
+[4] M.H.V.Le,D.Saragas,andN.Webbr,“Indoornavigationsystem
+forhandhelddevices.”
+[5] C. Lo, T. Lin, Y. Wang, Y. Tseng, L. Ko, and L. Kuo, “Using
+intelligent mobile devices for indoor wireless location tracking,
+navigation, and mobile augmented reality,” in IEEE VTS Asia
+PacificWirelessCommun.Symposium(APWCS),2010.
+[6] T. Gallagher, B. Li, A. Dempster, and C. Rizos, “A sector-based
+campus-wideindoorpositioningsystem,”inIndoorPositioningand
+Indoor Navigation (IPIN), 2010 International Conference on. IEEE,
+2010,pp.1–8.
+[7] Widyawan,“Learningdatafusionforindoorlocalisation,”Ph.D.
+dissertation,CorkInstituteofTechnology,2009.
+[8] M.Weyn,M.Klepal,andW.Widyawan,“Adaptivemotionmodel
+for a smart phone based opportunistic localization system,” in
+Proceedings of the 2nd international conference on Mobile entity lo-
+calization and tracking in GPS-less environments. Springer-Verlag,
+2009,pp.50–65.
+[9] M. Weyn, “Opportunistic seamless localization,” Ph.D. disserta-
+tion,UniversityofAntwerp,Mar.2011.
+[10] A. Butz, J. Baus, A. Kru¨ger, and M. Lohse, “A hybrid indoor
+navigationsystem,”inProceedingsofthe6thinternationalconference
+onIntelligentuserinterfaces. ACM,2001,pp.25–32.
+[11] P.Gillie´ron,D.Buchel,I.Spassov,andB.Merminod,“Indoornav-
+igation performance analysis,” in Proceedings of the 8th European
+NavigationConferenceGNSS,2004,pp.17–19.
+View publication stats

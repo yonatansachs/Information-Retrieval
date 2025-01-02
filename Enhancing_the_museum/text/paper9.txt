@@ -1,0 +1,299 @@
+Designing Inclusive Cultural Heritage Experiences – an 
+Academic Course on Enhancing Museum Accessibility for 
+Cognitive Impairment Visitors 
+Alexandra Danial-Saad, Yael Avni, Julia Sheidin and Tsvi Kuflik 
+The University of Haifa, Abba Khoushy Ave 199, Haifa, 3498838, Israel  
+Abstract 
+In recent years, there has been a growing interest in exploring the potential of state-of-the-art technologies 
+to enhance the museum visit experience of cognitively impaired visitors. However, developing cultural 
+heritage experiences for cognitively impaired visitors is not straightforward, and multiple factors, including 
+knowledge about the available opportunities, desires, barriers, and abilities, affect their participation. This 
+paper presents a multidisciplinary graduate course that collaborates with museum staff and cognitively 
+impaired visitors to explore techniques for designing and developing such experiences.  The goal is to apply 
+universal design principles, user-centered design and co-design approaches to make the cultural heritage 
+accessible and enhance the museum visit experience of individuals with cognitive impairment.  
+Keywords  
+Cultural heritage, Cognitive impairment, Museum experience, Inclusive design, Technology innovation, 
+Inclusive Museum, Academic course, Digital accessibility. 
+ 1 
+1. Introduction 
+Museums have a major role in society, evolving from repositories of art and artifacts to cultural 
+educators [31]. Despite the shift towards free-choice learning, where visitors determine their learning 
+path, the traditional museum setup involving displays within glass cases and on walls poses challenges 
+for individuals with disabilities. This includes limited exploration opportunities due to the nature of 
+exhibit placements and the inaccessibility of artifacts. Museum labels, often concise yet informative, 
+can be challenging for people with disabilities, particularly those with visual, cognitive, or motor 
+impairments. This explains why only 7% of museum visitors have disabilities [3]. Encouraging 
+inclusivity within museums and galleries can lead to a more diverse audience, allowing a broader range 
+of visitors to engage with and gain value from the cultural offerings fully [21]. Assistive and digital 
+accessibility technologies can create a more authentic experience, potentially bringing the user closer 
+to previously inaccessible artifacts and sites and enabling them to function independently and with 
+dignity [10][14][15]. Well-adapted technology may contribute to the visitors’ varied needs, thereby 
+encouraging participation, self-esteem, and quality of experience [8].  
+Exploration of museum accessibility, especially for individuals with cognitive impairments 
+(including Intellectual and Developmental Disabilities (IDD), sensory hypersensitivity, and attention 
+deficit hyperactivity disorder (ADHD)) is an evolving and crucial aspect of cultural inclusivity that 
+museums have only recently begun to address. Accessibility for these individuals involves considering 
+how information is presented, how exhibits are designed, and how interactions are facilitated [11]. 
+ 
+Workshop on Advanced Visual Interfaces and Interactions in Cultural Heritage (AVICH 2024), June 4th, 2024, co-located with 
+the 17th ACM Conference on Advanced Visual Interfaces, Arenzano (Genoa), Italy 
+ asaad@univ.haifa.ac.il (A. Danial-Saad); yaeliv@gmail.com (Y. Avni); sheidin.julia@gmail.com (J. Sheidin); 
+tsvikak@is.haifa.ac.il (T. Kuflik) 
+ 0000-0002-2904-8548 (A. Danial-Saad); 0009-0005-3723-6150 (Y. Avni); 0009-0002-9092-7231 (J. Sheidin); 0000-0003-
+0096-4240 (T. Kuflik) 
+ 
+© 2024 Copyright for this paper by its authors. 
+Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0).  
+ CEUR Workshop Proceedings (CEUR-WS.org)  
+  
+CEUR
+Workshop
+Proceedings
+ceur-ws.org
+ISSN 1613-0073
+
+Despite the recent heightened interest in accommodating these impairments, literature has primarily 
+focused on simplifying text [17]. For example, many museums have created social stories and other 
+visual guides that use pictures and simple text to prepare children for the sights, sounds, smells, and 
+possible tastes and objects to touch [5]. Notably, Guedes et al. [11] conducted an evaluation of 
+museum websites and applications and suggested guidelines to support the design of accessible 
+materials for people with IDD. To effectively support individuals with IDD, they highlighted the 
+importance of upholding consistency and simplicity, significantly enhancing the overall user 
+experience.  
+We aim to equip developers with the skills necessary to create inclusive systems. This initiative 
+builds on the achievements of our previous "Advanced Technologies in Development and 
+Rehabilitation" course, which was acclaimed by both the museum and its target audience 
+representatives [2]. In our previous course, our collaborative work generated various 
+recommendations for improving the accessibility of exhibits and their accompanying  information for 
+blind visitors within museums. Now, we are shifting our focus toward developing technologies 
+specifically designed to accommodate the needs of individuals with cognitive impairments. 
+2. Background and Related Work 
+Accessibility in museums has different meanings. It involves criteria that highlight a holistic and 
+inclusive approach to museum accessibility, considering not just the museum's physical environment 
+but also the broader experience of all visitors [10]. To ensure accessibility for all visitors, there are 
+several guidelines by the Americans with Disability Act (ADA) that museums should follow [23]. 
+Accessibility considerations listed in the Smithsonian Guidelines for Accessible Design include but are 
+not limited to, public spaces, furniture, color usage, language and label design, text choices, interactive 
+elements, and circulation routes [27]. In recent years, accessibility also focused  on integrating 
+innovative technologies to enhance experiences for visitors with disabilities. Therefore, it is very 
+important to consider accessibility in the development and deployment of new technologies in 
+museums [4]. This helps create a more authentic experience, potentially bringing the user closer to 
+previously inaccessible artifacts and sites [10]. 
+Guidelines for museum accessibility for cognitive visitors  
+The “Smithsonian Guidelines for Accessible Exhibition Design” offers museums a set of guidelines as 
+well as design tools to meet the world accessibility standard [12]. Below are provided indicative 
+guidelines specifically tailored to address accessibility for cognitive disabilities: 
+• 
+“Offer a programmatic path for traveling through the exhibition. People with cognitive 
+disabilities, like most individuals, learn best from an orderly presentation. An exhibition that 
+reveals its topic through an obvious storyline, theme, or repeated element offers landmarks, 
+repetition, and a connecting thread to follow a complex presentation” (p. 7). 
+• 
+“Include people with disabilities in exhibition topics, photographs, and presentations of 
+perspectives” (p. 7). 
+• 
+“Present information to all the senses. Multisensory presentations provide choices for the 
+sensory channel used and interesting repetitions of key points. Some people, however, have 
+difficulty sorting overlapping sights and sounds” (p. 7).  
+• 
+“Tactile experiences can greatly assist people with cognitive disabilities” (p. 12). 
+• 
+“Use readily legible typefaces. The typefaces that are easiest for people with low vision, language 
+problems, or cognitive disabilities are sans serif or simple serif. Maintain consistent label 
+locations throughout the exhibition for ease of finding. Use easily legible typefaces like ‘sans serif’ 
+or ‘simple serif’” (p. 19). 
+
+• 
+“Instructions are more effective for people with cognitive disabilities if participant action is 
+required after each direction rather than after a string of directions. This step-action-step format 
+assists people with short-term memory problems” (p. 28). 
+• 
+“Provide touch-sensitive areas in predictable locations that are at least 75 mm (3 in.) in diameter. 
+Small touch areas require fine muscle control. If areas are too small, people with cerebral palsy 
+or other mobility impairments often activate unwanted areas instead of or in addition to those 
+selected” (p. 32). 
+3. Method  
+In recent years, there has been a growing interest in exploring the potential of state-of-the-art 
+technologies to enhance the museum visiting experience for visitors with cognitive impairment. Our 
+goal is to train students (developers to be) to design and develop such innovative systems inspired by 
+the work of Umanski and Avni [29], Newell et al. [18] and Cavazos et al. [6], where student teams 
+conceived and realized inventive systems. To accomplish this, we have adopted the Project-Based 
+Learning (PBL) approach as our core pedagogic method [9]. This methodology prioritizes practical, 
+hands-on projects, enabling collaboration among students in small groups and applying theoretical 
+concepts in real-world contexts. Following the paradigms of universal design principles [1][28], user-
+centered design [20] and of co-design [24], students gain a deeper understanding and involvement in 
+the technology development process to enhance museum accessibility. 
+3.1 Conceptual Framework and Technologies  
+Our goal is to train a multidisciplinary team of students (developers to be) to design and develop an 
+accessible environment for cognitively impaired people by exploring the potential of advanced 
+technologies (intelligent user interfaces) using the user-centered design (UCD) approach, involving 
+students and lecturers with technological background and experience (from the information systems 
+department) and students and lecturers with therapy experience and background (from the 
+department of occupational therapy) using design approach. The course will combine theoretical and 
+practical aspects aimed at developing several experiential kits (for specific cultural heritage topics) for 
+cognitively impaired visitors. The course will follow a co-creation approach where the students will be 
+introduced to the human-centered design approach [26], design thinking methodologies [19], and 
+interaction design principles [13], and co-design [24], as well as to the Human Activity Assistive 
+Technology (HAAT) model [7]; the Matching Person and Technology (MPT) model [25]  and the 7 
+universal design principles focusing on the User-Centered Design (UCD) approach to ensure that the 
+product or prototype meets the needs, wants, and expectations of its intended users [16][30]. Based 
+on all these models and principles, the students will work together with individuals with cognitive 
+impairments and the museum staff to better understand the challenge and the opportunities, to 
+design the experience, create three dimensional (3D) models of museum artifacts, print 3D replicas 
+and augment them with audio commentary where input methods such as pushbuttons, 
+microswitches, and Radio Frequency Identification (RFID) scanning technologies will be used to 
+activate the audio in context. 
+3.2  Implementation  
+After an introductory lesson, the students will split into groups of four students. The museum staff 
+will select several topics and artifacts related to each theme. To ensure that the suggested concepts 
+meet the needs of individuals with cognitive impairments users, the development process includes all 
+stages of the Design Thinking method from UCD [19]:  
+
+1. Empathy: The students generate empathy and familiarity with the field of development by talking 
+with the museum staff, accompanying individuals with cognitive impairments during the visit to 
+the museum, and reviewing relevant literature. 
+2. Define & Ideate: The teams will be asked to present their concepts based on literature reviews 
+and user interviews while producing quick prototypes (such as video prototypes and cardboard 
+prototypes) to communicate better and refine their ideas. This will include creative thinking about 
+using relevant state-of-the-art technologies, including 3D replicas of objects within multimodal 
+interaction systems that deliver information through visual, auditory, and haptic feedback, 
+catering to various learning styles and sensory needs. Augmented reality (AR) will be pivotal in 
+crafting interactive storylines and engaging visitors through gamified learning pathways. 
+Additionally, audio commentaries will enhance accessibility, offering content in simplified 
+language or as audio descriptions, and computer games will provide interactive learning 
+experiences, all underpinned by insights from comprehensive literature reviews. 
+3. Prototyping: the teams will be asked to produce semi-working prototypes that can be tasted with 
+actual users. For that matter, replicas will be produced using 3D scanning and 3D printing, audio 
+files will be recorded, and primary code will be written. All groups will face the same questions 
+regarding interaction design, and each of them will choose to solve them differently. 
+4. Testing Evaluating: For the initial usability test, students will employ the Wizard of Oz testing 
+technique—an approach used to evaluate a system that is still in development, proven to be highly 
+effective in assessing interactions and performance [22]. While 3D artifacts and audio files will be 
+generated, the activation of interactive artifacts will be overseen by a "hidden wizard". Students 
+may test these concepts with individuals with cognitive impairments, even if they are not fully 
+functional, and incorporate enhancements into the final projects. 
+The final prototypes will be developed and refined according to the observations of the intermediate 
+tests. It will be presented at the end of the course.  
+4.      Expected Contribution  
+When reviewing the literature in the context of making museums more accessible for visitors with 
+cognitive impairment, the effort focuses on simplified text, social stories, and guidelines for accessible 
+materials [11][17]. The aim of this project is to train a multidisciplinary team of students (developers 
+to be) to design and develop an accessible smart/intelligent environment for cognitively impaired 
+visitors by exploring the potential of advanced technologies using the UCD approach, universal design, 
+and co-design approach. These approaches involve collaboration between students and lecturers with 
+expertise in technological experience and background, and those with therapy experience and 
+background.  
+Such a course offers a unique opportunity to test, evaluate and compare the performance and 
+satisfaction from the interaction with various prototypes. Although these prototypes are similar 
+enough in terms of the amount and type of information, they differ in interaction and manipulation 
+methods. Such an opportunity is not common, and the ability to compare different elements of the 
+same interactions with the same participants can lead to a better understanding of visitors' needs and 
+expectations. The insights gained from these comparisons can inform the development of more 
+accurate guidelines to improve information accessibility for this audience within museums.  
+Additionally, the course has the potential to significantly contribute to the field of accessible design 
+and human-computer interaction devices and interfaces. By providing valuable insights into the design 
+and development of technological solutions for visitors with cognitive impairment, the course offers 
+essential insights into designing and developing more inclusive user interfaces and devices. 
+Furthermore, the knowledge and skills acquired by the graduate students during this course will be 
+invaluable in their future endeavors, equipping them to tackle challenges in accessible design and 
+enhance the inclusivity of digital and physical spaces alike. 
+
+References 
+[1] Abascal, J., & Azevedo, L. (2007). Fundamentals of inclusive HCI design. In Universal Acess in 
+Human Computer Interaction. Coping with Diversity: 4th International Conference on Universal 
+Access in Human-Computer Interaction, UAHCI 2007, Held as Part of HCI International 2007, 
+Beijing, China, July 22-27, 2007, Proceedings, Part I 4 (pp. 3-9). Springer Berlin Heidelberg.  
+[2] Avni, Y., Danial-Saad A., and Kuflik, T. (2023). Exploring the potential of enriching museum visit 
+experience of blind visitors using advanced technologies. CEUR Workshop Proceedings, 3622, 33-
+40. 
+[3] Bienvenu, B. Museums and ADA@25: Progress and looking ahead. Museum, 94(5), pp. 29-34. 
+(2015). 
+[4] Borg, J., Lindstrom, A., Larsen, S.: “Assistive technology in developing countries: a review from 
+the perspective of the convention on the rights of persons with disabilities”, Prosthetics and 
+Orthotics International, Vol. 35No. 1, pp. 20-29, (2011). 
+[5] Braden, C.: Welcoming all visitors: Museums, accessibility, and visitors with disabilities. University 
+of Michigan Working Papers in Museum Studies (2016). 
+[6] Cavazos Quero, L., Iranzo Bartolomé, J., Lee, S., Han, E., Kim, S., & Cho, J. (2018, October). An 
+interactive multimodal guide to improve art accessibility for blind people. In Proceedings of the 
+20th International ACM SIGACCESS Conference on Computers and Accessibility (pp. 346-348). 
+[7] Cook, A. M., and Miller-Polgar, J. (2012). Essentials of assistive technology. St. Louis, MO: Elsevier. 
+[8] Danial-Saad, A., Weiss, P.L., and Schreuer, N. (2012). Assessment of Computer Task Performance 
+(ACTP) of Children and Youth with Intellectual and Developmental Disability. Disability & 
+Rehabilitation: Assistive Technology, 7(6), 450-458. doi: 10.3109/17483107 
+[9] Frank, M., Lavy, I., & Elata, D. (2003). Implementing the project-based learning approach in an 
+academic engineering course. International Journal of Technology and Design Education, 13, 273-
+288.  
+[10] Garcia Carrizosa, H., Sheehy, K., Rix, J., Seale, J., Hayhoe, S.: Designing technologies for museums: 
+accessibility and participation issues. Journal of enabling technologies, 14(1), pp. 31-39, (2020). 
+[11] Guedes L. S., Zanardi I., Mastrogiuseppe M., Span S., and Landoni, M.: Co-designing a Museum 
+Application with People with Intellectual Disabilities: Findings and Accessible Redesign. In 
+Proceedings of the European Conference on Cognitive Ergonomics 2023, pp. 1-8, (2023). 
+[12] Hillemann, 
+P. 
+(2016). 
+Art 
+Museum 
+Tours 
+For 
+Visitors 
+Who 
+Are 
+Blind. 
+https://americanart.si.edu/blog/eye-level/2016/09/317/art-museum-tours-visitors-who-are-
+blind 
+[13] Horton, E. L., Renganathan, R., Toth, B. N., Cohen, A. J., Bajcsy, A. V., Bateman, A., Jennings, M. 
+C., Khattar, A., Kuo, R. S., Lee, F. A., Lim, M. K., Migasiuk, L. W., Zhang, A., Zhao, O. K., & Oliveira, 
+M. A. (2017). A review of principles in design and usability testing of tactile technology for 
+individuals 
+with 
+visual 
+impairments. 
+Assistive 
+Technology, 
+29(1), 
+pp. 
+28–36. 
+https://doi.org/10.1080/10400435.2016.1176083 
+[14] Islek, D. The Future of Accessible Museums: Qualitative Analysis on Educational Practices. Revista 
+Românească pentru Educaţie Multidimensională, 15(1), pp. 83-106, (2023).  
+[15] Luiza, S. M.: Accessible tourism–the ignored opportunity. Annals of Faculty of Economics, 1(2), 
+pp. 1154-1157, (2010). 
+[16] Mao, J.-Y., Vredenburg, K., Smith, P. W., & Carey, T. (2005). The state of user-centered design 
+practice. COMMUNICATIONS OF THE ACM, 48(3). 
+[17] Mastrogiuseppe, M., Span, S. and Bortolotti, E.: Improving accessibility to cultural heritage for 
+people with Intellectual Disabilities: A tool for observing the obstacles and facilitators for the 
+access to knowledge. Alter, 15(2), pp. 113-123, (2021). 
+[18] Newell, A. F. and Gregor, P. (2000). 'User sensitive inclusive design'—in search of a new paradigm. 
+Proceedings of the ACM Conference on Universal Usability (CUU '00). NewYork: ACM Press, pp. 
+39-44.  
+
+[19] Nielsen, J. (1993). Usability Engineering. London, England: Academic Press. 
+[20] Norman, D. A., & Draper, S. W. (1986). User centered system design; new perspectives on human-
+computer interaction. L. Erlbaum Associates Inc. https://doi.org/10.1201/b15703 
+[21] Packer, J. Beyond learning: Exploring visitors' perceptions of the value and benefits of museum 
+experiences. Curator: The Museum Journal, 51(1), pp. 33-54, (2008). 
+[22] Salber, D., and Coutaz, J. (1993). Applying the Wizard of Oz technique to the study of multimodal 
+systems. In L. J. Bass, J. Gornostaev, & C. Unger (Eds.), Human-Computer Interaction (Vol. 753, 
+pp. 219–230). Springer Berlin Heidelberg. https://doi.org/10.1007/3-540-57433-6_51  
+[23] Salmen, J. P. (1998). Everyone's Welcome: The Americans with Disabilities Act and Museums. 
+American Association of Museums, 1575 Eye St., NW., Suite 400, Washington, DC 20005.  
+[24] Sanders, E. B.-N., & Stappers, P. J. (2008). Co-creation and the new landscapes of design. 
+CoDesign, 4(1), 5–18. https:// doi.org/10.1080/15710880701875068 
+[25] Scherer, M. J. (2005). Matching Person & Technology Assessment Process. Institute for Matching 
+Person and Technology, Inc. http://members. aol. com/IMPT97/mptdesc. html.  
+[26] Shneiderman, B. and Plaisant, C: Designing the User Interface Strategies for Effective Human-
+Computer Interaction fourth edition. Addison Wesley Longman, Inc., (2005). 
+[27] Smithsonian Accessibility Program (2011). Smithsonian Guidelines for Accessible Exhibition 
+Design, Washington: Smithsonian Accessibility Program. 
+[28] Stephanidis, C., Akoumianakis, D., Sfyrakis, M., & Paramythis, A. (1998). Universal accessibility in 
+HCI: Process-oriented design guidelines and tool requirements. In Proceedings of the 4th ERCIM 
+Workshop on User Interfaces for all, Stockholm, Sweden (pp. 19-21).  
+[29] Umanski, D., and Avni, Y. (2017). PLAY-ABLE: developing ability-based play activities for children 
+with special needs. In Proceedings of the 11th International Convention on Rehabilitation 
+Engineering and Assistive Technology (pp. 1-4). 
+[30] Vredenburg, K., Mao, J.-Y., Smith, P. W., & Carey, T. (2002). A Survey of User-Centered Design 
+Practice. 1.  
+[31] Wood, E. (Ed.). A New Role for Museum Educators: Purpose, Approach, and Mindset. Taylor & 
+Francis, (2023). 
+

@@ -1,0 +1,602 @@
+2014 International Conference on Indoor Positioning and Indoor Navigation, 27th-30th October 2014
+Generating indoor maps by crowdsourcing
+positioning data from smartphones
+Parijat Mazumdar Vinay J. Ribeiro Saurabh Tewari
+Department of Electrical Engineering Department of Computer Science & Engg. CSR Technologies India Pvt. Ltd.
+Indian Institute of Technology Delhi Indian Institute of Technology Delhi Noida, India
+Delhi, India Delhi, India Email: Saurabh.Tewari@csr.com
+Email: mazumdarparijat@gmail.com Email: vinay@cse.iitd.ernet.in
+Abstract—Indoor maps are highly essential for indoor posi- Indoor maps are a prerequisite for many popular indoor
+tioningandlocation-basedservices.Applicationsprovidingnavi- positioning solutions like the Horus [3]. Even algorithms that
+gationsupporttousersarerendereduselesswithoutamapofthe
+do not directly depend on indoor maps, benefit from their
+vicinity being available. Presently, floorplans of public locations
+availability. Applying map-matching techniques increases the
+are collected and maintained by designated organizations using
+methodsthatrequireexcessivemanualintervention.Thisprocess accuracy and consistency of almost any PDR-based solution
+of creating a database of indoor maps is neither efficient nor like the UPTIME [4]. More importantly, indoor maps are a
+scalabletothepracticallyinfinitenumberofpublicindoorplaces neccessity forthe end usersof navigation solutions.For assis-
+around the world.
+tance in navigation, pedestrians require their present location
+In this paper, we present a crowdsourcing algorithm to
+relativetothestructureandpositioningofhallwaysandrooms
+automatically create floorplans of buildings with zero prior
+information.Thealgorithmleveragesthepositioningdatashared inthebuilding.Insuchascenario,onlyestimatingthelatitude
+bypedestriansusingsmartphone-basednavigationsystemsinthe andlongitudeoftheircurrentpositionisuselesstothem.This
+building. It expects only position fixes and associated uncertain- positioningdatamakessensetothemonlywhensuppliedwith
+ties from the navigation systems and does not depend on any
+a building floorplan.
+particular navigation algorithm. The available positioning data
+Despitetheimmenseimportanceoftheavailabilityofindoor
+in a completely unknown building is essentially PDR-based and
+is known to be prone to high amounts of accumulated error maps, the database of floorplans available with any location-
+primarily due to the lack of reliable error resetting techniques. based service provider like SkyHook [5] is limited. This is
+The presented algorithm takes into account the possibility of becausethepresentprocessofacquiringindoormapsinvolves
+such highly erroneous motion traces of pedestrians while trying
+intensivemanualintervention.Giventhevastnumberofindoor
+to generate map as accurately as possible. As an added merit,
+locations worldwide and the fast rate at which new public
+thealgorithmdoesnotdependontheavailabilityofWi-Fiaccess
+points. buildings like shopping malls are being constructed, manually
+acquiring floorplans is in itself not scalable. The situation
+I. INTRODUCTION
+is made worse by the fact that original floorplans become
+Indoor positioning and navigation has been a hot topic of outdated with time as the buildings are renovated or their
+researchforthepastfewyears.Researchershavedevelopedin- internal structures are altered. There is a need to automate
+novativesystemsandalgorithmslikeNavShoe[1],FootSLAM this process of map collecting and maintanence.
+[2] etc. to make indoor navigation a reality in known as well In this paper, we present a server-side algorithm which
+as unknown environments. However, the dependence of these automaticallycreatesandmaintainsadatabaseofindoorloca-
+methods on specialized hardware limit their use. The ubiqui- tions,makinguseofthepositioningdatasharedbypedestrians
+tous modern day smartphones, equipped with Wi-Fi receiver usingtheirindoornavigationapplicationsintheirsmartphones.
+and inertial sensors, have changed the scenario altogether. The positioning data required by the mapping algorithm is
+Wi-Fi fingerprinting based methods like the Horus [3] and comprised of the position fix (i.e. latitude and longitude)
+with PDR based techniques like UPTIME [4] can localize and its associated uncertainty which can be in one of many
+pedestriansinindoorlocationswithreasonableaccuracyusing standardformslikelat-longdeviation,radiusof50%(or90%)
+just smartphone and reasonable additional infrastructure like confidence region etc. In our opinion, these requirements of
+Wi-Fiaccesspoints.Thesemethodshavebeenwidelyaccepted positioning data do not limit the viability of our algorithm
+commercially and as a result, in a few places, the general because most navigation solutions leveraging smartphone’s
+public is already reaping the benefits of indoor navigation inertialsensorscalculatethesevaluesinherently.Themapping
+via easy-to-use smartphone applications. But, despite these algorithm is a truly crowdsourcing one in the sense that it
+advancements, indoor navigation is not as widespread as works with the shared positioning data irrespective of the
+outdoor navigation using GPS and GNSS. We believe that a positioning solution used to generate the data. Also, unlike
+primary reason for this is the reduced availability of indoor SLAM techniques which depend on looping trajectory of
+maps. pedestrians, our algorithm expects zero additional effort by2014 International Conference on Indoor Positioning and Indoor Navigation, 27th-30th October 2014
+hallways and rooms along with the position of rarely moved
+obstaclesliketables,decorativeinstallationsinshoppingmalls
+etc.Second,itspecifiesthedefininglabelsassociatedwiththe
+various parts segregated by the postioning of the obstacles.
+For example, in a shopping mall, the labels could be the
+names of various shops. The work presented in this paper
+deals with estimating only the former of the two types of
+information.Oncethepositioningofwallsandotherobstacles
+are estimated, the defining labels can be set through human
+contribution and feedback or by using prior work like the
+SurroundSense [6].
+The system we propose is a data collection and processing
+server which maintains a database of indoor maps. Any
+positioning and navigation application can send positioning
+data of the user over an Internet connection. Specifically, the
+server accepts the tuple (latitude, longitude, uncertainty) as
+positioning data. The mapping algorithm used by the system
+represents each position fix as a normal distribution with
+latitude and longitude of the position fix as mean and the
+uncertaintyastheco-variancematrix.Henceitisnecessaryto
+represent the uncertainty as a 2x2 co-variance matrix. Some
+positioning systems like those using Kalman filter internally
+calculatethecovariancematrixdenotinguncertainty,butother
+systems may instead measure uncertainty in terms of latitute
+and longitude deviation or radius of 50% confidence region.
+We argue that all standard forms of representing uncertainty
+can be converted to the co-variance matrix form with inherent
+approximations. For example, when latitude and longitude
+deviation form is used, the distributions along latitude and
+longitude can be considered independent and the co-variance
+matrix entries can be calculated accordingly. These conver-
+sions are inexpensive and can be done by peripheral sub-
+systems in our system, each of which converts one of the
+Fig.1. SystemOverview
+finitely many standard forms of uncertainty to the co-variance
+matrix form. The mapping algorithm is run periodically over
+users. the collected data to generate or modify maps and store them
+Notcontrollingthepositioningmethodorthequalityofoff- in the database. The positioning data is stored in the system
+the-shelf smartphones used presents the challenge of using in a time-bound manner, i.e., each data point is stored in the
+a mixture of accurate as well as highly erroneous position systemonlyforacertaintimeafterwhichitisdiscarded.This
+fixes in generating indoor maps as accurately as possible. helps in keeping the maps in the database up-to-date.
+We introduce the concept of spatial density histograms using At this point, it is worth mentioning that the system can
+variedGaussiankernelsasanon-parametricstatisticalwayto be easily extended to store Wi-Fi RSSI values as well which
+address this problem. will enable us to associate Wi-Fi fingerprints with the gen-
+The rest of the paper is organized as follows. We start with erated map. This inturn can be useful for a variety of Wi-Fi
+anoverviewofouralgorithm,followedbyadiscussiononthe fingerprint-basedpositioningapplications.Ourworkpresented
+mathematicalmodelused.Thenwelaydownouralgorithmin in this paper, however, focuses only on generating building
+specific terms and present the results of our experimentation. floorplans from crowd-collected position fixes.
+Finally, we review related work and conclude our paper.
+III. MATHEMATICALPROBLEMFORMULATIONAND
+II. SYSTEMOVERVIEW
+SOLUTION
+In this section, we formulate the indoor mapping problem.
+We also describe the complete system (see Fig. 1) of which In this section, we formalize the mapping problem and
+the mapping algorithm, discussed in the rest of the paper, is a depict it as a statistical problem. We also introduce Spatial
+central part. density histograms using varied Gaussian kernels as a non-
+A complete indoor map consists of two important types of parametric way to tackle the statistical problem, thus generat-
+information.First,itspecifiesthepositionofthewallsshaping ing a probabilistic version of the indoor map.2014 International Conference on Indoor Positioning and Indoor Navigation, 27th-30th October 2014
+(cid:114)
+A. Problem Formulation Intheaboveequation,K( )iscalledthekernelfunctionandis
+The task is to use a collection of uncertain position fixes of controlledbytheparameterhcalledthekernelbandwidth;||.||
+pedestrians to generate the map of a building. This problem denotes the Euclidean norm of the vector. The most popular
+statement can be defined, in a probabilistic setting, as the choice of kernel function is the normal kernel described by
+estimation of map given all the position fixes of pedestrians. the following equation :
+pdf(M|f 1,f 2...f n) (1) K(d;h)∝e− 2d h2 2 (4)
+where M denotes the map random variable, and each f
+i An important advantage of KDE is that it can asymptotically
+denotes an uncertain position fix modelled as a Gaussian
+achieveestimationoptimalityforadistributionwithoutmaking
+distribution (explained below). M is a random variable for
+any assumptions about it. In other words, as the number of
+various possible states of the map where each map state is a
+observed samples increases, the pdf estimate converges to the
+specific way to distributing the vacant areas and the blocked
+true density of ANY distribution [8].
+areasovera2-Dspace.Therefore,wecansaythatMcaptures
+(cid:90)
+thevariouswaysofdistributingvacantareasovera2-Dspace. |p˜(x)−p(x)|dx→0asN →∞ (5)
+The ith position fix in the input collection of positioning data
+is given by the tuple (lat i,long i,Σ i), where lat i is its latitude, where p˜ is the actual pdf; p is the estimated pdf; N is the
+long i isitslongitudeandΣ i isitsco-variancematrixdenoting number of input samples and |.| is the standard modulus
+the uncertainty of the position fix observed. The erroneous operator for real numbers. This convergence property makes
+position fix is mathematically represented in our problem KDE, in our opinion, an ideal technique for crowdsourcing
+formulation as an independent bivariate Gaussian distribution, indoor maps. However, we do not directly use KDE for our
+denoted by f i, with (lat i,long i) as mean and Σ i as the co- map estimation problem primarily for one reason. In KDE,
+variance matrix. the contribution of all training points are identical in nature
+because the same kernel function is applied to all the points.
+f (lat,long)=N([lat,long]|µ=[lat ,long ],σ =Σ ) (2) Thisisnotasuitablepropertyincaseofourmappingproblem
+i i i i
+where some position fixes are quite accurate while others can
+where lat and long are the latitude and longitude of the
+be highly erroneous (as demonstrated by the data collected
+location at which we want to evaluate the value of f ; N
+i for our experiment see figure 6b). An ideal solution, hence,
+stands for normal distribution. Since Σ is the uncertainty of
+i shouldgivehigherweightagetothemorecertainpositionfixes
+thepositionfixobserved,wecansaythat,f representsthepdf
+i and discount the contribution of highly uncertain points. Our
+of the actual position of a person given his observed position
+method of spatial density histogram using varied Gaussian
+fix.
+kernelsinherentlyincorporatesthisdifferentialweightingstrat-
+Keepinginmindtheaboveinferences,weconcludethatthe
+egy.
+probabilityexpressionin(1)representstheprobabilitydensity
+function of vacant locations over a continuous 2-D space, C. Spatial density histograms using varied Gaussian kernels
+given the finite observations of vacant locations (i.e. f i’s). The transition from KDE to spatial density histograms
+The use of f i as an observation of vacant location is a simple comprises of two changes.
+probabilisticextensionofthefollowingconjecturewhichintu- 1) Discretization of continuous space: We discretize the
+itivelyappliesifpositionfixesarenoterroneous:thelocation continuous2-Dspaceoverwhichthestateofmaprandomvari-
+associatedwithapositionfixofapedestrianisalwaysvacant. ableMistobeestimatedbychoosingagridrepresentationof
+In our proposed method, we estimate the bivariate pdf, in (1), themap.Werepresentthemapasagridofsquaretilesoffixed
+inanon-parametricwayusingspatialdensityhistograms.The dimensions(δxδ),eachofwhichiseithervacantoroccupied.
+conceptofourspatialdensityhistogramsderivesheavilyfrom The vacant tiles are available for pedestrians’ use while the
+the statistical technique of Kernel Density Estimation (KDE) occupied ones are blocked by obstacles to human motion
+[7],widelyusedincomputervisionandsignalprocessing.We (e.g. walls, tables). Each of these tiles, much like individual
+briefly discuss the essentials of KDE in the next part and then piecesofajigsawpuzzle,whenputtogethergeneratetheentire
+subsequently describe our spatial density histograms. building floorplan. The density estimate within each tile, T
+ij
+B. A primer of Kernel Density Estimation (i.e. the map tile in the ith row and jth column of the grid),
+in the map grid is considered to be uniform and same as the
+Kernel Density Estimation (KDE) is used to estimate the
+density estimate at it’s center point, c . In other words, the
+probability density function of a random variable in a non- ij
+tilesare2-Dhistogrambinswhosevaluesaretheaccumulated
+parametric way. Given a finite number of independent and
+density at their center points (c s).
+identically distributed samples, (x 1,x 2...x n), drawn from an ij
+2) Varied Gaussian kernels: We use f s,described in sub-
+unknown distribution, the pdf of the distribution is estimated i
+section III-A, for calculating density contributions of position
+using the following equation :
+fixes.Eachf isessentiallytheoutputofthecorrespondingpo-
+n i
+pdf(x)= 1 (cid:88) K(||x−x i|| ) (3) sitionfixappliedtoaGaussiankernelwhosekernelbandwidth
+nh h is proportional to the uncertainty of the position fix. The use
+i=12014 International Conference on Indoor Positioning and Indoor Navigation, 27th-30th October 2014
+of Gaussian kernels with customized bandwidths makes the A. Generating probabilistic maps
+contributions of the various position fixes non-identical and
+The algorithm for generating a probabilistic map is based
+dependent on the certainty of the position fixes. Position fixes
+on the concept of spatial density histograms with varied
+with high uncertainties have spread-out or flattened f s. As a
+i kernels discussed in Section III-C. We take up the various
+result, these position fixes contribute small values to a large
+aspectsofthealgorithmseparately.Thecompletealgorithmis
+areaofthemap.Suchalmost-uniform,globalcontributionsare
+summarized in Algorithm 1.
+incapable of changing the shape of the pdf of the map. On
+1) Forming a grid representaion: We ideally want to rep-
+the contrary, highly certain position fixes have sharp f s and
+i resent the map as a grid of square cells of fixed dimensions
+hence have high local contributions to the pdf. These sharp,
+as discussed in III-C1. But for computational efficiency and
+local contributions have significant effect on the shape of the
+representational ease, we approximate the sets of parallel
+map pdf.
+horizontal and vertical lines, which demarcate the individual
+Insummary,weestimatethedensityateachtileinthemap
+squares,withlatitudesandlongitudesseparatedbyfixedinter-
+grid using the following equation:
+vals. Within the limited spread of almost all indoor locations,
+the latitudes and longitudes form two sets of almost parallel
+n
+pdf(T )∝(cid:88) f (c ) (6) lines(seeFig.2).Theslightskewnessimpartedtothesquares
+ij i ij
+as a result of this approximation has negligible effect. The
+i=1
+interval size between latitudes (and longitudes) is a design
+The density estimates at the map tiles correspond to the decision and depends on the desired size of individual square
+likelihood of the tiles being vacant and together form the pdf tiles. Forming the grid is the first step of our algorithm which
+of the indoor map. can be done by identifying the demarcating latitudes and
+The statistical significance of our method is that it estimates longitudes. Since the interval between damarcating latitudes
+the likelihood of a map location being vacant using the and longitudes is fixed (say ∆), storing just the minimum
+expected number of pedestrians who have walked over that and maximum latitudes and longitudes essentially stores the
+location, calculated using the erroneous position fix readings. positionsofallreferencelatitudesandlongitudesandfulfilsall
+To substantiate this claim, we show the equivalence between our algorithmic requirements. The minimum (and maximum)
+the density estimate at a map tile (calculated using (6)) and latitude (and longitude) can be identified by a single scan of
+the expected number of pedestrians who have walked over it. the batch of position fixes (i.e. latitude, longitude tuple) used
+Remember from equation (2) that each f i represents the pdf for generating the map.
+of the actual position of a pedestrian given his position fix 2) Matrices for storing density contributions: Remember
+reading. Therefore, the expected number of persons who have from the discussion in III-C1 that we calculate the density
+been over a particular tile of dimensions δ×δ is given by: contributions only at the centeres of the tiles. For storing the
+density contributions at the centers, we use a 2-D rxc matrix,
+(cid:88)n (cid:90) Xcij+δ/2(cid:90) Ycij+δ/2
+V. Here r and c are:
+E(p )= f (x,y)dxdy (7)
+ij i
+i=1 Xcij−δ/2 Ycij−δ/2
+r
+=(cid:100)max lat−min lat
+(cid:101) (9)
+∆
+whereX andY aretheX-coordinateandY-coordinateof
+cij cij
+thetilecenterc .Forδ muchlessthanthevarianceoff ,the max long−min long
+ij i c=(cid:100) (cid:101) (10)
+above equation can be approximated as : ∆
+We call the matrix V as vacancy matrix and each of it’s
+n n
+E(p ij)=(cid:88) δ2f i(X cij,Y cij)∝(cid:88) f i(c ij) (8) e ol fe tm heen tt i, leν ,ij T, s .to Wre es uth see ad ne on ts hit ey rc ro xn ctr mib au trti io xn Nat
+,
+cth ae llec den tt he er, nc oi rj -,
+i=1 i=1 ij
+malization matrix, which stores the normalization coefficients
+Comparing equation (8) with equation (7), we see that the corresponding to the stored density evaluations. We initialize
+expected number of people who have walked over tile T ij all elements of V with 0 and all elements of N with 1.
+is proportional to the density estimate at the same tile, thus 3) Representing density contribution of a position fix:
+provingourclaimofequivalencebetweenexpectednumberof Recall from section III-C2 that density contribution of each
+pedestrians and density estimate. position fix is calculated using it’s corresponding f . Given
+i
+latitude (lat ), longitude (long ) and co-variance matrix of
+i i
+IV. THEALGORITHM uncertainty (Σ i), the corresponding f i is given by
+1
+Our algorithm can be broadly divided into two parts : gen- f i(lat,long)= (cid:112) e− 21LT iΣ− i1Li (11)
+(2π)2|Σ |
+erating the probabilistic map using spatial density histograms i
+discussedaboveandusingtheprobabilisticmapthusgenerated where
+(cid:18) (cid:19) (cid:18) (cid:19)
+to mark the positions of walls and other obstacles. In this lat lat
+L (lat,long)= − i (12)
+section, we describe both the parts in order. i long long
+i2014 International Conference on Indoor Positioning and Indoor Navigation, 27th-30th October 2014
+Fig. 2. Skewed grid formed using latitudes and longitudes used in our experiment to map the hallway of Bharati building (IIT Delhi). Visualized using
+GoogleEarth.
+ 
+0.0033 0.0478 0.1163 0.0478 0.0033
+We are interested in finding the density contributions only
+at discrete points, i.e. the centers of the map tiles. Hence
+0.0081 0.1163 0.2829 0.1163 0.0081
+0.0033 0.0478 0.1163 0.0478 0.0033
+we represent the continuous f as a matrix, K. Since K is
+i
+the matrix representation of a 2-D Gaussian, it contains the
+Fig.3. AnexampleofmatrixK
+symmetric structure of Gaussian distribution (see Fig. 3 for
+sample) and hence is indexed about the center-most cell. The
+center-most cell is indexed (0,0), the cell just right to the
+4) Accumulatingdensitycontributions: Thefinalpdf ofthe
+center-mostcellisindexedas(0,1),celljustlefttothecenter-
+maportheprobabilisticmapisgeneratedbyaccumulatingthe
+mostisindexed(0,-1),cellverticallyatthetopofcenter-most
+density contributions by all position fixes at the canters of the
+is indexed (1,0) and so on. Following this indexing pattern,
+tiles, c . We already know that the density contribution of
+the value of the element k of matrix K is given by: ij
+ij each position fix is represented by the corresponding matrix
+(cid:18) i.∆(cid:19)T (cid:18) i.∆(cid:19) K and the contributions are stored in the vacancy matrix, V.
+1
+−1
+2 j.∆
+Σ− i1
+j.∆ The process of accumulating density contributions is iterative
+k = e (13)
+ij (cid:112) (2π)2|Σ | : One position fix (along with its associated uncertainty) is
+i
+chosenatatime,it’sKmatrixisformedwhichisthenusedto
+f extends to infinity but it’s matrix representation, K, has
+i update the vacancy matrix, V. At each iteration, the elements
+fixed dimensions. To limit the dimensions of the matrix, an
+of V are updated as follows (seeFigs. 4 and 5). The matrix K
+errortoleranceparameter(cid:15)ischosen.Thedensitycontribution
+isimaginedtobeplacedoverthematrixV suchthatthecenter
+byf atapoint(lat,long)iseffectivelyignoredifitisbelow(cid:15).
+i of the smaller matrix K (cell with index (0,0)) is positioned
+ThedimensionsofKcannowbechosenas(2r +1)x(2c +
+k k over the cell (p,q) of V. Here p, q is the subscript of the map
+1) such that k , k , k and k are
+(rk+1)0 (−rk−1)0 0(ck+1) 0(−ck−1) tileT
+pq
+withintheboundsofwhichthepositionfixrepresented
+all just below (cid:15). Therefore, solving inequality with (cid:15) using
+by K (i.e lat , long ) lies. These are given by
+i i
+equation (13), r and c are given by:
+k k
+lat −min lat
+(cid:115) p=(cid:98) i (cid:99) (16)
+−2 (cid:112) ∆
+r =(cid:98) log( 4π2|Σ |.(cid:15))(cid:99) (14)
+k ∆2.Σ i
+i22
+q
+=(cid:98)long i−min long
+(cid:99). (17)
+and ∆
+(cid:115)
+−2 (cid:112) Once this alignment of both matrices have been done, the
+c =(cid:98) log( 4π2|Σ |.(cid:15))(cid:99). (15)
+k ∆2.Σ i respective overlapping elements are added to one another and
+i11
+stored back into the cells of the matrix N.2014 International Conference on Indoor Positioning and Indoor Navigation, 27th-30th October 2014
+Fig. 4. The smaller matrix to the right, represents the K matrix for a position fix. The larger matrix to the left represents vacancy matrix V. The red
+boundariesshowtheimaginaryplacementofmatrixKoverV.ThecenterofK,markedwithbroadredborders,isplacedoverbroadred-borderedcellofV.
+TheupdatedvacancymatrixisshowninFig.5.Thevaluesshownhereareimaginary.
+Fig.5. Updatedvacanymatrix,V attheendof1st iteration.Thevaluesshownhereareimaginary.
+At every iterative step, for every cell of matrix V that is B. Generating building floorplan
+updated the corresponding cell of the normalization matrix
+N is incremented by 1. At the end of all iterations, all the We use the probabilistic map, generated in the first stage,
+elementsofthevacancymatrixaredividedbytheelementsof to demarcate the position of walls and other obstacles. In
+the normalization matrix in an element-by-element manner. the probabilistic version, every tile is associated with the
+probability of it being vacant. But for the building floorplan,
+ν =ν /n (18) we want to get rid of the probabilities and clearly classify
+ijfinal ij ij
+each tile as being either vacant or occupied by wall (or any
+The final vacancy matrix stores the desired probabilistic map. other obstacle). Since the final vacancy matrix already stores2014 International Conference on Indoor Positioning and Indoor Navigation, 27th-30th October 2014
+Algorithm 1 Generating probabilistic map stall the process of accepting strokes, replace all currently ac-
+Input: P,∆ ceptedstrokeswithasinglelinearstrokejoiningtheendpoints
+Output: V,min lat,min long and then again repeat the process starting with the previously
+min lat← {min latitude in P} - tolerance unacceptedstroke(i.e.thestrokethatstalledtheprocess).This
+min long ← {min longitude in P} - tolerance way,wereplacesetsofsmallerstrokeswithlargerstrokesthus
+max lat← {max latitude in P} + tolerance regularizing the boundaries, but at the same time preserve the
+max long ← {max longitude in P} + tolerance intricate structures wherever required.
+Initialize V matrix with all 0’s
+V. EXPERIMENTS
+Initialize N matrix with all 1’s
+Wetestedourmappingalgorithmbyestimatingtheshapeof
+for all (lat,long,σ) tuples in P do
+thehallwayofBharatibuildinginIITDelhicampus.Asmen-
+Form K matrix
+tioned earlier, the algorithm is independent of the positioning
+Update V matrix
+device or method used. But for contextual purposes, we first
+Update N matrix
+present a qualitative overview of the positioning method used
+end for
+before discussing the procedure and results in detail.
+V ←V./N
+A. Overview of positioning method
+We implemented a dead reckoning [10] positioning algo-
+rithm which estimates the final position of a pedestrian, given
+valuesinthenormalizedform,theclassificationiseasilydone
+his initial position, by calculating the net displacement. The
+by applying a common global threshold. The tiles whose
+entire algorithm can be divided into 3 broad parts: heading
+corresponding values in the vacancy matrix are below the
+estimation, step detection and stride length estimation.
+chosen threshold are marked as occupied and the rest as
+1) Heading estimation: For heading estimation we use the
+vacant. Rendering the final map with occupied locations (or
+work on robust attitude estimation of hand-held positioning
+tiles) marked differently from the pedestrian usable locations,
+systemsbyMaheshChowdharyetal.[11],makingimplemen-
+is surely an acceptable way of map representation. But within
+tationlevelchangeswherevernecessary.Thecompleteattitude
+the limits of our experimentation method we have found that,
+of the smartphone is estimated by fusing the readings of
+when the map is depicted in the above manner, the implied
+gyroscope as well as magnetometer. The fusion is carried out
+boundaries of the hallways appear highly irregular and noisy.
+by an Extended Kalman Filter (EKF) which uses an S-shaped
+The discretization of the map into tiles may be a primary
+curve to adaptively change the measurement noise matrix (R)
+reason for this. Therefore, we go a step further and determine
+and the system noise matrix (Q). The heading estimated by
+andthenregularizetheboundariesoftheobstacles.Werender
+this method is claimed to be robust and resilient to arbitrary
+the final map as walkable sections enclosed and demarcated
+human actions like swinging of hands while walking.
+by boundaries to obstacles.
+2) Step detection and stride length estimation: The exact
+For markingthe boundaries,we firstassimilate togetherthe algorithmsusedforstepdetectionandstridelengthestimation
+corner points of the vacant tiles and then find the α-shape are proprietary of CSR Technologies Pvt. Ltd. Both these
+[9]ofthe2-Dpointcloud.α-shapesareessentiallycomposite algorithms make use of the absolute accelerations measured
+shapes formed by a chain of piecewise linear strokes, where with respect to earth-centered, earth-fixed (ECEF) frame of
+the parameter α controls the length of each stroke. They are a reference. But, the accelerations measured by the 3-axis
+generalizationoftheconvex-hullandcanbeusedtodetermine accelerometer in a smartphone are relative to the phone’s
+the shape of any finite set of points. Lowering the value of orientation.Estimatingthefull3-Dattitudeofthesmartphone
+the parameter α produces more regularized boundaries. But during heading estimation (refer to section V-A1), enables
+this regularization, which may be needed in one part of the us to transform the measured accelerations relative to the
+map, leads to the loss of intricate structure in other parts of smartphone’s frame of reference to the required absolute
+the map. So, we propose to use an intermediate value of α accelerations in ECEF frame. This transformation is brought
+and then apply additional heuristics to regularize all sections about by the multiplication of the 3-D vector of relative
+of map boundaries without the loss of structural intricacy. At accelerations with a rotational transformation matrix whose
+this point, we cannot argue about the best value of α, but elements can be calculated using the heading, pitch and roll
+based on our experimentation, we recommend choosing 1 as of smartphone’s orientation.
+α
+3-5 timesthe widthof themap tiles (i.e∆) andthen applying We do not numerically characterize the performance of the
+the heuristic defined below. positioning method implemented and rather acknowledge that
+We define for ourselves a small angular tolerance, τ (some moreaccurateandefficienttechniquesdoexist.Buttheability
+value between 5-15 degrees is recommended). We start with to use readings from such sub-optimal positioning methods,
+one of the linear stokes of the composite α-shape. We keep to generate maps as accurately as possible, is a desirable
+on accepting subsequent strokes in the chain as long as their characteristic of any crowd-sourcing mapping algorithm. As
+angles, relative to the initially chosen stroke, lie within ±τ. results indicate, our mapping algorithm does have this impor-
+When a subsequent stroke violates the angular tolerance, we tant characteristic.2014 International Conference on Indoor Positioning and Indoor Navigation, 27th-30th October 2014
+(a)Referencefloorplan (b)100representativetrajectories
+Fig.6. (a)ReferencefloorplanoftheBharatibuilding.Theblueandredlinesmarkthepresenttrueboundariesofthehallway.A,BandCarethestarting
+pointsofalltrajectoriesinourdataset.(b)100representativetrajectoriesarevisualizedusingGoogleEarth.Thereddotsareindividualpositionfixes.
+B. Experimental procedure figure 6a). This extension of hallway, as we show in figures 8
+and 9, is captured by our algorithmically generated map thus
+We implemented the positioning algorithm, described highlighting an important utility of automatically maintaining
+above, in an off-the-shelf Samsung Galaxy S-III smartphone indoor maps: keeping floorplans up-to-date.
+as an android application. The android application, curtailed
+C. Results
+for our experiment, records pedestrian trajectories as log files
+storedinthesmartphone.Theselogfilesarelaterdownloaded The skewed grid used for representating the map in our
+into a computer and our mapping algorithm is run to generate experiment is visualized in figure 2. The minimum and
+themap.Inourexperiment,thestartingpointofeachtrajectory maximum latitudes in the grid are 28.544733 degrees North
+was calculated using GPS fix. Therefore, we chose only those and 28.545303 degrees North respectively, the minimum and
+3 positions as starting points where GPS fix was readily maximum longitudes in the grid are 77.189950 degrees East
+available,forexample,entrancetotheadjointterrace,hallway and77.190811degreesEastrespectively.Theintervalbetween
+corners with large windows (see letter labels in figure 6a). adjacent latitudes (or longitudes), i.e. ∆, is chosen to be
+Wecollected300trajectoriesofvariedlengthsandshapesto 6x10−6 degrees.Themaptiles,therefore,haveasizeofabout
+generatethefinalmappresented.Equalnumberoftrajectories 66 cm x 66 cm.
+(100 each) were recorded with the smartphone held steadily The vacancy matrix (V) and the normalization matrix (N)
+in hand, smartphone placed in trouser pocket and smartphone have dimensions 95 x 144, calculated using equations (9) and
+in hand with arms swinging. A representative set of 100 (10). The implemented positioning android application logs
+trajectories has been shown is figure 6b. As it is evident
+fromthevisualization,someofthetrajectorieshavearbitrarily
+large errors. The primary reason for these large errors, we
+believe,issignificantheadingerrorinducedbythemomentary
+loss of magnetometer caliberation in the presence of strong
+magnetic disturbances at certain points of the hallway. Apart
+from these visibly erroneous trajectories, we have also found
+that a majority of the trajectories recorded, have significant
+deviationfromtheoriginalpathtraversed.Butsucherrorscan
+be expected from any PDR positioning algorithm without the
+assistance of error-resetting techniques.
+We evaluate the generated probabilitic map qualitatively by
+comparing it to the original floorplan of the building (figure
+6a).Thereferenceboundarytothehallway(againstwhichthe
+algorithmically estimated boundary is compared in figures 8 Fig. 8. Estimated boundaries of the hallway obtained using α-shapes.
+The red lines represent the estimated boundaries, the blue lines represent
+and 9) is drawn to scale by precisely overlaying the floorplan
+the boundaries depicted in the reference floorplan. Notice that the outdated
+over Bharati building using Google Earth. The reference reference floorplan does not show an extension in the hallway which the
+floorplan used, was prepared when the building was initially estimatedboundariesaccuratelyincorporate.Thesmallloopinthecenterof
+thehallwayrepresentstheestimatedboundariesofsmallsittingarrangement
+constructed and does not show an extension of the hallway
+locatedtherebutnotincorporatedinthereferencefloorplan.Theboundaries
+that was later done (the section bounded by red boundaries in aredrawntoscale.2014 International Conference on Indoor Positioning and Indoor Navigation, 27th-30th October 2014
+(a)Thresholdedvacancymatrix (b)Predictedvacantmaptiles
+Fig.7. (a)Thethresholdedvacanymatrix.Thevariouscoloursintheheatmaparearrangedinthecolourbar,frombottomtotop,inanincreasingorderof
+thesetsofvaluesthattheyrepresent.(b)Thepredicedvacanttilesareshadedindarkcoloursandoverlaidoverthereferencefloorplan.
+uncertainties as tuples : (deviation in latitude, deviation in SmartSLAM [12] is a system which extends the Simulta-
+longitude). We convert these tuples to the required 2x2 co- neous Locatization and Mapping (SLAM) technique to smart-
+variance matrix format in the manner described in system phones. SLAM is a technique used to generate the map of an
+overview (refer to section II). unknown location while localizing the pedestrian at the same
+The final vacancy matrix (V) obtained, is used to classify instant. SmartSLAM usesinertial sensorsas wellas WiFisig-
+thevacantmaptilesfromtheoccupiedones.Theclassification nals to construct RF fingerprints and building floorplans. But,
+is done by choosing a common global threshold which is likeanySLAMtechnique,SmartSLAMrequiresthepedestrian
+0.4 in our case. The thresholded vacancy matrix, obtained by to walk in loops i.e. revisit previously visited places, so that
+replacingthevaluesbelowthethresholdwith0andleavingthe convergenceofthemapestimateispossible.Thismightbean
+the values above the threshold unchanged, is shown in figure onerous responsibility for the general pedestrians. Also, since
+7a as a contour plot (or heatmap). The predicted vacant map
+tilesoverlaidoverthereferencefloorplan,ispresentedinfigure
+7b for qualitative comparison. Having identified the vacant
+tiles, we estimate the boundaries using α-shapes with 1 set
+α
+as200cm.WeuseDelaunaytraingulationforthecomputation
+of the α-shapes. The estimated boundaries using α-shapes
+is presented in figure 8. The boundaries formed are highly
+irregular and hence we apply our boundary regularization
+heuristic (discussed in the last paragraph of the section IV-B).
+Thefinal estimatedmapwithregularized boundariesisshown
+in figure 9.
+VI. RELATEDWORK
+In this section, we review three prior works which we
+Fig.9. Regularizedboundariesusingtheproposedboundary-regularization
+believe are closely related to our contribution and, in the heuristic. Red lines mark the estimated boundaries, blue lines mark the
+process, highlight the importance of our work. boundariesdrawntoscalefromthereferencefloorplan.2014 International Conference on Indoor Positioning and Indoor Navigation, 27th-30th October 2014
+localization and mapping are inter-dependent in SmartSLAM maintain a database of indoor floorplans. We present a novel
+(anyanySLAMalgorithm),usingitforcrowdsourcingindoor way to approach the mapping problem using spatial density
+maps inherently enforces the restriction of using the same histograms with varied kernels which, by virtue of its origin
+navigation application by all participating pedestrians. Such a from kernel density estimation, promises the convergence of
+restriction cannot be practically ensured at a large scale, thus the estimated map with the actual map as number of input
+reducingSmartSLAM’sviabilityascrowdsourcingmethodfor samples tend to ∞. The underlying concept also ensures that
+automatic maintenance of map database. the mapping algorithm is robust to the varying amounts of
+CrowdInside [13] is a crowdsourcing-based system for error present in the input positioning data. The results from
+automatically maintaining indoor floorplans. The mapping our experiment, conducted in a building of our university,
+algorithm segments the motion traces of pedestrians and then qualitatively validate the robustness of the mapping algorithm
+uses α-shapes to determine the shape of hallway and rooms. to arbitrarily high errors in positioning data supplied.
+Thismappingtechniqueishighlydependentontheaccuracyof
+the motion traces. It fails in the presence of highly erroneous
+ACKNOWLEDGMENT
+motion traces like those in our experiment dataset (refer to This work was supported by project RP02732 “Tracking
+figure 6b). To ensure highly accurate motion traces, it uses a Human Motion via Sensor Fusion” funded by CSR Technolo-
+PDR positioning algorithm which utilizes landmark anchors gies India Pvt. Ltd.
+(like elevators, escalators etc). Firstly, such landmark anchors
+REFERENCES
+maynotbeavailableinmanyplaces.Secondly,bylimitingthe
+positioningalgorithmcompatiblewiththemappingtechnique, [1] S.WanandE.Foxlin,“Improvedpedestriannavigationbasedondrift-
+reduced mems imu chip,” in Proceedings of the 2010 International
+theparticipationofgeneralpedestriansincrowdsourcingisre-
+TechnicalMeetingofTheInstituteofNavigation,2001,pp.220–229.
+strictedtoonlythosewhoareusingthatparticularpositioning [2] M. Angermann and P. Robertson, “Footslam: Pedestrian simultaneous
+algorithm. localization and mapping without exteroceptive sensorshitchhiking on
+human perception and cognition,” Proceedings of the IEEE, vol. 100,
+Yifei Jiang et al. proposed a system for automatic floorplan
+no.SpecialCentennialIssue,pp.1840–1848,2012.
+construction [14], which overcomes most of the challenges [3] R.VanRenesse,K.P.Birman,andS.Maffeis,“Horus:Aflexiblegroup
+of the above systems. The system uses WiFi fingerprints to communication system,” Communications of the ACM, vol. 39, no. 4,
+pp.76–83,1996.
+identify and enumerate rooms and inertial sensor readings
+[4] M. Alzantot and M. Youssef, “Uptime: Ubiquitous pedestrian tracking
+to estimate the shape of hallways. However, the system has using mobile phones,” in Wireless Communications and Networking
+its own shortcomings. It works only for rectangular shaped Conference(WCNC),2012IEEE. IEEE,2012,pp.3204–3209.
+[5] “SkyhookWirelessInc.”www.skyhookwireless.com.
+rooms. It does not include the positions of furniture into the
+[6] M.Azizyan,I.Constandache,andR.RoyChoudhury,“Surroundsense:
+floorplan. Finally, it is highly dependent on the availability of mobilephonelocalizationviaambiencefingerprinting,”inProceedings
+WiFi fingerprints. of the 15th annual international conference on Mobile computing and
+networking. ACM,2009,pp.261–272.
+Keeping in mind the 3 different prior works discussed
+[7] B. W. Silverman, Density estimation for statistics and data analysis.
+above, we present the major contributions of our proposed CRCpress,1986,vol.26.
+mapping algorithm. Our algorithm removes the requirement [8] L.DevroyeandL.Gyorfi,NonparametricDensityEstimation:TheL1
+View. Wiley,1985.
+of conformity among the positioning methods used to collect
+[9] H.Edelsbrunner,D.Kirkpatrick,andR.Seidel,“Ontheshapeofasetof
+data. It can work with any positioning method or device pointsintheplane,”InformationTheory,IEEETransactionson,vol.29,
+as long as the required data is supplied. It is robust to the no.4,pp.551–559,1983.
+[10] L. Ojeda and J. Borenstein, “Personal dead-reckoning system for gps-
+varying amounts of error that might be present in the dataset
+denied environments,” in Safety, Security and Rescue Robotics, 2007.
+and always generates the best possible map given the data. SSRR2007.IEEEInternationalWorkshopon. IEEE,2007,pp.1–6.
+It does not expect loop-closure or other special forms of [11] M.Chowdhary,M.Sharma,A.Kumar,S.Dayal,andM.Kumar,“Robust
+attitude estimation for indoor pedestrian navigation application using
+participation from the users. It only requires pedestrians to
+mems sensors,” in Proceedings of the 25th International Technical
+walk into the building with positioning system switched on Meeting of The Satellite Division of the Institute of Navigation (ION
+(to get the initial position fix from GPS data) and navigation GNSS2012),2001,pp.1658–1665.
+[12] H.Shin,Y.Chon,andH.Cha,“Unsupervisedconstructionofanindoor
+applicationstokeepsharingthepositioningdatatheycalculate.
+floor plan using a smartphone,” Systems, Man, and Cybernetics, Part
+The algorithm does not depend on the availability of WiFi C:ApplicationsandReviews,IEEETransactionson,vol.42,no.6,pp.
+signals and gives a more complete picture of the building 889–898,2012.
+[13] M. Alzantot and M. Youssef, “Crowdinside: automatic construction of
+floorplan by incorporating the position of walls, furniture or
+indoorfloorplans,”inProceedingsofthe20thInternationalConference
+other obstacles to pedestrian motion in the floorplan. on Advances in Geographic Information Systems. ACM, 2012, pp.
+99–108.
+VII. CONCLUSION [14] Y. Jiang, Y. Xiang, X. Pan, K. Li, Q. Lv, R. P. Dick, L. Shang, and
+M. Hannigan, “Hallway based automatic indoor floorplan construction
+In this paper, we present a crowdsourcing based server-side
+usingroomfingerprints,”inProceedingsofthe2013ACMinternational
+mappingalgorithmwhichcanacceptdatafromanypositioning jointconferenceonPervasiveandubiquitouscomputing. ACM,2013,
+deviceandmethod.Thealgorithmcanbeusedtoautomatically pp.315–324.

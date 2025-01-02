@@ -1,0 +1,580 @@
+PersUbiquitComput(2004)8:82–91
+DOI10.1007/s00779-004-0265-z
+ORIGINAL ARTICLE
+Carmine Ciavarella Æ Fabio Paterno`
+The design of a handheld, location-aware guide
+for indoor environments
+Received:5December2003/Accepted:10March2004/Publishedonline:27April2004
+(cid:1)Springer-VerlagLondonLimited2004
+Abstract Because of the growing spread of mobile and mobility of the users and the availability of interaction
+small devices (like PDAs, mobile phones, etc.), modalities unfettered by mouse and keyboards: voice,
+designers and developers of interactive systems have to sound, gesture, and user position can also be used to
+consider user mobility and the dynamic context of use. interact with a system. Location-aware systems can be
+In this paper we discuss the design criteria we have roughly grouped by the type of environment where
+defined for developing handheld location-aware sys- they are used: indoor or outdoor. They differ not only
+tems for indoor environments. We analyse some of the in the features of the environment (noise, light, number
+technologies currently available for this purpose and of people, and so on) but also in the technology
+examine how to use them in order to obtain location- exploited to detect user position: usually GPS for
+dependent information. We report on our experience in outdoor environments; various technologies for in-
+designing a location-aware guide for museum visitors doors. In this paper, we discuss the lessons learnt in
+and identify possible design criteria for this type of designing a handheld location-aware system for indoor
+system, which uses automatic detection of a change in environments. This discussion is based on the experi-
+environment to trigger the presentation of multi-modal, ence related to developing an application that localizes
+context-dependent information through a hand-held user position by interacting with infrared (IR) emitters,
+guide. and adapts the presentation of information to the
+current context of use. This solution can be easily ap-
+Keywords Location-aware guide Æ Indoor intelligent plied in other context-dependent indoor applications.
+ambient Æ Designcriteria Æ Handheldinteractivesystems We also provide users with audio feedback to help
+them interact with the application. We focussed our
+attention on the museum domain because it is charac-
+terized by mobile users who need context-dependent
+1 Introduction information, which should be provided without dis-
+orienting them or interfering with their visit. This need
+Thegrowingspreadofsmallbutpowerfuldevicesopens was also highlighted by an empirical study of the first
+up new scenarios in which users can interact with such version of the Marble Museum PDA application,
+devices in many environments in order to access the which did not include any automatic support for
+information they need at different times and locations. location detection [2]: several visitors complained that
+The context of use, which can change dynamically dur- sometimes they encountered problems understanding
+ing usage, becomes very important during the design, where they were during the visit. The new, location-
+and developers need to understand how to take it into aware system is currently available to all the museum
+account during their work. visitors of the Marble Museum of Carrara. In this
+Old paradigms in human–computer interaction, all paper, after a discussion of related work, we analyse
+addressed by traditional GUI mechanisms, need to be technologies to support location-awareness in indoor
+revisited [1] because of new elements such as the environments. Then, we introduce our case study and
+present a solution to identify user location, describing
+how we provide our users with information related to
+the current context by using the visual and audio
+C.Ciavarella(&)ÆF.Paterno`
+channels. Lastly, we analyse the results of the evalua-
+ISTI-CNR,ViaG.Moruzzi1,56100Pisa,Italy
+tion test and summarise the lessons learnt from this
+E-mail:c.ciavarella@isti.cnr.it
+E-mail:f.paterno@isti.cnr.it work.83
+userswerealsoprovidedwiththepossibilityofexploring
+2 Related work
+the map of the entire Center. The project authors in-
+tended to support the visitors’ tasks by taking into ac-
+Tobettersupportusersintheirdailyactivities, asystem
+count their positions and what they are currently
+has to provide users with information they need while
+looking at: to detect this information, they assume that
+takingintoaccountthecontextinwhichinteractionsare
+the users are looking in the same direction they are
+performed. This problem requires different solutions
+walking. Therefore, when the user passes from one cell
+depending on where the users are, i.e., in an outdoor or
+to another, the system shows the map of the new cell
+indoor environment. Whereas, in the former case, the
+where the user is entering, oriented according to this
+GPS technology helps the developer to find an outdoor
+direction. This approach requires a large number of
+user’sposition,inthelattercaseresearchershavetofind
+beacons and a consequently costly system. Moreover,
+different solutions to localize users. In our work we fo-
+the application provides the users with textual infor-
+cus on indoor environments. The museum domain has
+mation. A better solution would be to use audio for the
+been considered by a number of researchers (see for
+project presentations. In our solution, we use MP3 files
+example, [3–5]) because in such environments the users
+to give users information about the artworks in the
+walkfreelyinabuilding,withoutafixedpath,andneed
+museum.Thissolutionwasappreciatedbyuserswho,as
+informationrelatedtothecontext(i.e.,section)inwhich
+we will describe in the section about our last test eval-
+they are. Therefore, museums are an ideal test area for
+uation,likedthepossibilityofobservingtheobjectofthe
+researchers in human–computer interaction with mobile
+presentationwhilehearinginformationaboutit.Also,in
+devices.IntheGUIDEproject[4]visitorsinanoutdoor
+our solution, we chose to install IR emitters on the en-
+environment supported through several WLANs are
+trance of each section. In this way, by installing only a
+considered.Inourworkwefocusonindoorvisitors;this
+small number of devices, we have implemented a low
+requires consideration of different environments and
+cost, easy to install system.
+thus different solutions for supporting visitors.
+Thetwoprojectsdiscussedsofaraddresstheproblem
+In IrReal [6], the authors designed a building infor-
+of locating the user through interactions with infrareds
+mation and navigation system based on Palm Pilot
+inagenericbuilding.Now,letusexamineaprojectthat
+PDAs and a set of powerful IR emitters located
+aims to detect user position specifically in a museum.
+throughout a building. When the users are walking in
+TheHippiesystem,developedintheHIPSproject[5],
+the building, the IR sends them information related to
+locates users via an IR system composed of beacons
+their current position. The information is grouped in a
+installed at the entrance of each section and emitters
+cluster of ‘‘pages’’ connected to each other making an
+installedontheartworks. This solution creates asort of
+acyclic graph. These pages are broadcast using the IR
+IRgridthroughwhichthesystemcandetecttheartworks
+beacons. This solution has some problems; the first is
+nearestanygivenuser.Hippieprovidestheuserswiththe
+thattheinformationprovidedtotheusersconcernsonly
+information related to the artwork nearest them,
+nearby objects. This can be a problem in a large room
+assumingthatvisitorsstopwalkingonlybecausetheyare
+becauseeveniftheusersarenearanobject,theymaybe
+near an artwork they find interesting. However, the
+interested in a different object whose description is
+design does not consider other potential reasons for
+contained in another group of pages (i.e., located far
+stopping, such as a crowd preventing movement. This
+away). For each beacon, the pages are broadcast
+project also addresses the problem of how to adapt the
+repeatedly: no back button is provided. Another prob-
+user interface to the user model. The model can be
+lem concerns the cost of the solution: each beacon is
+modified either directly by the user at the beginning of
+connected to a PC in order to broadcast the pages.
+thesessionorbythesystem,whichtakesintoaccountthe
+Inoursolutionwewanttopreservethepossibilityfor
+historyofuserinteractionsandthechoicesperformedby
+theusertomoveeasilynotonlyinthebuilding,butalso
+theuser;inbothcasesthesystemhighlightsproposalsfor
+throughtheinformationinthesystem.Weprovidethem
+further information to the user through a blinking light
+withabackbuttonthatactslikethebackbuttoninWeb
+bulb icon. The suggested information can be accessed
+browsers:so,forexample, theycaneasilyaccessthelast
+through links to the descriptions of the works that best
+artwork they visited.
+correspond to the current user model. When accepted,
+Another approach has been proposed by the Cyber-
+the suggestions are used to update the user model. The
+guide project [7]. In this project, the authors provide
+information is provided by taking into account the user
+userswithcontext-awareinformationabouttheprojects
+model and the presentations are modified accordingly.
+performedattheGVUCenterinAtlanta,Georgia.They
+The limitation of this approach is that often the user
+installed TV remote controllers throughout the building
+position alone is not enough to indicate interest in the
+to detect users‘ locations and provide them with a map
+closest work of art. Thus, the risk is that the system
+that shows the area neighbouring the user, highlighting
+erroneously identifies the user interests and determines
+corridors and nearby objects, such as project demos. In
+the corresponding user model. Consequently, the audio
+this way they have divided the building into a series of
+presentations can probably be of little interest to the
+cells. The information on location (i.e., cell) and objects
+user. In our approach in order to prevent such wrong
+is provided in textual and graphical modalities. The84
+deductions that can negatively influence the visit, we receive information about a patient when they arrive
+havechosentoinsureusers’freedomofmovement.Once near the patient bed. In this project, the system detects
+thesystem has detected theroom theuser isin,then the the location of the users (doctors and nurses) by trian-
+user can freely activate audio comments regarding the gulating the signal strength from at least three 802.11
+artworks of interest. access points. Its reasoning component wraps a back-
+propagation neural network trained to map the signal
+strength from each access point in the wireless network
+3 Location identification to the user’s location. There exist other algorithms used
+to localize users in indoor environment using WLAN
+The identification of a user’s position in an indoor technology [9]. The major drawback of these techniques
+environment can be performed at various levels of isthecalibrationstepthatisnecessary.Researchershave
+granularity: for example, one is the identification of the reported location triangulation within approximately
+exact user position. Thus, in a museum application, the 1–2 m, but this often requires significant acquisition of
+systemcanidentifytheclosestworkofart;anotherlevel sample signal data to achieve, making it difficult to
+is when the system is only able to identify the room realize in practice. In our case, the museum covers a
+where the user is located. We have discussed that the large area structured in many environments obtained
+assumptionthatthetimetheuserspendsnearaworkof throughwallsorpanelsmadewithvariousmaterials:the
+art is proportional to the interest in it may be incorrect largeamountofdatarequiredbyvariousalgorithmsand
+because there are many reasons for a user to stop the structure of the museum that complicates the iden-
+somewhere(itcouldbebecauseofothervisitorsorsome tification of the access points location in such a way to
+obstacles). This is one of the reasons for our choice of minimize the ambiguity in the signal-strength caption,
+the second criterion. To explicitly localize the users in make the use of WLANs very difficult, as a technology
+themuseum,wehaveconsideredthreetechnologiesthat tolocateusers’positions.Anothermotivationisthecost
+allow mobile devices to offer some services: WLAN, of each access point because we would need a large
+Bluetooth and IR. Table 1 summarises the comparison number of them in order to obtain precise results in all
+among these technologies and the following sections the museum rooms.
+explain the reasons for our choice.
+3.2 Bluetooth
+3.1 WLAN
+Bluetooth technology is characterised by the interaction
+We studied the possibility of adopting the WLAN between devices in a range of 10 m. Once the discovery
+technologytolocalizetheusersduringtheirvisit.Inour step is finished (between 5 and 10 s), Bluetooth systems
+system we only need to know when users enter a new can create a piconet (also called a private area network)
+section. We would need to install an access point for composed of up to eight devices that have open con-
+each room and position all of them in such a way that nections to each other. Once the piconet is established,
+the coverage areas of three access points overlap at the the members randomly hop frequencies in unison so
+entrance of each section. Then, on the basis of the they keep connected. We wanted to develop a system
+intensity of the signal received the server could identify that supports users during their visits in the museum.
+thelocationoftheuser.Anexampleofanapplicationof The interaction with the device has to be immediate
+thisapproachhasbeendevelopedforahospital[8]. The because when the users enter in a new section, they
+system synchronizes the information in the user’s PDA should immediately receive the information regarding
+with the servers each time the device connects to an the section and the location of the artworks in order to
+access point. For example, a doctor might leave on the prevent disorientation. Using Bluetooth technology, the
+server messages that describe recommendations for visitors would have to stop at the entrance of each sec-
+treatment to any nurse on the next shift or doctors can tion waiting for the completion of the discovery step of
+Table1 Acomparisonofwirelesstechnologies
+Areaofinteraction Throughput Timeofconnection
+WLAN Rangeof100maround Theoretically11Mbpsbutin Immediately
+theaccesspoint(inindoor practisecloserto4–5Mbps
+environmentswithoutobstacles)
+Bluetooth Rangeof10maroundanother Theoretically1Mbpsbutin Between5and10sto
+Bluetoothdevice practisecloserto700Kbps discoverotherBluetoothdevices
+Infrared Senderandreceivershouldhave Currently,accordingtothe Immediatelyaftertwodevicesarelinedup
+thecorrespondingportstilted protocolusedbydevices,
+ata30(cid:2)angleeachother,point upto4Mbps
+andshotstyleapplication85
+their device. We thought that this discovery step is not manipulate in their performance (both interface and
+suitable for museum visitors and that it could be an domain objects).
+obstacle for the full enjoyment of their visit. More
+generally,theBluetoothtechnologyseemsmoresuitable
+to support wireless communication among a set of 4.1 Context of use
+statically located devices rather than mobile visitors.
+Forthecontextofuse,weconsideredtheenvironmentin
+which the interactive system should be used, the inter-
+3.3 Infrared action platforms and the users of the interactive system
+who wish to achieve their goals through it.
+DeviceswithIRportscaneasilycommunicatewitheach In our case, the users can vary in terms of ability in
+other using protocols based on the IrDA standard. The interacting with computing devices and knowledge of
+IrDA protocols are characterized by an immediate the application domain. The structure of the museum
+communication and identification, if the devices are forces to some extent the order of visit among the
+lined-up in a 30(cid:2) angle and support a bit rate between rooms. Some large rooms are somehow structured in
+2400 bps and 4 Mbps. The shortcoming of this tech- different environments using some light panels. The
+nologyisthatthedevicesneedtobelinedupinorderto rooms contain many types of objects from the ancient
+startthecommunication.Forexample,inoursystem,to Romans to pieces of quarrying technology of the past
+allow the communication between IR beacons and the century. Thus, visitors need support to be able to
+PDAs,attheentranceofanewsection,theusershaveto interactively select those items that are more interesting
+take the devices in a vertical manner (as in a holding- for them and to receive related information. The appli-
+and-looking-at-the-screen manner) because the IR bea- cationhasbeendevelopedonIpaqCompaqPDAs,with
+cons are located on the ceiling. This usually does not Windows CE and an additional 1 Gb flash memory
+createproblemsasusersoftenholdthePDAandlookto card. The availability of new larger add-on memory
+the screen holding the device in such a manner and re- capabilityallowsustodevelopastand-alonesystemthat
+ceive a recommendation to keep it this way as soon as does not need to download multimedia files, avoiding
+they interact with the guide. the interferences with other devices and with physical
+As mentioned before, we intended to provide the objects (such as a wall, an iron object etc.) typical of
+visitors with the information regarding the section as wirelessdatacommunication.Wedecidedtousetext-to-
+soonastheyenter.Havingconsideredtheprosandcons speech synthesis for supporting audio comments. In
+of these three technologies, we chose to adopt the last addition, the synthesized Italian voice was considered
+onebecauseoftheimmediatenessoftheconnectionand too unpleasant and was replaced with audio-recorded
+therelativelylowcostsofthedeviceandtheinstallation. comments. The system was originally designed to pro-
+Each IR beacon provides just an identifier of the new vide audio information with headphones but the man-
+environment. This type of communication is sufficient agers of the museum noticed that visitors preferred to
+because current PDAs can have one gigabyte of addi- usetheapplicationbysharingitinasmallgroup(twoor
+tional memory. This is sufficient to keep local copies of three visitors) without headphones, considering accept-
+audio,imagesandvideosonaspectstoprovidetousers. able the mix of the audio presentation from different
+Inaddition,otherpossibilitiessuchasInternetaccessare guidesinthesamesectionasthiscanhappenrarelygive
+not interesting for museum visitors whose main goal is the limited number of PDAs available. The mobile sys-
+to appreciate the artworks that are in the exhibition. tem reacts to user interactions with sounds, context-
+dependent information provided by text or audio
+channel to better support the users in their activity.
+4 Case study Currently, the application contains description of about
+150 works of art, each of them with an associated Jpeg
+We have designed, developed and delivered an applica- picture (the dimensions are about 140·140 pixels). The
+tion for a museum, the Marble Museum located in audio files are in MP3 format. The application requires
+Carrara [10], Italy. The managers of the museum deci- about 4 MB of memory. A new version of the applica-
+dedtoprovidetheirvisitorswithinformationadditional tion, functionally equivalent but with a more modular
+to that contained on traditional artwork labels. While internal architecture is under development and will re-
+humanguidesareavailableforlargegroups,theycanbe quire about 400 KB. The multimedia data (videos,
+tooexpensiveforsinglevisitorsorsmallgroups.Inthese images, vocal comments) require about 220 MB.
+cases an interactive guide can be a better solution to
+provide arich set ofinformation that can be adapted to
+the visitors’ interest. In our approach, the design is 4.2 Tasks
+driven by three main elements: the context of use that
+includesboththedeviceusedfortheinteractionandthe In the design of the user interface we considered three
+environmentwheresuchaninteractionoccurs,thetasks maintypesoftasksthatuserscanperforminthecontext
+users wish to perform and the objects they need to considered:86
+– Orientation withinthe museum.For this purpose three videinformationregardingmuseumsectionsgroupedby
+levels of spatial information are provided: a museum the typology of artwork contained and supports a
+map, a section map, and, for each physical environ- change of language whereas the lower part provides a
+ment composing the section, a map with icons indi- command bar with menus to control the application: to
+cating the main pieces of work available in the room close it, to activate the audio output, to go back to the
+and their location. previous presentation and so on. When a section is se-
+– Controlling the user interface. For example, this can lected,thecorrespondingmapisshownalongwithicons
+allow a change in the audio comments’ volume, to located according to the position of the corresponding
+stopandstartthecomments,andtomovethroughthe artwork, and the entrance and exit are highlighted with
+various levels of detail of the museum information arrows indicating the expected visit order. Through an
+available; iconselection,itispossibletoaccessinformationrelated
+– Access museum information. This is provided at dif- tothecorrespondingartwork.Inthiscasethemainarea
+ferent abstraction levels (museum, section, physical is used to show the title and an image of the artwork in
+environment, single work). order to better identify it and the lower area is used to
+closethepresentation,toactivateacorrespondingvideo,
+and to go back. Figure 1 shows an example of a pre-
+sentation at the museum, section and artwork level.
+4.3 Domain concepts and user interface
+Through an analysis of the behaviour of museum visi-
+tors and the information provided by the human guides 5 Location-dependent interaction
+we identified three levels of information that are inter-
+esting for them: Inordertodeterminetheuserposition,wehaveinstalled
+IRemittersattheentranceofeachroom.Wedecidedto
+– The museum: the overall introduction and short
+useIRbeaconsthatsendauniqueidentifierthroughthe
+informationregardingitshistoryandpeculiaraspects.
+IrDA protocol for each room. The IR beacons are lo-
+– The section: information regarding the main features
+cated on the ceiling of the building so that the presence
+ofthesections,thecommonaspectsoftheartworksin
+ofothervisitorsdoesnotinterferewiththedetectionofa
+them and the motivations for their introductions.
+givenuser’saccess.Whentheuserentersanewroomthe
+Most relevant artworks are highlighted as well.
+emitters send the identifier to the PDA, and the appli-
+– Artworks: the description of the artworks and addi-
+cation detects it and changes the presentation accord-
+tional information regarding them are provided.
+ingly. The angle covered by the IR beacons is 90(cid:2)
+If we follow a Web metaphor we can say that for because each beacon is actually composed of multiple
+each instance of a information level there is a page emitters. This angle is sufficient to assure a good com-
+designed following specific criteria. In these pages munication with the PDA assuming that the user holds
+there is information regarding not only the artworks the device in a vertical manner, even if it is not com-
+but also supporting the orientation or the control of pletely lined up with the IR beacon. The IR beacons
+the navigation within the application. have been purposely built for our application, even if
+The information is presented through a common their structure is simple.
+structurethatisfilledindifferentlyaccordingtothelevel The signal transmitted by the emitter is composed of
+of information required. The main area is used to pro- eight characters. Initially we used only three characters;
+Fig.1 AnexampleofPDA
+presentations87
+thus, the string sent by the emitters had the following
+format ‘‘001@@@@@’’. However, after the first
+experiments we realized that this solution needed to be
+improvedbecauseIRwavescanbereflectedbysurfaces.
+Consequently, the signal that reaches the IR port of the
+PDA may be distorted. In this case, the signal may be
+misinterpreted because a three-character string with
+erroneous content is detected and the corresponding
+identifier would be different from that actually associ-
+ated to the room the user is entering.
+Indeed, when the first version of the application was
+tested, it happened often that the infrared signals were
+distorted because of the rebounds; thus, the string
+identifying theroom was either completelycorruptedor
+provided a wrong information (i.e., the identification of
+a room different for that of the room the user was
+actually entering): to improve the recognition of the
+Fig.2 The visual feedback when an entrance in a new room is
+signal, a simple checksum of the character received detected
+would not be sufficient (because it is possible to have
+strings syntactically but not semantically correct). We
+decided to extend the string transmitted by the emitters displaying in each section map the physical elements
+byaddingthreecharactersthatareusedas‘‘paritybits’’. available, such as walls and doors, our system reduces
+Each number is associated with an alphabetical char- the effort for the users to orient themselves in the sec-
+acter: ‘‘0’’isassociatedwith‘‘A’’,‘‘1’’isassociatedwith tion.
+‘‘B’’,etc.Thealgorithmissimple:eachtimeanewstring The page related to the section that the visitors are
+is detected, the application checks that the part of the leaving, goes on the top of the history queue accessible
+string composed of numerical characters corresponds to throughthebackbutton, togetherwith allthepagesthe
+that composed of alphabetical characters. For example, users visited. Through this mechanism visitors can re-
+a valid string is ‘‘001AAB@@’’. Thus, the application visit the already visited pages, for example, to compare
+can correctly determine when it detects a correct signal artworks.
+indicating the room where the user has entered. The
+emitters have been developed by adopting stand-alone
+technology: they are made in such a way as to transmit 5.2 Audio feedback
+one eight-character signal per second. This solution was
+easy to install and with a low cost. The use of audio in the interaction between human and
+system plays an important role because the system can
+indicate its internal state: error, alert and information
+5.1 Visual feedback messages are generally displayed coupled with a sound
+associated to each event. In this case, the sound is used
+Whentheuserschangethesectiontheyarevisiting,they to call users’ attention to a system message. In our
+want information about the artworks they are looking application, we decided to highlight the automatic
+at. Therefore, the detection of the section where the detection of the room where users are entering, obtain-
+users are is important to support them in their visit. In ing two results: the first reason is to signal this event to
+our system, this information is detected automatically theusers who might notbe looking atthePDAdisplay;
+through the interaction with IR beacons: upon entering thesecondreasonistoassurethevisitorsthatthesystem
+a new section, the application provides users with a is aware that the context has changed and that the
+museum map, where the section is highlighted. After information is related to the new section. For example,
+that,anaudiopresentationofthemaincharacteristicsof in the Marble Museum there are sections, located in big
+the section and a map indicating the location of the rooms, which are logically but not physically divided in
+artworks in that section are provided to the users subsections. In this case, the system highlights the
+(Fig. 2). In other words, we use location information enteringinnewsubsectionsactingthesamewayaswhen
+only to provide the users with context-dependent infor- users enter in new physical sections (i.e., playing the
+mation that helps to orient them in the museum. To sound and showing the map of the new subsection). In
+avoid the problem caused by the failed misalignment doing so, we create a connection between sound and
+between PDAs and IR beacons, at the start of the visit action that improves the orientation and the interaction
+session our system presents information introducing the of the visitors with the system.
+IR beacons in the museum and explaining how the vis- Thechoiceofthesoundtouseisimportant.Tosignal
+itors can solve problems related to failure of the system theeventofenteringnewroom,wehavechosenthesame
+to detect their entrance in a new section. Moreover, by soundgeneratedwhenthePDAisconnectedtoadesktop88
+system.Therationaleforthechoiceliesinthefactthatan that identify it (walls, doors, supports for disabled
+information link is established: when the application people). Each of these can be a sort of landmark
+detectsanewuserposition,tosomeextentitshowsthat useful for orientation. In addition, all the maps dis-
+there is a connection between the application and the playedbythesystemhavethesameorientationasthat
+surroundingenvironment,justaswhenthePDAandthe of users entering in new sections.
+application exchange information. As we discuss in – Minimize graphical interaction: in order to reduce the
+thesectionontheusertests,theassociationofasoundto difficulties for the users to interact with the mobile
+the section change helps them to get oriented in the devices using both hands while they are moving. For
+museum.Toimprovethesupporttotheusersduringthe thispurpose,in our system,assoon astheuserenters
+visits,wehavealsoaddedaudiofeedbackwhentheusers a new section the application immediately starts a
+select artworks on the section map to assure users that vocal comment to present the new section.
+the system has received their input. We adopted this – No redundancy in input commands: in desktop graph-
+solution because we noticed that, after selecting an art- icalinterfacesusuallyitispossibletointeractthrough
+work, users often reselected the artworks because they both lists of pull-down menus and icon toolbars.
+wereunawarethatthesystemwasprocessingtherequest. Therefore, often the same command can be activated
+Wewanttoavoidthiskindofdouble-clickingbecauseit either through an element of a pull-down menu or
+can generate some confusion that can negatively influ- throughanicon.Inourcase,becausethedisplayhasa
+ence the interaction of the users with the system. very limited resolution, commands can be activated
+only through the icon toolbar.
+6 Design criteria for the graphical part
+7 Evaluation of the application
+Designing an application for a PDA should take into
+account the specific features of this type of device: it
+In order to have feedback from real users a first test of
+provides a broader range of interaction techniques than
+the application has been performed. The evaluation in-
+current mobile phones. The possibilities are similar to
+volved visitors who were given a PDA with our appli-
+those of desktop systems but there are two main differ-
+cation installed. After their visit to the museum, they
+ences: the limitation of the screen resolution and the
+were asked to fill in an anonymous questionnaire.
+possibility of using it on the go.
+Thirty-fivemuseumvisitors agreedtofillitin attheend
+We have followed these criteria during the design of
+of the visit. The goal of the test was to understand to
+the application:
+what extent the application provides a valid support
+– A Web metaphor: while not many users have had fromvariousviewpoints:thequantityandqualityofthe
+much experience with PDAs, most have some expe- information provided, the modality of presentation, the
+rience with Web browsers, which arecharacterised by interaction with IR devices, and the capacity to orient
+pages that can be uploaded through links with the themselves in the museum. In particular, the question-
+possibility of going backwards and forwards through naire was structured into various parts regarding:
+the page history. We have designed our application
+– Previousexperienceinmuseumvisits(fourquestions).
+trying to implement similar features into our appli-
+– Quality of the information provided regarding the
+cation, but also taking into account its specific goals.
+artworks in the museum (nine questions).
+Thus,theresultingsystemiscomposedofanumberof
+– Quality of the multimedia techniques used: audio,
+graphical presentations that can be navigated by
+images, and videos (seven questions).
+icons. Each page is also associated with a voice
+– Quality of the interactive part of the application: its
+comment automatically started the first time it is ac-
+use, the underlying concepts, the user interface (ten
+cessed. Using the back button in the toolbar it is
+questions).
+possible to go back to the previous presentations in a
+– Capability to support users’ orientation (ten ques-
+way similar to that of Web browsers.
+tions).
+– Navigationfeedback:inWebbrowsers,linksthathave
+– Some personal information, such as age, level of
+been selected have a different colour from the others.
+experience, etc.
+This is a useful feedback for navigators. In our
+application we adopted the same design: icons asso- Thetestwascomposedofvarioustypesofquestions:
+ciated withartworksalreadyaccessedhaveadifferent someofthemrequiredonlypositiveornegativeanswers;
+colour (red) from those associated with artworks yet othersrequiredanumericalscoring(onascalefrom1to
+to be visited (grey). 7), and open questions aiming to stimulate critics and
+– Orientation support in the surrounding environment: in suggestions were introduced as well.
+order to help users to orient themselves we provide On average a visit took 73 min, 25 users were Ital-
+various types of information: the map of the museum ians, 18 were women, and the average age of the visitor
+highlighting the section where the user is, and then a was37.63%hadgraduatedfromauniversity,and29%
+map of the section highlighting the physical elements hadahigh-schooldiploma.Only15ofthemhadalready89
+used a PDA before the experiment. In terms of age, no average rating of 6.60 with an 0.63 SD) while novices
+under 19 used it; however, the most numerous group asked for improvements (on average, 6.28 with a 1.23
+was between 19 and 30 and the majority of the visitors SD).Similarratingswereprovidedfortheuserinterface;
+was under 40 years old. experts users found the interface rich with possibilities
+After collecting the data, we decided to analyse it and easy to use, while novice users provided similar
+using two criteria: the first related to the users’ nation- ratings with a higher SD and provided suggestions such
+alities and the second related to users’ experiences with as ‘‘the possibility of adding arrows to go forward and
+PDAs. The application provides audio information in backward’’or‘‘improvethecorrespondencebetweenthe
+either Italian or English both of which are obtained realobjectsintheroomandtheiconsintheapplication’’,
+differently and we use the first criterion in analysing the thus showing that some problems can arise when users
+data to verify if the different techniques for audio pre- interacting with the application have no previous expe-
+sentation (a human voice for Italian visitors and a text- rience with PDAs.
+to-speech engine for English visitors ) can lead to a Regarding the interaction with the infrared, the
+different quality of the visit. The data show that foreign questionsaddressedissuessuchastheirutilitytosupport
+visitors appreciated the quality of the information more orientation, and the ease with which users interact with
+than Italians. In particular, the information regarding them and localize the section where they are. The data
+the museum sections received better ratings (average gatheredshowthattherearedifferencesbetweenexperts
+5.72 with 1.10 standard deviation (SD) for Italian and and novice users in this case. The former provided high
+6.33 with SD 0.71 for foreign visitors). The open ques- ratings in a consistent manner, while the ratings pro-
+tions provided indications of additional information vided by the novice users show that they found some
+content that users would appreciate, such as more difficulties in orienting themselves and identifying the
+information regarding quarrying in ancient times, current section. However, despite such difficulties they
+including the quarrying methods used and the life of didnotprovideanyparticularsuggestions.Somevisitors
+quarry men. The answers regarding the multimedia provided comments regarding the location of the art-
+techniques show that the audio presentations were worksintherooms.Onesaid‘‘itwouldbeusefultohave
+appreciated by both Italians and foreign visitors. Very maps that change the orientation according to the user
+high ratings were assigned to the videos whose utility movements’’.
+was highlighted by most visitors. Some problems were From the analysis of the data it is possible to
+raised by the images; some visitors were dubious understand that the most appreciated part of the appli-
+regarding their dimensions and clearness. cation is the quality of the information; for example,
+Weindividuatedtwocategories:expert(someonewho foreign visitors particularly appreciated the videos
+already had a similar experience) and novice (someone showingdynamicinformationrelatedtotheartworksin
+who was using a PDA for the first time), and used the the museum. Novice users had some problems, both in
+second criterion (related to the user’s experience in the the interaction and in the orientation, but in this case it
+useofaPDA)toverifytheimpactofourdesigncriteria seemsthatthelackoffamiliaritywithPDAsystemswas
+on the visitors. The questions regarding the interactions a major reason and the use of infrared added a further
+with the electronic guide were aimed to understand its level of difficulty.
+actual utility and evaluate its usability leaving to the
+visitors the possibility of suggesting further improve-
+ments. Analysing the utility of the electronic guide, we 8 Improving the user experience
+noticedthatnovicesandexpertsprovidedsimilarratings
+(on average novices assigned 6.47 with 0.62 SD whereas In order to improve the user experience new features
+experts provided 6.40 with 0.74 SD). Regarding the havebeendesignedandimplemented. Ashighlightedby
+easiness of use, the experts provided the best rates (an the test evaluation of the system, visitors asked for
+Fig.3 Exampleofasection
+map90
+Fig.4 Examplesofpathfinder
+activations
+improvementsthat couldhelp them during thevisit. We Future work will be dedicated to the possibility of
+haveprovidedtheuserswithorientedmapsanda‘‘path providing location-dependent support that takes into
+finder’’ feature, which finds the location of an artwork account also the preferences of the current user and
+they are interested in. perform a new evaluation study through an evaluation
+The system defines the user position in terms of the tool based on the intelligent analysis of the logs of
+section or subsection where the user currently is. It the user interactions and electronic questionnaires. In
+provides the user with the section map oriented addition, we also plan to support visitors through a
+according to the point of entry into the section. We variety of interactive devices (such as large screens) so
+adopted this solution because we wanted the users to that the PDA can be used in combination with them,
+orient themselves as soon as possible. The next figure and to consider RFID technology to provide additional
+shows an example of a map oriented according to the location-related information.
+user’s point of view.
+Figure 3 displays: (a) the museum map; (b) the sec-
+tionmapinthemuseummap(thissectioniscolouredin References
+green) oriented to the entrance; (cid:1)) the section map
+displayed from a different perspective. 1.Bellotti V, Back M, Edwards K, Grinter RE, Henderson A,
+The path finder method implemented allows visitors LopesC(2002)Makingsenseofsensingsystems:fivequestions
+to find the location of an artwork they are interested in for designers and researchers. In: Proceedings of CHI 2002,
+ACMPress,Minneapolis,MN,pp415–422
+bysuggestingthepathtoreachitstartingfromtheroom
+2.CiavarellaC,Paterno` F(2002)Designofhandheldinteractive
+they are in. The result of the request is a map high- support.In:ProceedingsofDSV-IS2002,Rostock,Germany,
+lighting the section where the user currently is, the sec- June2002
+tion where the artwork is located and the path that the 3.AokiPM,WoodruffA(2000)Improvingelectronicguidebook
+interfaces using a task-oriented design approach. Designing
+user is to follow to find the artwork. The next figure
+interactivesystems,ACMPress,pp319–325
+shows an example of the result of a user invoking this
+4.Cheverst K, Davies N, Mitchell K, Friday A, Efstratiou C
+feature and interacting with the system. (2000) Developing a context - aware electronic tourist guide:
+The output of the path finder is a museum map, some issues and experiences. In: Proceedings of CHI 2000,
+oriented to the new section’s entrance. The highlighted ACMPress,TheHague,TheNetherlands,pp17–24
+5.Oppermann R, Specht M (2000) A context-sensitive nomadic
+pathislocation-aware:whentheuserstartstofollowthe
+exhibition guide. In: The proceedings ofsymposium on hand-
+path, each change of section is tracked and the museum held and ubiquitous computing, LNCS 1927, Springer, Berlin
+map will change according to the new context with the HeidelbergNewYork,pp127–142
+current section being highlighted (see Fig. 4). 6.Butz A, Baus J, Kruger A (2000) Augmenting buildings with
+infrared information. In: Proceedings of the International
+Symposium on Augmented Reality (ISAR 2000), IEEE Com-
+puterSocietyPress,NewYork
+9 Conclusions 7.Abowd GD, Atkeson CG, Hong J, Long S, Kooper R, Pink-
+ertonM(1997)Cyberguide:amobilecontext-awaretourguide.
+Baltzer/ACMWirelessNetworks,vol3
+After analysing the benefits and drawbacks of various
+8.Munoz MA, Rodriguez M, Favela J, Martinez-Garcia AI,
+technologies we have discussed our experience in devel- GonzalezVM(2003)Context-awaremobilecommunicationin
+oping a museum application in this field. We report on hospitals.IEEEComput36:38–46
+the results of the evaluation of such application. We 9.SmalagiA,SiewiorekDP,AnhaltJ,KoganD,WangY(2001)
+Location sensing and privacy in a context aware computing
+have also identified a number of design criteria that can
+environment.PervasiveComput3:38-46
+be adopted for other applications that share similar
+10. The Marble Museum of Carrara Web site (2004) http://
+requirements. giove.isti.cnr.it/Museo.html91
+11. Bahland P, Padmanabhan VN (2000) RADAR: an inbuilding 13. Mori G, Paterno` F, Santoro C (2003) Tool support for
+RF-baseduserlocationandtrackingsystem.In:Proceedingsof designing nomadic applications. In: Proceedings of ACM
+IEEEInfocom2000,IEEEPress,Piscataway,NJ,pp775–784 IUI’03,Miami,FL,January2003,pp141–148
+12. Davies AC (2002) An overview of bluetooth wireless technol-
+ogyTM and some competing LAN standards, Invited plenary
+lecture.In:Proceedingsofthe1stIEEEInternationalConfer-
+enceonCircuitsandSystemsforCommunications,St.Peters-
+berg,FL,June2002,pp206–211

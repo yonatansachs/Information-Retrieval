@@ -1,0 +1,1528 @@
+Studies on the Value of Cultural Heritage
+23
+ILCAPITALECULTURALE
+eum
+Rivista fondata da Massimo Montella
+
+Il capitale culturale
+Studies on the Value of Cultural Heritage
+n. 23, 2021
+ISSN 2039-2362 (online)
+Direttore / Editor in chief
+Pietro Petraroia
+Co-direttori / Co-editors
+Tommy  D.  Andersson,  Elio  Borgonovi, 
+Rosanna Cioffi, Stefano Della Torre, Michela 
+di  Macco,  Daniele  Manacorda,  Serge Noiret, 
+Tonino Pencarelli, Angelo R. Pupino, Girolamo 
+Sciullo
+Coordinatore editoriale / Editorial coordinator
+Giuseppe Capriotti
+Coordinatore tecnico / Managing coordinator
+Pierluigi Feliciati
+Comitato editoriale / Editorial board
+Giuseppe Capriotti, Mara Cerquetti, Francesca 
+Coltrinari, Patrizia Dragoni, Pierluigi Feliciati, 
+Costanza Geddes da Filicaia, Maria Teresa 
+Gigliozzi, Enrico Nicosia, Francesco Pirani, 
+Mauro Saracco, Emanuela Stortoni
+Comitato  scientifico  -  Sezione  di  beni 
+culturali / Scientific Committee - Division of 
+Cultural Heritage
+Giuseppe  Capriotti,  Mara  Cerquetti, 
+Francesca  Coltrinari,  Patrizia  Dragoni, 
+Pierluigi  Feliciati,  Maria  Teresa  Gigliozzi, 
+Susanne  Adina  Meyer,  Marta Maria  Montella, 
+Umberto  Moscatelli, Sabina  Pavone, Francesco 
+Pirani,  Mauro  Saracco,  Emanuela  Stortoni, 
+Federico  Valacchi, Carmen  Vitale
+Comitato scientifico / Scientific Committee
+Michela Addis, Mario Alberto Banti, Carla 
+Barbati, Caterina Barilaro, Sergio Barile, Nadia 
+Barrella, Gian Luigi Corinto, Lucia Corrain, 
+Girolamo Cusimano, Maurizio De Vita, Fabio 
+Donato, Maria Cristina Giambruno, Gaetano 
+Golinelli, Rubén Lois Gonzalez, Susan Hazan, 
+Joel Heuillon, Federico Marazzi, Raffaella 
+Morselli, Paola Paniccia, Giuliano Pinto, Carlo 
+Pongetti, Bernardino Quattrociocchi, Margaret 
+Rasulo, Orietta Rossi Pinelli, Massimiliano 
+Rossi, Simonetta Stopponi, Cecilia Tasca, Andrea 
+Ugolini, Frank Vermeulen, Alessandro Zuccari
+Web
+http://riviste.unimc.it/index.php/cap-cult
+e-mail
+icc@unimc.it
+Editore / Publisher
+eum edizioni università di macerata, Corso 
+della Repubblica 51  –  62100 Macerata
+tel (39) 733 258 6081
+fax (39) 733 258 6086
+http://eum.unimc.it
+info.ceum@unimc.it
+Layout editor
+Roberta Salvucci
+Progetto grafico / Graphics
++crocevia / studio grafico
+Rivista accreditata WOS
+Rivista riconosciuta SCOPUS
+Rivista riconosciuta DOAJ
+Rivista indicizzata CUNSTA
+Rivista indicizzata SISMED
+Inclusa in ERIH-PLUS
+
+Museum, culture and digital 
+innovations
+
+Ludovico Solima, Mario Tani, Pasquale Sasso, Social innovation and accessibility in museum: some evidence from the SoStare 
+al MANN project
+«Il capitale culturale», n. 23, 2021, pp. 23-56
+ISSN 2039-2362 (online); DOI: 10.13138/2039-2362/2518
+Social innovation and accessibility 
+in museum: some evidence from 
+the SoStare al MANN project
+*  Ludovico Solima, Full Professor in Management, University of Campania “L. Vanvitelli”, 
+Department of Economics, Corso Gran Priorato di Malta, 81043 Capua, e-mail: ludovico.solima@
+unicampania.it.
+**  Mario Tani, Lecturer, University of Naples “Federico II”, Department of Economics, 
+Management and Institutions, via Cinthia, 80126 Napoli, e-mail: mario.tani@unina.it.
+***  Pasquale Sasso, Ph.D, University of Campania “L. Vanvitelli”, Department of Economics, 
+Corso Gran Priorato di Malta, 81043 Capua, e-mail: pasquale.sasso@unicampania.it.
+Ludovico Solima*, Mario Tani**, 
+Pasquale Sasso***
+Abstract
+In recent years, the function of museums has changed from focusing on protecting 
+cultural heritage to reach out to a wider audience and proposing a series of new methods 
+to promote and display its collections and contribute towards collective cultural and social 
+development. In this new vision, accessibility acquires a central role, asking to enable people 
+who otherwise would have been excluded, be it because of physical disabilities or because 
+suffering from behavioural and/or cognitive disorders, to enjoy the benefits of culture. 
+Accordingly, some museums have developed a number of new approaches for people with 
+special needs affected by autism spectrum disorder. At the same time these new activities 
+are designed leveraging new competences and knowledge that museums only rarely own, 
+but they can get access to them engaging local stakeholders in a process that starts from 
+
+24
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+analysing the local area’ needs to develop new ways to visit the collections that can be seen 
+as a social innovation. This work is concerned with analysing a project undertaken by the 
+Museo Archeologico Nazionale di Napoli (National Archaeological Museum of Naples) 
+with some of its stakeholders, aiming to understand whether, by altering the perspective of 
+analysis, museums can introduce totally novel ways to approach their collections, so that 
+they are more inclusive and welcoming for people affected by behavioural and/or cognitive 
+disorders. 
+Negli ultimi anni, la funzione del museo è cambiata, passando dalla mera tutela del 
+patrimonio culturale alla sua valorizzazione, tramite diversi e nuovi servizi rivolti a un più 
+ampio pubblico, con il fine di essere un soggetto attivo per la crescita culturale e sociale 
+della collettività. Al centro di questa funzione vi è l’accessibilità, che richiede di ampliare 
+la fruizione del servizio alle persone affette da disabilità motorie e a quelle che presentano 
+disordini comportamentali e/o cognitivi, tanto che alcuni musei hanno sviluppato nuovi 
+approcci rivolti alle necessità delle persone affette da disordini dello spettro autistico. Allo 
+stesso tempo queste nuove iniziative necessitano di competenze e conoscenze che solo 
+raramente i musei hanno internamente, ma che possono essere ottenute coinvolgendo 
+attivamente i portatori di interesse dell’organizzazione museale in un processo che parta 
+dall’analisi delle necessità del contesto per sviluppare nuove modalità di fruizione che 
+possono essere ritenute una forma di innovazione sociale. In questo lavoro si analizza un 
+progetto che il Museo Archeologico Nazionale di Napoli ha avviato insieme ad alcuni 
+stakeholder per comprendere come sia possibile sviluppare nuove modalità per valorizzare 
+le proprie collezioni, rendendole più inclusive nei confronti delle persone affette da disordini 
+comportamentali e/o cognitivi.
+1.  Introduction
+According to the International Council of Museums (ICOM), a museum is «a 
+non-profit, permanent institution in the service of society and its development, 
+open to the public, which acquires, conserves, researches, communicates and 
+exhibits the tangible and intangible heritage of humanity and its environment 
+for the purposes of education, study and enjoyment»1. 
+This statement explains that modern museums should set out to attract and 
+welcome everyone2, as the means to contribute to cultural and social development 
+within its local area and, in a wider sense, to that of society as a whole3. In 
+order to attain this goal, museums should become attractive to a broader set of 
+visitors4 and they should be able to overcome the barriers limiting the visitors 
+from enjoying, appreciating and learning from the museum’s collections. 
+The need for museums to be more open towards their community was 
+emphasized by the Council of Europe in its Convention on the Value of 
+1  <https://icom.museum/en/resources/standards-guidelines/museum-definition/>, 22.03.2021.
+2  Martins 2012.
+3  Solima 2004.
+4  Hein 2006.
+
+25
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+Cultural Heritage for Society (Faro Convention), adopted in Faro (Portugal) 
+in 2005. This framework convention opened a new season in cultural policies, 
+promoting more democratic participation in cultural heritage and a new scheme 
+for its accessibility. The first article of the Faro Convention underlines the 
+importance of involving all individuals and communities in safeguarding and 
+enhancing cultural heritage, the responsibility of all towards cultural heritage 
+and the need for synergy between private and public actors in the sector. Within 
+the new function of cultural heritage, museums have the social responsibility 
+of becoming a centre of cultural production and ensuring that everyone has 
+the right to participate. In this way, museums must promote, through their 
+work, the processes of creating value for their local territory and help that part 
+of the community which, for various reasons, is detached from the museums’ 
+traditional reach, to become active parts of the society5.
+As shown by Suchy6, when museums are able to create, and nurture, their 
+relationship with the key stakeholders in their community, they are able to 
+create the emotional bonds that link a museum tightly to its territory and help 
+to make it a central actor within the complex system in which it belongs7. In 
+this perspective, communities should not be seen as homogeneous, but as multi-
+faceted and ever-shifting entities in constant evolution. The changes within a 
+community may drive museums to redefine their own actions to accommodate 
+the new environmental request.
+At the same time, museums should be able to leverage their stakeholders’ 
+networks8 in order to access the broad set of competencies needed to address 
+the various types of accessibility. Drawing on their network of relationships, 
+museums can create new visiting experiences, whereby they communicate the 
+value of their permanent collections more effectively and succeed in their social 
+function of being able to entertain their audiences, to fulfil their function of 
+becoming a testing ground for new forms of cultural citizenship, and support 
+social relations and the sense of belonging to the local territory, promoting the 
+value of accessibility.
+Therefore, the main focus in this paper is to investigate how museums can 
+effectively engage other social actors to get two different effects: on one side, 
+these relationships should be able to leverage the competences of the other 
+actors in the local community to expand their professional resources and to 
+define new solutions to address the specific requirements of people with special 
+needs; at the same time these relationships should be able to strengthen their 
+relationship with the local community. At the same time, as a second research 
+5  De Luca 2007; Walters 2009; Rappolt-Schlichtmann, Daley 2013; Brown, Mairesse 2018.
+6  Suchy 2006.
+7  Onciul 2013; Phillips et al. 2015.
+8  Sciarelli, Tani 2013.
+
+26
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+question, we want to investigate if these new solutions can be extended to other 
+visitors, reducing the distance among the various audiences. 
+In this paper, we present a study on a specific example of a project developed 
+by the Museo Archeologico Nazionale di Napoli (MANN), leveraging its 
+network of relationships with a local association to design new services to 
+answer the needs of a well-defined group of visitors, people affected by autism 
+syndrome disorder, the SoStare al MANN project. We show how the project 
+has helped in making the MANN more accessible, mostly in the cognitive 
+dimension, to help these visitors fully enjoy their visit. At the same time, it has 
+helped to design services that could be used even by other types of visitors.
+The paper is structured as follows. The first part is dedicated to the analysis 
+of the literature on the issues of social innovation, and we then present the 
+literature on accessibility in museums. The third part covers the methodological 
+approach of the work, to define the research questions and justify the case study 
+selection; then, in the fourth part, we present the case, highlighting the actors 
+involved and the various phases of the project. After describing the case, we 
+discuss the main findings of this paper, giving some theoretical and managerial 
+implications and, in the conclusions, we set out the main limitations of this 
+study, together with suggestions for further research.
+2.  Literature review
+2.1  Social innovation
+Social innovation is generically defined as «the creation and implementation 
+of new solutions to social problems, with the benefits of these solutions shared 
+beyond the confines of the innovators»9, although, according to some scholars10, 
+it still lacks a commonly accepted and comprehensive definition. 
+Van der Have and Rubalcaba11 see social innovation as a multi-faceted 
+phenomenon with four possible levels. The first is the level of grassroots social 
+innovation, i.e. responding to pressing social demands which usually cannot 
+be satisfied through more traditional market-based solutions. The second level 
+consists of novel products and services produced by private, public, and third 
+sector organizations (or a combination thereof). The third level is composed of 
+the new combinations of social practices, attitudes and values, and the fourth 
+9  Tracey, Stott 2017, p. 51.
+10  Pol, Ville 2009; Lawrence et al. 2014; Edwards-Schachter, Wallace 2017.
+11  Van der Have, Rubalcaba 2016.
+
+27
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+and last level is that of systemic innovations, involving fundamental changes in 
+strategies and policies, organizational structures and institutional frameworks. 
+Mumford defined social innovation as «the generation and implementation 
+of new ideas about social relationships and social organization»12. Within the 
+same stream, several scholars13 have perceived it as the capability of society, 
+or some of its parts, to see socio-environmental issues and solve them through 
+processes of change. These new solutions mostly deal with issues linked to the 
+environment, social services or culture and education. This is a broad vision of 
+social innovation, and can encompass many different processes, starting from 
+new ideas to address social issues and/or solve unsatisfied needs in a local area14.
+According to other scholars15, the diffusion of social innovation within social 
+sciences is a consequence of rising interest on the part of private companies, 
+public organizations and community groups, which are actively pursuing more 
+efficient solutions to existing social problems or, trying to anticipate potential 
+new solutions before the problems escalate, with the contribution of, and the 
+coordination with, institutions, business and other individuals.
+Social innovation can still be considered as an emerging field of research16, 
+with several studies17 seeing it as a way to improve quality of life, while some 
+scholars18 examined the outcomes of the processes of social innovation. 
+According to them, these innovations are more about creating value and less 
+about creating profit and, in most cases, they may lead to successful new 
+enterprises and business models that may be seen as partially profit-oriented and 
+partially not-profit oriented. At the same time, according to other academics, 
+an innovation is only a social one when the new way to solve the problem 
+is more effective, efficient, sustainable and fair than the existing solution19. 
+Likewise, as these innovations are not developed for the purposes of profit only, 
+the new beneficial effects must be able to create value for society as a whole, 
+instead of being limited to only some individuals20. In a similar perspective, as 
+highlighted by Ziegler21, other studies see social innovation as a subdomain of 
+normal studies into innovation22.
+12  Mumford 2002, p. 253.
+13  Mulgan et al. 2007.
+14  Mulgan et al. 2007; Murray et al. 2010.
+15  Lettice, Parekh 2010; Lawrence et al. 2014; Phillips et al. 2015; van Wijk et al. 2018.
+16  Dacin et al. 2010.
+17  Harrisson et al. 2012; McKelvey, Zaring 2018.
+18  Bessant, Tidd 2007; Bhatt, Ahmad 2017; Tracey, Stott 2017.
+19  Phills et al. 2008.
+20  Bessant, Tidd 2007; Phills et al. 2008; Bhatt, Ahmad 2017.
+21  Ziegler 2017.
+22  Ziegler highlights even a third stream in the social innovation literature. This less enthusiastic 
+and more sceptical stream sees social innovation as a case for a switch to other concepts, such as 
+social inequality and social justice that are less favourably accepted. See Ziegler 2017, p. 400.
+
+28
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+Another group of scholars has focused more on the implementation of social 
+innovation. For example, for Howaldt and Schwarz23, this means the actions 
+of actors, or a group of actors, ultimately create a new combination or new 
+configuration of social practices that were intentionally designed to solve a 
+given social need or issue better than existing established practices. Similarly, 
+Cajaiba-Santana24 identifies social innovations as new social practices created 
+by one or more social actors that intentionally seek to induce social change by 
+reconfiguring how these very same social goals are accomplished. 
+At the same time, according to Ruiz and Parra25, social innovation is only 
+really accomplished when the social actors can disseminate it to other parts of 
+society that may need the new practices and related policies. Equally, Pol and 
+Ville26 claim that social innovation is only fully accomplished if it can have a 
+permanent impact on the perceptions and behaviours of people in certain areas. 
+More recently, Purtik and Arenas (2019) found that social actors can effectively 
+leverage the process of social innovation to change societal norms, spreading 
+other, more sustainable behaviour among the other actors in their environment, 
+themselves leveraging their example27. In the same stream of research, several 
+scholars see the processes of social innovation as system-changing practices that 
+could alter perceptions and act as an instrument for social change28.
+Social innovations are usually more complex and more ambiguous than 
+conventional business innovation29. This is because social innovators tend to 
+have to satisfy a wider range of stakeholders, each with different priorities and 
+potentially conflicting interests and viewpoints, and such social innovation may 
+require fundamental and systemic transformations or change that challenge the 
+status quo30.
+According to some scholars, social innovation is the direct consequence 
+of the experiences and learning processes undergone by social actors, such as 
+social enterprises and NGOs31. Mulgan32, on the contrary, claims that social 
+innovation is not limited to the actions taken by third sector actors, as its 
+effectiveness is linked to how engaged the different social actors are throughout 
+the various phases from design to dissemination. Papaluca and Tani33 linked 
+the third sector’s effectiveness in implementing social innovation to their ability 
+to involve a broader set of stakeholders in their processes, in that the third 
+23  Howaldt, Schwarz 2010.
+24  Cajaiba-Santana 2014.
+25  Ruiz, Parra 2013.
+26  Pol, Ville 2009.
+27  Purtik, Arenas 2019.
+28  McKelvey, Zaring 2018; Westley, Antadze 2010.
+29  Hall, Vredenburg 2003.
+30  Gladwin et al. 1995; Noci, Verganti 1999; Mulgan et al. 2007; van Wijk et al. 2018.
+31  Dees 1998; Paton 2003; Harding 2004.
+32  Mulgan 2006.
+33  Papaluca, Tani 2010.
+
+29
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+sector players can overcome their structural lack of resources by exploiting 
+their social capital and gaining new perspectives on the different needs arising 
+in their environment34.
+Mulgan35 holds that social innovation is only rarely completely new 
+innovation, and usually derives from the ability to observe and adapt solutions 
+that have been applied to similar problems in different contexts. It follows that 
+the value of social innovation is the outcome of a transparent and collaborative 
+value co-creation process built upon a multi-stakeholder engagement36. Social 
+innovation opens the door onto seeing innovation as a multi-disciplinary and 
+multi-stakeholder collaboration, where various actors are able to participate in 
+changing the behaviours of other actors in the same system37.
+In general, according to several scholars38, social innovation is most 
+effective when it is the result of a collective process initiated by individuals, 
+or single social movements, that are able to engage other public and private 
+social actors, in order to become more effective at capitalizing on the different 
+resources accessed by the entire network of actors. Several scholars39 speak 
+about the need to identify a social innovation system composed of the various 
+communities in which social innovation processes are developed, with the 
+participation of a range of stakeholders, including those in the public and third 
+sector and consumers.
+Lusch and Vargo40 argue that social innovation should be analysed by placing 
+emphasis on the actor-to-actor networks and resource integration processes 
+needed for enabling a co-creation of value that can potentially succeed in 
+sustaining social innovation over time. According to Huq41, social innovation 
+may be a third path to designing and implementing new social services. The 
+author suggests that organizations intending to design new, innovative social 
+services, especially if these services are to be deployed in tightly regulated fields, 
+should adopt a three-step process, involving professional organizations and 
+individuals in the development of the new solutions. In the first step, defined 
+by Huq as entwining problems, the organization should stop seeing the issues 
+that it is tackling as separate problems and, instead, try to engage with the local 
+communities and adopt a more systemic approach. The second step is known as 
+reconfiguring arrangements, undertaken so that the various organizations are 
+ready to accept the needed changes. The third step is active waiting, whereby 
+34  Lipparini 2002; Papaluca, Tani 2010.
+35  Mulgan 2006.
+36  Brodie et al. 2019; Rahman et al. 2019.
+37  Ziegler 2017.
+38  Mulgan 2006; Salim Saji, Ellingstad 2016.
+39  Phillips et al. 2015; Carberry et al. 2019.
+40  Lusch, Vargo 2014.
+41  Huq 2019.
+
+30
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+innovation is encouraged but not actively pursued in local settings, letting the 
+various professionals drive the process of innovation.
+In museums social innovation can be linked to the various activities designed, 
+with the help of external stakeholders, to better fulfil their new social function.
+2.2  Accessibility as a driving factor of the social function of the museum
+According to the spirit of the Faro Convention, the new museum shifts 
+from being a mere container to an institution where the cultural wealth of 
+its permanent collections are assets to be shared and promoted42. The static 
+vision has prevailed over the dynamic one for a long time, making it difficult 
+for museums to engage with other than their traditional audiences, and 
+totally excluding those whose knowledge does not meet the museum’s lofty 
+expectations43. One of the main criticisms of the traditional concept of museum 
+is that it focuses overly on the protection and conservation side, paying too little 
+attention to that of making its collections engaging and exciting44. The result 
+is that the visitor experience is often overlooked or oversimplified45. The habit 
+of not dwelling too much on the needs of users, or else considering the public 
+to be an amorphous cluster of passive and uncritical consumers, replicates the 
+positions taken for most of the twentieth century, and which had also applied to 
+the entertainment and advertising sector, and has equally evolved. The primary 
+mission of the museum has become the transmission of cultural heritage to 
+future generations, helping to cultivate the community’s own identity. The 
+museum is now seen as the means by which society presents and acknowledges 
+its relationship with its own history and that of other cultures. 
+In 2020, Taylor46 found that even the image of art museums, traditionally 
+perceived as repositories of fine art for audiences to observe at a distance, is 
+no longer valid. Museums are considered to be places where people engage 
+with the arts, and arenas for cooperation with audiences and neighbouring 
+communities. Barnes and McPherson47 found that one way for a museum 
+to expand its accessibility is for it to engage with parts of its community in 
+redefining museum services, or at least how artwork can be experienced by its 
+visitors, transforming it into a hybrid institution that is able to educate and 
+entertain its audiences at the same time.
+In 2009, the Commission for Education at ICOM Italy classified museum 
+visitors into adults, children, young people, the elderly, the physically and 
+42  Besozzi 2007.
+43  Solima et al. 2019.
+44  Ferraro 2011.
+45  Rodari 2005.
+46  Taylor 2020.
+47  Barnes, McPherson 2019.
+
+31
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+mentally disabled, citizens of other cultures, tourists, professionals in training, 
+family groups and participants in social reintegration programmes, because 
+the educational purposes of museums are the development and promotion 
+of knowledge, skills and behaviours that manifest themselves throughout the 
+life of each individual. The Commission emphasized the fact that museums 
+have a social responsibility towards their local communities. Museums must 
+necessarily place themselves in an open and listening position towards their 
+communities, question their role and rethink their function, in order to interact 
+effectively with current events characterized by elements of complexity and 
+dynamism. 
+Museums can be the bearers of major social benefits48. Alongside the 
+cultural value of knowledge built and disseminated by museums, is the 
+value of social relations which they can potentially promote49. Without the 
+relationship between cultural heritage and individuals, the museum would 
+return to taking the simple role of container. By emphasizing the relationship 
+between the museum, the various stakeholders and the community, museums 
+are referred to as places where different cultures are put into contact, rather 
+than as institutions that impart knowledge to visitors50. It should be noted that 
+museums are themselves communities with their own values and conventions, 
+and they differ from each other in the way they evolve in relation to the context 
+in which they are inserted. 
+The museum has the purpose of supporting critical learning and the process 
+whereby people internalize cultural heritage so that it becomes a value for each 
+individual. This idea goes in parallel with the principle of leveraging continuous 
+learning to help develop a democratic and active citizenship51. The social 
+function of a museum is apparently even recognized by the medical sector; in 
+Canada, doctors have recently been prescribing museum visits as a therapy in 
+conjunction with taking medicines. It can be said then that the museum is good 
+for health.
+In order to exercise its new social functions, as explicitly requested by the 
+international community, the modern museum must open itself to the needs of the 
+community, offer itself as a testing ground for new forms of cultural citizenship, 
+promote and support social relations and the sense of belonging to the local 
+territory, and oppose phenomena of social exclusion by promoting the value 
+of accessibility52. As highlighted by Cerquetti53, as a museum’s organization 
+must create value for all its stakeholders, it should not limit itself to protecting 
+cultural heritage but should be able to promote and enhance it. The museum’s 
+48  ICOM 2009.
+49  Clifford 1997.
+50  Singer 2007.
+51  Pinna 2000.
+52  Solima 2012.
+53  Cerquetti 2010.
+
+32
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+publics should be able to participate in the processes of value creation, and 
+other actors should be brought in to improve the management skills held within 
+museums. In other words, museums must activate practices that allow them to 
+involve their community more closely. Engagement, according to Onciul54, has 
+the great potential of benefiting not only the museums but their communities as 
+well. The outcome of these practices is to engender a closer bond between the 
+two sets of actors, and more, the two groups can share their activities, and the 
+interaction of a museum with new actors can create new narratives and new 
+perspectives that can increase the value of the museum’s offer. At the same time, 
+the various organizations should be wary of the distribution of power within 
+the engagement process as, even during the process itself, the different roles will 
+be continuously changing, not according to some pre-defined plan, but because 
+of the role that each actor effectively has in every single part of the process55. 
+Community engagement, in museum literature, has been defined as «museum 
+programs that usually involve individuals or groups who do not or cannot 
+use museums, and that may take place both in museums and in a range of 
+community spaces»56. In community engagement processes, art collections are 
+relevant and meaningful, but they are clearly not central57; they are the means 
+to create new connections, and how new interests are sparked. These processes 
+may require people to break down the wall between visitor and works of art, so 
+that the visitor can touch them, or a close replica, or interact with them through 
+other media, arts, crafts or photography58.
+The only way for museums to be more open and involve their communities 
+more closely is to promote the value of accessibility. The theme of accessibility 
+in the museum sector is certainly a distinctly current topic, as it is still able 
+to offer various possibilities for multi-disciplinary comparisons, open to 
+the contribution of the widest spectrum of professionals operating in the 
+various fields dealing with culture. There is an increasingly large and diverse 
+section of population that, through temporary or permanent circumstances 
+determined by physiological or pathological causes, has limited possibilities of 
+freely accessing and using the museum spaces, or of joining in cultural and 
+educational initiatives. In this perspective, the State and the bodies responsible 
+for ensuring equal rights for all are expected and required to know the citizens’ 
+needs, and to provide suitable services. Therefore, both at central and local 
+level, it is essential to pursue policies for equal opportunity and, above all, 
+equal access, which increase dissemination and sharing a culture of accessibility 
+among professionals and citizens, promoting the paradigm of culture open to 
+all and for all. 
+54  Onciul 2013.
+55  Ibidem.
+56  Morse, Munro 2018, p. 358.
+57  Morse, Munro 2018.
+58  Solima, Tani 2016.
+
+33
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+This new model, set out by the United Nations Convention on the Rights of 
+Persons with Disabilities59, is inspired by the full compliance and application 
+of the right to accessible culture, understood as both ensuring physical access 
+to places of culture and cognitive access to the contents they produce and 
+promote60. From this perspective, museums can be considered as effective 
+tools against the bane of social exclusion, as they are not mere repositories of 
+artwork, but suppliers of free knowledge able to reach everyone. It follows that, 
+by pursuing their institutional purposes, museums can become instruments of 
+social cohesion capable of fully interpreting the paradigm of open culture. The 
+new vision of the museum focuses on its educational nature and its natural 
+orientation towards the public, both being vocations that lead museums to be 
+of all and for all.
+The goal of becoming a space that all can access should not be interpreted 
+as simply removing architectural or physical barriers, but rather as ensuring 
+that everyone can fully enjoy the museums’ collections. Only by promoting 
+a dialogue devoid of any form of discrimination with the outside world will 
+museums be able to take on a role of primary importance within contemporary 
+society. The relationship between a museum and its communities is not new61 
+and, according to Morse and Munro62, is defined in several policies where 
+museums are asked to engage with specific target communities, such as people 
+from minority ethnic groups, socio-economically deprived areas and disability 
+groups. In these undertakings, museum staff should provide a welcoming, 
+inclusive and safe environment and, most importantly, a space where visitors 
+feel that they will not be judged.
+The term accessibility indicates, first of all, that all users can move around 
+in complete safety and autonomy; therefore, accessibility is an indispensable 
+requirement for liveability and is often associated with the concept of 
+environmental comfort, alongside the removal of access barriers in buildings. 
+At a first glance, accessibility can be understood as the set of spatial, 
+distributive and organizational characteristics in buildings designed to be used 
+by anyone and everyone.
+Accessibility is an essential prerogative for cultural places, as they are used by 
+the community to carry out activities mostly associated with cultural heritage. 
+As a consequence, a fundamental feature in the protection and enhancement of 
+heritage is the fact that the spaces intended for this purpose must be accessible 
+and welcoming in order to be adequately used. The issue of accessibility has 
+always been associated with that of disability, but in recent years something 
+59  United Nations 2007.
+60  Moussouri (2007) defined a social model of accessibility using three dimensions, i.e. 
+economic, environmental, and cultural barriers; several years later, Solima (2012) added a fourth 
+dimension to the social model, that of digital accessibility. 
+61  Watson 2007.
+62  Morse, Munro 2018.
+
+34
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+has been changing on this front. Because of a renewed attention on the various 
+categories that make up the cultural demand, there seems to be a stronger 
+interest in ensuring the right to access places of culture, and thus of providing 
+an autonomous, easy and safe cultural experience to an extended audience, 
+including all people with any physical, motor, sensory or cognitive special 
+needs, whether permanent or temporary. 
+There are four main dimensions to accessibility, which can be economic, 
+physical, cognitive or digital63. The economic dimension has its origin in the 
+need to ensure that all citizens have the same opportunity to satisfy their need 
+for culture regardless of their financial situation. In most cases, however, the 
+entrance ticket is only one of the costs that users must incur to use the cultural 
+service. There are clearly the direct costs linked to transport to reach the site, 
+and the evaluation of the economic dimension of accessibility must also take 
+into account the costs relating to the time spent on making an adequate use 
+of the cultural service, and those associated with how and where to access 
+information. It is clear that merely evaluating the costs a visitor incurs to access 
+the service is only a small part of that person’s overall investment to derive the 
+maximum benefit from services in the cultural sector.
+The second dimension of accessibility is equally important and concerns 
+the museum’s physical accessibility. According to this dimension, the service 
+can be said to be accessible only when the museum is equipped with adequate 
+infrastructures. Physical accessibility also takes on a double perspective. Within 
+the structure, being accessible means having taken the necessary steps to 
+eliminate all physical barriers that make it difficult, if not impossible, for even a 
+relatively small segment of users to navigate around the museum’s collections. 
+Shifting the attention to outside the museum, it must be possible to evaluate 
+how easily the museum can be reached without facing overly many logistics 
+difficulties, assessing public transport and relative connections, car parks and, 
+more generally, access roads. Another dimension of accessibility is that linked 
+to the cognitive profile. It can often be the case that, even when a museum is 
+easy to access physically, its information systems are difficult to understand. 
+Making a museum cognitively accessible has three positive effects. It makes 
+up for any inadequacy on the part of the visitors, it creates more loyal visitors 
+and it becomes a more active player within the local community.
+When cultural enterprises manage to eliminate this type of barrier, they 
+significantly reduce any sense of cultural inadequacy in the user. This feeling is a 
+major psychological obstacle that can help to explain why some people belong 
+to the group of non-public64.
+From this point of view, the categories of disadvantaged users deserve 
+particular attention. These are people with motor or sensory problems, and 
+63  Solima 2012, 2017; Da Milano, Sciacchitano 2015; Cetorelli, Guido 2017.
+64  Presta 2010.
+
+35
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+who may not be encouraged to use the museum’s services. Taking into account 
+the growing diffusion of digital technologies, it is necessary to acknowledge the 
+existence of an accessibility dimension specific to this area. 
+Museums must learn to manage their presence on the internet not by limiting 
+themselves to a simple website, where they merely replicate information 
+contained in their catalogues. They must try to initiate processes of user 
+engagement, setting in motion faster content creation mechanisms that have 
+themselves become the basis for creating a stable relationship with users, 
+with the added benefit of increased user loyalty65. Through this relationship, 
+a museum will have access to a varied set of resources, including videos and 
+photographs of the museum’s interior and of individual events, and will benefit 
+from all the flows of information deriving from the interaction between users. 
+All museums recognize the importance of being more accessible to visitors 
+and potential visitors, but today there are still many barriers to accessibility. 
+For this reason, museums must find solutions to become more accessible 
+and respond fully to their mission, including by resorting to external skills. 
+Among the various types of accessibility, sensorial perception is one of the most 
+important66. It, therefore, seems necessary to define the perimeter of the term 
+multi-sensory, as it indicates more than one sense67. 
+Taste comes into play least but still in a residual manner in a museum visit. 
+The many possible relationships between the world of food and wine and that 
+of art are easily appreciated. It is no coincidence that most major museums 
+choose to sell edible products in their shops, often connected to their collections 
+or temporary exhibitions. The sense of smell comes next, seemingly stimulated 
+in a fairly simple and economic way, through the use of natural fragrances or 
+electronic fragrance diffusers that can increase the experiential perception of 
+the visit. In the third place is touch, as the tactile dimension can be affected both 
+by the visitors’ relationship with the objects on display and by the information 
+presented. Museums can prepare tactile routes, identifying the works that can 
+be touched by visually impaired visitors, and information can be written in 
+Braille. The two senses most used by museum visitors are sight and hearing. In 
+particular, sight is used by visitors to find their way around the often-unknown 
+exhibition spaces, as well as to look at the exhibits and access the museum’s 
+various information media.
+Over the past twenty years, the sense of sight has been strongly affected by 
+technological progress. The extent to which museums can provide information 
+on portable devices (through smartphones, tablets and wearables) via apps 
+is now ubiquitous, paving the way for automatic orientation solutions (way-
+finding) as well as infinite possibilities for customizing the contents, i.e. 
+65  Solima 2018.
+66  Dodd et al. 1998.
+67  Howes 1991; Levent, Pascual-Leone 2014.
+
+36
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+presenting information flows according to the visitors’ wishes, interests or more 
+simply the time they have to visit68.
+People affected with the autism spectrum disorder are among the new 
+audiences that can particularly benefit from a multi-sensorial approach to the 
+exhibitions.
+2.3  Museum and autism
+According to the Diagnostic and Statistical Manual of Mental Disorders, a 
+handbook produced by the American Psychiatric Association, autism spectrum 
+disorder (ASD) is a developmental disorder that affects communication and 
+behaviour. Although autism can be diagnosed at any age, it is said to be a 
+developmental disorder because symptoms generally appear in the first two 
+years of life. Autism is often seen as one of the most complex and pervasive 
+disorders of the developmental age, as its effects are permanent and the sufferer 
+is impaired for life. Autism is considered to be a syndrome affecting a person’s 
+whole personality; therefore, it is referred to as a generalized and pervasive 
+developmental disorder69. Autism spectrum disorder is a serious disability and, 
+while physical appearance is normal, it may affect several brain functions. 
+Autistic people are physically healthy and develop like their peers, moreover 
+the effects may be rather uneven; autism manifests itself through a vast series 
+of symptoms, so it is usually referred to as autistic spectrum disorder (ASD)70.
+According to Cottini and Vivanti71, the most affected areas are:
+	– mutual social interaction: inability to establish social, emotional and/or 
+empathetic relationships with others;
+	– impairment in communication: inability to communicate ideas and 
+feelings plus language-related impairments;
+	– behaviour, restricted, repetitive and stereotyped activities and interests: 
+constantly focusing on a few interests or habits, limiting the autistic 
+child’s ability to carry out other tasks.
+Classic examples of the behaviour of people with ASD are sudden mood 
+swings, with inappropriate laughter or crying, hyperactivity or passivity, self-
+aggressive behaviour, often joined by phobias and sleep and eating disorders. 
+Some patients are particularly sensitive to sound, touch, sight and smell, and 
+when their senses are stimulated, they can be driven to extreme reactions, such as 
+panic attacks72. The three characteristic symptoms of autistic disorder (impaired 
+social interaction, communication problems and abnormal behaviour) can vary 
+68  Alunno 2017.
+69  Cottini 2009, 2016.
+70  Cattelan 2010.
+71  Cottini, Vivanti 2016.
+72  Ianes, Cramerotti 2002; Ianes, Zappella 2009.
+
+37
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+widely in intensity and incisiveness. With such disparity in level of severity and 
+appearance of symptoms, it can be difficult to understand the related behaviours 
+and set in place suitable interventions73. 
+Today, the focus of the debate seems to have increasingly shifted from 
+the individual’s disability to features in the environment, which can take the 
+form of barriers and create an impairment or act as enabling mechanisms 
+that can eliminate limitations and encourage full social participation. Every 
+environmental context can be configured as a barrier or a facilitator; in the case 
+of museums, many young people with ASD and families with autistic children 
+find them a barrier74.
+One consideration concerns the fairly widespread practice of distinguishing 
+between physical accessibility to the museum’s buildings and accessibility to 
+the museum’s collections and symbolic meaning of exhibitions, as well as to 
+the various educational programmes. While the first type of accessibility relates 
+mainly, but not exclusively, to architectural and physical barriers, the second 
+type presents a much broader perspective and, despite it being generally linked 
+to sensory and psycho-cognitive disabilities, its topics and reasonings can 
+potentially be applied to most users75. For a museum to be truly accessible 
+and inclusive towards people with autism spectrum disorder, its work must 
+necessarily involve these people, their families and experts in the field who often 
+have no place in the museum’s organizational chart76.
+3.  Method and research design
+The literature review on social innovation has highlighted that, for 
+organizations to be effective social innovators, they must be able to set up a co-
+operative process, bringing in different stakeholders to create a wider viewpoint 
+and increase the effectiveness of these processes77.
+In order to become active actors within these processes of innovation, 
+museums should create a network of relationships to broaden their perspective78 
+and transform their reality into a social innovation system79. Designing new 
+social innovation processes may help museums to leverage the competencies 
+of the various stakeholders in the community with whom the museum is able 
+73  Anaby et al. 2013.
+74  Askari et al. 2015.
+75  Kulik, Fletcher 2016; Coffey 2018.
+76  Caldin et al. 2018.
+77  Onciul 2013; Carberry et al. 2019; Taylor 2020.
+78  Howaldt, Schwarz 2010; Lawrence et al. 2014; van Wijk et al. 2018.
+79  Phillips et al. 2015; Carberry et al. 2019.
+
+38
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+to engage80. Moreover, according to Huq’s model of social innovation81, the 
+actors should let the various professionals deal with the innovation process by 
+tapping into their own pool of expertise. 
+In this perspective, museums that intend to include people with ASD among 
+their audiences, to educate them in becoming an active part of the community, 
+should be able to bring together the needs of these people, those of their families 
+and those of the experts who deal with these issues. Museums should be able to 
+create a system that includes expertise that is often not found within their own 
+organization82.
+On the contrary, social innovation processes provide a link between 
+the museum and its community and strengthen the museum’s relationship 
+with a number of stakeholders, which may be in the public or third sector, 
+or be consumers. Local communities may also benefit from this stakeholder 
+engagement process83. The two sets of actors are hence more connected and, 
+additionally, they can share their undertakings and, through their interaction, 
+the new actors can create new narratives and new perspectives, which, in turn, 
+can increase the value of the museum’s offer.
+In the light of these considerations, we set out our first research question as 
+follows:
+RQ1: How may museums engage social actors within the local community 
+to improve their activities?
+	– RQ1a: May museums engage with the social actors in the local 
+community to expand their professional resources and to get access 
+to specific skill and competences?
+	– RQ1b: May museums engage with social actors within the local 
+community to strengthen their relationship with the territory?
+As social actors and cultural institutions, museums have the social function 
+of providing access to their cultural resources in an inclusive way to all their 
+audiences84. 
+Among the four different dimensions of museum accessibility85, cognitive 
+accessibility is particularly interesting because, by becoming more inclusive and 
+breaking down barriers, museums may become more attractive to a broader 
+group of audiences. 
+Some of the cognitive barriers to being an accessible museum, such as those 
+related to ASD, demand the creation of new social services, which make use 
+80  Morse, Munro 2018.
+81  Huq 2019.
+82  Caldin et al. 2018.
+83  Onciul 2013.
+84  Cerquetti 2010; Solima 2015.
+85  Solima 2012, 2017; Da Milano, Sciacchitano 2015; Cetorelli, Guido 2017.
+
+39
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+of specific health-related professional services. While these areas are often in 
+need of social innovation, they are usually unable to change easily, as they must 
+comply with specific protocols86. At the same time, museums designing new 
+services must interpret their cultural resources in a new light, proposing them in 
+a new, multi-sensorial way and so create a broader range of options87.
+According to some scholars88, these new multi-sensorial perspective 
+approaches touch upon topics and thought processes that can potentially be 
+valid for most users.
+RQ2: May the solutions developed for people with special needs also be 
+extended to other audiences?
+In order to find an answer to these research questions, we decided to study 
+the process of creating and implementing a museum service designed for people 
+with ASD as part of a wider framework to study how to insert these people 
+within the wider visitor set.
+We used a case study, as this method can be used to analyse the items 
+identified in our literature review within a real-life context89, considering this 
+approach as functional for the explorative purposes of this study, consistent 
+with a constructivist, qualitative and inductive logic90.
+We focused our case on a specific project carried out by the Naples-based 
+MANN museum, entitled SoStare al Mann. This name is a play on the words 
+sostare, to pause/take a short time-out while in the museum, and so stare, 
+knowing how to be/behave there.
+We chose the MANN’s project for our study as the museum is influential 
+within the Italian landscape and it is a unique environment that was the first 
+Italian museum to prepare a Strategic Plan and so become more transparent in 
+the eyes of the local and not-so-local communities91 and it has started several 
+projects to re-define its social function92. It is one of the most visited museums in 
+Italy (according to MiBACT, the Ministry for Cultural Heritage and Tourism, 
+it attracted more than 670,000 visitors in 2019, and is the 10th most visited of 
+all Italian museums and heritage sites).
+Moreover, the museum had no previous experience in working with this 
+specific group of visitors, meaning that it was easier to follow the progress 
+of how the various sections of the involved community interacted with the 
+museum’s organization. The MANN was chosen despite it being possibly a 
+86  Adler et al. 2008; Zietsma et al. 2017.
+87  Alunno 2017.
+88  Kulik, Fletcher 2016; Coffey 2018.
+89  Lazzeretti et al. 2015; Yin 2017.
+90  Hennink et al. 2011.
+91  Solima, Giulierini 2018.
+92  Seawright, Gerring 2008; Mariotto et al. 2014.
+
+40
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+worst-case scenario for creating new services for people affected by ASD, with 
+its wide galleries, mostly permanent collections and general lack of support 
+material for visitors. As a consequence, the SoStare al MANN project could not 
+draw on existing resources and/or practices when creating the new services, and 
+the professionals were constrained by the actual collections, but nobody had to 
+deal with internal resistance.
+4.  Case study: the SoStare al MANN project
+The project ran from January 2017 to June 2018, at the behest the MANN’s 
+management, which has recognized the need for the museum to be accessible to 
+people living under conditions of disability, especially people with ASD. SoStare 
+al MANN is an experimental path aimed at widening the museum’s community, 
+engaging the community more closely in the museum’s life and helping to carry 
+out one of the museum’s main social functions, that of spreading art and culture. 
+The challenge faced by MANN and its main partner, the FOQUS Foundation 
+(mostly represented in the project by the FOQUS director, Renato Quaglia), 
+was in changing the way to address cultural services for people affected by 
+cognitive disorders. The museum created a new cultural experience by 
+introducing targeted educational tours, exploiting new visual aids and special 
+communication strategies particularly suited to autistic visitors, but open to all 
+types of audiences, i.e. the museum had become more inclusive. 
+The common thread running through the project is the effectiveness of the 
+communication tools used to spread the museum’s cultural message.
+4.1  The actors involved in the project
+4.1.1  The Museo Archeologico Nazionale di Napoli (MANN)
+The Museo Archeologico Nazionale di Napoli – MANN (National 
+Archaeological Museum of Naples) was simultaneously the promoter and the 
+place where the project was implemented. The museum is among the oldest and 
+most important in the world for the wealth and uniqueness of its heritage and its 
+contribution to the European cultural panorama. The origin of the collections 
+can be traced to Charles III, who ruled Naples as Charles of Bourbon from 
+1734 to 1759, and his cultural policies. The king was behind the excavations 
+of the cities buried by the eruption of Mount Vesuvius in 79 CE (with digs 
+starting at Herculaneum in 1738 and at Pompeii in 1748) and he oversaw the 
+construction of the Museo Farnese in the city, where he transferred part of the 
+
+41
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+rich collection inherited from his mother Elisabetta Farnese from her residences 
+in Rome and Parma. 
+The museum acquired national status in 1860, and its collections were 
+enriched with finds from excavations in archaeological sites in Campania and 
+Southern Italy and with acquisitions from private collections. The Pinacoteca 
+(Picture Gallery) was moved to Capodimonte in 1957, determining the 
+museum’s current embodiment as an Archaeological Museum. In 2016, with 
+the arrival of its new director, Paolo Giulierini, the museum presented its 
+inaugural Strategic Plan (the first of all museums in Italy to do so), which set 
+out its various strategic objectives, among which the specific aim of improving 
+the museum’s accessibility for particular sections of public, including people 
+with physical and cognitive disabilities.
+4.1.2  FOQUS Foundation
+FOQUS (Fondazione Quartieri Spagnoli) is an urban regeneration project 
+operating in the heart of Naples’ old city centre since 2014. The FOQUS 
+Foundation is located in an old building in the upper part of Naples (so-
+called: Spanish Quarter). The Foundation has renovated parts of the building, 
+providing spaces for young entrepreneurs and so creating new jobs and new 
+businesses. It has hosted several independent public and private companies, 
+to help build an economically productive community of cultural and creative 
+industries, working in personal care, training and education. In 2016, with the 
+help of private partners, the FOQUS Foundation inaugurated Argo, a centre 
+providing assistance to people with cognitive disabilities. Argo helps children, 
+teenagers and young adults with disabilities to discover their own value and 
+pursue their goals through concrete objectives. The project claims to give each 
+individual the basic skills to improve their life and their psycho-physical well-
+being autonomously, helping them to be better at school, at work, and so on.
+4.2  The SoStare al MANN project
+The project was intended for a group of ten young people who were already 
+going to the Argo Centre, plus other pupils from a nearby school, Dalla parte 
+dei bambini. The meetings were arranged in various ways, with the children 
+attending the centre visiting the museum sometimes alone and sometimes with 
+the other schoolchildren. The choice behind the Argo children visiting the 
+museum with the children from the school was based upon two very specific 
+reasons. Firstly, Dalla parte dei bambini has policies in place to be as inclusive 
+as possible. Secondly, we wanted to see what would happen in a museum when 
+schoolchildren were visiting the galleries and artwork.
+
+42
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+4.3  The project phases
+The project started in January 2017, with practical tests being carried out 
+between September 2017 and June 2018. The phases of the project can be 
+summarized as follows:
+	– First phase: meetings between the management of the MANN and the 
+FOQUS Foundation, from January 2017;
+	– Second phase: study of international models of museum accessibility for 
+people with cognitive disabilities, from April 2017 to September 2017;
+	– Third phase: direct testing and field experience with disabled young 
+people and primary school pupils, from September 2017 to June 2018.
+4.3.1  First phase: understanding
+The project partners studied the cultural, territorial and experiential context 
+on accessibility and cognitive and/or psychic impairments, as the project 
+focused on understanding how a person visiting the MANN could relate to 
+an artwork and discover the related meanings, the main opportunities and the 
+consequences of this connection.
+The first phase concentrated on identifying, for each different type of 
+disability, the tools and/or devices best suited to help the visitors with cognitive 
+or behavioural disabilities find interest and value in visiting a museum. 
+The project partners needed to define the museum’s objectives, how to 
+engage with the museum’s employees and identify the room for manoeuvre in 
+terms of breaking down sensory, communicative, architectural and financial 
+barriers. The driving principles of this phase were both being accessible and let 
+the children be an active part of the visitors’ community, in order to consider 
+the lack of accessibility as the problem, not the visitor. 
+In general, the group tried to identify new practices to be inclusive and 
+accessible, not just for people with disabilities, but for anyone. 
+4.3.2  Second phase: research
+In April 2017, FOQUS launched a research in partnership with volunteers 
+from the International Napoli Network (a for-benefit company) to identify, 
+classify and understand the accessibility models used in the main international 
+museums for people with disabilities, specifically examining people with ASD or 
+Down’s syndrome. According to the American Alliance of Museums, over thirty 
+museums in the United States have implemented proposals for these audiences, 
+focused on creating spaces, visiting hours and conditions within the museum 
+relating to noise factors and the non-excessive presence of other members of the 
+
+43
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+public. The answer as to whether a museum can become accessible to people 
+with cognitive and physical disabilities is somewhat ambiguous. It depends 
+on the people, their interests, what the museum is offering, its spaces and 
+involvement.
+When implementing accessible itineraries, the classic approach is to promote 
+tranquillity during a visit or create short and highly structured visits, with the 
+pre-defined use of photographs and short stories. The FOQUS Foundation’s 
+research involved a sample of one hundred international museums, with the 
+objective of surveying what the museum was offering in terms of events and 
+accessibility services. They were able to interview sixty-two museums, selecting 
+eighteen museums for deeper analysis, as their inclusive and accessible activities 
+were offered as mainstream museum services. 
+The results of the analysis pointed out that museums were able to change 
+their point of view and adapt to their visitors’ characteristics. Considering that 
+museums are places with high sensorial and cultural stimulation, reducing the 
+number of visitors and adjusting stimuli designed for able-bodied subjects, 
+lowering sounds, lights and suchlike all together create a comfortable and 
+welcoming environment for these visitors. 
+4.3.4  Third phase: experimentation
+The third phase was carried out in three main sub-phases: 
+	– in September 2017, a first meeting was held between the MANN’s 
+educational services, FOQUS Foundation managers, Argo operators and 
+experts in teaching students with cognitive disorders from the Panta Rei 
+Cooperative in Reggio Emilia;
+	– in October, the children visited the museum with the help of Argo 
+operators;
+	– between October and November, the children visited the museum several 
+times, in some cases they were alone, while in others, they visited the 
+MANN with children from a primary school, Dalla parte dei bambini, 
+guided by Argo operators and the school’s teachers.
+The operators (experts, educators, teachers, pedagogists, therapists and 
+cultural professionals) visited the MANN to study how the museum’s internal 
+spaces are arranged and see how people organized their visits (how they 
+entered, where they went and what they looked for). The experts focused 
+on the changes in how the museum welcomed its visitors to see if the new 
+reception methods could benefit all visitors, not only people with cognitive and 
+behavioural disorders. They discussed the experimentation process and selected 
+two galleries containing the Farnese Collection and the Villa of the Papyri for 
+their test purpose. 
+
+44
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+The experts studied the galleries’ features, the visitors’ behaviour, the lights, 
+visitor flows and any places where the visitors could potentially stop and stay 
+aside for a short time. The Farnese Collection inspired a series of new stories 
+evoking the shadows of the statues on the white walls, while the Villa of the 
+Papyri in Herculaneum was chosen for the dynamism and expressions of the 
+dancers and runners in the room. 
+4.3.5  Meeting in the museum
+The direct experience of the children with disabilities (known as Argonauts) 
+in the field was documented by transcribing reports on the actions carried out 
+by the children and the operators observing them. The notes were used to 
+understand the conversations between the operators and the children inside and 
+outside the MANN. The first extract describes how a young girl, Donatella, 
+suggests imitating the statues.
+The operators follow her proposal and are corrected by Donatella, who 
+gives precise indications. Donatella then welcomes an operator’s suggestion 
+to involve other children. The museum is seen as an evocative space in itself, 
+which can stimulate imagination, curiosity and amazement. Play can make a 
+visit more dynamic and more attractive. It can help people with disabilities 
+overcome their personal limitations and create a new idea of the museum being 
+a place where, always in the respect of artwork and other visitors, children can 
+enjoy themselves in new ways.
+The second extract describes the experience of children (in this case, Maria 
+Francesca) in selecting a subject to photograph. Following her personal logic, 
+Maria Francesca independently adds other works to her initial subject, giving 
+a meaning to the whole. Photography is recognized as a tool used by children 
+to choose, express, communicate and observe; cameras can stimulate their 
+curiosity, with more possibilities arising from potential post-production services. 
+Another extract describes Alessia’s experience. She wants to listen to music 
+in order to relax and focus on the Toro Farnese (the largest single sculpture from 
+antiquity so far discovered) and has even chosen a song. The operators follow 
+her movements around the sculpture on the notes of her chosen song, seeing her 
+touching the statue, feeling it as if it was the first time. The experience is used 
+to create empathy with the statue, the music helps in creating a synaesthesia of 
+senses, little by little involving the senses of all present.
+Several children decided to use their smartphones to photograph the 
+art. After an initial visit, they started to play at finding the works they had 
+photographed, using the details captured in each photograph. This micro to 
+macro research helped all the participants to join an active process of value 
+co-creation, as operators, children and teachers were able to help each other. 
+
+45
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+This game was considered so important that the operators’ note stated that the 
+«visitors’ involvement in this game was extraordinary».
+4.4  The new activities designed during the SoStare al MANN project
+The SoStare al MANN project has shown the importance of changing 
+perspective in analysing the role played by a museum to cater for new audiences. 
+Art has to be seen from a new, previously unapplied angle, and the interaction 
+between visitors and art redefined; for example, mirrors of different shapes and 
+sizes can be used to change the appearance of works of art, fragmenting them 
+and letting the children reinterpret them.
+At the same time, the project highlighted the opportunity to view how art 
+interacts with its environment; for example, projecting the light of the torch on 
+statues creates new shapes in the form of shadows. The children were able to 
+re-interpret the statues using light to create new shapes. They were also asked 
+to re-interpret various artefacts, including statues, through the medium of 
+drawings, photographs and videos. 
+The museum was able to define six different activities for its new audiences:
+1.	 Change point of view;
+2.	 If art is made of shadows;
+3.	 From micro to macro;
+4.	 Touch, move, see yourself;
+5.	 Imagine the music;
+6.	 SoStare (as mentioned, a play on “pausing” and “I know how to be/
+behave”).
+Change point of view involves asking visitors, with and without ASD, to 
+alter their own visual perception of the work of art using distorting mirrors to 
+fragment and rebuild them with different meanings, producing different ways 
+of interacting with them.
+If art is made of shadows involves re-reading artworks starting with their 
+shadows and, by changing the source of light, re-invent how the item is 
+perceived. 
+From micro to macro used photos of details of artwork to inspire people 
+to search for these details within the collections, linking and connecting the 
+various pieces together.
+Touch, move, see yourself was designed to create an experience where 
+visitors were asked to discover the museum using all their senses, even touching 
+selected exhibits.
+Imagine the music uses music or voices to change the perspective of the 
+various collections. 
+
+46
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+SoStare is where the museum can identify areas where people can stay and 
+interact with the other visitors, observing them from outside the visitor flows, 
+slowing down their whole experience.
+The children exposed to the new idea of a museum were able to develop their 
+own perceptions, using all their senses; they were able to touch the works of art, 
+use the background music to change their impression of the exhibitions and, 
+sometimes, these new stimuli directed them towards proposing new stories.
+5.  Discussion
+In this paper, we studied the SoStare al MANN project, examining the 
+progress of its development and implementation with the engagement of various 
+actors in the local community, and highlighting the main results of the project in 
+terms of letting people with autism be an active part of the museum’s audience, 
+increasing the museum accessibility for people with cognitive disabilities. 
+Regarding RQ1a, we found that the museum’s management was able to 
+locate a third sector organization (FOQUS) within the local area and tapped 
+into its competencies and into its relationships to identify, and later engage with 
+a number of stakeholders, in the form of professionals, cooperatives, schools, 
+children with and without a disability.
+This broad approach later proved to be really useful in creating the services 
+aimed for in the SoStare al MANN project, as highlighted by Mulgan93.
+Moreover, this approach is consistent with previous research94 into leveraging 
+external relationships to expand a project’s portfolio of expertise beyond those 
+of museum staff.
+At the same time, as the changing role of FOQUS highlights, their relationship 
+with the museum is a way for third sector organizations to become more 
+legitimate actors in the local and national environment. Non-local stakeholders 
+become engaged in its work95 and, looking at how the various steps of the 
+project were conducted, the project could be considered as a social innovation 
+system96, giving support to RQ1b.
+The project can be represented through Huq’s97 model. During the first 
+phase of the project (the multi-stakeholders’ meetings), the various stakeholders 
+were able to understand the problem from different perspectives; this can be 
+considered similar to Huq’s first phase of entwining problems, as museum 
+management entered the forum with no pre-defined agenda but as a way to obtain 
+93  Mulgan 2006.
+94  Papaluca, Tani 2010; Salim Saji, Ellingstad 2016.
+95  Morse, Munro 2018.
+96  Phillips et al. 2015; Carberry et al. 2019.
+97  Huq 2019.
+
+47
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+information, gain a broader perspective and to hear from other stakeholders 
+how to deal with these issues, giving further support to both RQ1a and RQ1b.
+The project then conducted a desk study to understand how other museums 
+had solved the same issues in order to gain an even broader perspective. The 
+results of this approach are similar to those Huq describes in the second phase of 
+his model, as the various stakeholders were studying international solutions as 
+a way to gain an understanding of how the various skills and expertise could be 
+combined into the social innovation system that the MANN intended to create 
+with this project. Similarly, the first two phases of the project are aligned with 
+previous findings in literature on stakeholder management and engagement as 
+a way to increase stakeholder legitimacy98.
+The MANN was able to create a stable and flexible forum where various 
+stakeholders were able to mediate their different approaches in order to create a 
+more flexible set of solutions, which could satisfy not only the targeted audience 
+of people affected by ASD, but also other audiences as well. The conclusions 
+of the project, «each visitor is different from the others, since all visitors are 
+bearers of a different diversity», give support to RQ2.
+The MANN’s lack of previous experience on this topic in its recent history 
+proved useful, as the museum’s organization was able to define new norms 
+for being more accessible. In particular, the process diverged from Huq’s 
+model in its third phase. In the SoStare al MANN project, the third phase was 
+left in the hands of the stakeholders but, as we can see from the interviews, 
+the professionals were not really driving the process, but were observing the 
+other stakeholders’ behaviour and became mediators in the creation of a more 
+engaging service. They were in charge of arousing the Argonauts’ interest and 
+making their visits more memorable. In this way, they were able to live the 
+museum from a different angle, rather than being mere spectators passively 
+looking at art; this is similar to the new perspective described in museum and 
+community engagement literature99.
+In the SoStare al MANN project, it was the children who said how they 
+would like to spend their time at the MANN and, in doing so, they came up 
+with intriguing strategies and ideas that could apply to many different audiences. 
+The new goal, defined during the project, was to interpret the works of art 
+through the language of people with cognitive disabilities. FOQUS chose to 
+engage with a heterogeneous group so as not to become entrenched in common 
+prejudices whereby children with cognitive disabilities come to be excluded 
+from discovering the arts. As a consequence, together they were able to define 
+a tight group of activities that were valid for everyone, not only people affected 
+98  Orr, Scott 2008; Vurro, Perrini 2013.
+99  Solima, Tani 2016; Morse, Munro 2018.
+
+48
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+by ASD, and were able to use their different cognitive abilities to re-read the 
+collections in a new light.
+The children developed the new activities, while the operators tried to 
+understand the children’s real perspective, changing the way they interacted 
+with them over time. The operators observed how the children touched the 
+works, how they asked for background music and how they gave new identities 
+to the statues. This experience was critical in discovering how to introduce 
+people with cognitive and behavioural disorders to art, and how these new 
+publics can become real visitors. The project was truly able to lower the barriers 
+to cognitive accessibility100.
+This case study has several managerial implications as well, as it highlighted 
+the need to factor in accessibility from the start of a project in order to take into 
+account the specific needs of the new audiences in all the museum new activities 
+encompassing the curatorship of the new exhibitions, interpretation, education 
+and the necessary processes of communication. 
+The new services developed during the SoStare al MANN project helped to 
+define a new vision of the museum where the exhibitions become a social place 
+where the audience can develop their own vision, using all their senses, not just 
+sight, as the new trends in museum management advise101.
+At the same time, the SoStare al MANN project highlights the need and 
+the difficulties of making a museum accessible to everyone. The process needs 
+to become part of the routine of every member of staff and, at the same 
+time, it highlights the need to create partnerships with external actors, both 
+practitioners and experts. The project also highlights the possibility that, in the 
+future, people with autism spectrum disorder could themselves be part of the 
+museum operators or they could work as guides in some areas or galleries. In 
+the past, it was felt that museums were closed to disabled people a priori; with 
+this project, we can affirm the exact opposite.
+Moreover, the project highlights an opportunity that only rarely has been 
+caught in previous international experiences, that of making the new audiences 
+an active part of the broader local community. Normally, museums try to 
+address the needs of publics with cognitive and behavioural disorders by 
+reducing the stimuli provided, or they introduce events that keep one public 
+apart from another, such as the various nights at the museum, generally designed 
+for younger visitors. The initiatives created and developed at MANN during 
+the project have highlighted the possibility of the various publics visiting the 
+museum at the same time, but seeing it differently, a far more ambitious project. 
+The effects ensuing from the interaction between these publics will have to be 
+100  Presta 2010; Solima 2012.
+101  Taylor 2020.
+
+49
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+studied to comprehend if and how this interaction can change the museum 
+experience and how it is perceived, by linking it to a specific moment in time.
+6.  Conclusions and further research
+Over the years, museums have changed their role in society, going from 
+a place of conservation to a place of continuous learning, open to everyone, 
+with an emphasis on their social role. Accessibility becomes a conditio sine qua 
+non for these organizations, even beyond their legal requirements. In addition, 
+modern museums are meeting places, encouraging the inclusive participation of 
+all visitors. The SoStare al MANN project flung open the museum’s doors to a 
+new public, for the first-time welcoming people with cognitive and behavioural 
+disabilities. The transition was not immediate, the museum had to work properly 
+to break down its physical, economic, methodological and communication 
+barriers. The SoStare al MANN project has shown the importance of engaging 
+with the local community to change perspectives and become more accessible 
+to some audiences. 
+The project helped the various stakeholders to go beyond the mere role of 
+bystanders, to redefine the very essence of several works of art, as the children 
+focused on the micro-level, the detail, to link different items in new ways, at 
+the macro-level. Consequently, they were able to create a new identity, new 
+processes of knowledge, their eyes seeing more and finding innumerable 
+similarities not usually seen and, accordingly, they become the source of a new 
+vision of the potential experiences that visitors, both normal ones and those 
+with cognitive disorders, may share among themselves.
+This paper has several limitations. Because the study was built around an 
+influential case selection process, these results cannot be generalized, as they 
+are deeply embedded in the resources that the various stakeholders, MANN 
+included, were able to deploy, and most are not available to smaller organizations. 
+The two main results of this paper, to reiterate, are showing how to engage 
+with other stakeholders to become more accessible and how to overcome the 
+limitations linked to social care professionals defining the new services, with 
+their role changing from decision makers to mediators. These results should 
+be tested on a broader sample; or another museum more representative of a 
+normal museum organization in Italy could use this project as a beacon to help 
+smaller organizations create effective social innovation processes by engaging 
+with their community.
+
+50
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+References / Riferimenti bibliografici
+Adler P.S., Kwon S.W., Heckscher C. (2008), Professional work: The emergence 
+of collaborative community, «Organization Science», n. 19, pp. 359-376.
+Alunno V. (2017), Le tecnologie multimediali per la fruizione museale e 
+l’esperienza dei visitatori. Prima indagine sui Musei Civici di Palazzo 
+Buonaccorsi a Macerata, «Il capitale culturale. Studies on the Value of 
+Cultural Heritage, n. 15, pp. 265-295.
+Anaby D., Hand C., Bradley L., Di Rezze B., Forhan M., Di Giacomo A., Law 
+M. (2013), The effect of the environment on participation of children and 
+youth with disabilities: a scoping review, «Disability and rehabilitation», 35, 
+n. 19, pp. 1589-1598.
+Askari S., Anaby D., Bergthorson M., Majnemer A., Elsabbagh M., 
+Zwaigenbaum L. (2015), Participation of children and youth with autism 
+spectrum disorder: a scoping review, «Review Journal of Autism and 
+Developmental Disorders», 2, n. 1, pp. 103-114.
+Barnes P., McPherson G. (2019), Co-Creating, Co-producing and Connecting: 
+Museum Practice Today, «Curator: The Museum Journal», 62, n. 2, pp. 
+257-267.
+Besozzi E. (2007), Culture in gioco e patrimoni culturali, in Progettare insieme 
+per un patrimonio interculturale, edited by S. Bodo, S. Cantù, S. Mascheroni, 
+Milano: Quaderni ISMU, n. 1, pp. 19-28.
+Bessant J., Tidd J. (2007),  Innovation and entrepreneurship, Hoboken, NJ: 
+John Wiley & Sons.
+Bhatt P., Ahmad A.J. (2017), Financial social innovation to engage 
+the economically marginalized: insights from an Indian case study, 
+«Entrepreneurship & Regional Development», 29, n. 5-6, pp. 391-413.
+Brodie R.J., Fehrer J.A., Jaakkola E., Conduit J. (2019), Actor engagement in 
+networks: Defining the conceptual domain, «Journal of Service Research», 
+22, n. 2, pp. 173-188.
+Brown K., Mairesse F. (2018), The definition of the museum through its social 
+role, «Curator: The Museum Journal», 61, n. 3, pp. 525-539.
+Cajaiba-Santana G. (2014), Social innovation: Moving the field forward. A 
+conceptual framework, «Technological Forecasting and Social Change», n. 
+82, pp. 42-51.
+Caldin R., Dainese R., Panciroli C. (2018), Didactics towards a bottom-up 
+museum approach, «Proceedings», 1, n. 9, pp. 1-9, <https://doi.org/10.3390/
+proceedings1091108>.
+Carberry E.J., Bharati P., Levy D.L., Chaudhury A. (2019), Social movements 
+as catalysts for corporate social innovation: Environmental activism and the 
+adoption of green information systems, «Business & Society», 58, n. 5, pp. 
+1083-1127.
+
+51
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+Cattelan L. (2010), Autismo. Manuale operativo per docenti e genitori, Schio: 
+Industrialzone.
+Cerquetti M. (2010), Dall’economia della cultura al management per il 
+patrimonio culturale: presupposti di lavoro e ricerca, «Il capitale culturale. 
+Studies on the Value of Cultural Heritage», n. 1, pp. 23-46.
+Cetorelli G., Guido M.R (2017), Il patrimonio culturale per tutti. Fruibilità, 
+riconoscibilità, accessibilità, «MIBACT Quaderni della valorizzazione», n. 
+4, Ascoli Piceno: Capponi.
+Clifford J. (1997), Routes. Travel and Translation in the Late Twentieth 
+Century, Cambridge: Harvard University Press.
+Coffey C. (2018), Creating Inclusive Experiences in Children’s Museums for 
+Children with Autism Spectrum Disorder, <https://dc.uwm.edu/etd/1981/>.
+Cottini L. (2009), Il bambino con autismo in classe, «Psicologia e Scuola», n. 
+4, luglio/agosto, Firenze: Giunti Scuola.
+Cottini L. (2016), L’autodeterminazione nelle persone con disabilità: percorsi 
+educativi per svilupparla, Trento: Edizioni Centro Studi Erickson.
+Cottini L., Vivanti G. (2016), Autismo: come e cosa fare con bambini e ragazzi 
+a scuola, Firenze: GiuntiEdu.
+Da Milano C., Sciacchitano E. (2015), Linee guida per la comunicazione nei 
+musei: segnaletica interna, didascalie e pannelli, «MIBACT Quaderni della 
+valorizzazione», n. 1, Ascoli Piceno: Capponi.
+Dacin P., Dacin T., Matear M. (2010), Social Entrepreneurship: Why We Don’t 
+Need a New Theory and How We Move Forward From Here, «Academy of 
+Management Perspectives», 24, n. 3, pp. 37-57.
+De Luca M. (2007), Comunicazione ed educazione museale, Milano: Franco 
+Angeli.
+Dees J.G. (1998), The Meaning of Social Entrepreneurship, Stanford University, 
+working paper.
+Dodd J., Sandell R., Coles A. (1998), Building bridges: Guidance for museums 
+and galleries on developing new audiences, London: Museums & Galleries 
+Commission.
+Edwards-Schachter M., Wallace M.L. (2017), Shaken, but not stirred: Sixty 
+years of defining social innovation, «Technological Forecasting and Social 
+Change», n. 119, pp. 64-79.
+Ferraro V. (2011), Restyling museum role and activities: European best practices 
+toward a new strategic fit, «Il capitale culturale. Studies on the Value of 
+Cultural Heritage», n. 2, pp. 133-177.
+Gladwin T.N., Krause T.S., Kennelly J.J. (1995), Beyond eco-efficiency: 
+Towards socially sustainable business, «Sustainable Development», 3, n. 1, 
+pp. 35-43.
+Hall J., Vredenburg H. (2003), The challenge of innovating for sustainable 
+development, «MIT Sloan Management Review», 45, n. 1, p. 61.
+
+52
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+Harding R. (2004), Social Enterprise: The New Economic Engine?, «Business 
+Strategy Review», 15, n. 4, pp. 40-43.
+Harrisson D., Chaari N., Comeau-Vallée M. (2012), Intersectoral alliance and 
+social innovation: When corporations meet civil society, «Annals of Public 
+and Cooperative Economics», 83, n. 1, pp. 1-24.
+Hein H. (2006), Public art: Thinking museums differently, Lanham: Altamira 
+Press.
+Hennink M.M., Hutter I., Bailey A. (2011), Qualitative research methods, 
+London: Sage Publications.
+Howaldt J., Schwarz M. (2010), Social Innovation: Concepts, research fields 
+and international trends, Dortmund: Sozialforschungsstelle.
+Howes D. (1991), The Varieties of Sensual Experience: a sourcebook in the 
+anthropology of the senses, Toronto: University of Toronto Press.
+Huq J.L. (2019), Conditioning a professional exchange field for social 
+innovation, «Business & Society», 58, n. 5, pp. 1047-1082.
+Ianes D., Cramerotti S. (2002), Comportamenti problema e alleanze 
+psicoeducative: strategie di intervento per la disabilità mentale e l’autismo, 
+Trento: Edizioni Centro Studi Erickson.
+Ianes D., Zappella M. (2009), L’autismo: aspetti clinici e interventi 
+psicoeducativi, Trento: Edizioni Centro Studi Erickson.
+ICOM (2009), La funzione educativa del museo e del patrimonio culturale: 
+una risorsa per promuovere conoscenze, abilità e comportamenti generatori 
+di fruizione consapevole e cittadinanza attiva, ICOM Italia – Commissione 
+Educazione 
+e 
+Mediazione, 
+<http://www.infologsrl.it/wp-content/
+uploads/2015/02/LA-FUNZIONE-EDUCATIVA-DEL-MUSEO.pdf>, 
+22.03.2021.
+Kulik T.K., Fletcher T.S. (2016), Considering the museum experience of 
+children with autism, «Curator: The Museum Journal», 59, n. 1, pp. 27-38.
+Lawrence T.B., Dover G., Gallagher B. (2014), Managing social innovation, in 
+The Oxford handbook of innovation management, edited by M. Dodgson, 
+D.M. Gann, N. Phillips, Oxford: Oxford University Press, pp. 316-334. 
+Lazzeretti L., Sartori A., Innocenti N. (2015), Museums and social media: the 
+case of the Museum of Natural History of Florence, «International Review 
+on Public and Nonprofit Marketing», 12, n. 3, pp. 267-283.
+Lettice F., Parekh M. (2010), The social innovation process: themes, challenges 
+and implications for practice,  «International Journal of Technology 
+Management», 51, n. 1, pp. 139-158.
+Levent N., Pascual-Leone A., eds. (2014), The multisensory museum: Cross-
+disciplinary perspectives on touch, sound, smell, memory, and space, 
+Lenham: Rowman & Littlefield.
+Lipparini A. (2002), La gestione strategica del capitale intellettuale e del capitale 
+sociale, Bologna: Il Mulino. 
+
+53
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+Lusch R.F., Vargo S.L. (2014), Service-dominant logic: Premises, perspectives, 
+possibilities, Cambridge: Cambridge University Press.
+Mariotto F.L., Zanni P.P., Moraes G.H.S. (2014), What is the use of a single-case 
+study in management research?, «Revista de Administração de Empresas», 
+54, n. 4, pp. 358-369.
+Martins C. (2012), Museum audio guides as an accessibility enhancer, in 
+Accesibilidad en la nueva era de las comunicaciones Profesionales y 
+universidad: un diálogo imprescindible, edited by C. Álvarez de Morales, C. 
+Limbach, M. Olalla Luque, Granada: Tragacanto, pp. 101-115.
+McKelvey M., Zaring O. (2018), Co-delivery of social innovations: exploring 
+the university’s role in academic engagement with society, «Industry and 
+Innovation», 25, n. 6, pp. 594-611.
+Morse N., Munro E. (2018), Museums’ community engagement schemes, 
+austerity and practices of care in two local museum services, «Social & 
+Cultural Geography», 19, n. 3, pp. 357-378.
+Moussouri T. (2007), Implications of the social model of disability for visitor 
+research, «Visitor Studies», 10, n. 1, pp. 90-106.
+Mulgan G. (2006), The Process of Social Innovation, «Innovations: Technology, 
+Governance, Globalization», 1, n. 2, pp. 145-162.
+Mulgan G., Tucker S., Rushanara A., Sanders B. (2007), Social Innovation: 
+What It Is, Why It Matters and How It Can Be Accelerated, London: Young 
+Foundation, Oxford Said Business School.
+Mumford M.D. (2002), Social innovation: ten cases from Benjamin Franklin, 
+«Creativity research journal», 14, n. 2, pp. 253-266.
+Murray R., Caulier-Grice J., Mulgan G. (2010), The open book of social 
+innovation, London: National endowment for science, technology and the 
+art.
+Noci G., Verganti R. (1999), Managing green product innovation in small 
+firms, «R&D Management», 29, n. 1, pp. 3-15.
+Onciul B. (2013), Community engagement, curatorial practice, and museum 
+ethos in Alberta, in Museums and communities: Curators, collections and 
+collaboration, edited by V. Golding, W. Modest, London: Bloomsbury, pp. 
+79-97.
+Orr R.J., Scott W.R. (2008), Institutional exceptions on global projects: A 
+process model, «Journal of International Business Studies», 39, n. 4, pp. 
+562-588.
+Papaluca O., Tani M. (2010), Stakeholder Relationships Management: Effects 
+on Strategy Definition in Social Enterprises-Some Evidences from a Fair 
+Trade Organization in Naples (October 11, 2010), available at SSRN: 
+<https://ssrn.com/abstract=1690520> 
+or 
+<http://dx.doi.org/10.2139/
+ssrn.1690520>, 22.03.2021.
+Paton R. (2003), Managing and Measuring Social Enterprises, London: Sage.
+
+54
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+Phills J.A., Deiglmeier K., Miller D.T. (2008), Rediscovering social innovation, 
+«Stanford Social Innovation Review», Fall 2008, pp. 34-43.
+Phillips W., Lee H., Ghobadian A., O’Regan N., James P. (2015), Social 
+innovation and social entrepreneurship: A systematic review, «Group & 
+Organization Management», 40, n. 3, pp. 428-461.
+Pinna G. (2000), Il ruolo socio-culturale dei musei scientifici, «Museologia 
+Scientifica», 16, n. 1, pp. 1-19.
+Pol E., Ville S. (2009), Social innovation: Buzz word or enduring term?, «The 
+Journal of socio-economics», 38, n. 6, pp. 878-885.
+Purtik H., Arenas D. (2019), Embedding social innovation: Shaping societal 
+norms and behaviors throughout the innovation process, «Business & 
+Society», 58, n. 5, pp. 963-1002.
+Presta I. (2010), Non-visitors: who are they, why is it important to know them?, 
+«Cadmo», n. 1, pp. 49-61.
+Rappolt-Schlichtmann G., Daley S.G. (2013), Providing access to engagement 
+in learning: The potential of Universal Design for Learning in museum 
+design, «Curator: The Museum Journal», 56, n. 3, pp. 307-321.
+Rahman M., Bose S., Babu M.M., Dey B.L., Roy S.K., Binsardi B. (2019), 
+Value co-creation as a dialectical process: Study in Bangladesh and Indian 
+Province of West Bengal, «Information Systems Frontiers», 21, n. 3, pp. 
+527-545.
+Rodari P. (2005), Apprendere al museo. La costruzione del sapere come attività 
+sociale, «Journal of Science Communication», 4, n. 3, pp. 1-5.
+Ruiz C., Parra C. (2013), New forms of organization in knowledge-based 
+societies: Social innovation, in  Non-profit Organizations and Social 
+Entrepreneurship, New York: Routledge.
+Salim Saji B.S., Ellingstad P. (2016), Social innovation model for business 
+performance and innovation, «International Journal of Productivity and 
+Performance Management», 65, n. 2, pp. 256-274.
+Sciarelli M., Tani M. (2013), Network approach and stakeholder management, 
+«Business Systems Review», 2, n. 2, pp. 175-190.
+Seawright J., Gerring J. (2008), Case selection techniques in case study 
+research: A menu of qualitative and quantitative options, «Political research 
+quarterly», 61, n. 2, pp. 294-308.
+Singer S. (2000), The social role of museums in contemporary society. Evaluation 
+as a tool, in Pensare, Valutare, Ri-pensare. La mediazione culturale nei 
+musei, edited by E. Nardi, Milano: FrancoAngeli, pp. 345-353.
+Solima L. (2004), L’impresa culturale, Roma: Carocci Editore.
+Solima L. (2012), Il museo in ascolto. Nuove strategie di comunicazione per i 
+musei statali, Catanzaro: Rubbettino.
+Solima L. (2015), I musei e la progettazione partecipata. L’esperienza dei musei 
+nazionali di Lucca in un contesto multiculturale, «Il capitale culturale. 
+Studies on the Value of Cultural Heritage», n. 12, pp. 955-977.
+
+55
+SOCIAL INNOVATION AND ACCESSIBILITY IN MUSEUM
+Solima L. (2017), Museums, accessibility and audience development, in Bridging 
+theories, strategies and practices in valuing cultural heritage, edited by M. 
+Cerquetti, Macerata: eum, pp. 225-240.
+Solima L. (2018), Management per l’impresa culturale, Roma: Carocci.
+Solima L., Amirante F., De Vivo C., Molino L. (2019), Attraverso gli occhi 
+degli altri: un progetto di accessibilità per il MANN, «Il capitale culturale. 
+Studies on the Value of Cultural Heritage», n. 9, pp. 307-332.
+Solima L., Giulierini P. (2018), Quando il museo diventa impresa culturale: il 
+Piano Strategico del Mann, Naples: Electa Editore.
+Solima L., Tani M. (2016), Do Not Touch! How 3d Printing can open the 
+way to an accessible museum, Referred Electronic Conference Proceeding 
+del XXVIII Convegno annuale di Sinergie, pp. 523-533.
+Suchy S. (2006), Museum management: emotional value and community 
+engagement, in New Roles and Missions of Museums, INTERCOM 2006 – 
+International Committee for Museum Management 2006 Symposium, edited 
+by Chinese Association of Museums, International Council of Museums, pp. 
+1-10.
+Taylor J.K. (2020), The Art Museum Redefined: Power, Opportunity, and 
+Community Engagement, London: Springer Nature.
+Tracey P., Stott N. (2017), Social innovation: a window on alternative ways of 
+organizing and innovating, «Innovation», 19, n. 1, pp. 51-60.
+United Nations (2007), Convention on the Rights of Persons with Disabilities, 
+New York: United Nations.
+Van der Have R.P., Rubalcaba L. (2016), Social innovation research: An 
+emerging area of innovation studies?, «Research Policy», 45, n. 9, pp. 1923-
+1935.
+van Wijk J., Zietsma C., Dorado S., De Bakker F.G., Marti I. (2018), Social 
+innovation: Integrating micro, meso, and macro level insights from 
+institutional theory, «Business & Society», 58, n. 5, pp. 887-918.
+Vurro C., Perrini F. (2013), La valutazione degli impatti sociali: approcci e 
+strumenti applicativi, Milano: EGEA.
+Walters D. (2009), Approaches in museums towards disability in the United 
+Kingdom and the United States, «Museum Management and Curatorship», 
+24, n. 1, pp. 29-46.
+Watson S., ed. (2007), Museums and their Communities, New York: Routledge.
+Westley F., Antadze N. (2010), Making a difference: Strategies for scaling social 
+innovation for greater impact, «Innovation Journal», 15, n. 2, pp. 1-19.
+Yin R.K. (2017), Case study research and applications: Design and methods, 
+London: Sage publications.
+Ziegler R. (2017), Social innovation as a collaborative concept, «Innovation: 
+The European Journal of Social Science Research», 30, n. 4, pp. 388-405.
+
+56
+LUDOVICO SOLIMA, MARIO TANI, PASQUALE SASSO
+Zietsma C.E., Groenewegen P., Logue D., Hiningspurtik C.R. (2017), Field or 
+fields? Building the scaffolding for cumulation of research on institutional 
+fields, «Academy of Management Annals», n. 11, pp. 391-450.
+
+eum  edizioni università di macerata
+JOURNAL OF THE DIVISION OF CULTURAL HERITAGE 
+Department of Education, Cultural Heritage and Tourism  
+University of Macerata
+Direttore / Editor in-chief
+Pietro Petraroia
+Co-direttori / Co-editors
+Tommy D. Andersson, University of Gothenburg, Svezia
+Elio Borgonovi, Università Bocconi di Milano
+Rosanna Cioffi, Seconda Università di Napoli
+Stefano Della Torre, Politecnico di Milano
+Michela di Macco, Università di Roma “La Sapienza”
+Daniele Manacorda, Università degli Studi di Roma Tre
+Serge Noiret, European University Institute
+Tonino Pencarelli, Università di Urbino “Carlo Bo”
+Angelo R. Pupino, Università degli Studi di Napoli L'Orientale
+Girolamo Sciullo, Università di Bologna
+Texts by
+Nicodemo Abate, Nicola Albergo, Gianpaolo Angelini, Giulia Beatrice,
+Giacomo Becattini, William Cortes Casarrubios, Tiziano Casola, Mara Cerquetti, 
+Matteo Cristofaro, Stefano De Falco, Alfredo Del Monte, Alice Devecchi, 
+Luigi Di Cosmo, Tamara Dominici, Patrizia Dragoni, Selene Frascella, 
+Luciana Lazzeretti, Luna Leoni, Lauro Magnani, Chiara Mannoni, 
+Giovanni Messina, Sara Moccia, Andrea Morelli, Umberto Moscatelli, 
+Sharon Palumbo, Luca Pennacchio, Andrea Penso, Pietro Petraroia, Gaia Pignocchi, 
+Federico Saccoccio, Pasquale Sasso, Giovanna Segre, Ludovico Solima, 
+Mario Tani, Roberta Tucci 
+http://riviste.unimc.it/index.php/cap-cult/index 
+ISSN 2039-2362
+

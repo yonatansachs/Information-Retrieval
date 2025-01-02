@@ -1,0 +1,974 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/384804033
+Promoting Inclusive Visits to a Natural History Museum with a Pre-Visit VR
+Tour for Autistic Families
+Article  in  Research in Science Education · October 2024
+DOI: 10.1007/s11165-024-10207-z
+CITATIONS
+0
+READS
+50
+4 authors, including:
+Nigel Newbutt
+University of Florida
+44 PUBLICATIONS   752 CITATIONS   
+SEE PROFILE
+Kent Crippen
+University of Florida
+122 PUBLICATIONS   3,937 CITATIONS   
+SEE PROFILE
+All content following this page was uploaded by Nigel Newbutt on 10 October 2024.
+The user has requested enhancement of the downloaded file.
+
+ORIGINAL ARTICLE
+Accepted: 27 September 2024
+© The Author(s), under exclusive licence to Springer Nature B.V. 2024
+	
+ Kent J. Crippen
+kcrippen@coe.ufl.edu
+Darby Drageset
+darbymbattle@ufl.edu
+Yu-Chia Kao
+yuchiakao@ufl.edu
+Nigel A. Newbutt
+nigel.newbutt@coe.ufl.edu
+1	
+School of Teaching and Learning, University of Florida, Gainesville, FL, USA
+Promoting Inclusive Visits to a Natural History Museum with 
+a Pre-Visit VR Tour for Autistic Families
+Darby Drageset1
+ · Yu-Chia Kao1
+ · Nigel A. Newbutt1
+ · Kent J. Crippen1
+Research in Science Education
+https://doi.org/10.1007/s11165-024-10207-z
+Abstract
+This exploratory study, framed by the Contextual Model of Learning, sought to define the 
+personal context of autistic visitors and their families attending a sensory-friendly natural 
+history museum event as a science learning experience. The study focused on the motiva­
+tions and expectations for visiting the museum, as well as how the inclusion of a VR tour 
+could promote inclusivity by better meeting the needs of these visitors and their social 
+support groups. A single case study design encompassing five family participant groups 
+that varied in age, family composition, and diagnoses was employed. Data collection in­
+volved a pre- and non-identical post-visit survey, complemented by a post-visit interview. 
+Results indicate that important features of the user experience with the VR museum tour 
+included clarity of exhibit text, lack of audio, the ability to measure exhibit features, easy 
+navigation, and enhanced museum accessibility. Autistic family groups used the virtual 
+tour in three main ways: (1) to prepare for specific exhibits, (2) to prepare for sensory 
+experiences, and (3) to build anticipation and set expectations. Two key features of the 
+virtual tour supported users’ preparation for their museum visit: the absence of crowds 
+and noise and the ability to zoom in and see exhibit text and details. The results highlight 
+the positive impact of a VR museum tour on autistic individuals and their families and 
+offer crucial insights into the personal and sociocultural contexts of autistic museum visi­
+tors and the potential for promoting unique, inclusive, and collaborative forms of science 
+learning.
+Keywords  Virtual reality · Contextual model of learning · Science · Museum · Autism · 
+Inclusion
+1 3
+
+Research in Science Education
+Introduction
+This study is the first in a planned series of studies that will investigate the interaction of the 
+personal and sociocultural context of autistic visitors within the physical context of a natural 
+history museum. This exploratory study aims to better understand the personal context of 
+autistic visitors and their families attending a sensory-friendly natural history museum event 
+as a science learning experience. We seek to understand their motivations and expectations 
+for visiting the museum, as well as how the inclusion of a virtual reality (VR) tour may 
+influence the acclimatization of autistic visitors so that the museum learning environment is 
+not only more accessible but inclusive in meeting the needs of these visitors and their social 
+support groups. Additionally, we seek to understand how visitors with autism interact with 
+the physical context of a natural history museum, what barriers exist in the physical envi­
+ronment, and how VR might help prepare these visitors to access the museum. This study 
+was designed in collaboration with the education department at a natural history museum, 
+autism experts, and autistic individuals.
+Autism is characterized by social communication and interaction difficulties and repeti­
+tive and restrictive behaviors (Zeidan et al., 2022). These characteristics vary across a con­
+tinuum, with every autistic individual experiencing a unique reality. In addition to social 
+challenges and repetitive or restrictive behaviors, individuals with autism can experience 
+difficulties processing sensory stimuli such as light, touch, and sound. The American Psy­
+chological Association (APA) (APA, 2013) describes autistic characteristics related to sen­
+sory issues as: “Hyper- or hyporeactivity to sensory input or unusual interest in sensory 
+aspects of the environment (e.g. apparent indifference to pain/temperature, adverse response 
+to specific sounds or textures, excessive smelling or touching of objects, visual fascina­
+tion with lights or movement)”. These characteristics can manifest as sensory-seeking or 
+sensory-avoidant behaviors (Schwartzman & Knowles, 2022). In both cases, sensory sen­
+sitivity can act as a barrier to accessing environments not attuned to such needs, including 
+non-formal learning environments such as museums, libraries, or other public spaces. In 
+addition to a lack of consideration for sensory needs, not knowing what environmental chal­
+lenges to expect in a non-formal learning space can further compound these issues (Cena 
+et al., 2023). Hoskin et al. (2020) observed five individuals with autism interacting with 
+museum exhibits at the Canada Science and Technology Museum. Observational data and 
+interview transcripts revealed that low sensory areas, preparation materials, and clear sig­
+nage were important resources for autistic museum-goers. These results support the notion 
+that non-formal science learning environments can hinder autistic visitors beyond physical 
+access to the space.
+Non-formal science learning environments are institutions and organizations outside of 
+formal school that are structured but highly adaptable (Eshach, 2007). Non-formal science 
+learning environments, such as museums, can present challenges for autistic individuals 
+through loud noises, flashing lights, and unfamiliar social situations (Varriale et al., 2023). 
+The function of these institutions is critical for the contemporary inclusive vision of scien­
+tific literacy, which envisions all people effectively and fully applying science in their daily 
+lives, workplaces, and society (Kahn, 2023). Within the context of public, formal science 
+education settings, Next Generation Science Standards (NGSS) and the Individuals with 
+Disabilities Education Act (IDEA) require equitable science learning opportunities that are 
+appropriately matched to the abilities of all learners (Kahn, 2023). In non-formal science 
+1 3
+
+Research in Science Education
+education settings, the Americans with Disabilities Act (ADA) functions to prevent discrim­
+ination and ensure equal access and opportunities for individuals with disabilities. More 
+specifically, when applied within the context of a museum, the ADA results in modifications 
+“such as ramps for wheelchair users or closed captions for the D/HH (deaf and hard-of-
+hearing)”(p. 134) (Varriale et al., 2023). While these modifications are absolutely necessary 
+and required, they often result in museums only approaching inclusivity from a physical 
+accessibility perspective, which fails to address visitors who have disabilities that are not 
+visible, like autism. This challenges the degree to which meeting accessibility standards is 
+sufficient to achieve inclusivity for individuals with autism. Accessibility and inclusivity are 
+related concepts but differ in that accessibility focuses on physical access to a space, while 
+inclusivity focuses on how individuals participate once they gain access to that environment 
+(Reich, 2010). Within the context of a museum, this implies that although an individual 
+might be able to physically enter an exhibit, they might not be able to thoroughly perceive 
+the space and respond cognitively or socially in productive ways (i.e., fully participate). 
+Therefore, inclusivity is multi-dimensional and includes consideration of how individuals 
+with disabilities “physically interact with and perceive the space, cognitively engage with 
+the materials, and socially interact with one another” (p. 15) (Reich, 2010).
+Efforts to provide a specific and modified museum experience for autistic visitors (i.e., 
+low stimuli, restricted access to the general public, low noises, and dim lights) can improve 
+accessibility (Coates, 2019). To achieve these modified experiences, museums provide sen­
+sory maps, noise-canceling earphones, weighted blankets, dimmed lighting, and sensory 
+signage to inform visitors about sensory considerations before entering exhibits. Some of 
+these modifications are considered pre-visit material, which, in this context, refers to any 
+information about the museum experience that visitors can use to prepare or plan for their 
+upcoming visit. Pre-visit materials such as sensory maps, information about exhibit content, 
+and descriptions of museum activities can help families with autistic children prepare for 
+their visit by familiarizing them with the museum environment and setting expectations for 
+the visit (Langa et al., 2013). According to Fortuna et al. (2024), planning is essential for 
+optimizing the museum experience because it helps alleviate anxiety for autistic individuals 
+and their families. Pre-planning for a visit can involve the use of social stories (Adams et 
+al., 2004), sensory maps and guides (Langa et al., 2013), reviewing the museum’s website 
+for resources and making a plan for what exhibits to visit and how long to stay (Lussenhop 
+et al., 2016). While this work acknowledges the benefits of pre-visit materials for autistic 
+museum-goers and their families, there is a lack of research investigating the use of tech­
+nology as a pre-visit material in this context. Beyond stating that pre-visit materials are 
+commonly distributed and accessed through web-based platforms like museum websites 
+(Fortuna et al., 2024; Hoskin et al., 2020; Langa et al., 2013; Lussenhop et al., 2016), the 
+use of technology other than webpages is not explored. For example, Magkafa et al. (2021) 
+explore the co-design of an app for autistic children to use during their museum visit, which 
+does involve technology other than a website, but the findings are focused on guidelines for 
+including autistic children in co-design, not the use of the app as a pre-visit tool.
+In addition to pre-visit materials and sensory modifications, some museums open their 
+doors to visitors with autism exclusively, having a dedicated time when only visitors with 
+autism and their families or caregivers are permitted. These events are typically described 
+and marketed as inclusive or sensory-friendly events (Lussenhop et al., 2016). These 
+restricted access events can help with crowding (i.e., having too many people in one space 
+1 3
+
+Research in Science Education
+at once), which can be overwhelming and overstimulating for autistic visitors (Langa et al., 
+2013). A well-known example of sensory-friendly science programming is the Morning at 
+the Museum, across the Smithsonian museums. Morning at the Museum takes place before 
+regular hours and rotates through the various Smithsonian museums, allowing visitors to 
+experience the museums with less crowding. Unfortunately, the characteristics of such 
+inclusive, sensory events are not well described in the literature, nor is there a consideration 
+of how technology, such as VR, could support visitors in preparing for these events.
+In this study, VR is understood to be the “presentation of exclusively virtual and con­
+trived objects and situations” that represent the museum environment (p. 37) (Papoutsi et 
+al., 2021). VR environments are consistent, predictable, safe, and controllable (Magkafa 
+et al., 2021; Lorenzo et al., 2022). These features align well with characteristics of autism, 
+such as an insistence on sameness and a desire for predictability. Furthermore, because VR 
+environments are safe and controllable, individuals with autism can experience situations 
+without fearing negative, real-world consequences (Lorenzo et al., 2022). Additionally, the 
+visual nature of VR aligns well with autistic individuals’ preferences to communicate and 
+learn via visual means rather than words (Magkafa et al., 2021). Despite the alignment 
+between autistic individuals and VR, using VR in educational research with autistic par­
+ticipants focuses primarily on social skills. It seldom occurs within the context of natu­
+ral history museums (Drageset & Crippen, 2024). In their systematic review of the use of 
+VR with autistic individuals in various educational contexts, Drageset and Crippen (2024) 
+found that an overwhelming majority of research prioritizes the mitigation of social deficits, 
+highlighting a missed opportunity for VR to be used to facilitate learning within non-formal 
+environments, like natural history museums. In alignment with their suggestions for future 
+work, this study is a first step in utilizing VR to promote social competence and learning 
+for autistic individuals in museum environments to promote greater degrees of inclusivity.
+Due to the alignment between VR and some autistic individuals, the lack of research 
+utilizing VR as a pre-visit material within the context of a natural history museum, and the 
+inherently social aspect of museum visits, we aim to explore and understand the potential 
+role that VR could play in supporting inclusive, sensory-friendly science learning events at 
+natural history museums. To examine this, we utilized an opportunity to collaborate with 
+a small natural history museum in the southeastern United States to deploy a VR tour that 
+provides a realistic representation of the museum for autistic visitors. To better include 
+autistic visitors in a museum of natural history and address gaps in current knowledge, we 
+investigated the following research questions:
+1.	 What do autistic families perceive as important features of their experience when using 
+a VR tour of a natural history museum?
+2.	 In what ways do autistic families use a VR tour to prepare for a visit to a natural history 
+museum?
+3.	 What specific aspects of the VR tour can support greater preparations, if any?
+1 3
+
+Research in Science Education
+Theoretical Framework and Relevant Prior Research
+The Contextual Model of Learning is regarded as one of the most important frameworks for 
+interpreting museum learning (Hsu et al., 2018). Falk and Dierking (2013) propose using the 
+Contextual Model of Learning to conceptualize a museum learning experience as involving 
+the continuous interplay between personal, sociocultural, and physical contexts over time. 
+The personal context refers to the variation in visitor interests, motivations, expectations, 
+learning preferences, prior knowledge, and developmental levels (Hsu et al., 2018). The 
+sociocultural context acknowledges that visitors learn through social interaction during their 
+visit and that each visitor is situated within their own culture and has various perceptions 
+and expectations for museums. The physical context refers to the physical space visitors 
+enter and interact with. In addition to the Contextual Model of Learning, Falk and Dierking 
+(2013) view museum visits through a needs-based contextual lens that considers each visit, 
+whether alone or in a group, as an attempt to use the physical context to fulfill a personal or 
+sociocultural need. For a museum visit to meet a personal or sociocultural need, the visitor 
+must be able to reasonably predict the museum experience. Museums are considered “pre­
+dictable for most visitors” (p.32) (Falk, 2013), which is why museums can fulfill specific 
+needs. The visitor can expect certain experiences and opportunities during their visit due to 
+the predictability of the museum’s physical context; however, for visitors who are autistic, 
+this might not be the case. Autism is characterized by restricted, repetitive behaviors that 
+manifest themselves in an insistence on sameness and inflexibility (Johnson et al., 2016), 
+and there is some evidence to suggest that autistic individuals have limited predictive abili­
+ties (Sinha et al., 2014). These characteristics of autism call into question the extent to which 
+a visitor with autism can have their needs and expectations met by a museum without the aid 
+of pre-visit materials to support the predictability of the museum’s physical context.
+Three notable research studies have leveraged the insights and requirements of the autis­
+tic community to design and develop prototypes aimed at enhancing access to and inclusion 
+of individuals with autism in non-formal learning settings (Giaconi et al., 2021; Messina et 
+al., 2018; Varriale et al., 2023). Messina et al. (2018) implemented immersive technology 
+in museums in Italy, where they used VR and head-mounted displays (HMDs) to develop 
+Wearable Immersive Social Stories (WISS) to support individuals with neurodevelopmental 
+disorders when they visited museums. Despite the promise, no evaluation or trial of this 
+tool has been published. Giaconi and colleagues (2021) utilized participatory design to co-
+design a virtual museum tour of a museum in Italy. The resulting VR tour enabled individu­
+als with autism “to anticipate both in the external and internal environments, thus ensuring 
+greater predictability of the spaces” (p. 101) (Giaconi et al., 2021). Varriale et al. (2023) uti­
+lized co-design with autistic children to create an app that included a VR tour of a museum 
+in Italy. Their virtual tour functioned as a digital agenda that supports autistic visitors with 
+narration, social stories, images, and sounds. Although these three examples represent some 
+early work in this area, they do not investigate the full potential of a virtual tour to function 
+as pre-visit material. Instead, they focus on the design of the virtual tour and the use of the 
+tour during the museum visit.
+Additionally, prior research suggests a good fit between VR and autistic users (Newbutt 
+et al., 2016; Magkafa et al., 2021; Lorenzo et al., 2022), and that VR could help lessen anxi­
+ety and support a notion of predictability (Mitchell et al., 2007). Functioning as pre-visit 
+material, a VR tour of a museum could support autistic visitors and their families in pre-
+1 3
+
+Research in Science Education
+planning for their museum visit, as well as be a sensory-friendly experience by eliminating 
+crowds of people, loud noises, inconsistent lighting, and other sensory stimuli associated 
+with the museum environment. Although it shows potential, a major challenge of imple­
+menting VR within this context is ensuring it is cost-effective and accessible to all potential 
+users. As researchers working to improve inclusivity and accessibility, we must ensure that 
+the products we deploy are not exclusionary because museums or users do not have the 
+funds to access them. Additionally, VR research with autistic individuals must be asset-
+based rather than deficit-based. VR research with autistic individuals has been criticized as 
+framing characteristics of autism as deficiencies that need to be fixed (Schmidt et al., 2024).
+Lastly, in the research that investigates the use of pre-visit material (Fortuna et al., 2024; 
+Langa et al., 2013), the families and/or caregivers of autistic museum-goers are included 
+as consumers of the pre-visit material. Family groups are said to use the pre-visit material 
+to prepare their autistic family member for their visit, which alleviates anxiousness and 
+unfamiliarity and helps families or caregivers set expectations for the visit. Hoskin et al. 
+(2020) noted in their observational data that support people were a key part of an autistic 
+individual’s museum visit. This highlights the importance of considering the larger family 
+group when investigating the experience of autistic individuals in museum settings. Not only 
+are family members or other support personnel important to autistic individuals’ museum 
+experience, but it would be remiss to ignore the inherently social aspect of the museum 
+experience. Falk and Dierking (2013) acknowledge the social aspect of the museum experi­
+ence in their Contextual Model of Learning. Autistic museum-goers do not experience the 
+museum in isolation but rather are influenced by the family members or caregivers they visit 
+with. Despite the social nature of visiting a museum, there is a lack of research being done 
+with autistic family groups within the context of a museum. Most research on families in 
+museum settings only focuses on neurotypical individuals (Langa et al., 2013).
+Methodology
+The methodology for this study took the form of a single case study design (Creswell & 
+Plano Clark, 2017), bounded by the intent to understand the experience of a group of autistic 
+families preparing and participating in a unique, sensory-friendly museum event using a VR 
+tour as pre-visit material. The experience was designed to emphasize the collective use of 
+the VR tour to promote a more accessible and productive museum visit for everyone. The 
+limited research on engaging the autistic community in creating educational technology 
+interventions, particularly for museum or non-formal science learning, dictated the context-
+dependent method and use of inductive data analysis.
+Context
+The study’s context was a natural history museum in the southeastern United States, which 
+is part of a comprehensive research university and includes eight permanent exhibits and 
+rotating temporary exhibits. The permanent exhibits highlight local ecology, indigenous 
+communities, native flora and fauna, and fossils. As part of an initiative to make the museum 
+more accessible and inclusive for all visitors, it implements designated mornings for autis­
+tic visitors and their families called Museum for Me. Museum for Me occurs three times a 
+1 3
+
+Research in Science Education
+year and involves the museum opening three hours early on a Sunday for autistic visitors 
+and their families. The designated mornings enable visitors to explore the museum with a 
+significantly reduced number of visitors and alterations to the exhibits, such as lower light­
+ing, reduced sounds, and sensory signage outside exhibits. In addition, during the event, the 
+museum provides a sensory map, quiet space, and fidgets.
+Participants
+The study received IRB approval from the University’s review board (IRB202300259). 
+Recruitment protocols and engagement with participants were carefully considered by the 
+research team to ensure ethical and respectful interactions with our autistic participants and 
+their families. Convenience sampling was used to enroll participants, and a formal diagnosis 
+of autism was not required to participate (self-diagnosis was acceptable). Recruitment fliers 
+were distributed at a prior Museum for Me event, advertised via social media platforms, 
+and emailed through listservs provided by local autism support groups. Local news also 
+disseminated the opportunity to participate in the study. The recruitment of participants was 
+limited to those who had attended prior Museum for Me events or were involved with a part­
+ner local autism support group. Compensation in the form of an annual pass to the museum 
+was provided to families who participated in the study.
+Families who expressed interest in participating in the study received a packet in the mail 
+that included consent forms with a pre-visit survey, a QR code to the VR museum tour, and 
+instructions for completing and returning the packet. All members of the family group were 
+required to complete and return the consent forms, while only autistic members of the fam­
+ily were asked to complete and return the pre-visit surveys. After completing the consent 
+forms and surveys, all family members became participants and were instructed to use the 
+VR museum tour before they visited the museum during the sensory-friendly event. Partici­
+pants could access the VR museum tour on any compatible device, such as a mobile phone, 
+tablet, or laptop. They had the flexibility to explore the VR museum tour at their conve­
+nience regardless of time or location and could view the tour as many times as they desired.
+The five family participant groups, all included at least one autistic member, varied in 
+age, family composition, and diagnoses. Table 1 provides the demographics and family 
+makeup of those who participated in the study and completed all data collection points. 
+Two families registered to participate but did not complete the study due to failing to attend 
+Museum for Me.
+Virtual Reality Technology
+A VR tour of the museum was created using Matterport, an online, computer-based virtual 
+tour platform/software that provides a 360-degree VR view of a physical space. The VR 
+tour was created by museum staff but had not been used with visitors yet. The virtual tour 
+offers several navigation options, including a 3D dollhouse view of the entire museum, a 
+floor plan representing an overview map, and circle tags highlighting ways to navigate the 
+space (Fig. 1). The 360-degree virtual platform features interactive and engaging functions. 
+For example, users can navigate the exhibits by clicking on the circle tags, also known as 
+‘hot spots’ in the virtual tour. Additionally, users can zoom in on the exhibits to read full-
+text descriptions and explore exhibit features more closely. This computer-based VR tour 
+1 3
+
+Research in Science Education
+differs from immersive virtual reality (IVR) in head-mounted displays (HMDs) and Cave 
+Automatic Virtual Environments (CAVEs), in that it lacks “immersive features that block 
+out the physical world, and enable users to feel psychologically located in the simulated 
+environment” (p. 183) (Bailey & Bailenson, 2017).
+The virtual tour was accessible to the participants via any computer screen or smart 
+device connected to the internet at their homes. Participants did not access the virtual tour 
+via headsets. Instead, they were given instructions on navigating the VR museum tour via 
+tablets, mobile phones, or computers using printed materials mailed to their homes. They 
+were asked to explore the VR museum tour before their actual museum visit.
+Data Collection
+Data collection involved a pre- and non-identical post-visit survey complemented by a post-
+visit interview. The pre-survey provided information about participant demographics, the 
+Fig. 1  (Left) Example of the floor plan view of the entire museum in Matterport. (Right) Example of the 
+hotspots used to navigate the virtual tour (the light colored circle features on the floor)
+ 
+Family ID
+Position in Family
+Gender
+Age
+Autistic
+1
+Mom
+Female
+35
+Dad
+Male
+38
+X*
+Son
+Male
+6
+X
+Daughter
+Female
+9
+X
+2
+Mom
+Female
+42
+Dad
+Male
+49
+Son
+Male
+4
+X
+3
+Mom
+Female
+36
+X
+Dad
+Male
+36
+Daughter
+Female
+6
+X
+4
+Mom
+Female
+55
+Dad
+Male
+50
+Daughter
+Female
+19
+Son
+Male
+11
+Son
+Male
+12
+X
+5
+Mom
+Female
+50
+Son
+Male
+14
+X
+Table 1  Family group demo­
+graphic data
+Note *The Dad in Family 1 is 
+self-diagnosed
+ 
+1 3
+
+Research in Science Education
+degree to which participants prepare for a museum visit and intend to use the VR museum 
+tour to support their preparation, and participant expectations for their visit and the VR 
+museum tour. After completing the pre-survey, participants were instructed to view the VR 
+museum tour before attending the Museum for Me event. After attending the event, autis­
+tic participants were asked to complete a post-survey that provided information about the 
+degree to which they felt prepared for their visit and the extent to which the VR museum 
+tour supported their preparation. The post-survey mirrored but was not identical to the pre-
+survey. Additionally, each family group scheduled a time for a semi-structured interview. 
+The semi-structured interviews were recorded and transcribed for data analysis and lasted 
+approximately 20 min. The semi-structured interview provided information about each fam­
+ily’s expectations for the sensory-friendly event and the VR museum tour, details regarding 
+how families used the virtual tour before their museum visit, and features of the virtual 
+tour that either supported or hindered the experience. The authors crafted the guiding ques­
+tions for the interview and leveraged their experience in museum education, educational 
+technology, and autism. Approximately half of the inquiries were centered around the fam­
+ily’s experience at the museum during the sensory-friendly event, with the remaining half 
+directed towards their engagement with the VR tour.
+Pre and post-surveys were compared across autistic participants to find key similarities 
+and differences. In the conception of this study, the surveys and interviews were consid­
+ered complementary and equally integral for answering our research questions; however, 
+after data collection and analysis, it became evident that the interview transcripts were far 
+more substantial. The interview transcripts were coded inductively and thematically using 
+MAXQDA software (VERBI Software, 2021). Given the lack of detailed theory for the 
+interactions among family members, inductive coding was used to ensure the analysis was 
+grounded in the experiences and insights of each family unit, leading to a more nuanced and 
+authentic understanding of the use of the VR tour and its influence on the perceptions of par­
+ticipants. Four themes and 13 codes were identified (Table 2). The first and second authors 
+coded the transcribed interviews separately, noting instances where each research question 
+was being addressed, which became the first three themes in Table 2. The fourth theme in 
+Table 2, Suggested Changes, emerged from families providing feedback for changes that 
+could be made to the VR tour to enhance its usefulness. After agreeing on the themes and the 
+coded segments that represented them, the first and second authors independently re-coded 
+the segments using phrases such as clarity of text, visit preparation, and easy navigation 
+that reflected the sentiment of the text. The first and second authors compared and discussed 
+these named segments until a consensus was reached on the 13 codes in Table 2. Due to the 
+surveys not adequately providing data to answer the research questions, only the two ques­
+tions about the expectations that autistic participants had for the Museum for Me event and 
+their museum visit were used.
+Results
+The overarching aim of this study was to explore how the personal and sociocultural con­
+texts of autistic visitors intersect with the physical environment of a sensory-friendly event 
+at a natural history museum. The objective being to gain a deeper understanding of the 
+motivations and expectations of autistic visitors and their families for attending such an 
+1 3
+
+Research in Science Education
+Theme
+Code
+Definition
+Examples
+Important 
+Features 
+of User 
+Experience
+Clarity of Text
+The clarity of text 
+allowed users to read por­
+tions of the exhibit.
+“You can literally, those things are so good 
+that you can read the signage on the 
+walls.” (Family 2)
+No Audio
+The lack of audio was 
+beneficial to the user.
+“So that was super helpful. I think as far 
+as preparing, that was one thing that really 
+helped us a lot was for him to be able to see 
+it without being just fully immersed in the 
+darkness and the noise.” (Family 1)
+Measure
+The VR tour allowed 
+users to measure features 
+of the exhibits.
+“Probably everybody was measuring the 
+jaws, or the mammoth, whatever we were 
+trying to measure, and the being you had a 
+lot of points of where we could transition to 
+move, and that was great.” (Family 4)
+Easy Navigation Navigating the VR tour 
+was easy for the user. Hot 
+spots were mentioned as 
+a feature of the navigation 
+that was positive and easy 
+to use.
+“We liked that because we it was easy to 
+move around…, there’s not a lot of options 
+somewhere to go. And this gave us a lot of 
+options, on where we wanted to go, and I 
+like that.” (Family 4)
+Access
+The ability for individuals 
+to experience the museum 
+without physically having 
+to visit.
+“It was kinda like being able to go to the 
+museum without actually having to leave 
+your house.” (Family 2)
+How the VR 
+Tour was 
+Used
+Anticipation
+The VR tour elicited 
+excitement about visiting 
+the museum in the future.
+“…to get him excited to go and to, and he 
+was thought we were going the next day to 
+be honest, and was really disappointed that 
+we weren’t going the next day…” (Family 4)
+Exhibit 
+Preparation
+The VR tour supported 
+the preparation of a user 
+to visit a specific exhibit 
+at the museum.
+“It’s dark and it’s just kind of very scary to 
+him. And usually when we go by that area 
+he’ll sit and wait for us outside while we go 
+inside. But during the with the virtual tour, 
+you’re actually able to access it pretty in 
+depth. So that was good for him to be able to 
+access it and to see it on the phone. I was re­
+ally happy to see that he handled it really 
+well.” (Family 1)
+Sensory 
+Preparation
+The VR tour supported 
+the preparation of the user 
+for specific sensory expe­
+riences at the museum.
+“I think that the experience help the sensa­
+tional process… Changing from one to an­
+other one and that experience of looking that 
+video actually help them to feel prepared.” 
+(Family 5)
+Aspects of 
+the VR Tour 
+that Support 
+Preparation
+Closer to 
+Exhibits
+The VR tour allowed 
+users to zoom in and get 
+closer to exhibits than 
+they normally would be 
+able to at the museum.
+“She really liked being able to get closer 
+to exhibits than she can get in person. 
+And like she really like to go up under the 
+wooly mammoth and like look all around 
+like really close. Whereas like in person 
+like obviously like you can’t really get that 
+close.” (Family 3)
+Less People
+The user benefitted from 
+the VR tour having less 
+people depicted in the 
+tour than they would 
+normally encounter at the 
+museum.
+“…so helpful that we didn’t have to fight to 
+get to see things.” (Family 4)
+Table 2  Codebook
+1 3
+
+Research in Science Education
+event, as well as to assess the effectiveness of a VR tour in preparing or acclimating these 
+visitors to the museum setting. The following sections address each research question using 
+quotes from the semi-structured interviews. Then, findings from the open-ended pre-visit 
+survey will be used to highlight the expectations and motivations of autistic visitors and 
+their families for attending a sensory-friendly event at a natural history museum. As men­
+tioned, the semi-structured interviews provided more robust and substantial data to address 
+our research questions. Due to this revelation, we focus on the interviews to answer our 
+research questions. The only data used from the survey is reflected in the Expectations and 
+Motivations section below. In this section, quotes from two open-ended pre-survey ques­
+tions highlight the expectations and motivations of autistic participants and their families for 
+visiting a sensory-friendly event at a natural history museum.
+Important Features of User Experience
+Results from the interviews indicate that important features of the user experience with the 
+VR museum tour included clarity of exhibit text, no audio, the ability to measure exhibit 
+features, easy navigation, and enhanced museum accessibility. Family 1 appreciated the 
+clarity of text in the VR tour because it afforded them the ability to “take time to read”. 
+Family 1 also mentioned that not having audio during the VR tour was an important feature 
+of their son’s experience. The lack of audio helped their son “to be able to see [the exhibits] 
+without being just fully immersed in the darkness and the noise”. Additionally, the ability 
+to measure elements of the exhibits was a key feature of the user experience with the VR 
+tour. The VR tour featured a measuring device that allowed users to measure the features of 
+the exhibits. Family 3 mentioned that their daughter enjoyed this experience and used the 
+measuring device to measure the shark jaws and the mammoth. Another significant aspect 
+of user experience was the ease of navigation, as highlighted by Family 4, who found it 
+“sharp, clear, and easy to navigate,” enhancing their enjoyment. Enhanced museum acces­
+sibility and inclusivity were also an important feature of user experience. Family 2 noted 
+that the virtual tour helped individuals “go to the museum without actually having to leave 
+[their] house”, which extends access to those who might otherwise be unable to visit. Addi­
+tionally, Family 3 shared that the tour improved accessibility by allowing their daughter to 
+Theme
+Code
+Definition
+Examples
+Suggestions 
+for Changes
+Difficult 
+Navigation
+Navigating the VR tour 
+was difficult for the user. 
+Hot spots were mentioned 
+as a feature of the naviga­
+tion that was challenging 
+to use.
+“I think for me it was just confusing trying 
+to like figure out how to get different 
+places.” (Family 3)
+Unclear Text
+The clarity of some of 
+the text could have been 
+better.
+“The things where you read is like it’s too 
+blurry to read.” (Family 5)
+Novelty
+The VR tour would have 
+been more helpful if the 
+participant was visiting 
+the museum for the first 
+time.
+“This totally would have been far more 
+helpful to me if this were my first time.” 
+(Family 2)
+Table 2  (continued)
+ 
+1 3
+
+Research in Science Education
+“go up under the woolly mammoth” and explore areas that would not be feasible during an 
+in-person visit.
+How the VR Tour was Used
+Autistic family groups used the virtual tour in three main ways: to prepare for specific 
+exhibits and sensory experiences, build anticipation, and set expectations. Family 1 dis­
+cussed how they used the virtual tour to help prepare their son with autism for entering an 
+exhibit he typically avoids. At the Natural History Museum there is an Indigenous com­
+munities exhibit in a dark, loud room. Family 1 shared that the exhibit is “very scary” to 
+their son and that he waits for them outside when they go into that exhibit. The virtual tour 
+allowed him to “access it and to see it on the phone”, which led to him entering the exhibit 
+for the first time during the Museum for Me event. Regarding preparing for sensory experi­
+ences, Family 4 shared that the virtual tour allowed them to “see areas that [could] be poten­
+tial triggers” for their child with autism, while Family 1 analyzed certain museum areas to 
+reassure their child that they were not frightening. Additionally, some families utilized the 
+virtual tour to help their children build anticipation and set expectations for their museum 
+visit. For instance, Family 4 mentioned that the tour helped get their son excited to visit the 
+museum and plan for what they would see.
+Aspects of the VR Tour that Support Preparation
+Two key features of the virtual tour supported users’ preparation for their museum visit: 
+the absence of crowds and noise and the ability to zoom in and see exhibit text and details 
+clearly. The lack of crowds and noise within the VR museum tour proved beneficial for 
+most families, allowing them to explore exhibits without navigating the stimulating aspects 
+of the museum environment. This feature facilitated focus on exhibit content without the 
+distractions of waiting in line or excessive noise. Additionally, a few families mentioned the 
+benefits of zooming in during the virtual tour to read the exhibits and get closer to objects 
+they are not allowed to get close to at the museum. Overall, the absence of crowds and noise 
+and the ability to zoom in enhanced access to museum content for autistic visitors and their 
+families. These features of the VR tour provided a more comfortable and focused environ­
+ment for exploring exhibits, allowing autistic individuals to engage with the content without 
+the sensory overload often experienced in traditional museum settings.
+Suggestions for Changes
+The semi-structured interviews let us learn more about how participants would change the 
+VR tour to fit their needs better. Although some autistic individuals and their families felt 
+the VR tour was easy to navigate and contained clear text, a few individuals felt the naviga­
+tion and overall clarity could be improved. Family 2 and Family 3 mentioned that the num­
+ber of hotspots made navigating to different museum sections more difficult. Furthermore, 
+the son from Family 5 felt the text could be clearer and suggested that the VR tour allow him 
+to click on certain text elements of exhibits to enlarge them for reading.
+1 3
+
+Research in Science Education
+Expectations and Motivations
+In the pre-visit survey, participants were asked open-ended and Likert-type questions about 
+their expectations for the sensory-friendly event and their overall museum visit. More spe­
+cifically, the Likert-type questions gauged how prepared the autistic participants felt for 
+their visit. Despite previous visits, the autistic children in Family 2 and Family 5 reported 
+feeling unprepared. Of similar sentiment, in response to an open-ended question asking 
+what participants expected from the sensory event, the mom in Family 3 indicated she did 
+not know what to expect, but she did anticipate the museum to be a place where she could 
+“educate her daughter” and see unique things. In response to the same question, the dad in 
+Family 1 expected the sensory-friendly event to be when he could relax and see exhibits 
+with his family “without many distractions”. The children in Families 1, 2, and 3 all men­
+tioned that they expected to learn during their visit to the museum, and the children in Fami­
+lies 1, 4, and 5 expressed their expectation to have fun. Specifically, one child in Family 1 
+looked forward to being less afraid of the exhibits, and the child in Family 2 anticipated a 
+calmer environment.
+Discussion
+The results reveal significant insights into the personal and sociocultural contexts of autistic 
+individuals and their families related to this science learning experience. Notably, despite 
+prior visits to the museum, not all autistic individuals felt adequately prepared for their 
+upcoming visit, underscoring the value of the VR tour in enhancing feelings of readiness. 
+Speaking with autistic participants highlighted how the VR experience mitigated anxiety 
+and fostered predictability, aligning with previous research (Mitchell et al., 2007). This sug­
+gests that VR technology can be used as pre-visit material to encourage accessibility and 
+inclusion in natural history museums. The VR tour provided autistic individuals and their 
+families the opportunity to view museum content without leaving their homes and func­
+tioned as a tool families could use to help prepare their autistic family member(s) for what 
+they would encounter during their museum visit. Specifically, the VR tour functioned as a 
+pre-visit tool that helped autistic individuals prepare for exhibits and sensory experiences. 
+These results corroborate the findings of Lanaga et al. (2013) and Hoskin et al. (2020) by 
+supporting the notion that pre-visit materials for autistic visitors and their families are ben­
+eficial and help familiarize visitors with the museum.
+Additionally, insights from the semi-structured interviews highlighted barriers within the 
+museum context, such as exhibits with loud noises and dim lighting and issues related to 
+crowding, all of which posed challenges for autistic visitors. The needs of autistic visitors 
+in this study support the notion that sensory sensitivities can act as a barrier to accessing 
+museum environments that are not specifically attuned to the sensory needs of its guests. 
+From a legal perspective, the ADA requires public institutions, including non-formal learn­
+ing institutions like museums, to remove all barriers that would prevent physical access 
+(ADA, 1990). This legislation does not mandate that museums remove barriers for people 
+with intellectual or sensory differences. In addition to the legislative requirements, to be 
+more inclusive of all visitors, museums must consider providing experiences and structuring 
+environments that acknowledge dimensions of inclusivity besides physical access. Solely 
+1 3
+
+Research in Science Education
+focusing on physical accessibility is no longer adequate (Schwartzman & Knowles, 2022). 
+Our results illustrate how autistic visitors can physically access museum exhibits, but still 
+experience barriers during their visit.
+Furthermore, the results offer insights into how autistic individuals and their families 
+experience a natural history museum. Museum visits are inherently social, as Falk and Dier­
+king (2013) acknowledged in their Contextual Model of Learning. Individuals with autism 
+who visit museums do not do so in complete isolation but are influenced by family mem­
+bers, caregivers, other museum visitors, and museum staff. Despite the social nature of visit­
+ing a museum, there is a lack of research being done with autistic family groups within the 
+context of a museum. The research on families in museum settings typically only focuses on 
+neurotypical individuals (Langa et al., 2013). As a step towards better understanding autistic 
+individuals and their families in museum contexts, this study sheds light on how families 
+help support their autistic family members as they participate in a sensory-friendly event 
+at a natural history museum. The semi-structured interviews with all five family groups 
+revealed that all families, regardless of composition, helped prepare their autistic family 
+members for their museum visit. Specifically, Families 1, 4, and 5 used the VR tour to pre­
+pare their autistic family members for exhibits they intended to visit, and Families 4 and 5 
+used the tour to prepare their autistic children for certain sensory elements at the museum. 
+Future work should investigate the potential of a VR tour of the museum to prepare autistic 
+individuals for social situations they will encounter in a museum context, such as paying for 
+their entrance into the museum and speaking with docents or other museum staff.
+In addition to providing information on the personal and sociocultural context of autistic 
+visitors, the results reveal key features of the VR tour that supported preparation. Namely, 
+the absence of crowds and noise and the ability to zoom in and clearly see exhibit text and 
+detail. This gives us information regarding the interaction between the museum’s physical 
+context and the individual’s personal context. Individuals with autism might be entering 
+the museum space with sensory needs that the museum fails to meet. The VR tour helped 
+support autistic individuals in viewing museum content while meeting their sensory needs. 
+This supports the notion that museums need to consider the sensory needs of their guests to 
+achieve greater inclusion and accessibility (Schwartzman & Knowles, 2022).
+Limitations
+Limitations are inherent to any study, and the instrumentation was the biggest factor here 
+as we were limited to researcher-created measures with self-reported data. Self-reported 
+data is notorious for social desirability bias—participants telling us what they think we 
+want to hear instead of their true thoughts and feelings. We minimized this bias by creating 
+a safe environment, using non-leading questions, and encouraging open, free expression. 
+However, there is also the potential for parental influence on children’s responses. Due to 
+the young age of most of the autistic participants, parents provided support in answering 
+the surveys and responding to interview questions and may have had an undue influence.
+Additionally, the small sample size and the heterogeneity of autism limits the generaliz­
+ability of our findings. Autism is a spectrum disorder, with each individual experiencing a 
+unique reality. As a result, we acknowledge that the results from this study are unique to its 
+participants. Furthermore, this study is situated in a small natural history museum, which 
+1 3
+
+Research in Science Education
+influences the nature of the results. Due to the specificity of the context, we cannot general­
+ize these results to all museums or even natural history museums.
+Conclusion and Future Work
+The results of this study highlight the positive impact of a VR museum tour on autistic indi­
+viduals and their families. Through the immersive experience of the VR tour, participants 
+found it to be a valuable tool in preparing for their museum visit. Notably, the tour aided in 
+familiarizing autistic individuals and their families with exhibits and sensory experiences, 
+enhancing their overall readiness and comfort level. This underscores the potential of VR 
+technology in creating inclusive and accessible science learning experiences for individu­
+als with autism and their families. In addition to preparation, autistic individuals and their 
+families highlighted image clarity, the absence of overwhelming crowds and noise, and the 
+ability to zoom in to see detail as important features of a VR museum tour that supported 
+their visit preparation. These results suggest that VR can be used as a pre-visit material to 
+encourage accessibility and inclusion in natural history museums. Future research should 
+explore the utility of using VR tours in other non-formal science learning environments to 
+facilitate greater degrees of inclusion. Family 3 specifically mentioned the need for other 
+places like zoos and aquariums to offer a virtual tour. This speaks to the value of VR tours 
+for autistic individuals and their families who want to venture out into more non-formal 
+science spaces.
+Additionally, the findings offer crucial insights into the personal and sociocultural con­
+texts of autistic museum visitors. We gained a deeper understanding of their expectations 
+and sensory requirements for visiting a natural history museum, as well as the role of a VR 
+tour in preparing or acclimatizing autistic visitors to a museum learning environment. This 
+understanding serves as a foundation for utilizing VR to support more inclusive museum 
+experiences in the future, tailored to meet the diverse needs of this population. By enhanc­
+ing cognitive engagement and facilitating science learning for autistic individuals in future 
+studies, we aim to acknowledge but move beyond the physical dimension of inclusivity to 
+foster a more enriching museum experience for autistic visitors.
+Future research will acknowledge the aspects of the physical context of natural history 
+museums that can act as barriers to individuals with autism. Additionally, efforts will be 
+made to understand how autistic individuals engage with exhibits. We will explore what 
+learning looks like for autistic visitors in natural history museums, what barriers prevent or 
+make learning difficult, and how VR could facilitate learning for this visitor population. It 
+is evident from our results that a VR tour of a natural history museum can help prepare and 
+acclimatize autistic visitors, but more work needs to be done to understand how a VR tour 
+can reinforce learning through the exposure of educational material in a virtual context fol­
+lowed by a real-life experience with the same content.
+Funding  The authors did not receive support from any organization for the submitted work.
+Data Availability  The datasets generated during and/or analyzed during the current study are available from 
+the corresponding author upon reasonable request.
+Code Availability  Not applicable.
+1 3
+
+Research in Science Education
+Declarations
+Ethical Approval  All procedures performed in studies involving human participants were in accordance with 
+the ethical standards of the institutional and/or national research committee and with the 1964 Helsinki Dec­
+laration and its later amendments or comparable ethical standards. The study was approved by the University 
+of Florida Institutional Review Board (IRB202300259).
+Consent to Participate  Participants provided informed consent to participate.
+Consent for Submission  All authors approve the manuscript for submission.
+Conflict of Interest  All authors certify that they have no affiliations with or involvement in any organization 
+or entity with any financial interest or non-financial interest in the subject matter or materials discussed in 
+this manuscript.
+Why this Manuscript Should be Published in Research in Science Education  This original research adds to 
+our understanding of providing inclusive science learning experiences in nonformal learning spaces. It offers 
+unique and crucial insights into the personal and sociocultural contexts of autistic museum visitors and their 
+social support systems. In addition to the intellectual merit provided by the methodology, this study achieves 
+broad impact by emphasizing and promoting the assets of autistic people and an asset-based approach to 
+designing science learning experiences. This topic will be an excellent fit for the Journal as it represents 
+unique empirical research that furthers the potential for understanding science education as an inclusive and 
+equitable endeavor that occurs in a diverse range of contexts.
+Issues Related to Journal Policies  All authors certify that we do not have or anticipate any issues with the 
+Journal’s policies.
+Originality of Submission  The authors confirm that the content of the manuscript has not been published or 
+submitted for publication elsewhere.
+Special Issue  This manuscript is not being submitted for consideration for a special issue.
+References
+Adams, L., Gouvousis, A., VanLue, M., & Waldron, C. (2004). Social story intervention. Focus on Autism 
+and Other Developmental Disabilities, 19(2), 87–94. https://doi.org/10.1177/10883576040190020301
+American Psychiatric Association. (2013). Diagnostic and statistical manual of mental disorders (5th ed.). 
+American Psychiatric Association.
+Americans with Disabilities Act of 1990, As Amended, 42 U.S.C. § 12182 et seq. (1990).
+Bailey, J. O., & Bailenson, J. N. (2017). Immersive virtual reality and the developing child. In Cog­
+nitive Development in Digital Contexts (pp. 181–200). Elsevier. https://doi.org/10.1016/
+B978-0-12-809481-5.00009-2
+Cena, F., Mauro, N., & Rapp, A. (2023). How do sensory features of places impact on spatial exploration 
+of people with autism? A user study. Information Technology & Tourism, 25(1), 105–132. https://doi.
+org/10.1007/s40558-023-00244-1
+Coates, C. (2019). Making the Museum Autism Friendly-Best Practice from Around the World - Museum 
+Next. https://www.museumnext.com/article/making-the-museum-autism-friendly/
+Creswell, J. W., & Plano Clark, V. L. (2017). Designing and conducting mixed methods research (3rd ed., p. 
+520). SAGE Publications, Inc.
+Drageset, D. B., & Crippen, K. J. (2024). A systematic review of the use of virtual reality in formal, informal, 
+and non-formal learning environments for individuals with autism. Interactive Learning Environments, 
+1–16. https://doi.org/10.1080/10494820.2024.2405702
+Eshach, H. (2007). Bridging In-school and out-of-school learning: Formal, non-formal, and informal 
+education. Journal of Science Education and Technology, 16(2), 171–190. https://doi.org/10.1007/
+s10956-006-9027-1
+1 3
+
+Research in Science Education
+Falk, J. H. (2013). The museum experience revisited (L. D. Dierking, Trans.). Taylor & Francis.
+Fortuna, J., Chamberlain, E., Filice, L., Kurt, M., & Porter, T. (2024). Exploring the usefulness of pre-visit 
+materials for children with autism at a public museum. Translational Science in Occupation, 1(1). 
+https://doi.org/10.32873/unmc.dc.tso.1.1.04
+Giaconi, C., Ascenzi, A., Del Bianco, N., D’angelo, I., & Capellini S. A. (2021). Virtual and augmented 
+reality for the cultural accessibility of people with autism spectrum disorders: A pilot study. The Inter­
+national Journal of the Inclusive Museum, 14(1), 95–106. https://doi.org/10.18848/1835-2014/CGP/
+v14i01/95-106
+Hoskin, E., Singh, A., Oddy, N., Schneider, A. L. J., Trepanier, G., Trudel, C., & Girouard, A. (2020). Assess­
+ing the experience of people with autism at the Canada Science and Technology Museum. Extended 
+Abstracts of the 2020 CHI Conference on Human Factors in Computing Systems, 1–7. https://doi.
+org/10.1145/3334480.3382834
+Hsu, T. Y., Liang, H., Chiou, C. K., & Tseng, J. C. R. (2018). CoboChild: A blended mobile game-based 
+learning service for children in museum contexts. Data Technologies and Applications, 52(3), 294–312. 
+https://doi.org/10.1108/DTA-05-2016-0042
+Johnson, N. L., Burkett, K., Reinhold, J., & Bultas, M. W. (2016). Translating research to practice for chil­
+dren with autism spectrum disorder: Part I: Definition, associated behaviors, prevalence, diagnostic pro­
+cess, and interventions. Journal of Pediatric Health Care: Official Publication of National Association of 
+Pediatric Nurse Associates & Practitioners, 30(1), 15–26. https://doi.org/10.1016/j.pedhc.2015.09.008
+Kahn, S. (2023). Special needs and talents in science learning. In Handbook of Research on Science Educa­
+tion: Volume III (pp. 325–358). Routledge. https://doi.org/10.4324/9780367855758-14
+Langa, L. A., Monaco, P., Subramaniam, M., Jaeger, P. T., Shanahan, K., & Ziebarth, B. (2013). Improving 
+the Museum experiences of children with Autism Spectrum disorders and their families: An exploratory 
+examination of their motivations and needs and using web-based resources to meet them. Curator: The 
+Museum Journal, 56(3), 323–335. https://doi.org/10.1111/cura.12031
+Lorenzo, G., Newbutt, N., & Lorenzo-Lledó, A. (2022). Global trends in the application of virtual real­
+ity for people with autism spectrum disorders: Conceptual, intellectual and the social structure of 
+scientific production. Journal of Computers in Education, 9(2), 225–260. https://doi.org/10.1007/
+s40692-021-00202-y
+Lussenhop, A., Mesiti, L. A., Cohn, E. S., Orsmond, G. I., Goss, J., Reich, C., Osipow, A., Pirri, K., & 
+Lindgren-Streicher, A. (2016). Social participation of families with children with autism spectrum dis­
+order in a science museum. Museums & Social Issues, 11(2), 122–137. https://doi.org/10.1080/15596
+893.2016.1214806
+Magkafa, D., Newbutt, N., & Palmer, M. (2021). Implementing co-design practices for the development of 
+a museum interface for autistic children. A. L. Brooks, S. Brahman, B. Kapralos, A. Nakajima, J. Tyer­
+man, & L. C. Jain (Eds.), Recent advances in technologies for inclusive well-being: Virtual Patients, 
+Gamification and Simulation (Vol. 196, pp. 421–443). Springer International Publishing. https://doi.
+org/10.1007/978-3-030-59608-8_22
+Messina, N., Matarazzo, V., Occhiuto, D., Gelsomini, M., & Garzotto, F. (2018). Museum for All: 
+Wearable Immersive Virtual Tours in Museums for People with Neurodevelopmental Disor­
+ders. IOP Conference Series: Materials Science and Engineering, 364, 012047. https://doi.
+org/10.1088/1757-899X/364/1/012047
+Mitchell, P., Parsons, S., & Leonard, A. (2007). Using virtual environments for teaching social understand­
+ing to 6 adolescents with autistic spectrum disorders. Journal of Autism and Developmental Disorders, 
+37(3), 589–600. https://doi.org/10.1007/s10803-006-0189-8
+Newbutt, N., Sung, C., Kuo, H.-J., Leahy, M. J., Lin, C.-C., & Tong, B. (2016). Brief report: A pilot study of 
+the use of a virtual reality headset in autism populations. Journal of Autism and Developmental Disor­
+ders, 46(9), 3166–3176. https://doi.org/10.1007/s10803-016-2830-5
+Papoutsi, C., Drigas, A., & Skianis, C. (2021). Virtual and augmented reality for developing emotional intel­
+ligence skills. International Journal of Recent Contributions from Engineering Science & IT (IJES), 
+9(3), 35. https://doi.org/10.3991/ijes.v9i3.23939
+Reich, C. (2010). Inclusion, Disabilities, and Informal Science Learning (J. Price, E. Rubin, & M. Steiner, 
+Trans.; CAISE Inquiry Group Report). Center for Advancement of Informal Science Education 
+(CAISE).
+Schmidt, M., Newbutt, N., Lee, M., Lu, J., Francois, M. S., Antonenko, P. D., & Glaser, N. (2024). 
+Toward a strengths-based model for designing virtual reality learning experiences for autistic 
+users. Autism: The International Journal of Research and Practice, 28(7), 1809–1827. https://doi.
+org/10.1177/13623613231208579
+Schwartzman, R., & Knowles, C. (2022). Expanding accessibility: Sensory sensitive programming for muse­
+ums. Curator: The Museum Journal, 65(1), 95–116. https://doi.org/10.1111/cura.12452
+1 3
+
+Research in Science Education
+Sinha, P., Kjelgaard, M. M., Gandhi, T. K., Tsourides, K., Cardinaux, A. L., Pantazis, D., Diamond, S. P., & 
+Held, R. M. (2014). Autism as a disorder of prediction. Proceedings of the National Academy of Sci­
+ences of the United States of America, 111(42), 15220–15225. https://doi.org/10.1073/pnas.1416797111
+Varriale, L., Cuel, R., Ravarini, A., Briganti, P., & Minucci, G. (2023). Smart and Inclusive museums for 
+visitors with Autism: The App Case A Dip in the Blue. S. Za, R. Winter, & A. Lazazzara (Eds.), Sus­
+tainable digital transformation: paving the way towards smart organizations and societies (Vol. 59, pp. 
+133–152). Springer International Publishing. https://doi.org/10.1007/978-3-031-15770-7_9
+VERBI Software (2021). MAXQDA (Version 2022) [Computer software]. VERBI Software. Available from 
+maxqda.com.
+Zeidan, J., Fombonne, E., Scorah, J., Ibrahim, A., S Durkin, M., Saxena, S., Yusuf, A., Shih, A., & Elsabbagh, 
+M. (2022). Global prevalence of autism: A systematic review update. Autism Research: Official Journal 
+of the International Society for Autism Research, 15(5), 778–790. https://doi.org/10.1002/aur.2696
+Publisher’s Note  Springer Nature remains neutral with regard to jurisdictional claims in published maps and 
+institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to this article under a 
+publishing agreement with the author(s) or other rightsholder(s); author self-archiving of the accepted manu­
+script version of this article is solely governed by the terms of such publishing agreement and applicable law.
+1 3
+View publication stats
+

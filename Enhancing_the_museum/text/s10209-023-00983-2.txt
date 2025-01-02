@@ -1,0 +1,1365 @@
+Vol.:(0123456789)
+1 3
+Universal Access in the Information Society (2024) 23:913–926 
+https://doi.org/10.1007/s10209-023-00983-2
+LONG PAPER
+Interactive description to enhance accessibility and experience of deaf 
+and hard‑of‑hearing individuals in museums
+JooYeong Kim1 · ChungHa Lee1 · JuYeon Kim1 · Jin‑Hyuk Hong1,2
+Accepted: 16 February 2023 / Published online: 1 March 2023 
+© The Author(s), under exclusive licence to Springer-Verlag GmbH Germany, part of Springer Nature 2023
+Abstract
+Text descriptions in museums provide detailed and rich information about artifacts that broadens museum visitors’ knowl-
+edge and enriches their experience. However, since deaf and hard-of-hearing (DHH) individuals have low literacy compared 
+to hearing people and communicate through sign language, museum descriptions are considerably limited in delivering a 
+stimulating and informative environment for understanding and enjoying exhibits. To improve DHH individuals’ museum 
+experience, we investigated the potential of three interactive description prototypes: active-linked, graph-based, and chatbot-
+based. A comparative study with 20 DHH participants confirmed that our interaction-based prototypes improve information 
+accessibility and provide an enhanced experience compared to conventional museum descriptions. Most participants preferred 
+the graph-based prototype, while post-interviews suggested that each prototype has potential benefits and limitations accord-
+ing to DHH individuals’ particular literacy skills and preferences. Text descriptions can be enlivened for DHH visitors by 
+adding a simple interaction functionality, e.g., clicking, which can lead to a better museum experience.
+Keywords  Museum description · Deaf and hard-of-hearing individuals · Interaction design · Museum experience · 
+Information accessibility
+1  Introduction
+Museum descriptions (or text) are the most basic means for 
+visitors to access information about various exhibits and 
+serve as a medium that allows for interaction between a 
+visitor and an object [18, 41]. A typical museum descrip-
+tion consists of a text supplemented with images or videos. 
+Ranging from simple stories to historical and scientific facts, 
+museum descriptions provide a variety of information on 
+each artifact, often including difficult or professional terms 
+[28]. Although these may be unfamiliar to the average per-
+son, visitors can learn new terms by considering the overall 
+context of descriptions and drawing from their prior knowl-
+edge; consequently, museum descriptions expand our under-
+standing of exhibits and allow for a rich museum experience 
+[23, 46].
+Text descriptions play an important role in shaping visi-
+tors’ museum experience as they offer detailed explanations 
+about artifacts. Thus, it is essential that the information be 
+presented in a way that is accessible to all visitors. Unfortu-
+nately, although museums strive to provide all patrons the 
+same access to rich information and opportunities to expand 
+their knowledge, the current format of museum descriptions 
+considerably limits the museum experience of deaf and hard-
+of-hearing (DHH) visitors. One of the main challenges DHH 
+visitors face when encountering text descriptions is diffi-
+culty reading the text. Generally speaking, they have lower 
+literacy skills than hearing people [15, 16, 33], including 
+problems with reading and understanding text due to unfa-
+miliar syntactic structures or limited vocabulary skills [4, 13, 
+14, 31]. Due to reading difficulties, many DHH individuals 
+simply visually observe the object or skim descriptions to 
+get a vague idea rather than grasping in-depth information 
+ *	 Jin‑Hyuk Hong 
+	
+jh7.hong@gist.ac.kr
+	
+JooYeong Kim 
+	
+jspirit01@gm.gist.ac.kr
+	
+ChungHa Lee 
+	
+chunghalee@gm.gist.ac.kr
+	
+JuYeon Kim 
+	
+kimjuyeon@gm.gist.ac.kr
+1	
+School of Integrated Technology, Gwangju Institute 
+of Science and Technology, Gwangju, Republic of Korea
+2	
+AI Graduate School, Gwangju Institute of Science 
+and Technology, Gwangju, Republic of Korea
+
+914
+	
+Universal Access in the Information Society (2024) 23:913–926
+1 3
+or the full back-story contained in museum descriptions; as 
+a result, their museum experience is confined to a limited or 
+shallow level of understanding.
+Recently, museums have tried to improve information 
+accessibility for DHH visitors by providing sign language 
+content on digital devices [12, 20, 32, 34, 35, 42], where 
+there exist some issues in exploiting sign language alone. 
+First, cognitive load may occur due to simultaneity [36]. 
+Sign language users who consume all information visually 
+may experience cognitive load due to visual dispersion when 
+understanding descriptions [10]. They must often quickly 
+switch their visual attention between an artifact and sign lan-
+guage while understanding content, which may cause visual 
+dispersion or the omission of some information. Second, 
+sign language content is usually not only costly to produce 
+due to insufficient data [8, 7], but also summarized compared 
+to the original content, so it may not be able to convey the 
+same level of rich information that textual descriptions pro-
+vide (e.g., acquisition of new terms and a detailed account 
+of artifacts). Moreover, such content is passively provided 
+in a one-way manner, highlighting the need to more actively 
+satisfy the curiosity of DHH visitors inside the museum, 
+e.g., answering any questions they may have on the artifacts 
+[5]. Given that DHH Individuals can use different languages 
+besides sign language [21], museum descriptions need to be 
+studied in various options including text format so that DHH 
+individuals can choose [2]. Thus, there is a need to improve 
+the current textual descriptions to ensure that rich informa-
+tion is provided—even to visitors who have difficulty in 
+understanding texts like DHH visitors. However, to the best 
+of our knowledge, few studies have explored the efficacy, 
+limitations, or potentials of textual descriptions in museums.
+To provide better accessibility and improve DHH individ-
+uals’ experience, we have investigated the potential of inter-
+active museum descriptions that allow people to actively 
+interact with a description system and explore all there is 
+to know about an artifact. After identifying three issues 
+that DHH individuals with low literacy skill encounter in 
+museum descriptions (exploration, construction, and user-
+inquiry), we propose three interactive museum descriptions: 
+active-linked, graph-based, and chatbot-based prototypes. 
+A comparative study and post-interviews with 20 DHH 
+participants revealed that even textual descriptions, which 
+are most familiar to hearing individuals, could be improved 
+by incorporating some interactive design elements. The 
+potential and limitations of the prototypes are presented to 
+explore the ways in which the interactive museum descrip-
+tions could improve the experience of DHH individuals, who 
+have unique needs and preferences.
+2  Background work
+DHH individuals vary greatly in terms of their communi-
+cation preferences [16] and reading comprehension ability 
+[15, 47, 50]. Based on educational and cultural factors 
+[50], some DHH individuals are adept readers, but others 
+are not good at reading in general [17]. DHH adults usu-
+ally report average reading scores between the fifth- and 
+sixth-grade levels [15], which falls well below the stand-
+ard scores of hearing adults [9]. Many DHH individuals 
+still struggle in comprehending “text” through reading. 
+This presents important challenges, especially in an area 
+where obtaining information by reading is important [16]: 
+museum descriptions.
+Museum visitors frequently refer to text descriptions to 
+acquire detailed information about artifacts, artworks, etc. 
+As basic museum descriptions are mostly textual in for-
+mat, this creates a comprehension barrier for many DHH 
+visitors. In an attempt to address this issue, the Smith-
+sonian Museum published ‘accessible design guidelines’ 
+[45], which highlight that museums must limit sentence 
+length and avoid complex English in text descriptions to 
+facilitate DHH individuals’ understanding. Unfortunately, 
+most museum descriptions are designed by and for people 
+who use both spoken and written language; thus, the issue 
+of DHH individuals’ information accessibility to museum 
+descriptions persists [20].
+When providing textual information to DHH individu-
+als, there are some important considerations to be made. 
+Dostal et al. presented two principles: (1) Optimize Access 
+and (2) Make Content and Thinking Visible [16]. Optimize 
+Access focuses on facilitating communication by inquiring 
+about communication preferences, and Make Content and 
+Thinking Visible underscores that making information vis-
+ible applies to thinking visible. Inui et al. discovered that 
+offering a syntactic and lexical paraphrase of a given text 
+to DHH individuals could support their reading compre-
+hension [24], implying that offering sufficient varieties of 
+leveled text improves their reading ability.
+Numerous other works have studied tools that can boost 
+DHH individuals’ reading comprehension [1, 2, 3, 6, 25, 
+27, 29]. Alonzo et al. examined the benefits of automatic 
+text simplification (ATS) for DHH individuals and found 
+that they perceived benefits from and preferred a system 
+with on-demand lexical simplification [2]. Kushalnagar 
+et al. simplified cancer and health-related texts using 
+MOSES, a text simplification program, and confirmed 
+the benefit of text simplification through an experiment 
+on 36 DHH students [29]. Gennari and Mich evaluated 
+whether another text simplification tool (LODE) could 
+improve DHH children’s reading comprehension and 
+found that appropriate illustrations make the text easier 
+
+915
+Universal Access in the Information Society (2024) 23:913–926	
+1 3
+to understand; by enriching the stories with static and/or 
+animated drawings, they significantly improve text read-
+ability [19]. Chung et al. proposed a news display system 
+for DHH individuals that automatically converts complex 
+sentences in a given news article into simple sentences and 
+illustrates the relationships among them via a graphical 
+representation. Their research demonstrated the potential 
+of (1) Identifying subordinate and embedded clauses in 
+complex sentences, (2) Relocating them for better read-
+ability, and (3) Displaying the clauses’ relationships with 
+a graphical representation, which subsequently allowed 
+readers to have a better understanding of the text [11].
+Although reading text remains a challenge for DHH 
+individuals with low literacy skills, these studies showed 
+that text accessibility can be improved by determining how 
+to adapt its presentation, suggesting museum descriptions 
+can also be improved in this regard. With this context, we 
+explore three research questions in this study:
+•	 RQ1: What difficulties do DHH individuals have when 
+they encounter textual descriptions in museums?
+•	 RQ2: Does the interaction help DHH individuals have a 
+better experience with museum descriptions?
+•	 RQ3: What are the potential and limitations of interactive 
+museum descriptions?
+3  Methods
+3.1  Prototypes
+Based on prior studies for DHH individuals [2, 3, 1, 4, 5, 
+12, 14, 20, 30, 35, 22, 49], we focused on three issues DHH 
+individuals may face when they encounter textual descrip-
+tions of museum artifacts:
+•	 Exploration DHH individuals want to explore more infor-
+mation in addition to the basic description of an artifact. 
+Many studies have shown that deaf people report a more 
+positive museum experience when they can explore and 
+interact with more information on their own [5, 12, 20, 
+30, 35]. Accordingly, providing supplemental visual 
+materials and explanations, e.g., definitions, examples, 
+and related stories, would be helpful for their understand-
+ing and exploration [22, 49];
+•	 Construction DHH individuals often have difficulty 
+understanding complex and long sentences due to low 
+literacy skills [21]. Prior research has revealed that the 
+main factors of poor comprehension are syntactic struc-
+ture and difficult vocabulary [2, 1, 3, 4, 14]. Museum 
+descriptions are generally composed of complex syntac-
+tic structures and unfamiliar terminology; thus, their for-
+mat may be unsuitable to effectively convey information 
+to DHH individuals who have not skilled at reading;
+•	 User-inquiry DHH individuals want to ask questions 
+and receive adequate feedback when they become curi-
+ous about an artifact in the course of a museum tour [5, 
+20], but sign language interpreters, who explain exhibits 
+to DHH people and facilitate communication between 
+hearing people (e.g., curators) and DHH visitors, are not 
+always available in museums [5].
+Taking the above issues into account, we prototyped four 
+description styles to explain artifacts in museums as shown 
+in Fig. 1: common, active-linked, graph-based, and chatbot-
+based styles. Table 1 summarizes the characteristics of the 
+four prototypes described in what follows:
+•	 Common prototype As a baseline, the common prototype 
+provides conventional descriptions commonly available 
+in museums; the description consists of many complete 
+sentences;
+•	 Active-linked prototype Researchers found that on-
+demand text buttons like pop-ups (text boxes appear 
+above the words when hovering the mouse) help reading 
+understanding rather than unconditionally replacing com-
+plex museum descriptions with a simplified version [2]. 
+Referred to these works, the active-linked prototype is an 
+improved version of the common prototype that allows 
+users to explore information up to one additional level 
+depth (shallow exploration). In the active-linked proto-
+type, some difficult or professional words, e.g., “maguri” 
+and “reverse inlay technique,” are color-highlighted so 
+that additional information pops up when users click the 
+colored words. Strategic highlighting of words or phrases 
+can enhance the reading experience of DHH [26];
+•	 Graph-based prototype As a prototype of a simplified 
+construction rather long sentences, we adopted the 
+“knowledge graph.” Knowledge graph presents related 
+information in a hierarchical connection [43] and can 
+reduce the need to read the entire descriptions [44]. We 
+refer to the third prototype as graph-based, where the 
+keywords (nodes) are hierarchically connected to each 
+other. In terms of construction, it initially displays only 
+several keyword nodes instead of presenting all descrip-
+tive sentences at once. It can then be expanded with more 
+details if users click on the nodes (keypoint-based con-
+struction). Unlike the active-linked prototype’s single-
+level exploration, the graph-based prototype enables 
+a deeper level of exploration by progressively expand-
+ing the graph according to users’ interests (progressive 
+
+916
+	
+Universal Access in the Information Society (2024) 23:913–926
+1 3
+exploration). We implemented the graph-based prototype 
+using Mindmeister1;
+•	 Chatbot-based prototype Chatbots have been widely used 
+as a solution for promptly handling user-inquiry [48, 48]. 
+In prior works, most chatbots for DHH individuals were 
+designed to use mainly their voice or gestures to com-
+municate, not text [38, 40]. To figure out the potential of 
+chatbot with text-based interaction for DHH individuals, 
+our chatbot-based prototype provides a basic museum 
+chatbot with buttons and an input textbox. It initially pro-
+vides a few candidate question buttons (e.g., FAQs) on 
+a target artifact rather than displaying all of the descrip-
+tions at once (keypoint-based construction). However, 
+there are fewer explorable topics (buttons) compared to 
+the graph-based prototype. Users can get some answers 
+by selecting a candidate question, but they mostly acquire 
+more detailed information by typing their own questions. 
+The chatbot-based prototype provides corresponding 
+answers according to the user’s interests and preferences 
+(hybrid exploration). Notably, this is the only one of the 
+three prototypes that allow users to ask their own ques-
+tions (enable user-inquiry). To ensure the quality of the 
+chatbot system remained constant (e.g., avoiding misun-
+derstanding an input question), we employed a Wizard-
+of-Oz approach utilizing real-time human responses. We 
+implemented the chatbot-based prototype using Chat-
+fuel2.
+3.2  Materials
+3.2.1  Artifacts and descriptions
+For this study, we first evaluated the difficulty level of 
+descriptions of ten representative artifacts displayed 
+Fig. 1   Four prototypes of description styles about a target artifact (e.g., Crane-pattern pillow)
+Table 1   A summary of 
+prototypes across three design 
+dimensions
+Dimension
+Common
+Active-linked
+Graph-based
+Chatbot-based
+Exploration
+No
+Shallow
+Progressive
+Hybrid
+Construction
+Sentence-based
+Sentence-based
+Keypoint-based
+Keypoint-based
+User-inquiry
+Disable
+Disable
+Disable
+Enable
+2  https://​chatf​uel.​com/.
+1  https://​www.​mindm​eister.​com/.
+
+917
+Universal Access in the Information Society (2024) 23:913–926	
+1 3
+in the Asian Ceramic Gallery of the Gwangju National 
+Museum in Korea. Ten DHH individuals (not partici-
+pants in the main study) assessed the difficulty level of 
+the ten descriptions, and four descriptions similar in level 
+and length were finally selected and used in this study. 
+The length of the four descriptions ranged from 84 to 103 
+words (M = 93), and 8 to 10 difficult words were included 
+in each description. All descriptions were customized for 
+each prototype. The number of explorable items (colored 
+words in the active-linked, nodes in the graph-based, and 
+candidate questions of the chatbot-based) are presented 
+in Table 2. The common prototype, as a baseline, pro-
+vides no explorable items. The chatbot-based prototype 
+was designed to provide six candidate questions and users 
+may ask a question to obtain more information. However, 
+the chatbot can only answer questions based on the same 
+information provided in the graph-based prototype.
+3.2.2  Subjective evaluation questions
+To measure the experience of DHH individuals with each 
+prototype, five interaction metrics were considered (see 
+Table  3). Understanding indicates how well participants 
+can understand an artifact through a prototype. Desire to 
+Explore indicates how much the prototype triggers their 
+motivation to explore and know more about the target arti-
+fact and Feedback indicates if the prototype provides suf-
+ficient information to satisfy their curiosity. Usability and 
+Interesting examine how easy and interesting the prototype 
+is for DHH participants to use, respectively. All questions 
+consist of a 7-point Likert-type scale of agreement rang-
+ing from 1 = “Strongly disagree” to 7 = “Strongly agree.”
+3.2.3  Post‑interview
+At the end of the experiment, post-interviews were con-
+ducted to understand participants’ experience of the four 
+museum description types and obtain their feedback. First, 
+in order to understand the difficulties they experience when 
+exploring museums, we asked how they feel when they 
+encounter conventional museum descriptions as well as 
+their usual viewing styles. Next, we asked them to rank the 
+four prototypes in order of preference from most to least 
+and inquired as to the reason for their ordering. Finally, 
+they were asked to provide any suggestions for a new tex-
+tual interaction design and what other functions would be 
+needed to enhance their museum experience.
+3.3  Experiment
+3.3.1  Procedure
+A within-subject study was conducted where participants 
+experienced all four prototypes. The data collection proce-
+dure was as follows. First, after receiving an overview of the 
+study, each participant signed a consent form and responded 
+to demographic questions. Then they tested the four proto-
+types according to a balanced Latin-Squares design, while 
+the four artifacts were presented in the same order. Prior to 
+Table 2   Number of explorable items in three prototypes
+Numbers in parentheses of columns indicate the total number of words in the description. Note that the chatbot-based prototype can only pro-
+vide answers that are found in the description of the graph-based prototype
+Interaction style
+Exploration level
+Description 1
+(101)
+Description 2
+(84)
+Description 3
+(84)
+Description 4
+(103)
+Average
+Active-linked
+Level 1 (max)
+14
+19
+21
+17
+17.8
+Graph-based
+Level 1
+15
+14
+13
+13
+13.8
+Level 2
+8
+12
+8
+13
+10.3
+Level 3 (max)
+9
+12
+10
+13
+11.0
+Chatbot-based
+Level 1
+6
+6
+6
+6
+6.0
+Table 3   Interaction metrics 
+and questions for subjective 
+evaluation
+Metric
+Survey question
+Understanding
+This prototype made it easy for me to understand the description.
+Desire to explore
+I want to know more about artifacts when I use this prototype.
+Feedback
+This prototype answered what I was curious about.
+Usability
+This prototype was easy to use.
+Interesting
+This prototype was interesting.
+
+918
+	
+Universal Access in the Information Society (2024) 23:913–926
+1 3
+using each prototype, participants watched a brief video that 
+explained its use and functions and then explored one of the 
+artifacts with it. Then, the participants responded to subjec-
+tive questions. After examining all four prototypes, we con-
+ducted post-interviews to collect opinions and feedback for 
+our further understanding, and the participants were asked 
+to order the prototypes by preference. To ensure clear com-
+munication with participants, a sign language interpreter was 
+present during all study procedures; that is, the study was 
+conducted through communication among the researcher, 
+the sign language interpreter, and a participant. The materi-
+als used in this study included a tablet PC (to present the 
+prototypes), the survey paper, and an interview sheet. The 
+tablet PC screen was recorded to observe participants’ inter-
+action procedure while using the prototypes. The study took 
+approximately one hour and participants were compensated 
+with 40K KRW ($34 USD) for their participation. All ethi-
+cal and experimental procedures and protocols in this study 
+were approved by the Institutional Review Board (IRB) of 
+the Gwangju Institute of Science and Technology.
+3.3.2  Participants
+Twenty participants identified as deaf or hard-of-hearing 
+were recruited from a community rehabilitation center. 
+Their average age was 47.35 (SD = 14.51), and the group 
+comprised 11 females and nine males. All participants self-
+identified as having severe deafness and the average age of 
+hearing loss occurred was 3 years old (SD = 2.52). Their 
+preferred languages included sign language (all partici-
+pants), spoken language (2), and writing (2). When asked 
+whether they had received any reading education, 16 partici-
+pants answered “Yes” and four answered “No.” The earliest 
+age and latest age of receiving reading education were 4 and 
+22, respectively (M = 9.75, SD = 4.15). Additionally, in their 
+assessment of the difficulty of the description immediately 
+after experiencing the common prototype, nine participants 
+identified it as hard, nine identified it as normal, and two 
+identified it as easy.
+4  Results
+4.1  What difficulties do DHH individuals have 
+when they encounter textual descriptions 
+in museums? (RQ1)
+4.1.1  Barriers to accessing information due to low literacy 
+skills
+Although many of them lacked background knowledge and 
+educational experience about history, DHH participants had 
+a great desire to learn historical stories and details. However, 
+many participants reported significant difficulty understand-
+ing museum descriptions consisting of long and complex 
+sentences with difficult and unfamiliar vocabularies. When 
+facing such difficult descriptions, four of the 20 participants 
+(P3, P7, P14, and P15) responded that they tried to search 
+the Web for more information to understand the artifact and 
+its description, but the other participants stated they were 
+more apt to give up and move on the next object. Many 
+avoided asking questions (even when they were deeply curi-
+ous about a particular artifact) because it was too inconven-
+ient for them to communicate with others, e.g., people who 
+verbally explain about the museum artifacts. In this situ-
+ation, they refrain from seeking further knowledge unless 
+there is a sign language interpreter, which is uncommon in 
+most museums.
+“Because there were many words that I didn’t know 
+and it’s hard to understand the description of the arti-
+facts, I could not know what the contents are, so I just 
+skipped it. It doesn’t interest me because I cannot know 
+the story about the artifact. It’s too boring to read eve-
+rything, and there are too many difficult Chinese char-
+acters and terminology.” – P4
+“I want to tell my friend about the old history that hap-
+pened in my neighborhood, but even if I want to know 
+about the history, I can’t. It’s frustrating that I can’t 
+tell my friend.”– P16
+“When a description is provided with sign language, 
+I can understand, my curiosity grows, and commu-
+nication about artifacts occurs. However, when the 
+description provided is a long sentence, it is incom-
+prehensible and not accessible.”– P19
+“I was frustrated that there was no solution when I 
+wanted to know additional information.”– P2
+4.1.2  Need for individual and active touring
+Most DHH participants have visited museums as part of a 
+group tour with a sign language interpreter who interprets 
+descriptions of the exhibits. Many participants stated that 
+a group tour with other DHH visitors to a museum is time-
+consuming and expensive because they can only visit when 
+an interpreter becomes available and must wait for all other 
+DHH visitors to finish viewing each artifact. Some partici-
+pants responded that they would like to explore the museum 
+freely as individuals rather than as a group. With respect to 
+interaction, they want contents they can react to, experiences 
+they can participate in, and active interaction rather than 
+one-sided and passive touring, even when a sign language 
+interpreter is present. Some participants strongly expressed 
+
+919
+Universal Access in the Information Society (2024) 23:913–926	
+1 3
+the preference for active touring in which they personally 
+search for information and enjoy the museum independently.
+“Five to ten DHH individuals usually gather together 
+to watch with a docent and a sign language interpreter. 
+The group tour is expensive and time-consuming.”– 
+P13
+“To be honest, I can only passively acquire the given 
+information when I am provided with a description 
+through a sign language interpreter....I wish there were 
+a system that can respond immediately when DHH 
+individuals are curious or want to know more about 
+something.”– P19
+“It is hard to enjoy it freely because there is a limit to 
+group tours. I want to tour the exhibits alone.”– P16
+“It is not fun because there is nothing that I can react 
+to.” – P11
+4.1.3  Negative emotions due to limited information 
+accessibility and museum experience
+Most participants felt frustrated, alienated, bored, and even 
+fearful when they run into complicated descriptions; many 
+thought the museum should have been more considerate of 
+their needs. They also expressed a strong sense of discontent 
+with their inability to comprehend the provided description 
+since they failed to access the desired information. Some 
+participants even thought that this situation was inevitable 
+due to personal limitations, saying:
+“It is my fault that I cannot understand because I am 
+not good at understanding sentences.”– P15
+“It is because I am not good at studying.”– P13
+“That’s just my luck. I gave up.”– P12
+4.2  Does the interaction help DHH individuals have 
+a better experience with museum descriptions? 
+(RQ2)
+Figure 2 shows the mean score and distribution of interac-
+tion metrics by the prototype. To check the reliability of 
+the participants’ responses, we first calculated Cronbach’s 
+alpha, which showed strong reliability for all subjective 
+questions ( 훼= .89 ). We conducted a Friedman test for all 
+four prototypes and Wilcoxon signed-rank tests for post-hoc 
+pairwise comparison. The Friedman test indicated a signifi-
+cant difference for all interaction metrics (Understanding 
+휒2 = 14.946 , p = .002 ; DesireToExplore 휒2 = 25.757 , 
+p = .000 ; Feedback 휒2 = 26.860 , p = .000 ; Usability 
+휒2 = 23.800 , p = .000 ; Interesting 휒2 = 25.447 , p = .000 ). 
+The post hoc pairwise comparison using Wilcoxon signed-
+rank tests mostly revealed significant differences in the com-
+parison of the common and other prototypes for every metric 
+(see Fig. 2).
+Subjective scores for all interaction metrics were high in 
+the order of graph-based, active-linked, chatbot-based, and 
+common prototype. In particular, the graph-based prototype 
+had the highest scores for all metrics. Post-interviews with 
+our participants revealed that compared to the common pro-
+totype, most participants were more satisfied with the three 
+other prototypes’ capacity to satiate their curiosity by pro-
+viding feedback, e.g., definitions of unfamiliar words. They 
+were also pleased that they were able to acquire in-depth 
+information through additional visual images and relevant 
+information provided for the artifacts.
+Understanding is the most fundamental step in the 
+museum experience since a good understanding about the 
+exhibited artifacts often leads visitors to a better experience 
+of museum contents. Regarding the current description of 
+museums, DHH participants found it difficult to understand 
+without additional explanation and images (mean score: 
+3.4). In contrast, they responded that the graph-based (mean 
+score: 5.3) and active-linked (mean score: 5.0) prototypes 
+Fig. 2   Comparison of participants’ responses to interaction metrics by prototype with significant pairwise differences (*p < 0.05 , **p < 0.01 , 
+and ***p < 0.001)
+
+920
+	
+Universal Access in the Information Society (2024) 23:913–926
+1 3
+substantially helped them comprehend the description of a 
+target artifact with additional information including images 
+that could be easily accessed by clicking colored words or 
+nodes: “I was able to satiate my curiosity because there was 
+an explanation of the word.” (P5) and “It was nice to have a 
+lot of pictures related to this artifact” (P8). For the chatbot-
+based prototype (mean score: 4.5), only a few individuals 
+were satisfied with typing custom queries to support their 
+further understanding of artifacts.
+Desire to explore indicates whether a prototype may 
+trigger the desire of users to know more about an artifact 
+while experiencing it, and Feedback conveys if it provides 
+a proper answer to their curiosity. With the common proto-
+type, participants had questions and wanted to find out more 
+while reading the description, but they were frustrated that 
+there was no pathway to acquire further information on the 
+description (DesireToExplore: 4.1; Feedback: 3.2). On the 
+other hand, they evaluated that the graph-based (DesireTo-
+Explore: 5.9; Feedback: 5.7) and active-linked (DesireTo-
+Explore: 5.4; Feedback: 5.5) prototypes strongly motivated 
+their exploration desire and provided appropriate feedback. 
+Particularly, the majority of participants (17 out of 20) had 
+a strong desire to explore and progressively opened 73% of 
+nodes in Level 1 and 49% of nodes in Levels 2 & 3 in the 
+graph-based prototype. Similarly, 15 out of 20 participants 
+demonstrated an eagerness to explore by clicking 71% of 
+color-highlighted keywords of the active-linked prototype. 
+The nodes of the graph-based and the color-highlighted 
+keywords in the active-linked appear to have significantly 
+positively impacted their desire to explore by offering sup-
+plemental materials according to their interest: “The infor-
+mation in the graph is connected to each other, and it was 
+nice to be able to see them by opening [the nodes]” (P17) 
+and “The words were colored so I could enter according to 
+my curiosity” (P1 and P18).
+However, despite the fact that the chatbot-based prototype 
+can provide additional information like graph-based and 
+active-linked prototypes, this prototype seems to have been 
+rated by participants as less satisfactory in satiating their 
+curiosity with adequate feedback related to their interests 
+(DesireToExplore: 5.2; Feedback: 4.5). One possible reason 
+is that they did not know what questions to ask. The chat-
+bot-based prototype provided six candidate questions, but 
+these were insufficient to reflect all participants’ interests. 
+Another explanation is that it is difficult to communicate 
+with the chatbot in an interrogative sentence format. We 
+observed that most DHH participants just asked one question 
+or refrained from asking at all because they were hesitant to 
+type their query as a sentence. As a result, they soon ceased 
+exploration to find more information.
+Usability and Interesting show how convenient a proto-
+type is to use and how interesting it is to explore informa-
+tion, respectively. The graph-based (Usability: 6.3; Inter-
+esting: 6.3) and active-linked (Usability: 5.6; Interesting: 
+5.9) prototypes are fairly easy to use and interesting, even 
+though they only provide a very simple interaction func-
+tionality, i.e., clicking: “It’s fun to click” (P11) and “It was 
+pleasurable to visit the nodes” (P14). It would appear that 
+the simple act of clicking precisely meets the need of users 
+to explore an area of their specific interest instead of being 
+informed of all contents: “It’s nice to be able to click and 
+see only what I am curious about, not the sentences” (P14). 
+Most participants were interested in the chatbot-based pro-
+totype (Interesting: 5.3), but, as previously mentioned, many 
+participants had a bad experience of formulating and typing 
+their own input queries (Usability: 4.7). In fact, many muse-
+ums are introducing chatbot services in order to help visitors 
+ask questions about the artifacts and the museums, but this 
+result signifies that the user-inquiry functionality has to be 
+designed carefully for DHH individuals. For the common 
+prototype, they evaluated that it was the least useful and the 
+most boring since they only passively received information 
+without any interaction (Usability: 3.9; Interesting: 3.8).
+4.3  Potential and limitations of interaction styles 
+(RQ3)
+From the previous section (RQ2), we found that the graph-
+based prototype showed positive interaction results for DHH 
+participants in all interaction metrics. However, in terms of 
+Fig. 3   Preference ranking for 
+the prototypes
+
+921
+Universal Access in the Information Society (2024) 23:913–926	
+1 3
+preference, we observed that it does not address the needs 
+of all participants. As shown in Fig. 3, there were different 
+preferences for each prototype. The graph-based prototype 
+was the most preferred prototype, followed by active-linked 
+and chatbot-based, with the common prototype ranking last. 
+A total of nine of the 20 participants reported graph-based 
+as the first preferred type, while more than half of the par-
+ticipants (11 of the 20 participants) reported common as the 
+least preferred type. Active-linked was observed to have the 
+same popularity as graph-based overall, but participants 
+slightly preferred graph-based over active-linked as the first 
+preference. Contrary to our expectations, the chatbot-based 
+prototype showed a greater degree of preference compared 
+to the other types, where the participants either greatly liked 
+or disliked it.
+4.3.1  Graph‑based—Just display key points and I will 
+explore by myself.
+A total of 16 out of 20 participants had a positive experience 
+with the graph-based prototype (ranking it first or second 
+most preferable) since it is visually concise and the connec-
+tion between presented facts is clear.
+“I liked that it was not a sentence, and I liked the way 
+that I could target information I was curious about 
+by simply clicking on it. [The graph-based prototype] 
+is an easy way for DHH individuals to find informa-
+tion.” – P14
+The graph structure seems to appeal to DHH individuals 
+who have a sense of repulsion to sentences; the content is 
+summarized rather than presented in many sentences at once 
+and the connectivity between information is visually mapped 
+based on keywords. Regarding this aspect, the sign language 
+interpreter who participated in this study also commented:
+“[The graph-based prototype] may be easier for DHH 
+people to understand because the graph structure 
+seems to be similar to the structure of expressing sign 
+language sentences (a way of expressing and arrang-
+ing relationships between words)”.
+Some participants (P11, P13, P18, P19, and P20) were 
+highly interested in the interaction method itself that unfolds 
+information progressively when clicked, reporting: “Click-
+ing (interaction) is fun, and expanding an idea when clicked 
+is fun” (P13). They also evaluated such methods positively 
+because they could acquire in-depth information through 
+expanding interaction. Those who favored the graph-based 
+prototype explored nodes at a much deeper level than those 
+who did not (47% vs. 6%).
+“It was great to see more and more information spread 
+out and expand about one aspect. In this way, it was 
+possible to acquire in-depth information.”– P19
+“It was good to expand, and it was fun and good to be 
+able to dive deeper if you had any questions.”– P18
+Since DHH individuals are reluctant to read long sentences 
+where all information is presented at once in a line-by-line 
+format, it would be advisable to display key content instead 
+so that they can actively explore by themselves whenever 
+they so desire, i.e., when they are curious. From this point 
+of view, the graph-based prototype helped promote DHH 
+individuals active exploration.
+“To be honest, I can only passively acquire the given 
+information when I am provided with a description 
+through a sign language interpreter, but in the case of 
+the graph style, it is good that I can acquire informa-
+tion actively. If this type were provided in the museum, 
+I would use it again.”– P19
+However, there were some participants who evaluated this 
+prototype negatively (P1, P7, P10, and P16). One partici-
+pant felt the graph format was rather complicated. Other 
+participants pointed out that the contextual information of 
+the existing description was lost in the graph because it was 
+a summary of relationships only.
+“It was complicated and made me dizzy. I don’t know 
+what it’s trying to say” – P7
+“[The active-linked prototype] was easier to under-
+stand as additional information came out in the com-
+mon description, but I didn’t feel that the information 
+was connected here (in the graph).” – P1
+4.3.2  Active‑linked—Keep original context, just add more 
+on it.
+A total of 14 of the 20 participants selected the active-linked 
+prototype as their first or second preferred style. Participants 
+favoring this type responded extremely positively to the 
+color highlighting of some words.
+“It was good and helpful to provide additional infor-
+mation by categorizing it by color. Adding color rather 
+than plain black text made it easier to access informa-
+tion.” – P1
+“Deaf people really like things with color. It feels 
+like suggesting something I don’t know, and it’s easy 
+to understand when I check it. I’ve never seen such 
+a method before, but it’s so nice. In particular, deaf 
+people are really weak when it comes to text. If sign 
+language is added here, there is nothing more to ask 
+for.”– P14
+
+922
+	
+Universal Access in the Information Society (2024) 23:913–926
+1 3
+As seen above, some preferred to add an exploration func-
+tion while preserving the existing description itself. There 
+were many opinions that it is better to be provided the option 
+to click and explore additional information when curiosity 
+arises while reading the context of an existing description.
+“It was good because I gain additional information 
+while reading intuitively.” – P6
+“[Using the active-linked prototype,] the description 
+was easy to understand because it was connected to 
+the original sentence. I can click on it only when I 
+don’t know the meaning of a word or I am curious 
+about it.” – P12
+“It was more difficult than the graph style, but it was 
+good to know the knowledge about difficult-to-find 
+words right away.” P14 (who selected the active-linked 
+as the 2nd preference)
+Conversely, those who exhibit a strong sense of reluctance to 
+sentences had a negative experience with the active-linked 
+prototype. These individuals preferred the keyword-based 
+construction such as graph-based and chatbot-based rather 
+than the sentence-based style (common and active-linked). 
+P13 even stated that because the active-linked prototype dis-
+played many sentences from the beginning, it was a little 
+different from the common prototype.
+“It was good to get pictures when I clicked buttons, 
+but it was difficult to understand because of many sen-
+tences. I wanted to know in-depth, even if I got only 
+one new fact, but it was hard to understand because 
+the information was presented in complex and long 
+sentences.”– P19
+Some participants reported that the depth of exploration was 
+shallow and could not satisfy their curiosity. This indicates 
+that DHH individuals may want to actively explore infor-
+mation at a deeper level. In particular, participants (P2, P4, 
+P5, and P15) who demonstrated a low preference for the 
+active-linked prototype, preferred the types that could be 
+explored deeply such as graph-based and chatbot-based. 
+These individuals’ average usage time in the active-linked 
+prototype (137 s) was lower than the average time for all par-
+ticipants (145 s), but their time spent exploring the graph-
+based prototype (219 s) was higher than the average time for 
+all participants (195 s).
+“The active-linked button alone did not satisfy my 
+curiosity. My curiosity hasn’ been satiated much with 
+this type.” – P19
+“With this style, I discovered some new information 
+such as the fact that the ship was sunk in Sinan, but I 
+couldn’t find any other information.”– P18
+4.3.3  Chatbot‑based—Immediate answer to my pressing 
+questions.
+Although many participants found it difficult to use the 
+chatbot-based prototype, there were seven participants who 
+selected this type as their first choice. These individuals 
+expressed that they felt more freedom in being able to ask 
+questions directly compared to the other types, dependent 
+on context and exploration. Except for P10, who was 71 
+years old, six enjoyed interacting with the chatbot enough 
+to spend approximately twice as much time as those who did 
+not prefer this prototype (5.7 min vs. 3 min).
+“The chatbot was fun to interact with as it gave 
+answers that directly satisfied my curiosity, but the 
+second (graph-based) doesn’t have that aspect.” – P2
+“It was the easiest to use because it gave feedback 
+right away. It’s nice to be able to focus on finding only 
+what you’re interested in. The rest [other types] are 
+limited in that they provide set information.” – P4
+“It was cool to be able to ask questions right away 
+when I don’t understand something. When will chatbot 
+be launched in Gwangju National Museum? I want to 
+use it soon.”– P15
+A few participants responded positively to the candidate 
+question buttons. Because DHH individuals did not know 
+what sorts of questions to ask due to limited knowledge 
+of history, they found the buttons more useful to obtain 
+information. In general, the chatbot-based prototype was 
+preferred by young people (P1, P2, P4, and P5 were all 
+individuals in their 20s) as well as by people who were not 
+burdened with writing sentences.
+Even though the chatbot-based prototype provides a key-
+point-based construction, e.g., candidate questions, similar 
+to the graph-based, the rest of the participants found it diffi-
+cult to interact with. Unanswered queries could be answered 
+only by typing questions due to the limited number of but-
+tons implemented in the chatbot-based prototype. However, 
+many participants simply pressed the candidate question 
+buttons and very few typed a question directly (the average 
+number of direct questions was 1). Owing to the difficulty of 
+formulating sentences, many felt uncomfortable interacting 
+with the chatbot. Notably, if they do not use the user-inquiry 
+function and simply press the buttons, the chatbot-based 
+prototype may be a little different from the graph-based or 
+active-linked types.
+“It was difficult because I was not familiar with chat-
+bots. It is burdensome to have to type something in a 
+full sentence.”– P20
+“I think it would be difficult for DHH individuals to 
+use a chatbot because they have difficulty writing sen-
+
+923
+Universal Access in the Information Society (2024) 23:913–926	
+1 3
+tences. Still, it’s good to ask questions about topics 
+I don’t understand. However, this style feels similar 
+to the graph-based style in that I get feedback when 
+I press a button. Both the graph and the chatbot felt 
+similar to me.” – P14
+In other words, unless DHH individuals can use the ‘direct 
+question’ function, which is the advantage of chatbots, there 
+is no advantage to the chatbot-based for them compared to 
+the other prototypes. Thus, researchers seeking to provide a 
+chatbot-based description may need to focus more on tailor-
+ing the specifics of the recommendation function to adapt to 
+DHH individuals’ needs.
+4.3.4  Common (conventional) – That’s why it is common.
+There was one person who preferred the common prototype. 
+He expressed confidence in writing and reading sentences 
+to the extent that writing is one of his preferred languages. 
+He also stated that he disliked unfamiliar and complicated 
+things and felt that the existing description was sufficient 
+for him.
+“I liked the general description and its simplicity. I 
+don’t really have any questions, and it’s the type I’ve 
+seen a lot in museums.” – P7
+Thus, it would appear that those possessing strong literacy 
+skills who can obtain enough information with the existing 
+description would be sufficiently satisfied with the common 
+description style.
+5  Discussion
+The results collected and analyzed in the present study allow 
+us to extend the discussion beyond a simple comparison of 
+the museum description styles. In what follows, we discuss 
+implications and suggestions for enhancing the museum 
+experience of DHH individuals based on their present 
+museum experience and the results of our study.
+5.1  Potentials of text description styles for DHH 
+individuals
+Our results show that besides sign language content, the 
+text-based description commonly seen in museums and 
+familiar to hearing individuals can be improved in terms of 
+the level of information accessibility and exhibit interaction. 
+Although they are interested in museum touring and histori-
+cal knowledge, poor information accessibility limits them 
+from receiving rich information and achieving a satisfying 
+museum experience. As the majority of DHH individuals 
+have a lower degree of literacy compared to hearing people, 
+providing some additional visual materials and explanations 
+to supplement the common description made them feel more 
+satisfied and cared for as museum visitors. However, in addi-
+tion to these supplements, the method of provision is also 
+an important aspect to consider when moving forward in 
+attempts to enhance DHH individuals’ museum experiences.
+5.2  Text descriptions are as important as sign 
+language descriptions
+When we asked the participants to suggest a new description 
+style during post-interviews, most expressed a strong desire 
+to receive additional sign language content, as expected. 
+However, they also said that sign language alone may be 
+insufficient in conveying descriptions. Sign language varies 
+from country to country, but only approximately 4.5% of the 
+words in the Standard Korean Language Dictionary appear 
+in the Korean Sign Language Dictionary. Unregistered 
+words are often expressed in fingerspelling (words spelled 
+in a sign language representation of the alphabet) or combi-
+nations of several words. It was confirmed that the museum’s 
+sign language descriptions expressed single Korean words 
+in protracted fingerspelling or were truncated by exclud-
+ing complex information from the original description. As 
+a result, not all information from the original descriptions 
+may have been included in the sign language content. This, 
+in turn, suggests that sign language alone may be insufficient 
+in providing a fully satisfying museum experience.
+Numerous participants felt that it is more useful to pro-
+vide both sign language and text when explaining museum 
+contents rather than to provide only sign language descrip-
+tions. For example, P4 stated, “It is difficult to distinguish 
+the meaning of sign language because there are many iden-
+tical words. Sign language consists of short words, so text 
+must be provided as well to facilitate clear understanding.” 
+P13 added, “If a sign language video is provided, it is easy 
+to understand, but if I watch only sign language, I usually 
+miss the content. Sign language has no word order, so hav-
+ing the text together helps improve comprehension.”
+There was also an opinion that participants should be 
+able to select the format they find most useful. Our results 
+showed that although they share the common attribute of 
+“deafness”, participants were diverse in terms of literacy 
+skills, preferred language, curiosity, interest, and desire 
+to explore. Therefore, we need to respond to their various 
+attributes and preferences, present them with different types 
+of content, and allow them autonomy to select the descrip-
+tion method that works best for them. The concept of provid-
+ing autonomy is aligned with a prior study that suggested 
+autonomy should be ensured [2].
+
+924
+	
+Universal Access in the Information Society (2024) 23:913–926
+1 3
+“Sign language and text should be provided together, 
+but I wish I could choose. I hope that deaf people who 
+need sign language will receive sign language and 
+deaf people who prefer text will receive text so that 
+they can see the description. The best and most flexible 
+method would be to provide both options and allow 
+the viewer to select what works best for him/her. Nei-
+ther option is complete, so the text and sign language 
+should be provided at the same time.” – P14
+5.3  Shifting from passive touring to active touring
+Our results showed that the interaction of DHH individu-
+als with museum descriptions was improved compared to 
+the common description style by merely adding a simple 
+and small interaction such as click or touch. Although it 
+was a minor change to add a small interactive element to 
+the common text, it significantly increased participant sat-
+isfaction. As indicated by the answers to RQ1, since DHH 
+individuals desire active and explorative touring rather than 
+passive one-way information consumption, museums are 
+advised to provide interactive content. In addition to a sign 
+language, it is possible to attract DHH individuals’ interac-
+tion through content that can work well for both DHH and 
+hearing individuals.
+5.4  High demands for personal touring
+As mentioned, DHH individuals had no choice but to sched-
+ule a group tour with other deaf people accompanied by sign 
+language interpretation when visiting a museum. Therefore, 
+support for individual and active touring for DHH individu-
+als is necessary. Recently, museums have been offering per-
+sonalized touring using personal devices, commonly referred 
+to as “Bring Your Own Device” tours [39]. If researchers 
+want to create museum content for diverse target audiences, 
+especially DHH visitors, they may consider the various 
+description styles evaluated in our study as potential design 
+considerations.
+6  Limitations and future work
+Our study has several limitations. First, we observed that 
+sign language is effective in conveying information to 
+DHH individuals, but we focused on the potential of “text” 
+descriptions as the modality by which DHH individuals 
+obtain information. Reflecting on the interview results that 
+indicate that DHH individuals desire information conveyed 
+in both text and sign language and prefer to be able to choose 
+between text, sign language, or both modes when obtain-
+ing information, the future extension of current prototypes 
+with sign language would be optimal. In this regard, the 
+characteristics of the particular sign language used must be 
+considered, since sign languages vary by country and region.
+Second, although we aimed to recruit a balanced age 
+population, the majority of DHH participants (11 out of 
+20) were in their 40s and 50s. Because there is a difference 
+between the education level of young and middle-age DHH 
+individuals, our participants may not be generalizable to all 
+DHH individuals. Subjective evaluation scores and prefer-
+ences between description styles will slightly differ when 
+balancing the age population of the participants. Future 
+work should pay more attention to DHH individuals’ demo-
+graphics, especially balancing age populations and education 
+levels.
+Third, we intended to conduct this study in an actual 
+museum, but due to the COVID-19 restrictions we were 
+unable to use actual museum facilities. Thus, future studies 
+should conduct experiments in museums to better under-
+stand the usage aspects of each descriptive style of DHH 
+individuals in real-world situations.
+Fourth, our study focused on a small sample of only four 
+artifacts. Thus, the findings should be verified by applying 
+them to other artifacts with different levels of descriptions 
+throughout the museum. We also need to ensure that our 
+findings can be applied in other domains (e.g., art museums, 
+science museums, etc.) besides history museums. Through 
+future works we can apply our results to various domains to 
+validate their veracity.
+Finally, our study was evaluated focusing DHH visitors 
+with low literacy levels. However, considering that text 
+descriptions are common in museums and more familiar to 
+hearing visitors, our approach can also be applied to hearing 
+people. Therefore, future research must validate and further 
+develop how our approach affects the museum experience of 
+various visitor groups (e.g., hearing people and people with 
+cognitive deficits or learning difficulties).
+7  Conclusion
+Museum text descriptions have the potential to expand visi-
+tors’ experience of artifacts through detailed and rich infor-
+mation, but accessibility and experience have been consid-
+erably limited for DHH visitors with low reading ability. 
+This paper proposed three interactive description methods 
+designed under the considerations of exploration, construc-
+tion, and user-inquiry. We observed the strong potential of 
+the graph-based description style in museums for DHH visi-
+tors, which allows them to explore descriptions according to 
+their interests (progressive exploration) and presents concise 
+visuals rather than overwhelming users with all explanations 
+at once (keypoint-based construction). According to the 
+various preferences of DHH participants, the active-linked 
+and chatbot-based styles also significantly improved their 
+
+925
+Universal Access in the Information Society (2024) 23:913–926	
+1 3
+experience compared to the conventional description. The 
+chatbot-based style showed potential in terms of interesting 
+interaction, but it requires a careful design to ensure usabil-
+ity for DHH individuals. The post-interview reflects the vari-
+ous needs and preferences of DHH individuals in museums, 
+such as individual and active touring and a high preference 
+for color highlights. Although this study focused on DHH 
+individuals, our approach is not limited to DHH visitors. 
+Considering that textual description is the most basic form 
+of description in museums, our approach can be applied to 
+a general audience to provide an accessible and rich experi-
+ence in museums. We hope our approach and insights could 
+be beneficial for future works studying museum contents 
+for DHH visitors, and more generally, for various groups 
+of visitors.
+Funding  This research was supported by Culture, Sports and Tour-
+ism R &D Program through the Korea Creative Content Agency grant 
+funded by the Ministry of Culture, Sports and Tourism in 2022 (Project 
+Name: Development of Intelligent Exhibition Commentary Platforms 
+for Deaf-Korean Sign Language/Word Translation Systems, Project 
+Number: R2020060002, Contribution Rate: 50%). This research was 
+supported by the GIST-MIT Research Collaboration grant funded by 
+the GIST in 2022 (Contribution Rate: 50%)
+Availability of data and materials  The data that support the findings of 
+this study are available from the corresponding author upon reasonable 
+request. The data are not publicly available due to containing informa-
+tion that could compromise research participant privacy/consent
+Declarations 
+Conflict of interest  On behalf of all authors, the corresponding author 
+states that there is no conflict of interest.
+References
+	 1.	 Alonzo, O., Elliot, L., Dingman, B., et al.: Reading experiences 
+and interest in reading-assistance tools among deaf and hard-of-
+hearing computing professionals. In: The 22nd International ACM 
+SIGACCESS Conference on Computers and Accessibility. Asso-
+ciation for Computing Machinery, New York, NY, USA, ASSETS 
+’20, (2020).https://​doi.​org/​10.​1145/​33736​25.​34169​92
+	 2.	 Alonzo, O., Seita, M., Glasser, A., et al.: Automatic text simplifi-
+cation tools for deaf and hard of hearing adults: Benefits of lexical 
+simplification and providing users with autonomy. In: Proceedings 
+of the 2020 CHI Conference on Human Factors in Computing 
+Systems. Association for Computing Machinery, New York, NY, 
+USA, p 1–13 (2020). https://​doi.​org/​10.​1145/​33138​31.​33765​63
+	 3.	 Alonzo, O., Trussell, J., Dingman, B., et al.: Comparison of meth-
+ods for evaluating complexity of simplified texts among deaf and 
+hard-of-hearing adults at different literacy levels. In: Proceedings 
+of the 2021 CHI Conference on Human Factors in Computing 
+Systems. Association for Computing Machinery, New York, NY, 
+USA, CHI ’21,(2021). https://​doi.​org/​10.​1145/​34117​64.​34450​38
+	 4.	 Banner, A., Wang, Y.: An analysis of the reading strategies used 
+by adult and student deaf readers. J. Deaf Stud. Deaf Educ. 16(1), 
+2–23 (2011). https://​doi.​org/​10.​1093/​deafed/​enq027
+	 5.	 Barbosa, P., Amorim, P., Ferreira, S.B.L., et al.: Supporting 
+spontaneous museum visits by deaf people: An augmented real-
+ity application and a case study. Augmented Reality in Tourism, 
+Museums and Heritage pp 173–193 (2021).https://​doi.​org/​10.​
+1007/​978-3-​030-​70198-7_​10
+	 6.	 Berke, L., Kafle, S., Huenerfauth, M.: Methods for evaluation 
+of imperfect captioning tools by deaf or hard-of-hearing users at 
+different reading literacy levels. In: the 2018 CHI Conference on 
+Human Factors in Computing Systems. ACM, pp 1–12 (2018). 
+https://​doi.​org/​10.​1145/​31735​74.​31736​65
+	 7.	 Bragg, D., Koller, O., Bellard, M., et al.: Sign language recog-
+nition, generation, and translation: an interdisciplinary perspec-
+tive. In: The 21st International ACM SIGACCESS Conference on 
+Computers and Accessibility, Pittsburgh, United States, (2019). 
+https://​hal.​archi​ves-​ouver​tes.​fr/​hal-​02394​580
+	 8.	 Bragg, D., Caselli, N., Hochgesang, J.A., et al.: The fate landscape 
+of sign language Ai datasets: an interdisciplinary perspective. 
+ACM Trans. Access Comput. 14(2), 1–45 (2021). https://​doi.​org/​
+10.​1145/​34369​96
+	 9.	 Bélanger, N.N., Rayner, K.: Frequency and predictability effects 
+in eye fixations for skilled and less-skilled deaf readers. Vis. Cogn. 
+21(4), 477–497 (2013). https://​doi.​org/​10.​1080/​13506​285.​2013.​
+804016
+	10.	 Cavender, A.C., Bigham, J.P., Ladner, R.E.: Classinfocus: Ena-
+bling improved visual attention strategies for deaf and hard of 
+hearing students. In: Proceedings of the 11th International ACM 
+SIGACCESS Conference on Computers and Accessibility. Asso-
+ciation for Computing Machinery, New York, NY, USA, Assets 
+’09, pp 67–74 (2009). https://​doi.​org/​10.​1145/​16396​42.​16396​56,
+	11.	 Chung, J.W., Min, H.J., Kim, J., et al.: Enhancing readability 
+of web documents by text augmentation for deaf people. In: the 
+9th ACM International Conference on PErvasive Technologies 
+Related to Assistive Environments (PETRA ’16). ACM, pp 1–10 
+(2016) https://​doi.​org/​10.​1145/​24797​87.​24798​08
+	12.	 Constantinou, V., Loizides, F., Ioannou, A.: A personal tour of 
+cultural heritage for deaf museum visitors. In: Ioannides, M., 
+Fink, E., Moropoulou, A., et al. (eds.) Digital Heritage. Progress 
+in Cultural Heritage: Documentation, Preservation, and Pro-
+tection, pp. 214–221. Springer International Publishing, Cham 
+(2016). https://​doi.​org/​10.​1007/​978-3-​319-​48974-2_​24
+	13.	 Convertino, C., Borgna, G., Marschark, M., et al.: Word and 
+world knowledge among deaf learners with and without cochlear 
+implants. J. Deaf Stud. Deaf Educ. 19(4), 471–483 (2014). https://​
+doi.​org/​10.​1093/​deafed/​enu024
+	14.	 Davey, B., King, S.: Acquisition of word meanings from context 
+by deaf readers. Am. Ann. Deaf 135(3), 227–234 (1990). https://​
+doi.​org/​10.​1353/​aad.​2012.​0555
+	15.	 Domínguez, A.B., Alegria, J.: Reading mechanisms in orally edu-
+cated deaf adults. J. Deaf Stud. Deaf Educ. 15(2), 136–148 (2010). 
+https://​doi.​org/​10.​1093/​deafed/​enp033
+	16.	 Dostal, H., Gabriel, R., Weir, J.: Supporting the literacy develop-
+ment of students who are deaf/hard of hearing in inclusive class-
+rooms. Read. Teach. 71(3), 327–334 (2017). https://​doi.​org/​10.​
+1002/​trtr.​1619
+	17.	 Furlonger, B.E.: The challenge of learning to read written 
+english for the profoundly pre-lingually deaf adult. 3L: Lan-
+guage, Linguistics® 22(3), (2016) https://​doi.​org/​10.​17576/​
+3L-​2016-​2203-​01
+	18.	 Gazi, A.: Writing text for museums of technology the case of the 
+industrial gas museum in athens. Museum Manag. Curatorship 
+33(1), 57–78 (2018). https://​doi.​org/​10.​1080/​09647​775.​2017.​
+14163​10
+	19.	 Gennari, R., Mich, O.: Constraint-based temporal reasoning for 
+e-learning with lode. In: Bessière, C. (ed.) Principles and Prac-
+tice of Constraint Programming - CP 2007, pp. 90–104. Springer, 
+
+926
+	
+Universal Access in the Information Society (2024) 23:913–926
+1 3
+Berlin Heidelberg, Berlin, Heidelberg (2007). https://​doi.​org/​10.​
+1007/​978-3-​540-​74970-7_9
+	20.	 Goss, J., Kollmann, E.K., Reich, C., et al.: Understanding the 
+multilingualism and communication of museum visitors who are 
+d/deaf or hard of hearing. Museums Social Issues 10(1), 52–65 
+(2015). https://​doi.​org/​10.​1179/​15596​89314z.​00000​000032
+	21.	 Hammami, S., Saeed, F., Mathkour, H., et  al.: Continuous 
+improvement of deaf student learning outcomes based on an 
+adaptive learning system and an academic advisor agent. Comput. 
+Hum. Behav. 92, 536–546 (2019). https://​doi.​org/​10.​1016/j.​chb.​
+2017.​07.​006
+	22.	 History of Place: Accessible exhibitions for all: a guide to co-
+designing exhibitons with disabled people, (2018). https://​histo​
+ryof.​place/​toolk​its/
+	23.	 Hooper-Greenhill, E.: Museums and education: Purpose, peda-
+gogy, performance. Routledge, UK (2007)
+	24.	 Inui, K., Fujita, A., Takahashi, T., et al.: Text simplification for 
+reading assistance: A project note. Association for Computational 
+Linguistics, USA, PARAPHRASE ’03, pp 9–16 (2003). https://​
+doi.​org/​10.​3115/​11189​84.​11189​86
+	25.	 Kafle, S., Huenerfauth, M.: Effect of speech recognition errors on 
+text understandability for people who are deaf or hard of hearing. 
+In: 7th Workshop on Speech and Language Processing for Assis-
+tive Technologies, INTERSPEECH (2016)
+	26.	 Kafle, S., Yeung, P., Huenerfauth, M.: Evaluating the benefit of 
+highlighting key words in captions for people who are deaf or hard 
+of hearing. In: The 21st International ACM SIGACCESS Confer-
+ence on Computers and Accessibility. Association for Computing 
+Machinery, New York, NY, USA, ASSETS ’19, pp 43-55 (2019). 
+https://​doi.​org/​10.​1145/​33085​61.​33537​81
+	27.	 Kato, N., Kitamura, M., Wakatsuki, D., et al.: How to make 
+captioning services for deaf and hard of hearing visitors more 
+effective in museums? In: 2020 12th International Conference on 
+Education Technology and Computers (ICETC’20). Association 
+for Computing Machinery, pp 157–160 (2019). https://​doi.​org/​10.​
+1145/​34367​56.​34370​38
+	28.	 Kjeldsen, A.K., Jensen, M.N.: When words of wisdom are not 
+wise. a study of accessibility in museum exhibition texts. Nordisk 
+museologi 1, 91–91 (2015). https://​doi.​org/​10.​5617/​nm.​3002
+	29.	 Kushalnagar, P., Smith, S., Hopper, M., et al.: Making cancer 
+health text on the internet easier to read for deaf people who use 
+American sign language. J. Cancer Educ. 33(1), 134–140 (2018). 
+https://​doi.​org/​10.​1007/​s13187-​016-​1059-5
+	30.	 Lisney, E., Bowen, J.P., Hearn, K., et al.: Museums and technol-
+ogy: being inclusive helps accessibility for all. Curator: Museum 
+J. 56(3), 353–361 (2013). https://​doi.​org/​10.​1111/​cura.​12034
+	31.	 Luckner, J.L., Handley, C.M.: A summary of the reading compre-
+hension research undertaken with students who are deaf or hard 
+of hearing. Am. Ann. Deaf 153(1), 6–36 (2008). https://​doi.​org/​
+10.​1353/​aad.0.​0006
+	32.	 Martins, P.R.: Engaging the d/deaf audience in museums: a case 
+study at the calouste gulbenkian museum. J. Museum Educ. 41(3), 
+202–209 (2016). https://​doi.​org/​10.​1080/​10598​650.​2016.​11933​16
+	33.	 Mayer, C.: What really matters in the early literacy development 
+of deaf children. J. Deaf Stud. Deaf Educ. 12(4), 411–431 (2007). 
+https://​doi.​org/​10.​1093/​deafed/​enm020
+	34.	 Milicchio, F., Prosperi, M.: Accessible tourism for the deaf via 
+mobile apps. In: Proceedings of the 9th ACM International Con-
+ference on PErvasive Technologies Related to Assistive Environ-
+ments. Association for Computing Machinery, New York, NY, USA, 
+PETRA ’16, (2016). https://​doi.​org/​10.​1145/​29106​74.​29106​94
+	35.	 Namatame, M., Kitamula, M., Wakatsuki, D., et al.: Can exhibit-
+explanations in sign language contribute to the accessibility of 
+aquariums? In: Stephanidis, C. (ed.) HCI International 2019 - 
+Posters, pp. 289–294. Springer International Publishing, Cham 
+(2019). https://​doi.​org/​10.​1007/​978-3-​030-​23522-2_​37
+	36.	 Napoli, D.J., Sutton-Spence, R.: Limitations on simultaneity in 
+sign language. Language 86(3), 647–662 (2010). https://​doi.​org/​
+10.​1353/​lan.​2010.​0018
+	37.	 Nirala, K.K., Singh, N.K., Purani, V.S.: A survey on providing 
+customer and public administration based services using Ai: 
+chatbot. Multimed. Tools Appl. (2022). https://​doi.​org/​10.​1007/​
+s11042-​021-​11458-y
+	38.	 Pardasani, A., Sharma, A.K., Banerjee, S., et al.: Enhancing the 
+ability to communicate by synthesizing american sign language 
+using image recognition in a chatbot for differently abled. In: 2018 
+7th International Conference on Reliability, Infocom Technologies 
+and Optimization (Trends and Future Directions) (ICRITO), pp 
+529–532 (2018). https://​doi.​org/​10.​1109/​ICRITO.​2018.​87485​90
+	39.	 Petrelli, D., O’Brien, S.: Phone vs. tangible in museums: a com-
+parative study. In: Proceedings of the 2018 CHI Conference on 
+Human Factors in Computing Systems. Association for Comput-
+ing Machinery, New York, NY, USA, CHI ’18, pp 1–12 (2018). 
+https://​doi.​org/​10.​1145/​31735​74.​31736​86
+	40.	 Rajkumar, G., Gayathri: Chatbot with gesture based user input. 
+Int. Res. J. Eng. Technol. (IRJET) 7(2), (2020)
+	41.	 Ravelli, L.: Museum texts: comunication frameworks. Routledge 
+(2007). https://​doi.​org/​10.​4324/​97802​03964​187
+	42.	 Ruiz, B., Pajares, J.L., Utray, F., et al.: Design for all in multime-
+dia guides for museums. Comput. Hum. Behav. 27(4), 1408–1415 
+(2011). https://​doi.​org/​10.​1016/j.​chb.​2010.​07.​044
+	43.	 Sarrafzadeh, B., Lank, E.: Improving exploratory search expe-
+rience through hierarchical knowledge graphs. Association for 
+Computing Machinery, New York, NY, USA, SIGIR ’17, pp 
+145–154 (2017). https://​doi.​org/​10.​1145/​30771​36.​30808​29
+	44.	 Sarrafzadeh, B., Vtyurina, A., Lank, E., et al.: Knowledge graphs 
+versus hierarchies: An analysis of user behaviours and perspec-
+tives in information seeking. In: Proceedings of the 2016 ACM 
+on Conference on Human Information Interaction and Retrieval. 
+Association for Computing Machinery, New York, NY, USA, 
+CHIIR ’16, pp 91–100 (2016). https://​doi.​org/​10.​1145/​28549​46.​
+28549​58
+	45.	 Smithsonian Institution: Smithsonian guidelines for accessible 
+exhibition design. Retrieved from https://access.si.edu/museum-
+professionals (2010)
+	46.	 Strachan, H.: Developing effective museum text: a case study from 
+caithness. Scotland, UK (2017)
+	47.	 Trezek, B., Mayer, C.: Reading and deafness: state of the evidence 
+and implications for research and practice. Educ. Sci. 9(3), 216 
+(2019). https://​doi.​org/​10.​3390/​educs​ci903​0216
+	48.	 Varitimiadis, S., Kotis, K., Skamagis, A., et al.: Towards imple-
+menting an ai chatbot platform for museums. In: International 
+Conference on Cultural Informatics, Communication & Media 
+Studies (2020). https://​doi.​org/​10.​12681/​cicms.​2732
+	49.	 Wang, Y.: Inquiry-based science instruction and performance lit-
+eracy for students who are deaf or hard of hearing. Am. Ann. Deaf 
+156(3), 239–254 (2011)
+	50.	 Zazove, P., Meador, H.E., Reed, B.D., et al.: Deaf persons’ english 
+reading levels and associations with epidemiological, educational, 
+and cultural factors. J. Health Commun. 18(7), 760–772 (2013). 
+https://​doi.​org/​10.​1080/​10810​730.​2012.​743633
+Publisher's Note  Springer Nature remains neutral with regard to 
+jurisdictional claims in published maps and institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) holds 
+exclusive rights to this article under a publishing agreement with the 
+author(s) or other rightsholder(s); author self-archiving of the accepted 
+manuscript version of this article is solely governed by the terms of 
+such publishing agreement and applicable law.
+

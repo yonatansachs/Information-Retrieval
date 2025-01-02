@@ -1,0 +1,2180 @@
+Hindawi
+Journal of Sensors
+Volume 2017, Article ID 2630413, 21 pages
+https://doi.org/10.1155/2017/2630413
+Review Article
+Evolution of Indoor Positioning Technologies: A Survey
+RamonF.Brena,1JuanPabloGarcía-Vázquez,2CarlosE.Galván-Tejada,3
+DavidMuñoz-Rodriguez,1CesarVargas-Rosales,1andJamesFangmeyerJr.1
+1Tecnolo´gicodeMonterrey,Av.E.GarzaSada2501,64849Monterrey,NL,Mexico
+2FacultaddeIngenier´ıa,MyDCI,UniversidadAuto´nomadeBajaCalifornia,Av.A´.Obrego´nS/N,21100Mexicali,BC,Mexico
+3ProgramadeIngenier´ıadeSoftware,UniversidadAuto´nomadeZacatecas,Av.Begonias2,98000Zacatecas,ZAC,Mexico
+CorrespondenceshouldbeaddressedtoJuanPabloGarc´ıa-Va´zquez;pablo.garcia@uabc.edu.mx
+Received 13 October 2016; Revised 22 January 2017; Accepted 21 February 2017; Published 29 March 2017
+AcademicEditor:AlbertoJ.Palma
+Copyright©2017RamonF.Brenaetal.ThisisanopenaccessarticledistributedundertheCreativeCommonsAttributionLicense,
+whichpermitsunrestricteduse,distribution,andreproductioninanymedium,providedtheoriginalworkisproperlycited.
+Indoor positioning systems (IPS) use sensors and communication technologies to locate objects in indoor environments. IPS
+areattractingscientificandenterpriseinterestbecausethereisabigmarketopportunityforapplyingthesetechnologies.There
+aremanyprevioussurveysonindoorpositioningsystems;however,mostofthemlackasolidclassificationschemethatwould
+structurallymapawidefieldsuchasIPS,oromitseveralkeytechnologiesorhavealimitedperspective;finally,surveysrapidly
+becomeobsoleteinanareaasdynamicasIPS.Thegoalofthispaperistoprovideatechnologicalperspectiveofindoorpositioning
+systems,comprisingawiderangeoftechnologiesandapproaches.Further,weclassifytheexistingapproachesinastructureinorder
+toguidethereviewanddiscussionofthedifferentapproaches.Finally,wepresentacomparisonofindoorpositioningapproaches
+andpresenttheevolutionandtrendsthatweforesee.
+1.Introduction withrespecttoatasksuchaslocatingspecificmerchandise
+on a shelf. Thus, the need for specialized methods and
+Positionlocationofauseroradeviceinagivenspaceisone technologiesforindoorlocationsystems(alsocalledindoor
+of the most important elements of contextual information. positioningsystems,IPS)hasbeenwidelyaccepted[4–11].
+The widespread use of sensors has produced an increasing Many surveys have been written based on various IPS
+wealthofsuchinformation.Byitself,locationhasgenerated related topics [12–16]. However, most of them omit several
+greatattentionbecauseofitspotentialtoleveragecommercial relevant technologies, have a limited perspective, or lack a
+applications such as advertisement and social networks [1]. classification structure. For instance, the use of visible light
+Theusercontext,constitutedbyallrelevantitemssurround- [17–19]orEarth’smagneticfield[20,21]hasbeenoverlooked
+ing her/him, has been given paramount importance in the insomereviews(seeTable1).Also,thelackofaclassification
+designofnext-generationinformationsystemsandservices. schemethatwouldguidethereadersinacleanwayisaserious
+Theadaptationtoachangingcontextispreciselywhatmakes flaw of some otherwise good surveys [15]. Furthermore,
+thosenext-generationsystemsflexibleandrobust[1]. an updated survey in indoor positioning systems is always
+Location detection has been very successfully imple- welcome as this is a rapidly evolving area and a decade-old
+mentedatoutdoorenvironmentsusingGPStechnology[2]. reviewcanbeconsideredoutdated.
+TheGPShasmadeatremendousimpactonoureverydaylives Inthissurvey,wereviewthefieldofindoorpositioning
+bysupportingawealthofapplicationsinguidance,mapping, systems(IPS)becauseitpresentsspecificfeatures,challenges,
+and so forth [3]. Nevertheless, in indoor environments, the andopportunities.Indoorsettingsaremostlyfullofobstacles
+usabilityoftheGPSorequivalentsatellite-basedlocationsys- that obstruct the signals between emitters and receivers,
+temsislimited,duetothelackoflineofsightandattenuation and a wide variety of materials, shapes, and sizes affect
+ofGPSsignalsastheycrossthroughwalls.Indeed,precision signalpropagationmorethaninoutdoorscenarios.IPSface
+of some 50 meters inside a commercial setting is useless an interesting technical challenge due to the great variety2 JournalofSensors
+Table1:Previoussurveyscomparison,includingours.“Passive”meansthattheinfrastructuregeneratesthesignalandthattheobjector
+persontobelocatedreceivesit.
+Technologyorfeature Liu Gu Mautz Deak Koyuncu Ours
+Infraredmobilereader No Yes No No No Yes
+Infraredbadge Mention Yes Yes Yes Yes Yes
+Laser(passive) No No Yes No No No
+Ultrasoundpassive No Yes Yes No Yes Yes
+Ultrasoundactive Mention Yes Yes Yes Yes Yes
+Audiblesoundactive No Yes Yes No No Yes
+Audiblesoundpassive No No No No No Yes
+Audiblesoundambient No No No No No Yes
+Magneticgenerated No Yes Yes No No Yes
+Magneticambient No No Yes No No Yes
+RFIDmobiletag Yes Yes Yes Yes Yes Yes
+RFIDmobilereader No No Yes No No No
+Wi-Fi Yes Yes Yes Yes Yes Yes
+Bluetooth Yes Yes Yes Yes No Yes
+ZigBee No No Yes No No Yes
+UWB Yes Yes Yes Yes Yes Yes
+Tomographic(waterresonance) No No No Yes No No
+Camerasinfrastructure Mention Yes Yes Yes Yes Yes
+Cameras(portable) No No Yes No No Yes
+Floortiles No No Yes Yes No No
+Airpressure No No Yes Yes No No
+Inertial No No Yes Mention Yes Yes
+Ambientlight No No No No No Yes
+Artificiallight(noencoding) No No No No No Yes
+Artificiallight(encoded) No No Yes No No Yes
+IndoorAGPS,pseudolites Yes No Yes No Yes Yes
+Cellular Yes No Yes Mention Yes Yes
+TV,FM No No Yes Yes No Yes
+Classification-guided Partial Partial No Yes Partial Yes
+of possible sensor technologies that can be applied, each thatindoorpositioningsystemswillhaveintheyearstocome,
+one with different strengths and weaknesses. The focus of andsomeconclusions.
+thisparticularsurveyispreciselyonreviewingthedifferent
+technologies that have been used for IPS. We present a 2.RelatedWork
+comprehensivereviewoftheliteratureonindoorpositioning
+systems, with the goal of providing a technological per- Though, as mentioned before, many IPS surveys have been
+spective of IPS evolution, making the distinction between published[12–16,31–34],wecanseethatsomesurveyssuch
+different technological approaches by using a classification as Hightower and Borriello’s [32] are just outdated for a
+scheme,andpresentingtheevolutionandtrendsofthefield. rapidlychangingareasuchasIPS.Also,someotherwisegood
+We stress that although outdoor positioning techniques reviews lack a classification scheme that would allow the
+couldbeusedinindoorenvironments,theseareleftoutofour reader to organize the different works in some conceptual
+scopebecausethissurveyisspecializedspecificallyinindoor structure more useful than a flat and an unorganized list.
+technologies. The most representative example of this flaw is the oth-
+Thispaper’sstructureisasfollows:afterthisintroduction, erwise very good review by Mautz [15], where a flat list
+wecomparethissurveywithotherones,tojustifyitspubli- of 16 technologies is presented in a sequential order, with
+cation;then,inSection3,wepresentthemethodsandissues no classification whatsoever. In our paper, we introduce
+related to the field itself. Then, in Section 4, we proceed to thorough classification criteria that will partition the set of
+presentthereviewofindoorpositioningtechnologies,which differentworks,makingitmoremanageableandprovidinga
+isthemainsubjectofthisreport.Afterthat,Section5presents conceptualstructureformappingtheIPSfield.Furthermore,
+acomparisonoflocationtechnologies.Finally,inSection6, some classification schemes proposed in previous reviews
+we present a discussion, forecasting the possible evolution are not sound; for instance, Gu et al. [14] classified IPS
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseJournalofSensors 3
+systems as network-based, systems that take advantage of specificmeaninginthecontextofRFID.Anotherdistinction
+existingnetworkinfrastructure,andnon-network-based,sys- is between signals with embedded encoded information
+tems using infrastructure solely dedicated to positioning, but andsignalswithoutembeddedencodedinformation,where
+thisleavesnospaceforpurelypassivesystems,likemagnetic the former include some method of attaching symbolic
+fieldfingerprintingorambientlightanalysis,aswellasother information to the carrying signal in such a way that the
+technologieslikeimageanalysis. receiverdecodesthesignalandrecoversthatinformation.
+One can also see that most reviews that strive to be
+comprehensive omit entire technologies, not to mention 3.LocationMethodsandIPS
+individualworks.Forinstance,Guetal.[14]omittedinertial
+navigation, ambient magnetic fingerprinting, the use of In general terms, a location estimation consists of an algo-
+encoded patterns in artificial light (fluorescent or LED), rithmwiththreestages.Thefirststageistheevidence,where
+ambientlightanalysis,theuseofaudiblesoundtransmitted devices involved measure characteristics of a signal. The
+by the infrastructure (some with encoded patterns), RFID second stage is the range estimation, where devices use the
+where the tags are fixed and the reader is mobile, ZigBee, measurements or evidence obtained to estimate distance
+vision analysis with portable cameras, floor tiles, and the to/from the object that needs to be located. The third stage
+indoor use of outdoor technologies (GPS, cellular, TV, and is the combination of such range estimates in order to
+FMsignals). estimate position. This combination could be carried out
+InTable1,wepresentthetechnologiesreviewedinseveral using optimization methods (see [35]) or matrix equation
+prominenttechnology-orientedsurveys,comparedwiththis methods (see [36, 37]), among other techniques. In this
+survey. In the table, we write “mention” to indicate that section, we present the most common techniques used to
+the survey does not include a complete discussion of the locateauser/objectinindoorenvironments.
+correspondingtechnology.Asthereadercanseeinthistable, Wewillusethetermpositiontoemphasizethenotionofa
+evencurrent,supposedlycomprehensivesurveyslikeDeak’s pointinacoordinatesystem,whereasplacewillemphasizea
+omitfifteendifferenttechnologies. regioninagivencontext,forexample,“livingroom”;location
+Westressthefactthatverybroadtechnologynamesare could refer to both. Indoor positioning systems (IPS, also
+not fit as organizing principals in an IPS survey because “indoor location systems”) thus provide information about
+the applications of a broad technology can be very creative the place where a user or object is situated in an indoor
+anddifferent.Forinstance,“magnetic”technologiesinclude environment.
+boththosewhichpickuptheirregularitiesofEarth’snatural An IPS estimates the target object location from the
+magneticfieldandthosewhichgenerateapulsatingmagnetic observation data collected by a set of sensing devices or
+fieldthatwillberegisteredbyasensor;thesearecompletely sensors [33]. An indoor location system can report the
+different technologies. Thus, saying that a given survey estimation as a symbolic reference, for instance, “kitchen,”
+covers“magneticfields”isnotpreciseenough.Somereviews or as a coordinate-based reference [12]. Positions could be
+intentionallyleaveoutsomeareas.Liuetal.’sreview[12]only giveninanumberofdifferentcoordinatesystems,depending
+considers wireless-based positioning systems, thus leaving on the purpose of the application. For instance, in outdoor
+out infrared, vision-related systems, sound or ultrasound, navigationsystems,thelatitudeandlongitudeareassociated
+inertial systems, ambient light, floor tiles, and magnetism withasphericalcoordinatesystem,but,forindoorlocation,
+analysis(infraredandultrasoundarebrieflymentionedina generallyaflatCartesiancoordinatesystemisbettersuited.
+sectionabout“PositioningUsingMultipleMedia”). In any case, a coordinate system transformation is always
+Finally, some surveys have not focused on the use of possible,sothisisnotoneofthemostcrucialissues.
+technologies as this one does. For example, Sun et al. [31] Inthispaper,wemakethedistinctionbetweentechniques
+analyzedlocationalgorithms,nottechnologies.Inthecaseof andtechnologies,wheretheterm“technique”referstosome
+theverycomprehensiveMautzsurvey,westressthefactthat basic abstract tool, not necessarily tied to physical media,
+ithasaslightlydifferentcharacterinherentinthefactthatitis which in principle could be used in several “technologies”;
+primarilyathesisandnotajournalpublication.Pleaserefer technologies are specific ways of using physical signals,
+toTable1foradetailedcomparison. registered through sensors, like radio waves or magnetic
+In Table 1, “passive” means that the infrastructure gen- fields,inordertoaccomplishthegoalsofanIPS.
+eratesthesignalandthattheobjectorpersontobelocated Multilateration basically uses geometry to combine the
+receives it. For instance, “ultrasound passive” means that rangeestimatesfromdifferentreferencedevices[32,35,36].
+the device the user is carrying receives sound generated The range estimates could come from different measure-
+fromtheinfrastructureandcalculatesthepositionfromthat ments such as RSS (Received Signal Strength), ToA (Time
+information.Sometimeswewrite“portable”or“mobile”for of Arrival), TDoA (Time Difference of Arrival), and AoA
+“passive,” as in “cameras (portable),” to emphasize the fact (AngleofArrival).Ifthreereferencedevicesareusedinthe
+thattheuseriscarryingthecamera.Indeed,thedistinction combination,thenitiscalledtrilateration.
+betweenactiveandpassiveispervasivetomanytechnologies TimeofArrival(ToA)issometimescalledTimeofFlight
+and is one of the classification criteria we used; in the case (ToF); it is the time taken by the signal to go from the
+of RFID, we cannot use the terms “passive” and “active” transmitter to the receiver. If the receiver is able to obtain
+to indicate which end of the communication is the reader as evidence ToA, say 𝑡 0, then it will estimate range𝑑 by
+because the terms “active” and “passive” have another very using the speed of light 𝑐 = 3 × 108 m/s with 𝑑 = 𝑐𝑡 0.
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License4 JournalofSensors
+Y
+Transmitter 3
+A C
+P
+A
+B
+R1
+R2
+X
+Transmitter 1 Transmitter 2
+R3
+B
+(a) (b)
+Figure1:Timemeasures(a)ToAand(b)DToA.
+Then,severalreferencedevicescombinetheirrangeestimates
+[36]. From the multilateration point of view, ToA describes
+circles around the reference devices (see Figure 1(a); this
+P
+figure, as well as the following three, is similar to the ones
+in Liu et al.’s survey [12]), and although two circles are
+sufficienttosolveforthecoordinates,athirdoneisneeded
+to get rid of the ambiguity. Normally, for the configuration
+𝜃
+inFigure1(a),A,B,andCwillbethetransmittersandPwill 2
+bethereceiver,asisthecaseinGPSapplications;thissetting
+allows keeping the location of P private. As there could be
+errors in the ToA measures, either small ones due to noise 𝜃 1
+andmeasurementprecisionorlargeonesduetoreflections,
+multipath,orscatteringofthesignal,wewillnotbeableto B
+determineasinglepointasthesolution,butaregion,ofwhich
+we normally select the point considered as the best guess.
+In the context of IPS, some of the problems with ToA will
+be aggravated: first, while in GPS the satellite positions are
+knowninadvancebytheirorbitalparameters,inIPS,thisis A
+notthecase,becausethereisnotageneralagreedreference. Figure2:AoAmeasure.
+Second, for very short distances as are indoor ones, for RF
+signals,thetimedifferenceswillbeextremelysmall,sogreat
+precisionisneeded. The reference device defines a line that departs from its
+Time Difference of Arrival (TDoA) is related to ToA in positionwithsuchanglemeasured,wherethetargetobjectis
+thesensethatitusesthetraveltimefromthetransmitterto assumedtobe.Thecombinationofseverallinesfromseveral
+thereceiverinordertoestimatedistances,butsometimesthe referencedevicesplacesthetargetobjectattheintersectionof
+emittingtimeisunknown;thus,thedifferenceintraveltimes severallines.Atleasttworeferencepointsandtwoanglesare
+from each receiver is used to estimate the distance to each used(𝜃 1,𝜃 2)(seeFigure2).Theadvantageofthismeasureis
+ofthem.Thecalculationofthetimedifferenceeliminatesthe thatnotimesynchronizationisrequiredbetweenreferences.
+need for the time of transmission to be known [35]. As in The disadvantage is that it requires complex hardware to
+ToAoranyothertime-basedmethod,synchronicitybetween determineAoA[39].
+devices must be achieved to have accurate measurements. Received Signal Strength (RSS) is the field intensity of
+However,sinceTDoAdoesnotusethedistancebetweenthe a signal at the receiving point. RSS is measured at the
+transmitterandthereceiver,thetransmitterisnotrequired receiver(seeFigure3),andthendistancecouldbeestimated
+tobeinsyncwiththereceiver.Synchronicityisonlyrequired by using a signal propagation model [40, 41] or other
+betweenallreceivers,sincethecalculationisbasedontheir methods. In particular, the Friis propagation equation is
+time/distancedifference[38]. often used [42]; at other times, more complex models are
+Angle of Arrival (AoA) provides a measurement of the considered. The RSS technique requires the use of multila-
+angle at which a signal is received in a reference device. teration.
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseJournalofSensors 5
+Regardless of the specific details, many location tech-
+A
+nologies face the following challenges; the severity of each
+LS challengevariesfromonetechnologytoanother.
+1 P
+LS 2 Signal Propagation. Most methods and algorithms used to
+locateobjectsarebasedonsignalpropagation,asisthecase
+C for electromagnetic signals and sound. As they propagate,
+LS
+3 their power is gradually reduced (“attenuated”), following
+well-knownphysicallaws[40,41,48];thesignalattenuation
+is normally measured in decibels (dB) logarithmic scale.
+B As the signal gets weaker as the distance from the source
+Figure3:RSSmeasure. increases, the signal-to-noise ratio gets worse. During its
+travel,thesignalcouldalsoencounterobstaclesanddensity
+changes, and so it is affected by propagation impairments
+Proximity techniques consist of determining when an such as reflections, scattering, and interference, becoming
+objectis“close”toaknownlocation,asregisteredbyasensor moredifficulttomeasurewithsensinginstruments.
+specificallyaimedatdetectingproximity.Therearetwomain
+approachestosensingproximity:(i)detectinganobjectwith MultipathEnvironment.Signalscanbecomemixedwithsome
+a physical contact through touch sensors, capacity sensors, oftheirreflections,causingthemtobescrambledanddifficult
+andsoforthor(ii)detectinganobjectinarangeareaofone to recognize. Another associated problem is that when a
+ormoreremoteidentificationsystemssuchasBluetoothand sensorreceivesasignal,itmightnotcomefromaline-of-sight
+RFIDcards[43]. path;hence,thetotaldistancetraveledbythesignalisgreater
+thanthedirectpath.Thiscancauseanerrorinthedistance
+Fingerprintingisamethodusedtocalculateapproximate
+estimationandhenceanerrorinthelocationestimation.
+locations. The term has been used especially as a way to
+obtain locations from the detection of Wi-Fi signals and
+Line of Sight. Some of the location technologies require a
+the like, as these are registered at a mobile device, but it
+nonobstructed path between a transmitter and a receiver, is a general technique that has been used for Bluetooth
+which is called line of sight (LOS). If LOS is required, the
+and magnetism as well. It is composed of two phases:
+transmitterandthereceivermusthaveacleartrajectorythat
+trainingandpositiondetermination.Inthetrainingphase,a
+avoidsobstructions[49].
+radiomapofobservedsignalstrengthvaluesfromdifferent
+locations is recorded. Then, in the position determination Synchronization.ForsomeofthetechniquesusedinIPS,itis
+phase, the signal strength values observed at a user device
+requiredtohaveseveralclocksinveryprecisesynchroniza-
+are compared to the radio map values using proximity
+tion: for ToA, the signal travel time is taken from the time
+matching algorithms, such as 𝑘-nearest neighbor (𝑘-NN),
+difference between the transmitter and the receiver clocks,
+in order to infer current user location [44], together with
+whereasinTDoAweneedtomeasurewithmuchprecision
+interpolation.
+thedifferencebetweentheclocksoftworeceivers[38].
+Veryoften,itisnecessarytocompensateforsignalpropa-
+gationimpairmentsandthepresenceofnoiseinthemeasure-
+4.IndoorPositioningTechnologies
+ments.Thiscanbedoneusingformsofaggregatingpartially
+redundant signals over a lapse of time. Some of the most
+Before introducing the technologies, we introduce a classi-
+usefulsmoothingmethodsarecarriedoutbydigitaladaptive
+fication to provide useful structure to an otherwise tangled filteralgorithms[45]suchasKalman[46]andparticle[47]
+massofreferences.WeclassifyIPStechnologiesusingseveral
+filters.
+criteria,oneofwhichisthekindofsignalusedforlocation.
+TheKalmanfilter[46]isusefulforsmoothingnoisydata
+Wecanhavethefollowingkindsofsignals:
+bytakingasequenceofnoisyvaluesandestimatingthevalue
+oftheunderlyingvariablesmorereliably. (i)Radio Frequency Signals (RF). A very generic term
+In the context of location systems, particle filtering relatedtothefrequencyofradiosignals,usedinmany
+involvescreatinga“cloud”ofestimatedpositionpointscalled popularcommunicationprotocolssuchasWi-Fiand
+particles, using some probability distribution around the Bluetooth [38]. RF signals for indoor environments
+believedactualposition.Whenamovementtakesplace,dis- consideredareintheMF(mediumfrequency,around
+placementisappliedtoallparticlesateach“prediction”step. 1MHz)range,particularlybetween2and5GHz.
+Therelationbetweenthetransformationandthenewparticle
+(ii)Light.Bothvisibleandinfraredlight.Althoughthisis
+positionsrequirestheapplicationofamodel,whichisappli-
+an electromagnetic signal just as the RF signals, the
+cation dependent. Then, a resampling step evaluates the fit-
+associatedtechnologiesarequitedissimilar.
+nessofeachparticlewithrespecttothenewobservations,so
+(iii)Sound.Bothaudibleandultrasonic.
+thatunfitparticlesaredestroyedandnewparticlesarecreated
+nearthebestfitparticles;eventually,theweightsofparticles (iv)Magnetic Fields. Both natural Earth’s magnetic field,
+areupdatedaswell.Thisprocessisrepeatedinaniterativeway alongwithitsirregularities,andartificiallyproduced
+[47]. magneticfields.
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License6 JournalofSensors
+The second criterion is whether the associated signal is
+received and analyzed, so that the location is calculated, in
+theinfrastructureorinaportabledevicecarriedbytheuser
+orsomeobjectwithmobility.Inthefirstcase(infrastructure),
+wearegoingtosaythattheapproachis“active,”likeinTable1,
+because the portable device generates the signal instead of
+receiving it. In the second case, we say that the approachis
+“passive”becausethemobiledevicereceivesthesignalinstead
+of generating it. Passive approaches have the advantage of
+privacybecausethelocationcalculationisdoneatthemobile
+device.
+Finally,athirdcriterioniswhetherornotthesignalused
+for location contains an intentionally embedded pattern of
+symbolicinformation,whichisgeneratedinthesignalsource Figure4:ActiveBadgeprototype(http://www.cl.cam.ac.uk/research/
+andthenreconstructedatthereceivingend.Intheaffirmative dtg/attarchive/ab.html).
+case, we say that the approach uses embedded information;
+in the negative case, we say the opposite. Examples of
+signalscontainingembeddedinformationareWi-Fisignals and a receiving photodiode to detect and capture the light
+as well as visible light and sound methods that encode a pulses,whicharethenprocessedtoretrievetheinformation
+predefined signal in light or sound that is not perceived by [52]. Infrared location can be used in active or passive
+humans(seeSections4.1.2and4.2).Examplesofsignalsnot configurations.
+containingembeddedinformationarethemagneticfieldof IRsystemreliabilityisaffectedbymanycharacteristicsof
+Earth as well as ambient noise. As an illustration of our the emitted optical signal, such as its directivity (to which
+classification scheme, consider one audible sound location degree it is unidirectional), as well as its way of reacting to
+approach[50]inwhichmusicplayinginapublicplace(like obstacles,suchasthereflectivityandscattering(irregularities
+amall)ismodulatedinadifferentwaybyeachspeakerusing indirectionandwhenhittingobstacles).ManydomesticIR
+predefined patterns that are not perceived by humans, so devices, such as remote controls, are intended to have low
+that the mobile receiver identifies the relative intensity of directivitybecausetheuserisnotsupposedtopointexactly
+musicfromeachspeakerandusingtriangulationcalculates tothereceivingsensor.MostIRsystemsrequireline-of-sight
+the user location. According to our classification scheme, clearancefromtheemittertothesensor,thoughsometimes
+this approach is (i) sound-based, (ii) passive, and (iii) with reflected signals have enough power to activate the sensor.
+embeddedinformation. Ofcourse,inthecontextofIRIPSsystems,therequirement
+Thethreeclassificationcriteria(typeofsignal,active/pas- of LOS clearance is a great disadvantage, as it suffers from
+sive, and with/without embedded information) are orthog- no-detectionareasthatareoccludedfromthetransmitteror
+onal,so youcan visualize theclassification space as a cube. sensor.
+We cannot stress enough the importanceof structuringthe A pioneering “active” system was the Active Badge,
+hugesetoflocationapproaches,whichotherwisewouldlook developedbyWantetel.[5].Thesystemisintendedtolocate
+chaoticanddifficulttograsp. employees,whocarryanIR“tag,”inanofficeenvironment
+In the following sections, we present a description of (seeFigure4).Thebadgeemitsauniqueinfraredcodeevery
+these technologies, as well as some representative examples 10 seconds. The codes are picked up by the infrared sensor
+of indoor positioning systems based on these technologies, networksthatareplacedaroundtheofficeenvironment.The
+starting with a pioneering system, then a state-of-the art informationreceivedbythesensornetworkisthenprocessed
+proposal, and sometimes a commercial system. Later, in by a computer that is also connected to the network. The
+Section 5, we will present the strengths and weaknesses of system makes the location of a user available to portable
+eachtechnology. devicesthatmaydisplayit.Thesystempresentstwolimita-
+tions: it requires LOS between the receivers and the badge
+and the system performance is affected by sunlight. It has
+4.1. Optical Technologies. Though optical signals are in fact
+been reported that this system compromised user privacy.
+just a form of electromagnetic radiation, we separate them
+Duringtheimplementation,someemployeesdeclaredtobe
+from radio waves, because the specific technologies are
+“horrified”tolearnthattheirlocationwasknownatalltimes
+different, as well as their advantages and challenges; for
+bytheorganization[5].
+instance, optical signals used in location technologies are
+AmoremodernsystemisreportedbyGorostizaetal.[51]
+restrictedbyline-of-sightconstraints.
+forestimatingthelocationofamobilerobot,usinganactive
+configuration.Inordertoestimatethepositionofthemobile
+4.1.1.InfraredTechnology. Infraredtechnology(IR)forIPS[5, target, distances are measured from it using phase shifts
+51] uses electromagnetic radiation with wavelengths longer to predetermined reference points and introduced into a
+than the visible light spectrum [52]. An infrared simple hyperbolictrilaterationnonlinearequationsystem,toobtain
+system is composed of an infrared light emitter diode, the mobile target location. They claim a precision below
+which emits an infrared signal as bursts of nonvisible light, 10cm.
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseJournalofSensors 7
+Special bulbs that provide the user with coded information through light
+Bulb_1 Bulb_2 Bulb_3
+11001001 11110000 00110011
+Coded information
+transmitted through light
+Mobile phone that
+captures the light
+information through
+phone camera
+Figure5:VLCapproach.
+4.1.2. Visible Light Communication. Visible Light Communi- by adding more ByteLight bulbs. The disadvantage of the
+cation(VLC)isatechnologythatusesvisiblelighttotransmit system is that it requires specialized devices (ByteLight
+data.Anytypeoflampcanbeused,butLEDlightshavebeen bulbs).
+found to be the most appropriate [18]. The transmission of
+datausingvisiblelightispossibleduetotheabilityofthelight 4.2. Sound-Based Technologies. Sound signals, consisting of
+sourcetobeswitchedonandoffagaininveryshortintervals. pressure waves propagating in the air, benefit from the fact
+Thisflickercanbesofastthatitcannotbeperceivedbyhuman thatsoundtravelsatamuchslowerspeedthanelectromag-
+eyesandcanuseavarietyofmodulationmethods.VLCfor netic signals, thus allowing the measuring of time between
+IPShasbeenconsideredduetothefactthatitallowsthereuse the emission and the arrival of a signal much more easily.
+ofalreadyavailableartificiallightinfrastructure,sothecostof The emission time is often measured by simultaneously
+implementationcouldbelow[53]. transmitting a radio signal and a sound signal, because the
+The principle for VLC is that each of the fixed lamps radiosignalarrivesatthesensoralmostinstantaneouslyand
+hasdifferentflickerencoding,sothesensor,whichcouldbe thesoundsignalarrivesatthesensorlater,sothedifference
+carriedbytheuser,receivesthelightandcomparesthemod- between these two times can be used to calculate distance;
+ulationagainsttheknownencodingschemesandeventually thismethodhaslongbeenexploitedbyfarmers,whoestimate
+determineswhichisthedominantone,thusassociatingthe thedistancetolightningbycountingthetimebetweenseeing
+sensorlocationwiththevicinityofthecorrespondinglamp theflashandhearingthethunder.Ofcourse,thereisalsothe
+(seeFigure5). optionofusingtheToAorTDoA,alsowiththeadvantages
+One advantage of such an arrangement is that it is not ofaslowsignal.
+intrusive at all, because the human users see just ordinary
+lampsfixedatstandardplacessuchastheceiling.Thereceiver 4.2.1. Ultrasound. Ultrasonic location-based systems use
+could be a photodiode or an optoelectronic device capable sound frequencies higher than the audible range (beyond
+of capturing light intensity (e.g., photocell), or an image 20KHz) to determine the user position using the time
+sensor(e.g.,camera)forregisteringthelightpulsesfromthe taken for an ultrasonic signal to travel from a transmitter
+transmitter. The advantage of an image sensor is that it can to a receiver. One evident advantage of ultrasound signals
+register simultaneously several lamps with their positions, against audible signals is that the former are not detectable
+thusachievingamorepreciselocationestimate. byhumans,whilethelatterwouldbeannoying.Ultrasound
+All VLC projects, as [18, 19] and Zhang et al. [8], use systems,likemanyotherIPS,canbe“active”or“passive.”
+passiveconfigurationsbecauseobviouslylampsareheavyand A pioneering ultrasound work is the Bat system [54],
+needconnectiontotheelectricitynetwork.Thelatterreports dating from the mid-nineties, in which an array of fixed
+anaccuracybelow20cm. microphones is used, and a tag is carried by the user
+There are as well some commercial systems, like the (see Figure 6(a)), giving thus an active configuration. User
+Philipsproposal[17](http://www.lighting.philips.com/main/ location is calculated using the principle of trilateration; at
+systems/themes/led-based-indoor-positioning.html) (http:// least 3microphonesreceivingasoundpulseareneededfor
+www.gelighting.com/LightingWeb/na/solutions/control-sys- finding the user position. Using the information about the
+tems/indoor-positioning-system.jsp), as well as ByteLight relative strength of the signal received in the microphone
+[17].TheByteLightCompanyclaimsthatthesystemprovides array,itisalsopossibletofindoutwhichdirectiontheuser
+submeteraccuracyandthatitiseasytoextendthecoverage is facing, assuming that the sound transmitter is carried in
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License8 JournalofSensors
+(a) (b)
+Figure6:Examplesofultrasonicdevices:(a)ActiveBatprototypeand(b)Cricketbeacon(http://www.cl.cam.ac.uk/research/dtg/attarchive/bat/).
+front of the user. Other advantages of the Bat system are For instance, Nakashima et al. [50] presented a method
+thatitisabletolocatesimultaneouslymorethan70separate for estimating user location using digital watermarking of
+transmitters and that its precision is in the order of a few audio signals, in which a pseudorandom sequence is used
+centimeters,theauthorsclaimingalmost3cm. to modulate in amplitude several frequency bands of the
+One disadvantage is that, as in most active systems, hostsignal(whichisjustmusic).Thisisdoneusingdifferent
+the location information is disclosed to the infrastructure pseudorandom sequences for each speaker deployed in the
+administrators,creatingaprivacyrisk. public space. The user, who carries a microphone, receives
+Another seminal work is the Cricket system [55], which the sound mixed in real time from several speakers, which
+uses a passive configuration. It places transmitters called appear to play the same music but actually have different
+“beacons” (see Figure 6(b)), which are part of the infras- watermarking. The rest of the process analyzes the sound
+tructure attached to fixed points like ceilings or walls, and in order to separate the watermarks coming from each
+receivers called “listeners,” which are carried by users. The speaker.Bymeansofcorrelationandtimeshifting,thesystem
+Cricketisactuallyahybridsystem,asitcombinesultrasound recognizes the amount of delay of each speaker, and using
+wavesaswellasradiofrequencysignals.Thealgorithmofthe trilateration the system calculates the position of the user.
+Cricket system tries to find the closest beacon, taking into Thesignalstrengthisusedasaredundantindicatorofeach
+accountthepossiblebouncingofultrasoundsignalsagainst speaker’s distance to the microphone, improving precision
+the walls and other surfaces. In order to avoid systematic andallowingamovingusertobelocated.Theauthorsclaim
+or persistent collision between the signals of two beacons, anaccuracyof1.3meters.
+randomizationisusedforseparatingtwosubsequentsignal
+emissions.OthermorerecentworkslikeLOSNUS[24]also 4.3. Radio Frequency Technologies. While most radio-based
+prefer the arrangement of fixed emitters and mobile sound technologies used in indoor positioning systems employ
+detectingdevices. radio signals restricted to a small range of frequencies
+Regarding the scalability of ultrasonic systems, in the (narrow-band signals), there are also applications that use
+active configurations, the number of simultaneous tags in largepartsofthespectrum(spreadspectrumsignals).Inthis
+an environment affects system performance and eventually section, we present first the narrow-band technologies and
+rendersthesystemunusablebecausewithtoomanytagsthe thenthespreadspectrumones.
+soundemissionswillcollidewitheachother.Incontrast,the
+numberofreceivingdevicesdoesnotaffecttheperformance
+4.3.1. Wi-Fi. Wireless Local Area Network (WLAN), also
+of a passive system, and collisions from beacons can be
+referredtoas“Wi-Fi,”transmitsandreceivesdatausingelec-
+avoided as synchronization mechanisms are not difficult to
+tromagneticwaves,providingwirelessconnectivitywithina
+putinplace. coverage area [48]. These waves substitute for twisted pair,
+Fromthepointofviewofaccuracy,weseebetterresults coaxial,oropticalfiberusedtotransmitdatainconventional
+inthepassiveconfigurations.SchweinzerandSyafrudin[24]
+LAN.
+reportedaprecisionofnearly1centimeter.
+While for outdoor location it is sufficient to get the
+identification of a detectable base station (i.e., the symbolic
+4.2.2. Audible Sound. It is also possible to use audible
+name or SSID of an access point), in indoor location it is
+soundsignalstoencodeinformationforlocationsystems.Of
+necessarytogobeyondthemereaccesspointidentification
+course, the naive idea of just delivering an artificial audible
+in order to achieve better precision. Three approaches are
+soundhastoomanydrawbacks,mainlythatitwouldannoy
+commonlyusedtolocateauserusingWLANtechnology:
+humans nearby. But there are more sophisticated schemes,
+likewatermarkinganalreadyavailablesoundsuchasmusic (i)The propagation model of a known antenna can be
+inmallsandotherpublicplacesinamannernondetectable used,calculatingthedistancetoaknownbase[40,41,
+tothehumanear. 48].
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseJournalofSensors 9
+Figure7:EkahauTags(https://www.ekahau.com/wifidesign/about).
+(ii)The relative strength of several known Wi-Fi bases 4.3.2.Bluetooth. Bluetoothisawirelesscommunicationtech-
+is used to solve the position by a multilateration nology that uses digitally embedded information on radio
+method. frequency signals. Originally intended for data exchange
+in short distances, it was defined by the standard IEEE
+(iii)Fingerprinting:apatternofknownWi-Fibaseswith
+802.15.1.Themainobjectivesofthetechnologyaretofacilitate
+their relative strengths is matched to a database of
+communication between mobile and fixed devices or two
+known patterns associated with locations [44]. Of
+mobile ones, in order to eliminate cables and connectors
+course, this requires an extensive previous mapping
+betweendevices(e.g.,intheuseofwirelessheadphones),and
+activityandstoringWi-Fipatternsforeachmapped
+to facilitate data synchronization between personal devices
+pointinordertobuildthedatabase.
+[58].
+AnearlysystemthatusesWLANtechnologyisRADAR, Bluetooth technology has been considered for indoor
+developed by Microsoft Research [56] (website: http:// position systems as a competitor to Wi-Fi, in particular
+research.microsoft.com/en-us/projects/radar/). It uses both since the widespread adoption of Bluetooth Low Energy
+fingerprintingandpropagationmodelstocalculatelocation. (BLE),duetoitsavailability(itissupportedbymostmodern
+Theirpropagationmodelconsidersanattenuationfactorfor smartphones), low cost, and very low power consumption,
+thewalls(WAF)andthefloor(FAF).WAFtakesintoaccount which allows fixed emitters to run on batteries for several
+the number of walls (obstructions). The authors argue that monthsorevenyears[59].
+the second approach addresses the limitations of the first We notice that, in some of its profiles, Bluetooth is
+approach. The RADAR system claims an accuracy of 2 to 3 symmetric, so in those cases we could not differentiate
+metersinaspacethesizeofatypicaloffice. activeorpassiveconfigurations.Butmostmodernproposals
+Astate-of-the-artsystemisFreeloc[11],inwhichtheusers consider fixed beacons and smartphones, very much in the
+themselves collect Wi-Fi location information by running ideaofpassiveconfigurations.
+on a portable device (smartphone) a process that makes OneoftheseminalprojectsusingBluetoothtechnology
+the map construction of fingerprinting automatic, which is forlocalizationistheworkofFeldmannetal.[60],whichuses
+normallyitsmostexpensiveaspect.Mappingisdonewithout RSS triangulation with least square estimation. The authors
+explicit user intervention; of course, as the users carrying claimanaccuracyof2.08metersinasmallroom.However,
+a smartphone with the Freeloc app continue doing their thesystemissensitivetosignalattenuationandreflectiondue
+normal activities, they do not remain static nor stay still a to obstacles between the person who carries the Bluetooth
+predetermined period of time, which makes the measure- deviceandtheaccesspoints.
+ments difficult. Another problem is that each user could AsBluetoothbeaconscompetewithWi-Fi,Faragherand
+have a different mobile device, so signal strengths are not Harle [59] provided a quantitative comparison with Wi-
+measured the same. So, in the Freeloc system, it is not the Fi fingerprinting.Some systems combiningbothWi-Fiand
+value of the signal intensities that is considered, but their Bluetoothhavebeenreportedaswell[61].
+relative strengths. Freeloc is not intended to achieve the A commercial proposal is Apple’s iBeacons, which is
+maximum accuracy in ideal conditions (system developers basicallyanapplicationofBluetoothLowEnergy(BLE)[62]
+reportaccuraciesintherangeof2to3m),buttomakeWi-Fi forlocationpurposes.Ittakesadvantageoftheshortrangeof
+fingerprintingpracticalinrealisticsettings. BLEinordertodeterminewhentheuserisintheproximity
+An example of a commercial system that uses WLAN ofabeacon.Thesuggestedcommercialapplicationisthatthe
+fingerprint is Ekahau [57]. It uses an Ekahau tag, a small infrastructure responds with an appropriate action, such as
+devicethatincludesabutton,lights,motionsensors,andan delivering shopping advice or special offers to the user. A
+audioalarm(seeFigure7).TheEkahautagmustbewornby beaconcandetermineanapproximatedegreeofproximityto
+apersonorattachedtoanobjecttobelocatedandtransmits theuserinthreebroadregions:immediate,lessthan50cm;
+Wi-Fi packets periodically, as the button is pressed or as near,between50cmand2to5meters;andfar,between2to
+the person or object moves. Ekahau claims accuracy from 5metersandsome30meters.Accuracyacrosstheseregions
+submeterrangeto3meters. dependsonotherfactorssuchasinterferencefromphysical
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License10 JournalofSensors
+barriers.Fromthesoftwarepointofview,iBeaconshasbeen “passive” if they answer back to a reader using just the tiny
+buried into the operating system of Apple devices (from energy emitted by the reader, collected by means of a little
+iOS7), so that applications can be launched even without antenna, or “active” if they have their own power supply
+user intervention. iBeacons has already been deployed in and transmit periodically their ID signal. Some RFID tags
+hundredsofApplestoresaswellassomepublicevents.From are intermediate “semipassive,” using a small battery and
+theprivacypointofview,thereistheproblemthatatalltimes transmitting only when a reader signal is detected (do not
+the user location is known to the iBeacons system, which confusethese“active”and“passive”termswiththetermswe
+couldbeundesirablefortheuser.Anadditionalproblemis haveusedforclassifyingIPS).
+thatitisnotanapplicationtheusercouldeasilydelete,asitis RFIDtechnologyhasmanyapplicationsandareasofuse,
+partoftheoperatingsystem.Ontheotherhand,integration like personal/vehicle access control, department store secu-
+withtheoperatingsystemcouldbeattractivetocommercial rity, equipment tracking, baggage, fast food establishments,
+firms. logistics,medicalequipment,andsoforth[67].Inaddition,
+RFID systems have been used for localization, especially
+whentheuserlocationdoesnotneedtobeknownatalltimes,
+4.3.3. ZigBee. ZigBee is a wireless communication standard
+butonlywhenpassingthroughimportantcontrolplaces,like
+developedbytheZigBeeAlliance.Itwasproposedtospecif-
+entrancegates.Inthesecases,userlocationisoftengivenin
+icallyaddresstheneedforlow-costimplementationoflow-
+the form of a logical location, as, for instance, “before the
+data-rate wireless networks with ultralow power consump- gate,”“insidethewaitingroom,”andsoforth,andnotina
+tion.TheZigBeestandardhasadoptedtheIEEE802.15.4as
+coordinatesystem.
+itsphysicallayerandmediumaccesscontrol[63].
+Two variants of user positioning are possible: in one of
+Due to its energy saving and improved security, ZigBee
+them,theusercarriesthetag,andthetagisreadbyreaders
+technology was originally intended for applications like
+intheinfrastructure.Theotheroptionisthattheusercarries
+homeautomation(remotelightsandthermostatmonitoring
+a reader, and many tags are embedded in key places of a
+and control), urban traffic light control, health care, and
+given area. The first option has been the most popular for
+agriculture,amongmanyothers[64].Inaddition,ZigBeehas
+good reason: the tags are inexpensive and very light, while
+beenusedtodevelopindoorpositioningsystemsbecauseitis
+thereadersarebulkyandveryexpensive.
+alow-cost,low-powerconsumptiontechnologyandbecause
+LANDMARC(LocationIdentificationbasedonDynamic
+itiseasytoobtainRSSIlevelsastheseareincorporatedineach
+ActiveRFIDCalibration)isapioneeringRFIDsystem[4].It
+ofthepacketssent,withnoadditionalhardwareneeded.
+belongstothecategoryofsystemsinwhichthetagisattached
+An indoor positioning system based on ZigBee is com-
+totheobjectorpersontobelocated.LANDMARCrequires
+posed of a network of sensors and wireless sensor network
+information about the signal intensity of each label reader algorithms. Most of the algorithms used in these systems
+to calculate the position of RFID tags using the k-nearest
+use the RSSI values to estimate the location, relying thus
+neighbor(𝑘-NN)algorithm.Authorsclaimanaccuracyof1
+on the same techniques as Wi-Fi and Bluetooth, that is,
+meter. However, the system presents the limitation that the
+fingerprintingandpropagationmodels.
+reader does not provide directly the signal strength; it only
+In particular, Fang et al. [65] used a network of several
+reports“detectable”or“notdetectable.”LANDMARCneeds
+ZigBee nodes and a combination of different approaches,
+to scan periodically the power levels to estimate the signal
+both propagation and fingerprinting types. After all those
+strengthsofthetag;thisproducesalatencywhenlocatinga
+methodshavebeenapplied,acombinationofthemiscalcu-
+tag.Anadditionalproblemisthatthereisagreatvariationin
+latedtofindalocationpredictionthat,astheyshow,isbetter
+thebehaviorofRFIDtags,duetothelossofbatterypower.
+thananyindividualmethod.Needlesstosay,theapplication
+The opposite configuration (user carrying the reader,
+ofseverallocationalgorithmstaxesthecomputationalcosts
+withtagsattachedtotheinfrastructure)isseldomused,but
+ofthesystem.
+thereisaninterestingexampleofindoor/outdooruse:inthe
+A commercial project using ZigBee is Netvox (website:
+SeSaMoNet deployed in Italy [68], the user to be located
+http://www.netvox.com.tw), in which location is part of a
+(whohappenstobeablindperson)carriestheRFIDreader,
+completehomeautomationplatform.
+which is at the tip of a cane, and passive tags are buried
+insidesidewalksalloverthecity.Eachtagisassociatedwitha
+4.3.4. RFID. Radio Frequency Identification (RFID) [66] is placeintown,soastheblindpersonpassesthecaneoverthe
+a technology that uses radio waves to make a specialized floor,theembeddedRFIDtaganswerswithitsID,whichis
+circuitproducearesponsecontainingauniqueidentifier;as associatedwithinformationaboutthatplace(whichisread
+the circuit could be attached to people, animals, or objects, audibly to the user) by means of a database. The authors
+itprovidesamethodforidentifyingthem.AnRFIDsystem indicatethatthesystemismostaccurateatguidingtheblind
+consistsofRFIDreadersandRFIDtags.TheRFIDreadercan person when the cane is 20–25 centimeters away from the
+pickthedataemittedfromRFIDtags. passivetag.
+TagsorRFID“transponders”arefittedwithamicrochip AcommercialsystemusingRFIDforlocationisoffered
+and a printed circuit board acting as an antenna, capable byZebra(https://www.zebra.com).
+of emitting radio signals carrying information, mainly its A variant of RFID is NFC (near-field communica-
+unique ID [66]. Tags can be classified depending on how tion [69]), which has become important in recent times
+they get energy to respond to an RFID reader: they can be becauseithasbeenincorporatedinmanypopularAndroid
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseJournalofSensors 11
+smartphones and also because it has been proposed as a
+way of making secure mobile payments. NFC provides a
+two-waycommunicationbetweentwodevicestouchingeach
+otherorincloseproximity,andbecauseofthisrequirement
+it can be used for registering the user’s location, which is
+obviously close to a fixed terminal. Nevertheless, its future
+as a device for location purposes is uncertain at this point,
+asitsrequirementofanactiveuserintervention(i.e.,taking
+outasmartphoneandputtingitincontactwithaterminal)
+isasevereinconveniencecomparedwithtraditionalRFID,in
+whichitsufficestocarryatag.
+4.3.5.Ultrawideband. Ultrawideband(UWB)isbasedonthe
+transmission of electromagnetic wave forms formed by a
+Figure8:UbisenseTags(http://ubisense.net/en).
+sequenceofveryshortpulsesusingaverybigbandwidth.
+UWB has many applications and areas of use: cable
+TV, asset management, radar and imaging, security appli-
+cations,medicalapplications,vehicularradarsystems,high- Access (TDMA) scheme, assigning a slot to each tag for
+penetratingradarsystems,andlocationandtracking,among communication.UWBsignalsarereceivedatthesensorsand
+others[70].UWBtechnologyhasbeenconsideredtodeploy are used to calculate the Angle of Arrival (AoA). Just two
+indoor positioning systems because UWB techniques offer sensors receiving a tag signal are enough to deliver a 3D
+distinct advantages in precision of time-of-flight measure- location.Ifsensorsaresynchronized,theTDoAbetweeneach
+ment,multipathimmunity,andlow-powerrequirementsfor pairofsensorsiscalculated;thismakesthelocationrobust.
+extendedoperation[71]. The system’s authors claim an accuracy of 15 centimeters.
+TwodifferentmeasurescanbeusedinaUWBpositioning The disadvantages of the system are that it requires dedi-
+system to determine the distance between the target and cated infrastructure and devices, that it limits the number
+a reference point: Time of Arrival (ToA) and the Time of mobile devices in one cell, and finally that the user’s
+DifferenceofArrival(TDoA);thesemeasuresareexplained location is disclosed to the system, raising some privacy
+inbooksonthesubject[35]. concerns.
+Bai and Lu [72] presented an IPS based on UWB,
+which consists of four fixed transmitters and some mobile
+4.4. Passive/without Embedded Information Technologies. In
+users.Thetransmitters,whicharesynchronizedusingatime
+this section, we will discuss several technologies that all
+divisionscheme,sendaUWBsignaltothemobileusers.The
+rely on naturally occurring signals. Thus, the signal does
+estimation of location was calculated using a triangulation
+not contain any embedded information. For the most part,
+method based on the measure TDoA between transmitters
+sensors in this type of scheme arepassive because theyjust
+andreceivers.Thesystemclaimsanaccuracyof1meterwhen
+pickupavailablesignalsfromtheenvironment.
+thebandwidthofUWBsignalis528MHz.
+An example of a commercial system based on UWB
+is Ubisense Real-Time Location System [28]. This system 4.4.1. Magnetic Field. Though there are some approaches
+has two types of components: a network of Ubisensors forindoorlocalizationusingartificiallygeneratedmagnetic
+fixed to the infrastructure in known positions, distributed fields[73],mostmodernsystemsmakeuseofEarth’snatural
+throughout the area to be covered, and connected to the magnetic field strength and/or orientation to perform a
+InternetusingEthernetcablesandasetof“Ubitags,”which localizationprocess,sointhefollowingweareonlygoingto
+are the mobile devices attached to people and objects to considersystemsbasedonEarth’snaturalmagneticfield.
+be located; they include a radio transceiver and a UWB An IPS based on magnetic fields uses a magnetometer
+transmitter. Tags are small, active radio frequency devices to measure magnetic field variations, which will be used to
+thattransmitbothaUWBsignalforlocationandastandard determine the position of a person or object. The position
+2.4GHzsignalforcommunication.Tagscomeinanumber estimationiscommonlyperformedthroughmethodssuchas
+of different shapes and sizes; for instance, the “slim” tag is fingerprinting.
+typicallyusedasanindividualtagbecauseofitsdirectional Haverinen and Kemppainen [6] proposed an approach
+antennaandinteractivityoptions(buzzerbuttonsandLED; for dynamic localization in corridors in a building. The
+seeFigure8).Tocommunicatewiththeactivetags,abuilding moving target, starting from an unknown position and
+space is equipped with sensor devices at key points of followingthecenterlineofthecorridorthereafter,sensedthe
+visibility within the tracking space. The system uses both magneticvariationsandusedpatternanalysistoidentifythe
+AoA and TDoA of the UWB signal to calculate a location. position.
+The sensors are configured in groups called cells, each one Gozick et al. [74] reported another indoor positioning
+with a Ubisensor playing the role of a master and up to systembasedonmobilephonesthatmeasureslocationusing
+10 slave sensors. The master uses a Time Division Multiple disturbances of Earth’s magnetic field caused by structural
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License12 JournalofSensors
+steelelementsinabuilding.Theydevelopedmagneticmaps In modern systems, inertial methods use digital acce-
+taking measurements along corridors and landmarks and lerometersandgyroscopesandgenerallycombinetheirinfor-
+then identified places based on a magnetic signature. Their mation with other sensors in order to achieve a good
+magneticintensity maps are extremely detailed, which is of performance,aswewillseeinthefollowing.
+course a problem from the practical point of view, as we Accelerometers can be used to determine the modifica-
+wouldhavetoconstructthosemapsforeverylocationwhere tionsinuserpositionwhenaccelerationinacertaindirection
+thesystemisdeployed.Wecomparethiswiththefacilityfor isdetected.Ofcourse,thisisaveryroughestimation,which
+usingasystemlikeGalvan’s,discussedinthefollowing. canbeimprovedbyusingagyroscopefordirectionchanges.
+In the research project of Galva´n-Tejada et al. [20], The evidence of initial acceleration could be confirmed by
+another magnetic field indoor location method is pre- thefactthatauseriswalking,byrecognizing(alsowithan
+sented. It uses the magnetic sensor of a mobile phone accelerometer)thetypicalshakeassociatedwiththewalking
+to estimate user location at the room level; that is, no movement[75].
+precisecoordinatesarecalculated.Aspreviously,thismethod Dabove et al. [10] and Leppa¨koski et al. [76] reported
+requires to first create a fingerprint database of magnetic inertialIPS.Thelatterdevisedawayofcounteringtheerror
+field variations, but in this case there is no need to map accumulation typical of inertial systems by refining inertial
+each point of a grid. Instead, a pseudorandom path is navigationwithparticlefiltering.
+followed to collect a “typical” magnetic variation in a cer- The system reported by Leppa¨koski et al. handles a
+tain room, and then a Fourier transform is done to the prestored map on which the user’s position is tracked in a
+collectedmeasures,whicharesenttothefrequencydomain; continuous way. The particle filtering algorithm (see Sec-
+so a frequency magnetic pattern for each room is stored tion 3) is used to refine the overall position by discarding
+in the database. For detecting a location, the user walks impossiblepathsthatcollidewiththeboundariesofthemap,
+randomlyinsidearoomandscansthemagneticsignaldata thus killing the associated particles in the particle filtering
+(a Fourier transform is applied to this information), and algorithmandfurtherrefiningtheuserlocation.Thisavoids
+then the result is compared against the database, locating theaccumulationoferrorsastimepasses.
+the user in the room. The advantage of this method is that
+no detailed map is necessary for building the database in
+4.4.3. Passive Sound-Based Technologies. In this section, we
+the first place, which opens the possibility of constructing
+discusssound-basedlocationsystemsthatusesoundwithout
+maps automatically by random users who carry a mobile
+embedded information, in contrast to the technologies we
+application on their phones. Another advantage is that it
+presentedinSections4.2.1and4.2.2.
+usesthestandardinexpensivemagnetometersthatcomewith
+Locationbysoundwithoutembeddedinformationgen-
+manymodern cell phones. The limitationof this methodis erally takes already available sounds in the environment as
+that it gives only the “logical” location of the user (i.e., in
+characteristicofagivenplaceandusesadatabaseofknown
+whichroomhe/sheis),nottheexactpositioninacoordinate
+places. A user detecting ambient sounds with a portable
+system.
+microphone could be located by matching the registered
+An example of a commercial system that uses a mag-
+soundagainsttheavailableplacesinadatabase.
+netometer is IndoorAtlas (website: http://www.indooratlas
+A typical work is the one by Vildjiounaite et al. [30].
+.com). This system utilizes the magnetic field irregularities
+It calculates a “fingerprint” of the ambient noise by taking
+insidebuildingstoestimatethelocationofanindividual.It
+10-secondsamplesandthendoingacalculationthatinvolves
+requiresafloorplanimagetobeaddedtoIndoorAtlasMaps
+dividing a sample in time frames, calculating a frequency
+using the tool IndoorAtlas Floor Plans web application and
+spectrumforeachframe,filteringsomefrequencies,sorting
+also to collect the magnetic field data of a given path in an
+theremainingframesbyenergy,andtakingthelogarithmof
+indoorenvironmentandthencreatethemagneticfieldmap
+acertainpercentile.Authorsclaimaprecisionof69percent
+withthetoolIndoorAtlasMapCreator.Afterthat,thesystem
+forrecognizingroomsfromasetof33differentrooms.They
+can estimate the user’s location by comparing the magnetic
+implementedaniPhoneapplication,Batphone,availablefor
+fielddatafromthecurrentpositionagainstthemagneticfield
+download,whichrecognizesinrealtimewhichroomtheuser
+datapreviouslycollected.
+isin,usingnothingbutambientsound(seeFigure9)(website:
+The system’s authors claim an accuracy of less than
+http://www.mccormick.northwestern.edunewsarticlesarchive-
+2 meters. Their documentation shows typical applications
+20092012article_935.html).
+in environments such as retail surfaces for easily locating
+A more modern system using background noise is
+merchandise.
+reportedbyGalva´n-Tejadaetal.[77],butthisoneisactually
+ahybridsystemthatusesalsovisiblelightandmagneticfield.
+4.4.2.InertialTechnology. Theestimationofafutureposition
+given an initial one and a speed and direction is indeed
+oneoftheoldestmethodsfornavigation,oftencalled“dead 4.4.4.PassiveVisibleLight. Inthissection,wediscusssystems
+reckoning”; it was used by ancient sailors like Christopher that use the position of known light sources like lamps to
+Columbus. One obvious problem with dead reckoning is find a location, but without making use of any information
+the progressive accumulation of errors, as a small error in embedding, in contrast to those seen in Section 4.1.2. The
+direction could mean a huge error as a long distance is techniqueswediscussinthecurrentsectionareofa“passive”
+traveled. nature, as the sensors just pick up the available light using
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseJournalofSensors 13
+Some works belonging to the passive mobile camera
+approach use visual odometry (VO) to update the user
+position. VO is “the process of estimating the egomotion
+of an agent (e.g., vehicle, human, and robot) using only
+the input of a single or multiple cameras attached to it”
+[80]. VO is not a recent approach and has been around
+forsome30yearsbuthasbeengraduallyimprovedbothin
+efficiency and in precision [81]. An example of VO work is
+presented by Kitt et al. [82], who used a sequence of stereo
+images and, with filtering techniques, were able to achieve
+goodprecisionwithlesscomputationalcostthancompeting
+methods. VO has many variants: it could involve 6 degrees
+of freedom or more restricted movements (such as in the
+caseofawheeledvehicleonaflatfloor)andcouldbedone
+with the help of a model such as a map, either previously
+available or constructed as the camera is moving (also
+Figure9:Batphonemobileapplication(https://itunes.apple.com/ known as SLAM for Simultaneous Location and Mapping).
+us/app/batphone/id405396715?mt=8). Also, it could use a single camera or a stereo set of two
+cameras.
+A recent positioning system that uses computer vision
+sensors,insteadofproducinglightwiththeexplicitpurpose
+methods and a smartphone camera to estimate the user
+oflocalization.Westartbydiscussingtheuseofavailablelight
+locationisMoVIPS[83]usingapassiveapproach.Itconsists
+sources.
+of two phases: calibration and localization. The calibration
+The idea of exploiting the measurement of known light
+phase is intended to create a database with images taken
+sourcesisattherootofworkslikeRandall’sLuxTrace[78].In
+by mobile phone users together with their location. In the
+thiswork,standardsolarcellsareusedtoregisterluminosity
+localizationphase,theuserusesamobileapplicationtotake
+(intensity of light), besides their intended use to collect an image of the environment; it is uploaded to a server
+energy.Theyleveragetheadvantagesofpassivetechnologies,
+component. The server executes a “Speeded Up Robust
+as no infrastructure at all needs to be installed. Further, as
+Features” (SURF) algorithm, which compares this image
+everybuildingintheworldhasparticularluminositycondi-
+with a database of the calibration phase. Once the server
+tions,thistechnologyhasuniversalcoverage.LuxTracelearns
+has the results of image comparison, the user position is
+variation signatures in straight trajectories (measurements
+estimated. This information is sent to the mobile phone to
+weretakenusingatrolley),andthen,whenfollowingthose
+be displayed to the user in the mobile phone application.
+same trajectories, the system identifies the user’s position.
+Theauthorsclaimapositionerrorof1.3meters.Thesystem
+System developers achieved an average position estimation
+presents the problem that if the image or video has a low
+error of only 21cm. Of course, the limitation to straight
+resolutionormotionblur,theaccuracyofthesystemdrops
+trajectoriesisaseriousone.
+[83].
+Otherpassivevisiblelightworkscombinelightwithother
+OnecomputersystemdifficulttoclassifyisSignPost[9],
+sources for getting the location. For instance, Azizyan and
+an indoor positioning system which uses an off-the-shelf
+Choudhury[79]combinedpassivevisiblelightwithambient
+cameraphoneand2Dbarcodemarkers;eachbarcodeiden-
+sound (see Section 4.4.3). Similarly, Galva´n-Tejada et al.
+tifiesauniqueposition.InSignPost,smartphonecamerasare
+[77]combinedpassivevisiblelightwithambientsoundand usedincontinuousmodetocapturebarcodesignsastheyfall
+magneticfield,allthreepassivesignalswithnoinfrastructure
+insidethefieldofvision,andthesoftwareusestheperspective
+requirements.
+distortiontofurtherrefinethepositionoftheuserrelativeto
+thesign.TheauthorsclaimthatSignPostcanestimatetarget
+4.4.5. Computer Vision. IPSthatusecomputervisionmake positionwithacentimeterlevelaccuracy.Itcouldbeargued
+use of the information collected by cameras and image thatthissystemfallsinthecategoryofIPS“withembedded
+processing techniques for identifying and tracking objects. information,” because the barcode markers are a form of
+WeidentifytwoconfigurationsforIPSusingcomputervision: encodedinformation,butthereisnoexplicit“transmission”
+in the passive approach, the camera is worn by the user ofaproducedsignal.TheSignPostsystemwasdeployedina
+or object to be monitored, and it captures images or video real-worldcommercialevent.
+from the user’s perspective. The captured images could be Aprojectbasedontheactive(fixedcamera)approachis
+compared with files previously stored in a database with EasyLivingofMicrosoftResearch[84],intendedforbuilding
+locationinformation.Intheactiveapproach,oneorseveral intelligentenvironments.Itusescomputervisionforperson
+cameras arefixed in theenvironmentin which the subjects tracking and visual user interaction, as EasyLiving spaces
+will be monitored (the terms “active” and “passive” are not must respond to user’s actions and voice commands. Its
+commonintheterminologyofcomputervision,butweuse accuracy is reportedly about 10cm in the horizontal plane.
+themforuniformitywiththetermsusedhereforalltheother This visual tracking system was a precursor of the recent
+technologies). MicrosoftKinectproductline[85].
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License14 JournalofSensors
+4.5.HybridTechnologies. Thesystemsthatrelyontechnology whileKimandChoi[92]usedultrasonicsensorsanddigital
+fusion are called “hybrid.” While in surveys like that of compasses.
+De Gante and Siller [86] the term “hybrid” refers to the Anotherhybridresearchsystem,combiningRFID,Blue-
+combination of different techniques like AoA, TDoA, and tooth, and VLC, is presented by Liu et al. [91]. In their
+so forth; in the context of the current survey “hybrid” experiments,precisionofabouthalfameterisreported.
+refers to the combination of different technologies, such as A commercial hybrid system with Wi-Fi and inertial
+magnetic and Wi-Fi technologies. In a hybrid system, one technologiesistheLightHouseSignalSystem(website:http://
+of the technologies is commonly considered more relevant www.lighthousesignal.com).
+for estimating the location of the user, while the rest of the
+technologiesareconsideredascomplementary,andtheyare
+5.Technologies Comparison
+usedtoimprovethefeaturesofthesystemsuchasaccuracy
+andcoveragearea.
+For more than two decades, several scientific and indus-
+EvennouandMarx[87]presentedasystemthatcombines
+trialresearchgroupshaveproposedindoorpositioningsys-
+inertialandWi-Filocationtechnologies.Theinertialpartis
+temsusingdifferenttechnologicalapproaches,encompassing
+done using standard accelerometers and gyroscopes, intro-
+many types of sensors. In this section, we present a com-
+duced in Section 4.4.2, and the Wi-Fi location is estimated
+parison of the different technologies that have been used
+using fingerprinting from signal strength measures (see
+to develop indoor positioning systems. There are several Section 3). Authors argue that pure inertial systems are
+parameters that have been used to compare an IPS with
+weak because errors in the estimation tend to accumulate
+others, like accuracy, localization type (2D or 3D), method
+progressivelyandalsothatpureWi-Filocationsystemslack
+(e.g., triangulation, fingerprint), algorithm, signal measure
+precisionandresponsivenesstousermovements.Therefore,
+(AoA,ToA,TDoA,andRSS),coverage,andcost[12,13].From
+they propose to counter these respective weaknesses by
+thoseparameters,weconsideraccuracy,coverage,andcost,
+means of a combination. In this work, the Wi-Fi location
+becauseweidentifythattheseparametersarecommonlyused
+is estimated by means of RSS fingerprinting [88], which
+tomakethebenefitofusingaspecifictechnologyknownto
+implies the construction of a database of existing Wi-Fi
+develop an indoorpositioningsystem. Foreach technology
+bases with their RSS at each measurement point. At run
+time, the 𝑘 points of the database with profile closest to presented in Section 4, we selected an indoor positioning
+systemwiththebestvaluesregardingaccuracy,coverage,and
+the measurement are found, and then the barycenter of
+cost.TheinformationofeachsystemispresentedinTable2.
+them is considered as the calculated position. Then, the
+Accuracy roughly refers to the difference between the
+inertialpartofthesystemisincorporatedtothelocationby
+estimated position and the actual one; as this difference
+means of a Monte Carlo simulation method, in particular
+particle filtering [89]. Based on experiments, the authors could change depending on the conditions, it is rather a
+report a precision of 1.53m after the subject has made a statistical distribution, which should be expressed in terms
+round walk near the edges of a 40m by 40m room. For ofparameterslikeadistanceandapercentage,suchas“less
+comparison,usingonlyWi-Fifingerprinting,theprecisionis thanone-metererrorin95percentofcases,”thoughauthors
+5.73m. rarelyexpressaccuracyintheseterms.
+Arecentexampleofanotherhybridsystemispresented Coverageistheterritorialextensioninwhichthesystem
+byKrizetal.[7].ThissystemisbasedonBluetoothandWi-Fi can locate a user or object. Although some technologies
+technologies;theyproposetousethesetechnologiesbecause mayofferextensivecoverageinanidealenvironment,when
+theydonotrequirehighcomputingresourcesandareboth these are used indoors, their coverage may be limited by
+cheap and available off-the-shelf. To merge these technolo- environmentalfactors.AnIPSmaylocateapersonorobject
+gies,theyproposeanalgorithmthatcombinesfingerprinting in a range of meters or even locate them at different levels
+forbothBluetoothandWi-Fi.Intheirexperiments,anerror insideabuilding.
+of0.77misreported,withanimprovementof23percentover Cost is the amount of resources invested for the instal-
+Wi-Fialone. lationandoperationofapositioningsystem.Inthissurvey,
+Another hybrid system is MaWi [90]. Its authors argue cost is determined based on two parameters. The first is
+that Wi-Fi signals are not stable and do not allow for fine installationandmaintenancecost(ICinTable2).Thesecond
+grained localization and that the magnetic signals are not iscostforeachenduser(UCinthetable).Weidentifythat
+goodfordiscriminatingdistantplacesbutareverystableand IPS that make use of existing infrastructures (e.g., lighting,
+discriminatewellbetweencloselocations,sotheirrespective ambientsound,andEarth’smagneticfield),aswellassystems
+strengths are combined when used together. In some cases, thatreusetechnologythatexistsintheindoorenvironments
+the fusion of technology seeks to address the limitations of (e.g., Wi-Fi access points) or those that are carried by the
+a positioning system. For instance, the work of Liu et al. user (e.g., mobile devices), require low (L) investments for
+[23] uses VLC technology, which has limitations (it cannot installationandmaintenanceandlowcostoftheservicefor
+detectthedirectionofthepersonanditisaffectedbysunlight theuser.
+and the reflection of light off of walls), so they proposed Furthermore, in the case of indoor positioning systems
+merging VLC with RFID and Bluetooth [91]. Furthermore, based on technologies that use special purpose devices and
+hybridtechnologiessometimesaimtoincreasetheaccuracy specializedinfrastructure(e.g.,sensornetworks,readers,and
+ofIPS;forinstance,Krizetal.[7]usedBluetoothandWi-Fi, encoders),theinstallationandmaintenancecostishigh(H).
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseJournalofSensors 15
+.slevelelpitlum:LM;wol:L;hgih:H;tsocecnanetniamdnanoitallatsni:CI;tsocresudne:CU.seigolonhcetgninoitisoproodniniamfonosirapmoC:2elbaT
+tsoC
+sessenkaeW
+shtgnertS
+egarevoC
+.ucca.xorppA
+ygolonhceT
+SPI
+CU
+CI gnidocnelangishtiwseigolonhceT
+thgilnuS
+resurofpaehC
+L
+H
+mooR
+m3.2–mc75
+derarfnI
+]22[
+ecnerefretni
+,resurofpaehC
+.tsarfni.snepxE
+L
+H
+)LM(gnidliuB
+mc01
+CLV
+]32[
+evisurtninu
+.refretni,tsoC
+noisicerpdooG
+H
+H
+mooR
+m2–mc1
+cinosartlU
+]42[
+noisicerpwoL
+tsocwoL
+L
+L
+mooR
+sreteM
+dnuoselbiduA
+]52[
+otelbarenluV
+doog,tsocwoL
+tniopssecca
+L
+L
+gnidliuB
+m5.1
+iF-iW
+]62[
+noisicerp
+segnahc sdeen;evisurtnI
+doog,tsocwoL
+/swen/moc.aikon.hcraeser//:ptth
+L
+L
+gnidliuB
+sretem–mc03
+htooteulB
+gnippamlangis
+noisicerp
+90811
+;noisicerpwoL
+esuerdluoC
+sdeenresu
+H
+L
+gnidliuB
+mc52
+eeBgiZ
+]72[
+erutcurtsarfni
+.piuqelaiceps wolyreV
+tsocwolyreV
+L
+H
+mooR
+m5–1
+DIFR
+]4[
+noisicerp
+edisevissap
+tsochgiH
+noisicerphgiH
+H
+H
+gnidliuB
+mc51
+BWU
+]82[
+gnidocnelangistuohtiwseigolonhcetevissaP
+rofdeenoN
+seriuqeR
+,erutcurtsarfni
+L
+L
+—
+m2
+citengamoeG
+/moc.saltaroodni.www//:ptth
+gnippam
+noisicerpdoog
+setalumuccA
+,tsocwoL
+L
+L
+—
+m2
+laitrenI
+]92[
+rorre
+etavirp
+,etaruccatoN
+ton,paehC
+otevitisnes
+L
+L
+—
+sreteM
+dnuostneibmA
+]03[
+evisurtni
+segnahc otevitisneS dnathgilnus sahcussegnahc
+paehC
+L
+L
+—
+sretem–mc01
+thgiltneibmA
+]32[
+adnabluba wodniw
+,tsocwoL
+thgilotevitisneS
+fiycavirp
+retupmoC
+L
+L
+—
+m1–mc1
+]9[
+snoitidnoc
+enohpllec
+noisiv
+desusiaremac
+9161,
+2017,
+1,
+Downloaded
+from https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on Wiley Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License16 JournalofSensors
+Sometimes the devices are expensive as well (e.g., RFID (i)Inpractice,theevolutionoftheunderlyingtechnologies
+readers or ultrasonic sensors); therefore, the cost to the has had a very positive impact on the evolution of
+end user could also be high (H). For instance, the system indoor positioning systems. We realized that changes
+Ubisense [28] has expensive devices and needs a dedicated in the subsequent versions of standards in a given
+infrastructureandtheenduserneedstouseaspecificdevice, technologycanreducesometasksinthepositioning
+so the system ranks high (H) on both cost parameters (see systemorevensolvesomelimitations.Forinstance,
+Table2). positioning systems that use Bluetooth version 1.0
+shouldfirstestablishcommunicationbetweendevices
+5.1. Comparison Discussion. It is important to take the in order to measure the Received Signal Strength,
+information provided by the authors themselves with some butinlaterversionsofthestandard(version1.2)this
+reservations, because very often their results are not in process is no longer necessary because the protocol
+agreement with independent evaluations. For instance, the has a device discovery mechanism. This avoids user
+2014MicrosoftIndoorLocalizationCompetition[34]offered interventiontoestablishconnectionandreducesthe
+a uniform setting for testing different indoor localization timeofresponseofthesystem(latency)[95].Lateron,
+methods.Fromthecompetitionresults,wecanseethatthe Bluetooth version 4 drastically reduced power con-
+best competitor using ultrasonic technology got an average sumption, making portable devices with Bluetooth
+location error of 2m, even though Schweinzer reported an much more practical. Furthermore, the emergence
+errorassmallasonecentimeter.Wethinkthishugedifference of new technologies provides the opportunity to
+isexplainedbecauseintheirlabauthorssetidealconditions develop indoor positioning systems based on these
+and report the highest precision achieved, which is not technologies.
+realistic. This wide range is reported in Table 2 in the rows (ii)Themethod,thetechnology,andalsotheimplementa-
+forultrasoundandalsoforambientlight. tiondetailsaffecttheaccuracyofthesystem.Amethod
+Similarly,forinfraredtechnologies,thebestself-reported commonly used is triangulation; two different sys-
+result was around half a meter, but in the independent temspresentedinSection3usethismethod,butwith
+assessmentIRgot2.3mforaverageprecisionerror. different technologies. For instance, Feldmann et al.
+Wi-Fi technologies,combinedwith fingerprinting,have [60] use Bluetooth and claim an accuracy of 2.08
+surprisingly good results in the independent assessment, meters, while Liu et al. [23] use VLC and claim a
+getting the overall second best [93]; they incorporated the farsuperioraccuracyof10centimeters.Thiscanalso
+use of a Bayesian filter. Of course, Wi-Fi systems are cheap be appreciated by using the same technology with
+because they reuse existing equipment, but they need a different methods. For instance, the system BluePos
+mappingactivity,whichcouldbeexpensive,andeachtimean uses Bluetooth and the fingerprint method; the sys-
+accesspointischanged,mappingshouldberedone,unlessa temclaimsanaccuracyof2.5meters[95].Thesystem
+crowdsourcingautomaticmethodisinplace(seebelow),but presentedbyFeldmannetal.[60]usesBluetoothwith
+therearenoreliableprecisionmeasuresforsuchmethodsyet. triangulation,andthesystemclaimsbetteraccuracy,
+One difficulty in using the Microsoft competition [34] 2.08 meters. Also, the impact of implementation
+forassessingindividualtechnologiesisthatcompetitorsoften detailscouldbeappreciatedbyexaminingtheresults
+combinedseveraltechnologiesintheirsystems,anditisdif- of the aforementioned competition [34], as very
+ficulttoknowhowmuchofeachsystem’sachievedprecision similar technologies and techniques, like two teams
+isattributabletoanyoneofitscomponenttechnologies.This usingWi-Fiandfingerprinting,obtainsuchdifferent
+is,forinstance,thecaseofLietal.[94],whocombinedVLC locationerrorsas1.56mand5.23m.
+encodingwithWi-Fiandachievedthe4thplacewitha2m
+(iii)There is not yet an overall satisfying solution for the averageerror.
+IPS problem. Either very precise solutions are very
+Another aspect to incorporate in the discussion is that
+expensive,ornotrealtime,orcheapproposalsaretoo
+thenumberoftransmittersaffectstheperformanceofmost
+inaccurate.IfwetakeastandardproblemforIPSlike
+systems (excluding passive technologies). For instance, in
+locatingmerchandiseinshelveswhilewalking,nota
+thementionedcompetition,theyinstalledanunusuallyhigh
+single technology or combination of technologies is
+number of Wi-Fi access points (10 for a small area), which
+bothfeasibleandsatisfying.
+gavesomeadvantagetoWi-Fimethods.Ofcourse,increasing
+thetransmittersquantityisgoingtoraisethecostsandaffect
+thesystemscalability. 6.1. Trends in the Development of IPS. Additionally, the
+Finally, in some technologies, we did not find a reliable analysis of IPS enables us to identify the past, present,
+specific figure to report, so we included an approximate andfuturetrendsinthedevelopmentofindoorpositioning
+annotationlike“meters”togivejusttheorderoftheaccuracy. systems.
+6.Conclusions 6.1.1. Past. In the past, the purpose of the prototypes of
+indoor positioning systems was to investigate whether the
+From the analysis of the IPS presented in this report, we technology was suitable for locating objects or persons in
+identify the following aspects relative to the technologies indoor environments with accuracy and cost-effectiveness.
+used: Thesystemswerecomposedofexpensivedevices(i.e.,badges,
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseJournalofSensors 17
+bats, and crickets) or required a dedicated infrastructure; building, data coming from many users have been
+someexamplesinthiscategoryareActiveBadge[5],Cricket consolidatedinlocation-relatedsystems.Crowdsour-
+[55], Active Bat [54], and RADAR [56]. Those were not cing of maps has been done as grass roots efforts in
+practical systems because they were almost a “proof of nonprofit organizations like OpenStreetMap (OSM)
+concept.”Buttodaywewouldrequirefromasystemthatit (http://www.openstreetmap.com)orWikimapia(http://
+beapracticalsolutiontoIPS. www.wikimapia.org). Individuals have also helped
+Google with tools like Google Map Maker (web-
+6.1.2.Present. Aswewritethissurvey(2017),wecanidentify site: https://www.google.com/mapmaker). Participa-
+thefollowingrapidlydevelopingtrends,whichweguesswill tionofindividualsinthesemappingeffortsrequires
+bemainstreaminthenextfewyears: laborious handling of specialized map-editing soft-
+ware. Projects of this kind have been also proposed
+(i)ReuseExistingInfrastructureinIndoorEnvironments formappingindoorlocations,likeintheIndoorOSM
+(e.g., Access Points, Lamps, and Sound Systems) for initiative (http://indoorosm.uni-hd.de/). But unlike
+Location Purposes. In Section 4 of this article, we outdoorefforts,theeffortstoincludevolunteerindi-
+presented several examples of positioning systems vidualsinthemappingphaseofsomeindoorlocation
+thatreuseinfrastructure;wehavetonotice,though, technologies are much more limited. In particular,
+that communication systems were not designed in methodslikeWi-Fifingerprintingrequireathorough
+thefirstplaceforIPSpurposes,andthen,ingeneral, mapping activity which could be very expensive.
+improvementsthatmakecommunicationaspectsbet- So, if it is possible to automatically construct signal
+ter will not necessarily improve the IPS reuse of mapsbythespontaneousactivityofusers,thatwould
+the technology being considered. But it is useful to be a major improvement; crowdsourcing of indoor
+make the following consideration: most IPS benefit maps makes sense as users could contribute even
+from a high density of transmitters, as this would withoutnoticing,iftheycarryanautomatedapplica-
+improveaccuracy,butatthesametimeahighdensity tionontheircellphones.Forinstance,Alzantotand
+of transmitters would add cost to the IPS solution. Youssef [96] proposed the CrowdInside system that
+So, if transmitters are reused from communication uses smartphone accelerometers for detecting users’
+infrastructure, then the ever increasing transmitter movementswhileusersnaturallymoveintheindoor
+densitywillbenefitIPSsolutions. environment.Thecollecteddataisfusedwithseman-
+tic information which describes the environment.
+(ii)Technology Fusion (Hybrid Positioning Systems).
+SomethingsimilarisdonebyZhangetal.[97],with
+Hybrid approaches leverage the complementarity of
+theCIMLocsystem.Also,Kimetal.[11]proposedthe several technologies in positioning systems, as we
+Freeloc system we reviewed in Section 4 which uses
+presentedinSection4.5.Severalespeciallyattractive
+opendistributedcollaborationforbuildingtheradio
+combinationsarebecomingpopular,likeWi-Fiwith
+map of Wi-Fi signals. Indeed, building radio maps
+Bluetooth, Wi-Fi with magnetism, and Wi-Fi with
+with crowdsourcing makes much more sense than
+inertialnavigation.
+applyinganalyticpropagationmodels,becauseinreal
+(iii)Use of Mobile Devices as an Essential Component of
+environments the walls and furniture create irregu-
+a Positioning System. This approach considers the
+larities that are very difficult to take into account,
+mobile device as appropriate technology for devel-
+andcrowdsourcingapproachesdonotrelyonmodels,
+opingpositioningsystems,asthesecaneasilycollect
+but rather on the way that signals are measured
+user information due to the large number of sen-
+in the real world. In the project GROPING, open
+sors embedded, such as accelerometers, gyroscopes, distributedcollaborationalsoincorporatesmagnetic
+and magnetometers, as well as some devices not
+fieldsamples,whicharecollectedasuserswanderin
+often thought of as sensors, such as the camera, the
+theindoorenvironment[98].
+microphone,Bluetoothchip,GPS(globalpositioning
+system) receiver, and wireless network card. For
+6.1.3.Future. Finally,fortheyearstocomeinthenearfuture,
+instance,inLietal.’sstudy[29],theinertialsensorsof
+weareforecastingthefollowingtrends:
+asmartphoneareused(accelerometerandgyroscope)
+as well as the compass. Other works [83] use the (i)Indoor/Outdoor IPS. Outdoor positioning systems
+phone camera. The use of these devices allows the will merge with IPS in a seamless way to locate a
+reuseoftechnologysothatitmightnotbenecessary person with a smartphone anywhere. This means
+toaddnewdevicestotheenvironment;thesedevices that while current IPS systems involve specialized
+can be merged with existing infrastructure (e.g., a equipment and applications, future IPS systems will
+wirelessnetworkorBluetooth).Therefore,theimple- be part of the smartphone operating system and
+mentationandmaintenancecostsareminimal. leverage its sensors so any location-sensitive smart-
+phoneapplicationwilluseindoororoutdoorlocation
+(iv)Crowdsourcing.Oneofthecurrentmaintrendsisthe
+servicesastheyareavailable.
+use of open distributed collaboration of many users
+to build or refine location systems. In recent years, (ii)Consideration of Privacy and Security Issues in the
+as part of Web 2.0 participatory systems like map Development of IPS. From the analysis of IPS, we
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License18 JournalofSensors
+noticedthattheprivacyandsecurityissuesregarding [14] Y.Gu,A.Lo,andI.Niemegeers,“Asurveyofindoorpositioning
+the user’s location are only addressed in very few systemsforwirelesspersonalnetworks,”IEEECommunications
+projects [24, 99, 100]. Nevertheless, some authors SurveysandTutorials,vol.11,no.1,pp.13–32,2009.
+provide evidence that these factors may influence [15] R.Mautz,Indoorpositioningtechnologies[Ph.D.thesis],Habil.
+the adoption and use of the IPS [5, 78] or argue ETHZu¨rich,2012.
+thatthesystemmustgivetheusersthepossibilityof [16] G.Deak,K.Curran,andJ.Condell,“Asurveyofactiveandpas-
+deciding whether they want to share their locations sive indoor localisation systems,” Computer Communications,
+withothers[78].Thoughprivacyhasbeenaconcern vol.35,no.16,pp.1939–1954,2012.
+since the very beginning of the development of IPS [17] A.GanickandD.Ryan,“Methodandsystemformodulatinga
+systems, in the future, this will become one of the lightsourceinalightbasedpositioningsystemusingaDCbias,”
+main considerations for the adoption or choice of USPatent8,334,901,December2012.
+specificIPSsystems. [18] T.KomineandM.Nakagawa,“Fundamentalanalysisforvisible-
+lightcommunicationsystemusingLEDlights,”IEEETransac-
+tionsonConsumerElectronics,vol.50,no.1,pp.100–107,2004.
+ConflictsofInterest
+[19] N.Kumar,N.Lourenco,M.Spiezetal.,“Visiblelightcommu-
+nicationsystemsconceptionandvidas,”IETETechnicalReview,
+The authors declare that there are no conflicts of interest vol.25,no.6,article359,2008.
+regardingthepublicationofthispaper.
+[20] C. E. Galva´n-Tejada, J. P. Garc´ıa-Va´zquez, and R. F. Brena,
+“Magnetic field feature extraction and selection for indoor
+References locationestimation,”Sensors,vol.14,no.6,pp.11001–11015,2014.
+[21] W.Shao,F.Zhao,C.Wangetal.,“Locationfingerprintextrac-
+[1] A. K. Dey, “Understanding and using context,” Personal and tion for magnetic field magnitude based indoor positioning,”
+UbiquitousComputing,vol.5,no.1,pp.4–7,2001. JournalofSensors,vol.2016,ArticleID1945695,16pages,2016.
+[2] G.Xu,GPS,Springer,2003. [22] S. Sayeef, U. K. Madawala, P. G. Handley, and D. Santoso,
+“Indoorpersonneltrackingusinginfraredbeamscanning,”in
+[3] S. Haykin, “Cognitive radio: brain-empowered wireless com-
+ProceedingsofthePositionLocationandNavigationSymposium
+munications,” IEEE Journal on Selected Areas in Communica-
+(PLANS’04),pp.698–705,April2004.
+tions,vol.23,no.2,pp.201–220,2005.
+[23] X.Liu,H.Makino,andY.Maeda,“Basicstudyonindoorloca-
+[4] M.N.Lionel,Y.Liu,Y.C.Lau,andA.P.Patil,“LANDMARC:
+tionestimationusingvisiblelightcommunicationplatform,”in
+indoorlocationsensingusingactiveRFID,”WirelessNetworks,
+ProceedingsoftheAnnualInternationalConferenceoftheIEEE
+vol.10,no.6,pp.701–710,2004.
+Engineering in Medicine and Biology Society, pp. 2377–2380,
+[5] R.Want,A.Hopper,V.Falca˜o,andJ.Gibbons,“Theactivebadge Vancouver,Canada,August2008.
+location system,” ACM Transactions on Information Systems,
+[24] H. Schweinzer and M. Syafrudin, “LOSNUS: an ultrasonic
+vol.10,no.1,pp.91–102,1992.
+system enabling high accuracy and secure TDoA locating of
+[6] J. Haverinen and A. Kemppainen, “Global indoor self- numerousdevices,”inProceedingsoftheInternationalConfer-
+localizationbasedontheambientmagneticfield,”Roboticsand enceonIndoorPositioningandIndoorNavigation(IPIN’10),pp.
+AutonomousSystems,vol.57,no.10,pp.1028–1035,2009. 1–8,September2010.
+[7] P.Kriz,F.Maly,andT.Kozel,“Improvingindoorlocalization [25] I.Rishabh,D.Kimber,andJ.Adcock,“Indoorlocalizationusing
+usingbluetoothlowenergybeacons,”MobileInformationSys- controlledambientsounds,”inProceedingsoftheInternational
+tems,vol.2016,ArticleID2083094,2016. ConferenceonIndoorPositioningandIndoorNavigation(IPIN
+’12),pp.1–10,November2012.
+[8] W. Zhang, M. I. S. Chowdhury, and M. Kavehrad, “Asyn-
+chronous indoor positioning system based on visible light [26] A. Rai, K. K. Chintalapudi, V. N. Padmanabhan, and R. Sen,
+communications,”OpticalEngineering,vol.53,no.4,ArticleID “Zee: zero-effort crowdsourcing for indoor localization,” in
+045105,2014. Proceedings of the 18th Annual International Conference on
+MobileComputingandNetworking(MobiCom’12),pp.293–304,
+[9] A. Mulloni, D. Wagner, I. Barakonyi, and D. Schmalstieg,
+ACM,Istanbul,Turkey,August2012.
+“Indoorpositioningandnavigationwithcameraphones,”IEEE
+[27] G. Gonc¸alo and S. Helena, “Indoor location system using
+PervasiveComputing,vol.8,no.2,pp.22–31,2009.
+ZigBee technology,” in Proceedings of the 3rd International
+[10] P.Dabove,G.Ghinamo,andA.M.Lingua,“Inertialsensorsfor ConferenceonSensorTechnologiesandApplications(SENSOR-
+smartphonesnavigation,”SpringerPlus,vol.4,no.1,article834,
+COMM’09),pp.152–157,Athens,Greece,June2009.
+2015.
+[28] P. Steggles and S. Gschwind, “The ubisense smart space plat-
+[11] W. Kim, S. Yang, M. Gerla, and E.-K. Lee, “Crowdsource form,” in Proceedings of the 3rd International Conference on
+based indoor localization by uncalibrated heterogeneous Wi- Pervasive Computing, vol. 191, pp. 73–76, Munich, Germany,
+Fi devices,” Mobile Information Systems, vol. 2016, Article ID 2005.
+4916563,18pages,2016.
+[29] F.Li,C.Zhao,G.Ding,J.Gong,C.Liu,andF.Zhao,“Areliable
+[12] H.Liu,H.Darabi,P.Banerjee,andJ.Liu,“Surveyofwireless andaccurateindoorlocalizationmethodusingphoneinertial
+indoorpositioningtechniquesandsystems,”IEEETransactions sensors,” in Proceedings of the 14th International Conference
+on Systems, Man and Cybernetics Part C: Applications and on Ubiquitous Computing (UbiComp ’12), pp. 421–430, ACM,
+Reviews,vol.37,no.6,pp.1067–1080,2007. Pittsburgh,Pa,USA,September2012.
+[13] S.Gezici,“Asurveyonwirelesspositionestimation,”Wireless [30] E. Vildjiounaite, E.-J. Malm, J. Kaartinen, and P. Alahuhta,
+PersonalCommunications,vol.44,no.3,pp.263–282,2008. “Location estimation indoors by means of small computing
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseJournalofSensors 19
+power devices, accelerometers, magnetic sensors, and map [50] Y.Nakashima,R.Kaneto,andN.Babaguchi,“Indoorposition-
+knowledge,”inProceedingsofthe1stInternationalConferenceon ingsystemusingdigitalaudiowatermarking,”Transactionson
+PervasiveComputing,pp.211–224,Springer,2002. InformationandSystems,vol.94,no.11,pp.2201–2211,2011.
+[31] G.Sun,J.Chen,W.Guo,andK.J.R.Liu,“Signalprocessing [51] E.M.Gorostiza,J.L.L.Galilea,F.J.M.Meca,D.S.Monzu´,F.
+techniquesinnetwork-aidedpositioning:asurveyofstate-of- E.Zapata,andL.P.Puerto,“Infraredsensorsystemformobile-
+the-artpositioningdesigns,”IEEESignalProcessingMagazine, robotpositioninginintelligentspaces,”Sensors,vol.11,no.5,pp.
+vol.22,no.4,pp.12–23,2005. 5416–5438,2011.
+[32] J.HightowerandG.Borriello,“Locationsystemsforubiquitous [52] A.Rogalski,“Infrareddetectors:anoverview,”InfraredPhysics
+computing,”Computer,vol.34,no.8,pp.57–66,2001. andTechnology,vol.43,no.3–5,pp.187–210,2002.
+[33] H.KoyuncuandS.H.Yang,“Asurveyofindoorpositioning [53] K.Y.Yi,D.Y.Kim,andK.M.Yi,“Developmentofalocalization
+and object locating systems,” IJCSNS International Journal of system based on VLC technique for anindoor environment,”
+ComputerScienceandNetworkSecurity,vol.10,no.5,pp.121– JournalofElectricalEngineeringandTechnology,vol.10,no.1,
+128,2010. pp.436–442,2015.
+[34] D.Lymberopoulos,J.Liu,X.Yangetal.,“Arealisticevaluation [54] A.Ward,A.Jones,andA.Hopper,“Anewlocationtechnique
+and comparison of indoor location technologies: experiences fortheactiveoffice,”IEEEPersonalCommunications,vol.4,no.
+and lessons learned,” in Proceedings of the 14th International 5,pp.42–47,1997.
+SymposiumonInformationProcessinginSensorNetworks(IPSN [55] N.B.Priyantha,A.Chakraborty,andH.Balakrishnan,“Cricket
+’15),pp.178–189,ACM,Seattle,Wash,USA,April2015.
+location-support system,” in Proceedings of the 6th Annual
+[35] D. Munoz, F. B. Lara, C. Vargas, and R. Enriquez-Caldera, InternationalConferenceonMobileComputingandNetworking
+PositionLocationTechniquesandApplications,AcademicPress, (MOBICOM’00),pp.32–43,ACM,August2000.
+2009.
+[56] P.BahlandV.N.Padmanabhan,“RADAR:anin-buildingRF-
+[36] A.H.Sayed,A.Tarighat,andN.Khajehnouri,“Network-based based user location and tracking system,” in Proceedings of
+wirelesslocation:challengesfacedindevelopingtechniquesfor the 19th Annual Joint Conference of the IEEE Computer and
+accuratewirelesslocationinformation,”IEEESignalProcessing CommunicationsSocieties(INFOCOM2000’00),vol.2,pp.775–
+Magazine,vol.22,no.4,pp.24–40,2005. 784,March2000.
+[37] C.Vargas-Rosales,J.Mass-Sanchez,E.Ruiz-Ibarra,D.Torres- [57] Z.Li,Z.Deng,W.Liu,andL.Xu,“Anovelthree-dimensional
+Roman, and A. Espinoza-Ruiz, “Performance evaluation of indoorlocalizationalgorithmbasedonmulti-sensors,”inChina
+localization algorithms for WSNs,” International Journal of Satellite Navigation Conference (CSNC) 2013 Proceedings, vol.
+DistributedSensorNetworks,vol.11,no.3,pp.1–14,2015. 245 of Lecture Notes in Electrical Engineering, pp. 623–631,
+[38] Y. J. Guo, Advances in Mobile Radio Access Networks, Artech Springer,Berlin,Germany,2013.
+HouseMobileCommunicationsLibrary,Norwood,Mass,USA, [58] C.Bisdikian,“AnoverviewoftheBluetoothwirelesstechnol-
+2004. ogy,”IEEECommunicationsMagazine,vol.39,no.12,pp.86–94,
+[39] S.KawakamiandT.Ohtsuki,“Localizationusingiterativeangle 2001.
+of arrival method sharing snapshots of coherent subarrays,” [59] R.FaragherandR.Harle,“Locationfingerprintingwithblue-
+EURASIP Journal on Advances in Signal Processing, vol. 2011, toothlowenergybeacons,”IEEE Journal on Selected Areas in
+article46,7pages,2011. Communications,vol.33,no.11,pp.2418–2428,2015.
+[40] H.L.Bertoni,RadioPropagationforModernWirelessSystems,
+[60] S.Feldmann,K.Kyamakya,A.Zapater,andZ.Lue,“Anindoor
+PrenticeHall,2000.
+Bluetooth-basedpositioningsystem:concept,implementation
+[41] T.S.Rappaport,WirelessCommunications:PrinciplesandPrac- andexperimentalevaluation,”inProceedingsoftheInternational
+tice,PrenticeHall,2002. ConferenceonWirelessNetworks(ICWN’03),pp.109–113,Las
+[42] R.Chatterjee,AntennaTheoryandPractice,NewAgeInterna- Vegas,Nev,USA,June2003.
+tional,1996. [61] C. E. Galvan, I. Galvan-Tejada, E. I. Sandoval, and R. Brena,
+[43] J.HightowerandG.Borriello,“Locationsensingtechniques,” “Wifibluetoothbasedcombinedpositioningalgorithm,”Proce-
+IEEEComputer,vol.34,no.8,pp.57–66,2001. diaEngineering,vol.35,pp.101–108,2012,InternationalMeeting
+[44] P. Jiang, Y. Zhang, W. Fu, H. Liu, and X. Su, “Indoor mobile ofElectricalEngineeringResearch2012.
+localization based on Wi-Fi fingerprint’s important access [62] C.Gomez,J.Oller,andJ.Paradells,“Overviewandevaluation
+point,”InternationalJournalofDistributedSensorNetworks,vol. of bluetooth low energy: an emerging low-power wireless
+2015,ArticleID429104,8pages,2015. technology,”Sensors,vol.12,no.9,pp.11734–11753,2012.
+[45] S.Haykin,AdaptiveFilterTheory,Pearson,2013. [63] T.A.AlhmiedatandS.-H.Yang,“AZigBee-basedmobiletrack-
+[46] R.E.Kalman,“Anewapproachtolinearfilteringandprediction ing system through wireless sensor networks,” International
+problems,”JournalofBasicEngineering,vol.82,no.1,pp.35–45, JournalofAdvancedMechatronicSystems,vol.1,no.1,pp.63–
+1960. 70,2008.
+[47] F. Gustafsson, “Particle filter theory and practice with posi- [64] A.Wheeler,“Commercialapplicationsofwirelesssensornet-
+tioning applications,” IEEE Aerospace and Electronic Systems worksusingZigBee,”IEEECommunicationsMagazine,vol.45,
+Magazine,vol.25,no.7,pp.53–81,2010. no.4,pp.70–77,2007.
+[48] R.K.Crane,PropagationHandbookforWirelessCommunication [65] S.-H. Fang, C.-H. Wang, T.-Y. Huang, C.-H. Yang, and Y.-S.
+SystemDesign,ElectricalEngineering&AppliedSignalProcess- Chen,“AnenhancedZigBeeindoorpositioningsystemwithan
+ingSeries,Taylor&Francis,2003. ensembleapproach,”IEEECommunicationsLetters,vol.16,no.
+[49] E.L.ChristensenandG.Mogensen,“Experimentalinvestiga- 4,pp.564–567,2012.
+tionofline-of-sightpropagationat13.5–15.0ghz.,”Radioand [66] R.Weinstein,“RFID:atechnicaloverviewanditsapplicationto
+ElectronicEngineer,vol.49,no.3,pp.127–140,1979. theenterprise,”ITProfessional,vol.7,no.3,pp.27–33,2005.
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License20 JournalofSensors
+[67] K. Ahsan, H. Shah, and P. Kingston, “RFID applications: an [84] B. Brumitt, B. Meyers, J. Krumm, A. Kern, and S. Shafer,
+introductory and exploratory study,” International Journal of “Easyliving: technologies for intelligent environments,” in
+ComputerScienceIssues,vol.7,no.1,2010. HandheldandUbiquitousComputing,pp.12–29,Springer,2000.
+[68] U. Biader Ceipidor, C. M. Medaglia, A. Serbanati et al., [85] T.Leyvand,C.Meekhof,Y.-C.Wei,J.Sun,andB.Guo,“Kinect
+“SeSaMoNet: an RFID-based economically viable navigation identity:technologyandexperience,”Computer,vol.44,no.4,
+system for the visually impaired,” International Journal of RF pp.94–96,2011.
+Technologies:ResearchandApplications,vol.1,no.3,pp.214– [86] A. De Gante and M. Siller, “A survey of hybrid schemes
+224,2009. forlocationestimationinwirelesssensornetworks,”Procedia
+[69] K. Finkenzeller, RFID Handbook: Fundamentals and Applica- Technology,vol.7,pp.377–383,2013.
+tionsinContactlessSmartCards,RadioFrequencyIdentification [87] F. Evennou and F. Marx, “Advanced integration of WiFi and
+and Near-Field Communication, Wiley Online Library, New inertial navigation systems for indoor mobile positioning,”
+York,NY,USA,2003. EurasipJournalonAppliedSignalProcessing,vol.2006,Article
+[70] M.-G.DiBenedettoandB.R.Vojcic,“Ultrawidebandwireless ID86706,2006.
+communications: a tutorial,” Journal of Communications and [88] A. Kealy, B. Li, T. Gallagher, and A. Dempster, “Evaluation
+Networks,vol.5,no.4,pp.290–302,2003. of wifi technologies for indoor positioning applications,” in
+[71] S.Ullah,M.Ali,A.Hussain,andK.SupKwak,“Applicationsof Proceedings of the Surveying and Spatial Sciences Institute
+UWBtechnology,”https://arxiv.org/abs/0911.1681. Biennial International Conference, pp. 411–421, Surveying and
+SpatialSciencesInstitute,Adelaide,Australia,2009.
+[72] Y.BaiandX.Lu,“ResearchonUWBindoorpositioningbased
+on TDOA technique,” in Proceedings of the 9th International [89] P.M.Djuric´,J.H.Kotecha,J.Zhangetal.,“Particlefiltering,”
+ConferenceonElectronicMeasurementandInstruments(ICEMI IEEESignalProcessingMagazine,vol.20,no.5,pp.19–38,2003.
+’09),pp.1167–1170,August2009. [90] C. Zhang, J. Luo, and J. Wu, “A dual-sensor enabled indoor
+[73] Z.Kasmi,A.Norrdine,andJ.Blankenbach,“Towardsadecen- localizationsystemwithcrowdsensingspotsurvey,”inProceed-
+tralizedmagneticindoorpositioningsystem,”Sensors,vol.15, ings of the 9th IEEE International Conference on Distributed
+no.12,pp.30319–30339,2015. ComputinginSensorSystems(DCOSS’14),pp.75–82,Marina
+DelRey,Calif,USA,May2014.
+[74] B.Gozick,K.P.Subbu,R.Dantu,andT.Maeshiro,“Magnetic
+[91] X.Liu,H.Makino,S.Kobayashi,andY.Maeda,“Designofan
+mapsforindoornavigation,”IEEETransactionsonInstrumen-
+indoor self-positioning system for the visually impaired— tationandMeasurement,vol.60,no.12,pp.3883–3891,2011.
+simulationwithRFIDandbluetoothinavisiblelightcommu-
+[75] E.Garcia-CejaandR.Brena,“Long-termactivityrecognition
+nicationsystem,”inProceedingsofthe29thAnnualInternational
+fromaccelerometerdata,”ProcediaTechnology,vol.7,pp.248–
+ConferenceofIEEE-EMBS,EngineeringinMedicineandBiology
+256,2013.
+Society(EMBC’07),pp.1655–1658,August2007.
+[76] H.Leppa¨koski,J.Collin,andJ.Takala,“Pedestriannavigation
+[92] H.-S.KimandJ.-S.Choi,“Advancedindoorlocalizationusing
+based on inertial sensors, indoor map, and WLAN signals,”
+ultrasonic sensor and digital compass,” in Proceedings of the
+JournalofSignalProcessingSystems,vol.71,no.3,pp.287–296,
+International Conference on Control, Automation and Systems
+2013.
+(ICCAS ’08), pp. 223–226, IEEE, Seoul, Republic of Korea,
+[77] C.E.Galva´n-Tejada,J.P.Garc´ıa-Va´zquez,J.I.Galva´n-Tejada,J. October2008.
+Rube´nDelgado-Contreras,andR.F.Brena,“Infrastructure-less
+[93] C. Beder and M. Klepal, “Fingerprinting based localisation
+indoorlocalizationusingthemicrophone,magnetometerand
+revisited: a rigorous approach for comparing RSSI measure-
+lightsensorofasmartphone,”Sensors,vol.15,no.8,pp.20355–
+mentscopingwithmissedaccesspointsanddifferingantenna
+20372,2015.
+attenuations,”inProceedingsoftheInternationalConferenceon
+[78] J. Randall, O. Amft, J. Bohn, and M. Burri, “Lux Trace: Indoor Positioning and Indoor Navigation (IPIN ’12), pp. 1–7,
+indoorpositioningusingbuildingillumination,”Personaland IEEE,Sydney,Australia,November2012.
+UbiquitousComputing,vol.11,no.6,pp.417–428,2007.
+[94] L.Li,P.Hu,C.Peng,G.Shen,andF.Zhao,“Epsilon:avisible
+[79] M. Azizyan and R. R. Choudhury, “Surroundsense: mobile light based positioning system,” in Proceedings of the 11th
+phone localization using ambient sound and light,” ACM USENIX ConferenceonNetworkedSystemsDesignandImple-
+SIGMOBILE Mobile Computing and Communications Review, mentation,pp.331–343,Seattle,Wash,USA,April2014.
+vol.13,no.1,pp.69–72,2009.
+[95] T.King,H.Lemelson,A.Fa¨rber,andW.Effelsberg,“BluePos:
+[80] D.ScaramuzzaandF.Fraundorfer,“Visualodometry[tutorial],” positioning with bluetooth,” in Proceedings of the 6th IEEE
+IEEERobotics&AutomationMagazine,vol.18,no.4,pp.80–92, InternationalSymposiumonIntelligentSignalProcessing(WISP
+2011. ’09),pp.55–60,August2009.
+[81] F.FraundorferandD.Scaramuzza,“Visualodometry:partII: [96] M. Alzantot and M. Youssef, “CrowdInside: automatic con-
+matching, robustness, optimization, and applications,” IEEE struction of indoor floorplans,” in Proceedings of the 20th
+Robotics&AutomationMagazine,vol.19,no.2,pp.78–90,2012. ACM SIGSPATIAL International Conference on Advances in
+[82] B.Kitt,A.Geiger,andH.Lategahn,“Visualodometrybasedon Geographic Information Systems (ACM SIGSPATIAL GIS ’12),
+stereoimagesequenceswithRANSAC-basedoutlierrejection pp.99–108,ACM,November2012.
+scheme,”inProceedingsoftheIEEEIntelligentVehiclesSympo- [97] X. Zhang, Y. Jin, H.-X. Tan, and W.-S. Soh, “CIMLoc: a
+sium(IV’10),pp.486–492,IEEE,SanDiego,Calif,USA,June crowdsourcing indoor digital map construction system for
+2010. localization,”inProceedingsofthe9thIEEEInternationalCon-
+[83] M.Werner,M.Kessel,andC.Marouane,“Indoorpositioning ferenceonIntelligentSensors,SensorNetworksandInformation
+usingsmartphonecamera,”inProceedingsoftheInternational Processing(ISSNIP’14),pp.1–6,IEEE,Singapore,April2014.
+ConferenceonIndoorPositioningandIndoorNavigation(IPIN [98] C.Zhang,K.P.Subbu,J.Luo,andJ.Wu,“GROPING:geomag-
+’11),pp.1–6,IEEE,Guimara˜es,Portugal,September2011. netism and crowdsensing powered indoor navigation,” IEEE
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseJournalofSensors 21
+TransactionsonMobileComputing,vol.14,no.2,pp.387–400,
+2015.
+[99] M.PacigaandH.Lutfiyya,“Herecast:anopeninfrastructurefor
+location-basedservicesusingWiFi,”inProceedingsoftheIEEE
+International Conference on Wireless and Mobile Computing,
+NetworkingandCommunications(WiMob’05),vol.4,pp.21–28,
+August2005.
+[100] A.Quigley,B.Ward,C.Ottrey,D.Cutting,andR.Kummerfeld,
+“BlueStar,aprivacycentriclocationawaresystem,”inProceed-
+ingsofthePositionLocationandNavigationSymposium(PLANS
+’04),pp.684–689,IEEE,Monterey,Calif,USA,April2004.
+9161,
+2017,
+1,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1155/2017/2630413
+by
+Cochrane
+Israel,
+Wiley
+Online
+Library
+on
+[21/11/2024].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License

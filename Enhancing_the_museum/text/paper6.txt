@@ -1,0 +1,293 @@
+Breaking barriers: designing technologies to enhance 
+museum experiences for individuals with mobility 
+disabilities 
+Julia Sheidin1 and Tsvi Kuflik2 
+1 Braude College of Engineering Karmiel, 51 Snunit St., P.O. Box 78, Karmiel 21982, Israel 
+2 The University of Haifa, Abba Khoushy Ave 199, Haifa, 3498838, Israel 
+Abstract 
+Accessibility gains importance and is becoming a central component on the agenda of cultural and 
+heritage sites, such as museums, especially since the ratification of the UN Convention on the Rights of 
+Persons with Disabilities. A range of innovative technologies are being designed to facilitate accessibility 
+for museum visitors. These new technologies have the potential to transform museum experiences for 
+people with mobility disabilities. The presented work is a work in progress, which demonstrates an 
+innovative technique for designing adaptive museum displays. We present our idea in the context of the 
+two types of display cases: free-standing and wall-hung. 
+Keywords  
+Cultural heritage experience, Adaptive design, Inclusive design, Museum experience, Human-centered 
+computing, Accessibility, Accessibility systems and tools 1 
+1. Introduction 
+In recent years, there has been an increasing recognition in cultural and heritage sites, such as 
+museums, of the need to cater for diversity within their audiences. More recently this importance 
+has been acknowledged and explicitly focused for people who may require support to access and 
+enjoy these sites. As exhibitions are transitioning from the more traditional “presenter of objects” 
+to being “a site for experiences” and adding different forms of technology to achieve those ends, 
+Inclusive Design becomes more critical [15]. The term inclusive suggests that no one should be 
+excluded from experiencing the benefits of the museum, in other words that the whole world— 
+and every citizen in it—should be involved and able to see its exhibitions [11, 26]. The importance 
+of this issue is reflected in The UN Convention on the Rights of Persons with Disabilities [25], 
+which argues that assistive and digital technologies have a central role in the lives of people with 
+disabilities and therefore requires that national government address the assistive technology 
+needs of their citizens [1].   
+Therefore, the museums, that play such an important role in society, are trying to be more 
+responsive to visitors’ varied needs, including for people with mobility, hearing, visual, and 
+cognitive or developmental disabilities [2, 7]. Technology becomes able to create a more 
+authentic experience, potentially bringing the user closer to previously inaccessible artifacts and 
+sites, enabling them to function independently and with equity and dignity [9, 12, 13].   
+Developing technological solutions for people with disabilities requires different approaches, 
+according to the type of disability, since there are many different forms of disability or specific 
+conditions that may impact the way people face museum activities [11, 21]. Poria et al. [18], 
+provided a study that focused on the obstacles and barriers participants with disabilities (people 
+who use wheelchairs or crutches and visually impaired people) face while visiting art museums. 
+ 
+AMID 2023 - Workshop on Accessibility and Multimodal Interaction Design Approaches in Museums for People with 
+Impairments, September 27, 2023, Athens, Greece  
+ julia@braude.ac.il (J. Sheidin); tsvikak@is.haifa.ac.il (T. Kuflik)  
+ 0009-0002-9092-7231 (J. Sheidin); 0000-0003-0096-4240 (T. Kuflik) 
+ 
+© 2023 Copyright for this paper by its authors. 
+Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0).  
+ CEUR Workshop Proceedings (CEUR-WS.org)  
+ 
+CEUR
+Workshop
+Proceedings
+ceur-ws.org
+ISSN 1613-0073
+
+In-depth interviews revealed that people with disabilities are not able to experience the 
+museums as they wish, despite museums’ efforts toward becoming accessible to all. According to 
+their findings, the difficulties the visitors face are divided into two sections: those encountered 
+outside the exhibition (such as physical obstacles on the way to and from the museum) and those 
+experienced within the exhibition itself. Within the exhibition, difficulties are related to the public 
+space within the museum, including issues like counter heights (at the cashier, information desk, 
+earphone-rental station, and shops), as well as obstacles posed by the exhibits themselves [18].   
+Therefore, in our current work, we decided to concentrate on the specific needs of mobility 
+disability at the museum itself. There may be observable signs that a museum visitor has a 
+physical disability, such as use of a cane, crutches, or wheelchair. In this context, features such as 
+ramps, lifts, and elevators provide greater accessibility. So do less apparent accommodations like 
+positioning exhibit descriptions at a seated person's eye level, paving a gravel trail, or installing 
+a power door opener. The least obvious accommodation, however considered as the most 
+common issue, is the positioning of the exhibit objects themselves, especially the height of the 
+exhibits displayed [18]. Typically, visual items in exhibitions (e.g., artifact, graphic, prop) are 
+displayed within cases, either free-standing or wall-hung. Those cases should be allowed to be 
+viewed by people who use wheelchairs as well as people that are standing, be they short or tall. 
+Therefore, they should be designed at the appropriate height and have a clear floor space to stand 
+next to it and allowing other visitors, with disabilities and without, to pass by (see Figure 1). 
+ 
+ 
+Figure 1: The ADA (Americans with Disabilities Act) Standards state for positioning 
+Freestanding display cases [23] 
+ 
+The current paper presents a novel technique for designing free-standing and hung displays. 
+Our objective was to suggest ideas for techniques that may be used for creating exhibitions that 
+can be experienced from a seated position, and at the same time be capable of accommodating a 
+range of standing visitors. The rest of the paper is described as follows. We first provide a 
+description of related work; we then present the suggested solution, followed by conclusions and 
+future work directions. 
+2. Background And Related Work   
+Museums are progressively acknowledging the importance of addressing the diverse needs and 
+expectations of their audiences. The types of adjustments for individuals with mobility limitations 
+tend to be the most thought about by museums and the most closely aligned with the ADA 
+
+requirements [20]. The epidemiological COVID-19 crisis has highlighted the retrograde state of 
+culture in terms of accessibility and usability, conditioned by the physical and web browsing 
+limitations that for years impacted people with disabilities [17]. This health crisis gave the 
+opportunity to develop more inclusive and accessible actions, adapted to the whole society [16]. 
+The different cultural spaces, including museums, had to reinvent themselves to remain alive and 
+accessible to citizens [11]. Therefore, we will assess the existing solutions both before and after 
+the COVID-19 pandemic.   
+Before COVID-19, the available options for individuals with mobility limitations primarily 
+consisted of wheelchairs (standard and smart), motorized scooters, ramps, elevators and 
+accessible seating areas in auditoriums and theaters. Similarly, museums have also started 
+placing increased emphasis on physical accessibility by ensuring wheelchair access to physical 
+spaces [2].   
+Many museums facilitate universal access to their collections via multimedia and portable 
+guides, making access available to all and enriching the visitor’s experience [27]. There are 
+numerous multimedia tourist guides in existence, however, only an insufficient number take 
+accessibility criteria into consideration. For example, the Louvre Museum’s multimedia guide, 
+which integrates sign language and takes into consideration people with reduced mobility and 
+includes a route for wheelchair-bound visitors [22].   
+Some museums have also created ways to help people view exhibit areas or buildings that are 
+not fully accessible. For example, a virtual tour created by the Intrepid Sea, Air & Space Museum 
+in New York City that is available on its website shows photographs and 360-degree panoramic 
+views of inaccessible areas of its ship [2].   
+Another offering that some museums have for individuals with mobility limitations is an 
+accessible map (e.g., Wheelmap2) that enables the collaborative creation of accessibility maps to 
+augment standard maps with accessibility information [4]. For example, maps at Colonial 
+Williamsburg and Old Sturbridge Village show buildings that are fully accessible, not accessible, 
+or have limits to accessibility [2, 12]. These applications usually provide information about 
+locations that support disabled facilities, and which do not, and share their opinion about each 
+location. This approach is followed by AXSMap3, a crowd sourced map, powered by Google Maps, 
+that stores and shares information about wheelchair-accessible facilities in public places such as 
+restaurants, hotels, etc. [6].   
+The COVID-19 pandemic has had a profound impact on museums, bringing about significant 
+changes and presenting them with various challenges [5]. Virtual tours have become more 
+popular in association with museums [19]. Digital initiatives in museums, and in particular the 
+use of social media by museums, have increased during the pandemic [3]. The health crisis has 
+expedited the progress of technological advancements in the cultural and heritage sectors, 
+particularly in creating accessible and satisfactory services for individuals with diverse 
+disabilities [10]. For in-stance, 3D reconstructions and virtual tours could allow people with 
+permanent or temporary mobility impairment to visit unreachable places [19]; Virtual reality 
+(VR) and Augmented reality (AR) systems enable the rediscovery of the ancient wonders or 
+ruined sites using 3D models [24]; open data tools enable the archiving of data and 
+interoperability between ancient manuscripts and images [8].   
+Still, remote access using technology is not a replacement of an on-site visit. In this respect, 
+not all platforms or cultural sites themselves are accessible and inclusive for people with different 
+types of disabilities [17]. For instance, we are not aware of any research or industrial work that 
+has provided adaptable display cases or adaptable exhibitions. Therefore, our work fills this gap 
+by suggesting a new approach to accessing today's static display exhibitions.   
+3. Method  
+ 
+2 https://wheelmap.org/  
+3 https://www.axsmap.com/  
+
+The greatest challenge for exhibition designers is offering engaging experiences for as many 
+people as possible, catering to different abilities, interests, and preferences. Technology becomes 
+able to reach the requirements which mediate user’s experience. This helps create a more 
+authentic experience, potentially bringing the user closer to previously inaccessible artifacts and 
+sites [9].  
+When considering positioning objects in an exhibition (e.g., artifact, graphic, prop), it is very 
+important to pay careful attention to how objects are displayed with-in cases, how labels are used, 
+how lighting is designed, and how the information is delivered [23]. Items are usually displayed 
+within cases, either free-standing or wall-hung. Those cases should be allowed to be viewed by 
+people who use wheelchairs as well as those that are standing, be they short or tall. Therefore, 
+they should be designed following the ADA Standards, Smithsonian Guidelines for Accessible 
+Design and other accessibility guides, that were analyzed to identify the basic concepts and 
+requirements for universal design [14, 23]. More specifically, there is need to take into 
+consideration two main features [14]:  
+1. 
+Item’s Height from Ground: the distance between the ground and the item’s centroid, i.e., 
+how high the item is placed on the wall. Following specific guidelines pertaining to item visual 
+accessibility, small items (to center line) should be placed at no higher than 1015 mm (40 in.) 
+above the floor.  
+2. 
+The Top of Viewing Surface: the distance between the ground and the top of the display 
+case. Following specific guidelines pertaining to item visual accessibility, the top of a case 
+should be constructed at a maximum of 915 mm (36 in.) above the finished floor for items that 
+are mounted flat on a pedestal or deck.  
+This is where we come into the picture with our contribution in this area of research, the 
+innovative technique for designing adaptive museum displays. We present our idea in context of 
+the two types of display cases: free-standing and wall-hung.  
+3.1. Free-standing display cases  
+The eye level for people seated in wheelchairs or in scooters ranges from 42inches for a young 
+person between the ages of 9 and 12 to 51 inches for a tall male. This tells us that items laid flat 
+in display cases at 44 inches, such as books and labels, are too high for many if not most visitors 
+using wheelchairs. A preferable maximum height would be 33 to 40 inches above the floor (see 
+Figure 2.1).  
+To enhance the enjoyment of visitors with limited mobility, it is proposed to re-place large 
+free-standing display cases with shallower ones (potentially regular display cases that their 
+height may be adapted dynamically and even automatically). To achieve this, a mechanical 
+mechanism will be incorporated into the legs of the cabinets, allowing for adjustable height 
+settings that can be lowered or lifted according to the desired level. The activation of the 
+mechanism will involve pressing height control buttons, with one button designated for lowering 
+the case and another for raising it. This modification would offer improved accessibility and 
+accommodate the needs of a broader range of visitors.  
+ 
+Figure 2.1: Height of free-standing display 
+case [14]. 
+ 
+ 
+Figure 2.2: Average viewing sightlines [14]. 
+
+3.2. Wall-hung display cases  
+A male adult who uses a wheelchair has an average eye level of between 1090 mm (43 in.) and 
+1295 mm (51 in.) above the finished floor (see Figure 2.2). Objects placed above 1015 mm (40 
+in.) will be seen only from below by most seated and short viewers. Therefore, in this scenario, 
+the suggested solution involves integrating a small engine that can effortlessly lower the 
+wallhung display to the desired height. This implementation would facilitate accessibility and 
+provide visitors with the ability to adjust the display to their preferred viewing level.  
+A similar approach can be applied in the art wings of museums, such as the Hecht Museum at 
+the University of Haifa, where paintings are currently hung using wires. In this case, adding an 
+engine would be a straightforward extension, that will improve the experience for wheelchair 
+users or visitors of varying heights, whether they are standing or seated. The suggested by us 
+system is designed to identify the visitor positioned in front of the artwork and measure their eye 
+level. Subsequently, it will calculate the optimal delta value, that should be made to raise or lower 
+the exhibit. The calculated delta value, along with the specified direction (either upward or 
+downward), will then be transmitted to the engine to facilitate the precise repositioning of the 
+artwork. This modification would enable effortless adjustment of the painting's height, ensuring 
+optimal visibility and engagement for all individuals (see Figure 3).  
+ 
+ 
+Figure 3: Adjustment of the painting's height in the art wing at Hecht Museum. 
+4. Conclusions and future work  
+The presented work is a work in progress demonstrating innovative techniques for designing adaptable 
+display cases and exhibitions. We firmly believe the that the implementation of modified or even 
+adaptable cabinets, along with adjustable art exhibitions that can be experienced from a seated position, 
+may have the potential to greatly enhance the cultural visit experience for all visitors. This includes 
+individuals in wheelchairs, as well as those who are short and tall. To further gauge the potential impact, 
+we are planning to provide an initial prototype, demonstrate it to the museum and conduct evaluation 
+with end users. This will help us estimate the effectiveness and viability of the proposed solution.  
+References 
+[1] M Borg, J., Lindstrom, A., Larsen, S.: “Assistive technology in developing countries: a review 
+from the perspective of the convention on the rights of persons with disabilities”, Prosthetics 
+and Orthotics International, Vol. 35No. 1, pp. 20-29, (2011).  
+
+[2] Braden, C.: Welcoming all visitors: Museums, accessibility, and visitors with disabilities. 
+University of Michigan Working Papers in Museum Studies, i. (2016).  
+[3] Burke, V., Jørgensen, D., Jørgensen, F. A.: Museums at home: Digital initiatives in response to 
+COVID-19. Norsk museumstidsskrift, 6(2), pp. 117-123, (2020).   
+[4] Cardonha, C., Gallo, D., Avegliano, P., Herrmann, R., Koch, F., Borger, S.: A crowdsourcing 
+platform for the construction of accessibility maps. In Proceedings of the 10th international 
+cross-disciplinary conference on web accessibility, pp. 1-4, (2013).  
+[5] Choi, B., Kim, J.: Changes and challenges in museum management after the COVID-19 
+pandemic. Journal of Open Innovation: Technology, Market, and Complexity, 7(2), pp. 148, 
+(2021).   
+[6] DaSilva, J., Cook, A.: AXS map, http://www.axsma p.com/. Retrieved 13 Feb 2017, (2015).  
+[7] Demirezen, B.: A literature review on the availability of augmented reality and virtual reality 
+technology in the tourism sector. International Journal of Global Tourism Research, 3(1), pp. 
+1-26, (2019).   
+[8] Díaz, J. L. P., Dorn, A., Koch, G., Abgaz, Y.: A comparative approach between different computer 
+vision tools, including commercial and open-source, for improving cultural image access and 
+analysis. In 2020 10th International Conference on Advanced Computer Information 
+Technologies (ACIT), pp. 815-819. IEEE, (2020).  
+[9] Garcia Carrizosa, H., Sheehy, K., Rix, J., Seale, J., Hayhoe, S.: Designing technologies for 
+museums: accessibility and participation issues. Journal of enabling technologies, 14(1), pp. 
+31-39, (2020).  
+[10] Giannini, T., Bowen, J. P.: Museums and Digital Culture: From reality to digitality in the age of 
+COVID-19. Heritage, 5(1), pp. 192-214, (2022).  
+[11] González-Herrera, A. I., Díaz-Herrera, A. B., Hernández-Dionis, P., Pérez-Jorge, D.: Educational 
+and accessible museums and cultural spaces. Humanities and Social Sciences 
+Communications, 10(1), pp. 1-8, (2023).  
+[12] Islek, D.: The Future of Accessible Museums: Qualitative Analysis on Educational Practices. 
+Revista Românească pentru Educaţie Multidimensională, 15(1), pp. 83-106, (2023).    
+[13] Luiza, S. M.: Accessible tourism–the ignored opportunity. Annals of Faculty of Economics, 
+1(2), pp. 1154-1157, (2010).  
+[14] Majewski, J.: Smithsonian guidelines for accessible exhibition design. Smithsonian 
+Accessibility Program, pp. 1-60, (1996).  
+[15] Packer, J.: Beyond learning: Exploring visitors' perceptions of the value and benefits of 
+museum experiences. Curator: The Museum Journal, 51(1), pp. 33-54, (2008).  
+[16] Pérez-Jorge, D., Rodríguez-Jiménez, M. D. C., Ariño-Mateo, E., Barragán-Medero, F.: The effect 
+of COVID-19 in university tutoring models. Sustainability, 12(20), pp. 8631, (2020).   
+[17] Pirrone, M., Centorrino, M., Galletta, A., Sicari, C., Villari, M.: Digital Humanities and disability: 
+A systematic literature review of cultural accessibility for people with disability. Digital 
+Scholarship in the Humanities, 38(1), pp. 313-329, (2023).  
+[18] Poria, Y., Reichel, A., Brandt, Y.: People with disabilities visit art museums: an exploratory 
+study of obstacles and difficulties. Journal of Heritage Tourism, 4(2), pp. 117-129, (2009).  
+[19] Resta, G., Dicuonzo, F., Karacan, E., Pastore, D.: The impact of virtual tours on museum 
+exhibitions after the onset of covid-19 restrictions: visitor engagement and long-term 
+perspectives. SCIRES-IT-SCIentific RESearch and Information Technology, 11(1), pp. 
+151166, (2021).   
+[20] Reyes-García, M. E., Criado-García, F., Camúñez-Ruíz, J. A., Casado-Pérez, M.: Accessibility to 
+cultural tourism: The case of the major museums in the city of Seville. Sustainability, 13(6), 
+pp. 3432, (2021).   
+[21] Ribeiro, F. R., Silva, A., Barbosa, F., Silva, A. P., Metrôlho, J. C.: Mobile applications for 
+accessible tourism: overview, challenges and a proposed platform. Information Technology 
+& Tourism, 19, pp. 29-59, (2018).   
+[22] Ruiz, B., Pajares, J. L., Utray, F., Moreno, L.: Design for All in multimedia guides for museums. 
+Computers in Human Behavior, 27(4), pp. 1408-1415, (2011).  
+
+[23] Salmen, J. P.: Everyone's Welcome: The Americans with Disabilities Act and Museums. 
+American Association of Museums, 1575 Eye St., NW., Suite 400, Washington, DC 20005, 
+(1998).  
+[24] Silva, M., Teixeira, L.: Developing an extended reality platform for immersive and interactive 
+experiences for cultural heritage: Serralves museum and coa archeologic park. In 2020 IEEE 
+International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct), pp. 
+300-302. IEEE, (2020).   
+[25] United Nations (2006), “Convention on the rights of persons with disabilities”, available at: 
+www.un.org/disabilities/convention/conventionfull.shtml  
+[26] Wintzerith, S.: “Inclusive without Knowing It.” In The New Museum Community: Audiences, 
+Challenges, Benefits, edited by Nicola Abery, pp. 458–76. Edinburgh: MuseumsEtc, (2013).  
+[27] Yang, N., Sun, X., Jin, S.: Design and development of digital painting online learning and 
+communication system based on visual semantics. In 2020 International Conference on 
+Advance in Ambient Computing and Intelligence (ICAACI), pp. 161-164. IEEE. (2020). 
+

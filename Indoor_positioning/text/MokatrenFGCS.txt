@@ -1,0 +1,910 @@
+FutureGenerationComputerSystems ( ) –
+ContentslistsavailableatScienceDirect
+Future Generation Computer Systems
+journalhomepage:www.elsevier.com/locate/fgcs
+Exploring the potential of a mobile eye tracker as an intuitive indoor
+pointing device: A case study in cultural heritage
+MoayadMokatren,TsviKuflik*,IlanShimshoni
+TheDepartmentofInformationSystems,UniversityofHaifa,MountCarmel,Haifa31905,Israel
+h i g h l i g h t s
+• Analysisandexaminationofthepotentialuseofmobileeyetrackerinamuseumispresented.
+• Amobilemuseumvisitorsguidethatusesamobileeyetrackerasapointingdeviceisdescribed.
+• Auserstudycomparingtheuseofamuseumvisitorsguidethatusesaneyetrackerandaconventionaloneispresented.
+a r t i c l e i n f o a b s t r a c t
+Articlehistory: Currenttechnologyoffersavarietyofwaysforcontext-awareinformationdeliverytomobileusers.The
+Received26February2017 mostchallengingaspect,however,istodeterminewhattheuserisinterestedin.Theuser’spositionis
+Receivedinrevisedform3June2017 thebestavailablehint,butifweknowwhattheuserislookingatandwhathisorhergazingprofileis,
+Accepted1July2017 wecannarrowdownthepossiblyrelevantobjectsofinterest.Withtheadventofmobileandubiquitous
+Availableonlinexxxx
+computing,itistimetoexplorethepotentialofmobileeyetrackingtechnologyfornatural,intelligent
+interactionsbetweenusersandtheirsmartenvironment,notonlyforspecifictasks,butalsoforthemore
+Keywords:
+Mobileeyetracking ambitiousgoalofintegratingeyetrackingintotheprocessofinferringmobileusers’interests,forthe
+Museumvisitorsguide purposeofprovidingthemwithrelevantservices,aresearchareathathasreceivedlittleattentionsofar.
+Inthiswork,weexaminethepotentialofintegratingamobileeyetracker,asanaturalinteraction
+device,intoanaudioguidesystemformuseumvisitors.Usingitasapointingdeviceenablesthesystem
+toreasonunobtrusivelyabouttheuser’sfocusofattentionandtodeliverrelevantinformationaboutit
+asneeded.Torealizethisgoal,weintegratedanimage-matchingbasedtechniqueforindoorpositioning
+andaneye-gazedetectiontechniquetoidentifytheuser’sfocusofattentionintotwodifferentversions
+of a mobile audio guide: (1) a proactive version that delivers information automatically whenever
+userinterestisdetected,and(2)areactiveversionthatnotifiestheuserabouttheavailabilityofthis
+information,thusgivingtheusermorecontroloverinformationdelivery.Furthermore,wedeveloped
+aconventionalmuseumvisitors’mobileguidesystemusingasmartphoneandlow-energyBluetooth
+beaconsforpositioning;thisguidewasusedasareferencesystem.
+The three museum visitors’ guides were evaluated in realistic settings at the Hecht1 Museum, a
+smallmuseum,locatedattheUniversityofHaifathathasbotharcheologicalandartcollections.The
+experimentalevaluationcomparedthecontributionofthethreeversionsoftheaudioguidetothevisit
+experience.Theresultsshowedthatthemobileeyetrackingtechnology,althoughunfamiliar,andperhaps
+evenimmature,wasacceptedbytheparticipants.Themobileeyetrackeraudioguidewasperceived
+aspreferabletotheconventionalmuseummobileguide,especiallywithregardtolearningduringthe
+visit. Furthermore, with regard to proactivity in context-aware systems, the results showed that the
+participantsliketobeincontrol,andthatmostofthempreferredthereactiveversionofthemobileeye
+trackeraudioguideovertheproactiveone.
+©2017ElsevierB.V.Allrightsreserved.
+*Correspondingauthor.
+E-mailaddress:tsvikak@is.haifa.ac.il(T.Kuflik).
+1 http://mushecht.haifa.ac.il/Default_eng.aspx.
+http://dx.doi.org/10.1016/j.future.2017.07.007
+0167-739X/©2017ElsevierB.V.Allrightsreserved.
+Pleasecitethisarticleinpressas:M.Mokatren,etal.,Exploringthepotentialofamobileeyetrackerasanintuitiveindoorpointingdevice:Acasestudyincultural
+heritage,FutureGenerationComputerSystems(2017),http://dx.doi.org/10.1016/j.future.2017.07.007.2 M.Mokatrenetal./FutureGenerationComputerSystems ( ) –
+1. Introduction handhelddevices,manysystemsweredevelopedtosupportthe
+museum visitor and enhance the museum visit experience. The
+For most of us, vision is our main sense for gathering infor- purposeofsuchsystemswastoencouragethevisitorstousede-
+mation. When we want to gather information about or express vicesthatprovidemultimediacontentratherthanuseguidebooks,
+interest in something in our environment, the first thing we do and therefore focus on the exhibits instead of flipping through
+is look at it. However, the only information we get in this way pages in the guide book [9–12]. With the advent of mobile and
+is what we see: size, shape, color, distance, etc. Nowadays, a lot ubiquitous computing, it is time to explore the potential of this
+of information about the objects that we see is available online technologyfornatural,intelligentinteractionsbetweenusersand
+and is easily accessible. Theoretically, it is only a click away, a theirsmartenvironment,notonlyforspecifictasks,butalsoforthe
+queryaway,oravailablebysimplyactivatingthemobiledevice, moreambitiousgoalofintegratingeyetrackingintotheprocessof
+writingthequery,submittingit,scrollingthroughtheresultslist, inferringmobileusers’interestsandpreferences,forthepurpose
+selecting the relevant one, and accessing the relevant page. This ofprovidingthemwithrelevantservicesanddevelopingabetter
+is, however, a complicated set of actions to perform in a mobile usermodeltoenhancetheirexperience,anareathathasreceived
+scenario, when immediate, personalized, and context-aware in- little attention so far. This work aims at exploring the potential
+formationisdesired.Currenttechnologyoffersavarietyofways ofmobileeyetrackingtechnologyinenhancingthemuseumvisit
+todeliverinformationtomobileusers.Contextawarenessisthe experiencebyintegratingandextendingthesetechnologiesinto
+generaltermdescribingtheattempttodeliverrelevantinforma- amobilemuseumvisitors’guidesystem,soastoenabletheuse
+tion at the relevant time and place to the user. Most context- ofmachinevisiontoidentifyvisitorpositionsandobjectsoftheir
+aware services nowadays make use of the communication and interest,inordertodeliverpersonalizedinformation.
+computational power (and sensors) of the users’ mobile devices Inthisstudy,weaddressedthefollowingquestions:
+(mostlysmartphones).Inaddition,theyinteractwiththeirusers
+• Q1: How can we use a mobile eye tracker to identify the
+mainlybytheirmobiledevice’stouchscreens,whichhaveafew
+user’slocationandobjectofinterest?
+major limitations: they are limited in size, the users must look
+• Q2:Howcanweintegrateamobileeyetrackerasapointing
+atthemduringtheinteraction,andtheyhavetouseakeyboard
+deviceinasystemthatdeliversinformationtothemuseum
+orselecticons.Althoughvoicecommandscanbeusedtoactivate
+visitor?
+applications,thisoptionisstillverylimited.
+• Q3:Towhatextentdoestheuseofamobileeyetrackerin
+A major challenge in the mobile scenario is to know exactly
+anaudioguidecontributetothemuseumvisitexperience?
+whattheuserisinterestedin.Inclassichuman–computerinterac-
+tions,theusersuseapointingdevice,mostcommonlyamouseor,
+inthecaseofatouchscreen,afinger.However,thisisbecoming 2. Backgroundandrelatedwork
+a major challenge in the mobile setting, as noted by Calvo and
+Perugini[1],whosurveyednovelpointingapproachesforwearable 2.1. Backgroundoneyetrackingandcomputervision
+computing.Theuser’spositionisthebesthint,accompaniedbyhis
+orherorientation.Still,therearemanypossiblyinterestingobjects Eyetrackingisanactiveareaofresearchthathasseensignif-
+nearandaroundtheuser.Ifweknowwhattheuserislookingat, icant progress over the years. However, as Hansen and Ji noted
+andwhatthespecificuser’sgazingprofileis,thenwecannarrow in their survey [13] of eye-tracking research, ‘‘Despite active re-
+downthepossiblyrelevantobjectsofinterestandbetterservethe searchandsignificantprogressinthelast30years,eyedetection
+userwithrelevantservice/information. andtrackingremainschallengingduetotheindividualityofeyes,
+Giventhecurrentperformanceofourmobiledevices,weshould occlusion,variabilityinscale,location,andlightconditions’’.They
+beabletogainseamlessaccesstoinformationofinterest,without concluded that ‘‘The tendency to produce mobile and low-cost
+theneedtotakepicturesorsubmitqueriesandlookforresults, systemsmayincreasethewaysinwhicheyetrackingtechnology
+whicharetheprevailingmethodsofinteractionwithourmobile canbeappliedtomainstreamapplications,butmayalsoleadtoless
+devices. As we move towards ‘‘cognition-aware computing’’ [2], accurate gaze tracking. While high accuracy may not be needed
+it becomes clearer that eye-gaze based interaction should and forsuchapplications,mobilesystemsmustbeabletocopewith
+will play a major role in human–computer interaction (HCI) be- higher noise levels than eye trackers for indoor use’’. Relatively
+fore/untilbraincomputerinteractionmethodswillbecomeareal- inexpensive, easy to use mobile eye trackers have appeared in
+ity[3].Thestudyofeyemovementsstartedalmost100yearsago. recentyears.In2015,Yousefietal.[14]surveyedalargevariety
+JacobandKarn[4]presentedabriefhistoryoftechniquesthatwere ofsuchmobileeyetrackingapplicationsandtechnologiesforavia-
+usedtodetecteyemovements.Themajorworksonthistopicdealt tion,marketing,learning,medicine,andotherfields,andpredicted
+withusability,andoneoftheimportantworkswasbegunbyFitts thatsuchapplicationswouldcontinuetoappear.Asnoted,most
+etal.[5]in1947,whentheybeganusingmotionpicturecameras existingmobileeyetrackersareintendedforspecificapplications
+tostudythemovementsofpilots’eyesastheyusedcockpitcontrol andtasks.
+andinstrumentstolandanairplane.‘‘Itisclearthattheconceptof Modernmobileeyetrackersusuallyrecordvideoofthescenes
+usingeyetrackingtoshedlightonusabilityissueshasbeenaround forfurtheranalysisusingafrontcamera[7].Withtheadventof
+sincebeforecomputerinterfaces,asweknowthem’’[4].Inrecent computervisiontechnology,wecanexploitthiscameratodevelop
+years, commercial mobile eye trackers that enable us to detect a positioning tool. An image matching procedure can be used
+whatsomeoneislookingathavebecomeavailable[6].Moreover, to identify the museum visitor’s location/position by comparing
+eyetrackingandimagebasedobjectrecognitiontechnologyhave the front camera scene with a set of known dataset images. In
+reachedareliabledegreeofmaturity:itisnowpossibletodevelop thatway,positioncanbeidentifiedinapre-definedenvironment.
+asystembasedonthistechnology,preciselyidentifyingwhatthe Furthermore,thegazedatacanbeusedtoinfertheuser’sattention
+user is looking at [7]. We shall refer to this field by reviewing inaspecificscene,thusmakingitpossibletodeliverpersonalized
+techniques for image matching and extend them for location- information related to a specific object in the scene. Consider a
+awarenessuse,andwewillfollowtheapproachof‘‘Whatyoulook deviceconsistingofaforward-lookingcameraandaneyetracker.
+atiswhatyouget’’[8]. Thedevicetakesapicturewhiletheuserisfixatingonacertain
+Themuseumvisitexperiencehasbeenchangingoverthelast positionwithintheimage.Thechallengeistorecognizetheobject
+twodecades.Withtheprogressoftechnologyandthespreadof inthesceneanddelivercontentrelatedtothisobjecttotheuser.
+Pleasecitethisarticleinpressas:M.Mokatren,etal.,Exploringthepotentialofamobileeyetrackerasanintuitiveindoorpointingdevice:Acasestudyincultural
+heritage,FutureGenerationComputerSystems(2017),http://dx.doi.org/10.1016/j.future.2017.07.007.M.Mokatrenetal./FutureGenerationComputerSystems ( ) – 3
+Whenanimageistaken,andgiventothealgorithmtogetherwith be filtered and personalized for easy access. Personalization of
+asetofdatabaseimages,thegoalistofindtheimagethatshows culturalheritageinformationrequiresasystemthatcanmodelthe
+thesamesceneasthetestimage.Thealgorithmshouldworkin user(e.g.,interest,knowledge,andotherpersonalcharacteristics),
+clutteredscenes(scenesfromwhichobjectshavebeenremoved aswellascontextualaspects,selectthemostappropriatecontent,
+or added), where the images are not taken from the same pose and deliver it in the most suitable way. It should be noted that
+andwithvaryingillumination.Inthiswork,weusedlocalimage achievingthisresultisextremelychallenginginthecaseoffirst-
+featuresthatareunaffectedbynearbyclutterorpartialocclusion. timeusers,suchastouristswhovisitaculturalheritagesiteforthe
+The features are at least partially invariant to illumination, 3D firsttime.
+projectivetransforms,andcommonobjectvariations. The museum environment has many limitations, such as the
+The features must also be sufficiently distinctive to identify restriction not to make noise, not to talk loudly, not to touch
+specific objects among many alternatives. Several types of local anything,etc.Obviously,mobileguidesformuseumvisitorsshould
+complementratherthanreplacetraditionalinterpretationmeth-
+featureshavebeendeveloped.Themostpopulartypeoffeatureis
+ods[30].Undertheselimitations,Cheverstetal.[12]proposedtwo
+SIFT[15]butothersalsoexist(e.g.SURF[16],BRISK[17],andORB
+keyrequirementsforsuchguides,thefirstofwhichisflexibility.
+[18]).TheSIFTfeaturesareinvarianttoimagescaling,translation,
+Thesystemisexpectedtobesufficientlyflexibletoenablevisitors
+androtation,andpartiallyinvarianttoilluminationchangesand
+toexplore,andlearnabout,amuseumintheirownway,includ-
+affineor3Dprojection.WhentheSIFTalgorithmisappliedtoan
+ing controlling their own pace of interaction with the system.
+image, it produces a set of SIFT features with their descriptors.
+Thesecondrequirementiscontext-awareness,meaningthatthe
+By matching the descriptors recovered from the test image to
+information presented to the visitors should be tailored to their
+theonesrecoveredfromtheimageset,asetofpossiblematches
+personalorenvironmentalcontext.Thepersonalcontextincludes
+betweenthefeaturesisrecovered.Imageswithalargenumberof
+the visitor’s interests, the visitor’s current location, and exhibits
+possiblematchesarecandidatesforthematchedscene.However,
+alreadyvisited,whiletheenvironmentalcontextincludesthetime
+thematchedscenemightstillbeincorrectespeciallyifthenumber
+ofdayandtheopeninghoursofthemuseum.
+of matches is small. To overcome this problem, we can exploit
+Adrissinoetal.[9]havearguedthattheevolutionandconver-
+thegeometricrelationshipsbetweenthepositionsofthematched
+genceoftechnologies,togetherwiththeneedsexpressedinrecent
+featuresinthetwoimages(afundamentalmatrixinthegeneral
+museum research, open new opportunities for personalization
+caseandahomographymatrixforplanarscenes).Thismatrixis research,whichhasthepotentialtoimprovethepresentationof
+usually computed using a robust estimation procedure from the information,theexplorationofcontentinterestingforthespecific
+RANSACfamily[19–26].Thesealgorithmscanberunonthetest user, and collaboration among users having similar interests, as
+imageandoneachoftheimagesfromthedataset.Ifthealgorithm wellasadapttoheterogeneoususercontextsanddevices.
+succeeds,thenusuallythetwoimagesareofthesamescene.
+If, however, the image database is large, such a procedure 2.3. UbiquitouscomputingandHCI
+can be time consuming and cannot be run in real time. To ad-
+dress this problem, several algorithms have been proposed for Weiser’s vision [31] of ubiquitous computing, with its invisi-
+scenerecognitionfromatestimage.Usingvarioustechniques,the bleyetattentivecomputingenvironmentthatprovidestheright
+numberofpossibleimagesfromthedatabaseisreducedandthe information to the right person at the right time, is an exciting
+aforementionedalgorithmsonlyneedtoberunontheremaining visionofhowtoevolvecomputertechnology.Withinaubiquitous
+ones.Someofthealgorithmsdevelopasingledescriptorforthe computingenvironment,thecomputingelementsandtheirinter-
+whole image and recognize the scene using similarity measures communication are largely hidden from the user, and the tech-
+betweenthedescriptors[27].Othersuseconvolutionalneuralnet nologyisnotreadilyvisible–itiswornorembeddedinbuilding
+classifiers for deciding whether two images belong to the same infrastructure–andisspokenwithandrelatedto.Inafollow-up
+scene [28]. Statistics on matches between local descriptors can toWeiser’svision,andwiththematurationofmobiletechnology,
+alsobeusedforscenerecognition[29].Oncethedatabaseimage the idea of context awareness emerged. ‘‘Context and context-
+awareness provide computing environments with the ability to
+has been recovered, it will be accompanied by a set of matches
+usefullyadapttheservicesorinformationtheyprovide. Itisthe
+between the test image and one database image. At this stage,
+abilitytoimplicitlysenseandautomaticallyderivetheuserneeds
+the user’s fixation point comes into play. The designer of the
+that separates context-aware applications from traditionally de-
+applicationcanmarkinadvancepositionsonthedatabaseimages
+signedapplications,andthismakesthemmoreattentive,respon-
+where objects of interest are visible. In order for the object of
+sive,andawareoftheiruser’sidentity,andtheiruser’senviron-
+interesttoberecognized,thefixationpointonthetestimagehas
+ment’’[32].
+tobetransformedintoapointonthedatabaseimageand,ifthat
+Interaction between users and computers occurs at the user
+pointisclosetooneofthemarkedobjectsofinterest,thecontent
+interface, including both hardware and software. As computers
+relatedtothatobjectcanbedelivered.Usingthematchedpoints
+become mobile and invisible, designing the interaction between
+and the recovered geometric relationships between the images
+humansandcomputersbecomesmoreandmorechallenging.In-
+(fundamental matrix or homography), the transformation of the
+teractiondesignmeansdesigninginteractiveproductstosupport
+fixationpointiscomputed.
+peopleintheireverydayandworkinglives.BecauseHCIconcernsa
+humanandamachineinconjunction,designingauserinterfacere-
+2.2. TechnologyandCH
+quiresknowledgeofboththehumanandthemachineside:knowl-
+edgeaboutcommunicationtheory,graphicdisciplines,socialsci-
+Over the last 20 years, cultural heritage has been a favored ences,andcognitivepsychology,ontheonehand,andknowledge
+domainforpersonalizationresearch.Foryears,researchershave aboutcomputergraphicstechniques,operatingsystems,andpro-
+experimentedwiththecutting-edgetechnologyoftheday.Now, gramminglanguages,ontheotherhand.Huangetal.[33]discussed
+withtheconvergenceofinternetandwirelesstechnology,andthe thechallengesinHCIdesignformobiledevices.Thelimitationsof
+increasingadoptionoftheWebasaplatformforthepublication current mobile devices, such as limited input/output/screen size
+of information, cultural heritage material can be exploited by a andinconvenientnavigationthroughhierarchicalmenus,arewell
+museum visitor before, during and after the visit, with different knownandmostlyaresultofthedevicedimensions.Hence,ap-
+goalsandrequirementsineachphase.However,culturalheritage plyingimplicitinteraction,usingeye-gazeasanaturalinteraction
+siteshaveahugeamountofinformationtopresent,whichmust method,mayhelpovercomesomeofthesechallenges.
+Pleasecitethisarticleinpressas:M.Mokatren,etal.,Exploringthepotentialofamobileeyetrackerasanintuitiveindoorpointingdevice:Acasestudyincultural
+heritage,FutureGenerationComputerSystems(2017),http://dx.doi.org/10.1016/j.future.2017.07.007.4 M.Mokatrenetal./FutureGenerationComputerSystems ( ) –
+2.4. Relatedwork attentionbyeyetrackinginthetourismsetting,byexamining,for
+example, when a tourist gets bored looking at a city panorama.
+Many studies were conducted on detecting eye movements Thisscenariomaybeofspecificinteresttousinfuturework,as
+before the appearance of computer interfaces as we know them locationsorobjectsthatattractmoreorlessinterestmaybeusedto
+today. Robert and Jacob [8] presented techniques for local cal- modeluserinterestandtriggerfurtherservices/informationlater
+ibration of an eye tracker. This technique produces a mapping on.
+of the eye movement and eye wandering measures. In addition, NakanoandIshii[41]studiedtheuseofeyegazeasanindicator
+theypresentedatechniqueforfixationrecognitionwithrespect of user engagement, trying also to adapt it to individual users.
+toextractingdatafromnoisy,jittery,error-filledstreamsandfor Engagement may be used as an indicator of interest, and the
+addressingtheproblemof‘‘Midastouch’’,wheretheeyetracking abilitytoadaptengagementdetectiontoindividualusersmayalso
+system is ‘‘misled’’ by people inadvertently looking at an item enableustoinferinterestandbuild/adaptausermodelusingthis
+theyarenotinterestedin.JacobandKarn[4]presentedalistof information.Furthermore,Maetal.[42]demonstratedaninitial
+promisingeyetrackingmetricsfordataanalysis: abilitytoextractusermodelsbasedoneyegazeofusersviewing
+• Gazeduration—cumulativedurationandaveragespatiallo- videos.
+The use of handheld devices as a multimedia guidebook in
+cationofaseriesofconsecutivefixationswithinanareaof
+museumshasledtoimprovementinthemuseumvisitexperience.
+interest.
+• Gaze rate—number of gazes per minute on each area of Researchhasconfirmedthehypothesisthataportablecomputer
+with an interactive multimedia application has the potential to
+interest.
+• Numberoffixationsoneachareaofinterest. enhanceinterpretationandtobecomeanewtoolforinterpreting
+• Numberoffixationsoverall. museumcollections[43].
+• Scanpath—sequenceoffixations. Studiesaboutintegrationofmultimediaguidebookswitheye
+• Numberofinvoluntaryandnumberofvoluntaryfixations trackinghavealreadybeenconductedinthecontextofmuseums
+(shortfixationsandlongfixationsshouldbewelldefinedin andculturalheritagesites.MuseumGuide2.0[44]waspresented
+termsofmillisecondunits). as a framework for delivering multimedia content to museum
+visitors that runs on a handheld device and uses the SMI viewX
+Brôneetal.[34]haveimplementedeffectivenewmethodsfor eyetrackerandobjectrecognitiontechniques.Thevisitorcanhear
+analyzinggazedatacollectedwitheyetrackingdevicesandshown audio information when looking at an exhibit. A user study was
+howtointegrateitwithobjectrecognitionalgorithms.Theypre- conducted in a laboratory setting, but no real museum was in-
+sentedaseriesofargumentsastowhyanobject-basedapproach volved.Weextendedthisworkbyintegratingtheeyetrackerinto
+mayprovideasignificantadvantage,intermsofanalyticalpreci- arealmuseumvisitors’guideandexperimentonitinarealistic
+sion.Inordertoidentifytheareaofinterest(AOI),theyattached setting.
+physicalmarkerstoeachAOI.Theypresentedsomelimitationsof Aswehaveseen,thereisalargebodyofworkaboutmonitoring
+thistechnique,suchasthechallengeoftheinstallation.Weused andanalyzingusereyegazeingeneralandsomealsoincultural
+theirlessonsinourstudybydefiningtheobjectofinterest(OOI) heritage.Moreover,theappearanceofmobileeyetrackersopens
+(thistermbeingmoreappropriatetoourmuseumvisitscenario)
+new opportunities for research in mobile scenarios. It was also
+‘‘digitally’’ontheimagesinthedatabase.
+demonstratedonseveraloccasionsthateyegazemaybeusefulin
+Pfeifferetal.[35]presentedtheEyeSee3Dmethod.Theycom-
+enhancing a user model, as it might make it possible to identify
+binedgeometricmodelingwithinexpensive3Dmarkertrackingto
+userattention(andinterests).Inmobilescenarios,whenusersalso
+alignvirtualproxieswiththereal-worldobjects,sothatfixations
+carry smartphones equipped with various sensors, implicit user
+on objects of interest can be classified automatically while sup-
+modeling can be carried out by integrating signals from various
+portingacompletelyfreemovingparticipant.Duringtheanalysis
+sensors, including the new eye-gaze sensor, to better model the
+ofposeestimationaccuracy,theyfoundthatthemarkerdetection
+userandofferbetterpersonalizedservices.SensorslikeGPS,com-
+failedwhentheparticipantlookedsidewaysandtherewassimply
+passes,accelerometersandvoicedetectorshavethusfarbeenused
+no marker within view, or due to swift head movements or ex-
+tomodelusercontextandinterest,(see,forexample,[45]).Mobile
+tremepositionchanges.Ohmetal.[36]triedtodeterminewhere
+scenariosinfactcoverawidevarietyofactivities,fromjoggingto
+peoplelookwhennavigatinginalarge-scaleindoorenvironment
+shoppingtoculturalheritage.Thetasksineachscenarioaredif-
+andwhatobjectscanassisttheminfindingtheirway.Theycon-
+ferentanduserattentiondiffersaccordingtothetask.Bullingand
+ductedauserstudyandassessedthevisualattractionofobjects
+Gallersen[46]discusssomeofthecharacteristicsandchallenges
+withaneyetracker.Theirfindingsshowthatfunctionallandmarks
+ofmobileeye-trackinggiventhetechnologicalprogressinthefield
+likedoorsandstairsaremostlikelytobelookedatandnamedas
+and,specifically,howthesecharacteristicsmakeeyemovementsa
+landmarks.
+distinctinformationsourceabouttheuser’scontext.Giannopoulos
+Beugheretal.[37]presentedanovelmethodfortheautomatic
+etal.[47]presentedviGaze—aneyetrackingframeworkthatwas
+analysisofmobileeye-trackingdatainnaturalenvironmentsand
+forprocessingthisdatabyapplyingobject,face,andpersondetec- demonstratedinasupermarket.Itallowsthedynamiccreationand
+tionalgorithms.Theobtaineddetectionresultsweresatisfactory designofvirtualshelves,theirenhancementwithaudioandvisual
+formostoftheobjects.However,largescalevariationsresultedin information,aswellasthedesignandenablementofgaze-based
+alowerdetectionrate(forobjectsthatwerelookedatbothfrom interactions(explicitandimplicit)thatcantakeplacebetweenthe
+veryfarawayandfromcloseby.) usersandthevirtualshelves.Usingaprototypeimplementation
+Schrammeletal.[38,39]studiedattentionalbehaviorofusers oftheframework,theyconductedauserstudythatdemonstrated
+onthemove.Theydiscussedtheuniquepotentialandchallenges itsfeasibilityinthecontextofaninstrumentedretailenvironment.
+of using eye tracking in mobile settings and demonstrated the Theyconcludedthattheideasgeneralizeeasilytodifferentkinds
+abilitytouseittostudytheattentiononadvertisingmediaintwo ofinstrumentedenvironments.
+differentsituations:withinadigitaldisplayonpublictransporta- Although much research has been conducted on monitoring,
+tionandtowardslogosonapedestrianshoppingstreet;theyalso analyzing,andusingeyegazetoinferuserinterest,littleattention
+presentedideasforageneralattentionmodelbasedoneyegaze. has been paid so far to user gazing behavior ‘‘on the go’’. This
+Kiefer et al. [40] also explored the possibility of identifying user scenarioposesmajorchallengesasitinvolvessplittingattention
+Pleasecitethisarticleinpressas:M.Mokatren,etal.,Exploringthepotentialofamobileeyetrackerasanintuitiveindoorpointingdevice:Acasestudyincultural
+heritage,FutureGenerationComputerSystems(2017),http://dx.doi.org/10.1016/j.future.2017.07.007.M.Mokatrenetal./FutureGenerationComputerSystems ( ) – 5
+‘‘stop’’ gesture was adopted for starting/stopping the presenta-
+tions.Furtherstudiesonhowtheuserinteractswiththesystemare
+obviouslyrequired,possiblytakingintoconsiderationthemetrics
+suggestedbyJacobandKarnin[4]andlistedinSection2.4.
+Thesystem(seeFig.2)consistsofthreemainmodules:apo-
+sition locator, an OOI identifier, and a broadcaster. The modules
+andthedatabasesarelocalonthecomputerforreasonsofspeed,
+aswellastoreducethelatencyofdeliveringinformationtothe
+user/visitor. The flow of input/output is as follows: The mobile
+eyetrackerstreamsacapturedsceneframefromtheworldanda
+fixationpoint,afterwhichSIFTfeaturesoftheframeareextracted
+andsenttothepositionlocatortogetherwiththefixationpoint.
+The position locator module matches the current features with
+a predefined set of descriptors (that are extracted from dataset
+images beforehand). Once there is a match, the position locator
+streams the position ID together with the fixation point to the
+OOI identifier, which identifies the object of interest using the
+fixationpoint.Finally,theOOIidentifierpassestheobjectIDtothe
+broadcaster,whichfindstheappropriateaudiofileandbroadcasts
+Fig.1. Pupileye-tracker(http://pupil-labs.com/pupil).
+ittotheuser.Wehaveimplementedtwoversionsofthemobile
+eyetrackerbasedaudioguide:
+betweenseveraltasksatthesametime—avoidingobstacles,gath- 1. Proactive:Afterthepositionofthevisitorandpoint/objectof
+ering information, and paying attention to whatever seems rel- interestareidentified,a‘‘beep’’soundisplayed,andtheau-
+evant. While user behavior has been monitored and analyzed in dioinformationabouttheexhibitisdeliveredimmediately
+variouswaysinsmartenvironments,usingavarietyofsensors,this after.
+hashardlyeverbeendoneforeyegaze. 2. Reactive:Afterthepositionofthevisitorandpoint/object
+ofinterestareidentified,a‘‘beep’’soundisplayed,andthe
+3. Toolsandmethods system waits for a mid-air gestural action (‘‘stop sign’’).
+After the user makes the appropriate gesture, the audio
+Forthepurposeofthisstudy,acommercialmobileeyetracker, informationisdelivered.
+the Pupil-Dev eye tracker [7], was integrated into a mobile mu-
+Forbothversions,thesamemid-airgesturalactionofa‘‘stop
+seum visitors’ guide system as a positioning tool and for focus
+sign’’wasusedtostoptheaudiopresentation.Weimplemented
+of attention detection, both using computer vision techniques.
+thisfeatureusingDenseOpticalFlow,whichwaspresentedin[50].
+It comprises a lightweight eye tracking headset, an open source
+Wedidsobylookingatthreecontinuousframes,eachdividedinto
+softwareframeworkformobileeyetracking,aswellasagraphical
+100 blocks (10 × 10), and from each block we took one point,
+user interface to play back and visualize video and gaze data. It
+calculated its optical flow magnitude and counted it if it was in
+featureshigh-resolutionsceneandeyecamerasformonocularand
+the threshold range. In our case the range is between 10 to 150
+binoculargazeestimation.Weusedthemonocularversion(30 )
+hz pixels.Wecallthesepointsviolationpoints.Wedeterminedthata
+as an input device for inferring the object of interest (OOI) (see
+‘‘stopsign’’gesturewasmadeifthreeconsecutiveframeshadzero
+Fig.1).
+violationpoints.
+ThesoftwareandGUIareplatform-independentandofferreal-
+Since the system is to be used in a real-time scenario, the
+timepupildetectionandtracking,calibration,andaccurategaze
+followingfunctionalrequirementsshouldbemet:
+estimation. Results of a performance evaluation show that Pupil
+canprovideanaveragegazeestimationaccuracyof0.6◦ofvisual
+• Response time: The system should be responsive enough
+anglewithaprocessingpipelinelatencyofonly0.045s[7].
+todeliverthedesiredinformationwithininteractivetime.
+A key challenge in using mobile technology for supporting
+According to Card et al. [51], 10 s is about the limit for
+museumvisitorsisfiguringoutwhattheyareinterestedin.This
+keepingtheuser’sattentionfocused.Inoursystem,weset
+maybeachievedbytrackingwherethevisitorsareandthetime
+a maximum time limit of 5 s for delivering the desired
+theyspendthere[48].Amorechallengingaspectoftheproblem
+information.
+istoidentifyexactlywhattheyarelookingat[49].Thedeveloped • Accuracy:Thesystemshouldbeaccurateenoughtodeliver
+systemaddressesthetwoaforementionedchallenges–itidentifies
+the correct information at the right time. This means the
+userfocusofattentionaccurately,anditdoessounobtrusively.The
+correctinformationshouldbedeliveredwhenthevisitoris
+systemexploitsandextendsanimage-basedpositioningtechnique
+standinginfrontoftheexhibit,inaccordancewiththewhat
+(describedlaterinSection4)todeliveraudioinformationaboutex- youlookatiswhatyougetapproach.
+hibitsinthemuseum.Avisitorwearsthemobileeyetracker,which
+isconnectedtoalaptop(carriedinabackpack),andgazessteadily Theperformanceoftheeye-trackerwasfirstevaluatedinthree
+atanexhibitforapproximatelythreesecondswhilestandinginone userstudies,afterwhichthesystemwasevaluatedinaseparate
+place,afterwhichtheimage-basedpositioningprocedurestarts, user study in a realistic setting. 22 students from the University
+location/position and point of interest are identified, and audio ofHaifaparticipatedinthelatterstudy,whichwasconductedin
+informationregardingthedesiredexhibitisdelivered.Tomeetthe theHechtMuseum,asmallmuseumattheUniversityofHaifathat
+goal of unobtrusiveness, two assumptions were made regarding hasbotharcheologicalandartcollections.Thestudyincludedan
+theinteractionoftheuserwiththesystem:the3-sgazingperiod orientationsessiontoexplaintheuseoftheeyetracker,followed
+that triggers the positioning system is long enough to avoid the byatourofthemuseumwiththeeyetracker,whichwasconnected
+‘‘Midastouch’’problem,andalsolongenoughtoensurethatthe to a laptop carried in a backpack, with audio content about the
+userisnotmovingbutstandingandlookingatanexhibit.Asimple exhibitsdeliveredviaheadphones.
+Pleasecitethisarticleinpressas:M.Mokatren,etal.,Exploringthepotentialofamobileeyetrackerasanintuitiveindoorpointingdevice:Acasestudyincultural
+heritage,FutureGenerationComputerSystems(2017),http://dx.doi.org/10.1016/j.future.2017.07.007.6 M.Mokatrenetal./FutureGenerationComputerSystems ( ) –
+Fig.2. TheprocessofOOIidentificationandinformationdelivery.
+Table1
+Numberofmissespergridcell.
+Cell# 6 18 19 23 24
+#ofmisses 5 5 3 5 5
+Visitorexperiencewhenusingtwodifferentmobileguideswas
+alsocompared:anaudioguidethatusesthemobileeyetrackerand
+aconventionalmobileguidethatrunsonasmartphoneanduses
+BLE(Bluetoothlowenergy)Estimotebeacons[52]toidentifythe
+Fig.3. Left:Screencapturefromuserstudy1.Thefingerpointsatacellatwhich
+positionofthevisitor.Wheneverthevisitorreachedapredefined theparticipantwasaskedtolook.Thegreencircleisthefixationpointreturnedby
+areaofinterest,amultimediapresentationwasdelivered. theeyetracker.Thesizeofeachgridcellis20×20cm.Right:Screencapturefrom
+eyecamera. (Forinterpretationofthereferencestocolorinthisfigurelegend,the
+4. Assessing the performance of the Pupil-Dev eye tracker in readerisreferredtothewebversionofthisarticle.)
+realisticsettings
+To assess the accuracy of the mobile eye-tracker device in deliveringthesceneandtheseconddirectedtotherighteyefor
+realisticsettings,wefirsthadtodesignanddevelopthesystemto detectingfixations.Whenthedevicedidnotfitproperly,thevision
+workandtobeevaluatedintherequiredoperationalrange.Tothis rangedecreasedandpartsofthepupilfelloutsidetheareaofthe
+end,weconductedthreepreliminaryuserstudies. capturedframe(seeFig.3(right)forexample),asnofixationswere
+detected.Anotherlimitationwasthattallpeoplehavetostepback
+4.1. Userstudy1:lookingatgridcells from the object (to keep it in the camera’s field of view), which
+affectstheaccuracy.
+FivestudentsfromtheUniversityofHaifa,withoutanyvisual
+disabilities,participatedinthisstudy(averageageis22),thegoal 4.2. Userstudy2:lookingatanexhibit
+ofwhichwastodeterminetheaccuracyofthedetectionofapre-
+definedPOI.Thestudentswereaskedtolookatawall-mounted Inthisstudy,weexaminedtheaccuracyoftheeyetrackerina
+gridfromadistanceof2mandtrackafingerwhileusingthe eye realisticsetting.Oneparticipant(1.79mtall)wasaskedtolookat
+tracker(seeFig.3,left).Standingatafixedpoint,theywereasked exhibitsinthemuseum.Severalexhibitswherechosenwithdiffer-
+to look for approximately 3 s at each cell the finger pointed at. entfactorsandconstraints(seeFigs.4and5).Themainconstraint
+Onaverage,theeyetrackerdetectedfixationwithanaccuracyof in this case was the distance from the exhibit, since the visual
+∼80%(mostofthemissedfixationswereintheedges/corners—see range increases when the distance grows, and we have to cover
+Table1fordetails).Inaddition,theaveragefixationpointerror,in alltheobjectsthatweareinterestedin.Table2presentsheightof
+termsofdistancefromthecenterofthecell,wasapproximately theobjectsfromthefloorandthedistanceoftheparticipantfrom
+5cm. eachobject.Thenextstepwastoexaminefixationaccuracyafter
+Duringthestudy,weencounteredseveralpracticalproblems. makingsurethattheparticipantisstandingatthecorrectdistance
+The first is that the eye tracker was not fitted individually to from the exhibit. The participant was asked to look at different
+eachparticipant.Thedeviceconsistsoftwocameras,thefirstfor pointsintheexhibit/scene.Inthegalleryexhibits,thescanpath
+Pleasecitethisarticleinpressas:M.Mokatren,etal.,Exploringthepotentialofamobileeyetrackerasanintuitiveindoorpointingdevice:Acasestudyincultural
+heritage,FutureGenerationComputerSystems(2017),http://dx.doi.org/10.1016/j.future.2017.07.007.M.Mokatrenetal./FutureGenerationComputerSystems ( ) – 7
+Table2
+Experimentdetails—weconsideredthethreeglassshelvesonthefarleftofthevitrineshowninFig.5(right).
+Exhibittype Width(cm) Height(cm) Heightfromfloor(cm) Standdistance(cm)
+80 25 150 150
+80 15 120 230
+Vitrineshelf
+80 20 90 310
+80 15 40 390
+Gallery 60 67 150 200
+Table3
+Standingdistances.
+Exhibittype Distance(cm)
+Vitrineshelves 50–70
+Artgallery 70–100
+Smallstatues 50–70
+Largeexhibits 100–150
+layoutplaysacrucialroleinobtainingaccuratematchingresults.
+One option might be to capture several images from different
+viewpointsforeachexhibit.Timecomplexityisthelimitationof
+thisoption,sincetheimage-to-imagematchingprocedurerequires
+massive amounts of computation, which can cause a delay in
+deliveringthecurrentposition.Toidentifytypicalviewpoints,10
+regularmuseumvisitorswereobservedwhenvisitingtheHecht
+Fig.4. Galleryexhibition.
+Museum,andtheirstandingdistancefromeachexhibitwasmea-
+suredforfourtypesofexhibits:vitrineshelves(Fig.5,right),art
+galleries(Fig.4),smallstatues(Fig.5,left)andlargeexhibits(Fig.7).
+wassettobethefourcornersofthepictureandfinallythecenter The distancesare presentedin Table3. During theobservations,
+ofit.Regardingthevitrineexhibits,foreachjug,onepointatthe weignoredtheanglebetweenthevisitorandtheexhibit,because
+centerwasdefined. severalsuchfrontal-viewinganglesarepossible.Wethereforejust
+Not surprisingly, we obtained 100% accuracy in the art wing consideredthedistances.
+sinceallthepicturesareplacedatanidealheight.Thearcheological Once typical distances were known, images of the exhibits
+wingisconsideredamorechallengingenvironment,sinceobjects were taken and assigned distinct label values (image ID), and a
+areplacedatdifferentheightsanddifferinsize.Specifically,when setofrectangularregionswithintheimages(aroundobjects)was
+theuserhastotilthisorherheadtolookdown,wenoticedpoor definedandassignedadistinctID.
+performance. As this poor performance is due to a limitation of Thematchingprocedureforlocationidentificationandinterest
+thecurrentdevice,wedidnotconsiderlow-heightexhibitsinour detectionwasdoneinfoursteps:
+experiments.Morechallengingexhibitsarethosethatareplaced
+in harsh lighting conditions: conditions that change drastically 1. Aneye-trackerscenecameraframewastaken(Fig.6(left))
+duringtheday,asaresultofchangingsunlight.Hence,inthecaseof aftertheuserfocusedonanobject(lookedatitsteadilyfor
+thearcheologicalwing,weestimatedthatabout60%oftheexhibits threeseconds).Thiswasdonebytrackinggoodfeaturesin
+aredetectablewiththecurrentdevice. threeframeswithinthethree-secondperiod(foreachsec-
+As the goal of the study was to explore the potential of the ondwestoredoneframe)usingtheLucas–Kanademethod
+deviceinarealisticsetting,beingabletodetect60%oftheexhibits foropticalflow[53].
+seemed good enough for our purpose. We assume that as the 2. Image-to-imagematchingwasappliedusingSIFTfeatures.
+technology improves, the current limitations will be reduced or Twoimages(thecurrentframeandthedatasetframe)are
+eveneliminatedcompletely. saidtomatchifthenumberofmatchedfeaturesdividedby
+thetotalnumberoffeaturesishigherthanathreshold.(in
+4.3. Userstudy3:image-basedpositioning our case we chose the threshold = 0.12). The result is an
+imagethatmatchesthecurrentlocation(Fig.6(right)).
+4.3.1. Preparation 3. A mapping transformation was obtained to transform the
+In this study, we wished to answer the question: How can fixation point identified in the scene camera of the eye-
+we use a mobile eye tracker to identify the location and the trackertoasuitable/matchedpointintheimagethatexists
+objectofinterest?Weimplementedanimage-basedpositioning inourdatasetwithlabeledregions(seeFig.6,right),since
+techniquetoidentifythevisitor’spositionandobjectofinterestin theviewpointfromwhichtheobjectswerephotographed
+apredefinedmuseumlayout.WeusedtheSIFTalgorithm[15]to candifferinthetwoimages.Forexample,oneimagemight
+matchthecurrentscene’scameratoasetofimagesfromapre- be rotated relative to the other or one zoomed in/out be-
+defineddatasetforlocatingthevisitor’sposition.Whatremained cause the visitor’s distance from the object differed from
+afterlocatingthevisitor’slocationistoinferhis/herobjectofinter- thedistancefromwhichthedata-setimagewastaken.The
+est.Sincewehaveamatchedimagefromthedataset,transforming mappingtransformationwasobtainedusingthehomogra-
+thefixationpointthatwegetfromtheeyetrackerwillleadustoa phymatrix,whichwascomputedusingarobustestimation
+pointinthedatasetimage.Hence,withpredefinedregions/labels procedurefromtheRANSACfamily[19].
+ineverydatasetimage,weinferthevisitor’sobjectofinterest. 4. Thefinalstepoffindingtheobjectissimplenowthatwe
+Avisitorenteringthemuseumcanstop/standinfrontofeach haveobtainedmappedfixationpointsandlabeledregions.
+exhibit at different viewpoints (in terms of distance and angle). Whatremainsistodeterminewhichobject(ifany)thepoint
+Consequently,preparingthedatasetthatrepresentsthemuseum correspondsto.
+Pleasecitethisarticleinpressas:M.Mokatren,etal.,Exploringthepotentialofamobileeyetrackerasanintuitiveindoorpointingdevice:Acasestudyincultural
+heritage,FutureGenerationComputerSystems(2017),http://dx.doi.org/10.1016/j.future.2017.07.007.8 M.Mokatrenetal./FutureGenerationComputerSystems ( ) –
+Fig.5. Smallstatueexhibit(left).Backlitvitrineexhibit(right).
+Fig.6. Left:Exampleofanimagetakenbythescenecameraoftheeye-tracker.Thegreenpointisthefixationpoint.Right:Image-to-imagematching.Theyellowrectangles
+aretheregionsaroundeachobject.Thegreenpointisthefixationpointaftertransformationfromtheleftimageisperformed.ThecorrespondingregionwouldbeR3. (For
+interpretationofthereferencestocolorinthisfigurelegend,thereaderisreferredtothewebversionofthisarticle.)
+Asthematchingofthecamerasceneimagewitheveryimage the object of interest was identified. With a database of images
+fromthedatasetistimeconsuming,weoptimizedtheprocessby takenfrom24positionsandrepresenting18exhibits,theprocess
+startingitfromimagesnearthevisitor’scurrentlocation.Tothat took 1.5 s on average. The experimental results are presented
+end,werepresentedthedatasetusingagraph,whereeachnode in Table 4. It is clear the positions were correctly identified in
+representstheexhibit’simage/labelandthearcvaluesrepresent mostcases.However,thereweretwopositions/exhibitswherethe
+thephysicaldistancebetweentwoneighboringexhibits. performancewaspoororevenfailedmostofthetime.Examining
+thesecasesrevealedthatlow-accuracyresultswereobtainedfor
+4.3.2. Evaluationoftheaccuracyandmatchingtime exhibits with unusual features, e.g., those placed in such a way
+Weobservedmuseumvisitorsandnoticedthatavisitorwho thatthevisitorcanlookatthemfromadistanceandfromawide
+enters a museum might walk around or stand and look at an varietyofangles(Figs.7and8forexample),ascenariothatrequires
+exhibit.Wehavetodistinguishbetweenthesetwocases.Torecog- manyreferenceimages.Apossiblesolutionistoaddseveralimages
+nizetheeventoflookingatanexhibit,wesetatimeinterval(three fromdifferentdistancesandanglesforeachsuchexhibit.Exhibits
+seconds)oflookingatascene.Weusethisasatriggerforstartinga withdifferentlightingconditions(especiallynearbywindows)that
+matchingprocedure,comparingtheimageofthescenewithaset may affect the image-matching process will also require many
+ofexistingposition-representingimages(thatweretakenbefore- referenceimages.Apossiblesolutionistoaddseveralimagestaken
+hand,bythesametypeofcamera,ateverypositionfromseveral atdifferenttimesofday.Inoursystem,wedonotconsiderthese
+differentangles,basedonourobservationsofvisitors’behavior). cases.
+Thematchingprocedureyieldsasetofscores,andtheimagewith
+thehighestscoreisselectedasrepresentingthevisitor’scurrent 5. Empiricalstudy
+position.DuringthestudyconductedintheHechtMuseum,one
+personwasaskedtowalkaroundthemuseumandlookatexhibits. Oncetheperformanceoftheeyetrackerwasstudiedandthe
+Whenhelookedsteadilyatanexhibitforaboutthreeseconds,the systemsdeveloped,weevaluatedtheminarealisticsetting.The
+image based positioning procedure started and the position and researchquestionswewereinterestedinexploringwere:
+Pleasecitethisarticleinpressas:M.Mokatren,etal.,Exploringthepotentialofamobileeyetrackerasanintuitiveindoorpointingdevice:Acasestudyincultural
+heritage,FutureGenerationComputerSystems(2017),http://dx.doi.org/10.1016/j.future.2017.07.007.M.Mokatrenetal./FutureGenerationComputerSystems ( ) – 9
+Table4
+Accuracyofexhibitmatching.
+Item# 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+Accuracy 1 1 1 1 0.42 1 1 1 1 1 0.11 1 1 1 1 1 1 1
+Fig.7. ExhibitE5.Alargeexhibitthatrequiresadditionaldatasetimagesfromdifferentviewpoints.
+Fig.8. ExhibitE11.Additionaldatasetimagesarerequiredforeachobject.
+(Q3a)Towhatextentdoesaproactiveversionofthevisitor’saudio 5.1. Participants
+guidecontributetothevisitorexperienceinmuseums,compared
+withthecontributionofareactiveversion? Twenty-twostudentsfromtheUniversityofHaifaparticipated
+in the study, some of whom were randomly invited, and some
+(Q3b) To what extent does the use of a mobile eye tracker in
+of whom were occasional visitors who happened to be at the
+anaudioguidecontributetothevisitorexperienceinmuseums,
+museumduringtheexperiments.12participantswerefemalesand
+comparedwiththecontributionofconventionalmobileguide?
+10participantsweremales,withanaverageageof24.45years(SD
+ThehypothesesforQ3awere: =4.415).Thechoiceofuniversitystudents,whoarenotcharac-
+H0:Theproactiveandreactiveversionswillnotdiffersignificantly teristicofvisitorstotheHechtMuseum,mayimpactdependent
+intermsoftheircontributiontovisitorexperienceinmuseums. variables, such as average age or background knowledge, which
+H1:Theproactiveandreactiveversionswilldiffersignificantlyin couldinfluencetheexperimentalresults.However,wemadethis
+choicebecauseregularvisitorstotheHechtMuseumaremainly
+termsoftheirvisitorexperienceinmuseums.
+groupsofseniorcitizensandclassesofschoolchildren.
+ThehypothesesforQ3bwere:
+H0:Themobileeye-trackerbasedaudioguideandthesmartphone
+5.2. Experimentsetup
+based mobile guide will not differ significantly in terms of their
+contributiontovisitorexperienceinmuseums.
+To test the hypotheses, experiments manipulating and mea-
+H1:Themobile-eyetrackerbasedaudioguideandthesmartphone
+suringvariablesundercontrolledconditionswerecarriedout.The
+basedmobileguidewilldiffersignificantlyintermsoftheircontri- independentvariablewasthetypeofsystemwhilethedependent
+butiontovisitorexperienceinmuseums. variableswere:
+Pleasecitethisarticleinpressas:M.Mokatren,etal.,Exploringthepotentialofamobileeyetrackerasanintuitiveindoorpointingdevice:Acasestudyincultural
+heritage,FutureGenerationComputerSystems(2017),http://dx.doi.org/10.1016/j.future.2017.07.007.10 M.Mokatrenetal./FutureGenerationComputerSystems ( ) –
+(a) Usability factors, as measured by means of the SUS ques- versionandthesmartphone versions(p=0.048),bothsignificant
+tionnaire [54], and (b) a subjective assessment of the visitor ex- atalpha(<0.05).
+perience,asmeasured(inasetofthreeadditionalquestionnaires) Inadditiontotheusabilitystudy,theuser’ssubjectiveassess-
+byuserpreference.Thegoalofthesubjectiveassessmentwasto mentoftheproactiveorreactivesystemwasanalyzed(seeFig.10).
+determine,whethertheusersfeltthattheguidewasaneffective Thefollowingaspectsofuserpreferencewereassessed:
+waytogetinformationandlearnabouttheobjectsintheexhibit,
+1. Preferred version for overall museum visit: 13 participants
+andwhetherthesystemwassufficientlyintuitive.
+preferredthereactiveversioncomparedwith9participants
+whopreferredtheproactiveversion.
+5.3. Procedure
+2. Effectiveness for getting information and learning: 11 par-
+ticipants preferred the reactive version compared with 8
+Thestudytookaboutanhourandahalfandwasperformedasa
+whopreferredtheproactiveversion.2participantshadno
+randomizedcounterbalanced,within-groupsstudytoeliminatethe
+preference.
+learningeffect.
+3. Intuitiveness:18participantspreferredtheproactiveversion
+Theevaluationprocedurewasorganizedasfollows:
+comparedto3participantswhopreferredthereactivever-
+1. Itbeganwithabriefintroductiontothestudy,afterwhich sion.Onepersonhadnopreference.
+the participants were asked to complete a personal and
+AscanbeseeninFig.10,thereareslightdifferencesbetween
+backgroundquestionnaire.
+theproactiveandthereactivesystemswithrespecttousers’pref-
+2. Thentheparticipantsweregivenashortdemonstrationof
+erences and perceived effectiveness, where the reactive system
+each system and its features. The participants were also
+outperformedtheproactiveone:however,abinomialtestshowed
+instructedhowtoperformthecalibrationprocessand,for thatthedifferencesarenotsignificant(p=0.523forthepreferred
+thereactiveversion,howtointeractwiththeguide. versionandp=0.648foreffectiveness).Still,theproactivesystem
+3. The participants were next requested to visit the exhibits
+seemedtobemuchmoreintuitivethanthereactiveoneandthe
+inthearcheologicalwing,usingthevisitor’sguidesystems. binomialstatisticaltestconfirmedthisobservation(p=0.001).
+Thevisitstartedwiththecalibrationprocess.Thenthevis-
+Next,thepreferredmobileeyetrackeraudioguidewascom-
+itors were instructed to follow a pre-defined path in the
+pared with a conventional mobile guide on a smartphone (see
+museumandtolookatparticularobjects(aboutwhichwe
+Fig.11).
+haveinformation).
+4. Duringtheexperiment,theparticipantsfilledouttheSUS 1. Preferredguidefortheoverallmuseumvisit:16participants
+questionnairethreetimes—(onceforeverysystemtheyex- preferredthemobileeyetrackeraudioguidecomparedto
+perienced).Attheendoftheexperimenttheyfilledoutthree 6whopreferredtheconventionalmobileguideonasmart-
+additional questionnaires (1) an individual questionnaire phone.
+whose purpose was to compare visitor experience while 2. Ease of use and intuitiveness: 12 participants preferred the
+usingthetwodifferentversionsofthemobileeye-tracker conventional mobile guide on a smartphone compared to
+basedaudioguide;(2)anindividualquestionnaireregarding 10participantswhopreferredthemobileeye-trackeraudio
+user acceptance and accuracy of the gaze-based interface guide.
+and (3) an individual questionnaire whose purpose was 3. Learning:17participantspreferredthemobileeye-tracker
+to compare user experience while using the conventional audioguidecomparedto5participantswhopreferredthe
+mobileguideandthepreferredversionofthemobileeye- conventionalmobileguideonasmartphone.
+trackerbasedaudioguide.
+AscanbeseeninFig.11,themobileeyetrackerwasconsidered
+5. Finally, the participants were briefly interviewed and an-
+thepreferredguide,anditalsooutperformedthesmartphonewith
+sweredtwoopenquestions:
+respecttolearning.Theseobservationswereconfirmedbyabino-
+• Howwasyourmuseumvisitexperiencewhenusing mial statistical test that showed significant differences between
+themobileeyetrackeraudioguide? the systems (p = 0.52, which is marginally significant, for the
+• Whatdoyouthinkaboutthewaythesysteminteracts preferred version, and p = 0.017 for learning). However, there
+withtheuser(thegaze-basedinterface)? wasnorealdifferencebetweenthesystemswithrespecttoease
+ofuse,andthebinomialstatisticaltestconfirmedthisobservation
+(p=0.832).
+5.4. Experimentalresults Wewereinterestedinanalyzingtheacceptanceandaccuracyof
+thegaze-basedinterface,inordertoevaluatethepotentialofusing
+The three museum visitor’s guide systems obtained high us- themobileeyetrackerasapointingdevice.Tothatend,wepre-
+abilityscores:(1)mean=86.47andSD=7.96fortheproactive
+sentedtheparticipantswithafour-questionquestionnaire,where
+versionofthemobileeye-trackeraudioguide;(2)mean=86.36
+eachquestionhadafive-pointLikertscaleresponse.Figs.12–15
+andSD=11.84forthereactiveversionofmobileeyetrackeraudio
+presenttheresponsesoftheparticipantstothequestionsregard-
+guide;and(3)mean=93.75andSD=5.7fortheconventional
+ing the gaze-based interface: they liked the interface (Fig. 12),
+smartphone-basedmobile. thecalibrationprocessdidnotbotherthemmuch(Fig.13),they
+AscanbeseeninFig.9(left),thereisnorealdifferencebetween learned about objects of interest (Fig. 14), and they usually got
+the proactive and the reactive mobile eye tracker audio guide informationaboutthecorrectobject(Fig.15).
+buttherearedifferencesbetweenthesmartphonebasedsystem Thefinalstepofthestudywasabrief,five-minuteinterview,
+and the eye-tracker based systems. This was confirmed by the conductedattheendoftheone-and-a-half-hourstudy,wherethe
+FriedmantestwithBonferronicorrection.Thenullhypothesisthat overall visitor experience was briefly discussed and the partici-
+thedistributionsofallthreecasesarethesamewasrejected(χ2 = pantswereaskedabouttheirmuseumexperienceusingthemobile
+9.829,p = 0.007).Wefoundthattherewasnosignificantdiffer- eye-trackeraudioguideandtogivetheiropinionaboutthewaythe
+ence between the proactive and reactive versions (p = 0.706), systeminteractswiththeuser.
+butthereweresignificantdifferencesbetweentheproactiveand Theanswerstotheseopen-endedquestionsweretranscribed
+thesmartphoneversions(p = 0.016),andbetweenthereactive bytheinterviewer.Giventheconditionsofthispartofthestudy,
+Pleasecitethisarticleinpressas:M.Mokatren,etal.,Exploringthepotentialofamobileeyetrackerasanintuitiveindoorpointingdevice:Acasestudyincultural
+heritage,FutureGenerationComputerSystems(2017),http://dx.doi.org/10.1016/j.future.2017.07.007.M.Mokatrenetal./FutureGenerationComputerSystems ( ) – 11
+Fig.9. SUSscoresforthethreemuseumvisitor’sguides(left)andscoredistributions(right).
+Fig.10. Comparisonbetweenproactiveandreactiveversionsofthemobileeye-trackeraudioguide.
+Fig.11. Comparisonbetweenmobileeyetrackeraudioguideandconventionalmobileguideonsmartphoneregardingthemuseumvisitexperience.
+Fig.12. Responsestothequestion,Howdidyoulikethegazebasedinterface?
+Fig.13. Responsestothequestion:Towhatextentwasthecalibrationprocessacceptabletoyou?
+Fig.14. Responsestothequestion:Didyougetinformationregardingtheobjectyouwantedtoknowabout?
+Pleasecitethisarticleinpressas:M.Mokatren,etal.,Exploringthepotentialofamobileeyetrackerasanintuitiveindoorpointingdevice:Acasestudyincultural
+heritage,FutureGenerationComputerSystems(2017),http://dx.doi.org/10.1016/j.future.2017.07.007.12 M.Mokatrenetal./FutureGenerationComputerSystems ( ) –
+Fig.15. Responsestothequestion:Howoftendidyougetinformationregardingtheobjectyouwerenotinterestedin?
+we see this step as merely complementary. Data analysis was tolook’’;‘‘Moreintuitive,moreinteresting’’;‘‘Easiertogetinforma-
+carried out in accordance with grounded theory analysis princi- tionwith’’;‘‘I’mgettinginformationwhilelooking’’;‘‘Morecontrol
+ples [55]. With regard to the first open question, two categories overtheobjectsI’minterestedin’’.Incontrast,thoseparticipants
+of response were identified: those relating to visit enrichment whodidprefertheconventionalmobileguidesaid:‘‘Morecontrol
+(‘‘Verycoolandinteresting,temptingmetolistentoinformation inwhichIcanmovebackwardsandforwardsinthepresentation’’;
+even if the exhibit seems uninteresting to me’’; ‘‘It enriched the ‘‘Showingthepresentationispreferabletojustlisteningtoaudio’’;
+experience, I’ll remember the visit for a long time’’) and those ‘‘Iwouldusethemobileeyetrackeraudioguidewhenitaddsnew
+relatingtotheuseoffuturistictechnology(‘‘Groovy,feltfuturistic, thingstotheexhibit,likeaugmentedreality’’.
+it’swhatIalwayshopedmuseumvisitsshouldbelike’’;‘‘IfeltI’m Withregardtothepreferredguidefortheoverallmuseumvisit,
+livingin2020,itfeltlikeajourneyintime’’).Withregardtothe the results showed that most of the participants preferred the
+secondopenquestion,theanswerstendedtobeveryshortand, reactive version over the proactive version of the mobile eye-
+repetitive, and two categories of response were also identified: trackeraudioguide(eventhoughtherewasnodifferenceinthe
+thoserelatingtotheintuitivenessofthesystemandthoserelating usabilityquestionnaire).Theopen-endedquestionsshowthatthe
+tothelongdelay(‘‘3-sistoolong’’). mainreasonsforpreferringthereactiveversionarethattheusers
+feelmoreincontrolwhenusingthisversionandtheycandecide
+6. Discussion when to play the audio. According to Lanir et al. [56], museum
+visitors feel less in control when using proactive context-aware
+Wedevelopedandevaluatedamobilemuseumvisitor’sguide systems. Our reactive version was developed as an attempt to
+that uses an eye tracker as a pointing device. The current tech- overcome user aversion to such proactive systems. Nonetheless,
+nology, while still limited and premature for daily use, has the ourinteractiondesignwasnotsufficientlyacceptedasaneffective
+potentialtobeusedforexperimentationinrealisticsettings.The method of user control. It was suggested that the three-second
+evaluation results show that the system got satisfactory scores ‘‘stop’’gesturebereplacedwithabuttonorasensoronthemobile
+(‘‘very good’’ scores for both the proactive and the reactive ver- eye-trackerdevice.Therefore,whilethismobiletechnologyisstill
+sions).Notsurprisingly,theconventionalmobileguidegotahigher tooprematurefordailyuse,onceimproveditcanbeeasilyadopted
+usabilityscore,probablybecausethemobileeye-trackingtechnol- andusedasanaturalpointingdevice.
+ogyisstillnotmatureenoughandtheexperimentalprocedurewas Withregardtotheeffectivenessofgettinginformationandlearn-
+abitcumbersomeascomparedtosmartphones,whichareusedby ing,thequestionnaireresultsshowednorealdifferencesbetween
+thevisitorsonadailybasisandcompletelyfamiliartothem. thetwoversionsofthemobileeye-trackeraudioguide.
+Incontrasttoitslowerusabilityscore,themobileeye-tracker Finally, with regard to intuitiveness, the questionnaire results
+audioguidewasshowntobepreferabletotheconventionalsmart- showedthatmostoftheparticipantspreferredtheproactivever-
+phoneguidewithregardtooverallmuseumvisitexperience.Partic- sionoverthereactiveversion.Theopen-endedquestionsindicate
+ipantswhopreferredthemobileeyetrackeraudioguideindeed thatthispreferenceismainlyduetothesimplicityoftheinterac-
+attributed their preference to experience-related aspects of the tionandthefactthatitrequireslesseffort.
+guide: ‘‘It is mainly because of the experience’’; ‘‘I prefer to get Likeanystudy,thecurrentstudyhasitslimitations.Thefirst
+audio information while looking’’; ‘‘It’s because of the ability to limitationistechnical.Weusedaspecificeyetracker,examined
+get information while walking ’’; ‘‘It’s more comfortable to use, andmappeditslimitations(asexplainedabove),andtriedtowork
+there’s no need to play presentations and to scroll down on the withintheselimitations.Itmaybethatotherdevices(suchasTobii
+screen’’;‘‘Lesseffort,moreaccurate,morecontrolandgivesinfor- Pro Glasses 22 for instance) are better in terms of performance
+mation per object’’; ‘‘It’s because of the innovative technology’’; metricssuchaselevation,fieldofview,accuracy,orlatency,but
+‘‘You need to search for the object in the museum when using thesedevicesarealsomuchmoreexpensiveatthistime.Anad-
+the smartphone’’; ‘‘It gives an opportunity to ‘live the museum’ ditionallimitationstemsfromthefactthatthemobileeyetracker
+or ‘to feel the museum’’’; ‘‘It’s more efficient, but what about is a wearable device, and thus problematic for people who wear
+if we were in a larger museum? Why should I have to search glasses.Ingeneral,however,weassumethatthetechnologywill
+forthelocationofeveryobjectwhenusingthesmartphone?It’s getbetter.Hence,whilenotingthetechnicallimitations,webelieve
+a waste of time!’’. Participants who preferred the conventional ourresultsareencouraging.
+mobileguideattributedtheirpreferencenottooverallexperience Thegapbetweenourexploratorystudy,whichyieldedpromis-
+buttofamiliarity:‘‘Iknowtousethesmartphonebetter,it’smore ingresults,andtheintegrationofthemobileeyetrackerintoareal
+system, also needs to be addressed. The ‘‘Midas touch’’ problem
+intuitive’’;‘‘Ihavemorecontroloverthesmartphone’’;‘‘Wearing
+mustbemoreadequatelyaddressedinrealisticsettings.Correctly
+themobileeyetrackerisoverload’’;‘‘Theuseofthesmartphoneis
+identifying the user’s object of interest, a problem we solved by
+morecomfortable,youarenotlimitedinwhereyoustand’’;‘‘It’s
+settingahighthresholdforthedecision,mightalsorequireusto
+quicker’’.Withregardtoeaseofuseandintuitiveness,theresults
+consideradditionalfactors,suchastheoptionspresentedin[4]:
+showednorealdifferencebetweenthemobileeye-trackeraudio
+gazeduration,gaze,numberoffixationsoverallandoneacharea
+guideandtheconventionalone.
+of interest, scan path and number of involuntary and voluntary
+With regard to learning, the results showed that most of the
+fixations.
+participants preferred the mobile eye tracker audio guide over
+Systemerrorsmustalsobedealtwith:erroneouspositioniden-
+theconventionalone.Answeringtheopen-endedquestion,these
+tification, erroneous object identification, and positions/objects
+participants justified their preference with statements such as:
+‘‘I’minfocus,nothinginmyhand’’;‘‘It’smoreaccurateandbetter
+forself-learning’’;‘‘Youdon’tneedtoperformalotofactions,just 2 https://www.tobiipro.com/product-listing/tobii-pro-glasses-2/.
+Pleasecitethisarticleinpressas:M.Mokatren,etal.,Exploringthepotentialofamobileeyetrackerasanintuitiveindoorpointingdevice:Acasestudyincultural
+heritage,FutureGenerationComputerSystems(2017),http://dx.doi.org/10.1016/j.future.2017.07.007.M.Mokatrenetal./FutureGenerationComputerSystems ( ) – 13
+without information. These are beyond the scope of this ex- mobileeye-trackingtechnologybecomesaffordable,weenvision
+ploratorystudy.Possiblesolutionstotheproblemofsystemerrors thateverypersonwillhaveadevicethatemploysthistechnology.
+may include notifying the user that the position or the specific Future work will address improving the accuracy, speed, and
+objectofinterestwerenotidentifiedorthatthereisnoinformation interactivedesignofthemobileeye-trackeraudioguidesystem,
+aboutthem(contentpreparationisexpensive,soitisreasonable dealingalsowithpotentialerrorsandplaceswherenoinforma-
+toassumethattherewillbeexhibitsforwhichnoinformationis tion exists. Furthermore, we will explore the potential of using
+available).Itmayalsobepossibletoprovidegeneralinformation the mobile eye tracker as an intuitive pointing device in other
+about the area/exhibition or the exhibits in front of the visitor,
+scenarios,includingindoor,outdoor,andurbanscenarios.Another
+whendetailedinformationisnotavailable.
+interesting future research direction can be to design an overall
+Finally,weneedtodesignanaturalmethodofgesture-based
+immersivemuseumexperience,integratingadditionalnoveltech-
+interactiontostart/stopinformationdelivery.
+nologies,suchasthereal-timegenerationofpersonalizedcoherent
+Inthisstudy,wefocusedonexploringthepotentialofamobile
+presentations,intospatialaudiosystems.
+eye tracker as a pointing device for natural interaction in smart
+environment.Aninterestingalternativemaybetousearemoteeye
+tracker for this purpose. However, although accurate stationary References
+eye trackers do exist, the use of a remote system poses its own
+challenges.Firstandforemostisthechallengeofidentifyingthe [1] A.A.Calvo,S.Perugini,Pointingdevicesforwearablecomputers,Adv.Human–
+relevantuser,toensurecoherentinteractionthroughoutthevisit. Comput.Interact.2014(2014)10ArticleID527320.
+A remote system would also require the installation on many [2] A.Bulling,T.O.Zander,Cognition-awarecomputing,IEEEPervasiveComput.
+13(3)(2014)80–83.
+stationaryeyetrackers,whichwouldhavetoaccountforfactors
+[3] A.Bulling,R.Dachselt,A.Duchowski,R.Jacob,S.Stellmach,V.Sundstedt,Gaze
+suchasdifferencesinuserheightorstandingdistance.Moreover, interactioninthepost-WIMPworld,in:ExtendedAbstractsonHumanFactors
+suchsystemsalsoposecomputationalchallengessuchasinferring inComputingSystems, CHI’12,ACM,2012,pp.1221–1224.
+theexactfixationpointwhentheuserisnotstandinginfrontof [4] R.J.K. Jacob, K.S. Karn, Eye Tracking in Human–Computer Interaction and
+theeyetracker[57].Despitethesechallenges,theuseofaremote UsabilityResearch:ReadyToDeliverthePromises,ElsevierScienceBV,2003.
+[5] P.M. Fitts, R.E. Jones, J.L. Milton, Eye movements of aircraft pilots during
+system is an interesting idea and a possible direction for future
+instrument-landingapproaches,Aeronaut.Eng.Rev.9(2)(1950)24–29.
+work. [6] K.Hendrickson,K.L.Ailawadi,Sixlessonsforin-storemarketingfromsixyears
+ofmobileeye-trackingresearch.Shoppermarketingandtheroleofin-store
+7. Conclusionsandfuturework marketing,Rev.Mark.Res.11(2014)57–74.
+[7] M.Kassner,W.Patera,A.Bulling,Pupil:anopensourceplatformforpervasive
+eyetrackingandmobilegaze-basedinteraction,in:Proceedingsofthe2014
+In this work, we explored the use of a mobile eye tracker as
+ACMInternationalJointConferenceonPervasiveandUbiquitousComputing:
+an intuitive pointing device in realistic settings, using cultural
+AdjunctPublication,ACM,2014,pp.1151–1160.
+heritageasacasestudybecauseofthevastamountofinformation [8] R.J.K.Jacob,Theuseofeyemovementsinhuman–computerinteractiontech-
+availableinmuseums.Wefirststudiedthetechnicalaspectsand niques:Whatyoulookatiswhatyouget,ACMTrans.Inf.Syst.9(3)(1991)
+thelimitationsofthedeviceweused.Then,wedevelopedatool 152–169.
+[9] L.Ardissono,T.Kuflik,D.Petrelli,Personalizationinculturalheritage:theroad
+for image-based positioning and for detecting objects/points of
+travelledandtheoneahead,UserModel.User-Adapt.Interact.22(1–2)(2012)
+interest in real-time using computer vision techniques. Finally, 73–99.
+wedevelopedacontext-awaremobileaudioguidesystemusinga [10] S.Stephens,Thegrowthofmobileapps,Mus.Pract.(2010).
+mobileeyetrackerasapointingdevice.Wedevelopedandtested [11] S.Billings,Upwardlymobile,Mus.Pract.46(2009)30–34.
+two different versions of this guide, proactive and reactive. We [12] K.Cheverst,N.Davies,K.Mitchell,A.Friday,Experiencesofdevelopingand
+deploying a context-aware tourist guide: The GUIDE Project, in:Proc. 6th
+evaluated the system in a user study in a realistic setting at the
+Annu.Int.Conf.MobileComput.Netw.,ACMPress,NewYork,2000,pp.20–31.
+HechtMuseum.Theresultsshowedthatthemobileeye-tracking [13] D.W.Hansen,Q.Ji,Intheeyeofthebeholder:Asurveyofmodelsforeyesand
+technology,eventhoughunfamiliarandpossiblyimmature,was gaze,IEEETrans.PatternAnal.Mach.Intell.32(3)(2010)478–500.
+acceptedbytheparticipants.Themobileeye-trackeraudioguide [14] M.V.Yousefi,E.P.Karan,A.Mohammadpour,S.Asadi,Implementingeyetrack-
+wasperceivedasthepreferredmuseumvisitors’guidecompared ingtechnologyintheconstructionprocess,in:51stASCAnnualInternational
+ConferenceProceedings,2015.
+toaconventionalmuseummobileguide,especiallywithrespect
+[15] D.G.Lowe,Objectrecognitionfromlocalscale-invariantfeatures,in:Proceed-
+tolearning.Unsurprisingly,theresultsalsoshowedthatthepar- ingsoftheSeventhIEEEInternationalConferenceonComputerVision,Vol.2,
+ticipantsliketobeincontrol,asmostofthemchosethereactive 1999,pp.1150–1157.
+versionofthesystem. [16] H. Bay, T. Tuytelaars, L. Van Gool, SURF: Speeded up robust features, in:
+Thisstudylaysthefoundationsfortheuseofeye-trackersasa ComputerVision–ECCV,2006,pp.404–417.
+[17] S.Leutenegger,M.Chli,R.Y.Siegwart,BRISK:Binaryrobustinvariantscalable
+naturalHCIpointingdevice,inreal-timemobilescenarios,where
+keypoints,in:ComputerVision,ICCV,2011pp.2548–2555.
+thereisaneedtodynamicallyandquicklyidentifytheuser’sfocus [18] E.Rublee,V.Rabaud,K.Konolige,G.R.Bradski,ORB:Anefficientalternativeto
+ofattentionandactuponit,accordingtotheuser’ssituation.Inthe SIFTorSURF,in:ComputerVision,ICCV,2011,pp.2564–2571.
+cultural heritage setting, visitor movement in space, time spent, [19] M.A.Fischler,R.C.Bolles,Randomsampleconsensus:aparadigmformodelfit-
+informationrequested,vocalinteractionandorientationhavebeen tingwithapplicationstoimageanalysisandautomatedcartography,Commun.
+ACM24(6)(1981)381–395.
+used to infer user interest in museum exhibits and as the social
+[20] O.Chum,J.Matas,J.Kittler,LocallyoptimizedRANSAC,in:Patt.Recog.,2003,
+scenario when a group is visiting the museum together [45,58– pp.236–243.
+60].Addingeyegazeasanadditionalsourceofinformationmay [21] K.Lebeda,J.Matas,O.Chum,FixingthelocallyoptimizedRANSAC,in:British
+greatly enhance the system’s ability to pinpoint the user’s focus MachineVisionConference,2012,pp.1–11.
+[22] O.Chum,J.Matas,MatchingwithPROSAC-progressivesampleconsensus,in:
+of attention and interest (e.g., on products or exhibits), hence
+Proc.IEEEConf.Comp.VisionPatt.Recog,Vol.I,2005,pp.220–226.
+improving the ability to model the user and better personalize
+[23] A.Brahmachari,S.Sarkar,Hop-diffusionMonteCarloforepipolargeometry
+theserviceoffered(e.g.,exhibitorproductinformation,shopping estimation between very wide-baseline images, IEEE Trans. Pattern Anal.
+assistance). According to Majaranta et al. [61], ‘‘Advances in the Mach.Intell.35(3)(2013)755–762.
+technologyopennewareasforeyetracking,wideningthescope [24] L.Goshen,I.Shimshoni,Balancedexplorationandexploitationmodelsearch
+forefficientepipolargeometryestimation,IEEETrans.PatternAnal.Mach.
+ofgaze-basedapplications.Currenthottopicsincludeallkindsof
+Intell.30(7)(2008)1230–1242.
+mobileapplicationsandpervasivesystemswheretheuser’svisual
+[25] R.Raguram,O.Chum,M.Pollefeys,J.Matas,J.M.Frahm,USAC:auniversal
+behaviorandattentionaretrackedandusedforeye-basedinter- frameworkforrandomsampleconsensus,IEEETrans.PatternAnal.Mach.
+action everywhere and at any time’’. In the coming years, when Intell.35(8)(2013)2022–2038.
+Pleasecitethisarticleinpressas:M.Mokatren,etal.,Exploringthepotentialofamobileeyetrackerasanintuitiveindoorpointingdevice:Acasestudyincultural
+heritage,FutureGenerationComputerSystems(2017),http://dx.doi.org/10.1016/j.future.2017.07.007.14 M.Mokatrenetal./FutureGenerationComputerSystems ( ) –
+[26] B.Tordoff,D.Murray,Guidedsamplingandconsensusformotionestimation, [53] B.D.Lucas,T.Kanade,Aniterativeimageregistrationtechniquewithanappli-
+in:EuropeanConferenceonComputerVision,2002,pp.82–98. cationtostereovision,in:ProceedingsofImagingUnderstandingWorkshop,
+[27] A.Oliva,A.Torralba,Buildingthegistofascene:Theroleofglobalimage 1981,pp.121–130.
+featuresinrecognition,Prog.BrainRes.155(2006)23–36. [54] J.Brooke,SUS-Aquickanddirtyusabilityscale,UsabilityEval.Ind.189(194)
+[28] B.Zhou,A.Lapedriza,J.Xiao,A.Torralba,A.Oliva,Learningdeepfeaturesfor (1996)4–7.
+scenerecognitionusingplacesdatabase,in:AdvancesinNeuralInformation [55] J.Corbin,A.Strauss,BasicsofQualitativeResearch:TechniquesandProcedures
+ProcessingSystems,2014,pp.487–495. forDevelopingGroundedTheory,fourthed.,Sage,2015.
+[29] M.Brown,S.Süsstrunk,Multi-spectralSIFTforscenecategoryrecognition,in: [56] J.Lanir,T.Kuflik,A.J.Wecker,O.Stock,M.Zancanaro,Examiningproactiveness
+IEEEConferenceonComputerVisionandPatternRecognition,CVPR,2011,pp. andchoiceinalocation-awaremobilemuseumguide,Interact.Comput.23(5)
+177–184. (2011)513–524.
+[30] M.Economou,Theevaluationofmuseummultimediaapplications:lessons [57] M.Cohen,I.Shimshoni,E.Rivlin,A.Adam,Detectingmutualawarenessevents,
+fromresearch,Mus.Manag.Curatorship17(2)(1998)173–187. IEEETrans.PatternAnal.Mach.Intell.34(12)(2012)2327–2340.
+[31] M.Weiser,Thecomputerforthe21stcentury,Sci.Am.265(3)(1991)94–104. [58] T.Kuflik,J.Lanir,E.Dim,A.Wecker,M.Corra,M.Zancanaro,O.Stock,Indoor
+[32] P.Prekop,Paul,M.MarkBurnett,Activities,contextandubiquitouscomputing, positioninginculturalheritage:Challengesandasolution,in:Electrical&
+Comput.Commun.26(11)(2003)1168–1176. ElectronicsEngineersinIsrael(IEEEI),2012IEEE27thConventionof,2012,pp.
+[33] K.Huang,Challengesinhuman–computerinteractiondesignformobilede- 1–5,IEEE.
+vices,in:ProceedingsoftheWorldCongressonEngineeringandComputer [59] J.Lanir,T.Kuflik,E.Dim,A.J.Wecker,O.Stock,Theinfluenceofalocation-aware
+Science,Vol.1,2009,pp.20–22. mobileguideonmuseumvisitors’behavior,Interact.Comput.25(6)(2013)
+[34] G.Brône,B.Oben,T.Goedemé,Towardsamoreeffectivemethodforanalyzing 443–460.
+mobileeye-trackingdata:integratinggazedatawithobjectrecognitionalgo- [60] I.Beja,J.Lanir,T.Kuflik,Examiningfactorsinfluencingthedisruptiveness
+rithms,in:Proceedingsofthe1stInternationalWorkshoponPervasiveEye ofnotificationsinamobilemuseumcontext,Hum.–Comput.Interact.30(5)
+Tracking&MobileEye-basedInteraction,2011,pp.53–56. (2015)433–472.
+[35] T.Pfeiffer,P.Renner,Eyesee3d:Alow-costapproachforanalyzingmobile3D [61] P.Majaranta,A.Bulling,Eyetrackingandeye-basedhuman–computerin-
+eyetrackingdatausingcomputervisionandaugmentedrealitytechnology, teraction, in:S.H. Fairclough, K. Gilleade (Eds.), Advances in Physiological
+in:ProceedingsoftheSymposiumonEyeTrackingResearchandApplications, Computing,Springer,London,2014,pp.39–65.
+2014,pp.369–376.
+[36] C.Ohm,M.Müller,B.Ludwig,S.Bienk,WhereistheLandmark?EyeTracking
+StudiesinLarge-ScaleIndoorEnvironments,2014,pp.47–51.
+[37] S.DeBeugher,G.Brône,T.Goedemé,Automaticanalysisofin-the-wildmo- MoayadMokatrenisaPh.D.studentinthedepartmentof
+bileeye-trackingexperimentsusingobject,faceandpersondetection,in: InformationSystemsattheUniversityofHaifa,Israel.He
+ProceedingsoftheInternationalConferenceonComputerVisionTheoryand receivedhisbachelor’sdegreeinComputerSciencefrom
+Applications,VISIGRAPP2014,Vol.1,2014,pp.625–633. HadassahCollege,andhismaster’sdegreeinInformation
+[38] J. Schrammel, E. Mattheiss, S. Döbelt, L. Paletta, A. Almer, M. Tscheligi, SystemsfromtheUniversityofHaifa.Hismainresearch
+Attentional behavior of users on the move towards pervasive advertising interestsareinthefieldsofhuman–computerinteraction
+media,in:PervasiveAdvertising,Springer,London,2011,pp.287–307. inubiquitousandsmartenvironments.
+[39] J.Schrammel,G.Regal,M.Tscheligi,Attentionapproximationofmobileusers
+towardstheirenvironment,in:CHI’14ExtendedAbstractsonHumanFactors
+inComputingSystems,2014,pp.1723–1728.
+[40] P.Kiefer,I.Giannopoulos,D.Kremer,C.Schlieder,M.Raubal,Startingtoget
+bored:Anoutdooreyetrackingstudyoftouristsexploringacitypanorama,
+in:ProceedingsoftheSymposiumonEyeTrackingResearchandApplications,
+2014,pp.315–318. TsviKuflikisanassociateprofessorandformerheadof
+[41] Y.I.Nakano,R.Ishii,Estimatinguser’sengagementfromeye-gazebehaviorsin the Information Systems Department at the University
+human-agentconversations,in:Proceedingsofthe15thInternationalConfer- of Haifa, Israel. His main areas of research are Ubiqui-
+enceonIntelligentUserInterfaces,2010,pp.139–148. tousUserModellingandIntelligentUserInterfaces.He
+[42] K.T.Ma,Q.Xu,L.Li,T.Sim,M.Kankanhalli,R.Lim,Eye-2-I:Eye-trackingfor receivedhisB.Sc.andM.Sc.incomputerscienceandPh.D.
+just-in-timeimplicituserprofiling.2015.arXivpreprintarXiv:1507.04441. in Information systems from Ben Gurion University of
+[43] A.Hampapur,K.Hyun,R.M.Bolle,Comparisonofsequencematchingtech- theNegev.Prof.Kuflikistheauthorofover200refereed
+niquesforvideocopydetection,in:ElectronicImaging,2002,pp.194–201. publicationsinjournalsandconferences.Forsevenyears,
+[44] T.Toyama,T.Kieninger,F.Shafait,A.Dengel,Gazeguidedobjectrecognition heistheco-organizeroftheseriesofPATCHworkshops
+usingahead-mountedeyetracker,in:ProceedingsoftheSymposiumonEye focusingontheapplicationofnoveltechnologyincultural
+TrackingResearchandApplications,ETRA’12,ACM,NewYork,NY,USA,2012, heritageandthechairandorganizerofmanyotherwork-
+pp.91–98. shopsandconferences,includingbeingthegeneralchairofIUI2014,andIUI2017,
+[45] E.Dim,T.Kuflik,Automaticdetectionofsocialbehaviorofmuseumvisitor PCchairofUMAP2014andmore.TsviisadistinguishedACMscientistandasenior
+pairs,ACMTrans.Interact.Intell.Syst.(TiiS)4(4)(2014)17. IEEEmemberandthechairelectACMSIGCHIIUIcommunity.
+[46] A.Bulling,H.Gellersen,Towardmobileeye-basedhuman–computerinterac-
+tion,IEEEPervasiveComput.9(4)(2010)8–12.
+[47] I. Giannopoulos, J. Schöning, A. Krüger, M. Raubal, Attention as an input IlanShimshonireceivedtheB.Sc.degreeinmathemat-
+modalityforPost-WIMPinterfacesusingtheviGazeeyetrackingframework, ics and computer science from the Hebrew University
+MultimediaToolsAppl.75(6)(2016)2913–2929. Jerusalem,Israel,theM.Sc.degreeincomputerscience
+[48] S.S.Yalowitz,K.Bronnenkant,Timingandtracking:unlockingvisitorbehavior, fromtheWeizmannInstituteofScience,Rehovot,Israel,
+VisitorStud.12(2009)47–64. andthePh.D.degreeincomputersciencefromtheUni-
+[49] J.H.Falk,JohnL.D.Dierking,LearningfromMuseums:VisitorExperiencesand versityofIllinoisatUrbana-Champaign.Currently,heis
+theMakingofMeaning,AltamiraPress,2000. anassociateprofessorattheDepartmentofInformation
+[50] G.Farnebäck,Two-framemotionestimationbasedonpolynomialexpansion, Systems,UniversityofHaifa.Heservedasthechairofthe
+in:ScandinavianConferenceonImageAnalysis,in:LNCS,vol.2749,Springer, departmentforfouryears.Hiscurrentresearchinterests
+BerlinHeidelberg,2003,pp.363–370. includecomputervision,robotics,andcomputergraphics.
+[51] S.K.Card,G.G.Robertson,J.D.Mackinlay,Theinformationvisualizer:Aninfor- Hespecializesinmultipleviewgeometryand3Dshape
+mationworkspace,in:Proc.ACMCHI’91Conf.,1991,pp.181–188. analysisanditsapplicationsforthefieldofarcheology.Healsoconductsresearch
+[52] N.Newman,AppleiBeacontechnologybriefing,J.DirectDataDigit.Mark. inthefieldofdatamining.HeiscurrentlyanassociateeditorofIEEETransactions
+Pract.15(3)(2014)222–225. onPatternAnalysisandMachineIntelligence.
+Pleasecitethisarticleinpressas:M.Mokatren,etal.,Exploringthepotentialofamobileeyetrackerasanintuitiveindoorpointingdevice:Acasestudyincultural
+heritage,FutureGenerationComputerSystems(2017),http://dx.doi.org/10.1016/j.future.2017.07.007.

@@ -1,0 +1,1824 @@
+  
+  
+Website: www.aceiot.ur.ac.rw  
+Mail: aceiot@ur.ac.rw  
+ 
+ 
+ 
+COLLEGE OF SCIENCE AND TECHNOLOGY 
+ 
+ 
+ 
+AFRICAN CENTER OF EXCELLENCE IN INTERNET OF THINGS 
+ 
+MASTER THESIS  
+ 
+ 
+ 
+ ENHANCING MUSEUM ACCESSIBILITY FOR VISUALLY DISABLED PEOPLE AND 
+ITS ENVIRONMENTAL MONITORING USING IOT TECHNOLOGY: THE CASE OF 
+NATIONAL MUSEUM OF RWANDA  
+ 
+Author: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Supervisors: 
+    Grace Marline IDAGAZA 
+ 
+ 
+ 
+ 
+   Dr. Emmy Mugisha 
+    Reference. No: 220019862 
+ 
+ 
+                           Dr. Alfred Uwitonze 
+ 
+ 
+A thesis submitted in partial fulfilment of the requirements 
+ for the degree of Master of Internet of Things 
+in the 
+Wireless Intelligent Sensor Networking 
+College of Science and Technology 
+ 
+Submission Date: December 2022 
+   
+
+  
+  
+BONAFIDE CERTIFICATE 
+ 
+This is to certify that the dissertation report work titled “Enhancing museum accessibility 
+for visually disabled people and its environmental Monitoring Using IoT technology: 
+The case of National Museum of Rwanda : is a record of the original work done by 
+Miss. Grace Marline Idagaza a post-graduate student in MSc in the Internet of Things with 
+a specialization in Wireless Intelligent Sensor Networking (WISeNet), at the University of 
+Rwanda – College of Science and Technology in African Center of Excellence in the 
+Internet of Things (UR/CEST/ACEIoT). We certify that the work reported does not form a 
+part of any other research project. 
+ 
+Supervisors, 
+Main Supervisor: 
+ 
+ 
+ 
+ 
+ 
+Co-Supervisor: 
+Dr Emmy Mugisha  
+ 
+ 
+ 
+Dr Alfred Uwitonze 
+ 
+Signed, 
+ 
+Signed, 
+ 
+ 
+Date: December 20, 2022. 
+ 
+Date: December 20, 2022 
+ 
+ 
+Head of Masters and Training, ICEIoT, University of Rwanda. 
+Dr. RWIGEMA James, 
+ 
+Signed, 
+Date: December 20, 2022 
+ 
+ 
+ 
+ 
+ 
+
+  
+  
+DECLARATION 
+ 
+I, Grace Marline Idagaza, who holds a master's degree in Internet of things of Wireless Intelligent 
+Sensor Networking, hereby declare that the content in this document is the original work and has 
+never been presented or submitted for any academic award in any university or other institutions 
+of higher learning as a whole or in a part of work. I also declare that, as required by rules I have 
+fully cited and referenced all material and results that are not original to this work.  
+ 
+ 
+Student Name and Number 
+ 
+Grace Marline Idagaza,  
+220019862 
+ 
+ 
+Signed 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Date: 20th December 2022 
+ 
+Master’s 
+Degree, 
+African 
+Centre 
+of 
+Excellence 
+in 
+Internet 
+of 
+Things,  
+College of Science and Technology, University of Rwanda. 
+ 
+Wireless Intelligent Sensor Network (WISENeT) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+  
+DEDICATION  
+ 
+I dedicate this thesis report document to my supervisors, for their empathy and friendly assistance 
+during my research period, to my lecturers who encourage me always to work hard in academics, 
+and my family who pray for me unceasingly. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+  
+ACKNOWLEDGMENTS 
+ 
+First of all, I would like to thank the Almighty God, who gave me the grace to accomplish this 
+work. I would like to express my sincere and special thanks to my supervisory team consisting of 
+Dr Emmy Mugisha and Dr Alfred Uwitonze, for their great guidance towards the achievement of 
+this work from which I gained invaluable knowledge. Secondly, I wish to thank the African Centre 
+of Excellence in Internet of Things, College of Science and Technology, University of Rwanda, 
+especially the ACEIoT authorities for allowing me to pursue this Masters and for the skills they 
+gave to me. I also wish to thank my lecturers on the Internet of Things for the good job done during 
+my career of 2 years of our courses. Furthermore, my family as well as my classmates who have 
+been integral in all academic activities for their direct and indirect contributions to the achievement 
+of my objectives. My acknowledgment goes to everyone who supported me in my everyday life 
+to reach this moment. 
+ 
+May the Almighty God bless you all. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                        
+
+  
+  
+ABSTRACT 
+ 
+Internet of things helps people to live and work smarter, as well as gain complete control over their 
+lives. Humans obtain 83% of their knowledge by sight according to human physiology references 
+and one out of 100 people is visually impaired in Rwanda. In secondary school one out of three 
+children with disability is blind or visually impaired. Blindness causes challenges to perform 
+different tasks including learning new skills and having fun. Accessing museums has been difficult 
+for blind and visual impaired people. Some systems have been implemented to assist visually 
+disabled people in museums with customized designs depending on different types of the museums 
+and what they represent. Most of them focus on the use of other technologies such as smart sticks 
+and wearable devices. However, they require additional cost and don’t provide the fully enjoyable 
+experience of visiting museums for blind people. The aim of this study is to create a prototype that 
+is simple, fast, accurate and cost-effective which enables visually disabled people to enjoy the 
+museum experience and allow remote monitoring of the objects inside the museum. A headset is 
+given to the user at the entrance of the museum; he is then required to use his sense of touch to 
+explore the object.  By touching the object through the capacitive touch sensors that are connected 
+to the object, the information is processed and presented in an audio format through the Bluetooth 
+headsets. Also, this solution is used to monitor and control the museum environmental conditions 
+such as; temperature and humidity which are the essential elements of collections care. The results 
+obtained from the  prototype indicates that the temperature varies from 23.7°C  to 30°C and the 
+humidity varies between 35% to 62 % due to the surrounding environment but the recommended 
+temperature for museum items is 16°C to 20°C and the  humidity should not drop below 40% or 
+rise above 70%, lowering the temperature greatly increased the longevity of collections and a change 
+in humidity causes dimensional alteration in hygroscopic materials (for example wood, ivory, skin, 
+and other organic materials), resulting in warping, splitting, and delamination of sensitive 
+materials. The implemented system allows people who are visually impaired to learn and enjoy 
+the museum experience so that they can be reintegrated in the society; it also prevent the damage 
+of museum items materials of by controlling and monitoring the temperature and humidity.  
+Index Terms- IoT, museum, Raspberry pi, visual disabled people, cultural heritage, 
+environmental conditions, temperature, humidity.  
+
+  
+  
+TABLE OF CONTENTS 
+ 
+BONAFIDE CERTIFICATE ........................................................................................................ i 
+DECLARATION .......................................................................................................................... ii 
+DEDICATION ............................................................................................................................. iii 
+ACKNOWLEDGMENTS ............................................................................................................ iv 
+ABSTRACT ................................................................................................................................... v 
+LIST OF TABLES ..................................................................................................................... viii 
+LIST OF FIGURES ...................................................................................................................... ix 
+LIST OF SYMBOLS, ABBREVIATIONS, AND NOMENCLATURE ................................... x 
+CHAPTER I: GENERAL INTRODUCTION ............................................................................ 1 
+1.1 Introduction ......................................................................................................................... 1 
+1.2 Background and Motivation ............................................................................................... 3 
+1.3 Problem Statement .............................................................................................................. 4 
+1.4 Aim and Objectives of the Project ..................................................................................... 4 
+1.4.1. General objective of the project ................................................................................. 4 
+1.4.2 The specific objectives of this study ............................................................................ 4 
+1.5 Hypotheses ............................................................................................................................ 5 
+1.6 Scope and limitation of the study ....................................................................................... 5 
+1.7 Significance of the Study Research questions ................................................................... 5 
+1.8 Organization of the Study ................................................................................................... 6 
+CHAPTER II: LITERATURE REVIEW ................................................................................... 7 
+2.1 Introduction ......................................................................................................................... 7 
+2.2 Review of the related work ................................................................................................. 7 
+CHAPTER III. RESEARCH METHODOLOGY .................................................................... 13 
+3.1. Introduction ...................................................................................................................... 13 
+3.2 Prototyping Methodology ................................................................................................. 13 
+3.2.1 Prototyping model phases .......................................................................................... 13 
+3.3 Context analysis ................................................................................................................. 14 
+3.2.3 Archival research ........................................................................................................ 19 
+CHAPTER IV: SYSTEM ANALYSIS AND DESIGN ............................................................ 21 
+4.1 introduction ........................................................................................................................ 21 
+4.2 System components ............................................................................................................ 21 
+4.2.1: The sensing Module ................................................................................................... 21 
+4.2.2 System control module ............................................................................................... 21 
+
+  
+  
+4.2.3 Communication module Wi-Fi .................................................................................. 21 
+4.2.4 The Cloud platform .................................................................................................... 21 
+4.3. Block diagram ................................................................................................................... 23 
+4.2 System architecture ........................................................................................................... 25 
+4.3 The system functionality ................................................................................................... 25 
+4.3.2 The system flow chart ................................................................................................. 26 
+4.3.2 System use case diagram ............................................................................................ 26 
+4.4 System prototype ............................................................................................................... 27 
+CHAPTER V. RESULTS ANALYSIS AND DISCUSSION ................................................... 30 
+5.1 Introduction ....................................................................................................................... 30 
+5.2 Cloud platform dashboard and visualization ................................................................. 30 
+5.2.1 System dashboard ....................................................................................................... 31 
+5.2.2 Museum item representation ..................................................................................... 31 
+5.2.3 General Report ........................................................................................................... 37 
+5.2 Humidity and temperature results discussion ................................................................ 38 
+5.3. Prototype efficiency .......................................................................................................... 39 
+CHAPTER VI: CONCLUSION AND RECOMMENDATION ............................................. 40 
+6.1 Conclusion .......................................................................................................................... 40 
+References ..................................................................................................................................... 41 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+  
+LIST OF TABLES 
+ 
+Table 1  The summary of reviewed related work and their contributions. ...................................... 9 
+Table 2 hardware components of the system ................................................................................. 22 
+Table 3: containing all information regarding the item N1 such as; the time when it has been 
+touched, the temperature and humidity. The report can be viewed in pdf format. ........................ 33 
+Table 4 containing all information regarding the item N2 such as; the time when it has been 
+touched, the temperature and humidity. The report can be viewed in pdf format. ........................ 35 
+Table 5 Table containing all information regarding the item N3 such as; the number of times it 
+has been touched, the temperature and humidity. The report can be exported in pdf format. ...... 37 
+Table 6 General report ................................................................................................................... 38 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+  
+ 
+LIST OF FIGURES 
+Figure 1 Igisabo ............................................................................................................................... 2 
+Figure 2 Icumu ................................................................................................................................. 2 
+Figure 3 Igiseke ............................................................................................................................... 3 
+Figure 4 Visually disabled person touching a museum piece ......................................................... 7 
+Figure 5 Prototyping model phases ............................................................................................... 14 
+Figure 6 interviewed student responses 4 out of 5 of the students confirmed that they have never 
+visited any museum. ...................................................................................................................... 16 
+Figure 7 Statistic of students who visited the museum and the ones who never visited the 
+museum .......................................................................................................................................... 16 
+Figure 8 interviewed student responses 4 out of 5 of the students confirmed that they wish to 
+visit museums ................................................................................................................................ 17 
+Figure 9 statistic of students who want to visit museums and the ones who don’t want to visit .. 18 
+Figure 10 interviewed student responses about the designed prototype ....................................... 19 
+Figure 11 Block diagram ............................................................................................................... 24 
+Figure 12 System architecture of the system ................................................................................. 25 
+Figure 13 System flow chart .......................................................................................................... 26 
+Figure 14 Use case diagram ........................................................................................................... 27 
+Figure 15 System prototype ........................................................................................................... 28 
+Figure 16 System prototype showing how the capacitive touch sensors are connected to the 
+museums items .............................................................................................................................. 29 
+Figure 17 Museum Monitoring system user login interface .......................................................... 30 
+Figure 18 System dashboard .......................................................................................................... 31 
+Figure 19 The graph above represent the variation of temperature and humidity and the time  
+when Igisabo was touched. ............................................................................................................ 32 
+Figure 20 The graph above represents the variation of temperature and humidity when Icumu 
+was touched. .................................................................................................................................. 34 
+Figure 21 The graph above represents the variation of temperature and humidity when Igiseke 
+was touched. .................................................................................................................................. 36 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+  
+LIST OF SYMBOLS, ABBREVIATIONS, AND NOMENCLATURE 
+ 
+ACEIoT:  African Center of Excellence in Internet of Things 
+HVP: Home de la vierge des pauvres 
+EOAs: Electronic orientation Aid              
+GPS: Global positioning system 
+GIS: Geographic Information System 
+NFC: Near field communication 
+PLD: Position locator devices.  
+PLD: Position locator device 
+RUB: Rwanda Union of the blind  
+NCPDA: National council of persons with disabilities 
+RFID: Radio-frequency identification   
+RH: Relative Humidity  
+WISENeT: Wireless Intelligent Sensor Networking 
+ 
+
+  
+  
+ 
+  
+1 
+CHAPTER I: GENERAL INTRODUCTION 
+ 
+1.1 Introduction 
+ 
+A museum is a place where cultural heritage is preserved by collecting and arranging different 
+historical objects in a systematic order to tell the story of history [1]. The national museum of 
+Rwanda is one of the treasures the country has, it holds information related to Rwanda history and 
+all the objects related to that history. [2] It is difficult for a person to understand the layout of 
+culture at a museum, exhibition, or heritage site, especially a blind or visually disabled person who 
+cannot see. Museums also don’t have enough resources to guide and explain every object or 
+exhibition to every single impaired person who visits the museum. 
+The government of Rwanda ratified the Marrakesh treaty in September 2020, following members 
+of parliament voting on a law approving Rwanda’s agreement to the Marrakesh treaty to facilitate 
+access to published works for persons who are visually impaired or print-disabled on 22 July 2020 
+[4]. Therefore, there are not enough resources or facilities which can help to monitor the museum 
+and help the blind and visual impaired to have access to different kinds of arts. 
+Since blind individuals rely on their sense of touch for a better understanding of the world they 
+live in, this system helps them to have access to all information in museums through audible voices 
+by touching different objects and exhibits that are in the museum. 
+This system is also used to monitor any object in a museum to prevent any future damage and to 
+optimize their environmental conservation conditions. 
+In this thesis, we developed a low-cost, reliable system for visually disabled people which allows 
+them to learn about different objects and events in the museums without anyone’s help and the 
+same system is used by the museum managers or owners to control and monitor the environmental 
+conditions such as temperature and humidity inside the museum. 
+ 
+This project utilizes IoT infrastructure and devices such as Raspberry Pi, which is very energy 
+efficient and easily portable, capacitive touch sensor, temperature and humidity sensor, memory 
+cards, Bluetooth headsets and wireless networks. 
+This research has been conducted at the national museum of Rwanda in order to understand current 
+or historical events, conditions or practices that are present inside the museums in order to identify 
+
+  
+  
+ 
+  
+2 
+the key elements which contribute to the success of the project. We chose three objects inside the 
+museum to use as sample during the implementation of this project.  
+ 
+ 
+ 
+                                            Figure 1 Igisabo 
+Igisabo is a traditional Rwandan domestic object which were used for milk fermentation .it is also 
+a symbol of wealth and luck in Rwandan culture. 
+ 
+ 
+                                                      Figure 2 Icumu 
+
+  
+  
+ 
+  
+3 
+Icumu was a one of the main instruments in the history of Rwanda which were used at war, it is 
+also a symbol of strength and protection in Rwandan culture. 
+ 
+                                                             Figure 3 Igiseke  
+Igiseke is a type of traditional Rwandese woven basket. It is characterized by its flat circular base 
+that is taller than it is wide, with a sloped conical fitted lid. It is traditionally made of native natural 
+fibers in natural off-white colors with naturally-dyed patterns in colors like purple, green, black, 
+yellow, and red.it were used to store crops or other objects in a traditional home. 
+ 
+1.2 Background and Motivation 
+ 
+Visually disabled people face many challenges in their daily lives, among those challenges we can 
+mention the limited access to learning and entertainment materials such as museums. This can 
+make them feel isolated in the society and they often fall behind others in term of learning about 
+the history of the past or other objects which are in museums. Also museums don’t have a proper 
+way of monitoring the temperature and humidity which are the essential elements of collections 
+care. 
+ 
+
+  
+  
+ 
+  
+4 
+ 
+ 
+1.3 Problem Statement 
+ 
+One out of 100 people is visually impaired in Rwanda. In secondary school one out of three 
+children with disability is blind or visually impaired. 
+A museum plays a crucial role in preserving the culture of a given country; it is also a great place 
+for different generations of people to visit for educational and entertainment purposes. The same 
+way sighted people visits the museums, blind or visually impaired people have the right to enjoy 
+the same experience too. 
+Different institutions don’t take into consideration the needs of people affected by blindness or 
+impaired vision, which denies them the same freedom to learn and enjoy this experience. There 
+are limited resources and systems which can facilitate the blind and visually impaired people to 
+navigate and learn about objects inside the museums. Some objects or exhibitions in museums are 
+very old and precious but many museums don’t have an efficient system to monitor and control 
+their environmental conditions in order to ensure the safe and preventive conservation conditions. 
+Generally, some changes of temperature and relative humidity may cause serious damage to the 
+objects.  
+ 
+1.4 Aim and Objectives of the Project 
+ 
+1.4.1. General objective of the project  
+ 
+The Main goal of this project is to create an IoT-enabled solution which is used in Museums to 
+help blind and visually impaired people to navigate and learn about different objects in museums 
+and allow the monitoring of the environmental conditions such as humidity and temperature inside 
+museum in order to protect the objects against damage.  
+ 
+1.4.2 The specific objectives of this study 
+ 
+The following are the specific objectives:  
+o To assess the existing IoT-enabled solutions in order to find the available gaps. 
+
+  
+  
+ 
+  
+5 
+o To design and implement a solution prototype to facilitate visual impaired people to 
+have access to different objects in museums using a headset. 
+o To monitor and control the museum environmental conditions such as humidity and 
+temperature using different sensors and wireless networks. 
+ 
+1.5 Hypotheses 
+ 
+The hypothesis of this research are as follows: 
+1) It is possible for visually disabled people to visit museums and learn about historical 
+objects  
+2) Internet of things can be used to build a prototype which can enable visually disabled 
+people to the museum items  
+3) This system can be used to keep data and monitor the environmental conditions inside the 
+museum such as temperature and humidity.  
+1.6 Scope and limitation of the study 
+ 
+The research study is to design and implement IoT based system which assist blind and visual 
+impaired people to have access to some educational and entertainment tools such as museums. The 
+national museum of Rwanda was used as use case during the implementation of this project. We 
+focused on three objects which have significant meaning in the culture of Rwanda in order to 
+implement the prototype of the system, those objects are; Igisabo, Agaseke and Icumu.   
+1.7 Significance of the Study Research questions 
+ 
+The Rwanda Union of Blind (RUB), NCPDA (National council of persons with disabilities), 
+Jordan foundation, HVP Gatagara and other people who are visually impaired especially students 
+will benefit from this system because their members will be able to enjoy the museum experience 
+and have a deep understanding of the objects and events inside the museums through audible play 
+using a headset. The government of Rwanda will use this system to enhance ongoing national 
+efforts to promote and realize the rights of persons who are visually impaired as Rwanda acceded 
+to Marrakesh treaty to deepen inclusiveness of persons with disability on 25th, October, 2021. This 
+
+  
+  
+ 
+  
+6 
+solution will also be used by the museum owners or managers to monitor and control the museum 
+environmental conditions in order to avoid the deterioration of the objects.  
+1.8 Organization of the Study 
+ 
+The dissertation is organized in six chapters as following; The first paragraph contains the general 
+introduction, it gives the study background, statement of the problems, objectives and study 
+delimitation. The second chapter contains the literature review; it provides the review of the 
+literature and similar studies and defines the gaps ignored by other authors and key terms used in 
+this research work. The third chapter deals with data collection techniques, data analysis and data 
+interpretation. The fourth chapter contains The System Analysis and Design that explain system 
+models, proposed simulation models, and simulation scenarios. the fifth chapter explains the 
+results and discuss of the result that describes the graphs result and hypothesis verification of the 
+study. Finally, the sixth chapter contains the Conclusion and recommendations to other researchers 
+who will be interested to work on the similar work. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+  
+ 
+  
+7 
+CHAPTER II: LITERATURE REVIEW 
+2.1 Introduction 
+ 
+This section gives a brief analysis of other researches that are similar or related to our current 
+research. This includes the problem investigated by the previous researchers, proposed technical 
+solution, methodology approach used, and results found. Eventually, the gaps in the previous 
+similar and related research were identified through this research study and these provide the 
+justification and motivation for undertaking this research. 
+ 
+ 
+Figure 4 Visually disabled person touching a museum piece 
+ 
+2.2 Review of the related work 
+Different researches have been working on the development of IoT-based solutions which are used 
+to assist blind and visually impaired people in their daily life. Most of the studies have focused on 
+the use of wearable devices and virtual reality and the presentation of information in any form. 
+This information is presented in text, audio, and video.  
+Following are some of the proposed systems for blind people in museums and its monitoring 
+system;  
+ 
+
+  
+  
+ 
+  
+8 
+[5] A Museum for the Blind by Charlotte Coates; this paper shows how blind and visually impaired 
+people are offered the chance to access a museum in a standard way. The Visitors explore with 
+their hands by touching thee objects inside the museum. This museum exhibits artistic works that 
+are experienced through a sense of touch. 
+[6] Tools and technologies for blind and visually impaired Navigation support by Manish Mishra; 
+this system provides the necessary navigation details by performing obstacle detection. Electronic 
+Orientation Aids (EOAs) are designed to assist blind and visually impaired people in finding the 
+navigation path. Position Locator Devices (PLD) are used to determine the precise position of 
+devices that use the Global Positioning System (GPS) and Geographic Information System (GIS) 
+technologies and finally Electronic Travel Aids (ETAs) are general assistant devices for helping 
+visually impaired people avoid obstacles. 
+[7] An IoT-Enabled Information System for Smart Navigation in Museums by Muhammad Nawaz 
+Khan, Haseeb Ur and Rahman Mohammad Faisal; This system uses wearable devices with image 
+recognition algorithms and location-aware services, it arranges the artwork at the museum in a 
+logical order so that visitors can easily determine where to begin, how to proceed, and where to 
+end and finally It provides the information in an easy-to-read format (text, audio, and video) in a 
+storytelling manner. 
+[8] The talking museum by Flora Amato Angelo Chianese Antonino Mazzeo; the system uses 
+Bluetooth-enabled technology which is deployed for searching to detect the location of user 
+devices. The proposed model is composed of 1) WSNs, in which sensors are positioned on the 
+objects or attached very near these objects 2) “Gateway Server” accumulates information from the 
+sensors and base station; 3) “Multimedia Content Server” provides multimedia content on 
+requesting the gateway server according to user choices; and 4) “Multimedia Guide App” is 
+responsible for permitting the multimedia contents to the end-user according to his/her choices. 
+[9] A novel challenge into Multimedia Cultural Heritage by Angelo Chianese, Fiammetta Marulli, 
+Francesco Piccialli; this uses NFC (near field communication) technology for obtaining and 
+providing multimedia content for users with links and suggestions. The NFC devices obtain data 
+from other devices known as “passive token”. These passive tokens exchange information with 
+NFC devices without physical contact. 
+[10] Improving Smart Interactive Experiences in Cultural Heritage through Pattern Recognition 
+Techniques by Angelo Chianese and Francesco Piccialli; this paper talk about the system which is 
+
+  
+  
+ 
+  
+9 
+based on smartphones and smart watches for monitoring devices. For the recognition module, the 
+system can also use RFID-based architecture. 
+[11] Cultural Heritage and Internet of Things by Elizabeth M. Astorga González, Esteban Municio 
+This paper represents the overview of existing IoT solutions used for cultural heritage cases, both 
+to improve user experience and preventive conservation. It shows in IoT-based Cultural Heritage 
+and its impact on real world objects. 
+[12] Internet for Education-Online Audio Library for visual impaired people by Jean Benda 
+Nkurunziza this system convert textbook into audio files and store them into an online database 
+that is available to all blind learners. 
+ 
+Table 1  The summary of reviewed related work and their contributions. 
+SN 
+AUTHOR 
+TOPIC 
+CONTRIBUTIONS / ACHIEVEMENTS 
+GAPS 
+1 
+Charlotte Coates 
+A Museum for 
+the Blind  
+1. It offers blind and visually impaired people the 
+chance to access a museum in a standard way. 
+2. Visitors explore with their hands. 
+3. It exhibits artistic works that are experienced 
+through a sense of touch. 
+It doesn’t use IoT 
+technology or any 
+other technology, 
+visually disabled 
+people use their 
+hands to explore the 
+objects inside the 
+museum.  
+
+  
+  
+ 
+  
+10 
+2 
+Manish Mishra  
+Tools and 
+technologies for 
+blind and visually 
+impaired 
+Navigation 
+support  
+ It provides the necessary navigation details by 
+performing obstacle detection. 
+2. Electronic Orientation Aids (EOAs) are designed 
+to assist blind and visually impaired people in 
+finding the navigation path. 
+3. Position Locator Devices (PLD) are used to 
+determine the precise position of devices that use the 
+Global Positioning System (GPS) and Geographic 
+Information System (GIS) technologies. 
+4. Electronic Travel Aids (ETAs) are general 
+assistant devices for helping visually impaired 
+people avoid obstacles 
+Those technologies 
+are used to assist 
+blind and visual 
+impaired people to 
+navigate different 
+places but the 
+solution isn’t 
+enough to be used in   
+museums because in 
+order to enjoy the 
+museum experience 
+we need more tools 
+than that.  
+ 
+3 
+Muhammad 
+Nawaz Khan , 
+Haseeb Ur 
+Rahman, 
+Mohammad Faisal, 
+Faheem Khan  and 
+Shabir Ahmad  
+An IoT-Enabled 
+Information 
+System for Smart 
+Navigation 
+in Museums 
+1. The system uses wearable devices with image 
+recognition algorithms and location-aware services. 
+2. It arranges the artwork at the museum in a logical 
+order so that visitors can easily determine where to 
+begin, how to proceed, and where to end. 
+3. It provides the information in an easy-to-read 
+format (text, audio, and video) in a storytelling 
+manner 
+1. Wearable devices 
+need an extra 
+budget and some 
+users hesitated in 
+using the wearable 
+devices instead of 
+his/her own 
+smartphone 
+ 
+ 
+ 
+
+  
+  
+ 
+  
+11 
+4 
+Flora 
+AmatoAngelo 
+ChianeseAntonino 
+Mazzeo 
+The talking 
+museum  
+1. Bluetooth-enabled technology is deployed for 
+searching to detect the location of user devices. 
+2. The proposed model is composed of 1) WSNs, in 
+which sensors are positioned on the objects or 
+attached very near these objects; 2) “Gateway 
+Server” accumulates information from the sensors 
+and base station; 3) “Multimedia Content Server” 
+provides multimedia content on requesting the 
+gateway server according to user choices; and 4) 
+“Multimedia Guide App” is responsible for 
+permitting the multimedia contents to the end-user 
+according to his/her choices. 
+1. As blind people 
+rely mainly on their 
+sense of touch this 
+system won’t allow 
+the blind user to 
+fully enjoy the 
+experience without 
+touching the 
+objects. 
+5 
+Angelo Chianese, 
+Fiammetta Marulli 
+and Francesco 
+Piccialli 
+A novel challenge 
+into Multimedia 
+Cultural Heritage  
+1. It uses NFC (near field communication) 
+technology for obtaining and providing multimedia 
+content for users with links and suggestions 
+2. The NFC devices obtain data from other devices 
+known as “passive token”. These passive tokens 
+exchange information with NFC devices without 
+physical contact. 
+Because this system 
+is mainly based on 
+NFC technology, it 
+doesn’t work if 
+devices are more 
+than 4m apart. 
+6 
+K. Sornalatha 
+IoT Based Smart 
+Museum using 
+Bluetooth Low 
+Energy 
+1. Improve delay and image algorithm 
+2. An image recognition algorithm determines 
+objects and wearable devices to capture data from 
+surroundings. 
+3. BLE-based sensors regulate user location inside 
+the museum.  
+4. Observed objects are identified from the cloud 
+and narrate to targeted artwork.  
+It is a complex 
+system because it 
+requires a large 
+ecosystem and it is 
+costly because it 
+requires wearable 
+devices.  
+ 
+
+  
+  
+ 
+  
+12 
+7 
+Angelo Chianese 
+and Francesco 
+Piccialli 
+Improving Smart 
+Interactive 
+Experiences in 
+Cultural Heritage 
+through Pattern 
+Recognition 
+Techniques  
+1. It is based on smartphones and smart watches for 
+monitoring devices. 
+2. For the recognition module, the system can also 
+use RFID-based architecture. 
+In this paper They 
+didn’t mention the 
+IoT infrastructure 
+and how it should 
+be used.  
+8 
+ 
+ 
+ 
+ 
+Elizabeth M. 
+Astorga 
+,González ,Esteban
+ Municio 
+ 
+Cultural Heritage 
+and Internet of 
+Things 
+ 
+ 
+1. It represents the overview of existing IoT 
+solutions used for cultural heritage cases, both to 
+improve user experience and preventive 
+conservation. 
+2. It shows in IoT-based Cultural Heritage and its 
+impact on real world objects. 
+It doesn’t clearly 
+show how it can 
+help the blind user 
+to visit Museums  
+ 
+ 
+9 
+ 
+ 
+ 
+ 
+Jean Benda 
+Nkurunziza 
+Internet for 
+Education-
+Online Audio 
+Library for 
+visual impaired 
+people 
+The system Convert textbooks into audio files and 
+store them into an online database that is be 
+available to all blind learners. 
+This solution is 
+limited to textbooks, 
+other learning 
+materials such as 
+objects and artefacts   
+are not included. 
+ 
+2.3 Gap Analysis  
+ 
+ 
+Different researches worked on the development of solutions which are used to assist blind and 
+visually impaired to navigate museums but according to the requirements and target group in our 
+local museums, we have identified some gaps in those papers. 
+In some thesis there is no use of IOT based solutions even though the solutions aim to assist blind 
+visually disabled people, some systems use wearable devises which need extra budgets, as blind 
+people rely mainly on their sense of touch some systems won’t allow the blind user to touch the 
+objects which doesn’t allow them to fully enjoy the museum experience; some solutions which 
+help blind people are limited to textbooks, other learning materials like objects, drawings are not 
+included. 
+
+  
+  
+ 
+  
+13 
+CHAPTER III. RESEARCH METHODOLOGY 
+3.1. Introduction 
+This chapter explains various methodology and approaches used for data collection, preparation, 
+evaluation and visualization. The IoT-enabled solution for museum monitoring and helping 
+visually disabled people to navigate museum prototype was implemented using the prototyping 
+methodology.  
+3.2 Prototyping Methodology 
+ 
+The main methodology used during the implementation of this project is the prototyping method. 
+[13] It is a method in which the prototype is built, tested, and reworked until an acceptable 
+prototype is achieved.  
+In this study, the prototype is composed of three main parts, such as; the sensing, communication 
+and visualization parts: 
+i. 
+The sensing part consists of data collection, different sensors such as temperature and 
+humidity sensors are used to collect environmental data from the museum.  The capacitive 
+touch sensors are used to sense if a person has touched an object. The data collected is 
+processed by raspberry Pi and sent to cloud using communication protocol. 
+ii. 
+The Bluetooth headset are used so that the user can hear the audio description of events 
+which are happening inside the museum through the headset and Wi-Fi is used for sending 
+data on cloud for monitoring and visualization. 
+iii. 
+ The data is sent to cloud for visualization and monitoring of the output results.  
+3.2.1 Prototyping model phases   
+ 
+The prototyping model has following six phases which are [14]; 
+1. Requirement Gathering and Analyst: the prototyping model starts with requirement 
+analysis. In this phase, the requirements of the system were defined in detail, people who 
+are visually disabled have been interviewed to know what their expectation from the system 
+is. 
+
+  
+  
+ 
+  
+14 
+2. Quick Decision: The second phase is a preliminary design or a quick design. In this stage, 
+a simple design of the system was created. However, even if it was not a complete design, 
+it helped in developing the prototype. 
+3. Build a Prototype: In this phase, an actual prototype was designed based on the 
+information gathered from quick design. It is a small working model of the required system. 
+4. User Evaluation: In this stage, the proposed system was presented to a small group of 
+visually disabled people and museum staffs for the initial evaluation. Comment and 
+suggestion were collected from the users.  
+5. Prototype Refinement: the prototype was changed according to the user’s feedback and 
+suggestions. 
+6. Implement product and maintain: the final system was developed based on the final 
+prototype and it was tested.  
+                                                   
+                                     Figure 5 Prototyping model phases 
+ The prototyping model has different benefits because it allows the users to be actively involved 
+in development therefore, errors can be detected in the initial stage of the software development 
+process so that the missing functionality can be identified which helps to reduce the risk of failure. 
+The users provide quick feedback which helps to achieve better software development solutions 
+and allow to find out the missing functionality in the system as well as understanding of the 
+customer’s needs. This model also serves as a basis for deriving a system specification and may 
+offer early training for future users of the software system.  
+ 
+3.3 Context analysis 
+ 
+Context analysis is the systematic analysis; identification, sorting, organization, interpretation, and 
+communication of the data gathered in contextual inquiry, for the purpose of understanding the 
+
+  
+  
+ 
+  
+15 
+work context for a new system to be designed [14]. the context analysis was done to understand 
+how visually disabled people feel about visiting museums, understand how the designed prototype 
+works and capture their suggestions so that the museum experience can be more enjoyable for 
+them. The main technique used for context analysis is data collection.  
+3.3.1 Data Collection and analysis techniques 
+ 
+Data collection is a process used for gathering and analysing specific information to find solutions 
+to relevant questions and evaluate the results. the main tool used for data collection are interview 
+and archival research.  
+Interview with focused group 
+ 
+The interviews were conducted at an institution called HVP Gatagara, [13] an institution working 
+in favour of persons with disability and whose objective is to promote the lives of those people 
+and ensure an excellent education for Children with Disabilities thus allowing them to achieve 
+good quality of life and enhance the process of reintegration. HVP has 4 branches which are 
+located in different district of Rwanda. Rwamagana branch focuses on students who are visually 
+disabled and help more than 200 students. I decided to work with 5 students from different districts 
+of the country among those who were not in class at that time. 
+ 
+ 1. The interviewed student were asked if they have ever visited any museum 
+This question was asked to the visually disabled students in order to see the level at which visually 
+disabled student access museums. We wanted to know about the experience of those who have 
+been there and the reason why others couldn’t visit museums and the obstacles they met so that it 
+can contribute to the success of the project implementation. 
+4 out of 5 students confirmed that they have never been to any museum and one student confirmed 
+that he visited the national museum of Rwanda.  
+ 
+
+  
+  
+ 
+  
+16 
+ 
+ 
+Figure 6 interviewed student responses 4 out of 5 of the students confirmed that they have never 
+visited any museum. 
+ 
+Figure 7 Statistic of students who visited the museum and the ones who never visited the 
+museum 
+ 
+2. The interviewed students were asked if they wish to visit museums. 
+This question was asked in order to see if visually disabled students are interested in exploring 
+new places such as museums and to know if they understand the importance of visiting museums 
+
+  
+  
+ 
+  
+17 
+so that we can measure the impact the proposed solution will have. 4 out of 5 students confirmed 
+that they are really interested and would love to visit museums but one student insisted and said 
+that he is not interested because he cannot see.   
+ 
+ 
+ 
+Figure 8 interviewed student responses 4 out of 5 of the students confirmed that they wish to 
+visit museums 
+ 
+ 
+
+  
+  
+ 
+  
+18 
+ 
+ Figure 9 statistic of students who want to visit museums and the ones who don’t want to visit 
+ 
+3.The interviewed student were explained how the prototype works and they were asked to 
+give feedbacks.   
+We explained how the designed prototype enables students who are visually disabled to enjoy 
+the museum experience using their sense of touch and wanted to know what are their feedback 
+and contributions.  
+All students confirmed that the system is simple and well designed, they confirmed that it can be 
+useful to them and help them enjoy the museum experience.  
+
+  
+  
+ 
+  
+19 
+ 
+ 
+ 
+Figure 10 interviewed student responses about the designed prototype 
+3.2.3 Archival research  
+This research technique was conducted in order to know which different types of museums we 
+have in Rwanda and which kind of information they offer. 
+In Rwanda there are different types of museums with different stories or focuses, such as  
+1. National museum of Rwanda which is located in Huye district, is the largest and most 
+known of all the museums of Rwanda. The museum boasts of some of the best ethnographic 
+and archaeological collections in East Africa of more than 10,000 artifacts. These materials 
+include maps, photos, art objects and artifacts documenting hunting, fishing, basketry, 
+pottery, textiles, woodcarving and metallurgy. [15] 
+ 
+2. Kandt house museum in Kigali: which was named after Richard Kandt who was the first 
+colonial governor of Rwanda, on behalf of Germany, until the early 1900s.the Kandt House 
+
+  
+  
+ 
+  
+20 
+the kandt Museum comprises three main parts; the first part presents Rwandan life in all 
+its aspects – social, economic, and political – before the colonial period; The second part 
+traces the experience of the Rwandan people during the colonial period, Following the 
+Berlin Conference in 1884, the Germans ruled Rwanda until 1916, when the Belgians took 
+over under the League of Nations Mandate after World War I. Richard Kandt’s life and 
+deeds in Rwanda are covered here; The third part covers the history of Kigali, before, 
+during and after the colonial era. [16] 
+3. Campaign against Genocide museum in Kigali offers deeper learning of the political 
+events that led to the 1994 genocide. The parliament was chosen to host this space because 
+it was the base for Rwanda Patriotic Army, it was dedicated to RPA soldiers who fought 
+in the liberation war and it shows the war scene installations outside and audio and visuals 
+inside. [17] 
+4. Rwanda art museum in Kigali, Formerly the Presidential Palace Museum, this new 
+museum displays contemporary artworks from Rwanda as well as abroad. The museum 
+seeks to provide an insight into the originality of Rwandan creativity. Exploring the 
+development of art from olden times to the modern day, it considers how traditional and 
+modern imaginations can blend and fuse. [18] 
+5.  King’s palace museum in Nyanza which is a reconstruction of the traditional royal 
+residence, the King’s Palace is a beautifully-crafted thatched dwelling shaped like a 
+beehive.it was placed in Nyanza which was considered as the heart of Rwanda in olden 
+times. The museum explains some of the architectural idiosyncrasies inside the royal 
+compound and other traditional events which were practiced at the royal palace. [19] 
+6. Museum of the environment in Karongi Based near Lake Kivu in the Western Province, 
+the Museum of the Environment covers two floors with a traditional herbal medicine 
+garden on the rooftop. It is the first of its kind on the continent, the museum looks at 
+renewable and non-renewable sources of energy. It is an educational museum and Its 
+purpose is to help people understand and safeguard their environment, and ensure 
+integrated and durable development. [20]  
+This archival research has been conducted in order to understand the current or historical events, 
+practices and different focuses of different museums in order to identify the key elements which 
+contributes to the success of the project. 
+
+  
+  
+ 
+  
+21 
+CHAPTER IV: SYSTEM ANALYSIS AND DESIGN 
+ 
+4.1 introduction 
+ 
+This chapter describes the components, system architecture, and interfaces with the purpose to 
+provide sufficient information details about the design of this project. The system was designed 
+and simulated in thonny IDE using python language and a working prototype was developed using 
+the different hardware components with data being sent to the cloud for visualization.  
+ 
+4.2 System components  
+ 
+The system component is made of both hardware and software components. The hardware 
+components have been grouped into categories based on the functions such as  
+4.2.1: The sensing Module  
+ 
+This is the data collection part of the system, where DHT11 temperature –humidity sensor is used 
+to collect environmental data inside the museum where the objects are placed and TTP223 
+Capacitive touch sensor collects data when an object is touched.   
+4.2.2 System control module 
+ 
+Raspberry Pi 4 Model B controls the whole system and process data collected by the sensors and 
+send the data to the cloud via Wi-Fi 
+4.2.3 Communication module Wi-Fi 
+ 
+The data collected from the sensors is sent to a remote database via Wi-Fi communication. The 
+Raspberry Pi 4 B has a dual-band 802.11ac\n wireless that can run on 2.4GHz or 5GHz.  
+Bluetooth: The Raspberry Pi 4 P is also equipped with Bluetooth 5.0 which facilitates to send data 
+from the Raspberry Pi to the headset so that the end user can receive the information. 
+4.2.4 The Cloud platform 
+ 
+Cloud computing is Internet-based computing in which virtual shared servers offer clients pay-
+per-use access to software, infrastructure, platforms, devices, and other resources. Users can access 
+on-demand computing resources such as infrastructure, software, and storage through the internet. 
+In this study, dashboard cloud platform is used as an IoT analytics platform service that permits 
+the aggregation, visualization, and analysis of real-time data. 
+
+  
+  
+ 
+  
+22 
+Table 2 hardware components of the system 
+ 
+Hardware 
+ 
+Description  
+Raspberry Pi 
+4 Model B 
+ 
+ 
+ Raspberry Pi 4 Model B 
+ 
+Raspberry Pi 4 Model B controls the 
+whole 
+system 
+and 
+process 
+data 
+collected by the sensors.it offers 
+ground-breaking increases in processor 
+speed, 
+multimedia 
+performance, 
+memory, and connectivity. it has a 
+memory of 4GB, connectivity of 2.4 
+GHz and 5.0 GHz IEEE 802.11b/g/n/ac 
+wireless LAN, Bluetooth 5.0, BLE 
+Gigabit Ethernet 2 × USB 3.0 ports 2 × 
+USB 2.0 ports. 
+ 
+TTP223 
+Capacitive 
+touch sensor 
+ 
+Capacitive touch sensor 
+ 
+capacitive touch sensor module based 
+on the dedicated TTP223 touch sensor 
+IC. The module provides a single 
+integrated touch sensing area of 11 x 
+10.5mm with a sensor range of ~5mm. 
+these sensors are connected to different 
+objects inside the museum and send 
+data when they are triggered.  
+ 
+
+  
+  
+ 
+  
+23 
+DHT11 
+temperature –
+humidity 
+sensor  
+ 
+ 
+DHT11 Temperature sensor 
+ 
+It uses a capacitive humidity sensor and 
+a thermistor to measure the surrounding 
+air, they are placed inside the museum 
+where the objects are placed. Its 
+operating voltage is between 3.5V to 
+5.5V, 
+operating 
+current 
+03mA, 
+temperature range 0°C to 50°C and 
+Humidity Range: 20% to 90% 
+ 
+SD/MicroSD 
+Memory Card - 
+8GB 
+ 
+ 
+SD Memory card 
+A memory card which is placed inside 
+the Raspberry pi and used to store data. 
+ 
+Bluetooth 
+Headset 
+ 
+Bluetooth headset  
+Bluetooth headset with audio output to 
+assist blind people to hear descriptive 
+audio during museum navigation. 
+Piezo Buzzer - 
+PS1240 
+ 
+Piezo buzzers are used for making 
+beeps, tones and alerts in case of the 
+temperature or humidity level is 
+critical.  
+ 
+ 
+4.3. Block diagram 
+ 
+This system has two approaches; 
+1. It facilitates blind or visually disabled people to navigate and learn about different objects 
+inside the museums through audio description using IoT- solution. A Raspberry pi is 
+
+  
+  
+ 
+  
+24 
+connected to different capacitive touch sensors which are also connected to different 
+objects inside the museum. If someone has touched the object, then the audio records 
+describing that same object which are stored on a memory card inside the raspberry pi will 
+be played through the Bluetooth headset. 
+ 
+2. This IoT-Based solution will also be used to control and monitor the museum’s 
+environmental and material conditions such as temperature and humidity and it will also 
+be used to alert the staffs or admin in case the temperature or humidity level is critical. 
+Different sensors will be used such as, humidity sensor, and temperature sensor will be 
+deployed inside the museum. The data will be monitored on dashboard cloud platform.  
+ 
+ 
+Figure 11 Block diagram 
+ 
+ 
+ 
+ 
+
+  
+  
+ 
+  
+25 
+4.2 System architecture 
+ 
+The main components of the architecture include the sensing unit, the Raspberry Pi connected to 
+things speak, an open source IoT platform, via Wi-Fi and Bluetooth connection. The sensing unit 
+is composed by the temperature and humidity sensor, and the capacity touch sensor Connected on 
+to the Raspberry Pi. These sensors collect data, which is processed and transferred to Thing Speak 
+for storage, analysis and monitoring. Then the person who is visually disabled listen to the 
+descriptive audio through the Bluetooth headset.  
+ 
+Figure 12 System architecture of the system 
+                                                                                                                                           
+4.3 The system functionality 
+ 
+This section explains the flow of both instruction and data in the system and how it functions. 
+It describes the tasks and actors involved in the project by focusing on the system functions to be 
+performed. It also explained the data flow with its function. It includes the system flow chart and 
+use case diagram. 
+
+  
+  
+ 
+  
+26 
+4.3.2 The system flow chart 
+ 
+The flow charts describe the flow of data and instructions in the system. It shows where the data 
+goes, then process all that data and output them.  
+ 
+ 
+Figure 13 System flow chart 
+4.3.2 System use case diagram 
+ 
+The use case diagram is used to show the main actors for the system and the related actions they 
+perform. The actors include the visually disabled person, the museum staff or manager, the system 
+administrator and the embedded system. 
+ 
+
+  
+  
+ 
+  
+27 
+ 
+Figure 14 Use case diagram 
+4.4 System prototype 
+ 
+In order to obtain the current results, a prototype have been developed using some traditional 
+objects that are essential in Rwandan culture which are found in the museum such as Agaseke, 
+Icumu, Igisabo. Each object is connected to the capacitive touch sensors, the description of that 
+same object is recorded in audio form on the Raspberry Pi, once the object is touched the audio 
+record is played through the Bluetooth headset. The DHT11 sensor which connected to the 
+Raspberry Pi also collect temperature and humidity data for analysis and monitoring. 
+ 
+ 
+ 
+
+  
+  
+ 
+  
+28 
+ 
+ 
+Figure 15 System prototype 
+ 
+
+  
+  
+ 
+  
+29 
+ 
+Figure 16 System prototype showing how the capacitive touch sensors are connected to the 
+museums items 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+  
+ 
+  
+30 
+CHAPTER V. RESULTS ANALYSIS AND DISCUSSION  
+5.1 Introduction 
+This section describes step-by-step the analysis of the results obtained after the implementation 
+phase is completed and the brief discussion of those results. 
+ 
+5.2 Cloud platform dashboard and visualization 
+ 
+After processing, the data is sent via Wi-Fi to the cloud for monitoring and visualisation. The 
+dashboard called Museum Monitoring system was created and the user has to create an account so 
+that he/she can access the system.  
+ 
+Figure 17 Museum Monitoring system user login interface  
+
+  
+  
+ 
+  
+31 
+  
+ 
+5.2.1 System dashboard  
+                                                   
+After creating an account to the museum monitoring system the user has access to the dashboard 
+which shows all the items which are in the museum, in this case we have three items which are 
+igisabo, icumu, and igiseke which are numbered as item number 1, item number 2, and item 
+number 3 on the graph. The graph shows how many times each object has been touched and when 
+(time) it has been touched. 
+ As shown, by the below graph, item 1 Igisabo was touched 23 times, item 2 Icumu was touched 
+35 times and item3 igiseke was touched 36 times from 3:44 to 6:48 pm.  
+ 
+ 
+                                                                   Figure 18 System dashboard 
+5.2.2 Museum item representation  
+ 
+Each item inside the museum is represented on the dashboard with some details such as item 
+number; entry date and section name. 
+
+  
+  
+ 
+  
+32 
+In each item section there is a graph which represent the variation of temperature and humidity 
+according to a specific time, and the user can see a specific report of that particular item.  
+Item number 1:  Igisabo: which is located in the section of traditional objects. The graph below 
+represents the variation of humidity and temperature when the item number 1 (Figure 16) was 
+touched. Here you can also view the specific time when the museum visitors have touched this 
+object.  The graph below shows the date and time when this particular object was touched, the 
+variation of temperature which is between 23.7 °C and 31 °C and humidity which varies between 
+39% and 90%.  
+ 
+ 
+ 
+Figure 19 The graph above represent the variation of temperature and humidity and the time  
+when Igisabo was touched. 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+  
+ 
+  
+33 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Table 3: containing all information regarding the item N1 such as; the time when it has been 
+touched, the temperature and humidity. The report can be viewed in pdf format. 
+ 
+ 
+Item number 2: Icumu which is located in the section of traditional objects. The graph below 
+represents the variation of humidity and temperature when the item number 1 (Figure 17) was 
+touched. Here you can also view the specific time when the museum visitors have touched this 
+object.  The graph below shows the date and time when this particular object was touched, the 
+variation of temperature which is between 24.3 °C and 30.9 °C and humidity which varies between 
+41% and 81%.  
+ 
+
+  
+  
+ 
+  
+34 
+ 
+ 
+Figure 20 The graph above represents the variation of temperature and humidity when Icumu was 
+touched. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+  
+ 
+  
+35 
+Table 4 containing all information regarding the item N2 such as; the time when it has been 
+touched, the temperature and humidity. The report can be viewed in pdf format. 
+ 
+ 
+ 
+ 
+Item number 3: Igiseke which is located in the section of traditional objects. The graph below 
+represents the variation of humidity and temperature when the item number 3 (Figure 18) was 
+touched. Here you can also view the specific time when the museum visitors have touched this 
+object.  The graph below shows the date and time when this particular object was touched, the 
+variation of temperature which is between 23.7 °C and 29.8°C and humidity which varies between 
+35% and 62%.  
+ 
+
+  
+  
+ 
+  
+36 
+ 
+ 
+Figure 21 The graph above represents the variation of temperature and humidity when Igiseke was 
+touched. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+  
+ 
+  
+37 
+Table 5 Table containing all information regarding the item N3 such as; the number of times it 
+has been touched, the temperature and humidity. The report can be exported in pdf format. 
+ 
+5.2.3 General Report  
+ 
+The museum monitoring system has a report section where a system user can view a general 
+report when it is needed. The report can be exported in pdf format and it contains data of all 
+museum items as well as the variation of temperature and humidity. As shown by the table below 
+each time an object is touched inside the museum, the time and date are captured, the 
+temperature and humidity data are also captured and an Identification number is created to 
+differentiate those different actions.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+  
+ 
+  
+38 
+ 
+ 
+ 
+ 
+Table 6 General report 
+ 
+ 
+ 
+5.2 Humidity and temperature results discussion  
+ 
+Fluctuating relative humidity causes stress on materials. The fluctuation in humidity damages a 
+wider range of museum objects, a change in humidity causes dimensional alteration in hygroscopic 
+materials (for example, wood, ivory, skin, and other organic materials), resulting in warping, 
+splitting, and delamination of sensitive materials. Seasonal slow drifts are less harmful to structures 
+and objects than abrupt changes. High humidity (above 70%) can cause mold growth and metal 
+corrosion. Low humidity (below 40%) can cause embrittlement of hygroscopic materials such as 
+leather and paper. This prototype is built such that if the humidity is below 40% or 70% the buzzer 
+is activated to notify that the level of humidity is critical inside the museum. While testing this 
+
+  
+  
+ 
+  
+39 
+prototype the humidity varies between 41%-81% depending on the area of testing.  
+Temperature is the major factor in the speed at which "natural aging" occurs. Materials last longer 
+at cooler temperatures. A rapid change in temperature, if the relative humidity is constant, may 
+have damaging effects on stressed metals, stone, films, plastics or wax, materials from which many 
+modern collections are made. High temperatures increase deterioration reaction rates and melt 
+heat-susceptible materials. The temperature inside the museum should be 16 to 20°C. This 
+prototype is built such that if the temperature is below 16 °C or above 20°C the buzzer is activated 
+to notify that the level of temperature is critical inside the museum. While testing this prototype 
+the temperature varies between 23 °C and 30% according to the testing area. 
+ 
+ 
+5.3. Prototype efficiency 
+ 
+This solution is simple, fast, accurate, cost-effective, user-friendly, and it was designed according 
+to the requirement of the visually disabled people who are based here in Rwanda and as per the 
+nature of the national museum of Rwanda.  
+The prototype is made of three main sensors; the capacitive touch sensor which are also connected 
+to different objects inside the museum, collect data when someone has touched the object then the 
+audio records describing that same object is played through the Bluetooth headset and the user 
+who cannot see will be able to hear the audio description. the prototype has also the DH11 sensor 
+which collect temperature and humidity data from the museum in order to avoid the damage of 
+material conditions of the museum items.   
+The prototype is efficient and accurate in such way that when the temperature or humidity level 
+are critical the museum staffs are alerted using a buzzer which is connected to Raspberry Pi in 
+order to ensure the real time response.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+  
+ 
+  
+40 
+CHAPTER VI: CONCLUSION AND RECOMMENDATION 
+6.1 Conclusion 
+In this thesis, Internet of things has been used as a powerful tool to design and implement a system 
+which helps visually disabled people to enjoy the museum experience. This thesis explains the 
+impact of the use of IoT and the positive impact it has on the socio -economic plan in our society.  
+It has been proven that sight is not the only sense with which people can experience and enjoy 
+museums, this experience can also be enjoyable through the sense of touch using IoT technologies 
+and visually disabled people can benefit from it. Also we have seen that the solution will help in 
+terms of control and monitoring of the environmental conditions of the objects which is an 
+advantage for museums staffs and owners in order to avoid the materials damage. 
+IoT-enabled solution for Museum Monitoring and Visually Disabled People Navigation System 
+allow people who are visually impaired to enjoy the museum experience which can increase the 
+museum income and allow them to learn and to be reintegrated in our society. It increases 
+awareness of blind people’s obstacles and needs so that other projects can be done in their favour. 
+ 
+6.2 Recommendation 
+ 
+Different systems have been put in place to help people with disabilities but we still have a big gap 
+in terms of helping those people. With the use of IoT technologies, I believe that more can be done 
+to help those people. I would like to recommend future researchers to work on new tools and 
+systems which can be used to help visually disabled people or other people with disabilities to 
+have access to educational and entertainment tools so that they cannot be left behind in our 
+community. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+  
+ 
+  
+41 
+References 
+[1] DOPPLER, K., WIJTING, C., HENTTONEN, T., & VALKEALAHTI, K. (2008). Multiband 
+Scheduler for Future Communication Systems. International Journal of Communications, 
+Network and System Sciences, 01(01), 1–9. https://doi.org/10.4236/ijcns.2008.11001 
+[2] Temesgen, Z. (2018). School Challenges of Students with Visual 
+Disabilities. INTERNATIONAL JOURNAL of SPECIAL EDUCATION, 33(3). 
+https://files.eric.ed.gov/fulltext/EJ1196725.pdf 
+[3] Museum | Definition, History, Types, & Operation | Britannica. (2022). In Encyclopædia 
+Britannica. https://www.britannica.com/topic/museum-cultural-institution 
+[4] Karuhanga, J. (1970). Rwanda accedes to Marrakesh Treaty to deepen inclusiveness of 
+persons with disability. The New Times; The New Times. 
+https://www.newtimes.co.rw/article/190563/News/rwanda-accedes-to-marrakesh-treaty-to-
+deepen-inclusiveness-of-persons-with-disability 
+[5] Fucci, D., Romano, S., Baldassarre, M., Caivano, D., Scanniello, G., Thuran, B., & Juristo, 
+N. (n.d.). A Longitudinal Cohort Study on the Retainment of Test-Driven Development. 
+https://doi.org/10.1145/nnnnnnn.nnnnnnn 
+[6] Khan, M. N., Rahman, H. U., Faisal, M., Khan, F., & Ahmad, S. (2021). An IoT-Enabled 
+Information System for Smart Navigation in Museums. Sensors, 22(1), 312. 
+https://doi.org/10.3390/s22010312 
+[7] Tools and Technologies for Blind and Visually Impaired Navigation Support: A Review. 
+(2022). IETE Technical Review. 
+https://www.tandfonline.com/doi/full/10.1080/02564602.2020.1819893 
+[8] Amato, F., Chianese, A., Mazzeo, A., Moscato, V., Picariello, A., & Piccialli, F. (2013). The 
+Talking Museum Project. Procedia Computer Science, 21, 114–121. 
+https://doi.org/10.1016/j.procs.2013.09.017 
+[9]  Chianese, A., Marulli, F., Piccialli, F., & Valente, I. (2013, December 5). A Novel Challenge 
+into Multimedia Cultural Heritage: An Integrated Approach to Support 
+
+  
+  
+ 
+  
+42 
+Cultural... ResearchGate; unknown. 
+https://www.researchgate.net/publication/260024357_A_Novel_Challenge_into_Multimed
+ia_Cultural_Heritage_An_Integrated_Approach_to_Support_Cultural_Information_Enrich
+ment 
+[10] Sornalatha, K., & Kavitha, V. R. (2017). IoT based smart museum using Bluetooth Low 
+Energy. 2017 Third International Conference on Advances in Electrical, Electronics, 
+Information, Communication and Bio-Informatics (AEEICB). 
+https://doi.org/10.1109/aeeicb.2017.7972368 
+[11] Balducci, F., Buono, P., Desolda, G., & Piccinno, A. (2019, December). Improving Smart 
+Interactive Experiences in Cultural Heritage through Pattern Recognition Techniques. 
+ResearchGate; Elsevier. 
+https://www.researchgate.net/publication/338043361_Improving_Smart_Interactive_Exper
+iences_in_Cultural_Heritage_through_Pattern_Recognition_Techniques 
+[12] Cultural Heritage and Internet of Things | Proceedings of the 6th EAI International 
+Conference on Smart Objects and Technologies for Social Good. (2020). ACM Other 
+Conferences. https://dl.acm.org/doi/10.1145/3411170.3411267 
+[13 Prototyping methodologies and presentation techniques. (2021). Justinmind.com. 
+https://www.justinmind.com/prototyping/prototyping-methodology-techniques-presention 
+[14] HVP-GATAGARA - ORTHOPEDIS AND REHABILITATION HOSPITAL. (2019). 
+Hvpgatagara.org. https://hvpgatagara.org/ 
+[15] Prototype Model in Software Engineering. (2020, February 19). Guru99. 
+https://www.guru99.com/software-engineering-prototyping-model.html 
+[16] Museums of Rwanda. (2022). Kagerasafaris.com. https://www.kagerasafaris.com/museums-
+of-rwanda/ 
+[17] Kandt House Museum – Visit Rwanda. (2022). Visitrwanda.com. 
+https://www.visitrwanda.com/interests/kandt-house-museum/ 
+
+  
+  
+ 
+  
+43 
+[18] KAZIBWE, A. I. (2022, April 22). Kigali’s “Campaign against Genocide Museum” 
+reopens with new additions. The East African; The East African. 
+https://www.theeastafrican.co.ke/tea/magazine/kigali-campaign-against-genocide-
+museum-reopens-3782702 
+ [19] Rwanda Art Museum – Visit Rwanda. (2022). Visitrwanda.com. 
+https://www.visitrwanda.com/interests/rwanda-art-museum/ 
+[20] King’s Palace Museum – Rukari | Attractions - Lonely Planet. (2022). Lonelyplanet.com. 
+https://www.lonelyplanet.com/rwanda/nyanza-nyabisindu/attractions/kings-palace-
+museum-rukari/a/poi-sig/1341765/1331550 
+[21] admin. (2014, June 19). Rwanda opens environment Museum. African Safari. 
+https://www.wildwhispersafrica.com/blog/first-environment-museum-in-rwanda/ 
+[22] Museums Galleries Scotland - Temperature and humidity in museums. (2022). Museum 
+Galleries Scotland; Museum Galleries Scotland. 
+https://www.museumsgalleriesscotland.org.uk/advice/collections/temperature-and-
+humidity-in-museums/ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+

@@ -1,0 +1,627 @@
+Thinking Aloud in Search of Landmark
+Characteristics in an Indoor Environment
+Pepijn Viaene, AnnVanclooster, Kristien Ooms, Philippe De Maeyer
+Geography Department
+Ghent University
+Ghent, Belgium
+Pepijn.Viaene@UGent.be
+Abstract—The last decade has seen an increase in the was one of the first authors to define (outdoor) landmarks as
+attention towards indoor space and its applications. Within this “physical elements in space which can be unambiguously
+research topic, landmarks play an important role as these distinct referred to in route instructions”. A more extensive definition,
+objects exert important functions in the context of navigation and given by [9], states that a landmark is a prominent and
+in the construction of a cognitive model of an environment. identifiable element in an environment (external to man) that
+However, compared to outdoor research, little research has been enables an observer to locate himself and to set objectives like
+conducted related to indoor landmarks and their specific reaching a destination or selecting an optimal route.
+characteristics with respect to their use and description.
+Therefore, the presented study aims to investigate when or where Clearly, not every object meets the needs of the definitions
+landmarks are mostly needed during a navigational task in a above. According to [7], a landmark must satisfy three
+building and how they are verbally expressed. In order to fundamental qualities: persistence, information content and
+examine these aspects, eleven test persons completed a route in a saliency. First, a landmark is persistent if present at a certain
+complex building. While navigating, they had to think out loud location at any given time in order to be able to use as a
+and their verbal descriptions were analyzed and compared. The reference. Second, it has to be informative, pointing at the
+results of this study show that landmarks were most needed on information about the position of the navigator it provides and
+locations where a change of orientation took place. In addition,
+what action one has to undertake. Third, a landmark is salient if
+most referrals were made to objects near the observer.
+it is easily detectable and recognizable [7]. Especially saliency
+Furthermore, participants preferred to use common nouns to
+is crucial, because saliency indicates the quality of a landmark
+refer to a landmark and more detailing was given by specifying
+and refers to the relative distinction, visibility and notable
+color and material. Finally, the results indicate that
+features of an object with respect to its surroundings [10], [11].
+predominantly the same elements form the basis to identify an
+indoor landmark as an outdoor landmark, namely visual, Following, several types of landmarks can be identified.
+structural and semantic features. Some make a difference between object landmarks, as being
+objects that are independent of the building’s structure, and
+Keywords—navigation;wayfinding;think aloud
+structural landmarks [7].In contrast, the landmark theory of [9]
+suggests three categories of specific features that contribute to
+I. INTRODUCTION the saliency of a landmark: visual, semantic and structural.
+Finding one’s way in an environment in search of a Visual landmarks distinguish themselves based on visual
+destination is part of everyday life. Unfortunately, a complex aspects such as shape, position and visibility in the
+indoor environment may entail specific problems for environment, color, age and size. This is similar to the notion
+wayfinding and navigation [1]. For example, the third of the previously mentioned object landmark. Following,
+dimension (i.e. various floor levels), which is characteristic for semantic or cognitive landmarks are recognizable because of
+most buildings, has an impact on wayfinding performances [2]. their meaning. This can be a broadly dispersed historical
+Additionally, buildings are often composed of fragmented meaning or a unique connotation only known by a few people.
+areas with a limited field of view and changes in direction Finally, structural landmarks are seen as objects that exert an
+occur more frequently than outdoors [3]. These elements lead important function because of their role or location in the
+to disorientation, which represents one of the main difficulties structure of the spatial environment. Examples are accessible
+while moving through a building [4]. and prominent elements such as intersections, dead-ends and
+large open spaces. In most cases, they are marked by a high
+In order to resolve this loss of orientation, people can rely degree of connectivity [9], [12]. The most suitable landmarks
+on landmarks, which are the basis of the cognitive model of an are those that meet the demands of all categories. For example,
+environment that is used by a navigator to find his or her way. a library that is painted red and located near a large central
+Especially in the first stages of a mental map’s development, a intersection would be perceived as highly salient.
+space is seen as a loose collection of landmarks, which serve as
+anchor points, without spatial coherence [5]–[7].Reference [8] Compared to outdoor studies, few studies have focused
+specifically on the use of landmarks indoors, although they can
+This research would not have been possible without the financial support
+of the Special Research Fund (“Bijzonder Onderzoeksfonds” (BOF)).
+U PINLBS 2014, Corpus Christi, Texas, Nov 20-21, 2014 103
+978-1-4799-6004-0/14/$31.00 ©2014 IEEEserve as powerful wayfinding tools. Moreover, most indoor research has been conducted related specifically to the location
+studies base themselves on conclusions made in an outdoor of landmarks in an indoor context, our second research
+context. For example, Reference [3] focused on active indoor question is the following: “When or where are landmarks
+landmarks that implement radio-frequency identification, but needed most?”
+built upon conclusions made in an outdoor environment, such
+In this paper we will start by giving an overview of the
+as the landmark theory of [9] and for the derivation of
+setup of the conducted experiment and processing of the
+landmarks they relied on the outdoor research of [12].
+acquired data, which allowed us to determine which landmarks
+Similarly, for explaining the functions of conventional non-
+were used and how they were described by the different test
+active landmarks they referred to a study made by [13], which
+persons. This is followed by a summary of the most interesting
+also stems from research on outdoor landmarks. Following, in
+and relevant results, which constitutes the synthesis of a word,
+[1] the authors tried to develop a landmark-based pedestrian
+sentence and location analysis. In the fourth section, the results
+navigation system. Although this system provided promising
+will be the subject of a discussion that focusses on the two
+and good results, it can be noted that here as well outdoor
+main objectives of this paper, namely the description of
+research formed the basis for this study. Other experiments,
+landmarks and their location.
+like those of [7], took place in virtual indoor environments.
+Concluding, one might question whether or not outdoor
+characteristics are valid in real indoor environments. For II. STUDY DESIGN
+example, would a secretariat that is painted red and located
+near a large central intersection within a building be perceived A. Tasks
+equally as salient like the previously mentioned library in an An adaptation of an experiment conducted by [13] was
+outdoor environment? used as research method. In this previous experiment verbal
+descriptions of landmarks and information about the
+This study seeks to gain more insight into two aspects of
+distribution of those landmarks were collected after completing
+indoor landmarks that are vital for the formulation of route
+a route twice by recording route instructions after the second
+instructions, namely their location and description. Evaluating
+time the route was completed. However, these route
+a landmark’s description is useful, because an adequate and
+instructions only comprised a limited amount of potential
+correct description, which can capture the (visual)
+landmarks, namely those remembered. Therefore, a slightly
+characteristics, is needed to communicate clearly about these
+different methodology was applied in our study during both
+objects when using them in route instructions. Various authors
+traversals of the route: concurrent thinking aloud. This results
+(e.g. [1], [14]) emphasize the importance of conducting further
+in a more comprehensive outline of all salient objects along the
+research on the descriptions of landmarks in order to increase
+route and their features. Furthermore, video images were used
+efficiency of verbal route instructions and to reduce the
+to unambiguously identify landmark and their location. Finally,
+difficulties experienced by the users. Therefore, our first
+since this report deals with indoor landmarks, our study was
+research question is: “What are the general characteristics and
+situated in an indoor environment in contrast to the experiment
+descriptions of indoor landmarks?”
+of [13].
+Equally important for the creation of proper route
+The present experiment consisted of four parts. In the first
+instructions is acquiring knowledge about the location of
+part, the participants were asked to tell something about
+landmarks. A coordinated relocation in an environment (i.e.
+themselves and to solve a fairly simple mathematical problem
+navigation) requires distinguishable physical objects (i.e.
+aloud. These two tasks gave the participants the opportunity to
+landmarks) to specify the location where an action (e.g. “walk
+become familiar with the think aloud method, making them
+towards” or “make a turn at”) should take place. Hence,
+feel comfortable to share their thoughts aloud [17], [18]. In the
+defining the adequate location of these ‘view-action-pairs’ is
+second part, the participants were asked to follow the
+needed to provide route directions of good quality in order to
+experimenter (as they were not yet acquainted with the route).
+facilitate navigation performances [6], [15]. Outdoor landmark
+The participants were asked to apply the think aloud method
+research has recognized two main location-based functions for
+during this completion as follows: “Describe all things that
+landmarks in navigation: orientation point and checkpoint.
+come to mind while completing the route, ranging from visual
+First, outdoor landmarks that serve as orientation point allow a
+stimuli and scents to sounds and feelings related to the route
+navigator to anticipate points where extra attention is needed
+and the navigational task”. In the third part of the experiment,
+because of a potential change in direction [15]. This is the case
+the experimenter followed the test persons in their second
+at decision points with intersections of at least three road
+traversal of the route and only intervened if the participant was
+segments. This vision was applied by [10]. Similarly, [16] saw
+lost or asked for help. This action of the observer is believed to
+the environment as a network of graphs where outdoor
+have no influence on the thinking aloud process and test results
+landmarks were only needed at the nodes. Second, landmarks
+[18]. Before the second traversal, they were instructed to
+are important to ensure the navigator that he is still on the
+“apply the think aloud method in the same way as during the
+correct route [3] and to allow the observer to reorient himself if
+first completion but with specific attention to the objects that
+needed [13]. These are seen as checkpoints. Most studies
+helped them to retrace the route or gave confirmation that they
+situated in an outdoor context presuppose that people will
+were on the correct route”. Note that the participants were
+mostly fall back on landmarks when they need them to take a
+aware that the goal of the experiment was to study indoor
+decision about the action (e.g. change of direction) that should
+wayfinding. Finally, at the end of the experiment, the
+be unfolded at a specific location. However, as very little
+participants were asked six questions. For example, they were
+U PINLBS 2014, Corpus Christi, Texas, Nov 20-21, 2014 104
+978-1-4799-6004-0/14/$31.00 ©2014 IEEEasked to draw the route on a floor plan of the building and, if
+applicable, to explain why they went the wrong way during the
+experiment. The questions of part one and four were handed to
+them at the starting point of the route in the form of a
+structured query sheet, which also gave an overview of the
+proceedings of the experiment.
+As mentioned earlier, in order to capture all possible
+descriptions of landmarks during the experiment, the think
+aloud method will be applied. This method involves
+participants sharing their thoughts aloud while executing a
+specific task and is a unique supplier of qualitative and
+complete data regarding cognitive processes. Concurrent think
+aloud offers some advantages. Participants are not required to
+remember thoughts, but can communicate them immediately in
+an objective and undistorted way [19]. Moreover, this method
+only has a limited influence on the actions and thoughts of the
+participant and, consequently, on the test results [18].
+Nonetheless, two major disadvantages can be noted. First, if a
+person does not verbalize all thoughts, this will lead to a
+fragmented dataset. This could be resolved by a retrospective
+questioning, but then the risk exists that participants will
+rationalize their actions in order to give answers whereof they
+think it is expected of them [19]. Second, the obtained data is
+highly dependent on the selection of test persons and therefore
+in some way subjective. An adequate sample population is vital
+[17]. Finally, as the participants are expected to retrace the
+route, whereby landmarks play an important role [20], the think
+aloud method is used to identify landmarks via the cognitive
+processes related to (indoor) wayfinding. This is similar to
+[21]. In some studies (e.g. [22], [23]), the participants are asked
+to describe an environment without relating the noticed
+elements to a wayfinding task. Here, it is questionable whether
+the described elements can be considered landmarks as they are
+not used in a navigational context.
+B. Study Area
+The building in which the experiment took place was the
+“Institute of Sciences” of Ghent University (see Fig. 1). It can
+be seen as a complex set of interconnected buildings. Various
+junctions were characterized by a high level of connectivity,
+which emphasized the need for landmarks to aid navigational
+decisions. The route, used during the experiment, was
+characterized by an alternation of open spaces and corridors,
+passing through various zones and floors. A zone, namely an
+area within the building with similar design and function, could
+Fig. 1. Representation of the indoor test environment in which the route is
+easily be distinguished based on its color and material. This represented by the thick black line.
+was helpful for the participants to become familiar with the
+route [4]. Furthermore, the zones offered a huge variety of C. Participants and Materials
+potential landmarks, which allowed a comprehensive insight in
+In total seven males and seven females participated in our
+whether or not objects were identified as landmarks. The zones
+experiment. They were all in their twenties and the degree of
+also had different visual ranges to determine the distance at
+familiarity with the building varied. Due to equipment
+which landmarks were selected. The choice to frequent various
+problems, three female participants were excluded.
+floors was underpinned by the fact that several authors (e.g.
+[3], [21]) have stated that this often resulted in a loss of The think aloud method required the registration of the test
+orientation and that landmarks were exceedingly adequate to persons’ verbalizations and the recordings of where they were
+overcome this problem. The route itself had the same start and looking at to be able to correctly interpret their utterances.
+end point and was approximately 380 m long, which took Hence, a headset was used combined with a webcam. These
+about seven minutes to complete. Longer routes can cause were mounted on the person’s head and were connected to a
+confusion or doubt [4]. laptop that recorded sound and images. The test persons carried
+the laptop in a backpack during the experiment.
+U PINLBS 2014, Corpus Christi, Texas, Nov 20-21, 2014 105
+978-1-4799-6004-0/14/$31.00 ©2014 IEEED. Data Processing The word analysis reveals that external features were often
+used to describe an object in more detail. Materials (e.g.
+During the data processing, the recorded verbal utterances
+“wood” (28 times cited), “glass” (26)) formed a substantial
+were transcribed and subsequently analyzed. The analysis of
+element of the verbalizations.Colors were equally important to
+these transcriptions was done on three levels. First, a word
+describe an object, especially colors that inflicted great contrast
+analysis was carried out. An alphabetical list was formed
+with their immediate surroundings. For example, pale yellow,
+containing all words mentioned during the experiment (both
+which is present on almost all walls along the route, was
+traversals of the route) and their frequency. Second, a sentence
+mentioned only twice, while blue elements (noticeable on one
+analysis was conducted using protocol analysis with the aid of
+door and a small wall) were mentioned 28 times. Furthermore,
+the software package Elan EUDICO Linguistic Annotator
+the state or condition of the object was described in various
+(version 4.4.0) [24]. The verbal protocols were split into
+ways: 65 referrals related to age (e.g. “old”, “modern”, “new”)
+segments. Each segment referred to a specific action, object,
+and 27 times the appearance was described (e.g. “weird”,
+explanation or silence. These segments were then linked to a
+“strange”). Shapes and sizes were quoted rarely. Furthermore,
+predefined set of annotations listed in five tiers. This provided
+the descriptions of these objects varied in word choice and in
+standardized information about the actions of the test persons
+extensiveness in which they were experienced and described.
+and their thoughts. An overview of the coding scheme is
+presented in Fig. 2. For example, the statement “we are With respect to the objects themselves, staircases were
+walking towards the yellow door” was annotated as follows: mentioned 192 times. Notwithstanding a lot of staircases are
+‘action’ (walking towards), ‘landmark’ (door), ‘object’ (door), present on the trajectory, viewed proportionally it remains a
+‘point’ (door), ‘color and material’ (yellow). Every test person high frequency. Besides stairs, floors received a lot of attention
+led to two recordings; one for each time the route was as well. In total 43 referrals were made to the various floors
+completed. Finally, a location analysis was conducted. All frequented along the route. Both are characterized by a vertical
+objects that were mentioned regardless of their features or movement. Associated with this vertical movement were words
+descriptions were visualized on a floor plan. For the sentence indicating going up (31) or down (70). The word “downstairs”
+and location analysis, only the objects mentioned during the was cited in 95 % of the recordings. The two courtyards were
+second traversal of the route were used, because the think aloud mentioned 53 times, while going inside and outside the
+instruction for the second completion of the route directed the building were referred to respectively 22 and 45 times. Finally,
+participants more in describing the potential landmarks. auditoriums, corridors, toilets, signs and closets were
+Moreover, the participants were better able to assess the mentioned numerous times. Remarkable, the elevator was only
+saliency of these objects when the entire route is known in mentioned 26 times although it is quite unique along the route
+contrast with the first time that the route was completed [6]. and was seen several times during the completion of the route.
+An explanation could be its inconspicuous grey color, which
+III. RESULTS was mentioned in only 3 out of 22 recordings.
+The experiment consisted of recording the descriptions of Finally, words that refer to orientation or directions were
+landmarks formulated out loud by 11 test persons during the cited often: “direction” (39), “right” (114), “left” (83) … The
+dual completion of a route in a complex building. In this last two were mentioned in 20 of the 22 recordings.
+manner, more information was gathered about the description
+and location of potential landmarks. B. Results of the Sentence Analysis
+1) Analysis of the Tier Comment
+A. Results of the Word Analysis
+The annotations C_research, C_random and C_n/a
+In total 1628 different words were used during both comprise segments that contain respectively questions related
+completions of the route. An explanation for this wide range of to the experiment, irrelevant utterances and silences. On
+expressions is that a single object can be specified with various average, these comprised less than 1 % of all verbal segments.
+appellations, which are not necessarily correct. “Fire The annotations C_direction and C_landmark are more of
+installation”, “fire extinguisher”, “fire thing”, “fire hose”, “fire interest. All statements that expressed a direction without
+cabinet”, “fire unit”, “fire hydrant”, “fire cable” all related to making a reference to an object to describe a navigational
+the same object. Similar examples can be given for courtyards, action were annotated with C_direction. Statements that did
+closets and staircases. refer to a potential landmark were assigned with C_landmark.
+When comparing these annotations, it is clear that most
+statements contained a landmark (17 % C_direction, 83 %
+C_landmark). On average, 54 potential landmarks were
+mentioned with a standard deviation of 18.
+In a next step, the various expressions with the annotation
+C_landmark were assigned to either the category “object
+landmark” or “structural landmark” (analogue to the study of
+[7]). The resulting ratio was 51 % and 49 % respectively.
+When looking at the share of potential landmarks (object and
+Fig. 2. Coding scheme used during the sentence analysis depicting the tiers and structural) with a semantic component, 23 % had a semantic
+their annotations. component in addition to their visual or structural saliency. On
+U PINLBS 2014, Corpus Christi, Texas, Nov 20-21, 2014 106
+978-1-4799-6004-0/14/$31.00 ©2014 IEEEthe one hand, this semantic component was derived from signs,
+which assigned a function to a room (e.g. “B002 - the
+archives”, “physics laboratory”). On the other hand, familiarity
+with the environment was apparent (e.g. “the office of my
+tutor”). The fact that several test persons mentioned the
+secretariat or the conference room, but did not mention rooms
+similar to these without a special function or meaning,
+indicated that elements with specific semantics – derived from
+signs or foreknowledge – had a greater saliency.
+2) Analysis of the Tier Landmark
+The tier Landmark offers more insight in the kind of
+potential landmarks that were mentioned during the second
+completion of the route. These were annotated with Fig. 3. Representation of the annotation ratios for the tier description.
+C_landmark in the tier Comment. Physical objects (L_object),
+apart from signs, (e.g. doors, closets, posters, stairs) were most C. Results of the Location Analysis
+cited during the completion of the route (i.e. 77 %). They were
+After depicting all mentioned objects on a floor plan of the
+present along the entire route and highly outnumbered the
+environment on their corresponding locations, two conclusions
+number of signs in the building, which only represented 19 %
+can be drawn. First, most potential landmarks are located very
+of described elements.
+close to the observer. Only 26 objects, which correspond with
+Non-visual elements were mentioned least: 4 % with a 15 % of all objects, are located further than two meter from the
+standard deviation of 3 %. This category contained references path of the participants. Second, concentrations of objects were
+to scents and other objective elements that are not perceivable present whenever a change of direction occurred, even when
+on the spot and can only be known by people that were familiar there were no or very limited options. In order to quantify this
+with the environment to some extent. A large amount (41 %) of presumption, 21 decision points along the route were
+these remarks specified the possible or future use of a location identified. A decision point was defined as being a location
+or object. “We arrive at the courtyard, the ideal location to were a change of direction occurs and multiple options were
+smoke”, “this is where I work” and “this will become a library” possible for the continuation of the route. For each decision
+are some examples. Furthermore, 45 % of these non-visual point, the number of described objects within a certain distance
+elements predicted which zone followed on to the current zone (i.e. 2, 3, 4 or 5 meter) was determined. In addition the score,
+or recounted who works or has studied there. The remaining 4 which is the amount of described objects multiplied by the
+% comprised referrals to scents, temperatures and sounds. number of times that these objects were mentioned by all
+participants, was calculated. The results are presented in Fig. 4.
+3) Analysis of the Tier Type For example, the area around the decision points within a
+Based on the data arising from the analysis of the tier Type, distance of two meter comprises 20 % of the route, 35 % of the
+point objects (e.g. doors) were cited most frequent. This was mentioned objects and 33 % of the total score of all mentioned
+the case in 44 % of the potential landmarks. Line (e.g. stairs) objects. The same ratio is present for the areas with a radius of
+and polygon (e.g. courtyards) elements were mentioned to the three, four and five meter around each decision point.
+same extent, namely 29 % and 27 % respectively.
+In addition to this, fewer elements were described towards
+4) Analysis of the Tier Description the end of a longer segment, like a corridor. However, one
+Fig. 3 clearly demonstrates that most objects were referred notable exception can be found on the second floor whereby
+to by their common noun. Following, state was mentioned 13 potential landmarks were spread evenly across this segment.
+%. Colors and materials were used in 10 % of the cases to This hallway was characterized by a lay-out with various glass
+describe or specify an element along the route. With respect to walls that created smaller rooms. Thus, this specific spatial unit
+color, a striking situation occurred with one of the test persons appeared to be experienced as a collection of smaller
+during his second traversal. The participant doubted whether he compartments, which could explain the larger distribution of
+had to go left or right at a fork intersection. He decided to take potential landmarks.
+a look in both corridors. Immediately, he noticed that one hall
+Two landmarks were mentioned by all test persons: the
+way was painted red and that such a corridor was not
+VTK, this is the home and name of a student’s union, and a
+frequented the first time the trajectory was completed. The
+wooden spiral staircase. Finally, doors were mentioned
+other corridor, with blue elements, on the other hand was
+manifold when entering a new area. This was already
+recognized positively. This is an example on how contrasting
+established in the word analysis, where 125 references were
+colors can be decisive in reconstructing the route. Finally,
+made to a door. The word “door” was mentioned 96 times and
+shape was only mentioned for 4 % of the landmarks and the
+occurred in all but one recording.
+majority of those referrals dealt with the size of the object and
+not with the geometry.
+U PINLBS 2014, Corpus Christi, Texas, Nov 20-21, 2014 107
+978-1-4799-6004-0/14/$31.00 ©2014 IEEEcolors to describe a landmark could be less appropriate in
+modern buildings.
+Some emphasize the importance of the shape to describe an
+object [12]. Exceptional surfaces, unorthodox figures and
+special geometries of an object would enhance the visual
+saliency. This conclusion, however, is much less prominent in
+this study. Shape was only mentioned rarely, possibly because
+of the nature of the test environment. The environment is a
+classical constructed building that is built, furnished and
+designed quite traditionally. As such, no elements with
+extraordinary dimensions or shapes are present. Geometry and
+size might have a more pronounced role when situated in a
+Fig. 4. Graph depicting the relation between distance to the decision points and modern and highly developed architectural building. However,
+the number of landmarks and their score within that distance. based on this study, it can only be concluded that the role of
+shape for indoor landmarks is negligible.
+D. Concluding Questionnaire
+Coming back to the semantics of an object, the results
+The questionnaire revealed that no person consciously indicate that the features of structural and object landmarks are
+experienced difficulties with the think aloud method. not sufficient to account for the saliency of about 23 % of the
+Furthermore, nine out of eleven test persons stated that a map mentioned objects. Moreover, the semantic component was
+would not have simplified or supported the wayfinding process essential in explaining why certain objects were mentioned.
+in any way. For example, one of the objects that was described in every
+recording is the VTK. The reputation of this student’s union
+IV. DISCUSSION attributes a great semantic saliency to this room and explains
+why this room and no similar rooms were described as
+A. The Description of Landmarks and Related Characteristics frequent. As mentioned earlier, signs and symbols can attribute
+additional explicit semantic saliency to an object. In addition to
+Common nouns appear to be extremely adequate to
+this, many objects are perceived highly semantically salient by
+describe a landmark, although one object can be referred to by
+observers who are familiar with the environment. The fact that
+a wide range of terms. Signs can assign unambiguous names to
+the semantic component has to be deducted on the basis of
+certain objects and these objects are thus mentioned more
+familiarity or its immediate surroundings, namely the various
+frequently. This is ascertained by [15] as well. As such, areas
+signs, implies that a landmark always has to be examined with
+or elements in a building appointed with a sign possess a
+respect to its observer and environment, as emphasized by [11].
+greater (semantic) saliency. In this way, these objects
+Furthermore, the importance of cognitive landmarks, the notion
+distinguish themselves from the environment [25].
+of explicit semantics and the effect of familiarity are all
+To provide in a more detailed description of a chosen incorporated in the landmark theory of [9]. Related to indoor
+landmark, color and to a lesser extent material are used in most landmarks, this landmark theory, which stems from outdoor
+cases. Although this study indicates that the state of the object research, has never been explicitly refuted, neither specifically
+is the most cited feature, the authors share the opinion of [12] confirmed before. These findings support the applicability of
+that this is open to interpretation and can cause false this theory indoors.
+descriptions. For example, the age of an object is easy to
+Elaborating on the difference between structural and object
+determine by its date of construction, but the maintenance and
+landmarks, according to [7], people have a natural preference
+wear can visually misrepresent the age. Therefore, attributions
+to remember structural landmarks. However, at first sight, this
+like “modern”, “new” and “old” can be out of place. Moreover,
+study indicates a more balanced presence of object and
+expressions as “beautiful” or “weird” are highly subjective.
+structural landmarks. A possible explanation for this apparent
+Meanwhile, color and material can contrast stronger with the
+discrepancy can be linked to the different test environments.
+environment and all participants generally refer to the various
+The experiment of [7] took place in a virtual space with a
+colors and materials with the same terms, allowing a clear
+limited amount of landmarks and a restricted maneuverability
+communication. It is thus, according to [12], the most
+inducing a very limited field of view for the test persons. On
+mentioned objective way to make a detailing possible.
+the contrary, the test area in our study is characterized by a
+Furthermore, it seems that color is highly appropriate to
+large variety of objects and the possibility to look around with
+differentiate zones in a building. One of the participants could
+fewer visual restrictions. Furthermore, there is a more limited
+distinguish a frequented zone from an unfamiliar zone relying
+range of structural landmarks in the current testing area
+on the red and blue colors of these zones. This is in line with
+compared to the number of object landmarks and yet these are
+the theorem of Gärling et al. (1983) that colors are essential in
+consistently mentioned more by most participants of the
+recognizing the various parts of a building and in this way
+experiment. In other words, the entire collection of object
+substantially contribute to the formation of a cognitive model.
+landmarks, which is characterized by a huge variety, is
+Note that in the building where this study took place colors are
+mentioned equally as much in terms of percentage, but a
+often used to differentiate zones, while recent modern buildings
+specific object landmark is mentioned much less. This becomes
+display a more uniform color pattern. In other words, the use of
+evident based on the word analysis, especially with respect to
+U PINLBS 2014, Corpus Christi, Texas, Nov 20-21, 2014 108
+978-1-4799-6004-0/14/$31.00 ©2014 IEEEstairs. A possible explanation is that the interaction with stairs that give view across an open area very few objects are
+is physically perceivable due to the vertical relocation [7] and mentioned.
+these elements indicate an increased complexity of the (layout
+of the) environment [21]. For example, one of the test persons C. Concluding Remarks
+stated that he has an odd preference to describe stairs, but this
+This study has some limitations. First of all, the focus lies
+study indicates that this is not exceptional. In connection to
+on the identification of potential landmarks. In this way,
+this, one of the objects that was mentioned by all test persons is
+offering an insight on the characteristics of potential
+the wooden spiral staircase. Summarizing, it can be stated that
+landmarks. It is not clear, however, which landmarks would
+structural landmarks were perceived more salient and that this
+actually be used in route instructions. Second, some comments
+study is in line with the conclusions made by [7].
+can be made regarding the use of the think aloud method. It
+Finally, various non-persistent elements are cited during the supplies a rich dataset, but demands a very extensive and time
+description process. For example, people are often mentioned. consuming analysis. Therefore, the number of participants is
+Moreover, these elements were useful, since references like limited. This should not be a problem, since a small test
+“here I encountered a good friend” or “we passed those girls as population is considered to be sufficient to draw conclusions
+well” contributed to the wayfinding process. The benefits that about the cognitive processes with respect to the performed
+non-stationary landmarks can offer are also mentioned by [9]. task [17], [26]. However, coupled with the fact that the think
+They adduce that the utility of landmarks can be of longer aloud method brings forth qualitative data, this leads to the
+duration than the landmark itself. However, the notion of situation in which no statistical analysis could take place. Some
+moving landmarks is contradictious with the required caution is therefore advised in applying these deductions. It is a
+persistence of a landmark. Hence, some authors (e.g. [1], [7]) necessity to behold the conclusions in this report first of all as
+believe that people are not suitable landmarks. Accordingly, indications and to a lesser extent as proven facts. In order to
+these non-persistent elements should not be seen as landmarks, resolve this, the authors are currently investigating the potential
+but rather as elements that attribute to the semantic saliency of of other methods (e.g. eye tracking) to provide more adequate
+the space where they were encountered. quantitative measures. Finally, more research should be
+conducted on which aspects should be annotated by the coding
+B. The Location of Indoor Landmarks scheme. The presented coding scheme was composed to
+comprise some essential elements – according to the authors –,
+A first important finding is that landmarks are most needed
+but improvements should be considered.
+at locations where a change of orientation takes place, for
+example at intersections. This is similar to the findings in
+outdoor landmark research (e.g. [10], [13], [15], [16]). As a V. CONCLUSIONS
+result, it confirms the importance of landmarks in facilitating This study arose from the belief that there might be
+navigation decisions. substantial differences regarding the characteristics and use
+between indoor and outdoor landmarks. Starting from this
+Furthermore, in comparison to objects that function as
+problem statement, two research questions were formulated.
+orientation point, there are fewer objects present that are
+The first question was how landmarks are best described and
+eligible to take on the role of checkpoint. Yet, some authors,
+which characteristics are linked to these descriptions. The
+including [3], see this latter as a key function of a(n) (indoor)
+results indicate that the description of indoor landmarks is most
+landmark. A similar phenomenon occurs in a study of [6]:
+successful by using the common noun of the object. If a more
+participants render less information in secluded paths.
+detailed description is needed, this should be supplemented
+Moreover, references to landmarks in these segments stop
+with the color of the object or the material from which it is
+completely. Probably because every new direction or corridor
+made. Second, there was no doubt that landmarks are of great
+segment is accompanied with new distinct objects, while less
+importance during navigation and wayfinding, especially in
+new objects are found towards the end. After all, the location of
+unfamiliar buildings, but some confusion existed concerning
+a landmark is related to the availability of landmarks in the
+the main function of these navigational aids. This study
+environment [6]. Additionally, it is feasible to think of paths in
+demonstrates that indoor landmarks primarily function as
+an indoor environment as tunnels, as indicated by one of the
+orientation points since these objects supply information on
+test persons, whereby no confusion is possible about the
+points where decisions have to be made concerning the
+remainder of the route once one has entered a certain corridor.
+remainder of the route or where the orientation of the navigator
+This could indicate that landmarks as checkpoint only play a
+changes. Furthermore, there is strong tendency to neglect
+very moderate role indoor, because pedestrians are in general
+distant landmarks in favor of objects near the observer. In
+more restrained to the indoor network, characterized by narrow
+addition, the characteristics of the described objects verify that
+corridors and a limited field of view, in comparison to a more
+the landmark theory of [9] is applicable indoor. Thus, the
+open outdoor network.
+selection of indoor landmarks is made on the basis of visual,
+Finally, it is noted that the majority of the described structural and semantic properties. In sum, by placing some
+landmarks are located close to the observer. This is fully landmark aspects related to location and description in an
+concordant with outdoor research (e.g. [6], [10]). Distant indoor context, this paper has contributed to the formulation of
+objects seem to be less satisfactory as landmarks both indoors adequate route instructions. By doing so, the authors hope to
+as outdoors. This is reinforced in indoor spaces by the have contributed to the further integration of landmarks in
+restricted field of view on most locations, but even at windows route instructions in support of indoor navigation.
+U PINLBS 2014, Corpus Christi, Texas, Nov 20-21, 2014 109
+978-1-4799-6004-0/14/$31.00 ©2014 IEEEFUTURE WORK [12] M. Raubal and S. Winter, “Enriching Wayfinding Instructions with
+Local Landmarks,” in Geographic Information Science. Second
+As mentioned in section 4.1, the type of building might International Conference, GIScience 2002, 2002, pp. 243–259.
+have an impact on the identification of landmarks and their
+[13] P. Michon and M. Denis, “When and Why Are Visual Landmarks Used
+description. For that reason, similar experiments should be in Giving Directions(cid:3031)?,” in Spatial information theory. Cognitive and
+performed in different types of buildings (e.g. modern, old- Computional Foundations of Geographic Information Science, 2001, pp.
+time). 292–305.
+[14] Z. Fang, Q. Li, X. Zhang, and S. Shaw, “A GIS data model for
+landmark-based pedestrian navigation,” Int. J. Geogr. Inf. Sci., vol. 26,
+ACKNOWLEDGMENT no. 5, pp. 1–22, May 2011.
+We are grateful to M. Coryn, who provided detailed floor [15] A. Tom and M. Denis, “Referring to Landmark or Street Information in
+Route Directions: What Difference Does it Make?,” in Spatial
+plans of the building in which our experiment was conducted.
+information theory. Foundations of Geographic Information Science,
+2003, vol. 2, pp. 362–374.
+REFERENCES [16] B. Elias, “Determination of Landmarks and Reliability Criteria for
+Landmarks,” in Fifth workshop on progress in Automated Map
+[1] A. M. A. Millonig and K. S. K. Schechtner, “Developing Landmark- Generalization Paris, 2003, pp. 1–12.
+Based Pedestrian-Navigation Systems,” IEEE Trans. Intell. Transp.
+[17] M. W. M. Jaspers, “A comparison of usability methods for testing
+Syst., vol. 8, no. 1, pp. 43–49, 2007.
+interactive health technologies: methodological aspects and empirical
+[2] M. Soeda, N. Kushiyama, and R. Ohno, “Wayfinding in Cases with evidence.,” Int. J. Med. Inform., vol. 78, no. 5, pp. 340–353, May 2009.
+Vertical Motion,” Proc. MERA 97 Int. Conf. Environ. Stud., pp. 559 –
+[18] E. Krahmer and N. Ummelen, “Thinking About Thinking Aloud - A
+564, 1997.
+comparison of two verbal protocols for usability testing,” IEEE Trans.
+[3] B. Brunner-Friedrich and V. Radoczky, “Active Landmarks in Indoor Prof. Commun., vol. 47, no. 2, pp. 105–117, 2004.
+Environments,” in Visual Information and Information Systems, 2006,
+[19] C. P. J. M. van Elzakker, The Use Of Maps In The Exploration Of
+pp. 203–215.
+Geographic Data. Utrecht/Enschede: Koninklijk Nederlands
+[4] T. Gärling, E. Lindberg, and T. Mäntylä, “Orientation in buildings: aardrijkskundig genootschap, Faculteit geowetenschappen, Universiteit
+effects of familiarity, visual access, and orientation aids.,” J. Appl. Utrecht / Internationaal Instituut voor Geo-Information Science and
+Psychol., vol. 68, no. 1, pp. 177–186, 1983. Earth observation, 2004.
+[5] A. W. Siegel and S. H. White, “The development of spatial
+[20] J. Frankenstein, S. Brüssow, F. Ruzzoli, and C. Hölscher, “The language
+representations of large scale environments,” in Advances in child
+of landmarks: the role of background knowledge in indoor wayfinding,”
+development and behaviour, vol. 10, H. W. Reese, Ed. New York, New Cogn. Process., vol. 13, no. S1, pp. 165–170, Aug. 2012.
+York, USA: Academic Press, 1975, pp. 9–55.
+[21] C. Hölscher, T. Meilinger, G. Vrachliotis, M. Brösamle, and M. Knauff,
+[6] K. L. Lovelace, M. Hegarty, and D. R. Montello, “Elements of Good
+“Up the down staircase: Wayfinding strategies in multi-level buildings,”
+Route Directions in Familiar and Unfamiliar Environments,” in Spatial J. Environ. Psychol., vol. 26, no. 4, pp. 284–299, Dec. 2006.
+information theory. Cognitive and Computional Foundations of
+[22] L. T. Sarjakoski, P. Kettunen, H.-M. Flink, M. Laakso, M. Rönneberg,
+Geographic Information Science, 1999, pp. 65–82.
+and T. Sarjakoski, “Analysis of verbal route descriptions and landmarks
+[7] B. J. Stankiewicz and A. A. Kalia, “Acquisition of structural versus for hiking,” Pers. Ubiquitous Comput., vol. 16, no. 8, pp. 1001–1011,
+object landmark knowledge.,” J. Exp. Psychol. Hum. Percept. Perform., Sep. 2011.
+vol. 33, no. 2, pp. 378–390, May 2007.
+[23] K. Rehrl, S. Leitinger, G. Gartner, F. Ortag, J. H. Iii, and A.- Salzburg,
+[8] K. Lynch, “The city image and its elements,” in The City Reader, R. T. “An Analysis of Direction and Motion Concepts in Verbal Descriptions
+LeGates and F. Stout, Eds. London, England: Routledge, 1960, pp. 98– of Route Choices,” in COSIT, 2009, pp. 471–488.
+102.
+[24] B. Hellwig, D. Van Uytvanck, M. Hulsbosch, and A. Somasundarasm,
+[9] M. Sorrows and S. Hirtle, “The nature of landmarks for real and ELAN - Linguistic Annotator version 4.0.0 – manual. Nijmegen, The
+electronic spaces,” in Spatial information theory. Cognitive and Netherlands: Max Planck Institute for Psycholinguistics, The Language
+Computional Foundations of Geographic Information Science, 1999, Archive, 2010.
+vol. 1661, pp. 37–50.
+[25] M. Raubal, “Human wayfinding in unfamiliar buildings: A simulation
+[10] D. Caduff and S. Timpf, “The Landmark Spider: Representing with a cognizing agent,” Cogn. Process., vol. 2, no. 2–3, pp. 363–388,
+Landmark Knowledge for Wayfinding Tasks,” in AAAI Spring 2001.
+Symposium, 2002.
+[26] A. Gill and B. Nonnecke, “Think aloud: effects and validity,” in
+[11] D. Caduff and S. Timpf, “On the assessment of landmark salience for Proceedings of the 30th ACM international, 2012, pp. 31–35.
+human navigation.,” Cogn. Process., vol. 9, no. 4, pp. 249–67, Dec.
+2008.
+U PINLBS 2014, Corpus Christi, Texas, Nov 20-21, 2014 110
+978-1-4799-6004-0/14/$31.00 ©2014 IEEE

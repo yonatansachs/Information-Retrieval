@@ -1,0 +1,558 @@
+Perspectives of Visually Impaired Visitors on Museums: Towards
+an Integrative and Multisensory Framework to Enhance the
+Museum Experience
+Roberto Vaz ∗
+Faculty of Engineering, University of
+Porto, Portugal
+Diamantino Freitas
+Faculty of Engineering, University of
+Porto, Portugal
+António Coelho
+Faculty of Engineering, University of
+Porto/INESC TEC, Portugal
+ABSTRACT
+Although the growing concern to make museums accessible to
+individuals with visual impairments, their participation in these
+institutions is still limited, given the multiple barriers they often
+experience and the lack of assistive technologies to promote access.
+This research investigates the perspectives of 72 blind and partially
+sighted individuals on enhancing their visiting experience in mu-
+seums. A co-created framework to improve visitors’ autonomy is
+proposed, concluding that sensory, intellectual and physical access
+must be integrated into the pre, on-site and post phases of visiting
+museums.
+CCS CONCEPTS
+• Human-centered computing →Accessibility; Interaction De-
+sign.
+KEYWORDS
+Visual impairments, Museums, Access, Visitor experience, Multi-
+modality
+ACM Reference Format:
+Roberto Vaz, Diamantino Freitas, and António Coelho. 2020. Perspec-
+tives of Visually Impaired Visitors on Museums: Towards an Integrative
+and Multisensory Framework to Enhance the Museum Experience. In
+9th International Conference on Software Development and Technologies
+for Enhancing Accessibility and Fighting Info-exclusion (DSAI 2020), De-
+cember 02–04, 2020, Online, Portugal. ACM, New York, NY, USA, 5 pages.
+https://doi.org/10.1145/3439231.3439272
+1
+INTRODUCTION
+Billions of people worldwide live with different types of disabilities
+[26], and museums are, more than ever, aware of the importance
+of including these individuals and welcoming them in its spaces,
+exhibitions and programs. Proof of these institutions’ actual com-
+mitment as agents of change is the International Museum Day
+theme for 2020 – Museums for Equality: Diversity and Inclusion –
+which highlighted their potential in providing meaningful expe-
+riences for all [15]. However, a recent report from the European
+∗Corresponding author. E-mail address: robertovaz@fe.up.pt
+Permission to make digital or hard copies of part or all of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for third-party components of this work must be honored.
+For all other uses, contact the owner/author(s).
+DSAI 2020, December 02–04, 2020, Online, Portugal
+© 2020 Copyright held by the owner/author(s).
+ACM ISBN 978-1-4503-8937-2/20/12.
+https://doi.org/10.1145/3439231.3439272
+Union [19] stressed the inaccessibility of cultural premises, venues,
+and content as barriers to the blind and partially sighted citizens’
+participation in culture.
+The World Health Organization estimates that 2.2 billion people
+globally have a vision impairment, of whom about 36 million are
+blind, 217 million have moderate to severe vision impairment, 188.5
+live with mild visual impairment, and 1.8 billion have near vision
+impairments [25]. In Portugal, where the present research took
+place, data from the last Census allowed estimate that among the
+17.8% of the population that declared to have any difficulty, 23%
+(900 thousand) specified the vision as a cause, of which 3.1% (28
+thousand) reported blindness [16].
+Regarding their attendance to museums, only 5.5% of visually
+impaired (VI) people visit museums in Europe [8], which exposes
+a significant potential market for these institutions [18]. Several
+authors [4, 9, 13] relate barriers to their participation with the
+fact that museums remain mostly ocular centric oriented, which
+does not contribute to the engagement with exhibitions through
+other senses than vision, deprives their access to information and
+exhibits, and also hinders their independent mobility in the mu-
+seum space. Despite VI visitors being one of the most difficult to
+address in museums [20], technology can contribute to a beneficial
+impact on helping serve these publics by diminishing the barri-
+ers to accessibility [12, 24], although being rarely used. Moreover,
+positive economic effects are expected with the implementation
+of inclusive digital technologies to promote access to exhibitions
+[2], since they offer new possibilities to interact with museums and
+their themes, which can also bring non-disabled visitors closer to
+museum collections, broadening their sensory experiences [10].
+While these facts evidence the need for research in this field, few
+studies analyze the VI visitors’ needs and expectations across the
+continuum of visits to museums to promote great museum experi-
+ences from their viewpoints, and how technology can assist them
+during the whole museum experience. The present article aims to
+extend research in the field of accessibility in museums by exploring
+the perspectives of 72 VI individuals to co-create a framework that
+could be used to enhance their future visits to museums. The article
+begins with the discussion of assistive technologies to enhance
+VI experiences in museums. It proceeds with the presentation of
+the research methods, followed by the results and the proposal of
+guidelines for an integrative and multisensory framework linking
+the various museum visit phases with the access required in each
+of them. The article ends with some conclusions and implications
+for the field.
+17
+
+DSAI 2020, December 02–04, 2020, Online, Portugal
+Roberto Vaz et al.
+2
+ASSISTIVE TECHNOLOGIES AND VISUALLY
+IMPAIRED VISITORS’ EXPERIENCES IN
+MUSEUMS
+VI people’s positive museum experiences depend on their reliance
+on other senses besides vision to access information, physical space,
+and other facilities [3, 9].
+Haptic interfaces allow VI visitors to explore three-dimensional
+virtual copies of museum collections, like the Geomagic Touch Sys-
+tem [7], in which visitors are required to pick up a pen of the device
+to explore the multiple layers of the surface of the artifacts from
+the National Museum of Transylvanian History of Cluj-Napoca.
+The Probos Sensory Console [2], developed in collaboration with
+the Manchester Museum, UK, and Gallery Belvedere, in Vienna,
+Austria, allows visitors to explore virtual objects and hear sounds
+related to the material properties of the exhibits.
+Other museums are using 3D technologies to provide touch repli-
+cas digitally augmented, offering tactile and audio multisensory
+experiences. Tooteko [23] was developed for the Correr Museum,
+in Venice, Italy, requiring visitors to wear a ring sensor during
+the tactile exploration of the models, which detects and reads Near
+Field Communication (NFC) tags inserted inside the objects, while a
+smart device plays the related audio. The Egyptian Cat Sarcophagus
+[22] was produced by scanning an original mummy of the Manch-
+ester Museum collection, and includes touch-sensitive sensors to
+detect the touched areas and trigger contextual audio-explanations,
+heard through headphones. The gesture-based interactive audio
+guide for relief interpretation of Gustav Klimt’s painting The Kiss
+[21] allows exploration by regions, and different audio files describe
+the painting and its history. The visitor’s interactions are detected
+by a depth camera placed above the replica and connected to a
+computer running the software. A similar project allows the explo-
+ration of a relief of the painting Madonna with Child and Angels
+[6], in which a Microsoft Kinect is used to track the visitors’ hand
+movement in real-time, while software determines the correspond-
+ing verbal description of each area being touched, which can be
+heard through headphones.
+Other projects also use technology to provide better physical
+access, indoor navigation and wayfinding in museums. Blind Muse-
+umTourer [17] was designed for the Tactual Museum of the Light-
+house for the Blind of Greece, the National Archeological Museum
+and the Acropolis Museum. The application runs on an Android
+smartphone and presents vocal routes, emergency, and back op-
+tions, and also describes the exhibits approached by the visitor
+along the tour route. It uses Bluetooth low energy (BLE) beacons as
+proximity sensors at the exhibits to update users’ current location
+and provide audio presentations. Another project [14] proposes a
+voice guidance system for VI visitors that uses a hyper-directional
+speaker to radiate guiding audio instructions only to a target visi-
+tor who needs guidance, and a Kinect image sensor to detect user
+position.
+Different from the explored solutions, a research project [1] at
+the Museum of Cycladic Art, Athens, Greece, allows VI visitors
+using a smartphone with a mobile app to choose thematic areas and
+exhibits, providing navigation instructions by taking advantage of
+sensors embedded in the room. When arriving in front of an exhibit,
+the user can tactually explore its form while listening to the piece’s
+audio description.
+Most of the research found in literature explores technology to
+enhance the on-site visiting experience, supporting mainly sensory
+and intellectual access to exhibits, and physical access, in some
+cases. Extensive research is still needed to identify the blind and
+partially sighted visitors’ expectations and necessities across the
+continuum of visits to museums, which extends beyond the in-
+museum experience [11]. It is also essential to grant a central role
+to these people and include their perspectives during the research
+process [9, 24], to ensure more fruitful results for all [3]. The un-
+derstanding of those dimensions can contribute to help museums
+develop unified inclusive solutions, which effectively enhance ac-
+cessible exhibition designs and improve the museum experience of
+VI patrons.
+3
+RESEARCH METHODS
+The present research was circumscribed to three of the five regions
+of continental Portugal: North, Center, and Lisbon and Vale do Tejo.
+It was undertaken for seven months in six cities: Porto, Braga, Viana
+do Castelo, Vila Real, Viseu and Lisbon. For the data gathering, it
+followed a methodology based on qualitative research.
+3.1
+Sampling technique
+To randomly sample participants for the study, the leading official
+institutions for the VI of the mentioned regions of Portugal were
+identified. A total of 19 institutions were contacted and asked for
+collaboration with this research. The institutions then notified the
+members about the research, and 72 people, from 10 institutions,
+expressed their interest in voluntarily collaborating in the study.
+3.2
+Research instrument and procedure
+Semi-structured interviews were used as the instrument for data-
+gathering, and the interview guide included mainly open-ended
+questions. The closed questions were about the participants’ de-
+mographic information. The set of questions was conditioned by
+the research’s general objectives, addressing the following topics:
+profile of the participants, habits regarding visits to museums, and
+suggestions on solutions to enhance their future museum experi-
+ence.
+The study was conducted between January and July of 2019,
+mainly at the institutions where interviewees were members. In
+eight of the cases, the interviews were conducted in participants’
+homes, and five persons asked to meet them at their workplaces. All
+interviews were individual and performed face-to-face, except for
+nine cases (12.5%) in which it was necessary to do the interviews
+by telephone. A document with the initial protocol was read aloud
+at the beginning of each interview and asked for permission to
+audio record the data-gathering session. Each individual gave their
+consent to participate in the study by signing the document. The
+exceptions to this were the cases of telephone interviews, in which
+participants gave their oral consent, and the minor-age cases, for
+which their parents previously signed the document when arrang-
+ing the interviews.
+18
+
+Perspectives of Visually Impaired Visitors on Museums: Towards an Integrative and Multisensory Framework to
+Enhance the Museum Experience
+DSAI 2020, December 02–04, 2020, Online, Portugal
+3.3
+Tools for data analysis
+The average duration of each interview was 29 minutes and 17
+seconds, excluding the initial protocol. The NVivo 12 software
+‘transcribe mode’ tools were used to transcribe the audio files man-
+ually. The same software was used to conduct the qualitative data
+analysis, following the thematic analysis method [5]. The coded
+themes derived inductively from the collected data and their iden-
+tification was performed through a semantic approach, in which
+the explicit level of meanings of the data was considered in order
+to identify the different patterns.
+Regarding the answers related to the profile of the VI participants,
+as well as their habits concerning visits to museums, it was possible
+to convert the qualitative data into quantitative data, and the IBM
+SPSS 26 software was used to carry out descriptive and exploratory
+statistical analysis of these research topics.
+4
+RESULTS
+4.1
+Participant’s profile
+Of the 44 (61.1%) individuals who reported to be blind, 18 were
+early-blind (EB) and 26 late-blind (LB). The remaining 28 (38.9%)
+participants had low vision: 16 severe (SVI), 9 moderate (MoVI),
+and 3 had mild visual impairment (MiVI). It is mentioned that 75%
+of the interviewees in this research had visual references (LB and
+partially sighted), and that the average age of vision loss of the
+LB participants is approximately 30 years old (M=29.6; SD=17.5).
+The group was relatively homogeneous in terms of gender, i.e.,
+51.4% were female, and 48.6% were male. Interviewees’ age ranged
+from 14 to 87 years old (M=48.7; SD=17.1). The predominant age
+group was 42-57 (33.3%), followed by 58-73 (32%), 26-41 (18%), 14-
+25 (13.9%) and 74-87 (2.8%) years old. Regarding their education
+level, basic school represents the highest education level completed
+by 38.9% of the individuals, and the secondary school was the
+second level of education achieved by most of the participants
+(37.5%). Seventeen participants (23.6%) completed higher education:
+12.5% holds a bachelor’s degree, and 11.1% holds a master’s degree.
+Concerning their area of living, 52.7% live in a metropolitan area
+(Porto, Lisbon and Setúbal), whereas the rest of the participants live
+in less populated Districts: Braga (12.5%), Viana do Castelo (11.1%),
+Viseu (9.7%), Vila Real (6.9%), Aveiro (2.8%), and Évora, Guarda and
+Santarém (4.2%).
+4.2
+Habits regarding visits to museums
+More than half of the participants (56.9%) reported they visit mu-
+seums less than once every two years, and 22.2% informed that
+they go one to two times a year. Five participants (6.9%) use to visit
+museums three or four times in a year, and seven (9.7%) reported
+they visit more than four times in a year. Three participants (4.2%)
+have never visited any museum at the time of their interviews.
+Of the total answers given by the 69 people who frequent muse-
+ums to the question about whom they visit museums with, 34.1%
+referred to the associations where they are members, 31.7% stated
+visits with close family members, 20.3% with friends, and 13% visits
+in school contexts. One person (0.8%) affirmed had visited a mu-
+seum alone. Regarding the question about if they enjoy going to
+museums, 46.4% of the participants responded “yes”, 34.8% said
+“more or less”, and 18.8% revealed they do not enjoy visiting those
+places.
+4.3
+Improvement suggestions to enhance the
+visiting experience in museums
+All the 72 interviewees shared suggestions about the aspects they
+considered that must be improved and provided solutions to enable
+more enjoyable visits and enhance future museum experiences.
+The answers provided by the three participants who stated had
+never visited museums were also considered, given its relevance.
+A total of 479 commentaries were coded during the performed
+qualitative analysis, which allowed to co-design the guidelines
+towards a framework that will be discussed in the next section.
+5
+AN INTEGRATIVE FRAMEWORK
+CO-CREATED TO ENHANCE THE MUSEUM
+EXPERIENCE
+Based on the qualitative analysis, it was concluded that a frame-
+work must support integrating the different phases identified as
+relating to the experience of visiting cultural institutions: pre-visit,
+on-site visit, and post-visit. Furthermore, the data analysis per-
+formed revealed that it is imperative to ensure that the framework
+also articulates the strategies to promote sensory, intellectual, and
+physical access, so individuals are more likely to feel a sense of
+autonomy during the various phases of a visit, despite their diverse
+degrees of visual impairments.
+5.1
+Pre-visit planning
+5.1.1
+Museum Website: Accessible, Informative and with Inclusive
+Language [Intellectual Access]. Should follow the Web Content Ac-
+cessibility Guidelines (WCAG) to guarantee users the intellectual
+access to information. Besides the introductory presentation of the
+museum and its collection, museum websites should use inclusive
+language to welcome potential visitors with disabilities, and also
+provide useful information to VI individuals planning a visit: if
+anything can be touched during the on-site visit and what; the
+availability of audio guides and guided tours; if there are audio
+descriptions or supports in Braille; accessible events and services
+provided; if guided dogs are allowed inside; entrance fees and costs
+of these services.
+5.1.2
+Proper Dissemination of Information about the Museum [In-
+tellectual Access]. In order to reach VI audiences, museums should
+disseminate information through e-mail and user-friendly social
+media channels (taking into account the WCAG). Since not every
+participant stated feeling comfortable using digital devices and
+accessing websites, the information must also be directly dissemi-
+nated to schools, associations, and other institutions where people
+are part or attend, so it can be delivered to them.
+5.2
+On-site visit
+5.2.1
+Presentation of the Museum Space and Exhibitions [Intellec-
+tual Access]. Participants suggested that museums must provide
+them with complementary ways of accessing information about
+the exhibitions’ spaces and their organization through audio at the
+19
+
+DSAI 2020, December 02–04, 2020, Online, Portugal
+Roberto Vaz et al.
+beginning of a visit. According to the vast majority of the intervie-
+wees, resorting to sound would be more useful in the context of a
+spontaneous visit than having to read this information in Braille
+or printed media, since the awareness of the contents would be
+faster, more enjoyable and more convenient if listening. They also
+informed that Braille cannot be considered an inclusive reading
+medium because not every person developed adequate literacy to
+read it, and texts with large-sized fonts and adequate contrast ratios
+do not serve all persons with low vision.
+5.2.2
+Exhibits’ Information Presentation [Intellectual Access]. It
+should be prioritized the use of audio instead of Braille or printed
+media to convey the exhibits’ information, for the same reasons pre-
+viously discussed. It is also necessary to use appropriate descriptive
+language, so the detail of information and used terms to present the
+exhibits’ contents are adapter to the reality of someone who cannot
+entirely rely on her/his vision to sense the world. The museological
+information must be as concise as possible to convey the crucial
+aspects, to avoid the excess of information and visitors’ fatigue and
+loss of interest.
+5.2.3
+Physical Objects: Replicas, Models and Reliefs [Sensory Ac-
+cess]. Sensory access to physical objects was identified as essential
+to an enhanced and meaningful museum visit, serving different
+purposes. 3D models of museum spaces can enable the creation of
+mental representations of its organization, while 3D models of the
+museum building allow them to create accurate mental images of
+the architecture and other relevant details that are hard to express
+by language. On the other hand, 3D replicas of exhibits (at least
+of the most relevant) were pointed out as vital to effectively make
+sense of the objects, which are, generally, the purpose of museum
+exhibitions. It should be used reliefs for accessing bi-dimensional
+artworks like paintings, photos, or others only perceived through
+vision. The sensory access to physical objects must combine both
+touch and hearing, at least, to be effective, and the access to these
+objects should be available while visiting the entire museum, with
+the aim to promote inclusion.
+5.2.4
+Magnified Images to Amplify Visual Capacities and Adjusted
+Lighting of the Exhibits [Sensory Access]. Participants with low
+vision highlighted that they still have some vision and wish to
+use it to perceive the museum objects and artworks. Tablets and
+screens with zoomable high-resolution images of the exhibits can
+be provided to visualize better the pieces’ details, preferentially
+close to the originals. Brighter lighting of the exhibits, on the other
+hand, could also improve their visiting experiences by helping them
+using their remaining visual capacity.
+5.2.5
+Exhibition Space Design and Assistive Guide for Museum Nav-
+igation [Physical Access]. Exhibitions must be designed to afford a
+circulation route within the spaces free of physical obstacles and
+to promote a sense of safety and autonomy on the VI visitors. The
+use of an assistive guide that automatically provides contextual
+information was suggested to enhance their sense of autonomy and
+control while moving in exhibitions. It is recommended to be used
+as complementary ways to offer accurate feedback when approach-
+ing points of interest, provide route assistance indications while
+moving, and alert visitors.
+5.3
+Post-visit phase
+5.3.1
+Museum Website: with Additional Contents for Promoting Fur-
+ther Engagement [Intellectual Access]. Interviewees recommended
+that websites included audio described videos and allows listen-
+ing to the audio-clips from the audio guides. The possibility of
+exploring those materials, and additional ones not featured in the
+exhibitions, would benefit new discoveries and promote their inter-
+est and engagement, motivating further visits.
+5.3.2
+Social Media Platforms to Strengthen Connections [Intellec-
+tual Access]. Social media platforms can be used as a strategy to
+strengthen connections with the VI community and make muse-
+ums more relevant after the on-site visit. In order to captivate their
+attention and foster engagement, it is essential to transmit them a
+feeling of welcoming and that their interaction with the museum
+through this media will add value and generate positive outcomes,
+besides implementing the WCGA.
+5.3.3
+Souvenirs: Recalling the Visit Experience [Sensory Access].
+Participants expressed the interest of taking souvenirs home and
+commented about the role that those objects can assume in recalling
+personal memories of their visits to museums. To this end, some
+exemplars of souvenirs can include miniature replicas of museum
+objects, reliefs, or materials that were available to touch on the
+on-site visit; fragrances related to exhibitions; objects that produce
+music, voices, or sounds heard when visiting the museum; among
+others. Those souvenirs can also be digitally augmented and point
+to the museum website or other relevant web content related to the
+exhibition, for instance.
+6
+CONCLUSIONS
+The present research proposes guidelines towards a framework
+to enhance the museum experience of blind and partially sighted
+visitors, linking the pre, during, and post-visit phases with the ac-
+cess required to provide in each of them. It was co-created based
+on the perspectives of 72 VI study participants, collected through
+semi-structured interviews. The framework has some limitations
+and reveals new research opportunities. It was grounded on the
+opinions and suggestions of a reduced number of Portuguese indi-
+viduals, of whom 75% had visual references. It also did not include
+the diverse museum professionals’ perspectives to obtain a more
+in-deep perception of the aspects proposed on the framework. Al-
+though during the design of the framework was made an effort to
+cover its applicability in the diverse museum types, it implies di-
+rect challenges to museums, namely concerning their practices for
+exhibitions, curatorship, and management, to name a few. As a last
+consideration, the proposed framework does not intend to replace
+accessible guided tours nor other inclusive activities in museums,
+but rather to use technology to complement them and also allow
+VI people to have access to museum-related content whenever they
+wish to make spontaneous visits.
+ACKNOWLEDGMENTS
+This work is a result of the project Operation NORTE-08-5369-
+FSE-000049 supported by Norte Portugal Regional Operational Pro-
+gramme (NORTE 2020), under the PORTUGAL 2020 Partnership
+Agreement, through the European Social Fund (ESF).
+20
+
+Perspectives of Visually Impaired Visitors on Museums: Towards an Integrative and Multisensory Framework to
+Enhance the Museum Experience
+DSAI 2020, December 02–04, 2020, Online, Portugal
+REFERENCES
+[1] Giorgos Anagnostakis, Michalis Antoniou, Elena Kardamitsi, Thodoris Sachinidis,
+Panayiotis Koutsabasis, Modestos Stavrakis, Spyros Vosinakis, and Dimitris Zissis.
+2016. Accessible Museum Collections for the Visually Impaired: Combining
+Tactile Exploration, Audio Descriptions and Mobile Gestures. In Proceedings of
+the 18th International Conference on Human-Computer Interaction with Mobile
+Devices and Services Adjunct (MobileHCI ’16), ACM, New York, USA, 1021–1025.
+DOI:https://doi.org/10.1145/2957265.2963118
+[2] Eva Cambeiro Andrade, Reiner Delgado, Brigitte Hauptner, Felicia Kerschbaum,
+Ruth List, Petra Pobežalová, Andreas Reichinger, Sam Sportun, Stefanie Stein-
+bauer, Karol Trnka, and Susanne Wo¨gerbauer. 2015. Inclusive Technologies in
+Museums: for a Better Access to Culture for Blind and Visually Impaired People.
+Project AMBAVis, Economica Institute of Economic Research, Vienna.
+[3] Vassilios S. Argyropoulos and Charikleia Kanari. 2015. Re-imagining the mu-
+seum through “touch”: Reflections of individuals with visual disability on their
+experience of museum-visiting in Greece. Alter, Eur. J. Disabil. Res. 9, 2 (2015),
+130–143. DOI:https://doi.org/10.1016/j.alter.2014.12.005
+[4] Saki Asakawa, João Guerreiro, Dragan Ahmetovic, Kris Kitani, and Chieko
+Asakawa. 2018. The Present and Future of Museum Accessibility for People
+with Visual Impairments. In ASSETS ’18 Proceedings of the 20th International ACM
+SIGACCESS Conference on Computers and Accessibility, ACM, New York, USA,
+382–384. DOI:https://doi.org/doi.org/10.1145/3234695.3240997
+[5] Virginia Braun and Victoria Clarke. 2012. Thematic analysis. In APA handbook of
+research methods in psychology, Vol 2: Research designs: Quantitative, qualitative,
+neuropsychological, and biological. (1st ed.), Harris Cooper, Paul M. Camic, Debra
+L. Long, A. T. Panter, David Rindskopf and Kenneth J. Sher (eds.). American Psy-
+chological Association, Washington, 57–71. DOI:https://doi.org/10.1037/13620-
+004
+[6] Francesco Buonamici, Rocco Furferi, Lapo Governi, and Yary Volpe. 2015. Making
+Blind People Autonomous in the Exploration of Tactile Models: A Feasibility
+Study. In Universal Access in Human-Computer Interaction: Access to Interaction,
+Margherita Antona and Constantine Stephanidis (eds.). Springer International
+Publishing, Cham, 82–93. DOI:https://doi.org/10.1007/978-3-319-20681-3_8
+[7] Radu Comes. 2016. Haptic Devices and Tactile Experiences in Museum Exhibi-
+tions. J. Anc. Hist. Archaeol. 3, 4 (2016), 60–64. DOI:https://doi.org/10.14795/j.v3i4.
+205
+[8] Kalpana Dash and Gu¨nther Grohall. 2016. Economic impact of creating and exhibit-
+ing 3D objects for blind and visually impaired people in museums. Retrieved Septem-
+ber 5, 2020 from http://www.ambavis.eu/wp-content/uploads/2016/09/Economic-
+Aspects_final-disclaimer.pdf
+[9] Eugenia Devile and Elisabeth Kastenholz. 2018. Accessible tourism experiences:
+the voice of people with visual disabilities. J. Policy Res. Tour. Leis. Events 10, 3
+(2018), 265–285. DOI:https://doi.org/10.1080/19407963.2018.1470183
+[10] Alison F Eardley, Clara Mineiro, Joselia Neves, and Peter Ride. 2016. Redefining Ac-
+cess: Embracing multimodality, memorability and shared experience in Museums.
+Curator Museum J. 59, 3 (2016), 263–286. DOI:https://doi.org/10.1111/cura.12163
+[11] John H Falk. 2009. Identity and the Museum Visitor Experience (1st ed.). Routledge,
+New York.
+[12] Helena Garcia Carrizosa, Kieron Sheehy, Jonathan Rix, Jane Seale, and Si-
+mon Hayhoe. 2020. Designing technologies for museums: accessibility and
+participation issues. J. Enabling Technol. 14, 1 (April 2020), 31–39. DOI:https:
+//doi.org/10.1108/JET-08-2019-0038
+[13] Simon Hayhoe. 2017. Blind Visitor Experiences at Art Museums. Rowman & Little-
+field, London.
+[14] Yohei Hishida and Makoto J. Hirayama. 2018. A route guiding system for visu-
+ally impaired persons using a hyper-directional speaker. In 2018 International
+Workshop on Advanced Image Technology (IWAIT), 1–4. DOI:https://doi.org/10.
+1109/IWAIT.2018.8369668
+[15] ICOM. 2020. The theme 2020 – Museums for Equality: Diversity and
+Inclusion. IMD - International Museum Day. Retrieved October 3, 2020
+from http://imd.icom.museum/international-museum-day-2019/museums-as-
+cultural-hubs-the-future-of-tradition/
+[16] INE. 2012. Censos 2011 Resultados Definitivos - Portugal. Instituto Nacional de
+Estatística, I.P., Lisbon.
+[17] Apostolos Meliones and Demetrios Sampson. 2018. Blind MuseumTourer: A Sys-
+tem for Self-Guided Tours in Museums and Blind Indoor Navigation. Technologies
+6, 1 (January 2018), 4. DOI:https://doi.org/10.3390/technologies6010004
+[18] Susana Mesquita and Maria João Carneiro. 2016. Accessibility of European mu-
+seums to visitors with visual impairments. Disabil. Soc. 31, 3 (2016), 373–388.
+DOI:https://doi.org/10.1080/09687599.2016.1167671
+[19] Magdalena Pasikowska-Schnass. 2019. Access to cultural life for people with disabil-
+ities. Retrieved October 25, 2020 from https://www.europarl.europa.eu/thinktank/
+en/document.html?reference=EPRS_BRI(2019)644200
+[20] Byron Pillow, Margaret Banks, and Deborah Reeves. 2015. Equal Access for
+All: Providing for Impaired Stakeholders in a Museum Setting. 14. Retrieved
+October 10, 2020 from https://www.byronpillow.com/uploads/7/6/7/9/76797585/
+disability_access.pdf
+[21] Andreas Reichinger, Anton Fuhrmann, Stefan Maierhofer, and Werner Pur-
+gathofer. 2016. Gesture-Based Interactive Audio Guide on Tactile Reliefs. In
+Proceedings of the 18th International ACM SIGACCESS Conference on Comput-
+ers and Accessibility - ASSETS ’16, ACM, New York, NY, 91–100. DOI:https:
+//doi.org/10.1145/2982142.2982176
+[22] Reichinger, Svenja Schröder, Christian Löw, Sam Sportun, Peter Reichl, and
+Werner Purgathofer. 2016. Spaghetti, Sink and Sarcophagus: Design Explorations
+of Tactile Artworks for Visually Impaired People. In Proceedings of the 9th Nordic
+Conference on Human-Computer Interaction (NordiCHI ’16), ACM, New York, NY,
+USA, 82:1–82:6. DOI:https://doi.org/10.1145/2971485.2996471
+[23] Tooteko. 2018. Tooteko Talking Tactile: News. Retrieved October 10, 2020 from
+http://www.tooteko.com/news/
+[24] Roberto Vaz, Diamantino Freitas, and António Coelho. 2020. Blind and Visually
+Impaired Visitors’ Experiences in Museums: Increasing Accessibility Through
+Assistive Technologies. Int. J. Incl. Museum 13, 2 (2020), 57–80. DOI:https://doi.
+org/10.18848/1835-2014/CGP/v13i02/57-80
+[25] World Health Organization. 2019. World Report on Vision. World Health Organi-
+zation, Geneva, Switzerland.
+[26] World Health Organization and World Bank. 2011. World Report on Disability.
+World Health Organization, Geneva, Switzerland.
+21
+

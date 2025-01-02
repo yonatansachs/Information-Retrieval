@@ -1,0 +1,253 @@
+View metadata, citation and similar papers at core.ac.uk brought to you by CORE
+provided by Directory of Open Access Journals
+__________________________________________PROCEEDING OF THE 12TH CONFERENCE OF FRUCT ASSOCIATION
+Comparative Analysis of Indoor Positioning
+Systems Based on Communications
+Supported by Smartphones
+Alexey Kashevnik, Maxim Shchekotov
+Saint-Petersburg Institute for Informatics and
+Automation of Russian Academy Science
+Saint-Petersburg, Russia
+{alexey, shekotov}@iias.spb.su
+Abstract
+In this paper, common trends of architectural design, technologies, properties, and drawbacks of
+indoor positioning systems based on communications supported by smartphones are analyzed. The
+main idea of such kind of systems is that their users can use them through their mobile devices
+because such systems include positioning functionality based on such technologies as Wi-Fi,
+Bluetooth, and GSM. For example, museums might not need to buy expensive audioguides, but
+instead can provide their visitors with appropriate software for their smartphones. The paper
+presents a comparative analysis of most promising at the moment systems and solutions.
+Index Terms: Indoor positioning system, Fingerprinting, Triangulation, Wi-Fi, GSM, Bluetooth.
+I. INTRODUCTION
+Creating systems and solutions for solving the problem of indoor positioning and
+navigation is a promising and complex task. This problem requires of creating maps based
+on floor plans of indoors, choosing the effective positioning technology and algorithms,
+deploying the appropriate positioning devices inside buildings. Modern systems can offer
+much more than just positioning with acceptable accuracy. For example, the tasks of
+navigation, providing context information in text-, audio- or video- format, collection
+statistical information about the movements of people in buildings. The functions of these
+systems are depending on location type. Thus, the developing companies have great
+potential for creating various services.
+II. INDOOR POSITIONING SYSTEMS
+Dutch company IWAY [1] creates mobile navigation system with special modules
+separately for different types of objects and buildings according their destination:
+supermarkets, offices, museums, airports, etc. Such applications are focused on
+positioning and solutions specific for each object. Customer can download and install the
+application from the Internet. For example, the shopping center customers can find a map
+of interests to obtain information about discounts and special offers. In addition, there is
+an opportunity for the administration to process the data for the analysis of visitors’
+movements’ trough the shopping center. The system provides a set of functions to
+evaluate the efficiency of the shop work. Using such system makes it possible to
+coordinate the work of the shopping center. The system developed by this company
+includes mobile and desktop modules for public facilities, staff and administration.
+Desktop part of the system is responsible for the analysis, statistical data processing, and
+ISSN 2305-7254__________________________________________PROCEEDING OF THE 12TH CONFERENCE OF FRUCT ASSOCIATION
+HR management. The positioning method used in the system is based on fingerprinting
+technology and uses Wi-Fi signals, 3G/4G. This method provides the accuracy of 1-5
+meters. Calculated coordinates can be displayed on Google Maps. However, there is no
+information available whether the system uses its own maps or not. Furthermore, the
+system is able to determine the user's altitude.
+The Wifarer's [2] indoor positioning system has the similar concept as the IWAY's
+solution. This system offers a set of maps for positioning indoors, which can provide
+various content (for example, descriptions of exhibits in museums). In addition, Wifarer
+also provides some statistics regarding the movement of people. The system uses Wi-Fi
+fingerprinting technique with an accuracy of about 1.3 m. The system is designed for iOS
+and Android, and provides for indoor navigation. Wifarer use individual maps and
+Wifarer has developed software that will disrupt the Wi-Fi fingerprints that other
+mapping companies use to determine location, making accurate coordinate readings
+impossible.
+Applications, which use API (Application Programming Interface) of Walkbase [3], have
+a different core approach in compare with another systems described above. For
+example, an application “Checked” for Android devices doesn’t display client
+coordinates on the map, but determines if a user is located in a particular location or not
+with accuracy about 3-5 meters. The application allows adding different content with
+reference to a particular location which will be displayed on the mobile device screen
+when a user will be in the location. The approach is used A-GPS approach, which
+requires at least 10 measurements per location. It is also possible to determine the use
+location floor. The application uses a machine learning algorithm for adaptation of
+changing Wi-Fi hotspots signal (their movement). Applications users can add new
+locations and their descriptions in a common Walkbase database. The Walkbase API can
+be used by Android OS versions 2.1 and above.
+In scope of European project Smartmuseum [4] a recommendation system for visitors
+of museums has been implemented. This system supports indoor and outdoor excursions
+with positioning. System provides information on the various kinds of cultural places and
+other objects. The main features of the architecture of this system are the mechanisms of
+content creation that can be interest for a user. The mechanism is based on user’s search
+requests in the scope of the system and information of user’s profile. Profile is created
+when a user registers into the system and provides information about his/her interests.
+Moreover, the system can provide advice to the user and information about places of
+interest based on user's location defined using GPS if the user location is open area. If the
+user location is inside the building RFID technology is used for positioning. Each RFID
+tag stores the URL of the web page with information about the subject of the cultural
+heritage. The architecture of this system consists of user profiles server, annotation server
+that contains information about cultural values and issue recommendations server, which
+processes the user profiles information and their requests. Custom application developed
+for Windows Mobile 5 and 6 versions, Symbian versions 9.3 and 9.4.
+Google Maps [5] application can solve the problems of positioning navigation in open
+areas and in the indoors. It provides possibility to calculate the route inside the building
+between several floors, navigate, view photos, and panoramas at 360 degrees. There is
+also the ability to view a notification about nearby locations and accompanying content.
+For orientation it is used Wi-Fi and cellular networks with the positioning accuracy
+---------------------------------------------------------------------------- 44 ----------------------------------------------------------------------------__________________________________________PROCEEDING OF THE 12TH CONFERENCE OF FRUCT ASSOCIATION
+ranges from 5 to 10 meters. Outdoor is used GPS and cellular networks. Google Maps
+application supports the following popular platforms as iOS, Android, Blackberry,
+Windows Phone 7, and etc. Google is releasing a self-serve tool for venue owners to
+upload their floor plans to Google for inclusion in Google Maps.
+One of the main competitors of Google is a company Skyhook Wireless [6], which
+offers SDK to build positioning services (Skyhook Location SDK) and their own
+positioning system (Skyhook Location Performance, SpotRank). The company works
+with MapQuest using their maps. To determine user location hybrid algorithms that
+process signals from the Wi-Fi network, mobile networks and GPS is used. This solution
+achieves an accuracy of 10 meters. The using of different sources of signals allows
+provide for the user quick positioning with corresponding accuracy. From a complete
+cold start, Skyhook determines a user location in 4 seconds. In addition, the system can
+provide navigation for the user. Skyhook uses a massive network of more than 700
+million known Wi-Fi access points and cellular towers. An interesting solution is the
+application SpotRank that keeps track of the density of people in different buildings, for
+example, which can provide information on the busiest sites in the area.
+The platform developed by Qubulus [7] specializes in solving problems of navigation
+in indoor and outdoor and uses fingerprinting technology. Recording Tool allows to the
+users recording network data (Wi-Fi, 2G, 3G) in a particular location and adds it to the
+total base. These results are compressed into the special FPD file. Further, this
+information is used for positioning in the format of Geo-coordinates and displays on
+Google Maps or Bing maps. The company provides the ability for customers to write
+applications with the cloud API to gather intelligence necessary for effective business
+and advertising.
+Nokia Research Center has developed Indoor Navigator [8] to provide precise indoor
+location information on a mobile device without needing GPS. This indoor positioning
+technique based on Nokia high accuracy indoor positioning technology (HAIP). This
+technique uses Bluetooth 4.0 and Wi-Fi triangulation method and requires to mounting
+Bluetooth beacons in the each location. The system architecture consists of positioning
+server, global location database and positioning beacons in a number of locations. The
+beacons are working in receive and broadcast mode. This approach provides the 0,3 m
+accuracy. But the system is not released, and Nokia Research Center did not published
+new reports about this project.
+Place Lab [9] project’s aim is to determine user location indoor and outdoor.
+Technically, the system is based on radio beacons, which periodically sent radio signals
+by Wireless LAN access points, fixed Bluetooth stations, and GSM towers. Accuracy of
+the presented approach is 13-30 meters.
+The Horus [10] is a WLAN Location Determination system, characterized by high
+accuracy: through a probabilistic location determination technique and low
+computational requirements: through the use of clustering techniques.
+RADAR [11] is a radio-frequency based system for locating and tracking users inside
+buildings. RADAR is based on empirical signal strength measurements as well as a
+simple yet effective signal propagation model. Accuracy of the RADAR is 2-3 meters.
+In [12], an indoor localization application leveraging the sensing capabilities of the
+current state of the art smart phones is presented. Application is implemented for the
+using on smart phones and it integrates offline and online phases of fingerprinting.
+Accuracy of presented approach is up to 1.5 meters.
+---------------------------------------------------------------------------- 45 ----------------------------------------------------------------------------__________________________________________PROCEEDING OF THE 12TH CONFERENCE OF FRUCT ASSOCIATION
+TABLE I
+COMPARATIVE ANALYSIS OF INDOOR POSITIONING SYSTEMS
+Positioning Declared Context Navigation 3D Statistic Supported
+Solution Type Architecture Using Maps
+technology Accuracy information functions positioning information Platforms
+Cell and Wi-Fi
+IWAYtours IPS 1-5m Standalone + - + - Android Google Maps
+fingerprinting
+Wifarer in-
+venue IPS Wi-Fi fingerprinting 1,3m Client-Server + + + + iOS, Android Individual Maps
+navigation
+Walkbase API A-GPS 10-50m Client-Server + - + - Android -
+Windows Mobile,
+Smartmuseum IPS RFID 0.5m Client-Server + - + + -
+Symbian
+Google Maps Cell and Wi-Fi iOS, Android,
+IPS 5-10m Client-Server - + + - Google Maps
+(indoor module) triangulation Blackberry
+Android, Linux,
+Skyhook Cell and Wi-Fi
+API 10m SDK - - + + Windows, Mac MapQuest
+Location triangulation
+OS
+Qubulus Cell and Wi-Fi Google Maps,
+API 1m SDK - - + + Android
+LocLizard fingerprinting Bing Maps
+Cell and Wi-Fi Google Maps,
+Qubulus Gecko IPS 3-5m Standalone - - + - Android
+fingerprinting Bing Maps
+Navteq
+Bluetooth 4.0 and
+Nokia Indoor IPS Wi-Fi triangulation 0.3-1m Client-Server + + + - Windows Phone Destination
+Navigator 7, Symbian
+(HAIP) Maps
+Microsoft IPS Wi-Fi fingerprinting 2-3m Client-Server - - + + ? Bing Maps
+RADAR
+Wi-Fi fingerprinting
+2-3m Client-Server Windows XP,
+Horus IPS with location + - + - Individual Maps
+clustering Linux
+Indoor
+Localization
+Application (by IPS Cell and Wi-Fi 1.5 Standalone - - + - Android Individual Maps
+fingerprinting
+Eladio Martin
+et. al.)
+Cell, Bluetooth, and
+Wi-Fi centroid, 13-30m Client-Server
+Place Lab IPS + - + - ? Individual Maps
+fingerprinting,
+particle filter
+---------------------------------------------------------------------------- 46 ----------------------------------------------------------------------------__________________________________________PROCEEDING OF THE 12TH CONFERENCE OF FRUCT ASSOCIATION
+There are several systems and services which solve the problem of indoor positioning are
+considered (see Table I, where IPS – Indoor Positioning System). Some considered
+systems provides API for developers. There are two types of algorithms for indoor
+positioning: signal propagation model and information about the geometry of the
+building and location fingerprinting. Fingerprinting approach which is more sophisticated
+and promises better adaptability those systems that need an extra infrastructure. The
+accuracy of positioning system which uses fingerprinting technique is higher. The
+maximum accuracy is 1 m and is provided by Qubulus solutions. Some systems provide
+context information to the user depending on location (e.g. it can be exhibition
+description in the museum). Some systems provides navigation indoor functionality to
+the user, other systems provide only location in the map. Most systems have opportunity
+to define the floor of user location. Some systems allow collecting the statistical
+information about users' movement, density and personal information. This feature can
+be used by organizations to personalized provided services. There are following main
+platforms by considered indoor positioning system developers: iOS, Android,
+Blackberry, Linux, Windows, Mac OS, Windows Phone 7, Symbian. The most popular
+platform is Android. Some systems use external maps (Google maps, Bing Maps, Navteq
+Maps, and other), but some systems has own maps and provides possibilities for the user
+create own maps.
+III. CONCLUSION
+Based on results of this study it can be concluded that the main modern indoor
+positioning systems has been studied. The companies successfully implement their
+platforms, mobile applications and API for creation positioning systems. The most
+popular indoor positioning technology is the Wi-Fi fingerprinting. The accuracy of
+positioning system which uses this technique is higher than the system which uses other
+techniques. The maximum accuracy is 1 m and is provided by Qubulus solutions. There
+are several systems which support of members of contextual information. For example,
+the information about discounts and special offers for shopping center customers or the
+information about museum pieces. The most considered systems has "client-server"
+architecture which allows to make some calculations in server side and use maps
+provided by several services.
+ACKNOWLEDGMENT
+The paper is a part of the research carried out within the ENPI project KA322
+Development of cross-border e-tourism framework for the programme region (Smart e-
+Tourism); project funded by grant # 10-07-00368-а of the Russian Foundation for Basic
+Research; and project 12-04-12062 sponsored by Russian Humanitarian Scientific
+Foundation.
+REFERENCES
+[1] IWAY indoor positioning platform [Online], Available: http://www.iway.nl
+[2] K. Fitchard. (2012, August 1). Wifarer’s mobile app doesn’t just map the indoors: It maps the objects within
+[Online]. Available: http://gigaom.com/mobile/wifarers-mobile-app-doesnt-just-map-the-indoors-it-maps-the-
+objects-within/
+[3] Walkbase indoor positioning platform [Online]. Available: http://walkbase.com/
+[4] A. Kuusik, S. Roche, and F. Weis, “SMARTMUSEUM: Cultural Content Recommendation System for Mobile
+Users,” ICCIT2009 (IEEE/ACM) Int Conference on Computer Sciences and Convergence Information
+Technology, Seoul, Korea, Nov 2009.
+---------------------------------------------------------------------------- 47 ----------------------------------------------------------------------------__________________________________________PROCEEDING OF THE 12TH CONFERENCE OF FRUCT ASSOCIATION
+[5] R. Kim. (2011, November 29). Google turns on indoor mapping with Google Maps 6.0 for Android [Online].
+Available: http://gigaom.com/2011/11/29/google-turns-on-indoor-mapping-with-google-maps-6-0-for-android/
+[6] Skyhook Location SDK [Online]. Available: http://www.skyhookwireless.com/
+[7] Qubulus indoor positioning homepage [Online]. Available: http://www.qubulus.com/
+[8] K. Kalliola. (2011, April 27). High Accuracy Indoor Positioning Based on BLE [Online]. Available:
+http://www.hermia.fi/
+[9] D. Kolsch, “The Place Lab Project,” Mobile Business Seminar, 2006.
+[10] M. Youssef, and A. Agrawala, M. Youssef, and A. Agrawala, “The Horus WLAN Location Determination
+System, Journal Wireless Networks,” vol. 14 Issue 3, pp. 357-374, 2008, Journal Wireless Networks, vol. 14
+Issue 3, pp. 357-374, 2008.
+[11] P. Bahl and V. Padmanabhan, “RADAR: An In-Building RF-based User Location and Tracking System,”
+Proceedings of IEEE Infocom, 2000.
+[12] E. Martin, O. Vinyals, G. Friedland, and Ruzena Bajcsy, Precise “Indoor Localization Using Smart Phones,”
+Proceedings of the ACM International Conference on Multimedia, Florence, Italy, pp. 787-790, 2010.
+---------------------------------------------------------------------------- 48 ----------------------------------------------------------------------------

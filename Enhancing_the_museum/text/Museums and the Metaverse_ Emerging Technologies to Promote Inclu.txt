@@ -1,0 +1,1160 @@
+Lindenwood University 
+Lindenwood University 
+Digital Commons@Lindenwood University 
+Digital Commons@Lindenwood University 
+Faculty Scholarship 
+Research and Scholarship 
+2-8-2023 
+Museums and the Metaverse: Emerging Technologies to Promote 
+Museums and the Metaverse: Emerging Technologies to Promote 
+Inclusivity and Engagement 
+Inclusivity and Engagement 
+James Hutson 
+Lindenwood University, jhutson@lindenwood.edu 
+Piper Hutson 
+Lindenwood University, phutson@lindenwood.edu 
+Follow this and additional works at: https://digitalcommons.lindenwood.edu/faculty-research-papers 
+ Part of the Educational Technology Commons 
+Recommended Citation 
+Recommended Citation 
+Hutson, James and Hutson, Piper, "Museums and the Metaverse: Emerging Technologies to Promote 
+Inclusivity and Engagement" (2023). Faculty Scholarship. 452. 
+https://digitalcommons.lindenwood.edu/faculty-research-papers/452 
+This Book Chapter is brought to you for free and open access by the Research and Scholarship at Digital 
+Commons@Lindenwood University. It has been accepted for inclusion in Faculty Scholarship by an authorized 
+administrator of Digital Commons@Lindenwood University. For more information, please contact 
+phuffman@lindenwood.edu. 
+
+1
+Chapter
+Museums and the Metaverse: 
+Emerging Technologies to Promote 
+Inclusivity and Engagement
+James Hutson and Piper Hutson
+Abstract
+Over the past two decades, museums have increasingly sought to build connections 
+with the community and increase inclusivity of visitors. At the same time, emerging 
+technologies, such as extended reality (XR) and virtual museums (VM) are increas-
+ingly adopted to engage with different generational expectations but also for the pur-
+poses of supporting inclusivity and neurodiverse populations. First such technologies 
+were adopted to augment exhibitions in the physical museum space for edutainment. 
+Since then, XR has expanded from room-size environments (CAVEs) and augmented 
+exhibitions to the creation of entire virtual museums, such as The Museum of Pure 
+Form and The Virtual Museum of Sculpture. Digital twins of museums are increas-
+ingly common, along with UNESCO World Heritage Sites. Such virtual experiences 
+can be leveraged to prepare neurodiverse visitors prior to visiting a museum. This 
+chapter will outline how existing approaches to social stories and sensory maps may 
+be combined with XR experiences to support neurodiverse visitors and their families. 
+While onsite, immersive technologies can be used both for engagement and to provide 
+accommodations for greater inclusivity and diversity.
+Keywords: neurodiversity, social stories, sensory maps, museums, ASD
+1. Introduction
+In times of public health crises when travel becomes restricted, public spaces close, 
+and anxiety over an uncertain future spread, institutions must adopt an agile mindset 
+to continue to engage with their constituents in innovative ways. At the same time, 
+such events as the global spread of COVID-19, which the World Health Organization 
+(WHO) classified a pandemic on March 11, 2020, promote human resilience and 
+spur innovative solutions to emerging problems that find application beyond their 
+immediate intended use cases. Such was the case for cultural heritage institutions who 
+had to quickly pivot to find new ways for the public to engage with their collections. 
+The call to stay home and limit large gatherings of people led museums, galleries, 
+and cultural heritage sites to close around the globe almost overnight. For instance, 
+the Smithsonian announced all 19 of its related institutes, museums, and even the 
+National Zoo would close to the public on March 14, 2020 [1, 2].
+
+Application of Modern Trends in Museums
+2
+At first, front-of-house staff were repurposed in other areas, such as helping to 
+catalog and digitize collections [3]. But as the pandemic wore on, there was increased 
+pressure for furloughs and then layoffs among museum staff and educators [4]. To 
+stave off further loss of human capital and retain public engagement with sites and 
+collections across the globe, many museums turned to emerging technologies. For 
+instance, The Louvre in Paris spent much of the year digitizing and then releasing over 
+480,000 pieces from its collection in 2021 on their platform, while the work began 
+in 2017 for digitizing UNESCO World Culture Heritage Sites would provide remote 
+access to global locations cut off by border closures and travel bans in 2020 [5, 6].
+An unprecedented investment in research and development followed with com-
+panies such as Facebook (now Meta) to make extended reality (XR)—including 
+augmented reality (AR), mixed reality (MR), and virtual reality (VR)—commercially 
+available, user-friendly and affordable. The launch of the all-in-one head-mounted 
+display (HMD) Oculus Quest 2 (released October 13, 2022) represents a watershed 
+moment for immersive experiences and the ability to engage the public [7]. At the same 
+time, advancements were made in digital twin technologies. While previous photogram-
+metric techniques would require thousands of individual photographs painstakingly 
+stitched together manually to create 3D models of objects or spaces, the latest generation 
+of software compiles millions of individual images automatically [8]. The latest hand-
+held scanners, such as Scantech, can also be used to produce high-resolution digital 
+twins of objects, complete with precise colors and textures [9]. Both VR HMD and 
+digital twin systems are now highly portable, user-friendly, and affordable. These tech-
+nologies are now poised to work in tandem to create high-fidelity recreations of objects 
+and historical sites and view in an immersive environment anywhere in the world.
+The advances in technology coupled with the demand for virtual experiences 
+accelerated by the global pandemic have led to an unprecedented effort to digitize 
+museum collections and create digital twins of locations globally. The initial impetus 
+for such projects was to allow for access to locations that were closed to promote 
+social distancing and to incentivize future tourism in general [10]. However, as this 
+chapter will outline, the availability of digital versions of spaces and objects contained 
+within and the hardware to view prior to and during visitation can now be leveraged 
+to support inclusivity and accessibly efforts for neurodiverse populations in cultural 
+heritage institutions. Efforts to support diverse populations with a variety of needs 
+have dominated scholarship on museum studies since the last millennium. With an 
+estimated 10% of the world’s population (650 million people) living with a disability, 
+museums have introduced many strategies to promote accessibility. For instance, 
+audio and visual aids have seen widespread adoption, including audio guides, cap-
+tioning, and sign language interpretation for visitors who are blind, deaf, or hard 
+of hearing. Accessible facilities include wheelchair ramps and elevators, as well as 
+accessible restrooms and parking for those with mobility restrictions. And inclusive 
+programming showcases underrepresented perspectives to celebrate diverse cultures 
+and communities. However, the unique needs of neurodiverse visitors have only 
+recently begun garnering attention [11, 12].
+2. Neurodiversity and museums
+The American Alliance of Museum (AAM) commissioned a study to review how 
+inclusivity efforts were being implemented across institutions, as well as perceptions 
+of such programming by both regular museum attendees and the public in general 
+
+3
+Museums and the Metaverse: Emerging Technologies to Promote Inclusivity and Engagement
+DOI: http://dx.doi.org/10.5772/intechopen.110044
+during the pandemic [13]. The results of the study were used to develop resources and 
+strategies for museums, including primers for professionals to support efforts to pro-
+mote diversity, equity, accessibility, and inclusion (DEAI). Support for such efforts 
+have gained momentum with museum administrators and researchers, especially 
+in addressing physical disabilities, however, the same call to action for supporting 
+neurodiversity has yet to be headed. The lack of attention paid to this marginalized 
+community becomes clear when reviewing AAM primers, which do not even mention 
+neurodiversity [13]. Therefore, while advances in inclusivity efforts have been made 
+with regards to ethnicity, culture, physical disability, race, religion, and gender, there 
+remains a significant percentage of the population not considered [14–16]. With an 
+estimated 15–20% of the global population considered to be neurodiverse, greater 
+attention needs be paid to the specific needs of this group [17]. The population is also 
+estimated to be growing. In 2022, the Centers for Disease Control and Prevention 
+(CDC) reported that 1 in 44 children were diagnosed with autism spectrum disorders 
+(ASD). The rate of diagnosis makes this population one of the largest among those 
+with disabilities [18].
+Individuals with ASD are classified as having neurodevelopmental difficulties, 
+which may include autism, ADHD, ADD and dyslexia as the most common co-occur-
+ring diagnoses [18]. The different types and levels of social and intellectual abilities of 
+the group require the diagnosis to use the term “spectrum disabilities” due to the way 
+in which they can manifest. Despite such diversity in experiences and abilities, there 
+are certain physiological considerations for museum professionals to consider when 
+designing experiences that are inclusive. For example, those with ASD can find navi-
+gating museum spaces challenging given crowds, unexpected audio modulation, and/
+or lighting intensities [19]. Furthermore, museum challenges can include unforeseen 
+vestibular sensory input from interactive exhibitions, close proximity of large crowds, 
+and an overactive visual field.
+The average museum going public may not experience stressors with sensory 
+stimuli common in museums, such as noise, waiting in lines, crowds, or exhibition 
+lighting, but those with sensory sensitivity may. Moreover, the 2001 Council for 
+Museums, Archives, and Libraries identified that a fully accessible program should 
+include many considerations associated with access, such as social, financial, emo-
+tional, attitudinal, cultural, and/or educational [20]. Notably absent were sensory 
+considerations of access. Therefore, Schwartz and Knowles recently recommend 
+readjusting the list to expand considerations of sensory needs of visitors. Sensory 
+sensitivities not only dissuade those with ASD from visiting certain locations, but also 
+their families due to the potential negative social behaviors that might arise [21].
+Addressing the needs of the neurodiverse population of visitors to museums has 
+only recently entered the accessibility conversation. The broadest adoptions regard-
+ing accommodations in institutions remain confined to physical accessibility with 
+considerations for those with ASD emerging in the United Kingdom (UK) in large and 
+established museums with resources [22]. Those programs that do exist that support 
+accessibility for neurodiverse populations commonly use the following strategies:
+1. Providing sensory-friendly experiences: Many museums are offering sensory-
+friendly experiences or “quiet hours” for visitors who may be sensitive to loud 
+noises or bright lights.
+2. Providing sensory maps: Some museums provide a guide that highlights sensory-
+friendly areas and features of a museum, such as quiet spaces, low lighting, and 
+
+Application of Modern Trends in Museums
+4
+tactile exhibits, as well as identifying potentially problematic areas with larger 
+crowds or loud noises.
+3. Offering audio guides and other accessibility technology: Some museums are offering 
+audio guides and other forms of accessibility technology, such as apps, to help 
+mitigate sensory input and modulate information to navigate the museum and 
+access the exhibits.
+4. Providing social stories and visual schedules: Some museums are providing social 
+stories and visual schedules to help visitors with autism prepare for their visit 
+and understand what to expect.
+5. Training staff on neurodiversity: Many museums are training their staff on  
+neurodiversity and how to best support visitors with a range of neurological  
+conditions.
+6. Providing alternative format materials: Many museums are providing alternative 
+format materials such as large print, audio descriptions, and other multimedia 
+experiences to make their exhibits and events more accessible to visitors with 
+sensory processing.
+A holistic approach to accessibility is being considered that addresses pre-visit 
+planning and resources to familiarize visitors with sensory information and routes 
+through unfamiliar locations [23, 24]. Support onsite can include accessibility 
+maps, museum social stories, sunglasses, headphones, and even therapy putty 
+[25]. Engaging a sensory sensitive audience now includes integrating kinesthetic 
+or tactile exhibits and including “cool down” spaces with sensory modalities that 
+allow individuals who are overstimulated to regulate their cognitive flexibility and 
+extended the duration of the stay. Such areas are often equipped with therapy balls, 
+mats, mood lighting, and sound modulation [26]. In certain programs, trained 
+occupational therapy students run special sensory activities, and act as personal tour 
+guides to support visitors and foster exhibit interactions [12]. Given that parents 
+with children with autism report 70% higher rates of anxiety, isolation, and depres-
+sion, the sense of well-being and belonging in the museum experience is significant 
+and impactful [27].
+One way a positive experience can be facilitated is to ensure preparedness for a 
+visit. Research gathered indicates that families that feel prepared for the visit and pre-
+pare all involved greatly affects the quality of the experience that follows [28]. One of 
+the most common ways individuals and families prepare is gathering information via 
+the internet. An institutions website, social media pages, and advocacy organizations 
+all provide information to learn about an organization and neurodiverse program-
+ming available there. The channels for disseminating information and social sharing 
+are evident in that 35% of museums offer a mobile application (app). Therefore, the 
+dialogical relationship between visitors and the museum is one that unfolds through 
+storytelling—information is passed from the institution to visitors and, in turn, 
+visitors provide feedback via social media. The development of this dialog is ongoing 
+and helps create a personal story through the interactions prior to a visit and then 
+shared thereafter [29]. But overcoming the anxiety of visiting an unknown loca-
+tion and potential sensory processing issues once onsite is just the first step towards 
+accessibility.
+
+5
+Museums and the Metaverse: Emerging Technologies to Promote Inclusivity and Engagement
+DOI: http://dx.doi.org/10.5772/intechopen.110044
+Studies have revealed that 44–52% of those diagnosed with ASD have additional 
+learning disorders or difficulties. That being the case, once the population overcomes 
+the physical barriers to entry, comprehending the educational material presented 
+represents another obstacle [30–32]. Fortuitously, museums were prepared for the 
+needs of diverse learners and already have a range of resources to assist. Through 
+online resources and digital access, collections, exhibitions, and educational resources 
+are available remotely and, once onsite, virtual tours, digital audio guides and other 
+interactive digital experiences further understanding of curated content [33]. On the 
+other hand, the digitizing of collections and digital twin mapping of museum spaces 
+carried out during the pandemic was not carried out with the directive of creating 
+inclusive experiences. As such, the content was created for the neurotypical popula-
+tion at large [5, 6]. But these digital resources can be reconfigured and combined in a 
+novel way with other strategies for inclusivity to assist individuals better understand 
+the site they will visit and the societal expectations through the use of expanded 
+digital storytelling [34].
+3. Digital storytelling and museums
+The use of storytelling as a method to convey information is an inherently human 
+strategy and is counted among the oldest of social practices for communication and 
+learning [35, 36]. With the expansion of digital technology, the way in which stories 
+are delivered and received has been transformed and conceptualized into digital 
+storytelling through various digital communication tools [37]. Instead of one medium 
+used to tell a story, such as a speech, text, or video, digital storytelling often combines 
+video, text, audio narration, and more into a multimodal experience. With the latest 
+generation of emerging technologies in XR supported by artificial intelligence (AI), 
+multimedia digital communication tools and hypermedia-supported tools can expand 
+the limits of storytelling for museum goers and support neurodiverse populations 
+[37–41]. This approach does not require investment in infrastructure or a radical 
+reworking of current educational content to be effective.
+Most institutions already provide accessible resources through a variety of 
+mechanisms including their websites, social media accounts, digital applications, 
+or traditional printed handouts of maps or museums guides. These resources are 
+being coupled with mobility-enhancing systems using interactive digital storytelling, 
+personalization and adaptability, and mixed media [42]. The new, enhanced experi-
+ences have the potential to improve the attractiveness of not only cultural heritage 
+sites and museums, but also act as a new conduit for interpretation, analysis, and 
+cultural knowledge for diverse communities. Additionally, the innovative use of new 
+digital technologies will provide new forms of cultural interactive experiences that are 
+comfortable, sensory-friendly, and comprehensible to neurodiverse audiences.
+While existing accessibility resources seek greater inclusivity in visitor experience, 
+new considerations delivered via digital storytelling can serve to address obstacles 
+for neurodiverse individuals. In general, inclusivity seeks to provide equal access to 
+opportunities and resources for potentially marginalized populations. In order to be 
+truly inclusive, these individuals must not only feel welcomed on location through 
+accommodations, but also prior to the visit. An understanding of the travel logistics, 
+parking, desired paths mapped by curatorial staff, sensory-friendly areas, and more can 
+reduce anxiety of the unknown for those with ASD and assist with sensory processing 
+hinderances before even entering the physical space of a museum itself. Providing such 
+
+Application of Modern Trends in Museums
+6
+information through existing technology and digital assets facilitated with expanded 
+digital experiences leads to a better experience and retention of educational material 
+presented onsite during regular operating hours [43]. While “Sensory Days” seek to offer 
+experiences tailored to those with ASD, they inadvertently segregate the population from 
+the general public and imply that “normal” visiting hours are not for them [44]. Through 
+expanded digital experiences, a sense of belonging can be created where regular visiting 
+hours are welcoming. In addition, the ability afforded through virtual walkthroughs 
+and digital recreations of the location provides an opportunity to revisit the site, review 
+educational materials provided, and encourages post-visit interactions through shar-
+ing experiences on the institutions social media platforms. All of this instils conceptual 
+anchors of memory and subsequent reinforcement of institutional messaging [25]. Other 
+ways digital storytelling can support accessibility for neurodiverse visitors include:
+1. Providing multiple ways to access information: Digital storytelling can provide 
+different ways to access the same information, such as through text, audio, and 
+video, to accommodate different learning styles and abilities.
+2. Enhancing engagement: Interactive digital stories can engage visitors in a more 
+ immersive and personalized way, allowing them to explore and learn at their 
+own pace.
+3. Creating a safe and inclusive environment: Digital storytelling can create a safe and 
+inclusive environment for visitors with neurodiverse needs, by providing acces-
+sible and inclusive design, and allowing visitors to control their own pace and 
+level of engagement with the museum’s content.
+4. Accessibility features: Digital storytelling can be enhanced with accessibility 
+features such as closed captioning, Audio Description, and sign language 
+interpretation which can support visitors with different abilities.
+Digital storytelling can thus allow visitors to personalize their experiences by 
+providing a wide range of options, tailored to their specific needs, interests, and 
+preferences, making the experience more engaging and inclusive. In a technology-
+driven age, museums are seeking a variety of these tools using XR to stay current with 
+the ways their visitors are engaging with the world in their daily lives.
+The ways in which museums are seeking to tell stories with technology include 
+digital tour guides, AR and Bluetooth technologies, and smart museums. The inte-
+gration of digital tour guides is becoming more commonplace, and companies are 
+looking to support this adoption. Examples such as Mobile Tour App and Digital 
+Guide System are digital solutions that allow museums to embed their own images, 
+videos, and audio of their collections for visitors to experience [45]. The multimedia 
+component allows for greater memory retention than traditional storytelling by 
+addressing different learning styles [46]. This new form of content delivery combines 
+participation commonly seen with computer or video games complete with automatic 
+story generation and narration. For example, the British Museum uses AR in their 
+mobile game A Gift for Athena (2014) for the Parthenon gallery using tablets that 
+can be checked out. The game tasks visitors with finding specific statues based on an 
+outline and rewards them with more information about the works prior to assigning 
+another task to explore [47]. Furthermore, these digital tours need not be solely in 
+person. Virtual experiences can also represent inclusive alternatives to traditional 
+
+7
+Museums and the Metaverse: Emerging Technologies to Promote Inclusivity and Engagement
+DOI: http://dx.doi.org/10.5772/intechopen.110044
+museum visits through the digital embodiment of historical characters and their 
+stories that may also blend physical artifacts with the immersive experience [29]. In 
+such a way, visitors can experience the rich tapestry of stories in museum collections 
+prior to visiting (if at all) and have a greater understanding onsite.
+Along the same lines as digital tour guides, smart museums are also eliminating 
+physical barriers to their collections by allowing technological advancements to 
+remove sensory barriers, as well. Smart museums, such as the Smart Museum of Art 
+(Chicago) bring together traditional exhibitions with emerging technologies where 
+the use of immersive technology seek to enhance how material on complex cultural 
+heritage is delivered to visitors [48]. The use of technology to enhance visitor experi-
+ence can include interactive exhibits, virtual reality experiences, and mobile apps that 
+provide additional information and resources. Smart museums may also use technol-
+ogy to collect data on visitor behavior and preferences, and to improve the overall 
+management and operation of the museum. Overall, the goal of a smart museum is 
+to make the museum visit more engaging, interactive, and personalized for visitors. 
+The transition to becoming “smart” refers to the heterogeneous technologies allowing 
+museum environment to become more interactive, innovative, and accessible [49].
+Therefore, the infrastructure and ability to move past the elimination of mere 
+physical barriers for museum accessibility exists. The developments support the 
+call for greater attention to neurodiverse accessibility as only addressing physical 
+disabilities and accessibility will no longer suffice. The new multisensory approach 
+afforded by digital storytelling and smart museums is essential to remove barriers to 
+learning as part of the museum experience [50]. Once sensory obstacles have been 
+removed and/or minimized, personalized learning experiences can be tailored to each 
+individual and material and spaces delivered by way of storytelling. At the same time, 
+engaging visitors through multisensory approaches and considerations can bolster 
+learning for stories are not limited to oral communication and are critical for the 
+creation of an atmosphere through the senses.
+The elicitation of emotions such as empathy enriches stories, maintaining the 
+attention of the audience while also creating memorable experience one can become 
+invested in [51]. Storytelling supports other cognitive factors that improve learning, 
+including improving attention and time on task by keeping the listener engaged, 
+and empathy through emotional identification with the subject providing a cogni-
+tive framework to help understand and retain new information [52]. Drawing upon 
+previous research, the following proposes leveraging the engaging nature of storytell-
+ing and delivered through the new immersive and interactive digital experiences to 
+mitigate various ASD symptoms that would prohibit access to and appreciation of 
+cultural heritage in museums. The educational resources of social stories and sensory 
+maps that have been created to support neurodiverse visitors with various sensory 
+processing disorders (SPD) should be digitized. The proposed “storymap” combina-
+tion can then be transformed into a digital expression and experience through digital 
+storytelling strategies. Taken together, this digital storymap can provide support prior 
+to the visit, onsite, and engage diverse audiences with personalized, story-driven nar-
+ratives of museum collections, while supporting multisensory experiences.
+4. Sensory maps and museums
+Visual stories, or sensory maps, may be used prior to visitation to prepare visitors 
+for what to expect onsite. Such sensory maps provide “descriptions of a particular 
+
+Application of Modern Trends in Museums
+8
+situation, event or activity, which include specific information about what to expect 
+in that situation and why” ([53], p. 168). A sensory map is a guide that highlights 
+sensory-friendly areas and features of a museum, such as quiet spaces, low light-
+ing, and tactile exhibits. The resource can be a helpful tool for visitors with autism 
+or sensory processing disorders (SPD). Research has noted that families with ASD 
+children also have accompanying sensor processing and participation challenges 
+40–90% greater than other populations [54]. Additionally, studies also confirm 
+that even adults who are overresponsive to stimuli in the environment describe 
+their museum visits as disorganized, overwhelming, irritating, and distracting. The 
+situation may result in the need to cope by spending extensive periods of time alone 
+in order to regulate their emotional state, and result in feelings of isolation and 
+exhaustion [55].
+Regardless of demographic considerations such as age, visitors with SPD are often 
+grouped into two separate categories by museum and occupational therapy research-
+ers as either sensory avoiders or sensory seekers [25]. Sensory avoiders are individuals 
+with SPD who have a heightened sensitivity to certain stimuli, such as loud noises or 
+certain textures. This population may avoid or have an aversion to certain types of 
+sensory input, as it can be overwhelming or uncomfortable for them. Sensory seekers, 
+on the other hand, are individuals with SPD who have a lower sensitivity to certain 
+stimuli and may seek out more intense or varied sensory experiences. Individuals who 
+seek stimuli may have a greater need for movement and touch, which often results 
+in easily becoming board in environments. Both groups face challenges that might 
+manifest as either unwanted behavior that elicit sensory input, such as a compulsion 
+to move, bump into other visitors, maintaining an understanding of their presence 
+in space, or, alternatively, actions that seek to avoid stimuli by covering ears due to 
+noises, and/or difficulties retaining attention with multiple sensory inputs. In both 
+cases, the individuals may have difficulty interpreting and processing sensory infor-
+mation appropriately. Addressing the concern, sensory maps plot routes considering 
+which galleries are most congested, loud noise areas, and potential tactile exhibitions 
+in order to address the needs of both populations [21].
+Understanding the different sensory processing subcategories and groups affected 
+will assist museum administration in better serving these populations. For instance, 
+the categories of sensory processing include: auditory (hearing), gustatory (or 
+taste), tactile (touch), proprioception (body awareness), vestibular (balance), visual 
+(sight), and olfactory (smell) referencing [56]. Furthermore, within SPD there are 
+generally three subtypes of sensory processing—hypersensitivity, hyposensitivity, and 
+general sensory overload.
+1. Hypersensitivity, also known as over-responsivity, is a condition where an indi-
+vidual is overly sensitive to certain sensory inputs. They may have an aversion to 
+certain types of stimuli, such as loud noises or certain textures, and may avoid or 
+have a strong negative reaction to them.
+2. Hyposensitivity, also known as under-responsivity, is a condition where an indi-
+vidual is less sensitive to certain sensory inputs. They may seek out more intense 
+or varied sensory experiences and may have a greater need for movement and 
+touch.
+3. General sensory overload refers to an individual’s overall difficulty processing and 
+interpreting sensory information correctly. They may have difficulty with tasks 
+
+9
+Museums and the Metaverse: Emerging Technologies to Promote Inclusivity and Engagement
+DOI: http://dx.doi.org/10.5772/intechopen.110044
+such as paying attention, staying organized, or completing activities of daily 
+ living. They may have symptoms of both hypersensitivity and hyposensitivity.
+Stimuli, or lack thereof, is of critical importance for supporting accessibility 
+for these three populations. The heightened input from those with hypersensitiv-
+ity requires sensitivity to and avoidance of highly stimulating areas of a museum, 
+whereas those with hyposensitivity seek out tactile, auditory and other stimuli, and, 
+finally, general sensory overload may have symptoms of both [57, 58]. The threshold 
+for the number and amount of stimuli the nervous system can process is different for 
+diverse populations and requires the ability to modulate said stimuli before, during, 
+and after museum visits [59]. Given that the processing of stimuli and information is 
+environmental, there has also been a call to reframe the concept of disability as relat-
+ing to the environment instead of something inherently within the person experienc-
+ing them [60].
+In supporting such visitors, sensory maps can be made available in multiple for-
+mats, such as printed, digital, or an app, and can be provided to visitors upon arrival 
+or made available online in advance. The removal of future unknowns of a new loca-
+tion, visitors can pre-plan excursions and reduce anxiety. The resource can reduce 
+stress for both the neurodiverse individual and their entire family potentially visiting 
+with them. Such maps can be downloaded onto mobile devices, such as smartphones 
+or tablets, or printed before a planned visit. Examples include the Sensory Friendly 
+Map of the Metropolitan Museum of Art (https://www.metmuseum.org/-/media/
+files/events/programs/progs-for-visitors-with-disabilities/sensory-friendly-map.
+pdf). Potential crowded areas are highlighted in sensory maps, as well as identify-
+ing more high-traffic times of day and instances where there may be dramatic shifts 
+in lighting. International institutions, such as the British Museum, have gone even 
+further and included information on areas that might be potentially offensive to 
+those with olfactory sensitivities, uniforms commonly worn by staff, identifying 
+entrances and exits, and special events that might balloon attendance (https://www.
+britishmuseum.org/sites/default/files/2019-11/British-Museum-Sensory-Map-PDF-
+Download.pdf).
+5. Social stories and museums
+Like sensory maps, and often mistaken for them, social stories provide a social 
+narrative about programming in a museum or cultural heritage institution. The term 
+“social stories,” a term trademarked by Carol Gray in 1991, are short, simple descrip-
+tions of a specific situation or activity, such as visiting a museum. These stories can be 
+helpful for visitors with autism or other developmental disorders by providing a clear 
+and predictable explanation of what to expect during a museum visit [61]. The goal is 
+to not change the behavior of visitors, but to improve the individuals understanding 
+of the events and the expectations. Originally devised with no visual stimuli as the 
+subject or object of the resource, the inclusion of visual imagery was later revised 
+based on an increased understanding and available research for those using the tool in 
+2006 [62]. Examples include Social Stories: Spectrum Project (2017) at the San Diego 
+Natural History Museum (https://www.sdnhm.org/visit/accessibility/social-stories/) 
+and the Social Story at the Brandywine Museum of Art (https://www.brandywine.
+org/museum/accessibility/social-story). Unlike sensory maps that provide sensory 
+information about the environment, the narrative approach of social stories includes 
+
+Application of Modern Trends in Museums
+10
+all information about the environment, the adjustments that have been considered for 
+the comfort of the visitor and a breakdown of each individual step that might limit 
+access intellectually or socially for a visitor [63].
+These social stories, otherwise known as social narratives, describe a situation 
+that may be challenging for those with ASD where social behavior and cues are clearly 
+identified. These narratives are used to inform those with socialization challenges of 
+potentially difficult situations [64]. Museums and educational institutions like the 
+Eugene Science Center Chicago Children’s Museum, Boston Children’s Museum and 
+The Metropolitan Museum of Art in New York have social narratives embedded on 
+their websites that can be downloaded and printed as PDFs (e.g. https://bostonchil-
+drensmuseum.org/visit/accessibility/; https://www.twentyonesenses.org/places/
+united-states/il/chicago-1/chicago-childrens-museum/). These examples exhibit a 
+storytelling strategy using therapeutic and educational mediations for the population 
+in question. The brief narrative is presented using visual aids and text to reassure 
+those of what to expect in a given social event, exchange, or activity. The resources 
+are used as materials to learn how to promote the development of autonomy and learn 
+social skills, including routines, understanding rules, and expectations.
+Unfortunately, these social stories are generally found in the form of print media, 
+which are outdated and do not fulfill their potential of full accessibility and inclu-
+sion that other digital and virtual interventions and experiences now afford [64, 65]. 
+Accessible interventions need to align with daily use cases of individuals outside of 
+the museum context. As such, new AR and VR options are being created to meet users 
+where they are. For instance, Wearable Immersive Virtual Reality (WIVR) technology 
+has been leveraged to produce an innovative social story aptly named the Wearable 
+Immersive Social Story (WISS) [66]. By integrating immersive social stories using 
+AR and VR one is able to take advantage of 360° videos with embedded elements that 
+are interactive. Visual cues that include audio, images, and geometric shapes make 
+the experience more engaging and entertaining in order to gain a greater understand-
+ing of the social expectations of visiting a specific institution. While digital media 
+expands in museums to embed more multimedia experiences with images, video, 
+and audio, VR can now be used more widely to assist those with ASD. However, these 
+examples of immersive and wearable social stories remain confined to therapeutic 
+and educational interventions for those with autism and include common use cases 
+such as teaching students how to safely cross a road [67].
+6. Sensory maps, social stories and adaptive extended reality
+The future of accessibility will combine the resources and technology listed above. 
+Sensory maps represent an educational tool to prepare those with ASD to engage 
+with new situations and/or in new environments. The multisensory approach used 
+to create sensory maps ensures that whether over- or under-stimulated, visitors will 
+be prepared for the visit and to benefit from the educational materials provided. The 
+currently exist in the form of handouts provided by an institution that takes into 
+consideration how people perceive interacting with a space. Social stories, on the 
+other hand, use a narrative approach to both deliver content and to address situational 
+awareness for those with ASD. Taken together, the proposed combined “storymap” 
+can now be transformed into a digital expression and experience. Digital storytell-
+ing strategies can be used and experienced with various XR wearable devices. This 
+immersive storymap can provide support prior to the visit, onsite, and engage diverse 
+
+11
+Museums and the Metaverse: Emerging Technologies to Promote Inclusivity and Engagement
+DOI: http://dx.doi.org/10.5772/intechopen.110044
+audiences with personalized, story-driven narratives of museum collections, while 
+supporting adaptive, multisensory experiences.
+Using the benefits of both sensory maps and social stories with VR, especially, 
+enables those with sensory processing disorders, and other cognitive difficulties, to 
+feel more comfortable in the museum space. Social stories can capitalize on existing 
+avatar creators that are cross-platform and interoperable, such as Ready Player Me 
+(https://readyplayer.me/) for a more immersive, enjoyable, and personalized experi-
+ence. The use of avatars selected and created by a neurodiverse individual improve 
+inclusivity through their use in virtual environments to better understand social 
+contacts that may/ will occur onsite, familiarizing them with the facilities prior to 
+visiting, and the rewarding recognition of accomplishment by completing a visit. As 
+noted, the benefits of using head-mounted displays (HMD) and VR include improved 
+focus and attention span as these remove the distractions of the outside world, which 
+can be overwhelming for those with stimuli sensitivity [68].
+There are several use cases already available that demonstrate the efficacy of 
+integrating emerging immersive technologies into cultural heritage institutions. One 
+such example is A Dip in the Blue (2022), an application (app) developed for museum 
+visitors with ASD to provide a clear visual agenda along with additional accessibil-
+ity resources [69]. The app uses a social story that is inspired by the experience of 
+an archeologist discovering a tomb in Naples. After the experience, a survey gathers 
+data on the emotional reaction and sensory feedback experienced as part of the tour. 
+Additional, services and functional features within the app include a dashboard 
+management panel, a live virtual tour scheduling system, a media library dedicated to 
+storing documents, textual and multimedia contact like audio and video tours. There 
+is additional socializing functionality built in with the ability to broadcast live streams 
+of virtual tours.
+Another example that uses interactive technologies, including mixed-reality, 
+provides an interactive cultural visit of the church of Roncesvalles at the beginning 
+of the popular tourist destination of Camino de Santiago [70]. The inclusion of 
+avatars provides the ability for natural social interactions to further enhance the visit. 
+The church is experienced onsite through the use of a three-dimensional projection 
+mapping, while an agent generating conversation acts as a storyteller for visitors. The 
+avatar of the storyteller uses the techniques of storytelling while exhibiting emotional 
+reactions during their narration of local stories of the objects in the room. Therefore, 
+the storytelling experience is supported by the engagement with actual objects in 
+the environment and the emotional conversation avatar thus bridging the real and 
+virtual. But what makes this experience unique is the considerations of mapping the 
+senses.
+Moving beyond merely the visual, future cultural experiences will include 
+multisensory interactions. The importance of all of the senses for a truly immer-
+sive experience has been well-documented [71, 72]. As such, a 2016 report of the 
+Workshop in Cologne sought to understand how to map the senses and listed three 
+steps [73]. The first step includes a researcher mapping a specific urban space to be 
+recreated. The second includes the subjective experiences of visitors by capturing the 
+emotions and feelings of the citizens connected to the location. And, finally, the third 
+is the connection of the researcher to the local community. These steps shed light on 
+the soundscape and smellscape that compliment a visual imagery of a place. Smells 
+often provide a memory which helps identify a place and the effects of climate should 
+be considered. For instance, cold weather reduces the expansion of smells whereas 
+warm weather expands them [74]. Creating an adaptive experience that can not only 
+
+Application of Modern Trends in Museums
+12
+change based upon the environment represented, but also react to the physical and 
+emotional states of visitors will become ever more important in crafting compelling 
+virtual experiences.
+Adaptive content and interactive storytelling will revolutionize museum experi-
+ences. In order to make such experiences possible, the collection of biometrics of 
+visitors will be required. Furthermore, adaptive content that adjusts to the needs of 
+diverse audiences through new paradigms of interaction will provide accessible digital 
+content to a wide range of visitors [75]. Researchers will need to use the following 
+strategies to collect data to personalize avatars to craft custom-made experiences 
+associated with museum visits.
+1. Biometric data collection: This can include collecting data such as facial features, 
+body measurements, and voice samples from visitors. This data can be used to 
+create a 3D avatar of the visitor, which can be used in virtual reality and aug-
+mented reality experiences.
+2. Surveys and questionnaires: Museums can gather information about visitors’ 
+preferences, interests, and background through surveys and questionnaires. This 
+information can be used to tailor the content and activities of the museum visit 
+to the individual visitor.
+3. Tracking and monitoring: Museums can use technology such as RFID tags and 
+cameras to track visitors’ movements and interactions within the museum. This 
+data can be used to understand the visitor’s behavior, interests, and preferences 
+and personalize the experience accordingly.
+4. Social media integration: Museums can collect data from visitors’ social media 
+profiles and use it to personalize the museum experience. For example, if a visi-
+tor has a history of visiting similar museums or expressing interest in a certain 
+topic, the museum could suggest exhibits or activities that align with those 
+interests.
+5. Personalized recommendations: Museums can use the data collected from the 
+above methods to provide personalized recommendations for exhibits, activities, 
+and other experiences within the museum. This can include suggesting exhibits 
+that align with the visitor’s interests, providing personalized tours, or offering 
+augmented reality experiences that bring the exhibits to life in a more interactive 
+way.
+6. Feedback: Museums can also gather feedback from visitors about their personal-
+ized experiences and use that feedback to improve and refine the personalized 
+experience in the future.
+Examples of this in practice can already be seen in research projects like 
+CHESS (Cultural Heritage Experiences through Socio-personal interactions and 
+Storytelling). CHESS (https://chess.diginext.fr/) applies constant adaptable and per-
+sonalized content to enhance the experience of the Acropolis Museum, Athens [76]. 
+The onsite engagement with objects in the museum personalizes interactive stories 
+for each visitor. The project was created to further enhance a visit by personalizing 
+an engaging and interactive storytelling experience by adapting information about 
+
+13
+Museums and the Metaverse: Emerging Technologies to Promote Inclusivity and Engagement
+DOI: http://dx.doi.org/10.5772/intechopen.110044
+cultural artifacts for each individual visitor. Thus, the latest generation of state-of-
+the-art museum programming seeks to create cultural adventures that are driven 
+by stories and narratives. Such experiences involve users in many roles of a scenario 
+through multimodal interfaces and extends over time and space. This user-centered 
+approach personalizes the educational experience with real-time adaptive capabilities 
+using localization systems. The collapsing of space and time made possible through 
+virtual connectivity means that one will also be able to engage in such experiences at 
+home through various devices.
+7. Conclusion
+Museums will continue to adopt the latest emerging technology to engage with the 
+all of their constituencies. As the goal of museums is to ensure accessibility for all, the 
+needs of neurodiverse populations will continue to drive innovation and technological 
+adoption. Digital storytelling strategies can now be used and experienced with vari-
+ous immersive and wearable devices. New immersive storymaps can provide support 
+prior to the visit, onsite, and engage diverse audiences with personalized, story-
+driven narratives of museum collections, while supporting adaptive, multisensory 
+experiences. The integration of narrative and storytelling in virtual environments 
+encompasses both the needs to understand a given space physically and intellectu-
+ally. Furthermore, these new digital tools are effective in visualizing and presenting 
+historical and cultural heritage, and support staffing restrictions. The presentation 
+through digital storytelling continues to evolve in use and methodology and is inher-
+ently multimedia. Through the medium storytelling, digitized objects and virtual 
+reconstructions of environments allow visitors to engage with the culture and history 
+of a location or subject like never before. The pedagogical device generates a narrative 
+through the experience of interactive events and affords visitors the ability to direct 
+their own story and visit, creating meaning and context [77]. Systems will continue to 
+evolve that create emotional connections with visitors, allowing for the preferences to 
+be known and storytelling activities to adapt and evolve [70]. For example, detecting 
+children in a room, a system could modify the age level of content and appearance 
+of the avatar presenting said content; mini games may encourage interaction with 
+objects in a given exhibition or gallery, while an avatar employs storytelling to invest 
+the visitor in their history or significance. Finally, as the multiverse of metaverses 
+evolves, portals will be created that link museum collections of like content that can 
+be easily traversed for an even more expanded and immersive experience with art and 
+culture.
+Conflict of interest
+The authors declare no conflict of interest.
+
+Application of Modern Trends in Museums
+14
+Author details
+James Hutson* and Piper Hutson
+Lindenwood University, Saint Charles, USA
+*Address all correspondence to: jhutson@lindenwood.edu
+© 2023 The Author(s). Licensee IntechOpen. This chapter is distributed under the terms of 
+the Creative Commons Attribution License (http://creativecommons.org/licenses/by/3.0), 
+which permits unrestricted use, distribution, and reproduction in any medium, provided 
+the original work is properly cited. 
+
+Museums and the Metaverse: Emerging Technologies to Promote Inclusivity and Engagement
+DOI: http://dx.doi.org/10.5772/intechopen.110044
+15
+References
+[1] Associated Press. Coronavirus Spreads 
+to over 60 Countries. New Zealand 
+Herald: France Closes the Louvre; 
+2020. Available from: https://www.
+nzherald.co.nz/world/news/article.
+cfm?c_id=2&objectid=12312989
+[2] Daher N. Smithsonian museums 
+to close amid coronavirus outbreak. 
+SmithsonianMag.com. 2020. Available 
+from: https://www.smithsonianmag.
+com/smithsonian-institution/
+smithsonian-museums–close-amid-
+coronavirus-outbreak-180974399/
+[3] Cobley J, Gaimster D, So S, Gorbey K, 
+Arnold K, Poulot D, et al. Museums in 
+the pandemic: A survey of responses 
+on the current crisis. Museum Worlds. 
+2020;8(1):111-134
+[4] Krantz A, Downey S. The significant 
+loss of museum educators in 2020: A data 
+story. Journal of Museum Education. 
+2021;46(4):417-429
+[5] Longhi-Heredia SA, Marcotte P. The 
+attractiveness of Quebec’s heritage sites 
+in the era of Covid-19. Visual review. 
+International Visual Culture Review/
+Revista Internacional de Cultura Visual. 
+2021;8(2):151-165
+[6] Wildgans J. IP issues relating to 
+cultural heritage platforms and new 
+business models. In: Research Handbook 
+on Intellectual Property and Cultural 
+Heritage. Northampton, Massachusetts: 
+Edward Elgar Publishing; 2022. 
+pp. 480-501
+[7] Raja M, Priya GG. Conceptual origins, 
+technological advancements, and impacts 
+of using virtual reality technology in 
+education. Webology. 2021;18(2):116-134
+[8] Brennan M, Christiansen L. Virtual 
+materiality: A virtual reality framework 
+for the analysis and visualization of 
+cultural heritage 3D models. Digital 
+Heritage. 2018:1-3
+[9] Harrington MC, Jones C, Peters C. 
+Virtual nature as a digital twin botanically 
+correct 3D AR and VR optimized low-
+polygon and photogrammetry high-
+polygon plant models: A short overview 
+of construction methods. In: ACM 
+SIGGRAPH 2022 Educator’s Forum. New 
+York, NY: Association for Computing 
+Machinery; 2022. pp. 1-2
+[10] Franczuk J, Boguszewska K, 
+Parinello S, Dell’Amico A, Galasso F, 
+Gleń P. Direct use of point clouds in 
+real-time interaction with the cultural 
+heritage in pandemic and post-pandemic 
+tourism on the case of Kłodzko fortress. 
+Digital applications in archaeology and 
+cultural. Heritage. 2022;24:e00217
+[11] Hutson P, Hutson J. Neurodivergence 
+and inclusivity in cultural institutions: 
+A review of theories and best practices. 
+Creative Education. 2022;13(9):3069-3080
+[12] Sokoloff RL, Schattschneider E. 
+The Fight to Connect: Making Museums 
+Accessible to Neurodiverse Communities 
+(Doctoral dissertation, Brandeis 
+University). 2022
+[13] American Alliance of Museums. 
+Audiences and inclusion: A primer for 
+cultivating more inclusive attitudes 
+among the public. Wilkening Consulting. 
+2020:1-57
+[14] Andermann J, Arnold-de SS. 
+Museums and the educational turn: 
+History, memory, inclusivity. Journal 
+of Educational Media, Memory, and 
+Society. 2012;4(2):1-7
+[15] Pohawpatchoko C, Colwell C, 
+Powell J, Lassos J. Developing a native 
+
+Application of Modern Trends in Museums
+16
+digital voice: Technology and inclusivity 
+in museums. Museum Anthropology. 
+2017;40(1):52-64
+[16] Ariese C, Wróblewska M. Practicing 
+Decoloniality in Museums: A Guide with 
+Global Examples. Amsterdam, Holland: 
+Amsterdam University Press; 2022
+[17] Ott DL, Russo E, Moeller M. 
+Neurodiversity, equity, and inclusion 
+in MNCs. AIB Insights. 2022;22(3). 
+Retrieved from: https://insights.aib.
+world/article/34627-neurodiversity-
+equity-and-inclusion-in-mncs
+[18] Centers for Disease Control and 
+Prevention (CDC). What is Autism 
+Spectrum Disorder? (ASD). 2022. 
+Available from: https://www.cdc.gov/
+ncbddd/autism/facts.html
+[19] Nisticò V, Faggioli R, Tedesco R, 
+Giordano B, Priori A, Gambini O, et al. 
+Brief report: Sensory sensitivity is 
+associated with disturbed eating in 
+adults with autism Spectrum disorders 
+without intellectual disabilities. 
+Journal of Autism and Developmental 
+Disorders. 2022:1-6. DOI: 10.1007/
+s10803-022-05439-9
+[20] Hooper-Greenhill E. Measuring 
+learning outcomes in museums, 
+archives and libraries: The learning 
+impact research project (LIRP). 
+International Journal of Heritage Studies. 
+2004;10(2):151-174
+[21] Schwartzman R, Knowles C.  
+Expanding accessibility: Sensory 
+sensitive programming for museums. 
+Curator: The Museum Journal. 
+2022;65(1):95-116
+[22] Barclay DM. Traveling Different: 
+Vacation Strategies for Parents of 
+the Anxious, the Inflexible, and the 
+Neurodiverse. Washington, DC:  
+Rowman & Littlefield; 2022
+[23] Brule E, Bailly G, Brock A,  
+Valentin F, Denis G, Jouffrais C. 
+MapSense: Multi-sensory interactive 
+maps for children living with visual 
+impairments. In: Proceedings of the 
+2016 CHI Conference on Human 
+Factors in Computing Systems. New 
+Orleans, LA. 2016. pp. 445-457
+[24] Cho H, Jolley A. Museum 
+education for children with disabilities: 
+Development of the nature senses 
+traveling trunk. Journal of Museum 
+Education. 2016;41(3):220-229
+[25] Fletcher TS, Blake AB, Shelffo KE. 
+Can sensory gallery guides for children 
+with sensory processing challenges 
+improve their museum experience? 
+Journal of Museum Education. 
+2018;43(1):66-77
+[26] Kubasova TS. State Darwin Museum 
+support programs for children with 
+ASD and developmental disorders. 
+Autism and Developmental Disorders. 
+2022;20(2):13-19
+[27] Silverman F, Bartley B,  
+Cohn E, Kanics IM, Walsh L. 
+Occupational therapy partnerships 
+with museums: Creating inclusive 
+environments that promote participation 
+and belonging. International Journal of 
+the Inclusive Museum. 2012;4(4):15-30
+[28] Coffey CS. Creating Inclusive 
+Experiences in Children’s Museums for 
+Children with Autism Spectrum Disorder 
+(Doctoral dissertation, The University of 
+Wisconsin-Milwaukee). 2018
+[29] Dal Falco F, Vassos S. Museum 
+experience design: A modern storytelling 
+methodology. The Design Journal. 
+2017;20(sup1):S3975-S3983
+[30] Madge C. Autism in museums: 
+Welcoming families and young people. 
+Kids in Museums. 2021. Available 
+
+Museums and the Metaverse: Emerging Technologies to Promote Inclusivity and Engagement
+DOI: http://dx.doi.org/10.5772/intechopen.110044
+17
+from: https://www.museumnext.com/
+article/how-can-museums-increase-
+accessibility-for-neurodiverse-
+audiences/?adlt=strict
+[31] Giri A, Aylott J, Giri P, 
+Ferguson-Wormley S, Evans J. Lived 
+experience and the social model 
+of disability: Conflicted and inter-
+dependent ambitions for employment 
+of people with a learning disability and 
+their family carers. British Journal of 
+Learning Disabilities. 2022;50(1):98-106
+[32] Mammarella IC, Cardillo R, 
+Semrud-Clikeman M. Do comorbid 
+symptoms discriminate between 
+autism spectrum disorder, ADHD 
+and nonverbal learning disability? 
+Research in Developmental Disabilities. 
+2022;126:104242
+[33] Hawkey R. Learning with Digital 
+Technologies in Museums, Science 
+Centres and Galleries. Bristol, UK: Nesta 
+Futurelab; 2004
+[34] Nicolaou C. The secret power 
+of digital storytelling methodology: 
+Technology-enhanced learning utilizing 
+audiovisual educational content. 
+In: Enhancing Education through 
+Multidisciplinary Film Teaching 
+Methodologies. Hershey, Pennsylvania: 
+IGI Global; 2023. pp. 235-246
+[35] Bratitsis T, Ziannas P. From 
+early childhood to special education: 
+Interactive digital storytelling as a 
+coaching approach for fostering social 
+empathy. Procedia Computer Science. 
+2015;67:231-240
+[36] Nicolaou C, Kalliris G. Audiovisual 
+Media Communications in Adult 
+Education: The case of Cyprus and 
+Greece of adults as adult learners. 
+European Journal of Investigation in 
+Health, Psychology and Education. 
+2020;10(4):967-994
+[37] Matsiola M, Dimoulas C, Kalliris G, 
+Veglis AA. Augmenting user interaction 
+experience through embedded 
+multimodal media agents in social 
+networks. In: Information Retrieval and 
+Management: Concepts, Methodologies, 
+Tools, and Applications. Hershey, 
+Pennsylvania: IGI Global; 2018. pp. 
+1972-1993
+[38] Sarridis I, Nicolaou C. Social 
+media:(correct) professional use. 
+In: Proceedings of the 2nd Student 
+Conference of the Department of 
+Applied Informatics. Vol. 2. Thessaloniki, 
+Greece: University of Macedonia on 
+Modern Entrepreneurship & Informatics 
+Technologies; 2015
+[39] Pilgrim J, Pilgrim JM. Immersive 
+storytelling: Virtual reality as a cross-
+disciplinary digital storytelling tool. In: 
+Connecting Disciplinary Literacy and 
+Digital Storytelling in K-12 Education. 
+Hershey, Pennsylvania: IGI Global; 2021. 
+pp. 192-215
+[40] Matei SA, Hunter L. Data 
+storytelling is not storytelling with data: 
+A framework for storytelling in science 
+communication and data journalism. The 
+Information Society. 2021;37(5):312-322
+[41] Liu M, Williams D, Pedersen S. Alien 
+rescue: A problem-based hypermedia 
+learning environment for middle 
+school science. Journal of Educational 
+Technology Systems. 2002;30(3):255-270
+[42] Zhong Z, Coates H, Jinghuan S, 
+editors. Innovations in Asian Higher 
+Education. Oxfordshire, England, UK: 
+Routledge; 2019
+[43] Houston M. Facilitating digital 
+transformation for museum education 
+in response to COVID-19. New England 
+Museum Association. 2021;12:2021
+[44] Fletcher TS, Wiskera ES, 
+Wilbur LH, Garcia NM. The sensory totes 
+
+Application of Modern Trends in Museums
+18
+programme: Sensory-friendly autism 
+program innovations designed to meet 
+COVID-19 challenges. World Federation 
+of Occupational Therapists Bulletin. 
+2022;78(1):44-52
+[45] Podsukhina E, Smith MK, 
+Pinke-Sziva I. A critical evaluation of 
+mobile guided tour apps: Motivators and 
+inhibitors for tour guides and customers. 
+Tourism and Hospitality Research. 
+2022;22(4):14673584211055819
+[46] Manik HF, Christanti R, Setiawan W.  
+Knowledge management and community-
+based enterprise: An initiative to preserve 
+the shadow puppet traditional knowledge 
+in Yogyakarta, Indonesia. VINE Journal of 
+Information and Knowledge Management 
+Systems. Emerald Publishing Limited. 
+2022. DOI: 10.1108/VJIKMS-11-2021-0265 
+[Vol. and No. ahead-of-print]
+[47] Sabiescu A, Charatzopoulou K. 
+Shaping a culture of lifelong learning 
+for young audiences: A case study on the 
+samsung digital discovery centre at the 
+British museum. RICHES EU Project 
+Deliverable. 04 Jan 2015;5(1):1-33
+[48] Dohoney R. The Chicago sound 
+show at the smart museum of art, the 
+University of Chicago. Sound Studies. 
+2020;6(2):271-274
+[49] Korzun DG, Marchenkov SA, 
+Vdovenko AS, Petrina OB. A semantic 
+approach to designing information 
+services for smart museums. 
+International Journal of Embedded and 
+Real-Time Communication Systems 
+(IJERTCS). 2016;7(2):15-34
+[50] Eardley AF, Mineiro C, Neves J, 
+Ride P. Redefining access: Embracing 
+multimodality, memorability and shared 
+experience in museums. Curator: The 
+Museum Journal. 2016;59(3):263-286
+[51] Bruner J, Bruner JS. Acts of Meaning: 
+Four Lectures on Mind and Culture. 
+Cambridge, MA: Harvard University 
+Press; 1990
+[52] Pujol L, Roussou M, Poulou S, Balet O, 
+Vayanou M, Ioannidis Y. Personalizing 
+interactive digital storytelling in 
+archaeological museums: The CHESS 
+project. In: 40th Annual Conference of 
+Computer Applications and Quantitative 
+Methods in Archaeology. Amsterdam, 
+Holland: Amsterdam University Press; 
+2012. pp. 93-100
+[53] Gray CA. Social stories and comic 
+strip conversations with students 
+with Asperger syndrome and high-
+functioning autism. In: Asperger 
+Syndrome or High-Functioning Autism? 
+Boston, MA: Springer; 1998. pp. 167-198
+[54] Mitchell AW, Moore EM, 
+Roberts EJ, Hachtel KW, Brown MS. 
+Sensory processing disorder in children 
+ages birth–3 years born prematurely: 
+A systematic review. The American 
+Journal of Occupational Therapy. 
+2015;69(1):6901220030p1-1
+[55] Kinnealey M, Koenig KP, 
+Smith S. Relationships between sensory 
+modulation and social supports and 
+health-related quality of life. The 
+American Journal of Occupational 
+Therapy. 2011;65(3):320-327
+[56] Ben-Sasson A, Hen L, Fluss R, 
+Cermak SA, Engel-Yeger B, Gal E. A 
+meta-analysis of sensory modulation 
+symptoms in individuals with autism 
+spectrum disorders. Journal of Autism 
+and Developmental Disorders. 
+2009;39(1):1-1
+[57] Crane L, Goddard L, 
+Pring L. Sensory processing in adults 
+with autism spectrum disorders. Autism. 
+2009;13(3):215-228
+[58] Neufeld J, Hederos Eriksson L, 
+Hammarsten R, Lundin Remnélius K, 
+
+Museums and the Metaverse: Emerging Technologies to Promote Inclusivity and Engagement
+DOI: http://dx.doi.org/10.5772/intechopen.110044
+19
+Tillmann J, Isaksson J, et al. The impact 
+of atypical sensory processing on 
+adaptive functioning within and beyond 
+autism: The role of familial factors. 
+Autism. 2021;25(8):2341-2355
+[59] Murray M, Baker PH, 
+Murray-Slutsky C, Paris B. Strategies for 
+supporting the sensory-based learner. 
+Preventing School Failure: Alternative 
+Education for Children and Youth. 
+2009;53(4):245-252
+[60] Rappolt-Schlichtmann G, Daley SG. 
+Providing access to engagement in 
+learning: The potential of universal 
+Design for Learning in museum 
+design. Curator: The Museum Journal. 
+2013;56(3):307-321
+[61] Walker VL, Smith CG. Training 
+paraprofessionals to support students 
+with disabilities: A literature review. 
+Exceptionality. 2015;23(3):170-191
+[62] Ricciardelli D. A Social Skills 
+Program Evaluation: Will Social Stories 
+Combine with a Traditional Social Skills 
+Curriculum Increase pro-Social Behavior 
+in Autistic Children? Teaneck, NJ: 
+Fairleigh Dickinson University; 2006
+[63] Garzotto F, Matarazzo V,  
+Messina N, Gelsomini M, Riva C. 
+Improving museum accessibility through 
+storytelling in wearable immersive 
+virtual reality. In: 2018 3rd Digital 
+Heritage International Congress 
+(DigitalHERITAGE) Held Jointly with 2018 
+24th International Conference on Virtual 
+Systems & Multimedia (VSMM 2018). 
+New York City, NY: IEEE; 2018. pp. 1-8
+[64] Watermeyer R. A conceptualisation 
+of the post-museum as pedagogical space. 
+Journal of Science Communication. 
+2012;11(1):A02
+[65] Othman MK, Nogoibaeva A,  
+Leong LS, Barawi MH. Usability 
+evaluation of a virtual reality 
+smartphone app for a living museum. 
+Universal Access in the Information 
+Society. 2022;21(4):995-1012
+[66] Garzotto F, Gelsomini M, 
+Matarazzo V, Messina N, Occhiuto D. 
+Designing wearable immersive “social 
+stories” for persons with 
+neurodevelopmental disorder. In: 
+International Conference on Universal 
+Access in Human-Computer Interaction. 
+Cham: Springer; 2018. pp. 517-529
+[67] Josman N, Ben-Chaim HM, 
+Friedrich S, Weiss PL. Effectiveness 
+of virtual reality for teaching street-
+crossing skills to children and adolescents 
+with autism. International Journal on 
+Disability and Human Development. 
+2008;7(1):49-56
+[68] Howard MC, Lee J. Pre-
+training interventions to counteract 
+seductive details in virtual reality 
+training programs. Human 
+Resource Development Quarterly. 
+2020;31(1):13-29
+[69] Varriale L, Cuel R, Ravarini A,  
+Briganti P, Minucci G. Smart and 
+inclusive museums for visitors with 
+autism: The app case “a dip in the blue”. 
+In: Sustainable Digital Transformation. 
+New York City, New York: Springer; 2023. 
+pp. 133-152, Cham
+[70] Olaz X, Garcia R, Ortiz A, 
+Marichal S, Villadangos J, Ardaiz O, 
+et al. An interdisciplinary Design of 
+an Interactive Cultural Heritage Visit 
+for In-situ, mixed reality and affective 
+experiences. Multimodal Technologies 
+and Interaction. 2022;6(7):59
+[71] Gallace A, Ngo MK, 
+Sulaitis J, Spence C. Multisensory 
+presence in virtual reality: Possibilities 
+& limitations. In: Multiple Sensorial 
+Media Advances and Applications: New 
+
+Application of Modern Trends in Museums
+20
+Developments in MulSeMedia. Hershey, 
+Pennsylvania: IGI Global; 2012. pp. 1-38
+[72] Melo M, Gonçalves G,  
+Monteiro P, Coelho H, Vasconcelos- 
+Raposo J, Bessa M. Do multisensory 
+stimuli benefit the virtual reality 
+experience? A systematic review. 
+IEEE Transactions on Visualization 
+and Computer Graphics. 01 Feb 
+2022;28(2):1428-1442
+[73] El-Sayyad N. Role of sensory 
+maps in cultural planning to shape 
+the future of deteriorated heritage 
+sites. In: 8th International Conference 
+“ARCHCAIRO8:” Building the Future 
+“Now”–Rights to Better Living. 
+Architecture and Contexts; 2019. 
+pp. 8-10
+[74] Quercia D, Schifanella R, Aiello LM, 
+McLean K. Smelly maps: The digital life 
+of urban smellscapes. In: Proceedings 
+of the International AAAI Conference 
+on Web and Social Media. Vol. 9, 
+No. 1. Oxford, United Kingdom. 2015. 
+pp. 327-336
+[75] Pietroni E, Adami A. Interacting 
+with virtual reconstructions in museums: 
+The Etruscanning project. Journal 
+on Computing and Cultural Heritage 
+(JOCCH). 2014;7(2):1-29
+[76] Roussou M, Pujol L, Balet O, 
+Poulou S. Personalizing interactive 
+digital storytelling in archaeological 
+museums: The CHESS project. In: 
+Computer Applications and Quantitative 
+Methods in Archaeology (CAA) 2012. 
+Southampton, UK. 26-30 March 2012. 
+p. 2011
+[77] Baradaran RF. A model for 
+sociocultural interactions in museums. 
+Museum Management and Curatorship. 
+2014;29(2):174-187
+

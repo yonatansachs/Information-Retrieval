@@ -1,0 +1,635 @@
+Delft University of Technology
+Position location, place and area, an indoor perspective
+Zlatanova, Sisi; Sithole, George
+DOI
+10.5194/isprs-annals-III-4-89-2016
+Publication date
+2016
+Document Version
+Final published version
+Published in
+ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences
+Citation (APA)
+Zlatanova, S., & Sithole, G. (2016). Position location, place and area, an indoor perspective. ISPRS Annals
+of the Photogrammetry, Remote Sensing and Spatial Information Sciences, III-4, 89-96.
+https://doi.org/10.5194/isprs-annals-III-4-89-2016
+Important note
+To cite this publication, please use the final published version (if applicable).
+Please check the document version above.
+Copyright
+Other than for strictly personal use, it is not permitted to download, forward or distribute the text or part of it, without the consent
+of the author(s) and/or copyright holder(s), unless the work is under an open content license such as Creative Commons.
+Takedown policy
+Please contact us and provide details if you believe this document breaches copyrights.
+We will remove access to the work immediately and investigate your claim.
+This work is downloaded from Delft University of Technology.
+For technical reasons the number of authors shown on this cover page is limited to a maximum of 10.ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume III-4, 2016
+XXIII ISPRS Congress, 12–19 July 2016, Prague, Czech Republic
+POSITION, LOCATION, PLACE AND AREA: AN INDOOR PERSPECTIVE
+George Sitholea*, Sisi Zlatanovab
+a Geomatics Division, School of Architecture, Planning and Geomatics, University of Cape Town, Private Bag X3, Rondebosch,
+7701, South Africa, Email: george.sithole@uct.ac.za
+b 3D Geoinformation, Faculty of Architecture and the Built Environment, Delft University of Technology, Julianalaan 134, 2628 BL
+Delft, The Netherlands, Email: s.zlatanova@tudelft.nl
+Commission IV/WG IV/7
+KEY WORDS: Indoor, Mapping, Modelling, Navigation, Application
+ABSTRACT:
+Over the last decade, harnessing the commercial potential of smart mobile devices in indoor environments has spurred interest in indoor
+mapping and navigation. Users experience indoor environments differently. For this reason navigational models have to be designed
+to adapt to a user’s personality, and to reflect as many cognitive maps as possible. This paper presents an extension of a previously
+proposed framework. In this extension the notion of placement is accounted for, thereby enabling one aspect of the ‘personalised indoor
+experience’. In the paper, firstly referential expressions are used as a tool to discuss the different ways of thinking of placement within
+indoor spaces. Next, placement is expressed in terms of the concept of Position, Location, Place and Area. Finally, the previously
+proposed framework is extended to include these concepts of placement. An example is provided of the use of the extended framework.
+Notable characteristics of the framework are: (1) Sub-spaces, resources and agents can simultaneously possess different types of
+placement, e.g., a person in a room can have an xyz position and a location defined by the room number. While these entities can
+simultaneously have different forms of placement, only one is dominant. (2) Sub-spaces, resources and agents are capable of possessing
+modifiers that alter their access and usage. (3) Sub-spaces inherit the modifiers of the resources or agents contained in them. (4) Unlike
+conventional navigational models which treat resources and obstacles as different types of entities, in the proposed framework there
+are only resources and whether a resource is an obstacle is determined by a modifier that determines whether a user can access the
+resource. The power of the framework is that it blends the geometry and topology of space, the influence of human activity within sub-
+spaces together with the different notions of placement in a way that is simple and yet very flexible.
+1. INTRODUCTION 2013, Jung and Lee, 2015, Yang and Worboys, 2015 have
+proposed similar models. While closer to the human perception
+In recent years the mapping of enclosed environments has driven of space, these models have a weakness in that they do not discuss
+researchers to develop novel methods of representing these the way humans perceive placement (how a thing occupies
+environments. These representations are used in a variety of space), i.e., the conception of ‘Here’ and ‘There’.
+applications, one of the most important applications being the
+assisted navigation of indoor spaces. In contemporary navigational systems, travel between a start
+point and destination are imagined to be movements between pin
+A shortcoming of conventional indoor navigation aids is that they points in space. But as humans we seldom think in this way when
+tend to be very functional and mostly designed to answer the travelling. Our conception of ‘Here’ and ‘There’ is more
+basic question of ‘What is the best way to get from A to B?’. The complex. For example indoors a person goes from room 1.1, to
+emphasis has been on solving the technical problem of navigation the second floor, to room 2.3, and stops at a photocopier. During
+at the expense of resolving human needs and expectations. One this travel our conception of ‘Here’ and ‘There’ is expanded
+consequence of this is that navigational aids simplify the full (floor) and contracted (photocopier) in response to the context of
+range of human actions and conceptions during a navigation and the different parts of the journey. This paper looks at how best
+focus on providing natural language directives, e.g., Chen and refer to this changing notion of ‘Here’ and ‘There’ into the model
+Mooney 2011. of an indoor environment.
+This paper concerns itself with the more fundamental problem of Today many internet mapping services offer a richer notion of
+how to model the dynamic interactions within indoor spaces, and ‘Here’ and ‘There’ (e.g. Google Maps, Bing Maps, MapQuest,
+specifically defining the elements that are required to model Open Street Maps, etc.). They achieve this by disambiguating
+interactions within indoor spaces. Multi-Agent Systems (Van der between the geographical notions and moving from position to
+Hoek and Wooldridge, 2008) have been used to model dynamic place (Hightower, 2003). In everyday conversation these words
+interactions in spaces and the work here will draw from work are used interchangeably, but as will be shown subtle differences
+done in this area. exist between the words. The solution the authors propose is to
+build these notions of ‘Position’, ‘Location’, ‘Place’ and ‘Area’
+The authors previously proposed a framework (Zlatanova et. al. into their indoor navigation framework.
+2013) for modelling dynamics and navigation within indoor
+spaces. Others such as Goetz and Zipf, 2011, Khan and Kolbe,
+* Corresponding author
+This contribution has been peer-reviewed. The double-blind peer-review was conducted on the basis of the full paper.
+doi:10.5194/isprsannals-III-4-89-2016 89ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume III-4, 2016
+XXIII ISPRS Congress, 12–19 July 2016, Prague, Czech Republic
+The paper is divided into three parts. Part one reviews the notions most spatial expressions within indoor space. Coventry et al 2005
+of ‘Position’, ‘Location’, ‘Place’ and ‘Area’. Part two explores, proved that the prepositions depend on the object used for the
+with the use of examples, how these notions translate in indoor reference.
+environments. Finally, part three proposes the inclusion of these We use the prepositions to investigate the notion of placement.
+notions into an indoor modelling framework previously Table 1 lists prepositions most commonly used in expressing
+developed by the authors. placement or routes in/through space.
+PART I Above Beneath In Out Underneath
+Across Beside Inside Outside Until
+2. OVERVIEW: POSITION, LOCATION, PLACE, AND Against Between Into Over Up
+Ahead Beyond Left past Upon
+AREA
+Along By Near Right Up to
+Around Close by Next Through Within
+In linguistics, referential expressions are those expressions that
+At Down Off Towards
+describe the placement of persons, objects and things. These
+Among From On (On top To
+aspects have been partially addressed by a large number of Behind From...to of) Under
+scientists dealing with defining relationships between objects. Below Front Opposite
+Most of the investigated expressions are between two objects, i.e. Table 1. List of common prepositions used in referential
+binary (I am at from of the coffee machine) and very few can be expressions
+ternary (I am between the restaurant and the office of Tom).
+Therefore, most of the research has been focussed on identifying The rule for forming a prepositional phrase is thus:
+binary relationships. Three major approaches have been
+identified for representing spatial relationships namely metric, Preposition – Optional Modifier – Noun, Pronoun
+topology and direction (Kainz, 2010). The first sound models for
+representing spatial relationships have been based on point-set Table 2 provides examples of prepositional phrases. Because the
+theory and the notion of boundary, interior and closure of point rule contains nouns, pronouns, etc., an implication of the rule for
+sets (Pullar and Egenhofer 1998, Herring 1991). This framework forming prepositional phrases is that placement is with reference
+has been extended to cover 3D space and objects of different to space or other objects or things in space. In other words
+dimensions (Egenhofer and Herring, 1991, Zlatanova 2000). expressions of placement are relative.
+Topology represents neighbourhood relationships between two
+objects, which allows the definition of inclusion (‘in’) and Preposition Modifier Noun, Example
+closeness (meet, or next to). It’s a powerful method to control Pronoun, etc.,
+impossible cases such as trees penetrating a house (Xu and Above The First floor Above the first floor
+Zlatanova 2013, Louwsma et al 2006) or mother holding the hand Along The Passageway Walk along the
+of a girl being located by a localisation system in one room and passageway
+the girl in another. Many linguistic expressions such as ‘at back’, Table 2. Examples of prepositional phrases
+‘at front’, or ‘between’ have been formally defined under the
+category of directional relationships. Directional relationships But there are seeming exceptions like the expression ‘The toy
+are more complex and require a specific frame of reference store is at 33o S, 28o E’ doesn’t refer to a noun or pronoun.
+and/or context. Retz-Schmidt, 1988 discusses three frames of Although the above expression doesn’t reference a noun,
+reference namely intrinsic, deictic and extrinsic. Intrinsic frame pronoun, etc., the coordinates define a latitude and longitude
+relies on providing relations with respect to the reference objects. within a geographical reference frame. In this expression the
+An example of an intrinsic frame is ‘right’, ‘left’, ‘at front of’ the relative reference is implicit. Relative references that are fixed
+desk (the reference object). Frank 1998 introduces Euclidian and agreed to by general consensus are called absolute
+frame of reference to make the directional relationships references. This is to distinguish them from arbitrary relative
+unambiguous. Another approach is to use the context of the references.
+situation. For example, if a person is at front of a desk, it is trivial
+to indicate what is left or right. Clementini, 2013 provides a 2.2 Addressing
+formalisation of number of directional relationships by mapping
+Relative and absolute references can also be thought of addresses
+them to projective relationships.
+to placement in space. For indoor environments the addressing of
+sub-spaces is complex because (a) addresses will be building
+Referential expressions are used here to nuance the notion of
+specific (no two buildings are guaranteed to use the same form of
+placement in space. Because users of navigational aids will
+addressing), (b) the person navigating the building has to either
+conceive and express their placement in space using natural
+have a cognitive map of the building (e.g., Moeser 1988) or be
+language, it is reasonable to begin a study of placement by
+familiar with different spatial schemas of building floor plans.
+studying commonly used referential expressions.
+For example, the answer to the question ‘Where are you in the
+building?’ will depend on (a) the layout of the building, i.e.,
+2.1 Prepositions
+contextual knowledge, (b) how a person visualises themselves in
+Prepositions are words commonly used to indicate placement. the building. One person might say, ‘At the photocopier’ and
+Retz-Smith, 1988 provides an extensive review on the spatial another might say ‘In room 2.13’. Although the answers may be
+prepositions used for location outdoors. Kray at al 2013 different, if they refer to the same placement they are both
+investigate the prepositions used in outdoor, indoor and legitimate. An indoor model has to be able to accommodate this
+transitional spaces. They conclude that some prepositions are ambiguity.
+used only for indoor or outdoor spaces. For example, the
+preposition ‘through’ was found to be the most used for all three 2.3 Elements of referencing
+types of spaces, while ‘beneath’ and ‘behind’ has been
+In classical geography the expression of the placement of objects,
+predominantly used indoors. Their study shows that humans use
+in relation to the outdoors, was given in terms of the concepts of
+This contribution has been peer-reviewed. The double-blind peer-review was conducted on the basis of the full paper.
+doi:10.5194/isprsannals-III-4-89-2016 90ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume III-4, 2016
+XXIII ISPRS Congress, 12–19 July 2016, Prague, Czech Republic
+Topos, Choros, and Geos (Mayhew, 2011). These concepts were understand this, consider that if context were irrelevant all would
+typically distinguished by scale or specificity. Topos referring to provide the same answer to a referential question (e.g., where are
+the place, Choros refers to the region and Geos to the face of the you?). Statement 1 is clearly without context.
+earth. These concepts are mentioned here because not only can
+they be distinguished by scale, but also by the context of the From these aspects four conceptions of placement can be
+environment, notions of ‘belonging in space’, and a person’s isolated: Position, Location, Place and Area (established
+conception of placement in space. This provides an avenue to concepts in Geography). The notions of Position, Location,
+understand and accommodate the ambiguity in addressing that is Place, and Area in relation to the above four elements is
+necessary for indoor models. Below are seven typical expressions summarised in Table 3. The next part looks at how the concept
+of the same placement: of Position, Location, Place and Area can be applied to indoor
+environments.
+Statement 1: ‘I am at 28.2314o, -33.4577o’
+Statement 2: ‘I am on the chair’ PART II
+Statement 3: ‘I am next to the table’
+Statement 5: ‘I am in the living room’ 3. AN INDOOR PERSPECTIVE OF POSITION,
+Statement 6: ‘I am at home’ LOCATION, PLACE, AND AREA
+Statement 7: ‘I am in the neighbourhood’
+Figure 1 represents a simplified indoor scene within a building.
+From these statements certain aspects of addressing can be The scene is intended to capture the most basic spatial navigation
+identified, referred to here as Reference, Specificity and within an indoor environment, namely, movement between sub-
+Uncertainty, Scope and Context (see Table 3). spaces (rooms) and movement between floors. The scene also
+imagines that a building is divided into blocks and that each block
+Position Location Place Area contains one or more rooms. In the next sections the concepts of
+Reference Absolute Absolute, Relative, Relative, Position, Location, Place and Area will be explained in relation
+, e.g., a e.g. room Placement Placemen to this indoor scene.
+coordina number in a room in an
+te (Inside) aggregatio
+system n of rooms
+Specificity/ Depends Certain, Uncertain, Uncertain
+Uncertainty on the defined by defined by Defined by
+device the the a more
+providin physical functional general
+g the borders space of an notations
+position (walls) object, (floors,
+e.g., Desk parts of
+buildings)
+Scope Defined Contains Contained Contains
+by a Places in locations
+referenc Locations
+e frame
+Figure 1. Indoor scene composed of 2 floors, 6 blocks (4 blocks
+Context There is Context Context Context
+no on the ground floor), with each block containing 3 rooms. Two
+context block on the ground floor and two blocks on the first floor are
+Example I am at I am in the I am at the I am on the visible.
+28.2314o living photocopi second
+, - room er floor
+33.4577o
+Table 3. Position, Location, Place and Area
+Reference: Statements 2 and 3 refer to placement relative to two
+different objects, i.e., a chair and a table. Here the spatial
+relationship is only defined by topology.
+Specificity/Uncertainty: Statement 1 refers to a pin point
+placement in space. There is no uncertainty in the placement of
+(a) Absolute position (b) Relative position
+the object in statement 1. Here the spatial relationship is clearly
+metric. In contrast in statement 2 the definition of the extent has
+Figure 2. Position defines a pin point in space and it can be with
+been expanded to an area about the chair. This introduces the
+reference to the origin of a global reference frame (left) or with
+notion of uncertainty which relates to the extent of the
+reference to the origin of a local reference frame. The former and
+addressable space.
+latter are referred to as absolute and relative positions
+respectively.
+Scope: Statements 5, 6, and 7 provide the placement at the scale
+of a room, home and neighbourhood. Scope introduces the
+3.1 Position
+concept of the topological nesting of spaces, e.g. a room is inside
+a house and a house is inside neighbourhood.
+A Cartesian reference system is defined for the building. This is
+shown by the grey lines in figure 2. The absolute position of
+Context: Statements 2, and 3 refer to the same placement but
+objects in the building are defined relative to this reference
+relative to a chair and a table. The choice of the reference here
+system. Note as discussed earlier, positions provide pin-point
+depends on the context in which the statement is being made. To
+This contribution has been peer-reviewed. The double-blind peer-review was conducted on the basis of the full paper.
+doi:10.5194/isprsannals-III-4-89-2016 91ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume III-4, 2016
+XXIII ISPRS Congress, 12–19 July 2016, Prague, Czech Republic
+placements. Further reference systems can be defined for the 3.4 Area
+blocks.
+Area can be thought as of being a more generalised conception
+3.2 Location of Location. A helpful distinction between the two concepts is to
+think of an Area as containing multiple addressable locations. For
+Figure 3 shows the notion of location indoors. We specify a example in figure 5 the Area is represented by the second floor,
+location referring to the smallest physically defined space in a and the rooms on the second floor can be thought of as Locations.
+building. These can be rooms, corridors, stairs, hall etc. Shown Though many aggregations, such a floors can be clearly
+are people standing in room 2.2.A. The address of the room identified, areas are most dependent on the cognitive map of a
+indicates the precise location of the room in the building. The user and are source of misleading and confusion. Area
+address reads as ‘second floor, second block, partition A’. It can placements are often used when the user is lost and seeks for
+be seen that room 2.2.A refers to a placement having some extent. more specific placement.
+Therefore, the exact Position of people in this room can’t be
+inferred from the Location.
+Figure 5. Area defines a generalised space or sub-space. In the
+figure the second floor represents an area. An Area is
+distinguishable from a Location in that and Area can be
+Figure 3. Location defines a general placement relative to well-
+decomposed into Locations.
+defined physical space. For example in the figure the person can
+be said to be located in the room. The uncertainty in the position
+4. NAVIGATION PERSPECTIVE
+of the person is defined by the extent of the room. It should be
+noted that the speaker provides the context of the space.
+In a multi-agent system the existence of agents and resources
+with different definitions of placement may be seen as an
+unnecessary complication of the navigation model. This would
+be the case if each agent or resource possessed a different form
+of placement, e.g., an agent whose placement is defined position
+and a resource whose placement is defined by Place. But this is
+not the intention here.
+In the framework that will be explained in the next part, every
+entity (resource or agent) is simultaneously represented as a
+position, location, place and area.
+PART III
+Figure 4. Place defines a placement in space that relies on a user’s 5. INDOOR NAVIGATION FRAMEWORK
+memory of space, i.e., the understanding of the layout of space is
+In 2013 the authors developed a framework to support indoor
+provided by the listener rather than the speaker.
+localization and navigation. The framework was developed
+around the subdivision of indoor spaces. This framework (shown
+3.3 Place
+in figure 7) is composed of Agents, Resources, sub-spaces,
+As shown in Table 3 Place refer to a particular object and the Modifiers and Activities.
+uncertain (functional) space around it. Place we use to indicate
+placements, which are within Locations and have uncertain or 5.1 Conceptual framework
+dynamic limits (Kruminaite and Zlatanova, 2014). Figure 4
+Agents are those entities that navigate space. Space represents the
+shows an example of this. In this case Place is addressed as ‘At
+entirety of the enclosed environment to be navigated. To facilitate
+the photocopier’. Because there are multiple photocopiers in the
+navigation space is divided into sub-spaces. These sub-spaces
+building the ‘At the photocopier’ expression references multiple
+can either be Free or Inert. Inert spaces are inaccessible by
+placements. Which instance of ‘photocopier’ a user chooses to
+Agents. Examples of inert spaces are walls, indoor fountains and
+visit depends on either their cognitive map of the space or
+so forth. Free spaces (a) allow agents to move through them, (b)
+landmarks (Raubal and Winter, 2002, Richter, 2013) within the
+they contain resources, and (c) they host activities.
+space. In any case if the specific placement has to be made
+explicit, a Location is needed.
+This contribution has been peer-reviewed. The double-blind peer-review was conducted on the basis of the full paper.
+doi:10.5194/isprsannals-III-4-89-2016 92In a navigation event an agent moves between free sub-spaces enter spaces searching for resources at specific positions
+and either accesses resources or engages in activities. In figure 6 locations, or places, but we leave areas.
+the agent moves between three sub-spaces and accesses the
+resource, Resource 3, residing in the last free space. An agent’s FREE INERT FREE FREE
+use or access of a sub-space can be encumbered. For example a Resource 1 Resource 2 Resource 3
+fire in a room (the sub-space) can render the room temporarily
+Sub Modifier 1 Modifier 3
+unusable. Modifiers are used to define the environment of a sub- Spaces Modifier 2 Modifier 4
+space. Sub-spaces can be encumbered by multiple modifiers. For
+example modifiers can be defined for lighting, temperature, Activity Activity Activity
+sound and so forth. Together with the character of the agent
+Position Position Position
+(including the tasks that need to be performed), modifiers will Location Location Location
+Agent
+Place Place Place
+determine the activities that are possible in the sub-space. For Area Area Area
+example if the elevator is broken (i.e. the status of resource is START END
+modified) a person carrying cleaning equipment that performs Figure 7. Position, Location, Place and Area built into the
+activity ‘Cleaning’ is not possible to go to the second floor to framework.
+complete the activity. In this way the framework is able to
+simultaneously accommodate multiple agents with variable An example of this expansion/contraction of an address is show
+needs. in figure 8. The agent has to travel from Room 2.A.3 to Room
+1.B.2. The route can be addressed as Room2.A.3, Block A, Floor
+2, Floor 1, Block B, Room 1.B.2.
+Free and inert Spaces The dual of free and inert
+spaces
+Figure 8. Expansion vs Contraction of an address. As the agent
+moves between the sub-spaces to reach Room 1.B.2 his/her
+address inflates and then deflates.
+Agents and Resources Modifiers applied to sub-
+spaces, agents and resources 5.3 Logical framework
+Figure 6. The proposed framework. Sub-spaces are divided into Indoor navigation systems are built on top of partition-maps (or
+free and inert spaces. Sub-spaces are occupied by resources. Sub- subdivision maps) of indoor spaces. These partition-maps are
+spaces are also occupied by agents who perform activities in the obtained by subdividing indoor spaces such that they reflect
+sub-space or access resources. All sub-spaces, resources and cognitive spatial schemas (e.g. Khan and Kolbe 2013) of most
+agents possess the property ‘Placement’ that defines where the users (agents), e.g., rooms, corridors, stairways and so forth.
+entity is in space. Various subdivision models have been proposed (Afyouni et al,
+2012, Zlatanova et al 2014). The two most popular variants are
+5.2 Updated conceptual framework tessellations and networks. This proposed framework is indented
+to be universal and does not depend on the type of subdivision.
+The 2013 framework sought to accommodate customisable The remainder of this section will demonstrate the utility of the
+navigation by multiple agents, i.e., the navigation route for any proposed navigation framework for a network model.
+two agents with different intentions is not guaranteed to be the Applications to tessellation models will be discussed in future
+same. While the framework was designed to be as flexible as papers.
+possible the way in which agents, resources and activities were
+referenced remained the same for all, and it was typically given Network models: Figure 9 shows the test indoor space
+as a position. As already mentioned this reduces the richness of represented as a network. The subdivisions (e.g., rooms, stairs,
+navigational instructions. etc.,) are represented by nodes, V, and the topological
+relationship between the nodes is captured by the edges, E. The
+In figure 7 placement is augmented by the concepts of position, nodes and edges are commonly stored in a graph structure, G(V,
+location, place and area. In this conception every sub-space E).
+simultaneously possesses a position, location, place and area
+quartet. This change allows routes through space to be defined as Dominant and auxiliary traits: Each node in the graph has a
+in section 4.1. Notably in this conception an agent is allowed to placement P. While every node simultaneously possesses all four
+enter a sub-space with one address and leave it with an alternate types of placements (position, location, place and area), some
+address. This refinement is necessary because (a) our activities in nodes have a greater affinity for specialisation than generalisation
+a sub-space can alter our perception of that sub-space, and (b) we and vice versa. This affinity is here called the Dominant Trait.
+ecapS
+noitagivaN
+ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume III-4, 2016
+XXIII ISPRS Congress, 12–19 July 2016, Prague, Czech Republic
+This contribution has been peer-reviewed. The double-blind peer-review was conducted on the basis of the full paper.
+doi:10.5194/isprsannals-III-4-89-2016 93ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume III-4, 2016
+XXIII ISPRS Congress, 12–19 July 2016, Prague, Czech Republic
+The alternative is called the Auxiliary Trait. For example in concepts of modifiers and placement. The choice of route is
+figure 9 it can be seen that the placement of Agents (e.g. people) shown in figure 10. The navigation model is divided into three
+and Resources (e.g., photocopier) are specific and will most segments, the Environment segment, the Multi-Agent System
+likely be referred by positions or places. Position and Place are segment and the Route segment. The Environment segment
+the dominant traits of the placement. Entrances and exits also describes the subdivision of space and the placement of resources
+exhibit this trait. On the other hand the placement of rooms is within the space. A union of the subdivision of space and the
+general in character and the dominant traits of placement are placement of resources yields the environment graph/network.
+Location and Area.
+GEnv = GSpace  GRes 1  GRes 2  …  GRes N (2)
+Modifier influence inherited from the dominant trait: Each
+node in the graph also has the attribute M, representing the set of The benefit of this approach is that resources can be easily
+modifiers that apply to a placement. Here again the spatial added/removed from the environment in real-time. An added
+specificity of the modifier inherits from the dominant trait of the benefit is that only those resources that are desired by an agent
+placement. For example a fire (the modifier) in room 2.A.3 is need be included in the environment model. The Multi-Agent
+conceptualised to encompass the whole of the room. However, a System segment models the interaction of multiple agents within
+more specific placement can be inferred from a fire at a the environment. The proposed framework imagines that during
+photocopier. This inheritance mechanism provides a more a navigation an agent will access multiple resources and/or
+natural expansion and contraction of the influence of modifiers. agents. Here the optimum route is determined by a function 
+over the environment graph and the graph of each agent in the
+The navigation process: A guided navigation consists of three space.
+main activities, planning (path computation), giving instructions,
+receiving feedback (either by the user or by a localisation system) (GEnv, GAgent 1, GAgent 2, … , GAgent M) = min (3)
+and correcting the path if needed (Goetz and Zipf 2011,
+Zlatanova et al 2014). The planning phase aims to determine the Unlike equation (1) the function  is non-trivial and dependent
+least cost route between two or more points contained in the on the character of the agents at a particular moment in time. The
+space. This cost is typically measured in terms of distance, time
+content of the function  will be discussed in a future paper.
+and risk. The giving and receiving instructions phase determines
+how best to verbally ask for a route and how best to verbally
+The function of Modifiers in : In figure 10 it will be seen that
+convey the route to the asker. The travelling phase considers the
+all vertices, V, and edges, E possess a modifier as an attribute.
+movement between the source and destination and how the agent
+Furthermore the sub-spaces, resources and agents also possess
+is assisted during the movement.
+modifiers. Attributing all elements of the framework with
+modifiers may seem overwrought but as will be show with
+examples it provides a powerful mechanism for both designing
+the multi-agent system and forming route instructions. The reader
+may have noticed that obstacle are missing in the framework as
+shown in figure 10. The reason for this is that depending on user
+perspective a resource can also be treated as an obstacle. For
+example for those who want to sit in a chair within a room a chair
+is a resource, but for those passing through a room it’s an obstacle
+to be navigated. How a resource morphs into an obstacle is
+determined by the modifier associated with the resource.
+Therefore, an obstacle is a resource encumbered by a modifier
+that repels those who do not desire the resource. This provides a
+more faithful modelling of how agents perceive the world and
+interact with resources and obstacles. As can be seen modifiers
+are a powerful way of building dynamism into navigation
+Figure 9 Representation of indoor space as a network. The large
+models. In the next example the function of modifiers is taken
+blue circles represent locations indoors, they reference general
+even further.
+placement. The smaller red circles represent positions or places,
+and reference specific placement. All placements are assigned
+Attributing agents with modifiers allows agents to influence the
+positions.
+space they move in. For example when a security official enters
+a room he/she can impose restrictions on activities that may take
+The selected route determined from the navigation process can
+place in that room. As indicated earlier modifiers inherit from the
+be described as GRoute(Vposition/cost, Ecost) where GRoute is a
+dominant trait of placement. This allows spaces, resources and
+subgraph of G. Note that in conventional solutions vertices are
+agents to possess modifiers that are adapted to their various forms
+only attributed by a position and the cost of passing through a
+of placement, which permits rich interpretations. For example a
+vertex. The best route is then identified as that route for which
+resource, Res1, has the following placements, Position = (23.12,
+optimising function  is given by: 50.2, 45.1), Location = ‘Room 1.A.2’, Place = ‘Photocopier’,
+Area = ‘1st Floor’. If Res1 is on fire, a modifier called ‘Fire’ can
+ =  Ecost = min (1) be associated with Res1. Naturally, the region of influence of the
+modifier depends on the form of placement and different
+Conventional indoor navigation models have various limitations. definition of the ‘Fire’ modifier will have to be defined for each
+For example conventional indoor models do not account for form of placement. The forms and interaction of placements and
+dynamic environments (e.g., moveable resources), variable modifiers are complex. Theses interaction are modelled in the
+notions of placement (during travel) and that agents will navigate function . The form of modifiers cannot be elaborated in the
+space differently. For this reason the proposed framework
+includes the concepts of agents and resources, and introduces the
+This contribution has been peer-reviewed. The double-blind peer-review was conducted on the basis of the full paper.
+doi:10.5194/isprsannals-III-4-89-2016 94space available here and will therefore be left for discussion in a
+future paper.
+Figure 10. Representation of indoor space as a network. The large
+blue circles represent locations indoors, they reference general Figure 11 Application of the navigation framework. Blue circle
+placement. The smaller red circles represent positions or places, represent entities (in this case sub-spaces) whose dominant trait
+and reference specific placement. is Location. Red circles represent entities (in this case agents)
+whose dominant trait is Position. Green circles represent entities
+5.4 Application of the Framework whose dominant trait is Place.
+In this section an application of the framework is demonstrated
+Figure 11 shows the problem implemented according to the
+using a simple example. The problem is composed of the
+representation in figure 10. Note that the network in figure 11 is
+following element shown in table 4.
+sub-network of the network shown in figure 9. The sub-spaces
+(shown in blue) are to be traversed by the Secretary who is in
+Item Type Dominant Modifier Corridor 2.1. Each sub-space inherits the modifiers of its
+Trait attendant agent or resource/obstacle, e.g., Room 1.A.1 is
+Secretary Agent Position Space Lock inaccessible because this sub-space inherits the global Space
+Cleaner Agent Position Space Lock Lock modifier of the Cleaner. To reach the photocopier the
+Photocopier Resource Place Access 0 Secretary will have to travel through Room 1.A. Room 1.A has
+Floor 2 Sub-Space Area the global modifier Slippery Floor. Therefore, the Secretary will
+Stairs Sub-Space Location be cautioned when entering this room. Room 1.A. Room 1.A also
+Floor 1 Sub-Space Area inherits the local Access 1 modifier from the Plant and the Table.
+Corridor Sub-Space Location The Secretary doesn’t have Access 1 permissions which causes
+Room 1.A Sub-Space Location Slippery Floor the Plant and Table to become obstacles. Room 1.A.2 inherits the
+Room 1.A.1 Sub-Space Location local Access 0 modifier from the photocopier. The Secretary has
+Room 1.A.2 Sub-Space Location Access 0 permissions and because of this the photocopier
+Table Resource Place Access 1 becomes a resource.
+Plant Resource Place Access 1
+6. CONCLUSION
+Table 4. A navigation problem demonstrating the application of
+the framework
+This paper presents an extension of previously proposed
+framework on space subdivision, in which the notions of
+Parameters of the problem: (1) The Secretary needs to use a
+placement are accounted for. Placement is expressed in terms of
+photocopier in room 1.A.2. To use the copier the Secretary has to
+the concepts of Position, Location, Place and Area. The power of
+travel from Floor 2 (upper floor) to Floor 1 (lower floor) and
+the framework is that it blends the geometry and topology of
+reach Room 1.A.2 (Photocopier room). (2) The Cleaner is
+space, the influence of human activity within sub-spaces together
+working on the ground floor. (3) The Secretary and Cleaner may
+with the different conceptions of placement in a way that is
+not be in the same room at the same time. (4) When travelling
+simple and yet very flexible and intuitive. The proposed
+through Room 1.A the Secretary has to navigate past a Table and
+framework operates only with resources. Whether a resource is
+Plant (obstacles). The Cleaner has to tend to the Table and Plant
+an obstacle is determined by a modifier that determines whether
+(resources). Here the Table and Plant possess dual roles. (5)
+a user can access the resource. Furthermore, the expression for
+Room 1.A has just been cleaned and the floors are slippery.
+ecapSG
+1 seRG
+2 seRG
+vnEG
+1 tnegAG
+2
+tnegAG
+etuoRG
+Graph Example
+VS
+PM
+ES
+M
+R1
+VR1
+PM
+ER1
+M
+Union
+VR2
+PM
+ER2
+M
+R2
+R1
+VPM EM R2
+A1 VA1
+pM
+EA1
+M
+Φ
+A2
+VA2
+pM
+EA2
+M
+A1 A2 R1
+V’ PM E’ M R2
+tnemnorivnE
+metsyS
+tnegA-itluM
+etuoR
+ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume III-4, 2016
+XXIII ISPRS Congress, 12–19 July 2016, Prague, Czech Republic
+This contribution has been peer-reviewed. The double-blind peer-review was conducted on the basis of the full paper.
+doi:10.5194/isprsannals-III-4-89-2016 95ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, Volume III-4, 2016
+XXIII ISPRS Congress, 12–19 July 2016, Prague, Czech Republic
+navigating around a resource (obstacle) is determined by the Spaces, Spatial Information Theory. 11th International
+dominant placement of the resource. Conference, COSIT 2013, Scarborough, UK, September 2-6,
+2013. Proceedings, Vol. 8116, LNCS. pp. 14-32
+The great benefit of the model is that it’s scalable and permits the
+real time addition and removal of entities. Future work will Kruminaite, M. and S. Zlatanova, 2014. Indoor Space
+identify the various forms of agents, resources, and modifiers. Subdivision for Indoor Navigation. ISA'14, Proceedings of the
+Importantly work will be done in determining rules for designing Six ACM SIGSPATIAL International Workshop on Indoor
+the optimising function  when searching for optimal routes Spatial Awareness, pp. 25–31.
+within indoor environments.
+Louwsma, J., S. Zlatanova, R van Lammeren, and P. van
+Oosterom, 2006. Specifications and implementations of
+6.1 References
+constraints in GIS, In: GeoInformatica, Vol. 10(4). pp. 531-550
+Afyouni, I., Ray, C., and Claramunt, C. 2012. Spatial models for
+Mayhew, R., 2011, Geography’s Genealogies, in Agnew and
+context-aware indoor navigation systems: A survey, Journal of
+Livingstone (Eds.) The SAGA handbook of Geographical
+Spatial Information Science, Number 4 (2012), 85–123.
+knowledge, SAGE, Los Angeles, pp. 21-38
+Chen, D. L., and Mooney R. J., 2011. Learning to interpret
+Moeser, S. D., 1988. Cognitive mapping in a complex building.
+natural language navigation instructions from observations.
+Environment and Behavior 20(1). pp 21-49.
+Learning to interpret natural language navigation instructions
+from observations. In Association for the Advancement of
+Pullar D.V., Egenhofer, M.J., 1988. Toward the definition and
+Artificial Intelligence (AAAI), pp 128–135, Cambridge, MA.
+use of topological relations among spatial objects. In Proc. Third
+Int. Symp. on Spatial Data Handling, pp. 225–242.
+Clementini, E, 2013. Directional relations and frames of
+reference. GeoInformatica, 17(2). pp 235-255
+Raubal, M. and S. Winter, 2002, Enriching wayfinding
+instructions with local landmarks. Geographic information
+Coventry, K. R., A. Cangelosi, R. Rajapakse, A. Bacon, S.
+science, LNCS, Springer, pp. 243-259
+Newstead, D. Joyce, L. V. Richards, 2005. Spatial Prepositions
+and Vague Quantifiers: Implementing the Functional Geometric
+Retz-Schmidt, G., 1988. Various views on spatial prepositions,
+Framework, Spatial Cognition IV. Reasoning, Action,
+AI magazine, 9(2), pp. 95-105
+Interaction, Vol. 3343, Lecture Notes in Computer Science pp.
+98-110 Richter, K-F., 2013, Prospects and challenges of landmarks in
+navigation services. In Cognitive and Linguistic Aspects of
+Egenhofer MJ, Herring JR, 1991. Categorising topological
+Geographic Space, pages 83–97. Springer, 2013.
+relations between regions, lines and points in geographic
+databases, in: Egenhofer MJ and Herring IR (Eds.), A Framework Van der Hoek, W., and Wooldridge, M, 2008. Multi-agent
+for the Definition of Topological Relationships and an Approach systems. Foundations of Artificial Intelligence 3, pp 887-928.
+to Spatial Reasoning within this Framework, Santa Barbara, CA.
+pp 1–28 Yang, Y., and M. Worboys, 2005, Generation of navigation
+graphs for indoor space, International Journal of Geographical
+Frank, A.U., 1998. Formal models for cognition—taxonomy of Information Science, 29 (10) pp. 1737-1756
+spatial location description and frames of reference, Spatial
+Cognition, LNCS, Springer, pp. 293-312 Xu, D. and S. Zlatanova, 2013. An approach to develop 3D
+GeoDBMS topological operators by reducing existing 2D
+Goetz, M., and Zipf, A. 2011. Formal definition of a useradaptive operators, ISPRS Annals – Volume II-2/W1, 2013, WG II/2, 8th
+and length-optimal routing graph for complex indoor 3D GeoInfo Conference & ISPRS WG II/2 Workshop,
+environments. Geo-Spatial Information Science, 14(2), 119-128 November 2013, Istanbul, Turkey. pp. 291–298
+Hightower, J., 2003. From Position to Place. Proceedings of the Zlatanova, S., 2000. On 3D topological relationships, In:
+2003 Workshop on Location-Aware Computing. Fifth Proceedings of the 11th International Workshop on Database
+International Conference on Ubiquitous Computing, October 12- and Expert System Applications (DEXA 2000), 6-8 September,
+15, 2003, Greenwich, London, UK. pp. 913-919
+Jung, H. and Lee, J.: Indoor subspacing to implement Zlatanova, S., Liu, L., and Sithole, G., 2013. A conceptual
+IndoorGML for indoor navigation, Int. Arch. Photogramm. framework of space subdivision for indoor navigation. In The ISA
+Remote Sens. Spatial Inf. Sci., XL-2/W4, 25-27. '13 Proceedings of the Fifth ACM SIGSPATIAL International
+Workshop on Indoor Spatial Awareness, ACM, NY, USA, pp.
+Kanz, W, 2010, The mathematics of GIS, Department of
+37-41.
+Geography and Regional Research, University of Vienna,
+Vienna, Austria. Zlatanova, S., L. Liu, G. Sithole, J. Zhao and F. Mortari, 2014,
+Space subdivision for indoor applications, GISt Report, nr. 66,
+Khan, A. A. and Kolbe, T. H., 2013, Subspacing, based on
+Delft, 2014 50 p.
+connected opening spaces and for different ocomotion types
+using geometric and graph-based representation in multi-layered
+space-event model (MLSEM), ISPRS Ann. Photogramm. Remote
+Sens. Spatial Inf. Sci., II-2/W1, 173-185.
+Kray, C., H. Fritze, T. Fechner, A. Schwering, R. Li, V. Joy
+Anact, 2013. Transitional Spaces: Between Indoor and Outdoor
+This contribution has been peer-reviewed. The double-blind peer-review was conducted on the basis of the full paper.
+doi:10.5194/isprsannals-III-4-89-2016 96

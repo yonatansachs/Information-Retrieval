@@ -1,0 +1,626 @@
+2013 International Conference on Signal-Image Technology & Internet-Based Systems
+SmARTweet: A Location-based smart application
+for Exhibits and Museums
+Angelo Chianese, Fiammetta Marulli, Vincenzo Moscato and Francesco Piccialli
+Department of electrical engineering and information technologies
+University of Naples “Federico II”, Italy
+Email:{angchian,fiammetta.marulli,vmoscato,francesco.piccialli}@unina.it
+Abstract—Inthispaper,wepresent”SmARTweet”,aLocation- and more, can communicate. Exchanged and produced data
+basedapplicationdevelopedwithinDATABENC,ahightechnol-
+can be opportunely exploited by a set of applications in order
+ogy district for Cultural Heritage management. In particular,
+to make the system “smart”, and from a more general point
+theprojectaimsatexploitingseverallocation-basedservicesand
+technologies to realize a smart multimedia guide system able to of view, the social network can be seen as composed of a set
+detecttheclosestartworkstoanuser,makethemableto”tweet” of Single Smart Spaces - S3 (indoor museums, archeological
+and ”talk” during tourists’ visit and capable of automatically sites, old town center, etc...), each needing particular ICT
+tellingtheirstoriesusingmultimediafacilities.Moreover,wehave
+infrastructuresandservicesthattransformthephysicalspaces
+deployed and tested the installation of some sensors that, using
+into useful smart environments [1]. In this context, one of the
+Wi-Fitechnology,allowtotheusers’mobiledevicestodetectthe
+closestartworkinamuseumenvironment.Onceanartworkhas most important issue is to design location-based applications
+beendetected,therelatedidentifierisretrievedandamultimedia that can assist tourists, visitors and citizens in the contextual
+storyisdeliveredtouserbymeansofpropermultimediadelivery navigation of an indoor S3, for example automatically de-
+and user-profiling techniques, in order to facilitate and make
+livering to users multimedia contents related to the museum
+morestimulatingthevisit.Theartworksdetectionwasperformed
+artworks on the base of their positions. In this paper, we
+by a localization algorithm that we designed and tested in our
+laboratory rooms. As case of study, we show an example of describe an ongoing project developed within DATABENC 1,
+”tweeting and talking artworks” as a location-based application aHighTechnologyDistrictforCulturalHeritagemanagement
+ofasculptures’artexhibitionwithintheMaschioAngioinocastle, recently funded by Regione Campania (Italy). In particular,
+in Naples - Italy.
+the entire project exploits the Internet of Things technologies
+Keywords-Smart museum guide; location-based systems; Cul- in order to make the artworks of a museum exhibition able
+tural Heritage; to ”tweet” and ”talk” during users’ visit and capable of
+automaticallytellingtheirstoryusingmultimediafacilitiesand
+I. INTRODUCTION
+stored users profiles. Moreover, we have deployed and tested,
+The adoption of Future Internet (FI) technology, and in inanindoorenvironment,theinstallationofsomesensorsthat,
+particular of its most challenging components like the In- using Wi-Fi technology, allow to the users’ mobile devices
+ternet of Things (IoT) and the Internet of Services (IoS), to detect the closest artwork. Once an artwork has been
+can constitute the basic building blocks to progress towards detected, the related identifier is retrieved and a multimedia
+unified ICT platforms for a variety of applications within the story is delivered to user by means of proper multimedia
+large framework of smart cities. In addition, recent issues deliveryanduser-profilingtechniques,inordertofacilitateand
+on participatory sensing, where everyday mobile devices like make more stimulating the visit. The artworks detection was
+cellularphonesforminteractive,participatorysensornetworks performedbymeansofan”ad-hoc”localizationalgorithmthat
+enabling public and professional users to gather, analyse and wedesigned andtested in our laboratoryrooms. In particular,
+sharelocalknowledge,seemstofitthesmartnessrequirements thisalgorithmisabletodetect,withhighaccuracy,theclosest
+of a city in which also people have to play an active role. artworktoavisitor,exploitingtheRSSIoftheinstalledWi-Fi
+Eventually, cloud computing technologies provides a natural sensors.Finally,weshowanexampleof”tweetingandtalking
+infrastructure to support smart services. One of the fields artworks” as a location-based application of a sculptures’ art
+that can take great advantages of such technologies is the exhibition within the Maschio Angioino castle, in Naples -
+Cultural Heritage one. Indeed, Cultural Heritage represents Italy.
+a worldwide resource of inestimable value and such a value
+The paper is organized as follows: Section II illustrates a
+gains more and more importance when embedded into the
+motivating example, while Section III describes the architec-
+digital ecosystem of a smart city, where persons (citizens,
+ture of the realized system. Section IV outlines the main fea-
+tourists, etc.) and objects (buildings, rooms, artefacts, etc.)
+tures of the location-based application, on which we focused
+equipped with appropriate devices (GPS, smart-phone, video
+ourattention.SectionVconsistsofabriefliteratureoverview
+cameras, sensors, RFID and QR Code tags, etc.) constitute a
+particular social network in which all the mentioned entities, 1www.databenc.it
+978-1-4799-3211-5/13 $31.00 © 2013 IEEE 408
+DOI 10.1109/SITIS.2013.73of technologies similar to those provided by our platform described,ataglance,ascomposedofthefollowingelements:
+Section VI provides a case study with some implementation
+details and several preliminary experimental results. Finally, • A Wi-Fi network infrastructure, covering the whole
+Section VII reports some conclusions and the possible future
+exhibit/museum area. Each artwork is anchored to its
+work.
+own sensor and is enabled to generate a network signal.
+In order to deploy the proposed system, we designed a
+II. MOTIVATINGEXAMPLE
+modular architecture composed of pluggable elements,
+To better understand motivations behind our work, it is
+such enabling the easy substitution of the Wi-Fi SAPs
+important to analyze the kind of relation that exists between
+withaWirelessSensorNetworkInfrastructureandBlue-
+the exhibition and the visitors of a museum: the purpose of
+tooth trans-receivers, directly pluggable on the artworks.
+the visitor is to see and learn more and not to explicitly
+Each artwork sensor generates a Wi-Fi network signal
+use the technology. For these reasons and to better appraise
+that will be detected by users mobile devices, equipped
+and promote the museum heritage, it should be preferable to
+with the SmARTweet application. To overcome the prob-
+provide exhibition objects with the capability of telling their
+lem of different Wi-Fi signals overlapping, a two phase
+story, rather than to wait that users require in first person
+indoor localization algorithm was designed to run in the
+(throughmultimediaguides)moreinformationaboutanobject,
+SmARTweet application environment, to establish which
+as per usual in the majority of smart museum scenarios. In
+is the artwork closest to the user. Although many and
+addition, it should be useful for a user to receive a set of
+well-assessed indoor localization solutions are available
+suggestions, strongly based on his preferences, for navigating
+fromliterature,wedesignedanad-hocindoorlocalization
+the physical space in terms of browsing activities. To this
+system because our operating context (art exhibitions
+aim, we see the opportunity of using a profiling system as a
+and museums) needed of light-weight algorithms to be
+key element to orchestrate user fruition in the physical space,
+executed on a mobile device in very short times.
+whiletakingtheburdenofacquiringandprocessingtheneeded
+contextual information from surrounding smart sensors.
+As motivating example, we can consider the case of a tourist
+visiting an art exhibition within Maschio Angioino castle, in
+Naples (Italy). The cultural environment offers, by a Wi-FI
+connection, a web-based access to a multimedia collection
+containing: digital reproductions of sculptures by Francesco
+Jerace and other minor artists, educational videos, audio
+guides,textualandhypermediadocumentswithdescriptionof
+authorsandsculptures.Inordertomaketheuser’sexperience
+more interesting and stimulating, the access to information
+should be automatically delivered and customized based on
+thespecificprofileofavisitor,whichincludeslearningneeds,
+level of expertise and personal preferences, on user effective
+location in the museum, on the sculpture “similarity” and on
+Fig.1. Systemoverview.
+information about the context in terms of number of persons
+for each room, room fitness, network performances, etc.
+• SmARTweet guide application, currently developed to
+We can image a situation in which the tourist is walking
+run over the Android platforms, with the following fea-
+withinagivenexhibitionroomthroughseveralsculpturesand
+tures:
+whenheisparticularlyclosetooneofthem,itsmobiledevice
+detecteditthankstotheWiFisensorplacedonthatsculpture. – allowing users to access into the exhibit/museum
+Oncetheobjectshasbeendetectedbytheusermobiledevice, network, in order to enabling the communication
+it begin to talk about itself, its sculptor, its story and its process;
+statususingmultimediafacilitiesandstronglyconsideringuser – detecting the Wi-Fi signals of the users’ closest
+preferences (e.g. only text and images data). artworks ;
+In this way, a “static” art exhibition is able to transform itself – running the localization algorithm to establish the
+into a “dynamic” one and the talking artworks surround the closest artwork to each user;
+visitor in a place are now “animated.” Thanks to the delivery – enabling the winning artwork related multimedia
+strategy supported by the WiFi sensors, our system is finally contents retrieval and presentation, exploiting com-
+capable of enhancing the user visit satisfaction. munication with the Gateway Server and the Multi-
+media Content Server modules, and supporting con-
+III. SYSTEMARCHITECTURE tents delivery and fruition processes.
+Tweeting museum metaphor is supported by a multitier Aquestionnaireispreliminarilysubmittedtousers,when
+system whose architecture is shown in figure 1 and can be theydownloadthemobileapplication,inordertocapture
+409his/herprofile(e.g.favoriteartworks,artists,subjects,and applications [10]. In a smart museum scenario, localization
+kinds of multimedia) and the device features. of visitors devices is used to decide when and which type
+• The Gateway Server (GS) hosts a set of daemon pro- of fruition is more suitable for the visitor, meshed-up with
+cesses able to filter and gather information coming from his stored profiling information. Many and well assessed
+users devices. Each process manages the communication are the approaches to indoor positioning [11], as in WSN
+with a given user sensor. When users devices are near (WirelessSensorNetworks)domain.Inoursystem,weadopta
+an object, the localization algorithm starts. It terminates typicalrange-basedlocalizationexploitingtheReceivedSignal
+establishing the winning network, corresponding to the Strength Indicator (RSSI). This choice is supported by the
+artworkdetectedastheclosestone,oursmartapplication adequate precision of measurements obtained and it’s not
+starts a handshake phase with the Gateway Server, to required special or too invasive hardware. Our application
+communicate the network identifier of the winning art- scenario requires a discrete accuracy, since localization is
+work. When it is notified on the related stream, the GS aimed to identify the proximity of an artwork to the visitor
+forwardsarequestforcontentstotheMultimediaContent and not to detect a punctual visitor position. The designed
+Server, containing information identifying the requested localization algorithm makes use of Wi-Fi communication
+artwork contents and the device to which contents have technologies, exploits a topology built with a set of fixed
+tobedelivered.Allinformationaboutcommunicationbe- sensors(anchors)placedoneachartworksbasement,commu-
+tweenusersandartifactsareproperlystoredindedicated nicating with mobile sensors that are represented by visitors’
+logs. devices. Interaction paradigm is of pull-type; users’ device
+• The Multimedia Content Server (MCS) accepts a re- application scans for active networks periodically, in order to
+quest for contents from the GS, manages a multimedia start the localization phase.
+repository, builds a multimedia story exploiting user Details of this step are described as follows and it is
+preferencesandanappropriaterecommendationstrategy, composed of two parts:
+andfinallydeliversalltheinformationtotherelateduser 1) Wi-Fi Networks Discovery
+mobile App. 2) Winning Wi-Fi Network Declaration
+IV. FROMLOCALIZATIONTOUSERPREFERRED
+1)Wi-FiNetworksDiscovery: itisperformedbyasoftware
+TWEETINGARTWORK
+module composed of a set of daemon processes running
+Our approach meshes up indoor localization strategies,
+on users’ device that manages a periodical scanning process
+contents adaptation and recommendation techniques, in order
+aimed to seek for all the Wi-Fi networks sensed from users
+to support the ”tweeting” artworks metaphor. In particular,
+location. Museum Wi-Fi environment was scanned choosing
+starting from a preliminary phase of users profiling, we want
+an appropriate sampling time, obtained as the result of a
+to enable the artworks to tweet and talk, when they are
+tuning activity measurements, collected during experiments
+recommended as the most meaningful or interesting for a
+performedinourlaboratoriesandsimulatingamuseumrooms
+visitor, according to his preferences analysis and when he is
+topology and artworks placement. Our experiments assessed
+inside their surrounding area. When we mention the concepts
+the value of 2 seconds as the most suitable value to set as the
+of ”tweet and ”talk”, we mean the particular capability of an
+consideredWi-FiNetworkenvironmentsampletime.Thisrep-
+artwork automatic telling their story to the visotirs, through
+resents the starting default value, but it can be the differently
+multimedia content such as tailored audio stories, photos and
+modulatedaccordingtovariableconditions(visitors’behavior,
+videos; all through the sensor placed on it and the installed
+e.g, user is running or device is put in pockets). It was
+user smartphone App. The stories narrated by the artworks
+implemented,intheprototypalversion,usingtheEnvironment
+are generated by means of Natural Language Generation StateVirtualSensorAndroidlibrary2,thatallowsrecognition
+techniques, in particular by using our customized version
+of environmental scenarios in which an Android device can
+of the NaturalOWL engine, a project developed in [16]. To
+be found. The basic scenarios types are:
+make more interesting and amazing an art exhibition, so
+The basic scenarios types are:
+keeping high users attention levels and encouraging dynamic
+• Motion States detection (MotionLess, car, walk, run)
+recommendations among the users, we propose a tweeting
+• Noise States detection (Noise environment, Noiseless
+exhibit/museum model, in which artworks start to ”tweet” to
+environment)
+the visitors, only when they are next to the them (they stand
+• Proximity States detection (Boxed or Unboxed)
+inside their surrounding area) and when they are recognized
+• RingerMode detection (SilencedMode, NormalMode)
+as friends of users.
+A. User Localitazion Strategy Output produced by this step of the localization algorithm is
+a list of active sensed Wi-Fi networks in proximity of users
+In this subsection the designed indoor localization strategy,
+device.
+adoptedtosupportcontents filteringanddeliveringprocesses,
+will be described. Localization of people and devices is
+recognizedasoneofthemainbuildingblockofcontextaware 2http://sourceforge.net/projects/environmentstat
+4102)WinningWi-FiNetworkDeclaration: thisgamingphase, max dbm *K
+}
+during which each network races to be the winner, represents
+where max dbm is the maximum dbm value between the
+the core of the localization algorithm. It takes as input, from
+scanned networks, and K is a normalization value suggested
+the Network Discovery module, the list of sensed Wi-Fi
+by the experimentations.
+Networks identifiers, corresponding to the list of artworks
+Our experiments were performed with omni-directional
+detectedinproximityofavisitor.Then,itstartsthecomputing
+trans-receivers; therefore, the proposed localization strategy
+process of RSSI values measured in correspondence of each
+acts in each artwork surrounding area, so identifying a disk
+networkinthelist,inordertoassessthewinningone.Sincewe
+coverage area.
+aimtocatchthevisitorsperspectiveandbehavior(theartwork
+he/shecouldbeinterestedwith)andnothispunctualposition, B. User profiling
+theadoptedcriteriaestablishesthatthewinningnetworkisthat Auserprofileisastructuredrepresentationofcharacteristics
+one associated to the minimum RSSI value. Such minimum of an user, in order to take into account his needs, goals,
+valueisestimatedcomputingaweightedaveragebymeansof and interests. It can be analyzed by using filtering techniques
+three succeeding measures of RSSI. Weights were computed that also provide recommendation to the users, to help them
+by running a calibration algorithm aimed to tune and refine navigating in the exhibition and retrieving most interesting
+the network infrastructure configuration. RSSI measurements information. The approach adopted in SmARTweet (SMart
+areconditioned,asknownfromliterature,bytheenvironments ARTwork Tweets) is based on the integration of data that
+in which they are performed. In this perspective, during our the system collects about users, both explicitly and implicitly,
+experiments, we observed that, more reliable and effective and a classical collaborative filtering technique in order to
+RSSI measurements were those sampled in succeeding time produce comprehensive profiles to assign to each user and
+instants and differing each other of very low quantities. If provide appropriate recommendations in any context during
+for three succeeding times we register a very similar value, a visit of a exhibit/museum. It is implemented by a software
+we can assess that the RSSI measure is reliable. Hence, the personalization module, the User Profile Engine (UPE) that
+deputed winner network is that one showing the minimum acquirespersonaldataofauser,processesthesedatatoobtain
+distancevalueamongitsthreesucceedingRSSIsamples. The additional information, and uses it to modify either content
+winning artwork in our localization strategy is represented aspects or navigation capabilities. The adopted profiling and
+by that one holding very near RSSI values at least for three recommendation strategy implemented by the UPE module is
+succeeding times. To this aim, an observation window holds explained in the following lines. To download and be enabled
+threesucceedingRSSIsamples,foreachnetworkappearingin to use the SmARTweet application, users have to fill in a
+the input list. Only networks having the observation window prelimirary registration form, used to create and assign them
+filled up, can races in the gaming phase; other ones are a profile. This form asks users for explicit information about
+discarded from this phase until they will collect again three their attitude to visit art exhibition and museum, in term
+succeeding samples. The details of the algorithm follows. of visits frequency and leading motivations of the visit and
+The application, running on the users device, owns a map of some typical information, as age, sex, graduation level and
+candidate networks. Each network is characterized by a SSID country.Profilingprocessisfurtherenrichedwithinformation
+(networkidentifier),asymbolicnetworkname(anamestring), comingfromusersbehaviortracking,performedautomatically
+and an Observation Window containing the actual sampling by the system. This tracking process is generally transparent
+instant RSSI value and the two previous time instants RSSI to the user and behaviors information are generally stored in
+samples.Thewinningnetworkisthatoneownstheminimum a log file. Legacy data provide a further rich source of profile
+RSSI value, estimated with a normalized weighted average information for known users. The generated user profiles and
+computed on the three RSSI samples. As a software entity, localization information are analyzed in order to recommend
+eachanchornetworkissocharacterizedasatriplecontaining: multimediacontentsorsuggestactionstotheuser.Rule-based
+andfilteringtechniques[13]arethebestknownforanalyzing
+Anchor Network Object=<SSID,
+profile data and making appropriate recommendations.
+SymbolicName, RSSI ObservationWindow>
+C. User ratings based recommendation strategy
+The RSSI ObservationWindow is implemented as a three
+elements vector, collecting three succeeding RSSI samples: UPE(UserProfileEngine),runningintheback-endsideand
+hostedintheMCS,worksasarecommendersystemproviding
+RSSI ObservationWindow=[RSSI Value(t k−2), personalized suggestions about artwork contents, evaluated as
+RSSI value(t k−1),RSSI value(t k)] interesting for users among the ones in the collection stored
+in the MCS database. The recommendations are generated on
+where t is the sampling time. The distance function
+k
+the basis of different types of ratings (human evaluations on
+adopted to compute the minimum RSSI values distance for
+items)thatthesystemgetsusinganalgorithmofcollaborative
+each anchor network follows:
+filtering, joining users sharing the same tastes. The ratings
+RSSI distance values=abs RSSI value(t k−1)-abs collectedbythesystemmaybebothimplicit[14]andexplicit.
+{
+[RSSI value(t ) ] / 10 + abs[RSSI value(t )] / InthecurrentversionoftheSmARTweetapplication,amixed
+k k
+} {
+411techniquebasedonimplicit/explicitratingisimplemented.We the artwork tweeting process. Once recommendation process
+only consider two types of events, and each one has been terminates, contents identified as the most suitable for the
+associatedwithaweightthathighlightstheimportanceofthat user, are retrieved and a communication stream between the
+event for collecting information about the user interests: MCS and the users’ device is opened. When winner network
+• selection and zooming actions of suggested items is established, visitors’ device, by the App functionalities,
+• search for specific contents by a browser included in the sends to the GS a request for contents, containing a couple
+application composed by the users’ device network IP Address and the
+Ifneitherexplicitnorimplicitratingsareavailable,acollab- winningartworknetworkidentifier.TheGSforwardsittothe
+orative filtering technique is used to predict user interests on MCS.BeforestartingtheUPEmodule,apreliminaryfiltering
+an cultural object that is not evaluated by taking into account based on localization information is performed. MCS hosts a
+the historical dataset on rates of a users community, stored networkmap,collectinglinksbetweentheWi-FinetworksIDs
+into a database of existing rating provided by other users. andtherelatedartworks.Oncethewinningartworkidentityis
+Such a database is a set of rates u , corresponding to the obtained,therecommendationprocessstarts,computingusers’
+i,j
+evaluation of user i on the item j. If I is the set of items on profile information and contents related only to the winning
+i
+which user i has expressed a rate, then its possible to define artwork.TheMCS,includingtheUPEmodule,isimplemented
+the average rate for user i as: asaJavaWebApplication,designedaccordingwiththeModel
+ViewController(MVC)pattern.Thecommunicationenabling
+u = 1 (cid:2) u thecontentsrequestanddeliveryprocessbetweenSmARTweet
+t |I i | j ∈I i i,j Application and the MCS is performed by servlets remote
+It is also possible to compute the evaluation of the current invocation.
+user(thesubscripta)basedoninformationonthecurrentuser
+andonasetofweightscalculatedfromtheuserdatabase.We V. RELATEDWORKS
+canassumethatthepredictedrateofcurrentuserexpectedfor In the last years, much access to cultural heritage digital
+item j, i.e. p a,j , is a weighted sum of rates of other users: presentationstookplaceonthehomepersonalcomputerorin
+virtual theaters, often far from the real cultural environment.
+p = u + k(cid:2)n w(a,i)(u u )
+a,j a i=1 i,j a Virtual museums and virtual reconstructions are examples of
+−
+where n is the number of user in the database with non such a usage model, where the user experience is confined
+zero weight. Weights w(a,i) can reflect distance, correlation, within the software application, in a decontextualized space.
+or similarity between each user i and the current user. k is According to this, the authors in [2] propose a system that
+a normalization factor such that the absolute values of the is based on temporal data from the museums databases,
+weights sum to unit. The expression that identifies the weight and provided the user with powerful data manipulation and
+w(a,i) which relates the current user a with user i is: graphical visualisation tools.
+The definition and implementation of location based sys-
+(cid:2) (u u )(u u )
+w(a,i) = j a,j − a i,j − i tems (LBS) able to support users in indoor environments like
+√(cid:2) j(u a,j −u a)2 −(cid:2) j(u i,j −u i)2 an art exhibition or a museum is an active and multidisci-
+plinary research field.
+where summations overj are calculated on all items which
+A current trend is to try to improve the cultural heritage
+have been evaluated by the users a and i.
+experiences by adopting new technologies that support the
+UPE stores individual user profiles, but also assigns the
+use of mobile devices (smartphone, tablets, etc..), nowadays
+users to a kind of stereotype [15], used to group users with
+widespread among the people [17]. Since smartphones and
+similar characteristics, and therefore to overcome situations
+wireless Internet connection became ubiquitous in the last
+in which an individual user profile is not yet complete. The
+years,locationbasedinteractionsupportedviatheWiFi,WSN
+recommendations provided to users belonging to a specific
+or Bluetooth identification became a standard methodology
+stereotype, are calculated using all ratings available for all
+for mobile phone usage, especially in the Cultural Heritage
+users belonging to that stereotype. In this way, UPE is able
+context,whereitisimportanttolocalizeavisitorwithrespect
+to provide recommendations, also to an user that has just
+to physical objects.
+registered, because in the registration form the user provided
+In this scenario, several works have been proposed aiming
+enough data to be assigned to a segment, and therefore the
+atexperimentthemostpromisingtechnologytolocalizeusers
+UPEisabletogive,asrecommendations,thoserelativetothe
+andtodeliverytothemthemostsuitablecustomizedcontents.
+segment the user belongs to. The recommendation module is
+In the following, we report a brief overview of some of these
+part of the UPE component, which manages the user profiles
+techniques.
+and computes the recommendations.
+Bihler et al. [4] developed a prototypical context-aware
+D. Tailored Contents Delivery museum guide based on Ultrasound Control where the smart-
+The whole recommendation process described in the previ- phone is able to recognize the exhibits by receiving a mod-
+oussectionistriggeredbythelocalizationsystemthatenables ulated ultrasonic signal, but in any museum an adaptation
+the recommended contents delivery process, in order to start of the used frequencies is necessary. The authors of [3]
+412proposed a network based ticket reservation system which is thatdisplaysthedeliveredandadaptedmultimediacontentsof
+a localization-based smartphone application with augmented the sculptures.
+reality. The authors of [5] introduced Personalized Location-
+based Traveler Recommender System that provides person-
+alized tourism information to its users. As the cities are
+filledwithhugebuildingsandnumerouslargestores areopen
+underground, most of the people spend most of their time
+indoors. Therefore, LBS should be available not only outdoor
+but also indoor. Developing outdoor LBS is much easier
+than developing indoor LBS (ILBS) because of GPS (Global
+PositioningSystem)andMapproviders(Google,forexample).
+Since we cannot use GPS or the map in ILBS development,
+researches on indoor positioning and floor map (or drawing)
+provideservice[6],[7]areactivelybeingperformed.Another
+point of view to build a location based smart guide in a mu-
+seumistotargetnotjustasingleuserbutalsoagroupvisiting Fig. 2. From left to right: A multimedia story proposed to a visitor in
+it. The Sotto voce [8] system is designed specifically with the sculpture surrounding area, a list of the proposed related images, the
+possibilitytoratethemultimediacontents.
+this goal providing a communication mechanism to support
+interaction. Finally, [1] reports an example of location-aware
+mobile devices that enable the development of multimedia A. Implementation Details
+interactive applications offering innovative experiences to end
+Wi-FisensorshavebeendeployedbyusingtheBeagleBone
+users. These kind of LBS apporaches often relies on different
+Black board, an open hardware product offered by Beagle-
+methodologies, in terms of content delivering, related to dif- Bone 3, but at the moment we have not terminated yet the
+ferentresearchareas,spanningfrommultimediarecommender
+deployment of the sensors within Maschio Angioino rooms.
+systems [18], [21] to user modeling systems [20], ontologies
+Moreover,weequippedtheseboardswithaBelkinN150micro
+andsemanticweb[19],context-awareapproaches[22]andso USBWirelessadapter(802.11b/g/n)4.Wehavechosenthis
+on.
+board after a careful market analysis; it’s a complete open
+According to users localization, sometimes the accuracy is
+hardware and software board with a very active community
+not so important while in many cases is more important a
+that support the users. We are currently redesigning the board
+system able to recognize boundaries and positioning a person
+inourlaboratories,inordertoeliminateunnecessaryhardware
+throughasymboliclocation(e.g.inthemainhallorinthefirst
+components on it and therefore reducing the size and power
+room).Severalmethodshavebeenproposedtosolvetheprob-
+consumption.
+lem using different media like infrared beacons [9] or radio
+TheGScomponenthasbeenimplementedbyseveralJAVA
+signalsfromwirelessLAN[10],[11]RFIDtechnology[12]to
+librariesexploitingmulti-threadingfacilities.Inaddition,com-
+detect user location. These location based applications create
+munication logs have been stored into a proper repository
+situations where users can experiment real-virtual contiguity
+managedbybythe NosqlDBMSCassandra.The MCScom-
+(therealexperienceandthedigitalexperienceareoverlapped)
+ponentexploitsad-hocJAVAlibrariestobuildthemultimedia
+andenhancedreality(themobiledevicestrengthensthequality
+story of a sculpture on the top of the multimedia collection
+of the real experience).
+managed by PostgreSQL DBMS and on the base of user
+preferences appositely captured and modeled as described in
+VI. ACASEOFSTUDY Section IV. Finally, a user can interact with our system using
+at the moment an Android MGA. The presentation logic is
+The aim of these experiments is to implement and test
+based on apposite widgets. The client requests are elaborated
+a location-based smart system through Wi-Fi based sensors
+byJAVAServletsandtheresultsaresenttotheclientinform
+and mobile devices, that will be able to guide and assist the
+of XML data.
+visitors, by exploiting the position of the artworks closest
+to them, within art exhibitions and museums. As depicted B. Localitazion Experiments
+in Section II, we use as real case study an art exhibition
+Inordertotesttheperformanceofthelocalizationalgorithm
+within the Maschio Angioino castle, in Naples (Italy). The
+in an indoor environment, we carried out a preliminary mea-
+multimedia collection is constituted by about 6000 images,
+surementcampaignonthefirstflooroftheDatabencResearch
+texts and audio files about sculptures of Francesco Jerace and
+Laboratory,inNaples(Italy).Wedeployed11sensornodesin
+other minor artists. Moreover, we developed, implemented
+our laboratory room, as shown in Figure 3, and tested the
+and tested the MGA on the Samsung Galaxy S3 Android
+localization strategy for 37 different positions of the mobile
+phone. Several localization experiments have been performed
+inourlaboratory,inordertovalidatethelocalizationalgorithm 3http://beagleboard.org
+embedded in the MGA. Figure 2 shows snapshots of our App 4http://www.belkin.com
+413device,inordertosimulateatouristvisitamongtheartworks TABLEI
+in a museum room. This laboratory room is a typical office MEASUREMENTCAMPAIGNRESULTS
+environmentwithoveralldimensionsofapproximately5mby
+8m.Thisisaharshenvironmentforwirelesscommunications Measure CorrectDetections WrongDetections %ofAccuracy
+becauseofmulti-pathreflectionsduetowallsandinterference M1 34 3 92
+M2 33 4 91
+due to electronic devices. Detecting the closest artwork to a
+M3 37 0 100
+visitor is a crucial step of the entire process because after its
+M4 35 2 95
+localization, the system will deliver the contents to its mobile M5 35 2 95
+device, according to its stored profile. M6 34 3 92
+M7 36 1 92
+M8 36 1 98
+M9 34 3 92
+M10 35 2 95
+insideitssurroundingartworkarea,morethanthe91%ofthe
+test cases. Additionally, we observed no significant effects of
+interference from other electric apparels in the office, such as
+others Wi-Fi access points and mobile telephones; we tested
+the algorithm with more than 25 people inside the room,
+each of them equipped with its mobile device and we did
+not observe significant variations in accuracy, also placing
+the majority of people near a specific sensor. Moreover, the
+estimated closest artwork was almost always detected and
+suggested to the user in less then 8 seconds. According to
+theseresults,wehaveconsideredanotherscenariowheresome
+artworksareparticularlyclosetoeachother;indetail,instead
+ofplacingasensoroneachobject,wehavedeployedanunique
+sensor for these group of artworks. In this case, on the user
+mobile device, the application will indicate the presence of
+an artworks group and therefore the visitor will be able to
+choose,lookingtheimagesonthedisplay,whichartworkhave
+to ”tweet” and ”talk”. These results encourage the usability
+of our localization strategy in a smart indoor environment
+where the location based services to be provided are not
+strictly connected with the exact position of a user but with
+its proximity to the cultural object, because of the presence
+Fig.3. Indoortestenvironmentwithselectedsensorpointsanduserpath.
+of many visitors in the same room, as we expected in an art
+exhibition.
+The algorithm, detailed in section IV, aims to localize the
+artworkclosesttothevisitor,whenheisinsideitssurrounding C. Recommendation strategy experiments
+area. When we talk about the ”surrounding area”, we express
+Location-based, recommender and user-profiling systems
+theconceptthatwearenotinterestedindiscoveringtheexact
+aregenerallycomplexapplicationsthatarebasedonacombi-
+position of an user, but identifying his presence inside the
+nation of several models, algorithms and heuristics. Recently,
+restricted area that surround the artwork. The experiments
+researchersbeganexaminingissuesrelatedtouserssubjective
+consisted in a set of measures between a sensor-point, that
+opinions and developing additional criteria to evaluate these
+represent the artwork, and a point of the laboratory map, that
+systems. In particular, when a recommender module is in-
+represent the visitor mobile device. Each measure collected
+tegrated in the system, they suggest that user’s satisfaction
+about 1000 RSS measurements, where every RSS measure-
+does not always (or, at least, not only) correlate with the
+ment was the average of 20 consecutively received samples.
+overall recommender’s accuracy and evaluation frameworks
+Samples were obtained by sending a beacon packet from the
+for measuring the perceived qualities of a recommender and
+sensor-point to the mobile at regular intervals, 25 times per
+for predicting user’s behavioral intentions as a result of these
+second. We received a total of over 18,500 samples for each
+qualities should be taken into account. In order to evaluate
+of the 37 positions of the mobile node. The accuracy with
+the impact of the system on the users we have conducted the
+11 Wi-Fi points used in the map is more than adequate for a
+following experiments. We asked a group of about 25 people
+proximity location based services system as shown in table I.
+(all medium experts in art) to visit a virtual reproduction of
+During the overall localization measurement, the algorithm is
+the exhibit (8 rooms containing the collection of sculptures)
+able to detect the proper artwork closest to the user, that is
+obtained by the Unity 3D framework and complete several
+414TABLEII REFERENCES
+COMPARISONBETWEENOURSYSTEMANDNOFACILITIES
+[1] F.Amato,A.Chianese,V.Moscato,A.Picariello,G.SperliSNOPS:a
+TaskClass Strategy ta (min) nr smart environment for cultural heritage applications, Proc. of the 12th
+Q1 Withoutanyhelp 6 4 Int.WorkshopsonWebInformationandDataManag.,pp.49-56,(2012).
+[2] Yu-LinChenandTing-ShengLaiandTakamiYasudaandShigekiYokoi
+Q1 OurSystem 4 2
+Amuseumexhibitssupportsystembasedonhistoryandcultureliteracy,
+Q2 Withoutanyhelp 8 5
+IJHAC,(6)pp.148-159,(2012).
+Q2 OurSystem 6 3
+[3] Kang,S.K.,Kang,H.K.,Kim,J.E.,Lee,H.,Lee,J.B.Astudyonthe
+Q3 Withoutanyhelp 16 6
+mobilecommunicationnetworkwithsmartphoneforbuildingoflocation
+Q4 OurSystem 10 4
+basedrealtimereservationsystem,InternationalJournalofMultimedia
+andUbiquitousEngineering,7(2),pp17-36(2012)
+[4] P.Bihler,P.Imhoff,A.B.Cremers:SmartGuide ASmartphoneMuseum
+GuidewithUltrasoundControl,ProcediaComputerScience5(2011)pp.
+browsing tasks (15 tasks per user) of different complexity
+586–592.
+(i.e. Low Complexity tasks - Q1, Medium Complexity tasks [5] Husain, W., Dih, L.Y. A framework of a Personalized Location-based
+- Q2, High Complexity tasks - Q3) without the help of our traveler recommendation system in mobile application, Intern. J. of
+MultimediaandUbiquitousEngineering,7(3),pp.11-18(2012)
+system. After this test, we asked them to browse once again
+[6] Chon, J., Cha, H. LifeMap: A smartphone-based context provider for
+the same collection with the assistance of our recommender location-basedservices,IEEEPerv.Comput.,10(2),pp.58-67(2011)
+system and complete other 15 different tasks of the same [7] GyeyoungL.,JaegeolY.AReviewoftheTechniquesforIndoorLocation
+basedService,Int.J.ofGridandDist.Comp.,5(1),(2012)
+complexity. Each task consists in exploring a certain number
+[8] Aoki, P.M., Grinter, R.E., Hurst, A., Szymanski, M.H., Thornton, J.D.,
+ofsculpturessatisfyingseveralconstraints.Thecomplexityof Woodruff, A. Sotto Voce: Exploring the interplay of conversation and
+a task depends on several factors: the number of objects to mobileaudiospaces,Proc.onHumanFactorsinComp.Sys.,4(1),pp.
+431-438(2002)
+explore,thetypeofdesiredfeatures(eitherloworhigh-level), [9] Moreno, M.V., Zamora, M.A., Santa, J., Skarmeta, A.F. An indoor
+and the number of constraints (genre, author, subject). localizationmechanismbasedonRFIDandIRdatainambientintelligent
+environments, Proceedings - 6th Int. Conf. on Innovative Mobile and
+A simple strategy has been used to evaluate the results of
+InternetServicesinUbiquitousComputing,IMIS2012,pp.805-810.
+thisexperiment:empiricalmeasurementsofaccesscomplexity [10] P. Barsocchi, F. Potorti ,P. Nepa Device-Free Indoor Localization for
+in terms of number of virtual rooms and time. In particular, AALApplications,MobiHealth2012,pp361-368
+[11] Barsocchi,P.,Chessa,S.,Ferro,E.,Furfari,F.,Potorti,F.Contextdriven
+we measured the following parameters: (i) Access Time (t )
+a enhancement of RSS-based localization systems, Proceedings - IEEE
+- the average time spent by the users to visit all the objects SymposiumonComputersandCommunications,pp.463-468(2012)
+for a given class of tasks; (ii) Number of Rooms (n ) - the [12] Ye, A., Ling, Y., Xu, L., Yang, X. An improved RFID-based local-
+r
+ization algorithm for wireless sensor networks International Journal of
+average number of visited virtual rooms necessary to visit all
+DistributedSensorNetworks(2013)
+therequestedobjectsforagivenclassoftasks.Table1reports [13] Schiaffino, S, and Amandi, A, Intelligent User Profiling, Artificial
+theaveragevaluesoft andn ,forbothwithoutandwiththe intelligence,pp193-216,(2009)
+a r
+[14] Claypool,M.,Le,P.,Waseda,M.,Brown,D.ImplicitInterestIndicator.
+helpofoursystem,foreachofthefourtaskcomplexitylevels
+Computer Science Technical Report Series, WPI Computer Science
+defined earlier. Department,Worcester,Massachussets,(2000).
+[15] E. Rich Stereotypes and user modeling, User Models in Dialogue
+Systems,Springer-Verlag,pp.35-51,(1989).
+[16] Galanis, D. and Androutsopoulos, I.: Generating multilingual descrip-
+VII. CONCLUSION tions from linguistically annotated OWL ontologies: The natural OWL
+system,Proc.ofthe11thEuropeanWorkshoponNLG,ENLG,(2007)
+[17] AmatoF.,ChianeseA.,MazzeoA.,MoscatoV.,PicarielloA.,Piccialli
+In this paper we proposed a novel location-based platform F.:TheTalkingMuseumProject,ProcediaComputerScienceVol.21,pp.
+for the Cultural Heritage domain. The system exploits the 114-121,(2013)
+[18] Bartolini I., Moscato V., Pensa R.G., Penta A., Picariello A., Sansone
+Internet of Things technologies in order to make objects
+C.,SapinoM.L.:RecommendingMultimediaObjectsinCulturalHeritage
+of a museum exhibition able to ”tweet” ”talk” during users Applications.Proc.ofICIAP2013,LNCSVol.8158,pp257-267,(2013)
+visit and capable of automatically telling their stories using [19] M.Albanese,A.Chianese,V,Moscato,A.Picariello,A.dAcierno:A
+MultimediaRecommenderIntegratingObjectFeaturesandUserBehav-
+multimedia facilities. In particular we customized the system
+ior,MTAP,vol.50,n.3,pp.563-585,(2010)
+for an indoor environment like temporary art exhibitions or [20] V.Moscato,A.Rinaldi,A.Picariello:Towardsauserbasedrecommen-
+museums, providing to tourists personalized contetnts. Then, dationstrategyfordigitalecosystems,Knowledge-BasedSystemsJournal,
+vol.37,pp.165-175,(2013)
+we investigated the effectiveness of the proposed approach
+[21] M. Albanese, A. dAcierno, V. Moscato, F. Persia, A. Picariello: A
+in the considered scenario, based on several parameters. Ex- MultimediaSemanticRecommenderSystemforCulturalHeritageAppli-
+perimental results showed that our approach is quite promis- cations,Proc.ofIEEEInternationalWorkshoponSemanticMultimedia
+Computinginconjunctionwith(ICSC2011),PaloAlto(CA,USA),(2011)
+ing, both in terms of artworks localization and in terms of
+[22] G. Boccignone, A. Chianese, V. Moscato, and A. Picariello: Context-
+content personalization delivering and therefore encourages sensitiveQueriesforImageRetrievalinDigitalLibraries,J.ofIntelligent
+further research. Future works will be devoted to complete InformationSystems,vol.31,pp.53-84,(2008)
+the redesign of the board sensor and to finish the deploy of
+theentiresysteminthenextmonthsandcollectmorecomplete
+and interesting experimental results about the real advantages
+of the proposed technology w.r.t to oher approaches, also
+consideringtherelatedcostandbenefits,forexampleinterms
+of power consumption and maintenance needs.
+415

@@ -1,0 +1,872 @@
+Co-designing Immersive and Inclusive Virtual 
+Museum with children and People with Disabilities: 
+a Pilot Study 
+ 
+Aldo Caldarelli 
+Educational Neurosciences                
+and Sports Lab - HERACLE 
+Niccolò Cusano University of Rome 
+Rome, Italy 
+aldo.caldarelli@unicusano.it 
+Michele Domenico Todino 
+Department Humanities, Philosophy 
+and Education 
+University of Salerno 
+Fisciano (SA), Italy 
+mtodino@unisa.it 
+Stefano di Tore 
+Department Humanities, Philosophy 
+and Education 
+University of Salerno 
+Fisciano (SA), Italy 
+sditore@unisa.it 
+Lucia Campitiello 
+Department Humanities, Philosophy 
+and Education 
+University of Salerno 
+Fisciano (SA), Italy 
+lcampitiello@unisa.it 
+Silvia Ceccacci 
+Department of Education, Cultural 
+Heritage and Tourism 
+University of Macerata 
+Macerata, Italy 
+silvia.ceccacci@unimc.it 
+Catia Giaconi 
+Department of Education, Cultural 
+Heritage and Tourism 
+University of Macerata 
+Macerata, Italy 
+catia.giacone@unimc.it  
+Abstract— Immersive virtual environments represent a 
+great opportunity for museums to enhance visitor experience 
+through edutainment. However, to provide an enjoyable 
+entertainment and learning experience for all visitors, including 
+people with disabilities, the virtual museum must not only be 
+accessible, but also inclusive: they must provide greater equality 
+and cultural and learning opportunities for all social groups. To 
+achieve this goal, the concept of Universal Design needs to evolve 
+into a user-centered approach where people are involved in co-
+designing the virtual museum experience. In this context, the 
+article describes a pilot study conducted at the University of 
+Macerata, which explores the possibility of using high-fidelity 
+prototyping in a virtual laboratory to support the co-creation of 
+an immersive virtual museum environment with relevant target 
+users, including children and people with disability, from the 
+earliest design stages. The paper presents the results of the co-
+design process and discusses its implications in defining design 
+requirements to ensure the accessibility of immersive solutions 
+for cultural heritage. 
+Keywords—Virtual Museum, Immersive Virtual Reality, 
+Inclusive education, Inclusive Museum 
+I. INTRODUCTION 
+In the last three decades, the emergence of what has been 
+called "new museology" [1] and the need to cope with 
+increasing competition in the so-called "experience economy" 
+[2] have led museum institutions to gradually, but radically, 
+transform their relations with society and communities: from 
+institutions focused on the preservation and research of 
+collections, they are gradually and partially evolving into 
+spaces of participation and co-creation of cultural messages 
+[3, 4]. Museums must not only fulfill their educational 
+mission, but also provide engaging and remarkable 
+experiences to attract as many visitors as possible, better meet 
+their needs and expectations, and increase their willingness to 
+revisit and recommend, thereby growing audiences and 
+increasing ticket sales and museum sustainability [5]. In other 
+words, today's museums must enhance the visitor experience 
+through 
+edutainment 
+(education 
+and 
+entertainment), 
+providing an authentic and memorable experience with 
+artifacts.  
+In this context, new eXtended Reality (XR) technologies 
+represent crucial tools for the promotion of exhibitions, 
+drastically changing the way they are conceived and 
+organized, and reach audiences. Immersive virtual reality 
+(VR) is playing an increasingly important role, as it allows 
+visitors to perceive virtual images of artifacts as authentic and 
+to obtain information about the collections in an entertaining 
+way [4]. In addition, it can improve museum accessibility by 
+allowing visitors to access inaccessible locations or objects 
+[6]. Numerous museums (e.g., British Museum, the Prado 
+Museum, the Vatican Museum) have adopted VR to provide 
+spectacular experiences for their visitors.  
+Based on the results of a recent study [3], immersive VR 
+with Head Mounted Display (HMD) seems to be the 
+technology of choice to maximize visitor interest and 
+satisfaction (especially young people) and create memorable 
+museum experiences that maximize Pine & Gilmore's 4Es 
+(i.e., education, entertainment, escapism, esthetics) [2]. 
+However, to ensure enjoyable edutainment experiences virtual 
+museums must be inclusive. This requires the design of virtual 
+environments in order to meet as many visitor requirements as 
+possible, including those with disabilities. To this end, several 
+research try to address this issue, starting from the application 
+of accessibility guidelines, e.g., WCAG 2.1 [7], or proposing 
+specific methods and tools to ensure accessibility for people 
+with disabilities (e.g., low vision [8], learning disabilities [9], 
+intellectual disabilities [10], autism [11]). Nevertheless, 
+museum inclusiveness does not depend only on physical 
+accessibility aspects, but also to the peculiarities of its users 
+[12, 13], so that to ensure virtual museum inclusiveness is a 
+rather difficult and complex task that must consider many 
+aspects. The challenge facing is to provide greater equality 
+and cultural and learning opportunities for all social groups, 
+from an inclusion perspective that aims to respond to the 
+complexity of society [14, 15].  
+To achieve this goal, the concept of Universal Design 
+(UD) [16] needs to evolve into a user-centered approach 
+where people can participate in designing an entertainment 
+and learning environment that simply meets their needs and 
+expectations so that they can use it efficiently [17]. Design 
+methods and processes are crucial for the effective 
+development of VR, to ensure inclusive virtual museum 
+experiences, and deserve further studies [18]. However, 
+research appears to agree that user-centered design (UCD) is 
+1972
+2022 International Conference on Computational Science and Computational Intelligence (CSCI)
+979-8-3503-2028-2/22/$31.00 ©2022 IEEE
+DOI 10.1109/CSCI58124.2022.00370
+
+the preferred approach for developing immersive solutions for 
+cultural heritage [19], as this approach also underlies design 
+for user empowerment [20]. So that, there is a call for more 
+studies to improve user-centered design practices, to ensure 
+that the virtual experiences are designed and developed upon 
+a full understanding of the needs, expectations and 
+requirements of visitors [18, 21]. 
+In this context, this research aims at exploiting the 
+possibility of using high-fidelity prototyping, within a virtual 
+lab, to enable co-design activities with people with disabilities 
+useful to support design requirement definition, to ensure the 
+accessibility of immersive solutions for cultural heritage. The 
+paper describes a pilot study carried out at the University of 
+Macerata to support the co-creation of an immersive virtual 
+museum environment with relevant target users, including 
+children and people with disabilities. 
+II. RESEARCH BACKGROUND 
+A. Accessibility criteria for an inclusive virtual museum 
+In general, accessibility issues that may arise in physical 
+museums overlap with those in the virtual museum. To be 
+considered inclusive, a museum must meet accessibility 
+requirements: it must ensure that access to its environments 
+and content is barrier-free [7]. Such barriers may be present at 
+the spatial, sensory, or intellectual level (e.g., uneven paths, 
+mono-sensory information, excessive complexity of language 
+used in descriptions). Over the years, several guidelines have 
+been developed, which provide several criteria about how to 
+improve museum access for people with learning disabilities 
+and intellectual disabilities. Based on a recent review, the 
+main guidelines currently available (i.e., [22], [23], [24], [25]) 
+manly provide criteria that can be clustered into three 
+categories [26]: Orientation and Guidance, addresses the 
+design and presentation of the exhibit and the need for a 
+guidance system; Exhibits, concerns exhibits feature 
+and  presentation; Content, provides information about how 
+the text can be presented to the target audience to promote 
+better understanding. Most of them can be directly applied 
+also for the construction of virtual museums. However, coping 
+with these criteria does not ensure immersive virtual museum 
+accessibility. In fact, although immersive VR offers new 
+opportunities to include people with disabilities and make 
+museums more accessible, it also presents some problems. For 
+example, interaction in immersive VR, mainly based on head 
+movement and the use of a controller for each hand, requires 
+more physical dexterity than regular controllers or keyboards 
+[27], and can be a huge barrier for people with motor 
+disabilities. Using HMD can be impossible not only for blind 
+people, but also for visually impaired people with unequal 
+vision in one eye or stereo blindness [28], given that it is 
+usually impossible to wear glasses under the HMD. Moreover, 
+moving 
+within 
+the 
+virtual 
+environment 
+can 
+cause 
+cybersickness and disorientation [29]. This requires affording 
+further accessibility criteria. 
+As far as we know, there are no specific guidelines for 
+improving the accessibility of immersive virtual museums. 
+Notwithstanding, a recent study [30] provides a review of 
+accessibility guidelines available for immersive VR games, 
+which can be applied to ensure the accessibility of any VR 
+application. They mainly refer to two sources: XR 
+Accessibility User Requirements [27], published by APA 
+Working Group of W3C, and the Oculus VRCs “Accessibility 
+Requirements” [31], which provides recommendations to 
+make Oculus VR apps more accessible. 
+B. Methods to support the design of inclusive museum 
+Design methods and processes are crucial for the effective 
+development of VR, to ensure inclusive virtual museum 
+experiences, and deserve further studies [18]. However, 
+several researches [18, 19, 32, 33] agree that UCD represents 
+the approach of choice for the development of immersive 
+solutions in line with the principles of UD [34], to mediate and 
+support cultural heritage experiences, so as to empower users 
+[20]. 
+Based on standard ISO 9241-210:2010, a proper UCD 
+process is characterized by the following 4 iterative steps [35]: 
+a) identification of users’ needs and establishment of 
+requirements for design; b) development of alternative 
+solutions to meet such needs; c) building of interactive 
+prototypes which can be communicated and assessed; d) 
+evaluation of what is being built throughout the process and 
+of the user experience it offers. Over the years, several 
+methods have been proposed to support UCD practices to 
+better consider the dynamic nature of users abilities [36]. For 
+example, User Sensitive Inclusive Design [37] and Ability-
+based Design [38] have been introduced in the context of ICT 
+products to support the design team in developing empathy for 
+people with disabilities and promote the development of 
+adaptable interfaces based on user needs. However, there is 
+still a call for more studies to improve user-centered design 
+practices, to ensure that the virtual experiences are designed 
+and developed upon a full understanding of the needs, 
+expectations, and requirements of museum visitors [18, 21]. 
+Co-design approaches seem to be fundamental to integrate 
+multiple perspectives related to lived experiences, which is 
+extremely important when designing with people with 
+different abilities [39]. However, traditional techniques have 
+problems related to the difficulty of communication with 
+people with disabilities, who are often approached through 
+“proxy” people (e.g., parents, teachers, caregivers), with 
+consequent unequal power relations related issues [40]. 
+III. PILOT STUDY 
+This study was conducted with the aim of exploring the 
+use of virtual prototyping in the co-design of an immersive 
+and inclusive virtual museum environment with people with 
+specific learning disorders and mild intellectual disability. Co-
+design activities were carried out according to the method 
+described below. 
+A. The proposed method 
+The proposed method is characterized by two phases: 
+a) Construction of an adaptable and immersive virtual 
+co-design 
+environment. 
+This 
+phase 
+involved 
+a 
+multidisciplinary design team, including experts in: UX 
+design, special pedagogy and Easy-to-Read language, virtual 
+reality application design, art history, learning disabilities and 
+intellectual disabilities. The design activities were carried out 
+iteratively, with the goal of developing an initial concept of 
+an immersive virtual museum environment that complies 
+with the accessibility guidelines shown in Table 1. This 
+environment represents the starting concept that was used to 
+conduct subsequent co-design activities with end users. The 
+virtual environment used for the research was developed in 
+Unity 3D (https://unity.com/). It consists of a floor plan 
+1973
+
+including several rooms,  decorated with polychrome marble 
+and Ionic-style columns, through which an exhibition of 
+archeological findings takes place.  
+The asset used for the findings are digital copies of finds, 
+part of the collections of the National Archaeological Museum 
+of Sannio Caudino in Benevento and the Archaeological 
+Museum of Carife in the province of Avellino, realized using 
+a high-fidelity 3D color scanner (i.e., EinScan Color Pack 
+[41]). 
+The environment is completed by some monitors and 
+posters used to provide multimodal information of the 
+exhibit. The starting adaptable features include:  
+x 
+Adjustment of environment light exposure and color 
+temperature (Figure 1); 
+x 
+Adjustment of the focus level, through the setting of 
+vignetting effects (Figure 2), which allow the width 
+of the field of view to be narrowed; 
+x 
+Possibility to choose between different museum 
+guide modalities: text descriptions with highly 
+readable fonts (i.e., OpenDyslexic) or audio / video 
+guide that repeats slavishly the text of the 
+description, which can be turned on/off by the user 
+through a dedicated button (Figure 3). 
+x 
+Possibility to navigate the environment with mouse 
+and keyboard, with a gamepad or by teleporting to 
+the location and then exploring the surrounding 
+space within a range of 2 meters, with natural 
+movements (i.e., walking). 
+TABLE I. DESIGN CRITERIA TO ENSURE ACCESSIBILITY OF IMMERSIVE 
+VIRTUAL MUSEUM 
+Exhibits 
+- Generous room design  
+- Call for action 
+- Enough space between exhibits 
+- 360° view of some exhibits  
+- Economical use of effects 
+- Easy to handle 
+- Use of different media 
+- Movies in simplified language 
+Content 
+- Easy-to-read information 
+- High-contrast layout 
+- Big font 
+- Text-to-speech system available 
+- Visualization with pictorial language 
+- Information material should be colorfully illustrated 
+Access to VR  
+application 
+- Enable people to edit brightness of their display 
+- Provide customized high contrast skins for the environment to 
+suit luminosity and color contrast requirements 
+- Allow multiple input methods to be used at the same time 
+- Applications should support multiple locomotion style 
+- Ensure fine motion control is not needed to activate an input 
+- Ensure field of view in immersive environments, are 
+appropriate, and can be personalized - so users are not 
+disorientated 
+- Avoid VR simulation sickness triggers 
+ 
+b) Iterative co-design and testing sessions: Co-design 
+activities have been carried out at the virtual laboratory of the 
+Research center of Teaching and learning, Inclusion, 
+Disability, and Educational Technology (TIncTEC) of 
+University of Macerata. They lasted three days, and involved 
+a total of 30 people: 10 children (5 aged 6-10, 5 aged 11-13), 
+5 teenagers aged 14-19, 15 adults (5 aged 20-25, 5 aged 30-
+39, 5 aged 40-59). At least 2 people with disabilities were 
+included for each age group, including: specific learning 
+disorders, 
+intellectual 
+disability, 
+Attention-
+Deficit/Hyperactivity 
+Disorder, 
+high-functional 
+autism 
+(HFA) and physical disability. Participants were divided into 
+six groups of equal size (5 subjects each) and similar people 
+characteristics. Each group took part in co-design activities in 
+consecutive design iteration stages, so that their design 
+contributions have been used to improve the design solution 
+following an incremental process. 
+Each group, one user at a time, has been asked to interact 
+with the environment. During the interaction, they were 
+encouraged to describe their experience with the virtual 
+museum environment through semi-structured interviews 
+designed to assess the users' opinion about the features, so as 
+to highlight its strengths and limitations. 
+ 
+FIG. 1. EXAMPLE OF LIGHT CONFIGURATION OF THE FIRST VERSION OF THE 
+VIRTUAL MUSEUM ENVIRONMENT. 
+ 
+FIG.2. EXAMPLE OF VIGNETTING EFFECT. 
+ 
+FIG. 3. EXAMPLE OF EXHIBITION DISPLAY: THE DIGITAL MODEL OF AN 
+ARCHAEOLOGICAL ARTIFACT, DESCRIPTIVE TEXT, AND THE SCREEN FOR 
+VIEWING THE VIDEO GUIDE.  
+1974
+
+The tool used to allow navigation within virtual reality 
+consists of a headset Oculus Quest 2 [42] equipped with two 
+multifunction controllers. The headset is connected to a PC 
+workstation running the Unity application in the “game view” 
+modality using a usb cable. This enables environment co-
+design, through the possibility of implementing some 
+environment design adjustment in very short time (in the order 
+of a few minutes). The subjective view of the environment 
+visualized by the user through the headset is simultaneously 
+shown on a large screen inside the laboratory room that allows 
+the co-design team to monitor the activity of the users during 
+the immersive experience and at the same time acts as a video 
+source to be screen-captured, to record a video of the user 
+interaction with the environment. Based on the results of each 
+co-design session, the virtual museum features are updated as 
+difficulties of use are encountered, in order to achieve the 
+greatest possible accessibility and user experience. 
+B. Results 
+Six versions of the software have been developed. Table II 
+shows the main features (on the row) implemented by the 
+various versions of the virtual museum software application 
+(on the columns). 
+ 
+TABLE II. PROTOTYPE VERSIONS. MAIN FEATURES. 
+ 
+PROTOTYPE VERSIONS 
+FEATURES 
+V1 
+V2 
+V3 
+V4 
+V5 
+V6 
+V7 
+Adaptable camera exposure 
+X 
+X 
+X 
+X 
+X 
+X 
+X 
+Personalized light temperature 
+X 
+X 
+X 
+X 
+X 
+X 
+X 
+Focus level adjustment 
+X 
+X 
+X 
+X 
+X 
+X 
+X 
+Multimodal museum guide 
+X 
+X 
+X 
+X 
+X 
+X 
+X 
+Multimodal environment navigation 
+X 
+X 
+X 
+X 
+X 
+X 
+X 
+Video description 
+ 
+X 
+X 
+X 
+X 
+X 
+X 
+Adding of Keyboard control 
+ 
+X 
+X 
+X 
+X 
+X 
+X 
+Reduction of environment dimension 
+(One room per time) 
+ 
+X 
+X 
+X 
+X 
+X 
+X 
+Room decoration improvements 
+ 
+ 
+X 
+X 
+X 
+X 
+X 
+Start/stop of audio/video descrition by 
+proximity 
+ 
+ 
+X 
+ 
+ 
+ 
+ 
+Start/stop of audio/video descrition by 
+button 
+ 
+ 
+ 
+X 
+X 
+X 
+X 
+Possibility to choose the font of 
+textual descriptions 
+ 
+ 
+ 
+X 
+X 
+X 
+X 
+Improvement of keyboard controls 
+ 
+ 
+ 
+ 
+ 
+X 
+X 
+Improvement of exhibition positions 
+ 
+ 
+ 
+ 
+X 
+ 
+X 
+Play mode option 
+(Oculus/Gamepad) 
+ 
+ 
+ 
+ 
+ 
+X 
+X 
+Visualization of keyboard legenda 
+ 
+ 
+ 
+ 
+ 
+X 
+X 
+ 
+ 
+During the preliminary steps of co-design with people with 
+intellectual disabilities, it was necessary to modify and 
+implement the interaction interfaces created into the virtual 
+environment to increase both usability and interactivity. As a 
+result, the second version included the possibility to control 
+movement within the virtual environment even by mouse and 
+keyboard. Moreover, to reduce cognitive load, the exhibition 
+path was reduced as well, so that the user can explore one 
+room at a time (in the first version the exhibition route takes 
+place along three rooms). 
+In the third revision, improvements were made to the 
+decoration elements of the environment   (e.g., the reflectivity 
+of the floor was reduced, to better simulate a marble covering). 
+In addition, starting and stopping audio descriptions based on 
+the user's proximity to the artifact that is the subject of the 
+audio description was incorporated. 
+This feature was later dropped in the fourth version, in 
+favor of a start and stop control that requires user input (i.e., 
+pushing a highly visible red button located near the exhibit). 
+The possibility to choose between several fonts in addition to 
+the OpenDyslexic was also added (i.e., the serif font Times 
+New Roman and a sans-serif font Arial). 
+ 
+FIGURE 4. THE THIRD PROTOTYPE VERSION. 
+The 
+fifth 
+revision 
+of 
+the 
+software 
+introduced 
+improvements related to the placement of artifacts within the 
+virtual environment, and in the sixth revision, keyboard 
+navigability was enriched by displaying an explanatory 
+legend. In addition, the ability to navigate the environment by 
+means of a gamepad was added. 
+ 
+FIGURE 4. THE SEVENTH PROTOTYPE VERSION. 
+Finally, to further reduce cognitive load,  facilitating an 
+overall view of the exhibition, in the seventh and final revision 
+(Figure 6) the architectural appearance of the room was 
+changed: the columns originally arranged to delimit the room 
+in three sections were placed as decoration on the walls.  
+1975
+
+IV. CONCLUSION 
+In recent years a number of studies have been conducted 
+on the use of immersive technologies in museum education, 
+demonstrating how virtual reality can increase multisensory 
+engagement and enhance the visitor experience within 
+museums [43, 44, 45, 46]. Although the potential of 
+immersive technologies has not been fully explored, they 
+could be considered a valuable tool for creating inclusive 
+educational experiences aimed at fostering the teaching-
+learning process of cultural heritage  [47]. In this regard, the 
+following research aims at the realization of a virtual museum 
+developed with the Unity 3D graphics engine that includes 
+high definition digital copies of real archaeological finds. A 
+pilot study was conducted involving children and people with 
+disabilities in the co-design of the virtual environment, in 
+order to ensure an accessible and inclusive virtual museum 
+experience. Future research perspectives will be aimed at 
+investigating other possible configurations in the co-design 
+process that could be effective in creating an inclusive 
+environment during the museum experience. However, the 
+results of this study may have a broader impact, as it provides 
+new insights and guidelines for improving the accessibility of 
+immersive virtual environments, with the goal of enabling 
+people, to the maximum extent possible, to visit cities and 
+natural environments otherwise inaccessible to most people 
+(e.g., underwater depths, mountaintops), so as to enhance the 
+accessibility of video games exploiting immersive VR. Future 
+studies should be conducted to evaluate the usefulness of the 
+proposed co-design process in supporting the development of 
+accessible virtual environments in other application contexts. 
+ACKNOWLEDGMENT 
+We thank Vincenzo Zuccaro, director of the National 
+Archaeological Museum of Sannio Caudino in Benevento and 
+Flavio Castaldo, director of the Archaeological Museum of 
+Carife for making digital copies of part of their collections 
+available. 
+REFERENCES 
+[1] 
+Vergo, P. (1989).  New Museology, Reaktion books, London. 
+[2] 
+Pine B.J., & Gilmore, J. H. (1998). Welcome to the experience 
+economy. Harvard business review, 76(4), 97-106. 
+[3] 
+Leopardi, A., Ceccacci, S., Mengoni, M., Naspetti, S., Gambelli, D., 
+Ozturk, E., & Zanoli, R. (2021). X-reality technologies for museums: 
+a comparative evaluation based on presence and visitors experience 
+through user studies. Journal of Cultural Heritage, 47, 188-198. Doi: 
+https://doi.org/10.1016/j.culher.2020.10.005. 
+[4] 
+Lee, H., Jung, T. H., tom Dieck, M. C., & Chung, N. (2020). 
+Experiencing immersive virtual reality in museums. Information & 
+Management, 
+57(5), 
+103229. 
+Doi: 
+https://doi.org/10.1016/j.im.2019.103229. 
+[5] 
+Radder, L., & Han, X. (2015). An examination of the museum 
+experience based on Pine and Gilmore's experience economy realms. 
+Journal of Applied Business Research (JABR), 31(2), 455-470. Doi: 
+https://doi.org/10.19030/jabr.v31i2.9129. 
+[6] 
+Jung, T., & Michopoulou, E. (2019). Experiencing virtual reality in 
+heritage attractions: Perceptions of elderly users. In Augmented Reality 
+and Virtual Reality (pp. 89-98). Springer, Cham. Doi: , 
+https://doi.org/10.1007/978-3-030-06246-0_7.  
+[7] 
+Rojas, H., Renteria, R., Acosta, E., Arévalo, H., & Pilares, M. (2020, 
+October). Application of accessibility guidelines in a virtual museum. 
+In 2020 3rd International Conference of Inclusive Technology and 
+Education 
+(CONTIE) 
+(pp. 
+73-79). 
+IEEE. 
+Doi: 
+https://doi.org/10.1109/CONTIE51334.2020.00022. 
+[8] 
+Zhao, Y., Cutrell, E., Holz, C., Morris, M. R., Ofek, E., & Wilson, A. 
+D. (2019, May). SeeingVR: A set of tools to make virtual reality more 
+accessible to people with low vision. In Proceedings of the 2019 CHI 
+conference on human factors in computing systems (pp. 1-14). Doi: 
+https://doi.org/10.1145/3290605.3300341. 
+[9] Münch, L., Heuer, T., Schiering, I., & Müller, S. V. (2022). 
+Accessibility Criteria for an Inclusive Museum for People with 
+Learning Disabilities: A Review. In International Conference on 
+Human-Computer Interaction (pp. 371-385). Springer, Cham. 
+[10] Bushra, A., Mahmood, O., & Yousef, A. (2021). The learning disabled 
+students and incorporating the virtual museum: Analysis study. Doi:  
+[11] Garzotto, F., Matarazzo, V., Messina, N., Gelsomini, M., & Riva, C. 
+(2018, October). Improving museum accessibility through storytelling 
+in wearable immersive virtual reality. In 2018 3rd Digital Heritage 
+International Congress (DigitalHERITAGE) held jointly with 2018 
+24th International Conference on Virtual Systems & Multimedia 
+(VSMM 
+2018) 
+(pp. 
+1-8). 
+IEEE. 
+Doi: 
+https://doi.org/10.1109/DigitalHeritage. 2018.8810097. 
+[12] Giaconi, C., Rodrigues, B. (2014) Organization of Time and Space for 
+the Inclusion of Subjects with Autism. Educação & Realidade 39 (3): 
+687–705. Doi: https://doi.org/10.1590/S2175-62362014000300004. 
+[13] Giaconi, C., Ascenzi, A., Del Bianco, N., D'Angelo, I., & Capellini, S. 
+A. (2021). Virtual and Augmented Reality for the Cultural 
+Accessibility of People with Autism Spectrum Disorders: A Pilot 
+Study. International Journal of the Inclusive Museum, 14(1). Doi: 
+https://doi.org/10.18848/1835-2014/CGP/v14i01/95-106. 
+[14] Carrara, E. (2014) Verso un museo inclusivo: presupposti e prospettive 
+in risposta al cambiamento sociale” [Toward an Inclusive Museum: 
+Assumptions and Perspectives in Response to Social Change]. IL 
+Capitale Culturale: Studies on the Value of Cultural Heritage 9:169–
+188. Doi: https://doi.org/10.13138/2039-2362/811. 
+[15] Muscarà, M., Sani, C. (2019) Accessibility to Cultural Heritage, some 
+project outcomes. Education Sciences & Society-Open Access, 10(1): 
+244-280. Doi:  
+[16] Persson, H., Åhman, H., Yngling, A. A., & Gulliksen, J. (2014). 
+Universal design, inclusive design, accessible design, design for all: 
+different concepts—one goal? On the concept of accessibility—
+historical, methodological and philosophical aspects. Universal Access 
+in 
+the 
+Information 
+Society, 
+14(4), 
+505–526. 
+Doi: 
+https://link.springer.com/ article/10.1007/S10209-014-0358-Z. 
+[17] Giaconi, C., Del Bianco, N., D'Angelo, I., Halwany, S., & Capellini, S. 
+A. (2021). Cultural accessibility of people with Intellectual disabilities: 
+A pilot study in Italy. International Journal of Special Education and 
+Information Technologies, 7(1), 16-26. Doi: https://doi.org/10.18844/ 
+jeset.v7i1.7013. 
+[18] Marasco, A., & Balbi, B. (2019). Designing accessible experiences for 
+heritage visitors through virtual reality. E-review of Tourism Research, 
+17(3). 
+[19] Balbi, B., & Marasco, A. (2021). Co-designing Cultural Heritage 
+Experiences for All with Virtual Reality: a Scenario-Based Design 
+approach. 
+Umanistica 
+Digitale, 
+(11), 
+71-98. 
+Doi: 
+http://doi.org/10.6092/issn.2532-8816/1368671. 
+[20] Ladner, Richard E. 2015. “Design for user empowerment”. Interactions 
+22(2): 24-29. https://doi.org/10.1145/2723869. 
+[21] Han, D. I. D. & tom Dieck, M. C. (2019). Calling for user-centric VR 
+design research in hospitality and tourism. Hospitality & Society, 9(2), 
+237-246. Doi: https://doi.org/10.1386/hosp.9.2.237_7. 
+[22] Deutsches Seminar für Tourismus Berlin e.V. (DSFT): Reisen für Alle 
+– Qualitätskriterien: Anforderungen für Menschen mit kognitiven 
+Beeinträchtigungen [Travel for everyone – Quality criteria: 
+Requirements for people with cognitive impairments] (2020). 
+https://www.reisen-fuer-
+alle.de/qualitaetskriterien_fuer_menschen_mit_kognitiven_beeintraec
+htigungen_329.htm 
+[23] Interreg CENTRAL EUROPE. COME-IN! GUIDELINES (2019). 
+http://www.central2020.eu/Content.Node/COME-IN/COME-IN-
+Guidelines-FINAL-English-version.pdf 
+[24] Landesverband der Museen zu Berlin e.V. (LMB) & Senatskanzlei 
+Berlin – Kulturelle Angelegenheiten. DESIGN FOR ALL - 
+Barrierefreie Ausstellungen in Berlin – Checkliste Verstehen 
+[DESIGN FOR ALL – Barrier-free exhibitions in Berlin – Understand 
+checklist] 
+(2011). 
+https://neu.lmb.museum/wp-
+content/uploads/2021/04/04-checkliste-verstehen.pdf 
+[25] Deutscher Museumsbund (DMB): Das inklusive Museum – Ein 
+Leitfaden zu Barrierefreiheit und Inklusion [The inclusive museum – 
+A 
+guideline 
+to 
+accessibility 
+and 
+inclusion] 
+(2013). 
+1976
+
+https://www.museumsbund.de/wp-content/uploads/2017/03/dmb-
+barrierefreiheit-digital-160728.pdf 
+[26] Münch, L., Heuer, T., Schiering, I., & Müller, S. V. (2022). 
+Accessibility Criteria for an Inclusive Museum for People with 
+Learning Disabilities: A Review. In International Conference on 
+Human-Computer 
+Interaction 
+(pp. 
+371-385). 
+Doi: 
+https://doi.org/10.1007/978-3-031-05039-8_27. 
+[27] W3C (2020). XR Accessibility User Requirements. Available at: 
+https://www.w3.org/TR/xaur/ (Accessed October 17, 2022). 
+[28] Hamilton, I. (2018). A Practitioner Reflection on Accessibility in 
+Virtual Reality Environments. Comput. Game J. 7, 63–74. Doi: 
+https://doi.org/10.1007/s40869-018-0061-z. 
+[29] Wang, X., Liang, X., Yao, J., Wang, T., & Feng, J. (2021). A study of 
+the use of virtual reality headsets in Chinese adolescents with 
+intellectual disability. International Journal of Developmental 
+Disabilities, 
+1-9. 
+Doi: 
+https://doi.org/10.1080/20473869.2021.1970938. 
+[30] Heilemann, F., Zimmermann, G., & Münster, P. (2021). Accessibility 
+guidelines for VR games-A comparison and synthesis of a 
+comprehensive set. Frontiers in Virtual Reality, 119. Doi: 
+https://doi.org/10.3389/frvir.2021.697504. 
+[31] Oculus (2020). Quest Virtual Reality Check (VRC) Guidelines. 
+Available at: https://developer.oculus.com/distribute/publish-quest-
+req/ (Accessed October 17, 2022). 
+[32] Beltrán, M. E., Ursa, Y., de los Rios, S., Cabrera-Umpiérrez, M.F., 
+Arredondo, M.T., Páramo, M., Prados, B., Pérez, L.M. (2014) 
+Engaging people with cultural heritage: Users’ perspective”. In 
+Universal Access in Human-Computer Interaction. Universal Access 
+to Information and Knowledgeedited by Constantine Stephanidis, 
+Margherita 
+Antona, 
+639-649, 
+Springer, 
+Cham. 
+Doi: 
+https://doi.org/10.1007/978-3-319-07440-5_58 
+[33] Bettelli, A., Orso, V., Pluchino, P., Gamberini, L. (2019) An enriched 
+visit to the botanical garden: co-designing tools and contents. In 
+Proceedings of the 13thBiannual Conference of the Italian SIGCHI 
+Chapter: 
+Designing 
+the 
+next 
+interaction, 
+1-5. 
+Doi: 
+https://doi.org/10.1145/3351995.3352034. 
+[34] Story, M. F., J. L. Mueller, and R. L. Mace, The Universal Design File: 
+Designing for People of All Ages and Abilities, Raleigh, N.C.: Center 
+for Universal Design, North Carolina State University, 1998. 
+[35] Ceccacci, S., Generosi, A., Giraldi, L., & Mengoni, M. (2017, 
+September). An user-centered approach to design smart systems for 
+people with dementia. In 2017 IEEE 7th International Conference on 
+Consumer Electronics-Berlin (ICCE-Berlin), pp. 273-278. 
+[36] Ceccacci, S., Giraldi, L., & Mengoni, M. (2017, July). A Systematic 
+Approach to Support Conceptual Design of Inclusive Products. In 
+International Conference on Universal Access in Human-Computer 
+Interaction (pp. 43-55). Springer, Cham. 
+[37] Wobbrock, J. et al., 2011. Ability-based design: Concept, principles 
+and examples. ACM Transactions on Accessible Computing 
+(TACCESS), Vol. 3, No. 3, pp. 1-36. 
+[38] Newell, A. F. & Gregor, P., 2000. User Sensitive Inclusive Design – in 
+search of a new paradigm. A.C.M. Conference on Universal Usability, 
+Washington, DC Nov. 2000, pp. 39-44. 
+[39] Harris, M. C., Brown, D. J., Vyas, P., & Lewis, J. (2022). A 
+methodology for the co-design of shared VR environments with people 
+with intellectual disabilities: Insights from the preparation phase. In 
+International Conference on Human-Computer Interaction (pp. 217-
+230). Springer, Cham. 
+[40] Raman, S., & French, T. (2021). Enabling genuine participation in co-
+design with young people with learning disabilities. CoDesign, 1-17. 
+[41] Einscan 
+Color 
+scanner. 
+https://www.einscan.com/handheld-3d-
+scanner/color-pack (Accessed October 17, 2022) 
+[42] Oculus Quest 2. https://www.meta.com/it/quest/products/quest-2/ 
+(Accessed October 17, 2022) 
+[43] De Simone, G., Di Tore, S., Maffei, S., Sibilio, M., & Todino, M. D. 
+(2017). L’utilizzo di tecnologie head-mounted display a supporto della 
+didattica attraverso ambienti di apprendimento virtuali in contesti non 
+formali. Italian Journal Of Educational Research, 165-176. 
+[44] Coppola, S., & Zanazzi, S. (2020). L’esperienza dell’arte. Il ruolo delle 
+tecnologie immersive nella didattica museale. FORMAZIONE & 
+INSEGNAMENTO. Rivista internazionale di Scienze dell'educazione 
+e della formazione, 18(2), 036-049. Doi: https://doi.org/10.7346/-fei-
+XVIII-02-20_04   
+[45] Rossi, D., Meschini, A., Feriozzi, R., & Olivieri, A. (2018). Cose 
+dell’altro mondo. La realtà virtuale immersiva per il patrimonio 
+culturale. Ambienti digitali per l’educazione all’arte e al patrimonio, 
+240-256. 
+[46] Carci, G., Caforio, A., & Gamper, C. (2019). Digital technologies and 
+museums: augmented reality, learning and audience development. 
+Form@ re-Open Journal per la formazione in rete, 19(1), 274-286 
+.DOI: https://doi.org/10.13128/formare-24619 
+[47] Todino, M. D., Campitiello, L., & Di Tore, S. (2022). The Use of 
+Archaeological Finds to Realize Digital Assets Through 3D Scanning: 
+From Presence to Distance in Museum Education. International Journal 
+of Digital Literacy and Digital Competence (IJDLDC), 13(2), 1-13. 
+ 
+1977
+

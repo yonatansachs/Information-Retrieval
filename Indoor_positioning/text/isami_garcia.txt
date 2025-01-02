@@ -1,0 +1,305 @@
+ARTIZT: Applying Ambient Intelligence to a
+Museum Guide Scenario
+Oscar García, Ricardo S. Alonso, Fabio Guevara, David Sancho,
+Miguel Sánchez, and Javier Bajo*
+Abstract. Museum guides present a great opportunity where the Ambient Intelli-
+gence (AmI) paradigm can be successfully applied. Together with pervasive com-
+puting, context and location awareness are the AmI features that allow users to
+receive customized information in a transparent way. In this sense, Real-Time Lo-
+cating Systems (RTLS) can improve context-awareness in AmI-based systems.
+This paper presents ARTIZT, an innovative AmI-based museum guide system
+where a novel RTLS based on the ZigBee protocol provides highly precise users’
+position information. Thus, it can be customized the content offered to the users
+without their explicit interaction, as well as the granularity level provided by the
+system.
+Keywords: Ambient Intelligence, museum guide, context-aware, location-aware,
+Real Time Locating Systems, ZigBee.
+Oscar García
+School of Telecommunications, University of Valladolid, Paseo de Belén 15,
+47011 Valladolid, Spain
+e-mail: oscgar@tel.uva.es
+Ricardo S. Alonso
+Department of Computer Science and Automatic, University of Salamanca,
+Plaza de la Merced, s/n, 37008, Salamanca, Spain
+e-mail: ralorin@usal.es
+Fabio Guevara · David Sancho
+Nebusens, S.L. R&D Department, Parque Científico de la USAL, Edificio M2,
+Calle Adaja s/n, 37185, Villamayor, Salamanca, Spain
+e-mail: {fabio.guevara,david.sancho}@nebusens.com
+Miguel Sánchez · Javier Bajo
+Pontifical University of Salamanca, C/ Compañía 5, 37002, Salamanca, Spain
+e-mail: jbajope@upsa.es
+P. Novais et al. (Eds.): Ambient Intelligence - Software and Applications, AISC 92, pp. 173–180.
+springerlink.com © Springer-Verlag Berlin Heidelberg 2011174 O. García et al.
+1 Introduction
+Ambient Intelligence (AmI) systems have to take into consideration the context in
+which they are used. That is, they must have context-awareness properties and
+adapt their behavior without the need of users to make an explicit decision or in-
+teract with them, allowing applications to be more usable and efficient [1]. People,
+places and objects are recognized as the three main entities when dealing
+with Ambient Intelligence [2]. The place where the user is and the objects that sur-
+round him determine the behavior of the system, thus obtaining in a natural way
+personalized, adaptive and immersive applications.
+Mobile devices, such as smart phones, PDAs or tablets, offer a wide range of
+possibilities to create new AmI-based systems. One important feature of these de-
+vices is the ability to know their position, which includes the location of users
+themselves and any other object that is part of the environment [2]. However, the
+use of these devices on context-aware applications requires locating them more
+precisely. In this sense, Real-Time Locating Systems (RTLS) acquire a great
+importance in order to improve the applications based on the knowledge of the
+relative position of each user or object at any time.
+One of the areas of interest where AmI becomes more relevant is Museum
+Guides applications [3]. Museum scenarios are environments where users receive
+a wealth of information from many sources. New information and communication
+technologies facilitate that the characteristics and related information about art-
+works can be offered in a more understandable, attractive and easy way to visitors.
+In this sense, the context information becomes relevant in order to personalize the
+experience for every user at every moment [4]. Thus, RTLS are presented as a
+resource that greatly improves context-awareness in AmI applications as these
+systems provide the position of every static or dynamic object that interacts
+throughout the scenario. There are different technologies that can be used when
+designing and deploying an RTLS, such as Global Positioning System (GPS) [5],
+Infrared (IR) Pointing Systems [6], Passive and Active Radio-Frequency Identifi-
+cation (RFID) [7], Wireless Local Area Networks (WLANs) [8] or Near Field
+Communication (NFC) [9].
+There are several works that use RTLS to enhance the visitors experience in
+museums [8,10]. The ultimate goal of all these approaches is to find an association
+between the visitors and the art-work they are looking at a particular time. How-
+ever, most of these solutions require a strong interaction between the visitors and
+the technology. That is, visitors must be close enough to the art-work to be de-
+tected, even bringing their devices to a particular object or waiting for other visi-
+tors to finish their interaction. Furthermore, these approaches do not provide
+enough accuracy to customize information with a high granularity level.
+This paper describes ARTIZT, an innovative museum guide system in which
+visitors use tablets to receive personalized information and interact with the rest of
+the elements in the environment. An RTLS based on ZigBee is proposed in order
+to improve context-awareness. This system achieves a location precision of less
+than one meter. Thus, ARTIZT knows at every time how customized content must
+be shown to the visitors, based on the area on which they are located. This way,ARTIZT: Applying Ambient Intelligence to a Museum Guide Scenario 175
+visitors can naturally walk throughout the museum receiving relevant information
+as they get closer to each art-work. With this approach, every art-work, zone or
+important detail of the museum can be contextualized.
+The rest of the paper is structured as follows: Section 2 presents existing mu-
+seum guide works, as well as the shortcomings that motivate the development of a
+new system. Then, Section 3 describes the basic components of ARTIZT, includ-
+ing the most important locating and context management technologies involved on
+it and how they are used. Finally, conclusions and future work are depicted.
+2 Problem Description and Related Work
+In recent years, ongoing advances in technology and communications have al-
+lowed people to be surrounded by mobile devices. These devices are increasingly
+powerful, easy-to-use and capable of communicating with each other in more in-
+novative ways. These capabilities allow the creation of Ambient Intelligence sys-
+tems: users' mobility is guaranteed and they are, day by day, more accustomed to
+the use of technology for any task.
+A museum scenario is an ideal environment where AmI can improve the way
+the information is offered to visitors. AmI features encourage the creation of new
+museums guide approaches where information is presented in a natural, personal-
+ized and attractive way to users with a better human-machine interaction. This
+way, as art-works are usually statically placed in the environment, the main goal is
+how to detect where visitors are. If we can determine, as precisely as possible, the
+position of the visitor inside the museum, we will be able to know the entire
+context that surrounds him every time.
+Multiple technologies can be used in order to determine the position of the visi-
+tors. The ultimate goal of knowing the positioning of the visitors is to provide in-
+formation, as accurate as possible, about the art-works they are watching. In this
+sense, tagging the context and the use of RTLS are two widely used alternatives
+[11]. Next, it is analyzed the most used technologies in both trends.
+When talking about RTLS, the first technology that comes into our mind is
+GPS. It has been used in context-aware tourist guides where users receive person-
+alized information according to their position [12]. However, it only works out-
+doors and it is not an appropriate technology to develop an indoor museum guide.
+Some approaches try to solve indoor locating problem using combined technolo-
+gies along GPS. Cyberguide [5] determines the users’ position by means of infra-
+red sensors. However, it is needed a direct line of sight between user and sensors,
+so it does not work properly in crowded environments. Exploring the use of infra-
+red sensors, the HIPPIE system delivers information about the location of user in
+relation to an object [6]. Visitors point the art-work (which is provided with an in-
+frared detector) and the system knows where they are and provides the content.
+Nevertheless, this solution requires a proactive user and, as mentioned before, di-
+rect line of sight and proximity between user and object. The action performed by
+the user when pointing the object (e.g., an art-work) is physically the same as is
+done in solutions that use RFID [7] or NFC technologies [9]. Both technologies176 O. García et al.
+follow the same pattern of performance: each object all over the museum is
+tagged. RFID or NFC tags, containing a unique identification number, are placed
+near the object. If visitors want to receive information about an art-work, they
+have to place their device nearby the tag. Then, the system identifies the object
+and loads the relevant information. The necessity of proximity between devices
+and tags makes these solutions non-transparent to the user as it requires a direct
+collaboration. Moreover, if multiple users want to see the information about the
+same art-work, they must do it one by one at each time. Bluetooth solves the peer-
+to-peer relation between RFID tags and users [14]. The Eghemon system uses
+mobile phones that receive information via Bluetooth as users get closer to a piece
+of information (e.g., an art-work). These pieces can offer information to multiple
+devices simultaneously, but they must be close enough to them. If two pieces are
+close enough, the mobile device can only receive information from just one of
+them. Bluetooth can also be used to improve the devices locating. Bruns et al.
+have designed a solution where a grid of Bluetooth emitters is deployed through-
+out the museum, so the visitors’ mobile phones transmit their position to the
+nearest emitter [10]. However, location is not as accurate as desirable, because the
+system only knows which mobile phones are associated to an emitter. Further-
+more, Bluetooth can only support the association of up to seven mobile phones
+simultaneously to an emitter. The UbiCicero system [14] uses Active RFID to get
+the position of the users. In this case, users carry an RFID reader that continuously
+reads signals from active tags that are close to art-works. Active RFID technology
+allows a better locating approach because users do not have to be as close as with
+passive RFID technology to detect the object. However, location information is
+not precise enough because the system only detects which art-work is closer the
+users, so two objects that are close enough can cause interference and “confuse”
+the system. It is also possible to locate mobile devices that provide information on
+the museum via Wireless LANs. In this case, multiple Wireless LANs are created,
+usually one network for each different zone. When visitors change from a zone to
+another, devices automatically connect to an available network through which
+contents are provided [8]. This solution presents several problems: different cov-
+erage areas must not be overlapped; locating provides a poor precision (never gets
+precision under 2 meters); and infrastructure deployment is a hard process since it
+is needed a thorough calibration of all devices [13].
+As can be seen along this section, there are many approaches that have been
+considered to create museum guides. Analyzing all of them, two ways of tackling
+the problem can be identified. The first one is the direct physical interaction
+between the visitor and the art-work. The second one consists of obtaining infor-
+mation without having a voluntary interaction by the visitor, where the system
+automatically provides information depending on visitors’ location. ARTIZT
+follows the second approach. The main objective is to make interaction as trans-
+parent as possible to visitors. For doing that, it is very important that context in-
+formation is precise enough. This way, an accurate location of visitors is the most
+important aspect of this approach. Therefore, it is easy to know which elements
+(i.e., art-work) surround each visitor, no matter several of these elements are
+separated by a short distance between them. Thus, it is possible to get a wholeARTIZT: Applying Ambient Intelligence to a Museum Guide Scenario 177
+description of the context that surrounds each visitor in a more precise way. Based
+on the context information, the content provided to the visitors changes dynami-
+cally. Next section describes the basic features of ARTIZT and the way it works.
+3 ARTIZT: Ambient Intelligence Real-Time Locating System
+Museum GuIde Over Zigbee Technology
+The AmI paradigm proposes the development of applications that provide new
+ways of interaction between people and technology, adapting them to the needs of
+individuals and their environment [2]. ARTIZT (Ambient intelligence Real-Time
+locating system museum guIde over Zigbee Technology) follows these premises
+and offers personalized contents to the visitors in a transparent way according to
+the context information.
+The potential of ARTIZT lies in the precision with which contextual informa-
+tion can be collected. In this sense, an innovative RTLS provides the system with
+users’ positions with an error less than one meter, so it can be determined at any
+time which art-works are on the visitors' radio of interest, thus adapting precisely
+the information that it is provided to each user.
+3.1 The Real-Time Locating System
+The RTLS used is by ARTIZT is based on the novel n-Core platform [15], which
+is intended to develop ZigBee applications and provides both wireless physical
+devices and an Application Programming Interface (API) to access their function-
+alities. A network of ZigBee devices must be deployed all over the museum. This
+network is composed of a set of Sirius A (Figure 1 left) and Sirius Dongle devices
+(Figure 1 right). The Sirius A devices are placed across the ceiling of the museum
+(Figure 2), forming a network in which it is known the specific location of each
+one, as well as the relative positions with each of its neighbors (i.e., closest
+devices). The Sirius Dongle devices are inserted in tablet PCs that are carried by
+the visitors. This way, the visitors can move freely through the museum.
+Fig. 1 Sirius A (left) and Sirius Dongle (right) devices
+All devices communicate via the ZigBee standard. ZigBee is a low cost, low
+power consumption wireless communication standard, developed by the ZigBee
+Alliance. It is based on the IEEE 802.15.4 protocol and operates at the178 O. García et al.
+868/915MHz and 2.4GHz unlicensed bands. ZigBee is designed to be embedded
+in consumer electronics, home and building automation or toys and games.
+ZigBee allows star, tree or mesh topologies. Devices can be configured to
+act as network coordinator (creates and controls the network) router
+(sends/receives/forwards data to/from other devices) and end device
+(sends/receives data to/from other devices in the network).
+Over this network infrastructure it is implemented a locating engine that pro-
+vides users positioning whose accuracy reaches less than one meter. The infra-
+structure is completely dynamic and scalable so new devices can be added at any
+time without affecting the rest of the network. The operation of the RTLS is very
+simple. Visitors carrying mobile devices (i.e., tablets) move freely around the mu-
+seum. The mobile devices send periodically a broadcast signal by means of the
+Sirius Dongle connected to them. The signal is received by the Sirius A devices
+placed all over the museum. The location engine, allocated in a central server, cal-
+culates the positions of all Sirius Dongle devices and therefore the position of
+every visitor. Once the system knows the location of each visitor, an application
+installed on the devices of the visitors customizes the information which is
+provided dynamically.
+Fig. 2 Sirius A wireless network, Interest Areas and mobile device provided with Sirius
+Dongle
+3.2 Context Information Management
+Once ARTIZT gets the position of the visitors, the information must be personal-
+ized according to every visitor status. Each user carries a tablet on which it is
+installed a light and user-friendly application developed specifically for the mu-
+seum. Contextual information of the museum is included in this application so
+that, from the position of the visitors, ARTIZT decides which information is
+shown in the device. To do this it is created a map of the museum and, with theARTIZT: Applying Ambient Intelligence to a Museum Guide Scenario 179
+location information received by the server, it is determined the location of visi-
+tors continuously. In addition, each level of the museum is divided into "Interest
+Areas" (see Figure 2). So when a user enters into one of these, the application cus-
+tomizes all the information that is wanted to be shown to visitors. Reader can
+realize that with a so precise RTLS, these areas can be as small as desired, so that
+the system can provide enhanced context information and personalize it always in
+a transparent way without any user interaction.
+Tablets' application contains all the information that may be provided to users.
+Thus, ZigBee network only carries data from the devices to the server, necessary
+to calculate their position, and the location of the visitors from the server to the
+tablets. These communications reduce traffic data and there are always alternative
+paths in the network so fault tolerance increases and data loss is minimized.
+ARTIZT is configured to provide the customized content. When the position of
+the visitor is known, and using a series of data that is collected before the visitor
+starts his route, the system is able to tailor the information that is being shown in
+the form of content or language.
+4 Conclusions and Future Work
+Transparency and customized data is one of the keys in the development of AmI
+applications. If these applications want to adapt their behavior depending on the
+context that surrounds users transparently, it is important that users’ location is as
+precise as possible.
+Museum guides are a scenario where applying AmI techniques becomes more
+meaningful: multiple contextual information that contains the museum and the
+great mobility of the visitors make their location and the data filtering process
+become challenges to solve in an efficient way.
+ARTIZT is a museum guide system that includes AmI techniques. This system
+makes use of a powerful RTLS to determine where visitors are. This RTLS, based
+on an innovative ZigBee-based platform, provides high precision in the locating
+process. Therefore, the information that surrounds each visitor at any moment can
+be precisely determined and provided to them on real-time. The use of the ZigBee
+network to transport locate information minimize data loss (visitors' devices con-
+tains all the necessary information) and reduce the risk of disconnection, as there
+are always alternative ways to reach the server over the ZigBee grid.
+Future work on ARTIZT includes the use of sensors in order to determine any
+information that may affect the context (temperature, pressure, humidity, etc.) and
+estimate the direction of art-works and visitors through the use of compasses.
+Combining the precise location information provided by the RTLS with the in-
+formation from compasses it will be possible to determine where visitors are
+looking at, enhancing the user experience.
+Acknowledgments. This work has been supported by the Spanish Ministry of Science and
+Innovation, Project T-Sensitive, TRA2009_0096.180 O. García et al.
+References
+1. Baldauf, M., Dustdar, S., Rosenberg, F.: A survey on context-aware system. Interna-
+tional Journal of Ad Hoc and Ubiquitous Computing 1(4), 263–177 (2007)
+2. Weber, W., Rabaey, J.M., Aarts, E.: Ambient Intelligence. Springer-Verlag New York,
+Inc., Heidelberg (2005)
+3. Ramos, C., Augusto, J.C., Shapiro, D.: Ambient Intelligence—the Next Step for Arti-
+ficial Intelligence. IEEE Intelligent Systems 23(2), 15–18 (2008)
+4. Raptis, D., Tselios, N., Avouris, N.: Context-based design of mobile applications for
+museums: a survey of existing practices. In: Proceedings of the 7th International Con-
+ference on Human Computer Interaction with Mobile Devices & Services, Salzburg,
+Austria, September 19-22 (2005)
+5. Abowd, D.A., Atkeson, C.G., Hong, J., Long, S., Pinkerton, M.: Cyberguide: a mobile
+context-aware tour guide. Wireless Networks 3(5), 421–433 (1996)
+6. Oppermann, R., Specht, M.: A context-sensitive nomadic exhibition guide. In:
+Thomas, P., Gellersen, H.-W. (eds.) HUC 2000. LNCS, vol. 1927, pp. 127–142.
+Springer, Heidelberg (2000)
+7. Bellotti, F., Berta, R., De Gloria, A., Margarone, M.: Guiding Visually Impaired Peo-
+ple in the Exhibition. In: Mobile Guide 2006, Turin, Italy (2006)
+8. Cheverst, K., Davies, N., Mitchell, K., Smith, P.: Providing tailored Context-aware in-
+formation to city visitors. In: Brusilovsky, P., Stock, O., Strapparava, C. (eds.) AH
+2000. LNCS, vol. 1892, pp. 73–85. Springer, Heidelberg (2000)
+9. Blöckner, M., Danti, S., Forrai, J., Broll, G., De Luca, A.: Please touch the exhibits!:
+using NFC-based interaction for exploring a museum. In: Proceedings of the 11th In-
+ternational Conference on Human-Computer Interaction with Mobile Devices and Ser-
+vices (MobileHCI 2009), Bonn, Germaby, pp. 71–72. ACM, New York (2009)
+10. Bruns, E., Brombach, B., Zeidler, T., Bimber, O.: Enabling Mobile Phones To Support
+Large-Scale Museum Guidance. IEEE Multimedia 14(2), 16–25 (2007)
+11. Ghiani, G., Paterno, F., Santoro, C., Spano, L.D.: UbiCicero: A location-aware, multi-
+device museum guide. Interacting with Computers 21(4), 288–303 (2009)
+12. Park, D.-J., Hwang, S.-H., Kim, A.-R., Chang, B.-M.: A Context-Aware Smart Tourist
+Guide Application for an Old Palace. In: International Conference on Convergence In-
+formation Technology, November 21-23, pp. 89–94 (2007)
+13. Zimmermann, A., Lorenz, A.: LISTEN: a user-adaptive audio-augmented museum
+guide. User Modeling and User-Adapted Interaction 18(5), 389–416 (2008)
+14. Bay, H., Fasel, B., Van Gool, L.: Interactive museum guide. In: The Seventh Interna-
+tional Conference on Ubiquitous Computing UBICOMP, Workshop on Smart Envi-
+ronments and Their Applications to Cultural Heritage (2005)
+15. n-Core: A Faster and Easier Way to Create Wireless Sensor Networks (2010),
+http://www.n-core.info (retrieved November 14, 2010)

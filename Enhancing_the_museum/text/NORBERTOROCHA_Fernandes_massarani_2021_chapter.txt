@@ -1,0 +1,624 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/352714478
+Inclusion and accessibility in science museums: Voices from Brazil
+Chapter · August 2021
+CITATIONS
+4
+READS
+195
+3 authors:
+Jessica Norberto Rocha
+Fundação CECIERJ
+132 PUBLICATIONS   609 CITATIONS   
+SEE PROFILE
+Mariana Fernandes
+LIneA
+5 PUBLICATIONS   12 CITATIONS   
+SEE PROFILE
+Luisa Massarani
+Instituto Nacional de Comunicação Pública da Ciência e Tecnologia e SciDev.Net
+343 PUBLICATIONS   2,493 CITATIONS   
+SEE PROFILE
+All content following this page was uploaded by Jessica Norberto Rocha on 11 September 2023.
+The user has requested enhancement of the downloaded file.
+
+8
+Introduction
+Ensuring more equity-centered museums is not a simple task, particularly 
+in the context of countries that face enduring economic and social inequali-
+ties. Inclusion, or more accurately, exclusion has deep historical and cul-
+tural roots, which involve a network of political, cultural, economic, and 
+educational factors. Brazilian museums in general, and science museums in 
+particular, reflect a long history of social exclusion, having been designed 
+by and for the elites (see Cazelli et al., 2003; Lopes, 1997, 2003; Massarani 
+& Moreira, 2016). Indeed, access to science was exclusive only to the most 
+dominant classes in Brazilian society until the early 20th century (Massarani 
+& Moreira, 2016).
+Today there are at least 268 science museums in Brazil (Almeida et al., 
+2015), yet unequal access remains an urgent issue. Attempts to democratize 
+the museums’ use have had limited success. A 2019 survey found that only 
+6.3% of Brazilians reported visiting a science museum and 24% visited 
+zoos, environmental parks, and botanical gardens in the previous 12 months 
+(CGEE, 2019). The main reasons for not visiting were generally reported 
+as lack of proximity, lack of knowledge of their existence, low income, 
+educational level, and urban violence (CGEE, 2019; OMCC, 2006; OMCC, 
+2008). The lack of participation among populations with disabilities is 
+projected to be even more extreme, although, importantly, there are no 
+national data documenting the scope of the challenge.
+People with disabilities1 inhabit all social spheres—they include children, 
+young people, students, adults, varied professionals (e.g., teachers, 
+scientists, professors, politicians, etc.) and they are residents of large cities 
+and small rural towns. The Brazilian Institute of Geography and Statistics 
+(IBGE), from data collected in the 2010 population census, found that 6.7% 
+of the population (around 12.7 million Brazilians) reported having great 
+difficulty or being unable to perform basic functions and activities in any 
+way, suggesting the magnitude of the population with disabilities (Botelho 
+& Porciúncula, 2018).
+Social models of disability and 
+museum research
+Inclusion and accessibility in science 
+museums: voices from Brazil
+Jessica Norberto Rocha, Mariana Fernandes, 
+and Luisa Massarani
+
+﻿Social models of disability  129
+Although the fight for the rights of people with disabilities has been 
+underway for many decades, only more recently have science museums 
+begun to attend to their inclusion (Norberto Rocha et al., 2020; Sarraf, 
+2008, 2013). This chapter explores how the historically exclusionary field 
+of science museums in Brazil can directly and substantially address the lack 
+of inclusion of people with disabilities.
+Accessibility in science museums and theoretical underpinnings
+Accessibility not only supports people with disabilities but also the full 
+swath of humanity who can benefit from fewer barriers and more diverse 
+strategies for accessing information and experiences available in museums. 
+In this chapter, however, we focus on accessibility for people with 
+disabilities.
+In 2006, the United Nations (UN) organized the Convention on the 
+Rights of Persons with Disabilities (CRPD) and its Optional Protocol to 
+“promote, protect and ensure the full and equal enjoyment of all human 
+rights and fundamental freedoms by all persons with disabilities and to 
+promote respect for their inherent dignity” (UN, 2006, article 1). Ollerton 
+and Horsfall (2012) argue that the Convention “works alongside the 
+Universal Declaration, articulating an explicit, social dimension to human 
+rights and emphasizing the obligation of states to promote and protect the 
+rights and dignity of disabled people” (p. 619).
+The Convention highlights the right to participate in cultural activities 
+under conditions of equality. After its publication, 162 countries, including 
+Brazil and most Latin American countries, signed and ratified the 
+Convention. In this way, the states have committed themselves to promoting 
+equal access and the rights of people with disabilities. Since ratification, 
+several laws have been enacted to support people with disabilities—e.g., 
+Law No. 13.146 in Brazil (Brazil, 2015) and in other Latin American 
+countries, such as in Argentina (2009), Chile (2010), Colombia (2013), 
+Mexico (2011), and Uruguay (2010) (Ferreira & Norberto Rocha, 2017). 
+However, as noted by Reich (2014, p. 2), “although museums have made 
+great strides in the last 20 years to become more inclusive, the inclusion of 
+people with disabilities in museum learning is still a specialized rather than 
+a normalized practice.”
+While museums typically focus themselves on physical accessibility 
+(Lisney et al., 2013), in more recent years, there has been a growing concern 
+with not only physical but experiential access. Many authors (Duarte & 
+Cohen, 2012, 2018; Sarraf, 2008, 2013; Tojal, 2015) argue that museums’ 
+accessibility also depends on attitudinal and communicational aspects, 
+which are strongly related to welcoming, participation, inclusion, and 
+emotional, affective, and intellectual factors (Cohen & Duarte, 2013). In 
+this sense, Reich et al. (2010, p. 10), citing theories of social models of 
+disability (Barnes, 2003; Polino, 2009) state that inclusion
+
+130  Jessica Norberto Rocha et al.﻿
+Goes further than ensuring that people with disabilities can enter the 
+buildings or use the exhibits, programs and technologies that deliver 
+such experiences. It also requires that people with disabilities are able 
+to learn from such experiences and participate as a part of and not 
+separate from, the larger social group and community.
+Based on an extensive national and international literature review on 
+accessibility and inclusion in museums and cultural places, Inacio (2017) 
+proposed a research protocol called Accessibility Indicators for Science 
+Museums and Centres, in which he highlighted relevant characteristics 
+for consideration by science museums seeking to promote accessibility to 
+different people with disabilities. A few years later, researchers at the group 
+Museus e Centros de Ciências Acessíveis (MCCAC)2 subjected the protocol 
+to a more systematic review, eliminating ambiguities and duplications in 
+different categories (Abreu et al., 2019; Norberto Rocha et al., 2020).
+The current version of this protocol now encompasses 1) physical 
+accessibility, 2) attitudinal accessibility, and 3) communicational accessibility 
+(Norberto Rocha et al., 2020). Each type of accessibility has two other 
+subcategories (called “attributes”):
+	 1)	 Physical accessibility: related to architecture and the design of objects 
+and exhibitions within the physical space, physical accessibility refers 
+to features that allow for mobility and barrier-free accessibility that 
+ensure visitors’ autonomy and safety throughout the institution’s 
+buildings and premises. Physical features and resources of exhibitions 
+and objects are designed to consider, respect, and valorize visitors’ 
+differing abilities and characteristics (ABNT, 2015; Cohen et al., 2012; 
+Inacio, 2017; National Museums of Scotland, 2002). Its two attributes 
+are 1a) physical access, accommodations, and use of space and 1b) 
+design and use of objects.
+	 2)	 Attitudinal accessibility: reflecting attitudes and initiatives aimed at 
+overcoming biases, stereotypes, and stigmas regarding persons with 
+disabilities, this attitudinal accessibility refers to policy matters, such 
+as institutional missions, human resource training, incentives, funding, 
+and programs. Inclusive practices and interventions are designed to 
+create space for diversity (Corpas & Lyton, 2016; Inacio, 2017; Sarraf, 
+2013; Tojal, 2015). Its two attributes are 2a) inclusive practices, 
+welcome, and engagement and 2b) institutional policy.
+	 3)	 Communicational accessibility: referring to the equipment and 
+resources that make it possible to overcome barriers in interpersonal 
+communication, including written and informational material, 
+this comminicational accessibility covers onsite as well as external 
+communications, which include visitor information on scheduling, ticket 
+prices, exhibitions, location, and accessibility initiatives and which may 
+take place over an institutional website, through informational folders 
+
+﻿Social models of disability  131
+or pamphlets, or by telephone. Its attributes are 3a) communications 
+(onsite and external) and signage and 3b) media, equipment, resources, 
+etc. to enhance communications (ABNT 2015; Inacio, 2017; Mineiro 
+et al., 2014; Sarraf, 2013; Smithsonian Accessibility Program, 1996; 
+Tojal, 2007, 2015; W3CBrasil, 2013).
+Addressing accessibility
+Since 2016, Group MCCAC in Rio de Janeiro has been investigating issues 
+related to inclusion in science museums (Abreu et al., 2019; Fernandes, 
+2020; Norberto Rocha et al., 2020; Inacio, 2017). In 2016, collaborating 
+with the Latin American and Caribbean Network for the Popularisation 
+of Science and Technology (RedPOP), Group MCCAC conducted a Latin 
+America–wide survey among science museums to understand how they 
+tackle accessibility. Some 109 institutions from ten countries answered 
+the survey, with 67 Brazilian science museums and centers participating. 
+The data gathered from the questionnaires completed by representatives of 
+science museums and centers were analyzed using the revised Accessibility 
+Indicators for Science Museums and Centre protocol.
+Although this study found that the responding science museums and 
+centers in Latin America are implementing strategies toward accessibility 
+and inclusion, it also revealed a significant gap between policies and 
+good intentions and regular practices for promoting full and equal 
+enjoyment. Most of the actions reported involved the institutions’ physical 
+infrastructures. However, at the most basic level, accessibility and inclusion 
+were not incorporated into institutional policy and the allocation of 
+financial resources. In short, they were not prioritized. The study revealed 
+that only four institutions (out of 67 from Brazil) had earmarked funding to 
+promote accessibility and only 19 had any projects or programs to promote 
+accessibility. Furthermore, in the realm of communicational and attitudinal 
+accessibility, museums lacked continued strategies for hiring, training, and 
+supporting staff to effectively meet the needs of people with disabilities 
+(Norberto Rocha et al., 2020).
+These data highlight the continued absence of institutional practices that 
+underpin a long-standing history of thinking about the inclusion of people 
+with disabilities only in terms of physical access, with a notable dearth 
+of strategies for overcoming communication and attitudinal barriers and 
+ensuring visitors’ autonomy. The findings have stimulated the design of 
+several follow-on quantitative and qualitative surveys and interviews to try 
+understanding “how” and “why” institutional priorities and practices lag 
+institutional intentions.
+For example, in a recent study, Norberto Rocha et al. (in press) addressed 
+how staff in direct contact with the museums’ audiences (i.e., science 
+museum educators) understand accessibility and feel about their interac-
+tions with people with disabilities. The online questionnaire was answered 
+
+132  Jessica Norberto Rocha et al.﻿
+by 298 individuals from 87 science museums across Brazil. Responding 
+museum professionals reported gaps in their training, practice, and experi-
+ence that make them feel apprehensive about providing services to the public 
+with disabilities. Many of them report having received some type of acces-
+sibility training, but they still feel unconfident, in large part because they 
+lack practical experiences applying the training in the museums in which 
+they work. These data are in agreement with a previous study by Carlétti 
+and Massarani (2015) that surveyed 370 Brazilian science museum profes-
+sionals with roughly 60% reporting feeling unprepared to serve people with 
+disabilities and feeling insecure when interacting with them.
+A second example involves a more local context: Fernandes (2020) 
+studied a natural history and a science museum from Rio de Janeiro and 
+interviewed four staff members—a manager (M1; M2) and an educator (E1; 
+E2) from each one. Early results showed that the museums were unable to 
+report how many people with disabilities visited them monthly or annually, 
+nor did they have any information about the characteristics of disability 
+their visitors might have. Yet research shows that knowing its audience 
+is fundamental for museums seeking to create specific activities that can 
+attract those who are not visiting (Levent & Reich, 2013).
+Although they do not know how many people with disabilities are 
+visiting them, the two museums in the study have been actively engaged in 
+developing accessibility and inclusion strategies, including some strategies 
+for physical and communicational accessibility. But they continue to face 
+challenges in this process. The museum of natural history, for instance, 
+provides different physical and communications accessibility strategies, 
+such as ramps, tactile maps and exhibits, a mobile/tablet app—containing 
+audio-description of the collection, augmented reality, and information—
+and an adapted visitor guide for people with disabilities (Fernandes, 2020; 
+Norberto Rocha et al., 2017). The science center has begun a process of 
+modifying its interactive exhibition, creating a guided visit for people with 
+hearing disabilities and providing physical and tactile tools for people with 
+visual disabilities in displays that essentially depend on vision, such as the 
+optics ones (Fernandes, 2020).
+In the dimension of attitudinal accessibility, both museums’ managers 
+described efforts to promote awareness-raising activities with teams (pre-
+service and in-service) as a way to prepare the educators to overcome 
+barriers resulting from gaps in physical and communications accessibility. 
+These training activities include exploring sensory experiences, such as 
+reducing their vision, hearing, and mobility, and offering courses, lectures, 
+and workshops on Brazilian Sign Language (Libras).
+In the interviews conducted with two museum educators (E1; E2), both 
+described having received training from the museums where they work. 
+They reported a belief that the barriers produced by the lack of physical or 
+communicational accessibility in their institutions (which, in part, generates 
+some frustration) could be overcome with their attitudes. E1 had already 
+
+﻿Social models of disability  133
+worked with a group with intellectual disabilities and E2 had worked with 
+a school group containing one student with attention deficit disorder. But at 
+the time of the interview, neither of them had had experience with audiences 
+with visual, physical, or hearing disabilities, which means that they had little 
+practical experience in serving audiences with diverse disabilities.
+Both educators expressed commitments to the theme of inclusion, possibly 
+due to the training they received, and were aware of the potential barriers 
+that the museums and their exhibitions could present to people with disabili-
+ties. Having the training was important, particularly for preparing them emo-
+tionally and intellectually to embrace working with visitors with disabilities, 
+even if they were not entirely technically prepared to do so. For example, E1 
+stated that his expectations when serving the public with disabilities were 
+to ensure that visitors had a good experience at the museum: “Our aim is 
+[for] the person to be able to experiment and have a great experience in the 
+museum” (E1). When asked about his feeling of preparedness to serve the 
+visually disabled audiences, he answered that although there may be difficul-
+ties and interpersonal issues, he feels prepared, since there is support given 
+by the museum, such as lectures and training. E2, however, pointed out that 
+one of the possible barriers was that, despite having received training, she still 
+did not feel technically prepared, only emotionally, and that she sought ways 
+to feel more empowered about accessibility. In both cases, our study found 
+that there is a theoretical preparation for serving people with disabilities but 
+that self-confidence is still wanting in this service. In other words, the train-
+ing does not provide practical experience with these audiences, which would 
+bring greater comfort and self-confidence for museum educators.
+An important issue raised in the interviews is the institutional chal-
+lenge of implementing accessibility without the prioritization of financial 
+resources. This situation may be explained partially by the political and 
+economic crises museums are confronting in the country. In 2003 Brazil 
+entered a political period grounded in social inclusion and the reduction 
+of social inequalities, as the government moved to enact policies to popu-
+larize science (Ferreira, 2014; Massarani & Moreira, 2016). Grants were 
+offered by the Ministry of Science and Technology through public calls by 
+its Department of Science, Technology, and Social Inclusion and its Office 
+for the Popularization and Diffusion of Science and Technology, which 
+had played essential roles in sustaining public policies in science commu-
+nication, including science museums and centers (Massarani & Moreira, 
+2016). In 2014, however, the average number of federal and state grants 
+in the area of the popularization of science declined and no grant programs 
+were assigned specifically for science museums, negatively impacting the 
+quantity and quality of initiatives. Two years later, in 2016, Brazil faced 
+critical presidential changes and, consequently, changes to its public poli-
+cies. The Ministry of Science and Technology came under attack and the 
+Department of Science, Technology, and Social Inclusion and its Office for 
+the Popularization and Diffusion of Science and Technology was shut down 
+
+134  Jessica Norberto Rocha et al.﻿
+(Norberto Rocha, 2017). Since then, funds have become tighter and the 
+political power of museums has diminished, revealing an underlying vulner-
+ability of the sector, with many science museums closing and others strug-
+gling to survive. Within this context, if accessibility and inclusion are not 
+clearly stated as a mission or policy of the museum, it is difficult for finan-
+cial decision-makers to prioritize it.
+Indeed, Fernandes (2020) found that the managers interviewed saw the 
+lack of financial resources as the most significant obstacle faced by the 
+management professionals when implementing accessibility and inclusion 
+practices: “We have a huge lack of resources. I think there is also a lack of 
+political will for more resources to come but, today, the lack of resources is 
+the main issue” (M1). M2 also gave examples of how the lack of resources 
+for accessibility impacts access barriers:
+For us, the biggest problem is the physical space and lack of money 
+to adapt the exhibition. What is very low cost comes from the team’s 
+own resources [laughs]. What is expensive, which depends on a more 
+specialized workforce … [depends on other sources]. So, our main 
+concern is money.
+(M2)
+Another issue linked to the lack of continuous resources for accessibility 
+is the uncertainty and absence of job security for staff working with 
+accessibility in museums. As M1 and M2 noted, such staff are usually 
+hired through outreach and research grants and, in the scenario of little or 
+uncertain funding for these areas, it is not known for how long they will be 
+able to count on these professionals in their teams:
+On the one hand, we have managed to keep our jobs; on the other hand, 
+it is always a concern that you do not know how many professionals 
+you will have per year. … If I have five people in the year, in the next 
+year I have three. [Thus] there are two fewer actions [that we can do] 
+not having these people. Many of the activities are immensely impacted 
+by the lack of resources. The project would go much faster if we had the 
+resources. And it wouldn’t even have to be a lot of money.
+(M1)
+The instability and uncertainty that hang over the teams also impact their 
+training. Although both museums carry out in-service training activities at 
+least twice a year, staff turnover affects solid training, especially those assist-
+ing visitors. One more challenge declared by the interviewed managers is 
+not often having staff with disabilities joining their teams, a phenomenon 
+that has also been noted across Latin American science museums (Norberto 
+Rocha et al., 2020). In the science center, there is an educator who is deaf 
+and another who has a visual disability, but their positions are unstable. The 
+
+﻿Social models of disability  135
+natural history museum does not yet have people with disabilities as part of 
+their team: “Although we really want to, we still did not have the opportu-
+nity to have staff with disabilities” (M1).
+Conclusion
+If, on the one hand, we recognize that science museums are aware of the need 
+to implement actions that favor the inclusion of different types of audiences 
+and have tried to be more equity-centered, on the other hand, there are still 
+barriers to be overcome, such as the lack of institutional policies and funding. 
+Specifically, when we address the inclusion of audiences with disabilities, 
+we see that, although Brazilian science museums have gradually developed 
+strategies, programs, and policies toward accessibility, these programs still 
+need to become part of their stated missions.
+The data collected by our research group indicate that, on the one hand, 
+science museums have been looking for strategies to train their educators 
+and teams to assist people with disabilities and are seeing this action as 
+a means to overcome barriers caused by some inaccessible structures and 
+exhibitions. Managers, on the other hand, still have many uncertainties 
+regarding the continuity of activities, teams, and funding. Meanwhile, 
+museums’ staff often recognize the importance of thinking about more 
+inclusive strategies and attitudes, but they do not always feel confident to 
+work with people with disabilities. Those we interviewed claim they lack 
+the practical part of interacting with people with disabilities, that is, the 
+day-to-day and practical experiences that only happen when these audiences 
+essentially enter, remain in, and enjoy science museums and their services.
+Thus, we understand that to make museums increasingly accessible, it 
+is necessary to have institutional policies, budgets, and strategies that meet 
+the specificities of visitors with disabilities. Of course, money by itself does 
+not solve everything. The three types of accessibility—physical, attitudinal, 
+and communications—run together, are complementary and interrelated. 
+For example, museums that prioritize access need to account for it in their 
+admissions processes and audience-counting methods. It is also necessary 
+to rethink the way the museum works, so that the inclusion process stops 
+being a sum of individual projects and efforts and becomes a part of the 
+institution’s long-standing history, increasingly aiming to create more 
+equity-centered museums (see Bevan et al., 2018).
+Finally, we highlight that, in this text, we discuss data that reflect the 
+museums’ institutional and professional perspectives. However, our research 
+group has also developed research and discussions aimed at the experience 
+and perspectives of different visitor groups—people with disabilities, chil-
+dren, teenagers, families, etc. (see Fernandes, 2020; Massarani et al., 2019a, 
+2019b, 2019c, 2019d; Norberto Rocha et al., 2021; Passos dos Santos, 
+2019). Fernandes (2020), investigating the experience of groups of adults 
+with visual disabilities in the natural history museum and the science center, 
+
+136  Jessica Norberto Rocha et al.﻿
+found that people use and interact with exhibitions in their own ways. This 
+study suggests the importance of conducting further research on the acces-
+sibility strategies offered by the visitors. For instance, while some preferred 
+to read the Braille signs and touch the objects, others preferred to listen to 
+the museum educator’s oral description. In the words of one of the visitors: 
+“A person with a visual disability will not necessarily want to do all the 
+activity the museum prepared for them. It is an option, always an option.” 
+In this sense, offering more than one communication tool or strategy may 
+be essential for enhancing visitors’ autonomy, recognizing that visitors with 
+disabilities may not always want to have a fully mediated visit. Also, as a 
+part of the attitudinal accessibility, it is necessary to respect the visitors’ time 
+and choices, and the museum’s staff need to be prepared to recognize this. 
+Importantly, a strategy designed for people with visual disabilities will not 
+serve the entire audience in question. Within each kind of disability, there 
+is a wide range of diversity and specificities. Blázquez (2015) notes diversity 
+within disabilities as a further challenge for institutions when planning their 
+accessibility actions. For this reason, it is essential to have more studies that 
+highlight the perspective of visitors with a wide range of disabilities.
+Thus, we agree with Levent and Reich (2013) that learning from visitors 
+is essential, since only they can tell us about their actual needs, their per-
+sonal stories, and, most importantly, what they look for in the experience 
+that the museum can provide. There is a need to understand the audiences 
+(that is, to know who the people are that visit and do not visit museums, 
+where they are from, what their interests are, and what their demands are, 
+among other relevant information) if we are ever, at scale, going to realize 
+more equity-centered museums.
+Acknowledgments
+Dr. Jessica Norberto Rocha thanks FAPERJ for the Jovem Cientista do 
+Nosso Estado (JCNE) grant. Dr. Luisa Massarani thanks the CNPq for a 
+productivity grant and FAPERJ for the Cientista do Nosso Estado (CNE) 
+grant. All authors thank the science museums and the museum managers 
+and educators for their participation in our studies.
+Notes
+1	 The Brazilian Law on the Inclusion of People with Disabilities (Brazil, 2015, 
+article 2) states: “a person with a disability is one who has a long-term physical, 
+mental, intellectual or sensory impairment, which, in interaction with one or 
+more barriers, may obstruct their full and effective participation in society on 
+equal terms with other people.”
+2	 MCCAC stands for “Accessible Science Museums and Centers”; see https://gru-
+pomccac​.org​/en/.
+
+﻿Social models of disability  137
+References
+Associação Brasileira de Normas Técnicas (ABNT). (2015). ABNT NBR 9050: 
+2015 - Acessibilidade a edificações, mobiliário, espaços e equipamentos 
+urbanos(Accessibility to buildings, equipament and the urban environment). 
+Rio de Janeiro, Brazil. 148p. http:​/​/www​.mpf.​mp​.br​/atua​cao​-t​emati​ca​/pf​dc​/
+te​​mas​/i​​nclus​​ao​-de​​-pess​​oas​-c​​om​-de​​ficie​​ncia/​​legis​​lacao​​/​abnt​​-nbr-​​9​-050​​-2015​​/
+view​
+Abreu de, W. V., Norberto Rocha, J., Massarani, L., Inacio, L. G. B., & Molenzani, 
+A. O. (2019). Acessibilidade em planetários e observatórios astronômicos: uma 
+análise de 15 instituições brasileiras. JCOM – América Latina, 2(2), A04. https://
+doi​.org​/10​.22323​/3​.02020204.
+Almeida, C. Brito, F., Ferreira, R., Massarani, L., & Amorim, L. (2015). Centros e 
+Museus de Ciência do Brasil. Rio de Janeiro: ABCMC; Casa da Ciência/UFRJ; 
+Museu da Vida/Fiocruz.
+Barnes, C. (2003). What a difference a decade makes: Reflections on doing 
+‘emancipatory’ disability research. Disability and Society, 18(1), 3–18.
+Bevan, B., Calabrese Barton, A., & Garibay, C. (2018). Broadening Perspectives on 
+Broadening Participation in STEM: Critical Perspectives on the Role of Science 
+Engagement. Washington, DC: Center for Advancement of Informal Science 
+Education. Retrieved from https​:/​/ww​w​.inf​ormal​scien​ce​.or​g​/sit​es​/de​fault​/file​s​/
+BP-​Repor​t​.pdf​ (acessed December 1, 2020).
+Blázquez, Á. L. G. (2015) La accesibilidad para personas ciegas y con deficiencia 
+visual al patrimonio cultural y natural. her&mus, 16, VII(1), 47–54. Retrieved 
+from https​:/​/ww​w​.rac​o​.cat​/inde​x​.php​/Herm​us​/ar​ticle​/view​/3132​53 (acessed 
+December 1, 2020).
+Brazil. (2015).Lei n. 13.146, de 6 de julho de 2015. Retrieved from http:​/​/www​.plan​
+alto.​gov​.b​r​/cci​vil​_0​3/​_At​o2015​-2018​/2015​/​Lei/​L1314​6​.htm​ (accessed September 
+28, 2020).
+Botelho, L., & Porciúncula, K. (2018). Os desafios para a produção de indicadores 
+sobre pessoa com deficiência – ontem, hoje e amanhã. In Simões, A., Athias, 
+L., & Botelho, L. (Orgs.) Panorama nacional e internacional da produção de 
+indicadores sociais: grupos populacionais específicos e uso do tempo. Rio de 
+Janeiro: IBGE, Coordenação de População e Indicadores Sociais.
+Carlétti, C., & Massarani, L. (2015). Explainers of science centers and museums: A 
+study on these stakeholders in the mediation between science and the public in 
+Brazil. Journal of Science Communication, 14(2), 1–17. https://doi​.org​/10​.22323​
+/2​.14020201.
+Cazelli, S., Marandino, M., & Studart; D. C. (2003). Educação e Comunicação 
+em Museus de Ciência: aspectos históricos, pesquisa e prática. In: Gouvea, G., 
+Marandino, M., Leal, M. C. (Orgs.). Educação e Museu: A construção social do 
+caráter educativo dos museus de ciência. Rio de Janeiro: Access.
+CGEE - Centro de Gestão e Estudos Estratégicos. (2019). Percepção pública da C&T 
+no Brasil −2019. Retrieved from https​:/​/ww​w​.cge​e​.org​.br​/d​ocume​nts​/1​0195/​73406​​
+3​/CGE​E​_res​umoex​ecuti​vo​_Pe​rcepc​ao​_pu​b​_CT.​pdf (accessed September 28, 2020). 
+Cohen, R., & Duarte, C. R. (2013). Subsídios metodológicos na construção de uma 
+“acessibilidade plena”: A produção da identidade e da subjetividade de pessoas 
+com deficiência. Revista Benjamin Constant, Oct., ed.3.
+AU: Please 
+provide citation 
+for the reference 
+‘Barnes 2003; 
+Polino 2019’ 
+in the text 
+or delete the 
+reference from 
+the list.
+
+138  Jessica Norberto Rocha et al.﻿
+Cohen, R., Duarte, C. R., & Brasileiro, A. (2012). Acessibilidade a Museus. 
+Ministério da Cultura / Instituto Brasileiro de Museus. Brasília, DF: MinC/Ibram. 
+Cadernos Museológicos 2. 
+Corpas, F., & Lyton, D. (2016). Caderno Acessibilidades, (1), 11–115. Rio de 
+Janeiro: Oi Futuro - Museu das Telecomunicações.
+Duarte, C., & Cohen, R. (2012). Acessibilidade e desenho universal: fundamentação 
+e revisão bibliográfica para pesquisas. Relatório Técnico do Núcleo Pró-acesso. 
+Rio de Janeiro: UFRJ. 
+Duarte, C., & Cohen, R. (2018). Acessibilidade emocional. In: Villarouco, V. (Ed.), 
+VII Encontro Nacional de Ergonomia do Ambiente Construído / VIII Seminário 
+Brasileiro de Acessibilidade Integral. Blucher Design Proceedings. São Paulo: 
+Blucher. https://doi​.org/​10​.5151​/eneac2018​-duarte
+Fernandes, M. P. (2020). A experiência de pessoas com deficiência visual: a 
+acessibilidade e a inclusão no Museu da Geodiversidade (UFRJ) e na Casa da 
+Descoberta (UFF). Master’s thesis in Communication of Science, Technology 
+and Health. Rio de Janeiro, Brazil: Oswaldo Cruz Foundation. https://doi​.org/​10​
+.13140​/RG​.2​.2​.14129​.81767
+Ferreira, J. R. (2014). Popularização da ciência e as políticas públicas no Brasil 
+(2003–2012). PhD dissertation in Biological Sciences (Biophysics). Rio de Janeiro, 
+RJ: IBCCF, Federal University of Rio de Janeiro.
+Ferreira, F., & Norberto Rocha, J. (2017). Leis de inclusão da pessoa com 
+deficiência em países da América Latina: diálogos sobre o acesso a museus e 
+espaços científico-culturais. In: V Encontro Nacional de Acessibilidade Cultural. 
+Rio de Janeiro.
+Inacio, L. G. B. (2017). Indicadores de acessibilidade em museus e centros de 
+ciências: aplicação na Caravana da Ciência. Capstone Project in Science Teaching 
+with an Emphasis on Biology and Chemistry. Rio de Janeiro: Federal Institute of 
+Rio de Janeiro.
+Levent, N., & Reich, C. (2013). Museum accessibility: Combining audience research 
+and staff training. Journal of Museum Education, 38(2), 218–226. https​:/​/do​i​.org​
+/10​.1​080​/1​05986​50​.20​1​3​.11​51077​2
+Lisney, E., Bowen, J. P., Hearn, K., & Zedda, M. (2013). Museums and technology: 
+Being inclusive helps accessibility for all. Curator: The Museum Journal. 56(3), 
+353–362. https://doi​.org​/10​.1111​/cura​.12034
+Lopes, M. M. (1997). O Brasil descobre a pesquisa científica: os museus de ciências 
+naturais no século XIX. São Paulo, SP: Hucitec.
+Lopes, M. M. (2003). Museus e Educação na América Latina: o modelo parisiense e 
+os vínculos com as Universidades. In: Gouvea, G., Marandino, M., & Leal, M. C. 
+(Orgs.). Educação e Museu: A construção social do caráter educativo dos museus 
+de ciência. Rio de Janeiro: Access.
+Massarani, L., Chagas, C., Rocha, L., Rowe, S., & Fontanetto, R. (2019a). Children’s 
+protagonism in a science exhibition: An exploratory study of an exhibition in 
+Rio de Janeiro (Brazil). Research in Science Education. https​:/​/do​i​.org​/10​.1​007​/s​
+11165​-019​-​09886​-w
+Massarani, L., Fazio, M. E., Norberto Rocha, J., Dávila, A. E. S., & Bognanni, F. 
+A. (2019b). La interactividad en los museos de ciencias, pivote entre expectativas 
+y hechos empíricos: el caso del Centro Interactivo de Ciencia y Tecnología 
+Abremate (Argentina). Ciência & Educação (Bauru), 25(2), 467–484. https​:/​/dx​
+.doi.​org​/1​0​.159​0​/151​6​-731​32​019​00200​12
+
+﻿Social models of disability  139
+Massarani, L., & Moreira, I. (2016). Science communication in Brazil: A historical 
+review and considerations about the current situation. Anais da Academia 
+Brasileira de Ciências, 88(3), 1577–1595. https​:/​/do​i​.org​/10​.1​590​/0​001​-3​76520​
+16201​50338​
+Massarani, L., Poenaru, L. M., Norberto Rocha, J., Rowe, S., & Falla, S. (2019c). 
+Adolescents learning with exhibits and explainers: The case of Maloka. 
+International Journal of Science Education, Part B, 9 (3), 1–15. https​:/​/do​i​.org​
+/10​.1​080​/2​15484​55​.20​19​.16​46439​
+Massarani, L., Reznik, G., Norberto Rocha, J., Falla, S., Rowe, S., Martins, A. D., 
+& Amorim, L. H. (2019d). A experiência de adolescentes ao visitar um museu de 
+ciência: um estudo no Museu da Vida. Ensaio Pesquisa em Educação em Ciências 
+(Belo Horizonte), 21. https​:/​/do​i​.org​/10​.1​590​/1​983​-2​1172​0​19210​115
+Mineiro, C., Mendes, E., & Colwell, E. (2014). Temas de Museologia: Museus e 
+Acessibilidade. Lisbon: Instituto Português de Museus, Portugal. Retrieved from 
+http:​/​/www​​.iber​​museo​​s​.org​​/wp​-c​​onten​​t​/upl​​oads/​​2020/​​05​/mu​​seus-​​e​-ace​​ssi​bi​​lidad​​
+e​-por​.pdf (accessed November 5, 2020).
+National Museums of Scotland. (2002). Exhibitions for All: A Practical Guide to 
+Designing Inclusive Exhibitions. Edinburgh: NMS Publishing Ltd. 
+Norberto Rocha, J. (2017). Museus e centros de ciências ameaçados no país. Ciência 
+e Cultura, 69(1), 14–15. https​:/​/dx​.doi.​org​/1​0​.218​00​/23​17​-66​60201​70001​00007​
+Norberto Rocha, J., Alvaro, M., Massarani, L., & Abreu de, W. V. (in press). 
+Acessibilidade em museus de ciências: A perspectiva de mediadores brasileiros. 
+Interfaces Científicas – Humanas e Sociais.
+Norberto Rocha, J., Cunha, E., Massarani, L., Coelho, P., & Dahmouche, M. S. 
+(2021). Uma exposição sobre a física dos esportes pelo olhar de adolescentes: um 
+estudo de caso no Museu Ciência e Vida. Florianópolis, SC: Caderno Brasileiro 
+De Ensino De Física, UFSC.
+Norberto Rocha, J., Massarani, L., Abreu de, W. V., Inacio, L. G. B., & Molenzani, 
+A. O. (2020). Investigating accessibility in Latin American science museums and 
+centers. Anais da Academia Brasileira de Ciências, 92(1). https​:/​/do​i​.org​/10​.1​590​
+/0​001​-3​76520​202​01​91156​.
+Norberto Rocha, J., Massarani, L., Gonçalves, J., Ferreira, F., Abreu de, W. V., 
+Molenzani, A., & Inacio, L. G. B. (2017). Guia de Museus e Centros de Ciências 
+Acessíveis da América Latina e do Caribe (1st ed). Rio de Janeiro: Museu da Vida/ 
+/Fiocruz; RedPOP. Retrieved from https​:/​/gr​upomc​cac​.o​rg​/wp​-cont​ent​/u​pload​s​
+/201​7​/12/​GUIA-​PT​_au​diode​scriç​ão​-e-​leito​r​-de-​tela​s​.pdf (accessed September 28, 
+2020).
+Ollerton, J., & Horsfall, D. (2012). Rights to research: Utilising the convention on 
+the rights of persons with disabilities as an inclusive participatory action research 
+tool. Disability & Society, 28(5), 616–630. https​:/​/do​i​.org​/10​.1​080​/0​96875​99​.20​
+12​.71​7881
+Observatório de Museus e Centros Culturais (OMCC). (2006). Pesquisa Piloto 
+Perfil-Opinião 2005. Onze Museus e seus visitantes. Rio de Janeiro e Niterói. 
+Rio de Janeiro: Museu da Vida/Fiocruz.
+Observatório de Museus e Centros Culturais (OMCC). (2008). Pesquisa Perfil-
+Opinião 2006–2007. Museus e visitantes de São Paulo. Rio de Janeiro: Museu 
+da Vida/Fiocruz.
+Passos dos Santos, K. K. (2019). Territórios pouco explorados: os registros de 
+visitantes em livros de comentários da Casa da Ciência e Museu Ciência e Vida. 
+AQ: TITLE
+
+140  Jessica Norberto Rocha et al.﻿
+Master’s thesis in Communication of Science, Technology and Health. Rio de 
+Janeiro: Oswaldo Cruz Foundation. Retrieved from http:​/​/ppg​dc​.co​c​.fio​cruz.​br​/
+im​ages/​disse​rtaco​es​/di​ssert​aca​o_​kamyl​la​.pd​f (accessed December 1st, 2020). 
+Polino, C. (2019). Públicos de la ciencia y desigualdad social en América Latina. 
+JCOM – América Latina, 2(2), A05. https://doi​.org​/10​.22323​/3​.02020205.
+Reich, C., Price, J., Rubin, E., & Steiner, M. (2010). Inclusion, Disabilities, and 
+Informal Science Learning. A CAISE Inquiry Group Report. Washington, DC: 
+Center for Advancement of Informal Science Education (CAISE). Retrieved from 
+https​:/​/ww​​w​.inf​​ormal​​scien​​ce​.or​​g​/sit​​es​/de​​fault​​/file​​s​/Inc​​lusio​​nDisa​​bilit​​iesan​​dInfo​
+rmalS​cienc​eEduc​ation​.pdf (accessed September 28, 2020).
+Reich, C. A. (2014). Taking Action Toward Inclusion: Organizational Change 
+and the Inclusion of People with Disabilities in Museum Learning. PhD thesis 
+dissertation. Department of Curriculum and Instruction, Lynch School of 
+Education, Boston College. 
+Sarraf, V. (2008). Reabilitação no Museu: Políticas de Inclusão Cultural por meio da 
+Acessibilidade. Master’s thesis in Information Science, School of Communication 
+and Arts. São Paulo: University of São Paulo.
+Sarraf, V. (2013). A Comunicação dos sentidos nos espaços culturais brasileiros: 
+estratégias de mediações e acessibilidade para pessoas com suas diferenças. PhD 
+thesis in Communication and Semiotics. São Paulo: Pontifical Catholic University 
+of São Paulo.
+Smithsonian Accessibility Program. (1996). Smithsonian Guidelines for Accessible 
+Exhibition Design. Washington, DC: Smithsonian Institution. Retrieved from 
+https​:/​/ww​​w​.sif​​acili​​ties.​​si​.ed​​u​/ae_​​cente​​r​/pdf​​/Acce​​ssibl​​e​-Exh​​ibi​ti​​on​-De​​sign.​​pdf 
+(accessed August 4, 2019).
+Tojal, A. (2007). Políticas Públicas de Inclusão de Públicos Especiais em Museus. 
+PhD dissertation in information Science, School of Communications and Arts. 
+São Paulo: Universidade de São Paulo. 
+Tojal, A. (2015). Política de Acessibilidade Comunicacional em Museus: para quê 
+e para quem? Museologia e Interdisciplinaridade, 4(7). https​:/​/do​i​.org​/10​.2​6512/​
+museo​logia​.v4​i7​.1677​9
+United Nations. (2006). Convention on the Rights of Persons with Disabilities 
+(CRPD). Retrieved from https​:/​/ww​w​.un.​org​/d​evelo​pment​/desa​/disa​bilit​ies​/c​
+onven​tion-​on​-th​e​-rig​hts​-o​f​-per​sons-​w​ith-​disab​iliti​es​.ht​ml (accessed September 
+28, 2020).
+W3C Brasil. (2013). Cartilha de Acessibilidade na web. W3C e Ministério Público 
+do Estado de São Paulo. Retrieved from http:​/​/www​.w3c.​br​/pu​b​/Mat​eriai​s​/Pub​
+licac​oesW3​C​/car​tilha​w3cbr​acess​ibili​dade-​web- fasciculo​-I​.h​tml (accessed July 
+2016).
+View publication stats
+

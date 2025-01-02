@@ -1,0 +1,1710 @@
+Rochester Institute of Technology 
+Rochester Institute of Technology 
+RIT Digital Institutional Repository 
+RIT Digital Institutional Repository 
+Theses 
+4-2019 
+Utilizing Mobile Technology to Improve Accessibility for Museum 
+Utilizing Mobile Technology to Improve Accessibility for Museum 
+Visitors with Autism 
+Visitors with Autism 
+Felicia Dianne Swartzenberg 
+fds9410@rit.edu 
+Follow this and additional works at: https://repository.rit.edu/theses 
+Recommended Citation 
+Recommended Citation 
+Swartzenberg, Felicia Dianne, "Utilizing Mobile Technology to Improve Accessibility for Museum Visitors 
+with Autism" (2019). Thesis. Rochester Institute of Technology. Accessed from 
+This Thesis is brought to you for free and open access by the RIT Libraries. For more information, please contact 
+repository@rit.edu. 
+
+ 
+ 
+ 
+THE ROCHESTER INSTITUTE OF TECHNOLOGY 
+COLLEGE OF LIBERAL ARTS 
+ 
+ 
+UTILIZING MOBILE TECHNOLOGY TO IMPROVE ACCESSIBILITY 
+FOR MUSEUM VISITORS WITH AUTISM 
+ 
+ 
+A THESIS SUBMITTED 
+IN PARTIAL FULFILLMENT OF THE 
+BACHELOR OF SCIENCE DEGREE 
+IN MUSEUM STUDIES 
+DEPARTMENTS OF PERFORMING ARTS AND VISUAL CULTURE AND HISTORY 
+ 
+ 
+BY 
+FELICIA DIANNE SWARTZENBERG 
+ 
+ 
+ 
+ 
+ 
+APRIL 2019
+
+ 
+i 
+ 
+ 
+The members of the Committee approve the thesis of Felicia Swartzenberg submitted on 
+April 25, 2019. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Juilee Decker 
+______________________ 
+Juilee Decker, Ph.D. 
+Primary Advisor 
+ 
+Tamar Carroll 
+______________________ 
+Tamar Carroll, Ph.D. 
+Secondary Advisor 
+ 
+Tina Lent 
+_____________________ 
+Tina Lent, Ph.D. 
+MUSE Program Director  
+MUSE Program Director 
+ 
+ 
+
+ 
+ii 
+ 
+ 
+Acknowledgements 
+ 
+I extend special thanks to all of the people who assisted me in creating this app and 
+completing my thesis. First and most of all, I am so appreciative of my partner and app 
+developer, Peter Laurin, who brought my ideas to life. Without his help, I would never have been 
+able to complete this project. 
+I would also like to thank those who participated in my user testing: Dr. Juliee Decker’s 
+Visitor Engagement class for taking time out of the curriculum to test my app; and the families 
+who participated in my user testing on-site at the Strong National Museum of Play, Roberta and 
+her son, Austin, and Lindsay and her son, Preston. Their support and feedback on this project 
+was incredibly helpful, and their willingness to be involved and contribute was vital to the 
+success of my thesis. 
+Lastly, I would like to thank everyone who supported me as I developed this thesis, 
+including: both my advisers, Dr. Juilee Decker and Dr. Tamar Carroll; the College of Liberal 
+Arts Student Research fund, which helped fund the development of my app, SenseEase: Strong 
+Museum; and my mom, Jennifer, whose constant love, support, and belief in my skills helped 
+motivate me whenever I felt stressed or discouraged.  
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+iii 
+ 
+Abstract 
+What if museums could provide an app that makes interaction easier for visitors with 
+autism and allows them to enjoy the museum any day of the week like their neurotypical 
+counterparts? This research discusses how museums can utilize downloadable apps for personal 
+devices to provide easily accessible resources for children on the autism spectrum and their 
+families to use so they can have a more inclusive and sensory-friendly museum experience.  To 
+determine the feasibility of this, I worked in collaboration with an app developer, Peter Laurin, to 
+create a prototype-app called SenseEase: Strong Museum for the Reading Adventure Land 
+exhibit area at the Strong National Museum of Play in Rochester. The app caters to children 
+ranging from four to twelve years of age, and aims to help prepare them and their families for 
+their museum visit and help them cope with the overwhelming sensory stimulation that occurs in 
+this particular museum environment. To evaluate the effectiveness of the app, I conducted two 
+rounds of user testing, one with a general audience and one with my target audience for the app, 
+and found that SenseEase: Strong Museum was a well-received and effective aid for children on 
+the autism spectrum and their families navigating the unfamiliar and overstimulating 
+environment at the museum. 
+ 
+ 
+ 
+
+ 
+iv 
+ 
+Table of Contents 
+ 
+Acknowledgements ..………………………………………………………………..……………ii        
+Abstract ..………………………………………………………………………………………...iii        
+Introduction ...……………………………………………………………………………………..1 
+Literature Review ..……………………………………………………………………………….3 
+Research Methodology ...………………………………………………………………………..20 
+App Development Methodology ...………………………………………..……………………..21 
+User Testing Procedure ...………………………………………………………………………..32 
+User Testing Findings .…………………………………………………………………………..34 
+Future Development and Adoption ..…………………………………………………………....38 
+Conclusion ……………..………………………………………………………………………..39 
+Appendix ……………..………………………………………………………………………….43 
+Bibliography ……………..……………………………………………………………………...64
+
+ 
+1 
+ 
+Introduction 
+In an ideal world, museums function as public institutions that welcome visitors of all 
+ages, backgrounds, and abilities. However, until the Americans with Disabilities Act (ADA) 
+passed in 1990, most public spaces, including museums, did not cater to all audiences; they only 
+served people perceived as being of able mind and body. As a result of the ADA and the efforts 
+of disability rights activists, now, most public spaces, facilities, and institutions in the United 
+States are more conscious of including people of all physical and mental abilities.  
+Many museums have made efforts to improve their accessibility options, including 
+creating programming for people on the autism spectrum that is aimed at creating a more 
+sensory-friendly experience. However, no museum is perfect and there are opportunities for 
+improvement in every museum’s accessible programming options. The options available for an 
+organization the size of the Smithsonian Institution are far greater than museums of smaller 
+magnitude. However, low budgets do not eliminate the need for accessible options, they simply 
+pose challenges: how can one create an accessible experience without spending money on early 
+museum openings, sensory-friendly gear like noise cancelling headphones, or hiring someone to 
+train staff on how to work with individuals on the spectrum? 
+One method of approaching this question could be to provide an app that makes museum 
+interactions easier for visitors with autism and enables them to enjoy the museum any day of the 
+week like their neurotypical counterparts. This research discusses how museums can utilize 
+downloadable apps for personal devices to provide easily accessible resources for children on the 
+autism spectrum and their families to use so they can have a more inclusive and sensory-friendly 
+museum experience.  To determine the feasibility of this, I collaborated with an app developer, 
+Peter Laurin, a senior game design and development student at Rochester Institute of 
+Technology, to create a prototype-app called SenseEase: Strong Museum for the Reading 
+
+ 
+2 
+ 
+Adventure Land area at the Strong National Museum of Play in Rochester, N.Y. The overall goal 
+of the app is to assist the museum in providing a comfortable, positive museum experience for 
+visitors on the autism spectrum by giving visitors a hand-held tool to help them prepare for their 
+visit and distract from the overwhelming sensory stimulation that occurs on site in this particular 
+museum environment. My focus is particularly on visitors ranging from four to twelve years of 
+age, as that is the general age range of visitors that the Strong Museum attracts. Once the app 
+was completed, I conducted two rounds of user testing, one with a general audience and one with 
+the target audience of children on the autism spectrum and their families, to collect feedback on 
+the effectiveness of the app. After reviewing the feedback, I observed that users found that this 
+app and its contents were a highly effective tool that helped them successfully navigate and have 
+a positive experience at the museum.  
+ 
+ 
+
+ 
+3 
+ 
+Literature Review 
+Americans with Disabilities Act 
+When establishing the ADA, Congress recognized that “physical and mental disabilities 
+in no way diminish a person's right to fully participate in all aspects of society, but that people 
+with physical or mental disabilities are frequently precluded from doing so because of prejudice, 
+antiquated attitudes, or the failure to remove societal and institutional barriers.”1 The act was 
+drafted and passed to accomplish the following: 
+(1) To provide a clear and comprehensive national mandate for the elimination of 
+discrimination against individuals with disabilities; 
+(2) To provide clear, strong, consistent, enforceable standards addressing discrimination 
+against individuals with disabilities; 
+(3) to ensure that the Federal Government plays a central role in enforcing the standards 
+established in this chapter on behalf of individuals with disabilities; and 
+(4) To invoke the sweep of congressional authority, including the power to enforce the 
+fourteenth amendment and to regulate commerce, in order to address the major areas of 
+discrimination faced day-to-day by people with disabilities.2 
+ 
+Since the passage of the Americans with Disabilities Act, there have been several 
+revisions and additions to the document. One revision of particular importance for museums 
+came on September 15, 2010, when the Department of Justice revised the regulations for Titles II 
+and III of the ADA and adopted enforceable accessibility standards.3 This revision was titled 
+“ADA Standards for Accessible Design.” These standards set minimum requirements for newly 
+designed, constructed, or altered public and commercial facilities with the intention of making 
+public spaces easily accessible for individuals of all abilities.4 For museums, this meant that they 
+                                                           
+1 ADA: Americans With Disabilities Act of 1990, Public Law 101-336. § III. 108th Congress, 2nd session (July 26, 
+1990), https://www.ada.gov/pubs/adastatute08.htm#12101b. 
+2 ADA: Americans with Disabilities Act of 1990. 
+3 ADA: Standards for Accessible Design, Department of Justice (September 15, 2010), 
+https://www.ada.gov/2010ADAstandards_index.htm. 
+4 ADA: Standards for Accessible Design. 
+
+ 
+4 
+ 
+needed to reevaluate not only their building floor plan, but their exhibition designs as well. 
+While many of these changes can be costly in terms of renovation, the result of allowing all 
+visitors to enjoy a space regardless of ability is a more than worthy outcome.  
+While the ADA and related legislature have been very helpful in terms of making change 
+in public spaces for people with disabilities, relying on law alone to mandate these changes is 
+insufficient. Minimal compliance with the law can mean that institutions will miss out on the 
+opportunity to create an accessible and inclusive space that would enhance the visitor experience 
+for all types of audiences. Taking action simply because the law dictates what should be done 
+can result in thoughtless accommodation when institutions should be actively devising unique 
+and comfortable ways to include people of different abilities. 
+In her undergraduate thesis Accessibility Practices & the Inclusive Museum: Legal 
+Compliance, Professional Standards, and the Social Responsibility of Museums, museum studies 
+professional Ruth Starr explains that often much of the motivation museums have for 
+institutional change is complaint-driven.5 This means institutions assume compliance with ADA 
+laws and accessible design until a complaint is issued by a visitor.6 Most, if not all, public spaces 
+comply with the legal obligation to be accessible, but often—regardless of intent—it seems that 
+these actions toward accessibility rarely exceed the bare minimum. 
+As articulated by Starr, assumed compliance has seemingly resulted from limited and 
+vague goals that public and cultural institutions are expected to meet in order to become more 
+accessible and provide reasonable accommodations.7 Vague, undefined goals can become 
+                                                           
+5 Ruth Erin Starr, “Accessibility Practices & The Inclusive Museum: Legal Compliance, Professional Standards, and 
+the Social Responsibility of Museums” (Bachelor’s thesis, Rochester Institute of Technology, 2016).  
+6 Starr, “Accessibility Practices & The Inclusive Museum: Legal Compliance, Professional Standards, and the Social 
+Responsibility of Museums.” 
+7 Starr, “Accessibility Practices & The Inclusive Museum: Legal Compliance, Professional Standards, and the Social 
+Responsibility of Museums.” 
+
+ 
+5 
+ 
+problematic due to the varied interpretations of what “reasonable accommodation” means for 
+individual institutions. A large, well-funded institution may have a different definition of what is 
+reasonable than a smaller, volunteer-run institution. Similarly, museums in some communities 
+may have higher standards for what qualifies as reasonable accommodation than other 
+communities.  
+To attempt to address or overcome differing interpretations of what constitutes as 
+“reasonable” access and accommodation, the American Alliance of Museums (AAM), the 
+national accrediting body for museums in the United States, has adopted their own 
+Characteristics of Excellence, a document detailing the core standards for all accredited 
+museums.8 This document includes several key points that further clarify what museums should 
+be thinking about when developing reasonable accommodations and access for the museum: the 
+museum must identify the different demographics and communities it serves and use that 
+knowledge to guide decisions on how the institution serves the public; the museum must 
+understand “the characteristics and needs of its existing and potential audiences” and utilize this 
+knowledge as it creates exhibitions and interpretations; the museum must show “a commitment 
+to providing the public with physical and intellectual access” to museum resources; and the 
+museum must utilize methods that are appropriate for its audience, educational goals, and 
+resources.9 Putting emphasis on the needs and desires of the visitor can help museums evaluate 
+what reasonable accommodations are, forcing the museum to think past assumed compliance and 
+observe their audience. Asking the question “What does my community need?” can provide 
+                                                           
+8 American Association of Museums, “Characteristics of Excellence,” (1993), http://ww2.aam-
+us.org/resources/ethics-standards-and-best-practices/characteristics-of-excellence; Since this document has been 
+published, the American Association of Museums has rebranded and now goes by the title “American Alliance of 
+Museums. 
+9 American Association of Museums, “Characteristics of Excellence, (1993). 
+
+ 
+6 
+ 
+much more insightful answers than asking “What do I need to do in order to comply with the 
+ADA?”  
+In the years since the passage of the ADA, museums have worked diligently to ensure 
+that their facilities and exhibition spaces are able to be seen and appreciated by everyone 
+regardless of their physical limitations. One example of this is the development and adoption of 
+universal design. Universal design focuses on “the physical, cognitive, and social inclusion of 
+visitors with disabilities in museum experiences,” and, to achieve this inclusion, the Center for 
+Universal Design published formal principles of universal design and principles for universal 
+learning.10 These principles of universal design and learning are not only helpful for those with 
+disabilities, they can be helpful for anyone. For example, ramps are essential for people who use 
+wheelchairs or other assistive walking devices, but they can also be really helpful for families 
+who have a baby stroller or older people who may feel more comfortable or have an easier time 
+using a ramp than walking up stairs. The Boston Museum of Science has employed the universal 
+design approach since the 1980s and continues to ensure that each exhibit and space within the 
+museum is “designed with inclusion in mind.”11 In addition to being transparent with their 
+reports and planning for inclusive design,12 the museum also provides visitors with a detailed list 
+of their accessible services, including transportation, interpreters, and specific tips for visitors 
+with autism or similar developmental delays.13  
+                                                           
+10 “Universal Design for Museum Learning Experiences: Resources for museum professionals on employing a 
+universal design approach for exhibits, programs, and evaluation,” Boston Museum of Science, accessed Nov. 30, 
+2018, https://www.mos.org/UniversalDesign.  
+11 “Universal Design for Museum Learning Experiences: Resources for museum professionals on employing a 
+universal design approach for exhibits, programs, and evaluation.” 
+12 See the Universal Design Plan for Exhibit Design & Development provided by the Boston Museum of Science, 
+https://www.mos.org/sites/dev-elvis.mos.org/files/docs/misc/MOS_UD_Plan.pdf.  
+13 “Accessibility,” Boston Museum of Science, accessed Nov. 30, 2018, https://www.mos.org/accessibility.  
+
+ 
+7 
+ 
+Abiding by outlines set forth by the ADA, universal design and individual museum 
+programs are a great start toward ensuring all visitors can enjoy a museum experience. However, 
+there is still room for improvement, particularly in serving individuals with mental disabilities or 
+developmental delays, like autism spectrum disorder. While these visitors may not need what 
+one might consider traditional accommodation, like needing a certain size text or an elevator or 
+ramp to travel floor to floor, they still have needs that museums must meet for them to truly 
+enjoy their museum visit. 
+ 
+Living with autism 
+For many individuals on the autism spectrum, simple stimuli encountered in everyday life 
+can result in catastrophic and overwhelming feelings that are both physically and mentally 
+exhausting. In his book, Autism Discussion Page on the Core Challenges of Autism: A Toolbox 
+for Helping Children with Autism Feel Safe, Accepted, and Competent, behavior and autism 
+specialist Bill Nason explains that people who are on the autism spectrum have difficulty with 
+registering, integrating, and processing sensory experiences in all areas of life.14 These issues can 
+materialize in many ways, the most common being: fragmented or distorted perception; hyper or 
+hyposensitivity to sensory stimulation; sensory defensiveness,; difficulty integrating one’s 
+senses; mono processing; delayed processing; sensory overload; and modulating arousal level.15 
+All of these issues make it difficult for an individual with autism to interact with the world and 
+other people, particularly in environments that have a plethora of sensory stimulation, such as 
+loud noises, flashing lights, or large crowds.  
+                                                           
+14 Bill Nason, “Part III: Sensory Issues in Autism,” in Autism Discussion Page on the Core Challenges of Autism: A 
+Toolbox for Helping Children with Autism Feel Safe, Accepted, and Competent (London: Jessica Kingsley Publishers, 
+2014), 129-196. 
+15 Nason, Autism Discussion Page on the Core Challenges of Autism, 129-130. 
+
+ 
+8 
+ 
+For someone with distorted perception, the brain cannot integrate the many details of a 
+social situation, leaving the individual confused by a never ending stream of overwhelming 
+stimuli.16 For an individual with sensory defensiveness, the increased sensitivity to certain 
+stimuli can cause discomfort or pain, and they often try to escape a situation that is 
+overwhelming them.17 When one is bombarded with too much stimulation that is too intense to 
+process, one might suffer from sensory overload, which causes extreme emotional distress. 
+Sensory overload is what most parents, caregivers, and other guardians try to avoid. For people 
+who are neurotypical, their brain can filter out external stimuli, such as background noise, so the 
+individual can focus on the task at hand. This filter does not function effectively for those who 
+are on the autism spectrum, causing their brain to be bombarded by too much stimulation.18 This 
+bombardment prompts the brain to go into survival mode, meaning it prioritizes protecting itself 
+from overwhelming stimuli over anything else. When a person on the autism spectrum reaches 
+this level of stimulation, they can shut down and become unresponsive so their brain can escape 
+the overload, or they can have a emotional outburst or act out to escape the triggering stimuli.19 
+Although communicating with others is often difficult for people on the spectrum, there 
+are some who have stepped forward to describe how their unique sensory perception affects their 
+lives and interactions. Many people—including Temple Grandin, Donna Williams, Sean Barron 
+and others—have provided written books and articles describing their life experiences. In these 
+biographical accounts, common themes of their childhood are “fear, confusion, pain and the 
+arduousness of life” due to a lack of understanding of the world around them.20 Most 
+                                                           
+16 Nason, Autism Discussion Page on the Core Challenges of Autism, 130. 
+17 Nason, Autism Discussion Page on the Core Challenges of Autism, 132. 
+18 Nason, Autism Discussion Page on the Core Challenges of Autism, 139. 
+19 Nason, Autism Discussion Page on the Core Challenges of Autism, 139. 
+20 Shirley Cohen, Targeting Autism: What We Know, Don't Know, and Can Do to Help Young Children with Autism 
+Spectrum Disorders (Berkeley: University of California, 2007): 24-40. 
+
+ 
+9 
+ 
+neurotypical children would find a way to tell an adult when their emotions start to get out of 
+control, but one particular theme that has been echoed by many individuals on the spectrum is a 
+difficulty interacting with others; this means that communicating their feelings to avoid spiraling 
+into overwhelming anxiety or fear may not be possible. Furthermore, humans, while guided by 
+societal rules, are fairly unpredictable. One day someone can be friendly to you, another they 
+could be standoffish. For someone on the spectrum, this unpredictable behavior is often upsetting 
+and can induce anxiety.21 Combining the unpredictability of humans with the individual’s 
+difficulty communicating makes dealing with hyper or hypo-sensitivity to stimuli even more 
+arduous and can leave one feeling overwhelmed and isolated. 
+People alone can be overwhelming, but when you add them into a situation which has 
+unfamiliar environmental stimuli or requires social interaction and communication, the 
+individual’s state of mind can become significantly worse. Not only can all of this stimulation 
+cause intense emotional distress, but being aware of having these sensitivities can be incredibly 
+alienating. Donna Williams, an Australian writer and artist who was diagnosed with autism as a 
+child, described her experience as nothing short of difficult: 
+I had just come from another classroom where I had been tortured by sharp white 
+fluorescent light, which made reflections bounce off everything. It made the room race 
+busily in a constant state of change. Light and shadow dancing on people’s faces as they 
+spoke turned the scene into an animated cartoon. Now, in this noisy classroom, I felt I 
+was standing at the meeting point of several long tunnels. Blah-blah-blah echoed, 
+bouncing noise wall to wall. I looked at the cheerful, placid faces of others; clearly I was 
+the freak.22 
+ 
+In a world full of sensory information, it can be difficult navigating social situations like 
+going to the grocery story, sitting in a classroom, or visiting a museum. There is no simple 
+                                                           
+21 Cohen, Targeting Autism, 27-28. 
+22 Cohen, Targeting Autism, 32. 
+
+ 
+10 
+ 
+escape from these stimuli in public, and often escape may not be a viable choice in the case of 
+school or other social outings. So, many people with autism spectrum disorder have to learn how 
+to cope with these overwhelming feelings. Due to the wide spectrum and varied ways autism 
+affects individuals, there may never be one type of therapy or tool that works for everyone. So, in 
+order to accommodate everyone, museums and other public institutions should look to multiple 
+methods and tools of inclusion when designing an exhibition or providing accessible resources. 
+ 
+Improving accessibility for individuals with autism in the space of a museum 
+ 
+Museums are educational institutions meant to serve the public and their community. As 
+with all educational institutions, it is important to ensure that each potential student is being 
+served to the best of the institution’s abilities. For some audiences, this could mean making sure 
+no jargon or uncommon terms are used in text and display panels within an exhibit. For others, 
+this means utilizing different accessible methods of learning, such as providing braille on text 
+panels, providing captioning for any video or audio playing within an exhibit, or making sure 
+that the spaces provided are physically accessible to visitors who may use a wheelchair or other 
+assistive devices. For individuals with autism, it means making efforts to ensure that the visitor 
+can have the most comfortable and sensory-friendly visit possible. 
+ 
+Museums across the country have been implementing specific programs aimed at 
+creating a safe and enjoyable environment for individuals on the autism spectrum. One of the 
+most common methods of inclusion is the early entry approach, which was implemented in 2011 
+by the Smithsonian Institutions in the form of “Morning at the Museum.” This program allows 
+early access to the museum for individuals on the autism spectrum and, during this time, the 
+
+ 
+11 
+ 
+museum provides sensory-friendly activities for all ages.23 One of the first museums to develop 
+accessible programming specifically for individuals with autism and other similar developmental 
+delays, the Smithsonian collaborated with families and experts to see how they can better 
+accommodate visitors on the autism spectrum in their museums.24 In addition to the special 
+activities, the museum also dims the lights and dampens sounds within exhibits in an effort to 
+ensure that these elements will not trigger an overwhelming emotional response.25  
+Another museum that has implemented excellent inclusive programming for individuals 
+with autism is the Walters Art Museum in Baltimore, Maryland, which has offered early entrance 
+“Sensory Mornings” for people with developmental delays since 2010.26 The museum provides 
+early entry, first-person social narratives—documents that describe expected behavior and 
+interaction at a museum or given place—to help prepare individuals for their museum visit, and 
+opportunities for visitors to craft, do yoga, or take a break in dimly lit areas.27 By collecting 
+feedback and data at the end of each of their “Sensory Morning” events, the museum is able to 
+continually improve their offerings.28 From this data, they found that 48% of the participants 
+were first time visitors. This proves that the inclusive event allowed visitors to attend the 
+museum who may not have felt comfortable or welcomed during normal museum hours.29 One 
+visitor told the museum, “I cannot tell you what an event like this means to a family with a 
+special needs child. It was so nice to be someplace where people understood that [our child] has 
+                                                           
+23 Aditi Shrikant, “How Museums Are Becoming More Sensory-Friendly For Those With Autism,” Smithsonian, 
+January 5, 2018, https://www.smithsonianmag.com/innovation/how-museums-are-becoming-more-sensory-
+friendly-for-those-with-autism-180967740/. 
+24 Shrikant, “How Museums Are Becoming More Sensory-Friendly,” 2018. 
+25 Shrikant, “How Museums Are Becoming More Sensory-Friendly,” 2018. 
+26 Shrikant, “How Museums Are Becoming More Sensory-Friendly,” 2018.  
+27 Shrikant, “How Museums Are Becoming More Sensory-Friendly,” 2018. 
+28 Ashley Hosler, “Museum Access for All: Engaging Children with Autism Spectrum Disorders,” in Engagement and 
+Access: Innovative Approaches for Museums, ed. Juilee Decker (London: Rowman & Littlefield, 2015), 27-34. 
+29 Hosler, Engagement and Access, 31. 
+
+ 
+12 
+ 
+different needs and different reactions to things. It was great to have so many ways to engage 
+him.”30 It is evident from the positive response the Walters Art Museum received about their 
+“Sensory Morning” program that the museum, and museums elsewhere, are missing out on an 
+otherwise untapped audience. By simply providing one event or accessible services, museums 
+can expand their audience to include visitors on the autism spectrum and ensure that the 
+institution is serving the community in its entirety.  
+The Intrepid Sea, Air, & Space Museum in New York City also offers a good deal of 
+programming and materials to ensure people on the autism spectrum, or with similar 
+developmental delays, can enjoy their museum experience. In addition to providing early entry 
+days, they also provide a number of informational materials for families and individuals to utilize 
+before their visit, such as a social narrative, sensory guide, visual vocabularies, videos, and 
+virtual tours of the museum.31 Staff at the Intrepid also have tangle toys and noise cancelling 
+headphones available for individuals who need them so they can distract or distance themselves 
+from the overwhelming stimulation.32 Charlotte Martin, Senior Manager of Access Initiatives at 
+Intrepid Sea, Air & Space Museum, is part of an access team at the museum that works to ensure 
+it is “physically, emotionally, and intellectually accessible to all audiences.33 Martin and her 
+team have created varied types of programming for individuals with autism, and other 
+disabilities, and they continue to improve their offerings based on community and visitor 
+feedback. For Martin, making sure that visitors of all abilities are welcome at the Intrepid is of 
+                                                           
+30 Hosler, Engagement and Access, 32. 
+31 “Online resources: Plan your visit," Accessibility Resources, Intrepid Museum, last modified 2018,  
+https://www.intrepidmuseum.org/education/accessibility-resources.  
+32 Shrikant, “How Museums Are Becoming More Sensory-Friendly,” 2018. 
+33 Charlotte Martin, “Museums in Motion Today,” in Museums in Motion: An Introduction to the History and 
+Functions of Museums, ed. Edward P. Alexander, Mary Alexander, and Juilee Decker (London: Rowman & 
+Littlefield, 2017), 306-307. 
+
+ 
+13 
+ 
+top priority, embodying the spirit of the Characteristics of Excellence set forth by the American 
+Alliance of Museums: 
+My approach is to be ready for anything and anyone. When I head out to greet groups, I 
+am armed with bags loaded with touch objects, images, and supports for movement 
+activities. I never want the reason a visitor didn’t “get” something to be because I didn’t 
+provide an opportunity to communicate in the way that works for this individual. My 
+lesson plans tend to be stuffed with caveats about adjustments that educators can make as 
+they learn more about the participants.34 
+ 
+In addition to early entry, a common and useful tool that museums provide are social 
+narratives and sensory guides. As briefly mentioned above, these tools can be useful for families 
+and individuals as they are planning their visit. A social narrative provides general expectations 
+and behavior required for a museum visit, and parents of children with autism can utilize this 
+information to plan their visit and practice expected behavior at the museum35 When combined 
+with a sensory guide, which shows what types of sensory stimuli may be present in different 
+areas of the museum, families can plan the best route for their child so as to avoid sensory 
+overload to the best of their ability.36 
+The reason many of these programs are so successful is that most museums craft them 
+with the help and input from members of the autism community—from advocacy organizations 
+to traditional visitor feedback from individuals or families of individuals on the autism 
+spectrum.37 Drawing directly from the Characteristics of Excellence established by the American 
+Alliance of Museums, the museums are working to gain an understanding of what this specific 
+                                                           
+34 Martin, Museums in Motion, 307. 
+35 Intrepid Sea, Air & Space Museum, “Social Narrative," Intrepid Museum Accessibility Resources, last modified 
+2018,  https://www.intrepidmuseum.org/education/accessibility-resources. 
+36 Intrepid Sea, Air & Space Museum, “Sensory guide," Accessibility Resources, Intrepid Museum, last modified 
+2018,  https://www.intrepidmuseum.org/education/accessibility-resources. 
+37 Aditi Shrikant, “How Museums Are Becoming More Sensory-Friendly For Those With Autism,” Smithsonian, 
+January 5, 2018, https://www.smithsonianmag.com/innovation/how-museums-are-becoming-more-sensory-
+friendly-for-those-with-autism-180967740/. 
+
+ 
+14 
+ 
+community needs and then utilize their feedback to ensure that they are providing both an 
+enjoyable and educational experience for each visitor.   
+While these early entry days and pre-visit materials are highly useful, they are not the 
+single perfect answer for inclusivity. For early entry, the flaw is obvious: one can only attend the 
+museum on certain days if sensory-friendly accommodations are necessary for one’s enjoyment 
+and comfort. The sensory-friendly days are beneficial, as they increase the sense of community 
+among parents, families, and individuals with autism, but this does ultimately separate the autism 
+cohort from the mainstream community. Fostering a community of people who share similar 
+challenges and experiences is highly important, so rather than rendering this method of inclusion 
+completely obsolete, museum professionals and researchers should look to how they can 
+improve and expand the programs they already provide. Sensory guides and social narratives are 
+a great starting point, as they can help individuals navigate around potentially triggering stimuli 
+during a traditional museum visit. However, a pre-written guide may not be helpful in the 
+moment when stimuli start to become overwhelming and sensory overload is on the horizon, 
+particularly when it comes to stimuli coming from other visitors rather than the museum itself. If 
+individuals had a pocket-sized tool that enabled them to navigate the stimuli in a museum and 
+offered activities that could help an individual cope with these overwhelming feelings, the two 
+aforementioned hurdles could, in theory, be surpassed with relative ease.  
+ 
+Using technology to mediate education in the space of a museum 
+ 
+Scholarly studies in the field of psychology and education point to the utility of 
+technology as an educational tool for individuals on the autism spectrum. Given the limitations 
+many people on the spectrum have with face-to-face interaction and communication, technology 
+
+ 
+15 
+ 
+can be used as a mediator to assist in various educational situations. From learning about daily 
+tasks, like the importance of brushing one’s teeth, to classroom learning, using technology as a 
+means to facilitate education can help overcome some of the issues children with autism may 
+face in a traditional classroom or educational environment. Finding different methods of 
+mediating education in an environment that involves direct communication between the 
+instructor and the instructed can greatly enhance the quality of learning for individuals on the 
+autism spectrum.  
+ 
+One study, published in 2014, looked at interactive technologies that were beneficial for 
+people with autism and explained that computers can help support the sensory filtering process 
+by only displaying relevant information on the screen.38 The study also observed that computers 
+can be more predictable when it comes to interaction; they can offer a chance to be uninhibitedly 
+repetitious, offer opportunities to create a routine, and are consistent in how they function. All of 
+these features can help create a more comfortable experience for people on the spectrum who 
+often feel anxious around unpredictable elements and seek security.39  
+Another study from 2016, conducted by faculty in the department of informatics in 
+special education at the Federal University of Rio Grande, took this research further and found 
+that while computer mediated education was very helpful, the use of touch and mobile devices 
+were significantly more user-friendly than the traditional laptop.40 According to the study: 
+The interaction with the tablet showed a more friendly and intuitive use, since it is used 
+more naturally, using fingers to touch the screen. The tablet can be used anywhere and in 
+any position, which is good for students who are hyperactive.41  
+                                                           
+38 Julie A. Kientz et all, Interactive Technologies for Autism ed. Ronald M. Baecker (Morgan Claypool Publishers, 
+2014), 1-56.  
+39 Kientz et all, Interactive Technologies for Autism, 8. 
+40 Lucila Maria Costi Santarosa and Debora Conforto, “Educational and Digital Inclusion for Subjects with Autism 
+Spectrum Disorders in 1:1 Technological Configuration,” Computers in Human Behavior 60, (2016): 293-300. 
+41 Santarosa and Conforto, Computers in Human Behavior, 293. 
+
+ 
+16 
+ 
+ 
+With a laptop, one uses their fingers to control a mouse, which controls a small cursor on 
+the screen. For someone with difficulty integrating different sensory perceptions—specifically, 
+integrating sight and touch to understand the relationship between the mouse and the cursor—
+using a mouse may be frustrating or may not even make logical sense to the user.42 With touch 
+screens, one uses their finger to control what happens on a device, making the connection 
+between one’s action and the outcome of what is produced on screen more concrete.  
+Diving deeper into the topic, one study published in the Journal of Medical Systems 
+researched what exact methods of touch interaction seemed to produce the most positive and 
+user-friendly experience for individuals with autism. This study looked at Human-Computer 
+Interaction models and determined that the most favored forms of interaction for individuals on 
+the autism spectrum were keystroke interaction, tapping interaction, and touch interaction.43 
+They tested three apps requiring different types of interaction and observed twenty-one 
+individuals on the autism spectrum utilizing the apps to gather data.44 In addition to identifying 
+the best and most preferred types of interaction, they were able to collect information regarding 
+ideal app design, specifically icon size and shape. They found that size of the icons within the 
+app interfered with their study results and went further to identify the ideal shape and size of 
+icons for individuals with autism: a square that is 144 X 144 px.45 Studying and referencing all of 
+this information can be helpful when designing and creating apps for individuals on the autism 
+                                                           
+42 Santarosa and Conforto, Computers in Human Behavior, 293. 
+43 Quezada et al., “Usability Operations on Touch Mobile Devices for Users with Autism,” Journal of Medical 
+Systems, 41 no. 184 (2017): 1-11. 
+44 Quezada et al., Journal of Medical Systems. 
+45 Quezada et al., Journal of Medical Systems; The measurement (px) stands for pixels, a common form of 
+measurement when using digital design tools. 
+
+ 
+17 
+ 
+spectrum. It is also important to understand that features in common apps such as sudden 
+flashing lights or sound effects can affect individuals on the autism spectrum in a negative way.  
+One app that has been successful in accommodating the needs of individuals on the 
+autism spectrum is MagnusCards, an app inspired by creator Nadia Hamilton’s brother, Troy. 
+Troy has autism and Nadia has dedicated much of her life to helping individuals with special 
+needs, which includes creating this app.46 MagnusCards features digital card decks which contain 
+social narratives that help guide the users through daily activities, including brushing their teeth 
+and going to the grocery store.47 For $60 per year, users gain unlimited access to the app and are 
+able to create new cards within the app, allowing them to tailor the experience to a specific 
+individual.48 As of 2015, there were more than 650 users, and that number has surely grown in 
+the years since.49 The app is useful for people of all ages and abilities, providing twelve 
+categories of card decks with options to customize them.50 Most of these categories deal with 
+real-world problems, such as cleaning, entertainment, money management, and personal care.51 
+The idea of having a pocket handbook for social interaction and everyday activities can 
+be incredibly useful when applied to a museum setting. In a study published in the Journal of 
+Museum Education, Damian Maher observed how students interacted with an iPad being used 
+for a classroom assignment within the space of a museum. The students, teacher, and Maher all 
+                                                           
+46“MagnusCards: An Autism Life Skills & Transition Support Tool,” Magnus Cards, accessed Oct. 14, 2018, 
+https://magnusmode.com/magnuscards-an-autism-life-skills-transition-support-tool/#about-section.  
+47 “MagnusCards” 
+48 Terry Pender, “Startup’s digital cards helps people with special needs navigate daily life,” The Record, Feb. 21, 
+2015, https://www.therecord.com/news-story/5440793-startup-s-digital-cards-helps-people-with-special-needs-
+navigate-daily-life/.  
+49 Pender, The Record, 2015. 
+50 “MagnusCards: An Autism Life Skills & Transition Support Tool,” Magnus Cards, accessed Oct. 14, 2018, 
+https://magnusmode.com/magnuscards-an-autism-life-skills-transition-support-tool/#about-section.  
+51 “MagnusCards” 
+
+ 
+18 
+ 
+found that the iPad supported and enhanced learning within a museum.52 Maher also found that, 
+despite the consensus that the iPad enhanced learning, the presence of apps and games on the 
+iPad distracted students while at the museum.53 While games will likely always be a source of 
+distraction, this is no reason to ban or exclude iPads and personal devices from museum 
+education. Rather than work against the constant desire for entertainment that exists in young 
+people of all abilities, the museum could use these forms of entertainment to enhance knowledge 
+about an exhibit. 
+Utilizing games for educational purposes in museums is not a new concept; museums 
+around the world are using digital games to enhance the visitor experience. One successful 
+example of this is The Voyage, a game developed by The Australian National Maritime Museum 
+in collaboration with Roar Films in Tasmania, Screensound Australia, and Screensound 
+Tasmania.54 The Voyage allows the user to experience what it was like to take the historic 
+journey from London to Van Diemen’s Land—now known as Tasmania—to transport British 
+convicts to the island to work.55 The players are rewarded based on the number of healthy 
+convicts they deliver to the British colony.56 Based on historical data, such as documented ship 
+paths, medical records, and other documents relating to the convicts being transported, the 
+players are able to learn about the great transportation of convicts from Britain to Australia in the 
+1800s in a way that can be more entertaining than the traditional text panel or diorama.57 While 
+                                                           
+52 Damian Maher, “Connecting Classroom and Museum Learning with Mobile Devices,” Journal of Museum 
+Education, 40 no. 3 (2015): 257–267. 
+53 Maher, Journal of Museum Education, 257-267. 
+54 L. Kelly & A. Bowan, “Gamifying the museum: Educational games for learning,” Museums and the Web Asia 
+2014, ed. N. Proctor & R. Cherry, accessed Nov. 15, 2018, 
+https://mwa2014.museumsandtheweb.com/paper/gamifying-the-museum-educational-games-for-learning/. 
+55 Kelly and Bowan, Museums and the Web. 
+56 Kelly and Bowan, Museums and the Web. 
+57 Kelly and Bowan, Museums and the Web. 
+
+ 
+19 
+ 
+there is still much room for research and exploration of this topic, according to researchers, thus 
+far the Australian National Maritime Museum has found success with the game and sees a high 
+educational potential for this type of activity in an educational sphere, particularly for 
+museums.58 
+Utilizing digital games that are specific to a topic or area of a museum can be highly 
+useful in engaging a twenty-first century audience, but it also has great potential for increasing 
+accessibility for some visitors. Often, when a person with autism becomes overwhelmed with 
+stimuli, the only available option is to leave and remove themselves from a situation. If an app 
+could provide resources to help alleviate stressed caused by overwhelming stimuli, perhaps 
+individuals would not need to remove themselves completely. They could simply put on their 
+headphones, listen to some calming music, and play relaxing and educational games relating to 
+the museum and its exhibitions. With an app like this, one could, in theory, navigate the museum 
+at one’s own pace without having to worry about approaching a sensory overload.  
+To summarize, by creating a museum-specific app to mediate education, museums can 
+increase digital accessibility options for individuals with autism. The app could contain sensory-
+friendly entertainment options, such as games or music, helpful tools to navigate the museum, 
+such as maps or sensory guides, and offer other useful resources that can help ease social 
+interaction for individuals on the autism spectrum. If a general template was created that could 
+be modified for each individual museum’s needs, museums across the country could use the app 
+to increase their accessible offerings for visitors on the autism spectrum and enable these 
+individuals to attend the museum at times of their choice, not just during sensory-friendly days.  
+ 
+                                                           
+58 Kelly and Bowan, Museums and the Web. 
+
+ 
+20 
+ 
+Research Methodology  
+ 
+To complete this project, it was necessary to research possible methods of development 
+and begin the development of the app simultaneously. After doing preliminary research on 
+assistive technology developed for individuals on the autism spectrum and on similar, 
+preexisting approaches for accessible technology within both local and national museums, I 
+brought my findings to Peter Laurin, a senior game design and develop student at RIT and the 
+app developer on this project, and he began coding the app layout. Throughout the development 
+process, we consistently held meetings to ensure that the new information and findings I came 
+across in my research was applied to the app, so as to enhance the quality of its design and 
+content.  
+ 
+Once the prototype of the app was completed, I held two rounds of user testing. The first 
+was with a general audience off-site, and the second was with our specific target audiences—
+individuals on the autism spectrum and their families—on site at the Strong National Museum of 
+Play.59 Following both of these rounds of user testing, participants filled out a Google Forms 
+survey online to give their feedback on the quality and effectiveness of the app (Fig. 1 and Fig. 
+2). In addition to the survey, after I conducted the user testing with the target audience, I held 
+follow-up interviews with each participating family to ask more in-depth questions about their 
+previous museum experiences, as well as to elaborate on the feedback they had given on the user 
+testing survey they completed after their museum visit.60 Using the information collected from 
+                                                           
+59 Between the two rounds of user testing, the first being with a general audience, we took feedback and made 
+changes to the app before conducting the second round of user testing. We did this to ensure that the user testing 
+we conducted with our target audience would be with the best version of our app, both in respects to content and 
+design. 
+60 I chose not to conduct in-depth interviews with those participating in the first round of user testing. Their input 
+was intended to help Peter and I refine the app before deploying with our target audience. Moreover, they did not 
+comprise of my target audience for the app, children on the autism spectrum aged 4-12-years-old. 
+ 
+
+ 
+21 
+ 
+each round of user testing, I then evaluated the current prototype and compiled a list of 
+improvements and changes to implement in future iterations of this app-concept. 
+ 
+App Development Methodology 
+Developing the Concept 
+ 
+Seeing someone you love miss out on opportunities because of their disability can be 
+infuriating, but, when these feelings are channeled effectively, can also be inspiring. The idea for 
+SenseEase began with this feeling.  
+ 
+My younger cousin, Leo, was diagnosed with autism spectrum disorder when he was 
+about 2-years-old. Since his diagnosis, my uncle and the rest of my family have done everything 
+in our power to ensure that he has the same positive experiences as his neurotypical peers. He 
+has been sledding, played on a Slip n’ Slide, and even went on a short Christmas tour at a 
+museum to meet Santa Claus. All of the efforts we made to get him involved with the community 
+and other children were successful, until one Christmas when we found our first glaring 
+roadblock to his interpersonal interactions.  
+ 
+Around Christmas in 2017, we decided to take him to the Strong National Museum of 
+Play, and it did not go well. There were more visitors than usual because of the holiday breaks, 
+meaning larger crowds around interactive exhibits and, most importantly, more noise. After two 
+difficult hours at the museum, Leo finally had enough and hit his threshold of sensory 
+stimulation. He was trying to enjoy himself, but the noise and the other children moving around 
+him pushed him over the edge and, ultimately, we had to leave.  
+ 
+In contrast to Leo’s experience, I fondly remembered how, growing up, my other family 
+members and I loved the Strong Museum. We had so many great memories there, and knowing 
+
+ 
+22 
+ 
+that Leo would not be able to make his own memories at the museum broke my heart, 
+particularly because of my background in museum studies. However, instead of accepting defeat 
+and never bringing Leo to the museum again, I started thinking. What changes could I make to 
+the museum experience that would enable Leo to have fun at the museum? How could I make 
+museum experiences more manageable for him? Thus, the initial ideas that would become 
+SenseEase were conceived. 
+Choosing a medium 
+When it came to choosing a medium, a mobile app to be used on a cellphone seemed the 
+most obvious choice for a number of reasons. First, and most importantly, a mobile app allowed 
+for more flexibility when it came to utilizing the app. Most people carry their phones in their 
+pockets or purses, making the device easily accessible during a museum visit; the same cannot be 
+said for other devices like laptops or tablets.  
+When walking through a museum, it is unlikely that anyone would be carrying a laptop 
+with them because they are large and not as easily used when one is moving from exhibit to 
+exhibit. If this digital tool was to be created via a website, where visitors would need to access 
+the content via a computer, it would render much of the site-specific content within the app 
+useless. Additionally, if a child is on the verge of sensory overload and an emotional outburst, 
+taking time to open a laptop, connect to WiFi, and navigate the website would take too much 
+time and concentration. A similar argument can be made for tablets. While they are smaller and 
+more mobile than a laptop, not all visitors may want to carry their tablet around a museum.61  
+Another influencing factor behind my choice in medium was a study published in the 
+journal, Computers in Human Behavior. Through their research, Lucila Maria Costi Santarosa 
+                                                           
+61 Our current design can work on any Android device that is able to download mobile apps, but it is optimized for 
+cellphone-use. 
+
+ 
+23 
+ 
+and Débora Conforto found that touchscreens were preferred by individuals on the autism 
+spectrum over laptop computers, which can be inaccessible for some individuals on the autism 
+spectrum because the functions of the mouse, keyboard and screen may not be intuitive due to 
+difficulties with sensory processing.62 In their case studies, they found that the children involved 
+had difficulty connecting the movement of their hand to the cursor on the screen when using a 
+laptop, but when using the touch screen, they had no issues interacting with the provided 
+content.63 They concluded that a touch screen is a more effective method of interaction because 
+the tablets are “operated with the use of a data input device which is very natural to humans: 
+fingers.”64 They also found that the instantaneous response of a touch screen tablet was easier to 
+facilitate interaction, as one simply needs to press one button to turn on the tablet and one to 
+open the app rather than having to follow the multiple steps it takes to turn on a laptop and 
+access information on a website.65 
+Initial design 
+ 
+I began thinking about the logistics of this in the summer of 2018, beginning with some 
+minimal background research about different apps that my little cousin enjoyed and how I might 
+adapt the methods employed by those apps to create my own. At the beginning of this process, as 
+is always the case, SenseEase had lofty goals. Initially, the idea was to create one, catch-all app 
+that could help visitors on the spectrum have a sensory-friendly experience at any given 
+museum. While this would be wonderful in an ideal world, the idea was simply not realistic. 
+Given the variations between types of content, the level of interactivity, and the general setting 
+                                                           
+62 Santarosa and Conforto, Computers in Human Behavior, 298. 
+63 Santarosa and Conforto, Computers in Human Behavior, 298.; The study also noted that this would be ideal for 
+users with autism who also have other physical disabilities, as touch screens are generally easier to physically 
+interact with. 
+64 Santarosa and Conforto, Computers in Human Behavior, 298. 
+65 Santarosa and Conforto, Computers in Human Behavior, 298. 
+
+ 
+24 
+ 
+or environment of the museums just in the Rochester area, it became clear that one app would 
+never be capable of serving different institutions across the United States, or the world for that 
+matter.  
+ 
+Throughout August and September 2018, I began to narrow down my goal from an 
+unattainable deliverable to a feasible, year-long project. After discussing my ideas with my 
+museum studies classmates and my research methods professor, Dr. Tamar Carroll, I decided to 
+focus on creating an app for a single museum that had the potential to be recreated and adapted 
+for other institutions. This left me with a decision: what museum should I use for my case study? 
+ 
+To decide which museum would be the best environment to prototype SenseEase, I 
+looked back on Leo’s experience and seriously considered the Strong Museum. However, before 
+I made the decision, I interviewed representatives at the Strong Museum and two other local 
+institutions and discussed their accessibility options for individuals on the autism spectrum: 
+Cathy DeBellis, the Director of Public Programs at the Strong National Museum of Play; 
+Kathryn Murano Santos, the Senior Director of Collections and Exhibitions at the Rochester 
+Museum and Science Center; and Marlene Hamann-Whitmore, the McPherson Director of 
+Academic Programs from the Memorial Art Gallery (Fig. 3).66 Overall, these museums were 
+conscious of the need for more accessible and sensory-friendly options for visitors on the autism 
+spectrum, but the museums were still in the early development stages of having regular 
+programming catering to this specific audience. However, the Strong National Museum of Play 
+was the furthest along in terms of developing sensory-friendly programming and ensuring that all 
+staff members knew how to assist individuals on the autism spectrum and their families through 
+training with Autism Up, a local autism awareness group. After these interviews and internal 
+                                                           
+66 These interviews were conducted in October and November of 2018. See Fig. 3 for the full article. 
+
+ 
+25 
+ 
+reflection on both my research and personal experiences, I decided that the Strong National 
+Museum of Play would be the ideal environment to test this sensory app for three reasons: the 
+interactive nature of the museum’s exhibits, their preexisting autism-specific programming, and 
+the often loud and unique nature of the museum’s environment as a whole. 
+ 
+The Strong Museum is unlike any traditional museum, often seeming borderline chaotic 
+because of the museum’s younger clientele. However, the playful noisiness and constant streams 
+of children that come through their doors are exactly what the Strong wants. Their mission is to 
+“explore play and the ways in which it encourages learning, creativity, and discovery and 
+illuminates cultural history.” In order to explore play, play must be encouraged; and that is 
+exactly what they do.67 While this loud, playful environment attracts hundreds of children every 
+week, it is not the ideal environment for those on the autism spectrum. The large crowds of 
+parents and children, the sudden and uncontrollable noises, and being surrounded by strangers 
+and their unpredictable behaviors can trigger severe emotional outbursts. Often, for children on 
+the autism spectrum, once their sensory threshold is reached, as previously discussed, the only 
+option is to remove the child from the triggering environment and give them time to return to 
+their emotional baseline; which, while necessary, is not ideal for museums who want to share 
+their collections and experiences with all visitors of all ages and abilities.  
+ 
+In addition to the unique and chaotic environment, the Strong Museum made a good 
+candidate for this prototype because of its preexisting resources for individuals on the autism 
+spectrum and their families. The museum also provides: noise-cancelling headphones, which are 
+available for visitors at their front desk; quiet areas for visitors who may need a break from the 
+sensory stimulation; and “social stories,” or social narratives—pre-visit materials which provide 
+                                                           
+67 Strong National Museum of Play, "Mission," The Strong National Museum of Play, 30 Jan. 2019, accessed 12 Feb. 
+2019, https://www.museumofplay.org/about/mission. 
+
+ 
+26 
+ 
+a visual walkthrough of the museum and shows what one can expect during a visit through 
+photos, video, or text—which parents can use to help familiarize their children with how to 
+navigate the museum.68 One of the newest additions to the Strong’s accessible offerings is the 
+Sensory-Friendly Sunday program. Throughout the year, the museum hosts sensory-friendly 
+events that are exclusively for individuals with autism or other similar developmental delays 
+(Fig. 4). This allows for individuals on the spectrum to come to the museum before it officially 
+opens and to explore the exhibits in a calmer environment. They dim the overhead and exhibit 
+lighting, they lower the volume of interactive exhibit elements, and, ultimately, provide a space 
+for children and parents to explore the museum at their own pace among others who share 
+similar experiences without fearing judgement.69 Due to the Strong’s existing resources, I would 
+be able to consult with the museum and build on these resources when curating content for my 
+app. 
+Once I made my decision to focus on the Strong Museum, it was time to flesh out exactly 
+what my app would provide. I wanted to incorporate soothing elements that my cousin Leo used, 
+such as soft music and games, but I needed to find more resources that would be helpful for 
+children on the autism spectrum and their parents. I began by looking at the accessibility 
+resources available on the Strong Museum website, particularly their social stories, so I could 
+determine what supportive-materials I should include in the app beyond my games and music 
+(Fig. 5). To get a more comprehensive understanding of what I might need to include in the app, 
+                                                           
+68 Felicia D. Swartzenberg, “Are Museums Accommodating Visitors on the Autism Spectrum?” 
+69 Felicia D. Swartzenberg, “Are Museums Accommodating Visitors on the Autism Spectrum?,” Atavist, 12 Dec. 
+2018, feliciadianne.atavist.com/asd_accessibility.; The Strong Museum always strives to promote a judgement-free 
+environment for their institution. However, the point of providing a space exclusive to people on the autism 
+spectrum and their caregivers is to help ease public interaction. Regardless of where they are, when people on the 
+spectrum reach sensory-overload and have emotional outbursts it can draw attention and be met by judgement 
+from those who do not have experience with or know anything about autism spectrum disorder. When surrounded 
+by other parents who understand and share those fears, it can be comforting and help parents feel at ease even if 
+their child does have an emotional outburst. 
+
+ 
+27 
+ 
+I expanded my research and looked at methods used by the Intrepid Sea, Air, and Space Museum 
+Complex, an institution that has made many great strides toward accessibility for individuals on 
+the autism spectrum (Fig. 6). Additionally, I looked at the sensory-friendly app that was 
+developed for the Shedd Aquarium in Chicago as an example of what I should be striving for 
+when creating the design and content for my app (Fig. 7). I also looked at other apps that are 
+similar in nature, even if they were not created for a museum space, such as Magnus Cards, to 
+see what features and functions were available. 
+After completing my preliminary research, I decided I needed to include the following in 
+my app: games, upbeat and soothing music, a sensory guide, a social narrative, a list of 
+programming, and an explanation of what the app is supposed to accomplish. I also, at this point, 
+amended the prototype’s title to read, SenseEase: Strong Museum, to show the connection 
+between this iteration of the app and the institution we modeled it after. 
+Connecting with an app developer 
+ 
+In terms of actually programming the app, there were significant deficits in my personal 
+skillset that were vital to creating the app. Mainly, I had none. With the assistance of my primary 
+adviser, Dr. Juilee Decker, I was able to connect with Peter Laurin. Peter was a student in Dr. 
+Decker’s Museums and the Digital Age class and, when approached about the project, he was 
+eager to join the SenseEase: Strong Museum team as the app developer.   
+ 
+Peter and I had our first official meeting in early September 2018, where we discussed 
+the feasibility of the app I had theoretically designed. With his guidance and knowledge, we 
+determined that it would be most feasible to focus on a single exhibit area within the museum if 
+we were to develop a quality prototype. 
+
+ 
+28 
+ 
+ 
+To help us choose a specific area of the museum to focus on and develop ideas for what 
+types of games we would include, Peter and I visited the Strong Museum on September 30, 
+2018. During our site visit, we evaluated each exhibit with three things in mind: what is the level 
+of chaos in this particular area, what area would make the best use of a digital experience, and 
+what games within the existing exhibits might adapt well to a digital interface without 
+completely changing the experience as a whole? We chose these questions based on the 
+information I had obtained from interviews with Rachel Rosner, the Director of Education and 
+Support at Autism Up (Fig. 8).70 Rosner heavily emphasized two necessities: having ample 
+accommodations for individuals on the autism spectrum in areas that are typically very chaotic, 
+and having those accommodations be as similar as possible to the experiences any other 
+neurotypical child would have; or, in other words, ensuring that while they are having a slightly 
+different experience, they would not be considered as “different” from their peers in a negative 
+way. 
+We listened for the noisiest rooms, but also made sure to choose an area where an app-
+facilitated experience would make sense. For example, while the miniature Wegmans and large 
+Sesame Street play area is loud and crowded, the interactions visitors have with these exhibits 
+simply cannot be digitally manufactured due to their hands-on, physically interactive nature. 
+They are all very tactile and are far more exciting when experienced in person. Ultimately, we 
+agreed on creating the app around the Reading Adventure Land area on the first floor of the 
+museum because it was quite loud but had several interactive elements that could be effectively 
+translated into a digital format (Fig. 9). 
+                                                           
+70 Autism Up is a local autism support organization that helps provide a “Multi-Sensory Learning Environment for 
+individuals with autism” and their families or caregivers. See Fig. 8 for more details about the organization. 
+
+ 
+29 
+ 
+The last question we asked ourselves was what games within the exhibits we might take 
+inspiration from; which was possibly the most exciting aspect of our on-site research. To make 
+our decision, we interacted with the different game offerings to see which would be feasible for 
+us to recreate, enjoyable for our audience of children on the autism spectrum ranging from four 
+to twelve-years-old, and applicable to the area we decided to focus on. After a few hours of fun, 
+playful research, we settled on a goal of three games for the app: a character-matching game in 
+which the user would flip over two cards at a time to find the matching pairs; an alphabet 
+matching game where the user is shown a letter and a two to three photos and they must choose 
+which photo contains a character or an object that starts with the letter being shown; and a 
+spelling game where the user is shown a photo and a partially spelled-out word and they need to 
+choose the remaining letters needed to finish spelling the word. The general ideas for the games 
+were modeled after games that are actually featured throughout the museum, but they are not 
+exact replications.  
+Additionally, as we walked through the museum, I took preliminary notes that would 
+help me create a sensory guide for the museum. In each exhibit area of the museum, I noted the 
+prominent sensory-stimuli, potential sensory triggers, and areas where there was little or no 
+overwhelming sensory input, like rest areas or reading nooks. Using this information, and more 
+information gathered from later visits, I created a slideshow detailing what sensory stimuli to 
+expect in each area of the museum so parents could learn where to avoid or where to go when 
+their child needs a break, and a social narrative that would help parents and children learn what 
+behaviors are expected at the museum. 
+Due to various software set-backs, time, and resource restraints, we decided to change 
+our goal for the prototype and chose not to include any games at this stage of development. 
+
+ 
+30 
+ 
+Rather than rushing to push out an app and a game, we wanted to focus on creating a fully 
+functional app design without any bugs. Creating an app interface and a fully functional game 
+was simply not possible within our given timeframe with only one app developer on our team. 
+Creating the app 
+After our initial visit, it was time to sit down and determine the exact content of the app. 
+Once Peter and I agreed on a feasible design, we held regular meetings to discuss the evolution 
+of: SenseEase Strong Museum. The first decisions we made were in regard to the general 
+aesthetics of the app, such as color schemes and icon design. We chose a light blue for the app 
+background color, because that color is associated with Autism Awareness Month, and rainbow-
+colored icons, because the Autism Awareness Ribbon is a puzzle-piece pattern that is made up of 
+different colors of the rainbow.71 For icon size and design, we decided to create square icons that 
+measured to 144 x 144 pixels with printed text explaining the function of the icon.72 We also 
+decided, based on a study published in the Journal of Medical Systems, to have all of the app 
+functions be triggered by tapping motions rather than sliding motions, as tapping was found to be 
+a more intuitive form of interaction for individuals on the autism spectrum.73  
+ 
+When it came to the development software, Peter and I decided to use Android Studio, 
+which Peter had experience in.74 Android’s platform was chosen for its easily accessible 
+publishing software, which, in turn, allowed for easily accessible user testing opportunities. 
+Additionally, I had access to two android devices, a smartphone and a tablet, to use for user 
+                                                           
+71 Autism Society, "The Autism Awareness Ribbon," Autism Society, accessed Feb 13, 2019, http://www.autism-
+society.org/about-the-autism-society/history/autism-awareness-ribbon/. 
+72 Quezada et al., “Usability Operations on Touch Mobile Devices for Users with Autism,” Journal of Medical 
+Systems, 41 no. 184 (2017): 8. 
+73 Quezada et al., Journal of Medical Systems, 6-9. 
+74 Since we chose to use Android Studio, we also used JavaScript to code our interactive elements as it is the 
+default code language in this particular development software. 
+
+ 
+31 
+ 
+testing, making this software a good choice.75 While this prototype can only operate on Android 
+devices, this concept and template can be adapted to develop an iOS-compatible version of the 
+app.  
+ 
+When creating the wireframe of the app, we began by setting up an empty project within 
+the Android software and an emulator to run a virtual android device on the PC so we could view 
+how the wireframe would look on a mobile device. I began by making a sketch for what the 
+home screen should look like, and Peter created the layout of the screen in an XML file, a 
+metalanguage similar to HTML.76 He began by setting up the main toolbar at the top of the page, 
+and then he proceeded to bring the sketched design to reality by adding the six icons labeled as 
+follows: Music, Sensory Guide, Social Story, Settings, For Parents, and Games  (Fig. 10).77 
+Before proceeding to the next step in the development process, Peter tested the code in the 
+emulator to ensure that the design layout matched our original sketch. 
+ 
+After making the basic wireframe, Peter began to add the functionality to the home 
+screen. He made the icons clickable so they would open to their respective pages and tested each 
+function in the emulator to ensure that all of them worked as expected.  After this was completed 
+for each individual page, he created a downloadable Google Drive file that was ready for user 
+testing.78 
+                                                           
+75 Since we did not register this app on the Google Play store, it was ideal to have it pre-downloaded on my devices 
+for the second round of user testing due to security issues regarding downloading apps from unregistered or 
+unknown sources. For the first round of user testing, due to the number of participants, most of them downloaded 
+the app onto their own device, which is not typically best-practice. 
+76 XML is a metalanguage, similar to HTML, which allows users to define their own customized markup languages. 
+77 While we had made the decision to not develop games for this prototype, we chose to leave the option in our 
+interface design so we could have a template that encompassed my full vision for this app, which, with more time 
+and resources, would include interactive games relating to the museum exhibits. The game icons are not 
+functional.  
+78 Note that this is not best practice in terms of sharing app-files. We chose this method of dissemination because 
+we were unable to register the game with the Google Play store in time for our two rounds of user testing. 
+
+ 
+32 
+ 
+We finished the interface and individual page design in December 2018, and finished the 
+fully functional app interface in early February 2019. The final iteration of the SenseEase: 
+Strong Museum prototype included: a home screen; a functional music player with four songs; a 
+social story for entering the museum and navigating the Reading Adventure Land exhibit; a 
+sensory guide for the museum; information about the app itself; the museum’s upcoming 
+programs and the museum’s hours of operation (Fig. 11).  
+ 
+User Testing Procedure 
+ 
+To evaluate the functionality and effectiveness of this app, I conducted two rounds of 
+user testing; the first with a general audience and the second with two families who have children 
+diagnosed as being on the autism spectrum, my target audience. During the first round of user 
+testing, Peter and I visited Dr. Juilee Decker’s Visitor Engagement class, which consisted of 
+twenty-two students from various colleges within the university, including: the College of 
+Liberal Arts, the College of Engineering Technology; the B. Thomas Golisano College of 
+Computing and Information Sciences; the College of Art and Design; the Kate Gleason College 
+of Engineering; the College of Health Sciences and Technology; and the School of 
+Individualized Study. Dr. Decker’s class discusses visitor accessibility and interaction, so having 
+her students test the first iteration of the prototype allowed us to gather feedback from people 
+familiar with the subjects at hand, specifically museum studies and visitor accessibility. During 
+their class time, students with Android devices were able to download the app via a Google 
+Drive file and navigate the different pages at their own pace for about fifteen minutes.79 After the 
+                                                           
+79 For students without Android devices, we had one tablet available for use and printed hand-outs of the sensory 
+guide and textual information from the app so they could still participate.  
+
+ 
+33 
+ 
+class finished exploring the app, the students were instructed to complete a survey in which they 
+evaluated the concept, design, functionality, and overall effectiveness as a tool (findings 
+referenced in the following section).   
+ 
+During the second round of user testing, I was able to conduct the test on site at Strong 
+Museum with two families: Roberta and Austin, who is ten-years-old, and Lindsay and Preston, 
+who is seven-years-old.80 As an incentive to be involved with this user testing, the families 
+received free admission to the museum on the day of the visit. Each family was able to review 
+the app before visiting the museum and utilize the interactive components of the app throughout 
+their museum visit with a particular focus on Reading Adventure Land, given the prototype’s 
+focus. After they were able to use the app at the museum, each family filled out a visitor survey 
+that detailed their experience with the app and its effectiveness. After reviewing their feedback, I 
+followed up with each family and conducted individual interviews to ask about their previous 
+museum experiences, get a more in-depth description of how this app affected their museum 
+experience, and ask for more details as to why they did or did not consider this an effective tool 
+and guide for the museum.  
+While this user testing pool may seem small, the choice was purposeful, as I wanted to 
+engage in pre- and follow-up interviews with each family to get as much qualitative data about 
+their previous museum experiences and how using SenseEase: Strong Museum affected their 
+visit. 
+ 
+ 
+                                                           
+80 Both families requested that their last names be redacted from this public document. 
+
+ 
+34 
+ 
+User Testing Findings 
+First Round: General Audience 
+ 
+The results of the first test with a general audience, Dr. Juilee Decker’s Visitor 
+Engagement students, were generally positive (Fig. 12).  The students found that the app 
+installation speed was consistent with other apps they had experience with, they found the app 
+fairly easy to navigate, and they thought the aesthetic and appearance of the app was a good fit 
+for my target audience. When asked for possible improvements or additions, the students 
+suggested: changing the name of the app, which was originally Project Ease, to something that 
+sounded less professional and more kid friendly, like SenseEase: Strong Museum; changing the 
+original music options we had on the app, which were a mixture of lullabies and nursery rhymes, 
+to songs that were generally more calming, like classical and instrumental music; adding 
+additional content, such as a floor map of the museum, an interactive map of each exhibition area 
+with details about each individual exhibit, additional videos and multimedia content about the 
+exhibits, the museum’s hours of operation; and adding an option that allows you to provide direct 
+feedback to the museum about the exhibit or the app itself.  
+In addition to having the class fill out the Google Forms survey, I visited the class the 
+following day to seek additional comments and opinions about the app. During this meeting, 
+students suggested: reorganizing the sensory guide and either implementing a grid-design, which 
+would allow users to select areas of personal interest, or changing the order of the guide from 
+being alphabetical to being in the order in which visitors would encounter them at the museum; 
+providing a video walk-through or voiceover for the social story; verifying and adjusting the 
+colors, if need be, to ensure that the design is accessible to those who may be colorblind; and 
+separating the app into two sections, “Pre-visit” and “At the Museum,” so the content needed to 
+
+ 
+35 
+ 
+prepare for the museum and the content meant to be used on site would be separate and their 
+purposes would be clear.  
+After reviewing their feedback and before proceeding with the second round of user 
+testing, Peter and I held a meeting and determined what suggested revisions would be feasible to 
+implement before our next user testing date. We decided to adjust the design of the social story 
+and sensory guide, change the available music to classical and instrumental options, and verify 
+that the colors of the background and font within the app were distinct enough so those who are 
+colorblind would not have an issue reading the text. 
+Second Round: Target Audience 
+ 
+After each family visited the Strong Museum of Play, they filled out the online Google 
+Forms survey (Fig. 13). After reviewing their survey responses, I held individual, in-person 
+interviews with them to ask about their previous museum experiences, how the app would have 
+been helpful if they had it during their previous visits, and to elaborate on the answers they gave 
+on the online survey.  
+ 
+When I interviewed the first family to use the app, Roberta and Austin (age 10), and 
+asked about their museum experiences, they were generally positive with a few negative 
+memories scattered throughout their previous visits. Roberta, Austin’s mother, noted that, most 
+often, Austin’s negative reactions were brought on by being in large crowds or lines, being in a 
+certain place for too long and getting overwhelmed or tired, and when he was getting hungry. 
+When asked about why something like this would be important for children on the autism 
+spectrum and their families, she said “it would make things a lot easier and less stressful. 
+Usually, when Austin gets upset, we go to another area of the museum or just leave. We might 
+not have to leave if this app could help him work through those feelings instead.”  
+
+ 
+36 
+ 
+When thinking of suggestions for improvements, Roberta and Austin felt that the 
+following would be valuable additions to the app: changing the music to include genres that are 
+more exciting, like Jazz or children’s songs, as Austin found the calming instrumentals boring; a 
+section dedicated to the food options that are available at the museum so families can plan to 
+bring lunches if necessary81; Bluetooth proximity beacon notifications to provide both general 
+information about what is available in each exhibit and sensory information about what to expect 
+in each area; games similar to “Tetris,” “Candy Crush,” and other puzzles for children on the 
+older end of the four to twelve spectrum; counting videos or videos about different exhibits in the 
+museum for children to use while waiting in line to help them practice being patient; and a 
+reward system set up like a scavenger-hunt, where children can be offered prizes, such as a free 
+ice cream or a five dollar gift card to the gift shop, if they travel and digitally “check in” at 
+different exhibits at the museum to encourage children to explore more of the museum, rather 
+than getting caught up in one or two areas. 
+When I interviewed the second family, both Lindsay, the mother, and Preston (age 7) 
+gave overwhelmingly positive feedback about the app. They were particularly pleased with the 
+social story and sensory guide. Lindsay expressed that if she had access to this type of resource 
+during their other museum experiences, it would have helped alleviate some of the stressors they 
+encountered during their visit. Similar to the triggers Austin experienced most often, Preston 
+often acted out and was uncomfortable when faced with large crowds, when they had to do a lot 
+of walking or if it was too hot or cold in a space—this is specific to their outdoor museum 
+experiences—and when he got hungry.  
+                                                           
+81 Due to sensory issues, many individuals on the autism spectrum have limited diets and are picky about what 
+they will eat. 
+
+ 
+37 
+ 
+For Lindsay and Preston, the feature on this app that helped them the most, and would 
+have been helpful in their previous museum visits, was having access to information about quiet 
+areas where they can go to when Preston needed a break or to get away from his sensory triggers. 
+Lindsay emphasized this point many times both in the Google Forms survey and the interview, 
+expressing that “it’s easy to forget about quiet spaces to escape to when your child is in the 
+middle of a meltdown, and if we could plan what exhibits we wanted to visit ahead of time using 
+the app, we would be more prepared for what we would see and it would not just be a free-for-
+all.”82 
+Lindsay and Preston did not have too many suggestions for improvements, but they did 
+indicate that having additional photos and information of what the exhibit interior looked like 
+would be helpful so families could get a better idea of exactly what to expect in each space, 
+particularly for the short-term exhibits in the Strong’s Fidelis Care Gallery. They also suggested 
+adding a video walkthrough option for the social story to provide a more in-depth, realistic 
+picture of what families can expect when they go to the museum. 
+One suggested improvement that was expressed by both families was to offer an option 
+on the app that allowed the user to choose content based on their age range. While the Strong 
+Museum and, therefore, this app aims to cater to children of all ages, there are definite 
+differences in taste and interest that are age-dependent. For example, Austin, age ten, did not like 
+the idea of listening to children’s music, such as Baby Shark or other nursery rhymes, but 
+expressed that the options should be provided for younger children like his little cousin. There 
+would also be differences in the types of interactive games the varying age groups would like. A 
+                                                           
+82 Lindsay, interview by Felicia Swartzenberg, in-person interview, Rochester, N.Y., March 26, 2019. 
+
+ 
+38 
+ 
+four-year-old may enjoy a matching game, but a ten-year-old could find the simple game to be 
+boring and it may not hold their attention.  
+Overall, the app was well-received by my target audience. With further work and 
+improvements on this prototype, SenseEase: Strong Museum could be a very useful tool that the 
+Strong Museum, or any other museum, could adopt to enhance their relationships with visitors 
+on the spectrum and their local autism communities. 
+ 
+Future Development and Adoption 
+ 
+When I first conceived of this project, my goal was to create a tool that could be used in 
+any museum space that would help alleviate stress and provide a more comfortable visitor 
+experience for children on the autism spectrum. While this goal was unattainable through the 
+development of a single app, this prototype provides a template for other museums to adopt a 
+similar tool for their own individual museum environments. By obtaining the template from 
+Peter and I, any museum can create their own version of SenseEase: Strong Museum. While the 
+cost of hiring an app developer may seem daunting, by presenting them with a preexisting design 
+or code (which can be obtained from myself and Peter on a case-by-case basis) they would not 
+need to dedicate as much time to the wireframe development.83 Therefore, a museum would only 
+need to pay for the costs of modifying the template to fit each individual museums’ needs and 
+inputting or creating content that is site-specific to the museum.84  
+                                                           
+83 Our design is purposefully simple and easily adaptable so other institutions can adopt and individualize our basic 
+interface design. Furthermore, because the colors and interface are not necessarily specific to Strong Museum, an 
+institution would not need to change the overall design if they chose to adopt this digital tool and are happy with 
+the current design. 
+84 I created or collected all of the content that is available on the app and Peter designed the interface of the app. 
+So, in terms of content, a staff member would be able to create most things and the developer would only need to 
+create games or any additional multimedia feature that is outside of the staff’s skillset.  
+
+ 
+39 
+ 
+ 
+If a museum were to consider adopting this app template, I would recommend further 
+development to implement a number of suggestions that my user testing participants gave in their 
+feedback. Particularly, I would recommend: providing different content options, in terms of 
+games and music, for different age groups so, regardless of their age, children will be interested 
+and engaged with the app; adding additional music that is a mixture of calming instrumentals, 
+upbeat modern music, and fun children’s songs, as the calming instrumental alone was not well 
+received by the younger participants; implementing a grid-design for the social story and sensory 
+guide so people can pick and choose what sections they want to see rather than having to scroll 
+through the entire slideshow of material; providing a video walkthrough as an additional method 
+of consuming the social story content, which allows for better and more in-depth visuals than a 
+simple photo; including a section on the For Parents page dedicated to the food options that are 
+available at the museum so families can plan to bring lunches if necessary; creating content for 
+Bluetooth proximity beacons that provide both general information about what is available in 
+each exhibit and sensory information about what to expect in each area; and providing counting 
+videos or videos about different exhibits in the museum for children to use while waiting in line 
+to help them practice being patient. 
+Conclusion 
+ 
+Historically, museums have put maintaining a beautiful and pristine collection as their 
+top priority. Today, the professional community has shifted from collections-focused to 
+community-focused mindsets because museums have come to recognize that an institution that 
+does not serve the public is not an effective, or even necessary, institution. In her book The 
+Social Work of Museums, Lois Silverman explains: “As the climate of accountability worldwide 
+has pressured museums to justify their worth, it is not surprising, but rather inevitable, that they 
+
+ 
+40 
+ 
+are acting upon a growing awareness of their broadest potential: what we might call the social 
+work of museums.”85 An important part of meeting societal standards for accessibility and 
+maintaining the “social work of museums” is ensuring that the museum and its collections are 
+accessible to all visitors regardless of backgrounds, ages, abilities, and beliefs.  
+Most, if not all, museums in the United States—and globally—have made efforts to 
+ensure they serve all types of visitors. Some, like the Rochester Museum and Science Center, 
+develop programming and change their exhibit designs to become more accessible on site. 
+Others, like the Strong National Museum of Play, work with local advocacy organizations that 
+represent various populations in need of accessibility accommodations to ensure that they are 
+serving their community and meeting people’s needs effectively. Some have even joined larger 
+initiatives in the museum professional world to ensure both their institution and other local 
+institutions are doing all they can to implement more accessible policies that are sensitive to the 
+needs of their communities. Organizations like the Museum Access Consortium and the Chicago 
+Cultural Accessibility Consortium bring museum professionals together to discuss topics related 
+to accessibility and how individual institutions and staff can become more accessible for all types 
+of visitors.86 The formation of organizations like this both propagates the importance of 
+accessible programming and highlights the validity and necessity of these resources by showing 
+how community members positively react to them. 
+ 
+In terms of accessibility programming and resources for individuals on the autism 
+spectrum specifically, many museums are still in the early stages of even developing resources; 
+                                                           
+85 Lois H. Silverman, The Social Work of Museums (New York: Routledge, 2010), 14.  
+ 
+86 Chicago Cultural Accessibility Consortium, "About Us," CCAC, accessed March 20, 2019, 
+https://www.chicagoculturalaccess.org/about-us; Museum Access Consortium, "About MAC," Museum Access 
+Consortium, accessed March 20, 2019, https://macaccess.org/about-new/.  
+
+ 
+41 
+ 
+but that does not make these resources any less necessary than accessibility ramps for people in 
+wheelchairs or providing translations for those who do not speak English. However, there are 
+inclusive solutions that can complement separate programming for individuals on the spectrum. 
+While sensory-friendly days can be very helpful when first introducing a child to a new museum 
+environment, a by-product of this exclusive safe space is that it essentially segregates the 
+population of visitors on the autism spectrum from the rest of museum visitors. By utilizing an 
+app like SenseEase: Strong Museum, autistic museum visitors would not feel excluded and could 
+enjoy the museum at any time like their neurotypical counterparts. This app would not be able to 
+completely replace sensory-friendly days or other resources for individuals on the spectrum, as 
+both of these are incredibly valuable in their own right, but it would be an addition that would 
+make people feel less like a “special” guest, and more like a regular visitor. 
+Overall, the results of the user testing conducted with the app’s target audience was 
+highly positive, and both families felt that the app has great potential to help children on the 
+autism spectrum and their families navigate chaotic or unfamiliar museums; particularly the 
+social story and sensory guide. They found the app’s design and content easily navigable and 
+intuitive to use, they felt the app helped them have a more comfortable and sensory-friendly 
+experience at the museum, and they felt the app provided helpful content that their child could 
+use when they began to feel overwhelmed or stressed. Most importantly, they indicated that they 
+would recommend this app to other parents who have children on the autism spectrum—and 
+parents of young children in general—as they felt it contained helpful information and 
+interactive content. After reviewing all of the user testing feedback, I have concluded that a 
+mobile application can indeed help visitors with autism have a more comfortable, positive, and 
+accessible museum experience. 
+
+ 
+42 
+ 
+In the words of museum studies scholar Susan Davis Baldino, “inclusion benefits autistic 
+students by eradicating inequities. Perhaps, more importantly, it benefits all students, autistic and 
+non-autistic, by expanding individuals’ experiences of difference in ways that diminish 
+prejudice.”87 By providing a digital tool that allows visitors on the autism spectrum to be 
+engaged and included like their neurotypical counterparts, museums will benefit from two 
+desirable outcomes: their institution will become a welcoming and less intimidating space for 
+individuals on the autism spectrum and their families will feel comfortable attending the museum 
+more often; and, by allowing for more people on the spectrum to visit and be visible in their 
+museum space, other museum visitors will be made aware that there are visitors with different 
+abilities and, in theory, stereotypes or prejudices they had about individuals on the autism 
+spectrum may be erased.  
+ 
+ 
+                                                           
+87  Susan Davis Baldino, “Museums and Autism: Creating an inclusive community for learning,” in Museums, 
+Equality and Social Justice, edited by Richard Sandell and Eithne Nightingale, (New York: Routledge, 2012), 172. 
+
+ 
+43 
+ 
+Appendix – Images and Photographs 
+Fig. 1: A screenshot of the Google Forms survey given to the Visitor Engagement students. See 
+the full survey here: https://forms.gle/7g4t98FpxzW9sVHV8.  
+  
+ 
+ 
+ 
+ 
+ 
+
+ 
+44 
+ 
+Fig. 2: A screenshot of the Google Forms survey given to the two families who participated in 
+user testing. See the full survey here: https://forms.gle/67ZPZcjkUYfVk7J3A.  
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+45 
+ 
+Fig. 3: A screenshot of an article written by the author about accessibility for visitors at three 
+large museums in Rochester, N.Y. Read the full article here: 
+https://feliciadianne.atavist.com/asd_accessibility.  
+ 
+ 
+ 
+
+ 
+46 
+ 
+ 
+Fig. 4: A screenshot of the Strong National Museum of Play’s website which features 
+information about their Sensory-Friendly Sunday program. For more information, go to: 
+https://www.museumofplay.org/calendar/sensory-friendly-sunday.  
+ 
+ 
+ 
+ 
+
+ 
+47 
+ 
+Fig. 5: A screenshot of the Strong National Museum of Play’s Social Story. For more 
+information and a list of the Strong’s Social Stories, go to 
+https://www.museumofplay.org/visit/accessibility.
+ 
+
+ 
+48 
+ 
+Fig. 6: A screenshot of the Intrepid Sea, Air and Space Museum’s website which features details 
+about their accessibility resources. For more information, go to: 
+https://www.intrepidmuseum.org/education/accessibility-resources. 
+ 
+ 
+ 
+ 
+ 
+
+ 
+49 
+ 
+Fig. 7: A screenshot of the Shedd Aquarium’s website which features information about the 
+museum’s sensory-friendly app. For more information, go to: 
+https://www.sheddaquarium.org/plan-a-visit/visitor-guide/Accessibility/sensory-friendly-app/. 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+50 
+ 
+Fig. 8: A screenshot of the “About” page on Autism Up’s website. For more information, go to: 
+https://autismup.org/about-us. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+51 
+ 
+Fig. 9: The Reading Adventure Land exhibit at Strong National Museum of Play in Rochester., 
+N.Y. Photo by author, October 8, 2018. 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+52 
+ 
+Fig. 10: The home screen of SenseEase: Strong Museum. 
+ 
+ 
+ 
+ 
+
+ 
+53 
+ 
+Fig. 11: Top, from left: Music page Social Story main page; Sensory Guide main page. Bottom: 
+For Parents page. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+54 
+ 
+Fig. 12: Screenshots of data from the first round of user testing data with Dr. Juilee Decker’s 
+Visitor Engagement class. 
+ 
+ 
+ 
+
+ 
+55 
+ 
+ 
+ 
+ 
+
+ 
+56 
+ 
+ 
+ 
+ 
+
+ 
+57 
+ 
+Fig. 13: Screenshots of data from the second round of user testing with my target audience, 
+Roberta and Austin, and Lindsay and Preston. 
+ 
+
+ 
+58 
+ 
+ 
+
+ 
+59 
+ 
+ 
+
+ 
+60 
+ 
+ 
+
+ 
+61 
+ 
+ 
+
+ 
+62 
+ 
+ 
+
+ 
+63 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+64 
+ 
+Bibliography 
+ 
+ADA: Americans With Disabilities Act of 1990. Public Law 101-336. § III. 108th Congress, 2nd 
+session. (July 26, 1990). 
+ADA: Standards for Accessible Design. Department of Justice. (September 15, 2010). 
+American Alliance of Museums. “Characteristics of Excellence.” (1993). 
+Autism Society. "The Autism Awareness Ribbon." Autism Society. Accessed Feb 13, 2019. 
+http://www.autism-society.org/about-the-autism-society/history/autism-awareness-
+ribbon/. 
+Baldino, Susan Davis. “Museums and Autism: Creating an inclusive community for learning.” In 
+Museums, Equality and Social Justice. Edited by Richard Sandell and Eithne Nightingale, 
+169-180. New York: Routledge, 2012. 
+Boston Museum of Science. “Accessibility.” Accessed Nov. 30, 2018, 
+https://www.mos.org/accessibility.  
+Boston Museum of Science. “Universal Design Plan for Exhibit Design & Development.” 
+Accessed Nov. 30, 2018. https://www.mos.org/sites/dev-
+elvis.mos.org/files/docs/misc/MOS_UD_Plan.pdf.  
+Boston Museum of Science. “Universal Design for Museum Learning Experiences: Resources 
+for museum professionals on employing a universal design approach for exhibits, 
+programs, and evaluation.” Accessed Nov. 30, 2018. 
+https://www.mos.org/UniversalDesign.  
+
+ 
+65 
+ 
+Chicago Cultural Accessibility Consortium. "About Us." CCAC. Accessed March 20, 2019. 
+https://www.chicagoculturalaccess.org/about-us.  
+Cohen, Shirley. Targeting Autism: What We Know, Don't Know, and Can Do to Help Young 
+Children with Autism Spectrum Disorders. Berkeley: University of California, 2007. 
+Grandin, Temple. “Calming Effects of Deep Touch Pressure in Patients with Autistic Disorder, 
+College Students, and Animals.” Journal of Child and Adolescent Psychopharmacology 
+2, no. 1 (1992). 
+Hosler, Ashley. “Museum Access for All: Engaging Children with Autism Spectrum Disorders.” 
+In Engagement and Access: Innovative Approaches for Museums, edited by Juilee 
+Decker, 27-34. London: Rowman & Littlefield, 2015. 
+Intrepid Museum. “Online Resources: Plan Your Visit," Accessibility Resources. Intrepid 
+Museum. Last modified 2018,  https://www.intrepidmuseum.org/education/accessibility-
+resources. 
+Intrepid Museum. “Social Narrative." Accessibility Resources. Last modified 2018,  
+https://www.intrepidmuseum.org/education/accessibility-resources. 
+Kelly, L. and A. Bowan, “Gamifying the museum: Educational games for learning,” in Museums 
+and the Web Asia 2014, edited by N. Proctor & R. Cherry. Silver Spring: Museums and 
+the Web, 2014. 
+https://mwa2014.museumsandtheweb.com/paper/gamifying-the-museum-educational-games-for-
+learning/.  
+
+ 
+66 
+ 
+Kientz, Juile A., Matthew S. Goodwin, Gillian R. Hayes, and Gregory D. Abowd. “Interactive 
+Technologies for Autism,” ed. Ronald M. Baecker. Morgan Claypool Publishers, 2014. 
+Lindsay. Interview by Felicia Swartzenberg. In-person interview. Rochester, N.Y., March 26, 
+2019. 
+Magnus Cards. “MagnusCards: An Autism Life Skills & Transition Support Tool.” Accessed 
+Oct. 14, 2018. https://magnusmode.com/magnuscards-an-autism-life-skills-transition-
+support-tool/#about-section.  
+Maher, Damian. “Connecting Classroom and Museum Learning with Mobile Devices.” Journal 
+of Museum Education, 40, no. 3 (2015): 257–267. 
+Martin, Charlotte. “Museums in Motion Today,” in in Edward P. Alexander, Mary Alexander, 
+and Juilee Decker,  Museums in Motion: An Introduction to the History and Functions of 
+Museums. Lanham, MD: Rowman & Littlefield, 2017, 306-307. 
+Museum Access Consortium. "About MAC." Museum Access Consortium. Accessed March 20, 
+2019. https://macaccess.org/about-new/.  
+Nason, Bill. “Part III: Sensory Issues in Autism.” In Autism Discussion Page on the Core 
+Challenges of Autism: A Toolbox for Helping Children with Autism Feel Safe, Accepted, 
+and Competent, 129-196. London: Jessica Kingsley Publishers, 2014. 
+Pender, Terry. “Startup’s digital cards helps people with special needs navigate daily life.” The 
+Record, Feb. 21, 2015. https://www.therecord.com/news-story/5440793-startup-s-digital-
+cards-helps-people-with-special-needs-navigate-daily-life/.  
+
+ 
+67 
+ 
+Santarosa, L.M.C. and Conforto, Debora. “Educational and digital inclusion for subjects with 
+autism spectrum disorders in 1:1 technological configuration.” Computers in Human 
+Behavior 60 (2016): 293-300. 
+Shrikant, Aditi. “How Museums Are Becoming More Sensory-Friendly For Those With 
+Autism.” Smithsonian Magazine, January 5, 2018. 
+https://www.smithsonianmag.com/innovation/how-museums-are-becoming-more-
+sensory-friendly-for-those-with-autism-180967740/.  
+Strong National Museum of Play. "Mission." The Strong National Museum of Play. January 30, 
+2019. Accessed February 12, 2019. https://www.museumofplay.org/about/mission. 
+Silverman, Lois H. The Social Work of Museums, 1-23. New York: Routledge, 2010. 
+Starr, Ruth Erin. “Accessibility Practices & the Inclusive Museum: Legal Compliance, 
+Professional Standards, and the Social Responsibility of Museums.” Bachelor’s thesis, 
+Rochester Institute of Technology, 2016. 
+Swartzenberg, Felicia D. “Are Museums Accommodating Visitors on the Autism Spectrum?” 
+Atavist. Dec. 12 2018. feliciadianne.atavist.com/asd_accessibility. 
+Quezada, Angeles, Reyes Juárez-Ramírez, Samantha Jiménez, Alan Ramírez Noriega, Sergio 
+Inzunza, and Arnulfo Alanis Garza. “Usability Operations on Touch Mobile Devices for 
+Users with Autism.” Journal of Medical Systems, 41, no. 184 (2017): 1-11.  
+ 
+

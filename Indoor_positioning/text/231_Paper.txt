@@ -1,0 +1,529 @@
+2012 International Conference on Indoor Positioning and Indoor Navigation, 13-15th November 2012
+Landmark-based Navigation in Complex Buildings
+Paul Heiniz, Karl-Heinz Krempels, Christoph Terwelp and Stefan Wu¨ller
+Informatik 5, RWTH Aachen University, D-52074 Aachen, Germany
+Email: {heiniz, krempels, terwelp, wueller}@dbis.rwth-aachen.de
+Abstract—Growing numbers of mobile devices in our daily navigationconcept.Ournavigationsystemdoesnotdependon
+lifeandtheircapabilitytofulfillchallengingcomputationaltasks a precise geographical positioning of the user in the building.
+raise the question about new application fields beyond well-
+Weincludetheuserintothenavigationtaskbylettinghersub-
+established tasks. While outdoor navigation became a standard
+consciouslycollectvisualimpressionsabouthersurroundings.
+task for many mobile devices, indoor positioning and navigation
+is still in the research and development stage. Even though She then actively informs the systemabout her position in the
+complex buildings require aided guidance for visitors, today’s building by selecting certain areas from a list of preselected
+mobilehardwareisnotabletodeliverareliableindoornavigation positions. A special data structure called building-graph rep-
+system.
+resents the complex building and all possible connections be-
+In this paper we describe a novel information system for indoor
+tween the areas. Using the physical constrains of the building
+navigation in complex buildings. Users are guided through
+the building by using images of the surroundings and textual and the human power of observation, we are able to design a
+instructions. We avoid hardware-based user positioning due generallyapplicablenavigationsystem.However,eventhough
+to its known drawbacks. Instead, users are involved into the this system does not require hardware positioning, we will
+navigation process and complete missing information through
+useexistinginfrastructuresinbuildingsforusersupport.They
+recognized context and logical constrains of their surroundings.
+will be included as a best-effort approach to estimate user’s
+The human navigation process based on recognition of certain
+unique locations and visual clues is the foundation of this work. position in the building-graph within a certain deviation area.
+Theproposedsystemisuniversallyapplicablewithoutrestrictions This approach reduces the amount of choices users have to
+on navigation devices or existing hardware in the building. consider.
+Usability and precise instructions are further goals of our
+I. INTRODUCTION
+system. The navigation steps need to be self-explanatory and
+Mobile devices of all kinds penetrate our daily life and the presented information has to be reduced to the required
+change it significantly. The build-in hardware becomes more minimum. This way user’s cognitive load can be significantly
+complex and consequently, the range of application steadily reduced and a more natural navigation experience is made
+grows. possible. Additionally, by optimizing presented information,
+Navigation is one of the many tasks that nowadays devices weprovideamoresuitablevisualizationforthesmalldisplays
+master. The satellite-based Global Positioning System (GPS) of smartphones.
+became the standard for outdoor positioning in recent time. This paper is structured as follows: Section 2 introduces
+There exist not only stand-alone navigation solutions but several navigation models and presents techniques for indoor
+many of today’s sold mobile phones include the required positioning and navigation. In Section 3, we describe the
+soft- and hardware for outdoor navigation. However, there are ideabehindournavigationapproach.Additionally,thissection
+limitations in the field of application for such devices. Even coversthedatastructurewhichisthefoundationofthisnaviga-
+though navigation tasks on street level are very precise, the tionapproachanddepictstheimplementationandarchitecture
+GPS approach reaches its limit at the entrance of a building. of our system in more detail. In Section 4, we present the
+Since nowadays architectonic styles are changing to more evaluation of our system. Finally, in Section 5, we summarize
+individualandoftenmorecomplexstructures,itisindisputably this paper and future steps in the system development are
+important to support visitors in such complex buildings as revealed.
+airports,railwaystations,hospitals,andmuseums.Completely
+new navigation routines are often required to navigate a
+II. RELATEDWORK
+person inside unfamiliar buildings. For this task exist several In this chapter we want to highlight relevant concepts
+hardware-basedsolutionsaswellasapproachesworkingsolely and research work in the area of indoor navigation. Several
+withlogicalconstraintsofthebuildingandhumanperception. space models as well as different positioning techniques and
+This paper describes a new approach for indoor navigation navigation approaches are described and discussed.
+in complex buildings. We especially aim for a generally
+applicable solution, i.e., the resulting system should work
+A. Navigation models
+in any building independent from any compulsory hardware
+infrastructureorothermandatoryrequirements.Avoidingstrict Navigation models describe different ways to represent an
+requirementsfortechnicalinfrastructureinthebuildingaswell environment in a navigation system. Leonhard [17] differs
+ashardwareconstrainsinthenavigationdevicerequiresanew between three navigation models. Geometric space models
+978-1-4673-1954-6/12/$31.00(cid:13)c2012IEEE2012 International Conference on Indoor Positioning and Indoor Navigation, 13-15th November 2012
+base on precise positioning of the user in geographic coor- and rarely flawlessly usable outside of laboratory conditions.
+dinates. These are either relative to a pre-defined point in the Build-in cameras in mobile devices can be used for com-
+buildingortoearth’sglobalcoordinatesystem.Thus,aprecise puter vision to provide an alternative way of environment
+localization of the user is mandatory. Today’s navigation recognition [10]. However, image recognition has a complex
+devices work by using this space model. setupandthereforedoesnotsuitageneralapplicabilitywhich
+Symbolic space models divide the surroundings into logically is aimed in our application. Another way of positioning is
+closed areas. These areas differ either in their visual char- done via 2D-Codes [13], [11]. Such codes may include the
+acteristics or in spatial separation. Single areas are logically coordinates of the location and after scanning one label the
+combinedtoasinglegridstructure.Thus,usersareledthrough system consequently discovers user’s position. Camera data
+the building either by their geographic coordinates or by their can also be used for augmented reality [11]. Here, users
+logical position in the grid. observe their surroundings through the device’s video stream
+Finally, hybrid space models form a combination of the first which is enhanced with additional data, e.g., POIs, directions,
+two space models. Users navigate through a graph-based routes. However, this representation approach relies on very
+structure but are allowed to switch into a more detailed precise positioning of the user and is often not applicable to
+representationofthebuildingthatisbasedontheirgeographic indoor environments.
+position. In retrospective, all those mentioned localization techniques
+One further approach for environment representation are se- have the same short-comings in common. Most approaches
+mantic space models [3], [5]. These models identify user’s require an additional hardware setup in the building or nav-
+position based on her actual context. Such context may be: igation device or are known to be error-prone. Thus, these
+user needs to keep an appointment at a certain time, she logs techniques are only reliable to a certain degree. There exists a
+into a computer which location is known to the system or second group of approaches based on symbolic space models
+she has daily repeating tasks. Positions withdrawn from this whichworkswithareasinbuildingsandthusdoesnotrelyon
+information can then be used for localization purposes. precise positioning.
+The following approaches base on the idea of supporting
+B. Positioning techniques
+positioning through the data structure. Thus, the system is
+Nowadays, several techniques for indoor positioning sys- more independent from the existing technical infrastructure
+tems are subject to research. Most of them differ in accu- in the building.
+racy, signal coverage, installation and maintenance costs, and ThenavigationapproachpresentedbyChowaw-Liebmanetal.
+hardware dependency. In this section we describe the most [4] provides an advanced data model for buildings. Users fol-
+common research projects and address their strengths and low generated textual instructions and thus is guided through
+weaknesses. thegraphstructureofthedatamodel.Thepositionoftheuser
+Satellite-based Positioning System (GPS) is built into many is monitored via the device whispering approach [15] during
+mobile devices nowadays and forms the most widely used the navigation.
+outdoor localization system [9]. Even though GPS signals Barasetal.[1]presentedanapproachthatleadsusersthrough
+are blocked by walls and thus GPS is not applicable on a building without any hardware-based positioning. Here, a
+indoorlocalizationinthestandardsetup,repeatersystemslike model of the target building provides the route based on area
+Pseudolites[16]areabletocarrythosesignalsintoindooren- identifiers such as room names or special locations. Objects
+vironments. This allows users to use common mobile devices which base on these identifiers are logically connected. Users
+without further hardware changes for navigation purposes. are following the sequence of locations and reach their des-
+Tracking Wi-Fi signals is another approach that avoids ad- tination. However, the presented system provides very sparse
+ditional hardware and thus is universally applicable to many information which lacks details. Furthermore, all information
+buildings. This technique, known as Wi-Fi fingerprinting [4], is presented as text, therefore, users need to be familiar with
+[15], is the main focus of today’s positioning research due the building to follow the route.
+to its accuracy, low installation costs, and usage of existing Another approach working with the symbolic space model
+infrastructure. was introduced by Jensen et al. [12]. The presented system
+Additionally, further techniques based on light, sound, and encloses areas to logical objects which are connected in
+radio signals complete this group. Approaches based on in- a building graph. Human movement is tracked by a tech-
+frared, ultrasound, ultra-wideband, Bluetooth, RFID, and nique based on RFID signal recognition. Even though this
+NFCallowaveryprecisepositioningoftheuser[9].However, positioning approach shares the drawbacks of all hardware-
+all of those approaches require additional sender or receiver based positioning solutions, the graph on its own provides
+nodes in the building as well as special navigation devices. strong constrains for possible actions within the building and
+Another approach that works with existing sensors in mobile thus the introduced navigation approach is still reliable. A
+devicesistheInertialNavigationSystem(INS).Thissystem proper building structure enables flawless navigation for this
+usesthebuild-incompassandaccelerometerinmobilephones approach.
+to calculate the walked route [18]. Even though this system is Landmark-based navigation for outdoor scenarios was exam-
+independentfromadditionalhardware,itishighlyerror-prone ined by Beeharee et al. [2] as well as by Christian Kray [14].2012 International Conference on Indoor Positioning and Indoor Navigation, 13-15th November 2012
+Both approaches used depictions of areas as well as textual confirming her arrival at the target waypoint to be navigated
+descriptionstoguideausertoherdestination.Thesesolutions to a successor located on the route.
+were merely dependent on precise positioning. The overall
+B. Navigation model
+results were promising but they cannot be simply transferred
+on indoor environments. Amongst others, special cases like In this section, we will focus on a data model called
+missingtechnicalsupportforuserpositioning,multiplefloors, building-graph. In our system, on the one hand the building-
+identicallylookinglocations,andtheclosenessoftheenviron- graph is used as a structure the navigation relies on. On the
+ment need to be considered and require an extension of these other hand the system provides a module to construct such a
+approaches. structure for an arbitrary building.
+Apparently,itispossibletonavigateapersonthroughabuild- The graph consists of nodes and directed edges. The nodes
+ing without precise hardware-based positioning. To develop representaspecificlogicalareainabuildingwhichcomprises
+a universally applicable, cost-effective, and reliable indoor unique attributes, e.g., the entrance hall. They are used as
+navigation system, we will focus on the presented findings navigation points and can obviously be applied as starting
+and combine the techniques for improved results. points or endpoints. We distinguish between waypoints which
+depict landmarks lying on the route and points of interest
+III. LANDMARK-BASEDINDOORNAVIGATION which are relevant navigation endpoints and a subset of
+waypoints. Both are discussed below.
+This chapter describes the approach for our navigation sys-
+The edges represent all possible routes between the nodes in
+tem in detail. First, we explain the idea behind the navigation
+the specific building. They have to be directed edges because
+approach,followedbythenavigationdatamodelofoursystem
+some routes can be restricted with respect to their direction
+and the user interaction model.
+of movement, e.g., an escalator. Every edge contains a rough
+distancevaluebetweentheconnectednodessuchthattheuser
+A. Navigation approach
+can estimate how long she has to walk to reach the next
+The concept of the developed navigation system follows waypoint and can easily compare sections. An estimation of
+the human cognitive navigation process. Subconsciously, the the distance is sufficient since a person can hardly estimate
+human brain constructs a unique cognitive map from the accurate distances in buildings [6]. During the construction
+starting point to the endpoint of the route which is divided of a building-graph, we assign a geographic direction to each
+into single route sections of manageable sizes characterized edge to compute the angle between two consecutive sections.
+by waypoints and landmarks known or communicated to Independencyontheangulardegree,theusercanbeprecisely
+the user [8]. A landmark is a unique recognizable reference navigatedbyadaptingthetextualinstructionsaccordingtothe
+point in a section used for orientation and positioning of the computed value, e.g., turn left, turn right, turn around, follow
+user, whereas a waypoint is a special kind of a landmark, the route. The direction patterns base on work by Chowaw-
+namely the starting or endpoint of a route section. Hence, Liebman et al. [4].
+the route consists of a sequence of waypoints which the user
+C. User interaction
+needs to pass in a predefined order. Each of these waypoints
+is connected to one or several landmarks which make this Users interact with our navigation system in three different
+exact position visually unique in the context of the routing. ways. In the first step, immediately after the system start,
+During the human navigation process, a mental depiction of the user selects her starting point either from a automatically
+the route, the cognitive map, is continuously compared to the suggested set of nearby locations or through manual selection
+surroundings. from the set of all existing position. In the next step, she
+This subconscious procedure is modeled in our navigation assigns her destination point from a predefined set. Based on
+system. However, this approach does not only model the thisdata,thesystemleadsherthroughthebuilding.Itproposes
+human navigation process but also human instructions in onedirectionandonelandmarkatatimeandtheuserconfirms
+case of asking other people for the direction to a destination her arrival at the landmark in each single step. Additionally,
+point. People tend to describe the route by providing two to she is able to check the right way by comparing passed
+three landmarks which are located on the way and build the landmarks to proposed ones. User interaction is depicted in
+directions using these unique areas. Our navigation system the sequence diagram (see Figure 1).
+is based on the same principle. A route along waypoints is
+computed after defining starting and endpoint. The naviga-
+IV. IMPLEMENTATION
+tion system displays successively the next waypoint the user This chapter covers the implementation of our navigation
+has to pass until she reaches the endpoint. To facilitate the system. We introduce the architecture of the system and
+navigation for each waypoint, textual instructions are attached describe the building graph and the user interface in detail.
+which describe how to reach the waypoint from the current
+A. System architecture
+position.Additionallydisplayedlandmarksallowacontinuous
+verification of the current position along the route. Themainfocusforthearchitectureofournavigationsystem
+The user is actively integrated into the navigation process by lies on expandability and modularity. New modules should2012 International Conference on Indoor Positioning and Indoor Navigation, 13-15th November 2012
+User System
+Positioning UI Navigation UI POI Selection UI User
+Interface
+selectInitialPosition()
+presentSetOfDestinations
+selectDestination() Locator Navigator
+routing()
+Navigation
+Renderer Module
+loop presentNextLocation Location
+Router
+Frameworks
+confirmLocation()
+Building Graph Network Building Graph
+Fig. 1: User interaction Repository
+Fig. 2: System architecture
+be easily included into the system. The proposed navigation
+system does not rely on hardware-based positioning. How-
+ever, existing infrastructure in buildings is used for position and Wi-Fi fingerprints. The two latter attributes are necessary
+estimation through so-called location frameworks. In the first because a landmark just as a waypoint can be suggested to
+implementation GPS and Wi-Fi were used for this purpose. It identify the starting point in the navigation process.
+is easily possible to include new frameworks such as NFC or A waypoint is similar to a landmark and is described by the
+Bluetooth for advanced positioning of the user. same attributes. The difference is that a waypoint contains
+Furthermore, this system will distribute data dynamically to a set of landmarks which are visible from this point and is
+users. The required building graph is identified by the address not necessarily a discrete object. In fact, waypoints represent
+object. After selecting a start- and an endpoint, we are able to the nodes of the building-graph, i.e., the starting points and
+calculate the route through the graph and thus only download endpointsofeverysectionofaroutewhichhavetobereached
+detailed information from the server for waypoints which tocontinuewiththenextsection,e.g.,branchesorstairstothe
+are part of the route. This way we guarantee a reduced nextfloor.Apointofinterest(POI)isaspecialwaypointwhich
+memory footprint which is beneficial for efficient mobile can be the target of an entire route. They additionally contain
+communication. a textual description of the target. A waypoint is associated
+The following Figure 2 depicts the architecture of our naviga- to the area it is located in and to other adjacent waypoints
+tion system. In the first step our system requests building data by segment objects. Segments correspond to the edges of
+foraspecifiedareafromacentralserver.Basedonthisdata,a the building-graph and have to fulfill the attributes discussed
+routing module calculates the path from user’s position to her above. Especially, all landmarks positioned on a section are
+chosen destination point. Existing location frameworks ease included into such a segment.
+the selection of this route by approximating the position of LandmarksandPOIsarecollectedinlogicalcategories:Land-
+the device. A rendering unit converts the calculated path into markCategory,POICategory,andPOISubcategory.Landmarks
+textual directions, extracts all required images for landmarks, are categorized by included attributes, e.g., stairs, corridors,
+and finally builds up the navigation module. pillars, lifts.
+POICategory and POISubcategory are used to facilitate the
+B. Building Graph
+manual choices of the endpoint.
+A building graph is identified by the address of the respec- To support the user by determining her starting point, GPS-
+tivebuilding.Thisway,weareabletopreciselydownloadonly coordinates and Wi-Fi fingerprints are assigned to landmarks
+required data chunks and thus lower our memory footstep. and waypoints. With the appropriate infrastructure, the navi-
+A building is subdivided in different areas, e.g., different gation system can suggest possible starting points based on
+floors, departments which distinguish in a logical matter. An hardware positioning. A GPS object contains a latitude, a
+area can be a subarea of another one, e.g., there can be longitude,andanaccuracyvalueandreferstoeverylandmark
+several departments on the same floor of a building. Partially and waypoint with the same coordinates. The accuracy value
+intersecting areas are not considered in our implementation. specifies the accuracy during the measurement to determine
+Another important entity is a landmark. A landmark is a the coordinates of a point in a building conditioned by
+unique recognizable reference point used for orientation and shielding. The system suggests only estimated points whose
+positioning.Itcontainspicturesofthereferencepointfromthe coordinates stay within this value.
+user’s point of view, an identifying name, GPS-coordinates, Wi-Fi fingerprinting uses the signals of Wi-Fi access points2012 International Conference on Indoor Positioning and Indoor Navigation, 13-15th November 2012
+for positioning. To determine the user position, the mea- and allows much faster positioning. Calculation of the initial
+sured fingerprint of the navigation system is compared to node is done analog to the automatic suggestions component.
+the fingerprint objects in the database. Hence, every Wi-Fi 2) Destination selection: Additionally to a reliable initial
+fingerprint object requires the creation date, the access point positioning it is important to clearly select a waypoint in the
+identifier(SSID),thesignalstrength,andthereferencestothe building graph as a destination point. This happens analog to
+considered landmarks and waypoints. the approach described in the previous section. First, the user
+selects one matching POI-Category from the list, e.g., rooms,
+C. Navigation module
+restaurants, shops. A second list is displayed containing all
+The navigation module transforms the route description POI-Subcategorieswhichwereincludedintothiscategory.The
+from the building graph into an appropriate visual representa- selectedPOI-Subcategoryiseitherconnectedtoasingle,well-
+tion with respect to the defined user interaction protocols. It defined POI in the graph or to a general term, e.g., restroom,
+is crucial to provide a self-explanatory, intuitive interface that ATM, phone booth. The user is then led to the nearest POI
+supports users through the task of navigation. Furthermore, which corresponds to that subcategory.
+this component is responsible for locating user’s initial posi- 3) User navigation: After a proper selection of a starting
+tion in the building graph, calculating the best path through point and an endpoint, our system calculates a route through
+thebuildingandrenderingtextualinstructionsaccordingtothe thebuildingusingDijkstra’sshortestpathalgorithm[7].Inour
+steps on the route. Following sections will depict these tasks working environment with several hundred navigation points
+in more details. in the building graph, this algorithm is able to calculate any
+1) Initial user positioning: For a proper navigation it is route within a reasonable time of few hundreds of millisec-
+crucial to identify user’s initial position accurately. Even onds.
+though several technical solutions were presented in Chapter Based on this routing, we render all relevant information
+II, it was shown that none of those approaches suit our for navigation. The navigation view contains two important
+solution well enough. Existing drawbacks, e.g., dependency elements: textual instructions which are built after calculating
+on additional hardware or error-proneness, hinder a reliable all route segments and graphical representations of relevant
+user positioning based solely on one single solution. Thus, landmarks on the way to the endpoint.
+hardware-based approaches will only be used to support our Textual instructions are important to guide users from one
+main positioning technique: observations made by the user. navigation point to the following. Such instructions include
+The proposed approach relies on visual perception of unique the approximate length of current route segment, walking
+featuresinthesurroundingareaandarobustmappingofthose directions, and the name of the endpoint. Walking directions
+spots on the building graph. are derived from angles between prior and current segments
+We implemented two ways of informing the system about of the route. These values are converted into human readable
+the position of the user. The first method to identify user’s instructions, such as ”Turn slightly left and follow the route
+location requires hardware-based positioning. The first imple- for 20 meters”. Waypoints on different floors are displayed
+mented software version tracks Wi-Fi signals to build up a accordingly, e.g., ”Go one story up to the 1st floor”.
+rough estimation of user’s position. We assume that Wi-Fi Additionally to the values for direction and route length,
+tracking delivers an approximate position within a predefined landmarks which can be perceived on the route and the
+deviation area. This deviation area depends hardly on the waypoints from the beginning and the end of the route are
+environment, i.e., number of Wi-Fi access points, architecture fetched from the database. These objects provide visual clues
+of the building, quality of navigation device. In our test for the user. She is then able to adjust her position to her
+environment,aconsidereddeviationof15metersprovedtobe cognitive map of the building and make sure that she follows
+aconvenientvalue.Ouralgorithmselectsalllandmarkswithin the correct route.
+thedeviationareaandpresentsimagesoftheselectedareasto
+D. User interface
+the user (see Figure 3(a)). Then she compares shown images
+to her present observations and selects her current scene. The Three different views build up the main user interaction
+selected landmark is then tracked back over the associated stack for our navigation system. The first view (see Figure
+segmentelementtothelinkedwaypointwhichmarkstheinitial 3(a)) depicts landmarks in the surroundings which are auto-
+node in the navigation route. matically selected by the system as possible user positions. In
+In case of malfunctioning or non-existing hardware-based case of missing sensor-based positioning infrastructure in the
+positioning, users may switch to the manual selection from building,theuserisabletoselectlandmarkcharacteristicsand
+a set of all landmarks. We implemented a filtering option her position from a list (see Figure 3(b)).
+basedonlandmarkcategoriestoeasetheselectionoftheinitial The following destination selection view displays the POI-
+area.Suchcategoriesarestairs,shops,entrypoints,entrances, CategoriesandPOI-Subcategoriesintwotexttables.ThePOI-
+corridors,andotheruniquefeatures.Userschooseenvironment Subcategorytable containsentries basedonthe previouslyse-
+characteristics from a set of categories and consequently filter lectedPOI-Category.Thus,thepresentedchoicesaredisplayed
+the set of displayed landmarks. Therefore, selection of two to in an easily understandable manner.
+three categories reduces the displayed landmarks significantly In the final view, all necessary components for navigation are2012 International Conference on Indoor Positioning and Indoor Navigation, 13-15th November 2012
+Position Suggestions Categories Landmarks Waypoint Carousel
+Category 1 Fig u r e 1 Landmark 1 Textual Instructions
+Category 2
+Category 3 Fig u r e 2 Landmark 2
+Category 4
+Waypoint Figure
+Fig u r e 3 Landmark 3 Waypoint Figure
+Category 5
+Category 6 Fig u r e 4 Landmark 4
+Category 7
+Category 8 Fig u r e 5 Landmark 5
+Landmark Carousel
+Category 9
+Fig u r e 6 Landmark 6
+Category 10 Figure 1 Figure 2 Figure 3 Figure 4
+Manual Selection
+(a) Automaticpositionsuggestions (b) Manualpositionselection (c) Usernavigation
+Fig. 3: Sketches for user interfaces
+combinedandformtheusernavigationview(seeFigure3(c)). many university departments are located in the main building,
+This main element on the screen is the waypoint-carousel. It most students are not acquainted with this building, thus, it
+includesthegeneratedtextualinstructionsaswellasadditional can be assumed that the test results are not distorted.
+descriptions of the surroundings and the picture of the final Two test routes of the same length and complexity were
+waypoint for the active route segment. This module always selected for the test. Each of both routes lead from the front
+depicts one single segment of the route. Once user’s view entrance to two target rooms and back again. The first route
+matches the depicted landmark, she may go on to the next leads the participant from the main entrance to a lecture hall
+segment by pressing a button. on the first floor in the left wing of the building. This room
+Underneath the waypoint-carousel follows the landmark- is not signposted and the entrance is hidden behind a pillar.
+carousel. It contains all landmarks which lie on the segment. Afterwards,shehastoattainaroomonthesparselyfrequented
+Their purpose is to provide users with additional information third floor and return to the starting point. The second route
+abouttheroute.Wheneversheobservesoneofthelandmarks, leads the testee to the right wing of the building. On her
+shecanbecertaintofollowtherightpath.Thefinalrealization way, she has to find a room on an intermediate story between
+of the user interfaces is illustrated in Figure 4(b) and 4(a). the first and the second floor. By using the implemented
+standard version of the navigation software, it is yet not
+V. EVALUATION
+possible to locate a point on an intermediate story. Therefore,
+Inthissectionwediscusstheevaluationoftheimplemented additional textual descriptions are added to such POIs. Next,
+navigation system. Every participant has to pass two test the participant is instructed to visit the university’s post office
+routes within a building. On one test route she uses the locatedinthebasementofthebuilding.Finally,shereturnsto
+implemented software, on the other one she searches her the main entrance.
+endpoint with one of the two alternative navigation methods: The test group consisted of 3 female and 11 male students
+verbal assignments by the receptionist or the floor plan of the aged between 19 and 30. They had to pass one route with the
+building. Afterwards, the different approaches are compared navigation system and the other with one of two alternatives.
+based on time measurements and user feedback. Six of them used the oral instructions from the receptionist,
+the other eight participants used a very detailed building map.
+A. Test procedure and setup description
+Required time, chosen routes, deviations in usability of the
+The depicted navigation system was implemented in navigation system, and comments of the participants were
+Objective-C on the Cocoa-Framework. During the test pro- writtendownduringthestudy.Themainpartoftheevaluation
+cedure the software ran on an Apple iPad 2 Wi-Fi with iOS bases on an online questionnaire. Users could evaluate the
+5.0.1. application and the alternatives, write comments, and rate the
+The main building of RWTH Aachen was chosen to conduct usability of the system.
+the user tests. This building has a complex architecture. It
+is rambling and consists of three upper floors, two basement
+floors, different kinds of stairways, and elevators. Although2012 International Conference on Indoor Positioning and Indoor Navigation, 13-15th November 2012
+(a) Manualpositionselection (b) Usernavigationview
+Fig. 4: Application components
+B. Outcomes not well-understood by the users. Presumably, directions by
+random passengers would be more questionable and vague.
+The first part of the evaluation comprises the time compar- Our indoor navigation system performed better in case of the
+ison between the navigation approaches. It was considered to route becoming complex. In this situation, the environment
+useroutesofthesamelengthanddifficultyinregardstoindoor often did not match the cognitive map of the user and
+navigation. Differences between the navigation approaches consequently confused her. Otherwise, if the navigation route
+could be determined by comparing single sections of both is well-structured and can be easily visualized in a cognitive
+routes. The essential differences could be highlighted by map,analogalternativesallowtheusertoreachherdestination
+comparing the two routes using the mentioned navigation morequicklysincemostofthenavigationtasksarecompleted
+methods. Overall, the navigation system performed equally on the fly in the human mind.
+well or better than the two alternatives (see Figure 5). The In the following, we describe the evaluation results of the
+two alternatives to our system revealed clear short-coming implemented navigation system. The participants interacted
+during the navigation process. The use of maps revealed with the system as expected and successfully recognized the
+weaknesses in complex parts of the building, e.g., finding startingpoint,endpoint,andthelandmarks.Importantfindings
+the room on the intermediate story. This implies that users were made during the user study. Stopping in the middle
+can hardly comprehend challenging parts of a building by of a corridor only by using landmarks did not work for the
+using a common floor plan. Increased complexity of the route most participants. Since we are working with approximated,
+consequently increased the time for the guidance by the map. imprecise locations, additional textual instructions are abso-
+The verbal explanation has been partially fragmented which lutely necessary to deal with that problem. Furthermore, we
+led to longer navigation. Participants had often to increase foundoutthatglassdoorsrequiretohaveaseparatelandmark.
+their searching space and thus only found the POI by a All users expected a new instruction when they arrived at
+coincidence. Even though the receptionists were trained for such glass doors and were confused not finding the picture
+advising visitors in the building, their instructions were often of the displayed landmark on their iPad, even if it was clearly2012 International Conference on Indoor Positioning and Indoor Navigation, 13-15th November 2012
+03:36
+02:24
+01:12
+00:00
+)nim(
+emit
+09:36
+07:12
+04:48
+02:24
+00:00
+1 2 3
+Median of single route sections (Route A)
+)nim(
+emit
+1 2 3
+Median of accumulated time (Route A)
+06:00
+04:48
+03:36
+02:24
+01:12
+00:00
+)nim(
+emit
+14:24
+12:00
+09:36
+07:12
+04:48
+02:24
+00:00
+1 2 3
+Median of single route sections (Route B)
+)nim(
+emit
+1 2 3
+Median of accumulated time (Route B)
+App Map Oral instructions
+Fig. 5: Time measurements for two routes with three segments
+visible behind the door. As mentioned before, it is crucial movement during the navigation process.
+that landmarks are depicted from the user’s point of view. Finally, 57% of the testees would prefer navigation with the
+Slightshiftedvisionangleofthedepictedviewconfusesmost applied software over the compared alternatives. Participants
+participants and the user tends to turn in the same direction. named uncertainty in dealing with the software for being
+Consequently, textual instructions do not work in this case. the main reason to prefer analog navigation approaches. On
+A crucial problem occurred when parts of the building look that point, it should be considered that the software is in
+identically. For participants, it was not possible to distinguish an experimental stage and many extensions are in progress.
+similar waypoints and landmarks. By consulting the textual We assume that later iteration stages of the implementation
+instructions they tried to deduce the right floor. In such cases, and familiarization with the software would increase the
+thetextualinstructionsabsolutelyconductthenavigation.Itis acceptance rate.
+then very important to provide unique cues for the context of
+the user. VI. CONCLUSION&FUTUREWORK
+The usage of the additional landmarks which lie between to
+Buildings represent an insuperable barrier for existing nav-
+waypoints appeared as redundant. Almost nobody considered
+igation systems. Although there exist approaches for indoor
+thisadditionalinformation,eveninsituationswhensuchclues
+navigation, they suffer from various disadvantages. A new
+were helpful and the participants were confused and disori-
+approach for navigation in complex buildings was examined
+ented. In further implementations the additional landmarks
+in this work. It focused on an universally applicable concept
+should be omitted or partially integrated into the waypoint-
+in combination with an intuitive and user-friendly handling.
+carousel.
+The evaluation revealed that reliable indoor navigation can be
+Altogether, the navigation system performed very well. The
+accomplished by the provided implementation. The proposed
+software proved to be user-friendly and most participants
+solution improves indoor navigation under certain circum-
+could imagine to apply it in their daily life. Furthermore,
+stances compared to classic solutions of way finding, such
+the navigation software was classified as the most reliable
+as a building map and oral instructions. This system can even
+considered method because people were able to validate their
+befurtherimprovedwiththeknowledgegainedduringthede-2012 International Conference on Indoor Positioning and Indoor Navigation, 13-15th November 2012
+velopment and evaluation. Some of the possible improvement [13] J.KimandH.Jun. Vision-basedlocationpositioningusingaugmented
+steps could be extracted from this work. realityforindoornavigation.IEEETransactionsonConsumerElectron-
+ics,54(3):954–962,August2008.
+The implemented navigation system should open up the area
+[14] C.Kray.Situatedinteractiononspatialtopics.PhDthesis,Saarla¨ndische
+of mobile phones equipped with smaller displays. The user Universita¨ts-undLandesbibliothek,2003.
+interface has to be revised, i.e., a compromise between the [15] K.-H. Krempels, S. Patzak, J. Stu¨lpnagel, and C. Terwelp. Device
+whispering: An approach for directory-less wlan positioning. In e-
+size of a waypoint illustration and the amount of depicted
+Business and Telecommunications, Communications in Computer and
+information needs to be found. Additionally, the landmark InformationScience,pages346–357.SpringerBerlinHeidelberg,2011.
+carousel has to be integrated into the waypoint carousel. [16] T. Lagenstein, S. Pullen, H. Jun, D. Yun, C. Kee, and B. Parkinson.
+Centimeter-accuracyindoornavigationusinggps-likepseudolites.Tech-
+Furthermore, the building-graph has to be extended. It should
+nicalreport,GPSWorld,November2001.
+be possible to map intermediate floors and areas with many [17] U. Leonhardt. Supporting location-awareness in open distributed sys-
+branches. Another aim is to automatically reduce the sections tems. PhDthesis,1998. UniversityofLondon.
+[18] J.Link,P.Smith,andK.Wehrle.FootPath:AccurateMap-basedIndoor
+of a route and the textual instructions without complicating
+NavigationUsingSmartphones. InInternationalConferenceonIndoor
+the navigation. It was proven that an increased number of PositioningandIndoorNavigation(IPIN2011),pages21–23,September
+segments in a route leads to a distorted perception of this 2011.
+[19] E.Sadalla,L.Staplin,andW.Burroughs.Retrievalprocessesindistance
+route’s length [19]. The route tends to appear longer than it
+cognition. Memory&Cognition,7:291–296,1979.
+really is.
+Furthermore,inournextsteps,wewanttoanalyzetheusageof
+pictographic illustrations instead of textual navigation instruc-
+tions, e.g., arrows will be compared to textual instructions.
+Pictures are perceived faster than textual instructions but usu-
+allycontainlessinformationthantheirwrittencounterparts.It
+has to be examined whether the pictographic instructions can
+completely replace the textual instructions or just expand the
+information.
+Finally, we plan a user study in the Cologne-Bonn airport to
+evaluate our navigation system in a real-world environment.
+Thisbuildingcomplexallowsusanevaluationofalargeareal
+with a highly frequented pedestrian traffic.
+REFERENCES
+[1] K.Baras,A.Moreira,andF.Meneses. NavigationBasedonSymbolic
+SpaceModels. InInternationalConferenceonIndoorPositioningand
+IndoorNavigation(IPIN2010),September2010.
+[2] A. K. Beeharee and A. Steed. A natural wayfinding exploiting photos
+inpedestriannavigationsystems. InProceedingsofthe8thconference
+on Humancomputer interaction with mobile devices and services Mo-
+bileHCI06,volume8,pages81–88,2006.
+[3] B.BrumittandS.Shafer. Topologicalworldmodelingusingsemantic
+spaces. In Proceedings of Location Modeling Workshop at Ubicomp,
+2001.
+[4] O. Chowaw-Liebman, U. Christoph, K.-H. Krempels, and C. Terwelp.
+Evaluation of an indoor navigation approach based on approximate
+positions. InWINSYS,pages195–201,2010.
+[5] U. Christoph, K.-H. Krempels, J. von Stu¨lpnagel, and C. Terwelp.
+Automaticcontextdetectionofamobileuser,pages1–6. 2010.
+[6] J. E. Cutting and P. M. Vishton. Perceiving layout and knowing
+distances:theintegration,relativepotencyandcontextualuseofdifferent
+information about depth. In Handbook of perception and Cognition.,
+volume5:PerceptionofSpaceandMotion,pages69–117.1995.
+[7] E. W. Dijkstra. A note on two problems in connexion with graphs.
+NumerischeMathematik,1(1):269–271,December1959.
+[8] R. M. Downs and D. Stea. Kognitive Karten: Die Welt in unseren
+Ko¨pfen. UTBfu¨rWissenschaft,1982.
+[9] Y.Gu,A.Lo,andI.Niemegeers.Asurveyofindoorpositioningsystems
+for wireless personal networks. Communications Surveys & Tutorials,
+11(1):13–32,2009.
+[10] C. Hide and T. Botterill. An integrated IMU, GNSS and image
+recognition sensor for pedestrian navigation. In Proceedings of the
+InstituteofNavigation,2009.
+[11] L.Huey,P.Sebastian,andM.Drieberg.Augmentedrealitybasedindoor
+positioning navigation tool. In Open Systems (ICOS), pages 256–260.
+IEEE,2011.
+[12] C.S.Jensen,H.Lu,andB.Yang.GraphModelBasedIndoorTracking.
+2009 Tenth International Conference on Mobile Data Management:
+Systems,ServicesandMiddleware,pages122–131,2009.

@@ -1,0 +1,492 @@
+See discussions, stats, and author profiles for this publication at: https://www.researchgate.net/publication/371562446
+Multisensory Diorama: Enhancing Accessibility and Engagement in Museums
+Conference Paper · August 2023
+CITATION
+1
+READS
+242
+4 authors, including:
+Leandro Guedes
+University of Lugano
+37 PUBLICATIONS   134 CITATIONS   
+SEE PROFILE
+Irene Zanardi
+University of Lugano
+11 PUBLICATIONS   19 CITATIONS   
+SEE PROFILE
+Monica Angela Landoni
+University of Lugano
+20 PUBLICATIONS   64 CITATIONS   
+SEE PROFILE
+All content following this page was uploaded by Leandro Guedes on 14 June 2023.
+The user has requested enhancement of the downloaded file.
+
+Multisensory Diorama: Enhancing Accessibility
+and Engagement in Museums
+Leandro S. Guedes1, Irene Zanardi1, Stefania Span2, and Monica Landoni1
+1 Università della Svizzera italiana (USI), Switzerland
+(leandro.soares.guedes, irene.zanardi, monica.landoni)@usi.ch
+www.luxia.inf.usi.ch
+2 Cooperativa Sociale Trieste Integrazione a m. Anffas Onlus, Italy
+Abstract. This paper describes the design and evaluation of a Mul-
+tisensory Diorama (MSD) intended as a tool to provide an alternative
+learning environment for people with intellectual disabilities (ID) in mu-
+seums. The MSD is designed to be interactive, engaging, and accessible
+to accommodate the specificities of participants with ID, and to help con-
+textualize and consolidate previous knowledge. The MSD is a portable
+box with RFID readers, LEDs, a fan, a photoresistor, a button, an Ar-
+duino Uno, an MP3 shield, a speaker, and an external battery. The MSD
+offers two different ways of engagement and interaction via exploration
+and gamification: visitors can explore the augmented landscape and play
+a matching game that reinforces their knowledge of the food chain in
+the forest. In a formative evaluation approach focusing on the accessi-
+bility and engagement with the MSD, a study was conducted with 12
+adults with ID, who provided valuable feedback to improve the design
+and make necessary adjustments for future implementations. The MSD
+proved to be a successful tool for engaging visitors and reinforcing their
+understanding of the food chain in an interactive and accessible way.
+Keywords: Multisensory Experiences · Diorama · Accessibility · People
+with Intellectual Disabilities · Museum · Inclusion
+1
+Introduction
+Museums are spaces of knowledge and cultural heritage, offering a range of expe-
+riences that aim to inform, educate, and entertain visitors. Unfortunately, many
+people face barriers when accessing and enjoying museums, including people with
+intellectual disabilities (ID). The barriers include the complexity of information
+and lack of inclusive interpretation. To address them, there has been growing in-
+terest in developing inclusive practices and accessible environments in museums.
+In particular, there has been a focus on enhancing the multisensory experience
+of museums by engaging multiple senses and modes of communication [11].
+Multisensory experiences can facilitate learning and engagement and can
+enhance the accessibility of museums for people with ID. One approach to cre-
+ating multisensory museum experiences is through dioramas, which are three-
+dimensional models or displays showing a scene or an event. Dioramas, which
+
+2
+L. S. Guedes et al.
+can provide a rich and immersive experience, allow visitors to explore different
+perspectives, time periods, and cultural contexts while promoting and enhancing
+learning and critical thinking.
+This paper explores the potential of multisensory experience dioramas to en-
+hance accessibility and engagement in museums for individuals with intellectual
+disabilities. Specifically, in Section 2, we will review the literature on intellec-
+tual disabilities, museum accessibility, and multisensory experiences. Further,
+Section 3 will present our objectives, implementation, and interaction and gam-
+ification plan. Section 4 will present the evaluation of a multisensory experience
+diorama designed for a museum exhibition. We will also discuss our findings in
+Section 5. Finally, we conclude this paper and highlight limitations and future
+considerations in Section 6.
+2
+Background and Related work
+Intellectual Disabilities (ID) are neurodevelopmental disorders characterized by
+deficits in cognition and adaptive functioning [1]. The severity can vary widely,
+with some people facing minor issues and being able to live relatively indepen-
+dently with the right support, while others may need significant and perma-
+nent assistance [26]. Assistance is especially needed in the context of formal
+and informal education [20], as learning can be difficult for individuals with ID
+without accommodations or modifications [15]. This is due, in part, to intellec-
+tual function limits, which may include issues with abstract concepts, memory,
+problem-solving, planning, reasoning, and generalization [1][9][32].
+In recent efforts to provide inclusive interactive technologies, the multisen-
+sory approach has received special attention [16]. Multisensoriality for people
+with disabilities has been employed with different applications, ranging from
+multisensory smart objects [24][2][13] to multisensory environments [18][5][25],
+and with different goals, such as relaxation [10], communication [24], and learn-
+ing [2]. Indeed, multiple sensory modalities can benefit learning [29] as they
+present information that can be more accessible according to the preferences of
+the learner [21], enhancing learning opportunities for everyone [4]. Multisensory
+experiences can also be found in museums, where multisensory technology creates
+immersive experiences and empowers imagination [11]. Regarding accessibility,
+multisensory solutions typically focus on visual impairments [19], as visual in-
+formation constitutes the majority of museums’ content [11], and visitors with
+ID received less attention in HCI technologies.
+When it comes to enhancing learning experiences, natural history museums
+frequently employ dioramas [12][31], which are "three-dimensional depictions of
+animal-landscape sceneries that include real or artificial models of animals in
+combination with background paintings and natural or artificial requisites" [14].
+Because of their educational value [30], their potential in relation to HCI has
+been investigated to understand how technology could enhance dioramas. Al-
+though museums are the most common setting for digital dioramas, there are
+also applications set in schools to provide hands-on experience with science con-
+
+Multisensory Diorama (MSD)
+3
+cepts [27][3][6]. Aside from traditional physical ones [27][3][28], there are virtual
+reality dioramas [22][6][23], augmented reality dioramas [7][17][23], and mixed re-
+ality dioramas [8]. Interaction is typically achieved through external controllers
+[27][22][6][8][28][23], with only a few opting for physical interaction [7][17][3],
+highlighting a lack of multimodality. Similarly, there is a lack of multisensorial-
+ity. The sensory output of digital dioramas is primarily visual, with occasional
+incorporation of auditory feedback [7][3][28] and even less frequent incorporation
+of haptic output [28]. The latter is the only one designed specifically for people
+with disabilities, explicitly those with visual impairment. The target users of
+digital dioramas are not always specified because they are appealing to a wide
+range of people [22][8][23], but when the design is specific to a defined population,
+targets are usually children [7][17][3][6].
+3
+Design
+3.1
+Rationale and objectives
+Thanks to informal learning, museums can provide an effective informal alterna-
+tive learning environment for people with ID. In particular, dioramas can provide
+explicit and immersive representations of information that can be more easily
+understood. After visiting a Natural History museum with people with ID and
+observing their reactions to playful interactions, we conducted a focus group
+session with a psychologist, educators, and the museum’s researcher. Together
+we explored the feasibility, requirements, and features of a tangible interactive
+object to place inside the museum. Inspired by the literature and the museum’s
+content, we envisioned a Multisensory Diorama (MSD) focused on the food chain.
+As the group of participants was going to learn content about wolves and rein-
+deer, the educator suggested focusing on that topic and proposing an activity
+that could be placed inside their learning process. Following the focus group,
+the content of the museum, and accounting for the learning objectives of the
+participants, we extracted the key considerations that should have been taken
+into account during the design phase:
+1. Engagement: The diorama should be designed to be interactive and en-
+gaging for the participants, to involve them in a memorable and meaningful
+learning experience;
+2. Accessibility: The diorama should propose multisensory feedback to ac-
+commodate the specificities of the participant with ID. It should leave the
+participant the possibility to choose how to engage with it and should be
+easy to use;
+3. Learning: The diorama should help contextualize and consolidate previous
+knowledge.
+3.2
+Implementation
+The MSD presented in this paper is a portable box with the scenery on top and
+the electronics inside. To recreate the landscape, a green textured cloth miming
+
+4
+L. S. Guedes et al.
+grass covers the surface. On the front are three cards with pictures and names of
+mouse, moss, and reindeer. Each card has its own RFID reader housed inside the
+box. Red and green LEDs are on the left side of the box and next to the cards.
+Statuettes of wolves and reindeer occupy the middle portion of the surface, and
+two of them stand on a white card-shaped RFID tag. Paper trees with thin
+branches and leaves that can easily shake with wind serve as a backdrop for the
+game. The wind is generated by a small fan located directly behind the trees.
+It can be activated by a photoresistor placed among the trees and a button on
+the diorama’s left side. RFID readers, LEDs, the fan, the photoresistor, and the
+button are all connected to an Arduino Uno, which is equipped with an MP3
+shield, a speaker, and an external battery. Fig. 1a shows the components.
+Fan
+Photoresistor
+Textures
+RFID sensor
+Speaker
+LEDs
+Button
+Vibromotor
+RFID tag
+(a) Components available on the MSD.
+(b) MSD in the Museum.
+Fig. 1: MSD: Components’ description and the box inside the museum.
+3.3
+Interaction and Gamification
+The MSD offers visitors an interactive experience in a forest setting, where they
+can observe wolves and reindeer. The diorama is designed to provide two differ-
+ent ways of engagement and interaction, allowing visitors to choose their own
+experience and make their visit more memorable. Visitors can explore the aug-
+mented landscape, where they can touch the MSD’s elements to discover their
+textures, activate the wind, and move the animals. This allows visitors to ex-
+perience the forest environment hands-on and understand the different elements
+that make up the ecosystem. They can also play imaginative games set in the
+forest, which will make the experience more fun and creative.
+In addition, visitors can play a matching game that reinforces their knowledge
+of the food chain in the forest. The game is based on the prompt "Who eats
+what?" and visitors can pick up the animals from the scenery and place them
+on top of the image of their food. The answers provided are mouse, moss, and
+reindeer. If the participant selects the wolf, the correct answers would be mouse
+and reindeer. However, if the participant selects the reindeer, moss is the correct
+answer. When the answer was wrong, a red LED lit up, and a feedback sound was
+
+Multisensory Diorama (MSD)
+5
+played, encouraging participants to try again. On the other hand, if the answer
+was correct, a green LED lit up, and the speakers played a sound associated with
+the animal. Every time a match was made, the diorama vibrated. The game is
+designed to reinforce knowledge about the different animals and their role in the
+ecosystem in an interactive way. The simple mechanic and interaction are meant
+to enhance accessibility and improve understandability.
+4
+Evaluation
+4.1
+Method
+To evaluate the accessibility and engagement of the MSD, we conducted a study
+at a Natural History museum. Participants were first given a tour of the museum
+room with the wolf and the reindeer and were given a brief refresher on the
+animals featured in the diorama. Afterward, the MSD (Fig. 1b) was placed on
+a table between the animal statuettes and a stool was provided for participants
+to sit on. The participants then entered the room individually for a one-on-one
+session with two researchers present. One researcher was leading the experience
+and was standing beside the participant to guide them through the activity, while
+the other researcher was standing in the corner of the room, taking notes on the
+participant’s interactions and observations and filming the experiment for further
+analysis. Participants were first given the opportunity to explore the diorama
+freely. We then provided a brief overview of the MSD and its purpose, and later,
+the leading researcher presented the matching game promptly. The researcher
+handed the animal with the tag and asked the participant to place it on its food.
+At the end of the session with the MSD, the researcher showed participants
+any interaction that they hadn’t tried at the beginning of the session. Finally,
+we requested that participants exercise their free will in selecting between the
+MSD and other familiar options, including a Museum app, an Augmented Reality
+app, printed easy-to-read text, and augmentative and alternative communication
+(AAC) pictograms. They were asked to choose their preferred option in sequence
+until the final alternative. After the session, participants were interviewed by an
+educator in a separate room, where they were asked to describe the diorama,
+the activity, and express their opinions about it. This approach allowed us to
+gather valuable feedback on the accessibility and engagement of the MSD and
+make any necessary adjustments for future implementations.
+4.2
+Participants
+The study involved a sample of 12 adults with ID, 8 women and 4 men, who
+were chosen to participate in a museum visit by their educator from the same
+association. It was made possible by an ongoing agreement between the partic-
+ipants’ association and the research organization involved and formal approval
+from the ethical committee of the researchers’ institution. The association en-
+sured that both legal guardians and participants knew the research purpose and
+
+6
+L. S. Guedes et al.
+that participation was voluntary. This was an important aspect of the study
+as it ensured that all participants were willing and able to participate in the
+experience. Three participants had a mild disability (P3, P5, P10), eight had a
+moderate disability (P1, P2, P4, P6, P8, P9, P11, P12), and one had a severe
+disability (P7), providing a representative sample of the population. Regarding
+age, 2 participants were under 40, 4 were between 40 and 50, and 6 were over
+50. To ensure that all participants were comfortable during the study, frequent
+reminders were given that they could opt out of the activity at any time. This
+was an important step as it ensured that participants were not feeling pressured
+to continue the activity if they were uncomfortable with it. For non-verbal or
+minimally verbal participants, their educators were present to ensure that their
+needs were understood and that they felt comfortable throughout the experience.
+5
+Findings and Discussion
+5.1
+Initial observations
+Participants were initially free to explore the diorama. We analyzed and clustered
+data based on similarities in behavior. Some participants (P1, P3, P7) focused
+more on physical interaction with the elements, such as touching and feeling,
+while (P2, P4, P5, P6, P8, P9, P10, P12) focused more on verbal expression
+and describing what they see or experience. P11 is initially more cautious and
+skeptical of the diorama and needs help to relax and understand what we are
+proposing.
+We now look at accessibility, engagement, and learning during exploration
+and playing with the diorama via participant observations and feedback.
+5.2
+Exploration
+Several similarities were observed in participants’ exploration behaviors. A few
+participants described the elements they saw, such as in P1, P4, and P5, while
+others pointed at them and named them, as seen in P6 and P12. Many partic-
+ipants interacted with the wind, expressing enjoyment, surprise, or fascination
+with it, as evidenced in P2, P3, P4, P6, P8, and P12. Some participants explored
+the exhibit independently, as observed in P8 and P9, while others needed some
+prompting, such as in P6 and P10. P10 mentioned, "I am confused with the
+mouse" and later on highlighted when the fan was activated "as if it was the
+wind of nature." Ultimately, P11 expressed curiosity about the exhibit’s purpose
+or mechanisms.
+5.3
+Independence and Accessibility
+Most participants were able to access the diorama and complete their assigned
+tasks independently. Nonetheless, some participants required different levels of
+assistance to complete the game. Three participants (P7, P8, P12) were found
+
+Multisensory Diorama (MSD)
+7
+to be primarily independent but required some form of guidance or assistance,
+such as specifying where to place a statuette or correcting the placement of a tag
+on the reader. One participant required scaffolding to complete the game (P9),
+and another needed help to start (P11).
+5.4
+Understanding and Learning
+Participants showed a good understanding of the feedback provided in the game,
+either through sound or light. Some participants found the light feedback more
+immediate and noticeable than the sound feedback. When prompted P12 said,
+"It’s not right because red means mistake." Several participants used the feed-
+back to correct their following answer, while others understood that the green
+light meant a correct answer and moved to the next spot. P1 says when play-
+ing, "One reindeer doesn’t eat another reindeer. That doesn’t make sense." One
+participant (P11) required scaffolding to understand the game. The vibration
+was the least noticeable. Participants could feel it when touching the statuettes
+during the game’s feedback.
+5.5
+Gaming Experience
+Most participants demonstrated an understanding of right and wrong answers by
+saying out loud what was going to happen, before waiting for the matching game
+feedback. P12 is sure about her answers and proud to get them right, saying:
+"You see?!?" Two participants (P9 and P11) needed help playing the game. P3
+explained the gaming experience "I didn’t know if it was correct, but I wanted
+to try. The light told me it was right."
+5.6
+Emotions and Engagement
+Participants exhibited a range of emotions during gameplay. P1, P7, and P12
+were surprised and enthusiastic, with P1 expressing excitement at discovering
+new features "I really liked the box, did you know?" P2, P4, P6, P10, and P11
+smiled during gameplay, with P6 smiling specifically at the feedback, P10 while
+playing with the reindeer statuette, and P11 while discovering what the box did.
+P5 was generally serious, while P9 was curious and spent time looking closely
+at the objects.
+5.7
+Preferences
+We asked participants to freely choose which solution they would like to use to
+learn more about the museum content. They had five alternatives, three high-
+tech (Museum app, Augmented Reality app, and the MSD) and two low-tech
+(printed easy-to-read text and AAC pictograms). MSD was the second preference
+of 5 participants (P3, P6, P7, P11, P12), the third preference of 3 participants
+(P1, P2, P10), and the fourth (P5 and P8) and last (P4 and P9) of two. When
+placed as second or third place, the MSD was always chosen after a high-tech
+solution, proving the engagement and interest in technology by people with ID.
+
+8
+L. S. Guedes et al.
+5.8
+Interview
+After each one-on-one session, the participants were asked about what they saw
+without any extra prompt, they were free to express what they remembered.
+They all described the box and various animals, the reindeer and the wolves. P3
+mentioned "stickers" indicating the game alternatives glued on top of the box,
+while P4 and P5 provided detailed descriptions of the LEDs, fan, and wind, as
+well as their interactions with the box. P9 noted the presence of "fake moss,"
+and P10 mentioned the "reindeer and wolf family."
+We asked participants to describe their experience with the MSD in detail
+and prompted, if necessary, with the following questions: were there any noises or
+sounds? Did you have something to read? Were there any pictures? Were there
+any lights? Could you do something with the box? Many participants mentioned
+lights that turned green when they gave a correct answer and red when they gave
+an incorrect answer. Some participants also reported hearing animal sounds, such
+as the wolf howling or the reindeer making noise. Several participants described
+feeling the wind on their hands or seeing leaves move when they touched a
+specific box area. Participants appeared engaged and enjoyed interacting with
+the various elements, such as guessing which animals the wolf and reindeer should
+eat. However, there were also some differences in their experiences, such as one
+participant who reported not hearing any noises (P3) and another who did not
+see any lights in the box (P11).
+Lastly, during the interview, the educators asked about the participants’
+favorite technology. A few participants said they enjoyed the tablet (with the
+museum or AR app) and the easy-to-read texts. P2, P6, P7, P8, P9, and P10
+highlighted the box and its features. P4 answered, "I liked the pictures," which
+could be related to any of the alternatives they had in the hall. Additionally, one
+participant (P3) noted that he liked everything.
+6
+Conclusions
+This study aimed to propose and evaluate the effectiveness of a MSD designed to
+enhance accessibility and interaction in the museum environment. The MSD was
+an innovative and inclusive way for people with ID to learn about the museum
+content, providing participants with multisensory experiences that allow for in-
+teractive and fun informal learning. Nevertheless, the study had limitations, such
+as noise inside the museum that disturbed the audio feedback experience and the
+museum hall with stimuli everywhere. As a result, future work should focus on
+evaluating new multisensory feedback and increasing speakers’ volume. Overall,
+the results of this study suggest that the MSD successfully engaged participants
+and elicited a range of responses and behaviors, making it a promising approach
+for enhancing museum learning experiences.
+Acknowledgements We would like to thank our amazing participants from
+ANFFAS and SNSF for funding this research.
+
+Multisensory Diorama (MSD)
+9
+References
+1. American Psychiatric Association, A., Association, A.P., et al.: Diagnostic and
+statistical manual of mental disorders: DSM-5, vol. 10. Washington, DC: American
+psychiatric association (2013)
+2. Brule, E., Bailly, G., Brock, A., Valentin, F., Denis, G., Jouffrais, C.: Mapsense:
+multi-sensory interactive maps for children living with visual impairments. In: Pro-
+ceedings of the 2016 CHI conference on human factors in computing systems. pp.
+445–457 (2016)
+3. Cools, S., Conradie, P., Ciocci, M.C., Saldien, J.: The diorama project: development
+of a tangible medium to foster steam education using storytelling and electronics.
+In: Conference on Smart Learning Ecosystems and Regional Development. pp.
+169–178. Springer (2017)
+4. Eardley, A.F., Mineiro, C., Neves, J., Ride, P.: Redefining access: Embracing multi-
+modality, memorability and shared experience in museums. Curator: The Museum
+Journal 59(3), 263–286 (2016)
+5. Frid, E., Lindetorp, H., Hansen, K.F., Elblaus, L., Bresin, R.: Sound forest: evalu-
+ation of an accessible multisensory music installation. In: Proceedings of the 2019
+CHI Conference on Human Factors in Computing Systems. pp. 1–12 (2019)
+6. Gambini, A., Pezzotti, A., Broglia, A., Poli, A.: The digital diorama project: the
+design. Procedia-Social and Behavioral Sciences 182, 470–476 (2015)
+7. Harrington, M.C.: Connecting user experience to learning in an evaluation of an
+immersive, interactive, multimodal augmented reality virtual diorama in a natural
+history museum & the importance of story. In: 2020 6th International Conference
+of the Immersive Learning Research Network (iLRN). pp. 70–78. IEEE (2020)
+8. Hayashi, O., Kasada, K., Narumi, T., Tanikawa, T., Hirose, M.: Digital diorama
+system for museum exhibition. In: 2010 IEEE International Symposium on Mixed
+and Augmented Reality. pp. 231–232. IEEE (2010)
+9. Henry, L.A., MacLean, M.: Working memory performance in children with and
+without intellectual disabilities. American journal on mental retardation 107(6),
+421–432 (2002)
+10. Hogg, J., Cavet, J., Lambe, L., Smeddle, M.: The use of ‘snoezelen’as multisen-
+sory stimulation with people with intellectual disabilities: a review of the research.
+Research in developmental disabilities 22(5), 353–372 (2001)
+11. Hornecker, E., Ciolfi, L.: Human-computer interactions in museums. Synthesis lec-
+tures on human-centered informatics 12(2), i–171 (2019)
+12. Insley, J.: Little landscapes: dioramas in museum displays. Endeavour 32(1), 27–31
+(2008)
+13. Jost, C., Le Pévédic, B., El Barraj, O., Uzan, G.: Mulsebox: Portable multisensory
+interactive device. In: 2019 IEEE International Conference on Systems, Man and
+Cybernetics (SMC). pp. 3956–3961. IEEE (2019)
+14. Kamcke, C., Hutterer, R.: History of dioramas. In: Natural history dioramas, pp.
+7–21. Springer (2015)
+15. Kauffman, J.M., Hallahan, D.P., Pullen, P.C., Badar, J.: Special education: What
+it is and why we need it. Routledge (2018)
+16. Kientz, J.A., Hayes, G.R., Goodwin, M.S., Gelsomini, M., Abowd, G.D.: Interactive
+technologies and autism. Synthesis lectures on assistive, rehabilitative, and health-
+preserving technologies 9(1), i–229 (2019)
+17. Kyriakou, P., Hermon, S.: Can i touch this? using natural interaction in a mu-
+seum augmented reality system. Digital Applications in Archaeology and Cultural
+Heritage 12, e00088 (2019)
+
+10
+L. S. Guedes et al.
+18. Lancioni, G., Cuvo, A., O’reilly, M.: Snoezelen: an overview of research with people
+with developmental disabilities and dementia. Disability and rehabilitation 24(4),
+175–184 (2002)
+19. Lloyd-Esenkaya, T., Lloyd-Esenkaya, V., O’Neill, E., Proulx, M.J.: Multisensory
+inclusive design with sensory substitution. Cognitive Research: Principles and Im-
+plications 5, 1–15 (2020)
+20. Mastrogiuseppe, M., Guedes, L.S., Landoni, M., Span, S., Bortolotti, E.: Technol-
+ogy use and familiarity as an indicator of its adoption in museum by people with
+intellectual disabilities. Studies in health technology and informatics 297, 400–407
+(2022)
+21. Mount, H., Cavet, J.: Multi-sensory environments: an exploration of their potential
+for young people with profound and multiple learning difficulties. British Journal
+of Special Education 22(2), 52–55 (1995)
+22. Nakaya, T., Yano, K., Isoda, Y., Kawasumi, T., Takase, Y., Kirimura, T.,
+Tsukamoto, A., Matsumoto, A., Seto, T., Iizuka, T.: Virtual kyoto project: Digital
+diorama of the past, present, and future of the historical city of kyoto. In: Culture
+and computing, pp. 173–187. Springer (2010)
+23. Narumi, T., Kasai, T., Honda, T., Aoki, K., Tanikawa, T., Hirose, M.: Digital
+railway museum: An approach to introduction of digital exhibition systems at
+the railway museum. In: Proceedings of the 15th International Conference on Hu-
+man Interface and the Management of Information: Information and Interaction
+for Learning, Culture, Collaboration and Business - Volume Part III. p. 238–247.
+HCI’13, Springer-Verlag, Berlin, Heidelberg (2013)
+24. Neidlinger, K., Koenderink, S., Truong, K.P.: Give the body a voice: Co-design with
+profound intellectual and multiple disabilities to create multisensory wearables. In:
+Extended Abstracts of the 2021 CHI Conference on Human Factors in Computing
+Systems. pp. 1–6 (2021)
+25. Parés, N., Carreras, A., Durany, J., Ferrer, J., Freixa, P., Gómez, D., Kruglanski,
+O., Parés, R., Ribas, J.I., Soler, M., et al.: Mediate: An interactive multisensory
+environment for children with severe autism and no verbal communication. In: Pro-
+ceedings of the Third International Workshop on Virtual Rehabilitation. vol. 81,
+pp. 98–99 (2004)
+26. Patel, D.R., Apple, R., Kanungo, S., Akkal, A.: Intellectual disability: definitions,
+evaluation and principles of treatment. Pediatric Medicine 1(11), 10–21037 (2018)
+27. Ritzel, C., Sentic, A.: Investigating energy prosumer behaviour in crowd energy
+using an interactive model/diorama. Journal of Electronic Science and Technology
+16(4), 341–350 (2018)
+28. Samaroudi, M., Rodriguez-Echavarria, K., Song, R., Evans, R.: The fabricated dio-
+rama: Tactile relief and context-aware technology for visually impaired audiences.
+In: GCH. pp. 201–206 (2017)
+29. Shams, L., Seitz, A.R.: Benefits of multisensory learning. Trends in cognitive sci-
+ences 12(11), 411–417 (2008)
+30. Tunnicliffe, S.D., Scheersoi, A.: Dioramas as important tools in biological educa-
+tion. In: Natural History Dioramas, pp. 133–143. Springer (2015)
+31. Tunnicliffe, S.D., Scheersoi, A.: Natural history dioramas. History Construction
+and Educational Role, Dordrecht (2015)
+32. Wehmeyer, M.L., Buntinx, W.H., Lachapelle, Y., Luckasson, R.A., Schalock, R.L.,
+Verdugo, M.A., Borthwick-Duffy, S., Bradley, V., Craig, E.M., Coulter, D.L., et al.:
+The intellectual disability construct and its relation to human functioning. Intel-
+lectual and developmental Disabilities 46(4), 311–318 (2008)
+View publication stats
+

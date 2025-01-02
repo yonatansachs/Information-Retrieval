@@ -1,0 +1,443 @@
+MUSEUMS AND PEOPLE WITH VISUAL DISABILITY: AN 
+EXPLORATION AND IMPLEMENTATION THROUGH AN ERASMUS+ 
+PROJECT  
+Vassilios Argyropoulos, Magda Nikolaraizi, Sofia Chamonikolaou, Charikleia 
+Kanari  
+University of Thessaly (GREECE) 
+Abstract 
+The access of people with disabilities to museums has become a major issue of interest for museums. 
+Individuals with visual disabilities, which is one of the target groups of the present project, face many 
+barriers regarding their access to museums, since museums are considered as spaces “of seeing” 
+and “do not touch”. The present project titled “Bridging the Gap between Museums and Individuals 
+with Visual Impairments” aims to support museums to develop various practices in order to enhance 
+the access and inclusion of people with visual disability into their context and content. Museums, as 
+audience-centered spaces, are required to enhance the access and inclusion of individuals with visual 
+disability. However, this is a challenging task for museums and requires the collaboration between 
+museums and organizations involved in the education and the protection of individuals with visual 
+disabilities. This need for collaboration and interagency partnerships is the basis of the project, which 
+aims to bridge the gap between museums and individuals with visual disabilities. 
+Keywords: Students with visual disability, Individuals with visual disabilities, Museums, Action 
+Research, Erasmus+ Programme. 
+1 
+INTRODUCTION 
+The formulation and the adoption of social model of disability significantly affects the policies and 
+practices towards disability. The social model of disability indicated issues such as the failure of the 
+society to respond to the needs of people with disabilities, the barriers and the limitations of the 
+society which have the effect of excluding people with disabilities from equal social participation. Such 
+an example is the interaction between museums and people with disability ([1], [2], [3], [4]). 
+The aforementioned is in line with the development of the role of museums as cultural institutions. 
+Nowadays museums are not considered only as spaces of collection, preservation and display of 
+objects but institutions with a wide educational and social role ([5], [6], [7], [8]). In the recent past 
+museums have redefined their relationship with their audiences [9] and this relationship is depicted on 
+the museums’ definition of the International Council of Museums [10]. The recognition of the 
+heterogeneous audience in combination with the finding that museums for centuries were addressing 
+limited social groups [11], have led museums to redefine their relationship with their audiences and 
+their social and educational role in order to contact different people and respond to contemporary 
+social changes. This means that museums are not considered any more just as spaces, which collect, 
+preserve and exhibit objects but as audience-centred spaces with a wide educational and social role 
+([5], [7], [8]). In this framework, the access of people with disabilities to museums has become a major 
+issue of interest for museums. It is argued that the right of all people for access to cultural goods has 
+found in the Universal Declaration of Human Rights in 1948 [12]. Also, access to culture has been 
+recognized as a right of people with disabilities in the Convention of the Rights of Persons with 
+Disabilities [13]. 
+Regarding access of people with disabilities to museums, it is true that access for people of disabilities 
+is a central topic of discussion in museums around the world. Because access to museums is a 
+“multidimensional reality” [14] namely there are different types of access like physical access, sensory, 
+intellectual, emotional/attitudinal, financial, cultural, digital access etc. ([14], [15]). Nowadays many 
+steps have been made toward a wider accessibility of people with disabilities to museums such as: 
+guidelines for an accessible environment in the framework of Universal Design, the introduction of 
+legislation against discrimination in different countries ([16], [17]), initiatives and relevant research of a 
+number of associations for people with disabilities for the improvement of their accessibility, etc. 
+However, there are a lot of differences among different countries and museums since there are 
+Proceedings of EDULEARN16 Conference 
+4th-6th July 2016, Barcelona, Spain
+ISBN: 978-84-608-8860-4
+4509
+
+varying levels of commitment and success for the achievement of access [18]. Furthermore there is 
+more attention of enhancing physical access and to a lesser extent to other types of access like 
+sensory access ([18], [19]). It seems that despite the intensive discussions about access to cultural 
+goods for people with disabilities their cultural rights are poorly implemented [20].  
+In order to build bridges between society and museum we should also consider the relationship 
+between education and museums. This cultural education and the educational opportunities are not 
+provided only by museums but also in schools [21]. A recent research for the current accessibility 
+practices in cultural sectors for individuals with visual disability in Europe [20] stresses the importance 
+of education supporting, among others, that cultural accessibility and “societal change should start 
+with raising awareness of disabled people equity in schools”. This will lead to the configuration of 
+positive attitudes of students and encouraging them to participate in different spaces and actions and 
+cultivate different skills ([22], [23]). 
+People with visual disabilities, which is one of the target groups of the present project, face many 
+barriers regarding their access to museums ([14], [24]), since museums are considered as spaces “of 
+seeing” and “do not touch” [24]. Many museums around the world have developed various practices in 
+order to enhance the access of people with visual disabilities ([15], [25]), such as touch collections or 
+audio guides but many disabling barriers still exist.  
+Examples of barriers may be the tendency of museums to encounter visitors with visual disabilities as 
+a homogeneous group and therefore treat them as a group with a single characteristic; that is their 
+lack of sight [26]. The poor content of special programmes that often museums organize for individuals 
+with visual disabilities ([27], [28]), and the museum staff’s attitudes and behaviors, who are often not 
+trained to make individuals with visual disabilities feel welcome in the museum [29] are also typical 
+examples of barriers. As a result visitors with visual disabilities have very limited opportunities to 
+broaden their knowledge in the context of a museum.  
+Museums are required to address the needs of individuals with visual disabilities, enhance their 
+access, and contribute to their educational and social inclusion. This is a challenging task for 
+museums and requires the collaboration between museums and organizations involved in the 
+education, the development and the protection of individuals with visual disabilities. It is estimated as 
+significant the collaboration between museums and schools in the learning and inclusion of students 
+with disabilities ([1], [23]). This need for collaboration and interagency partnerships is the basis of the 
+present project, which aims to bridge the gap between museums and individuals with visual 
+disabilities. Hence, the present project “Bridging the Gap between Museums and Individuals with 
+Visual Impairments” (BaGMIVI) - which is presented and delineated in the present paper - aims to 
+address and fulfil the following objectives: 
+• To enable the museum members become aware and update their knowledge regarding the 
+disabling barriers that impede the access of visitors with visual disabilities to museums and the 
+techniques that can enhance the access and inclusion of individuals with visual disabilities to 
+the museums. 
+• To create learning, cultural and social opportunities for individuals with visual disabilities and 
+enable them acquire self-advocacy skills regarding their rights as museum visitors and the 
+requirements of an inclusive museum. 
+• To promote the collaboration between museums, schools and associations of individuals with 
+visual disabilities. 
+• To point out the best practices and guidelines for the development of an accessible and 
+inclusive museum for visitors with visual disabilities. 
+2 
+METHODOLOGY 
+The present European project is implemented under the umbrella of the Erasmus+ Programme and 
+aims to bridge the gap between museums and individuals with visual disabilities. The main objectives 
+of the present project – as mentioned above - aim to shape and promote strategic partnerships 
+between museums and educational settings within which students with visual disability are enrolled. In 
+essence, the present project involves primarily academics who are experts in the field of visual 
+disability, museum education, museum educational programmes as well as experts who work in 
+museums and have experience in touch collections, touch exhibitions, touch tours and tactile 
+diagrams. 
+4510
+
+2.1 Participants and Partnerships 
+All project partners are involved in the field of visual disability with different occupations and duties. In 
+specific, twelve formal and four silent partners constitute the consortium of this project.  Four of the 
+twelve formal partners are universities (University of Thessaly-UTH, Sofia University-SU, University 
+Babes Bolyai-UBB, and Eotvos Lorand University-ELTE), three are non-profit non-governmental 
+organisations (i.e the International Council for Education and Rehabilitation of people with Visual 
+Impairment-ICEVI-Europe, the Bulgarian Association for Education of Visually Impaired Children- 
+BAOZZD, and the European Blind Union-EBU), four are museums (an archeological, two galleries and 
+one ethnographic), and one is an IT Company. The contact persons of the Universities are all experts 
+in the education and rehabilitation of people who are blind and visually impaired. They are also 
+functioning as contact persons on behalf of their country (Greece, Bulgaria, Romania and Hungary 
+respectively) under the umbrella of ICEVI-Europe who is one of the six regional bodies of the World 
+Blind Union, representing, protecting and promoting the interests of blind and partially-sighted people 
+in continental Europe, including the EU-27 Member States, the EEA countries and the candidate 
+countries associated to the EU. Finally, the silent partners constitute special schools for the blind 
+which all have experience in participating in projects. 
+2.2 The Roadmap of the project – Work plan and activities 
+The ultimate target of the BaGMIVI project is to strengthen and consolidate partnerships between 
+museums and educational settings  within which blind students are enrolled by training the staff of the 
+former to meet the needs of museum visitors who have visual disabilities enhancing their social 
+inclusion through accessible cultural content and differentiated instructional approaches and museum 
+programmes.  
+In total, organizations such as universities, museums, associations for the blind, NGOs and 
+educational settings have collaborated to shape a networking with activities at many levels. It is 
+argued that all BaGMIVI activities lie in the strands of action research. Action research is a 
+methodology that fulfils two important conditions; one is that it seeks improvement and the other is that 
+it seeks an understanding of the setting and context in general ([30], [31]). The aforementioned 
+conditions are apparent in BaGMIVI project because the museum programs will be enriched regarding 
+the level of collaboration between the museum staff and the individuals with visual disability. Also, 
+several principles of action research [32], such as research and investigation, analysis of practice, 
+applying theory through action, evaluating practice, reflection, and constant renewal strengthened the 
+argument about choosing action research as the best methodology for the purposes and requirements 
+of all activities which are incorporated in the BaGMIVI project (see also below). 
+The activities which this project has organised – some have been integrated and others are in the 
+process - fall in with three action levels: (a) preliminary, (b) vertical, and (c) horizontal.  
+2.2.1 Preliminary Activities (PA) 
+PA1. The first preliminary phase aims at a thorough literature review to investigate the reasons for the 
+exclusion of visitors with visual disability from cultural centres such as museums and galleries. PA1 
+can be characterized as situational analysis and has provided insights from both sides (i.e. 
+participating museums and participating educational settings). The product of PA1 comprises a 
+detailed report with enriched data from all partners of the BaGMIVI project. 
+PA2. The results of PA1 were discussed between the partners (skype, meetings) and were used to 
+organize Intensive Training Programmes (ITP) enriched with workshops for museum staff exploring a 
+range of topics relevant to special education, visual disability, haptic perception, orientation and 
+mobility, differentiated content, touch collections, touch exhibitions, touch tours, audio guides, verbal 
+descriptions, handling sessions, three-dimensional models, replicas, information in braille, large print, 
+tactile diagrams, and issues pertinent to “design for all”. Also the BaGMIVI consortium during the ISPs 
+had the opportunity to discuss the barriers that teachers and students with visual disability faced in 
+their museum visits.    
+2.2.2 Vertical Activities (VA)  
+This level of activities refers to the actions taken by every single partner in the BaGMIVI project. For 
+example, vertical activities refer to the collaboration between university and museum as well as 
+between museum and educational setting. Also, within the set of vertical activities, each partner 
+4511
+
+appointed a. the museum or the gallery where the ITP took place, and b. the educational setting where 
+students and teachers will set up organized visits to the museum aiming to extract a set of best 
+practices from this collaboration. The analysis of the VAs of the BaGMIVI project is as follows: 
+VA1. Each contact person is in charge for the completion of an ITP which brought together the 
+museum staff and teaching staff from participating higher education institutions relevant to the field of 
+visual disability as well as other relevant experts and professionals (academics, specialists from 
+relevant organizations, etc.). The objectives of each ITP were: (a) to inform the museum staff  about 
+the needs of the individuals with visual disability during their museum visits (data from PA1), (b) to 
+enable museum staff to work together with specialists and experts in groups so they could benefit from 
+special learning and gain new perspectives relevant to issues such as special education, visual 
+disability, touch collections, touch tours, three-dimensional models, replicas, information in Braille, and 
+the like, (c) to enable museum staff to plan differentiated museum educational programmes with 
+relevant haptic and acoustic content, and (d) to give the opportunity to museum staff to meet teachers 
+and students with visual disabilities on a regular basis and discuss through the context of a museum 
+educational programme issues of accessibility, aesthetics and emotions. The ultimate purpose of the 
+ITP is to enable museum staff to collaborate effectively with educational settings within which students 
+with visual disabilities are enrolled and build up bridges of social integration and strategic partnerships 
+with permanent character leading to joint study programmes and joint curricula. The product of VA1 is 
+a report from each country about the planning and act of the ITP which will take place in museums or 
+in galleries.  
+VA2. After the completion of the ITP the contact person of each country will act as mediator and 
+facilitator between the museum and the educational setting. The product of this collaboration will be 
+the setup of museum visits with corresponding museum educational programmes adapted for 
+individuals with visual disabilities. It is expected to highlight all good practices which will emerge during 
+these visits from both sides (museums and educational settings). The product of VA2 constitutes 
+reports referring to reflective logs conducted by museum staff and educators indicating the pros and 
+the cons during the museum visits. Based on this data the contact person will provide a summary of 
+best practices that were adopted by educational settings and museums to make these visits fruitful in 
+terms of active participation.  
+2.2.3 Horizontal Activities (HA) 
+HA1. This level of activities referred to the networking actions that concern all educational settings and 
+museums that are involved in the BaGMIVI project. The reflective phases from these networking 
+actions will provide data enabling the Coordinating Group of the BaGMIVI project in conjunction with 
+the contact persons of every partner to reflect on the collected data and move on to the next step of 
+re-planning and acting. It is expected that a common methodology will be shaped and also two guides 
+for teachers and museum staff respectively will be published to support the sustainability of the 
+project.  
+HA2. All museums which participated in ITPs as well as the teachers of the participating schools will 
+be able to upload their best practices accompanied with photos and videos to the project site 
+(http://www.bagmivi.eu) or to sites of their organisations sharing knowledge and experience. In this 
+way the BaGMIVI consortium will be able to disseminate its actions and activities to other educators 
+and museums that are interested in educational innovations, teaching methods, curriculum 
+adaptations, integrated curriculum, haptic apprehension, design and development of appropriate 
+tactile material, and last but not least social integration.  
+HA3. Transnational meetings of museum staff and contact persons have been conducted and are still 
+in progress in order to exchange practices, experience making all necessary modifications or 
+adaptation regarding the implementation phases of the project. Finally, sustainability is considered as 
+the cornerstone of all horizontal activities and it will be feasible via conferences at local and European 
+level.  
+3 
+RESULTS: EVENTS AND INTELLECTUAL OUTPUTS (IO) 
+The expected results ("intellectual" or events) of the overall project execution and its lifetime are the 
+following:  
+IO1: A needs assessment study. As we mentioned before the needs assessment study has been 
+completed in which has been described the level of access and inclusion of individuals with visual 
+4512
+
+disabilities to the museums and the requirements for the development of an inclusive museum in 
+relation to the individuals with visual disabilities. In order to conduct the needs assessment study, the 
+following activities took place: i) initially a literature review was conducted with research data and 
+theoretical perspectives regarding museums and people with visual disabilities, ii) a thorough search 
+of databases took place to search for publications relevant to the topic of BaGMIVI project, iii)  a local 
+search took place in journals, reports, local news and books, which often cannot be traced through 
+databases, and iv) semi-structured interviews with individuals with visual disabilities and teachers of 
+students with visual disabilities were conducted to explore their experiences and perspectives 
+regarding the level of accessibility and inclusion of individuals with visual disabilities regarding 
+museums and similar cultural centres.   
+IO2: A joint syllabus for the training of the museum staff is also completed, which was based on the 
+needs assessment study. The joint syllabus was developed for the training of the museum staff. The 
+syllabus included the objectives of the training, the learning outcomes, the thematic areas and the 
+content in each area and the assessment methods to examine whether the objectives have been met. 
+Furthermore, the syllabus may be used in the future by the trained museum staff who want to organise 
+in-service training seminars for their own benefit or it may be used by another museum. Therefore, it 
+will be accessible to everybody who does not participate to the project and be interested to read and 
+use such a syllabus. This output will be distributed to all participating museums and galleries of the 
+BaGMIVI project for the museum staff training.    
+IO3: The BaGMIVI portal. The BaGMIVI portal is constructed (http://www.bagmivi.eu) and includes 
+three distinct sections public dissemination, private collaboration, and e-learning module.  
+IO4: Training events. It is expected that during the training events (ITP), members of the museum staff 
+have acquired knowledge and skills to encounter visitors with visual disabilities as a heterogeneous 
+group and have learned to organize special programmes for people with visual disabilities. This event 
+is of great importance because it will help all BaGMIVI partners who are actively involved in museums 
+and galleries to develop differentiated and accessible museum programmes.  
+IO5: Differentiated and accessible material of all participating museums staff will be produced and 
+video-recorded to enhance the access and inclusion of individuals with visual disabilities during their 
+museum visits. The museum staff in collaboration with individuals with visual disabilities are designing 
+and developing the accessible material by following the principles that they learnt during the training 
+and which are included in the syllabus. For each school visit, the museum staff will set the objectives, 
+describe the content/programme, and decide how to evaluate whether the objectives have been met. 
+IO6: A guide with the best practices regarding ways of differentiated museum content. It is expected to 
+produce a best practices guide which will include an analysis of the data gathered through visitors’ and 
+museum staff’s reflective logs. More analytically, the experiences of the participants, their emotions, 
+their concerns, the challenges encountered and how they dealt with them are some of issues that will 
+be included within the best practices guide. For example, the visitors may comment that at the 
+beginning of the museum visits they were not very satisfied with the museums services while gradually 
+the level of services was improved. The museum staff may describe how they dealt with the 
+challenging task of differentiating artworks and also how they met the diverse needs of their visitors 
+with visual impairments.  
+It is expected that all the above results will have an impact at personal and societal level. In specific, it 
+is expected that since individuals with visual disabilities will actively participate in the development of 
+accessible materials they will acquire self-advocacy skills. Also, a collaborative network between 
+museums, schools and associations is expected to be developed as well as a sustainable learning 
+community is expected to be created during the BaGMIVI’s duration involving all  relevant 
+stakeholders who will have the chance to interact through the BaGMIVI site, to exchange their 
+experience and ideas, share their concerns and improve their methods and techniques. 
+Also, the BaGMIVI project will develop and test a concrete methodology for the exploitation of 
+differentiated museum content in general, for blind students’ information and education in general. In 
+particular, it is expected that the differentiated museum content will enable blind students to formulate 
+more concise mental representations of the museum exhibits. The usage of appropriate haptic 
+material and appropriate museum educational programmes will facilitate the perceptive mechanisms 
+of the “shape” of the world in which students with visual disabilities are involved in and build up a 
+comprehensive map and communicative skills. Finally, it is expected that the differentiated museum 
+content will constitute a very important educational tool for the education of students with visual 
+4513
+
+disabilities which may have a significant impact on their development of literacy skills, their 
+employment and their quality in life, in general. 
+Last but not least, it is expected that the broad community of the museums, schools and associations 
+for and of the blind will be informed about the actions and results of the BaGMIVI project. This is 
+argued because the project partners are already widely experienced at disseminating information 
+through publication in scientific journals, conferences and exhibitions and several of them have 
+convenient access to audiences. ICEVI-Europe and EBU, by centrally representing the pan-European 
+community of the blind and visually impaired will act as the central points for dissemination activities. 
+4 
+DISCUSSION 
+The project “Bridging the Gap between Museums and Individuals with Visual Impairments” (BaGMIVI) 
+lies in its synthetic character which combines the contemporary role of the museums, the socio-
+anthropological paradigm for disability and the influence of many political and social movements of 
+people with disabilities as well as many documents regarding the rights of people with disability and 
+human rights in general. As a result, it is argued that it fully supports the social agenda of the 
+European Union on non-discrimination, equal opportunities of individuals with visual disabilities 
+through the “cultural gates” of the museums and galleries. Another characteristic constitutes the 
+development and validation of methodologies, workshops and patterns of collaboration among 
+museums, associations of the blind, NGOs, IT Company, universities and schools for the blind for the 
+exploitation of appropriate differentiated museum content building bridges among them and share 
+knowledge through the method of action research. 
+Furthermore, the innovation of this project can be justified by the production of outputs that may be 
+used as Open Educational Resources, namely the syllabus, videos from museum staff training events, 
+the development of differentiated museum content/programmes and the best practices guide, as well 
+as a policy recommendations and guidelines.  Also, the best practices guide will include innovative 
+features in the sense of introducing recommendations into how to convert a visual image (e.g. a 
+painting) into a tactile form based on the principles of differentiation and design for all. 
+The BaGMIVI project is complimentary to other European projects already carried out which either 
+focus on accessibility and equal opportunities for people with visual or other disabilities and on the role 
+of museums for the society and the need for training the museum staff.  Specifically, BaGMIVI is 
+complimentary to projects that focus on accessibility for equal opportunities issues such as 
+accommodation & catering accessibility for disability, vocational education of visually impaired people 
+via distance education, audio description-lifelong access for the blind, dialoguing museums in a new 
+cultural democracy, professionalization for learning in technology and science, museum 
+communicator, lifelong museum learning, on-line learning to improve quality of life. 
+Finally, it is argued that the present project has an intensive innovative character because no Lifelong 
+Learning Programme project so far aimed to enhance the inclusion and access of people with visual 
+disabilities as well as other disabilities to the museums.  Also, it will be the first time that a consortium 
+with organisations that work exclusively for and with people who are blind or visually impaired will train 
+museum staff regarding the accessibility needs of individuals with visual impairments and involve the 
+museum staff and the visitors with visual impairments in joint development of accessible museum 
+exhibits and programmes the results of which will be shared through a European portal as Open 
+Educational Resources. 
+ACKNOWLEDGMENTS  
+The present project entitled “BaGMIVI: Bridging the Gap between Museums and Individuals with 
+Visual Impairments” (Project Agreement Number 2014-1-EL01-KA200-001631) is funded by the 
+Erasmus+ programme of the European Union and co-ordinated by the State Scholarships Foundation 
+(IKY). 
+REFERENCES 
+[1] 
+Argyropoulos, V., & Kanari, C. (2015). Re-imagining the Museums through “Touch”: Reflections 
+of Individuals with Visual Disability on their Experience of Museum-visiting in Greece. ALTER, 
+European Journal of Disability Research 9, pp. 130-143. 
+4514
+
+[2] 
+Barnes, C., Mercer, G., & Shakespeare, T. (1999). Exploring Disability. A Sociological 
+Introduction. Cambridge: Policy Press. 
+[3] 
+Oliver, M. (1990). The Politics of Disablement. London: Macmillan. 
+[4] 
+Moussouri, T. (2007). Implications of the Social Model of Disability for Visitor Research. Visitors 
+Studies, 10 (1), pp. 90-106. 
+[5] 
+Black, G. (2005). The Engaging Museum. Developing Museums for Visitor Involvement. London 
+– N.Y.: Routledge. 
+[6] 
+Hooper-Greenhill, E. (1999). The Educational Role of the Museum. London: Routledge. 
+[7] 
+Hooper-Greenhill, E. (2007). Museum and Education. Purpose, Pedagogy, Performance. 
+London-NY: Routledge. 
+[8] 
+Sandell, R. (2002). Museums, Society, Inequality. London: Routledge. 
+[9] 
+Vergo, P. (1989). The new Museology. London: Reaktion Books. 
+[10] 
+International Council of Museums (2007). Museum Definition. Retrieved by 
+http://icom.museum/the-vision/museum-definition/ 
+[11] 
+Merriman, N. (1999). Opening up Museums to the Public. Archaeology and Arts 72, pp. 43-46 
+(in Greek). 
+[12] 
+United Nations (1948). Universal Declaration of Human Rights, Retrieved by 
+http://www.un.org/en/documents/udhr/ 
+[13] 
+United Nations (2006). United Nations Conventions on the Rights of Persons with Disabilities, 
+Retrieved by http://www.un.org/esa/socdev/enable/rights/convtexte.htm#convtext 
+[14] 
+Weisen, M. (2008). How Accessible are Museums Today? In H. J. Chatterjee (ed.) Touch in 
+Museums. Policy and Practice in Object Handling. Oxford-New York: BERG.  
+[15] 
+Dodd, J., & Sandell, R. (1998). Building Bridges. Guidance for Museums and Galleries on 
+Developing New Audiences. London: Museums and Galleries Commission Publications. 
+[16] 
+ADA (1990). Americans with Disabilities Act, accessed November, 23, 2014, 
+http://www.ada.gov/2010_regs.htm 
+[17] 
+DDA (1995). Disability Discrimination Act, Retrieved by 
+http://www.legislation.gov.uk/ukpga/1995/50/contents 
+[18] 
+Sandell, R. & Dodd, J. (2010). Activist Practice. In R. Sandell & J. Dodd & R. Garland-Thomson 
+(Ed.), Re-presenting Disability, Activism and Agency in the Museum. London: Routledge. 
+[19] 
+Bοussaid, M. (2004). Access of Individuals with Visual Impairments: Reality and Prospects. In 
+A. Tsitouri (ed.) Access of People with Disabilities in Spaces of Culture and Sport. Proceedings, 
+pp. 55-59. Athens: Ministry of Culture (in Greek). 
+[20] 
+EBU (2012). EBU Access to Culture Survey 2012. Mapping Current Levels of Accessibility to 
+Cultural Venues and Activities in Europe, Retrieved by http://www.euroblind.org/working-
+areas/access-to-culture/nr/1315. 
+[21] 
+Dufreney-Trinchinetti, F. (2004). Issues of Access to Culture of People with Disabilities. In A. 
+Tsitouri (Ed.) Access of People with Disabilities in Spaces of Culture and Sport. Proceedings, 
+pp. 65-69. Athens: Ministry of Culture (in Greek). 
+[22] 
+Pearson, A. & Aloysious, C. (1994). The Big Foot. Museums and Children with Learning 
+Difficulties. London: Trustees of the British Museum. British Museum Press. 
+[23] 
+Vemi, V., & Kanari, H. (2008). School Teachers and Museum Education: A Κey Factor in 
+Expanding the Inclusive Character of Museums. The International Journal of the Inclusive 
+Museum, 1, pp. 1-8. 
+[24] 
+Hetherington, K. (2000). Museums and the Visually Impaired: The Spatial Politics of Access, 
+The Sociological Review, 48, pp. 444-463. 
+4515
+
+[25] 
+Krivec, T., Muck, T., Fugger G., R., Majnaric´, I., & Golob, G. (2014). Adapting Artworks for 
+People Who Are Blind or Visually Impaired Using Raised Printing. Journal of Visual Impairment 
+& Blindness, 108(1), pp. 68-76. 
+[26] 
+De Coster, K., & Loots, G. (2004). Somewhere in Between Touch and Vision: In Search of a 
+Meaningful Art Education for Blind Individuals. Journal of Art and Design Education, 23, pp. 
+326-334. 
+[27] 
+Candlin, F. (2003). Blindness, art and exclusion in museums and galleries. International Journal 
+of Art and Design Education, 22, pp. 100-110. 
+[28] 
+Kanari, H., & Argyropoulos,V. (2014). Museum Educational Programmes for Children with 
+Visual Disabilities. The International Journal of the Inclusive Museum, 6 (3), pp. 13 – 26. 
+[29] 
+Reich, C., Lindgren-Streicher, A., Beyer, M., Levent, N., Pursley, J. & Mesiti, L.A. (2011). 
+Speaking Out on Art and Museums: A Study on the Needs and Preferences of Adults who are 
+Blind or Have Low Vision. Report. Museum of Science, Boston & Art Beyond Sight, Retrieved 
+by 
+https://www.imamuseum.org/sites/default/files/attachments/IMA_ABS_Speaking_Out_on_Art_a
+nd_Museums_Report_1.pdf. 
+[30] 
+Feldman, A., & Minstrell, J. (2000). Action Research as a Research Methodology for the Study 
+of the Teaching and Learning of Science. In A. E. Kelly & R. A. Lesh (Eds), Research Design in 
+Mathematics and Science Education. Lawrence Erlbaum Associates, Publishers: London. 
+[31] 
+Kemmis, S., & McTaggart, R. (1988). The Action Research Planner, (3rd ed.), Victoria, 
+Australia: Deakin University. 
+[32] 
+O’Hanlon, C. (1996). Why is Action Research a Valid Basis for Professional Development? In R. 
+McBride (Ed.), Teacher Education Policy: Some Issues Arising from Research and Practice, pp. 
+179-191. Falmer Press: London. 
+4516
+

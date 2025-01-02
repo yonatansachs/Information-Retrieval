@@ -1,0 +1,1634 @@
+Citation: Kasemsarn, K.; Sawadsri, A.;
+Harrison, D.; Nickpour, F. Museums
+for Older Adults and Mobility-
+Impaired People: Applying Inclusive
+Design Principles and Digital
+Storytelling Guidelines—A Review.
+Heritage 2024, 7, 1893–1916. https://
+doi.org/10.3390/heritage7040090
+Academic Editors: Eva Pietroni and
+Anna Maria Marras
+Received: 27 January 2024
+Revised: 5 March 2024
+Accepted: 11 March 2024
+Published: 24 March 2024
+Copyright: © 2024 by the authors.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed
+under
+the
+terms
+and
+conditions of the Creative Commons
+Attribution (CC BY) license (https://
+creativecommons.org/licenses/by/
+4.0/).
+heritage
+Review
+Museums for Older Adults and Mobility-Impaired People:
+Applying Inclusive Design Principles and Digital Storytelling
+Guidelines—A Review
+Kittichai Kasemsarn 1, Antika Sawadsri 1,*, David Harrison 2 and Farnaz Nickpour 3
+1
+School of Architecture, Art and Design, King Mongkut’s Institute of Technology Ladkrabang (KMITL),
+Bangkok 10520, Thailand; kittichai.ka@kmitl.ac.th
+2
+College of Engineering, Design and Physical Sciences, Brunel University London, London UB8 3PH, UK
+3
+Department of Civil Engineering and Industrial Design, University of Liverpool, Liverpool L69 3GH, UK
+*
+Correspondence: antika.sa@kmitl.ac.th
+Abstract: The research problems addressed in this article pertain to the limited understanding
+and insufficient availability of digital storytelling guidelines for elderly and physically impaired
+individuals in museum presentations. The objective of this review is to explore digital storytelling
+guidelines along with the latest technology in museums catering to older adults and those with
+mobility impairments. This literature review included databases such as Scopus, ScienceDirect, and
+Google Scholar, covering the period from 2000 to 2023. Researchers comprehensively examined and
+employed content analysis to categorize all papers into three primary themes: (1) inclusive design
+for museum presentations; (2) trends in technology for digital storytelling in museum presentations;
+(3) guidelines for digital storytelling in museum presentations. This review article could enhance
+understanding and promote diversity, accessibility, and motivation among two specific groups of
+museum visitors, both onsite and online.
+Keywords: museums; older adults; disabled people; mobility impaired people; inclusive design;
+digital storytelling
+1. Introduction
+Currently, many museums are embracing concepts centered around fostering visitor
+engagement and inclusive design principles [1–3] while prioritizing new target audi-
+ences [4]. Despite the positive development represented by the adoption of inclusive design
+approaches, museums face challenges in effectively engaging older adults and individuals
+with physical impairments, as it pertains to addressing their unique programming require-
+ments. Additionally, there is a noticeable lack of scholarly literature and research focused
+on examining museum experiences and technology trends relevant to older adults and
+people with physical disabilities [5].
+Historically, museums have often overlooked older adults, treating them as ordinary
+visitors [6–8]. However, with the global population’s average age on the rise and advance-
+ments in medical care enabling longer and healthier lives, older adults have become a
+significant consumer demographic with considerable disposable income. They possess
+the financial means to access essential support services and facilities, including medical
+personnel and wheelchair ramps [6].
+People with physical disabilities, constituting approximately 10% of the world’s popu-
+lation, are a substantial demographic [9,10]. Research indicates that this group comprises
+extremely loyal customers who actively seek establishments providing accessible options
+meeting their requirements [7,9,11,12].
+Furthermore, studies reveal that most museums globally present historical information
+in overly formal, academic, antiquated, and excessively high tech formats. Such environ-
+Heritage 2024, 7, 1893–1916. https://doi.org/10.3390/heritage7040090
+https://www.mdpi.com/journal/heritage
+
+Heritage 2024, 7
+1894
+ments and technologies are not suitable for all individuals, especially seniors and disabled
+people in need of special care [13,14].
+In seeking strategies to enhance the engagement of these groups, this research pro-
+poses the use of the digital storytelling method. This method is widely employed to
+elucidate various forms of content, excluding direct advertising, such as novels, films,
+narratives, presentations, and interactives through digital platforms [15–19]. According to
+Ohler [18], digital storytelling is a form of media that integrates various media types into a
+unified narrative using digital technology. However, this introduces a research problem for
+certain reasons.
+There is currently a limited availability of specific digital storytelling guidelines and
+information about technology for the elderly and those with mobility disabilities in the
+context of museum presentations and exhibitions [1,6,7,10,13,14]. Most digital storytelling
+guidelines present about general purpose [20–22], and interactive multimedia purpose,
+which could be applied into museum presentations [1,17,23–26]. However, for older adults
+and people with disabilities as target groups, there are only two studies [1,23] focusing on
+these target audiences.
+Therefore, the aim of this review is to examine digital storytelling guidelines and
+the latest technology in museums for older adults and mobility-impaired individuals,
+framing the research question as follows: “How can a museum develop digital storytelling
+presentations with suitable technology to accommodate older adults, aged 60 or more, and
+people who have mobility impairments in functions related to the lower body extremities
+(mobility), such as wheelchair users and those requiring walking aids”?
+Background: Scopes of Older Adults and Mobility-Impaired People in This Review Article
+The definition of an older adult differs across countries, as there is no agreement
+regarding the chronological age that signifies advanced age. Numerous studies employ
+a cut-off age of 50, 60, 65, or even older. According to the World Health Organization
+(WHO) [27], older adults in developing countries are typically classified as those aged 60 or
+older. However, in Europe it is the case that 65 is more frequently regarded as the dividing
+line. Based on this, 60 or older was established as the age criterion for older adults in this
+review article.
+Regarding disabilities, an additional seven-category scheme comprising cognition,
+vision, hearing and speech, body function, arm function, hand function, and mobility
+was initially proposed in research based on the principles of universal design [28]. At a
+high level of abstraction, three broad categories of impairments are frequently employed
+in information and communication technology (ICT): sensory, motor, and cognitive [29].
+Neuromusculoskeletal and movement-related functions of mobility are categorized by
+the WHO [27] as follows: (1) functions associated with the lower extremities (mobility)
+and (2) functions associated with the upper extremities (motor). This review focuses
+on the criteria “lower extremities (mobility)”, meaning those individuals with mobility
+impairments who require walking aids or utilize wheelchairs.
+When it comes to elderly museum visitors, on the other hand, physical abilities and
+health conditions vary considerably. Some may rely on mobility aids, such as wheelchairs
+or walkers, while others may have minor mobility issues necessitating only occasional
+sitting. The limitations of people with mobility impairments, such as wheelchair users and
+those who rely on walking aids, are associated with the physical capabilities of older adults
+in this study. As a result, this review article concentrates on those in need of walking aids
+and those requiring wheelchairs on account of their mobility limitations. To guarantee that
+every visitor can fully utilize museum exhibits and facilities, it is vital to recognize these
+various restrictions.
+By delineating these categories, a more precise evaluation of the ways in which varying
+degrees of mobility impairment impact the ability of individuals to visit and interact with
+museums can be achieved. This entails an evaluation of various elements, including
+the physical arrangement and design of the exhibit, as well as the presence of accessible
+
+Heritage 2024, 7
+1895
+features, such as ramps, benches, and elevators to enhance the accessibility and enjoyment
+of museums for these individuals.
+2. Materials and Methods
+The present study employs the PRISMA [30] flow diagram and theory-based re-
+view [31]. The methodology comprises three fundamental components, as depicted in
+Figure 1.
+Heritage 2024, 7, FOR PEER REVIEW  
+3 
+ 
+ 
+By delineating these categories, a more precise evaluation of the ways in which var-
+ying degrees of mobility impairment impact the ability of individuals to visit and interact 
+with museums can be achieved. This entails an evaluation of various elements, including 
+the physical arrangement and design of the exhibit, as well as the presence of accessible 
+features, such as ramps, benches, and elevators to enhance the accessibility and enjoyment 
+of museums for these individuals. 
+2. Materials and Methods 
+The present study employs the PRISMA [30] ﬂow diagram and theory-based review 
+[31]. The methodology comprises three fundamental components, as depicted in Figure 1. 
+ 
+ 
+Figure 1. PRISMA [30] ﬂow diagram. 
+2.1. Inclusion and Exclusion 
+As illustrated in Table 1, the inclusion and exclusion criteria were developed with the 
+intention of identifying and evaluating digital storytelling guidelines assisting the elderly 
+and mobility-impaired people with functions related to the lower body extremities (mo-
+bility) as target groups. 
+Table 1. Criteria for inclusion and exclusion. 
+Inclusion 
+Exclusion 
+Studies in English 
+Non-English  
+Publication in the 2000–2023 period (Scopus, 
+ScienceDirect), 1990–2023 (Google Scholar) 
+Publications outside the timeframe were 
+not selected 
+Journals, conference proceedings, textbooks, 
+book chapters 
+Working paper, conference abstracts, and 
+organization websites 
+Figure 1. PRISMA [30] flow diagram.
+2.1. Inclusion and Exclusion
+As illustrated in Table 1, the inclusion and exclusion criteria were developed with
+the intention of identifying and evaluating digital storytelling guidelines assisting the
+elderly and mobility-impaired people with functions related to the lower body extremities
+(mobility) as target groups.
+Table 1. Criteria for inclusion and exclusion.
+Inclusion
+Exclusion
+Studies in English
+Non-English
+Publication in the 2000–2023 period (Scopus,
+ScienceDirect), 1990–2023 (Google Scholar)
+Publications outside the timeframe were not
+selected
+Journals, conference proceedings, textbooks,
+book chapters
+Working paper, conference abstracts, and
+organization websites
+Categories: Arts and Humanities; Social
+Sciences; Business Management and
+Accounting; Computer Science
+Categories: Medicine; Nursing; Engineering;
+Agriculture; Economics; Econometrics and
+Finance
+
+Heritage 2024, 7
+1896
+2.2. Conducting Searches in Diverse Databases
+This review article used Scopus, ScienceDirect (as a primary database), and Google
+Scholar (as a secondary database). To acquire historical data for comparative analysis, the
+search terms “museum presentation”, “digital storytelling”, “older adults”, and “disabled
+people” were employed between 2000 and 2023. In an effort to locate information regarding
+missing data and case studies from primary databases, researchers utilized Google Scholar
+as a gray area (not indexed in main databases but potentially relevant to the research
+topic) to conduct an investigation. Next, researchers searched Google Scholar for the top
+100 articles through a review of titles and abstracts, from which 50 studies were selected.
+2.3. Importing Data into Bibliographic Applications
+In EndNote 20, the search results from all three databases were imported. This was
+achieved by selecting “Import into duplicate library” from the menu to eliminate duplicated
+articles. No duplicated papers were found, leaving 132 articles in total.
+2.4. Articles Considered Relevant or Irrelevant
+This phase involved three primary stages: a review of all 132 titles and abstracts,
+followed by the elimination of 20 titles. Subsequently, 112 pertinent articles underwent a
+thorough examination, resulting in the elimination of 6 titles. Ultimately, 106 articles were
+selected for inclusion.
+3. Results
+By employing a theory-based review approach [31], this review examined the signifi-
+cance of particular theories in three areas covering inclusive design for museum presenta-
+tions, technology in digital storytelling for museum presentations, and digital storytelling
+for museum presentation guidelines. This category of review article contributes to the
+advancement of the literature by synthesizing and empirically applying a particular under-
+lying theory [31].
+Next, content analysis was employed to examine all 106 studies. This process entailed
+thematic coding, wherein the meaning of the entire sentence or paragraph was categorized
+as opposed to the individual texts themselves. The outcomes of the reliability assessment
+were reevaluated and categorized by a team of three researchers who deliberated on the
+ultimate coding. Briefly, the following three themes exist:
+•
+Theme 1: Inclusive design for museum presentations (presented in Section 3.1)
+•
+Theme 2: Trends of technology in digital storytelling for museum presentations (pre-
+sented in Section 3.2)
+•
+Theme 3: Digital storytelling for museum presentation guidelines (presented in
+Section 3.3)
+3.1. Theme 1: Inclusive Design for Museum Presentations
+The needs of museum visitors are diverse, encompassing both obstacles and incen-
+tives that motivate their participation in exhibitions. Therefore, to develop effective de-
+sign and marketing strategies, designers must understand and strive to eliminate these
+obstacles [1,14,24]. In an effort to expand and enhance the potential clientele for museum
+presentations, this research employs inclusive design theory to identify the needs of visitors
+in digital storytelling presentations in museums, focusing on two specific groups.
+Older adults: The majority of the tourism sector, including museums, tends to overlook
+older adults, treating them similarly to other visitors [6,7,10]. Despite the global aging
+trend, with improved health, increased wealth, and longer life expectancy, this age cohort
+is considered a significant consumer demographic [6]. Moreover, older adults in this group
+have ample funds and time to invest in facilities and services that can assist them, such as
+wheelchair ramps or medical services [32].
+People with mobility disabilities: Globally, the number of individuals with disabilities
+is expanding rapidly. WHO [27] reports indicate that 15% of the global population, or more
+
+Heritage 2024, 7
+1897
+than one billion individuals, are presently affected by at least one type of disability. This
+quantity is increasing rapidly due to the aging population. The United Nations adopted the
+Convention on the Rights of Persons with Disabilities in 2006, guaranteeing comprehensive
+integration for this demographic. This requires increasing their engagement levels in the
+public domain, and accessible tourism, including inclusive museums, is on the rise. A
+growing number of hotels, restaurants, museums, and attractions are announcing their
+accessibility to individuals with disabilities [33,34].
+According to Ozturk et al. [12], individuals with physical disabilities tend to revisit
+locations that accommodate their accessibility needs, potentially generating greater rev-
+enue for the tourism sector through market liberalization. This notion aligns with Shaw-
+Lawrence’s assertion that “countries seeking to increase their incoming travel markets must
+possess the requisite infrastructure and knowledge to cater to the unique requirements of
+tourists with disabilities” [8] (p. 8).
+Moreover, several studies propose various applications of inclusive design adopted
+in museums:
+•
+Accessibility for all museum visitors: Inclusive design principles ensure that museums
+are universally accessible, regardless of ability or disability [35–37].
+•
+Enhanced learning experiences: Inclusive design enhances the educational impact
+of museums by catering to a wide range of learning styles and sensory preferences,
+thereby providing improved learning experiences [24,38].
+•
+Cultural inclusivity: Inclusive design assists museums in representing and valuing
+the diverse cultures and backgrounds of their visitors [24,35,39].
+•
+Social equity and justice: Inclusive museums advocate for social equity by ensuring
+equal access to cultural and educational resources for all visitors, including individuals
+with disabilities [40,41].
+•
+Community engagement and collaboration: Inclusive design often requires partner-
+ships with diverse communities, fostering enhanced community connections and
+active participation [42–44].
+•
+Enhanced public image and increasing attendance: Museums adopting inclusive
+design appeal to a broader demographic, thereby improving public perception and
+attracting a greater number of visitors [45,46].
+•
+Sustainability: The implementation of inclusive design principles ensures the contin-
+ued relevance and accessibility of museums for future generations, contributing to
+their sustainability [44,47,48].
+3.2. Theme 2: Trends of Technology in Digital Storytelling for Museum Presentations from 2010
+to Now
+3.2.1. User Experience (UX)
+UX plays a crucial role in the design, evaluation, and development of various applica-
+tions and technological devices today [49–52]. UX could be applied with digital storytelling
+on advanced interaction technology (e.g., AR, VR, immersive, muiltimedia interfaces,
+wearable technologies) [53,54]. For instance, the “CHESS” project, Acropolis Museum’s
+application that could customize museum information in order to generate individualized
+narratives, begins with a comprehensive examination of the user’s profile, demographics,
+interests, cognitive or conceptual change, value perception, and inspiration, presenting
+suitable information and interfaces matched to the user’s interests and profiles.
+User experience (UX) encompasses a wide array of ever-changing concepts, such
+as aesthetic, hedonic, emotional, and experiential variables. Furthermore, the analysis
+is excessively flexible, encompassing everything from a solitary facet of an end-user’s
+engagement with a standalone application to the entirety of multiple end-users’ interactions
+with the organization and its integration of services originating from various disciplines [53].
+Conducting prior research on museum visitors, including their origins, technological and
+cultural literacy, age group, and preference for guided or unguided tours, is critical for
+
+Heritage 2024, 7
+1898
+developing content and experiences that effectively cater to the needs of a diverse museum
+audience [50].
+Applying for older adults and mobility-impaired people requires taking note of how
+several studies [50,55–57] suggest that UX in museums encompasses all user actions and
+reactions before, during, and after visiting the museums, as follows:
+•
+Before visiting: presenting accessibility information, wheelchair accessibility, re-
+strooms, and facilities on the museum’s website.
+•
+During visiting: presenting information about navigation, rest areas, and multi-sensory
+exhibitions, as well as providing easy-to-understand materials, large print brochures,
+and audio guides.
+•
+After visiting: offering feedback channels through online surveys and reviews to
+enhance the user experience in the future.
+3.2.2. Customization Information
+In the past, interactive museum narratives aimed to present content on a device as a
+single piece for all users. Currently, cultural heritage museums prioritize personalization,
+allowing users to provide feedback, rate, or respond to inquiries about their interests.
+This enables tailored information presentation to match individual preferences, ensuring a
+seamless museum visit [51].
+For instance, the “CHESS” project focuses on two key aspects to enhance museum
+visits. It emphasizes customization of visitors’ information and provides users with an
+exploratory and awe-inspiring experience. Similarly, “Show Taiwan”, a multimedia-
+integrated location-based guide application comparable to museum tours, encourages
+user-generated content, fostering idea exchange among educators and learners. A study
+suggests that this method significantly increases users’ interest in cultural narratives [58].
+The “STEDR“ project, providing users with the capability to customize their profile and
+location via augmented reality, caters to diverse user interests, recognizing the importance
+of convenience in accessing, searching, filtering, and customizing information. Social media
+sharing is crucial, allowing users to share their experiences or information online, moving
+away from a one-size-fits-all content approach [49].
+Applying for older adults and mobility-impaired people occurs in the context of
+disabled individuals, where museums like the Victoria and Albert Museum in London
+and the Museum of Fine Arts in Boston have developed programs to accommodate and
+focus on visitors with disabilities, offering specialized programming for those with mobility
+impairments, blindness, deafness, or learning disabilities [59].
+The personalized accessibility map is an assisted wayfinding information approach
+suggested by Karimi et al. [60] for three groups: those with limited mobility, those with
+visual impairment, and those with hearing impairment. This map provides individual-
+ized details regarding wheelchair parking, the number of stair steps, slopes, grab bars,
+wheelchair lifts, low counters, and restrooms.
+Yildiz [61] notes that the accessibility menu on the website of the Ludwig Museum in
+Budapest, Hungary, which debuted in 2005, provides details regarding exhibition accessibil-
+ity as well as information concerning the museum’s accommodations for individuals with
+disabilities and physical limitations. Additionally, the museum as a whole and nearly all of
+its exhibits accommodate senior citizens and wheelchair users. The building’s entrance is
+designed to be universally accessible, and the information desk’s color scheme enhances
+its visibility. In addition to providing sufficient space for sitting and resting, the lobby
+also features locker boxes. Vertical connections, including stairs, elevators, and ramps, are
+well-maintained and easily accessible. Accessible restrooms are situated on each floor of
+the structure.
+The Mumok, which commenced operations in Vienna, Austria, in 2001, maintains
+an accessible website that details facilities, elevators, entrances, and exhibitions, as well
+as information on physical abilities and ages. A schematic accessibility map that is both
+straightforward and simple to use facilitates navigation within the building [61,62].
+
+Heritage 2024, 7
+1899
+The DOX Centre for Contemporary Art in Prague, Czech Republic, offers specialized
+information on its website, such as details about the ramps in the museum that can accom-
+modate all attendees and be utilized as exhibition spaces. The entrance (a sliding automatic
+door) is inclusive and accessible. The varying heights of the information desk appeal to
+a variety of users, and wide elevators feature seating for individuals with limited mobil-
+ity. The size of the exhibition units is specifically designed to accommodate wheelchair
+users [61,63].
+3.2.3. Mobile Device Technologies
+Advancements in sensor technology of mobile devices have significantly influenced
+museum applications. Sensors can now capture information like compass readings, device
+motion, and GPS location, thus enhancing UX [64]. Projects like “CHESS”, “STEDR”,
+“Show Taiwan”, and “The Westwood Experience” use mobile device sensor technology for
+user identification and map displays.
+The evolution of technology has introduced 4D visualization as an alternative to
+3D, incorporating a temporal element into visualization. This is exemplified by “The
+Westwood Experience”, which uses mixed reality (MR) to connect the past and present. The
+narrative, introduced by the mayor of Westwood during a 1949 community tour, showcases
+inaccessible heritage sites through a temporal lens [52].
+Advanced mobile devices can integrate real-time location data with traditional media,
+facilitated by augmented reality (AR). AR projects narratives onto physical locations via a
+mobile device’s display and camera. MR effects, combining video, audio, and images in
+authentic settings, virtually convey narratives of fictional or historical worlds, connecting
+applications to the real world [52]. “Show Taiwan” enhances the location-based guide
+process by integrating multimedia elements activated by users’ motion in their physical
+surroundings. “The Westwood Experience”, “CHESS”, and “STEDR” implement MR and
+AR to construct sequential narratives in physical location-based environments [49,51].
+Applying for older adults and mobility-impaired people in the museum context
+involves several institutions, including The John and Mable Ringling Museum of Art in
+Sarasota, Florida, The Metropolitan Museum of Art in New York City, and The Melbourne
+Museum in Australia, that have specialized programming for individuals with disabilities.
+For instance, orientation materials for individuals with autism spectrum disorder (ASD)
+and their family members, including guided checklists, sensory maps, and social narratives,
+are provided through mobile phone applications [65].
+Furthermore, according to Kruczek et al. [33], the COVID-19 pandemic demonstrated
+the potential of mobile phone technologies to enhance the accessibility of tourist desti-
+nations, particularly museums, for individuals with sensory impairments. Technology
+has been used in various ways to enhance accessibility, including the provision of online
+communication tools, smartphones equipped with audio guides, and the capability to
+directly translate text into sign language [66,67].
+Ribeiro et al. [68] also suggest that currently a wide range of mobile applications exist,
+providing information assistance to users with mobility impairments or facilitating the
+collaborative development of accessibility maps to supplement conventional maps with
+pertinent accessibility data [69,70]. Typically, these applications furnish data related to
+locations that offer accessible amenities as well as those that do not.
+In the context of museums, mobile applications have been created to assist visitors
+with various disabilities, including mobility impairments, by providing features such
+as audio descriptions, GPS navigation, large text options, and voice commands [68,71].
+Ribeiro et al. [68] also suggest that AXSMap implements the storage and dissemination of
+data related to wheelchair-accessible amenities in public locations. AXSMap populates its
+database with information from the Google Places database and encompasses numerous
+global locations, although its primary emphasis is on North America.
+According to Ribeiro et al. [68], mobile application technologies designed to assist
+seniors and people with disabilities should incorporate accessibility features. These fea-
+
+Heritage 2024, 7
+1900
+tures can include automatic reading capabilities, the ability to adjust font size and image
+dimensions, customized color schemes, and an accessibility map. Furthermore, Roussou
+and Katifori [57] argue that these two groups require location awareness via the Global
+Positioning System (GPS). To facilitate visitors’ movements and guide them to intended
+areas, museum staff or their family must also be aware of their location in the physical
+space. Therefore, navigation aids and subsystems for location and orientation detection
+are necessary.
+3.2.4. Concise Content
+In the past, digital storytelling could be defined as anything beyond a simple image
+accompanied by narrative voices, texts, or audio with sounds [72]. However, advancements
+in technology, particularly those found on mobile devices, have evolved at a faster rate
+than content or narratives [49]. This is evident in the complex and sophisticated methods of
+blending audio, text, video, and interactivity. Consequently, certain projects emphasize only
+the most recent technologies. Furthermore, interactive technologies can be prohibitively
+expensive and it may be better to prioritize the development of high-quality narratives and
+content that are adaptable across multiple technological platforms. Therefore, to establish
+guidelines for producing high-quality content and narratives, it is critical to prioritize user
+requirements and the content creation process [49].
+Numerous studies have also recommended that, rather than emphasizing complex
+and high-tech methods (such as puzzle hunts, events, or games), narratives at museums
+should be kept extremely simple. A straightforward, simple, and uncomplicated narrative
+structure is sufficient for users [49,51,52].
+Applying for older adults and mobility-impaired people in the case of digital sto-
+rytelling in museums, Fletcher et al. [65] point out that for disabled people and seniors,
+sometimes simple technology and information is suitable for them. For example, a sensory
+map serves as an informational layout of the museum’s gallery spaces that assists visitors
+in acclimating by emphasizing the presence of other visitors, noise, and light. A social
+narrative comprises optimistic first-person statements that an individual with ASD would
+either read aloud or to themselves as a means of anticipating subsequent events [73].
+Kasemsarn and Nickpour [14] posit that digital storytelling, content, and information
+for the elderly and individuals with mobility impairments should be succinct, straight-
+forward, unadorned, and devoid of hyperbole. Moreover, technological enhancements
+should be kept to a minimum and serve to accentuate the story’s central concept. Due
+to its condensed nature, digital storytelling motivates the narrator to omit superfluous
+information and prioritize a straightforward narrative that conveys a clear message.
+3.2.5. Virtual Reality (VR) and Augmented Reality (AR)
+The prevalence of VR and AR technologies in museums has increased, providing
+accessible immersive experiences for individuals with mobility limitations or those who
+are unable to visit the museum in person. Certain museums have initiated the provision
+of VR tours, enabling individuals with mobility limitations or older adults to experience
+exhibits from the convenience of their residences or a designated seating area within the
+museum. VR is suitable for all generations because of its user-friendly nature and ability to
+transport individuals to remote historical or modern locations [1,33,74].
+Furthermore, there is a noticeable increase in the enthusiasm and drive of older
+individuals to acquire knowledge and engage with ICT products [75]. In recent times,
+this has prompted scholars to direct their attention toward mobile applications and the
+implementation of AR, in addition to seniors and ICTs [75]. Certain research endeavors have
+been dedicated to exploring novel approaches that can assist and enhance the self-esteem
+of elderly individuals who lack familiarity with digital technologies. The ultimate goal is
+to improve their social inclusion, independence, and the accessibility and affordability of
+relevant technologies.
+
+Heritage 2024, 7
+1901
+Moreover, with respect to AR, it refers to multimedia content—such as animation,
+video, websites, or 3D—that combines computer-generated images with video footage
+captured at an actual location using a video camera. AR is considered a fusion of the
+physical and digital realms [76]. According to Guimares et al. [77], a digital storytelling
+approach may be applied to AR in a number of categories: (1) natural heritage, (2) historical
+and archaeological sites, and (3) garden maintenance.
+Applying for older adults and mobility-impaired people, the guideline for virtual
+reality (VR) in museums proposed by Vishwanath [78] is implemented at the Design
+Museum Helsinki in Finland and addresses the accessibility, inclusivity, and engagement
+of a diverse array of age groups, with a particular focus on senior citizens.
+This VR experience comprises two scenes. The first involves a five-second looping
+video tutorial. In it, users select their preferred language and generation group (Silent
+Generation, Baby Boomers, Gen X, Millennial, and Gen Z). Users then proceed to the main
+scene, which consists of the following: (1) listening to autobiographical stories (approxi-
+mately 25–40 s) about a contributed artifact, (2) engaging in virtual artifact immersion as
+the virtual environment undergoes a substantial enlargement (approximately 100 times the
+size of the artifact) to evoke the sensation of being “immersed” within it, and (3) collecting
+artifacts by amassing personal collections of virtual artifacts.
+Nishchyk et al. [79] note that the design and development of augmented reality (AR)
+for the elderly has been the subject of few studies. Liang [80], for instance, presents design
+principles for AR with an emphasis on elderly users. The principles are, in general, as
+follows: (1) “hidden reality design principle”—elements generated by a virtual computer
+should not obscure practical real-world information; (2) “modality focus augmentation
+principle”—depending on the context, computer-generated elements ought to be pre-
+sented in various modalities; (3) “instantaneous augmentation design principle”—in the
+event of a delay in the generation of virtual content, the user should be notified of the
+delay; (4) “layer-focus augmentation design principle”—according to the user’s require-
+ments, when more than one piece of virtual content is presented, it should be grouped;
+and (5) “accurate augmentation principle”—the augmentation should be pertinent and
+consistent with the actual content, taking into account the expectations of the users.
+3.2.6. Artificial Intelligence (AI)
+Museums have begun implementing the use of AI and robotic guides to provide
+individualized tours tailored to the needs of seniors and people with disabilities. In
+the context of AI, particularly eXplainable AI (XAI), the integration of XAI and HCI
+facilitates the development of more engaging interfaces that dynamically adjust to the
+specific needs and preferences of the target audience. Adapting to the visitor’s pace and
+interests, it can respond to inquiries in multiple languages [81]. Additionally, it employs
+personalized mechanisms determined by the visitor’s curiosity, learning progress, and
+automatic curriculum learning [82].
+Dal Falco and Stavros [83] highlight the potential of contemporary technologies to be
+implemented in museums. For instance, certain rudimentary natural language conversation
+models can respond to inquiries from online visitors. The responses are selected from a
+predetermined set of potential answers. Prior studies and implementations have also been
+fruitful for works of a similar nature that integrate interactive storytelling and basic natural
+language conversation techniques [84].
+When applying for older adults and mobility-impaired people, however, studies
+have identified only a handful of instances in which AI was implemented in museums to
+promote accessibility and inclusivity. The ArtiMuse project, for instance, seeks to transmit
+to future generations the uncommon manual expertise and knowledge associated with
+traditional craftsmanship, specifically the wheel-throwing pottery technique [85]. It was
+developed to enable both the modeling and recognition of expert technical gestures, i.e., to
+determine whether website visitors accurately imitate the gestures described on the page.
+
+Heritage 2024, 7
+1902
+Scholarly investigations propose the use of explainable artificial intelligence (XAI), a
+collection of machine learning methodologies that generate justifications or explanations
+to elucidate or simplify the operation of a system. By implementing this in the context
+of museums, XAI aims to increase the transparency of cutting-edge models and support
+AI-based outcomes via a logical explanation, i.e., one that is intended for non-technical
+users. Its primary functions for the elderly and those with limited mobility, both on site and
+online, are as follows: (1) generate models that are easier to comprehend while maintaining
+a high level of performance, and (2) empower these populations to recognize, rely on, and
+oversee the emergence of artificially intelligent partners [86,87].
+3.2.7. Internet of Things (IoT) for Enhanced Accessibility
+Intelligent museum environments have been developed using IoT technology. In
+order to enhance accessibility and direct visitors with mobility issues along less congested
+pathways, sensors and connected devices have the capability to modify lighting conditions
+and sound levels, deliver personalized information, and aid in navigation [88,89].
+Aman et al. [90] provide an additional illustration of an IoT-based museum tour guide
+system that is cognizant of its location. This system can identify the user’s gaze on specific
+images and, using this information to trigger communication with a central processing
+unit, display explanatory content on interactive displays mounted on the museum walls.
+When applying for older adults and mobility-impaired people, each individual mu-
+seum visitor possesses a unique set of interests. Typical exhibits include a guiding system,
+a traditional multilingual tour guide, specialized sections for explanations by experts,
+computers, and handheld devices [90]. In the context of portable devices serving as guiding
+systems, certain museums offer audio devices that can be used to access exhibit explana-
+tions via a designated code number. For example, Kuusik et al. [91] put forth the “Smart
+Museum” system, which enables visitors to customize their visit and obtain information re-
+garding the museum’s exhibits by using RFID-localized PDAs [88,89,92]. Almeida et al. [93]
+discuss the potential application of ICTs that facilitate the Internet of Things (IoT) in the
+surveillance of elderly behaviors to support the provision of corrective interventions. Such
+projects employ a variety of technologies to monitor the behavior of the elderly, including
+AR, vision systems, wearable devices, and portable interactive devices, in addition to
+wireless sensor networks.
+As noted by Chianese and Piccialli [94], the IoT implemented in museums can be di-
+vided into three categories: (1) the sensing layer, responsible for acquiring and transferring
+data, as well as facilitating collaboration among nodes in local and short-range networks;
+(2) the network layer, the purpose of which is to transfer data across various networks
+and applications; and (3) the application layer, where IoT applications and middleware
+functionalities are implemented. These enable seniors and individuals with disabilities
+to interact with environments and other objects and to receive relevant information via
+multimedia facilities.
+3.2.8. Social Robots in Museums
+According to several studies, robot guides typically serve primary purposes. Initially,
+museum guests would be identified and greeted via body or facial detection. For instance,
+the robot would recognize a visitor if they maintained eye contact for a minimum of
+five seconds and would use motion sensors to identify adjacent visitors before extending
+an invitation for interaction. The second function was to engage in conversation with
+the visitor and demonstrate the exhibits through natural and human-like body language,
+including questioning and providing verbal descriptions, adjusting posture, gesturing,
+pointing, and adjusting facial expressions. In conclusion, the robotic systems concluded the
+exchange by extending farewells or wishing the visitors a pleasant sojourn [95–97].
+Applying for older adults and mobility-impaired people, this sees how the develop-
+ment of social robots for public spaces, such as museums, to assist the elderly or those with
+limited mobility, is becoming widespread [96]. The classification of robots as social robots
+
+Heritage 2024, 7
+1903
+is based on their ability to interact with and assist humans. This makes them well-suited
+for museum environments, as they can greet, educate, or guide visitors. For example,
+visitors to the Smithsonian’s National Museum of American History were assisted by a
+comparable robot named Minerva [98]. Throughout its two-week field trial, the robot
+engaged in interactions with over 50,000 visitors. This facially articulated robot can convey
+emotions through variations in facial expressions and vocal intonation. When queried,
+36.9% of 63 individuals believed Minerva to possess human-like intelligence [96].
+All eight factors in Theme 2 are summarized and presented in Table 2 below.
+Table 2. Summary of the latest technology in digital storytelling for museum presentations.
+Topics
+Details
+User experience
+•
+UX is applied in many museum applications [49,51,52].
+•
+Analyzing the user’s profile, demographics, interests, shift in cognition or
+concept, sense of inspiration, and value [50].
+•
+Understanding the needs of a wide-ranging museum audience [50].
+•
+Users can rate, comment, or respond to questions about their interests using this
+feature, and they will subsequently see information tailored to their interests [51].
+•
+(1) Before visit: present accessibility information: (2) During visit: present
+information about navigation and easy-to-understand materials: (3) After visit:
+offer feedback channels [50,55–57].
+Customizationof information
+•
+Ensuring that every visitor to the museum has a positive experience and the
+information they need [51].
+•
+Contemporary cultural media aim to assist users in personalizing, customizing,
+and sharing their interests on social media, rather than providing one type of
+information for every visitor to the website [40,51].
+•
+Presenting specific information for those who have mobility impairment, are
+blind, deaf, or have learning disabilities [3].
+•
+Provide details about accessible facilities, wheelchair parking, the number of stair
+steps, slopes, grab bars, wheelchair lifts, low counters, elevators, and entrances,
+as well as accessibility maps for exhibitions that address physical abilities and
+ages [60–63].
+Mobile device technology
+•
+To improve a positive cultural tourism experience, GPS can be used to locate
+nearby locations and determine the social context (i.e., who is nearby) [64].
+•
+Using GPS in a mobile device’s sensor to display maps and find users [49,51,52].
+•
+Using a mobile device’s camera and screen, AR can tell stories at actual
+locations [49,51,52].
+•
+Real-time accessibility maps with accessibility data for the elderly and those with
+mobility impairments [69,70].
+•
+Supporting people with disabilities via audio descriptions, GPS navigation, large
+text options, and voice commands [68,71].
+•
+Wheelchair-accessible amenities information in public locations [68].
+•
+Offer accessibility features, including automatic reading capabilities, the ability
+to adjust font size and image dimensions, customized color schemes, location
+awareness via GPS, and an accessibility map [57,68].
+Concise content
+•
+It is preferable to concentrate on producing quality narratives and content that
+are cross-platform compatible [49].
+•
+Just a straightforward and simple narrative structure is sufficient for all
+users [49,51,52].
+•
+People with mobility limitations or older adults could experience exhibits at their
+convenience [1,24,33,74].
+•
+Keep content for elderly and mobility-impaired people to a minimum and use it
+to accentuate the story’s central concept [14].
+
+Heritage 2024, 7
+1904
+Table 2. Cont.
+Topics
+Details
+Virtual reality and augmented reality
+•
+Improving the social inclusion, independence, accessibility, and affordability of
+VR and AR technologies [75].
+•
+AR presents multimedia content, such as animation, video, websites, or 3D [76].
+•
+Provide VR that is accessible, inclusive, and engages a diverse array of age
+groups and capabilities [78].
+•
+Follow the AR principles for seniors: elements generated by a virtual computer
+should not obscure practical real-world information, and computer-generated
+elements should be presented in various modalities [79].
+Artificial intelligence
+•
+Understanding and presenting the specific needs, preferences, and interests of
+visitors in multiple languages [81].
+•
+Personalizing the visitor’s curiosity, learning progress, and automatic curriculum
+learning [82].
+•
+Utilize an AI-based program that provides explanations and simplifies
+information in museum exhibitions for non-technical users, both on site and
+online [86,87].
+Internet of Things
+•
+Controlling lighting conditions and sound levels, delivering personalized
+information, and aiding in navigation [88,89,92].
+•
+Enabling visitors to customize their visit and information by PDAs [88,89,92].
+•
+Monitor the behavior of the elderly via AR, vision systems, wearable devices,
+and portable interactive devices, in addition to wireless sensor networks [93].
+•
+Create systems for seniors and individuals with disabilities that facilitate
+interaction with environments and objects, as well as provide relevant
+information via multimedia facilities [94].
+Social robots in museums
+•
+Social robots for museums, to assist the elderly or those with limited mobility, are
+widespread [96].
+•
+Minerva, with human-like intelligence, was used by the Smithsonian’s National
+Museum of American History [96,98].
+•
+Social robots for museums are used for greeting visitors and demonstrate the
+exhibitions [95–97].
+3.3. Theme 3: Digital Storytelling for Museum Presentation Guidelines
+Visitors to museums lack the incentive to engage with the narrative presented in the
+exhibitions [14,99]. These issues present a favorable chance to enhance storytelling to boost
+visitors’ motivation. To achieve this objective, this study proposes digital storytelling, a
+technique commonly used in designing digital systems to present various types of stories,
+narratives, films, and novels [17,18,26,100,101]. In this paper, digital storytelling is defined
+as a medium that uses personal digital technology to integrate multiple forms of media
+into a cohesive narrative [18].
+When using digital storytelling, a range of strategies, including plots, characters,
+conflict, humor, and competition, is employed to endorse and market products or ser-
+vices without resorting to aggressive advertising techniques [17,102,103]. Furthermore,
+numerous cultural and heritage sites across the globe have been extensively digitized
+as virtual museums or applications featuring digital storytelling. This has the effect of
+bringing challenging narratives or topics to life and establishing a stronger connection with
+viewers [101,104,105].
+However, as mentioned in the introduction, there is currently a limited specific guide-
+line for the creation of digital storytelling that caters to seniors and mobility-impaired
+people in the field of museum presentations, who are not the primary target audience. The
+majority of guidelines pertaining to digital storytelling primarily emphasize its application
+in educational settings within classrooms and game development.
+A number of guidelines have been established by experts on the creation of digital
+storytelling presentations. They are grouped into four main purposes: (1) general pur-
+
+Heritage 2024, 7
+1905
+pose [20–22]; (2) educational purpose [18,106]; (3) interactive multimedia purpose, which
+could be applied into museum presentations [14,17,23–26]; and (4) for older adults and
+disabled people [14,23]. However, for older adults and people with disabilities as target
+groups, there are only two studies focusing on these target audiences.
+These guidelines have been meticulously crafted to assist storytellers in the develop-
+ment of digital narratives that serve various objectives and incorporate distinct components,
+as summarized and presented in Table 3.
+Table 3. Summary of ten digital storytelling guidelines with different target groups.
+Guidelines/Authors
+Elements of Each Guideline
+Category
+Target
+Take six: Elements [21]
+Living in your story, Unfolding lessons
+learning, Developing creative tension,
+Economizing the story told, Showing not
+telling, Developing craftsmanship
+General
+General
+Six elements of digital
+storytelling [22]
+Personal, Begin with the story or script,
+Concise, Use readily available source
+materials, Include universal story elements,
+Involve collaboration
+General
+General
+The seven elements of digital
+storytelling [20]
+A point of view, A dramatic question,
+Emotional content, The gift of your voice, The
+power of the soundtrack, Economy, Pacing
+General
+General
+Expanded and modified digital
+storytelling elements [106]
+The overall purpose of the story, The
+narrator’s point of view, A dramatic question
+or questions, Quality of the images, video, and
+other multimedia elements, Use of a
+meaningful audio soundtrack, The choice of
+content, Pacing of the narrative, Good
+grammar and language usage, Economy of the
+story detail, Clarity of voice
+Education
+Teachers, students
+Story elements [18]
+Point of view, Emotional engagement, Tone,
+Spoken narrative, Soundtrack music, Role of
+video and performance, Creativity and
+originality, Time, Story length and economy
+Education
+Teachers, students
+Five elements of digital
+storytelling [25]
+Media, Action, Relationship, Context,
+Communication
+Interactive multimedia
+General
+Dimension star: models for digital
+storytelling and interactive
+narratives [26]
+Concreteness, User contribution, Coherence,
+Continuity, (Conceptual) Structure, Stage,
+Virtuality, Spatiality, Control, Interactivity,
+Collaboration, Immersion
+Interactive entertainment (games,
+applications, new technologies)
+General
+Digital storytelling guideline for
+older adults [23]
+Story type, Imagery process and choice, Music
+and sound, Multimedia
+Interactive multimedia
+Older adults
+A ten-step development checklist
+for creating an interactive
+project [17]
+Premise and purpose, Audience and market,
+Medium, Platform and genre, Narrative/
+gaming elements, User’s role and point of
+view, Characters, Structure and interface,
+Fictional world and setting, User engagement,
+Overall look and sound
+Interactive entertainment (games,
+applications, new technologies)
+General
+Inclusive digital storytelling
+guideline [14]
+The storyteller’s point of view, A key question,
+The purpose, Story structure, Economy, The
+storyteller’s voice, Soundtrack, Media,
+Background
+Multimedia museum presentation
+Youth, older adults,
+disabled people
+3.3.1. Digital Storytelling Guidelines for General Purpose
+Regarding Lambert and Hessler’s guideline [20], Lambert was the initial individual
+to extend support to Atchley, who in the late 1980s pioneered the integration of digital
+media and oral storytelling as a media artist. Lambert, the founder of the Centre for Digital
+Storytelling in the United States, organized workshops to assist individuals in using digital
+techniques to tell their own stories. Lambert and Hessler [20] developed a set of seven
+principles, which are presented in Table 3 and detailed in Table 4. These principles serve as
+
+Heritage 2024, 7
+1906
+a guide for storytellers as they construct their works. This guideline addresses the practice
+of narrating personal stories and non-interactive digital narratives.
+Table 4. Digital storytelling for general purposes from three experts [20–22].
+Elements
+Explanation
+Point of view
+•
+What is the central argument of the narrative and what is the author’s point of view? [20].
+•
+It is recommended that every narrative be presented in the first person, narrated in one’s
+own voice, drawing from personal and emotional experience of the occurrence [21].
+•
+The narrator is encouraged to imbue the story with significance by demonstrating how the
+characters or occurrences in the narrative have affected their own life [22].
+Concept
+•
+A pivotal inquiry that sustains the audience’s interest and is resolved toward the
+conclusion of the narrative [20].
+•
+Disclosing the lesson learned, each narrative must have a concluding point that is
+revealed [21].
+•
+It is anticipated that digital story creators will develop their narrative to a certain extent by
+composing and even recording their script prior to commencing any video editing, image
+digitization, or sound effect importation [22].
+Emotional content
+•
+Profound and emotionally resonant matters that establish a profound connection between
+the audience and the narrative [20].
+•
+Constructing imaginative tension, effectively using tension and pacing to advance the plot
+while maintaining the audience’s interest until the very end [21].
+•
+Excellent narratives comprise critical components, including conflict, transformation, and
+resolution [22].
+Showing not telling
+•
+Demonstrating rather than telling the use of vivid details to convey emotions and
+information that are not explicitly articulated within the narrative [21].
+Voice
+•
+A method of personalizing the narrative to aid the audience in comprehending the
+setting [20].
+Soundtrack
+•
+Additional sounds or music that support and embellish the narrative [20].
+Economy
+•
+Employing a sensible amount of material to convey the plot without inundating the
+audience [20].
+•
+Condensing the narrative, while maintaining the core of the story, employing minimal
+language and visuals to convey your argument [21].
+•
+This requires meticulous editing and an extremely narrow focus [22].
+•
+Produce a narrative using minimal technology and resources [22].
+Pacing
+•
+The story’s progression rate, which indicates how slowly or quickly it flows [20].
+Developing craftsmanship
+•
+Excellent craftsmanship combines media elements ingeniously to communicate
+substantial meaning [21].
+•
+Participants in the workshop provide and obtain feedback regarding their narratives and
+scripts [22].
+In her book Digitales: The Art of Telling Digital Stories (2004), Porter [21] outlines her set
+of principles as six components of digital storytelling, as presented in Table 3. She drew
+inspiration from Lambert’s original digital storytelling guideline to construct narratives
+through the lens of the storyteller’s perspective and personal experience, as opposed to
+centering on an external narrative unrelated to the storyteller, as detailed and grouped in
+Table 4.
+Salpeter [22] proposed six elements for developing digital storytelling projects from
+her observations of such projects. Similar to Lambert’s principle, this guideline emphasizes
+that tales are based on the personal experience of the narrator, as presented in Table 4.
+
+Heritage 2024, 7
+1907
+3.3.2. Digital Storytelling Guidelines for Educational Purposes
+Robin’s guideline [106] was published in the book Digital Storytelling: A Powerful
+Technology Tool for the Twenty-First Century Classroom. The objective of this guideline was to
+assess the quality of student work produced at Houston University [106], as presented in
+Table 3 and detailed in Table 5.
+Table 5. Digital storytelling for educational purposes from two experts (Robin, 2008; Ohler, 2013).
+Elements
+Explanation
+The purpose
+•
+Early establishment of a purpose and consistent maintenance of focus are key
+qualities [106].
+Point of view
+•
+The point of view is effectively developed and enhances the story’s overall
+significance [106].
+•
+The scope of possible points of view in digital stories is extensive and is limited only
+by the perspective that the author wishes to impose [18].
+A dramatic question
+•
+A profound and significant dramatic inquiry is posed and resolved in the narrative’s
+framework [106].
+•
+A storyteller with sufficient dexterity to captivate the audience (either emotionally or
+objectively) [18].
+Content
+•
+The content establishes a unique ambiance or tone that corresponds with various
+segments of the narrative. The images have the potential to convey metaphors and/or
+symbolism [106].
+Voice
+•
+The voice remains audible and clear throughout the entire presentation [106].
+•
+Tones may alter the genre or tone of a narrative [18].
+Pacing
+•
+The tempo (voice punctuation and rhythm) complements the plot and enables the
+audience to “get into” the story [106].
+•
+The storyteller places the proper amount of emphasis on the narrative (Ohler, 2013).
+Soundtrack
+•
+Music evokes a profound emotional reaction that complements the narrative
+effectively. Complementary visuals to the music [106].
+•
+Use of music in a suitably supportive capacity [18].
+Media
+•
+Images establish a unique ambiance or tone that corresponds with various segments of
+the narrative. The images have the potential to convey metaphors and/or
+symbolism [106].
+•
+When determining which visual image to use, consider the amount of time and
+technology required [18].
+Economy
+•
+Throughout, the narrative contains precisely the right amount of detail. It appears
+neither excessively short nor long [106].
+•
+Restrict input and story length and enforce economy [18].
+Good grammar and language usage
+•
+The use of proper grammar and usage (appropriate for the selected dialect) enhanced
+the text’s clarity, style, and character development [106].
+Creativity and originality
+•
+It is imperative for educators to establish explicit criteria and mandate a specific
+proportion of media usage, given that digital tools may inspire students to construct
+imaginative narratives but do not ensure novelty [18,106].
+According to Ohler [18], his primary emphasis is on the implementation of digital sto-
+rytelling within educational settings. Based on his practical involvement in implementing
+digital storytelling with both educators and learners, he formulated the eight components
+outlined in Table 3. Ohler explains in his book that he adapted Lambert’s guideline for
+educational purposes. However, unlike Lambert, Ohler does not emphasize the first-person
+point of view. Ohler [18] argues that instructors ought not to limit the manner in which
+
+Heritage 2024, 7
+1908
+they present to a single pattern. Instead, they should illustrate points of view that are
+determined by the students themselves.
+3.3.3. Digital Storytelling Guidelines for Interactive Multimedia Purposes
+Regarding Paul and Fiebich’s guideline [25], they investigated numerous digital
+storytelling initiatives. The research was conducted at The Media Centre and the School of
+Journalism and Mass Communication, University of Minnesota. This primary emphasis
+was on journalistic storytelling and interactivity. They further characterize it as interactive
+multimedia for journalism. Five components for the development of digital narratives are
+presented in Table 3 and detailed in Table 6.
+Table 6. Digital storytelling for interactive multimedia purposes from five experts [14,17,23–26].
+Elements
+Explanation
+Point of view
+•
+What is the primary contention put forth in the narrative, and what is the author’s
+perspective? [14,24].
+•
+What purpose do characters fulfill (adversaries, allies, or helper figures)? [17].
+•
+Which perspective will the user adopt (individually or in the third person)? [17].
+Concept
+•
+An essential question that maintains the attention of the audience and is ultimately
+resolved in the story’s denouement [14,24].
+•
+What is the project’s fundamental concept and objective? [17].
+•
+The origin of the source of the story construction [23].
+The purpose
+•
+Establishing a purpose early on and maintaining focus consistently throughout [14,24].
+Story
+•
+What substantial events or challenges occur during the course of the narrative [14,24].
+•
+Communication pertains to the manner in which the narrative’s substance is
+conveyed [25].
+•
+Defines the story’s dramatic arc and its constituent elements: events, characters,
+narrative objects, and themes [26].
+•
+What significant occurrences or obstacles take place throughout the narrative? [17].
+•
+How will the project be navigated by the user? [17].
+•
+What is the critical outcome that this work aims to achieve? [17].
+•
+Stories encompass both generalizability and specificity, such as significant individuals
+(memorial stories), events (adventure stories, accomplishment stories), locations
+(recovery stories, love stories), and discoveries (personal journeys) [23].
+•
+Context is denoted by way of connecting the narrative to pertinent external
+information or material [25].
+Economy
+•
+The amount of content is adequate to communicate the plot without inundating the
+audience [14,24].
+Voice
+•
+The storyteller emphasizes the narrative in their work in an appropriate voice [14,24].
+Soundtrack
+•
+Music or sound effects that serve to augment and supplement the narrative [14,24].
+•
+What is your intended approach to incorporating sound into your work? [17].
+•
+The narrator employs an assortment of musical compositions to establish distinct
+ambiances during the digital narrative while sound effects are omitted. Various
+emotions were “reflected and expressed” through music in the narrative [23].
+
+Heritage 2024, 7
+1909
+Table 6. Cont.
+Elements
+Explanation
+Interactive multimedia
+•
+Which media formats exist, including but not limited to the internet, mobile phones,
+and television? [14,24].
+•
+The components or materials used in the construction of the story package. Digital
+stories are distinguished by their capacity to use any variety and combination of
+media [25].
+•
+The extent to which the user is afforded the opportunity to actively participate in the
+story’s environment [26].
+•
+The user contributes to the structure of the narrative through system interaction [26].
+•
+The extent to which the storytelling activity occurs in the user’s physical environment
+or in a virtual world [26].
+•
+What are the forms of media (such as the internet, mobile phones, or television)?
+Which platform (hardware) is it (such as a mobile phone, a computer, or a console
+game)? Which genre is it classified as (such as action or simulation)? [17].
+•
+Which visual methods do you intend to employ, such as animation, graphics, and
+video? [17].
+•
+The narrator may have employed both explicit and implicit uses of imagery to convey
+the story. Some photographs were used throughout, and they all had symbolic or
+metaphorical significance [23].
+•
+Social media storytelling increasingly incorporates visual elements, such as graphics,
+videos, music, and new media [23].
+•
+Immersion level: the extent to which the user is engrossed in the narrative [26].
+•
+The capability for users to engage in collaborative story creation or experience [26].
+•
+The connection and degree of interactivity between the user and the content is referred
+to as the “relationship” [25].
+Background
+•
+What is the world and the setting of the story? [14,17,24].
+•
+Does the setting seem realistic or fantastical? [17].
+For Schafer’s guideline [26], as her doctoral dissertation, Schafer introduced the “di-
+mension star model”, a twelve-point guideline for digital storytelling that she subsequently
+published in the textbook Investigations on Digital Storytelling—The Development of a Reference
+Model [26]. As shown in Table 3, this guideline focuses primarily on interactive digital
+storytelling.
+Next, the objective of Hausknecht’s digital storytelling guideline [23] for older adults
+is to discover novel methods of communication with this demographic. This research
+investigated how seniors incorporated multimedia into their narratives. Additionally, this
+guideline emphasizes a technological society replete with multimedia and new media.
+This is due to the fact that older adults are increasingly using social media and other
+technological platforms to communicate, as presented in Table 3 and detailed in Table 6.
+Miller’s guideline [17] provides a comprehensive guide to interactive entertainment.
+The guideline and this book exclusively highlight interactive media, including but not
+limited to mobile devices, websites, video games, and interactive television. Furthermore,
+Miller [17] conducts a comparative analysis of traditional and contemporary (interactive
+or online) storytelling tools, providing guidance on how to modify this principle for
+application in each medium, as presented in Tables 3 and 6.
+In the case of the inclusive digital storytelling guideline [14,24], they found that most
+digital storytelling guidelines focus primarily on general media for general audiences
+and not museums. Furthermore, most studies focus on the application of cutting-edge
+presentation technologies rather than the development of narrative structures. In addition,
+the majority of research does not target youth, the elderly, or individuals with disabilities.
+Consequently, this guideline, applied with inclusive design principles and created by
+interviewing target audiences and experts, is designed for different demographics—namely,
+young people, the elderly, and individuals with disabilities—and employs strategies to
+pique their interest in museum exhibits, as presented in Tables 3 and 6.
+
+Heritage 2024, 7
+1910
+3.3.4. Digital Storytelling Guidelines for Older Adults and People with Disabilities
+Regarding the several guidelines presented, there are only two studies [14,23] focusing
+on older adults and people with disabilities as target audiences.
+In case of the inclusive digital storytelling guideline [14], the aim is to use inclusive
+design principles to understand the barriers faced by these two study groups and to deter-
+mine the accommodations they require. Both of these two groups prefer to see the same
+characteristics as themselves (e.g., disabled people, seniors) as presenters. Seniors prefer
+content about religion, family vacation, and physical health or quality of life, as well as
+nostalgia stories about the past. In the case of story structure, they prefer straightforward,
+conventional, and conservative aesthetics with direct information, while no gimmicks,
+tricks, or hidden plots are necessary. Designers have to present brief segments of infor-
+mation. For this group, voice and soundtrack are essential. Lastly, this group prefers all
+settings (locations, characters) to be authentic (not cartoon or 3D) and for constructed
+historical settings to evoke sentiments of nostalgia. For disabled people, they prefer content
+about religion, accessibility, and transportation. In the case of story structure, this group
+prefers stable, fundamental, and conservative structures with one point of climax and
+dislikes new and rapid structures. Brief information, voice, and soundtrack are essential.
+In the case of Hausknecht’s digital storytelling guideline [23] for older adults, this
+guideline emphasizes a technological approach with multimedia and new media. This is
+due to the fact that older adults are increasingly using social media and other technological
+platforms to communicate as follows:
+(1) Types of stories: stories encompass both generalizability and specificity, such
+as significant individuals (memorial stories), events (adventure stories, accomplishment
+stories), locations (recovery stories, love stories), and discoveries (personal journeys).
+(2) Imagery process and choice: the narrator may have employed both explicit and implicit
+uses of imagery to convey the story. Some photographs were used throughout, and
+they all had symbolic or metaphorical significance. (3) Music and sound: the narrator
+employed an assortment of musical compositions to establish distinct ambiances during
+the digital narrative while sound effects were omitted. Various emotions were “reflected
+and expressed” through music in the narrative. (4) Multimedia: social media storytelling
+increasingly incorporates visual elements, such as graphics, videos, music, and new media.
+4. Conclusions
+Digital storytelling guidelines, technologies, and resources that specifically address the
+needs of the elderly and individuals with mobility impairments in the context of museum
+exhibitions and presentations are scarce. The researchers read each article in its entirety
+and, using content analysis, classified the papers into three primary categories: (1) inclusive
+design for museum presentation, (2) technology trends in digital storytelling for museum
+presentations, and (3) museum presentation guidelines for digital storytelling.
+Based on this, the following research question was considered: “How can a museum
+develop digital storytelling presentations with suitable technology to accommodate older
+adults, aged 60 or more, and people who have mobility impairments in functions related
+to the lower body extremities (mobility), such as wheelchair users and those requiring
+walking aids?”
+First, although museums are beginning to acknowledge the unique requirements of
+visitors with mobility impairments and the aging global population, a pervasive oversight
+persists. Nevertheless, the positive consequences that museums can anticipate from imple-
+menting inclusive design principles are outlined in this article. These include increased
+accessibility, enhanced learning experiences, greater cultural inclusivity and social equity,
+and more community engagement. By adhering to these practices, museums not only
+accommodate the unique requirements of older individuals and those with limited mo-
+bility but also make a positive contribution toward the overarching objective of fostering
+more inclusive and hospitable environments. For museum designers to comprehend these
+heterogeneous groups and implement inclusive design principles, they must be aware of
+
+Heritage 2024, 7
+1911
+both the barriers that make visiting museums a challenge and the drivers that attract these
+individuals to museums. Consequently, barriers could be eradicated, and visitors from
+these groups could receive more effective assistance.
+Second, this review elucidates notable technological developments that have the
+potential to augment the accessibility of museums for elderly patrons and those with limited
+mobility. User experience, for instance, requires that designers comprehend and assess user
+profiles, demographics, interests, and needs through research and presentations regarding
+accessibility before, during, and after the visit. Accordingly, customization information
+must be provided that includes only pertinent details regarding accessible facilities (e.g.,
+wheelchair parking, accessibility maps, and inclined surfaces). It is essential to utilize
+cutting-edge mobile device technologies, including automatic reading, location awareness
+via GPS, and accessibility maps. Additionally, individuals with mobility impairments
+could be assisted with online museum presentations using VR, and AR could be combined
+with multimedia to pique their interest. Online and in-person AI could be implemented
+to provide exhibition guidance and explanations, and the IoT, including wearable and
+portable interactive devices, has the potential to transform an exhibition into a “smart and
+accessible museum” system. This would allow visitors to personalize their experience
+while gaining multimedia-based information about the exhibits.
+Finally, in the realm of museum presentation guidelines for digital storytelling, pre-
+senters who possess similar qualities to those of the visitors are favored. Religious topics,
+family vacations, physical health or quality of life, anecdotes from the past, memorial
+tales, and sentimentality are preferred by seniors. For individuals with limited mobility,
+prioritizing content regarding accessibility is crucial. These groups require information
+that is direct, conventional, and concise. A soundtrack and voice must also be provided for
+both groups. These individuals value feelings of nostalgia and prefer settings (e.g., loca-
+tions and characters) to be genuine rather than cartoonish or two-dimensional. Eventually,
+multimedia and social media storytelling for the elderly could include components such as
+graphics, videos, music, and new media.
+In conclusion, the significance of an inclusive design and digital storytelling approach
+to museum presentations and the inclusion of underrepresented target groups is empha-
+sized. By taking into consideration the unique requirements, barriers, motivating factors,
+supported technologies and presentation guidelines of older individuals and those with
+limited mobility, museums have the potential to not only improve the accessibility and
+satisfaction of their displays for these demographics but also establish a paradigm for
+inclusiveness and active participation in cultural environments that benefits all.
+4.1. Practical Implications of This Review Article
+This article has undergone a comprehensive review process and has been condensed to
+provide insights pertaining to the identified research issue. If researchers, designers, muse-
+ums, storytellers, and stakeholders wish to increase diversity, accessibility, and motivation
+in museums for these two groups through the use of technology and digital storytelling,
+literature reviews and examples in this article could be applied in three ways: (1) In-person
+presentations at the museums (e.g., AR, VR, or interactive presentations at the kiosks of
+museums); (2) Virtual online presentations (e.g., VR with online museums, GPS navigation,
+voice commands, AI with multiple languages); and (3) Short presentations (e.g., advertise-
+ments, social media videos, or brief narratives) designed to entice these two target group
+visitors to visit.
+Moreover, it is our suggestion that museums adopt the following: (1) Establish inclu-
+sive design principles as a fundamental component of museum planning and development;
+(2) Utilize emerging technologies to generate individualized and accessible experiences
+that accommodate the distinct requirements and preferences of every visitor; (3) Formulate
+and execute precise and targeted digital storytelling protocols that cater specifically to the
+requirements of older adults and individuals with mobility impairments.
+
+Heritage 2024, 7
+1912
+4.2. Limitations of This Article
+As a result of the scarcity of relevant studies in the primary databases (e.g., Scopus
+and ScienceDirect), this review article employs Google Scholar as an intermediary platform
+to locate pertinent information and conference and journal case studies. Google Scholar
+uses a search engine equipped with “crawler robots” to locate pertinent web pages and has
+frequently faced criticism due to its lack of disclosure regarding its search algorithms, its
+untraceable approach to sorting search results, and the incorporation of content from non-
+scholarly sources into its search results. This implies that outcomes may vary depending
+on whether identical and repeated searches are conducted.
+Author Contributions: Conceptualization, K.K., A.S., D.H. and F.N.; review and analysis, K.K., A.S.
+and F.N.; writing—original draft preparation, K.K.; writing—review and editing, K.K., A.S., D.H. and
+F.N. All authors have read and agreed to the published version of the manuscript.
+Funding: This research was funded by the School of Architecture, Art, and Design, King Mongkut’s
+Institute of Technology Ladkrabang (KMITL), grant number 2567-02-02-009.
+Data Availability Statement: Not applicable.
+Conflicts of Interest: The authors declare no conflicts of interest.
+References
+1.
+Kasemsarn, K.; Harrison, D.; Nickpour, F. Applying Inclusive Design and Digital Storytelling to Facilitate Cultural Tourism: A
+Review and Initial Framework. Heritage 2023, 6, 1411–1428. [CrossRef]
+2.
+Villeneuve, P.; Love, A.R. (Eds.) Visitor-Centered Exhibitions and Edu-Curation in Art Museums; Rowman & Littlefield: Lanhamu,
+MA, USA, 2017.
+3.
+Woodruff, A. The museum can be visitor-centered: An intern’s reflection. Reflective Pract. 2018, 19, 179–192. [CrossRef]
+4.
+Chiovatto, M.; Aidar, G. Inclusive education in museums case study: Pinacoteca do estado de Sao Paulo. Mus. Int. 2012, 64, 69–79.
+[CrossRef]
+5.
+Derby, J. Confronting ableism: Disability studies pedagogy in preservice art education. Stud. Art Educ. 2016, 57, 102–119.
+[CrossRef]
+6.
+D’Hudson, G.; Saling, L.L. Worry and rumination in older adults: Differentiating the processes. Aging Ment. Health 2010, 14,
+524–534. [CrossRef] [PubMed]
+7.
+Sica, E.; Sisto, R.; Bianchi, P.; Cappelletti, G. Inclusivity and responsible tourism: Designing a trademark for a national park area.
+Sustainability 2020, 13, 13. [CrossRef]
+8.
+Shaw-Lawrence, P. Enabling the disabled. Travel Wkly. 1999, 59, 8.
+9.
+Lipianin-Zontek, E.; Szewczyk, I. Adaptation of business hotels to the needs of disabled tourists in Poland. Probl. Perspect. Manag.
+2019, 17, 392. [CrossRef]
+10.
+Shaw, G.; Coles, T. Disability, holiday making and the tourism industry in the UK: A preliminary survey. Tour. Manag. 2004, 25,
+397–403. [CrossRef]
+11.
+Lim, J.E. Understanding the discrimination experienced by customers with disabilities in the tourism and hospitality industry:
+The case of Seoul in South Korea. Sustainability 2020, 12, 7328. [CrossRef]
+12.
+Ozturk, Y.; Yayli, A.; Yesiltas, M. Is the Turkish tourism industry ready for a disabled customer’s market? The views of hotel and
+travel agency managers. Tour. Manag. 2008, 29, 382–389. [CrossRef]
+13.
+Brida, J.G.; Dalle Nogare, C.; Scuderi, R. Frequency of museum attendance: Motivation matters. J. Cult. Econ. 2016, 40, 261–283.
+[CrossRef]
+14.
+Kasemsarn, K.; Nickpour, F. A conceptual framework for inclusive digital storytelling to increase diversity and motivation for
+cultural tourism in Thailand. Stud. Health Technol. Inform. 2016, 229, 407–415.
+15.
+Bahtiar, B.; Yusuf, Y.; Doyan, A.; Ibrahim, I. The Trend of Technology Pedagogical Content Knowledge (TPACK) Research in
+2012–2022: Contribution to Science Learning of 21st Century. J. Penelit. Pendidik. IPA 2023, 9, 39–47. [CrossRef]
+16.
+Kasemsarn, K. Creating a Cultural Youth Tourism eBook Guidelines with Four Design Factors. Int. J. Vis. Des. 2022, 16, 31.
+[CrossRef]
+17.
+Miller, C.H. Digital Storytelling 4e: A Creator’s Guide to Interactive Entertainment; CRC Press: Boca Raton, FL, USA, 2019.
+18.
+Ohler, J.B. Digital Storytelling in the Classroom: New Media Pathways to Literacy, Learning, and Creativity; Corwin Press: Thousand
+Oaks, CA, USA, 2013.
+19.
+Psomadaki, O.I.; Dimoulas, C.A.; Kalliris, G.M.; Paschalidis, G. Digital storytelling and audience engagement in cultural heritage
+management: A collaborative model based on the Digital City of Thessaloniki. J. Cult. Herit. 2019, 36, 12–22. [CrossRef]
+20.
+Lambert, J.; Hessler, B. Digital Storytelling Capturing Lives, Creating Community; Routledge, Taylor & Francis Group: New York, NY,
+USA; London, UK, 2018.
+
+Heritage 2024, 7
+1913
+21.
+Porter, B. Digitales: The Art of Telling Digital Stories; Bernajean Porter: Denver, CO, USA, 2004.
+22.
+Salpeter, J. Telling Tales with Technology: Digital Storytelling Is a New Twist on the Ancient Art of the Oral Narrative. Technol.
+Learn. 2005, 25, 18.
+23.
+Hausknecht, S. The role of new media in communicating and shaping older adult stories. In Human Aspects of IT for the Aged
+Population. Acceptance, Communication and Participation: 4th International Conference, ITAP 2018, Held as Part of HCI International
+2018, Las Vegas, NV, USA, 15–20 July 2018; Proceedings, Part I 4; Springer International Publishing: Berlin/Heidelberg, Germany,
+2018; pp. 478–491.
+24.
+Kasemsarn, K.; Harrison, D.; Nickpour, F. Digital Storytelling Guideline Applied with Inclusive Design for Museum Presentation
+from Experts’ and Audiences’ Perspectives. Int. J. Incl. Mus. 2023, 16, 99. [CrossRef]
+25.
+Paul, N.; Fiebich, C. The Elements of Digital Storytelling; School of Journalism and Mass Communication’s Institute for New Media
+Studies and The Media Center: Thessaloniki, Greece, 2005.
+26.
+Schäfer, L. Investigations on Digital Storytelling: The Development of a Reference Model; VDM Publishing. Müller: Saarbrucken,
+Germany, 2008.
+27.
+World Health Organization (2011) World Report on Disability. Available online: https://www.who.int/teams/noncommunicable-
+diseases/sensory-functions-disability-and-rehabilitation/world-report-on-disability (accessed on 1 January 2024).
+28.
+Story, M.F.; Mueller, J.L.; Mace, R.L. The Universal Design File: Designing for People of all Ages and Abilities; ERIC, Education
+Resources Information Center: Washington, DC, USA, 1998.
+29.
+Fuglerud, K.S. Inclusive Design of ICT: The Challenge of Diversity; University of Oslo, Faculty of Humanitites: Oslo, Norway, 2014.
+30.
+Liberati, A.; Altman, D.G.; Tetzlaff, J.; Mulrow, C.; Gøtzsche, P.C.; Ioannidis, J.P.; Clarke, M.; Devereaux, P.J.; Kleijnen, J.; Moher, D.
+The PRISMA statement for reporting systematic reviews and meta-analyses of studies that evaluate health care interventions:
+Explanation and elaboration. Ann. Intern. Med. 2009, 151, W-65–W-94. [CrossRef] [PubMed]
+31.
+Paul, J.; Criado, A.R. The art of writing literature review: What do we know and what do we need to know? Int. Bus. Rev. 2020,
+29, 101717. [CrossRef]
+32.
+Burnett, J.J.; Baker, H.B. Assessing the travel-related behaviors of the mobility-disabled consumer. J. Travel Res. 2001, 40, 4–11.
+[CrossRef]
+33.
+Kruczek, Z.; Gmyrek, K.; Zi˙zka, D.; Korbiel, K.; Nowak, K. Accessibility of Cultural Heritage Sites for People with Disabilities: A
+Case Study on Krakow Museums. Sustainability 2023, 16, 318. [CrossRef]
+34.
+Sawadsri, A. Universal Design Guideline to Accommodate Disabled Occupants. In Challenges for Assistive Technology; IOS Press:
+Amsterdam, The Netherlands, 2007; pp. 796–801.
+35.
+Giannini, T.; Bowen, J.P. Museums and Digital Culture: From reality to digitality in the age of COVID-19. Heritage 2022, 5, 192–214.
+[CrossRef]
+36.
+Ibem, E.O.; Oni, O.O.; Umoren, E.; Ejiga, J. An appraisal of universal design compliance of museum buildings in Southwest
+Nigeria. Int. J. Appl. Eng. Res. 2017, 12, 13731–13741.
+37.
+Zakaria, N.N. Barriers to social inclusion with the Egyptian museums; new approach towards disability. Curator Mus. J. 2020, 63,
+115–130. [CrossRef]
+38.
+Eardley, A.F.; Thompson, H.; Fineman, A.; Hutchinson, R.; Bywood, L.; Cock, M. Devisualizing the Museum: From Access to
+Inclusion. J. Mus. Educ. 2022, 47, 150–165. [CrossRef]
+39.
+Kinsley, R.P. Inclusion in museums: A matter of social justice. Mus. Manag. Curatorship 2016, 31, 474–490. [CrossRef]
+40.
+Heidelberg, B.M. Evaluating equity: Assessing diversity efforts through a social justice lens. Cult. Trends 2019, 28, 391–403.
+[CrossRef]
+41.
+Huhn, A.; Anderson, A. Promoting social justice through storytelling in museums. Mus. Soc. 2021, 19, 351–368. [CrossRef]
+42.
+Callahan Schreiber, R.; Goeke, M.; Bequette, M. Community-informed design: Blending community engagement and museum
+design approaches for sustainable experience development. Curator Mus. J. 2023, 0, 1–17. [CrossRef]
+43.
+Salgado, M.; Marttila, S. Discussions on inclusive, participative and open museums. In Proceedings of the Beyond Control: The
+Collaborative Museum and its Challenges. International Conference on Design and Digital Heritage: NODEM 2013 Conference
+Proceedings, Stokholm, Sweden, 1–3 December 2013; pp. 41–48.
+44.
+Tsipra, T.; Drinia, H. Geocultural landscape and sustainable development at Apano Meria in Syros Island, central Aegean sea,
+Greece: An ecomuseological approach for the promotion of geological heritage. Heritage 2022, 5, 2160–2180. [CrossRef]
+45.
+Hollander, J.B.; Foster-Karim, C.; Wiley, A. Urban inclusivity through a service design framework. J. Place Manag. Dev. 2019, 12,
+71–87. [CrossRef]
+46.
+McMillen, R. The inclusive art museum: Determining disability access. Int. J. Incl. Mus. 2012, 4, 101. [CrossRef]
+47.
+Gossett, A.; Gossett, A.; Mirza, M.; Barnds, A.K.; Feidt, D. Beyond access: A case study on the intersection between accessibility,
+sustainability, and universal design. Disabil. Rehabil. Assist. Technol. 2009, 4, 439–450. [CrossRef] [PubMed]
+48.
+Villeneuve, P. Building museum sustainability through visitor-centered exhibition practices. Int. J. Incl. Mus. 2013, 5, 37.
+[CrossRef]
+49.
+Floch, J.; Jiang, S. One place, many stories digital storytelling for cultural heritage discovery in the landscape. In Proceedings of
+the 2015 Digital Heritage, Granada, Spain, 28 September–2 October 2015; Volume 2, pp. 503–510.
+50.
+Pietroni, E.; Ferdani, D. Virtual restoration and virtual reconstruction in cultural heritage: Terminology, methodologies, visual
+representation techniques and cognitive models. Information 2021, 12, 167. [CrossRef]
+
+Heritage 2024, 7
+1914
+51.
+Pujol, L.; Roussou, M.; Poulou, S.; Balet, O.; Vayanou, M.; Ioannidis, Y. Personalizing interactive digital storytelling in archaeolog-
+ical museums: The CHESS project. In Proceedings of the 40th Annual Conference of Computer Applications and Quantitative
+Methods in Archaeology, Southampton, UK, 26–29 March 2012; Amsterdam University Press: Amsterdam, The Netherlands,
+2012; pp. 93–100.
+52.
+Wither, J.; Allen, R.; Samanta, V.; Hemanus, J.; Tsai, Y.T.; Azuma, R.; Carter, W.; Hinman, R.; Korah, T. The westwood experience:
+Connecting story to locations via mixed reality. In Proceedings of the 2010 IEEE International Symposium on Mixed and
+Augmented Reality-Arts, Media, and Humanities, Seoul, Republic of Korea, 13–16 October 2010; pp. 39–46.
+53.
+Law, E.L.C.; Roto, V.; Hassenzahl, M.; Vermeeren, A.P.; Kort, J. Understanding, scoping and defining user experience: A survey
+approach. In Proceedings of the SIGCHI Conference on Human Factors in Computing Systems, Boston, MA, USA, 4–6 April 2009;
+pp. 719–728.
+54.
+Tongsubanan, S.; Kasemsarn, K. Sustainability at Home: The Development of an Efficient Framework for Home Energy-Saving
+Applications. Designs 2023, 7, 101. [CrossRef]
+55.
+Mohd Noor Shah, N.F.; Ghazali, M. A systematic review on digital technology for enhancing user experience in museums. In User
+Science and Engineering: 5th International Conference, i-USEr 2018, Puchong, Malaysia, 28–30 August 2018, Proceedings 5; Springer:
+Singapore, 2018; pp. 35–46.
+56.
+Rodrigues, J.M.; Lessa, J.; Gregório, M.; Ramos, C.; Cardoso, P.J. An initial framework for a museum application for senior citizens.
+In Proceedings of the 7th International Conference on Software Development and Technologies for Enhancing Accessibility and
+Fighting Info-Exclusion, Vila Real, Portugal, 1–3 December 2016; Association for Computing Machinery: New York, NY, USA,
+2016; pp. 414–421.
+57.
+Roussou, M.; Katifori, A. Flow, staging, wayfinding, personalization: Evaluating user experience with mobile museum narratives.
+Multimodal Technol. Interact. 2018, 2, 32. [CrossRef]
+58.
+Chen, H.C.; Kao, Y.F.; Kuo, C.L. A multimedia storytelling in a rural village: The show Taiwan e-tourism service using tablet
+technologies. In Proceedings of the 2014 IIAI 3rd International Conference on Advanced Applied Informatics, Kokura, Japan, 31
+August 2014–4 September 2014; pp. 525–526.
+59.
+Woodruff, A. Creating Visitor-Centered Museum Experiences for Adults with Developmental Disabilities: A Collaborative Case
+Study. Doctoral Dissertation, The Florida State University, Tallahassee, FL, USA, 2022.
+60.
+Karimi, H.A.; Zhang, L.; Benner, J.G. Personalized accessibility map (PAM): A novel assisted wayfinding approach for people
+with disabilities. Ann. GIS 2014, 20, 99–108. [CrossRef]
+61.
+Yildiz, S. A Holistic View on Contemporary Art Museums in the Context of Accessible Tourism-Case Studies from Central Europe.
+Karabük Üniversitesi Sos. Bilim. Enstitüsü Derg. 2019, 9, 337–348.
+62.
+Muñoz-Muñoz, A.M.; González-Moreno, M.B. The presence of women photographers in the permanent collections of ten
+European museums. Curator Mus. J. 2017, 60, 205–215. [CrossRef]
+63.
+Jagodzi´nska, K. Do the buildings really matter? Czech, Polish and Slovak museums and centres of contemporary art in adapted
+buildings. Cent. Eur. 2018, 16, 112–133. [CrossRef]
+64.
+Christodoulakis, S. Trends in Digital Cultural Heritage Management and Applications. Digit. Present. Preserv. Cult. Sci. Herit.
+2014, 4, 17–25. [CrossRef]
+65.
+Fletcher, T.S.; Blake, A.B.; Shelffo, K.E. Can sensory gallery guides for children with sensory processing challenges improve their
+museum experience? J. Mus. Educ. 2018, 43, 66–77. [CrossRef]
+66.
+Xia, Y. How Has Online Digital Technology Influenced the On-Site Visitation Behavior of Tourists during the COVID-19 Pandemic?
+A Case Study of Online Digital Art Exhibitions in China. Sustainability 2023, 15, 10889. [CrossRef]
+67.
+Załuska, U.; Kwiatkowska-Ciotucha, D.; Grze´skowiak, A. Travelling from perspective of persons with disability: Results of an
+international survey. Int. J. Environ. Res. Public Health 2022, 19, 10575. [CrossRef]
+68.
+Ribeiro, F.R.; Silva, A.; Barbosa, F.; Silva, A.P.; Metrôlho, J.C. Mobile applications for accessible tourism: Overview, challenges and
+a proposed platform. Inf. Technol. Tour. 2018, 19, 29–59. [CrossRef]
+69.
+Cardonha, C.; Gallo, D.; Avegliano, P.; Herrmann, R.; Koch, F.; Borger, S. A crowdsourcing platform for the construction of
+accessibility maps. In Proceedings of the 10th International Cross-Disciplinary Conference on Web Accessibility, Rio de Janeiro,
+Brazil, 13–15 May 2013; Association for Computing Machinery: New York, NY, USA, 2013; pp. 1–4.
+70.
+Miura, T.; Yabu, K.I.; Ikematsu, S.; Kano, A.; Ueda, M.; Suzuki, J.; Sakajiri, M.; Ifukube, T. Barrier-free walk: A social sharing plat-
+form of barrier-free information for sensory/physically-impaired and aged people. In Proceedings of the 2012 IEEE International
+Conference on Systems, Man, and Cybernetics (SMC), Seoul, Republic of Korea, 14–17 October 2012; pp. 2927–2932.
+71.
+Kunjir, A.R.; Patil, K.R. Challenges of mobile augmented reality in museums and art galleries for visitors suffering from vision,
+speech, and learning disabilities. In Virtual and Augmented Reality in Education, Art, and Museums; IGI Global: Hershey, PA, USA,
+2020; pp. 162–173.
+72.
+Sarvas, R.; Frohlich, D.M. From Snapshots to Social Media: The Changing Picture of Domestic Photography; Springer: London, UK, 2011.
+73.
+Zimmerman, K.N.; Ledford, J.R. Beyond ASD: Evidence for the effectiveness of social narratives. J. Early Interv. 2017, 39, 199–217.
+[CrossRef]
+74.
+Marasco, A.; Balbi, B. Designing accessible experiences for heritage visitors through virtual reality. E Rev. Tour. Res. 2019, 17,
+426–443.
+
+Heritage 2024, 7
+1915
+75.
+Traboulsi, C.; Frau, M.; Cabiddu, F. Active seniors perceived value within digital museum transformation. TQM J. 2018, 30,
+530–553. [CrossRef]
+76.
+Figueiredo, M.; Gomes, J.; Gomes, C. Creating learning activities using augmented reality tools. In Proceedings of the 2nd
+Experiment@ International Conference—Online Experimentation, Coimbra, Portugal, 18–20 September 2013; pp. 301–305.
+77.
+Guimarães, F.; Figueiredo, M.; Rodrigues, J. Augmented Reality and Storytelling in heritage application in public gardens:
+Caloust Gulbenkian Foundation Garden. In Proceedings of the 2015 Digital Heritage, Granada, Spain, 28 September–2 October
+2015; Volume 1, pp. 317–320.
+78.
+Vishwanath, G. Enhancing Engagement through Digital Cultural Heritage: A Case Study about Senior Citizens using a Virtual
+Reality Museum. In Proceedings of the 2023 ACM International Conference on Interactive Media Experiences, Nantes, France,
+12–15 June 2023; Association for Computing Machinery: New York, NY, USA, 2023; pp. 150–156.
+79.
+Nishchyk, A.; Sanderson, N.C.; Chen, W. Elderly-centered usability heuristics for augmented reality design and development. In
+Universal Access in the Information Society; Elsevier: Amsterdam, The Netherlands, 2024; pp. 1–21.
+80.
+Liang, S. Establishing Design Principles for Augmented Reality for Older Adults; Sheffield Hallam University: Sheffield, UK, 2018.
+81.
+Pisoni, G.; Díaz-Rodríguez, N.; Gijlers, H.; Tonolli, L. Human-centered artificial intelligence for designing accessible cultural
+heritage. Appl. Sci. 2021, 11, 870. [CrossRef]
+82.
+Ten, A.; Kaushik, P.; Oudeyer, P.Y.; Gottlieb, J. Humans monitor learning progress in curiosity-driven exploration. Nat. Commun.
+2021, 12, 5972. [CrossRef]
+83.
+Dal Falco, F.; Vassos, S. Museum experience design: A modern storytelling methodology. Des. J. 2017, 20 (Suppl. 1), S3975–S3983.
+[CrossRef]
+84.
+Zancanaro, M.; Stock, O.; Schiavo, G.; Cappelletti, A.; Gehrmann, S.; Canetti, D.; Shaked, O.; Fachter, S.; Yifat, R.; Mimran, R.; et al.
+Evaluating an automated mediator for joint narratives in a conflict situation. Behav. Inf. Technol. 2020, 39, 1022–1037. [CrossRef]
+85.
+Manitsaris, S.; Glushkova, A.; Bevilacqua, F.; Moutarde, F. Capture, modeling, and recognition of expert technical gestures in
+wheel-throwing art of pottery. J. Comput. Cult. Herit. (JOCCH) 2014, 7, 10. [CrossRef]
+86.
+Díaz-Rodríguez, N.; Pisoni, G. Accessible cultural heritage through explainable artificial intelligence. In Proceedings of the
+Adjunct Publication of the 28th ACM Conference on User Modeling, Adaptation and Personalization, Genoa, Italy, 14–17 July
+2020; Association for Computing Machinery: New York, NY, USA, 2020; pp. 317–324.
+87.
+Guidotti, R.; Monreale, A.; Ruggieri, S.; Turini, F.; Giannotti, F.; Pedreschi, D. A survey of methods for explaining black box
+models. ACM Comput. Surv. (CSUR) 2018, 51, 93. [CrossRef]
+88.
+Alletto, S.; Cucchiara, R.; Del Fiore, G.; Mainetti, L.; Mighali, V.; Patrono, L.; Serra, G. An indoor location-aware system for an
+IoT-based smart museum. IEEE Internet Things J. 2015, 3, 244–253. [CrossRef]
+89.
+Wang, Y.; Yang, C.; Liu, S.; Wang, R.; Meng, X. A RFID & handheld device-based museum guide system. In Proceedings of the
+2007 2nd International Conference on Pervasive Computing and Applications, Birmingham, UK, 26–27 July 2007; pp. 308–313.
+90.
+Aman, M.S.; Quint, C.D.; Abdelgawad, A.; Yelamarthi, K. Sensing and classifying indoor environments: An Iot based portable
+tour guide system. In Proceedings of the 2017 IEEE Sensors Applications Symposium (SAS), Glassboro, NJ, USA, 13–15 March
+2017; IEEE: Piscataway, NJ, USA, 2017; pp. 1–6.
+91.
+Kuusik, A.; Roche, S.; Weis, F. Smartmuseum: Cultural content recommendation system for mobile users. In Proceedings of the
+2009 Fourth International Conference on Computer Sciences and Convergence Information Technology, Seoul, Republic of Korea,
+24–26 November 2009; pp. 477–482.
+92.
+Mainetti, L.; Mighali, V.; Patrono, L. An IoT-based user-centric ecosystem for heterogeneous smart home environments. In
+Proceedings of the 2015 IEEE International Conference on Communications (ICC), London, UK, 8–12 June 2015; pp. 704–709.
+93.
+Almeida, A.; Fiore, A.; Mainetti, L.; Mulero, R.; Patrono, L.; Rametta, P. An IoT-aware architecture for collecting and managing
+data related to elderly behavior. Wirel. Commun. Mob. Comput. 2017, 2017, 5051915. [CrossRef]
+94.
+Chianese, A.; Piccialli, F. Designing a smart museum: When cultural heritage joins IoT. In Proceedings of the 2014 Eighth
+International Conference on Next Generation Mobile Apps, Services and Technologies, Oxford, UK, 10–12 September 2014;
+pp. 300–306.
+95.
+Bazzano, F.; Lamberti, F. Human-robot interfaces for interactive receptionist systems and wayfinding applications. Robotics 2018,
+7, 56. [CrossRef]
+96.
+Fuentes-Moraleda, L.; Lafuente-Ibanez, C.; Fernandez Alvarez, N.; Villace-Molinero, T. Willingness to accept social robots in
+museums: An exploratory factor analysis according to visitor profile. Library Hi Tech 2022, 40, 894–913. [CrossRef]
+97.
+Yousuf, M.A.; Kobayashi, Y.; Kuno, Y.; Yamazaki, K.; Yamazaki, A. Social interaction with visitors: Mobile guide robots capable of
+offering a museum tour. IEEJ Trans. Electr. Electron. Eng. 2019, 14, 1823–1835. [CrossRef]
+98.
+Thrun, S.; Bennewitz, M.; Burgard, W.; Cremers, A.B.; Dellaert, F.; Fox, D.; Hahnel, D.; Rosenberg, C.; Roy, N.; Schulte, J.; et al.
+MINERVA: A second-generation museum tour-guide robot. In Proceedings of the 1999 IEEE International Conference on Robotics
+and Automation (Cat. No. 99CH36288C), Detroit, MI, USA, 10–15 May 1999; Volume 3.
+99.
+Rizvic, S.; Sadzak, A.; Hulusic, V.; Karahasanovic, A. Interactive digital storytelling in the Sarajevo survival tools virtual
+environment. In Proceedings of the 28th Spring Conference on Computer Graphics, Budmerice, Slovakia, 2–4 May 2012;
+Association for Computing Machinery: New York, NY, USA, 2012; pp. 109–116.
+100. Ryan, G.W.; Bernard, H.R. Data management and analysis methods. In Handbook of Qualitative Research; Sage: London, UK, 2000;
+Volume 2, pp. 769–802.
+
+Heritage 2024, 7
+1916
+101. Cunsolo Willox, A.; Harper, S.L.; Edge, V.L. ‘My Word’: Storytelling and Digital Media Lab, Rigolet Inuit Community Government.
+Storytelling in a digital age: Digital storytelling as an emerging narrative method for preserving and promoting indigenous oral
+wisdom. Qual. Res. 2013, 13, 127–147. [CrossRef]
+102. Alcantud-Diaz, M.; Vayá, A.R.; Gregori-Signes, C. ‘Share your experience’. Digital storytelling in English for tourism. Ibér. Rev.
+Asoc. Eur. Leng. para Fines Específ. 2014, 27, 185–204.
+103. Wexler, L.; Eglinton, K.; Gubrium, A. Using digital stories to understand the lives of Alaska Native young people. Youth Soc. 2014,
+46, 478–504. [CrossRef]
+104. Tolva, J.; Martin, J. Making the transition from documentation to experience: The eternal Egypt project. Arch. Mus. Inform. 2004, 2,
+1–25.
+105. Hein, H.S. The Museum in Transition: A Philosophical Perspective; Smithsonian Institution: Washington, DC, USA, 2000.
+106. Robin, B.R. Digital storytelling: A powerful technology tool for the 21st century classroom. Theory Pract. 2008, 47, 220–228.
+[CrossRef]
+Disclaimer/Publisher’s Note: The statements, opinions and data contained in all publications are solely those of the individual
+author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to
+people or property resulting from any ideas, methods, instructions or products referred to in the content.
+

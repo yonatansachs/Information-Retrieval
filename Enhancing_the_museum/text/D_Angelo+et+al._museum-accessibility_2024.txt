@@ -1,0 +1,922 @@
+ 
+ 
+ 
+ 
+MUSEUM ACCESSIBILITY AND PEOPLE WITH DISABILITIES: THE CHALLENGE OF CO-
+DESIGNING PATHWAYS 
+ 
+ACCESSIBILITÀ MUSEALE E PERSONE CON DISABILITÀ: LA SFIDA DELLA CO-
+PROGETTAZIONE DEI PERCORSI 
+ 
+Catia Giaconi 
+Università degli Studi di Macerata 
+catia.giaconi@unimc.it 
+ 
+Noemi Del Bianco 
+Università degli Studi di Macerata 
+n.delbianco@unimc.it 
+ 
+Ilaria D’Angelo 
+Università degli Studi di Macerata 
+i.dangelo@unimc.it 
+ 
+Silvia Ceccacci 
+Università degli Studi di Macerata 
+s.ceccacci@unimc.it 
+ 
+Lucia Borsini 
+Università degli Studi della Campania Luigi Vanvitelli 
+lucia.borsini@unicampania.it 
+ 
+Karrie Shogren 
+University of Kansas 
+shogren@ku.edu 
+ 
+Double Blind Peer Review 
+ABSTRACT 
+As the UN Convention on the Rights of People with Disabilities (2006) 
+states, participation in cultural life, recreation, leisure and sport is a 
+full right connected to the level of inclusiveness that people with 
+disabilities can experience. Accordingly, scientific literature upholds 
+how access to culture and social life can foster the Quality of Life of 
+all people. With the direct involvement of people with disability 
+through a participatory methodology, our research group co-
+designed, developed and tested innovative digital solutions 
+incorporating multisensory technologies and accessible storytelling 
+to create an inclusive museum experience. The findings of this study 
+provide valuable insights for the development of inclusive design 
+solutions in museum contexts, promoting technology integration to 
+ensure equal opportunities of participation in social and cultural life. 
+ 
+La Convenzione delle Nazioni Unite sui diritti delle persone con 
+disabilità (2006) sancisce il diritto alla partecipazione alla vita 
+culturale, al tempo libero e allo sport, il quale è strettamente legato 
+al livello di inclusività che le persone con disabilità possono 
+sperimentare. La ricerca scientifica conferma che l’accesso alla 
+cultura e alla vita sociale può migliorare la qualità della vita per tutti. 
+Il nostro gruppo di ricerca ha collaborato direttamente con persone 
+con disabilità nella progettazione, sviluppo e sperimentazione di 
+soluzioni digitali innovative per creare un’esperienza museale 
+inclusiva, integrando tecnologie multisensoriali e una narrazione 
+accessibile. Questo studio fornisce indicazioni per lo sviluppo di 
+soluzioni progettuali inclusive nei contesti museali, promuovendo 
+l’utilizzo delle tecnologie per garantire pari opportunità di 
+partecipazione alla vita sociale e culturale 
+ 
+KEYWORDS 
+Special Pedagogy, Technological Innovation, Museum Accessibility 
+Pedagogia Speciale, Innovazione tecnologica, Accessibilità Museale 
+ 
+Received 29/04/2024 
+Accepted 13/06/2024 
+Published 
+ 
+Citazione 
+D’Angelo, I., Giaconi, C., Del Bianco, N., Borsini, 
+L., Ceccacci, S., & Shogren, K. (2024). Museum 
+accessibility and people with disabilities: the 
+challenge of co-designing pathways. Giornale 
+Italiano di Educazione alla Salute, Sport e 
+Didattica Inclusiva, 8(2), Edizioni Universitarie 
+Romane. 
+Doi:  
+ 
+ 
+Copyright notice: 
+© 2023 this is an open access, peer-reviewed 
+article published by Open Journal System and 
+distributed under the terms of the Creative 
+Commons Attribution 4.0 International, which 
+permits unrestricted  use,  distribution,  and  
+reproduction  in  any medium, provided the 
+original author and source are credited.  
+ 
+gsdjournal.it 
+ISSN: 2532-3296 
+ISBN 978-88-7730-493-3 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+Introduction 
+Contemporary societies are facing new challenges emerging from the generative 
+relationship between territories and institutions concerning the dissemination of 
+information and useful skills for social, disseminating scientific knowledge, and 
+increasing civic awareness (Giaconi et al., in press). Concerning academic contexts, 
+new research paths unfold as part of the Third Mission, which involves creating 
+virtuous and sustainable learning ecosystems characterised by digital and cultural 
+innovation. In this framework, activating valuable processes requires an approach 
+that matures along horizontal trajectories connecting local communities and 
+university areas to fully exploit collaborative networks and alliances’ 
+epistemological and generative validity (Giaconi et al., 2023). Through work moving 
+from theory to practice, in collaboration with key stakeholders, opportunities for 
+active understanding and involvement can be created, leading to the practical 
+application of research results in the territory. The direct responsibility for social 
+change (Varriale et al., 2022; Del Gottardo, Rossiello, 2022) therefore encourages 
+university contexts to play a central role in promoting an inclusive culture, both 
+inside and outside its institution (Varriale et al., 2022). This process allows 
+universities to provide tools and practices, transferring knowledge and enhancing 
+the necessary subject competencies. In this line, the dialogue between universities 
+and the third sector arises naturally alongside the possibility of research oriented 
+towards innovation and the transformation of cultural heritage from an 
+accessibility perspective. This requirement, in harmony with the guarantee and 
+protection of the rights of persons with disabilities to access cultural heritage (UN, 
+2006), allows us to reflect both in terms of physical accessibility (UN, 2006, Article 
+9a) and terms of accessibility to cultural content and experiences (UN, 2006, Article 
+9b). These premises recall how the pedagogical value of culture and education in 
+cultural heritage is functional to social participation and, therefore, to the 
+achievement of significant levels of Quality of Life in persons with disabilities 
+(Giaconi, 2015). Building on these considerations, this contribution will illustrate 
+the redesign process of a museum experience conducted by the research group in 
+Special Pedagogy of the University of Macerata to implement accessibility and 
+cultural inclusion (Mace, 1985; UN, 2006; Schalock, Verdugo Alonso, 2006; ISTAT, 
+2019; Giaconi et al., 2021). 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+1. Museum accessibility: a pedagogical reading  
+The concept of accessibility, in line with the studies of Special Pedagogy (Gimenez, 
+Thomas, 2015; Greek, 2019; Caldarelli, 2023; Giaconi et al., 2023) and as also 
+specified by the UN Convention on the Rights of Persons with Disabilities (UN, 
+2006), goes far beyond the removal of physical barriers (Art. 9a), calling into 
+question also forms of accessibility to cultural content and experiences (Art. 9b). 
+These considerations encourage cultural institutions to reflect on the usability of 
+content and information, ensuring a true involvement in visiting experiences and 
+real opportunities for exploration, participation and learning (Giaconi et al., 2023).  
+Presenting a brief reconnaissance of the guidelines concerning accessibility in 
+places of culture (Rappolt-Schlichtmann, Daley, 2013; Cho, Jolley, 2016; Seale et al., 
+2021; Leahy, Ferri, 2022), including museums, it emerges that more attention is 
+being paid to the issue of physical accessibility.  
+On an international level, we can mention, by way of example, the provisions from 
+the International Council of Museums, the leading non-governmental organisation 
+of museums and their professionals. Over the years, it has issued guidelines (ICOM 
+Accessibility Guidelines) and manuals (ICOM Training Manual: Museums and 
+Accessibility) containing operational guidance and suggestions for museum staff 
+training on accessibility and inclusion. 
+On the European level, the Recommendation of the Committee of Ministers to 
+member States on the European Cultural Heritage Strategy for the 21st century of 
+2017 (Council of Europe, 2017) is one of the main guiding documents for cultural 
+heritage policies1, in which multiple implementation strategies are highlighted, 
+among which we can observe: activities to increase the participation of visitors with 
+physical and sensory disabilities; the design of new paths and ways of presenting 
+content; etc. This plurality of provisions is aimed at responding to the diverse needs 
+of the visiting public, taking into account the plural modes of interacting with and 
+discovering the cultural heritage exhibited. 
+Italy’s most recent and important provisions are the Guidelines for Drafting the Plan 
+for Eliminating Architectural Barriers in Museums, Museum Complexes, 
+Archaeological Areas, and Parks (P.E.B.A) (2018). Again, the main objective is to 
+promote accessible and inclusive cultural places by identifying operational lines to 
+ 
+1 https://rm.coe.int/16806f6a03  
+
+ 
+ 
+ 
+ 
+make cultural resources accessible to a wider audience of visitors, regardless of 
+operating profiles. 
+Entering into the merits of pedagogical considerations about accessibility, in line 
+with the principles of Universal Design for Learning (UDL) (Rappolt-Schlichtmann, 
+Daley, 2013; Savia, 2016), our design focus is directed towards the promotion of 
+flexible solutions able to respond to the complex interaction that is created 
+between the visitor and the museum context (WHO, 2001). In this direction, the 
+use of new technologies, such as Apps, Head Mounted Displays (HMDs), 4D sound 
+environments, haptic devices, etc., can offer media for the design of accessible 
+museum content (Luigini, Panciroli, 2021; Giaconi et al., 2021; Caldarelli, 2023; 
+Giaconi et al., 2023). 
+A museum space that meets accessibility criteria, for instance, concerning people 
+with visual sensory disabilities, can provide plural communication and 
+representation channels, such as the enjoyment of cultural content through haptic 
+exploration (Fusinetti, Empler, 2019) or audio description listening (Fiorucci, 
+Pinnelli, 2013; Del Bianco et al., 2019; Pacinotti, 2019; Perego, 2019). Alongside 
+different perceptions and understandings of information, how people navigate and 
+actively interact with the museum environment may also differ (Rappolt-
+Schlichtmann, Daley, 2013). We can think of those with difficulties in movement, 
+communication, orientation, or spatial organisation. For these reasons, in previous 
+research (Giaconi et al., 2020; Giaconi et al., 2021), we have highlighted how, 
+regarding the functioning profile of people with Autistic Spectrum Disorder who 
+have difficulty creating forward models (Barale et al., 2009), Virtual Reality and 
+Augmented Reality options can respond to their need for anticipation with respect 
+to space exploration. Finally, another element to be considered is the public's 
+engagement, which may vary depending on visitors' background of knowledge, 
+culture, interest, etc., (Rappolt-Schlichtmann, Daley, 2013). Additionally, in this 
+direction, it is important to provide different options, paths and activities that can 
+help increase the visitor's active participation (Del Bianco et al., 2019). Different 
+possibilities of interaction with the museum environment and activities for a 
+customisable engagement can be provided, together with supports and strategies 
+(also technology-based) able to respond to specific personalisation needs (Giaconi 
+et al., 2023). To this end, using Virtual and/or Augmented Reality solutions or 
+Artificial Intelligence can contribute to creating interactive and immersive museum 
+environments capable of enhancing audience engagement (Luigini, Panciroli, 2021; 
+Rossi et al., 2024).  
+
+ 
+ 
+ 
+ 
+In this direction, we will present in the following paragraphs a redesign path of a 
+museum environment to increase its accessibility through innovative and 
+technological solutions and the co-participation of people with disabilities. From 
+describing the research design and the activities carried out, we will present the 
+entire process to customise the museum visit. We will specifically focus on the 
+illustration of a single path co-designed with people with intellectual disabilities for 
+the realisation of accessible museum captions—in Easy-to-Read language—with 
+the support of new technologies, namely Artificial Intelligence. 
+ 
+2. The research design 
+As mentioned in the previous paragraphs, the Special Pedagogy research group 
+from the University of Macerata launched a project, to be conducted between 2022 
+and 2024, to create a museum exhibition that would make the visit experience 
+more accessible. 
+To this end, co-design strategies with people with disabilities were implemented to 
+support the rearrangement procedures through solutions informed by the 
+expertise of the stakeholders. Participatory research (Cornwall, 1995) characterised 
+the project from a methodological point of view, orienting the design, development 
+and implementation of accessibility solutions and distinguishing it for its highly 
+participatory nature and the active involvement of people with disabilities.  
+In particular, focus groups were created (Liamputtong, 2011) involving people with 
+disabilities to map accessibility needs and identify inclusive strategies for 
+implementing the chosen museum path. The participants’ contributions were 
+analysed through Qualitative Content Analysis (Schreier, 2012) to develop a 
+theoretical framework to identify the potential and limits of museum accessibility. 
+The choice of co-designing with people with disabilities allowed us to synergize 
+different skills by creating an inclusive museum context, responding to the real 
+needs of all visitors. 
+For these reasons, the presented project represents a case study (Thomas, Myers, 
+2015), providing insights that can lead to significant transformations in the field of 
+our interest, namely museum accessibility. 
+Based on these assumptions, participatory research was based on the following 
+procedural steps (Giaconi et al., 2023): 
+
+ 
+ 
+ 
+ 
+a. Mapping of critical issues related to the accessibility, both physical and cultural, 
+of the museum context involved in the project (6 months); 
+b. Co-design of integrated solutions with stakeholders to develop and test 
+accessible and inclusive museum paths (6 months); 
+c. Development of integrated solutions aimed at the usability of museum spaces 
+and contents (9 months); 
+d. Re-test of implemented solutions (3 months). 
+With reference to the project’s activities, to redesign a museum environment that 
+meets both physical accessibility and cultural inclusion criteria, the research team 
+was composed of engineers and architects, art historians and archaeologists, 
+pedagogists, Easy-to-Read experts, educators and people with disabilities affiliated 
+with different associations of the Marche region. 
+Regarding the topic discussed in this contribution, we will briefly present the co-
+design phase of integrated solutions with stakeholders to develop and test 
+accessible and inclusive museum paths (procedural step “b”). 
+ 
+3. Co-design of integrated solutions with stakeholders 
+In line with the regulatory provisions on the renewal of museum accessibility and 
+inclusion plans (PEBA, 2018) and in continuity with scientific literature (Balcazar et 
+al., 1998; Giaconi et al., 2021; Giaconi et al., 2023; Paladini et al., 2023; Chiatti et 
+al., 2023), a process of co-design with people with disabilities was initiated to 
+develop new integrated paths to be realised within the museum environment.  
+Specifically, concerning the mapping of critical issues related to both physical and 
+cultural accessibility and to the solutions hypothesised in the focus groups, three 
+macro-paths were formulated (Giaconi et al., 2023), as follows:  
+a) Easy-to-Read (co-design of integrated solutions with people with intellectual 
+disabilities); 
+b) Tactile and Haptic (co-design of integrated solutions with people with sensory 
+disabilities); 
+c) Virtual Reality (VR) and Augmented Reality (AR) (co-design of integrated 
+solutions with people with Autistic Spectrum Disorder). 
+
+ 
+ 
+ 
+ 
+In the next paragraphs, we will detail the “Easy-to-Read” path (a) and the 
+implementation phases carried out during the co-design of integrated solutions 
+with people with intellectual disabilities.  
+For the “Tactile and Haptic” path (b), the co-design of integrated solutions with 
+people with sensory disabilities involved implementing Braille captions, creating 
+LOGES# tactile paths, and realising 3D reproductions of significant museum objects. 
+In addition, a haptic station that simulates the sense of touch in a virtual 
+environment was created. The tactile path was also integrated with a Tactile Map 
+and provided different types of tactile tiles in the flooring, each corresponding to 
+specific tactile codes2.  
+With reference to the “Virtual Reality (VR) and Augmented Reality (AR)” path (c), 
+the research group focused on the development of immersive and innovative 
+environments for multimodal interaction, in particular for people with Autistic 
+Spectrum Disorder. The co-design phase began with data collection to construct 
+the virtual prototype. The working group chose the main rooms that characterise 
+the museum, taking spherical photos with a 360° camera and creating three-
+dimensional environments. Using different tools and software3, the prototype was 
+calibrated according to the principles of Universal Design for Learning (Rappolt-
+Schlichtmann, Daley, 2013; Savia, 2016) and was structured to meet the needs of 
+people with Autistic Spectrum Disorder (e.g. predictability and anticipation of 
+spaces; the need for real and visual images to understand reality; accessibility to 
+cultural objects and content; clarification of symbols, codes and signs in the 
+museum) (Giaconi et al., 2021). 
+Lastly, the three routes were designed to be used in an integrated way. These 
+solutions were included in an application developed for the customisation of 
+visiting routes (Giaconi et al., 2023). The main access route for the provision of 
+customised solutions is, in fact, an App that, thanks to the use of multiple 
+languages, innovative interactive modes and customizable solutions, makes the 
+ 
+2 These codes include directional indications, warnings of passable hazard, attention-service, required 
+turn at 90°, X or T crossings, and removable tactile strips to signal stairs and handrails. 
+3 Among the main tools used, we mention: a spherical camera Ricoh Theta SC2, a smartphone equipped 
+with Android 6.0 operating system, the Ricoh Theta S applications, Ricoh Theta Converter Pro, 
+Retouch3 and Marzipano Tool4 which is a free web service based on an open-source library. In 
+particular, the file compressed in.zip format returned by Marzipano Tool, is composed mainly of 
+JavaScript, CSS and HTML code, being freely editable, it is possible to rewrite it in some places to get 
+a better customisation of the contents. 
+
+ 
+ 
+ 
+ 
+museum experience accessible to an increasingly diverse audience (Fig. 1). In 
+addition, among its functions, the App allows the use of content and spaces also on 
+occasions other than the in-person museum visit. These prerequisites facilitate the 
+design and organisation of educational activities, both before the visit to the 
+museum and as a support to the consolidation of learning after the museum 
+experience. The intuitive interface, designed according to the principles of 
+Universal Design for Learning (Story, Mueller, Mace, 1998; Rappolt-Schlichtmann, 
+Daley, 2013) integrates tactile inputs, voice and visual information, allowing users 
+to interact with virtual objects in a realistic and engaging way, thus making usable, 
+in an alternative way, the artefacts stored in the museum. 
+ 
+Fig. 1 – Application developed for the customisation of visit routes 
+ 
+ 
+4.1 The “Easy-to-Read” path 
+There are numerous useful international guidelines and recommendations 
+(Tronbacke, 1997; Freyhoff et al., 1998; Fajardo et al., 2014; Bernabé Caro, Orero, 
+2019; Madina, Gonzalez-Dios, Siegel, 2023) for the design of accessible information, 
+through clear, direct and simple language. 
+Adapting documents in Easy-to-Read language is a cyclical process and involves 
+three procedural steps: analysis, transformation and validation. Through these 
+
+ 
+ 
+ 
+ 
+steps, the active involvement of people with intellectual disabilities and experts in 
+Easy-to-Read allows the production of information that effectively meets 
+accessibility criteria. However, such participation requires a significant 
+commitment and use of human resources, and scholars have sought alternative 
+solutions (Suárez-Figueroa et al., 2020). In this regard, several semi-automatic 
+systems based on Artificial Intelligence have been proposed, such as Large 
+Language Models (LLMs) like ChatGPT, launched by OpenAI. These promising tools 
+can give significant contributions to solving natural language processing tasks (Min 
+et al., 2023; Liu et al., 2023; Araújo, Aguiar, 2023) to support the analysis of texts 
+and verify their compliance with the Easy-to-Read guidelines (Suárez-Figueroa et 
+al., 2020). In detail, several methods of automatic simplification of sentences based 
+on supervised and unsupervised machine learning techniques have been proposed 
+over the years (Nisioi et al., 2017; Kumar et al., 2020). With reference, for example, 
+to automatically transform reading materials based on Easy-to-Read guidelines, a 
+relevant approach that can be applied is the so-called “simplification of sentences”. 
+Such an approach consists of “modifying the content and structure of a text to make 
+it easier to read and understand, preserving the main idea and approaching the 
+original meaning” (Alva-Manchego, Scarton, Specia, 2020, p. 135). 
+These considerations encourage us to reflect on using the same semi-automatic 
+systems based on Artificial Intelligence (specifically the Large Language Model 
+ChatGPT4) since they are functional to support adapting information in Easy-to-
+Read. Being aware that AI systems can offer “opportunities to improve and multiply 
+the possibilities of human action” (Floridi, 2022, p.284), we intend to use such 
+systems as possible tools to optimise co-design processes rather than substituting 
+them.  
+In this sense, using LLMs to create Easy-to-Read texts was carried out in full 
+compliance with the guiding principles proposed by the Inclusion Europe 
+movement5. Therefore, in all the procedural steps of transforming the texts into 
+Easy-to-Read through the use of LLM systems, up to the testing and re-testing of 
+the content produced, people with intellectual disabilities experienced in Easy-to-
+Read were involved in verifying effective adherence to the criteria of the same 
+guidelines and those of content accessibility. 
+ 
+4 This system is reported as the best in terms of writing, compared to user ratings (Uricchio et al., in 
+press). 
+5 https://www.inclusion-europe.eu/easy-to-read/ 
+
+ 
+ 
+ 
+ 
+The specific implementation phases carried out are illustrated below. 
+ 
+4.1.1 The Implementation Protocol 
+In the preliminary phase, the level of knowledge of ChatGPT related to the Easy-to-
+Read guidelines was assessed by submitting to the chat questions to assess its 
+adherence to guidelines.  
+In line with the reference literature (Min et al., 2023), a test consisting of 10 open 
+questions was prepared, formulated by the research team assisted by experts on 
+the Easy to Read Guidelines, to which the LLM responded freely, without any 
+predefined structure.  
+The questions were sent to various versions of ChatGPT (3.5 and 4.0) using the 
+OpenAI API with a Python script.  
+The results showed that ChatGPT 4.0 appears to know Easy-to-Read guidelines well. 
+Based on the data emerging from this evaluation, a specialised prompt was built to 
+direct ChatGPT 4.0 towards producing a text strictly adhered to the Easy-to-Read 
+guidelines. In detail, the prompt included: a) a contextual background to direct the 
+model to act as an accessibility expert; B) a detailed presentation of the Easy-to-
+Read guidelines; and c) explicit instructions to apply the guidelines in 
+simplifications. 
+Subsequently, the “trained” tool to produce simplified information was used to 
+draft 10 simplified museum captions.  
+These products of “trained” ChatGPT 4.0 were subjected to the evaluation of the 
+working group, composed of experts in Easy-to-Read with and without disabilities 
+(people 
+with 
+intellectual 
+disabilities, 
+pedagogists, 
+art 
+historians, 
+and 
+archaeologists), who assessed their specific adherence to the guidelines through a 
+Likert scale from 1 to 5: 
+1- Completely incorrect: it significantly deviates from the guidelines, it does not 
+meet the basic standards for an easy understanding. 
+2- Not sufficiently correct: it shows an attempt to align with the guidelines but fails 
+to meet several important aspects. 
+3- Sufficiently correct: it adequately meets the guidelines, ensuring a basic level of 
+easier understanding. 
+
+ 
+ 
+ 
+ 
+4- More than sufficiently correct: it meets the basic requirements of the guidelines 
+but could be improved. 
+5- Completely correct: it adheres perfectly to the guidelines. 
+In addition to these quantitative assessments, experts were asked to provide 
+qualitative feedback on each text, highlighting strengths and areas of improvement. 
+This dual approach made it possible to fully understand the alignment of each text 
+with the Easy-to-Read principles and to identify the specific elements that 
+contributed or not to the accessibility criteria (Table 1). The quantitative and 
+qualitative data collected during this re-test phase guided the subsequent phases 
+of re-designing the system and optimizing the texts. 
+ 
+ 
+Table 1 – Easy-to-Read facilitation process: from the original text to the latest 
+version prepared by the research team after the review process. 
+ 
+
+ 
+ 
+ 
+ 
+Testo Originale6 
+Ultima versione del testo facilitato, 
+realizzato grazie al processo di co-
+progettazione7 
+ 
+6 Authors’ traduction of the original text: “The Picenian aristocracies used to gather for common meals 
+(banquets or symposia). 
+This was a custom typical of many ancient civilisations and its introduction in the Picenian area is 
+linked to an influence from the Greek world, also well attested among the Etruscans. 
+In the grave goods of the tombs of Tolentino we often find objects that can be traced back to the banquet, 
+especially vases related to the pouring of wine. 
+Among the most representative vessels we find: craters, large vases for preparing wine; stamnoi and 
+amphorae, medium-large vessels for storing liquids; small jugs (oinochoi); vessels of various shapes 
+used for drinking such as kilikes, large bowls on feet with two handles, and skyphoi, smaller and deeper. 
+Many of these objects are imported from Greece, Magna Graecia or Etruria and testify to the wealth of 
+the Picenian aristocracies and their adherence to a Mediterranean culture. 
+The scenes depicted on some of the objects found and, in particular, on the vases, are often related to 
+myth or typical Greek banquet customs such as representations of Heracles or Dionysian scenes. If 
+Dionysus is in fact the god who gave wine to mankind, Heracles constitutes the symbolic ﬁgure of the 
+aristocracies as a man welcomed among the divinities for his merits. 
+At the banquet, other objects were also used for both the preparation and consumption of wine and 
+meat. In fact, we find, among the accompanying objects, basins and other bronze vessels, strainers and 
+graters, as well as winged and skewered. The preparation of wine was, in ancient times, a rather complex 
+process involving, for example, the use of spices and flavourings, dilution with water, heating and 
+ﬁltering”. 
+7 Authors’ traduction of the final version of the text: “The richest and most powerful Picenian families 
+were called aristocrats. Aristocratic families gathered to have meals together.  These meals were called 
+banquets or symposia. In the tombs of Tolentino we often find objects that were used at banquets to 
+show that the person was important. Among these objects we find vases that were used to mix wine 
+with water and some spices and aromas. In ancient times, in fact, it took a long time to prepare wine 
+and that is why jars were used. Vases were therefore very important objects that were buried together 
+with the person, i.e. they were part of the grave goods. On these vases are depicted the images of 
+Dionysus and Heracles. Dionysus is the god of wine. Heracles is such a heroic man that he was 
+considered a god. Heracles represents what aristocratic families wanted to do and be. In the grave goods 
+of the Tolentino tombs, these vases were found: Craters, which are large vessels for preparing wine; 
+Stamnoi and amphorae, which are smaller vessels for storing liquids; Small jugs (oinochoi); Other 
+drinking vessels, either cup-shaped (kilikes) or smaller (skyphoi)”. 
+ 
+ 
+
+ 
+ 
+ 
+ 
+Le aristocrazie picene usavano riunirsi 
+in occasione di pasti comuni (banchetti 
+o simposi). 
+Si tratta di un’usanza tipica di molte 
+civiltà antiche e la sua introduzione in 
+area picena è legata ad un’influenza 
+proveniente dal mondo greco, ben 
+attestata anche tra gli Etruschi. 
+Nei corredi delle tombe di Tolentino 
+troviamo spesso oggetti riconducibili al 
+banchetto, in particolar modo 
+vasellame legato alla mescita del vino. 
+Tra i vasi più rappresentativi troviamo: 
+●  crateri, grandi vasi per la 
+preparazione del vino; 
+● stamnoi e anforette, vasi di 
+medio-grandi dimensioni utili 
+alla conservazione dei liquidi; 
+● piccole brocche (oinochoi); 
+● recipienti di varia forma 
+utilizzati per bere come le 
+kilikes, larghe coppe su piede 
+con due anse, e gli skyphoi, più 
+piccoli e profondi. 
+Molti di questi oggetti sono importati 
+dalla Grecia, dalla Magna Grecia o 
+dall’Etruria e testimoniano la ricchezza 
+delle aristocrazie picene e la loro 
+adesione ad una cultura mediterranea. 
+Le scene rappresentate su alcuni degli 
+oggetti rinvenuti e, in particolar modo, 
+sui vasi, sono spesso relative al mito o 
+Le famiglie picene più ricche e potenti si 
+chiamavano aristocratiche. 
+Le famiglie aristocratiche si riunivano 
+per fare pasti insieme.   
+Questi pasti si chiamano banchetti o 
+simposi.  
+Nelle tombe di Tolentino troviamo 
+spesso oggetti che si usavano nei 
+banchetti per dimostrare che quella 
+persona era importante.  
+Tra questi oggetti troviamo dei vasi che 
+venivano usati per miscelare il vino con 
+l’acqua e alcune spezie e aromi. In 
+antichità, infatti, serviva molto tempo 
+per preparare il vino e per questo 
+motivo si usavano i vasi.  
+I vasi erano quindi oggetti molto 
+importanti che venivano seppelliti 
+insieme alla persona, ovvero facevano 
+parte del corredo funebre.  
+Su questi vasi sono raffigurate le 
+immagini di Dioniso ed Eracle. 
+Dionosio è il dio del vino. 
+Eracle è  un uomo tanto Eroico che era 
+considerato un Dio. 
+Eracle rappresenta quello che le 
+famiglie aristrocatiche volevano fare ed 
+essere.   
+Nei corredi funebri delle tombe  di 
+Tolentino sono stati trovati questi vasi:  
+
+ 
+ 
+ 
+ 
+alle usanze tipiche del banchetto greco 
+come le rappresentazioni di Eracle o di 
+scene dionisiache. Se Dioniso è infatti il 
+dio che ha donato il vino agli uomini, 
+Eracle costituisce la ﬁgura simbolo delle 
+aristocrazie in quanto uomo accolto tra 
+le divinità per i suoi meriti. 
+In occasione del banchetto anche altri 
+oggetti venivano utilizzati sia per la 
+preparazione 
+e il consumo del vino che delle carni. 
+Troviamo infatti, tra gli oggetti di 
+corredo, bacini e altri recipienti in 
+bronzo, colini e grattugie ma anche alari 
+e spiedi. La preparazione del vino era, 
+anticamente, un processo piuttosto 
+articolato che prevedeva, ad esempio, 
+l’uso di spezie e aromi, la diluizione con 
+acqua, il riscaldamento e il ﬁltraggio. 
+Crateri, che sono grandi vasi per 
+preparare il vino; 
+Stamnoi e anforette, che sono vasi più 
+piccoli per conservare i liquidi; 
+Piccole brocche (oinochoi); 
+Altri vasi per bere, a forma di coppa 
+(kilikes) o più piccoli (skyphoi). 
+ 
+4. Conclusions 
+This contribution highlights how, within cultural spaces, particularly museums, it is 
+possible to realise paths aimed at protecting and guaranteeing plural forms of 
+accessibility. Such an approach is supported by guidelines that emphasise the 
+cruciality of museums in promoting individual and collective identity by 
+constructing an accessible heritage (Council of Europe, 2017; P.E.B.A., 2018; ICOM, 
+2022). According to these considerations, museums can increase their credibility 
+and authority by committing to cultural accessibility and building relationships with 
+government institutions and the community (ICOM, 2022). Therefore, it is essential 
+to launch projects involving increasing collaborations with stakeholders to promote 
+an increasingly inclusive culture.  
+As also highlighted in other works (Giaconi et al., 2021; Shogren et al., 2022), the 
+active involvement of persons with disabilities can play a significant role in the 
+development of cultural contexts accessible to all. The starting point was 
+
+ 
+ 
+ 
+ 
+understanding the needs that people with intellectual and sensory disabilities 
+experience in museum contexts and then discussing and designing the 
+requirements of the proposals to be collectively developed. This study highlights 
+how co-design work with people with disabilities can foster the development and 
+enhancement of inclusive museum pathways, creating synergies within which the 
+museum’s cultural activities and social inclusion mutually reinforce each other 
+(Giaconi et al., 2021; Shogren et al., 2022). Co-designing with different 
+professionals and people with disabilities represents a significant process that has 
+led to the creation of inclusive museum paths and enhancing the personal and 
+social empowerment of the people involved.  
+In addition, this participatory approach made it possible to accurately identify the 
+essential functionalities and specific requirements of the tested digital solutions. In 
+line with the principles of UDL (Rappolt-Schlichtmann, Daley, 2013; Savia, 2016) and 
+with relevant literature (Fiorucci, Pinnelli, 2013; Del Bianco et al., 2019; Pacinotti, 
+2019; Perego, 2019), it seems significant in our opinion to promote a synergistic 
+integration between technology and innovation, useful to increase the active 
+involvement of all museum users (Solima, 2007; Carci, Gaforio, Gamper, 2019). 
+Specifically, we focused on the accessibility of simplified texts in Easy-to-Read, 
+exploiting AI’s potential and the competencies of people with disabilities directly 
+involved (Floridi, 2022). In this direction, future research trajectories could be 
+centred around developing strategies for co-designing prompts to facilitate textual 
+content with people with intellectual disabilities experienced in Easy-to-Read. 
+As this work underlines, the focus on reciprocity and relationality is crucial to 
+creating generative spaces for development and further capitalising on the capacity 
+of sharing and mutual involvement (Giaconi et al., 2023). Through micro and macro 
+actions in ecosystemic contexts, it is possible to promote the active participation of 
+people with disabilities and thus develop an inclusive culture (Molinari et al., 2022). 
+Only include indispensable images or drawings or graphics in the article and check 
+that they are saved in a format readable by all computers. Images, graphs and 
+tables must be captioned with a number. References in the article to the image 
+should indicate its type and number (e.g. Fig. 1; Graph.2; Tab. 3). 
+ 
+
+ 
+ 
+ 
+ 
+Table 1 (description) 
+ 
+References 
+Alva-Manchego F., Scarton C., Specia L. (2020).  Data-driven sentence 
+simplification: survey and benchmark. Computational Linguistic, 46(1), 135–187. 
+https://doi.org/10.1162/COLIa00370  
+Araújo S., Aguiar M. (2023, June). Simplifying Specialized Texts with AI: A ChatGPT-
+Based Learning Scenario. In International Conference in Information Technology 
+and Education (pp. 599-609). Singapore:Springer Nature Singapore. 
+Balcazar F. E., Keys C. B., Kaplan D. L., Suarez-Balcazar, Y. (1998). Participatory 
+action research and people with disabilities: Principles and challenges. Canadian 
+Journal of rehabilitation, 12, 105–112. Retrieved by: home.interlog.coml-
+kroghlkroghlpg105.html 
+Barale F., Politi P., Boso M., Broglia D., Orsi P., Pace A., Di Nemi S. U. (2009). 
+L’autismo a partire dalla sua evoluzione nell’età adulta: nuove conoscenze, criticità, 
+implicazioni abilitative. NÓOς, 3, 257–91. 
+Bernabé C. R., Orero P. (2019). Easy to Read as Multimode Accessibility Service. 
+Hermēneus. 
+Revista 
+de 
+Traducción 
+e 
+Interpretación, 
+21, 
+53–74. 
+https://doi.org/10.24197/her.21.2019.53-74 
+Caldarelli A. (2023). Linee di pedagogia speciale per l’accessibilità culturale: uno 
+studio di caso. Journal of Inclusive Methodology and Technology in Learning and 
+Teaching, 
+3(1sup), 
+1–7. 
+Retrieved 
+by 
+https://www.inclusiveteaching.it/index.php/inclusiveteaching/article/view/90  
+Carci G., Caforio A., Gamper C. (2019). Tecnologie digitali nei musei: realtà 
+aumentata, apprendimento e audience development. Form@ re, 19(1), 274–286. 
+Chiatti C., Mogianesi F. M., Giaconi C. (2023). Musei Inclusivi: esperienze sensoriali 
+e immersive per l’accessibilità culturale. In Borsini L., Marfoglia A. (a cura di), 
+
+ 
+ 
+ 
+ 
+Didattiche Speciali e sfide inclusive: Esperienze e studi di caso per la formazione 
+continua (pp. 96-113), Londra:Edizioni Accademiche Italiane. 
+Cho H., Jolley A. (2016). Museum education for children with disabilities: 
+Development of the nature senses traveling trunk. Journal of Museum Education, 
+41(3), 220–229. https://doi.org/10.1080/10598650.2016.1193313 
+Circolare n.26 del 25/7/2018, Ministero per i beni e le attività culturali (Mibac), 
+Direzione Generale Musei, Linee guida per la redazione del Piano di eliminazione 
+delle barriere architettoniche (P.E.B.A.) nei musei, complessi monumentali, aree e 
+parchi archeologici. 
+Convenzione quadro del Consiglio d’Europa sul valore del patrimonio culturale per 
+la Società (CETS no. 199), Faro, 2005. 
+Cornwall A., Jewkes, R. (1995). What is participatory research?. Social science & 
+medicine, 41(12), 1667–1676. https://doi.org/10.1016/0277-9536(95)00127-S 
+Decreto Ministeriale 27 giugno 2017, n. 582. “Linee guida per la redazione del piano 
+per l’eliminazione delle barriere architettoniche (P.E.B.A.) nei musei, complessi 
+monumentali aree e parchi archeologici’’. Allegato a “Gruppo di lavoro per la 
+redazione di provvedimenti anche a livello normativo inerenti il superamento delle 
+barriere culturali, cognitive e psicosensoriali nei luoghi della cultura di competenza 
+del Ministero per il bene e le attività culturali aperti al pubblico Nella fattispecie 
+musei, monumenti, aree e parchi archeologici’’. Ministero della Cultura. 
+Del Bianco N., Caldarelli A., D’Angelo I., Crescimbeni M. (Eds.) (2019). L’Escluso 2. 
+Nuove storie di resilienza per non vivere infelici e scontenti. Traiettorie Inclusive, 2, 
+Milano:FrancoAngeli 
+Del Gottardo E., Rossiello C. M. (2022). Terza missione e innovazione sociale: lo 
+spin-off universitario “Io faccio futuro”. In Pavone M. et al. (a cura di), Un ponte tra 
+l’Università e mondo del lavoro per l’inclusione e la vita indipendente (pp. 220-233). 
+Milano:FrancoAngeli. 
+Fajardo I., Ávila V., Ferrer A., Tavares G., Gómez M., & Hernández A. (2014). Easy‐
+to‐read texts for students with intellectual disability: linguistic factors affecting 
+comprehension. Journal of applied research in intellectual disabilities, 27(3), 212–
+225.  https://doi.org/10.1111/jar.12065 
+
+ 
+ 
+ 
+ 
+Fiorucci A., Pinnelli S. (2013). Audio descrizione e disabilità visiva [Audio description 
+and visual disability]. Italian Journal of special education for inclusion, 1(1), 133–
+147. 
+Floridi L. (2022). Etica dell’intelligenza artificiale: Sviluppi, opportunità, sfide. 
+Cortina:Raffaello Editore. 
+Freyhoff G., Hess G., Linda K., Menzel E., Bror Y., Vander Veken K. (1998). Make It 
+Simple, European Guidelines for the Production of Easy-to-Read Information for 
+People with Learning Disability. Brussels: International League of Societies for the 
+Mentally Handicapped. 
+Giaconi C., Ascenzi A., Del Bianco N., D’Angelo I., Capellini S. A. (2021). Virtual and 
+Augmented Reality for the Cultural Accessibility of People with Autism Spectrum 
+Disorders: A Pilot Study. International Journal of the Inclusive Museum, 14(1), 95–
+106. https://doi.org/10.18848/1835-2014/CGP/v14i01/95-106  
+Giaconi C., Patera S., Borsini L., Scotta D., D’Angelo I., Del Bianco N. (in press). Il 
+ruolo della Pedagogia Speciale per la Terza Missione e l’Impatto Sociale tra pratiche 
+trasformative e processi emancipatori. Education Sciences & Society, (1/2024). 
+Giaconi C. (2015). Qualità della vita e adulti con disabilità. Percorsi di ricerca e 
+prospettive inclusive. Milano:FrancoAngeli. 
+Giaconi C., Taddei A., Del Bianco N., Caldarelli A., D’Angelo I. (2020). Dalla “voce 
+degli studenti” alla co-progettazione di percorsi inclusivi: uno studio di caso. SIRD, 
+2, 186–193. 
+Giaconi C., Taddei A., Del Bianco N., D’Angelo I., Ceccacci S. (2023). Special 
+pedagogy in Innovative Ecosystems: a pilot project for museums accessibility. 
+Italian 
+Journal 
+of 
+Special 
+Education 
+for 
+Inclusion, 
+11(2), 
+24–34. 
+https://doi.org/10.7346/sipes-02-2023-02 
+Gimenez, J. and Thomas, P. (2015) ‘A Framework for usable pedagogy: Case studies 
+towards accessibility, criticality and visibility’, in Lillis, T, Harrington, K., Lea, M. and 
+Mitchell, S. (2015). (eds) Working with academic literacies: case studies towards 
+transformative practice, Parlor Press, Perspectives on Writing Series. Open access 
+publication available at https://wac.colostate.edu/books/perspectives/lillis/ 
+Greco G. M. (2019). Towards a pedagogy of accessibility: The need for critical 
+learning spaces in media accessibility education and training. Linguistica 
+
+ 
+ 
+ 
+ 
+Antverpiensia, New Series–Themes in Translation Studies, 18, 23–46. 
+https://doi.org/10.52034/lanstts.v18i0.518 
+International Council of Museums [ICOM]. (2022). XXVI General Conference 20‐28 
+august. Prague. https://prague2022.icom.museum/  
+Istituto Nazionale di Statistica [Istat] (2019). Conoscere il mondo della disabilità. 
+Persone, relazioni e istituzioni. Rome:Istituto Nazionale di Statistica 
+Kumar, Dhruv, Lili Mou, Lukasz Golab, and Olga Vechtomova. 2020. Iterative edit-
+based unsupervised sentence simplification. In Proceedings of the 58th Annual 
+Meeting of the Association for Computational Linguistics, pages 7918–7928, Online. 
+https://doi.org/10.18653/v1 /2020.acl-main.707 
+Leahy A., Ferri D. (2022). Barriers and facilitators to cultural participation by people 
+with disabilities: a narrative literature review. Scandinavian Journal of Disability 
+Research, 24(1), 68–81. https://doi.org/10.16993/sjdr.863 
+Liamputtong P. (2011). Focus group methodology: Principle and practice. Thousand 
+Oaks: Sage Publications. 
+Liu Y., Han T., Ma S., Zhang J., Yang Y., Tian J., Ge B. (2023). Summary of chatgpt-
+related research and perspective towards the future of large language models. 
+Meta-Radiology, 100017. https://doi.org/10.1016/j.metrad.2023.100017 
+Luigini A., Panciroli C. (2018). Ambienti digitali per l’educazione all’arte e al 
+patrimonio. Milano:FrancoAngeli. 
+Mace R. (1985). Universal Design: Barrier-Free Environments for Everyone. 
+Designer’s West, 33(1), 147–152. 
+Madina M., Gonzalez-Dios I. Siegel M. (2023). Easy-to-Read in Germany: A Survey 
+on its Current State and Available Resources. 10th Language & Technology 
+Conference: Human Language Technologies as a Challenge for Computer Science 
+and Linguistics.  https://doi.org/10.48550/arXiv.2306.03189  
+Min B., Ross H., Sulem E., Veyseh A. P. B., Nguyen T. H., Sainz O., Roth D. (2023). 
+Recent advances in natural language processing via large pre-trained language 
+models: 
+A 
+survey. 
+ACM 
+Computing 
+Surveys, 
+56(2), 
+1–40. 
+https://doi.org/10.1145/3605943 
+Molinari A., Cacciapaglia M., Indellicato R., Sandrini S., Marcone V. M. (2022). 
+Rethinking Enabling Educational and Training Ecosystems in the Perspective of 
+
+ 
+ 
+ 
+ 
+Reciprocity. 
+Formazione 
+& 
+insegnamento, 
+20(1), 
+1028–1041. 
+https://doi.org/10.7346/-fei-XX-01-22_92 
+Nisioi S., Štajner S., Ponzetto S. P., Dinu L. P. (2017, July). Exploring neural text 
+simplification models. In Proceedings of the 55th annual meeting of the association 
+for computational linguistics (volume 2: Short papers) (pp. 85-91). 
+Pacinotti A. (2019). Linguaggio, relazione ed empatia: audiodescrizione e 
+accessibilità museale. Rivista Internazionale di Tecnica della Traduzione, 21, 171–
+182. https://doi.org/10.13137/2421-6763/29129  
+Paladini P., Ceccacci S., Caldarelli A., D’Angelo I., Giaconi C. (2023). Percorsi di 
+accessibilità culturale: il museo tra inclusione e tecnologia. In C. Giaconi, I. 
+D’Angelo, A. Marfoglia, C. Gentilozzi (a cura di), Ecosistemi formativi inclusivi (pp. 
+101-114), Milano: FrancoAngeli. 
+Perego E. (2019). Into the language of museum audio descriptions: a corpus‐based 
+study. 
+Perspectives, 
+27(3), 
+333–349. 
+https://doi.org/10.1080/0907676X.2018.1544648 
+Pinnelli S., Ruggieri M. C. (2021). Il Museo come vettore di inclusione e 
+partecipazione: l’accessibilità nel Museo Archeologico di Taranto. Italian Journal of 
+Special Education for Inclusion, 9(2), 077–093. https://doi.org/10.7346/sipes-02-
+2021-09 
+Rappolt-Schlichtmann G., Daley S. G., Lim S., Lapinski S., Robinson K. H., Johnson M. 
+(2013). Universal Design for Learning and elementary school science: Exploring the 
+efficacy, use, and perceptions of a web-based science notebook. Journal of 
+educational psychology, 105(4), 1210–1225. https://doi.org/10.1037/a0033217 
+Rossi M., Berardinetti V., Peconio G., & Simonetti C. (2024). Didattica Museale e 
+Realtà Virtuale: quali prospettive educative?. Nuova Secondaria, (6), 381–391. 
+http://digital.casalini.it/5748622  
+Savia G. (2016). Universal Design for Learning: La Progettazione Universale per 
+l’Apprendimento per una didattica inclusiva. Trento:Edizioni Centro Studi Erickson. 
+Schalock R. L., Verdugo M. A., Braddock D. L. (2002). Handbook on quality of life for 
+human service practitioners. Washington, DC: American Association on Mental 
+Retardation. 
+Schreier M. (2012). Qualitative content analysis in practice. London: Sage. 
+
+ 
+ 
+ 
+ 
+Seale J., Garcia Carrizosa H., Rix J., Sheehy K., Hayhoe S. (2021). A participatory 
+approach to the evaluation of participatory museum research projects. 
+International Journal of Research & Method in Education, 44(1), 20–40. 
+https://doi.org/10.1080/1743727X.2019.1706468 
+Shogren K.A., Caldarelli A., Del Bianco N., D’Angelo I., Giaconi C. (2022). Co 
+designing inclusive museum itineraries with people with disabilities: A case study 
+from self-determination. Education Sciences & Society, 2, 214–226. 
+Solima L. (2007). Nuove tecnologie della comunicazione. Economia della Cultura, 
+17(3), 365–376. https://doi.org/10.1446/25469  
+Story M.F., Mueller J.L., Mace R.L. (1998). The universal design file: Designing for 
+people of all ages and abilities. Center for Universal Design. 
+Suárez-Figueroa M.C., Ruckhaus E., López-Guerrero J., Cano I., Cervera Á. (2020). 
+Towards the Assessment of Easy-to-Read Guidelines Using Artificial Intelligence 
+Techniques. In Miesenberger, K., Manduchi, R., Covarrubias Rodriguez M., Peňáz P. 
+(eds.) Computers Helping People with Special Needs. ICCHP 2020. Lecture Notes in 
+Computer Science, (12376). Springer:Cham. 
+Thomas G., Myers K. (2015). The anatomy of the case study. The Journal for 
+Decision Makers, 41(4) 344–345. http://digital.casalini.it/9781473926844  
+Tronbacke B. (1997). Guidelines for Easy-to-Read Materials. IFLA:The Hague. 
+United Nations (2006). Convention on The Rights of Persons with Disabilities. UN, 
+New York 
+Uricchio T., Ceccacci S., D’Angelo I., Del Bianco N., Giaconi C. (in press). Investigating 
+Openai's Chatgpt Capabilities To Improve Accessibility of Textual Information: An 
+Explorative Study. HCII. 
+Varriale L., Volpe T., Briganti P. (2022). Il ruolo delle università per la promozione 
+della cultura dell’inclusione interna ed esterna. In Pavone M. et al. (a cura di), Un 
+Ponte tra Università e mondo del lavoro per l'inclusione e la Vita Indipendente (pp. 
+191-206), Milano:FrancoAngeli. 
+Vaz R., Freitas D., Coelho A. (2020). Blind and visually impaired visitors’ experiences 
+in museums: increasing accessibility through assistive technologies. The 
+International 
+Journal 
+of 
+the 
+Inclusive 
+Museum, 
+13(2), 
+57–80. 
+https://doi.org/10.18848/1835-2014/CGP/v13i02/57-80  
+

@@ -1,0 +1,1032 @@
+Museum Management and Curatorship
+ISSN: (Print) (Online) Journal homepage: www.tandfonline.com/journals/rmmc20
+Inclusive museum audio guides: ‘guided looking’
+through audio description enhances memorability
+of artworks for sighted audiences
+Rachel Hutchinson & Alison F. Eardley
+To cite this article: Rachel Hutchinson & Alison F. Eardley (2021) Inclusive museum audio
+guides: ‘guided looking’ through audio description enhances memorability of artworks
+for sighted audiences, Museum Management and Curatorship, 36:4, 427-446, DOI:
+10.1080/09647775.2021.1891563
+To link to this article:  https://doi.org/10.1080/09647775.2021.1891563
+© 2021 The Author(s). Published by Informa
+UK Limited, trading as Taylor & Francis
+Group
+Published online: 03 Mar 2021.
+Submit your article to this journal 
+Article views: 6898
+View related articles 
+View Crossmark data
+Citing articles: 22 View citing articles 
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=rmmc20
+
+Inclusive museum audio guides: ‘guided looking’ through
+audio description enhances memorability of artworks for
+sighted audiences
+Rachel Hutchinson and Alison F. Eardley
+Psychology, School of Social Sciences, University of Westminster, London, UK
+ABSTRACT
+Museums aim to oﬀer engaging and memorable visitor experiences,
+but their visuo-centric bias can prove challenging for people both
+with and without sight. Audio Description was developed to
+convey visual information through verbal description to blind and
+partially
+sighted
+audiences.
+However,
+cognitive
+psychology
+suggests it could enhance memorability for sighted visitors by
+stimulating ‘guided looking’. In this study, three groups of
+participants viewed nine photographs from the Museum of
+London’s collections, with either no audio, a standard audio guide
+or an audio descriptive guide. Enjoyment and emotional responses
+were similar for all groups. However, one month later, audio
+participants recalled more photos and were more likely to have re-
+engaged with the collection. Crucially, audio descriptive guide
+participants recalled most details about the photos. This suggests
+that inclusive audio descriptive guides could enhance access and
+memorability for sighted visitors, as well as expanding crucial
+access provisions for blind and partially sighted people.
+ARTICLE HISTORY
+Received 21 November 2020
+Accepted 14 February 2021
+KEYWORDS
+Inclusive design; museums;
+access; interpretation;
+memory; visual impairment
+Introduction
+Museums in the twenty-ﬁrst century are seeking to become outward looking, visitor
+focused institutions that engender audience empowerment (Sandell 2003). As such,
+they strive to facilitate positive change through social inclusion, at an individual, commu-
+nity and societal level (Sandell 2003). Despite these ambitious aims, museums are per-
+ceived by many as elite cultural institutions which fail to be relevant or representative
+(Mendoza 2017). In order to succeed, museums arguably not only need to broaden
+their audiences to include all sectors of society, but they also need to provide their visi-
+tors, both new and existing, with an engaging and memorable experience. It is therefore
+crucial for museums to expand the ways in which they engage with new and existing
+audiences in order to meet their social inclusion agendas.
+Visitors with disabilities may feel particularly excluded when it comes to museum visit-
+ing. Although museums are bound by legislation to oﬀer access to culture (e.g., Americans
+with Disabilities Act, 1990; UK, Equality Act, 2010), where there is any access provision at
+© 2021 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group
+This is an Open Access article distributed under the terms of the Creative Commons Attribution-NonCommercial-NoDerivatives License
+(http://creativecommons.org/licenses/by-nc-nd/4.0/), which permits non-commercial re-use, distribution, and reproduction in any
+medium, provided the original work is properly cited, and is not altered, transformed, or built upon in any way.
+CONTACT Rachel Hutchinson
+rachelsarahhutchinson@gmail.com
+Psychology, School of Social Sciences, Uni-
+versity of Westminster, 115 New Cavendish Street, London W1W 6UW, UK
+MUSEUM MANAGEMENT AND CURATORSHIP
+2021, VOL. 36, NO. 4, 427–446
+https://doi.org/10.1080/09647775.2021.1891563
+
+all, it often invites disabled visitors to attend speciﬁc timetabled access events. This not
+only requires people with disabilities to present themselves as ‘special patrons’ (Renel
+2019), it also fails to facilitate independent visiting. Consequently, many disabled
+people still feel that museums are unwelcoming and largely inaccessible (McMillen and
+Alter 2017). One solution is removing the necessity of ‘special’ provision. Rather, the possi-
+bility of creating and embedding inclusive design solutions should be explored. A poten-
+tial example of this is inclusive audio descriptive guides (Eardley et al. 2017; VocalEyes
+n.d.), which draw on the principles of audio description, a practice originally designed
+for the communication of visual information to people who are blind or partially
+sighted (BPS), in which visual information is translated into a rich auditory experience
+through the use of multisensory imagery, spatial positioning and historical context.
+For museums to provide a rich and rewarding experience, they must engage visitors who
+come with a wide range of existing knowledge and interests, preferred ways of experien-
+cing a museum, and varying sensory, cognitive and physical abilities. Nevertheless,
+despite increasing research and practice interest in the multisensory museum (Levent
+and Pascual-Leone 2014), the majority of museums still attempt to engage their visitors
+through an environment that is primarily visuo-centric. Much museum interpretation is pro-
+vided in the form of written information in the form of gallery text or artwork labels (White-
+head 2011) and accompanies the act of looking at a work of art or an object. This reliance on
+the visual sense has obvious drawbacks for BPS visitors. However, it also presents challenges
+for sighted visitors that are two-fold: where to look and how to look.
+Knowing where to direct one’s visual attention is challenging in a museum environ-
+ment which will typically present an array of visual stimuli and stands to overwhelm
+the visitor (Bitgood 2013). This tends to lead to what can be characterised as browsing
+behaviour, where people spend only a very short time in front of any one exhibit or
+artwork (Smith and Smith 2001). Smith and Smith’s (2001) research in art museums has
+shown that, even where people have physically stopped at a work of art to look at it,
+the average time spent looking is only around 17 s. This suggests that for many visitors,
+a visit consists of many quick glances at artworks, rather than a lengthy contemplation of
+fewer pieces. Smith, Smith, & Tinio repeated this study in 2017, reporting a median view
+time of 21 s. These ﬁndings raise the question of how much meaningful engagement can
+take place in such a short time. Researchers have advocated reducing the number of exhi-
+bits that are visible at any one time, to encourage selection, and to urge a general ‘con-
+trolling of visual access’ in exhibition design (Bitgood 2013, 164). There is a growing
+interest in slow looking workshops, which encourage visitors to look closely at just two
+or three works, allowing them to see things that they might otherwise miss (Brown
+2018; Roberson 2011; Rosenbloom 2014; Tishman 2017). Nevertheless, such slow-
+looking workshops are currently a specialist rather than a mainstream oﬀering.
+Even when a visitor does stop to look at an exhibit, there is variation in people’s knowl-
+edge about art and objects, and how to explore them visually. Research comparing
+viewing patterns of visitors who are art experts and non-experts has shown that art
+experts may scan for composition and form, whereas visitors with little knowledge of
+art are more likely to be drawn to recognisable features (Koide et al. 2015). As such,
+although visitors with sight can see a work of art, they may not know how to use that
+vision to look in ways that draw out its speciﬁc cultural or artistic signiﬁcance, context,
+or meanings (Koide et al. 2015; Vogt and Magnussen 2007). It has been recognised that
+428
+R. HUTCHINSON AND A. F. EARDLEY
+
+interpretation can support the visitor in recognising signiﬁcance and deriving meaning
+from an experience, and that without this support, fulﬁlment is likely to be low (Bauer-
+Krösbacher 2013). Some visitors may require more support than others. Museum
+interpretation may be missing out on the opportunity to fully engage the visitor, if it
+assumes that sighted visitors have the visual literacy needed to direct their attention,
+in order to access what they are seeing (Eardley et al. 2017).
+The function of museum interpretation is to oﬀer support to visitors in their exploration of
+collections by communicating what curators consider to be signiﬁcant information about the
+artwork, the artist, or the cultural context in which it was produced (Serota 1996). Interpret-
+ation should support engagement with collections by inviting audience participation, arous-
+ing curiosity and helping visitors connect to meanings (Gross and Zimmerman 2010).
+Ultimately, it should link tangible displays (that can be perceived) to intangible meanings,
+and help people to learn new things or to conﬁrm things they already think they know
+(Bitgood 2013), as well as developing thoughts and ideas (Gross and Zimmerman 2010).
+Audio interpretation, in the form of audio guides, is one form of interpretation that does
+not expect visitors to rely entirely on vision. Audio guides are available in nearly all mid-size
+and large museums, either built into the ticket price or for an additional cost (Proctor and
+Tellis 2003). Conventional audio tours provide short bursts of information, typically 180 s
+per ‘stop’ (Aoki et al. 2002), and they have been shown to impact positively on visitor behav-
+iour. Empirical studies with quantitative measures are rare, but one such study compared
+the behaviours of 42 students, half of whom visited the museum with an audio guide
+and half with no supplementary materials (Sung et al. 2008). Observational data showed
+that the students with the guide stayed longer at exhibits and displayed more inquisitive
+behaviours than those without. Researchers have also observed that audio guides can
+help to draw attention to aspects of a display or setting that may otherwise go unnoticed,
+with one study observing that visitors crossed a large room to examine a detailed carving
+on a ﬁreplace that was mentioned on the guide (Woodruﬀet al. 2001).
+Psychological theories of levels of processing (Craik 2002; Craik and Lockhart 1972;
+Ekuni, Vaz, and Bueno 2011) may help to explain some of the beneﬁts of audio guides
+to visitors. Processing of a stimulus can occur at diﬀerent levels, ranging from ‘shallow’
+processing, which is based on the perceptual experience (colour, form, brightness, loud-
+ness etc) to ‘deep’ processing, whereby the stimulus incites personal analysis of meaning,
+inference and implications (Craik 2002). Deeper processing is associated with increased
+memorability of the stimulus, both in working memory and autobiographical memory
+(Ekuni, Vaz, and Bueno 2011). In the museum context, perceptual presentation only
+(visual exploration) may result in ‘shallower’ processing. Conversely, where interpretation
+is provided, the user may be able to interweave information about the stimulus with their
+existing knowledge, thereby resulting in semantic or ‘deeper’ levels of processing.
+However, audio guides have also been subjected to various criticisms. Headsets are
+said to impede the visitors’ interaction with companions and with the museum environ-
+ment (Aoki et al. 2002). This has historically led to concerns that audio tours can lock visi-
+tors into isolated experiential ‘bubbles’ (Aoki et al. 2002). Other criticisms have been raised
+regarding audio guides and their isolating eﬀect (Aoki et al. 2002; Bauer-Krösbacher 2013;
+Lee 2017) and it has been suggested that they hamper the visitor’s ability to enjoy the
+exhibits with full independence of thought (Bauer-Krösbacher 2013). Audio guides
+have also been criticised for being too detailed or distracting (Bauer-Krösbacher 2013).
+MUSEUM MANAGEMENT AND CURATORSHIP
+429
+
+Furthermore, standard audio guides do not provide adequate access for BPS visitors,
+because there may be limited description of the visual details of the object or artwork.
+Access is typically provided instead through audio description (AD), either in the form of
+a recorded guide or delivered in a live tour. AD has been deﬁned as a verbal commentary
+which provides visual information for those unable to perceive it for themselves (Fryer
+2016). In museums, AD describes the visual appearance of artworks and objects, including
+information such as colour, contrast, shape and form. It may also provide factual, contextual
+or historical information to accompany and enrich the description of visual features. The key
+diﬀerence between audio description and a standard audio guide is that the audio descrip-
+tion systematically describes visual elements and the spatial relationships between them in
+order that a blind user may create mental images of the object. In contrast, while audio
+guides may refer to prominent visual aspects of the work they are addressing, they do
+not systematically guide the user’s eyes from one detail to the next. Analysis has shown
+that the prevalence of spatial and visual positioning words is correspondingly lower in
+audio guide texts compared to AD texts (Jiménez Hurtado and Soler Gallego 2015). Corre-
+spondingly, practitioners distinguish between audio guides and audio descriptive guides,
+emphasising that their content diﬀers (VocalEyes n.d.).
+There are compelling reasons why AD may provide beneﬁts to sighted museum visitors, a
+possibility which is as yet unexplored through empirical research, although practitioners
+report beneﬁts (Eardley et al. 2017). Functioning as a kind of ‘guided looking’ (Eardley
+et al. 2017), AD may help people to direct, and importantly, prolong their visual attention.
+Traditional audio guides may require the visitor to attend to competing visual and auditory
+information, thereby raising the possibility that they divide attention and increase cognitive
+load. In contrast, AD could provide congruent visual and auditory stimuli to sighted people, as
+the nature of audio description would mean that users’ eyes would be guided to a visual
+feature by way of the verbal explanation, which is delivered aurally. This may reduce cognitive
+load, enhancing memorability, as congruent stimuli are known to increase later recall (Kim,
+Seitz, and Shams 2008). Indeed, psychologists advising museum practice have emphasised
+the importance of semantic congruence in museum interpretation (Ward 2014).
+There are other features of AD which suggest it could stimulate engagement levels even
+above and beyond those of traditional guides. Firstly, AD has the potential to create a multi-
+sensory experience through its use of rich sensory imagery (Hutchinson and Eardley 2020),
+which would stand to increase memorability in sighted and blind people alike (Eardley and
+Pring 2006). Secondly, it could provoke emotional and cognitive responses not only
+through the information it presents, but also its use of cognitive prompts and narrative
+(Hutchinson and Eardley 2020). Creating a story is known to help recall of content (Bellezza,
+Richards, and Geiselman 1976), as this is thought to help to organise ideas during encoding
+(Craik 2002). In short, the techniques inherent to AD and its potential eﬀect on sighted
+visitor attention might impact positively on the nature and level of engagement for
+sighted visitors, and the resulting memorability of the experience.
+This study therefore sought to compare three ways of experiencing an exhibition of
+photographs taken from the Museum of London’s collections. Firstly, through vision
+only, with minimal text labels, thereby replicating a typical experience of a museum’s per-
+manent collections. Secondly, through viewing the artworks whilst listening to a standard
+audio guide (SAG), which provides factual and contextual information. Thirdly, through
+viewing the artworks with an audio descriptive guide (ADG), which guides the viewer’s
+430
+R. HUTCHINSON AND A. F. EARDLEY
+
+attention around the image, builds a narrative, employs multisensory imagery and also
+provides semantic information. This study takes a longitudinal approach and uses mem-
+orability as a basis for exploring impact. In so doing, it builds on the literature that
+explores museum memories as a means to evaluate the museum experience (Anderson
+2003; Anderson and Shimizu 2007b, 2007a; Anderson, Storksdieck, and Spock 2007;
+Falk and Dierking 1990, 1997; Hutchinson, Loveday, and Eardley 2020; Medved and
+Oatley 2000; Medved, Cupchik, and Oatley 2004). It also employs multiple measures to
+address engagement, such as attention, enjoyment, interest, and emotion.
+Participants’ experience and levels of engagement are thus evaluated both immedi-
+ately after the event (time A) and one month later (time B). Furthermore, participants’
+memories of the artworks are evaluated in order to compare the number and richness
+of the memories that result from the three diﬀerent exhibition experiences. The study
+brings these aspects together in order to address the following research questions:
+ﬁrstly, whether audio interpretation (SAG and ADG) would have an impact on the experi-
+ence and engagement of sighted people, and secondly, whether AD would have a
+diﬀerent impact compared to SAG. Impact is evaluated through a series of enjoyment,
+interest, attention, emotion and memorability measures.
+Methods
+Design
+This was a longitudinal study (time A, time B) with an independent groups design. The
+independent variables were time (exit, 1 month) and exhibition experience: no audio
+(NA); standard audio guide (SAG); audio descriptive guide (ADG). The dependent variables
+were measures of attention, enjoyment of the experience, desire to reengage with the
+material and actual reengagement, emotion, memories evoked during the exhibition,
+audio evaluation measures (for SAG and ADG participants), recall of the photos and rich-
+ness of recall. Photo recall texts were coded to provide counts for various content detail
+categories, which were as follows: visual, spatial, event/activity/movement, emotion (per-
+ceived emotion of photo subjects) and atmosphere (including nonvisual imagery), partici-
+pants’ reactions (emotions, thoughts, and memories mentioned during photo recall), and
+semantic recall (socio-historical information/context and information about the photogra-
+pher). The data were analysed using ANOVAs, but where the data distribution of the DVs
+was not normal, and normality could not be achieved using transformations, nonpara-
+metric tests were applied.
+Participants
+148 participants were recruited via the University of Westminster’s Psychology Research
+Participation Scheme; the University of the Third Age (U3A), the Museum of London’s
+Friends of the Museum mailing list, and through snowball sampling. Participants were
+approximately matched for age and gender, and then randomly allocated to one of
+three conditions: no audio, SAG, and ADG (see Table 1).
+A one-way between subjects ANOVA conﬁrmed that there was no diﬀerence in age
+across groups (F (2, 142) = .17, p=.84).
+MUSEUM MANAGEMENT AND CURATORSHIP
+431
+
+Materials
+Photographs
+Photographs were selected from the Museum of London’s Henry Grant archive in collab-
+oration with their Curator of Photography. Nine photos were chosen that were all: (a)
+taken between 1950 and 1970; (b) taken outside; (c) black and white; (d) containing
+people, but with a clear focal point (e.g., crowd scenes were avoided); (e) considered
+optimal for the use of multisensory imagery in the texts of the audio descriptions. The
+photo shown below is an example of one of the 9 selected:
+Children playing in the Lido in Parliament Hill Fields, Hampstead Heath, 1957. © Henry
+Grant Collection/Museum of London
+Table 1. Age, gender, and number of participants (time A), by participant group.
+No audio
+SAG
+ADG
+N
+52
+47
+49
+Age (mean, SD)
+50.29 (25.65)
+52.74 (24.76)
+52.68 (19.90)
+Gender
+11 males, 41 females
+14 males, 33 females
+17 males, 32 females
+432
+R. HUTCHINSON AND A. F. EARDLEY
+
+Audio guides
+SAGs and ADGs were produced for the study, in consultation with the Museum of
+London’s Curator of Photography and VocalEyes. Both guides included an audio introduc-
+tion with some biographical information about the photographer and his practice. An
+excerpt of this information was summarised and presented on the initial slide for the
+‘no audio’ condition. Both SAGs and ADGs provided factual and contextual information.
+This information was given in a more expanded form in the SAG and was condensed
+for the ADG, but wherever possible, the same semantic information was presented in
+both texts. The SAGs referred to some visual features of the photos but they did not sys-
+tematically guide visual attention in the way that the ADG texts did. All texts were profes-
+sionally recorded and voiced by a professional audio describer.
+The mean (SD) durations in seconds were as follows: SAG: 2 min 35 s (17.8 s), ADG:
+3 min 41 s (26.8 s). The ADG texts were necessarily longer than the SAG texts, to allow
+for the provision of the description as well as equivalent semantic information.
+All 9 photographs were presented in a ﬁxed order to participants in a PowerPoint pres-
+entation on a laptop or desktop computer with a minimum screen size of 13.5 inches. One
+photograph was shown per slide. The time participants spent on each slide was logged.
+For the audio conditions, an embedded Mp3 ﬁle accompanied each photo, and com-
+menced playback automatically as the slide was reached. Participants listened through
+headphones.
+Questionnaires
+Two questionnaires (time A, time B) were designed for the experiment. One was adminis-
+tered in person after the participants had viewed the photos. The second was emailed one
+month later, and was completed via a link to the questionnaire hosted on the Qualtrics
+platform. The questionnaire at both times A and B addressed the participant’s experience
+and engagement levels, with the questionnaire at time B also addressing memorability for
+the photos.
+Demographic information
+The questionnaire collected basic demographic information: age, gender, level of edu-
+cation, whether English was their ﬁrst language. Where English was not their ﬁrst
+language, participants were asked to rate their level on a 4-point Likert Scale where
+1 = beginner/basic, 2 = intermediate, 3 = competent and 4 = ﬂuent. Participants rated
+their frequency of museum visits over the last 5 years on a 6-point Likert scale where
+1 = never, 2 = once every few years, 3 = once a year, 4 = once every six months, 5 =
+once a month and 6 = once a week or more.
+Experience and engagement measures
+Levels of enjoyment and engagement were measured through the 7-item motivation
+scale of the Intrinsic Motivation Inventory (IMI) (Ryan 1982). Participants also gave
+likings ratings for the photos on a 7-point Likert Scale, where 1 = hated it and 7 = loved
+it. Participants’ emotional response was addressed by asking them if they experienced
+emotion for their favourite photo, and to select emotions from a list, if applicable. They
+MUSEUM MANAGEMENT AND CURATORSHIP
+433
+
+were asked to rate emotions for valence and strength on ten-point Likert scales (where 1
+= negative and 10 = positive for valence, and 1 = barely noticeable and 10 = as strong as I
+have ever felt, for strength). The listening experience was assessed through participants
+(SAG, ADG) evaluating their experience of the audio by rating 4 items about the audio
+guides on ten-point Likert Scales (1 = really hated it, 10 = really loved it), namely infor-
+mation, delivery, speed and their enjoyment of it. These audio evaluation measures
+were repeated at time B.
+Memories, memory vividness and mental imagery
+Participant rated their mental images of the photos at time A for clarity on a ten-point
+Likert scale (1 = no image, just know I am thinking about it, and 10 = as clear as if I
+were actually looking at the photo). They also described any memories evoked during
+the exhibition, and rated their vividness, again on a ten-point scale.
+Memorability
+The Time B questionnaire asked participants to recall the photos by describing them,
+giving as much information as they could. Responses were coded for content (see
+Design). For example, the memory ‘People enjoying themselves by the river. Tranquillity
+in the middle of the city’ would receive 2 counts for visual (people, river), one count for
+emotion/atmosphere (enjoying themselves) and one count for participant reaction (tran-
+quillity in the middle of the city).
+Procedure
+Participants were all tested in a quiet room with no external distraction, either at the
+Museum of London, a laboratory at the University of Westminster, or in their own home.
+For the SAG and ADG conditions, participants were invited to check the headphone
+volume was comfortable, then they were asked to open the PowerPoint presentation
+when they were ready and to move on to the next image once the audio had completed
+playback. Participants in the no audio condition were invited to look at the images for as
+long as they would like to, before moving on to the next. All participants were told that
+they would have the chance to look again at any of the images at the end of the presen-
+tation, and the ﬁnal slide contained thumbnails of all 9 images which they could use to navi-
+gate the photos as they wished. No time limit was set for their exploration of the images.
+Once they had indicated that they had seen enough, participants completed a paper
+questionnaire about their experience. They were then thanked for their time, and
+reminded that they would receive a link by email in a month’s time to the follow up ques-
+tionnaire, after which time they would be debriefed.
+Results
+Participant demographics and time taken to follow up
+One hundred and twenty-seven participants responded to both stages of the experiment:
+no audio = 44, SAG = 38, ADG = 45. Their demographic information is presented below in
+Table 2:
+434
+R. HUTCHINSON AND A. F. EARDLEY
+
+A one way between subjects ANOVA conﬁrmed no diﬀerence in age between groups:
+(F (2, 122) = .19, p = .83), or number of years of education: (F (2, 120) = 1.28, p = .29).
+Kruskal Wallis tests conﬁrmed there was no diﬀerence between groups in terms of the
+level of English of non-native speakers: (chi sq = 0.42, df = 2, NA N = 5, SAG = 12, ADG =
+8, p = .81), nor in their frequency of museum visits over the last 5 years: (chi sq = 3.44,
+df = 2, NA N = 27, SAG N = 22, ADG N = 32, p = .18).
+The mean (SD) number of days between times A and B was as follows: NA = 32.70
+(4.96), SAG = 31.61 (4.25), ADG = 32.53 (5.61). A Kruskal Wallis test conﬁrmed no diﬀer-
+ences between groups for the time taken to follow up: (chi sq = 1.26, df = 2, NA N = 44,
+SAG N = 38, ADG N = 45, p = .53)
+Experience and engagement
+Participants in the audio groups listened for the duration of the audio introduction and
+photo descriptions; 25 min 18 s for the SAG and 35 min 10 s for the ADG. Participants
+in the NA group (N = 43) spent a mean time of 2 min 50 s (SD = 1 min 23 s) looking at
+the photos in the ﬁrst instance (total view time). The frequency of participants who
+chose to continue to browse the photos is shown in Table 3:
+A series of experience and engagement measures were taken as shown in Table 4
+below:
+Analysis revealed that the three participant groups had broadly similar experiences, in
+terms of their enjoyment of the photos and their emotional responses and levels of initial
+Table 3. Decision to look further and additional browse time (seconds), by participant group.
+NA
+N = 44
+SAG
+N = 38
+ADG
+N = 45
+Chose to look again
+77% (34)
+29% (11)
+18% (8)
+Table 2. Number of participants and demographic information, by participant group.
+No audio
+SAG
+ADG
+N
+44
+38
+45
+Age (mean, SD)
+51.75 (25.09)
+48.79 (25.03)
+51.43 (19.95)
+Gender
+9 males, 35
+females
+11 males, 27
+females
+15 males, 30
+females
+Years of Education: mean (SD)
+15.14 (3.98)
+15.39 (3.77)
+16.33 (3.33)
+% of non-native speakers of English
+13%
+32%
+18%
+Levels of English of non-native speakers: median
+(range)
+4 (3)
+4 (1)
+4 (2)
+Frequency of museum visits in the last 5 years: median
+(range)
+5 (4)
+5 (3)
+5 (3)
+Table 4. Experience and Engagement Measures, by participant group.
+NA
+N = 44
+SAG
+N = 38
+ADG
+N = 45
+Intrinsic Motivation Inventory scores: mean, (SD)
+35.34 (14.84)
+38.37 (8.56)
+38.31 (9.42)
+Likings ratings for the photos: mean, (SD)
+5.27 (0.58)
+5.43 (0.68)
+5.43 (0.66)
+Desire to see more photos: median, (range)
+4 (probably) (2)
+4.5 (2)
+5 (deﬁnitely) (2)
+% of participants who reported experiencing emotion
+88%
+95%
+87%
+Number of emotions recorded: mean, (SD)
+2.7 (1.42)
+3.14 (1.84)
+3.19 (1.72)
+MUSEUM MANAGEMENT AND CURATORSHIP
+435
+
+engagement. Kruskal Wallis tests conﬁrmed no diﬀerences between participant groups in
+either IMI scores: (chi sq = 1.35, df = 2, NA N = 44, SAG N = 38, ADG N = 45, p = .51.); liking
+ratings for the photos (chi sq = 0.089, NA N = 44, SAG N = 38, ADG N = 45 df = 2, p = .64); or
+desire to see more photos (chi sq = 1.50, df = 2, NA N = 42, SAG N = 38, ADG N = 45, p
+= .47). A one -way ANOVA conﬁrmed no signiﬁcant diﬀerences between groups for the
+number of emotions recorded for the favourite photo: (F (2, 116) = 1.04, p = .36).
+Audio Evaluation measures are presented in Table 5 below:
+For the Audio Evaluation measures, a mixed 2 (time A, time B) × 2 (participant group
+SAG, ADG) ANOVA showed a main eﬀect of time: (F (1, 78) = 37.64, p < .001), but no
+main eﬀect of participant group (F (1, 78) = 2.05, p = .16), and no interaction eﬀect (F
+(1,78) = 0.219, p = .64), demonstrating that the evaluation scores were lower at Time B,
+but there were no diﬀerences between SAG and ADG participants in their ratings of
+the audio guides.
+There was, however, a diﬀerence in subsequent re-engagement as measured at time
+B. Participants were asked whether they had thought about the photos or talked to
+anyone about them since, if they had tried to ﬁnd out any further information, or
+engaged further with the museum. In the NA group, 40% gave a positive response to
+this question, compared to 68% in the SAG group and 60% in the ADG group. A multi-
+dimensional chi-sq test conﬁrmed that there was a relationship between participant
+group and follow-up engagement: (chi sq (2, N = 125) = 7.37, p = .025), suggesting partici-
+pants who listened to a SAG or ADG were more likely to have engaged with the content
+between times A and B.
+Memories, memory vividness and mental imagery
+Participants’ memories, memory vividness and clarity of mental images were recorded
+and are shown in Table 6:
+Kruskal–Wallis tests conﬁrmed no diﬀerences between participant groups for the
+number of memories evoked (chi sq = 0.51, df = 2, NA N = 44, SAG N = 38, ADG N = 45,
+p = .78) or their vividness (chi sq = 0.24, df = 2, NA N = 38, SAG N = 37, ADG N = 41, p = .89).
+A Kruskal–Wallis test conﬁrmed there was a signiﬁcant diﬀerence between groups for
+mental image clarity for participants’ favourite photo: (chi sq = 8.15, df = 2, NA N = 44, SAG
+Table 5. Audio Evaluation Measures, by participant group.
+NA
+N = 44
+SAG
+N = 38
+ADG
+N = 45
+Audio Evaluation Measures (information, delivery, speed, enjoyment),
+time A: mean, (SD) (maximum score = 40)
+-
+29.66 (8.21)
+31.79 (6.76)
+Audio Evaluation Measures, time B: mean, (SD)
+-
+25.22 (9.22)
+28.26 (7.91)
+Table 6. Evocation of memories, memory vividness and mental image clarity, by participant group.
+NA
+N = 44
+SAG
+N = 38
+ADG
+N = 45
+% of participants who reported memories being evoked
+91%
+97%
+95%
+Number of memories evoked: mean (SD)
+1.55 (1.55)
+1.37 (1.26)
+1.73 (1.71)
+Memory vividness: median, (range)
+8 (9)
+9 (5)
+8 (8)
+Mental image clarity for favourite photo: median, (range)
+8 (6)
+8 (9)
+9 (4)
+436
+R. HUTCHINSON AND A. F. EARDLEY
+
+N = 38, ADG N = 45, p = .017), suggesting that ADG participants reported clearer mental
+images.
+Memorability
+The mean (SD) number of photos recalled was as follows: NA: 3.86 (2.10), SAG: 5.46 (2.06),
+ADG = 5.58 (2.37). A one-way ANOVA on photo recall conﬁrmed a signiﬁcant eﬀect of
+exhibition experience: (F (2, 123) = 8.27, p < .001). Bonferroni corrected post hoc compari-
+sons conﬁrmed a diﬀerence between both SAG and NA: mean diﬀerence = 1.60, (95% CI:
+0.41, 2.78), p = .001, and ADG and NA: mean diﬀerence = 1.71, (95% CI: 0.59, 2.84), p < .001.
+There was no diﬀerence between SAG and ADG (p = .808).
+The photo recall texts were coded for content details and the mean total details
+recorded. 10% of the sample was coded by a second, independent rater. The second-
+coder was given detailed instructions, including examples (available from the correspond-
+ing author, upon request). Inter-rater agreement was 92.17% for the sample. Three
+participants in the NA group followed up but did not recall any photos and so were
+excluded from the content analysis. The mean (SD) total details recalled were as
+follows: NA (N = 41) 25.24 (17.49), SAG (N = 38) 39.45 (22.32), ADG (N = 45) 57.31
+(43.39). A square root transformation was conducted on the total details variable to
+render it suitable for analysis by means of a one-way ANOVA, which conﬁrmed a signiﬁ-
+cant eﬀect of exhibition experience: F (2, 121) = 11.14, p < .001. Bonferroni–Holm cor-
+rected pairwise comparisons on the square root transformed variable conﬁrmed that
+ADG participants recalled more details compared to NA participants, mean diﬀerence
+2.29 (95% CI: 1.33, 3.25), p < .001. ADG participants also recalled more details than SAG
+participants: mean diﬀerence 1.05 (95% CI: 0.7, 2.03), p = .036. More details were also
+recalled by SAG participants compared to NA participants: mean diﬀerence 1.24 (95%
+CI: 0.24,2.24), p = .032.
+Finally, participants’ recall of the photos were scored for detail types. Mean counts by
+participant group are presented in Figure 1:
+Figure 1 suggests that content related details (visual details) was the most salient cat-
+egory for all participant groups, with the other categories being comparable in size.
+To address the possibility that the richer recall with AD was due to the fact that partici-
+pants spent longer listening to the ADG than the SAG, a correlation analysis was con-
+ducted on the total time spent looking at the photos and the number of details
+recalled at time B for ADG and SAG participants. It conﬁrmed there was no signiﬁcant
+relationship: rs = 0.038, N = 78, p = .74. Therefore, ADG participants’ recall of more
+details could not be attributed to the fact that the ADG audio ﬁles were longer in duration.
+Discussion
+This study sought to explore the impact of AD on the experience of sighted participants,
+within a museum exhibition context. The study was lab-based, meaning that it did not
+evaluate AD in an in-situ museum experience. Rather, AD was evaluated in the context
+of the experience of an exhibition. Running the study this way allowed us to control
+the setting and thereby facilitate a deep exploration of AD and its impact when con-
+trasted to standard audio guides or no audio interpretation at all.
+MUSEUM MANAGEMENT AND CURATORSHIP
+437
+
+Overall, results indicated that the participants’ enjoyment and emotional response was
+broadly similar, regardless of the experience group (NA, SAG, ADG) in which they took
+part. In other words, neither of the audio experiences enhanced or impinged on enjoy-
+ment or emotional engagement. However, memorability ﬁndings revealed that partici-
+pants who listened to audio interpretation in either form recalled more photos than
+those who just looked. Furthermore, participants who experienced the photos with
+ADG had richer memories of the photos, compared to either those who had no audio,
+or the standard audio guide. It is therefore important to explore both the impact of (a)
+listening to audio (either SAG or ADG) and (b) the impact of AD speciﬁcally.
+Standard audio guide, audio descriptive guide or visual exploration alone:
+similarities and diﬀerences in experience, engagement and memorability
+At time A, levels of engagement were broadly similar for all participants, regardless of
+which groups they were in. Enjoyment of the photos and, where applicable, the audio,
+was similar across groups, as was the desire to re-engage with the subject matter, with
+all groups expressing a relatively high interest in returning to the subject matter (‘prob-
+ably-deﬁnitely’). This is indicative of a broadly consistent level of initial interest across
+the three participant groups.
+It was also evident from the emotional responses to the artworks and the evocation of
+autobiographical memories that the experience had stimulated cognitive and emotional
+engagement in the participants across all three groups. The emotional response to the
+photos and the numbers of autobiographical memories recorded was similar in all
+three groups. There were also no diﬀerences in the level of vividness of these memories,
+suggesting that the audio was not interfering with the experience of reminiscing. Thus,
+these ﬁndings do not support contentions in the research literature that audio guides
+impede independence of thought (Bauer-Krösbacher 2013).
+Figure 1. Mean (SD) frequencies of detail types recalled by participant group, at Time B.
+438
+R. HUTCHINSON AND A. F. EARDLEY
+
+At time B, it was notable that the pattern of content in the photo recall was broadly
+similar across groups, with visual details being the most salient. The presence of thoughts,
+emotions and the recall of semantic information indicated that a level of cognitive
+engagement took place across all three participant groups. This suggests that a certain
+level of engagement was possible through visual exploration alone, but this should be
+contextualised with the fact that an audio experience of the photos impacted more on
+the lasting memories of the artworks.
+The key diﬀerences between the participants who listened to audio and those who did
+not were revealed through the measures of attention, memorability and subsequent
+engagement (between times A and B). Firstly, the NA group’s average interaction with
+the photos was brief: a mean time of 18 s per image at ﬁrst viewing, which is consistent
+with observations of museum visitors in situ (Smith and Smith 2001; Smith, Smith, and
+Tinio 2017). Seventy-seven per cent of ‘no audio’ participants subsequently wished to
+look again at the photos, compared to 29% of SAG and 18% of ADG participants.
+Taken alone, this measure could suggest higher levels of interest in the photos
+amongst NA participants. However, when considered in conjunction with the other
+measures, it rather suggests that the initial visual encounter with the photos was felt to
+be in some way insuﬃcient when it was not supported by audio interpretation. It is poss-
+ible that the initial brief glance was not enough to access meaning, or a sense of having
+fully engaged with the photos. This would be consistent with the concept that processing
+based purely on perceptual experience is a shallower level of processing (Craik 2002). The
+attention data are therefore in accordance with previous research that demonstrated that
+audio guides help to hold attention, causing visitors to spend longer in front of exhibits
+(Sung et al. 2008), and that looking alone results in a short viewing time only (Smith and
+Smith 2001; Smith, Smith, and Tinio 2017). It therefore seems likely that the use of audio
+altered participants’ patterns of attention, as they were encouraged to attend to the
+images for longer, and that the prolonged attention increased the opportunity to activate
+representations in memory (Renninger and Hidi 2015).
+Correspondingly, the use of audio interpretation resulted in higher recall of the photos
+at time B. It could therefore be suggested that the increased recall in the audio groups
+was due to the increased looking time. However, there was no signiﬁcant correlation
+between details recalled and time spent looking. Levels of processing research has
+shown that further ‘shallow’ processing (for example, allowing more time on shallow pro-
+cessing tasks) does not increase recall (Craik 2002). This suggests that it was the depth of
+processing permitted by the audio guides rather than the sheer time spent that was
+important. Depth of processing was not measured in this study, except indirectly,
+through memory. However, increased recall of the photos is suggestive of deeper proces-
+sing at the time of encoding, and it seems reasonable to suggest that the semantic and
+narrative information provided in the guides would have supported the creation of con-
+nections and meaning, thereby forming memory traces (Ekuni, Vaz, and Bueno 2011). A
+more deeply encoded stimulus, involving more memory traces, would provide more
+opportunities for cues to stimulate later recall (Ekuni, Vaz, and Bueno 2011; Ward
+2014). Furthermore, the audio guides, through provision of information, would help to
+integrate the stimulus of the photos into participants’ knowledge structure about the
+world and about themselves. This suggests the possibility that the use of audio could
+support processes of elaboration, whereby multiple aspects of meaning of an item are
+MUSEUM MANAGEMENT AND CURATORSHIP
+439
+
+activated and thereby linked into the existing network of semantic associations (Bartsch,
+Singmann, and Oberauer 2018).
+Furthermore, there were diﬀerences between the no audio, SAG and ADG groups in
+terms of the amount of engagement that took place between times A and
+B. Participants in the no audio group were less likely than the SAG and ADG participants
+to have come back to the photos, either in terms of their thoughts, conversations or
+follow up research. This suggests that additional interpretation increased the chances
+of suﬃcient interest developing for participants to later re-engage with the artworks. In
+other words, this later engagement is indicative of the triggering of interest during the
+initial encounter with the photos at time A. This is consistent with the literature on the
+triggering of interest and its relationship with the development of engagement (Rennin-
+ger and Bachrach 2015; Renninger and Hidi 2015), as well as the importance of supporting
+content for the development of interest (Renninger and Hidi 2011). It is also consistent
+with recognition in museum practice that meaning-making, or making sense of experi-
+ence, is to be achieved through the process of interpretation (Hooper-Greenhill 2000).
+It is possible that the re-engagement measures suggest higher levels of interest and curi-
+osity in participants who listened to audio, thereby inﬂuencing future behaviour between
+times A and B. If this were the case, then it may also have contributed to the enhanced
+memorability, as increased interest is known to enhance memory (McGillivray, Murayama,
+and Castel 2015; Renninger and Hidi 2015), and curiosity has been associated with
+increased memorability for novel information (Kang et al. 2009).
+The impact of AD on the participant experience, engagement and memorability:
+similarities and diﬀerences between SAG and ADG
+While the use of audio interpretation (both SAG and ADG) had an impact on the partici-
+pants’ assimilation over the month between times A and B, it is important to understand
+where there are similarities and diﬀerences between the standard audio guides and the
+audio descriptive guides, in order to understand fully the potential for AD as inclusive
+design.
+Firstly, the concerns regarding audio guides were not borne out in these ﬁndings, as
+the guides did not have any negative impact on enjoyment. Rather, they appeared to
+enhance interest as indicated by later re-engagement. Furthermore, the experience
+measures were broadly similar for SAG and ADG participants. This suggests that using
+audio descriptive techniques in audio interpretation would create more inclusive
+materials and that this would not have any negative impact on visitors’ enjoyment of
+the resources.
+There were, however, important diﬀerences between the SAG and ADG with regards to
+memorability. While SAG and ADG participants recalled similar numbers of photos, the
+ADG participants had richer memories of what they had seen, with higher numbers of
+details. As the correlation analysis demonstrated, the richer memories with ADG cannot
+be attributed to longer looking time. Rather, there are multiple possible reasons why pres-
+entation of the photos with ADG was more memorable than the standard audio guide.
+The increased richness of memories may have been related to the ‘guided looking’
+element of the ADG experience. It is possible that the congruent nature of the perceptual
+information and the semantic information delivered by the guide was able to support
+440
+R. HUTCHINSON AND A. F. EARDLEY
+
+recall, with congruence in the presentation of stimuli being known to be important in sup-
+porting recall in levels of processing tasks (Craik 2002). In contrast, traditional guides may
+stand to present competing auditory and visual information, which diﬀers from the con-
+gruence of the ADG experience. Dividing attention is known to result in shallower encod-
+ing, as deeper encoding requires more attention (Craik 2002). This limitation of traditional
+guides could have led to the SAG texts in this study having less of an impact on memor-
+ability than the ADG texts.
+Furthermore, when asked to rate their mental images of their favourite photos at time
+A, there was a diﬀerence in clarity ratings between participant groups, with participants in
+the ADG group reporting a higher average rating. This suggests that there was enhanced
+initial mental imagery formation in the ADG group. As visual imagery is known to be a
+predictor for memorability (Greenberg and Knowlton 2014), this may also have contribu-
+ted to the increased memorability in the ADG group. Exactly why AD should have led to
+the formation of clearer visual images initially cannot be determined, but it is possible that
+the guided looking allowed for a deeper assimilation of the visual content of the photos.
+Other, linguistic features of the AD may have impacted positively on memorability,
+such as multisensory imagery, narrative, and cognitive prompts. These techniques are
+important in AD (Hutchinson and Eardley 2020) and were accordingly foregrounded in
+the creation of the ADG texts for this study. The fact that the AD was embedded with mul-
+tisensory imagery may have had a part to play in enhancing recall (Chu and Downes 2000;
+Eardley and Pring 2006; Gottfried et al. 2004). The formation of mental imagery has also
+been employed as an elaboration strategy to enhance learning (Bartsch, Singmann, and
+Oberauer 2018; Dunlosky and Kane 2007). It is therefore possible that the use of multisen-
+sory imagery helped to create a richer imaginary landscape, with more images and associ-
+ations that could later cue recall of the photo’s appearance, content or socio-historical
+context.
+The use of narrative was also important in the AD. Whilst narrative was to some extent
+present in both sorts of audio texts, the SAG texts focused more on the provision of
+semantic information, whereas the ADG focused more on the imagined experience of
+the photos’ subjects, in order to build a story. It is possible that this use of narrative, along-
+side the use of cognitive prompts in the audio descriptions, may have aroused curiosity or
+interest, again with positive implications for memorability (Kang et al. 2009). In the
+museum literature, narrative is understood as storytelling which evokes feelings, mem-
+ories and curiosity, thereby creating engagement (Nielsen 2017). It is therefore consistent
+with such deﬁnitions that the provision of narrative and cognitive prompts would be
+associated with curiosity, increased engagement and memorability in these ﬁndings.
+This study does not dissociate between the eﬀects of AD on attention (‘guided
+looking’) and the features of AD and its language (multisensory imagery, narrative and
+cognitive prompts), therefore it is diﬃcult to draw any conclusions about which
+aspects were most important for memorability. It is therefore possible that recall was
+stimulated in any individual instance by the image alone, the words of the AD, or the
+image and words in conjunction. However, in terms of developing inclusive museum
+resources, this question is of theoretical rather than practical importance. As has been
+observed in the museum literature, the very purpose of meaning-making through
+interpretation is to create a memory (Nielsen 2017). These ﬁndings suggest the ability
+of AD to do so to an extent previously untapped by standard audio guides.
+MUSEUM MANAGEMENT AND CURATORSHIP
+441
+
+Conclusion
+This study was the ﬁrst investigation of the impact of museum AD on the experience of
+sighted participants. The ﬁndings present a positive picture for the future use of inclusive
+AD in museums for sighted as well as blind visitors, suggesting a strong case for museums
+both to increase their audio resources and to incorporate AD in their creation. Making use
+of audio description techniques in preparation of audio resources would not only adhere
+to inclusive design principles, and thereby help to create a more inclusive museum
+environment, but it would also stand to enhance the long-term impact of the museum
+visit for many visitors. This study looked at recorded AD, but there is also scope to
+explore the use of audio descriptive techniques in live tours. If AD also has beneﬁts for
+sighted visitors when delivered live, then its potential as inclusive interpretation would
+be increased even further. As the museum sector seeks to meet the changing needs of
+visitors in a post Covid-19 world, these ﬁndings have important implications for the cre-
+ation of online resources. As museums and galleries develop and adapt their online
+resources to connect with visitors who may be unable or reluctant to return to the
+museum, using AD as inclusive interpretation could help to ensure that both blind and
+sighted visitors are given optimal ways to engage and to form lasting memories of
+their experiences.
+Acknowledgements
+The authors would like to thank the Museum of London and VocalEyes for their support of the
+study.
+Disclosure statement
+No potential conﬂict of interest was reported by the author(s).
+Notes on contributors
+Rachel Hutchinson is currently Project and Community Engagement Manager on an AHRC project
+looking at Inclusive Audio Description in theatre (Inclusive Description for Equality and Access), at
+Royal Holloway, University of London. She also works as a freelance researcher focusing on under-
+standing and evaluating the impact of cultural experience. Her recent PhD (Psychology, University
+of Westminster) explored the role of audio description in inclusive museum experiences.
+Alison Eardley, PhD, is a senior lecturer in psychology at the University of Westminster. Trained as a
+cognitive psychologist, her earlier work explored imagery, imagination, memory and multisensory
+processing in individuals who were blind and sighted. Her current work applies a cognitive lens to
+visitor experience and audience engagement in museums and the cultural sector more broadly,
+with a focus on access and inclusion. Her interdisciplinary mixed methods approach has contributed
+to the development of museum practice and scholarship in the ﬁelds of museum studies, psychol-
+ogy, translation studies and disability studies. She is a Fulbright-Smithsonian Scholar (2021–22).
+References
+Anderson, D. 2003. “Visitors’ Long-Term Memories of World Expositions.” Curator: The Museum
+Journal 46 (4): 401–420. doi:10.1111/j.2151-6952.2003.tb00106.x.
+442
+R. HUTCHINSON AND A. F. EARDLEY
+
+Anderson, D., and H. Shimizu. 2007a. “Factors Shaping Vividness of Memory Episodes: Visitors’ Long-
+Term Memories of the 1970 Japan World Exposition.” Memory 15 (2): 177–191. doi:10.1080/
+09658210701201312.
+Anderson, D., and H. Shimizu. 2007b. “Recollections of Expo 70: Visitors’ Experiences and the
+Retention of Vivid Long-Term Memories.” Curator: The Museum Journal 50 (4): 435–454. doi:10.
+1111/j.2151-6952.2007.tb00284.x.
+Anderson, D., M. Storksdieck, and M. Spock. 2007. “Understanding the Long-Term Impacts of
+Museum Experiences.” In In Principle, In Practice: Museums as Learning Institutions, edited by
+J. Falk, L. Dierking, and S. Foutz, 198–215. Lanham, MD: AltaMira Press.
+Aoki, P. M., R. E. Grinter, A. Hurst, M. H. Szymanski, J. D. Thornton, and A. Woodruﬀ. 2002. “Sotto Voce:
+Exploring the Interplay of Conversation and Mobile Audio Spaces.” In Proceedings of the SIGCHI
+Conference on Human Factors in Computing Systems, 431–438. doi:10.1145/503453.503454.
+Bartsch, L. M., H. Singmann, and K. Oberauer. 2018. “The Eﬀects of Refreshing and Elaboration on
+Working Memory Performance, and Their Contributions to Long-Term Memory Formation.”
+Memory and Cognition 46 (5): 796–808. doi:10.3758/s13421-018-0805-9.
+Bauer-Krösbacher, C. 2013. “Mobile Interpretation at Cultural Attractions: Insights Into Users and
+non-Users of Audio-Guides.” In Cultural Tourism, edited by R. Raj, K. Griﬃn, and N. Morpeth,
+64–73. doi:10.1079/9781845939236.0064
+Bellezza, F. S., D. L. Richards, and R. E. Geiselman. 1976. “Semantic Processing and Organization in
+Free Recall.” Memory & Cognition 4 (4): 415–421. doi:10.3758/BF03213198.
+Bitgood, Stephen. 2013. Attention and Value: Keys to Understanding Museum Visitors. Walnut Creek,
+CA: Left Coast Press. doi:10.4324/9781315433455
+Brown, M. 2018. “Tate Recommends ‘Slow Looking’ at Major Pierre Bonnard Exhibition.” Guardian.
+https://www.theguardian.com/artanddesign/2018/jul/23/tate-modern-slow-looking-pierre-bonnard-
+exhibition-2019.
+Chu, S., and J. J. Downes. 2000. “Odour-evoked Autobiographical Memories: Psychological
+Investigations of Proustian Phenomena.” Chemical Senses 25 (1): 111–116. doi:10.1093/chemse/
+25.1.111.
+Craik, F. I. M. 2002. “Levels of Processing: Past, Present … and Future?” Memory 10 (5-6): 305–318.
+doi:10.1080/09658210244000135.
+Craik, F. I. M., and R. S. Lockhart. 1972. “Levels of Processing: A Framework for Memory Research.” Journal
+of Verbal Learning and Verbal Behavior 11 (6): 671–684. doi:10.1016/S0022-5371(72)80001-X.
+Dunlosky, J., and M. J. Kane. 2007. “The Contributions of Strategy Use to Working Memory Span: A
+Comparison of Strategy Assessment Methods.” Quarterly Journal of Experimental Psychology 60
+(9): 1227–1245. doi:10.1080/17470210600926075.
+Eardley, A., L. Fryer, R. Hutchinson, M. Cock, P. Ride, and J. Neves. 2017. “Enriched Audio Description:
+Working Towards an Inclusive Museum Experience.” In Inclusion, Disability and Culture: An
+Ethnographic Perspective Traversing Abilities and Challenges, edited by L. C. Halder, and Assaf
+Santoshi, 195–207. Springer International Publishing. doi:10.1007/978-3-319-55224-8
+Eardley, A., and L. Pring. 2006. “Remembering the Past and Imagining the Future: A Role for
+Nonvisual Imagery in the Everyday Cognition of Blind and Sighted People.” Memory 14 (8):
+925–936. doi:10.1080/09658210600859582.
+Ekuni, R., L. J. Vaz, and O. F. A. Bueno. 2011. “Levels of Processing: The Evolution of a Framework.”
+Psychology and Neuroscience 4 (3): 333–339. doi:10.3922/j.psns.2011.3.006.
+Falk, John, and L. D. Dierking. 1990. “The Eﬀect of Visitation Frequency on Long-Term Recollections.”
+In Proceedings of the Third Annual Visitor Studies Conference, edited by S. Bitgood, 94–104.
+Jacksonville: Center for Social Design.
+Falk, John, and L. D. Dierking. 1997. “School Field Trips: Assessing their Long-Term Impact.” Curator
+40 (3): 211–218. doi:10.1111/j.2151-6952.1997.tb01304.x.
+Fryer, L. 2016. Introduction to Audio Description. Abingdon: Routledge.
+Gottfried, J. A., A. P. R. Smith, M. D. Rugg, and R. J. Dolan. 2004. “Remembrance of Odors Past: Human
+Olfactory Cortex in Cross-Modal Recognition Memory.” Neuron 42 (4): 687–695.
+Greenberg, D. L., and B. J. Knowlton. 2014. “The Role of Visual Imagery in Autobiographical Memory.”
+Memory & Cognition 42 (6): 922–934. doi:10.3758/s13421-014-0402-5.
+MUSEUM MANAGEMENT AND CURATORSHIP
+443
+
+Gross, M. P., and R. Zimmerman. 2010. “Park and Museum Interpretation: Helping Visitors Find
+Meaning.” Curator: The Museum Journal 45 (4): 265–276. doi:10.1111/j.2151-6952.2002.tb00064.x.
+Hooper-Greenhill, E. 2000. Museums and the Interpretation of Visual Culture. London: Routledge.
+Hutchinson, R., and A. F. Eardley. 2020. “Towards the Accessible Museum: Understanding
+International Audio Description Practices in Museums.” Journal of Visual Impairment and
+Blindness 114 (6): 475–487.
+Hutchinson, R., C. Loveday, and A. F. Eardley. 2020. “Remembering Cultural Experiences: Lifespan
+Distributions, Richness and Content of Autobiographical Memories of Museum Visits.” Memory
+28 (8): 1024–1036. doi:10.1080/09658211.2020.1811874.
+Jiménez Hurtado, C., and S. Soler Gallego. 2015. “Museum Accessibility Through Translation: A
+Corpus Study of Pictorial Audio Description.” In Audiovisual Translation: Taking Stock, edited by
+J. Diaz Cintas and J. Neves, 277–299. Newcastle: Cambridge Scholars Publishing.
+Kang, M. J., M. Hsu, I. M. Krajbich, G. Loewenstein, S. M. McClure, J. T. Wang, and C. F. Camerer. 2009.
+“The Wick in the Candle of Learning: Epistemic Curiosity Activates Reward Circuitry and Enhances
+Memory.” Psychological Science 20 (8): 963–973. doi:10.1111/j.1467-9280.2009.02402.x.
+Kim, R. S., A. R. Seitz, and L. Shams. 2008. “Beneﬁts of Stimulus Congruency for Multisensory
+Facilitation of Visual Learning.” PLoS One 3 (1). doi:10.1371/journal.pone.0001532.
+Koide, N., T. Kubo, S. Nishida, T. Shibata, and K. Ikeda. 2015. “Art Expertise Reduces Inﬂuence of Visual
+Salience on Fixation in Viewing Abstract-Paintings.” PloS One 10 (2): e0117696. doi:10.1371/
+journal.pone.0117696.
+Lee, S. J. 2017. “A Review of Audio Guides in the Era of Smart Tourism.” Information Systems Frontiers
+19 (4): 705–715. doi:10.1007/s10796-016-9666-6.
+Levent, N., and A. Pascual-Leone. 2014. The Multisensory Museum: Cross-Disciplinary Perspectives on
+Touch, Sound, Smell, Memory, and Space. Lanham, MD: Rowman & Littleﬁeld.
+McGillivray, S., K. Murayama, and A. D. Castel. 2015. “Thirst for Knowledge: The Eﬀects of Curiosity
+and Interest on Memory in Younger and Older Adults.” Psychology and Aging 30 (4): 835–841.
+doi:10.1037/a0039801.
+McMillen, R., and F. Alter. 2017. “Social Media, Social Inclusion, and Museum Disability Access.”
+Museums and Social Issues 12 (2): 115–125. doi:10.1080/15596893.2017.1361689.
+Medved, M. I., G. C. Cupchik, and K. Oatley. 2004. “Interpretative Memories of Artworks.” Memory 12
+(1): 119–128. doi:10.1080/09658210244000441.
+Medved, M. I., and K. Oatley. 2000. “Memories and Scientiﬁc Literacy: Remembering Exhibits from a
+Science Centre.” International Journal of Science Education 22 (10): 1117–1132. doi:10.1080/
+095006900429475.
+Mendoza. 2017. The Mendoza Review: An Independent Review of Museums in England. Department for
+Digital, Culture, Media & Sport. https://www.gov.uk/government/publications/the-mendoza-
+review-an-independent-review-of-museums-in-england
+Nielsen, J. K. 2017. “Museum Communication and Storytelling: Articulating Understandings Within
+the Museum Structure.” Museum Management and Curatorship 32 (5): 440–455. doi:10.1080/
+09647775.2017.1284019.
+Proctor, N., and C. Tellis. 2003. The State Of The Art In Museum Handhelds In 2003. Museums and the
+Web 2003, (March 2004), 1–12. http://www.archimuse.com/mw2003/papers/proctor/proctor.
+html/.www.archimuse.com.
+Renel, W. 2019. “Sonic Accessibility: Increasing Social Equity Through the Inclusive Design of Sound
+in Museums and Heritage Sites.” Curator: The Museum Journal 62 (3): 377–402. doi:10.1111/cura.
+12311.
+Renninger, K. A., and J. E. Bachrach. 2015. “Studying Triggers for Interest and Engagement Using
+Observational Methods.” Educational Psychologist 50 (1): 58–69. doi:10.1080/00461520.2014.
+999920.
+Renninger, K. A., and S. Hidi. 2011. “Revisiting the Conceptualization, Measurement, and Generation
+of Interest.” Educational Psychologist 46 (3): 168–184. doi:10.1080/00461520.2011.587723.
+Renninger, K. A., and S. Hidi. 2015. The Power of Interest for Motivation and Engagement. New York:
+Routledge. doi:10.4324/9781315771045
+444
+R. HUTCHINSON AND A. F. EARDLEY
+
+Roberson, D. N. 2011. “Free Time in an Art Museum: Pausing, Gazing and Interacting.” Leisure
+Sciences 33 (1): 70–80. doi:10.1080/01490400.2011.533112.
+Rosenbloom, S. 2014. The Art of Slowing Down in a Museum. https://www.nytimes.com/2014/10/12/
+travel/the-art-of-slowing-down-in-a-museum.html.
+Ryan, R. M. 1982. “Control and Information in the Intrapersonal Sphere: An Extension of Cognitive
+Evaluation Theory.” Journal of Personality and Social Psychology 43 (3): 450–461. doi:10.1037/
+0022-3514.43.3.450.
+Sandell, R. 2003. “Social Inclusion, the Museum and the Dynamics of Sectoral Change.” Museum and
+Society 1 (1): 45–62.
+Serota, N. 1996. Experience or Interpretation. The Dilemma of Museums of Modern Art. Walter Neurath
+Memorial Lectures. New York: Thames and Hudson.
+Smith, J., and L. Smith. 2001. “Spending Time on Art.” Empirical Studies of the Arts 19 (2): 229–236.
+doi:10.2190/5MQM-59JH-X21R-JN5J.
+Smith, L., J. Smith, and P. Tinio. 2017. “Time Spent Viewing art and Reading Labels.” Psychology of
+Aesthetics, Creativity, and the Arts 11 (1): 77–85. doi:10.1037/aca0000049.
+Sung, Yeo-Ting, Kuo-En Chang, Yi-Hsuan Lee, and W.-C. Yu. 2008. “Eﬀects of a Mobile Electronic
+Guidebook on Visitors’ Attention and Visiting Behaviors.” Educational Technology & Society 11
+(2): 67–80.
+Tishman, S. 2017. Slow Looking: the art and Practice of Learning Through Observation (1st ed.).
+New York: Routledge. doi:10.4324/9781315283814
+VocalEyes. n.d. Museums, Galleries and Heritage: What is Audio Description? VocalEyes. Accessed
+January 26, 2021 from https://vocaleyes.co.uk/services/museums-galleries-and-heritage/.
+Vogt, S., and S. Magnussen. 2007. “Expertise in Pictorial Perception: Eye-Movement Patterns and
+Visual Memory in Artists and Laymen.” Perception 36 (1): 91–100.
+Ward, J. 2014. “Multisensory Memories: How Richer Experiences Facilitate Remembering.” In The
+Multisensory Museum: Cross-Disciplinary Perspectives on Touch, Sound, Smell, Memory, and
+Space, edited by A. Levent, and Nina Pascual-Leone, 273–284. Lanham, Maryland: Rowman &
+Littleﬁeld.
+Whitehead, C. 2011. Interpreting Art in Museums and Galleries. London: Routledge. doi:10.4324/
+9780203145616
+Woodruﬀ, A., P. M. Aoki, A. Hurst, and M. H. Szymanski. 2001. “The Guidebook, the Friend, and the
+Room.” In CHI ‘01 Extended Abstracts on Human Factors in Computing Systems - CHI ‘01. doi:10.
+1145/634067.634229
+Appendix
+Sample SAG text: Parliament Hill Lido:
+Henry Grant took this photo in the heatwave of June 1957. It shows children playing in the Parlia-
+ment Hill Lido in North London.
+In this photo, Henry Grant displays his enthusiasm for photographing children enjoying their
+environment. Some children are playing with the spray from a standpipe at the edge of the
+pool, and others are in the shallow water of the lido.
+The Lido was opened on 20 August 1938, in the decade when lidos were the height of fashion
+and enjoying their heyday. The construction of lidos was part of a government initiative to improve
+the nation’s health, especially that of the working classes. Between 1930 and 1939 at least 180 lidos
+were built in Britain. This lido was designed by Harry Rowbotham and TL Smithson, who were archi-
+tects working for London County Council. They designed all of the city’s lidos between 1906 and
+1939. It cost £34,000 to construct, making it the most expensive of the lidos built in London in
+the 1920s and 30s.
+By 1957, when this photo was taken, the Lido had been open for nearly 20 years and had survived
+a direct hit in the Blitz. On 13 September 1940, incendiary bombs caused seventeen local ﬁres, and
+the last one fell on the lido. The ﬁre brigade managed to extinguish the blaze and keep the lido open.
+MUSEUM MANAGEMENT AND CURATORSHIP
+445
+
+Since Henry Grant took this photo, the lido has continued to survive despite the gradual decline
+of lidos across the UK. In 1976, a young boy lost his life there, which resulted in increased numbers
+of staﬀand the removal of most of the diving boards. The ﬁnal board was taken away in 2003.
+The lido underwent a major refurbishment in 2005 and remains open today, with the addition of
+a stainless-steel liner which is said to give the water an extra shimmer. It is acclaimed as an Art Deco
+classic and was Grade II-listed in 2009. Measuring 61 by 27 metres, it is a large pool which is packed
+with families on warm days, and is popular with triathletes in training.
+Sample ADG text: Parliament Hill Lido:
+Henry Grant took this photo in the heatwave of June 1957. It shows children playing in the Parlia-
+ment Hill Lido in North London.
+A small section of the shallow end of the lido is captured in the photo. We stand, with Grant, at
+the water’s edge, surveying the scene. Water is to our left, and tarmac to our right, with the edge of
+the lido leading up from the base of the picture. This forms a line dividing the action of the photo.
+To the right, are two boys and a girl, all about 10 years old. They appear half way up the photo,
+standing on the poolside tarmac which looks rough under their bare feet. They crowd around a
+standpipe which sends a jet of water spraying into the lido. The two boys are in front of the girl,
+closest to the pipe, and their wet hair is plastered against their foreheads. They are wearing plain
+dark swimming trunks. One boy has his hand in the jet of water, forcing it up and over his playmates
+in the pool. A girl in a plain dark swimming costume stands behind him. Her right hand is on the
+boy’s back as she reaches past him, jostling for position at the source of the stream of water.
+To the left, are around 12 children of similar age, girls and boys, ankle deep in the lido. They run
+towards the roaring spray of water. It forms an arch and patters like heavy rainfall as it cascades into
+the pool. They raise their arms and stretch out their hands to feel the force of the cool water as it
+batters against their faces.
+In the foreground is a young boy about 3 or 4 paces away from us. He stands still, ankle deep,
+drawing his shoulders up towards his ears, holding his arms away from his sides. His body is tense,
+his rib cage showing, as if the coldness of the water has caused a sharp intake of breath. Exhilarated,
+a broad grin spreads across his face as he glances past the camera.
+The photo has been taken with the camera angled towards the ground. The sky line is high and
+the clear, cloudless sky takes up only the top ﬁfth of the photo. The horizon line is made up of a row
+of terraced houses and, in front of them, three elm trees in leaf.
+By the time this photo was taken, the Lido had been open for 19 years. Lidos were at their height
+in the 1930s, as a result of a government drive to improve the health of the working classes. It was
+built by Harry Rowbotham and TL Smithson, who were architects for London Country Council. The
+Lido cost £34,000 to construct, making it the most expensive of the city’s lidos built in the 1920s and
+1930s. The Lido is still open to swimmers today. It survives despite the decline of lidos across the UK,
+and its own turbulent history. It took a direct hit in the Blitz of 1940 and a young boy lost his life
+there in 1976. It has since undergone major changes. These include the removal of diving boards
+and the addition of a stainless-steel liner, which is said to give the water an extra shimmer. The
+lido is acclaimed as an Art Deco classic and was Grade II-listed in 2009. Measuring 61 by
+27 metres, it is a large pool which is packed with families on warm days, and is popular with triath-
+letes in training.
+446
+R. HUTCHINSON AND A. F. EARDLEY
+

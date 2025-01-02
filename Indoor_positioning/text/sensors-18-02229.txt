@@ -1,0 +1,999 @@
+sensors
+Article
+An Indoor Positioning System Based on Static
+Objects in Large Indoor Scenes by Using
+Smartphone Cameras
+AoranXiao1 ID,RuizhiChen1,2,* ID,DerenLi1,2,*,YujinChen3 ID andDewenWu1,2
+1 StateKeyLaboratoryofInformationEngineeringinSurveying,MappingandRemoteSensing,
+WuhanUniversity,Wuhan430079,China;xiaoaoran@whu.edu.cn(A.X.);wudewen@whu.edu.cn(D.W.)
+2 CollaborativeInnovationCenterofGeospatialTechnology,WuhanUniversity,Wuhan430079,China
+3 SchoolofGeodesyandGeomatics,WuhanUniversity,Wuhan430079,China;yujin.chen@whu.edu.cn
+* Correspondence:ruizhi.chen@whu.edu.cn(R.C.);drli@whu.edu.cn(D.L.)
+(cid:1)(cid:2)(cid:3)(cid:1)(cid:4)(cid:5)(cid:6)(cid:7)(cid:8)(cid:1)
+(cid:1)(cid:2)(cid:3)(cid:4)(cid:5)(cid:6)(cid:7)
+Received:4June2018;Accepted:9July2018;Published:11July2018
+Abstract: The demand for location-based services (LBS) in large indoor spaces, such as airports,
+shoppingmalls,museumsandlibraries,hasbeenincreasinginrecentyears. However,thereisstill
+nofullyapplicablesolutionforindoorpositioningandnavigationlikeGlobalNavigationSatellite
+System(GNSS)solutionsinoutdoorenvironments.Positioninginindoorscenesbyusingsmartphone
+camerashasitsownadvantages: noadditionalneededinfrastructure,lowcostandalargepotential
+market due to the popularity of smartphones, etc. However, existing methods or systems based
+on smartphone cameras and visual algorithms have their own limitations when implemented in
+relativelylargeindoorspaces. Todealwiththisproblem,wedesignedanindoorpositioningsystem
+tolocateusersinlargeindoorscenes. Thesystemusescommonstaticobjectsasreferences,e.g.,doors
+andwindows,tolocateusers. Byusingsmartphonecameras,ourproposedsystemisabletodetect
+static objects in large indoor spaces and then calculate the smartphones’ position to locate users.
+Thesystemintegratesalgorithmsofdeeplearningandcomputervision. Itscostislowbecauseit
+doesnotrequireadditionalinfrastructure. Experimentsinanartmuseumwithacomplicatedvisual
+environmentsuggestthatthismethodisabletoachievepositioningaccuracywithin1m.
+Keywords: indoorpositioning;smartphone;largeindoorscene;computervision;deeplearning
+1. Introduction
+Itseemsobviousforustoconcludethathumanbeingsaswellasmostofanimalslocatethemselves
+byvisualperception. Accordingtoourownexperiences,peopleobservetheenvironmentsurrounding
+themintentionallyorunintentionally,and“draw”aroughmapintheirmind. ThewinnersofThe
+NobelPrizeinPhysiologyorMedicine2014provedthisidea: O'Keefeetal.[1,2]discoveredthatsome
+“place cells”, which are a type of nerve cells in particular area of the brain, were always activated
+if a rat was located at a particular place in a room. Other place cells were also activated if the rat
+moved to different places. O’Keefe concluded that the room map in the mind is formed by these
+placecells. In2005,May-BrittandEdvardMoser[3]madeafurtherdiscovery. Theyfoundanother
+important component of location system in brain. Another type of nerve cell, which they named
+“gridcells”,thatcancreateacoordinatesystemtorealizeprecisepositioningandfindaccuratepaths.
+Theirsubsequentresearch[4]indicatedhowplacecellsandgridcellsareabletodetermineposition
+andallowonetonavigate.
+Inspired by this interesting discovery, we propose an indoor positioning system. We used
+smartphonecamerasasdataacquisitiondevicestocapturevisualinformationforlocation.Considering
+Sensors2018,18,2229;doi:10.3390/s18072229 www.mdpi.com/journal/sensorsSensors2018,18,2229 2of17
+that specific indoor surroundings, including objects and layouts, activate place cells in the rat’s
+brain, wedecidedtouseparticularobjectsintheroomsforpositioning. Inanapplication, objects
+used as positioning references should be common and immovable, such as doors and windows.
+Theseobjectsarewidelydistributed(manyofwhicharenecessaryforindoorscenes)andremainstill
+andwell-preservedforalongtime. Astheirlocationsareknowninplanmaps,theybecomeideal
+referencesourcesforpositioning. Inthispaper,wecalledthem“staticobjects”. Besides,largeindoor
+scenessuchaslibraries,airportsandmuseums,provideawideandstablevisionconditionforvisual
+algorithmsofthesystem. Traditionalvision-basedindoorpositioningmethodshavetheirownlimits
+whenimplementinginthiskindofrelativelylargeindoorenvironments(SeeSection5.2. Evaluation).
+Thus,wedecidedtousethesystemtolocatepeopleinlargeindoorscenes.
+Inourpreviousresearch,Wu. etal.[5]comparedthepositioningaccuracybetweenhumanbrains
+andavisualalgorithmwasproposed,whichprovedthattheindoorvisualpositioningmethodvia
+smartphoneoutperformshumanbrains. Theyexperimentedwiththepositioningalgorithminseveral
+placesincludinglibrariesandanofficetoprovetherobustness. Inthispaper,weimprovedthemethod
+toawholesystem,realizingpositioninginlargeindoorspacesinourapplication.
+The system proposed in this paper aims to locate smartphones (users) via static objects.
+Staticobjectsinimagearedetectedandidentifiedfirstly. Thenthepositionsofusersarecalculatedas
+output. Themaincontributionofourworkcanbesummarizedasfollows:
+(1) Weproposeanindoorpositioningsystembyusingsmartphonecameras,whichisdesignedfor
+largeindoorscenes. Previousstudiesofindoorpositioningbasedonsmartphonecamerashave
+theirownshortcomingsinsuchlargeindoorscenes. Thesystemintegratescomputervision(CV)
+anddeeplearning(DL)algorithms. Commonstaticobjects(suchasdoorsandwindows)inthe
+indoorsceneareusedasreferencesforlocatingpurposes,makingourmethodgeneral,andeasy
+toreplicate.
+(2) Wetestedoursysteminalargeindoorspacewithacomplicatedfieldofvision—anartmuseum.
+Experimentsindicatedthatourmethodisabletoachieveapositioningaccuracywithin1min
+suchcircumstances.
+(3) Our method is low-cost, as developers only need to take several photos to the static objects
+as a sample collection, without any additional infrastructure. It is also easily operated using
+monocular photography, which means users don’t have to photograph scenes from multiple
+anglesortakeavideo.
+Therestofthepaperisorganizedasfollows: Section2reviewsrelatedworks. Detailsaboutthe
+methodaredemonstratedinSection3. Experimentswithperformanceevaluationarepresentedin
+Section4. Section5isthediscussionandSection6istheconclusions.
+2. RelatedWorks
+Despiteoftheincreasingdemandforindoorlocation-basedservices,thereisstillnopersuasive
+solutionforindoorlocationandnavigationlikeGlobalNavigationSatelliteSystem(GNSS)foroutdoor
+environments,asGNSSsignalsaretooweaktopenetrateintowalls.Also,thecomplexspatialtopology
+andRFtransmissionmakelocalizationinindoorenvironmentsverycomplicated.
+Recent years have witnessed many studies on indoor positioning, especially by means of
+smartphones for their widespread use and development. Equipped with various sensors and
+supporting rich RF signals, smartphones hence can be located by various means, which can be
+divided into three categories [6]: (1) GNSS signal receiver, including GPS, BDS, GLONASS and
+Galileo; (2) Built-in sensors in smartphones, such as accelerometers, gyroscopes, magnetometers,
+barometers,lightersensors,microphones,loudspeakersandcameras,etc.;(3)RFsignalslikeWi-Fi,
+Bluetoothandcellularwirelesscommunicationsignal,etc. ExceptfortheGNSSsignalreceiver,allof
+other sensors and RF signals are not designed for positioning purposes, but they can be used to
+calculateindoorlocationsviadifferentprinciplesandalgorithms. Amongthem,theestablishmentofSensors2018,18,2229 3of17
+fingerprintingofWi-Fi[7–11],geomagnetism[12]orBluetooth[13–16]arepopularapproachesdue
+totheireffectivenessandindependencefrominfrastructure. Thesemethodscanreachpositioning
+accuraciesof2~5mbutareeasilyinterferedbychangingenvironmentsandnearbyhumanbodies.
+Besides, the fingerprinting database has to be updated every few months, which is inconvenient
+fordevelopers. Heetal.[17]combinedthestrengthsoftrilaterationandfingerprintingtoforman
+accurateandeffectiveindoorlocalizationframework. TheBluetoothantennaarray[18]canachievea
+higherlocationaccuracybuthaslimitationssuchashighcostandshortworkingdistance. Cellular
+technology[19,20]hasgreatpotentialinindoorpositioningbecausecellularsignalsarewidespread,
+butthepositioningerrorofthesekindofmethodsisrelativelylarge. Infraredtechnology[21]and
+ultrasonicwaves[22,23]canachievehigherindoorpositioningaccuracy,withthelimitationofneeding
+additionalinfrastructure. Sinceallofthesemethodshavetheirownadvantagesanddisadvantages,
+multi-sensorfusionapproacheshavebeenresearchedbymanypeopletotakeadvantageofdifferent
+methods. Kim et al. [24] combined magnetic signals, Wi-Fi signals and cellular signals to realize
+indoorlocation. Jeonetal.[25]proposedamethodintegratingBluetoothRSSIwithanaccelerometer
+andabarometeronsmartphonestoreachhigherpositioningaccuracycomparedwiththeapproach
+withoutBluetoothRSSI.Chenetal.[26]integratedatypicalWi-Fiindoorpositioningsystemwitha
+PDRsystemandachievedabetterpositioningperformancethanthePDRsystemorWi-Fipositioning
+systemalone. Lietal.[27]proposedadead-reckoning(DR)/Wi-Fifingerprinting/magneticmatching
+(MM)integrationstructure. Thestructureusesconsumers’portabledeviceswithoff-the-shelfsensors
+andexistingWi-Fiinfrastructurestoraisepositioningaccuracy. Liuetal.[28]fusedmultiplesensors,
+including cameras, Wi-Fi and inertial sensors, and used a deep learning method to realize indoor
+localization. Beckeretal.[29]usedvisionimagesforclassificationtorecognizecorridors,withexisting
+wirelessLANaccesspointsincorrespondingcorridortorealizepositioning. Gaoetal.[30,31]designed
+amethodwhichcombinedcameraandgyroscopeinsmartphonetorealizeindoorpositioningwith
+accuracyof2m–8m. Intheirmethod,atleastthreesmartphonephotosarephotographedineach
+test place to capture references points (such as store logos) that provide positioning information,
+andgyroscoperecordsangleinformationatthesametime. Afterthat,thepositioncanbecalculated
+viatrilateration.
+In addition, the vision-based indoor positioning problem has always been a hotspot issue of
+researchinthelastdecades. In1998,thevisiontechnologygroupofMicrosoftdiscussedaneasy-living
+life in the future [32], and one of the core technologies was to locate people in house by using
+several video surveillance techniques. After that, methods of indoor positioning based on vision
+keptdeveloping,andtheycanberoughlydividedintothreecategories[33]. Thefirstcategoryuses
+referencesfrombuildingmodels.Thesekindsofmethodsdetectobjectsinimagesandmatchthemwith
+thoseinthebuildingdatabase. HileandBorriello[34]comparedtheimageswiththefloorplanofthe
+buildingtolocatesmartphones.Kohouteketal.[35]detectedspecificobjectsincloudpointsobtainedby
+arangeimagingcamera,andcomparedthemwiththedigitalspatial-semanticinteriorbuildingmodel
+CityGMLtodeterminelocationandorientation.Thesecondcategoryofvisualpositioningmethodsare
+basedonimages. Theseapproachesmainlycomparesimilaritiesamongtestingimagesandreference
+imagescapturedinofflinephaseandoutputthelocationofthereferenceimagewiththehighestscore.
+KimandJun[36]matchedthecurrentviewofacamerawithimagesequencesstoredinadatabase.
+Theirmethodisdesignedforaugmentedrealityapplicationsforextrainformation. Werneretal.[37]
+estimatedpositionandorientationbyusingreferenceimagesandlocationinformationacquiredfrom
+thepre-builtdatabase. Theydesignedanalgorithmtoestimatedistancethroughtheratioofmatched
+pixeldistancetomeasureviewpoint-to-imagedistance. Mölleretal.[38]designedanmobileindoor
+navigationsystemcombinedinterfacesofVirtualReality(VR)andAugmentedReality(AR)elements.
+Thelastcategoryisutilizingdeployedcodedtargets,includingconcentricrings,barcodesorpatterns
+consistingofcoloreddots,etc. Mullonietal.[39]pastedthebarcodeindifferentplaces,socameras
+cancapturethesemarkstogetlocationaswellasotherinformation. ByteLightcompanycreateda
+special LED light with specific frequency (represent different position information), which can beSensors2018,18,2229 4of17
+capturedbycamerasinsteadofhumaneyes[40]. Inadditiontothesesystemsandmethods,visual
+gSyernosor[s4 210]1a8,n 1d8, vx isualodometertechnology[42]arealsousedasvisualpositioning. Thealgorithm4 oof 1f7
+visionpositioningismorecomplex,largercomputationandhigherpowerconsumptionthanother
+maentdh ohdisg.hHero wpeovweer,r wciotnhsfuumrtphteiroinm tphraonv eomtheenrt omfsemthaordtsp.h oHnoewpeevrefor,r mwainthc ef,uthrtihsekri nidmopfromveetmhoednst iosf
+esxmpeacrttepdhotonefu prethrfeorrpmoapnuclea,r tihzeisi nkitnhde ofuf tmureeth.ods is expected to further popularize in the future.
+33..S Syysstetemma annddM Meeththooddoolologgyy
+InInt hthisiss esectcitoionn,,a as ysystsetemmo ovveervrvieiewwi sisp prerseesenntetedda attfi frisrts.t.T Thheennk keeyym moodduulelessa arerei lillulustsrtarateteddw witihth
+pprorocecesssso offt hthees ysystsetmem..
+33.1.1..S SyysstetemmO Ovveerrvvieieww
+TThheem maainini dideeaao offo ouurrs syysstetemmi sist otou ussees smmaarrtptphhoonneei mimaaggeesst otol oloccaateteu usseersrsv viaias statatitcico obbjejecctstsi ninl alargrgee
+ininddoooorrs scceenneess,,a annddt hthees ysystsetemmfl folowwd diaiaggrarammi siss hshoowwnna assF Figiguurere1 1..T Thheep proroppooseseddi ninddoooorrp poosistiitoionniningg
+ssyysstetemmc coonnssisiststso offt wtwoop paratrst:s:s tsatatitcico obbjejectcstsr erceocoggnnitiitoionna nanddp posoistiitoionnc aclacluculaltaitoionn..T Thhees tsatatitcico obbjejecctsts
+rereccooggnnitiitoionn aaimimss ttoo ddeetteecctt aanndd iiddeennttiiffyy ssttaattiicc oobbjjeeccttss iinn imimaaggeess, ,aanndd ththenen ddeteetremrminien ecocoorodridniantaetse osf
+ocfocnotrnotrl oplopinotisn ftosrf coarlccuallactuinlagt iunsgeruss’ elorsc’atlioocna t(iSoenct(iSoenc 3ti.o1n). T3h.1e) .poTshiteiopno csailtciounlatciaolnc uinlactliuodnesin pcolusidtieosn
+peosstiitmioantieosnti,m diasttiaonnc,ed eissttaimncaetieosnti amnadt iao nfilatnerd sacrfieletnerinsgc rgereonsisn gpogirnotsss apnodi notustapnudt uosuetrpsu’ tpuosseitriso’np (oSseictitoionn
+(S3e.2c)t.i on3.2).
+Figure 1. System flow diagram.
+Figure1.Systemflowdiagram.
+The current version of our system is web-based. After the smartphone photographs test images,
+Thecurrentversionofoursystemisweb-based. Afterthesmartphonephotographstestimages,
+a desktop as server will implement the rest of algorithms and return the results.
+adesktopasserverwillimplementtherestofalgorithmsandreturntheresults.Sensors2018,18,2229 5of17
+Sensors 2018, 18, x 5 of 17
+3.2. StaticObjectsRecognition
+3.2. Static Objects Recognition
+3.2.1. StaticObjectDetection&Identification
+3.2.1. Static Object Detection & Identification
+Whenuserstakeaphotoasinput,thefirsttaskofthesystemistodetectstaticobjectsinimages
+and rWechoegnn iuzseertsh etairkeu na ipqhuoetiod aesn itnitpieust., tThhei sfirissta takseky omf tohdeu slyestoefmth ies tsoy sdteetmec,t osutattpicu totbinjegctbso iunn imdaargieess
+aanndd rideceongtintiizese tohfesirta utinciqoubeje icdtesnitnitiiems.a Tghesis. iTs ha ekebyo umnoddaurliee sofo tfhset astyicsteombj,e octustpinutitminagg beoiunnflduaerniecse atnhde
+pideerfnotritmieasn coef osftafetiact uorbejeecxttsr aicnti oinmaangdesm. Tathceh inbgouinndthaeriefos lloofw sintagtipc roocbejdecutrse si,na nimdaidgee nitnitfileuseonfcset atthice
+opbejrefcotrsmaraentchee okfe fyeatotufirned excotrrarcetsipoonn adnindg matattrcihbuintegs iinn tdhaet afoblalsoew,sinugch parsocroedomurnesu, manbder ,idpeixnetlitcioeso rodfi nstaatteisc
+aonbdjecotbsj eacrtse ctohoer dkienya tetos offincodn tcroorlrpesopinotnsd,ientcg. attributes in database, such as room number, pixel
+coordInintahtiessp aanpde ro,bwjeectism cpoloermdeinnattFesa sotfe rc-oRnCtrNolN paolignotsr,i tehtcm. [43]forthistask. Faster-RCNNintegrates
+regioInnp throisp posaaple,rf,e wateu rimeepxltermacetniot nF,acsltaesrs-RifiCcNatNio nalagnodritrhecmta [n4g3l]e f-orer fithnies itnatsok.o Fnaesetenrd-R-tCo-NenNd innteetgwroatreks,
+wrehgiicohn gprreoaptloysarle,d fueacteutrhe eexatmraocutinotno, fclcaaslsciufilcaattiioonn aanndd srpeceteadngulpe-rthefeindee tinectoti oonnep eroncde-stos.-eSnmd anretptwhoornke,
+iwmhaigcehs garreeafitrlyst lryedzouocme ethdei natmooaufinxte dofs iczael,ctuhleantiothno saenfidx sepde-seidz euipm athgee sdaerteescetinodn toprtohceenses.t wSmorakr.tJpuhsotnase
+Fimigaugrees2 airlelu fisrtsrtaltye sz,oaotmtheed binetgoi nan fiinxgedo fsitzhee, tnheetnw tohroksteh feixreeda-rseiz1e3 icmoangvelsa ayreer ss,e1n3dr teol uthlea yneertswaonrdk.f Jouusrt
+paos oFliignugrlea y2e irlsl.uTsthriastecso,m abt itnhaet iboengoinfndiinffge roefn tthlaey neerstwisoarckt uthalelryea aprea r1t3o fcoVnGvG l1a6yenrest,w 1o3 rrkel[u44 l]a,ywehrsic ahnids
+afofuarm poouoslninegtw laoyrekrisn. Timhiasg ceocmlabsisnifiactiaotnio nof, rdeiaflfiezrienngt fleaayteurrse iesx atrcatuctailolny fao rpasmrt aorft pVhGoGne16im naegtweso;rTkh [e4n4a],
+Rwehgiicohn Pisr oap ofasamloNuest wnoertkw(oRrPkN i)ng iemneargaet ecslfaosrseigfircoautinodn,a nrcehaloirzsinags wfeealltuasreb oeuxntrdaicntgiobno xforre gsrmesasriotpnhboinase
+images; Then a Region Proposal Network (RPN) generates foreground anchors as well as bounding
+tocalculateproposalsfromthesefeatures;ROIpoolinglayersuseproposalstoextractproposalfeature
+box regression bias to calculate proposals from these features; ROI pooling layers use proposals to
+forsubsequentfullyconvolutionalnetworkandsoftmaxnetworktoclassifyproposals. Thewhole
+extract proposal feature for subsequent fully convolutional network and softmax network to classify
+networkistrainedonthebasisoftheconvergenceoflossfunctionasbelow:
+proposals. The whole network is trained on the basis of the convergence of loss function as below:
+Loss= 1 1 ∑ L (p,p∗)+ 11 ∑ p∗ L (t,t∗) (1)
+Loss(cid:3404)N
+(cid:1840)cls
+(cid:3533)i (cid:1838)c (cid:3030)l (cid:3039)s (cid:3046)(cid:4666)(cid:1868)i (cid:3036),(cid:1868)i (cid:3036)(cid:1499)(cid:4667)(cid:3397) (cid:1840)N reg(cid:3533)i(cid:1868) (cid:3036)(cid:1499)i(cid:1838) (cid:3045)r (cid:3032)e (cid:3034)g(cid:4666)(cid:1872) (cid:3036)i,(cid:1872) (cid:3036)(cid:1499)i(cid:4667) (1)
+(cid:3030)(cid:3039)(cid:3046) (cid:3036) (cid:3045)(cid:3032)(cid:3034) (cid:3036)
+H He er re e,
+,
+ii(cid:1861)s t ih
+s
+e ti hn ed e ix ndo ef xa n och
+f
+o ar n; cp hr oe rp
+;
+re(cid:1868)se n rets pp rer se ed nic tsti o pn rep dro icb ta iob nil it py rf oo br ac bl ia ls its yifi c foat ri o cn lao sf sif fo ir ce ag tir oo nu n od
+f
+a fon rc eh go rr ou(i n.e d., as nta ct hic oro b (ij .e ec .,t ) sa tan td
+ic
+t oi bs jet ch te
+)
+o au nt de r(cid:1872)r e isc t ta hn eg l oe uo tef rp rr ee cd ti ac nte gd
+le
+t oar
+f
+g pe rt. edp ic∗ tea dn d tat r∗ gr ee t.p r(cid:1868)e(cid:1499)s e an nt dt h(cid:1872)e(cid:1499)
+c ro eprr re es sp eo nn t d thin eg cg or ro reu sn pd ontr du it nh go gf rp ouan nd d t trr ue ts hp e oc ft i(cid:1868)v e aly n. dN (cid:1872)cl sra en spd eN ctrievgea lyre . n(cid:1840)um b aner ds o(cid:1840)fan c ah ro e r ns ua mnd beo ru st e or f
+(cid:3030)(cid:3039)(cid:3046) (cid:3045)(cid:3032)(cid:3034)
+r ae nc ct han og rsle as n. dL colsu( t· e) ra rn ed ctL anregg( le·) s.r u(cid:1838)ns(cid:4666)u·(cid:4667)b t ar nac dt io(cid:1838)n. (cid:4666)·(cid:4667) run subtraction.
+(cid:3030)(cid:3039)(cid:3046) (cid:3045)(cid:3032)(cid:3034)
+Figure 2. Faster-RCNN network for static objects detection and identification.
+Figure2.Faster-RCNNnetworkforstaticobjectsdetectionandidentification.
+In order to improve performance and robustness of the system, the whole network shall be
+In order to improve performance and robustness of the system, the whole network shall be
+retrained in offline phase. Photos of static objects photographed from various angles at different
+retrained in offline phase. Photos of static objects photographed from various angles at different
+distances are used for training images. After training customized network, the system outputs outer
+distancesareusedfortrainingimages. Aftertrainingcustomizednetwork,thesystemoutputsouter
+rectangles and identities of static objects appeared in images (as Figure 3).
+rectanglesandidentitiesofstaticobjectsappearedinimages(asFigure3).Sensors2018,18,2229 6of17
+Sensors 2018, 18, x 6 of 17
+Figure 3. An example of output (right) in process of Static Object Detection & identification.
+Figure3.Anexampleofoutput(right)inprocessofStaticObjectDetection&identification.
+3.2.2. Obtaining Control Points Coordinates
+3.2.2. ObtainingControlPointsCoordinates
+We define “control points” as those physical feature points on static objects with accurately
+We define “control points” as those physical feature points on static objects with accurately
+surveyed coordinate location and can be identified relatively easy. By building relationship between
+surveyedcoordinatelocationandcanbeidentifiedrelativelyeasy. Bybuildingrelationshipbetween
+pixel coordinates in image and corresponding space coordinates of control points (Collinear Equation
+pixelcoordinatesinimageandcorrespondingspacecoordinatesofcontrolpoints(CollinearEquation
+Model [45]), the position of the smartphone can then be obtained. Thus, the key problem is to find
+Model[45]),thepositionofthesmartphonecanthenbeobtained. Thus,thekeyproblemistofind
+the corresponding pixel coordinate of control points in test images. Here is our strategy: In the offline
+the corresponding pixel coordinate of control points in test images. Here is our strategy: In the
+phase, images of static objects are photographed and stored in dataset, called the “reference images”.
+offlinephase,imagesofstaticobjectsarephotographedandstoredindataset,calledthe“reference
+Pixel coordinates of control points in these images are measured and recorded. In the online phase,
+images”. Pixelcoordinatesofcontrolpointsintheseimagesaremeasuredandrecorded. Intheonline
+after detecting and identifying static objects in test images, feature points in testing image and
+phase,afterdetectingandidentifyingstaticobjectsintestimages,featurepointsintestingimageand
+corresponding reference images are extracted. Then the feature matching algorithm is implemented
+correspondingreferenceimagesareextracted. Thenthefeaturematchingalgorithmisimplementedto
+to get enough homonymy feature points, which is used to calculate homographic matrix in next step.
+getenoughhomonymyfeaturepoints,whichisusedtocalculatehomographicmatrixinnextstep.
+The homographic matrix represents the mapping relationship between pixels of testing image and
+Thehomographicmatrixrepresentsthemappingrelationshipbetweenpixelsoftestingimageand
+reference image. Finally, the pixel coordinates of control points in testing image can be calculated
+referenceimage. Finally, thepixelcoordinatesofcontrolpointsintestingimagecanbecalculated
+from the homographic matrix and reference images coordinates of control points. The details of the
+fromthehomographicmatrixandreferenceimagescoordinatesofcontrolpoints. Thedetailsofthe
+algorithm are showed in Algorithm 1.
+algorithmareshowedinAlgorithm1.
+AAllggoorriitthhmm 11.. O Ob bt ta ai in ni in ng
+g
+P Pi ix xe el
+l
+C Co oo or rd di in na at te es
+s
+o of
+f
+C Co on nt tr ro ol
+l
+P Poo ii nn tt ss ii nn TT ee ss tt II mm aa gg ee ss
+Input: image block of static objects from test image
+Input:imageblockofstaticobjectsfromtestimage
+Procedure:
+Procedure:
+(1) Get reference image through identity of static object from database;
+(1)Getreferenceimagethroughidentityofstaticobjectfromdatabase;
+(2) Extract feature points for both test image block and reference image by SIFT operator [46];
+(2)ExtractfeaturepointsforbothtestimageblockandreferenceimagebySIFToperator[46];
+(3) Perform feature matching to get homonymy feature point pairs;
+(3)Performfeaturematchingtogethomonymyfeaturepointpairs;
+(4) Employed RANSAC [47] to remove false matching points; the remaining matching points marked
+(4)EmployedRANSAC[47]toremovefalsematchingpoints;theremainingmatchingpointsmarkedas
+as (cid:1842) for test image and (cid:1842) for reference image;
+Ptestf(cid:3047)o(cid:3032)r(cid:3046)(cid:3047)testimageandP
+ref
+for(cid:3045)(cid:3032)r(cid:3033)eferenceimage;
+(5) Calculate homographic matrix (cid:1834) by solving formula below:
+(5)CalculatehomographicmatrixH (cid:3035)(cid:3042)(cid:3040)b(cid:3042)ysolvingformulabelow:
+homo
+(cid:1842) (cid:3404)(cid:1834) (cid:3400)(cid:1842)
+(cid:3021)(cid:3032)(cid:3046)(cid:3047) (cid:3035)(cid:3042)(cid:3040)(cid:3042) (cid:3045)(cid:3032)(cid:3033)
+P = H ×P
+(6) Estimate pixel coordinates of control Tpeostints inh otmeost imraegfes CPT as following formula, (cid:1829)(cid:1842)(cid:1846) is the
+(cid:3045)(cid:3032)(cid:3033)
+(s6e)tE osft ipmixaetel cpoioxerdlcinoaotredsi noaf tceosnotfroclo pnotrionltsp oinin rtesfeinretnecste iimmaaggeess:C PTasfollowingformula,CPT
+ref
+istheset
+ofpixelcoordinatesofcontrolpointsin(cid:1829)r(cid:1842)e(cid:1846)fe(cid:3404)ren(cid:1834)ceima(cid:3400)g(cid:1829)es(cid:1842):(cid:1846)
+(cid:3035)(cid:3042)(cid:3040)(cid:3042) (cid:3045)(cid:3032)(cid:3033)
+Output: (cid:1829)(cid:1842)(cid:1846) CPT= H ×CPT
+homo ref
+Output:CPT
+Figure 4 shows an example of output by Algorithm 1. The pixel coordinates of control points in
+reference images are measured in the offline phase. The reason why we do not directly choose feature
+points from test image as output is that the specific control points may not belong to the set of feature
+points by SIFT when the texture of images are too complicated. Also, it is hard to design a robust and
+effective filter to screen the specific point from plenty of feature points. Algorithm 1 is a fast and
+effective approach instead.Sensors2018,18,2229 7of17
+Figure4showsanexampleofoutputbyAlgorithm1. Thepixelcoordinatesofcontrolpointsin
+referenceimagesaremeasuredintheofflinephase. Thereasonwhywedonotdirectlychoosefeature
+pointsfromtestimageasoutputisthatthespecificcontrolpointsmaynotbelongtothesetoffeature
+pointsbySIFTwhenthetextureofimagesaretoocomplicated. Also, itishardtodesignarobust
+andeffectivefiltertoscreenthespecificpointfromplentyoffeaturepoints. Algorithm1isafastand
+Seefnfesocrtsi v20e18a,p 1p8,r xo achinstead. 7 of 17
+FFiigguurree 44.. AAnn eexxaammppllee ooff oouuttppuutt bbyy AAllggoorriitthhmm 11.. TThhee ppiixxeell ccoooorrddiinnaatteess ooff ccoonnttrrooll ppooiinnttss iinn tteesstt iimmaaggee
+aarree oobbttaaiinneedd ffrroomm rreeffeerreennccee iimmaaggee..
+3.3. Position Calculation
+3.3. PositionCalculation
+33..33..11.. PPoossiittiioonn EEssttiimmaattiioonn
+TThhee ggeeoommeettrriicc rreellaattiioonn bbeettwweeeenn ccoonnttrrooll ppooiinnttss iinn iimmaaggee aanndd oobbjjeecctt ssppaaccee ccaann bbee iilllluussttrraatteedd vviiaa
+ccoolllliinneeaarr eeqquuaattiioonn mmooddeell aassE Eqquuaatitoionn( 2(2),),f oforrp pixiexlecl ocoorodridniantaete( x(cid:4666),(cid:1876)y,)(cid:1877)a(cid:4667)n dansdp ascpeaccoe ocrodoirndaitnea(tXe ,(cid:4666)Y(cid:1850),,Z(cid:1851)),(cid:1852)o(cid:4667)f
+othf ethsea msaemceo nctornotlrpool ipnoti,ntht,e thgee ogmeoemtriectrriecl aretiloantiocnan cabne bilelu isllturastteradteads baes lboewlo:w:
+ 
+
+(cid:1749)(cid:1750)(cid:1748)(cid:1750)(cid:1747) x y(cid:1877)(cid:1876) −−(cid:3398) (cid:3398)yx 00(cid:1876) (cid:1877)(cid:2868) (cid:2868)==(cid:3404) (cid:3404)−−(cid:3398) (cid:3398)ff(cid:1858)
+(cid:1858)
+tttt 3231 (cid:1872)
+(cid:1872)
+(cid:1872)(cid:1872) 1111 (cid:2871)(cid:2869)
+(cid:2870)
+(cid:2871)(((( (cid:2869)(cid:2869)
+(cid:2869)
+(cid:2869)XXXX (cid:4666)(cid:4666)
+(cid:4666)
+(cid:4666)(cid:1850)(cid:1850)
+(cid:1850)
+(cid:1850)−−−− (cid:3398)(cid:3398)
+(cid:3398)
+(cid:3398)XXXX (cid:1850)(cid:1850)
+(cid:1850)
+(cid:1850)
+OOOO (cid:3016)(cid:3016)
+(cid:3016)
+(cid:3016))))) (cid:4667)(cid:4667)
+(cid:4667)
+(cid:4667)++++ (cid:3397)
+(cid:3397)
+(cid:3397)(cid:3397) ttt t(cid:1872)(cid:1872)
+(cid:1872)
+(cid:1872)
+321 3(cid:2869)
+(cid:2871)
+(cid:2870)
+(cid:2871)222 2(cid:2870)
+(cid:2870)
+(cid:2870)
+(cid:2870)((( ((cid:4666) (cid:4666)
+(cid:4666)
+(cid:4666)YYY Y(cid:1851) (cid:1851)
+(cid:1851)
+(cid:1851)−−− −(cid:3398) (cid:3398)
+(cid:3398)
+(cid:3398)YYY Y(cid:1851) (cid:1851)
+(cid:1851)
+(cid:1851)
+OOO O(cid:3016)
+(cid:3016)
+(cid:3016)
+(cid:3016)(cid:4667) (cid:4667)
+(cid:4667)
+(cid:4667)))) )(cid:3397) (cid:3397)
+(cid:3397)
+(cid:3397)+++ +(cid:1872) (cid:1872)
+(cid:1872)
+(cid:1872)ttt t(cid:2869)
+(cid:2871)
+(cid:2870)
+(cid:2871)321 3(cid:2871)
+(cid:2871)
+(cid:2871)
+(cid:2871)333 3(cid:4666) (cid:4666)
+(((cid:4666)
+(cid:4666)( ((cid:1852) (cid:1852)
+(cid:1852)
+(cid:1852)ZZZ Z(cid:3398) (cid:3398)
+(cid:3398)
+(cid:3398)−−− −(cid:1852) (cid:1852)
+(cid:1852)
+(cid:1852)ZZZ Z(cid:3016)
+(cid:3016)
+(cid:3016)
+(cid:3016)OOO O(cid:4667) (cid:4667)
+(cid:4667)
+(cid:4667))))
+) (2 (2)
+)
+In this formula, (cid:4666)(cid:1876) ,(cid:1877) ,(cid:1858)(cid:4667) are the intrinsic parameters of the camera, which can be measured by
+In this formula, (x(cid:2868),y(cid:2868), f) are the intrinsic parameters of the camera, which can be measured
+0 0
+camera calibration offline [48]. (cid:4666)(cid:1850) ,(cid:1851) ,(cid:1852) (cid:4667) are the space coordinates of the smartphone camera, i.e.,
+bycameracalibrationoffline[48].(cid:3016)(X(cid:3016),Y(cid:3016) ,Z )arethespacecoordinatesofthesmartphonecamera,
+O O O
+the position of user. (cid:1872) (cid:4666)(cid:1861),(cid:1862)(cid:3404)1,2,3(cid:4667) are nine directional cosines related to the exterior orientation of
+i.e.,thepositionofuser(cid:3036)(cid:3037). t (i,j =1,2,3)areninedirectionalcosinesrelatedtotheexteriororientationof
+ij
+smartphone. Hence, as long as more than three control points are offered (including pixel coordinates
+smartphone. Hence,aslongasmorethanthreecontrolpointsareoffered(includingpixelcoordinates
+and space coordinates, which are the result of (cid:1829)(cid:1842)(cid:1846) from last step, Section 3.2.2), such as (cid:4666)(cid:1827),(cid:1853)(cid:4667), (cid:4666)(cid:1828),(cid:1854)(cid:4667)
+andspacecoordinates,whicharetheresultofCPTfromlaststep,Section3.2.2),suchas(A,a),(B,b)
+and (cid:4666)(cid:1829),(cid:1855)(cid:4667) in Figure 5, the position can be calculated through this model. The system outputs
+and(C,c)inFigure5,thepositioncanbecalculatedthroughthismodel. Thesystemoutputsestimated
+pes ot sim itia ot ned(cid:0) Xp∗o ,s Yiti∗o ,n
+Z
+∗(cid:4666)(cid:1850)(cid:1) (cid:3016)(cid:1499) b, y(cid:1851) (cid:3016)a(cid:1499), n(cid:1852) i(cid:3016)(cid:1499) t(cid:4667)
+e
+rab ty
+iv
+a en
+p
+i rte or ca et si sv .e process.
+O O OSensors2018,18,2229 8of17
+Sensors 2018, 18, x 8 of 17
+Sensors 2018, 18, x 8 of 17
+FFigiguurere5 .5.P Prirninccipipaallo offP PoossitiitoionnE Esstitmimaatitoionn.. oo((cid:4666)x(cid:1876)0(cid:2868),,y(cid:1877)0(cid:2868))(cid:4667)i sist htheep prirnincicpipaallp pooinintto offc acmamerearai mimaag gee,,a annddt hthee
+lel Fenn ig ggt uhth ro e of 5fO . (cid:1841)o P(cid:1867)i rs i nits ch ite phf aeo l cf ooa fcl a Plel o nl seg in tt ihg ot nhf . EB(cid:1858) sy. t iB mcya a lcc tau iollc naut .i lnaotg (cid:4666)i(cid:1876)ncgo , l (cid:1877)clion (cid:4667)lel ia in sre tea hqr e ue paqt rui ioa nnt ci iom pn ao lmd peo olds ineol tfs o coo ff n cc ator monlt erp ro aol i ipn mot aipn gat ei rp , s aa, niAr ds,, B tA h,, e
+CB la e, n nCd
+g
+a ta hn, db
+o
+, fa c,, (cid:1841)bt (cid:1867),h c e,
+i
+stp h to hes eipt i foo osn cit aiin lo g ln eio nnf ggs
+t
+hmo fa (cid:1858)sr .mt Bpah yr ot cpn ahe lcoO un l( e aX ti(cid:1841)O n(cid:2868) , g(cid:4666)Y(cid:1850) c(cid:2868) O(cid:3016)o,, lZ l(cid:1851) i(cid:3016)nO e,)(cid:1852) ac r(cid:3016)a e(cid:4667)n qcb uae an to ibb oet na oi mnbe otad di. en le sd o.
+f control point pairs, A,
+B, C and a, b, c, the positioning of smartphone (cid:1841)(cid:4666)(cid:1850) ,(cid:1851) ,(cid:1852) (cid:4667) can be obtained.
+(cid:3016) (cid:3016) (cid:3016)
+33.3.3.2.2..D DisistatanncceeE Esstitmimaatitoionn
+3.3.I2nI.n Do orisdrtdeaernrtc oteo aE avsvotioimdidag tgriooronsss se rerrororrf oforrt htheefi fninalalp poosistiitoionn,,d disitsatanncecee setsitmimaatitoionni sist htheenni mimpplelemmeennteteddt oto
+cchheecckkt htheeo ouutptpuutto offc ocolllilnineeaarre eqquuaatitoionnm mooddele.l.
+In order to avoid gross error for the final position, distance estimation is then implemented to
+TThheep prirnicnicpilpeleo fodf isdtiasntacnecees teimstaimtioantiocann cbaen ilbleu sitlrluatsetdraatesdF iagsu rFeig6ua:reA 6aan: d(cid:1827)B aanrde t(cid:1828)w oacroe nttwrool pcoonintrtso.l
+check the output of collinear equation model.
+Tphoeipnats Tr.a
+h
+lT ele h pleo
+r
+g ip nraa cmr ipal lil ene l obo flg u drea ismr te ap nirn ce esb e enlu st tse
+im
+irme apa tigr oee nsp e cln aat nns e b;im ea aa ilgn lued
+s
+b tp rla aar tne ee dc; o ara sr e Fasn ip gdo
+u
+n rbd
+e
+in 6a agre
+:
+p (cid:1827)cixo e arlr nse dos pf (cid:1828)oc on and rti erno tgl
+w
+pp ooi ix cne otls ns ti rno of
+l
+imc poa ong it ner to. slG
+.
+p Tao hni end t psg aia rnr
+a
+e li lm em loaidg gpe ra.o mi(cid:1833)n t isa nno d bf ll ui(cid:1859)n
+e
+e a rrA ee pB rm ea sind ed np toa sbi n ir mtess apo gfe
+e
+c lti pinv le ae nl(cid:1827)y e.(cid:1828)
+;
+O aa in asd nth
+d
+ae b bf o r acea rs elp pe coc oti rin rv ete, slw py o.h ni (cid:1841)c dh
+i
+niis gs ta phls ie xo eft lo shc ea ol
+f
+ppo cos oii ntni tot r,n
+o
+w lo h pfi otch ih ne i tss sm a il nasr ot
+i
+p mthh aeo
+g
+np eeo
+.
+.s(cid:1833)iTthi o aen nd dois f t (cid:1859)tah ne ac rse emb maetrw it dpe phe oon in nteh t.
+s
+eT oshm fe lad ir nits ept ah (cid:1827)no (cid:1828)cne e aba nent ddw a aebesn ta
+r
+t ethi sce
+p
+os ebm cj tea ivcrt etpc lyah .no nb (cid:1841)ee as isnim d thp a el is fit fa oetd ci ac
+l
+aosbthjeectl ecnagnt hbeo sfilminpeliOfiGed, wash tihche lceanngbthe eosf tliimnea te(cid:1841)d(cid:1833)b, wyfhoilclho wcainn gbefo ersmtiumlaa:ted by following formula:
+point, which is also the position of the smartphone. The distance between the smartphone and a static
+object can be simplified as the length of line (cid:1841)(cid:1841)(cid:1833)(cid:1859), which can be estimated by following formula:
+OG(cid:1841)(cid:1833)=(cid:3404)O
+a(cid:1853)
+b(cid:1841)g (cid:1854)(cid:1859)×(cid:3400) A(cid:1827) B(cid:1828)=(cid:3404) d(cid:1856)
+r(cid:3045)
+( (3 3)
+)
+(cid:1841)(cid:1833) (cid:3404) (cid:3400)(cid:1827)(cid:1828) (cid:3404)(cid:1856) (3)
+The length of (cid:1841)(cid:1859) can be calculated as Figu(cid:1853)r(cid:1854)e 6b: o is p(cid:3045)rincipal point of camera image, line (cid:1841)(cid:1867)
+ThelengthofOgcanbecalculatedasFigure6b: oisprincipalpointofcameraimage,lineOois
+is the Tfo hc ea ll e l ne gn tg ht h o f(cid:1858) (cid:1841). T(cid:1859)h cu as n: be calculated as Figure 6b: o is principal point of camera image, line (cid:1841)(cid:1867)
+thefocallength f. Thus:
+is the focal length (cid:1858). Thus: O(cid:1841) g(cid:1859)=(cid:3404)(cid:113) (cid:3493)((cid:4666) O(cid:1841) o(cid:1867))(cid:4667)2(cid:2870) +(cid:3397)((cid:4666) o(cid:1867) g(cid:1859))(cid:4667)2(cid:2870) ( (4 4)
+)
+(cid:1841)(cid:1859)(cid:3404)(cid:3493)(cid:4666)(cid:1841)(cid:1867)(cid:4667)(cid:2870)(cid:3397)(cid:4666)(cid:1867)(cid:1859)(cid:4667)(cid:2870) (4)
+(a) (b)
+(a) (b)
+Figure 6. Principal of Distance Estimation. (a) Is geometric relation between smartphone camera and
+control points on static object; (b) is interior geometric relation of smartphone camera.
+Figure 6. Principal of Distance Estimation. (a) Is geometric relation between smartphone camera and
+Figure6.PrincipalofDistanceEstimation.(a)Isgeometricrelationbetweensmartphonecameraand
+control points on static object; (b) is interior geometric relation of smartphone camera.
+co Inn t aro dl dp io tii on nts
+,
+o sn ins cta et i tc ho eb pje oct s; i( tb io) nis oin
+f
+t se mrio ar rg tpeo hm onet er ic (cid:1841)re (cid:3404)la (cid:4666)ti (cid:1850)on(cid:1499),o (cid:1851)f(cid:1499)s ,m (cid:1852)(cid:1499)a (cid:4667)rt p hh ao sn be ec ea nm e er sa t.
+imated in previous,
+(cid:3016) (cid:3016) (cid:3016)
+we ca In
+n
+ac dal dc iu til oa nte
+,
+st ih ne
+c
+ed tis ht ea n pc oe
+s
+it(cid:1841) io(cid:1833)
+n
+d oi fr e smctl ay
+r
+ta pn hd
+o
+nm
+e
+a(cid:1841)rk(cid:3404)ed(cid:4666) (cid:1850)it(cid:1499) ,a(cid:1851)s(cid:1499) ,(cid:1856) (cid:1852)(cid:3032)(cid:1499).(cid:4667) T hh ae sn
+b
+eth ene ec so tn imtro atll ee dd ine r pro rer vγ
+io
+ua ss
+,
+(cid:3016) (cid:3016) (cid:3016)
+we can calculate the distance (cid:1841)(cid:1833) directly and marked it as (cid:1856) . Then the controlled error γ as
+(cid:3032)Sensors2018,18,2229 9of17
+Sensors 2018, 18, x 9 of 17
+Sensors 2018, 18, x 9 of 17
+f fo ol ll lo ow wIni in nag gd da ari rte ei ou uns s,e esd di n t toc oe s stc chr re eee epn no o osiu utit to g gnr ro oos sfs ss e emr rr rao ortr rp.
+.
+Ih If fo γ γn ei is sO l le e=s ss s(cid:0) t tXh ha Oa∗n n,Y t tOh h∗e e,Z t th hO∗r r(cid:1) e ehs sh hao osl lbd de,
+,
+et tnh he ee se ets sit tmi im mata aet tde ed di n p ppo os srei it tvi io oion nu i iss s,
+wacececpantacbalelc ausla ftienathl esydsitsetamn coeuOtpGutd: irectlyandmarkeditasd . Thenthecontrollederrorγasfollowing
+acceptable as final system output: e
+areusedtoscreenoutgrosserror. Ifγislessthanthethreshold,theestimatedpositionisacceptableas
+finalsystemoutput: (cid:2011) (cid:2011)(cid:3404) (cid:3404)(cid:1313) (cid:1313)(cid:1856) (cid:1856)(cid:3045)(cid:3398) (cid:3398)(cid:1856) (cid:1856)(cid:3032)(cid:1313) (cid:1313) ( (5 5) )
+(cid:3045) (cid:3032)
+γ = (cid:107)d −d (cid:107) (5)
+r e
+4. Experiments
+4. Experiments
+4. Experiments
+In this section, details of experiments are represented. We tested our system in a large indoor
+In this section, details of experiments are represented. We tested our system in a large indoor
+spaceI nwthitihs sae crteiolant,ivdeeltyai lcsoomfepxlipceartiemde enntsvairroenrempernest eanntedd .coWmepteasrteedd othuer spyossteitmionininagl arregseuilntsd owoirthsp tahcee
+space with a relatively complicated environment and compared the positioning results with the
+wgriothunadre tlrautitvhe. lycomplicatedenvironmentandcomparedthepositioningresultswiththegroundtruth.
+ground truth.
+44..11.. EExxppeerriimmeenntt SSeettuupp
+4.1. Experiment Setup
+TThhee eexxppeerriimmeenntt wwaass ccoonndduucctteedd oonn tthhee ffiirrsstt fflloooorr ooff WWaannlliinn AArrtt MMuusseeuumm iinn WWuuhhaann UUnniivveerrssiittyy..
+The experiment was conducted on the first floor of Wanlin Art Museum in Wuhan University.
+TThhee mmuusseeuumm hhaass aabboouutt 88440000 mm2
+2
+bbuuiillddiinngg aarreeaa,, aanndd iittss ffiirrsstt flfloooorr hhaass mmoorree tthhaann 11000000 mm2
+2
+wwiitthh aann ooppeenn
+The museum has about 8400 m2 building area, and its first floor has more than 1000 m2 with an open
+ffiieelldd aanndd ssttaabbllee iilllluummiinnaattiioonn,, wwhhiicchh iiss aa ttyyppiiccaall llaarrggee iinnddoooorr sscceennee ((FFiigguurree 77)).. IInn oorrddeerr ttoo vveerriiffyy tthhee
+field and stable illumination, which is a typical large indoor scene (Figure 7). In order to verify the
+eeffffeeccttiivveenneessss,, ssttaattiicc oobbjjeeccttsss shhaallllb beec coommmmoonna anndde aesays-yt-ot-oc-actacthchin inim imagaeg.eT. hTehreeraer aerteh trheeregel agslsasdso doorsoirns
+effectiveness, static objects shall be common and easy-to-catch in image. There are three glass doors
+itnh ethexep eexrpimereinmtaelnstiatel ,saitlel,o falwl hoifc hwchainchb ecasnee bnea tseaenny patla acneyo fptlhaecero oofm th(Fei grouorem8 )(.FTiwguored o8o)r. sT(widoe ndtiofioerds
+in the experimental site, all of which can be seen at any place of the room (Figure 8). Two doors
+(aisd“ednotiofire1d” aasn “dd“odoor1o”r2 a”n)da r“edoonort2h”e) saorue tohno tfhteh seomutuhs oeuf tmhe, amnuds“eduomo,r a3n”dlo “cdaoteosri3n” tlhoecanteosr tihn. tWhee ncohrotshe.
+(identified as “door1” and “door2”) are on the south of the museum, and “door3” locates in the north.
+Wthees cehtohsree ethgelsaes sthdroeoer gslaassss tdaotiocros bajse csttsatainc dobujseecdts tahnedm ufsoerdl othcaetmin gfo.r locating.
+We chose these three glass doors as static objects and used them for locating.
+FFiigguurree 77.. TTeesstt eennvviirroonnmmeenntto offt htheep prorpoopsoesdeds yssytsetmem,i,. ei..,eW., WanalinnliAnr AtMrt uMseuusmeu.m(a.) (ias)o ius tosiudtesildoeo klooofkt hoef
+Figure 7. Test environment of the proposed system, i.e., Wanlin Art Museum. (a) is outside look of
+tahret marut smeuumse.u(mb,.c ()ba,rce) aprheo ptohsootofsi nosfi dinesliodoek looonkt ohne fithres tfflirosto fr.loor.
+the art museum. (b,c) are photos of inside look on the first floor.
+F FFiiiggguuurrreee 8 88. .. T Th hTr rhe ere ee gegl la ags slas s sd dso odo or ros so a arss s s sat tsa at tsi ic cta o otb bicj je eoc ct tbs sj ei in nct t tsh hie en e ex xthp pee er rei im mxpe een nrt ti. .m ( (a ae– –nc ct) ). a ar r(e ea –“ “cd d)o oao orr re1 1” ”“, ,d “ “od doo oro o1r r”2 2,” ”“ a adn nod do “ “r2d d”o oo oar rn3 3d” ”
+“r rde es sop poe erc c3t t”i iv vre eel lsy yp. . e ctively.SSeennssoorrss 22001188,, 1188,, 2x2 29 1100 ooff 1177
+We used an iPhone 6S smartphone to take images in both offline and online phases, including
+trainiWnge iumseadgeasn foiPr hnoentweo6rSks, mreafertrpenhcoen iemtoagtaesk eanimd ategsets iminabgoetsh. Ooftflheinr eparoncdedonulriense opf hthaese ssy,sitnecmlu wdienrge
+tcroanindiuncgteimd aing eas cfoomrnpeuttwero wrki,thre Tfeirteannc Xepim garagpeshiacnsd caterdst, ifmora ag epsu.rOetlyh ewrepbro-bcaesdeudr essoloufttiohne.s Iyns ttehmis wcaesree,
+cthoen dbautctteerdieisn oaf scmomarptpuhteornwesi tdhoT nitoatn coXnpsugmraep hmicuschca prdow,feorr. aThpeu grerloyuwnde btr-buathse odf sspolauctei ocno.orInditnhaitsecsa fsoer,
+tahlle bcoanttterroiel spoofisnmtsa ratrpeh omneeassduorendo tbcyo nas uHmie-Tmaurgceht pZoTwSe-r4.2T0hRe gTrootuanl dSttarutitohno f(Hspi-aTcaercgoeot rdSiunravteeysifnogr
+aInllsctrounmtroelnpt oCinot. sLatrde, mGeuaasnugrezdhobuy, aCHhiin-Taa)r g(FeitgZuTreS -94)2,0 wRiTtho t2a lmStmat iponos(iHtioi-nTianrgge etrSruorrv feoyri negveIrnys t1ru0m00e nmt
+Cdios.taLntdce,.G uangzhou,China)(Figure9),with2mmpositioningerrorforevery1000mdistance.
+Figure 9. Hi-Target ZTS-420R Total Station is used for measuring space coordinates of control points
+Figure9.Hi-TargetZTS-420RTotalStationisusedformeasuringspacecoordinatesofcontrolpoints
+and ground truth of test points.
+andgroundtruthoftestpoints.
+We randomly selected twelve places as test points and photographed plenty of static objects
+We randomly selected twelve places as test points and photographed plenty of static objects
+images. All the test points are distributed throughout the room evenly (Figure 12).
+images. Allthetestpointsaredistributedthroughouttheroomevenly(Figure12).
+4.2. Performance of Static Object Recognition
+4.2. PerformanceofStaticObjectRecognition
+In the phase of static object detection and identification, we did data augmentation for training
+Inthephaseofstaticobjectdetectionandidentification,wediddataaugmentationfortraining
+images in order to prevent the network from overfitting and improve the success rate of static object
+imagesinordertopreventthenetworkfromoverfittingandimprovethesuccessrateofstaticobject
+detection. We randomly blocked 30% area of the static target area in the training image to simulate
+detection. Werandomlyblocked30%areaofthestatictargetareainthetrainingimagetosimulate
+the actual situation that the static objects may be blocked by pedestrians or other things. There were
+theactualsituationthatthestaticobjectsmaybeblockedbypedestriansorotherthings. Therewere
+302 training images in total. We adopted the strategy of transfer learning, and retrained the
+302trainingimagesintotal. Weadoptedthestrategyoftransferlearning,andretrainedthenetworked
+networked by using training images on the basis of a model trained by ImageNet [49]. Using the
+byusingtrainingimagesonthebasisofamodeltrainedbyImageNet[49]. Usingthecross-validation
+cross-validation method, we randomly selected 50% of the images for training, 25% for testing, and
+method,werandomlyselected50%oftheimagesfortraining,25%fortesting,and25%forvalidation.
+25% for validation. The Accurate Precision (AP) of the detection and identification is shown in Table 1.
+TheAccuratePrecision(AP)ofthedetectionandidentificationisshowninTable1.
+Table 1. Performance of Faster-RCNN network to detect and identify static objects. The ground truth
+Table1.PerformanceofFaster-RCNNnetworktodetectandidentifystaticobjects.Thegroundtruth
+of test images is offered by human eye judgement.
+oftestimagesisofferedbyhumaneyejudgement.
+Phase Static Object Accurate Precision (AP)
+Phase doSotra1ti cObject Acc1u00ra%te Precision(AP)
+door2d oor1 100% 100%
+Training
+door3d oor2 90.9% 100%
+Training
+meand oor3 97.0% 90.9%
+Testing door1/door2m/deoaonr3 100% 97.0%
+Testing door1/door2/door3 100%
+The accuracy of coordinates of control points in test image is determined by the homographic
+matrix (cid:1834) , which determines the final positioning accuracy to a large extend. We manually
+Thea(cid:3035)(cid:3042)c(cid:3040)cu(cid:3042)racyofcoordinatesofcontrolpointsintestimageisdeterminedbythehomographic
+measured and recorded the ground truth of control points’ pixels in test images (with 2~3 pixels error)
+matrix H , which determines the final positioning accuracy to a large extend. We manually
+homo
+and compared them with the calculation results (cid:1829)(cid:1842)(cid:1846). The errors of pixel coordinates for matching,
+measuredandrecordedthegroundtruthofcontrolpoints’pixelsintestimages(with2~3pixelserror)
+as showed in Figure 10, mostly fall within ten pixels, which we considered as acceptable.Sensors2018,18,2229 11of17
+andcomparedthemwiththecalculationresultsCPT. Theerrorsofpixelcoordinatesformatching,
+Sensors 2018, 18, x 11 of 17
+asshowedinFigure10,mostlyfallwithintenpixels,whichweconsideredasacceptable.
+25
+20
+15
+10
+5
+0
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21
+Figure 10. Accuracy of control points coordinates in test images. The horizontal axis is the index of
+test images; The vertical axis is pixel error between obtained pixel coordinates of control points and
+ground truth.
+The size of images photographed by iPhone 6S is 3024 × 4032 pixels. For all of test images with
+such size, time cost in static object recognition phase are about 0.3 s.
+4.3. Positioning Results and Analysis
+This part demonstrates positioning results. We evaluated the accuracy through Euclidean
+distance of calculated position and ground truth position. Figure 11 illustrates the relationship of
+distance (user-static object) and positioning error. Within the range of 40 m, there is no significant
+correlation between distance and positioning precision. All of the test points achieved an accuracy of
+1.5 m, and most of them are within 1 m.
+Figure 11. Relation between position error and distance.
+Figure 12 is the plan map of the experimental site. Green circles on the map are error boundaries,
+and centers of these circles represent test points. The words near circles such as “0.14 m” means that
+the positioning accuracy error of this test point is 0.14 m. Just as the figure shows, nearly all test points
+achieve accuracy within 1 m, except for two test points, which is caused by unreasonable distribution
+of control points (see Section 5. Discussion). From the plan map we can see that our system has ability
+to locate smartphone within accuracy of 1 m in such a large indoor scene.
+rorrE
+lexiP
+Index of Images
+1.6
+1.4
+1.2
+1
+0.8
+0.6
+0.4
+0.2
+0
+4 9 14 19 24 29 34 39
+rorrE
+gninoitisoP
+Sensors 2018, 18, x 11 of 17
+25
+20
+15
+10
+5
+0
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21
+FiFgiugurer e101.0 .AAcccucruarcayc yofo fcocnotnrtorlo plpoionitnst scocoorodrdiniantaetse sini ntetsets timimagaegse.s T.hTeh ehohroirzioznotnatla alxaixsi sisi sthteh einidndexe xofo f
+tetsets itmimagaegse;s T;Theh evevretrictiacla alxaixsi sisi sppixiexle elrerrorro rbbetewtweeene nobotbatianiende dppixiexle clocoorodrdiniantaetse sofo fcocnotnrtorlo plpoionitnst sanadnd
+grgoruoundnd trturuthth. .
+The size of images photographed by iPhone 6S is 3024 × 4032 pixels. For all of test images with
+ThesizeofimagesphotographedbyiPhone6Sis3024×4032pixels. Foralloftestimageswith
+such size, time cost in static object recognition phase are about 0.3 s.
+suchsize,timecostinstaticobjectrecognitionphaseareabout0.3s.
+4.3. Positioning Results and Analysis
+4.3. PositioningResultsandAnalysis
+This part demonstrates positioning results. We evaluated the accuracy through Euclidean
+Thispartdemonstratespositioningresults.WeevaluatedtheaccuracythroughEuclideandistance
+distance of calculated position and ground truth position. Figure 11 illustrates the relationship of
+of calculated position and ground truth position. Figure 11 illustrates the relationship of distance
+distance (user-static object) and positioning error. Within the range of 40 m, there is no significant
+(user-staticobject)andpositioningerror. Withintherangeof40m,thereisnosignificantcorrelation
+correlation between distance and positioning precision. All of the test points achieved an accuracy of
+between distance and positioning precision. All of the test points achieved an accuracy of 1.5 m,
+1.5 m, and most of them are within 1 m.
+andmostofthemarewithin1m.
+Distance
+Figure 11. Relation between position error and distance.
+Figure 12 is the plan map of the experimental site. Green circles on the map are error boundaries,
+and centers of these circles represent test points. The words near circles such as “0.14 m” means that
+the positioning accuracy error of this test point is 0.14 m. Just as the figure shows, nearly all test points
+achieve accuracy within 1 m, except for two test points, which is caused by unreasonable distribution
+of control points (see Section 5. Discussion). From the plan map we can see that our system has ability
+to locate smartphone within accuracy of 1 m in such a large indoor scene.
+rorrE
+lexiP
+Index of Images
+1.6
+1.4
+1.2
+1
+0.8
+0.6
+0.4
+0.2
+0
+4 9 14 19 24 29 34 39
+rorrE
+gninoitisoP
+Distance
+Figure11.Relationbetweenpositionerroranddistance.
+Figure12istheplanmapoftheexperimentalsite. Greencirclesonthemapareerrorboundaries,
+andcentersofthesecirclesrepresenttestpoints. Thewordsnearcirclessuchas“0.14m”meansthat
+thepositioningaccuracyerrorofthistestpointis0.14m. Justasthefigureshows,nearlyalltestpoints
+achieveaccuracywithin1m,exceptfortwotestpoints,whichiscausedbyunreasonabledistribution
+ofcontrolpoints(seeSection5. Discussion). Fromtheplanmapwecanseethatoursystemhasability
+tolocatesmartphonewithinaccuracyof1minsuchalargeindoorscene.Sensors2018,18,2229 12of17
+Sensors 2018, 18, x 12 of 17
+FFiigguurree1 122..P Pllaannm maappo offe exxppeerrimimeennttaalls sitietea annddp poossitiitoionnininggr reessuultlsts..
+55..D Diissccuussssiioonn
+LLaarrggeei ninddoooorrs psapcaecsews withithw iwdiedfiee flidelodf voifs vioisnioann danstda bslteabillleu milliunmatiinonat(isounc (hsuaschm auss emuumsse,ummasl,l smaanldls
+aairnpdo artisr)pporrotsv)i dperoavpipdleic aapbpleliecnavbilreo ennmveirnotnsmfoernvtiss ufoarl pvoissuitaiol npionsgit.iHoneinncge., Hweenucsee, wcoem umseo ncosmtamticoonb sjetacttisc
+inobtjheecstes sipna ctehsesaes rsepfearceensc eass torelofecraetnecsems atrotp lhoocnaetec asmmearratpvhiaovnies ucaalmalegroar ivthiam sv.isOuuarl eaxlpgeorriimthemnts.i nOaunr
+aerxtpmeurismeuemnt sinu gagne asrtst mthuasteouumrs syusgtegmesitss athbalet otoura cshyisetvemep ios saibtiloen tion gacahciceuvrea pcyoswitiitohninin1g macceuvreancyth watitthhien
+e1x pme reivmeenn tthaalte nthvei reoxnpmereinmteisntcaolm enpvliicraotnemdeinntv iiss icoonm. plicated in vision.
+55.1.1..E ExxppeerriimmeennttaallD Difififfcicuultltieiessa annddC Crritieterriaiaf oforrC ChhoooossininggS StatatitcicO Obbjejecctsts
+TThhee ssttaattiicc oobbjjeeccttss ((ddoooorrss)) wwee chchooses eini nexepxepreimrimenetnalt aslitesi aterea arectuacatlulya clloymcpolmicpatleicda tteod prtoocpesrso cfoesrs a
+fvoirsuaavl iaslugaolraitlhgmor,i bthemca,ubsee ctahuesye atrhee myaadree omf agdlaessoefsg. Slainsscees g.laSsins cdeoogrlas sasred otroarnssparaeretnrat,n tshpeairr etnext,tuthree iirn
+tiemxtaugree iisn dimepaegnediss odne pthene dosuotsnidthe eenouvitrsoidnemeennvti,r wonhmicehn cta,nw chhicahngcaen dcuhea tnog medanuye tfoacmtoarns,y lifkaect woresa,tlhikeer,
+wtiemateh, esre,atsiomne, ,islleuamsoinna,nilclue maninda snhcoeoatnindg sahnogolteisn, getacn. gTlheiss, echtca.rTachtiesricshtiacr alicmteirtsis ptiecrlfiomrmitsanpceer foofr mfeaantucree
+oefxfteraatcutiroene xatnrda ctfieoantuarne dmfeaatcthuirnegm. aIntc hthinisg .caInset, htihsec asstera,ttehgeys ttrhaatte gdyesthigantidnges iag nfeinagtuaref efailttuerre tfio ltgeert
+thoogmetohnoymmoyn pyominytsp oofi nfetsatoufrfee aptouirnetsp forionmts rferfoemrenrecfee rimenacgeeism dairgeecstldyi,r aesc ttlhy,ea fsintahle cfionnatrloclo pnotrinotlsp ioni ntetsst
+inimtaesgte,i misa ngoet, irsobnuosttr: oAbtu fsitr:stA, tpfiixreslts, pofi xceolnstoroflc opnotirnotls pino itnetsst iinmtaegsetsi mmaagye nsomt abye nexottrbaceteedxt raasc fteeadtuarse
+fpeaotiunrtes.p Ioni nsutsc.hI ncosnudchiticoonn,d cihtiooons,icnhgo tohsein ngetahreesnt enaeriegshtbnoerig fhebatourrfee aptouirnetsp oinin ttessitn imteasgteim inacgreeainscerse pasixeesl
+pcioxoerldcionoartde inerartoere. rSreocro.nSdelcyo,n idt liys, hitarisd htoar ddetsoigdne sai gronbausrto bfeuasttufreea ftiultreer fitlot esrelteocts etlheec tctohrereccot rornecet foronme
+fhroumgeh aumgoeuanmt oouf fnetaotufrfee aptouirnetsp woihnetsn wfahcienngf cahcainnggecahbalneg iemaabglee itmexatugeret.e Txhtuurse, .wTeh duess,iwgneedde tshige nsterdattehgey
+sttora gteegty ctoongtreotlc opnotirnotlsp ioni nttessitn imtesatgiems afgreosmf robmothb ohthomhoomgroagprhaipch micamtraixtr ix(cid:1834)H aanndd ccoonnttrrooll ppooiinnttss inin
+(cid:3035)(cid:3042)(cid:3040)ho(cid:3042)mo
+rreeffeerreenncceei mimaaggeessi ninssteteaadd..B Byyt thhiisss sttrraatteeggyy,,t htheep prraacctitcicaaliltiytyo offt thhees syysstteemmi innccrreeaasseess.. HHoowweevveerr,,i inno orrddeerr
+ttoog geenneerraatteem moorreef feeaattuurreep pooiinnttsst too iinnccrreeaassee aaccccuurraaccyy ooff hhoommooggrraapphhiicc mmaattrriixx H(cid:1834) ,,s statatitcico obbjejecctstsw witithh
+h(cid:3035)o(cid:3042)m(cid:3040)o(cid:3042)
+nnoonn--ttrraannssppaarreennttm maateterriaiallw wililllb beeb beetttteerr..A Altlthhoouugghhw weeu usseeddd doooorrssa ass ssttaattiicc oobbjjeeccttss iinn oouurr eexxppeerriimmeennttss,,
+aannyyththininggc caannb bees seetta asss sttaattiicc oobbjjeeccttss iinn iinnddoooorr sscceenneess,, wwhhiicchh iinnccrreeaasseess tthhee pprraaccttiiccaabbiilliittyy ooff tthhee mmeetthhoodd..
+BBeessiiddeess,, ccoonnttrrooll ppooiinnttss oonn ssttaattiicc oobbjejeccttss sshhaallll bbee cchhoosseenn pprrooppeerrllyy.. TTwwoo tteesstt ppooininttss wwitithh hhigighheerr
+ppoossititioionniinngg aaccccuurraaccyy eerrrroorr( (11.4.455m ma anndd1 1.2.255m mr eressppeecctitviveelyly))r reessuultleteddf rfroommi mimpprrooppeerrd disistrtribibuuttioionno off
+ccoonnttrroollp pooinintsts..O Onnllyy“ “ddoooorr11””c caannb bees seeeenno onnt thheesseet twwoop plalacceess,,a annddt thheec coonnttrroollp pooininttssi nini mimaaggeessw weerree
+rroouugghhllyy ddisisttrriibbuutteedd oonn aa sstrtraaigighhtt lilninee.. OOtthheerr tteesstt ppooiinnttss tthhaatt hhaavvee pprrooppeerr ‘‘oobbsseerrvvaattiioonn ccoonnddiittiioonn’’
+rreeaacchheeddi dideeaalla accccuurraaccyy..G Geenneerraallllyy,,c coonntrtroollp pooinintstss shhaallllb beee eaassyy-t-oto-c-caapptuturreei nini mimaaggee,,w witihthc chhaarraaccteterrss
+ddififffeerreenntt ffrroommn neeigighhbboorriinngg rreeggiioonnss,, ssuucchh aass tthhoossee wwiitthh uunniiqquuee ccoolloorr oorr eeddggee ppooininttss,, eettcc.,., aanndd tthheeyy
+shall be distributed evenly throughout the static objects. Further, static objects chosen as referencesSensors2018,18,2229 13of17
+shallbedistributedevenlythroughoutthestaticobjects. Further,staticobjectschosenasreferences
+cannot be too small, otherwise all control points will be distributed too close to output accurate
+positioningresults.
+5.2. Evaluation
+Vision-basedindoorpositioningproblemhasalwaysbeenahotresearchissueinrecentyears.
+However,methodsthatarecompletelybasedonvisionalgorithmsandconductedonsmartphones
+aremuchlessfrequent, andeachmethodhasitsownscopeofapplication. Duetothelowcostor
+evenwithouttheneedforanyinfrastructuresaswellasthepopularityofsmartphones,webelieve
+that this kind of method has a promising future. However, the methods or systems designed so
+farmayhavetheirownshortcomingswhenimplementedinlargeindoorscenes. Inthefollowing,
+wewilldiscussandevaluatethesestate-of-artofpurelyvisualindoorpositioningmethodsorsystems
+when performing in large indoor spaces, most of them are based on smartphone cameras as our
+system. WeexcludedmethodsthatintegratedsmartphonecamerawithRFsignals, suchasWi-Fi,
+Bluetooth,wirelessLANandsoon,becauseoursystemusesvisionalgorithmonly,andthuswithout
+anyinfrastructures.
+TheSignpostsystemdesignedbyMullonietal.[39]detectsunobtrusivefiduciarymarkersthat
+contain position information in different places as the location of users. This strategy is easy to
+transplant due to the low cost and low computation power of cellphones, but users have to find
+the nearest marker as these tiny markers cannot be made large in size. This is inconvenient for
+peopleinlargeindoorspacessincetheymayhavetomovealongdistancetofindandscanamarker.
+Hileetal.[34]builtanovelsystemtofindpreciselocationsandorientusersbymatchingfeatures
+extracted from smartphone images with relevant sections of a floorplan map. However, as this
+creativesystemisdesignedforenvironmentslikehallways,itmayperformpoorlyinlargeindoor
+scenes,becausetheavailablefeaturessuchasedgeorcornersaremuchlessabundantinlargespaces.
+ThedistanceestimationalgorithmbyWerneretal.[37]isadoptedbyoursystemasDistanceEstimation
+module(Section3.3.2). Thisalgorithmisabletocalculateaccuratedistancesbetweencamerasand
+reference targets. However, since the trilateral location method requires at least three reference
+targetpositionsaswellasthecorrespondingdistancestothecamera(onedistanceforeachimage),
+this algorithm performs better in environments such as corridors with narrow width (requiring
+onetarget/distanceonly)thanwideopenindoordistricts(requireatleastthreetargets/distances).
+Van Opdenbosch et al. [50] realized indoor positioning by image recognition. In order to achieve
+meter-accuratelocalization,theyphotographedimagesinevery1m×1mgridcell,using16viewing
+anglesforeachspot. However,thisstrategyhaslowefficiencyinlargerroomsbecausethevastnumber
+ofimagesinthedatasetwillresultinahugecomputationcostandincreasetheburdenofsmartphones
+and web servers. Kawaji et al. [51] realized indoor positioning in a large indoor space—a railway
+museum. Theyusedomnidirectionalpanoramicimagescapturedbyanomnidirectionalcameraand
+supplementalimagescapturedbydigitalcamerastobuildadatasetandmatchedthetestdigitalcamera
+imageswithreferenceimagesinthedatasettolocateusers. Sinceomnidirectionalpanoramicimages
+aresuitableforlargescenes,thismethodiseffectiveforlocalizationinlargeindoorspaces. However,
+theoutputlocationoftestimagesisthesameasthatoftheomnidirectionalpanoramicimages,which
+cannot achieve a relatively accurate position. Deretey et al. [52] proposed a method by matching
+cameraimageswith3DmodelsofindoorscenesbyaSimultaneousLocalizationandMapping(SLAM)
+systemtorealizepositioning. Althoughitrequiresa3Dmodelbuildingprocessinanofflinephase,we
+thinkitisapromisingmethodduetothedevelopmentofSLAMtechnology. Xuelal.[53]proposed
+anovelmonocularvisualmethodtolocatepositionsinofficesbasedonceilings. Thisstrategymay
+notfunctioninlargeindoorsceneslikemuseumsorairportsbecausetheseplacesusuallydonothave
+aplanarceilingfloorwithaseriesofchessboard-likeblockslikeoffices. Oursolutiontolocateusers
+ismoreworkableinlargeindoorenvironments. StaticobjectssuchasdoorsandwindowsarenotSensors2018,18,2229 14of17
+onlycommoninindoorscenes,butalsorelativelylargeenoughtobecapturedfromalongdistance.
+Thelongestdistanceinourexperimentisnearly40m,withapositioningaccuracyof0.7m.
+Therearesomefactorsthatmayinfluencetheperformanceofoursystem: illuminationofthe
+indoorscenesaswellasshootinganglesmaychangeimagesandhaveanimpactonfeaturematching.
+Inaddition, theperformanceofthesmartphonesmayalsoaffectthefinalresult. Thesystemdoes
+notconsumemuchbatterypowerofsmartphonesasoursystemisweb-basedandthesmartphone
+onlytakeimagesasinput. Theclarityofimagestakenbysmartphonecamerasishighenoughforour
+task. Thedistortionofimagesbydifferentsmartphonesmaychangethefinalpositionoutput,but
+acameracalibrationprocesscanfixthisproblem(detailscanbefoundinourpreviousresearch[5]).
+Inthefuture,wewilltrytoimprovetherobustnessofoursystemandexperimentinotherlargeindoor
+spaceswithmoreroomsandmorecomplextopologies.
+6. Conclusions
+Inthispaper,apositioningsysteminlargeindoorspacesbyusingsmartphonecamerasbasedon
+staticobjectsisproposed. Oursystemusessmartphoneimagestodetectspecificstaticobjectsindoors
+andcalculateusers’position. Thesystemimitatesthehumanbrain’scognitivemodeandintegrates
+algorithmsofdeeplearningandcomputervision. Weexperimentedinanartmuseumwithalarge
+indoorareaandacomplexvisualenvironment. Experimentalresultsshowthatthismethodhasthe
+abilitytoachievethepositioningaccuracywithin1minadistancerangeof40mindoors. Webelieve
+thatithaspotentialforwideapplicationinlargeindoorscenes.
+AuthorContributions:Thispaperisacollaborativeworkbyallauthors.Proposedtheidea,A.X.implemented
+thesystem,performedtheexperiments,analyzedthedataandwrotethemanuscript. R.C.andD.L.helpedto
+proposetheidea,givesuggestionsandrevisetheroughdraft.Y.C.helpedwithallofexperiments,especiallydata
+acquisition.D.W.helpedrevisedcodeandhelpedtodosomeoftheexperiments.
+Funding: This study is supported by the National Key Research and Development Program of China
+(2016YFB0502201 and 2016YFB0502202), the NSFC (91638203), the State Key Laboratory Research Expenses
+ofLIESMARS.
+ConflictsofInterest:Theauthorsdeclarenoconflictofinterest.
+References
+1. O’Keefe,J.Placeunitsinthehippocampusofthefreelymovingrat.Exp.Neurol.1976,51,78–109.[CrossRef]
+2. O’Keefe,J.;Dostrovsky,J.Thehippocampusasaspatialmap:Preliminaryevidencefromunitactivityinthe
+freely-movingrat.BrainRes.1971,34,171–175.[CrossRef]
+3. Fyhn,M.;Molden,S.;Witter,M.P.;Moser,E.I.;Moser,M.-B.Spatialrepresentationintheentorhinalcortex.
+Science2004,305,1258–1264.[CrossRef][PubMed]
+4. Sargolini,F.;Fyhn,M.;Hafting,T.;McNaughton,B.L.;Witter,M.P.;Moser,M.-B.;Moser,E.I.Conjunctive
+representationofposition,direction,andvelocityinentorhinalcortex.Science2006,312,758–762.[CrossRef]
+[PubMed]
+5. Wu,D.;Chen,R.;Chen,L.Visualpositioningindoors:Humaneyesvs.smartphonecameras.Sensors2017,
+17,2645.[CrossRef][PubMed]
+6. Ruizhi,C.;Liang,C.IndoorPositioningwithSmartphones:TheState-of-the-artandtheChallenges.ActaGeod.
+Cartogr.Sin.2017,46,1316–1326.[CrossRef]
+7. Youssef,M.;Agrawala,A.TheHorusWLANlocationdeterminationsystem. InProceedingsofthe3rd
+InternationalConferenceonMobileSystems,Applications,andServices,Seattle,WA,USA,6–8June2005;
+ACM:NewYork,NY,USA,2005;pp.205–218.
+8. Bahl, P.; Padmanabhan, V.N. RADAR: An in-building RF-based user location and tracking system.
+InProceedingsoftheIEEEINFOCOM2000ConferenceonComputerCommunications.NineteenthAnnual
+JointConferenceoftheIEEEComputerandCommunicationsSocieties(Cat.No.00CH37064),TelAviv,Israel,
+26–30March2000;Volume2,pp.775–784.Sensors2018,18,2229 15of17
+9. Vaupel, T.; Seitz, J.; Kiefer, F.; Haimerl, S.; Thielecke, J. Wi-Fi positioning: System considerations and
+devicecalibration.InProceedingsofthe2010InternationalConferenceonIndoorPositioningandIndoor
+Navigation(IPIN),Zurich,Switzerland,15–17September2010;pp.1–7.
+10. Hansen,R.;Wind,R.;Jensen,C.S.;Thomsen,B.Algorithmicstrategiesforadaptingtoenvironmentalchanges
+in802.11locationfingerprinting.InProceedingsofthe2010InternationalConferenceonIndoorPositioning
+andIndoorNavigation(IPIN),Zurich,Switzerland,15–17September2010;pp.1–10.
+11. Teuber, A.; Eissfeller, B. WLAN indoor positioning based on Euclidean distances and fuzzy logic.
+In Proceedings of the 3rd Workshop on Positioning, Navigation and Communication, Lower Saxony,
+Germany,16March2006;pp.159–168.
+12. Haverinen, J.; Kemppainen, A. Global indoor self-localization based on the ambient magnetic field.
+Rob.Auton.Syst.2009,57,1028–1035.[CrossRef]
+13. Chen,L.;Kuusniemi,H.;Chen,Y.;Pei,L.;Kröger,T.;Chen,R.Informationfilterwithspeeddetectionfor
+indoorBluetoothpositioning.InProceedingsofthe2011InternationalConferenceonLocalizationandGNSS
+(ICL-GNSS),Tampere,Finland,29–30June2011;pp.47–52.
+14. Chen,L.;Kuusniemi,H.;Chen,Y.;Liu,J.;Pei,L.;Ruotsalainen,L.;Chen,R.ConstraintKalmanfilterfor
+indoorbluetoothlocalization. InProceedingsofthe201523rdEuropeanSignalProcessingConference
+(EUSIPCO),Nice,France,31August–4September2015;pp.1915–1919.
+15. Chen,L.;Pei,L.;Kuusniemi,H.;Chen,Y.;Kröger,T.;Chen,R.Bayesianfusionforindoorpositioningusing
+bluetoothfingerprints.Wirel.Pers.Commun.2013,70,1735–1745.[CrossRef]
+16. Bargh,M.S.;deGroote,R.Indoorlocalizationbasedonresponserateofbluetoothinquiries.InProceedings
+of the First ACM International Workshop on Mobile Entity Localization and Tracking in GPS-Less
+Environments,SanFrancisco,CA,USA,19September2008;ACM:NewYork,NY,USA,2008;pp.49–54.
+17. He, S.; Chan, S.H.G. INTRI: Contour-Based Trilateration for Indoor Fingerprint-Based Localization.
+IEEETrans.Mob.Comput.2017,16,1676–1690.[CrossRef]
+18. QuuppaCompany.Availableonline:http://quuppa.com/company/(accessedon10July2018).
+19. Lakmali,B.D.S.DatabaseCorrelationforGSMLocationinOutdoor&IndoorEnvironments.InProceedings
+ofthe4thInternationalConferenceonInformationandAutomationforSustainability(ICIAFS),Colombo,
+SriLanka,12–14December2008.
+20. Zhao,Y.Standardizationofmobilephonepositioningfor3Gsystems.IEEECommun.Mag.2002,40,108–116.
+[CrossRef]
+21. Want,R.;Hopper,A.;Falcao,V.;Gibbons,J.Theactivebadgelocationsystem.ACMTrans.Inf.Syst.1992,10,
+91–102.[CrossRef]
+22. Ward,A.;Jones,A.;Hopper,A.Anewlocationtechniquefortheactiveoffice.IEEEPers.Commun.1997,4,
+42–47.[CrossRef]
+23. Priyantha,N.B.;Chakraborty,A.;Balakrishnan,H.Thecricketlocation-supportsystem.InProceedingsofthe
+6thnnualInternationalConferenceonMobileComputingandNetworking,Boston,MA,USA,6–11August
+2011;ACM:NewYork,NY,USA,2000;pp.32–43.
+24. Kim,B.;Kwak,M.;Lee,J.;Kwon,T.T.Amulti-prongedapproachforindoorpositioningwithWiFi,magnetic
+andcellularsignals.InProceedingsofthe2014InternationalConferenceonIndoorPositioningandIndoor
+Navigation(IPIN),Busan,Korea,27–30October2014;pp.723–726.
+25. Jeon, J.S.; Kong, Y.; Nam, Y.; Yim, K. An Indoor Positioning System Using Bluetooth RSSI with an
+AccelerometerandaBarometeronaSmartphone.InProceedingsofthe201510thInternationalConference
+onBroadbandandWirelessComputing,CommunicationandApplications(BWCCA),Krakow,Poland,
+4–6November2015;pp.528–531.
+26. Chen,L.H.;Wu,H.K.;Jin,M.H.;Chen,G.H.IntelligentFusionofWi-FiandInertialSensor-BasedPositioning
+SystemsforIndoorPedestrianNavigation.IEEESens.J.2014,14,4034–4042.[CrossRef]
+27. Li,Y.;Zhuang,Y.;Zhang,P.;Lan,H.;Niu,X.;El-Sheimy,N.Animprovedinertial/wifi/magneticfusion
+structureforindoornavigation.Inf.Fusion2017,34,101–119.[CrossRef]
+28. Liu,M.;Chen,R.;Li,D.;Chen,Y.;Guo,G.;Cao,Z.;Pan,Y.SceneRecognitionforIndoorLocalizationUsing
+aMulti-SensorFusionApproach.Sensors2017,17,2847.[CrossRef][PubMed]
+29. Becker,M.;Ahuja,B.Implementingreal-lifeindoorpositioningsystemsusingmachinelearningapproaches.
+InProceedingsofthe20178thInternationalConferenceonInformation,Intelligence,Systems&Applications
+(IISA),Larnaca,Cyprus,27–30August2017;pp.1–6.Sensors2018,18,2229 16of17
+30. Gao,R.;Ye,F.;Wang,T.Smartphoneindoorlocalizationbyphoto-takingoftheenvironment.InProceedings
+ofthe2014IEEEInternationalConferenceonCommunications(ICC),Sydney,Australia,10–14June2014;
+pp.2599–2604.
+31. Tian,Y.;Gao,R.;Bian,K.;Ye,F.;Wang,T.;Wang,Y.;Li,X.Towardsubiquitousindoorlocalizationservice
+leveragingenvironmentalphysicalfeatures.InProceedingsoftheIEEEINFOCOM2014—IEEEConference
+onComputerCommunications,Toronto,ON,Canada,27April–2May2014;pp.55–63.
+32. Shafer,S.;Krumm,J.;Brumitt,B.;Meyers,B.;Czerwinski,M.;Robbins,D.TheNewEasyLivingProjectat
+MicrosoftResearch.InProceedingsofthe1998JointDARPA/NISTSmartSpacesWorkshop,Gaithersburg,
+MD,USA,30–31July1998;pp.30–31.
+33. Mautz,R.IndoorPositioningTechnologies.HabilitationThesis,InstituteofGeodesyandPhotogrammetry,
+DepartmentofCivil,EnvironmentalandGeomaticEngineering,ETHZurich,Zurich,Switzerland,2012.
+34. Hile,H.;Borriello,G.Positioningandorientationinindoorenvironmentsusingcameraphones.IEEEComput.
+Graph.Appl.2008,28,32–39.[CrossRef]
+35. Kohoutek, T.K.; Mautz, R.; Donaubauer, A. Real-time indoor positioning using range imaging sensors.
+In Proceedings of the Real-Time Image and Video Processing 2010, Brussels, Belgium, 4 May 2010;
+Volume7724,pp.1–8.
+36. Kim,J.;Jun,H.Vision-basedlocationpositioningusingaugmentedrealityforindoornavigation.IEEETrans.
+Consum.Electron.2008,54,954–962.[CrossRef]
+37. Werner,M.; Kessel,M.; Marouane,C.Indoorpositioningusingsmartphonecamera. InProceedingsof
+the 2011 International Conference on Indoor Positioning and Indoor Navigation, Guimaraes, Portugal,
+21–23September2011.[CrossRef]
+38. Möller,A.;Kranz,M.;Huitl,R.;Diewald,S.;Roalter,L.Amobileindoornavigationsysteminterfaceadapted
+tovision-basedlocalization.InProceedingsofthe11thInternationalConferenceonMobileandUbiquitous
+Multimedia,MUM2012,Ulm,Germany,4–6December2012;pp.4:1–4:10.
+39. Mulloni,A.; Wagner,D.; Barakonyi,I.; Schmalstieg,D.Indoorpositioningandnavigationwithcamera
+phones.IEEEPervasiveComput.2009,8,22–31.[CrossRef]
+40. Ganick,A.; Ryan,D.Lightpositioningsystemusingdigitalpulserecognition. U.S.Patent824,846,7B1,
+26July2011.
+41. Ruotsalainen, L.; Kuusniemi, H.; Bhuiyan, M.Z.H.; Chen, L.; Chen, R. A two-dimensional pedestrian
+navigationsolutionaidedwithavisualgyroscopeandavisualodometer. GPSSolut. 2013,17,575–586.
+[CrossRef]
+42. Ruotsalainen,L.VisualGyroscopeandOdometerforPedestrianIndoorNavigationwithaSmartphone.
+In Proceedings of the 25th International Technical Meeting of The Satellite Division of the Institute of
+Navigation(IONGNSS2012),Nashville,TN,USA,17–21September2012;pp.2422–2431.
+43. Ren,S.;He,K.;Girshick,R.;Sun,J.FasterR-CNN:Towardsreal-timeobjectdetectionwithregionproposal
+networks.IEEETrans.PatternAnal.Mach.Intell.2017,39,1137–1149.[CrossRef][PubMed]
+44. Simonyan,K.;Zisserman,A.VeryDeepConvolutionalNetworksforLarge-ScaleImageRecognition.arXiv
+2014,arXiv:1409.1556.
+45. Zuxun,Z.;Jianqing,Z.DigitalPhotogrametry,2nded.;WuhanUnivertyPress:Wuhan,China,2002.
+46. Keypoints,S.;Lowe,D.G.DistinctiveImageFeaturesfrom.Int.J.Comput.Vis.2004,60,91–110.[CrossRef]
+47. Fischler,M.A.;Bolles,R.C.RandomSampleConsensus:AParadigmforModelFittingwith.Commun.ACM
+1981,24,381–395.[CrossRef]
+48. Zhang,Z.Aflexiblenewtechniqueforcameracalibration.IEEETrans.PatternAnal.Mach.Intell.2000,22,
+1330–1334.[CrossRef]
+49. Deng,J.;Dong,W.;Socher,R.;Li,L.J.;Li,K.;Li,F.-F.ImageNet:Alarge-scalehierarchicalimagedatabase.
+InProceedingsofthe2009IEEEConferenceonComputerVisionandPatternRecognition,Miami,FL,USA,
+20–25June2009;pp.248–255.
+50. VanOpdenbosch,D.;Schroth,G.;Huitl,R.;Hilsenbeck,S.;Garcea,A.;Steinbach,E.Camera-basedindoor
+positioningusingscalablestreamingofcompressedbinaryimagesignatures. InProceedingsofthe2014
+IEEEInternationalConferenceonImageProcessing(ICIP),Paris,France,27–30October2014;pp.2804–2808.
+51. Kawaji, H.; Hatada, K.; Yamasaki, T.; Aizawa, K. Image-based indoor positioning system: Fast image
+matchingusingomnidirectionalpanoramicimages.InProceedingsofthe1stACMInternationalWorkshop
+onMultimodalPervasiveVideoAnalysis,Firenze,Italy,29October2010;ACM:Firenze,Italy,2010;pp.1–4.Sensors2018,18,2229 17of17
+52. Deretey,E.;Ahmed,M.T.;Marshall,J.A.;Greenspan,M.Visualindoorpositioningwithasinglecamera
+usingPnP.InProceedingsofthe2015InternationalConferenceonIndoorPositioningandIndoorNavigation
+(IPIN),Banff,AB,Canada,13–16October2015;pp.1–9.
+53. Xu,D.;Han,L.;Tan,M.;Li,Y.F.Ceiling-basedvisualpositioningforanindoormobilerobotwithmonocular
+vision.IEEETrans.Ind.Electron.2009,56,1617–1628.
+©2018bytheauthors.LicenseeMDPI,Basel,Switzerland.Thisarticleisanopenaccess
+articledistributedunderthetermsandconditionsoftheCreativeCommonsAttribution
+(CCBY)license(http://creativecommons.org/licenses/by/4.0/).

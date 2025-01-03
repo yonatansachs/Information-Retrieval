@@ -21,14 +21,6 @@ class TextClassifier:
     warnings.filterwarnings("ignore", category=UndefinedMetricWarning)
 
     def __init__(self, search_enging_processed_dir, our_processed_dir, our_labels_file, search_labels_file):
-        """
-        :param search_enging_processed_dir: Directory containing processed .txt files
-                                            for 'Does not belong' documents
-        :param our_processed_dir: Directory containing processed .txt files
-                                  for 'Belongs' documents
-        :param our_labels_file: CSV file containing docs labeled 'Belongs'
-        :param search_labels_file: CSV file containing docs labeled 'Does not belong'
-        """
         self.search_enging_processed_dir = Path(search_enging_processed_dir)
         self.our_processed_dir = Path(our_processed_dir)
 

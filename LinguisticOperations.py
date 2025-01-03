@@ -33,7 +33,10 @@ def read_tokens(file_path: Path):
 
 def process_documents(input_dir: Path, stopwords_file: Path):
     # Verify input paths exist
-    if input_dir.resolve()==Path("SearchEngineBias/Processed_Files").resolve():
+    if (input_dir.resolve()==Path("SearchEngineBias/Processed_Files").resolve() or
+        input_dir.resolve()==Path("Indoor_positioning/Processed_Files").resolve() or
+        input_dir.resolve()==Path("Enhancing_the_museum/Processed_Files").resolve()):
+
         input_files = list(input_dir.glob("*.txt"))
         if not input_files:
             print(f"Warning: No .txt files found in {input_dir}")

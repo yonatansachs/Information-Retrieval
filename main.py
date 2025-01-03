@@ -153,11 +153,37 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Error: {str(e)}")
 
-
+"""
     print("***************************************")
     print("***************************************")
     print("Moving on to Classification")
     print("***************************************")
     print("***************************************")
-
     main()
+    print("Preforming Operations on Enhancing the musuem documents")
+    input_dir = Path("Enhancing_the_museum")
+    # Process files
+    print("Starting to Tokenize...")
+    process_directory(input_dir)
+    # Linguistic Operations
+    print()
+    print("Starting Linguistic Operations...")
+    LinguisticInput_dir = Path("Enhancing_the_museum/Processed_Files")
+    try:
+        process_documents(LinguisticInput_dir, stopwords_file)
+    except Exception as e:
+        print(f"Error: {str(e)}")
+
+    print("Preforming Operations on Indoor positioning documents")
+    input_dir = Path("Indoor_positioning")
+    # Process files
+    print("Starting to Tokenize...")
+    process_directory(input_dir)
+    # Linguistic Operations
+    print()
+    print("Starting Linguistic Operations...")
+    LinguisticInput_dir = Path("Indoor_positioning/Processed_Files")
+    try:
+        process_documents(LinguisticInput_dir, stopwords_file)
+    except Exception as e:
+        print(f"Error: {str(e)}")"""

@@ -1,0 +1,238 @@
+FAIRshake: Toolkit to Evaluate the FAIRness of Research Digital Resources
+Daniel J.B. Clarke,1 Lily Wang,1 Alex Jones,2 Megan L. Wojciechowicz,1 Denis Torre,1 Kathleen M. Jagodnik,1
+Sherry L. Jenkins,1 Peter McQuilton,3 Zachary Flamholz,1 Moshe C. Silverstein,1 Brian M. Schilder,1 Kimberly Robasky,4 Claris Castillo,4 Ray Idaszak,4 Stanley C. Ahalt,4 Jason Williams,5 Stephan Schurer,6 Daniel J. Cooper,6
+Ricardo de Miranda Azevedo,7 Juergen A. Klenk,2 Melissa A. Haendel,8 Jared Nedzel,9 Paul Avillach,10
+Mary E. Shimoyama,11 Rayna M. Harris,12 Meredith Gamble,13 Rudy Poten,13 Amanda L. Charbonneau,12 Jennie Larkin,14
+C. Titus Brown,12 Vivien R. Bonazzi,15 Michel J. Dumontier,7 Susanna-Assunta Sansone,3 and Avi Ma'ayan1,* 1Department of Pharmacological Sciences, Mount Sinai Center for Bioinformatics, Icahn School of Medicine at Mount Sinai, New York, NY 10029, USA
+2Deloitte Consulting, 1919 N Lynn St., Arlington, VA 22209, USA
+3Oxford e-Research Centre, Department of Engineering Science, University of Oxford, Oxford OX1 3QG, UK
+4Renaissance Computing Institute, University of North Carolina, Chapel Hill, USA 5Cold Spring Harbor Laboratory, 1 Bungtown Rd., Cold Spring Harbor, NY 11724, USA 6University of Miami, Pharmacology, 1600 NW 10th Ave., Miami, FL 33136, USA
+7Institute of Data Science Maastricht University, Universiteitssingel 60, 6229 ER Maastricht, the Netherlands 8Oregon State University, 307 Linus Pauling Science Center, 2900 SW Campus Way, Corvallis, OR 9733, USA 9The Broad Institute, 415 Main St., Cambridge, MA 02142, USA
+10Harvard Medical School, Department of Biomedical Informatics, 10 Shattuck St., Boston, MA 02115, USA
+11Medical College of Wisconsin, 8701 Watertown Plank Road, Milwaukee, WI 53226, USA
+12Department of Population Health and Reproduction, School of Veterinary Medicine, UC Davis, Davis, CA 95616, USA
+13Curoverse, Somerville, MA 02144, USA
+14National Institute of Diabetes, Digestive, and Kidney Diseases (NIDDK), National Institutes of Health (NIH), 6707 Democracy Blvd., Bethesda, MD 20817, USA
+15Office of the Director, National Institutes of Health, 8600 Rockville Pike, Rm. 2S-20, Bethesda, MD, 20894, USA
+*Correspondence: avi.maayan@mssm.edu https://doi.org/10.1016/j.cels.2019.09.011
+
+As more digital resources are produced by the research community, it is becoming increasingly important to harmonize and organize them for synergistic utilization. The findable, accessible, interoperable, and reusable (FAIR) guiding principles have prompted many stakeholders to consider strategies for tackling this challenge. The FAIRshake toolkit was developed to enable the establishment of community-driven FAIR metrics and rubrics paired with manual and automated FAIR assessments. FAIR assessments are visualized as an insig- nia that can be embedded within digital-resources-hosting websites. Using FAIRshake, a variety of biomed- ical digital resources were manually and automatically evaluated for their level of FAIRness.
+
+
+Introduction
+The findable, accessible, interoperable, and reusable (FAIR) guiding principles describe an urgent need to improve the infrastructure supporting scholarly data reuse and outline several existing re- sources that already demonstrate various aspects of FAIR and associated driving technologies (Wilkinson et al., 2016). A specific emphasis has been placed on ensuring that machines can exchange interpretable data and metadata. Following the FAIR principles, the resource description framework (RDF) is a key globally accepted framework for data and knowledge representation that is intended to be read and interpreted by machines. A critical challenge in fulfilling the goals outlined by the FAIR guiding principles is the lack of consensus with respect to agreement on using certain standards. In an effort to address this
+
+challenge, a comprehensive community- driven approach was taken to assemble descriptions of standards, repositories, and policies and make them easily acces- sible from one source (Sansone et al., 2019). By collecting community-accepted elements of this kind, FAIRsharing can reveal domain-relevant community stan- dards with respect to the FAIR principles. Several initiatives have begun to develop their own understandings of FAIRness and developed some methods of assess- ing FAIRness by self- and peer-reviewed manual question-answer approaches (Cox and Yu, 2017; Dillo and De Leeuw, 2014). Because there are different strate- gies for asserting FAIRness, efforts so far have been independent of one another and as such not comparable. While the biomedical research community at large mostly embraces the FAIR guidelines, there is still some confusion about the
+
+difference between being FAIR and being open access, what it means to be FAIR, and how the FAIR principles compare with other standards (Hasnain and Re- bholz-Schuhmann, 2018).
+  In order to bring the FAIR principles into practice and to provide more clarity about their meaning, a template was created for constructing FAIR metrics around the original FAIR guiding principles (Wilkinson et al., 2018). The publication that describes the FAIR met- rics contains self-evaluations by nine or- ganizations. While the FAIR metrics are provided on GitHub so the community can contribute to their development, the original authors of the FAIR metrics claim that these metrics are universal and aim to cover all types of digital ob- jects for all organizations. In the publication of the universal FAIR metrics, it was envisioned that a framework
+
+for automated evaluation of FAIRness could be devised using self-describing and programmatically executable metrics. This was followed by an initial attempt to develop a system that evalu- ates FAIR maturity level (Wilkinson et al., 2019).
+  While the universal FAIR metrics developed by some of the original authors of the FAIR guiding principles pro- vide a concrete guide on how to assess FAIRness, the uni- versal FAIR metrics may not fit all domains and specific re- quirements. For example, a recent review by a group con- sisting of biopharma re- searchers and representatives suggests that the biopharma community has unique re- quirements, so being FAIR for them may mean a different
+
+
+
+
+Figure 1. A Diagram Illustrating FAIRshake's Workflow
+Digital resources from various projects are paired with FAIR metrics and rubrics to perform assessments that are visualized with the FAIR insignia.
+
+using the FAIRshake interface and accessing FAIRshake programmatically.
+  To perform and visualize FAIR assessments with FAIR- shake, users must follow several steps (Table 2). First, users are required to sign up. Sign up is available via standard registration and via OAuth implementation of GitHub, ORCID, and Globus (Foster and Kesselman, 1997). Next, users are required to create a project. Projects are a bundle of thematically relevant digital resources. Project descriptions contain minimal information for identi- fying, displaying, and indexing the project. Within projects, users can assess the FAIR- ness of an arbitrary collection of digital resources. Project analytics are available to help
+
+thing compared with other digital object producers (Wise et al., 2019).
+  In order to facilitate digital resource producers to define, assess, and imple- ment their own FAIRness criteria for their specialized specific projects, we devel- oped FAIRshake. FAIRshake enables the community to develop new standards, or reuse existing standards, to define and evaluate FAIRness. Thus, FAIRshake allows the co-existence of multiple met- rics and rubrics, enabling the community to develop standards more democrati- cally. FAIRshake is a toolkit that enables the systematic assessment of the FAIR- ness of any digital resource. Compared with previous attempts to develop FAIR- ness assessment tooling, the FAIRshake toolkit has more features. It contains a database that enlists users, projects, dig- ital resources, metrics, rubrics, and as- sessments (Figure 1); it is a full-stack application with a user interface; and it comes with a browser extension and a bookmarklet to enable viewing and sub- mitting assessments from any website. The FAIR assessment results are visual- ized as an insignia that represents the FAIR score in a compact grid of squares colored in red, blue, and purple. Below, we briefly describe the various compo- nents of FAIRshake, how they are related to each other, and how the FAIRshake system has been already used to assess
+
+the FAIRness of thousands of digital re- sources for numerous projects.
+
+
+The FAIRshake Framework
+Overall, FAIRshake provides mechanisms to associate digital objects with rubrics and metrics to perform FAIR assessments. These assessments are communicated via the FAIR insignia (Figure 1). The FAIRshake toolkit is composed of elements that include a full-stack web-server application containing a user interface with a search engine, a backend database, and an appli- cation-programming interface (API), as well as a Chrome extension and a bookmarklet (Table 1). FAIRshake also contains FAIR analytics modules that produce statistical reports about collections of assessments for a specific project. In an effort to make FAIRshake adhere to the FAIR guidelines, the FAIRshake endpoint-REST API is ma- chine readable with documentations for SmartAPI, Swagger/OpenAPI (https:// swagger.io/), and CoreAPI (https://www. coreapi.org/). The API can be accessed via the human-friendly counterparts of these specifications with the REST Frame- work API explorer (https://www.django- rest-framework.org/topics/browsable-api/), Swagger UI (https://swagger.io/tools/ swagger-ui/), and CoreAPI UI. A Jupyter Notebook and YouTube tutorials are avail- able to guide users through the process of
+
+a user better understand the overall FAIR- ness of the digital resources contained within the project. Next, users need to associate the digital objects in their pro- jects with rubrics and metrics. FAIR met- rics are questions that assess whether a digital object complies with a specific aspect of FAIR. A FAIR metric is directly related to one of the FAIR guiding princi- ples. In order to make FAIR metrics reus- able, FAIRshake collects information about each metric, and when users attempt to associate a digital resource with metrics, existing metrics are pro- vided as a first choice. FAIR metrics represent a human-described concept that may or may not be automated; auto- mation of such concepts can be done independently by linking actual source code to reference a persistent identifier of that metric semantic. Without linked code, metrics are simply questions that can be answered manually. FAIRshake defines several categorical answer types to FAIR metrics when manually assessed that are ultimately quantified to a value in a range between zero and one, or take the property of undefined. Programmati- cally, metric code can quantify the satis- faction of a given FAIR metric within this same range. The concept of a metric is supplemented with that of a FAIR rubric. A FAIR rubric is a collection of FAIR met- rics. An assessment of a digital resource
+
+
+Table 1. The Major Components of the FAIRshake Toolkit
+Feature	Description	URL
+
+mehchy and Winslett, 2010), a library for extracting embedded metadata from HTML markup. This approach is utilized by major search engines to index websites and bind information together. Using this RDF-expressed metadata alone, some FAIR metrics are automatically resolved, including those designed with RDF in mind. As schema.org expands its vocabu- lary through initiatives such as Bio- schemas (Garcia et al., 2017), RDF will enable more automated assessments. Adopting other non-RDF based standards has also been	accomplished with FAIRshake. In summary, any assessment of a digital resource within FAIRshake at- tempts to obtain answers automatically. The newly assessed digital resource will now have an associated insignia that re- flects the results of the FAIR assessment. The FAIRshake insignia uses a color gradient from blue (satisfactory) to red (un- satisfactory), visualizing how well a digital resource satisfied the FAIR metrics of the chosen rubric. Because the same digital resources can be assessed by different ru-
+
+is performed using a specific rubric by ob- taining answers to the metrics within the rubric. The use of a FAIR rubric makes it possible to establish a relevant and appli- cable group of metrics for a large number of digital resources, typically under the umbrella of a specific project, while enabling reuse of metrics both for com- parisons across different projects and for automation. Linking rubrics to digital
+
+resources by association helps users un- derstand the context of the FAIR metrics that are best suited to assess the digital resources in their projects.
+  FAIR assessments can be performed manually or automatically on a digital resource that is associated with a rubric. Leveraging RDF, FAIRshake automatically extracts RDF-expressed schema.org metadata from URLs with Extruct (Ter-
+
+brics, composed of different metrics, the insignia dynamically expands to fit all as- sessments. If answers to the rubric are missing, the squares associated with these metrics will be colored in gray. De- velopers of data and tool portals can visu- alize FAIRshake insignias on their site. A standalone JavaScript library for gener- ating the insignias at any hosting website with few lines of code is provided. Alterna- tively, through this library, a browser exten- sion and bookmarklet were developed for
+
+Table 2. Steps to Perform and Visualize FAIR Assessments with FAIRshake
+Step	Instructions
+
+rendering the visualization of FAIR insig- nias on any website without the need of the hosting site to modify their website's source code.
+  FAIRshake was already applied to assess the FAIRness of many digital ob- jects that belong to various high-profile projects (Table 3). The first use of FAIR- shake involved the manual assessment of 150 tools and datasets developed by the Alliance of Genome Resources (AGR) (https://www.alliancegenome.org/).
+Detailed results and breakdown of these assessments were captured in an HTML table and associated Jupyter Notebooks that are available at https://maayanlab. github.io/AGR-FAIR-Website/. Overall, we observed that the examined AGR tools and datasets scored well in regard to providing data for download, use of ontol- ogies, and providing contact information,
+
+
+Table 3. Case Studies where FAIRshake Was Utilized to Perform FAIR Assessment to Evaluate Various Collections of Digital Objects
+Number of Digital
+
+tial. Community adoption of FAIRness- endorsed standards is challenging, because digital object producers do not always see the added benefit in spending
+
+Case Study	Resource
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+while most AGR tools and datasets did not provide the source code, versioning information, or API access (Figure 2).
+
+Limitations and Challenges
+The FAIRshake platform is complex. Before beginning to use FAIRshake, users must have some training about concepts like FAIR metrics and rubrics. Associating a digital object with the ''right'' rubric is not trivial. While the co-existence of multi- ple rubrics provides flexibility and freedom in the choice of how one may define FAIR, this approach has the risk of having too
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 2. FAIR Assessment of AGR Tools
+
+Objects  URL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+many different interpretations of the guide- lines with undesired partial redundancy that is not consolidated into a shared stan- dard. We hope that with increasing use of FAIRshake, users will be able to reuse met- rics without the need to create new ones. This can potentially enable the develop- ment of a grassroots, eventually widely accepted standard.
+Incentivizing Users with Carrots and Sticks
+When community standards are devel- oped, global adoption is needed in order to facilitate their true enabling poten-
+
+the time, effort, and resources to FAIRify
+their digital products. In most cases, digi- tal object producers will use the excuse that they do not have the required re- sources to spend on FAIRification. Thus, there are currently few incentives for them to make their products FAIRer. Such incentives can be nurtured. Specif- ically, these incentives can be divided into carrots and sticks. If more FAIR- enabled resources become used by the community-for example, if researchers will begin using resources such as Google Datasets (Halevy et al., 2016) more frequently for their research-digital ob- ject producers will want to be listed there. If data citations begin to soar, digital ob- ject producers will have the incentive to participate. These are carrot incentives for FAIRification. At the same time, fun- ders and journals can demand that published data meet certain community- accepted standards before they are accepted for publication or become eligible for funding. This is achieved, for example, when gene expression data are deposited into the Gene Expression Omnibus (GEO) or when solved protein structure coordinates are deposited into the Protein Data Bank (PDB). Funders and journals requiring researchers to take the needed steps in order to ensure the FAIRness of the digital resources they produce is a stick approach. Howev- er, convicting funders and journals to enforce new rules is often difficult due to a possible backlash from the researchers, who will simply ''go somewhere else.'' Ul- timately, FAIRification benefits all-the digital object producers, the journals, the funders, and the users who are the real consumers of these digital resources. The question, and challenge, is simply determining who is responsible for per- forming the FAIRification task, who will pay for it, and what it means to do it- and, perhaps, overdo it. The concept of ''digital objects needs to be born FAIR'' suggests that this activity needs to be done by the data producers at an early stage.
+
+Discussion
+
+Distribution of average FAIR scores for 132 AGR tools assessed with an initial set of 9 FAIR metrics.
+
+FAIRshake was developed as a toolkit to
+promote the FAIRification of digital objects
+
+produced by research projects. FAIR- shake is not intended to judge or penalize digital resource producers but rather to promote the awareness about standards. The purpose of FAIRshake is to guide dig- ital object producers to implement com- munity-accepted best practices for their own benefit of attracting, retaining, and enabling more engagement with the digital objects they produce. There is common confusion between assessing the quality of a resource and assessing its FAIRness. It should be made clear that FAIRshake was designed to assess FAIRness, and a low FAIR score does not mean that a digital resource is lacking quality, usefulness, user friendliness, or innovation. Another aspect of confusion about FAIR is the as- sociation of FAIRness with openness. Be- ing FAIR does not entail making data, source code, tools, or any other digital resource free and openly available. Rather, the FAIR guidelines only require that ac- cess and usage policies are provided and stated clearly (Haendel et al., 2016; Mons et al., 2017).
+  By facilitating the creation of both manual and automated FAIR assessments and enabling FAIR metric findability, FAIRshake promotes the involvement of more stakeholders. Starting with the pro- cess of manual FAIR assessments, the ca- pacity for automation is expected to further expand as more adoption is realized. The findability of FAIR metrics within FAIRshake makes it possible to design community-adopted metrics that can be customized for specific purposes but at the same time, for general and generic uses. FAIRshake strives to evolve with the community, adding new features to accommodate community demands as they arise while facilitating more assess- ments. With its feature of enabling the development of FAIR metrics and rubrics by any user, the assessment of digital re- sources can happen before the community agrees on the definition of what it means to be FAIR. FAIRshake facilitates dynamic metric re-use, and it provides analytical tools to understand the global and relative performance of resources and metrics. With transparency, FAIRshake enables the community to study the FAIRness of the resources they produce and use.
+  FAIRshake was developed to meet the demands of the biomedical research com- munity. With integration of a number of community-accepted standards, including
+
+RDF, DATS, SmartAPI, and schema.org, FAIRshake is already capable of facilitating FAIR assessments of a diverse set of digi- tal objects, including datasets, tools, re- positories, and APIs. Throughout our initial assessments, it has become clear that many established community standards are not being employed within the biomed- ical research community, largely due to a lack of awareness. As the community con- tinues to evolve toward better defining FAIRness, the FAIR metrics are expected to converge, and the FAIR assessments are likely to become more automated.
+  FAIRshake will continue to evolve with community demand. Continued im- provements to the clarity, usability, and FAIRness of FAIRshake are planned. Similarly, through integration with existing FAIR-embracing resources such as FAIRSharing, FAIRshake will enable the display of assessments on digital resource landing pages so that a broader community of users will become more aware of FAIRshake. The FAIRshake plat- form codebase can be reused for the assessment of other digital and physical products, such as publications, events, books, and courses. However, such as- sessments may not be relevant to the FAIR guiding principles. Nevertheless, the FAIRshake platform is flexible enough that it can facilitate other related appli- cations, even potentially repurposing FAIRshake as a platform for scientific peer review.
+
+Availability
+The primary interface to FAIRshake is at: https://fairshake.cloud.
+  The FAIRshake Chrome extension is available from: https://chrome.google. com/webstore/detail/fairshake/pihohcec piomegpagadljmdifpbkhnjn?hl=en-US.
+  The FAIRshake source code is available from GitHub at: https://github.com/ MaayanLab/FAIRshake.
+
+ACKNOWLEDGMENTS
+
+This work was partially supported by the National Institutes of Health, United States, grant numbers OT3-OD025467, OT3-OD025459, and U54- HL127624.
+
+
+REFERENCES
+
+Cox, S. and Yu, J. (2017) OzNome 5-star Tool: A Rating System for making data FAIR and Trustable. eResearch Australasia 2017.
+
+
+Dillo, I., and De Leeuw, L. (2014). Data Seal of Approval: Certification for sustainable and trusted data repositories (The Hague: Data Archiving and Networked Services (DANS)), p. 20.
+
+Foster, I., and Kesselman, C. (1997). Globus: A metacomputing infrastructure toolkit. The International Journal of Supercomputer Applications and High Performance Computing 11, 115-128.
+
+Garcia, L., Giraldo, O., Garcia, A. and Dumontier,
+M. (2017) Bioschemas: schema. org for the Life Sciences. Proceedings of SWAT4LS.
+
+Haendel, M., Su, A., McMurry, J., Chute, C.,
+Mungall, C., Good, B., Wu, C., McWeeney, S., Hochheiser, H., and Robinson, P. (2016). Metrics to assess value of biomedical digital repositories: response to RFI NOT-OD-16-133 (Zenodo).
+
+Halevy, A., Korn, F., Noy, N.F., Olston, C., Polyzotis, N., Roy, S., and Whang, S.E. (2016), Proceedings of the 2016 International Conference on Management of Data. ACM, San Francisco, California, USA, pp. 795-806.
+
+Hasnain, A., and Rebholz-Schuhmann, D. (2018). Assessing FAIR Data Principles Against the 5-Star Open Data Principles. In The Semantic Web: ESWC 2018 Satellite Events (Springer International Publishing), pp. 469-477.
+
+Mons, B., Neylon, C., Velterop, J., Dumontier, M., da Silva Santos, L.O.B., and Wilkinson, M.D. (2017). Cloudy, increasingly FAIR; revisiting the FAIR Data guiding principles for the European Open Science Cloud. Inf. Serv. Use 37, 49-56.
+
+Sansone, S.-A., McQuilton, P., Rocca-Serra, P., Gonzalez-Beltran, A., Izzo, M., Lister, A.L., and Thurston, M.; FAIRsharing Community (2019). FAIRsharing as a community approach to stan- dards, repositories and policies. Nat. Biotechnol. 37, 358-367.
+
+Termehchy, A., and Winslett, M. (2010). EXTRUCT: using deep structural information in XML keyword search. Proceedings VLDB Endowment 3, 1593-1596.
+
+Wilkinson, M.D., Dumontier, M., Aalbersberg, I.J., Appleton, G., Axton, M., Baak, A., Blomberg, N., Boiten, J.-W., da Silva Santos, L.B., Bourne, P.E., et al. (2016). The FAIR Guiding Principles for scien- tific data management and stewardship. Sci. Data 3, 160018.
+
+Wilkinson, M.D., Sansone, S.-A., Schultes, E., Doorn, P., Bonino da Silva Santos, L.O., and Dumontier, M. (2018). A design framework and exemplar metrics for FAIRness. Sci. Data 5, 180118.
+
+Wilkinson, M.D., Dumontier, M., Sansone, S.-A., Bonino da Silva Santos, L.O., Prieto, M., Batista, D., McQuilton, P., Kuhn, T., Rocca-Serra, P., Crosas, M., and Schultes, E. (2019). Evaluating FAIR maturity through a scalable, automated, community-governed framework. Sci. Data 6, 174.
+
+Wise, J., de Barron, A.G., Splendiani, A., Balali- Mood, B., Vasant, D., Little, E., Mellino, G.,
+Harrow, I., Smith, I., Taubert, J., et al. (2019). Implementation and relevance of FAIR data princi- ples in biopharmaceutical R&D. Drug Discov. Today 24, 933-938.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

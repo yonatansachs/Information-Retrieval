@@ -1,0 +1,145 @@
+
+
+Tutorial
+
+
+Fairness in Rankings and Recommenders
+
+Evaggelia Pitoura pitoura@cs.uoi.gr University of Ioannina Ioannina, Greece
+
+Georgia Koutrika georgia@athenarc.gr Athena Research Center Athens, Greece
+
+Kostas Stefanidis konstantinos.stefanidis@tuni.fi Tampere University
+Tampere, Finland
+
+ABSTRACT
+With the growing complexity of the available online information, search engines via rankings and recommender systems come to the rescue, providing suggestions to users about items of potential interest, from movies and products to news articles and even potential friends. Such results and suggestions aim at covering the user information needs and play an important role in guiding users' decisions and in forming their opinions.
+  However, the same technology, if not used responsibly, may lead to discrimination, amplify potential biases in the original data, restrict transparency and strengthen unfairness. For exam- ple, consider scenarios in which models based on biased data produce results that abet violence, decrease diversity, or have an adverse impact on economic policies.
+  While the potential benefits of rankings and recommenders are well-accepted and understood, the importance of using such systems in a fair manner has only recently attracted attention. In this tutorial, we cover recent advancements and highlight future research directions in this increasingly relevant research area.
+1 INTRODUCTION
+Currently, algorithmic systems driven by large amounts of data are increasingly being used in all aspects of society. Such systems offer enormous opportunities. They accelerate scientific discov- ery in all domains, including personalized medicine and smart weather forecasting, they automate tasks, they help in improv- ing our life through personal assistants and recommendations, they have the potential of transforming society through open government, to name just a few of their benefits.
+  Often, such systems are being used to assist, or, even replace human decision making in diverse domains. Examples include software systems used in school admissions, housing, pricing of goods, credit score estimation, job applicant selection, and sentencing decisions in courts and surveillance. A prominent case is the COMPAS software used in courts in the US to assist bail and sentencing decisions through a risk assessment algorithm that predicts future crime.
+   The ubiquitous use of such systems may create possible threats of economic loss, social stigmatization, or even loss of liberty. For instance, a known study by ProPublica found that in COMPAS, the false positive rate for African American defendants, namely people labelled "high-risk" who did not re-offend, was nearly twice as high as that for white defendants [11]. Another well- known study shows that names used predominantly by men and women of colour are much more likely to generate ads related to arrest records [34].
+  Data-driven systems are also being employed by search and recommendation engines, social media tools, and news outlets,
+
+(c) 2019 Copyright held by the owner/author(s). Published in Proceedings of the 23rd International Conference on Extending Database Technology (EDBT), March 30-April 2, 2020, ISBN 978-3-89318-083-7 on OpenProceedings.org.
+Distribution of this paper is permitted under the terms of the Creative Commons license CC-by-nc-nd 4.0.
+
+among others. Recent studies report that social media has be- come the main source of online news with more than 2.4 billion internet users, of which nearly 64.5% receive breaking news from social media instead of traditional sources [22]. Thus, to a great extent, such systems play a central role in shaping our experi- ences and influencing our perception of the world. Again, there are many reports questioning the output of such systems. For instance, a known study on search results showed evidence for stereotype exaggeration in images returned when people search for professional careers [16].
+Fairness in rankings and recommenders. In this tutorial, we pay special attention to the concept of fairness in rankings and rec- ommender systems. By fairness, we typically mean lack of dis- crimination. It is not correct to assume that insights achieved via computations on data are unbiased simply because data was collected automatically or processing was performed algorithmi- cally. Bias may come from the algorithm, reflecting, for example, commercial or other preferences of its designers, or even from the actual data, for example, if a survey contains biased questions, or, if some specific population is misrepresented in the input data.
+  In this tutorial, we review a number of definitions of fairness that aim at addressing discrimination, bias amplification, and ensure fair treatment. We organize these definitions around the notions of individual and group fairness. We also present methods for achieving fairness in rankings and recommendations, taking a cross-type view, distinguishing them between pre-processing, in-processing and post-processing approaches. We conclude with a discussion of the new research directions that arise.
+2 TUTORIAL OBJECTIVES
+This tutorial aims at presenting a toolkit of definitions, models and methods used for ensuring fairness in rankings and recom- mendations. Our objectives are three-fold: (a) to provide a solid framework on a novel, quickly evolving, and impactful domain,
+(b) to highlight challenges and research paths for researchers and practitioners that work on problems in the intersection of recommender systems and databases, and (c) to show how fair- ness challenges manifest in other areas (e.g., cloud computation and job scheduling) and transfer findings from existing works in these areas.
+  For this purpose, we organize our tutorial along the follow- ing main axes: (i) Motivation and background for the need for fair rankings and recommendations, (ii) Modeling fairness in rankings and recommendations, (iii) Ensuring fair rankings and recommendations, and (iv) Fairness in computations, algorithms and systems, and open research challenges.
+3 MOTIVATION AND BACKGROUND
+Fairness has emerged as an important category of research for machine learning systems in many application areas. Extending this concept to rankings and recommendations is tricky. First, there is an essential tension between the goals of fairness and those of personalization. Inherent in the idea of personalization
+
+
+
+
+Series ISSN: 2367-2005	651	10.5441/002/edbt.2020.86
+
+is that the best items for one user may be different than those for another. However, there are contexts in which equity across rankings and recommendation outcomes is a desirable goal. Fur- thermore, fairness is a multi-sided concept (e.g., [7, 8]), in which the impacts on multiple groups of individuals must be considered. In this tutorial, we start by presenting motivating examples for the need for fair rankings and recommendations from several domains, including justice, ads, image search and others. We highlight possible causes of unfairness, such as biased or incom- plete data, and algorithmic inefficiencies. We point out potential harms, such as filter bubbles, polarization, loss of opportunity,
+and discrimination.
+   We consider a number of different dimensions based on which we classify existing models and approaches. Firstly, we distin- guish between the multiple viewpoints that fairness can have in recommendation systems, namely (a) fairness for the recom- mended items (e.g., [31]), (b) fairness for the users (e.g., [19, 38]),
+(c) fairness for groups of users (e.g., [1, 24, 29]) and (d) fairness for the item providers, and the recommendation platform (e.g., [25]). Furthermore, we distinguish the existing methods for achieving fairness in rankings and recommendations as: (a) pre-processing (e.g., [31]), (b) in-processing (e.g., [13]) and (c) post-processing approaches (e.g., [15]).
+4 MODELING FAIRNESS
+Fairness is a general term and coming up with a single definition or model is tricky. We start this part of the tutorial by reviewing definitions of fairness which, in general, ask for nondiscrimina- tion of users or items, based on the values of one or more sensitive or protected attributes, such as gender or race. We organize the definitions with respect to the notions of individual fairness, i.e., treating similar individuals similarly [10, 18], and group fairness, i.e., treating different groups equally (e.g., nondiscrimination of sensitive groups) [2, 35].
+  We present a number of widely used models and definitions for fairness [23, 36], including:
+• Demographic (or statistical) parity (e.g., [35]), stating that the proportion of each part of a protected class (e.g., gen- der) should take the positive outcome at equal rates.
+• Conditional statistical parity (e.g., [36]), which defines sta- tistical parity given a set of legitimate factors.
+• Equalized odds (e.g., [2]), stating that the protected and un- protected groups should have equal rates for true positives and false positives.
+• Fairness through awareness (e.g., [10]), stating that any two similar individuals should receive a similar outcome.
+• Counterfactual fairness (e.g., [18]), stating that a decision for an individual is fair, if it is the same in both the actual world and a counterfactual world where the individual belongs to a different demographic group.
+• Calibration-based fairness (e.g., [26]), stating that if a group receives a predicted probability p, at least a fraction p of its members should belong to the predicted class.
+  Next, we review how these models of fairness have been ex- tended in the case of ranked outputs, including attention-based and probability-based approaches [3] as well as approaches based on pair-wise comparisons [4, 37]. Then, we look at how defini- tions of algorithmic fairness and fair ranking have been adopted in recommender systems (e.g., [31, 39]). Given that fairness is a multi-sided concept, we extend our taxonomy under the umbrella of recommender systems, considering that fairness can refer to
+
+suggested data items [31], users [19, 38], group of users [27, 29] or item providers. Finally, we investigate the notion of fairness in sequential and multi-round recommenders [5, 6, 25, 33], where the goal is to ensure fairness in a number of interactions between the users and the system. We also discuss fairness in the case of link recommendations in networks and related concepts of homogeneity, echo chambers and polarity [12].
+  This part of the tutorial concludes with a discourse on other related concepts, such as the relationship between fairness and diversity [9], recommendation independence, transparency [15] and feedback loops.
+
+5 ENSURING FAIRNESS
+In this section, we present methods for achieving fairness in rankings and recommendations. We first discuss the trade-offs among fairness, personalization and accuracy.
+  Taking a cross-type view, approaches can be distinguished as pre-processing, in-processing and post-processing.
+
+• Pre-processing approaches target at transforming the data so that any underlying bias or discrimination is removed.
+• In-processing approaches target at modifying existing or introducing new algorithms that result in fair rankings and recommendations, e.g., by removing bias.
+• Post-processing approaches treat the algorithms for pro- ducing rankings and recommendations as black boxes, without changing their inner workings. To ensure fair- ness, they modify the output of the algorithm.
+
+5.1 Recommenders
+We first study fairness in systems that produce recommenda- tions for individuals. These comprise the majority of existing recommender systems. We start by presenting pre-processing ap- proaches that work on modifying the input to the recommender, for example, by appropriate sampling (e.g., [9]), by adding more data to the input (e.g., [31]), or by performing database repair [28]. Then, we focus on approaches for designing fairness-aware algorithms, that is, recommendation algorithms that produce fair recommendations. We will present algorithms for fairness-aware matrix factorization [7, 38], multi-armed bandits [13, 21] and deep learning recommenders (e.g., [6, 44]). For instance, we show that when fairness with respect to both consumers and to item providers is important, variants of the well-known sparse linear method (SLIM) can be used to negotiate the trade-off between fairness and accuracy and improve the balance of user and item neighborhoods [7]. Alternatively, we can augment the learning objective in matrix factorization by adding a smoothed varia- tion of a fairness metric [38]. As another example, we present methods that mitigate bias to increase fairness by incorporating randomness in variational autoencoders recommenders (e.g., [6]). Finally, we present post-processing approaches that modify the output of the recommenders to ensure fairness (e.g., [15]).
+  Moving from individuals to groups, group recommendations have attracted significant research efforts for their importance in benefiting a group of users. However, maximizing the satisfaction of each group member while minimizing the unfairness between them is very challenging [20]. We study different fair-aware algorithms for group recommenders [20, 27, 29, 32].
+
+5.2 Rankings
+In order to guarantee fair rankings, in-processing approaches work with result generation procedures that allow the systematic con- trol of the degree of unfairness in the output, by exploiting learn- ing techniques, satisfying statistical parity, while preserving rel- evance [37, 43]. The work in [30] formulates fairness constraints on rankings, targeting at relevance maximization, in terms of exposure allocation. A learning-based in-processing approach is also used in [41] to reduce discrimination and inequality of opportunity in rankings, Here, the method learns a ranking func- tion with an additional objective that reduces disparate exposure. A recent learning to rank approach, DELTR, looks at the average probability of items from a protected group to be ranked at the top position [42].
+  The post-processing approach of [40] aims at satisfying statisti- cal tests of representativeness, when ranking items in a certain order, so as to ensure that the ratio of protected individuals that appear within a prefix of the ranking (namely, top-k) must be above a given proportion. The attention received by the items in different positions in the ranking is also not the same: items ranked in first positions are exposed to much more attention than the lower ones. [5] tackles the problem of having a ranking to be presented as a query result, where the items in the first positions have the same or very similar relevance. When it happens, there is a decision to be made of which items are being top-ranked and which are not. A solution to this situation, called amortized fairness, considers that the position index is a proxy for the level of attention an item is exposed, while the output of the predic- tion algorithm corresponds to the item relevance. Accumulated attention across a series of rankings should be proportional to accumulated relevance, as indicating long term ranking fairness.
+
+6 OPEN ISSUES AND RESEARCH DIRECTIONS
+In this section, we present a critical comparison of the existing work on ensuring fair rankings and recommendations, and the lessons learnt in these areas. Furthermore, we discuss open issues and new research directions that arise.
+  First, we present fairness concepts studied in different areas of computer science. Fairness is often a ubiquitous property of computations, algorithms, and systems beyond recommender systems. For instance, in federated stream processing systems, it is an open challenge how to ensure global fairness on processing quality experienced by queries [14]. Systems for processing big data such as Hadoop, Spark, and massively parallel databases, need to run workloads on behalf of multiple tenants simulta- neously. The abundant disk-based storage in these systems is usually complemented by a smaller, but much faster, cache. Cache allocation strategies are required that speed up the overall work- load while being fair to each tenant [17].
+   Then, we highlight a number of possible research directions. We start with the observation that even if there exist several definitions and models for representing fairness, coming from different research perspectives, these definitions and models are many times somewhat incomparable, hindering consistent un- derstanding and treatment. Compiling existing definitions to produce new ones and evaluating their suitability in different domains and applications appears to be an open topic for further research. Fairness in recommendations is multi-sided, achieving fairness for all parties involved is also a topic that needs to be investigated further.
+  
+While the potential benefits of fairness are well-accepted nowadays, we still need to study the actual impact of fairness- enhancing algorithms. For example, extensive user studies are needed to evaluate the level of acceptance of the fairness-enhanced results by the users and the long term effect of these results on their own perceptions and preferences. Extensive studies that exploit feedback loops, should also be performed in this line of work, so as to investigate deeper the connections between the concepts of fairness, explainability and personalization. More- over, it will be very advantageous to study comparatively the notions of equality, that ensures equal treatment, over equity, that ensures treatment based on needs. Operationalizing equity is a difficult task that often depends on the domain under study.
+7 TUTORIAL INFORMATION
+Motivation and Target Audience: The tutorial's topic lies in the core of the conference interests. The tutorial aims at re- searchers and students, as well as IT professionals and developers in searching, ranking and recommender systems, and the general data management community. Researchers and students will get a good introduction to the topic and get inspired by challenging research problems. Furthermore, IT professionals and develop- ers will learn appropriate fairness-aware techniques to promote fairness in their systems. All the materials that will be used for the tutorial will be publicly available.
+Prerequisites: The tutorial is carefully structured to accommo- date both attendees unfamiliar with the topic and more experi- enced participants by providing required background knowledge, shared terminology and common understanding of the basic fairness-related concepts.
+Intended Duration: We are aiming for a 90-minute tutorial. Link to Tutorial Resources: https://sites.google.com/view/fair-ranking-recommend
+8 PRESENTERS
+Evaggelia Pitoura is a Prof. at the Univ. of Ioannina, Greece, where she also leads the Distributed Management of Data Labo- ratory. She received her PhD degree from Purdue Univ., USA. Her research interests are in the area of data management systems with a recent emphasis on social networks and responsible data management. Her publications include more than 150 articles in international journals (including TODS, TKDE, PVLDB) and con- ferences (including SIGMOD, ICDE, WWW) and a highly-cited book on mobile computing. Her research has been funded by the EC and national sources. She has served or serves on the editorial board of ACM TODS, VLDBJ, TKDE, DAPD and as a group leader, senior PC member, or co-chair of many international conferences (including PC chair of EDBT 2016 and ICDE 2012). She has more than 20 years experience in teaching. Prior tutorials: Tempo- ral Graphs [eBISS'17], Social Graphs [BigDat'15], Data Graphs [SummerSOC'14], Personalization [ICDE'10], Mobile Computing [ICDE'03], Pervasive Computing [ICDE'00].
+Georgia Koutrika is Research Director at Athena Research Cen- ter in Greece. She has more than 15 years of experience in multiple roles at HP Labs, IBM Almaden, and Stanford, building innovative solutions for recommendations, data analytics and exploration. Her work has been incorporated in commercial products, de- scribed in 9 granted patents and 18 patent applications in the US and worldwide, and published in more than 80 papers in top-tier conferences and journals. She is an ACM Distinguished Speaker and associate editor for TKDE and PVLDB. She has served or
+
+serves as PC member or co-chair of many conferences (including Demo PC chair of ACM SIGMOD 2018 and General Chair of ACM SIGMOD 2016). Prior tutorials: Recommender Systems [SIG- MOD'18, EDBT'18, ICDE'15], Personalization [ICDE'10, ICDE'07, VLDB'05].
+Kostas Stefanidis is an Assoc. Professor on Data Science at the Tampere University, Finland. He got his PhD in personalized data management from the Univ. of Ioannina, Greece. His re- search interests lie in the intersection of databases, information retrieval, data mining and the Web, and include personalization and recommender systems, and large-scale entity resolution and information integration. His publications include more than 80 papers in peer-reviewed conferences and journals, including SIG- MOD, ICDE, and ACM TODS, and a book on entity resolution in the Web of data. He has 8 years experience in teaching. Prior tutorials: Recommender Systems [MUMIA Training School'14], Personalization [ICDE'10], Entity Resolution [ICDE'17, ESWC'16, WWW'14, CIKM'13].
+
+REFERENCES
+[1] Sihem Amer-Yahia, Senjuti Basu Roy, Ashish Chawla, Gautam Das, and Cong Yu. 2009. Group Recommendation: Semantics and Efficiency. PVLDB 2, 1 (2009), 754-765.
+[2] Pranjal Awasthi, Matthäus Kleindessner, and Jamie Morgenstern. 2019. Ef- fectiveness of Equalized Odds for Fair Classification under Imperfect Group Information. CoRR abs/1906.03284 (2019).
+[3] Richard Berk, Hoda Heidari, Shahin Jabbari, Matthew Joseph, Michael J. Kearns, Jamie Morgenstern, Seth Neel, and Aaron Roth. 2017. A Convex Framework for Fair Regression. CoRR abs/1706.02409 (2017).
+[4] Alex Beutel, Jilin Chen, Tulsee Doshi, Hai Qian, Li Wei, Yi Wu, Lukasz Heldt, Zhe Zhao, Lichan Hong, Ed H. Chi, and Cristos Goodrow. 2019. Fairness in Recommendation Ranking through Pairwise Comparisons. In KDD. 2212- 2220.
+[5] Asia J. Biega, Krishna P. Gummadi, and Gerhard Weikum. 2018. Equity of Attention: Amortizing Individual Fairness in Rankings. In SIGIR. 405-414.
+[6] Rodrigo Borges and Kostas Stefanidis. 2019. Enhancing Long Term Fairness in Recommendations with Variational Autoencoders. In MEDES. 95-102.
+[7] Robin Burke. 2017.  Multisided Fairness for Recommendation.  CoRR
+abs/1707.00093 (2017).
+[8] Robin Burke, Nasim Sonboli, and Aldo Ordonez-Gauger. 2018. Balanced Neighborhoods for Multi-sided Fairness in Recommendation. In FAT. 202- 214.
+[9] L. Elisa Celis, Amit Deshpande, Tarun Kathuria, and Nisheeth K. Vishnoi. 2016. How to be Fair and Diverse? CoRR abs/1610.07183 (2016).
+[10] Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard S. Zemel. 2012. Fairness through awareness. In Innovations in Theoretical Com- puter Science. 214-226.
+[11] J. Angwin et al. 2016. Machine Bias. ProPublica (2016). https://www.propublica. org/article/machine-bias-risk-assessments-in-criminal-sentencing
+[12] Kiran Garimella, Gianmarco De Francisci Morales, Aristides Gionis, and Michael Mathioudakis. 2018. Reducing Controversy by Connecting Opposing Views. In IJCAI. 5249-5253.
+[13] Matthew Joseph, Michael J. Kearns, Jamie H. Morgenstern, and Aaron Roth. 2016. Fairness in Learning: Classic and Contextual Bandits. In NIPS. 325-333.
+[14] Evangelia Kalyvianaki, Marco Fiscato, Theodoros Salonidis, and Peter Pietzuch. 2016. THEMIS: Fairness in Federated Stream Processing Under Overload. In SIGMOD. 541-553.
+[15] Toshihiro Kamishima, Shotaro Akaho, Hideki Asoh, and Jun Sakuma. 2018. Recommendation Independence. In FAT. 187-201.
+[16] Matthew Kay, Cynthia Matuszek, and Sean A. Munson. 2015. Unequal Repre- sentation and Gender Stereotypes in Image Search Results for Occupations. In CHI. 3819-3828.
+[17] Mayuresh Kunjir, Brandon Fain, Kamesh Munagala, and Shivnath Babu. 2017. ROBUS: Fair Cache Allocation for Data-parallel Workloads. In SIGMOD. 219- 234.
+[18] Matt J. Kusner, Joshua R. Loftus, Chris Russell, and Ricardo Silva. 2017. Coun- terfactual Fairness. In NIPS. 4066-4076.
+[19] Jurek Leonhardt, Avishek Anand, and Megha Khosla. 2018. User Fairness in Recommender Systems. In WWW. 101-102.
+[20] Xiao Lin, Min Zhang, Yongfeng Zhang, Zhaoquan Gu, Yiqun Liu, and Shaoping Ma. 2017. Fairness-Aware Group Recommendation with Pareto-Efficiency. In RecSys. 107-115.
+[21] Yang Liu, Goran Radanovic, Christos Dimitrakakis, Debmalya Mandal, and David C. Parkes. 2017. Calibrated Fairness in Bandits. CoRR abs/1707.01875 (2017).
+[22] 
+N. Martin. 2018. How Social Media Has Changed How We Consume News. Forbes (2018). https://www.forbes.com/sites/nicolemartin1/2018/11/ 30/how-social-media-has-changed-how-we-consume-news/#18ae4c093c3c
+[23] Ninareh Mehrabi, Fred Morstatter, Nripsuta Saxena, Kristina Lerman, and Aram Galstyan. 2019. A Survey on Bias and Fairness in Machine Learning. CoRR abs/1908.09635 (2019).
+[24] Eirini Ntoutsi, Kostas Stefanidis, Kjetil Nørvåg, and Hans-Peter Kriegel. 2012. Fast Group Recommendations by Applying User Clustering. In ER. 126-140.
+[25] Gourab K Patro, Abhijnan Chakraborty, Niloy Ganguly, and Krishna P Gum- madi. 2020. Incremental Fairness in Two-Sided Market Platforms: On Smoothly Updating Recommendations. In AAAI.
+[26] Geoff Pleiss, Manish Raghavan, Felix Wu, Jon Kleinberg, and Kilian Q Wein- berger. 2017. On Fairness and Calibration. In Advances in Neural Information Processing Systems 30, I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus,
+S. Vishwanathan, and R. Garnett (Eds.). Curran Associates, Inc., 5680-5689.
+[27] Dimitris Sacharidis. 2019. Top-N group recommendations with fairness. In
+SAC. 1663-1670.
+[28] Babak Salimi, Luke Rodriguez, Bill Howe, and Dan Suciu. 2019. Interventional Fairness: Causal Database Repair for Algorithmic Fairness. In SIGMOD. 793- 810.
+[29] Dimitris Serbos, Shuyao Qi, Nikos Mamoulis, Evaggelia Pitoura, and Panayiotis Tsaparas. 2017. Fairness in Package-to-Group Recommendations. In WWW. 371-379.
+[30] Ashudeep Singh and Thorsten Joachims. 2018. Fairness of Exposure in Rank- ings. In KDD. 2219-2228.
+[31] Harald Steck. 2018. Calibrated recommendations. In RecSys. 154-162.
+[32] Maria Stratigi, Haridimos Kondylakis, and Kostas Stefanidis. 2018. FairGRecs: Fair Group Recommendations by Exploiting Personal Health Information. In DEXA. 147-155.
+[33] Maria Stratigi, Jyrki Nummenmaa, Evaggelia Pitoura, and Kostas Stefanidis. 2020. Fair Sequential Group Recommendations. In SAC.
+[34] Latanya Sweeney. 2013. Discrimination in online ad delivery. Commun. ACM
+56, 5 (2013), 44-54.
+[35] Virginia Tsintzou, Evaggelia Pitoura, and Panayiotis Tsaparas. 2019. Bias Disparity in Recommendation Systems. In RMSE.
+[36] Sahil Verma and Julia Rubin. 2018. Fairness definitions explained. In FairWare. 1-7.
+[37] Ke Yang and Julia Stoyanovich. 2017. Measuring Fairness in Ranked Outputs. In SSDM. 22:1-22:6.
+[38] Sirui Yao and Bert Huang. 2017. Beyond Parity: Fairness Objectives for Col- laborative Filtering. In NIPS. 2921-2930.
+[39] Sirui Yao and Bert Huang. 2017. New Fairness Metrics for Recommendation that Embrace Differences. FAT/ML (2017).
+[40] Meike Zehlike, Francesco Bonchi, Carlos Castillo, Sara Hajian, Mohamed Megahed, and Ricardo Baeza-Yates. 2017. FA*IR: A Fair Top-k Ranking Algo- rithm. In CIKM. 1569-1578.
+[41] Meike Zehlike and Carlos Castillo. 2018. Reducing Disparate Exposure in Ranking: A Learning To Rank Approach. CoRR abs/1805.08716 (2018).
+[42] Meike Zehlike, Gina-Theresa Diehn, and Carlos Castillo. 2020. Reducing Disparate Exposure in Ranking: A Learning to Rank Approach. In WWW.
+[43] Richard S. Zemel, Yu Wu, Kevin Swersky, Toniann Pitassi, and Cynthia Dwork. 2013. Learning Fair Representations. In ICML. 325-333.
+[44] Ziwei Zhu, Xia Hu, and James Caverlee. 2018. Fairness-Aware Tensor-Based Recommendation. In CIKM. 1153-1162.
+
+

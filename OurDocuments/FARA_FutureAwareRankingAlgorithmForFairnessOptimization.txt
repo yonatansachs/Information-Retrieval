@@ -1,0 +1,1013 @@
+        FARA: Future-aware Ranking Algorithm for Fairness Optimization
+
+Tao Yang University of Utah Salt Lake City, Utah taoyang@cs.utah.edu
+Zhenduo Wang
+   University of Utah Salt Lake City, Utah, USA zhenduow@cs.utah.edu
+
+Zhichao Xu University of Utah Salt Lake City, Utah zhichao.xu@utah.edu
+Qingyao Ai*
+DCST, Tsinghua University
+Quan Cheng Laboratory, Zhongguancun Laboratory Beijing, China
+aiqy@tsinghua.edu.cn
+
+Abstract
+Ranking systems are the key components of modern Information Retrieval (IR) applications, such as search engines and recommender systems. Besides the ranking relevance to users, the exposure fair- ness to item providers has also been considered an important factor in ranking optimization. Many fair ranking algorithms have been proposed to jointly optimize both ranking relevance and fairness. However, we find that most existing fair ranking methods adopt greedy algorithms that only optimize rankings for the next imme- diate session or request. As shown in this paper, such a myopic paradigm could limit the upper bound of ranking optimization and lead to suboptimal performance in the long term.
+  To this end, we propose FARA, a novel Future-Aware Ranking Algorithm for ranking relevance and fairness optimization. Instead
+of greedily optimizing rankings for the next immediate session, FARA plans ahead by jointly optimizing multiple ranklists together and saving them for future sessions. Specifically, FARA first uses the Taylor expansion to investigate how future ranklists will influ- ence the overall fairness of the system. Then, based on the analysis of the Taylor expansion, FARA adopts a two-phase optimization algorithm where we first solve an optimal future exposure plan- ning problem and then construct the optimal ranklists according to the optimal future exposure planning. Theoretically, we show that FARA is optimal for ranking relevance and fairness joint op- timization. Empirically, our extensive experiments on three semi- synthesized datasets show that FARA is efficient, effective, and can deliver significantly better ranking performance compared to state-of-the-art fair ranking methods. We make our implementation public at https://github.com/Taosheng-ty/QP_fairness/.
+CCS Concepts
+• Information systems ? Learning to rank.
+
+*Corresponding authors
+
+CIKM '23, October 21-25, 2023, Birmingham, United Kingdom
+(c) 2023 Copyright held by the owner/author(s). ACM ISBN 979-8-4007-0124-5/23/10.
+https://doi.org/10.1145/3583780.3614877
+
+Keywords
+Fair Ranking, Position Bias, Exposure, Exposure Fairness
+ACM Reference Format:
+Tao Yang, Zhichao Xu, Zhenduo Wang, and Qingyao Ai. 2023. FARA: Future- aware Ranking Algorithm for Fairness Optimization. In Proceedings of the 32nd ACM International Conference on Information and Knowledge Manage- ment (CIKM '23), October 21-25, 2023, Birmingham, United Kingdom. ACM, New York, NY, USA, 11 pages. https://doi.org/10.1145/3583780.3614877
+1 INTRODUCTION
+Ranking systems are one of the important cornerstones of informa- tion retrieval (IR). Existing ranking systems are usually constructed to optimize ranking relevance with the Probability Ranking Prin- ciple (PRP) [34] where items of greater likely relevance should be ranked higher. The PRP is a user-centered ranking strategy that helps save users energy and time since users could satisfy their needs with the top-ranked items [18]. However, recent research has shown that, besides users, item providers also draw utility from ranking systems, and the PRP could result in severe unfairness for item providers [4, 37]. Particularly, the PRP always assigns a few top items with high-rank positions. Those top items usually get the ma- jority of exposure while other items rarely get exposure, although other items might still be relevant [19, 29, 40, 49]. The unbalanced exposure leads to unfair opportunities and unfair economic gains for item providers. Such unfairness will eventually force unfairly treated providers to leave the system, and fewer options will be left for users [51]. Therefore, IR researchers have argued that ranking relevance and fairness are both important for modern ranking sys- tems [37, 38]. Many fair ranking algorithms have been proposed to optimize both of them jointly [29, 55].
+  However, existing fair algorithms are mostly greedy algorithms and could only deliver suboptimal ranking performance in the long run. In particular, existing fair ranking algorithms [4, 24, 26, 37, 47] usually behave greedily to sequentially produce the locally optimal
+ranklist for the next immediate session without being aware of the influence of future sessions1 (see more discussion in §2). The unawareness could lead to unmitigated ranking conflict between relevance and fairness optimization. For example, imagine a case
+that there are in total 3 items in consideration, item A, item B, and
+
+1 In this paper, we define a session as a query issued by a user.
+
+CIKM '23, October 21-25, 2023, Birmingham, United Kingdom	Tao Yang, Zhichao Xu, Zhenduo Wang, and Qingyao Ai
+
+
+item C, where item A is the most relevant one and item C is the least relevant one. Ranklist [??, ??, ??] is the ranklist to maximize ranking relevance. We now consider a scenario where item C is severely unfairly treated in history. To optimize exposure fairness, we need to allocate item C more exposure by boosting item C to a higher position. However, If we try to greedily boost item C within the next immediate session, it is highly likely that item C will be boosted to the first rank to get the maximum exposure and the result ranklist is [??, ??, ??]. However, Ranklist [??, ??, ??] is of poor ranking relevance due to the ranking conflict that the least relevant item (item C) is put on the most important rank (the first rank).
+  Intuitively, the ranking conflict can be smoothed if we plan ahead and jointly optimize multiple future sessions' ranklists to- gether instead of greedily optimizing the next immediate session. For example, the multiple ranklists after joint optimization can be
+[[??, ??, ??], [??, ??, ??], ...], where item C is smoothly boosted in multi- ple ranklists and the most relevant item, i.e., item A, is still ranked the highest. Based on the above idea, we propose FARA, a novel Future-Aware Ranking Algorithm for relevance and fairness opti-
+mization. Briefly, FARA precomputes and jointly optimizes multiple ranklists together and saves them for future use. Particularly, to be able to plan for the future, FARA first uses the Taylor expansion to investigate how future ranklists will influence fairness. Then, based on the influence, FARA uses a two-phase optimization to jointly optimizes multiple ranklists together for future use. In phase 1, we solve an exposure planning problem and get the optimal future planning for item exposure. In phase 2, we construct the optimal ranklists according to the optimal future planning for item expo- sure. We prove FARA's optimum in terms of ranking relevance and fairness joint optimization in § 5. Extensive experiments on three semi-synthesized datasets also demonstrate FARA's effectiveness and efficiency compared to existing fair ranking algorithms (§ 6).
+2 RELATED WORK
+Ranking Fairness: Due to the importance of rankings for providers (sellers, job seekers, content creators, etc.), [9, 17, 37, 53, 54], there has been growing interest in ranking fairness for providers [5, 12, 15, 20, 25, 32, 41, 41, 47]. However, the definitions of ranking fairness vary a lot in the existing literature, and there exists no uni- versal definition. At a high level, existing fairness definitions can be grouped into probability-based fairness and exposure-based fair- ness [29, 55]. Probability-based fairness [3, 6, 13] usually requires a minimum number or proportion of protected (e.g., race, gender) items to be distributed evenly across a ranklist. However, only con- sidering the number or proportion of items in a ranklist neglects the fact that different ranks usually have different importance. To address this, exposure-based fairness [4, 8, 11, 37, 48] assigns values to each ranking position based on the expected user attention or
+
+Table 1: A summary of notations in this paper.
+
+??, ??, ?? (??)For a query ??, ?? (??) is the set of candidates items. ?? ?
+?? (??) is an item.??, ??, ??All are binary random variables indicating whether an item ?? is examined (?? = 1), perceived as relevant (?? = 1)
+and clicked (?? = 1) by a user respectively.??, ????, ??, ???? = ?? (?? = 1 |??), is the probability of an item ?? perceived as relevant. ???? = ?? (?? = 1 |???????? (?? |?? ) = ??) is the exami-
+nation probability of item ?? when it is put in ????h rank in
+a ranklist ?? . ?? is item's accumulated examination proba- bility (see Eq.7).????, ????Users will stop examining items lower than rank ???? due to
+selection bias (see Eq. 3). ???? is the cutoff prefix to evaluate Cum-NDCG and ???? = ???? .generated ranklists are used to correct ranking scores. For open- loop fair algorithms [15, 26, 36-38, 42, 46], each item usually has a static and fixed ranking score once the ranking model is optimized. Then ranklists are stochastically sampled for each session according to the static ranking scores. Various techniques have been used to optimize the static ranking model, such as linear programming [15, 37], policy gradient [38], differentiable PL model optimization [26]. However, given the fact that ranking scores are static, open-loop algorithms are usually not robust. To improve ranking robustness, feedback-loop algorithms [4, 24, 48, 52] dynamically take historical ranklists as input to correct items' scores. For example, Morik et al.
+[24] proposes to use a proportional controller to boost ranking scores of historically unfairly treated items.
+3 BACKGROUND AND PRIOR KNOWLEDGE
+In this section, we provide readers with background knowledge of the paper. A summary of notations we use throughout the paper can be found in Table 1.
+Ranking Services Workflow: We take web search as an example to detail the ranking service workflow. At time step ?? , a ranking session starts when user ?? issues a query ??. For query ??, there exist candidate items provided by item providers. With the query and candidate items, the ranking system first estimates each item's relevance and then constructs a ranklist of candidate items by optimizing certain ranking objectives. Then the ranking system presents the ranklist to users and collects users' feedback (e.g., clicks) which can be utilized to update the relevance estimator.
+Partial and Biased Feedback: Relevance estimation is usually updated using users' feedback. However, such feedback is usually a noisy and biased indicator of relevance since users only provide meaningful feedback for items they have examined. If we consider user clicks as the main signal for user feedback, then we have
+
+click probability. Exposure-based fairness argues that total expo- sure is a limited resource for a ranking system and advocates for fair distribution of exposure among items to ensure fairness for
+
+??, if ?? = 1 0,  otherwise
+
+(1)
+
+item providers [29]. In this paper, we limit our discussion of fair ranking algorithms within the scope of exposure-based fairness.
+Fair Ranking Algorithms: Recently, a few ranking algorithms [10, 15, 23, 29, 35, 41, 55] have been proposed to achieve exposure-based fairness. In this work, we classify them as open-loop algorithms or feedback-loop algorithms depending on whether historically
+
+where ??, ??, ?? are binary random variables indicating whether an item is examined, perceived as relevant, and clicked, respectively. With User Examination Hypothesis [33], we can model users' click probability as
+?? (?? = 1) = ?? (?? = 1)?? (?? = 1)	(2)
+
+FARA: Future-aware Ranking Algorithm for Fairness Optimization	CIKM '23, October 21-25, 2023, Birmingham, United Kingdom
+
+
+For the rest of the paper, we use ?? = ?? (?? = 1) to simplify the notation. Although there exist several types of biases in the exami- nation probability ?? (?? = 1), we focus on two most important ones: positional bias and selection bias.
+  Positional Bias [7]: Examination probability is decided by the rank (also called position) and drops along ranks. Particularly, the examining probability is denoted as ??rank(?? |?? ) , where rank(?? |?? ) is
+item ??'s rank in ranklist ?? .
+Selection Bias [27, 28]: This bias exists when not all of the items
+
+simplify notations, we use ???? (??) to denote ???? @???? (??) and eff. for
+eff.@???? , where ???? is the ranklist length introduced in Eq. 3.
+  The Provider-side Utility (Fairness): As items' rankings can
+have significant effects on their providers' profit, it is important to create a fair ranking environment. To evaluate whether exposure is fairly allocated to users, we use the negative exposure disparity between item pairs as fairness measurement [26],
+unfair.(??, ?? ) = 	1		??	??	???? (???? )??(???? )-???? (???? )??(???? )
+
+are selected to be shown to users, or some lists are so long that no users will examine every item in them. Assuming the items ranked
+
+??(?? - 1)
+???? ??? (??) ????
+
+
+??? (??)
+
+
+(8)
+
+lower than rank ???? will not be examined [27], we model this as:
+
+fair.(??, ?? ) = -unfair.(??, ?? )	(9)
+where ?? (??) is the set of candidate items that will construct the
+
+?? (?? = 1|??, ?? ) = ??rank(?? |?? ) ,  if  rank(?? |?? ) = ????
+
+
+(3)
+
+ranklist of query ?? and ?? = |?? (??) |. The intuition of the above fair- ness measurement is that the optimal fairness can be achieved when
+
+Ranking Utility Measurement: Here we introduce the evaluation of ranking performance from both the user side and the provider
+
+items exposure is proportional to their relevance, i.e., ????? , ???? ?
+?? (??), ???? (???? ) = ???? (???? ) . In other words, exposure fairness means
+
+side, which in later sections will guide the ranking optimization.
+
+?? (???? )
+
+?? (???? )
+
+  The User-side Utility: User-side utility measures a ranking system's ability to put relevant items on higher ranks. A popular user-side utility measurement is DCG [16]. Specifically, given a query ?? and a ranklist ?? , DCG@???? is defined as,
+
+we should let items of similar relevance get similar exposure. In this paper, we choose the exposure fairness evaluation proposed by Oosterhuis [26] instead of the original evaluation proposed in [37]. The reason for the choice is that the fairness evaluation in [37]
+needs to divide the exposure of an item by its relevance, i.e., ???? (??) ,
+
+????
+
+????
+
+which has zero denominator problem when item ?? is irrelevant,
+
+DCG@???? (??) = ?? ?? (?? [??], ??)???? = ?? ?? (?? [??], ??)????	(4)
+
+and ?? (??) is near zero. This paper uses average unfairness across
+
+where ?? [??] indicates the ????h ranked item in ranklist ?? , ?? (?? [??], ??) indicates ?? [??]'s relevance to query ??, cutoff ???? indicates the prefix we want to evaluate, ???? indicates the weight we put on ????h rank. ????
+is usually monotonically decreases as ?? increases, e.g., ???? is usually
+
+the average unfairness as the unfairness tolerance.
+4 PROPOSED METHOD
+Most existing fair algorithms are greedy algorithms, i.e., they se-
+
+set to log 1	[16]. In this paper, following previous works in [37],
+
+quentially construct the locally optimal ranklist for the next immedi-
+
+
+we set
+
+2 (??+1)
+???? as the examination probability ???? at the ??
+
+
+??h
+
+
+rank when
+
+ate session. Therefore they usually fail to optimize the construction procedure if we expect multiple sessions will come for the same
+
+computing DCG. Furthermore, based on DCG, we can measure
+multiple ranklists with the cumulative NDCG,
+??
+
+query in the future. To mitigate this gap and reach a global opti- mal for a query, we propose to (i) plan ahead and precompute
+
+eff.@???? = cum-NDCG@???? (??, ?? ) = ??????-?? DCG@???? (???? )	(5)
+
+multiple ranklists for future use (§ 4.1) and (ii) jointly opti-
+
+where 0 = ?? = 1 is a constant discount factor and ?? is the current time step. ?? * is the ideal ranklist constructed by ranking items according to true relevance, and we use DCG@???? (??*), referred to as IDCG, to normalize DCG@???? (???? ). By ignoring ?? , we can get the average NDCG as,
+
+ranking relevance (§ 4.2 & § 4.3). We hypothesize that jointly op-
+timizing multiple ranklists can construct better ranklists compared to sequentially greedily optimizing one single ranklist at each time step. Such hypothesis is verified by both the theoretical analysis in
+§ 5 and the empirical results in § 6.2.
+
+L??
+
+DCG@???? (???? )
+4.1 
+Future-aware Ranking Objective
+
+?? DCG ???? (?? )
+??
+
+the future ??? ranklists for a query ??. Specifically, when we are at
+
+L?? ??? (??) ?? (??) L??
+
+L?? ?? 1
+
+?? ?? ]_???? [ ?? ]==?? 
+
+(6)
+
+time step ?? + 1, the objective is to pre-compute the optimal ranklists
+
+?? DCG@???? (??*)
+?? ??? (??) ?? (??)???? @???? (??)
+?? DCG@???? (??*)
+where ???? @???? (??) is the cumulative exposure at top ???? ranks,
+
+B* = [????+1, ..., ???? +??? ] that can maximize the marginal fairness
+?tfair.(??, ??, ?? + ??? ),
+B* =	arg max	?tfair.(??, ??, ?? + ??? )	(10)
+B=[????+1,...,????+??? ]
+
+??  ????
+
+?tfair.(??, ??, ?? + ??? ) = tfair.(??, ?? + ??? ) - tfair.(??, ?? ), and tfair. is the
+
+???? @???? (??) =	?? ?? ]_?? [ ?? ]==??	(7)
+??=1 ?? =1
+where ???? [ ?? ] indicates the ????h item in ranklist ???? , ]_ is an indicator function which means we only accumulate item ??'s exposure. To
+
+estimated fairness. tfair. is calculated with Eq. 9 by substituting true relevance ?? with the estimated relevance, denoted as t??, since true relevance is mostly not available during optimization. Here maximizing the marginal fairness ?tfair.(??, ??, ?? + ??? ) is equivalent
+
+
+
+to maximizing final fairness tfair.(??, ?? + ??? ) at time step ?? + ??? . The reason for the equivalence is that ranklists B = [????+1, ..., ???? +??? ] can only influence the marginal fairness from timestep ?? + 1 to timestep ?? +??? rather than fairness before timestep ?? . Here, fairness evaluation in Eq. 9 is a direct objective in our method.
+  To the best of our knowledge, there is no trivial algorithm to get the optimal ranklists B* due to the discontinuity of ranking problem [21]. One example of discontinuity is that increasing an
+item's ranking score may not change the output ranklist, and fair- ness stays the same unless the increased score can surpass another item's score, and fairness will experience a sudden change. To allevi-
+ate the discontinuity of B* ? argmax?? ?tfair., we propose a novel
+
+correct future fairness estimation, it is possible to find the optimal marginal exposure planning, denoted as ???*, that can maximize future fairness. Since t?? is semi-definite, Quadratic Programming- based (QP) optimization is valid to find ???*. We give the specific QP problem formulation to find ???* in § 4.2 and leave constructing optimal ranklists B* from ???* in § 4.3.
+4.2 Phase 1: Future Exposure Planning
+When giving the QP problem formulation, we noticed that existing ranking fairness optimization usually considers two settings: (i) the post-processing setting [4, 37, 38] where relevance is assumed to be known or well estimated in advance; and (ii) the online
+
+two-phase solution path by introducing a continuous variable, ???,
+
+setting [24, 48] where fairness is optimized while relevance is still
+
+* Vertical Allocation	*
+
+argmax???	t
+
+being learned. To consider both settings, we first illustrate the QP
+
+B ?	- ??? (??) ??? ? ?? (??) ?	- ?fair.
+
+(11)
+
+problem formulation in the post-processing setting in § 4.2.1 and
+
+??h??????2	??h??????1
+
+where ???(??), also referred to as the planning exposure, is the mar- ginal (or incremental) exposure we plan to assign to item ?? within the next ??? timesteps. ???* (??) is the optimal marginal exposure. We found that introducing ??? helps to effectively maximize ?tfair.
+
+then extend it to work in the online setting in § 4.2.2.
+4.2.1 The post-processing setting . To get the optimal exposure planning ???*, we propose the following QP formulation with ???(??) ??? ? ?? (??) as decision variables,
+
+in phase 1 of our solution. In phase 2, we construct the optimal ranklists B* by allocating the optimal exposure ???* to each item
+
+max
+???
+
+?tfair.(??, ??, ?? + ??? )	(13a)
+
+with a vertical allocation method (more details are in §4.3).
+
+??? ????
+
+  To get ???*, we carry out a Taylor series expansion to investigate how future exposure will influence the fairness objective,
+
+s.t.
+?? ??? (??)
+
+???(??) =	?? ??	(13b)
+??=1 ?? =1
+
+?tfair.(??, ??, ?? + ??? ) =
+
+?? ????? (??)
+
+??tfair.
+???(??)
+???? (??)
+
+?? ????? (??)
+
+???(??)t?? (??) = (1 - ??)
+
+??? ????
+
+??=1 ?? =1
+
+?? ?? t?? (??order )	(13c)
+
++ 1	??
+
+	??2tfair.	
+???(????
+???? (???? )???? (???? )
+
+)???(????)
+
+???(??) =
+
+0, ??? ? ?? (??)	(13d)
+???
+
+???? ??? (??) ???? ??? (??)
+
+???(??) = ?? ??1, ??? ? ?? (??)	(13e)
+
+=	t?? (??)???(??)
+?? ??? (??)
+
+(12)
+
+??=1
+where ???? is the length of ranklists, ?? ?? is the examining prob-
+
+- 1	??
+
+?? t?? (???? , ???? )???(???? )???(????)
+
+ability at rank ?? . Eq.13b indicates that the sum of items' mar-
+
+2
+???? ??? (??) ????
+
+
+??? (??)
+
+ginal exposure should equal the sum of the ??? ranklists' exposure.
+t
+
+= t(r)
+
+(r)	1 (r)?? t	(r)
+
+In Eq.13c, we introduce the NDCG constraint, where ?? (??order?? )
+
+?? · ??? - 2 ???
+
+· ?? · ???
+
+means the ????h largest estimated relevance. According to Eq.(4&6),
+
+?? +???	??
+
+t	L?? ??? (??) ???(??)t?? (??) indicates the DCG and L??? L????
+
+?? ?? t?? (??order )
+
+t?? are the first and the second order derivative, i.e., the gradient vector and the Hessian matrix, respectively,
+t?? (??) = 	4	 tt?? (??) ?? ???? (?? )t?? (?? ) - ???? (??) ?? t??2 (h))
+
+indicates IDCG. Then, it is straightforward that (1 - ??) indicates the minimum NDCG requirement we want to guarantee. In the post-processing setting, relevance is assumed to be given or already
+well-estimated prior to ranking optimization. Eq.13d indicates that
+
+??(?? - 1)
+t		4	 t
+
+
+??
+?? t2
+
+
+h
+t	t	)
+
+an item's marginal exposure ???(??) should be no less than 0. In Eq.13e, ???(??) should be more than the accumulation of the first
+
+
+
+By observing Eq. 8, we could derive two facts about the above second-order expansion in Eq. 12. (i) The above second-order ex- pansion is not an approximation, but equality since (un)fairness in Eq. 8 is defined as a polynomial of ?? with a degree of two, and its derivative of order higher than two is zero. (ii) Since (un)fairness in Eq. 8 is defined as a sum of squares, the second order derivative t?? is semi-definite. Being equality, Eq. 12 allows us to correctly estimate future fairness given marginal exposure ??? even when we consider a long-term future (large ??? and ???). Based on the
+
+Here we assume that the first rank's exposure is the largest and exposure drops from the top to the lower ranks.
+4.2.2 The online setting. In the online setting, ranklists are opti- mized while relevance is still being learned. How to actively explore items and get more accurate relevance for ranking optimization is critical. Yang et al. [50] show that a more accurate relevance estima- tion for an item can be achieved by exposing an item more because more exposure leads to more interaction with users. Based on this, we do explorations by setting a minimum exposure requirement
+
+
+
+
+
+Figure 1: The ranklist construction order of the horizontal allocation and vertical allocation.
+for items and propose the following QP formulation,
+
+
+
+Algorithm 1: Vertical Allocation
+
+1 Input: The optimal exposure planning ???, the number of planning sessions to consider ??? , the ranked list length ???? , relevance estimation t??;
+2 Initialize: ranking lists B* (??) +-- [Ø] for ?? ? ?????????? (??? ), set
+??˜(??) +-- 0 ??? ? ?? ;
+3 for ?????? ? [1, 2, ..., ???? ] do
+4	for ???????? ? [1, 2, ..., ??? ] do
+5	?????? 1 +-- {?? |???(??) - ??˜(??) = ???????? };
+6	?????? 2 +-- {?? |?? ? B* (????????))};
+7	if ?????? 1 n ?????? 2 = Ø then
+8	???????????????????? +-- ?????? 2
+
+max
+???
+
+?tfair.(??, ??, ?? + ??? ) - ??
+?? ??? (??)
+
+?? (??)	(14a)	9
+10
+
+else
+???????????????????? +-- ?????? 1 n ?????? 2
+
+s.t.	????. (13??, 13??, 13??, 13??)	(14b)	11
+
+??* +--	argmax
+
+t?? (??);
+
+?? (??) = 0, ??? ? ?? (??)	(14c)
+
+?? ?????????????????????
+*	*
+
+12	B (????????).???????????? (?? );
+
+?? (??) + ???(??) + ???? (??) = ????????, ??? ? ?? (??)	(14d)	13
+
+??˜(??*) +-- ??˜(??*) + ???????? ;
+
+where ?? indicates the importance of exploration, ?? (??) ??? ? ?? (??)
+are slack variables to encourage exploration. In other words, both
+?? (??) and ???(??) ??? ? ?? (??) are decision variables in the setting. In Eq. 14d, ???????? is the minimum exposure requirement, ???? (??) is item
+??'s exposure accumulated till time step ?? , and ???(??) is the marginal exposure we plan to allocate to item ?? within the next ??? steps. ?? (??) can be interpreted as the additional exposure still needed to satisfy
+the minimum exposure requirement after the next ??? steps. When
+???? (??) = ???????? for item ??, i.e., minimum exposure requirement is already satisfied for item ??, it is straightforward that ?? (??) will be 0 and will not contribute to the ranking objective in Eq. 14a. When
+???? (??) < ???????? , i.e. item ?? does not meet the minimum exposure requirement, the objective in Eq. 14a will try to minimize ?? (??). In other words, ???(??) will be boosted in order to satisfy the constraint in Eq. 14d. With more exposure, item ?? will be explored more. In this paper, we refer to the introduction of ?? as Exploration. And we treat ?? in Eq. 14a and ???????? as hyper-parameters to control the degree of exploration.
+  As quadratic programming has been well studied, there are many available existing solvers. In this paper, we use quadratic program- ming library qpsolvers2 within python to solve Equation 13 and Equation 14 to get the optimal exposure planning ???*.
+4.3 Phase 2: Ranklists Construction
+Following the solution path in Eq. 11, the next step is to construct the optimal ranklists B* according to ???* as ???* has been solved in Phase 1. Here, we should allocate each item exactly its optimal expo- sure ???* within B*. However, we find that the allocation solution of B is not unique, and they share the same aver-NDCG@???? (see Theo- rem 5.3). Therefore, we additionally aim to find the optimal B* that can optimize all top ranks' effectiveness, i.e., aver-NDCG@???? ,
+????? = ???? . Optimizing top ranks' effectiveness is important since
+users usually pay more attention to top ranks.
+  Inspired by [51], we propose a vertical exposure allocation method in Algorithm 1 to construct the optimal B* based on ???*. The dif- ference between a vertical allocation and a horizontal allocation
+
+2 https://pypi.org/project/qpsolvers/
+
+14 Output: B*;
+
+
+is the ranklist construction order. As shown in Fig. 1, a horizontal allocation prioritizes earlier ranklists and first fills out all ranks of the ????h ranklist ???? before filling out ????+1. However, a vertical
+allocation prioritizes top ranks and fills out the ????h ranked items
+of all ranklists before filling out any (?? + 1)??h ranked item. Since top ranks are usually more important, our proposed Algorithm 1 adopts a vertical allocation to fill out B*. In our proposed Algo- rithm 1, B* is the generated ??? ranklists and B* (????????, ??????) denote the ????????h rank of the ??????????h ranklist. To fill out B* (????????, ??????), the proposed vertical allocation first generates a feasible candidate
+set, i.e., ????????????????????, which contains items that are not selected for this session before (?? ? ?? (????????)) but still have planned exposure left (???(??) - ??˜(??) = ???????? ). Here, examination probability ???????? serves as the margin, ??˜(??) stores the actual exposure item ?? re- ceives. Within ????????????????????, our algorithm selects the most relevant item from the candidate set to fill out B* (????????, ??????). Algorithm 1 is theoretically justified to accurately allocate exposure ???* (see Theorem 5.1) and can construct optimal B* for aver-NDCG@????
+????? = ???? (see Theorem§ 5.2).
+Although inspired by the vertical method in [51], the proposed
+vertical allocation is different from it. Yang et al. [51] focus on a certain share of exposure to be guaranteed and have a complicated 3-step procedure, i.e., allocation, appending, and resorting, which cannot be used to allocate ???* for our problem. The proposed allocation algorithm in this paper uses up all ???*, and the allocation procedure is less complicated and more straightforward than those introduced by Yang et al. [51].
+4.4 FARA: Future-Aware Ranking Algorithm
+Combining Phase 1 and Phase 2, we propose a future-aware ranking algorithm for fairness optimization, FARA, detailed in Algorithm 2.
+FARA serves users in an online manner where we pre-compute B*, the next ??? ranklists, and randomly pop out one ranklist from B* when needed. When B* is used up and empty, We will re-compute
+
+
+
+Algorithm 2: FARA: Future-aware Ranking Algorithm
+1 Input: The number of planning sessions to consider ??? , fairness-effectiveness tradeoff parameter ??. And in the online setting, we need to additionally give the exploration parameters ?? and ???????? (see Eq. 14) ;
+2 Initialize time step ?? ? 0, initialize an empty dictionary 1B = {} to store ranked lists, items' exposure ?? ? 0 and cumulative click cumC ? 0;
+3 while True do
+4	?? ? ?? + 1;
+5	A user issues a query ???? ;
+
+Table 2: Datasets statistics. For each dataset, the table below shows the number of queries, the average number of docs for each query, and the relevance annotation ??'s range.
+
+Datasets#Queries#Aver. Docs per Query??'s rangeMQ2008800200 - 2MSLR-10k10k1220 - 4Istella-S33k1030 - 4??˜(??) ??? ? ?? and the identity ?? ??? (??) ???(??) = ?? ??? (??) ??˜(??), we would know that ???(??) = ??˜(??) ??? ? ??, which means exposures are perfectly allocated according to ???(??).
+Combing the two scenarios, the vertical allocation in Algorithm 1
+
+6	if ???? ? 1B then
+
+can theoretically guarantee ???(??) - ??˜(??) = ??  for at least |?? | -??
+
+7	1B[???? ] = [], i.e., add an empty list
+
+items. Since
+
+????	??
+
+8	if 1B[???? ] is empty then
+9	Get ???* by solving Eq. 13 (post-processing) or
+Eq. 14 (online);
+10	Get B* with Algorithm 1;
+11	Randomly shuffle B;
+12	1B[???? ] ? B*;
+13	Pop out a ranking list from 1B[???? ] and present it;
+14	Update cumulative click ???????? and items' exposure ??;
+15	Update the relevance estimation t?? via Eq. 15;
+          
+???(??) >> ?????? and |?? | >> ???? when using FARA, we can claim that Algorithm 1 correctly allocates exposure.	?
+  Theorem 5.2. FARA can reach the optimal NDCG with the given exposure planning.
+  Proof. Here we provide theoretical proof that vertical allocation, i.e., phase 2, can optimize effectiveness (aver-NDCG) when exposure planning ??? is given. Specifically, maximizing aver-NDCG@???? in Eq. 6 is equivalent to
+max	?? (??)??@???? (??)	(16a)
+?? ??? (??)
+
+B* for future ??? timesteps. 1B[??] is used to store B* for query ??. Besides, FARA does not depend on any specific relevance estimation
+
+s.t.	??@???? (??) = ?????????? .	(16b)
+?? ??? (??)
+
+model, therefore, can be seamlessly integrated into most existing ranking applications. In this paper, we follow works by [50] to use the following unbiased estimator of relevance,
+
+0 = ??@???? (??) = ???(??) ??? ? ??	(16c)
+ where normalization is ignored in Eq. 16a, the sum of top ranks exposure should be a constant in Eq. 16b, and the top ranks exposure
+
+t?? (??) =
+
+cumC?? (??)	(15)
+???? (??)
+
+should be less than the total exposure planning in Eq. 16c. According to Rearrangement Inequality [14], it is straightforward to know
+
+where cumC?? (??) = L??
+
+??
+?? =1
+
+????,?? ]_?? [ ?? ]==?? is the cumulative clicks3.
+
+that aver-NDCG@???? , i.e., Eq. 16a, can be optimized by letting item
+of greater relevance ?? get more exposure at top ranks, i.e., greater
+
+Moreover, it is worth noting that the relevance estimator can be replaced with other relevance estimators as well.
+5 THEORETICAL ANALYSIS
+Theorem 5.1. Algorithm 1 can theoretically guarantee ???(??) -
+
+??@???? . In other words, we should prioritize letting items of greater relevance ?? fulfill their exposure planning ??? at top ???? ranks since
+??@???? is bounded in [0, ???]. By assuming that aver-NDCG at higher ranks is more important [34], we should maximize aver-NDCG@????
+
+??˜(??) = ???? for at least |?? | - ???? items.
+
+before maximizing aver-NDCG@(???? + 1), ? 1 = ???? < ???? . As we
+maximize aver-NDCG from top to lower ranks, it is straightforward
+
+  Proof. Here we discuss the exposure allocation error bounds in Phase 2 of FARA, i.e., |??˜(??) - ???(??) |, in Algorithm 1. We noticed that there are two possible scenarios of lines 6-12 in Algorithm 1: Scenario 1: There exists a (??????*, ????????*) pair where ?????? 1 n?????? 2 = Ø.
+If this happens, (???? , ????????*) will also have ?????? 1 n ?????? 2 = Ø since
+the size of ?????? 1 and ?????? 2 monotonically decrease for lower rank
+of the same session. As ?????? 2 is the set of unselected items for a session, we know that there are at least |?? | - ???? items in ?????? 2, i.e.,
+|?????? 2| = |?? | - ???? . If ?????? 1 n ?????? 2 = Ø, those |?? | - ???? items are not in ?????? 1. In other words, there are at least |?? | - ???? items that satisfy ???(??) - ??˜(??) < ???? .
+Scenario 2: ?????? 1 n ?????? 2 ? Ø ?(??????, ????????) pair. Due to the margin
+???????? in line 5 of Algorithm 1, ???(??) = ??˜(??) ??? ? ?? should always hold if ?????? 1 n ?????? 2 = Ø never happens. By considering ???(??) =
+
+3 Given the page limit, we skip the proof of unbiasedness for the above estimator and refer interested readers to [50]
+
+that the optimal way is to follow a greedy selection strategy to let an item of greater relevance ?? fulfill its exposure planning ??? at its highest possible ranks. In Algorithm 1, the proposed vertical allocation exactly follows the above greedy selection strategy to let item of greater relevance ?? (line 11 in Algorithm 1) fulfill its exposure planning ??? at the highest possible ranks (setting rank loops as the outer loop in 3 and line 4 of Algorithm 1). So it can reach optimal effectiveness at the top ranks.	?
+Theorem 5.3. Effectiveness and fairness are fixed when ??? is fixed.
+  Proof. Given the same exposure planning ???, effectiveness (aver-NDCG@???? ) and fairness are fixed since we can substitute exposure planning ???(??) for ???? @???? (??) in Eq. 6 and substituting
+??? for ?? in Eq. 8, respectively. In other words, for any ranklist B*,
+as long as exposure planning ??? can be accurately allocated in B*,
+the effectiveness and fairness are fixed.	?
+
+
+
+6 EXPERIMENTS
+6.1 Experimental setup
+Datasets: In this work, we use three public Learning-to-Rank (LTR) datasets: MQ2008 [30], MSLR10k4 and Istella-S [22]. Datasets' statistics are shown in Table 2. MQ2008 has a three-level relevance judgment (from 0 to 2). MSLR10k and Istella-S have a five-level
+
+construct a ranklist ?? of candidate items and present it to the sim- ulated user. To collect users' feedback for the ranked list ?? , we need to simulate relevance and examination (see Eq.2). Same as [2],
+the relevance probabilities of each document-query pair (??, ??) are simulated with their relevance judgement ?? as
+2?? - 1
+
+?? (?? = 1|??, ??) = ?? + (1 - ??) ??
+
+relevance judgment (from 0 to 4). Queries in each dataset are already divided into training, validation, and test partitions according to a
+
+?????? - 1
+where ???????? is the maximum value of relev2ance judgement ??, i.e., 2
+
+60%-20%-20% scheme. In this work, we mainly focus on comparison within the LTR tasks. However, the proposed method can be adapted to recommendation tasks, which we leave for future studies.
+
+or 4 depending on the datasets. Besides relevance, following [24, 28],
+we simulate users' examination probability as,
+
+In this paper, we compare the following methods:
+
+1	??? log (
+
+1 ?? |?? )+1) , if rank(?? |?? ) = ????
+
+Baselines:
+• TopK: Sort items according to t?? (??)
+
+?? (?? =
+
+|??, ?? ) =
+
+2 rank(
+0,	otherwise
+?
+
+• RandomK: Randomly rank items.
+• FairCo [24]: Fair ranking algorithm based on a proportional con- troller. ?? ? [0.0, 1000.0]
+• MCFair [52]: Fair ranking algorithm directly uses gradient as the ranking score. ?? ? [0.0, 1000.0]
+• ILP [4]: Fair ranking algorithm based on Integer Linear Program- ming (ILP).?? ? [0.0, 1.0]
+• LP [37]: Fair ranking algorithm based on Linear Programming (LP).?? ? [0.0, 1000.0]
+• MMF [48]. Similar to FairCo but focus on top ranks fairness.
+?? ? [0.0, 1.0]
+• PLFair [26]. A fair ranking algorithm based on Placket-Luce optimization. ?? ? [0.0, 1.0]
+• FARA-Horiz. (ours): A variant of FARA. Compared to FARA, we
+switch line 3 and line 4 in Algorithm 1 to first iterate the sessions and then iterate the ranks. We refer to the iterations as the hori- zontal allocation paradigm. ?? ? [0.0, 1.0]
+• FARA (ours). The proposed fair ranking algorithm. ?? ? [0.0, 1.0].
+Among the above ranking algorithm, TopK and RandomK are un- fair algorithms, while the others are fair algorithms. While all the fair ranking algorithms aim to maximize effectiveness and fairness, FARA and FARA-Horiz. differ from others by taking a joint opti- mization across multiple ranklists rather than a traditional greedy optimization approach. For fair ranking algorithms, there exists a tradeoff parameter ??, similar to ?? in Eq. 13, to balance effectiveness and fairness. For fair algorithms, the greater ?? is, the more we care about fairness while potentially sacrificing more effectiveness. For example, when increasing ?? in Eq. 13c, FARA can maximize fairness with less effectiveness constraint. For different fair algorithms, ?? lies in different ranges. For FairCo, MCFair, LP, ?? are originally within [0.0, +8], and we adopt ?? ? [0.0, 1000.0] which is enough according to our experiments. For ILP, MMF, PLFair, FARA-Horiz. and FARA, ?? ? [0.0, 1.0]. Although the vertical allocation in Al- gorithm 1 was inspired by [51], [51] cannot be used as a baseline because [51] works with offline ranking services where all user
+queries are known in advance. However, in this paper, we consider the online services depicted in Algorithm 2.
+Ranking Service Simulation: Following the workflow in Algo- rithm 2, at each time step, a simulated user will issue a query ??, which is randomly sampled from the training, validation, or test partition. Corresponding to the query ??, a ranking algorithm will
+
+4 https://www.microsoft.com/en-us/research/project/mslr/
+
+For simplicity, we only simulate users' examination behavior on top ranks, and we set ???? to 5 throughout the experiments (refer to Eq. 3 for more details of ???? ). With ?? (?? = 1|??, ??, ?? ) and ?? (?? = 1|??, ?? ), we sample clicks with Equation 2. The advantage of the simulation
+is that it allows us to do online experiments on a large scale while still being easy to reproduce by researchers without access to live ranking systems [28]. For simplicity, same as existing works [24, 28, 48, 50], we assume that users' examination ?? (?? = 1|??, ?? ) is known in experiment since many existing works [1, 2, 31, 45] have been
+proposed to estimate it. Due to different data sizes, we simulate 200k steps for MQ2008 and 4M steps for MSLR10k and Istella-S.
+Experiment Settings: We noticed that LP and ILP methods are pro- posed in the post-processing setting, where relevance is already known or well estimated in advance. However, in most real-world settings, ranking optimization and relevance learning are carried out at the same time, which we refer to as the online setting. To give a comprehensive comparison, we evaluate ranking methods in both settings. In the post-processing setting, all the ranking meth- ods in Section 6.1 are based on true relevance ??, and FARA will set
+?? as 0. In the online setting, all the ranking methods in Section 6.1 are based on the relevance estimation t?? in Eq. 15 to perform rank- ing optimization. FARA set ?? to 1 and ???????? = 10 unless otherwise explicitly specified, as they work well across all our experiments.
+Evaluation: We use the cum-NDCG (cNDCG) in Eq. 5 with ?? = 0.995 (same ?? adopted in [43, 44]) to evaluate the effectiveness at different cutoffs, 1 = ???? = 5. Aside from effectiveness, unfairness defined in Eq. 8 is used for unfairness measurement. We run each ex-
+periment five times and report the average evaluation performance on the test partition. We use the Fisher randomization test [39] with
+?? < 0.05 to do significant tests. Due to the time cost (see Table 3),
+we do not run ILP and LP on the larger datasets, MSLR10k and Istella-S, and the performances are not available (NA).
+6.2 Results and Analysis
+In this section, we first compare the ranking relevance performance given different degrees of fairness requirements. Then we dive deep into our method to offer more insights into FARA's supremacy.
+6.2.1 Can FARA reach a better balance between fairness and effec- tiveness? In Figure 2, we compare ranking methods' effectiveness- fairness balance given different fairness requirements. To generate the balance curves in Figure 2, we incrementally sample ?? from the minimum value to the maximum value within ??'s ranges indicated in Section 6.1. For each method, twenty ?? are sampled with the
+
+
+
+
+200
+
+
+200
+
+
+200
+
+
+
+
+
+150
+
+
+150
+
+
+100
+
+
+
+
+180
+
+
+100
+
+
+
+
+
+
+
+
+180
+
+
+
+
+
+0	1000  5000
+Unfairness tolerance
+
+(a) MSLR10k, post-processing
+
+
+
+50
+
+
+
+
+
+
+200
+
+
+
+
+
+0	100	1000
+Unfairness tolerance
+
+(b) Istella-S, post-processing
+
+
+
+
+100
+
+
+
+
+
+200
+
+
+
+
+
+10000	20000	100000
+Unfairness tolerance
+
+(c) MQ2008, post-processing
+
+
+
+
+
+130
+
+
+
+
+100
+
+
+190
+
+
+
+50
+70	150
+
+
+(d) MSLR10k, online
+(e) 
+Istella-S, online
+(f) 
+MQ2008, online
+
+
+
+Figure 2: c-NDCG vs. unfairness tolerance (Eq. 8) in the post-processing setting and the online setting. Given the same unfairness, the higher curves or points lie, the better their performances are. Our methods FARA and FARA-Horiz. lie higher than all fair baselines in all figures. ILP and LP are unavailable for MSLR10k and Istella-S due to time costs (refer to Table 4).
+Table 3: Comparison of cNDCG@(1,3,5) and unfairness tolerance in the post-processing setting. Significant improvements or degradations with respect to FairCo are indicated with +/-. Within fair algorithms, the best performance with statistical significance is bolded and underlined. Here, ?? is set to the maximum value (see Sec. 6.1 for ??'s range) for each fair algorithm respectively, which means that all algorithms are trying their best to optimize ranking fairness (Eq. 9) and the numbers in the table represents their unfairness lower bound. Results are rounded to one decimal place.
+
+MethodsMSLR-10kIstella-SMQ2008cNDCG@1cNDCG@3cNDCG@5unfair.cN@1cN@3cN@5unfair.cN@1cN@3cN@5unfair.TopK
+Randomk200.0+
+68.0-200.0+
+74.7-200.0+
+79.7-4165.0 -
+119.0 -200.0+
+30.2-200.0+
+35.7 -200.0+
+41.1 -310.1-
+56.7 -200.0+
+74.0 -200.0+
+95.7-200.0+
+114.6-86001.1 -
+104632.2-PLFair68.2 -74.8 -79.9-119.6 -31.8 -36.2-41.5 -54.6 -79.2-99.3-117.2 -101245.1-MMF84.492.899.98.0-62.268.880.16.6-132.8-162.3-172.5-20688.7-ILPNANANANANANANANA185.6+183.8186.719916.3 -LPNANANANANANANANA188.4+187.4+187.99425.7MCFair114.8+102.7+101.00.0113.7 +85.25 +81.30.4193.5+186.0+186.69113.7FairCo85.593.7100.80.063.369.980.40.5179.0182.0187.49382.0FARA-Horiz.(Ours)90.7+96.1+100.40.078.5+79.8+82.60.9187.3+186.1+187.09125.9FARA(Ours)129.0+107.0+99.70.0135.5+89.1+82.60.9196.3+190.9+186.89129.9
+
+step size as (???????? - ???????? )/20. After sampling, we perform ranking simulation experiments for each ?? to get a (cNDCG, unfairness) pair. Then we connect different ??'s (cNDCG), unfairness) pair to form a
+curve for each method respectively in Figure 2. All the curves start from the top right to the bottom left as ?? increases, which means there exists a tradeoff between fairness and effectiveness (cNDCG). The reason behind this tradeoff is that requiring more fairness will bring more constraints on optimizing effectiveness. Since TopK and RandomK do not have trade-off parameters, both of them only have one single pair of (cNDCG, unfairness), and their performances are shown as single points in Figure 2.
+  In Figure 2, our methods FARA and FARA-Horiz. outperform all other fair methods since our methods reach the best cNDCG given the same unfairness tolerance. And FARA's supremacy is consistent in both post-processing and online settings. All fair rank- ing algorithms are effective fair ranking algorithms since they all
+
+show the tradeoff, i.e., higher cNDCG when increasing the unfair- ness tolerance. For unfair algorithms, TopK performs differently in post-processing and online settings. In the post-processing setting, TopK reaches the highest cNDCG since relevance is known, and ranking relevance is the only consideration. However, in the online setting, TopK can not reach the highest cNDCG. We think the drop in cNDCG is that TopK naively trusts the relevance estimation with- out any exploration when optimizing ranking relevance. However, fair algorithms are shown to be robust to the online setting since they mostly can reach better cNDCG than Topk when increasing unfairness tolerance. We think the reason for the robustness is that fair algorithms usually rerank items for different sessions to optimize fairness, and such reranking brings explorations.
+
+6.2.2 What is the fairness upper bound that FARA can reach? In Ta- ble 3, lower unfairness means higher fairness capacity and fairness upper bound, i.e., the maximum possible fairness one algorithm can
+
+
+
+Table 4: The average time (seconds per 1k ranklists) cost with standard deviations in parentheses. Since ILP and LP are time- consuming on large datasets, the time costs on MSLR-10k and Istella-S are estimated by only running 1k steps instead of the total simulation steps indicated in Sec. 6.1.
+
+		Datasets		 MSLR10k		Istella	MQ2008
+
+
+
+192
+
+190
+
+188
+
+186
+
+
+
+
+
+
+
+
+
+
+
+
+1	10	100
+
+
+9250
+
+9200
+
+9150
+
+9100
+
+9050
+
+9000
+
+
+
+1	10	100
+
+TopK	0.65
+
+0.50
+
+0.55
+
+The number of planning sessions, ?T .
+
+The number of planning sessions, ?T .
+
+(0.14)
+Randomk	0.63(0.12)
+PLFair	2.24(0.04)
+
+(0.00)
+0.57(0.04)
+3.11(0.07)
+
+(0.10)
+0.59(0.14)
+1.77(0.04)
+
+Figure 3: The numbers of planning session ??? 's influence on FARA in the post-processing setting on MQ2008. ?? is set as 1.
+
+MMF	8.01(0.39)	6.57(0.23)	1.82(0.28)
+ILP	1208.90(85.80)	1102.30(75.20)	19.70(1.29)
+LP	=10 days	=10 days	2.09(0.48)
+MCFair	0.724(0.016)	0.660(0.025)	0.567(0.035)
+
+190
+
+
+
+
+170
+
+
+190
+
+FairCo	0.73
+
+(0.04)
+
+0.71
+
+(0.03)
+
+0.70
+
+(0.12)
+
+140
+
+FARA-Horiz.(Ours)	1.00(0.17)	0.86(0.07)	0.97(0.22)
+
+FARA(Ours)	0.91
+
+(0.07)
+
+0.91
+
+(0.00)
+
+0.97
+
+(0.30)
+
+130
+
+100	1000	5000
+
+110
+
+10	30	150
+
+reach. Fair effective ranking algorithms, including FairCo, LP, FARA- Horiz. and FARA, have similar fairness capacity and outperform
+
+Unfairness tolerance
+(a) MSLR10k.
+
+Unfairness tolerance
+(b) Istella-S
+
+unfair ranking algorithms in terms of unfairness. The success of FARA-Horiz. and FARA validates the proposed quadratic program- ming formulation can optimize fairness. Similar cNDCG@5 and unfairness for those effective algorithms are expected according to Theorem 5.3. For other fair ranking algorithms, ILP and MMF, and PLFair show inferior fairness capacity. As for the possible reason, ILP uses the integer linear programming method, which may not be effective in optimizing fairness. MMF actually follows a slightly different definition of fairness which require fairness at any cutoff should be fair, which is more strict than the definition we use in this paper. As for PLFair, PLFair tries to learn the ranking score that optimizes fairness based on the feature representation (the exact setting in original paper [26]). However, the feature repre- sentation is initially designed for relevance which makes PLFair suboptimal for fairness optimization. In Table 3, ILP and LP are NA for MSLR10k and Istella-S due to time costs (refer to Table 4). Due to the page limit, we show the ranking performance of the online setting in Fig. (2), instead of in Table 3.
+6.2.3 How is FARA's effectiveness at different cutoffs? In Table 3, we show cNDCG at different cutoffs. Although FairCo, LP, FARA-Horiz. and FARA have similar fairness capacities, FARA significantly out- performs those fair algorithms for cNDCG@1 and cNDCG@3 on all three datasets. Compared to FARA-Horiz., shown in Table 3, FARA still significantly outperforms FARA-Horiz. at top ranks, which shows the necessity of vertical allocation.
+6.2.4 How is FARA's time efficiency ? Besides fairness and effective- ness optimization, we also empirically compare the time efficiency. In Table 4, ILP and LP are really time-consuming, especially on large datasets, MSLR10k and Istella-S. Compared to ILP and LP, FARA is more than 1000× time efficient on MSLR10k and Istella-S,
+although all three of them are programming-based methods. There
+are two reasons behind FARA's time efficiency. The first one is that FARA has a much fewer number of decision variables since FARA only has ?? (??) decision variables, while ILP and LP have ?? (??2) decision variables. The second one is that FARA does not need to solve quadratic programming for every time step. By solving quadratic programming once, we can get ??? ranklists used for
+
+Figure 4: Ablation study of exploration in the online setting. The higher curves lie, the better their performances are.
+future ??? sessions. FARA can reach comparable time efficiency with non-programming-based algorithms like TopK, RandomK, and FairCo. Compared with those non-programming-based algorithms, the slightly additional time cost of FARA is acceptable given FARA' superior ranking performance in Tab. 3 and in Fig. 2.
+6.2.5 How does ??? influence FARA ? In Figure 3, we show the results of cNDCG and unfairness by varying the value of ??? . With greater ??? , we see a clear boost of cNDCG for FARA, while such a boost does not happen for FARA-Horiz. We know that the pro- posed vertical allocation is the key reason to have better-ranking relevance when we get the optimal exposure planning ???*, and we theoretically analyze the reason in § 5.2. Besides, as we increase ??? , unfairness does not vary much, and its value stays close to the minimum unfairness we can achieve in Table 3. We think the reason for the steady value of unfairness is that FARA already reaches the upper limit of fairness when ??? is small, and it is hard to improve when we increase ??? .
+6.2.6 How does exploration influence FARA in the online setting ? To study how the exploration part (the slack variables ?? in Eq. 14a) influences FARA, we did an ablation study for FARA with or with- out exploration. Due to the page limit, we only show the ablation results on the larger dataset, i.e., MSLR10k and Istella-S, in Fig- ure 4. The advantage of exploration is two-folded based on Figure 4. Firstly, FARA lies higher than FARA-w/o-Exp. in the figure, which suggests exploration leads to a better effectiveness-fairness balance. Secondly, FARA has a smaller lower bound of unfairness tolerance, which implies exploration enables FARA to have a higher fairness capacity and can meet a more strict fairness requirement.
+ACKNOWLEDGEMENTS
+This work was supported in part by NSF CCF-2115677 and in part by the School of Computing, University of Utah. Any opinions, find- ings, conclusions, or recommendations expressed in this material are those of the authors and do not necessarily reflect those of the sponsor.
+
+
+
+References
+[1] Aman Agarwal, Ivan Zaitsev, Xuanhui Wang, Cheng Li, Marc Najork, and Thorsten Joachims. 2019. Estimating position bias without intrusive interven- tions. In Proceedings of the Twelfth ACM International Conference on Web Search and Data Mining. 474-482.
+[2] Qingyao Ai, Keping Bi, Cheng Luo, Jiafeng Guo, and W Bruce Croft. 2018. Unbi-
+ased learning to rank with unbiased propensity estimation. In The 41st Interna- tional ACM SIGIR Conference on Research & Development in Information Retrieval. 385-394.
+[3] Abolfazl Asudeh, HV Jagadish, Julia Stoyanovich, and Gautam Das. 2019. De- signing fair ranking schemes. In Proceedings of the 2019 international conference on management of data. 1259-1276.
+[4] Asia J Biega, Krishna P Gummadi, and Gerhard Weikum. 2018. Equity of attention: Amortizing individual fairness in rankings. In The 41st international acm sigir conference on research & development in information retrieval. 405-414.
+[5] Amin Bigdeli, Negar Arabzadeh, Shirin SeyedSalehi, Morteza Zihayat, and Ebrahim Bagheri. 2022. Gender Fairness in Information Retrieval Systems. In
+Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Information Retrieval. 3436-3439.
+[6] L Elisa Celis, Damian Straszak, and Nisheeth K Vishnoi. 2017. Ranking with fairness constraints. arXiv preprint arXiv:1704.06840 (2017).
+[7] Nick Craswell, Onno Zoeter, Michael Taylor, and Bill Ramsey. 2008. An ex- perimental comparison of click position-bias models. In Proceedings of the 2008 international conference on web search and data mining. 87-94.
+[8] Fernando Diaz, Bhaskar Mitra, Michael D Ekstrand, Asia J Biega, and Ben Carterette. 2020. Evaluating stochastic rankings with expected exposure. In
+Proceedings of the 29th ACM international conference on information & knowledge management. 275-284.
+[9] Michael D Ekstrand, Graham McDonald, Amifa Raj, and Isaac Johnson. 2023. Overview of the TREC 2022 Fair Ranking Track. arXiv preprint arXiv:2302.05558 (2023).
+[10] Ruoyuan Gao, Yingqiang Ge, and Chirag Shah. 2022. FAIR: Fairness-aware information retrieval evaluation. Journal of the Association for Information Science and Technology 73, 10 (2022), 1461-1473.
+[11] Ruoyuan Gao and Chirag Shah. 2021. Addressing bias and fairness in search systems. In Proceedings of the 44th international ACM SIGIR conference on research and development in information retrieval. 2643-2646.
+[12] Yingqiang Ge, Juntao Tan, Yan Zhu, Yinglong Xia, Jiebo Luo, Shuchang Liu, Zuohui Fu, Shijie Geng, Zelong Li, and Yongfeng Zhang. 2022. Explainable Fairness in Recommendation. arXiv preprint arXiv:2204.11159 (2022).
+[13] Sahin Cem Geyik, Stuart Ambler, and Krishnaram Kenthapadi. 2019. Fairness- aware ranking in search & recommendation systems with application to linkedin talent search. In Proceedings of the 25th acm sigkdd international conference on knowledge discovery & data mining. 2221-2231.
+[14] Godfrey Harold Hardy, John Edensor Littlewood, George Pólya, György Pólya,
+et al. 1952. Inequalities. Cambridge university press.
+[15] Maria Heuss, Fatemeh Sarvi, and Maarten de Rijke. 2022. Fairness of Exposure in Light of Incomplete Exposure Estimation. arXiv preprint arXiv:2205.12901 (2022).
+[16] Kalervo Järvelin and Jaana Kekäläinen. 2002. Cumulated gain-based evaluation of IR techniques. ACM Transactions on Information Systems (TOIS) 20, 4 (2002), 422-446.
+[17] Thorsten Joachims. 2021. Fairness and Control of Exposure in Two-sided Mar- kets. In Proceedings of the 2021 ACM SIGIR International Conference on Theory of Information Retrieval. 1-1.
+[18] Thorsten Joachims, Laura Granka, Bing Pan, Helene Hembrooke, and Geri Gay. 2017. Accurately interpreting clickthrough data as implicit feedback. In ACM SIGIR Forum, Vol. 51. Acm New York, NY, USA, 4-11.
+[19] James Kotary, Ferdinando Fioretto, Pascal Van Hentenryck, and Ziwei Zhu. 2022. End-to-End Learning for Fair Ranking Systems. In Proceedings of the ACM Web Conference 2022. 3520-3530.
+[20] Yunqi Li, Hanxiong Chen, Shuyuan Xu, Yingqiang Ge, and Yongfeng Zhang. 2021. Towards personalized fairness based on causal notion. In Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval. 1054-1063.
+[21] Tie-Yan Liu et al. 2009. Learning to rank for information retrieval. Foundations and Trends(r) in Information Retrieval 3, 3 (2009), 225-331.
+[22] Claudio Lucchese, Franco Maria Nardini, Salvatore Orlando, Raffaele Perego, Fabrizio Silvestri, and Salvatore Trani. 2016. Post-learning optimization of tree ensembles for efficient ranking. In Proceedings of the 39th International ACM SIGIR conference on Research and Development in Information Retrieval. 949-952.
+[23] Masoud Mansoury. 2022. Understanding and mitigating multi-sided exposure
+bias in recommender systems. ACM SIGWEB Newsletter Autumn (2022), 1-4.
+[24] Marco Morik, Ashudeep Singh, Jessica Hong, and Thorsten Joachims. 2020. Con- trolling Fairness and Bias in Dynamic Learning-to-Rank. In Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval (Virtual Event, China) (SIGIR '20). Association for Computing Machin- ery, New York, NY, USA, 429-438. https://doi.org/10.1145/3397271.3401100
+
+
+[25] Mohammadmehdi Naghiaei, Hossein A Rahmani, and Yashar Deldjoo. 2022. Cpfair: Personalized consumer and producer fairness re-ranking for recommender systems. arXiv preprint arXiv:2204.08085 (2022).
+[26] Harrie Oosterhuis. 2021. Computationally Efficient Optimization of Plackett- Luce Ranking Models for Relevance and Fairness. In Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval. 1023-1032.
+[27] Harrie Oosterhuis and Maarten de Rijke. 2020. Policy-aware unbiased learning
+to rank for top-k rankings. In Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval. 489-498.
+[28] Harrie Oosterhuis and Maarten de Rijke. 2021. Unifying online and counterfactual learning to rank: A novel counterfactual estimator that effectively utilizes online interventions. In Proceedings of the 14th ACM International Conference on Web Search and Data Mining. 463-471.
+[29] Gourab K Patro, Lorenzo Porcaro, Laura Mitchell, Qiuyue Zhang, Meike Zehlike,
+and Nikhil Garg. 2022. Fair ranking: a critical review, challenges, and future directions. arXiv preprint arXiv:2201.12662 (2022).
+[30] Tao Qin and Tie-Yan Liu. 2013. Introducing LETOR 4.0 datasets. arXiv preprint arXiv:1306.2597 (2013).
+[31] Filip Radlinski and Thorsten Joachims. 2006. Minimally invasive randomization for collecting unbiased preferences from clickthrough logs. In Proceedings of the national conference on artificial intelligence, Vol. 21. Menlo Park, CA; Cambridge, MA; London; AAAI Press; MIT Press; 1999, 1406.
+[32] Amifa Raj and Michael D Ekstrand. 2022. Measuring Fairness in Ranked Results: An Analytical and Empirical Comparison. In Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Information Retrieval. 726-736.
+[33] Matthew Richardson, Ewa Dominowska, and Robert Ragno. 2007. Predicting clicks: estimating the click-through rate for new ads. In Proceedings of the 16th international conference on World Wide Web. 521-530.
+[34] Stephen E Robertson. 1977. The probability ranking principle in IR. Journal of documentation (1977).
+[35] Yuta Saito and Thorsten Joachims. 2022. Fair Ranking as Fair Division: Impact- Based Individual Fairness in Ranking. In Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining. 1514-1524.
+[36] Ashudeep Singh. 2021. Fairness of Exposure for Ranking Systems. Ph.D. Disserta- tion. Cornell University.
+[37] Ashudeep Singh and Thorsten Joachims. 2018. Fairness of exposure in rankings. In Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining. 2219-2228.
+[38] Ashudeep Singh and Thorsten Joachims. 2019. Policy learning for fairness in ranking. In Advances in Neural Information Processing Systems. 5426-5436.
+[39] Mark D Smucker, James Allan, and Ben Carterette. 2007. A comparison of statistical significance tests for information retrieval evaluation. In Proceedings of the sixteenth ACM conference on Conference on information and knowledge management. 623-632.
+[40] Anh Tran, Tao Yang, and Qingyao Ai. 2021. ULTRA: an unbiased learning to
+rank algorithm toolbox. In Proceedings of the 30th ACM International Conference on Information & Knowledge Management. 4613-4622.
+[41] Nicolas Usunier, Virginie Do, and Elvis Dohmatob. 2022. Fast online ranking with fairness of exposure. In 2022 ACM Conference on Fairness, Accountability, and Transparency. 2157-2167.
+[42] Ali Vardasbi, Fatemeh Sarvi, and Maarten de Rijke. 2022. Probabilistic Permu- tation Graph Search: Black-Box Optimization for Fairness in Ranking. arXiv preprint arXiv:2204.13765 (2022).
+[43] Huazheng Wang, Sonwoo Kim, Eric McCord-Snook, Qingyun Wu, and Hongning Wang. 2019. Variance reduction in gradient exploration for online learning to rank. In Proceedings of the 42nd International ACM SIGIR Conference on Research and Development in Information Retrieval. 835-844.
+[44] Huazheng Wang, Ramsey Langley, Sonwoo Kim, Eric McCord-Snook, and Hongn-
+ing Wang. 2018. Efficient exploration of gradient space for online learning to rank. In The 41st International ACM SIGIR Conference on Research & Development in Information Retrieval. 145-154.
+[45] Xuanhui Wang, Nadav Golbandi, Michael Bendersky, Donald Metzler, and Marc Najork. 2018. Position bias estimation for unbiased learning to rank in personal search. In Proceedings of the Eleventh ACM International Conference on Web Search and Data Mining. 610-618.
+[46] Haolun Wu, Bhaskar Mitra, Chen Ma, Fernando Diaz, and Xue Liu. 2022. Joint
+multisided exposure fairness for recommendation. In Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Information Retrieval. 703-714.
+[47] Yao Wu, Jian Cao, Guandong Xu, and Yudong Tan. 2021. Tfrom: A two-sided fairness-aware recommendation model for both customers and providers. In
+Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval. 1013-1022.
+[48] Tao Yang and Qingyao Ai. 2021. Maximizing Marginal Fairness for Dynamic Learning to Rank. In Proceedings of the Web Conference 2021. 137-145.
+
+
+
+[49] Tao Yang, Cuize Han, Chen Luo, Parth Gupta, Jeff M Phillips, and Qingyao Ai. 2023. Mitigating Exploitation Bias in Learning to Rank with an Uncertainty-aware Empirical Bayes Approach. arXiv preprint arXiv:2305.16606 (2023).
+[50] Tao Yang, Chen Luo, Hanqing Lu, Parth Gupta, Bin Yin, and Qingyao Ai. 2022. Can clicks be both labels and features? Unbiased Behavior Feature Collection and Uncertainty-aware Learning to Rank. In The 45th International ACM SIGIR Conference on Research & Development in Information Retrieval.
+[51] Tao Yang, Zhichao Xu, and Qingyao Ai. 2022. Effective Exposure Amortizing for
+Fair Top-k Recommendation. arXiv preprint arXiv:2204.03046 (2022).
+[52] Tao Yang, Zhichao Xu, Zhenduo Wang, Anh Tran, and Qingyao Ai. 2023. Marginal-Certainty-aware Fair Ranking Algorithm. In Proceedings of the Six- teenth ACM International Conference on Web Search and Data Mining. 24-32.
+[53] 
+Meike Zehlike, Francesco Bonchi, Carlos Castillo, Sara Hajian, Mohamed Mega- hed, and Ricardo Baeza-Yates. 2017. Fa* ir: A fair top-k ranking algorithm. In Proceedings of the 2017 ACM on Conference on Information and Knowledge Man- agement. 1569-1578.
+[54] Meike Zehlike and Carlos Castillo. 2020. Reducing disparate exposure in ranking: A learning to rank approach. In Proceedings of The Web Conference 2020. 2849- 2855.
+[55] Meike Zehlike, Ke Yang, and Julia Stoyanovich. 2021. Fairness in ranking: A survey. arXiv preprint arXiv:2103.14000 (2021).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

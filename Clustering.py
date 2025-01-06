@@ -20,27 +20,14 @@ DIRECTORIES = [
 ]
 
 def assign_numeric_labels(directories):
-    """
-    Assign each directory a numeric label, e.g.:
-      0 -> OurDocuments/Processed_files
-      1 -> Enhancing_the_museum/Processed_files
-      2 -> Indoor_positioning/Processed_files
-      3 -> SearchEngineBias/Processed_files
-    Returns a dict: directory_path -> numeric_label.
-    """
+
     directory_to_label = {}
     for i, d in enumerate(directories):
         directory_to_label[d] = i
     return directory_to_label
 
 def load_texts_from_directories(dirs, directory_to_label):
-    """
-    Reads all .txt files from the given directories.
-    Returns:
-      - all_texts: list of document strings
-      - all_labels: list of numeric labels corresponding to each directory
-      - all_filenames: list of "directory/filename" for reference
-    """
+
     all_texts = []
     all_labels = []
     all_filenames = []
@@ -88,7 +75,7 @@ def evaluate_clustering_accuracy(true_labels, cluster_labels, n_clusters=4):
     accuracy = correct / total_docs if total_docs > 0 else 0.0
     return accuracy, conf_matrix
 
-def main():
+def main2():
     # 1) Assign numeric labels to each directory
     directory_to_label = assign_numeric_labels(DIRECTORIES)
 
@@ -162,12 +149,6 @@ def main():
 
     print("\nPlot saved as 'kmeans_clusters_2d.png' in the current directory.")
 
-    print("\n=== Discussion of Potential Errors ===")
-    print("1. Overlapping vocabulary across directories may cause mixing.")
-    print("2. Very short or noisy docs can skew cluster assignments.")
-    print("3. Some directories might share domain terms, merging into a single cluster.")
-    print("4. The 'accuracy' is approximate, based on majority vote per cluster.")
-    print("5. More advanced text preprocessing or more clusters might be required.\n")
 
 if __name__ == "__main__":
-    main()
+    main2()

@@ -1,0 +1,171 @@
+A Search Engine for Algorithmic Fairness Datasets
+Alessandro Fabris1,2 , Fabio Giachelle1 , Alberto Piva1 , Gianmaria Silvello1 and
+Gian Antonio Susto1
+1
+2
+
+University of Padova
+Max Planck Institute for Security and Privacy
+
+Abstract
+
+Algorithmic equity is a key desideratum for systems embedded in a diverse society producing data with
+embedded patterns of discrimination. This data is leveraged in algorithmic fairness research with the
+aim of studying the root causes of undesirable discrimination and developing methods to overcome
+them. Data documentation is central in supporting discoverability and correct use of existing resources.
+Documentation debt causes suboptimal data usage, with a negative impact on data-driven research and
+practice. This work introduces a search engine for algorithmic fairness datasets, describing its scope,
+functionality, and envisioned use cases, calling for inputs and collaboration within the community for
+the long-term maintenance and exploitation of this resource.
+
+Keywords
+
+Algorithmic Fairness, Fairness Datasets, Documentation Debt, Information Access
+
+1. Introduction
+Algorithmic Fairness is a scholarly field aimed at ensuring equity in algorithmic decision
+making [1], with dedicated measures [2, 3], algorithms [4, 5], and auditing procedures [6, 7].
+Many of the key findings in this field have been data-driven [8, 9]. Therefore, the quality of
+datasets employed in research and practice are central to the validity of experiments and to the
+generalization of results in algorithmic fairness. Downstream effects of data issues triggered
+by poor practice that undervalues data quality are both common and avoidable [10]. Noisy,
+inaccurate, or otherwise non-representative data inevitably affect the reliability and utility of
+findings [11, 12]. Algorithmic fairness, as a whole, stands to gain from improvements in its
+prevalent data practices.
+Recent work has shown that algorithmic fairness articles frequently use “off-the-shelf”
+datasets [13]. Fabris et al. [14] call into question the suitability of these benchmark datasets in
+algorithmic fairness, documenting over 200 alternative datasets that have been employed in the
+field. In this work, we develop a search engine that makes the documentation of Fabris et al.
+[14] readily available and searchable.1
+
+EWAF’23: European Workshop on Algorithmic Fairness, June 07–09, 2023, Winterthur, Switzerland
+$ fabrisal@dei.unipd.it (A. Fabris); giachelle@dei.unipd.it (F. Giachelle); albertopiva97@gmail.com (A. Piva);
+silvello@dei.unipd.it (G. Silvello); sustogia@dei.unipd.it (G. A. Susto)
+© 2023 Copyright for this paper by its authors. Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0).
+
+CEUR Workshop Proceedings (CEUR-WS.org)
+Search engine available at http://fairnessdata.dei.unipd.it/.
+CEUR
+
+Workshop
+Proceedings
+
+1
+
+http://ceur-ws.org
+ISSN 1613-0073
+
+2. Key Functionality
+Our Web Application (WebApp) realizing the search engine, is depicted in screeshots reported in Figures 1 and
+2. Two search modes are concurrently available. Fulltext search lets the user specify a text query and returns
+the datasets whose documentation matches the query.
+Faceted search (Figure 1) can be used to refine the query
+or as a stand-alone feature. The available filters let the
+user specify different domains (e.g. “computer vision”),
+tasks (e.g. “fair classification”), and sensitive attributes.
+A list of datasets matching all the search requirements
+is displayed in alphabetical order (Figure 2). Search
+results can be expanded, as in Figure 2, displaying the
+data brief for a given dataset, as described in Fabris et al.
+[14]. It is worth noting that the documentation in the
+Figure 1: A screenshot summarizing WebApp was hand-curated and sent to dataset creators
+the faceted search result fil- for verification, as described in Fabris et al. [14]. To
+favour contributions from a larger community, the Wetering.
+bApp allows for spontaneous reporting of datasets and
+donations of documentation, through a form accessible
+from the WebApp homepage or the menu available in the search results page.
+For each dataset, the WebApp includes the following fields.
+• Description. A summary of the dataset describing its purpose, features, and labeling
+procedures.
+• Task. The algorithmic fairness tasks that have been studied on a given dataset, including
+both the setting (e.g. “fairness under unawareness”) and the task itself (e.g. “fair ranking”), with citations to the respective articles. Notice that this field also summarizes the
+popularity of a dataset in algorithmic fairness research as measured by its usage in peer
+reviewed articles.
+• Domain, annotated from a two-level taxonomy including domain (e.g. health) and
+subdomain (e.g. radiology).
+• Sensitive Features. The encoded sensitive attributes, that can be the focus of an algorithmic fairness study.
+• Landing Page. A link to the website where the resource can be downloaded or requested.
+• Data Specification. The format of the data.
+• Sample size. Dataset cardinality.
+• Last Update. Last known update at the time of writing.
+• Creator Affiliation, summarizing the provenance of the data.
+
+Figure 2: A screenshot summarizing the search engine results.
+
+3. Use Cases and Applications
+The WebApp we developed supports research and practice in algorithmic fairness and critical
+data studies in several ways. Below are the main use cases we envision.
+1. Enabling task-driven and domain-driven search for principled dataset selection. Researchers and practitioners with a specific research angle may use our WebApp to find
+the most suited datasets for their needs.
+2. Supporting multi-dataset studies in identifying relevant resources; for example, studies
+of how race and gender are encoded in datasets can use our tool to select datasets with
+the sensitive attributes of interest.
+3. Directing data audits and critical data studies towards important resources; for example,
+datasets used in many research articles are pivotal for the community and deserve deeper
+scrutiny.
+4. Highlighting under-explored domains or tasks, where new contributions, such as algorithms and datasets, can have a larger impact.
+
+4. Discussion and Call for Contributions
+Documentation debt causes suboptimal data usage and negatively affects data-driven research
+[10, 15]. Our WebApp aims to empower the algorithmic fairness community, enabling principled
+approaches to select datasets for research, development, and critical data studies. Our longterm goal is to support easily accessible, up-to-date search along relevant axes. Updating and
+maintaining this resource with new datasets will certainly be a challenge.
+We call on the algorithmic fairness community, the key stakeholders of this work, to
+contribute with guidance and collaboration, to help shape and maintain this resource.
+
+References
+[1] S. Barocas, M. Hardt, A. Narayanan, Fairness and Machine Learning, fairmlbook.org, 2019.
+http://www.fairmlbook.org.
+[2] A. Castelnovo, R. Crupi, G. Greco, D. Regoli, I. G. Penco, A. C. Cosentini, A clarification of
+the nuances in the fairness metrics landscape, Scientific Reports 12 (2022) 4209.
+[3] A. Fabris, G. Silvello, G. A. Susto, A. J. Biega, Pairwise fairness in ranking as a dissatisfaction
+measure, in: Proceedings of the Sixteenth ACM International Conference on Web Search
+and Data Mining, WSDM ’23, Association for Computing Machinery, New York, NY, USA,
+2023, p. 931–939. URL: https://doi.org/10.1145/3539597.3570459. doi:10.1145/3539597.
+3570459.
+[4] M. Hardt, E. Price, N. Srebro, Equality of opportunity in supervised learning, in: Proc.
+of the 29th Annual Conference on Neural Information Processing Systems (NIPS 2016),
+Barcelona, ES, 2016, pp. 3323–3331.
+[5] S. C. Geyik, S. Ambler, K. Kenthapadi, Fairness-aware ranking in search & recommendation
+systems with application to linkedin talent search, in: Proceedings of the 25th acm sigkdd
+international conference on knowledge discovery & data mining, 2019, pp. 2221–2231.
+[6] A. Fabris, A. Mishler, S. Gottardi, M. Carletti, M. Daicampi, G. A. Susto, G. Silvello, Algorithmic audit of italian car insurance: Evidence of unfairness in access and pricing,
+in: Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society, AIES
+’21, Association for Computing Machinery, New York, NY, USA, 2021, p. 458–468. URL:
+https://doi.org/10.1145/3461702.3462569. doi:10.1145/3461702.3462569.
+[7] A. Fabris, A. Esuli, A. Moreo, F. Sebastiani, Measuring fairness under unawareness of
+sensitive attributes: A quantification-based approach, Journal of Artificial Intelligence
+Research 76 (2023) 1117–1180.
+[8] S. A. Friedler, C. Scheidegger, S. Venkatasubramanian, S. Choudhary, E. P. Hamilton,
+D. Roth, A comparative study of fairness-enhancing interventions in machine learning,
+in: Proceedings of the Conference on Fairness, Accountability, and Transparency, FAT*
+’19, Association for Computing Machinery, New York, NY, USA, 2019, p. 329–338. URL:
+https://doi.org/10.1145/3287560.3287589. doi:10.1145/3287560.3287589.
+[9] J. Buolamwini, T. Gebru, Gender shades: Intersectional accuracy disparities in commercial
+gender classification, in: Conference on fairness, accountability and transparency, PMLR,
+2018, pp. 77–91.
+[10] N. Sambasivan, S. Kapania, H. Highfill, D. Akrong, P. Paritosh, L. M. Aroyo, “everyone
+wants to do the model work, not the data work”: Data cascades in high-stakes ai, in:
+proceedings of the 2021 CHI Conference on Human Factors in Computing Systems, 2021,
+pp. 1–15.
+[11] M. F. Kilkenny, K. M. Robinson, Data quality:“garbage in–garbage out”, volume 47, SAGE
+Publications Sage UK: London, England, 2018, pp. 103–105.
+[12] J. Hullman, S. Kapoor, P. Nanayakkara, A. Gelman, A. Narayanan, The worst of both
+worlds: A comparative analysis of errors in learning from data in psychology and machine
+learning, in: Proceedings of the 2022 AAAI/ACM Conference on AI, Ethics, and Society,
+AIES ’22, Association for Computing Machinery, New York, NY, USA, 2022, p. 335–348.
+URL: https://doi.org/10.1145/3514094.3534196. doi:10.1145/3514094.3534196.
+
+[13] B. Laufer, S. Jain, A. F. Cooper, J. Kleinberg, H. Heidari, Four years of facct: A reflexive,
+mixed-methods analysis of research contributions, shortcomings, and future prospects,
+in: 2022 ACM Conference on Fairness, Accountability, and Transparency, FAccT ’22,
+Association for Computing Machinery, New York, NY, USA, 2022, p. 401–426. URL: https:
+//doi.org/10.1145/3531146.3533107. doi:10.1145/3531146.3533107.
+[14] A. Fabris, S. Messina, G. Silvello, G. A. Susto, Algorithmic fairness datasets: the story so far,
+Data Mining and Knowledge Discovery (2022). doi:10.1007/s10618-022-00854-z.
+[15] E. M. Bender, T. Gebru, A. McMillan-Major, S. Shmitchell, On the dangers of stochastic
+parrots: Can language models be too big?, FAccT ’21, Association for Computing Machinery,
+New York, NY, USA, 2021, p. 610–623. URL: https://doi.org/10.1145/3442188.3445922. doi:10.
+1145/3442188.3445922.
+
+

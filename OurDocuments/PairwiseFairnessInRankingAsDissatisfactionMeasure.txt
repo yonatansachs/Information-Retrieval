@@ -1,0 +1,1309 @@
+Pairwise Fairness in Ranking as a Dissatisfaction Measure
+Alessandro Fabris
+
+Gianmaria Silvello
+
+Max-Planck Institute for Security and Privacy
+Bochum, Germany
+University of Padova
+Padova, Italy
+fabrisal@dei.unipd.it
+
+University of Padova
+Padova, Italy
+silvello@dei.unipd.it
+
+Gian Antonio Susto
+
+Asia J. Biega
+
+University of Padova
+Padova, Italy
+sustogia@dei.unipd.it
+
+Max Planck Institute for Security and Privacy
+Bochum, Germany
+asia.biega@mpi-sp.org
+
+ABSTRACT
+
+Mining (WSDM ’23), February 27-March 3, 2023, Singapore, Singapore. ACM,
+New York, NY, USA, 9 pages. https://doi.org/10.1145/3539597.3570459
+
+Fairness and equity have become central to ranking problems in
+information access systems, such as search engines, recommender
+systems, or marketplaces. To date, several types of fair ranking
+measures have been proposed, including diversity, exposure, and
+pairwise fairness measures. Out of those, pairwise fairness is a
+family of metrics whose normative grounding has not been clearly
+explicated, leading to uncertainty with respect to the construct that
+is being measured and how it relates to stakeholders’ desiderata.
+In this paper, we develop a normative and behavioral grounding
+for pairwise fairness in ranking. Leveraging measurement theory
+and user browsing models, we derive an interpretation of pairwise
+fairness centered on the construct of producer dissatisfaction, tying
+pairwise fairness to perceptions of ranking quality. Highlighting
+the key limitations of prior pairwise measures, we introduce a set
+of reformulations that allow us to capture behavioral and practical
+aspects of ranking systems. These reformulations form the basis for
+a novel pairwise metric of producer dissatisfaction. Our analytical
+and empirical study demonstrates the relationship between dissatisfaction, pairwise, and exposure-based fairness metrics, enabling
+informed adoption of the measures.
+
+1
+
+INTRODUCTION
+
+Information Access Systems (IAS) facilitate user interactions with
+content by ranking and presenting items to their users according
+to their estimated merit or relevance [2, 29]. Content producers in
+IAS are increasingly recognized as stakeholders whose economic
+and societal needs must be taken into account, along with those of
+consumers, to foster a fruitful and equitable information ecosystem
+[19, 37, 45, 46]. Their needs can be considered individually [8, 10, 16]
+or based on group membership [6, 39, 40] determined by sensitive
+attributes such as gender or race. To this end, several measures of
+fairness in ranking have been proposed, capturing notions of equity
+of exposure [17, 40], representation [1, 42], or pairwise accuracy
+[5, 32].
+When considering a measure, it is important to distinguish between its construct, that is, the theoretical property captured by the
+measure (e.g. fame), and its operationalization, that is, the mathematical formulation adopted to capture this property (e.g. number of
+followers) [26]. In this regard, exposure- and representation-based
+measures in fair ranking operationalize well-defined constructs,
+clearly connected to the desiderata of producers. They measure
+the presence of salient groups of providers in the most visible positions of a ranking, increasing their chance of being viewed by IAS
+users and consequently gain benefits, such as clicks, purchases, or
+downloads. In contrast, in the prior literature, pairwise fairness has
+not been clearly associated with a quantity of practical interest for
+producers [5, 32, 36]. In a nutshell, measures of pairwise fairness
+quantify how often the rank of two items from different groups
+reflects their merit and whether mismatched pairs are systematically in favor of one group. This notion of equity is less clearly
+connected with immediate producer benefits and thus deserves
+further scrutiny.
+In this paper, we perform an in-depth study of pairwise fairness.
+First, we provide an interpretation of pairwise fairness grounded in
+browsing models [12], developing a rigorous distinction between
+the construct and its operationalization [26]. We show that pairwise
+fairness can capture perceived unfairness on part of item producers,
+and thus operationalize their dissatisfaction with the output of an
+IAS. Second, we highlight several limitations of existing pairwise
+fairness metrics, deriving a novel metric that overcomes the issues.
+
+CCS CONCEPTS
+• Information systems;
+
+KEYWORDS
+algorithmic fairness, fair ranking, paiwise fairness
+ACM Reference Format:
+Alessandro Fabris, Gianmaria Silvello, Gian Antonio Susto, and Asia J. Biega.
+2023. Pairwise Fairness in Ranking as a Dissatisfaction Measure. In Proceedings of the Sixteenth ACM International Conference on Web Search and Data
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for components of this work owned by others than the
+author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior specific permission
+and/or a fee. Request permissions from permissions@acm.org.
+WSDM ’23, February 27-March 3, 2023, Singapore, Singapore
+© 2023 Copyright held by the owner/author(s). Publication rights licensed to ACM.
+ACM ISBN 978-1-4503-9407-9/23/02. . . $15.00
+https://doi.org/10.1145/3539597.3570459
+
+931
+
+WSDM ’23, February 27-March 3, 2023, Singapore, Singapore
+
+Alessandro Fabris, Gianmaria Silvello, Gian Antonio Susto, & Asia J. Biega
+
+Our measure improves on previous proposals by modeling realistic
+browsing behaviors, individual user perspectives, and relevance
+ties. It captures key aspects of observed unfairness and dissatisfaction, connected with perceived quality of IAS by the producers,
+which is one of the central concerns for platform owners. Finally,
+we characterize the relationship between pairwise and exposurebased measures analytically and empirically. We show their key
+similarities, inherited from browsing models, and highlight their
+differences arising from the underlying normative constructs.
+Overall, we make the following salient contributions:
+
+of a Favorable Discordant Pair (FDP) or an Unfavorable Discordant
+Pair (UDP).
+Pairwise Fairness. Inter-Group Inaccuracy (IGI) [5] and Rank
+Equality Error (REE) [32], the most popular measures of pairwise
+fairness, are defined as
+1 ∑︁ ∑︁
+𝑀𝐴𝐵 =
+·
+𝑑𝑈 (𝑖, 𝑗).
+(1)
+𝐶𝐴𝐵
+𝑖 ∈𝐴 𝑗 ∈𝐵
+
+The key difference between IGI and REE is the normalizing constant
+𝐶𝐴𝐵 . We defer a detailed analysis of this aspect to Section 4.4. 𝑀𝐴𝐵
+measures how often items 𝑖 ∈ 𝐴 are in a UDP with items 𝑗 ∈ 𝐵.
+Conversely, 𝑀𝐵𝐴 measures the frequency of cross-group UDPs
+where items from 𝐵 are disadvantaged. Beutel et al. [5] then define
+fairness as
+
+• Interpretation of pairwise fairness, centered on producer
+dissatisfaction with IAS (§ 3).
+• New measure of pairwise fairness (§ 5), overcoming the
+limitations inherent in the most popular measures (§ 4).
+• An analytical (§ 5.2) and empirical (§ 6) study of the relationship between pairwise fairness and exposure-based fairness.
+
+2
+
+𝑀𝐴𝐵 − 𝑀𝐵𝐴 = 0,
+
+(2)
+
+i.e., equality in the frequency of unfavorable discordant pairs between groups. An explicit discussion of the normative reasoning
+behind this measure and the construct it captures is lacking in the
+literature. To foster contextualized adoption of pairwise fairness,
+this paper develops an interpretation of the measured constructs
+and proposes a new generalized fairness metric.
+
+BACKGROUND AND RELATED WORK
+
+Fair ranking is concerned with accurately ordering items without
+unjust discrimination. Fairness interventions are developed for bias
+mitigation [9, 13], equity [8, 40], and diversity [33, 41], and are technically challenging due to the existence of multiple protected groups
+[20, 44], outliers [39], and duplicate ranking items [16]. Recent surveys and comparative analyses of fair ranking omit measures of
+pairwise fairness [38, 44] or simply frame them as accuracy-based
+[19, 37]. A clear discussion of the construct underlying pairwise
+fairness is lacking in the literature [5, 32, 36], hindering an informed
+adoption of these measures and understanding of how they relate
+to item producers and equity towards them.
+Notation. Let I denote a set of items to be ranked, and let 𝑖 be an
+item from this set. Let 𝑟𝑖 denote the relevance of item 𝑖 in a given
+ranking. Moreover, let 𝑔 ∈ G = {𝐴, 𝐵} denote a (binary, for ease of
+exposition) sensitive attribute.1 Let 𝑖 ∈ 𝑔 denote the membership
+of 𝑖 in group 𝑔. Let 𝜎∗ denote an “ideal” ranking, i.e., a permutation
+which orders items decreasingly by relevance: 𝜎∗ = argsort(𝑟𝑖 ).
+Finally, let 𝜎 denote a ranking returned by the IAS in response to a
+query, and 𝜎 (𝑘) indicate the item ranked by 𝜎 in position 𝑘.
+Discordant pairs. Central to pairwise fairness is the definition of
+discordant pair. Two items 𝑖, 𝑗 ∈ I represent a discordant pair if
+their relative ordering in 𝜎 and 𝜎∗ differs. More formally, let 𝜎 −1 (𝑖)
+denote the position of item 𝑖 in ranking 𝜎, i.e., 𝜎 −1 (𝑖) = 𝑘 ⇐⇒
+𝜎 (𝑘) = 𝑖. Given two rankings, 𝜎 and 𝜎∗ , the indicator function for
+a discordant pair is defined as
+
+3
+
+WHAT DOES PAIRWISE FAIRNESS
+ACTUALLY MEASURE?
+
+Following Jacobs and Wallach [26], we examine fairness measures
+distinguishing between the construct, i.e., the theoretical property
+that a measure intends to capture, and the operationalization, i.e.,
+the particular mathematical formulation meant to model that property. Ideally, a fairness measure (operationalization) should be based
+on an a priori defined clear normative construct, explicitly enunciating what it means for an algorithm to be equitable and from whose
+perspective. However, fairness measures are often introduced as
+self-evident prerequisites for equity, resulting in downstream uncertainty as to what exactly is being measured or optimized.
+These considerations are especially applicable to measures of
+pairwise fairness in ranking. For example, REE is based on the
+“postulate that there is value in considering error-based fairness
+criteria for rankings” [32]. Similarly, for IGI, Beutel et al. [5] “draw
+on the intuition of Hardt et al. [23] for equality of odds, where the
+fairness of a classifier is quantified by comparing its false positive
+rate and/or false negative rate.” Although related to fairness in that
+they seek to equalize a certain property between groups, according
+to Equation (2), an explicit exposition of the construct behind these
+measures is lacking. In this section, we address this gap by analyzing pairwise fairness measures in depth and uncovering their
+underlying construct(s).
+
+𝑑 (𝑖, 𝑗) = 1(𝜎 −1 (𝑖) < 𝜎 −1 ( 𝑗), 𝜎∗−1 (𝑖) > 𝜎∗−1 ( 𝑗)) +
+|
+{z
+}
+𝑑 𝐹 (𝑖, 𝑗)
+
+1(𝜎 −1 (𝑖) > 𝜎 −1 ( 𝑗), 𝜎∗−1 (𝑖) < 𝜎∗−1 ( 𝑗))
+|
+{z
+}
+
+3.1
+
+𝑑𝑈 (𝑖, 𝑗)
+
+Implicit browsing models
+
+In this section, we demonstrate and derive the implicit user browsing model in pairwise fairness metrics. Let us begin with an observation that REE and IGI are closely related to Kendall’s Tau [30], a rank
+Í Í
+correlation measure defined as 𝜏 (𝜎, 𝜎∗ ) = 1 − 𝐶2 · 𝑖 𝑗≠𝑖 𝑑 (𝑖, 𝑗),
+with 𝐶 = 𝑛(𝑛 − 1)/2. In essence, computing Kendall’s Tau requires
+enumerating every item pair and counting discordant ones. Following Equation (1), let us define inaccuracy as the frequency of
+
+In other words, 𝑖 can be part of a discordant pair when ranking 𝜎
+unfairly places it at an advantage (𝑑 𝐹 ) or a disadvantage (𝑑𝑈 ) over
+another item 𝑗; subscripts 𝐹 and 𝑈 indicate that the first item is part
+1 We follow the literature on pairwise fairness and consider binary sensitive attributes.
+
+Extensions to settings with more than two groups can be defined in multiple ways
+starting from individual measures (§4.1) and are left to future work.
+
+932
+
+Pairwise Fairness in Ranking as a Dissatisfaction Measure
+
+WSDM ’23, February 27-March 3, 2023, Singapore, Singapore
+
+• User-centric: Users browse the ranking 𝜎 sequentially, visiting items in rank 𝑘 with probability 𝐹 (𝑘). Each time they
+visit an item 𝜎 (𝑘), if an item of lower relevance was unduly positioned above it, users add 1 to a counter measuring
+wasted effort in arriving at the item in position 𝑘. According to this interpretation, Kendall’s Tau operationalizes user
+dissatisfaction due to wasted browsing effort.
+
+discordant pairs in 𝜎 and 𝜎∗
+1 ∑︁ ∑︁
+𝑀= ·
+𝑑 (𝑖, 𝑗),
+𝐶 𝑖 𝑗≠𝑖
+
+(3)
+
+from which Kendall’s Tau is computed via the linear transformation
+𝜏 = 1 − 2 · 𝑀. For the sake of simplicity, we will temporarily concentrate on Kendall’s Tau and its interpretation(s), and subsequently
+reintroduce the complexity of sensitive attributes to specifically
+study REE and IGI.
+Furthermore, note that item pairs can be enumerated by browsing the ranking 𝜎 according to a cascade model [14]. To enumerate
+every pair, we can browse 𝜎 from top (𝑘 = 0) to bottom (𝑘 = 𝑛 − 1)
+and compare the current item 𝜎 (𝑘) (the item at rank 𝑘 in 𝜎) with
+items further up in the ranking, to determine whether they constitute a discordant pair.
+
+These interpretations are also applicable to group-based measures of pairwise fairness, such as IGI and REE (Equation 1), with
+the caveat of focusing on cross-group comparisons. To exemplify,
+let us focus on the item-centric formulation and consider
+
+𝑀𝐴𝐵 =
+
+1
+𝐶𝐴𝐵
+
+·
+
+𝑛−1
+∑︁ 𝑘−1
+∑︁
+
+𝐹 (𝑘 ′ )𝑑𝑈 (𝑘, 𝑘 ′ ) · 1(𝜎 (𝑘) ∈ 𝐴, 𝜎 (𝑘 ′ ) ∈ 𝐵)
+
+𝑘=1 𝑘 ′ =0
+
+𝑛−1 𝑘−1
+
+𝑀=
+
+1 ∑︁ ∑︁
+·
+𝑑 (𝜎 (𝑘), 𝜎 (𝑘 ′ ))
+𝐶
+′
+
+Item-centric interpretations for IGI and REE convey the dissatisfaction of items (and producers) from one group for being unjustly
+ranked worse than items of lesser relevance from a different group.
+More specifically, suppose that an item in position 𝑘 ′ belongs to
+group 𝐵; the producers of group 𝐴 evaluate whether this item
+is unjustly ranked above their items despite having lower merit.
+They contribute to an inter-group dissatisfaction counter, which is
+weighted according to the probability of a visit at rank 𝑘 ′ , i.e., to the
+visibility of the unjustly favored item. In other words, if an item 𝑗
+is unjustly ranked better than another item 𝑖, but in a position with
+low visibility (such as 𝜎 −1 ( 𝑗) = 900 under a top-heavy browsing
+model), the producer of 𝑖 is unlikely to notice, while they are more
+likely to observe the UDP and increase their dissatisfaction if 𝑗 is
+very visible. According to this interpretation, 𝑀𝐴𝐵 represents the
+dissatisfaction of group 𝐴 with the ranking 𝜎, due to their items
+being unjustly ranked below the items of group 𝐵 (in expectation
+over the browsing model 𝐹 (𝑘) and after normalization). Pairwise
+fairness is thus connected to observed injustice, which can affect the
+perceived quality of platform service [18, 28], and, in turn, influence
+the loyalty of item producers [31]
+User-centric interpretations, on the other hand, center on wasted
+effort due to user attention being diverted to items of lower interest
+from a different group. Users visit an item with probability 𝐹 (𝑘),
+taking into account its group (say, 𝑔 = 𝐴). They evaluate how
+much effort they wasted to reach this item because they examined
+items of inferior relevance from different groups. According to this
+interpretation, the counter measures wasted effort to reach items in
+group 𝐴 that are unduly ranked below items in group 𝐵, and 𝑀𝐴𝐵
+represents a normalized expectation of cross-group wasted effort
+over the browsing model.
+
+𝑘=1 𝑘 =0
+
+With shorthand notation, we write the indicator function for a
+discordant pair of items ranked by 𝜎 at positions (𝑘, 𝑘 ′ ) as 𝑑 (𝑘, 𝑘 ′ ) =
+𝑑 (𝜎 (𝑘), 𝜎 (𝑘 ′ )).
+Moreover, let us define a trivial browsing model, according to
+which users visit the positions in a ranking with uniform (unit)
+probability across all ranks. More formally, 𝐹 (𝑘) = 1 ∀𝑘, where
+𝐹 (𝑘) denotes the probability that users will visit the item 𝜎 (𝑘).
+With this notation, we can write the following alternative formulas
+for 𝑀:
+𝑛−1 𝑘−1
+
+Item-centric 𝑀 =
+
+User-centric: 𝑀 =
+
+1 ∑︁ ∑︁
+·
+𝐹 (𝑘 ′ )𝑑𝑈 (𝑘, 𝑘 ′ )
+𝐶
+′
+
+(4)
+
+1
+·
+𝐶
+
+(5)
+
+𝑘=0 𝑘 =0
+𝑛−1
+𝑘−1
+∑︁
+∑︁
+
+𝐹 (𝑘)
+
+𝑘=0
+
+𝑑𝑈 (𝑘, 𝑘 ′ )
+
+𝑘 ′ =0
+
+In the next section, we show that these alternative formulations capture the perspectives and desiderata of item producers (item-centric)
+or item consumers (user-centric). They are equivalent under the
+trivial browsing model defined above, but generally yield different
+values for 𝑀. Both provide a way to count and weigh each pair of
+items by sequentially traversing a ranking according to a specified
+browsing model 𝐹 (𝑘).
+
+3.2
+
+Interpretations
+
+We provide two alternative interpretations of Kendall’s Tau based
+on Equations (4) and (5), before generalizing those interpretations
+to pairwise fairness metrics.
+• Item-centric: Producers of items at each rank 𝑘 evaluate
+ranking 𝜎 by focusing on the most visible cases of unfair
+treatment against their item 𝜎 (𝑘). Their dissatisfaction with
+𝜎 grows each time they encounter a UDP for 𝜎 (𝑘), that is,
+an item of lesser relevance ranked better than their own.
+Í
+The inner summation 𝑘−1
+𝐹 (𝑘 ′ )𝑑𝑈 (𝑘, 𝑘 ′ ) is a weighted
+𝑘 ′ =0
+counter of UDPs, with a weight proportional to the visibility
+of the unjustly favored item. According to this interpretation,
+Kendall’s Tau operationalizes aggregate producer dissatisfaction with 𝜎 for unjustly favoring other items.
+
+4
+
+TOWARD A DISSATISFACTION MEASURE
+
+The fact that multiple interpretations are possible speaks to the flexibility of pairwise measures in operationalizing multiple constructs.
+Yet, both IGI and REE exhibit certain limitations when it comes
+to capturing phenomena that occur in ranking systems and user
+behavior in practice. In this section, we describe these limitations
+and propose new formulations of pairwise fairness metrics that
+address them.
+
+933
+
+WSDM ’23, February 27-March 3, 2023, Singapore, Singapore
+
+4.1
+
+Alessandro Fabris, Gianmaria Silvello, Gian Antonio Susto, & Asia J. Biega
+
+Individual pairwise fairness
+
+Many top-heavy user models have been proposed and studied in
+the literature, including logarithmic (𝐹 (𝑘) ∝ 1/log(𝑘) [27]) and
+exponential discount (𝐹 (𝑘) ∝ 𝛾 𝑘 [35]) models.
+
+Limitation. Just like aggregate performance measures can obscure
+poor performance for groups of people [3, 22], group measures
+can obscure poor performance for individuals. IGI and REE focus
+on user groups, hiding the potential impact on individuals. This
+section presents an individual pairwise fairness metric.
+New formulation. We define an individual version of pairwise
+fairness that captures the dissatisfaction of each ranked item (or
+implicitly, the item’s producer):
+𝑀𝑖 =
+
+𝑛−1
+∑︁
+
+𝑑𝑈 (𝑖, 𝑗)
+
+4.3
+
+(6)
+
+𝑗=0
+
+Moreover, we may model the case where producers are especially
+alert about discordant ranking with items from a certain group (for
+example, marketplaces can selectively favor items based on brand
+ownership [18, 28], making this attribute particularly salient [15]):
+𝑀𝑖𝐴 =
+
+𝑛−1
+∑︁
+
+𝑑𝑈 (𝑖, 𝑗) · 1( 𝑗 ∈ 𝐴); 𝑀𝑖𝐵 =
+
+𝑗=0
+
+𝑛−1
+∑︁
+
+𝑑𝑈 (𝑖, 𝑗) = 1(𝜎 −1 (𝑖) > 𝜎 −1 ( 𝑗), 𝑟𝑖 > 𝑟 𝑗 )
+showing that relevance ties are unaccounted for. We propose to
+generalize the notion of UDP to handle ties as:
+
+𝑑𝑈 (𝑖, 𝑗) · 1( 𝑗 ∈ 𝐵).
+
+𝑑𝑈 (𝑖, 𝑗) =1(𝜎 −1 (𝑖) > 𝜎 −1 ( 𝑗), 𝑟𝑖 > 𝑟 𝑗 )
+
+𝑗=0
+
++ 𝑐𝑡 1(𝜎 −1 (𝑖) > 𝜎 −1 ( 𝑗), 𝑟𝑖 = 𝑟 𝑗 )
+
+Note that the group fairness metrics defined in Eq. (1) can be derived
+from these group-envy versions of individual fairness metrics as
+follows:
+1 ∑︁
+1 ∑︁
+𝑀𝑖𝐵 ; 𝑀𝐵𝐴 =
+𝑀𝑖𝐴
+𝑀𝐴𝐵 =
+𝐶𝐴𝐵
+𝐶𝐵𝐴
+𝑖 ∈𝐴
+
+𝑖 ∈𝐵
+
+4.4
+
+Limitation. Existing pairwise fairness metrics do not account for
+realistic browsing behaviors. As we have shown in Section 3.1, REE
+and IGI implicitly use a simple browsing model with a uniform visit
+probability for all ranks. Yet, UDPs at the top of a ranking in practice
+would be more visible (top ranking positions are more likely to be
+visited by searchers) and thus cause greater dissatisfaction.
+New formulation. Pairwise fairness measures can be flexibly modified, both at the individual and group levels, to account for a suitable
+user browsing model 𝐹 (𝑘):
+𝑛−1
+∑︁
+
+with different normalizing constants:
+∑︁ ∑︁
+IGI
+REE
+𝐶𝐴𝐵
+1(𝑟𝑖 > 𝑟 𝑗 ); 𝐶𝐴𝐵
+=
+= 𝑁𝐴 · 𝑁 𝐵 ,
+
+where 𝑁𝐴 and 𝑁𝐵 denote the number of items in I that belong
+to group 𝐴 and 𝐵, respectively. In other words, IGI is normalized
+with respect to a worst-case scenario which takes into account the
+ground truth relevance 𝑟𝑖 and its distribution between groups, while
+REE is normalized with respect to the a-priori worst case which
+does not take 𝑟𝑖 into account. As a result, the normalizing constant
+REE = 𝐶 REE ), while for IGI
+in REE is the same for 𝑀𝐴𝐵 and 𝑀𝐵𝐴 (𝐶𝐴𝐵
+𝐵𝐴
+IGI
+IGI
+they typically differ (𝐶𝐴𝐵 ≠ 𝐶𝐵𝐴 ).
+The normalization scheme for IGI has a downside—it becomes
+IGI and 𝑀 IGI . Let us visualize this issue
+unclear how to compare 𝑀𝐴𝐵
+𝐵𝐴
+with a toy example where 𝐹 (𝑘) = 1, ∀𝑘, and the ideal ranking is
+𝐵 𝐴 𝐴
+𝜎∗ = [𝑖 𝐴
+0 , 𝑖 1 , 𝑖 2 , 𝑖 3 ]; here, for ease of exposition, superscript 𝑔 in
+𝑔
+𝑖 denotes membership of 𝑖 in group 𝑔. In this situation, we have
+IGI = 1, 𝐶 IGI = 2) and equal constants
+different constants for IGI (𝐶𝐴𝐵
+𝐵𝐴
+REE
+REE
+𝐵 𝐴 𝐴
+for REE (𝐶𝐴𝐵 = 𝐶𝐵𝐴 = 3). A ranking 𝜎 = [𝑖 𝐴
+2 , 𝑖 1 , 𝑖 0 , 𝑖 3 ], obtained
+𝐴
+𝐴
+𝐵
+by exchanging 𝑖 0 and 𝑖 2 in 𝜎∗ , produces two UDPs, one (𝑖 𝐴
+0 , 𝑖1 )
+𝐵
+𝐴
+in favor of group 𝐵 and another (𝑖 1 , 𝑖 2 ) in favor of group 𝐴. The
+IGI = 1 ≫ 𝑀 IGI = 0.5. Taken
+resulting measures for IGI are 𝑀𝐴𝐵
+𝐵𝐴
+at face value, this suggests that group 𝐵 is largely favored over
+group 𝐴, and that the latter should be more dissatisfied with 𝜎 than
+
+𝐹 (𝑘)𝑑𝑈 (𝑖, 𝜎 (𝑘))
+
+In other words, the dissatisfaction 𝑀𝑖 of the item 𝑖 is a weighted sum
+of UDPs, with weights proportional to the probability of visiting
+the item unfairly ranked better than 𝑖.
+We can also incorporate group membership into the individual
+pairwise fairness measure defined in Sec. 4.1:
+𝑛−1
+∑︁
+
+𝐹 (𝑘)𝑑𝑈 (𝑖, 𝜎 (𝑘)) · 1(𝜎 (𝑘) ∈ 𝐵)
+
+𝑘=0
+
+and aggregate it to quantify cross-group dissatisfaction:
+𝑀𝐴𝐵 =
+
+𝑛−1
+1 ∑︁ ∑︁
+
+𝐶𝐴𝐵
+
+𝐹 (𝑘)𝑑𝑈 (𝑖, 𝜎 (𝑘)) · 1(𝜎 (𝑘) ∈ 𝐵).
+
+(9)
+
+𝑖 ∈𝐴 𝑗 ∈𝐵
+
+𝑘=0
+
+𝑀𝑖𝐵 =
+
+Normalization
+
+Limitation. Recall that IGI and REE can be written as:
+∑︁ ∑︁
+1
+IGI,REE
+𝑑𝑈 (𝑖, 𝑗)
+𝑀𝐴𝐵
+= IGI,REE ·
+𝐶𝐴𝐵
+𝑖 ∈𝐴 𝑗 ∈𝐵
+
+Top-heaviness
+
+𝑀𝑖 =
+
+(8)
+
+where 𝑐𝑡 models the dissatisfaction of an item ranked below another
+item of the same relevance. We call this case a partial UDP. Possible
+values for 𝑐𝑡 range in (0, 1), where 𝑐𝑡 = 1 corresponds to equating
+partial UDPs to proper UDPs, while 𝑐𝑡 = 0 indicates indifference to
+comparisons with items of the same relevance.
+
+This property provides an intuitive connection between individual
+and group perspectives, and guarantees that interventions at the
+individual level, making 𝑀𝑖 smaller ∀𝑖 ∈ {0, . . . , 𝑛 − 1}, will also be
+beneficial at the group level for metrics 𝑀𝐴𝐵 and 𝑀𝐵𝐴 .
+
+4.2
+
+Tie handling
+
+Limitation. Measures of pairwise fairness do not account for ties in
+relevance scores 𝑟𝑖 , a common occurrence in practical applications.
+In recommender systems, for example, user ratings are often quantized [25], while, in information retrieval, relevance judgements
+are typically discrete (either binary or graded) [24]. IAS which prioritize a group by frequently breaking ties in its favour are not
+detected as problematic by either IGI or REE.
+New formulation. Recall that 𝜎∗ = argsort(𝑟𝑖 ). We can rewrite
+the indicator function for UDPs as:
+
+(7)
+
+𝑖 ∈𝐴 𝑘=0
+
+934
+
+Pairwise Fairness in Ranking as a Dissatisfaction Measure
+
+WSDM ’23, February 27-March 3, 2023, Singapore, Singapore
+
+the former. We argue that this is not necessarily true since, from
+a groupwise perspective, 𝜎 and 𝜎∗ are equivalent. In fact, under
+IGI and 𝑀 IGI is not straightforward. This is a
+IGI, comparing 𝑀𝐴𝐵
+𝐵𝐴
+very practical problem, since fairness, according to Equation (2), is
+defined precisely as the difference between these quantities.
+New formulation. We propose an REE inspired normalization
+scheme, using the same constant for 𝑀𝐴𝐵 and 𝑀𝐵𝐴 , independently
+of the relevance scores. In Equation (7). we define:
+!
+𝑁∑︁
+𝑁∑︁
+𝐵 −1
+𝐴 −1
+𝐶𝐴𝐵 = 𝐶𝐵𝐴 = max 𝑁𝐴 ·
+𝐹 (𝑘), 𝑁𝐵 ·
+𝐹 (𝑘)
+(10)
+𝑘=0
+
+compute the overall unfairness of ranking 𝜎, we follow Biega et al.
+[8], and report the ℓ1 norm of 𝛿 𝜎 . We consider three measures
+that differ in their normative reasoning for establishing the target
+exposure quotas.
+Equity of Attention. According to Equity of Attention (EA) [8],
+the target exposure for a group 𝑔 should be proportional to the sum
+of the relevance of the items in 𝑔:
+∑︁
+𝑇𝑔EA =
+𝑟𝑖
+(13)
+𝑖 ∈𝑔
+
+Under a different normative reasoning, we can define a version
+of EA inspired by demographic parity [4, 11], which requires that
+each group receives a share of attention that is proportional to the
+group’s representation in the overall population:
+
+𝑘=0
+
+Inside the max(·) function, the first term represents a worst-case
+scenario in which every item in group 𝐵 is unduly ranked above
+every item in group 𝐴 (hence the multiplying factor 𝑁𝐴 ) and occupies the most visible ranking positions (hence the summation).
+Analogously, the second term represents the case where every item
+in group 𝐴 is unduly ranked above every item in group 𝐵.
+This formulation has two desirable properties: (1) the difference
+𝑀𝐴𝐵 − 𝑀𝐵𝐴 (the unfairness measure) is bounded between (−1, 1)
+and (2) the sign of the measure identifies the (dis)advantaged group,
+since positive (negative) values correspond to rankings 𝜎 with more
+visible UDPs against group 𝐴 (𝐵).
+
+5
+
+EA-dp
+
+𝑇𝑔
+
+Based on the proposed reformulations, we define a pairwise fairness
+measure termed Dissatisfaction Induced by Pairwise Swaps (DIPS):
+1
+
+𝑛−1
+∑︁ 𝑛−1
+∑︁
+
+DIPS
+𝐶𝐴𝐵
+𝑖=0 𝑘=0
+
+𝑡𝑖 = mean { 𝑗 |𝑟 𝑗 =𝑟𝑖 } (𝐹 (𝜎∗−1 ( 𝑗)))
+∑︁
+𝑇𝑔EE =
+𝑡𝑖
+
+𝐹 (𝑘)𝑑𝑈 (𝑖, 𝜎 (𝑘)) · 1(𝑖 ∈ 𝐴, 𝜎 (𝑘) ∈ 𝐵),
+(11)
+
+(15)
+(16)
+
+𝑖 ∈𝑔
+
+DIPS (i) handles ties through parameter 𝑐𝑡 in the definition of 𝑑𝑈 (·)
+in Equation (8), (ii) is normalized with a group-symmetric constant
+according to Equation (10), and (iii) inherits a top-heavy behavior
+from a suitable browsing model 𝐹 (𝑘). Browsing models capture the
+fact that dissatisfaction is more likely to occur when unfair swaps
+happen at highly exposed ranking positions. The tunable parameters for DIPS are the browsing model 𝐹 (𝑘) and the tie-handling
+constant 𝑐𝑡 . For the latter, we recommend an intermediate value
+𝑐𝑡 = 0.5, while the former depends on the application and should
+be tuned to context-specific browsing behaviour.
+Exposure-based measures are a popular family of fairness metrics typically also grounded in browsing models [7, 8, 40]. In the
+remainder of this section, we study the relationship between DIPS
+and exposure-based fairness.
+
+5.1
+
+(14)
+
+Expected Exposure. Expected Exposure (EE) [17] also relies on
+relevance scores to specify its target exposure; however, unlike
+EA, it assigns ordinal validity to relevance judgements: if item 𝑖
+is more relevant than (or as relevant as) 𝑗, it should get more (or
+as much) exposure. This property should be contrasted with EA,
+which assigns a scale ratio validity to relevance judgements: if item
+𝑖 is twice as relevant as 𝑗, it should get twice as much exposure.
+The amount of exposure in EE is not explicitly specified by the
+normative reasoning and is determined by the browsing model
+𝐹 (𝑘) in practice. Numerically, the target exposure in EE can be
+expressed as:
+
+DISSATISFACTION INDUCED BY PAIRWISE
+SWAPS
+
+DIPS
+𝑀𝐴𝐵
+=
+
+= 𝑁𝑔 /𝑁 .
+
+where 𝑡𝑖 is the exposure target quota for item 𝑖. In a simple setting
+without relevance ties, 𝑡𝑖 is equal to the exposure granted to 𝑖 by
+the ideal ranking 𝜎∗ under 𝐹 (𝑘). If ties are present, 𝑡𝑖 is the average
+exposure granted by 𝜎∗ to items of the same relevance as 𝑖.
+
+5.2
+
+DIPS and exposure-based fairness
+
+According to exposure-based measures, individual misallocation is
+the difference between the target exposure quota of an item and
+its actual exposure 𝐹 (𝜎 −1 (𝑖)), i.e., its probability of a visit by a
+searcher given ranking 𝜎. For example, EA defines the target quota
+Í
+of an item as its share of overall relevance 𝑐𝑖 = 𝑟𝑖 / 𝑖 ′ 𝑟𝑖 ′ . Under
+EA, individual misallocation 𝑀𝑖 can be written as:
+𝑀𝑖EA = 𝑐𝑖
+
+𝑛−1
+∑︁
+
+𝐹 (𝜎 −1 (𝑖 ′ )) − 𝐹 (𝜎 −1 (𝑖))
+
+𝑖 ′ =0
+
+Review of exposure-based fairness
+
+Exposure-based measures, in their groupwise version, define an
+ideal target exposure (𝑇𝐴 ,𝑇𝐵 ) for each group and measure the distance between this target and actual exposure (𝐸𝐴 , 𝐸𝐵 ) in ranking
+𝜎. We define the normalized misallocation vector as:
+
+
+𝑇𝐴
+𝐸𝐴
+𝑇𝐵
+𝐸𝐵
+𝜎 𝜎
+𝛿 𝜎 = [𝛿𝐴
+, 𝛿𝐵 ] =
+−
+,
+−
+(12)
+𝑇𝐴 + 𝑇𝐵 𝐸𝐴 + 𝐸𝐵 𝑇𝐴 + 𝑇𝐵 𝐸𝐴 + 𝐸𝐵
+
+=
+
+𝑛−1
+∑︁
+
+
+
+𝑝𝑠 (𝜎 (𝑘)) 𝑐𝑖 (𝑘 + 1) − Pr(𝜎 −1 (𝑖) ≤ 𝑘) ,
+
+𝑘=0
+
+where 𝑝𝑠 (𝜎 (𝑘)) denotes the probability of a user stopping browsing at position 𝑘, and 𝐹 (𝑘) is the resulting probability of a visit.2
+2 Under cascade (sequential) browsing models, the probability of receiving a visit at
+
+where, for a given group 𝑔, 𝐸𝑔 is the sum of individual exposure
+Í
+values granted by 𝜎 to items in group 𝑔: 𝐸𝑔 = 𝑖 ∈𝑔 𝐹 (𝜎 −1 (𝑖)). To
+
+rank 𝑘 is equal to the sum of the probability of stopping at any rank greater than or
+Í
+equal to 𝑘 [12]: 𝐹 (𝑘) = 𝑛−1
+𝑝 (𝜎 (𝑘 ′ )) .
+𝑘 ′ =𝑘 𝑠
+
+935
+
+WSDM ’23, February 27-March 3, 2023, Singapore, Singapore
+
+Alessandro Fabris, Gianmaria Silvello, Gian Antonio Susto, & Asia J. Biega
+
+To compare fair ranking measures in a principled fashion, we build
+a synthetic dataset with full control on group representation, merit,
+and ranking policies. We consider a controlled setting with a binary
+sensitive attribute 𝑔 ∈ {𝐴, 𝐵}, where groups have equal representation over a total of 𝑁 = 1, 000 items, and with sizeable differences
+in relevance scores. More specifically, we set 𝑁𝐴 = 𝑁𝐵 = 500, and
+draw relevance scores from group-specific, uniform distributions
+𝑓𝐴 (𝑟𝑖 ) = unif (0.5, 1) and 𝑓𝐵 (𝑟𝑖 ) = unif (0.2, 0.7). In other words, all
+items of high relevance (0.7 < 𝑟𝑖 ≤ 1) belong to group 𝐴, items of
+intermediate relevance (0.5 ≤ 𝑟𝑖 ≤ 0.7) belong to both groups with
+the same probability, and low relevance items (0 ≤ 𝑟𝑖 < 0.5) are
+entirely from group 𝐵. The distribution of relevance scores between
+groups is depicted in panel (1) of Figure 1a. We choose the browsing
+model underlying rank biased precision [35], modeling a top-heavy
+probability of visit with exponential decay: 𝐹 (𝑘) = 𝛾 𝑘 , 𝛾 = 0.9.
+
+items remain unchanged, i.e., their rank increases according to
+𝜎 −1 (𝑖) = 𝜎∗−1 (𝑖) + 20.
+Results. The results of this experiment are reported in Figure 1a.
+The values of 𝑀𝐴𝐵 − 𝑀𝐵𝐴 (Equation 2) for REE and DIPS are shown
+in panel (2). No promotion takes place in favour of 𝑔 = 𝐴, hence
+𝑀𝐵𝐴 = 0. DIPS is very sensitive to the promotion rank of items in
+group 𝐵, showing an exponential decay, while REE is mostly flat.
+DIPS > 0.5 for 𝑘 = 0 captures a strong
+Furthermore, the value 𝑀𝐴𝐵
+REE
+dissatisfaction, while 𝑀𝐴𝐵 ≪ 0.1 is much smaller in comparison.
+The remaining panels concentrate on three exposure-based measures (EE, EA, EA-dp). Panel (3) of Figure 1a reports the aggregate
+measure |𝛿 𝜎 | 1 , i.e., the ℓ1 norm of the misallocation vector in Equa𝜎 for
+tion (2), while Panel (4) reports the groupwise measure 𝛿𝐴
+group 𝐴, i.e., the first component of Equation (2). The groupwise
+misallocation in panel (4) clearly shows a monotonic trend with
+exponential decay, as expected from the browsing model 𝐹 (𝑘). It
+is worth recalling that positive values indicate underexposure for
+group 𝐴. Promoting items from group 𝐵 to the most visible positions reduces the exposure 𝐸𝐴 available for group 𝐴, and therefore
+𝜎 increases as items from group 𝐵 are promoted to better posi𝛿𝐴
+tions, corresponding to lower values of 𝑘 on the 𝑥 axis. It should
+be noted that the aggregate measure (|𝛿 𝜎 | 1 ) in panel (3) derives
+𝜎 in panel (4). In the binary
+directly from the groupwise measure 𝛿𝐴
+case considered in this example, it is equal to twice its absolute
+𝜎 ).
+value, since |𝛿 𝜎 | 1 = 2 · abs(𝛿𝐴
+DIPS > 0.5 for 𝑘 = 0 captures the
+Interpretation. The large value 𝑀𝐴𝐵
+strong dissatisfaction that is likely to arise in group 𝐴 if many items
+in another group were unfairly promoted to the top ranks—unfairly
+in the sense that they do not reflect the merit reflected in 𝑟𝑖 and 𝜎∗ .
+DIPS adequately summarizes a situation where
+A large value for 𝑀𝐴𝐵
+items in group 𝐴 are highly dissatisfied, as the promoted items form
+visible UDPs with most items from group 𝐴. The same is not true
+REE ≪ 0.1, suggesting that, under the (implicit) normative
+for 𝑀𝐴𝐵
+reasoning of REE, the dissatisfaction of group 𝐴 would be very far
+from its theoretical maximum.
+Turning to exposure-based measures, the disaggregated mea𝜎 , depicted in panel (4), are equal up to a constant, which
+sures 𝛿𝐴
+depends on the differences in their normative reasoning presented
+in Section 5.1. Moreover, these measures have the same profile as
+DIPS in the left panel. As discussed in Section 5.2, UDPs (in the absence of FDPs) directly result in missed exposure and higher values
+of EA, EA-dp, and EE. Since the same top-heavy browsing model
+𝐹 (𝑘) is assumed across these measures, they end up having a similar profile with exponential decay. Hence, if item producers have a
+notion of merit 𝑟𝑖 , any intervention that assigns exposure to a group
+beyond its merit, as encoded by 𝑟𝑖 , may generate a proportional
+amount of dissatisfaction in the remaining groups.
+
+6.1.1 Experimental condition 1: systematic group advantage.
+Setup. To be able to compare metrics under controlled unfairness
+conditions, we create a rank promotion mechanism that allows us to
+control the amount of unfairness relative to a ranking purely based
+on relevance. In this experiment, the mechanism advances the 20
+most relevant items from group 𝐵. We vary the top destination rank
+𝑘 for the promoted items, with 𝑘 in (0, 99). For example, setting
+𝑘 = 0, we promote the 20 most relevant items from 𝑔 = 𝐵 to the
+ranks {0, 1, . . . , 19}, while the relative positions of the remaining
+
+6.1.2 Experimental condition 2: relevance ties.
+Setup. Relevance ties are common in ranking problems and datasets
+[24, 25, 34, 47]. To study the behavior of DIPS and related measures
+in the presence of ties, we round relevance scores in the synthetic
+𝑞
+dataset to the nearest integer, leaving us with binary values 𝑟𝑖 =
+round(𝑟𝑖 ), depicted in panel (1) of Figure 1b. We consider rankings
+𝑞
+of maximum utility 𝜎 = argsort(𝑟𝑖 ) where we vary the tie breaking
+policy. At each position of the ranking 𝜎, a policy places the item of
+maximum relevance among those that have not already been placed
+
+Moreover, recall that DIPS at the item level can be expressed as:
+𝑀𝑖DIPS =
+
+=
+
+𝑛−1
+∑︁
+𝑘=0
+𝑛−1
+∑︁
+𝑘=0
+
+𝐹 (𝑘)𝑑𝑈 (𝑖, 𝜎 (𝑘))
+
+𝑝𝑠 (𝜎 (𝑘))
+
+𝑘
+∑︁
+
+𝑑𝑈 (𝑖, 𝜎 (𝑘 ′ ))
+
+𝑘 ′ =0
+
+These formulas show that EA and DIPS can both be expressed as
+a sum, weighted by stopping probabilities 𝑝𝑠 (𝜎 (𝑘)), of two quantities that are directly related: DIPS counts the number of UDPs
+for the item 𝑖 up to rank 𝑘, while EA computes the (negative) probability Pr(𝜎 −1 (𝑖) ≤ 𝑘) that item 𝑖 is among the top 𝑘. One can
+expect the probability of an item being in the top ranks to decrease with the number of its UDPs. For this reason, we expect
+DIPS and exposure-based measures to exhibit certain similarities in
+practice. At the same time, these measures operationalize different
+constructs; hence, we expect them to capture different properties of
+rankings. For example, a ranking can assign to an item 𝑖 its ideal exposure quota (𝑀𝑖𝐸𝐴 = 0), while granting the most visible positions
+to items of lesser relevance, thus causing substantial dissatisfaction
+of 𝑖 due to highly visible UDPs (𝑀𝑖𝐷𝐼 𝑃𝑆 ≫ 0).
+
+6
+
+EXPERIMENTS
+
+DIPS is a measure of pairwise fairness, yet it is grounded in browsing models like exposure-based fairness. In this section, we empirically study the similarities and differences between DIPS, pairwise measures, and exposure-based measures on synthetic and
+real-world datasets.
+
+6.1
+
+Synthetic data
+
+936
+
+Pairwise Fairness in Ranking as a Dissatisfaction Measure
+
+WSDM ’23, February 27-March 3, 2023, Singapore, Singapore
+
+(a) Synthetic data: systematic group advantage.
+
+(b) Synthetic data: relevance ties.
+
+(c) Real-world data: fairness intervention to ensure minimum representation.
+
+Figure 1: Distribution of relevance 𝑟𝑖 (1) and comparison of pairwise fairness measures REE and DIPS (2) with exposure-based
+𝜎 (4).
+measures EE, EA, EA-dp: |𝛿 𝜎 | 1 (3) and 𝛿𝐴
+in better positions; if items of the same relevance are available from
+both groups, we draw the best available item from 𝑔 = 𝐴 with
+probability 𝑝𝐴 ∈ {0, 0.1, . . . , 1}, or from 𝑔 = 𝐵 with probability
+𝑝 𝐵 = 1 − 𝑝𝐴 . We consider a tie-aware and a tie-indifferent variant
+of REE and DIPS, obtained by setting 𝑐𝑡 = 1 and 𝑐𝑡 = 0, respectively,
+in Equation (8).
+Results. Figure 1b shows the values for each measure, averaged
+over 100 repetitions. Panel (2) shows both versions of REE and DIPS.
+As expected, the tie-indifferent variant of both measures is flat at
+𝑞
+zero. Indeed, 𝜎 = argsort(𝑟𝑖 ) is a meritocratic ranking; therefore,
+there are no proper UDPs. For 𝑐𝑡 = 1, both DIPS and REE span a
+wide range of values, capturing the large dissatisfaction between
+groups that is likely to arise in this setting with ranking policies
+that systematically favor one group over another in case of ties.
+EE, EA, and EA-dp are represented in panels (3)-(4), with their
+𝜎 ), respectively. The
+aggregate (|𝛿𝑔 | 1 ) and groupwise component (𝛿𝐴
+difference between EE and EA is negligible in this setting and they
+
+are therefore indistinguishable in the plots. Overall, EA and EE
+have the same profile as the tie-aware version of DIPS.
+Interpretation. Measures of pairwise fairness can aptly model
+dissatisfaction in contexts where relevance ties are present, a situation that is fairly common in ranking problems. This is achieved
+by extending the concept of UDP to account for relevance ties. If,
+instead, we stick to the regular definition of UDP, any systematic
+advantage for one group will go unnoticed, as testified by the (constant and null) values of REE and DIPS instantiated with 𝑐𝑡 = 0.
+Furthermore, this experiment confirms a close connection between
+DIPS and exposure-based measures.
+
+6.2
+
+Real-world data
+
+In this section, we complement our discussion of similarities and
+differences between pairwise and exposure-based fairness measures by experimenting with a real-world dataset and a popular fair
+ranking intervention. We use the Entrepreneurs dataset [21], which
+
+937
+
+WSDM ’23, February 27-March 3, 2023, Singapore, Singapore
+
+Alessandro Fabris, Gianmaria Silvello, Gian Antonio Susto, & Asia J. Biega
+
+consists of a list of US startup founders who received Series A funding in the last 5 years, obtained from Crunchbase.3 Entrepreneurs
+are ranked by inflation-adjusted funding, which is considered the
+merit parameter 𝑟𝑖 , reported in panel (1) of Figure 1c. The sensitive
+attribute is binary gender, with a representation ratio of 9:1 in favor
+of men (group 𝐴). Notice that the 𝑦 axis is broken, to highlight
+the prevalence of items of low relevance from the group 𝐴, while
+favoring readability at higher values of 𝑟𝑖 .
+
+entrepreneurs with higher 𝑟𝑖 are promoted first. Different ranking
+policies, naïvely enforcing representation without paying attention
+to relevance, would yield high values of DIPS.
+Interpretation. On the one hand, this experiment shows that,
+when DIPS and exposure-based measures are instantiated with the
+same top-heavy browsing model 𝐹 (𝑘), they are similarly influenced
+by fairness interventions toward the top of a ranking, while ignoring
+swaps at less visible positions; they display similar profiles as a
+result. On the other hand, the absolute values of these measures
+can differ substantially. In essence, exposure-based measures are
+based on a comparison between groupwise merit and groupwise
+representation among the most visible items in the final ranking.
+Although DIPS is focused similarly on the most visible items, it
+takes into account their individual merits. For instance, an item
+whose relevance is in the highest decile can be promoted to the most
+visibile position, i.e, with a sizeable impact on exposure, without
+increasing the dissatisfaction counter of most items, i.e., with a
+small impact on the aggregate DIPS measure. While showing some
+clear similarities, DIPS and exposure-based measures operationalize
+different constructs and capture different properties. Overall, our
+analyses show that fairness-enhancing interventions in ranking
+may cause dissatisfaction for non-protected groups, but merit-based
+policies will mitigate this downside.
+
+6.2.1 Enforcing minimum representation.
+Setup. We deploy the fairness intervention of Zehlike et al. [43], imposing a minimum representation for the protected group (women).
+More specifically, we require a minimum percentage 𝑝 min = 0.5 of
+women in every prefix of the final ranking, up to a given ranking
+¯ In this experiment, we vary 𝑘¯ ∈ {0, . . . , 100}.
+position 𝑘.
+As a motivating example for such an intervention, consider a
+trade magazine that compiles a chart of successful entrepreneurs
+with attention to gender representation. Relevance and gender representation goals can be achieved with a ranking 𝜎 that is aware
+of the raised funding while featuring a minimum percentage of
+¯ Low values of 𝑘¯ correwomen in every prefix up to a given rank 𝑘.
+spond to mild gender parity requirements, enforced only at the top
+¯ On the other hand, high values
+positions of the ranking (up to 𝑘).
+¯
+of 𝑘 correspond to more strict requirements, where the minimum
+representation must also be maintained further down the ranking.
+Results. The results of this experiment are reported in Figure 1c.
+Panel (2) focuses on REE and DIPS. The latter increases sharply for
+small values (𝑘¯ < 20), where an increased representation corresponds to highly visible UDPs under a top-heavy browsing model.
+Around rank 𝑘¯ = 40 DIPS becomes flat, as these ranks have low
+¯ but, unlike DIPS, the increase
+visibility. REE also increases with 𝑘,
+¯ This is due to the fact that, to satisfy the miniaccelerates with 𝑘.
+mum representation requirement, the number of UPDs increases
+¯
+superlinearly with 𝑘.
+EE, EA, and EA-dp are represented in panels (3)-(4). The groupwise measure displays a concave profile, similar to DIPS, since
+promotions after rank 𝑘 = 40 have a negligible impact on exposure. As usual, EE is minimized by the null manipulation 𝑘¯ = 0;
+EA and EA-dp are very close to it as, in this particular setting,
+EA-dp
+women entrepreneurs have a low overall representation (𝑇𝐵
+=
+𝑁𝐵 /𝑁 ≃ 0.1) and, subsequently, a low share of the overall relevance
+Í
+Í
+(𝑇𝐵EA = 𝑖 ∈𝐵 𝑟𝑖 / 𝑖 𝑟𝑖 ≃ 0.1). The sizeable values of EE, for 𝑘 ≥ 40,
+suggest that group 𝐵 (women) gains a significant exposure from
+this intervention, clearly at the expense of group 𝐴 (men).4
+DIPS − 𝑀 DIPS | ≪ 0.1.
+DIPS, on the other hand, has low values |𝑀𝐴𝐵
+𝐵𝐴
+This is due to the fact that the women entrepreneurs occupying
+these highly visible positions in the final ranking 𝜎 have greater
+relevance (𝑟𝑖 ) than most of the other entrepreneurs. In other words,
+despite a substantial visibility gain for female entrepreneurs, the
+most visible positions occupied by them do not represent a UDP
+for most male entrepreneurs. For example, when 𝑘¯ ≥ 20, among
+the twenty most visible positions, accounting for more than 80% of
+overall exposure, we find ten female entrepreneurs who are in the
+top decile for raised funding overall. This follows from the fact that
+the fairness manipulation used is aware of relevance, so women
+
+7
+
+CONCLUSION
+
+In this paper, we have provided a normative grounding for pairwise fairness measures (Inter-Group Inaccuracy (IGI) [5] and Rank
+Equality Error (REE) [32]), retrospectively mapping the measured
+construct to producer dissatisfaction induced by a non-meritocratic
+ranking, which is related to, yet different from, the construct of
+equitable exposure allocation.
+We have highlighted the limitations of REE and IGI in capturing
+behavioral and practical aspects of rankings in information access
+systems, deriving a new measure called Dissatisfaction Induced by
+Pairwise Swaps (DIPS) to address them. DIPS operationalizes perceptions of injustice by ranked producers when they are positioned
+below less relevant items from other groups.
+Finally, we have studied the relationship between DIPS, pairwise, and exposure-based fairness measures, including Equity of
+Attention and Expected Exposure. We have shown how to ground
+pairwise fairness in browsing models, highlighting the similarities
+between exposure-based measures and DIPS. At the same time,
+we have stressed the differences between the two families of measures which arise as they operationalize fundamentally different
+constructs.
+Overall, this work grounds and generalizes measures of pairwise
+fairness, situates them more precisely in the practical context of
+information access systems, and contributes to the debate on the
+normative reasoning behind algorithmic fairness measures.
+
+ACKNOWLEDGMENTS
+The work of Gianmaria Silvello was supported by the ExaMode
+project, as part of the EU H2020 program under Grant Agreement
+no. 825292.
+
+3 https://crunchbase.com/
+4 Recall that 𝛿 𝜎 is a normalized quantity, i.e., 0 ≤ 𝛿 𝜎 ≤ 1
+𝐴
+𝐴
+
+938
+
+Pairwise Fairness in Ranking as a Dissatisfaction Measure
+
+WSDM ’23, February 27-March 3, 2023, Singapore, Singapore
+
+REFERENCES
+
+[23] Moritz Hardt, Eric Price, and Nathan Srebro. 2016. Equality of opportunity in
+supervised learning. In Proc. of the 29th Annual Conference on Neural Information
+Processing Systems (NIPS 2016). Barcelona, ES, 3323–3331.
+[24] Donna Harman. 1992. The DARPA TIPSTER Project. SIGIR Forum 26, 2 (1992),
+26–28.
+[25] F. Maxwell Harper and Joseph A. Konstan. 2015. The MovieLens Datasets: History
+and Context. ACM Trans. Interact. Intell. Syst. 5, 4, Article 19 (Dec. 2015), 19 pages.
+https://doi.org/10.1145/2827872
+[26] Abigail Z. Jacobs and Hanna Wallach. 2021. Measurement and Fairness. In Proc.
+of the 2021 ACM Conference on Fairness, Accountability, and Transparency (Virtual
+Event, Canada) (FAccT ’21). ACM, 375–385. https://doi.org/10.1145/3442188.
+3445901
+[27] Kalervo Järvelin and Jaana Kekäläinen. 2002. Cumulated Gain-Based Evaluation
+of IR Techniques. ACM Trans. Inf. Syst. 20, 4 (oct 2002), 422–446. https://doi.org/
+10.1145/582415.582418
+[28] Adrianne Jeffries and Leon Yin. 2021. Amazon puts its own “brands” above better
+rated products. https://themarkup.org/amazons-advantage/2021/10/14/amazonputs-its-own-brands-first-above-better-rated-products.
+[29] Thorsten Joachims. 2002. Optimizing Search Engines Using Clickthrough Data. In
+Proc. of the Eighth ACM SIGKDD International Conference on Knowledge Discovery
+and Data Mining (Edmonton, Alberta, Canada) (KDD ’02). ACM, 133–142. https:
+//doi.org/10.1145/775047.775067
+[30] Maurice G Kendall. 1938. A new measure of rank correlation. Biometrika 30, 1/2
+(1938), 81–93.
+[31] Junic Kim. 2021. Platform quality factors influencing content providers’ loyalty.
+Journal of Retailing and Consumer Services 60 (2021), 102510. https://doi.org/10.
+1016/j.jretconser.2021.102510
+[32] Caitlin Kuhlman, MaryAnn VanValkenburg, and Elke Rundensteiner. 2019. FARE:
+Diagnostics for Fair Ranking Using Pairwise Error Metrics. In The World Wide
+Web Conference (San Francisco, CA, USA) (WWW ’19). ACM, 2936–2942. https:
+//doi.org/10.1145/3308558.3313443
+[33] Graham McDonald, Craig Macdonald, and Iadh Ounis. 2022. Search results
+diversification for effective fair ranking in academic search. Information Retrieval
+Journal 25, 1 (2022), 1–26.
+[34] Frank McSherry and Marc Najork. 2008. Computing Information Retrieval
+Performance Measures Efficiently in the Presence of Tied Scores. In Advances in
+Information Retrieval. Springer Berlin Heidelberg, Berlin, Heidelberg, 414–421.
+[35] Alistair Moffat and Justin Zobel. 2008. Rank-Biased Precision for Measurement of
+Retrieval Effectiveness. ACM Trans. Inf. Syst. 27, 1, Article 2 (dec 2008), 27 pages.
+https://doi.org/10.1145/1416950.1416952
+[36] Harikrishna Narasimhan, Andrew Cotter, Maya Gupta, and Serena Wang. 2020.
+Proc. of the AAAI Conference on Artificial Intelligence 34, 04 (Apr. 2020), 5248–5255.
+https://doi.org/10.1609/aaai.v34i04.5970
+[37] Evaggelia Pitoura, Kostas Stefanidis, and Georgia Koutrika. 2021. Fairness in
+rankings and recommendations: an overview. The VLDB Journal (2021), 1–28.
+[38] Amifa Raj and Michael D Ekstrand. 2022. Measuring Fairness in Ranked Results:
+An Analytical and Empirical Comparison. In Proc. of the 45th International ACM
+SIGIR Conference on Research and Development in Information Retrieval.
+[39] Fatemeh Sarvi, Maria Heuss, Mohammad Aliannejadi, Sebastian Schelter, and
+Maarten de Rijke. 2022. Understanding and Mitigating the Effect of Outliers
+in Fair Ranking. In Proc. of the Fifteenth ACM International Conference on Web
+Search and Data Mining (Virtual Event, AZ, USA) (WSDM ’22). ACM, 861–869.
+[40] Ashudeep Singh and Thorsten Joachims. 2018. Fairness of Exposure in Rankings.
+In Proc. of the 24th ACM SIGKDD International Conference on Knowledge Discovery
+& Data Mining (London, United Kingdom) (KDD ’18). ACM, 2219–2228.
+[41] Julia Stoyanovich, Ke Yang, and HV Jagadish. 2018. Online set selection with
+fairness and diversity constraints. In Proc. of the EDBT Conference.
+[42] Ke Yang and Julia Stoyanovich. 2017. Measuring Fairness in Ranked Outputs.
+In Proc. of the 29th International Conference on Scientific and Statistical Database
+Management (Chicago, IL, USA) (SSDBM ’17). ACM, Article 22, 6 pages. https:
+//doi.org/10.1145/3085504.3085526
+[43] Meike Zehlike, Francesco Bonchi, Carlos Castillo, Sara Hajian, Mohamed Megahed, and Ricardo Baeza-Yates. 2017. Fa* ir: A fair top-k ranking algorithm. In
+Proc. of the 2017 ACM on Conference on Information and Knowledge Management.
+1569–1578.
+[44] Meike Zehlike, Tom Sühr, Ricardo Baeza-Yates, Francesco Bonchi, Carlos Castillo,
+and Sara Hajian. 2022. Fair Top-k Ranking with multiple protected groups.
+Information Processing & Management 59, 1 (2022), 102707.
+[45] Meike Zehlike, Ke Yang, and Julia Stoyanovich. 2022. Fairness in Ranking, Part I:
+Score-Based Ranking. ACM Comput. Surv. (apr 2022). https://doi.org/10.1145/
+3533379 Just Accepted.
+[46] Meike Zehlike, Ke Yang, and Julia Stoyanovich. 2022. Fairness in Ranking, Part
+II: Learning-to-Rank and Recommender Systems. ACM Comput. Surv. (apr 2022).
+https://doi.org/10.1145/3533380 Just Accepted.
+[47] Ke Zhou, Gui-Rong Xue, Hongyuan Zha, and Yong Yu. 2008. Learning to Rank
+with Ties. In Proc. of the 31st Annual International ACM SIGIR Conference on
+Research and Development in Information Retrieval (Singapore, Singapore) (SIGIR
+’08). ACM, 275–282. https://doi.org/10.1145/1390334.1390382
+
+[1] Abolfazl Asudeh, H. V. Jagadish, Julia Stoyanovich, and Gautam Das. 2019. Designing Fair Ranking Schemes. In Proc. of the 2019 International Conference on
+Management of Data (Amsterdam, Netherlands) (SIGMOD ’19). ACM, 1259–1276.
+https://doi.org/10.1145/3299869.3300079
+[2] Ricardo Baeza-Yates, Berthier Ribeiro-Neto, et al. 1999. Modern information
+retrieval. Vol. 463. ACM press New York.
+[3] Solon Barocas, Anhong Guo, Ece Kamar, Jacquelyn Krones, Meredith Ringel
+Morris, Jennifer Wortman Vaughan, W. Duncan Wadsworth, and Hanna Wallach.
+2021. Designing Disaggregated Evaluations of AI Systems: Choices, Considerations,
+and Tradeoffs. ACM, 368–378. https://doi.org/10.1145/3461702.3462610
+[4] Solon Barocas, Moritz Hardt, and Arvind Narayanan. 2019. Fairness and Machine
+Learning. fairmlbook.org. http://www.fairmlbook.org.
+[5] Alex Beutel, Jilin Chen, Tulsee Doshi, Hai Qian, Li Wei, Yi Wu, Lukasz Heldt,
+Zhe Zhao, Lichan Hong, Ed H. Chi, and Cristos Goodrow. 2019. Fairness in
+Recommendation Ranking through Pairwise Comparisons. In Proc. of the 25th
+ACM SIGKDD International Conference on Knowledge Discovery & Data Mining
+(Anchorage, AK, USA) (KDD ’19). ACM, 2212–2220.
+[6] Asia J Biega, Fernando Diaz, Michael D Ekstrand, Sergey Feldman, and Sebastian
+Kohlmeier. 2021. Overview of the TREC 2020 Fair Ranking Track. arXiv preprint
+arXiv:2108.05135 (2021).
+[7] Asia J Biega, Fernando Diaz, Michael D Ekstrand, and Sebastian Kohlmeier. 2020.
+Overview of the TREC 2019 fair ranking track. arXiv preprint arXiv:2003.11650
+(2020).
+[8] Asia J. Biega, Krishna P. Gummadi, and Gerhard Weikum. 2018. Equity of
+Attention: Amortizing Individual Fairness in Rankings. In The 41st International
+ACM SIGIR Conference on Research & Development in Information Retrieval (Ann
+Arbor, MI, USA) (SIGIR ’18). ACM, 405–414.
+[9] Ludovico Boratto, Gianni Fenu, and Mirko Marras. 2021. Connecting user and
+item perspectives in popularity debiasing for collaborative recommendation.
+Information Processing & Management 58, 1 (2021), 102387.
+[10] Amanda Bower, Hamid Eftekhari, Mikhail Yurochkin, and Yuekai Sun. 2021.
+Individually Fair Ranking. arXiv preprint arXiv:2103.11023 (2021).
+[11] Toon Calders and Sicco Verwer. 2010. Three naive Bayes approaches for
+discrimination-free classification. Data mining and knowledge discovery 21, 2
+(2010), 277–292.
+[12] Ben Carterette. 2011. System Effectiveness, User Models, and User Utility: A
+Conceptual Framework for Investigation. In Proc. of the 34th International ACM
+SIGIR Conference on Research and Development in Information Retrieval (Beijing,
+China) (SIGIR ’11). ACM, 903–912. https://doi.org/10.1145/2009916.2010037
+[13] L. Elisa Celis, Anay Mehrotra, and Nisheeth K. Vishnoi. 2020. Interventions
+for Ranking in the Presence of Implicit Bias. In Proc. of the 2020 Conference on
+Fairness, Accountability, and Transparency (Barcelona, Spain) (FAT* ’20). ACM.
+[14] Nick Craswell, Onno Zoeter, Michael Taylor, and Bill Ramsey. 2008. An Experimental Comparison of Click Position-Bias Models. In Proc. of the 2008 International
+Conference on Web Search and Data Mining (Palo Alto, California, USA) (WSDM
+’08). ACM, 87–94. https://doi.org/10.1145/1341531.1341545
+[15] Abhisek Dash, Abhijnan Chakraborty, Saptarshi Ghosh, Animesh Mukherjee,
+and Krishna P. Gummadi. 2021. When the Umpire is Also a Player: Bias in Private
+Label Product Recommendations on E-Commerce Marketplaces. In Proc. of the
+2021 ACM Conference on Fairness, Accountability, and Transparency (Virtual Event,
+Canada) (FAccT ’21). ACM, 873–884. https://doi.org/10.1145/3442188.3445944
+[16] Giorgio Maria Di Nunzio, Alessandro Fabris, Gianmaria Silvello, and Gian Antonio Susto. 2021. Incentives for Item Duplication Under Fair Ranking Policies.
+In Advances in Bias and Fairness in Information Retrieval, Ludovico Boratto, Stefano Faralli, Mirko Marras, and Giovanni Stilo (Eds.). Springer International
+Publishing, Cham, 64–77.
+[17] Fernando Diaz, Bhaskar Mitra, Michael D. Ekstrand, Asia J. Biega, and Ben
+Carterette. 2020. Evaluating Stochastic Rankings with Expected Exposure. In Proc.
+of the 29th ACM International Conference on Information & Knowledge Management
+(Virtual Event, Ireland) (CIKM ’20). ACM, 275–284. https://doi.org/10.1145/
+3340531.3411962
+[18] Renee Dudley. 2020. Amazon’s New Competitive Advantage: Putting Its Own
+Products First. https://www.propublica.org/article/amazons-new-competitiveadvantage-putting-its-own-products-first.
+[19] Michael D Ekstrand, Anubrata Das, Robin Burke, and Fernando Diaz. 2021.
+Fairness and discrimination in information access systems. arXiv preprint
+arXiv:2105.05779 (2021).
+[20] Michael D. Ekstrand, Graham McDonald, Amifa Raj, and Isaac Johnson. 2022.
+Overview of the TREC 2021 Fair Ranking Track. In The Thirtieth Text REtrieval
+Conference (TREC 2021) Proceedings.
+[21] Avijit Ghosh, Ritam Dutt, and Christo Wilson. 2021. When Fair Ranking Meets
+Uncertain Inference. ACM, 1033–1043. https://doi.org/10.1145/3404835.3462850
+[22] Sruthi Gorantla, Amit Deshpande, and Anand Louis. 2021. On the Problem of
+Underranking in Group-Fair Ranking. In Proc. of the 38th International Conference
+on Machine Learning (Proc. of Machine Learning Research, Vol. 139). PMLR, 3777–
+3787.
+
+939
+
+

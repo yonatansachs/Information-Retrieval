@@ -1,0 +1,1639 @@
+Session 3A: Bias and Fairness
+
+SIGIR ’20, July 25–30, 2020, Virtual Event, China
+
+Controlling Fairness and Bias in Dynamic Learning-to-Rank
+Marco Morik∗†
+
+Ashudeep Singh∗
+
+m.morik@tu-berlin.de
+Technische Univerität Berlin
+Berlin, Germany
+
+ashudeep@cs.cornell.edu
+Cornell University
+Ithaca, NY
+
+Jessica Hong
+
+Thorsten Joachims
+
+jwh296@cornell.edu
+Cornell University
+Ithaca, NY
+
+tj@cs.cornell.edu
+Cornell University
+Ithaca, NY
+
+ABSTRACT
+
+1
+
+Rankings are the primary interface through which many online
+platforms match users to items (e.g. news, products, music, video).
+In these two-sided markets, not only the users draw utility from
+the rankings, but the rankings also determine the utility (e.g. exposure, revenue) for the item providers (e.g. publishers, sellers,
+artists, studios). It has already been noted that myopically optimizing utility to the users – as done by virtually all learning-to-rank
+algorithms – can be unfair to the item providers. We, therefore,
+present a learning-to-rank approach for explicitly enforcing meritbased fairness guarantees to groups of items (e.g. articles by the
+same publisher, tracks by the same artist). In particular, we propose a learning algorithm that ensures notions of amortized group
+fairness, while simultaneously learning the ranking function from
+implicit feedback data. The algorithm takes the form of a controller
+that integrates unbiased estimators for both fairness and utility, dynamically adapting both as more data becomes available. In addition
+to its rigorous theoretical foundation and convergence guarantees,
+we find empirically that the algorithm is highly practical and robust.
+
+We consider the problem of dynamic Learning-to-Rank (LTR), where
+the ranking function dynamically adapts based on the feedback
+that users provide. Such dynamic LTR problems are ubiquitous in
+online systems — news-feed rankings that adapt to the number of
+"likes" an article receives, online stores that adapt to the number of
+positive reviews for a product, or movie-recommendation systems
+that adapt to who has watched a movie. In all of these systems,
+learning and prediction are dynamically intertwined, where past
+feedback influences future rankings in a specific form of online
+learning with partial-information feedback [17].
+While dynamic LTR systems are in widespread use and unquestionably useful, there are at least two issues that require careful
+design considerations. First, the ranking system induces a bias
+through the rankings it presents. In particular, items ranked highly
+are more likely to collect additional feedback, which in turn can
+influence future rankings and promote misleading rich-get-richer
+dynamics [3, 31, 32, 39]. Second, the ranking system is the arbiter
+of how much exposure each item receives, where exposure directly
+influences opinion (e.g. ideological orientation of presented news
+articles) or economic gain (e.g. revenue from product sales or streaming) for the provider of the item. This raises fairness considerations
+about how exposure should be allocated based on the merit of the
+items [14, 41]. We will show in the following that naive dynamic
+LTR methods that are oblivious to these issues can lead to economic
+disparity, unfairness, and polarization.
+In this paper, we present the first dynamic LTR algorithm – called
+FairCo – that overcomes rich-get-richer dynamics while enforcing a configurable allocation-of-exposure scheme. Unlike existing
+fair LTR algorithms [14, 41, 42, 47], FairCo explicitly addresses the
+dynamic nature of the learning problem, where the system is unbiased and fair even though the relevance and the merit of items are
+still being learned. At the core of our approach lies a merit-based
+exposure-allocation criterion that is amortized over the learning
+process [14, 41]. We view the enforcement of this merit-based exposure criterion as a control problem and derive a P-controller that
+optimizes both the fairness of exposure as well as the quality of
+the rankings. A crucial component of the controller is the ability
+to estimate merit (i.e. relevance) accurately, even though the feedback is only revealed incrementally as the system operates, and
+the feedback is biased by the rankings shown in the process [31].
+To this effect, FairCo includes a new unbiased cardinal relevance
+
+CCS CONCEPTS
+• Information systems → Learning to rank.
+
+KEYWORDS
+ranking; learning-to-rank; fairness; bias; selection bias; exposure
+ACM Reference Format:
+Marco Morik, Ashudeep Singh, Jessica Hong, and Thorsten Joachims. 2020.
+Controlling Fairness and Bias in Dynamic Learning-to-Rank. In Proceedings
+of the 43rd International ACM SIGIR Conference on Research and Development
+in Information Retrieval (SIGIR ’20), July 25–30, 2020, Virtual Event, China.
+ACM, New York, NY, USA, 10 pages. https://doi.org/10.1145/3397271.3401100
+∗
+†
+
+Equal contribution.
+Work conducted while at Cornell University.
+
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for components of this work owned by others than the
+author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior specific permission
+and/or a fee. Request permissions from permissions@acm.org.
+SIGIR ’20, July 25–30, 2020, Virtual Event, China
+© 2020 Copyright held by the owner/author(s). Publication rights licensed to ACM.
+ACM ISBN 978-1-4503-8016-4/20/07. . . $15.00
+https://doi.org/10.1145/3397271.3401100
+
+429
+
+INTRODUCTION
+
+Session 3A: Bias and Fairness
+
+SIGIR ’20, July 25–30, 2020, Virtual Event, China
+
+estimator – as opposed to existing ordinal methods [4, 32] –, which
+can be used both as an unbiased merit estimator for fairness and as
+a ranking criterion.
+In addition to the theoretical justification of FairCo, we provide
+empirical results on both synthetic news-feed data and real-world
+movie recommendation data. We find that FairCo is effective at
+enforcing fairness while providing good ranking performance. Furthermore, FairCo is efficient, robust, and easy to implement.
+
+2
+
+In reverse, the remaining 49% of the users (left-leaning) like only
+the articles in G left . Ranking articles solely by their true average
+relevance puts items from G right into positions 1-10 and the items
+from G left in positions 11-20. This means the platform gives the
+articles in G left vastly less exposure than those in G right . We argue
+that this can be considered unfair since the two groups receive
+disproportionately different outcomes despite having similar merit
+(i.e. relevance). Here, a 2% difference in average relevance leads to
+a much larger difference in exposure between the groups.
+We argue that these two deficiencies – namely bias and unfairness – are not just undesirable in themselves, but that they have
+undesirable consequences. For example, biased estimates lead to
+poor ranking quality, and unfairness is likely to alienate the leftleaning users in our example, driving them off the platform and
+encouraging polarization.
+Furthermore, note that these two deficiencies are not specific
+to the news example, but that the naive algorithm leads to analogous problems in many other domains. For example, consider a
+ranking system for job applicants, where rich-get-richer dynamics
+and exposure allocation may perpetuate and even amplify existing
+unfairness (e.g. disparity between male and female applicants). Similarly, consider an online marketplace where products of different
+sellers (i.e. groups) are ranked. Here rich-get-richer dynamics and
+unfair exposure allocation can encourage monopolies and drive
+some sellers out of the market.
+These examples illustrate the following two desiderata that a
+less naive dynamic LTR algorithm should fulfill.
+
+MOTIVATION
+
+Consider the following illustrative example of a dynamic LTR problem. An online news-aggregation platform wants to present a ranking of the top news articles on its front page. Through some external
+mechanism, it identifies a set D = {d 1 , ..., d 20 } of 20 articles at the
+beginning of each day, but it is left with the learning problem of
+how to rank these 20 articles on its front page. As users start coming
+to the platform, the platform uses the following naive algorithm to
+learn the ranking.
+Algorithm 1: Naive Dynamic LTR Algorithm
+Initialize counters C(d) = 0 for each d ∈ D;
+foreach user do
+present ranking σ = argsort D [C(d)] (random tiebreak);
+increment C(d) for the articles read by the user.
+
+Executing this algorithm at the beginning of a day, the platform
+starts by presenting the 20 articles in random order for the first
+user. It may then observe that the user reads the article in position
+3 and increments the counter C(d) for this article. For the next
+user, this article now gets ranked first and the counters are updated
+based on what the second user reads. This cycle continues for each
+subsequent user. Unfortunately, this naive algorithm has at least
+two deficiencies that make it suboptimal or unsuitable for many
+ranking applications.
+The first deficiency lies in the choice of C(d) as an estimate of
+average relevance for each article – namely the fraction of users
+that want to read the article. Unfortunately, even with infinite
+amounts of user feedback, the counters C(d) are not consistent
+estimators of average relevance [31, 32, 39]. In particular, items
+that happened to get more reads in early iterations get ranked
+highly, where more users find them and thus have the opportunity
+to provide more positive feedback for them. This perpetuates a
+rich-get-richer dynamic, where the feedback count C(d) recorded
+for each article does not reflect how many users actually wanted to
+read the article.
+The second deficiency of the naive algorithm lies in the ranking
+policy itself, creating a source of unfairness even if the true average
+relevance of each article was accurately known [7, 14, 41]. Consider
+the following omniscient variant of the naive algorithm that ranks
+the articles by their true average relevance (i.e. the true fraction
+of users who want to read each article). How can this ranking be
+unfair? Let us assume that we have two groups of articles, G right
+and G left , with 10 items each (i.e. articles from politically rightand left-leaning sources). 51% of the users (right-leaning) want to
+read the articles in group G right , but not the articles in group G left .
+
+Unbiasedness: The algorithm should not be biased or subject to
+rich-get-richer dynamics.
+Fairness: The algorithm should enforce a fair allocation of exposure based on merit (e.g. relevance).
+With these two desiderata in mind, this paper develops alternatives to the Naive algorithm. In particular, after introducing the
+dynamic learning-to-rank setting in Section 4, Section 5 formalizes
+an amortized notion of merit-based fairness, accounting for the fact
+that merit itself is unknown at the beginning of the learning process
+and is only learned throughout. Section 6 then addresses the bias
+problem, providing estimators that eliminate the presentation bias
+for both global and personalized ranking policies. Finally, Section 7
+proposes a control-based algorithm that is designed to optimize
+ranking quality while dynamically enforcing fairness.
+
+3
+
+RELATED WORK
+
+Ranking algorithms are widely recognized for their potential for
+societal impact [8], as they form the core of many online systems,
+including search engines, recommendation systems, news feeds,
+and online voting. Controlling rich-get-richer phenomena in recommendations and rankings has been studied from the perspective
+of both optimizing utility through exploration as well as ensuring fairness of such systems [2, 40, 48]. There are several adverse
+consequences of naive ranking systems [19], such as political polarization [11], misinformation [45], unfair allocation of exposure [42],
+and biased judgment [8] through phenomena such as the Matthew
+effect [3, 23]. Viewing such ranking problems as two-sided markets
+of users and items that each derive utility from the ranking system
+brings a novel perspective to tackling such problems [1, 41]. In this
+
+430
+
+Session 3A: Bias and Fairness
+
+SIGIR ’20, July 25–30, 2020, Virtual Event, China
+
+the information in x t , if we want to learn a single global ranking
+like in the introductory news example.
+After presenting the ranking σt , the system receives a feedback
+vector ct from the user with a non-negative value ct (d) for every
+d ∈ D. In the simplest case, it is 1 for click and 0 for no click, and we
+will use the word "click" as a placeholder throughout this paper for
+simplicity. But the feedback may take many other forms and does
+not have to be binary. For example, in a video streaming service,
+the feedback may be the percentage the user watched of each video.
+After the feedback ct was received, the dynamic LTR algorithm
+A now updates the ranking policy and produces the policy πt +1
+that is used in the next time step.
+
+work, we take inspiration from these works to develop methods for
+mitigating bias and unfairness in a dynamic setting.
+Machine learning methods underlie most ranking algorithms.
+There has been a growing concern around the question of how
+machine learning algorithms can be unfair, especially given their
+numerous real-world applications [10]. There have been several
+definitions proposed for fairness in the binary classification setting
+[9], as well as recently in the domains of rankings in recommendations and information retrieval [13, 14, 16, 41]. The definitions of
+fairness in ranking span from ones purely based on the composition
+of the top-k [16], to relevance-based definitions such as fairness of
+exposure [41], and amortized attention equity [14]. We will discuss
+these definitions in greater detail in Section 5. Our work also relates to the recent interest in studying the impact of fairness when
+learning algorithms are applied in dynamic settings [21, 35, 43].
+In information retrieval, there has been a long-standing interest
+in learning to rank from biased click data. As already argued above,
+the bias in logged click data occurs because the feedback is incomplete and biased by the presentation. Numerous approaches based
+on preferences (e.g. [25, 30]), click models (e.g. [18]), and randomized interventions (e.g. [36]) exist. Most recently, a new approach
+for de-biasing feedback data using techniques from causal inference
+and missing data analysis was proposed to provably eliminate selection biases [6, 32]. We follow this approach in this paper, extend
+it to the dynamic ranking setting, and propose a new unbiased
+regression objective in Section 6.
+Learning in our dynamic ranking setting is related to the conventional learning-to-rank algorithms such as LambdaRank, LambdaMART, RankNet, Softrank etc. [15, 44]. However, to implement
+fairness constraints based on merit, we need to explicitly estimate
+relevance to the user as a measure of merit while the scores estimated by these methods don’t necessarily have a meaning. Our
+setting is also closely related to online learning to rank for top-k
+ranking where feedback is observed only on the top-k items, and
+hence exploration interventions are necessary to ensure convergence [26, 34, 37, 49]. These algorithms are designed with respect
+to a click-model assumption [49] or learning in the presence of
+document features [34]. A key difference in our method is that
+we do not consider exploration through explicit interventions, but
+merely exploit user-driven exploration. However, explicit exploration could also be incorporated into our algorithms to improve
+the convergence rate of our methods.
+
+πt +1 ←− A((x 1 , σ1 , c1 ), ..., (x t , σt , ct ))
+An instance of such a dynamic LTR algorithm is the Naive algorithm
+Í
+already outlined in Section 2. It merely computes ct to produce
+a new ranking policy for t + 1 (here a global ranking independent
+of x).
+
+4.1
+
+Partial and Biased Feedback
+
+A key challenge of dynamic LTR lies in the fact that the feedback
+ct provides meaningful feedback only for the items that the user
+examined. Following a large body of work on click models [18], we
+model this as a censoring process. Specifically, for a binary vector
+et indicating which items were examined by the user, we model
+the relationship between ct and rt as follows.
+
+r (d) if et (d) = 1
+ct (d) = t
+(2)
+0
+otherwise
+
+We begin by formally defining the dynamic LTR problem. Given is
+a set of items D that needs to be ranked in response to incoming
+requests. At each time step t, a request
+
+Coming back to the running example of news ranking, rt contains
+the full information about which articles the user is interested
+in reading, while ct reveals this information only for the articles
+d examined by the user (i.e. et (d) = 1). Analogously, in the job
+placement application rt indicates for all candidates d whether
+they are qualified to receive an interview call, but ct reveals this
+information only for those candidates examined by the employer.
+A second challenge lies in the fact that the examination vector
+et cannot be observed. This implies that a feedback value of ct (d) =
+0 is ambiguous – it may either indicate lack of examination (i.e.
+et (d) = 0) or negative feedback (i.e. rt (d) = 0). This would not
+be problematic if et was uniformly random, but which items get
+examined is strongly biased by the ranking σt presented to the
+user in the current iteration. Specifically, users are more likely to
+look at an item high in the ranking than at one that is lower down
+[31]. We model this position bias as a probability distribution on
+the examination vector
+
+x t , rt ∼ P(x, r)
+
+et ∼ P(e |σt , x t , rt ).
+
+4
+
+DYNAMIC LEARNING-TO-RANK
+
+(1)
+
+arrives i.i.d. at the ranking system. Each request consists of a feature
+vector describing the user’s information need x t (e.g. query, user
+profile), and the user’s vector of true relevance ratings rt for all
+items in the collection D. Only the feature vector x t is visible to
+the system, while the true relevance ratings rt are hidden. Based on
+the information in x t , a ranking policy πt (x) produces a ranking
+σt that is presented to the user. Note that the policy may ignore
+
+(3)
+
+Most click models can be brought into this form [18]. For the simplicity of this paper, we merely use the Position-Based Model (PBM)
+[20]. It assumes that the marginal probability of examination pt (d)
+for each item d depends only on the rank rank(d |σ ) of d in the
+presented ranking σ . Despite its simplicity, it was found that the
+PBM can capture the main effect of position bias accurately enough
+to be reliable in practice [5, 32, 46].
+
+431
+
+Session 3A: Bias and Fairness
+
+4.2
+
+SIGIR ’20, July 25–30, 2020, Virtual Event, China
+
+Evaluating Ranking Performance
+
+candidate. We discuss in Section 6 how to estimate pt (d). Taking a
+group-based approach to fairness, we aggregate exposure by groups
+G = {G 1 , . . . , Gm }.
+1 Õ
+pt (d).
+(8)
+Exp t (G i ) =
+|G i |
+
+We measure the quality of a ranking policy π by its utility to the
+users. Virtually all ranking metrics used in information retrieval define the utility U (σ | r) of a ranking σ as a function of the relevances
+of the individual items r. In our case, these item-based relevances r
+represent which articles the user likes to read, or which candidates
+are qualified for an interview. A commonly used utility measure is
+the DCG [29]
+Õ
+r(d)
+U DCG (σ | r) =
+,
+log2 (1 + rank(d |σ ))
+
+d ∈G i
+
+These groups can be legally protected groups (e.g. gender, race),
+reflect some other structure (e.g. items sold by a particular seller),
+or simply put each item in its own group (i.e. individual fairness).
+In order to formulate fairness criteria that relate exposure to
+merit, we define the merit of an item as its expected average relevance R(d) and again aggregate over groups.
+1 Õ
+R(d)
+(9)
+Merit(G i ) =
+|G i |
+
+d ∈σ
+
+or the NDCG when normalized by the DCG of the optimal ranking.
+Over a distribution of requests P(x, r), a ranking policy π (x) is
+evaluated by its expected utility
+∫
+U (π ) =
+U (π (x)| r) d P(x, r).
+(4)
+
+4.3
+
+d ∈G i
+
+In Section 6, we will discuss how to get unbiased estimates of
+Merit(G i ) using the biased feedback data ct .
+With these definitions in hand, we can address the types of disparities identified in Section 2. Specifically, we extend the Disparity
+of Treatment criterion of [41] to the dynamic ranking problem,
+using an amortized notion of fairness as in [14]. In particular, for
+any two groups G i and G j the disparity
+1 Íτ Exp (G )
+1 Íτ Exp (G )
+t i
+t j
+DτE (G i , G j ) = τ t =1
+− τ t =1
+(10)
+Merit(G i )
+Merit(G j )
+
+Optimizing Ranking Performance
+
+The user-facing goal of dynamic LTR is to converge to the policy
+π ∗ = argmaxπ U (π ) that maximizes utility. Even if we solve the
+problem of estimating U (π ) despite our lack of knowledge of e, this
+maximization problem could be computationally challenging, since
+the space of ranking policies is exponential even when learning
+just a single global ranking. Fortunately, it is easy to show [38] that
+sorting-based policies
+
+
+π (x) ≡ argsort R(d |x) ,
+(5)
+
+measures in how far amortized exposure over τ time steps was
+fulfilled. This exposure-based fairness disparity expresses in
+how far, averaged over all time steps, each group of items got
+exposure proportional to its relevance. The further the disparity is
+from zero, the greater is the violation of fairness. Note that other
+allocation strategies beyond proportionality could be implemented
+as well by using alternate definitions of disparity [41].
+Exposure can also be allocated based on other fairness criteria,
+for example, a Disparity of Impact that a specific exposure allocation
+implies [41]. If we consider the feedback ct (e.g. clicks, purchases,
+votes) as a measure of impact
+1 Õ
+ct (d),
+(11)
+Imp t (G i ) =
+|G i |
+
+d ∈D
+
+where
+R(d |x) =
+
+∫
+
+r(d) d P(r |x),
+
+(6)
+
+are optimal for virtually all U (σ | r) commonly used in IR (e.g. DCG).
+So, the problem lies in estimating the expected relevance R(d |x)
+of each item d conditioned on x. When learning a single global
+ranking, this further
+∫ simplifies to estimating the expected average
+relevance R(d) = r(d)d P(r, x) for each item d. The global ranking
+can then be derived via
+
+
+σ = argsort R(d)
+(7)
+d ∈D
+
+d ∈G i
+
+In Section 6, we will use techniques from causal inference and
+missing-data analysis to design unbiased and consistent estimators
+for R(d |x) and R(d) that only require access to the observed feedback
+ct .
+
+5
+
+then keeping the following disparity close to zero controls how
+exposure is allocated to make impact proportional to relevance.
+1 Íτ Imp (G )
+1 Íτ Imp (G )
+t i
+t j
+τ
+τ
+t =1
+t =1
+I
+Dτ (G i , G j ) =
+−
+(12)
+Merit(G i )
+Merit(G j )
+
+FAIRNESS IN DYNAMIC LTR
+
+While sorting by R(d |x) (or R(d) for global rankings) may provide
+optimal utility to the user, the introductory example has already
+illustrated that this ranking can be unfair. There is a growing body
+of literature to address this unfairness in ranking, and we now
+extend merit-based fairness [14, 41] to the dynamic LTR setting.
+The key scarce resource that a ranking policy allocates among
+the items is exposure. Based on the model introduced in the previous section, we define the exposure of an item d as the marginal probability of examination pt (d) = P(et (d) = 1|σt , x t , rt ).
+It is the probability that the user will see d and thus have the opportunity to read that article, buy that product, or interview that
+
+We refer to this as the impact-based fairness disparity. In Section 7 we will derive a controller that drives such exposure and
+impact disparities to zero.
+
+6
+
+UNBIASED ESTIMATORS
+
+To be able to implement the ranking policies in Equation (5) and
+the fairness disparities in Equations (10) and (12), we need accurate estimates of the position bias pt , the expected conditional
+relevances R(d |x), and the expected average relevances R(d). We
+consider these estimation problems in the following.
+
+432
+
+Session 3A: Bias and Fairness
+
+6.1
+
+SIGIR ’20, July 25–30, 2020, Virtual Event, China
+
+L r (w) that uses the unobserved true relevances (r1 , ..., rτ ).
+
+Estimating the Position Bias
+
+Learning a model for pt is not part of our dynamic LTR problem,
+as the position-bias model is merely an input to our dynamic LTR
+algorithms. Fortunately, several techniques for estimating positionbias models already exist in the literature [5, 22, 32, 46], and we
+are agnostic to which of these is used. In the simplest case, the
+examination probabilities pt (d) only depend on the rank of the
+item in σ , analogous to a Position-Based Click Model [20] with
+a fixed probability for each rank. It was shown in [5, 32, 46] how
+these position-based probabilities can be estimated from explicit
+and implicit swap interventions. Furthermore, it was shown in [22]
+how the contextual features x about the users and query can be
+incorporated in a neural-network based propensity model, allowing it to capture that certain users may explore further down the
+ranking for some queries. Once any of these propensity models are
+learned, they can be applied to predict pt for any new query x t and
+ranking σt .
+
+6.2
+
+
+
+Ee L c (w)
+
+τ ÕÕ 
+Õ
+w
+2 ct (d)
+w
+=
+R̂ (d |x t ) +
+(ct (d)−2R̂ (d |x t)) P(et (d)|σt , x t)
+pt (d)
+t =1
+d et (d)
+
+=
+
+τ Õ
+Õ
+
+R̂ w (d |x t )2 +
+
+t =1 d
+
+=
+
+τ Õ
+Õ
+
+1
+rt (d)(rt (d) − 2R̂ w (d |x t )) pt (d)
+pt (d)
+
+R̂ w (d |x t )2 + rt (d)2 − 2 rt (d)R̂ w (d |x t )
+
+t =1 d
+
+=
+
+τ Õ
+Õ
+
+rt (d) − R̂ w (d |x t )
+
+2
+
+t =1 d
+
+= L r (w)
+
+Estimating Conditional Relevances
+
+The key challenge in estimating R(d |x) from Equation (6) lies in
+our inability to directly observe the true relevances rt . Instead,
+the only data we have is the partial and biased feedback ct . To
+overcome this problem, we take an approach inspired by [32] and
+extend it to the dynamic ranking setting. The key idea is to correct
+for the selection bias with which relevance labels are observed in
+ct using techniques from survey sampling and causal inference
+[27, 28]. However, unlike the ordinal estimators proposed in [32],
+we need cardinal relevance estimates since our fairness disparities
+are cardinal in nature. We, therefore, propose the following cardinal
+relevance estimator.
+The key idea behind this estimator lies in a training objective that
+only uses ct , but that in expectation is equivalent to a least-squares
+objective that has access to rt . To start the derivation, let’s consider
+how we would estimate R(d |x), if we had access to the relevance
+labels (r1 , ..., rτ ) of the previous τ time steps. A straightforward
+solution would be to solve the following least-squares objective for
+a given regression model R̂ w (d |x t ) (e.g. a neural network), where
+w are the parameters of the model.
+L r (w)
+
+=
+
+τ Õ
+Õ
+
+rt (d) − R̂ w (d |x t )
+
+Line 2 formulates the expectation in terms of the marginal exposure
+probabilities P(et (d)|σt , x t ), which decomposes the expectation
+as the objective is additive in d. Note that P(et (d) = 1|σt , x t ) is
+therefore equal to pt (d) under our exposure model. Line 3 substitutes ct (d) = et (d) rt (d) and simplifies the expression, since
+et (d) rt (d) = 0 whenever the user is not exposed to an item. Note
+that the propensities pt (σ ) for the exposed items now cancel, as
+long as they are bounded away from zero – meaning that all items
+have some probability of being found by the user. In case users
+do not naturally explore low enough in the ranking, active interventions can be used to stochastically promote items in order to
+ensure non-zero examination propensities (e.g. [26]). Note that unbiasedness holds for any sequence of (x 1 , r1 , σ1 )..., (xT , rT , σT ), no
+matter how complex the dependencies between the rankings σt
+are.
+Beyond this proof of unbiasedness, it is possible to use standard concentration inequalities to show that L c (w) converges to
+L r (w) as the size τ of the training sequence increases. Thus, under standard conditions on the capacity for uniform convergence,
+it is possible to show convergence of the minimizer of L c (w) to
+the least-squares regressor as the size τ of the training sequence
+increases. We will use this regression objective to learn neuralnetwork rankers in Section 8.2.
+
+2
+(13)
+
+t =1 d
+
+The minimum w ∗ of this objective is the least-squares regression
+estimator of R(d |x t ). Since the (r1 , ..., rτ ) are not available, we define an asymptotically equivalent objective that merely uses the
+biased feedback (c1 , ..., cτ ). The new objective corrects for the position bias using Inverse Propensity Score (IPS) weighting [27, 28],
+where the position bias (p1 , ..., pτ ) takes the role of the missingness
+model.
+L c (w) =
+
+τ Õ
+Õ
+t =1 d
+
+R̂ w (d |x t )2 +
+
+ct (d)
+(ct (d) − 2R̂ w (d |x t ))
+pt (d)
+
+6.3
+
+Estimating Average Relevances
+
+The conditional relevances R(d |x) are used in the ranking policies
+from Equation (5). But when defining merit in Equation (9) for the
+fairness disparities, the average relevance R(d) is needed. Furthermore, R(d) serves as the ranking criterion for global rankings in
+Equation (7). While we could marginalize R(d |x) over P(x) to derive
+R(d), we argue that the following is a more direct way to get an
+unbiased estimate.
+
+(14)
+
+We denote the regression estimator defined by the minimum of this
+objective as R̂ Reg (d |x t ). The regression objective in (14) is unbiased,
+meaning that its expectation is equal to the regression objective
+
+τ
+
+R̂ IPS (d)
+
+433
+
+=
+
+1 Õ ct (d)
+.
+τ t =1 pt (d)
+
+(15)
+
+Session 3A: Bias and Fairness
+
+SIGIR ’20, July 25–30, 2020, Virtual Event, China
+
+We are now in a position to state the FairCo ranking policy as
+
+
+FairCo:
+στ = argsort R̂(d |x) + λ errτ (d) .
+(17)
+
+The following shows that this estimator is unbiased as long as the
+propensities are bounded away from zero.
+τ Õ
+ 1Õ
+
+et (d) rt (d)
+Ee R̂ IPS (d) =
+P(et (d)|σt , x t )
+τ t =1
+pt (d)
+
+d ∈D
+
+When the exposure-based disparity D̂τE−1 (G i , G) is used in the error
+term, we refer to this policy as FairCo(Exp). If the impact-based
+disparity D̂τI −1 (G i , G) is used, we refer to it as FairCo(Imp).
+Like the policies in Section 4.3, FairCo is a sort-based policy.
+However, the sorting criterion is a combination of relevance R̂(d |x)
+and an error term representing the fairness violation. The idea
+behind FairCo is that the error term pushes the items from the
+underexposed groups upwards in the ranking. The parameter λ
+can be chosen to be any positive constant. While any choice of λ
+leads to asymptotic convergence as shown by the theorem below
+for exposure fairness, a suitable choice of λ can have influence
+on the finite-sample behavior of FairCo: a higher λ can lead to
+an oscillating behavior, while a smaller λ makes the convergence
+smoother but slower. We explore the role of λ in the experiments,
+but find that keeping it fixed at λ = 0.01 works well across all of
+our experiments. Another key quality of FairCo is that it is agnostic
+to the choice of error metric, and we conjecture that it can easily
+be adapted to other types of fairness disparities. Furthermore, it is
+easy to implement and it is very efficient, making it well suited for
+practical applications.
+To illustrate the theoretical properties of FairCo, we now analyze its convergence for the case of exposure-based fairness. To
+ˆ
+disentangle the convergence of the estimator for Merit(G)
+from the
+ˆ
+convergence of FairCo, consider a time point τ0 where Merit(G)
+is
+already close to Merit(G) for all G ∈ G. We can thus focus on the
+E
+question whether FairCo can drive D τ to zero starting from any
+unfairness that may have persisted at time τ0 . To make this problem well-posed, we need to assume that exposure is not available
+in overabundance, otherwise it may be unavoidable to give some
+groups more exposure than they deserve even if they are put at
+the bottom of the ranking. A sufficient condition for excluding this
+case is to only consider problems for which the following is true:
+for all pairs of groups G i , G j , if G i is ranked entirely above G j at
+any time point t, then
+
+et (d)
+
+τ
+1 Õ rt (d)
+
+=
+
+p (d)
+τ t =1 pt (d) t
+
+=
+
+1Õ
+rt (d)
+τ t =1
+
+τ
+
+= R(d)
+
+In the following experiments, we will use this estimator whenever
+a direct estimate of R(d) is needed for the fairness disparities or as
+a global ranking criterion.
+
+7
+
+DYNAMICALLY CONTROLLING FAIRNESS
+
+Given the formalization of the dynamic LTR problem, our definition of fairness, and our derivation of estimators for all relevant
+parameters, we are now in the position to tackle the problem of
+ranking while enforcing the fairness conditions. We view this as
+a control problem since we need to be robust to the uncertainty
+in the estimates R̂(d |x) and R̂(d) at the beginning of the learning
+process. Specifically, we propose a controller that is able to make
+up for the initial uncertainty as these estimates converge during
+the learning process.
+Following our pairwise definitions of amortized fairness from
+Section 5, we quantify by how much fairness between all classes is
+violated using the following overall disparity metric.
+Dτ =
+
+m Õ
+m
+Õ
+2
+Dτ (G i , G j )
+m(m − 1) i=0 j=i+1
+
+(16)
+
+This metric can be instantiated with the disparity DτE (G i , G j ) from
+Equation (10) for exposure-based fairness, or DτI (G i , G j ) from Equation (12) for impact-based fairness. Since optimal fairness is achieved
+for D τ = 0, we seek to minimize D τ .
+To this end, we now derive a method we call FairCo, which
+takes the form of a Proportional Controller (a.k.a. P-Controller)
+[12]. A P-controller is a widely used control-loop mechanism that
+applies feedback through a correction term that is proportional to
+the error. In our application, the error corresponds to the violation
+of our amortized fairness disparity from Equations (10) and (12).
+Specifically, for any set of disjoint groups G = {G 1 , . . . , Gm }, the
+error term of the controller for any item d is defined as
+
+
+∀G ∈ G ∀d ∈ G : errτ (d) = (τ − 1) · max D̂τ −1 (G i , G) .
+
+Exp t (G j )
+Exp t (G i )
+≥
+.
+ˆ
+ˆ
+Merit(G i )
+Merit(G
+j)
+
+(18)
+
+Intuitively, the condition states that ranking G i ahead of G j reduces
+the disparity if G i has been underexposed in the past. We can now
+state the following theorem.
+Theorem 7.1. For any set of disjoint groups G = {G 1 , . . . , Gm }
+ˆ
+with any fixed target merits Merit(G
+i ) > 0 that fulfill (18), any
+relevance model R̂(d |x) ∈ [0, 1], any exposure model pt (d) with
+0 ≤ pt (d) ≤ pmax , and any value λ > 0, running FairCo(Exp) from
+
+Gi
+
+E
+
+time τ0 will always ensure that the overall disparity D τ with respect
+
+The error term errτ (G) is zero for the group that already has the
+maximum exposure/impact w.r.t. its merit. For items in the other
+groups, the error term grows with increasing disparity.
+Note that the disparity D̂τ −1 (G i , G) in the error term uses the esˆ
+timated Merit(G)
+from Equation (15), which converges to Merit(G)
+ˆ
+as the sample size τ increases. To avoid division by zero, Merit(G)
+can be set to some minimum constant.
+
+to the target merits converges to zero at a rate of O τ1 , no matter
+Í
+how unfair the exposures τ10 τt 0=1 Exp t (G j ) up to τ0 have been.
+
+The proof of the theorem is included in the full version of
+the paper on arXiv. Note that this theorem holds for any time
+point τ0 , even if the estimated merits change substantially up to τ0 .
+So, once the estimated merits have converged to the true merits,
+
+434
+
+Session 3A: Bias and Fairness
+
+SIGIR ’20, July 25–30, 2020, Virtual Event, China
+
+E
+
+FairCo(Exp) will ensure that the amortized disparity D τ converges
+to zero as well.
+
+EMPIRICAL EVALUATION
+
+8.1
+
+Avg. Cumulative NDCG
+
+In addition to the theoretical justification of our approach, we also
+conducted an empirical evaluation1 . We first present experiments
+on a semi-synthetic news dataset to investigate different aspects
+of the proposed methods under controlled conditions. After that
+we evaluate the methods on real-world movie preference data for
+external validity.
+
+Robustness Analysis on News Data
+
+To be able to evaluate the methods in a variety of specifically designed test settings, we created the following simulation environment from articles in the Ad Fontes Media Bias dataset2 . It simulates
+a dynamic ranking problem on a set of news articles belonging to
+two groups G left and G right (e.g. left-leaning and right-leaning news
+articles).
+In each trial, we sample a set of 30 news articles D. For each
+article, the dataset contains a polarity value ρ d that we rescale to the
+interval between -1 and 1, while the user polarities are simulated.
+Each user has a polarity that is drawn from a mixture of two normal
+distributions clipped to [−1, 1]
+
+ρ ut ∼ clip[−1,1] pneд N (−0.5, 0.2) + (1 − pneд )N (0.5, 0.2) (19)
+
+0.700
+0.675
+0.650
+0
+
+1000
+
+2000
+
+3000
+
+0.15
+
+Naive
+D-ULTR(Glob)
+
+0.10
+
+FairCo(Imp)
+
+0.05
+0.00
+0
+
+1000
+
+2000
+
+3000
+
+Users
+
+8.1.1 Can FairCo reduce unfairness while maintaining good ranking quality? This is the key question in evaluating FairCo, and
+Figure 1 shows how NDCG and Unfairness converge for Naive, DULTR(Glob), and FairCo(Imp). The plots show that Naive achieves
+the lowest NDCG and that its unfairness remains high as the
+number of user interactions increases. D-ULTR(Glob) achieve the
+best NDCG, as predicted by the theory, but its unfairness is only
+marginally better than that of Naive. Only FairCo manages to substantially reduce unfairness, and this comes only at a small decrease
+in NDCG compared to D-ULTR(Glob).
+The following questions will provide further insight into these
+results, evaluating the components of the FairCo and exploring its
+robustness.
+0.3
+
+average |R̂(d) − R(d)|
+
+0.2
+
+Naive
+R̂IP S (d)
+
+0.1
+0.0
+0
+
+The remainder of the simulation follows the dynamic ranking
+setup. At each time step t a user ut arrives to the system, the
+algorithm presents an unpersonalized ranking σt , and the user
+provides feedback ct according to pt and rt . The algorithm only
+observes ct and not rt .
+To investigate group-fairness, we group the items according to
+their polarity, where items with a polarity ρ d ∈ [−1, 0) belong to
+the left-leaning group G left and items with a polarity ρ d ∈ [0, 1]
+belong to the right-leaning group G right .
+We measure ranking quality by the average cumulative NDCG
+1 Íτ U DCG (σ | r ) over all the users up to time τ . We measure
+t t
+τ
+t =1
+
+500
+
+1000
+
+1500
+Users
+
+2000
+
+2500
+
+3000
+
+Figure 2: Error of relevance estimators as the number of
+users increases (|D| = 30, 10 trials)
+8.1.2 Do the unbiased estimates converge to the true relevances?
+The first component of FairCo we evaluate is the unbiased IPS
+estimator R̂ IPS (d) from Equation (15). Figure 1 shows the absolute
+difference between the estimated global relevance and true global
+relevance for R̂ IPS (d) and the estimator used in the Naive. While
+the error for Naive stagnates at around 0.25, the estimation error
+of R̂ IPS (d) approaches zero as the number of users increases. This
+verifies that IPS eliminates the effect of position bias and learns
+accurate estimates of the true expected relevance for each news
+article so that we can use them for the fairness and ranking criteria.
+
+I
+
+Exposure Unfairness via D τ and Impact Unfairness via D τ as defined in Equation (16).
+2
+
+0.725
+
+Figure 1: Convergence of NDCG (left) and Unfairness (right)
+as the number of users increases. (100 trials)
+
+As the model of user behavior, we use the Position-based click
+model (PBM [18]), where the marginal probability that user ut
+examines an article only depends only on its position. We choose
+an exposure drop-off analogous to the gain function in DCG as
+1
+pt (d) =
+.
+(20)
+log2 (rank(d |σt ) + 1)
+
+1
+
+0.20
+
+Users
+
+where pneд is the probability of the user to be left-leaning (mean=−0.5).
+We use pneд = 0.5 unless specified. In addition, each user has an
+openness parameter out ∼ U(0.05, 0.55), indicating on the breadth
+of interest outside their polarity. Based on the polarities of the user
+ut and the item d, the true relevance is drawn from the Bernoulli
+distribution
+"
+!#
+−(ρ ut − ρ d )2
+rt (d) ∼ Bernoulli p = exp
+.
+2(out )2
+
+E
+
+0.750
+Impact Unfairness
+
+8
+
+In all news experiments, we learn a global ranking and compare
+the following methods.
+Naive: Rank by the sum of the observed feedback ct .
+D-ULTR(Glob): Dynamic LTR by sorting via the unbiased estimates R̂ IPS (d) from Eq. (15).
+FairCo(Imp): Fairness controller from Eq. (17) for impact fairness.
+
+The implementation is available at https://github.com/MarcoMorik/Dynamic-Fairness.
+https://www.adfontesmedia.com/interactive-media-bias-chart/
+
+435
+
+0.2
+
+SIGIR ’20, July 25–30, 2020, Virtual Event, China
+
+see that their solutions are unfair. As λ increases, both methods
+start enforcing fairness at the expense of NDCG. In these and other
+experiments, we found no evidence that the LinProg baseline is superior to FairCo. However, LinProg is substantially more expensive
+to compute, which makes FairCo preferable in practice.
+
+Naive
+D-ULTR(Glob)
+FairCo(Imp)
+
+0.1
+
+0.0
+0
+
+50
+
+100
+150
+200
+250
+300
+Number of right-leaning users in the beginning
+
+350
+
+400
+
+Impact Unfairness
+
+Impact Unfairness
+
+Session 3A: Bias and Fairness
+
+0.75
+NDCG
+
+Figure 3: The effect of a block of right-leaning users on the
+Unfairness of Impact. (50 trials, 3000 users)
+
+0.70
+0.65
+
+8.1.3 Does FairCo overcome the rich-get-richer dynamic? The illustrating example in Section 2 argues that naively ranking items
+is highly sensitive to the initial conditions (e.g. which items get
+the first clicks), leading to a rich-get-richer dynamic. We now test
+whether FairCo overcomes this problem. In particular, we adversarially modify the user distribution so that the first x users are
+right-leaning (pneд = 0), followed by x left-leaning users (pneд = 1),
+before we continue with a balanced user distribution (pneд = 0.5).
+Figure 3 shows the unfairness after 3000 user interactions. As expected, Naive is the most sensitive to the head-start that the rightleaning articles are getting. D-ULTR(Glob) fares better and its unfairness remains constant (but high) independent of the initial user
+distribution since the unbiased estimator R̂ IPS (d) corrects for the
+presentation bias so that the estimates still converge to the true relevance. FairCo inherits this robustness to initial conditions since it
+uses the same R̂ IPS (d) estimator, and its active control for unfairness
+makes it the only method that achieves low unfairness across the
+whole range.
+
+0.68
+−4
+
+−3
+
+−2
+
+0 10 10 10 10
+λ
+
+−1
+
+0
+
+1
+
+10 10 10
+
+2
+
+FairCo(Imp)
+
+0.1
+0.2
+0.4
+Proportion of Left-Leaning Items
+
+NDCG
+
+8.1.5 Is FairCo effective for different group sizes? In this experiment, we vary asymmetry of the polarity within the set of 30 news
+articles, ranging from G left = 1 to G left = 15 news articles. For each
+group size, we run 20 trials for 3000 users each. Figure 5 shows
+that regardless of the group ratio, FairCo reduces unfairness for
+the whole range while maintaining NDCG. This is in contrast to
+Naive and D-ULTR(Glob), which suffer from high unfairness.
+
+Impact Unfairness
+
+Impact Unfairness
+
+NDCG
+
+0.70
+
+0.2
+
+Figure 5: NDCG (left) and Unfairness (right) for varying proportion of G left (20 trials, 3000 users)
+
+0.8
+
+0.7
+
+0.72
+
+Naive
+D-ULTR(Glob)
+
+0.0
+
+0.2
+0.4
+Proportion of Left-Leaning Items
+
+0.74
+0.15
+
+0.3
+
+LinProg
+FairCo(Imp)
+
+0.2
+0.4
+0.6
+0.8
+Proportion of Left-Leaning Users
+
+0.10
+0.05
+
+0.4
+
+0.2
+
+0.0
+
+Naive
+D-ULTR(Glob)
+FairCo(Imp)
+
+0.2
+0.4
+0.6
+0.8
+Proportion of Left-Leaning Users
+
+Figure 6: NDCG (left) and Unfairness (right) with varying
+user distributions. (20 trials, 3000 users)
+
+0.00
+0 10−4 10−3 10−2 10−1 100 101 102
+λ
+
+8.1.6 Is FairCo effective for different user distributions? Finally, to
+examine the robustness to varying user distributions, we control the
+polarity distribution of the users by varying pneд in Equation (19).
+We run 20 trials each on 3000 users. In Figure 6, observe that Naive
+and D-ULTR(Glob) suffer from high unfairness when there is a
+large imbalance between the minority and the majority group,
+while FairCo is able to control the unfairness in all settings.
+
+Figure 4: Comparing the LP Baseline and the P-Controller
+in terms of NDCG (left) and Unfairness (right) for different
+values of λ. (15 trials, 3000 users)
+8.1.4 How effective is the FairCo compared to a more expensive
+Linear-Programming Baseline? As a baseline, we adapt the linear
+programming method from [41] to the dynamic LTR setting to
+minimize the amortized fairness disparities that we consider in
+this work. The method uses the current relevance and disparity
+estimates to solve a linear programming problem whose solution is
+a stochastic ranking policy that satisfies the fairness constraints in
+expectation at each τ . The details of this method are described in
+the full version of the paper on arXiv. Figure 4 shows NDCG and
+Impact Unfairness after 3000 users averaged over 15 trials for both
+LinProg and FairCo for different values of their hyperparameter
+λ. For λ = 0, both methods reduce to D-ULTR(Glob) and we can
+
+8.2
+
+Evaluation on Real-World Preference Data
+
+To evaluate our method on a real-world preference data, we adopt
+the ML-20M dataset [24]. We select the five production companies
+with the most movies in the dataset — MGM, Warner Bros, Paramount, 20th Century Fox, Columbia. These production companies
+form the groups for which we aim to ensure fairness of exposure.
+To exclude movies with only a few ratings and have a diverse user
+population, from the set of 300 most rated movies by these production companies, we select 100 movies with the highest standard
+
+436
+
+SIGIR ’20, July 25–30, 2020, Virtual Event, China
+
+2000
+
+4000
+
+5000
+
+0.0
+0
+
+6000
+
+2000
+
+4000
+
+6000
+
+Users
+
+0.20
+Impact Unfairness
+
+Avg. Cumulative NDCG
+
+0.9
+
+0.8
+
+0.7
+0
+
+2000
+
+4000
+
+6000
+
+Naive
+D-ULTR(Glob)
+D-ULTR
+FairCo(Imp)
+
+0.15
+0.10
+0.05
+0.00
+0
+
+2000
+
+4000
+
+6000
+
+Users
+
+8.2.2 Can FairCo reduce unfairness? Figure 8 shows that FairCo(Exp)
+can effectively control Exposure Unfairness, unlike the other methods that do not actively consider fairness. Similarly, Figure 9 shows
+that FairCo(Imp) is effective at controlling Impact Unfairness. As expected, the improvement in fairness comes at a reduction in NDCG,
+but this reduction is small.
+
+6000
+
+0.20
+
+0.20
+
+0.15
+0.10
+0.05
+0.00
+0
+
+Figure 7: Comparing the NDCG of personalized and nonpersonalized rankings on the Movie data. (10 trials)
+
+2000
+
+4000
+Users
+
+6000
+
+0.15
+
+D-ULTR
+FairCo(Imp)
+
+0.10
+
+FairCo(Exp)
+
+0.05
+0.00
+0
+
+2000
+
+4000
+
+6000
+
+Users
+
+Figure 10: Unfairness of Exposure (left) and Unfairness of
+Impact (right) for the personalized controller optimized for
+either Exposure or Impact. (10 trials)
+
+8.2.1 Does personalization via unbiased objective improve NDCG?.
+We first evaluate whether training a personalized model using the
+de-biased R̂ Reg (d |x) regression estimator improves ranking performance over a non-personalized model. Figure 7 shows that ranking
+by R̂ Reg (d |x) (i.e. D-ULTR) provides substantially higher NDCG than
+the unbiased global ranking D-ULTR(Glob) and the Naive ranking.
+To get an upper bound on the performance of the personalization
+models, we also train a Skyline model using the (in practice unobserved) true relevances rt with the least-squares objective from
+Eq. (13). Even though the unbiased regression estimator R̂ Reg (d |x)
+3
+
+0.1
+
+only has access to the partial feedback ct , it tracks the performance
+of Skyline. As predicted by the theory, they appear to converge
+asymptotically.
+
+D-ULTR
+Skyline
+
+3000
+Users
+
+4000
+
+0.2
+
+Figure 9: NDCG (left) and Impact Unfairness (right) on the
+Movie data as the number of user interactions increases. (10
+trials)
+
+0.7
+1000
+
+2000
+
+Naive
+D-ULTR(Glob)
+D-ULTR
+FairCo(Exp)
+
+0.3
+
+Users
+
+0.8
+
+0
+
+0.7
+0
+
+Impact Unfairness
+
+Naive
+D-ULTR(Glob)
+
+0.8
+
+0.4
+
+Figure 8: NDCG (left) and Exposure Unfairness (right) on the
+Movie data as the number of user interactions increases. (10
+trials)
+
+1.0
+0.9
+
+0.9
+
+Users
+
+Exposure Unfairness
+
+Avg. Cumulative NDCG
+
+deviation in the rating across users. For the users, we select 104
+users who have rated the most number of the chosen movies. This
+leaves us with a partially filled ratings matrix with 104 users and
+100 movies. To avoid missing data for the ease of evaluation, we use
+an off-the-shelf matrix factorization algorithm3 to fill in the missing
+entries. We then normalize the ratings to [0, 1] by apply a Sigmoid
+function centered at rating b = 3 with slope a = 10. These serve
+as relevance probabilities where higher star ratings correspond to
+a higher likelihood of positive feedback. Finally, for each trial we
+obtain a binary relevance matrix by drawing a Bernoulli sample
+for each user and movie pair with these probabilities. We use the
+user embeddings from the matrix factorization model as the user
+features x t .
+In the following experiments we use FairCo to learn a sequence
+of ranking policies πt (x) that are personalized based on x. The goal
+is to maximize NDCG while providing fairness of exposure to the
+production companies. User interactions are simulated analogously
+to the previous experiments. At each time step t, we sample a user
+x t and the ranking algorithm presents a ranking of the 100 movies.
+The user follows the position-based model from Equation (20) and
+reveal ct accordingly.
+For the conditional relevance model R̂ Reg (d |x) used by FairCo and
+D-ULTR, we use a one hidden-layer neural network that consists of
+D = 50 input nodes fully connected to 64 nodes in the hidden layer
+with ReLU activation, which is connected to 100 output nodes with
+Sigmoid to output the predicted probability of relevance of each
+movie. Since training this network with less than 100 observations is
+unreliable, we use the global ranker D-ULTR(Glob) for the first 100
+users. We then train the network at τ = 100 users, and then update
+the network after every 10 users on all previously collected feedback
+i.e. c1 , ..., cτ using the unbiased regression objective, L c (w), from
+Eq. (14) with the Adam optimizer [33].
+
+Exposure Unfairness
+
+Avg. Cumulative NDCG
+
+Session 3A: Bias and Fairness
+
+8.2.3 How different are exposure and impact fairness? Figure 10
+evaluates how an algorithm that optimizes Exposure Fairness performs in terms of Impact Fairness and vice versa. The plots show
+that the two criteria achieve different goals and that they are substantially different. In fact, optimizing for fairness in impact can
+even increase the unfairness in exposure, illustrating that the choice
+of criterion needs to be grounded in the requirements of the application.
+
+Surprise library (http://surpriselib.com/) for SVD with biased=False and D=50
+
+437
+
+Session 3A: Bias and Fairness
+
+9
+
+SIGIR ’20, July 25–30, 2020, Virtual Event, China
+
+CONCLUSIONS
+
+[20] Nick Craswell, Onno Zoeter, Michael Taylor, and Bill Ramsey. 2008. An experimental comparison of click position-bias models. In WSDM.
+[21] Danielle Ensign, Sorelle A Friedler, Scott Neville, Carlos Scheidegger, and Suresh
+Venkatasubramanian. 2018. Runaway Feedback Loops in Predictive Policing. In
+Conference of Fairness, Accountability, and Transparency.
+[22] Zhichong Fang, A. Agarwal, and T. Joachims. 2019. Intervention Harvesting for
+Context-Dependent Examination-Bias Estimation. In SIGIR.
+[23] Fabrizio Germano, Vicenç Gómez, and Gaël Le Mens. 2019. The few-getricher: a surprising consequence of popularity-based rankings. arXiv preprint
+arXiv:1902.02580 (2019).
+[24] F Maxwell Harper and Joseph A Konstan. 2015. The movielens datasets: History
+and context. ACM TIIS (2015).
+[25] Herbrich, Graepel, and Obermayer. 2000. Large Margin Ranking Boundaries for
+Ordinal Regression. In Advances in Large Margin Classifiers.
+[26] Katja Hofmann, Shimon Whiteson, and Maarten de Rijke. 2013. Balancing exploration and exploitation in listwise and pairwise online learning to rank for
+information retrieval. Information Retrieval (2013).
+[27] Daniel G Horvitz and Donovan J Thompson. 1952. A generalization of sampling
+without replacement from a finite universe. Journal of the American statistical
+Association (1952).
+[28] Guido W Imbens and Donald B Rubin. 2015. Causal inference in statistics, social,
+and biomedical sciences. Cambridge University Press.
+[29] Kalervo Järvelin and Jaana Kekäläinen. 2002. Cumulated gain-based evaluation
+of IR techniques. TOIS (2002).
+[30] T. Joachims. 2002. Optimizing Search Engines Using Clickthrough Data. In ACM
+SIGKDD Conference on Knowledge Discovery and Data Mining (KDD). 133–142.
+[31] T. Joachims, L. Granka, Bing Pan, H. Hembrooke, F. Radlinski, and G. Gay. 2007.
+Evaluating the Accuracy of Implicit Feedback from Clicks and Query Reformulations in Web Search. ACM TOIS (2007).
+[32] T. Joachims, A. Swaminathan, and T. Schnabel. 2017. Unbiased Learning-to-Rank
+with Biased Feedback. In WSDM.
+[33] Diederik P Kingma and Jimmy Ba. 2014. Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980 (2014).
+[34] Shuai Li, Tor Lattimore, and Csaba Szepesvári. 2018. Online Learning to Rank
+with Features. arXiv preprint arXiv:1810.02567 (2018).
+[35] Lydia Liu, Sarah Dean, Esther Rolf, Max Simchowitz, and Moritz Hardt. 2018.
+Delayed Impact of Fair Machine Learning. In ICML.
+[36] F. Radlinski and T. Joachims. 2006. Minimally Invasive Randomization for Collecting Unbiased Preferences from Clickthrough Logs. In AAAI. 1406–1412.
+[37] F. Radlinski, R. Kleinberg, and T. Joachims. 2008. Learning Diverse Rankings
+with Multi-Armed Bandits. In ICML.
+[38] Stephen E Robertson. 1977. The probability ranking principle in IR. Journal of
+documentation (1977).
+[39] M. J. Salganik, P. Sheridan Dodds, and D. J. Watts. 2006. Experimental study of
+inequality and unpredictability in an artificial cultural market. Science (2006).
+[40] Tobias Schnabel, Adith Swaminathan, Ashudeep Singh, Navin Chandak, and
+Thorsten Joachims. 2016. Recommendations as Treatments: Debiasing Learning
+and Evaluation. In ICML.
+[41] Ashudeep Singh and Thorsten Joachims. 2018. Fairness of Exposure in Rankings.
+In ACM SIGKDD.
+[42] Ashudeep Singh and Thorsten Joachims. 2019. Policy Learning for Fairness in
+Ranking. In NeurIPS.
+[43] Behzad Tabibian, Vicenç Gómez, Abir De, Bernhard Schölkopf, and
+Manuel Gomez Rodriguez. 2019. Consequential ranking algorithms and
+long-term welfare. arXiv preprint arXiv:1905.05305 (2019).
+[44] Michael Taylor, John Guiver, Stephen Robertson, and Tom Minka. 2008. Softrank:
+optimizing non-smooth rank metrics. In WSDM. ACM.
+[45] Soroush Vosoughi, Deb Roy, and Sinan Aral. 2018. The spread of true and false
+news online. Science (2018).
+[46] Xuanhui Wang, Nadav Golbandi, Michael Bendersky, Donald Metzler, and Marc
+Najork. 2018. Position bias estimation for unbiased learning to rank in personal
+search. In WSDM. ACM.
+[47] Himank Yadav, Zhengxiao Du, and Thorsten Joachims. 2019. Fair Learning-toRank from Implicit Feedback. arXiv:cs.LG/1911.08054
+[48] Hongzhi Yin, Bin Cui, Jing Li, Junjie Yao, and Chen Chen. 2012. Challenging the
+long tail recommendation. VLDB (2012).
+[49] Masrour Zoghi, Tomas Tunys, Mohammad Ghavamzadeh, Branislav Kveton,
+Csaba Szepesvari, and Zheng Wen. 2017. Online learning to rank in stochastic
+click models. In ICML.
+
+We identify how biased feedback and uncontrolled exposure allocation can lead to unfairness and undesirable behavior in dynamic
+LTR. To address this problem, we propose FairCo, which is able
+to adaptively enforce amortized merit-based fairness constraints
+even though their underlying relevances are still being learned. The
+algorithm is robust to presentation bias and thus does not exhibit
+rich-get-richer dynamics. Finally, FairCo is easy to implement and
+computationally efficient, which makes it well suited for practical
+applications.
+
+ACKNOWLEDGMENTS
+This research was supported in part by NSF Awards IIS-1901168
+and a gift from Workday. All content represents the opinion of
+the authors, which is not necessarily shared or endorsed by their
+respective employers and/or sponsors.
+
+REFERENCES
+[1] Himan Abdollahpouri, Gediminas Adomavicius, Robin Burke, Ido Guy, Dietmar
+Jannach, Toshihiro Kamishima, Jan Krasnodebski, and Luiz Pizzato. 2019. Beyond
+Personalization: Research Directions in Multistakeholder Recommendation. arXiv
+preprint arXiv:1905.01986 (2019).
+[2] Himan Abdollahpouri, Robin Burke, and Bamshad Mobasher. 2017. Controlling
+popularity bias in learning-to-rank recommendation. In ACM RecSys.
+[3] Lada A Adamic and Bernardo A Huberman. 2000. Power-law distribution of the
+world wide web. Science (2000).
+[4] A. Agarwal, K. Takatsu, I. Zaitsev, and T. Joachims. 2019. A General Framework
+for Counterfactual Learning-to-Rank. In SIGIR.
+[5] A. Agarwal, I. Zaitsev, Xuanhui Wang, Cheng Li, M. Najork, and T. Joachims.
+2019. Estimating Position Bias Without Intrusive Interventions. In WSDM.
+[6] Qingyao Ai, Keping Bi, Cheng Luo, Jiafeng Guo, and W Bruce Croft. 2018. Unbiased learning to rank with unbiased propensity estimation. In SIGIR.
+[7] Michael Ekstrand Sebastian Kohlmeier Asia Biega, Fernando Diaz. 2019. TREC
+Fair Ranking Track. https://fair-trec.github.io/ [Online; accessed 08-14-2019].
+[8] Ricardo Baeza-Yates. 2018. Bias on the Web. Commun. ACM (2018).
+[9] Solon Barocas, Moritz Hardt, and Arvind Narayanan. 2018. Fairness and Machine
+Learning. (2018).
+[10] Solon Barocas and Andrew D Selbst. 2016. Big data’s disparate impact. Calif. L.
+Rev. (2016).
+[11] Michael A Beam. 2014. Automating the news: How personalized news recommender system design choices impact news reception. Communication Research
+(2014).
+[12] B Wayne Bequette. 2003. Process control: modeling, design, and simulation. Prentice
+Hall Professional.
+[13] Alex Beutel, Jilin Chen, Tulsee Doshi, Hai Qian, Li Wei, Yi Wu, Lukasz Heldt,
+Zhe Zhao, Lichan Hong, Ed H. Chi, and Cristos Goodrow. 2019. Fairness in
+Recommendation Ranking through Pairwise Comparisons. In ACM SIGKDD.
+[14] Asia J Biega, Krishna P Gummadi, and Gerhard Weikum. 2018. Equity of Attention:
+Amortizing Individual Fairness in Rankings. In SIGIR.
+[15] Christopher JC Burges. 2010. From Ranknet to Lambdarank to Lambdamart: An
+overview. Learning (2010).
+[16] L Elisa Celis, Damian Straszak, and Nisheeth K Vishnoi. 2017. Ranking with
+fairness constraints. arXiv preprint arXiv:1704.06840 (2017).
+[17] Nicolò Cesa-Bianchi and Gábor Lugosi. 2006. Prediction, learning, and games.
+Cambridge University Press.
+[18] Aleksandr Chuklin, Ilya Markov, and Maarten de Rijke. 2015. Click models for
+web search. Synthesis Lectures on Information Concepts, Retrieval, and Services
+(2015).
+[19] Giovanni Luca Ciampaglia, Azadeh Nematzadeh, Filippo Menczer, and Alessandro
+Flammini. 2018. How algorithmic popularity bias hinders or promotes quality.
+Scientific reports (2018).
+
+438
+
+
